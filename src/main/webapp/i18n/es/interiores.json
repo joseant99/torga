@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "interiores": {
+            "home": {
+                "title": "Interiores",
+                "createLabel": "Crear nuevo Interiores",
+                "createOrEditLabel": "Crear o editar Interiores"
+            },
+            "created": "Un nuevo Interiores ha sido creado con el identificador {{ param }}",
+            "updated": "Un Interiores ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Interiores ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Interiores {{ id }}?"
+            },
+            "detail": {
+                "title": "Interiores"
+            },
+            "imagen": "Imagen",
+            "productosDormitorio": "Productos Dormitorio",
+            "dimensionesProductoTipo": "Dimensiones Producto Tipo"
+        }
+    }
+}

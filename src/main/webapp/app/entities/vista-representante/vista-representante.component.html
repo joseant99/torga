@@ -1,0 +1,91 @@
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <br>
+  <br>
+  
+  
+  <div *ngIf="cargado"  class="table-responsive">
+    <table class="table" mat-table [dataSource]="dataSource" matSort>
+   
+      <ng-container matColumnDef="fecha_pedido">
+        <th *matHeaderCellDef mat-sort-header> Fecha Pedido</th>
+        <td *matCellDef="let row"> {{row.fecha_pedido | date: 'dd/MM/yyyy'}} </td>
+      </ng-container>
+  
+      
+      <ng-container matColumnDef="pedido">
+        <th  *matHeaderCellDef mat-sort-header> Pedido </th>
+        <td  *matCellDef="let row"> {{row.pedido}} </td>
+      </ng-container>
+  
+      
+      <ng-container matColumnDef="confirmacion">
+        <th  *matHeaderCellDef mat-sort-header> Confirmacion </th>
+        <td *matCellDef="let row" >
+          <ng-container *ngIf="row.confirmacion_exist"> 
+             <a> <i (click)="getPDFConfirmacion(row.confirmacion)" > Disponible </i></a>   
+          </ng-container >
+          <ng-container *ngIf="!row.confirmacion_exist">
+               {{row.confirmacion}} 
+          </ng-container> </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="referencia_cliente">
+        <th   *matHeaderCellDef mat-sort-header> Ref. Cliente </th>
+        <td  mat   *matCellDef="let row">  {{row.referencia_cliente}} </td>
+      </ng-container> 
+
+      <ng-container matColumnDef="cliente">
+        <th   *matHeaderCellDef mat-sort-header> Cliente </th>
+        <td  mat   *matCellDef="let row">  {{row.cliente}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="importe">
+        <th    *matHeaderCellDef mat-sort-header> Importe </th>
+        <td    *matCellDef="let row"> {{row.importe}} </td>
+      </ng-container> 
+  
+      <ng-container matColumnDef="estado">
+        <th     *matHeaderCellDef mat-sort-header> Estado </th>
+        <td    mat   *matCellDef="let row"> {{row.estado}} </td>
+      </ng-container>  
+  
+      <ng-container matColumnDef="transportista">
+        <th     *matHeaderCellDef mat-sort-header> Transportista </th>
+        <td *matCellDef="let row"> {{row.transportista}} </td>
+      </ng-container> 
+  
+      <ng-container matColumnDef="fecha_entrega">
+        <th     *matHeaderCellDef mat-sort-header> Fecha Entrega </th>
+        <td    *matCellDef="let row"> {{row.fecha_entrega | date: 'dd/MM/yyyy'}} </td>
+      </ng-container> 
+
+      <ng-container matColumnDef="poblacion">
+        <th     *matHeaderCellDef mat-sort-header> Poblacion </th>
+        <td    *matCellDef="let row"> {{row.poblacion}} </td>
+      </ng-container> 
+  
+      <ng-container matColumnDef="factura">
+        <th *matHeaderCellDef mat-sort-header> Factura </th>
+        <td *matCellDef="let row" >
+          <ng-container *ngIf="row.factura_exist"> 
+             <a> <i (click)="getPDF(row.factura)" > Disponible </i></a>   
+          </ng-container >
+          <ng-container *ngIf="!row.factura_exist">
+               {{row.factura}} 
+          </ng-container> </td>
+        
+  </ng-container> 
+  
+      <tr mat-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+  
+   
+  
+  </div>
+  <div> <mat-paginator  [pageSizeOptions]="[10, 25, 50]" ></mat-paginator> </div>
+  
+  

@@ -1,0 +1,25 @@
+{
+    "torgaPedidosApp": {
+        "presupuestoPedido": {
+            "home": {
+                "title": "Presupuesto Pedidos",
+                "createLabel": "Crear nuevo Presupuesto Pedido",
+                "createOrEditLabel": "Crear o editar Presupuesto Pedido"
+            },
+            "created": "Un nuevo Presupuesto Pedido ha sido creado con el identificador {{ param }}",
+            "updated": "Un Presupuesto Pedido ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Presupuesto Pedido ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Presupuesto Pedido {{ id }}?"
+            },
+            "detail": {
+                "title": "Presupuesto Pedido"
+            },
+            "codigo": "Codigo",
+            "pedido": "Pedido",
+            "fecha_presupuesto": "Fecha Presupuesto",
+            "fecha_pedido": "Fecha Pedido",
+            "user": "User"
+        }
+    }
+}

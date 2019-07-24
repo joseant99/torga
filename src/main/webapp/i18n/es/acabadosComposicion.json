@@ -1,0 +1,22 @@
+{
+    "torgaPedidosApp": {
+        "acabadosComposicion": {
+            "home": {
+                "title": "Acabados Composicions",
+                "createLabel": "Crear nuevo Acabados Composicion",
+                "createOrEditLabel": "Crear o editar Acabados Composicion"
+            },
+            "created": "Un nuevo Acabados Composicion ha sido creado con el identificador {{ param }}",
+            "updated": "Un Acabados Composicion ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Acabados Composicion ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Acabados Composicion {{ id }}?"
+            },
+            "detail": {
+                "title": "Acabados Composicion"
+            },
+            "productosComposicion": "Productos Composicion",
+            "acabados": "Acabados"
+        }
+    }
+}

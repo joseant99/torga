@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-productos-presupuesto-pedidos-heading" jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.home.createOrEditLabel">Create or edit a Productos Presupuesto Pedidos</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!productosPresupuestoPedidos.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="productosPresupuestoPedidos.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="productosPresupuestoPedidos.productosDormitorio" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productosDormitorioOption.id === productosPresupuestoPedidos.productosDormitorio?.id ? productosPresupuestoPedidos.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.dimensionesProductoTipo" for="field_dimensionesProductoTipo">Dimensiones Producto Tipo</label>
+                    <select class="form-control" id="field_dimensionesProductoTipo" name="dimensionesProductoTipo" [(ngModel)]="productosPresupuestoPedidos.dimensionesProductoTipo" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dimensionesProductoTipoOption.id === productosPresupuestoPedidos.dimensionesProductoTipo?.id ? productosPresupuestoPedidos.dimensionesProductoTipo : dimensionesProductoTipoOption" *ngFor="let dimensionesProductoTipoOption of dimensionesproductotipos; trackBy: trackDimensionesProductoTipoById">{{dimensionesProductoTipoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.presupuestoPedido" for="field_presupuestoPedido">Presupuesto Pedido</label>
+                    <select class="form-control" id="field_presupuestoPedido" name="presupuestoPedido" [(ngModel)]="productosPresupuestoPedidos.presupuestoPedido" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="presupuestoPedidoOption.id === productosPresupuestoPedidos.presupuestoPedido?.id ? productosPresupuestoPedidos.presupuestoPedido : presupuestoPedidoOption" *ngFor="let presupuestoPedidoOption of presupuestopedidos; trackBy: trackPresupuestoPedidoById">{{presupuestoPedidoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.tipoProducto" for="field_tipoProducto">Tipo Producto</label>
+                    <select class="form-control" id="field_tipoProducto" name="tipoProducto" [(ngModel)]="productosPresupuestoPedidos.tipoProducto" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoProductoOption.id === productosPresupuestoPedidos.tipoProducto?.id ? productosPresupuestoPedidos.tipoProducto : tipoProductoOption" *ngFor="let tipoProductoOption of tipoproductos; trackBy: trackTipoProductoById">{{tipoProductoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.tiposApoyo" for="field_tiposApoyo">Tipos Apoyo</label>
+                    <select class="form-control" id="field_tiposApoyo" name="tiposApoyo" [(ngModel)]="productosPresupuestoPedidos.tiposApoyo" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tiposApoyoOption.id === productosPresupuestoPedidos.tiposApoyo?.id ? productosPresupuestoPedidos.tiposApoyo : tiposApoyoOption" *ngFor="let tiposApoyoOption of tiposapoyos; trackBy: trackTiposApoyoById">{{tiposApoyoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

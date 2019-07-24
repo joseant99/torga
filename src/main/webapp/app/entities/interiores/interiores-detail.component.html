@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="interiores">
+            <h2><span jhiTranslate="torgaPedidosApp.interiores.detail.title">Interiores</span> {{interiores.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.interiores.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="interiores.imagen">
+                        <a (click)="openFile(interiores.imagenContentType, interiores.imagen)">
+                            <img [src]="'data:' + interiores.imagenContentType + ';base64,' + interiores.imagen" style="max-width: 100%;" alt="interiores image"/>
+                        </a>
+                        {{interiores.imagenContentType}}, {{byteSize(interiores.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interiores.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="interiores.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', interiores.productosDormitorio?.id, 'view']">{{interiores.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interiores.dimensionesProductoTipo">Dimensiones Producto Tipo</span></dt>
+                <dd>
+                    <div *ngIf="interiores.dimensionesProductoTipo">
+                        <a [routerLink]="['/dimensiones-producto-tipo', interiores.dimensionesProductoTipo?.id, 'view']">{{interiores.dimensionesProductoTipo?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/interiores', interiores.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

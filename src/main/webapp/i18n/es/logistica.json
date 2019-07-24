@@ -1,0 +1,29 @@
+{
+    "torgaPedidosApp": {
+        "logistica": {
+            "home": {
+                "title": "Logisticas",
+                "createLabel": "Crear nuevo Logistica",
+                "createOrEditLabel": "Crear o editar Logistica"
+            },
+            "created": "Un nuevo Logistica ha sido creado con el identificador {{ param }}",
+            "updated": "Un Logistica ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Logistica ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Logistica {{ id }}?"
+            },
+            "detail": {
+                "title": "Logistica"
+            },
+            "numPedido": "Num Pedido",
+            "ruta": "Ruta",
+            "carro": "Carro",
+            "transportistas": "Transportista",
+            "estados": "Estado",
+            "fechaEntrega": "Fecha Entrega",
+            "fechaPedido": "Fecha Pedido",
+            "pedidos": "Pedidos",
+            "referenciaclientes": "Referenciaclientes"
+        }
+    }
+}

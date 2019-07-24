@@ -1,0 +1,24 @@
+{
+    "torgaPedidosApp": {
+        "acabados": {
+            "home": {
+                "title": "Acabados",
+                "createLabel": "Crear nuevo Acabados",
+                "createOrEditLabel": "Crear o editar Acabados"
+            },
+            "created": "Un nuevo Acabados ha sido creado con el identificador {{ param }}",
+            "updated": "Un Acabados ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Acabados ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Acabados {{ id }}?"
+            },
+            "detail": {
+                "title": "Acabados"
+            },
+            "nombre": "Nombre",
+            "precio": "Precio",
+            "imagenFondo": "Imagen Fondo",
+            "acaProd": "Aca Prod"
+        }
+    }
+}

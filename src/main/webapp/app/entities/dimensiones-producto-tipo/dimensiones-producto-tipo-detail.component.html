@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dimensionesProductoTipo">
+            <h2><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.detail.title">Dimensiones Producto Tipo</span> {{dimensionesProductoTipo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.ancho">Ancho</span></dt>
+                <dd>
+                    <span>{{dimensionesProductoTipo.ancho}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.alto">Alto</span></dt>
+                <dd>
+                    <span>{{dimensionesProductoTipo.alto}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.fondo">Fondo</span></dt>
+                <dd>
+                    <span>{{dimensionesProductoTipo.fondo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.mensaje">Mensaje</span></dt>
+                <dd>
+                    <span>{{dimensionesProductoTipo.mensaje}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="dimensionesProductoTipo.imagen">
+                        <a (click)="openFile(dimensionesProductoTipo.imagenContentType, dimensionesProductoTipo.imagen)">
+                            <img [src]="'data:' + dimensionesProductoTipo.imagenContentType + ';base64,' + dimensionesProductoTipo.imagen" style="max-width: 100%;" alt="dimensionesProductoTipo image"/>
+                        </a>
+                        {{dimensionesProductoTipo.imagenContentType}}, {{byteSize(dimensionesProductoTipo.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.precio">Precio</span></dt>
+                <dd>
+                    <span>{{dimensionesProductoTipo.precio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.anchoMesitaIdeal">Ancho Mesita Ideal</span></dt>
+                <dd>
+                    <span>{{dimensionesProductoTipo.anchoMesitaIdeal}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="dimensionesProductoTipo.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', dimensionesProductoTipo.productosDormitorio?.id, 'view']">{{dimensionesProductoTipo.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.tipoProducto">Tipo Producto</span></dt>
+                <dd>
+                    <div *ngIf="dimensionesProductoTipo.tipoProducto">
+                        <a [routerLink]="['/tipo-producto', dimensionesProductoTipo.tipoProducto?.id, 'view']">{{dimensionesProductoTipo.tipoProducto?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dimensiones-producto-tipo', dimensionesProductoTipo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

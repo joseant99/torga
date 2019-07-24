@@ -1,0 +1,29 @@
+{
+    "torgaPedidosApp": {
+        "tiposApoyo": {
+            "home": {
+                "title": "Tipos Apoyos",
+                "createLabel": "Crear nuevo Tipos Apoyo",
+                "createOrEditLabel": "Crear o editar Tipos Apoyo"
+            },
+            "created": "Un nuevo Tipos Apoyo ha sido creado con el identificador {{ param }}",
+            "updated": "Un Tipos Apoyo ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Tipos Apoyo ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Tipos Apoyo {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipos Apoyo"
+            },
+            "nombre": "Nombre",
+            "imagen": "Imagen",
+            "precio": "Precio",
+            "altura": "Altura",
+            "ancho": "Ancho",
+            "fondo": "Fondo",
+            "productoApoyo": "Producto Apoyo",
+            "productosDormitorio": "Productos Dormitorio",
+            "dimensionesProducto": "Dimensiones Producto"
+        }
+    }
+}

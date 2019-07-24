@@ -1,0 +1,55 @@
+<div>
+    <h2 id="page-heading">
+        <span >Presupuesto</span>
+        
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="presupuestoPedidos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th  jhiSortBy="id" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="global.field.id" >ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="pedido" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.pedido">Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fecha_presupuesto"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto">Fecha Presupuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fecha_pedido" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_pedido">Fecha Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let presupuestoPedido of presupuestoPedidos;">
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'"><a [routerLink]="['/presupuesto-pedido', presupuestoPedido.id, 'view' ]"  >{{presupuestoPedido.id}}</a></td>
+                <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</td>
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.pedido}}</td>
+                <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_presupuesto}}</td>
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.fecha_pedido}}</td>
+                <td *ngIf="presupuestoPedido != undefined">
+                    {{presupuestoPedido.user?.login}}
+                </td>
+                <td *ngIf="presupuestoPedido != undefined" class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                                [routerLink]="['/presupuesto-producto' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>           
+                    </div>
+                </td>
+            </tr>
+            <tr></tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="presupuestoPedidos && presupuestoPedidos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>
+

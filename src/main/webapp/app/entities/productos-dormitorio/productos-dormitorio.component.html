@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.productosDormitorio.home.title">Productos Dormitorios</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-productos-dormitorio" [routerLink]="['/productos-dormitorio/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.productosDormitorio.home.createLabel">
+            Create new Productos Dormitorio
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="productosDormitorios">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nombre"><span jhiTranslate="torgaPedidosApp.productosDormitorio.nombre">Nombre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imagen"><span jhiTranslate="torgaPedidosApp.productosDormitorio.imagen">Imagen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="categoriasDormiId"><span jhiTranslate="torgaPedidosApp.productosDormitorio.categoriasDormi">Categorias Dormi</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let productosDormitorio of productosDormitorios ;trackBy: trackId">
+                <td><a [routerLink]="['/productos-dormitorio', productosDormitorio.id, 'view' ]">{{productosDormitorio.id}}</a></td>
+                <td>{{productosDormitorio.nombre}}</td>
+                <td>
+                    <a *ngIf="productosDormitorio.imagen" (click)="openFile(productosDormitorio.imagenContentType, productosDormitorio.imagen)">
+                        <img [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" style="max-height: 30px;" alt="productosDormitorio image"/>
+                    </a>
+                    <span *ngIf="productosDormitorio.imagen">{{productosDormitorio.imagenContentType}}, {{byteSize(productosDormitorio.imagen)}}</span>
+                </td>
+                <td>
+                    <div *ngIf="productosDormitorio.categoriasDormiId">
+                        <a [routerLink]="['../categorias-dormi', productosDormitorio.categoriasDormiId , 'view' ]" >{{productosDormitorio.categoriasDormiId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/productos-dormitorio', productosDormitorio.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/productos-dormitorio', productosDormitorio.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'productos-dormitorio/'+ productosDormitorio.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="productosDormitorios && productosDormitorios.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

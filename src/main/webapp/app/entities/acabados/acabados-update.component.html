@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-acabados-heading" jhiTranslate="torgaPedidosApp.acabados.home.createOrEditLabel">Create or edit a Acabados</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!acabados.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="acabados.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.acabados.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="acabados.nombre" required/>
+                    <div [hidden]="!(editForm.controls.nombre?.dirty && editForm.controls.nombre?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nombre?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.acabados.precio" for="field_precio">Precio</label>
+                    <input type="number" class="form-control" name="precio" id="field_precio"
+                        [(ngModel)]="acabados.precio" required/>
+                    <div [hidden]="!(editForm.controls.precio?.dirty && editForm.controls.precio?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.precio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.precio?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.acabados.imagenFondo" for="field_imagenFondo">Imagen Fondo</label>
+                    <div>
+                        <img [src]="'data:' + acabados.imagenFondoContentType + ';base64,' + acabados.imagenFondo" style="max-height: 100px;" *ngIf="acabados.imagenFondo" alt="acabados image"/>
+                        <div *ngIf="acabados.imagenFondo" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{acabados.imagenFondoContentType}}, {{byteSize(acabados.imagenFondo)}}</span>
+                            <button type="button" (click)="clearInputImage('imagenFondo', 'imagenFondoContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagenFondo" (change)="setFileData($event, acabados, 'imagenFondo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagenFondo" id="field_imagenFondo"
+                        [(ngModel)]="acabados.imagenFondo" required/>
+                    <input type="hidden" class="form-control" name="imagenFondoContentType" id="field_imagenFondoContentType"
+                        [(ngModel)]="acabados.imagenFondoContentType" />
+                    <div [hidden]="!(editForm.controls.imagenFondo?.dirty && editForm.controls.imagenFondo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imagenFondo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

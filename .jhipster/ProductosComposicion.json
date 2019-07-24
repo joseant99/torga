@@ -1,0 +1,59 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productosDormitorio",
+            "otherEntityName": "productosDormitorio",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "dimensionesProductoTipo",
+            "otherEntityName": "dimensionesProductoTipo",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "acabadosComposicion",
+            "otherEntityName": "acabadosComposicion",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "productosComposicion"
+        },
+        {
+            "relationshipName": "composicion",
+            "otherEntityName": "composicion",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "tipoProducto",
+            "otherEntityName": "tipoProducto",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "tiposApoyo",
+            "otherEntityName": "tiposApoyo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20190710100749",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "productos_composicion",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

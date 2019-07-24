@@ -1,0 +1,105 @@
+<div style="width:60%;">
+    <h2 id="page-heading">
+        <span style="margin-left:40%">1.Chinfonier</span>
+       
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div style="width:100%" id="producto">
+    <div *ngFor="let productosDormitorio of productosDormitorios" style="float:left;margin-left:50px;margin-bottom:50px" [id]='productosDormitorio.id' class="productosColor">
+    	<div *ngIf="productosDormitorio.categoriasDormiId == 3">
+	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
+	 		<img title="Foto de linea de codigo"" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" style="max-height: 250px;max-width: 250px;    opacity: 0.7;" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
+    	</div>
+    	    </div>	
+	<div id="dimensiones"style="width:100%;float:left">
+
+		<h2 id="medidas" style='margin-left:40%;float:left;display:none'>2.Medidas</h2>
+		</br>		
+		<div style="float:left;margin-left:10%;margin-bottom:50px;" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
+		</div>   
+		<div style="float:left;margin-left:10%;margin-bottom:50px" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
+		</div>   
+		<div style="float:left;margin-left:10%;margin-bottom:50px" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
+		</div>   
+		<div style="float:left;margin-left:10%;margin-bottom:50px" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
+		</div>   
+	</div>  
+	
+	<div id="acabados"style="width:100%;float:left">
+			<h2 id="acabado" style='margin-left:40%;float:left;display:none'>3.Acabados</h2>
+			<div id="forms" style="float:right;">
+			<input id="idioma" style="display:none">
+				<div id="acaba1" (change)="anadirCalculadora()"></div>		
+				<div id="acaba2" (change)="anadirCalculadora()"></div>			
+				<div id="acaba3" (change)="anadirCalculadora()"></div>			
+				<div id="acaba4" (change)="anadirCalculadora()"></div>			
+					
+			</div>
+
+	</div>  
+	<div id="apoyo"style="width:100%;float:left;margin-top:50px">
+			<h2 id="nombreApoyo" style='margin-left:40%;float:left;display:none'>4.Sistema de Apoyo</h2>
+			</br>	
+			<div style="float:left;width:100%;margin-bottom:50px">
+			<div style="float:left;margin-left:10%;"" class="apoyoCogido1" (click)="apoyoCogido(1)"> 
+			</div>  
+		
+			<div style="float:left;margin-left:10%;" class="apoyoCogido2" (click)="apoyoCogido(2)"> 
+			</div>
+			</div>	
+			 
+			<div style="float:left;width:100%">
+				<div style="float:left;margin-left:10%;" class="apoyoCogido3" (click)="apoyoCogido(3)"> 
+				</div>   
+				<div style="float:left;margin-left:10%;" class="apoyoCogido4" (click)="apoyoCogido(4)"> 
+				</div>  
+			</div>	
+			 
+		
+	</div>  
+	
+	
+	
+	<div id="terminarConfiguracion" style="display:none">
+			<h2 id="configuracion" style='margin-left:20%;float:left;margin-bottom:50px'>&#191;Cuantas unidades quieres de esta configuracion?</h2>
+		<div style="float:left"><img src="../../../content/images/1.png" height="200" width="200">
+		</div>	
+		<div style="float:left"><img src="../../../content/images/2.jpg" height="200" width="200">
+		</div>
+		<div style="float:left"><img src="../../../content/images/3.jpg" height="200" width="200">
+		</div>
+		<div style="float:left"><img src="../../../content/images/4.png" height="200" width="200">
+		</div>
+	
+	</div>
+	
+	
+</div>
+<div style="width:20%;background-color:#DFDDDC;margin-left:57%;height:600px;position:fixed">
+<p style="margin-left:80px;font-size: 20px;">Calculadora</p>
+	<div style="background-color:white;width:86%;height: 75%;margin-left:25px;">
+			<div id="calculadora" style="float:left;width:100%;height:100%">
+			<div style="width:100%;height:7%;background-color:gray;color:white;top:0;">				
+				<strong><p id="nombreMesita"></p></strong>
+			</div>
+					<div id="datos" style="float:left;margin-left:5px">
+							
+					</div>
+					<div style="float:left;margin-left:50px;"id="precios">
+					
+					</div>
+					<div style="float:left;margin-left:20px;"id="precioCalculado">
+						
+					</div>
+					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 405px;">				
+						<p >Precio Total <strong id="total">0</strong>&euro;</p>
+					</div>
+			</div>
+		<button style="width:100%;height:10%;margin-top:30px;font-size:16px;background-color:#FBCD13">Mandar articulo/s al carro de la compra</button>
+	
+	</div>
+</div>
+
+
+

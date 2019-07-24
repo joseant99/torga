@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.acaProd.home.title">Aca Prods</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-aca-prod" [routerLink]="['/aca-prod/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.acaProd.home.createLabel">
+            Create new Aca Prod
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="acaProds">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imagen"><span jhiTranslate="torgaPedidosApp.acaProd.imagen">Imagen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productosDormitorio.id"><span jhiTranslate="torgaPedidosApp.acaProd.productosDormitorio">Productos Dormitorio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipoProducto.id"><span jhiTranslate="torgaPedidosApp.acaProd.tipoProducto">Tipo Producto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let acaProd of acaProds ;trackBy: trackId">
+                <td><a [routerLink]="['/aca-prod', acaProd.id, 'view' ]">{{acaProd.id}}</a></td>
+                <td>
+                    <a *ngIf="acaProd.imagen" (click)="openFile(acaProd.imagenContentType, acaProd.imagen)">
+                        <img [src]="'data:' + acaProd.imagenContentType + ';base64,' + acaProd.imagen" style="max-height: 30px;" alt="acaProd image"/>
+                    </a>
+                    <span *ngIf="acaProd.imagen">{{acaProd.imagenContentType}}, {{byteSize(acaProd.imagen)}}</span>
+                </td>
+                <td>
+                    <div *ngIf="acaProd.productosDormitorio">
+                        <a [routerLink]="['../productos-dormitorio', acaProd.productosDormitorio?.id, 'view' ]" >{{acaProd.productosDormitorio?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="acaProd.tipoProducto">
+                        <a [routerLink]="['../tipo-producto', acaProd.tipoProducto?.id, 'view' ]" >{{acaProd.tipoProducto?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/aca-prod', acaProd.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/aca-prod', acaProd.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'aca-prod/'+ acaProd.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="acaProds && acaProds.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

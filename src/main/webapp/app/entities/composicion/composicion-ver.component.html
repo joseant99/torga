@@ -1,0 +1,670 @@
+<div style="width:25%;background-color:#DFDDDC;margin-left:57%;height:800px;position:fixed">
+
+ <ul class="nav nav-tabs" style="margin-left: 75px;margin-top: 20px;margin-bottom: 20px;">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#calculadora">Calculadora</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#carrito">Carrito</a>
+    </li>
+
+  </ul>	
+  <div style="background-color:white;width:86%;height: 75%;margin-left:25px;">
+  
+ 	 <div class="tab-content">
+
+	
+			<div id="calculadora" class="container tab-pane fade" style="height:600px;overflow:scroll;">
+				<div style="width:100%;height:7%;background-color:gray;color:white;top:0;">				
+					<strong><p id="nombreMesita"></p></strong>
+				</div>
+			
+					<div id="productoCalculadora1" style="float:left">
+						<div id="datos1" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios1">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado1">
+							
+						</div>
+					</div>
+					<div id="productoCalculadora2" style="float:left">
+						<div id="datos2" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios2">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado2">
+							
+						</div>
+					</div>
+					<div id="productoCalculadora3" style="float:left">
+						<div id="datos3" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios3">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado3">
+							
+						</div>
+					</div>
+					
+					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 520px;">				
+						<p >Precio Total <strong id="total">0</strong>&euro;</p>
+					</div>
+				<button style="width: 86%;height: 7%; bottom: 35px;position: absolute;font-size:16px;background-color:#FBCD13" (click)="enviarCarrito()">Mandar articulo/s al carro de la compra</button>
+					
+			</div>
+			
+			<div id="carrito" class="container tab-pane fade" style="height:600px;overflow:scroll;">
+					<div id="productoCarrito1" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(1)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos1" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios1">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado1">
+							
+						</div>
+					</div>
+					<div id="productoCarrito2" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(2)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos2" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios2">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado2">
+							
+						</div>
+					</div>
+					<div id="productoCarrito3" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(3)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos3" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios3">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado3">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito4" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(4)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos4" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios4">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado4">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito5" style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(5)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos5" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios5">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado5">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito6" style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(6)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos6" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios6">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado6">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito7" style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(7)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos7" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios7">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado7">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito8"  style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(8)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos8" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios8">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado8">
+							
+						</div>
+					</div>	<div id="productoCarrito9" style="display:none">
+					<div style="float:left"  (click)="borrarCarritoProd(9)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos9" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios9">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado9">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito10"  style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(10)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos10" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios10">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado10">
+							
+						</div>
+					</div>	
+				<button style="width: 86%;height: 7%; bottom: 35px;left:35px;position: absolute;font-size:16px;background-color:#75D775" data-toggle="modal" data-target="#modalPresupuesto" >Finalizar y Generar<br> Presupuesto</button>
+			</div>
+	
+	</div>
+</div>
+</div>
+<div style="width:60%;">
+     <h1 id="page-heading">
+        <span style="margin-left:40%">Composiciones</span>
+    </h1>
+     <h2 id="page-heading">
+        <span style="margin-left:36%">1.Selecciona Composicion</span>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div style="width:100%" id="producto">
+    <div *ngFor="let composicion of composicions" style="float:left;"  >
+    	<div style="margin-left:50px;width:89%;margin-bottom:50px;"  [id]='composicion.id'>
+    	   	<p  style="text-align:center">{{composicion.nombre}}</p><hr style="width:100%;color:black"></hr>
+	 		<a href="#productosComp"><img title="Foto de linea de codigo" class="producto" [src]="'data:' + composicion.imagenContentType + ';base64,' + composicion.imagen" style="width:400px;opacity: 0.7;" (click)="open(composicion.id)"  alt="composicion image"/></a>
+ 		</div>  
+     </div>	
+    
+    <div id="productosComp" style="display:none">
+    	<h2 style="margin-left:29%;float:left">2. Articulos que la componen</h2>
+    	<div id="prod1">
+	    	<div id="prodMetido1">
+	    	</div>
+	    <div id="botones1" style="display:none">
+	    	<div id="eliminarA1" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:80px;text-align:center;padding-top: 20px;" data-toggle="modal" data-target="#myModal">Eliminar Articulo<p></div>
+	    	<div id="eliminarB1" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:120px;text-align:center;padding-top: 15px; " (click)="mostrarDatos(1)">Mostrar la configuracion del articulo</p></div>
+	    	<div id="eliminarBA1" style="display:none"><p id="textoMostrar1" (click)="mostrarDatosAct(1)"></p></div>
+	    	<div id="eliminarC1" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:120px;text-align:center;padding-top: 15px;" (click)="ocultar(1)">Ocultar la configuracion del articulo</p></div>
+	    </div>	
+	    	<div id="dimensiones1" style="display:none">
+    			<h2 style="margin-left:29%;">Dimensiones</h2>
+	    		
+	    		<div id="dimen11" class="dimensionBlanca1" (click)="cambiarDimension(1,1)">
+	    		
+	    		</div>
+	    		<div id="dimen12" class="dimensionBlanca1" (click)="cambiarDimension(1,2)">
+	    		
+	    		</div>
+	    		<div id="dimen13" class="dimensionBlanca1" (click)="cambiarDimension(1,3)">
+	    		
+	    		</div>
+	    		<div id="dimen14" class="dimensionBlanca1" (click)="cambiarDimension(1,4)">
+	    		
+	    		</div>
+	    		<div id="dimen15" class="dimensionBlanca1" (click)="cambiarDimension(1,5)">
+	    		
+	    		</div>
+	    	</div>
+	    	<div id="acabados1" style="display:none">
+    			<h2 style="margin-left:29%;">Acabados</h2>
+	    		<div id="imagen1" style="float:left">
+	    		
+	    		</div>
+	    		<div id="aca11">
+	    			<button class="cambiarAcabado" style="float:left;margin-right:50px;margin-top: 20px;margin-bottom:30px" id="color" data-toggle="modal" data-target="#myModalColores1">Cambiar Acabado</button>
+	    			<div id="imagenAcabado11" style="float:left;"></div>		
+	    		</div>
+	    		<div id="aca12">
+	    		<button class="cambiarAcabado" style="float:left;margin-right:50px;margin-top: 20px;margin-bottom:30px" id="color" data-toggle="modal" data-target="#myModalColores2">Cambiar Acabado</button>
+	    		<div id="imagenAcabado12" style="float:left;"></div>
+	    		</div>
+	    		<div id="aca13">
+	    		<button class="cambiarAcabado" style="float:left;margin-right:50px;margin-top: 20px;margin-bottom:30px" id="color" data-toggle="modal" data-target="#myModalColores1">Cambiar Acabado</button>
+	    		<div id="imagenAcabado13" style="float:left;"></div>
+	    		
+	    		</div>
+	    		<div id="aca14">
+	    		
+	    		</div>
+	    		<div id="aca15">
+	    		
+	    		</div>
+	    	</div>
+	    	
+	    	<div id="apoyo1" style="display:none">
+	    	    <h2 style="margin-left:29%;" >Tipos de Apoyo</h2>
+	    		<div id="apo11"></div>
+	    		<div id="apo12"></div>
+	    		<div id="apo13"></div>
+	    		<div id="apo14"></div>
+	    		<div id="apo15"></div>
+	    		
+	    	</div>	
+	    	
+	    	
+    	</div>
+    	<div id="prod2"><div id="prodMetido2">
+	    					</div>
+	    <div id="botones2" style="display:none">
+	    	<div id="eliminarA2" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:80px;text-align:center;padding-top: 20px;" data-toggle="modal" data-target="#myModal1">Eliminar Articulo<p></div>
+	    	<div id="eliminarB2" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:120px;text-align:center;padding-top: 15px; " (click)="mostrarDatos(2)">Mostrar la configuracion del articulo</p></div>
+	    	<div id="eliminarBA2" style="display:none"><p id="textoMostrar2" (click)="mostrarDatosAct(2)"></p></div>
+	    	<div id="eliminarC2" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:120px;text-align:center;padding-top: 15px;" (click)="ocultar(2)">Ocultar la configuracion del articulo</p></div>
+	    </div>	
+	    	<div id="dimensiones2" style="display:none">
+    			<h2 style="margin-left:29%;">Dimensiones</h2>
+	    		<div (click)="interior(2,1)" style="position:absolute;margin-top:380px;margin-left:350px"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>
+	    		<div id="dimen21"  class="dimensionBlanca2" (click)="cambiarDimension(2,1)">
+	    		</div>
+	    		<div id="dimen22" class="dimensionBlanca2" (click)="cambiarDimension(2,2)">
+	    		
+	    		</div>
+	    		<div id="dimen23" class="dimensionBlanca2" (click)="cambiarDimension(2,3)">
+	    		
+	    		</div>
+	    		<div id="dimen24"  class="dimensionBlanca2" (click)="cambiarDimension(2,4)">
+	    		
+	    		</div>
+	    		<div id="dimen25"  class="dimensionBlanca2" (click)="cambiarDimension(2,5)">
+	    		
+	    		</div>
+	    	</div>
+	    	<div id="acabados2" style="display:none">
+    			<h2 style="margin-left:29%;">Acabados</h2>
+	    		<div id="imagen2" style="float:left">
+	    		
+	    		</div>
+	    		<div id="aca21">
+	    			
+	    			<select id="comboAca12" style="display:none"  >
+	    			</select>
+	    		
+	    		</div>
+	    		<div id="aca22">
+	    		<select id="comboAca22" style="display:none">
+	    			</select>
+	    		</div>
+	    		<div id="aca23">
+	    		<select id="comboAca32" style="display:none" >
+	    			</select>
+	    		</div>
+	    		<div id="aca24">
+	    		<select id="comboAca42" style="display:none" >
+	    			</select>
+	    		</div>
+	    		<div id="aca25">
+	    		<select id="comboAca52" style="display:none" >
+	    			</select>
+	    		</div>
+	    	</div>
+	    	
+	    	<div id="apoyo2" style="display:none">
+	    	    <h2 style="margin-left:29%;">Tipos de Apoyo</h2>
+	    		<div id="apo21"></div>
+	    		<div id="apo22"></div>
+	    		<div id="apo23"></div>
+	    		<div id="apo24"></div>
+	    		<div id="apo25"></div>
+	    		
+	    	</div>	
+	    </div>
+    	<div id="prod3">
+    	<div id="prodMetido3">
+	    	</div>
+	    	<div id="botones3" style="display:none">
+	    		<div id="eliminarA3" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:80px;text-align:center;padding-top: 20px;" data-toggle="modal" data-target="#myModal2">Eliminar Articulo<p></div>
+		    	<div id="eliminarB3" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:120px;text-align:center;padding-top: 15px; " (click)="mostrarDatos(3)">Mostrar la configuracion del articulo</p></div>
+		    	<div id="eliminarBA3" style="display:none"><p id="textoMostrar2" (click)="mostrarDatosAct(3)"></p></div>
+		    	<div id="eliminarC3" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:120px;text-align:center;padding-top: 15px;" (click)="ocultar(3)">Ocultar la configuracion del articulo</p></div>
+	    		
+	    	</div>
+	    		    	
+	    	<div id="dimensiones3" style="display:none">
+    			<h2 style="margin-left:29%;">Dimensiones</h2>
+	    		
+	    		<div id="dimen31">
+	    		
+	    		</div>
+	    		<div id="dimen32">
+	    		
+	    		</div>
+	    		<div id="dimen33">
+	    		
+	    		</div>
+	    		<div id="dimen34">
+	    		
+	    		</div>
+	    		<div id="dimen35">
+	    		
+	    		</div>
+	    	</div>
+	    	<div id="acabados3" style="display:none">
+    			<h2 style="margin-left:29%;">Acabados</h2>
+	    		<div id="imagen3" style="float:left">
+	    		
+	    		</div>
+	    		<div id="aca31">
+	    			
+	    			<select id="comboAca13" style="display:none" >
+	    			</select>
+	    		
+	    		</div>
+	    		<div id="aca32">
+	    		<select id="comboAca23" style="display:none">
+	    			</select>
+	    		</div>
+	    		<div id="aca33">
+	    		<select id="comboAca33" style="display:none">
+	    			</select>
+	    		</div>
+	    		<div id="aca34">
+	    		<select id="comboAca43" style="display:none">
+	    			</select>
+	    		</div>
+	    		<div id="aca35">
+	    		<select id="comboAca53" style="display:none">
+	    			</select>
+	    		</div>
+	    	</div>
+	    	
+	    	<div id="apoyo3" style="display:none">
+	    	    <h2 style="margin-left:29%;">Tipos de Apoyo</h2>
+	    		<div id="apo31"></div>
+	    		<div id="apo32"></div>
+	    		<div id="apo33"></div>
+	    		<div id="apo34"></div>
+	    		<div id="apo35"></div>
+	    		
+	    	</div>	
+    	</div>
+    	<div id="prod4">
+    	<div id="prodMetido4">
+	    	</div>
+	    	
+	     <div id="botones4" style="display:none">	
+	    	<div id="eliminarA4" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:80px;text-align:center;padding-top: 20px;" data-toggle="modal" data-target="#myModal3">Eliminar Articulo<p></div>
+	    	<div id="eliminarB4" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:120px;text-align:center;padding-top: 15px; " (click)="mostrarDatos(4)">Mostrar la configuracion del articulo</p></div>
+	    	<div id="eliminarBA4" style="display:none"><p id="textoMostrar2" (click)="mostrarDatosAct(4)"></p></div>
+	    	<div id="eliminarC4" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:120px;text-align:center;padding-top: 15px;" (click)="ocultar(4)">Ocultar la configuracion del articulo</p></div>
+	    </div>
+	    	<div id="dimensiones4" style="display:none">
+    			<h2 style="margin-left:29%;">Dimensiones</h2>
+	    		
+	    		<div id="dimen41">
+	    		
+	    		</div>
+	    		<div id="dimen42">
+	    		
+	    		</div>
+	    		<div id="dimen43">
+	    		
+	    		</div>
+	    		<div id="dimen44">
+	    		
+	    		</div>
+	    		<div id="dimen45">
+	    		
+	    		</div>
+	    	</div>
+	    	<div id="acabados4" style="display:none">
+    			<h2 style="margin-left:29%;">Acabados</h2>
+	    		<div id="imagen4" style="float:left">
+	    		
+	    		</div>
+	    		<div id="aca41">
+	    			
+	    			<select id="comboAca14" style="display:none" >
+	    			</select>
+	    		
+	    		</div>
+	    		<div id="aca42">
+	    		<select id="comboAca24" style="display:none">
+	    			</select>
+	    		</div>
+	    		<div id="aca43">
+	    		<select id="comboAca34" style="display:none">
+	    			</select>
+	    		</div>
+	    		<div id="aca44">
+	    		<select id="comboAca44" style="display:none">
+	    			</select>
+	    		</div>
+	    		<div id="aca45">
+	    		<select id="comboAca54" style="display:none">
+	    			</select>
+	    		</div>
+	    	</div>
+	    	
+	    	<div id="apoyo4" style="display:none">
+	    	    <h2 style="margin-left:29%;">Tipos de Apoyo</h2>
+	    		<div id="apo41"></div>
+	    		<div id="apo42"></div>
+	    		<div id="apo43"></div>
+	    		<div id="apo44"></div>
+	    		<div id="apo45"></div>
+	    		
+	    	</div>	
+    	</div>
+    	<div id="prod5">
+    	<div id="prodMetido5">
+	    	</div>
+    	</div>
+    	<div id="prod6">
+    		<div id="prodMetido6">
+	    	</div>
+    	</div>
+    	<div id="prod7">
+    		<div id="prodMetido7">
+	    	</div>
+    	</div>
+    	<div id="prod8">
+    		<div id="prodMetido8">
+	    	</div>
+    	</div>
+    	
+    </div>
+      <div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Borrar articulo de la Composición</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p>Va a proceder a borrar un producto de la configuracion.¿Esta seguro?</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="eliminar(1)">Borrar</button>
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	    <div class="modal fade" id="myModalColores1" role="dialog">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un acabado</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+		          
+		          <div style="float:left; width:150px; height:150px ;margin-left:50px" id="acabadoImagen0"></div>
+		          <div style="float:left; width:150px; height:150px ;margin-left:50px" id="acabadoImagen1"></div>
+		          <div style="float:left; width:150px; height:150px ;margin-left:50px" id="acabadoImagen2"></div>
+		          <div style="float:left; width:150px; height:150px ;margin-left:50px" id="acabadoImagen3"></div>
+		          
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="myModalColores2" role="dialog">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un acabado</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen0" (click)="cambiarAcabado(0,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen1" (click)="cambiarAcabado(1,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen2" (click)="cambiarAcabado(2,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen3" (click)="cambiarAcabado(3,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen4" (click)="cambiarAcabado(4,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen5" (click)="cambiarAcabado(5,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen6" (click)="cambiarAcabado(6,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen7" (click)="cambiarAcabado(7,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen8" (click)="cambiarAcabado(8,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen9" (click)="cambiarAcabado(9,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen10" (click)="cambiarAcabado(10,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen11" (click)="cambiarAcabado(11,1,2)"></div> 
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen12" (click)="cambiarAcabado(12,1,2)"></div>          
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
+		                   
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	   <div class="modal fade" id="myModal1" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Borrar articulo de la Composición</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p>Va a proceder a borrar un producto de la configuracion.¿Esta seguro?</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="eliminar(2)">Borrar</button>
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>	   	
+	   <div class="modal fade" id="myModal2" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Borrar articulo de la Composición</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p>Va a proceder a borrar un producto de la configuracion.¿Esta seguro?</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="eliminar(3)">Borrar</button>
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>	   	
+	   <div class="modal fade" id="myModal3" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Borrar articulo de la Composición</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p>Va a proceder a borrar un producto de la configuracion.¿Esta seguro?</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="eliminar(4)">Borrar</button>
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	   <div class="modal fade" id="modalInformacion" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Interior</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div id="arriba" style="float:left;width:100%"></div>
+	          <div id="imagenInterior" style="float:left"></div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	   <div class="modal fade" id="modalPresupuesto" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Vas a generar un presupuesto</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p style="text-align:center">&#191;Est&#225;s Seguro?</p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="generarPresupuesto()">Si</button></p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">No</button></p>
+	        </div>
+	        	<p id="verPresupuesto" style="display:none"> <a data-dismiss="modal" routerLink="../presupuesto-usuario"  routerLinkActive="active"><span>Abrir Presupuesto</span></a></p>
+	      </div>
+	      
+	    </div>
+	  </div>	  	   	  	   	    
+</div>

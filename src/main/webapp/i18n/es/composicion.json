@@ -1,0 +1,22 @@
+{
+    "torgaPedidosApp": {
+        "composicion": {
+            "home": {
+                "title": "Composicions",
+                "createLabel": "Crear nuevo Composicion",
+                "createOrEditLabel": "Crear o editar Composicion"
+            },
+            "created": "Un nuevo Composicion ha sido creado con el identificador {{ param }}",
+            "updated": "Un Composicion ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Composicion ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Composicion {{ id }}?"
+            },
+            "detail": {
+                "title": "Composicion"
+            },
+            "nombre": "Nombre",
+            "imagen": "Imagen"
+        }
+    }
+}

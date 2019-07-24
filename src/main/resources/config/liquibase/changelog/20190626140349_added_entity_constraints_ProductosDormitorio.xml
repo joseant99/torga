@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ProductosDormitorio.
+    -->
+    <changeSet id="20190626140349-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="categorias_dormi_id"
+                                 baseTableName="productos_dormitorio"
+                                 constraintName="fk_productos_dormitorio_categorias_dormi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categorias_dormi"/>
+
+    </changeSet>
+</databaseChangeLog>

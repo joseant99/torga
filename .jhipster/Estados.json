@@ -1,0 +1,29 @@
+{
+    "name": "Estados",
+    "fields": [
+        {
+            "fieldName": "estadoPedido",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "logistica",
+            "otherEntityName": "logistica",
+            "otherEntityRelationshipName": "estados"
+        }
+    ],
+    "changelogDate": "20190315191124",
+    "entityTableName": "estados",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

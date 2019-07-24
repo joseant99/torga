@@ -1,0 +1,149 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-dimensiones-producto-tipo-heading" jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.home.createOrEditLabel">Create or edit a Dimensiones Producto Tipo</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!dimensionesProductoTipo.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="dimensionesProductoTipo.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.ancho" for="field_ancho">Ancho</label>
+                    <input type="number" class="form-control" name="ancho" id="field_ancho"
+                        [(ngModel)]="dimensionesProductoTipo.ancho" required/>
+                    <div [hidden]="!(editForm.controls.ancho?.dirty && editForm.controls.ancho?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.ancho?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.ancho?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.alto" for="field_alto">Alto</label>
+                    <input type="number" class="form-control" name="alto" id="field_alto"
+                        [(ngModel)]="dimensionesProductoTipo.alto" required/>
+                    <div [hidden]="!(editForm.controls.alto?.dirty && editForm.controls.alto?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.alto?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.alto?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.fondo" for="field_fondo">Fondo</label>
+                    <input type="number" class="form-control" name="fondo" id="field_fondo"
+                        [(ngModel)]="dimensionesProductoTipo.fondo" required/>
+                    <div [hidden]="!(editForm.controls.fondo?.dirty && editForm.controls.fondo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fondo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.fondo?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.mensaje" for="field_mensaje">Mensaje</label>
+                    <input type="text" class="form-control" name="mensaje" id="field_mensaje"
+                        [(ngModel)]="dimensionesProductoTipo.mensaje" required/>
+                    <div [hidden]="!(editForm.controls.mensaje?.dirty && editForm.controls.mensaje?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.mensaje?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + dimensionesProductoTipo.imagenContentType + ';base64,' + dimensionesProductoTipo.imagen" style="max-height: 100px;" *ngIf="dimensionesProductoTipo.imagen" alt="dimensionesProductoTipo image"/>
+                        <div *ngIf="dimensionesProductoTipo.imagen" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{dimensionesProductoTipo.imagenContentType}}, {{byteSize(dimensionesProductoTipo.imagen)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, dimensionesProductoTipo, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                        [(ngModel)]="dimensionesProductoTipo.imagen" required/>
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                        [(ngModel)]="dimensionesProductoTipo.imagenContentType" />
+                    <div [hidden]="!(editForm.controls.imagen?.dirty && editForm.controls.imagen?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imagen?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.precio" for="field_precio">Precio</label>
+                    <input type="number" class="form-control" name="precio" id="field_precio"
+                        [(ngModel)]="dimensionesProductoTipo.precio" required/>
+                    <div [hidden]="!(editForm.controls.precio?.dirty && editForm.controls.precio?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.precio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.precio?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.anchoMesitaIdeal" for="field_anchoMesitaIdeal">Ancho Mesita Ideal</label>
+                    <input type="text" class="form-control" name="anchoMesitaIdeal" id="field_anchoMesitaIdeal"
+                        [(ngModel)]="dimensionesProductoTipo.anchoMesitaIdeal" required/>
+                    <div [hidden]="!(editForm.controls.anchoMesitaIdeal?.dirty && editForm.controls.anchoMesitaIdeal?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.anchoMesitaIdeal?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="dimensionesProductoTipo.productosDormitorio"  required>
+                        <option *ngIf="!editForm.value.productosDormitorio" [ngValue]="null" selected></option>
+                        <option [ngValue]="productosDormitorioOption.id === dimensionesProductoTipo.productosDormitorio?.id ? dimensionesProductoTipo.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.productosDormitorio?.dirty && editForm.controls.productosDormitorio?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.productosDormitorio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.tipoProducto" for="field_tipoProducto">Tipo Producto</label>
+                    <select class="form-control" id="field_tipoProducto" name="tipoProducto" [(ngModel)]="dimensionesProductoTipo.tipoProducto" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoProductoOption.id === dimensionesProductoTipo.tipoProducto?.id ? dimensionesProductoTipo.tipoProducto : tipoProductoOption" *ngFor="let tipoProductoOption of tipoproductos; trackBy: trackTipoProductoById">{{tipoProductoOption.mensaje}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

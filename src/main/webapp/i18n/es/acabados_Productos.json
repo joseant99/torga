@@ -1,0 +1,22 @@
+{
+    "torgaPedidosApp": {
+        "acabados_Productos": {
+            "home": {
+                "title": "Acabados Productos",
+                "createLabel": "Crear nuevo Acabados Productos",
+                "createOrEditLabel": "Crear o editar Acabados Productos"
+            },
+            "created": "Un nuevo Acabados Productos ha sido creado con el identificador {{ param }}",
+            "updated": "Un Acabados Productos ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Acabados Productos ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Acabados Productos {{ id }}?"
+            },
+            "detail": {
+                "title": "Acabados Productos"
+            },
+            "productosDormitorio": "Productos Dormitorio",
+            "acabados": "Acabados"
+        }
+    }
+}

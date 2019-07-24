@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ProductosComposicion.
+    -->
+    <changeSet id="20190710100749-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id"
+                                 baseTableName="productos_composicion"
+                                 constraintName="fk_productos_composicion_productos_dormitorio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="productos_dormitorio"/>
+
+        <addForeignKeyConstraint baseColumnNames="dimensiones_producto_tipo_id"
+                                 baseTableName="productos_composicion"
+                                 constraintName="fk_productos_composicion_dimensiones_producto_tipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dimensiones_producto_tipo"/>
+
+        <addForeignKeyConstraint baseColumnNames="composicion_id"
+                                 baseTableName="productos_composicion"
+                                 constraintName="fk_productos_composicion_composicion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="composicion"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipo_producto_id"
+                                 baseTableName="productos_composicion"
+                                 constraintName="fk_productos_composicion_tipo_producto_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipo_producto"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipos_apoyo_id"
+                                 baseTableName="productos_composicion"
+                                 constraintName="fk_productos_composicion_tipos_apoyo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipos_apoyo"/>
+
+    </changeSet>
+</databaseChangeLog>

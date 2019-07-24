@@ -1,0 +1,210 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+<!--     <changeSet author="torga (generated)" id="1552679867249-1"> -->
+<!--         <createTable tableName="cliente"> -->
+<!--             <column autoIncrement="true" name="id" type="BIGINT"> -->
+<!--                 <constraints primaryKey="true" primaryKeyName="clientePK"/> -->
+<!--             </column> -->
+<!--             <column name="cod_cliente" type="VARCHAR(255)"> -->
+<!--                 <constraints nullable="false"/> -->
+<!--             </column> -->
+<!--             <column name="nombre" type="VARCHAR(255)"/> -->
+<!--             <column name="poblacion" type="VARCHAR(255)"/> -->
+<!--             <column name="provincia" type="VARCHAR(255)"/> -->
+<!--             <column name="usuario" type="VARCHAR(255)"/> -->
+<!--             <column name="representates_id" type="BIGINT"/> -->
+<!--         </createTable> -->
+<!--     </changeSet> -->
+    <changeSet author="torga (generated)" id="1552679867249-2">
+        <createTable tableName="estados">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="estadosPK"/>
+            </column>
+            <column name="estado_pedido" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-3">
+        <createTable tableName="jhi_authority">
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-4">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="TINYBLOB"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-5">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-6">
+        <createTable tableName="jhi_user">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_userPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TINYBLOB"/>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="TINYBLOB"/>
+            <column name="activated" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activation_key" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(254)"/>
+            <column name="first_name" type="VARCHAR(50)"/>
+            <column name="image_url" type="VARCHAR(256)"/>
+            <column name="lang_key" type="VARCHAR(6)"/>
+            <column name="last_name" type="VARCHAR(50)"/>
+            <column name="login" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password_hash" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reset_date" type="TINYBLOB"/>
+            <column name="reset_key" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-7">
+        <createTable tableName="jhi_user_authority">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="authority_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-8">
+        <createTable tableName="logistica">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="logisticaPK"/>
+            </column>
+            <column name="carro" type="VARCHAR(255)"/>
+            <column name="fecha_entrega" type="TINYBLOB"/>
+            <column name="fecha_pedido" type="TINYBLOB"/>
+            <column name="num_pedido" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ruta" type="VARCHAR(255)"/>
+            <column name="estados_id" type="BIGINT"/>
+            <column name="referenciaclientes_id" type="BIGINT"/>
+            <column name="transportistas_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-9">
+        <createTable tableName="pedidos">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="pedidosPK"/>
+            </column>
+            <column name="confirmacion" type="VARCHAR(255)"/>
+            <column name="factura" type="VARCHAR(255)"/>
+            <column name="importe" type="FLOAT"/>
+            <column name="num_pedido" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="logistica_id" type="BIGINT"/>
+            <column name="referenciaclientes_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-10">
+        <createTable tableName="referencia_clientes">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="referencia_clientesPK"/>
+            </column>
+            <column name="referencia_cliente" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cliente_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-11">
+        <createTable tableName="representante">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="representantePK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="usuario" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-12">
+        <createTable tableName="transportistas">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="transportistasPK"/>
+            </column>
+            <column name="transportista_pedido" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-13">
+        <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-14">
+        <addPrimaryKey columnNames="user_id, authority_name" tableName="jhi_user_authority"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-15">
+        <addPrimaryKey columnNames="name" constraintName="jhi_authorityPK" tableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-16">
+        <addUniqueConstraint columnNames="email" constraintName="UC_JHI_USEREMAIL_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-17">
+        <addUniqueConstraint columnNames="login" constraintName="UC_JHI_USERLOGIN_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-18">
+        <addUniqueConstraint columnNames="logistica_id" constraintName="UC_PEDIDOSLOGISTICA_ID_COL" tableName="pedidos"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-19">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_user_authority" constraintName="FK290okww5jujghp4el5i7mgwu0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-20">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-21">
+        <addForeignKeyConstraint baseColumnNames="authority_name" baseTableName="jhi_user_authority" constraintName="FK4psxl0jtx6nr7rhqbynr6itoc" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-22">
+        <addForeignKeyConstraint baseColumnNames="logistica_id" baseTableName="pedidos" constraintName="FK4yqk9x1ybgwpi19cvtfm6tw5l" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="logistica"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-23">
+        <addForeignKeyConstraint baseColumnNames="referenciaclientes_id" baseTableName="logistica" constraintName="FK9fln4p7ofhs43ax9clwqk3e7w" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="referencia_clientes"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-24">
+        <addForeignKeyConstraint baseColumnNames="transportistas_id" baseTableName="logistica" constraintName="FKg9q8nedqt3xgaj1twxlkkacch" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="transportistas"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-25">
+        <addForeignKeyConstraint baseColumnNames="estados_id" baseTableName="logistica" constraintName="FKge78as2oaeuobr8i4k7pe30fw" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="estados"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-26">
+        <addForeignKeyConstraint baseColumnNames="representates_id" baseTableName="cliente" constraintName="FKix7rt25mr88c7yt3b6f9nophv" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="representante"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-27">
+        <addForeignKeyConstraint baseColumnNames="referenciaclientes_id" baseTableName="pedidos" constraintName="FKoitijw6emrtga05g0r5gjqd1o" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="referencia_clientes"/>
+    </changeSet>
+    <changeSet author="torga (generated)" id="1552679867249-28">
+        <addForeignKeyConstraint baseColumnNames="cliente_id" baseTableName="referencia_clientes" constraintName="FKtpfkjhr8ilfqxcthofvw9xvf7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cliente"/>
+    </changeSet>
+</databaseChangeLog>

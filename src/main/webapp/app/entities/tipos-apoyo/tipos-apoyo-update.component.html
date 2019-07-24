@@ -1,0 +1,115 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-tipos-apoyo-heading" jhiTranslate="torgaPedidosApp.tiposApoyo.home.createOrEditLabel">Create or edit a Tipos Apoyo</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!tiposApoyo.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="tiposApoyo.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.tiposApoyo.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="tiposApoyo.nombre" required/>
+                    <div [hidden]="!(editForm.controls.nombre?.dirty && editForm.controls.nombre?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nombre?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.tiposApoyo.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + tiposApoyo.imagenContentType + ';base64,' + tiposApoyo.imagen" style="max-height: 100px;" *ngIf="tiposApoyo.imagen" alt="tiposApoyo image"/>
+                        <div *ngIf="tiposApoyo.imagen" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{tiposApoyo.imagenContentType}}, {{byteSize(tiposApoyo.imagen)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, tiposApoyo, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                        [(ngModel)]="tiposApoyo.imagen" required/>
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                        [(ngModel)]="tiposApoyo.imagenContentType" />
+                    <div [hidden]="!(editForm.controls.imagen?.dirty && editForm.controls.imagen?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imagen?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.tiposApoyo.precio" for="field_precio">Precio</label>
+                    <input type="number" class="form-control" name="precio" id="field_precio"
+                        [(ngModel)]="tiposApoyo.precio" required/>
+                    <div [hidden]="!(editForm.controls.precio?.dirty && editForm.controls.precio?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.precio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.precio?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.tiposApoyo.altura" for="field_altura">Altura</label>
+                    <input type="number" class="form-control" name="altura" id="field_altura"
+                        [(ngModel)]="tiposApoyo.altura" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.tiposApoyo.ancho" for="field_ancho">Ancho</label>
+                    <input type="number" class="form-control" name="ancho" id="field_ancho"
+                        [(ngModel)]="tiposApoyo.ancho" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.tiposApoyo.fondo" for="field_fondo">Fondo</label>
+                    <input type="number" class="form-control" name="fondo" id="field_fondo"
+                        [(ngModel)]="tiposApoyo.fondo" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.tiposApoyo.productoApoyo" for="field_productoApoyo">Producto Apoyo</label>
+                    <select class="form-control" id="field_productoApoyo" name="productoApoyo" [(ngModel)]="tiposApoyo.productoApoyo"  required>
+                        <option *ngIf="!editForm.value.productoApoyo" [ngValue]="null" selected></option>
+                        <option [ngValue]="productosDormitorioOption.id === tiposApoyo.productoApoyo?.id ? tiposApoyo.productoApoyo : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.productoApoyo?.dirty && editForm.controls.productoApoyo?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.productoApoyo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.tiposApoyo.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="tiposApoyo.productosDormitorio" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productosDormitorioOption.id === tiposApoyo.productosDormitorio?.id ? tiposApoyo.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.tiposApoyo.dimensionesProducto" for="field_dimensionesProducto">Dimensiones Producto</label>
+                    <select class="form-control" id="field_dimensionesProducto" name="dimensionesProducto" [(ngModel)]="tiposApoyo.dimensionesProducto">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dimensionesProductoOption.id === tiposApoyo.dimensionesProducto?.id ? tiposApoyo.dimensionesProducto : dimensionesProductoOption" *ngFor="let dimensionesProductoOption of dimensionesproductos; trackBy: trackDimensionesProductoById">{{dimensionesProductoOption.mensaje}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

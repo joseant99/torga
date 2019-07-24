@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.home.title">Productos Presupuesto Pedidos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-productos-presupuesto-pedidos" [routerLink]="['/productos-presupuesto-pedidos/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.home.createLabel">
+            Create new Productos Presupuesto Pedidos
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="productosPresupuestoPedidos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productosDormitorio.id"><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.productosDormitorio">Productos Dormitorio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dimensionesProductoTipo.id"><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.dimensionesProductoTipo">Dimensiones Producto Tipo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="presupuestoPedido.id"><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.presupuestoPedido">Presupuesto Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipoProducto.id"><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.tipoProducto">Tipo Producto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tiposApoyo.id"><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.tiposApoyo">Tipos Apoyo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId">
+                <td><a [routerLink]="['/productos-presupuesto-pedidos', productosPresupuestoPedidos.id, 'view' ]">{{productosPresupuestoPedidos.id}}</a></td>
+                <td>
+                    <div *ngIf="productosPresupuestoPedidos.productosDormitorio">
+                        <a [routerLink]="['../productos-dormitorio', productosPresupuestoPedidos.productosDormitorio?.id, 'view' ]" >{{productosPresupuestoPedidos.productosDormitorio?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo">
+                        <a [routerLink]="['../dimensiones-producto-tipo', productosPresupuestoPedidos.dimensionesProductoTipo?.id, 'view' ]" >{{productosPresupuestoPedidos.dimensionesProductoTipo?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="productosPresupuestoPedidos.presupuestoPedido">
+                        <a [routerLink]="['../presupuesto-pedido', productosPresupuestoPedidos.presupuestoPedido?.id, 'view' ]" >{{productosPresupuestoPedidos.presupuestoPedido?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="productosPresupuestoPedidos.tipoProducto">
+                        <a [routerLink]="['../tipo-producto', productosPresupuestoPedidos.tipoProducto?.id, 'view' ]" >{{productosPresupuestoPedidos.tipoProducto?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="productosPresupuestoPedidos.tiposApoyo">
+                        <a [routerLink]="['../tipos-apoyo', productosPresupuestoPedidos.tiposApoyo?.id, 'view' ]" >{{productosPresupuestoPedidos.tiposApoyo?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/productos-presupuesto-pedidos', productosPresupuestoPedidos.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/productos-presupuesto-pedidos', productosPresupuestoPedidos.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'productos-presupuesto-pedidos/'+ productosPresupuestoPedidos.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="productosPresupuestoPedidos && productosPresupuestoPedidos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "productosDormitorio": {
+            "home": {
+                "title": "Productos Dormitorios",
+                "createLabel": "Crear nuevo Productos Dormitorio",
+                "createOrEditLabel": "Crear o editar Productos Dormitorio"
+            },
+            "created": "Un nuevo Productos Dormitorio ha sido creado con el identificador {{ param }}",
+            "updated": "Un Productos Dormitorio ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Productos Dormitorio ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Productos Dormitorio {{ id }}?"
+            },
+            "detail": {
+                "title": "Productos Dormitorio"
+            },
+            "nombre": "Nombre",
+            "imagen": "Imagen",
+            "categoriasDormi": "Categorias Dormi"
+        }
+    }
+}

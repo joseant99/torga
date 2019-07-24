@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190202121517_added_entity_Cliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190202121518_added_entity_ReferenciaClientes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190202121519_added_entity_Representante.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190202121520_added_entity_Logistica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190202121521_added_entity_Pedidos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190315191124_added_entity_Estados.xml" relativeToChangelogFile="false"/>
+<!--     <include file="config/liquibase/changelog/20190315191125_added_entity_Transportista.xml" relativeToChangelogFile="false"/> -->
+    <include file="config/liquibase/changelog/20190315191357_added_entity_Transportistas.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190625150601_added_entity_CategoriasDormi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190704105607_added_entity_TipoProducto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190626140349_added_entity_ProductosDormitorio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190628091003_added_entity_DimensionesProducto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201907010708591_added_entity_Acabados.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201907011510163_added_entity_AcaProd.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190701151016_added_entity_constraints_AcaProd.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190202121517_added_entity_constraints_Cliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190202121518_added_entity_constraints_ReferenciaClientes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190202121520_added_entity_constraints_Logistica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190202121521_added_entity_constraints_Pedidos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190703074603_added_entity_TiposApoyo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190705085632_added_entity_DimensionesProductoTipo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190710071347_added_entity_Composicion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190710100749_added_entity_ProductosComposicion.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20190710100749_added_entity_constraints_ProductosComposicion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201907101009391_added_entity_AcabadosComposicion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201907101009391_added_entity_constraints_AcabadosComposicion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190715070115_added_entity_Interiores.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190715070115_added_entity_constraints_Interiores.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190716094251b_added_entity_PresupuestoPedido.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190716094251b_added_entity_constraints_PresupuestoPedido.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190716151217_added_entity_ProductosPresupuestoPedidos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190716151217_added_entity_constraints_ProductosPresupuestoPedidos.xml" relativeToChangelogFile="false"/>
+</databaseChangeLog>

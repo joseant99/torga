@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-interiores-heading" jhiTranslate="torgaPedidosApp.interiores.home.createOrEditLabel">Create or edit a Interiores</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!interiores.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="interiores.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiores.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + interiores.imagenContentType + ';base64,' + interiores.imagen" style="max-height: 100px;" *ngIf="interiores.imagen" alt="interiores image"/>
+                        <div *ngIf="interiores.imagen" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{interiores.imagenContentType}}, {{byteSize(interiores.imagen)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, interiores, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                        [(ngModel)]="interiores.imagen" required/>
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                        [(ngModel)]="interiores.imagenContentType" />
+                    <div [hidden]="!(editForm.controls.imagen?.dirty && editForm.controls.imagen?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imagen?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiores.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="interiores.productosDormitorio"  required>
+                        <option *ngIf="!editForm.value.productosDormitorio" [ngValue]="null" selected></option>
+                        <option [ngValue]="productosDormitorioOption.id === interiores.productosDormitorio?.id ? interiores.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.productosDormitorio?.dirty && editForm.controls.productosDormitorio?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.productosDormitorio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiores.dimensionesProductoTipo" for="field_dimensionesProductoTipo">Dimensiones Producto Tipo</label>
+                    <select class="form-control" id="field_dimensionesProductoTipo" name="dimensionesProductoTipo" [(ngModel)]="interiores.dimensionesProductoTipo"  required>
+                        <option *ngIf="!editForm.value.dimensionesProductoTipo" [ngValue]="null" selected></option>
+                        <option [ngValue]="dimensionesProductoTipoOption.id === interiores.dimensionesProductoTipo?.id ? interiores.dimensionesProductoTipo : dimensionesProductoTipoOption" *ngFor="let dimensionesProductoTipoOption of dimensionesproductotipos; trackBy: trackDimensionesProductoTipoById">{{dimensionesProductoTipoOption.mensaje}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.dimensionesProductoTipo?.dirty && editForm.controls.dimensionesProductoTipo?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.dimensionesProductoTipo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

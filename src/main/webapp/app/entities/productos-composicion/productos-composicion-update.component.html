@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-productos-composicion-heading" jhiTranslate="torgaPedidosApp.productosComposicion.home.createOrEditLabel">Create or edit a Productos Composicion</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!productosComposicion.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="productosComposicion.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosComposicion.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="productosComposicion.productosDormitorio"  required>
+                        <option *ngIf="!editForm.value.productosDormitorio" [ngValue]="null" selected></option>
+                        <option [ngValue]="productosDormitorioOption.id === productosComposicion.productosDormitorio?.id ? productosComposicion.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.productosDormitorio?.dirty && editForm.controls.productosDormitorio?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.productosDormitorio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosComposicion.dimensionesProductoTipo" for="field_dimensionesProductoTipo">Dimensiones Producto Tipo</label>
+                    <select class="form-control" id="field_dimensionesProductoTipo" name="dimensionesProductoTipo" [(ngModel)]="productosComposicion.dimensionesProductoTipo"  required>
+                        <option *ngIf="!editForm.value.dimensionesProductoTipo" [ngValue]="null" selected></option>
+                        <option [ngValue]="dimensionesProductoTipoOption.id === productosComposicion.dimensionesProductoTipo?.id ? productosComposicion.dimensionesProductoTipo : dimensionesProductoTipoOption" *ngFor="let dimensionesProductoTipoOption of dimensionesproductotipos; trackBy: trackDimensionesProductoTipoById">{{dimensionesProductoTipoOption.mensaje}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.dimensionesProductoTipo?.dirty && editForm.controls.dimensionesProductoTipo?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.dimensionesProductoTipo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosComposicion.composicion" for="field_composicion">Composicion</label>
+                    <select class="form-control" id="field_composicion" name="composicion" [(ngModel)]="productosComposicion.composicion"  required>
+                        <option *ngIf="!editForm.value.composicion" [ngValue]="null" selected></option>
+                        <option [ngValue]="composicionOption.id === productosComposicion.composicion?.id ? productosComposicion.composicion : composicionOption" *ngFor="let composicionOption of composicions; trackBy: trackComposicionById">{{composicionOption.nombre}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.composicion?.dirty && editForm.controls.composicion?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.composicion?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosComposicion.tipoProducto" for="field_tipoProducto">Tipo Producto</label>
+                    <select class="form-control" id="field_tipoProducto" name="tipoProducto" [(ngModel)]="productosComposicion.tipoProducto" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoProductoOption.id === productosComposicion.tipoProducto?.id ? productosComposicion.tipoProducto : tipoProductoOption" *ngFor="let tipoProductoOption of tipoproductos; trackBy: trackTipoProductoById">{{tipoProductoOption.mensaje}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosComposicion.tiposApoyo" for="field_tiposApoyo">Tipos Apoyo</label>
+                    <select class="form-control" id="field_tiposApoyo" name="tiposApoyo" [(ngModel)]="productosComposicion.tiposApoyo" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tiposApoyoOption.id === productosComposicion.tiposApoyo?.id ? productosComposicion.tiposApoyo : tiposApoyoOption" *ngFor="let tiposApoyoOption of tiposapoyos; trackBy: trackTiposApoyoById">{{tiposApoyoOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

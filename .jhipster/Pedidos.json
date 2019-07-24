@@ -1,0 +1,49 @@
+{
+    "name": "Pedidos",
+    "fields": [
+        {
+            "fieldName": "numPedido",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "factura",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "confirmacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "importe",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "logistica",
+            "otherEntityName": "logistica",
+            "otherEntityField": "referenciaCliente",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pedidos(referenciaCliente)"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "referenciaclientes",
+            "otherEntityName": "referenciaClientes",
+            "otherEntityField": "referenciaCliente"
+        }
+    ],
+    "changelogDate": "20190202121521",
+    "entityTableName": "pedidos",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="presupuestoPedido">
+            <h2><span jhiTranslate="torgaPedidosApp.presupuestoPedido.detail.title">Presupuesto Pedido</span> {{presupuestoPedido.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoPedido.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{presupuestoPedido.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoPedido.pedido">Pedido</span></dt>
+                <dd>
+                    <span>{{presupuestoPedido.pedido}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto">Fecha Presupuesto</span></dt>
+                <dd>
+                    <span>{{presupuestoPedido.fecha_presupuesto}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_pedido">Fecha Pedido</span></dt>
+                <dd>
+                    <span>{{presupuestoPedido.fecha_pedido}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoPedido.user">User</span></dt>
+                <dd>
+                    {{presupuestoPedido.user?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/presupuesto-pedido', presupuestoPedido.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

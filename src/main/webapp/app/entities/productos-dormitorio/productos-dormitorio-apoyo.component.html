@@ -1,0 +1,61 @@
+<div style="width:60%;">
+    <h2 id="page-heading">
+        <span style="margin-left:40%">1.Sistemas de apoyo</span>
+       
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div style="width:100%" id="producto">
+    <div *ngFor="let productosDormitorio of productosDormitorios" style="float:left;margin-bottom:50px" >
+    	<div *ngIf="productosDormitorio.categoriasDormiId == 2" [id]='productosDormitorio.id' class="productosColor" style="margin-left:140px" >
+    			<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
+	 			<img title="Foto de linea de codigo"" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" style="max-height: 250px;max-width: 250px;    opacity: 0.7;" width="250px" height="150px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
+    		</div>	    	
+	    
+     </div>	
+	
+	
+	
+	
+	<div id="terminarConfiguracion" style="display:none">
+			<h2 id="configuracion" style='margin-left:20%;float:left;margin-bottom:50px'>&#191;Cuantas unidades quieres de esta configuracion?</h2>
+		<div style="float:left"><img src="../../../content/images/1.png" height="200" width="200">
+		</div>	
+		<div style="float:left"><img src="../../../content/images/2.jpg" height="200" width="200">
+		</div>
+		<div style="float:left"><img src="../../../content/images/3.jpg" height="200" width="200">
+		</div>
+		<div style="float:left"><img src="../../../content/images/4.png" height="200" width="200">
+		</div>
+	
+	</div>
+	
+	
+</div>
+<div style="width:20%;background-color:#DFDDDC;margin-left:57%;height:600px;position:fixed">
+<p style="margin-left:80px;font-size: 20px;">Calculadora</p>
+	<div style="background-color:white;width:86%;height: 75%;margin-left:25px;">
+			<div id="calculadora" style="float:left;width:100%;height:100%">
+			<div style="width:100%;height:7%;background-color:gray;color:white;top:0;">				
+				<strong><p id="nombreMesita"></p></strong>
+			</div>
+					<div id="datos" style="float:left;margin-left:5px">
+							
+					</div>
+					<div style="float:left;margin-left:50px;"id="precios">
+					
+					</div>
+					<div style="float:left;margin-left:20px;"id="precioCalculado">
+						
+					</div>
+					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 405px;">				
+						<p >Precio Total <strong id="total">0</strong>&euro;</p>
+					</div>
+			</div>
+		<button style="width:100%;height:10%;margin-top:30px;font-size:16px;background-color:#FBCD13">Mandar articulo/s al carro de la compra</button>
+	
+	</div>
+</div>
+
+
+

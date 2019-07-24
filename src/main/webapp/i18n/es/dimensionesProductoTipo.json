@@ -1,0 +1,29 @@
+{
+    "torgaPedidosApp": {
+        "dimensionesProductoTipo": {
+            "home": {
+                "title": "Dimensiones Producto Tipos",
+                "createLabel": "Crear nuevo Dimensiones Producto Tipo",
+                "createOrEditLabel": "Crear o editar Dimensiones Producto Tipo"
+            },
+            "created": "Un nuevo Dimensiones Producto Tipo ha sido creado con el identificador {{ param }}",
+            "updated": "Un Dimensiones Producto Tipo ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Dimensiones Producto Tipo ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Dimensiones Producto Tipo {{ id }}?"
+            },
+            "detail": {
+                "title": "Dimensiones Producto Tipo"
+            },
+            "ancho": "Ancho",
+            "alto": "Alto",
+            "fondo": "Fondo",
+            "mensaje": "Mensaje",
+            "imagen": "Imagen",
+            "precio": "Precio",
+            "anchoMesitaIdeal": "Ancho Mesita Ideal",
+            "productosDormitorio": "Productos Dormitorio",
+            "tipoProducto": "Tipo Producto"
+        }
+    }
+}

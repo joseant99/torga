@@ -1,0 +1,25 @@
+{
+    "torgaPedidosApp": {
+        "productosPresupuestoPedidos": {
+            "home": {
+                "title": "Productos Presupuesto Pedidos",
+                "createLabel": "Crear nuevo Productos Presupuesto Pedidos",
+                "createOrEditLabel": "Crear o editar Productos Presupuesto Pedidos"
+            },
+            "created": "Un nuevo Productos Presupuesto Pedidos ha sido creado con el identificador {{ param }}",
+            "updated": "Un Productos Presupuesto Pedidos ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Productos Presupuesto Pedidos ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Productos Presupuesto Pedidos {{ id }}?"
+            },
+            "detail": {
+                "title": "Productos Presupuesto Pedidos"
+            },
+            "productosDormitorio": "Productos Dormitorio",
+            "dimensionesProductoTipo": "Dimensiones Producto Tipo",
+            "presupuestoPedido": "Presupuesto Pedido",
+            "tipoProducto": "Tipo Producto",
+            "tiposApoyo": "Tipos Apoyo"
+        }
+    }
+}

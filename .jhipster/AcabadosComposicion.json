@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productosComposicion",
+            "otherEntityName": "productosComposicion",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "acabados",
+            "otherEntityName": "acabados",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20190710100939",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "acabados_composicion",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

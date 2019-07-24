@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pedidos">
+            <h2><span jhiTranslate="torgaPedidosApp.pedidos.detail.title">Pedidos</span> {{pedidos.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.pedidos.numPedido">Num Pedido</span></dt>
+                <dd>
+                    <span>{{pedidos.numPedido}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.pedidos.factura">Factura</span></dt>
+                <dd>
+                    <span>{{pedidos.factura}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.pedidos.confirmacion">Confirmacion</span></dt>
+                <dd>
+                    <span>{{pedidos.confirmacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.pedidos.importe">Importe</span></dt>
+                <dd>
+                    <span>{{pedidos.importe}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.pedidos.logistica">Logistica</span></dt>
+                <dd>
+                    <div *ngIf="pedidos.logistica">
+                        <a [routerLink]="['/logistica', pedidos.logistica?.id, 'view']">{{pedidos.logistica?.numPedido}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.pedidos.referenciaclientes">Referenciaclientes</span></dt>
+                <dd>
+                    <div *ngIf="pedidos.referenciaclientes">
+                        <a [routerLink]="['/referencia-clientes', pedidos.referenciaclientes?.id, 'view']">{{pedidos.referenciaclientes?.referenciaCliente}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pedidos', pedidos.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

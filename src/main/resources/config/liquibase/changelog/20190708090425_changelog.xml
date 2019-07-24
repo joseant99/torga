@@ -1,0 +1,98 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="jose (generated)" id="1562576674446-1">
+        <createTable tableName="aca_prod">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="aca_prodPK"/>
+            </column>
+            <column name="imagen" type="LONGBLOB"/>
+            <column name="imagen_content_type" type="VARCHAR(255)"/>
+            <column name="productos_dormitorio_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tipo_producto_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-2">
+        <createTable tableName="aca_prod_acabados">
+            <column name="aca_prods_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="acabados_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-6">
+        <addPrimaryKey columnNames="aca_prods_id, acabados_id" tableName="aca_prod_acabados"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-10">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_user_authority" constraintName="FK290okww5jujghp4el5i7mgwu0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-11">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-14">
+        <addForeignKeyConstraint baseColumnNames="authority_name" baseTableName="jhi_user_authority" constraintName="FK4psxl0jtx6nr7rhqbynr6itoc" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-15">
+        <addForeignKeyConstraint baseColumnNames="logistica_id" baseTableName="pedidos" constraintName="FK4yqk9x1ybgwpi19cvtfm6tw5l" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="logistica"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-16">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="tipos_apoyo" constraintName="FK7t3i6hloj240629wixexqmxft" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-17">
+        <addForeignKeyConstraint baseColumnNames="referenciaclientes_id" baseTableName="logistica" constraintName="FK9fln4p7ofhs43ax9clwqk3e7w" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="referencia_clientes"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-19">
+        <addForeignKeyConstraint baseColumnNames="acabados_id" baseTableName="aca_prod_acabados" constraintName="FKcfe9srl3skfngiimuuxp34cp0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="acabados"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-20">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="tipo_producto" constraintName="FKg78201vvstb9juxhdcbe27m0m" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-21">
+        <addForeignKeyConstraint baseColumnNames="categorias_dormi_id" baseTableName="productos_dormitorio" constraintName="FKg85pvguykb3u6cjbhygcnqt7f" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="categorias_dormi"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-22">
+        <addForeignKeyConstraint baseColumnNames="transportistas_id" baseTableName="logistica" constraintName="FKg9q8nedqt3xgaj1twxlkkacch" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="transportistas"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-23">
+        <addForeignKeyConstraint baseColumnNames="estados_id" baseTableName="logistica" constraintName="FKge78as2oaeuobr8i4k7pe30fw" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="estados"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-24">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="dimensiones_producto" constraintName="FKgvpw4ptiy74i2cynf86sopsgq" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-25">
+        <addForeignKeyConstraint baseColumnNames="dimensiones_producto_id" baseTableName="tipos_apoyo" constraintName="FKid1gnqbgbo76k2doo061cp280" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dimensiones_producto"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-26">
+        <addForeignKeyConstraint baseColumnNames="representates_id" baseTableName="cliente" constraintName="FKix7rt25mr88c7yt3b6f9nophv" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="representante"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-27">
+        <addForeignKeyConstraint baseColumnNames="tipo_producto_id" baseTableName="aca_prod" constraintName="FKk65avr5t5u562dtgpjnak27n5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_producto"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-28">
+        <addForeignKeyConstraint baseColumnNames="aca_prods_id" baseTableName="aca_prod_acabados" constraintName="FKljti76f3sb3i0m6h2c2r3woyl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="aca_prod"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-30">
+        <addForeignKeyConstraint baseColumnNames="referenciaclientes_id" baseTableName="pedidos" constraintName="FKoitijw6emrtga05g0r5gjqd1o" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="referencia_clientes"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-31">
+        <addForeignKeyConstraint baseColumnNames="tipo_producto_id" baseTableName="dimensiones_producto_tipo" constraintName="FKp46gstevgeo0d3h0jfquxqy2r" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_producto"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-32">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="aca_prod" constraintName="FKpwmujhhhsm6kn4u6v4qx4jnix" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-33">
+        <addForeignKeyConstraint baseColumnNames="producto_apoyo_id" baseTableName="tipos_apoyo" constraintName="FKs881i80umehoncu5knang9e9t" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-35">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="dimensiones_producto_tipo" constraintName="FKt71f8requbjq1muiyw9ecfn7y" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-37">
+        <addForeignKeyConstraint baseColumnNames="cliente_id" baseTableName="referencia_clientes" constraintName="FKtpfkjhr8ilfqxcthofvw9xvf7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cliente"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1562576674446-38">
+        <dropTable tableName="jhi_date_time_wrapper"/>
+    </changeSet>
+</databaseChangeLog>

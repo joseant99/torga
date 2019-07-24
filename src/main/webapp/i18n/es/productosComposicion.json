@@ -1,0 +1,26 @@
+{
+    "torgaPedidosApp": {
+        "productosComposicion": {
+            "home": {
+                "title": "Productos Composicions",
+                "createLabel": "Crear nuevo Productos Composicion",
+                "createOrEditLabel": "Crear o editar Productos Composicion"
+            },
+            "created": "Un nuevo Productos Composicion ha sido creado con el identificador {{ param }}",
+            "updated": "Un Productos Composicion ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Productos Composicion ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Productos Composicion {{ id }}?"
+            },
+            "detail": {
+                "title": "Productos Composicion"
+            },
+            "productosDormitorio": "Productos Dormitorio",
+            "dimensionesProductoTipo": "Dimensiones Producto Tipo",
+            "acabadosComposicion": "Acabados Composicion",
+            "composicion": "Composicion",
+            "tipoProducto": "Tipo Producto",
+            "tiposApoyo": "Tipos Apoyo"
+        }
+    }
+}

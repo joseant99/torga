@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productosPresupuestoPedidos">
+            <h2><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.detail.title">Productos Presupuesto Pedidos</span> {{productosPresupuestoPedidos.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="productosPresupuestoPedidos.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', productosPresupuestoPedidos.productosDormitorio?.id, 'view']">{{productosPresupuestoPedidos.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.dimensionesProductoTipo">Dimensiones Producto Tipo</span></dt>
+                <dd>
+                    <div *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo">
+                        <a [routerLink]="['/dimensiones-producto-tipo', productosPresupuestoPedidos.dimensionesProductoTipo?.id, 'view']">{{productosPresupuestoPedidos.dimensionesProductoTipo?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.presupuestoPedido">Presupuesto Pedido</span></dt>
+                <dd>
+                    <div *ngIf="productosPresupuestoPedidos.presupuestoPedido">
+                        <a [routerLink]="['/presupuesto-pedido', productosPresupuestoPedidos.presupuestoPedido?.id, 'view']">{{productosPresupuestoPedidos.presupuestoPedido?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.tipoProducto">Tipo Producto</span></dt>
+                <dd>
+                    <div *ngIf="productosPresupuestoPedidos.tipoProducto">
+                        <a [routerLink]="['/tipo-producto', productosPresupuestoPedidos.tipoProducto?.id, 'view']">{{productosPresupuestoPedidos.tipoProducto?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosPresupuestoPedidos.tiposApoyo">Tipos Apoyo</span></dt>
+                <dd>
+                    <div *ngIf="productosPresupuestoPedidos.tiposApoyo">
+                        <a [routerLink]="['/tipos-apoyo', productosPresupuestoPedidos.tiposApoyo?.id, 'view']">{{productosPresupuestoPedidos.tiposApoyo?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/productos-presupuesto-pedidos', productosPresupuestoPedidos.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

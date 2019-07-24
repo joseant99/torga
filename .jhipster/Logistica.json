@@ -1,0 +1,64 @@
+{
+    "name": "Logistica",
+    "fields": [
+        {
+            "fieldName": "numPedido",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ruta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "carro",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechaEntrega",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fechaPedido",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pedidos",
+            "otherEntityName": "pedidos",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "logistica"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "referenciaclientes",
+            "otherEntityName": "referenciaClientes",
+            "otherEntityField": "referenciaCliente"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "estados",
+            "otherEntityName": "estados",
+            "otherEntityField": "estadoPedido"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "transportistas",
+            "otherEntityName": "transportistas",
+            "otherEntityField": "transportistaPedido"
+        }
+    ],
+    "changelogDate": "20190202121520",
+    "entityTableName": "logistica",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

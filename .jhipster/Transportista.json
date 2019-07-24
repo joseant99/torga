@@ -1,0 +1,29 @@
+{
+    "name": "Transportista",
+    "fields": [
+        {
+            "fieldName": "transportistaPedido",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "logistica",
+            "otherEntityName": "logistica",
+            "otherEntityRelationshipName": "transportista"
+        }
+    ],
+    "changelogDate": "20190315191125",
+    "entityTableName": "transportista",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

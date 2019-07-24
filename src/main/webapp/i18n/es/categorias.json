@@ -1,0 +1,21 @@
+{
+    "torgaPedidosApp": {
+        "categorias": {
+            "home": {
+                "title": "Categorias",
+                "createLabel": "Crear nuevo Categorias",
+                "createOrEditLabel": "Crear o editar Categorias"
+            },
+            "created": "Un nuevo Categorias ha sido creado con el identificador {{ param }}",
+            "updated": "Un Categorias ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Categorias ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Categorias {{ id }}?"
+            },
+            "detail": {
+                "title": "Categorias"
+            },
+            "nombreCategoria": "Nombre Categoria"
+        }
+    }
+}

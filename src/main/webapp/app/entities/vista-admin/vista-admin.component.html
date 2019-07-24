@@ -1,0 +1,143 @@
+  <div class="row">
+        <div class="col-sm-6">
+          
+            <mat-form-field class="float-left">
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar por...">
+            </mat-form-field>
+         
+        </div>
+       
+        <!-- style="padding:15px;" -->
+        <div class="col-md-6" >
+            
+              <button class="btn btn-primary btn-md float-xl-right mb-3"  style=" background-color: #004952" [routerLink]="['/', { outlets: { popup: 'admintorga/upload'} }]">
+                  <fa-icon [icon]="'plus'"></fa-icon>
+                  
+                  Adjuntar Archivos
+                  
+              </button>
+            
+        </div>
+        
+    </div>
+
+
+<!-- <input type="checkbox" [(ngModel)]="hidecolumn" data-md-icheck (change)="hideVisibility($event)"/> -->
+
+
+<br>
+
+<div *ngIf="cargado"  class="table-responsive">
+
+  <table class="table" mat-table [dataSource]="dataSource" matSort>
+    
+
+    <ng-container matColumnDef="fecha_pedido">
+       
+      <th [hidden] = "column" *matHeaderCellDef mat-sort-header> Fecha Pedido</th>
+      <td [hidden] = "column" *matCellDef="let row"> {{row.fecha_pedido | date: 'dd/MM/yyyy'}} </td>
+     
+    </ng-container>
+    
+       
+    <ng-container matColumnDef="pedido">
+      <th  *matHeaderCellDef mat-sort-header> Pedido </th>
+      <td  *matCellDef="let row"> {{row.pedido}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="confirmacion">
+      <th  *matHeaderCellDef mat-sort-header> Confirmacion </th>
+      <td *matCellDef="let row" >
+        <ng-container *ngIf="row.confirmacion_exist"> 
+           <a> <i (click)="getPDFConfirmacion(row.confirmacion)" > Disponible </i></a>   
+        </ng-container >
+        <ng-container *ngIf="!row.confirmacion_exist">
+             {{row.confirmacion}} 
+        </ng-container> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="referencia_cliente">
+      <th   *matHeaderCellDef mat-sort-header> Ref. Cliente </th>
+      <td  mat   *matCellDef="let row">  {{row.referencia_cliente}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="ruta">
+      <th   *matHeaderCellDef mat-sort-header> Ruta </th>
+      <td  mat   *matCellDef="let row">  {{row.ruta}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="carro">
+      <th   *matHeaderCellDef mat-sort-header> Carro </th>
+      <td  mat   *matCellDef="let row">  {{row.carro}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="cliente">
+      <th   *matHeaderCellDef mat-sort-header> Cliente </th>
+      <td  mat   *matCellDef="let row">  {{row.cliente}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cod_cliente">
+      <th   *matHeaderCellDef mat-sort-header> Cod. Cliente </th>
+      <td  mat   *matCellDef="let row">  {{row.cod_cliente}} </td>
+    </ng-container>
+    
+
+    <ng-container matColumnDef="importe">
+      <th    *matHeaderCellDef mat-sort-header> Importe </th>
+      <td    *matCellDef="let row"> {{row.importe}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="estado">
+      <th     *matHeaderCellDef mat-sort-header> Estado </th>
+      <td    mat   *matCellDef="let row"> {{row.estado}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="transportista">
+      <th     *matHeaderCellDef mat-sort-header> Transportista </th>
+      <td *matCellDef="let row"> {{row.transportista}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="fecha_entrega">
+      <th     *matHeaderCellDef mat-sort-header> Fecha Entrega </th>
+      <td    *matCellDef="let row"> {{row.fecha_entrega | date: 'dd/MM/yyyy'}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="representante">
+      <th     *matHeaderCellDef mat-sort-header> Representante </th>
+      <td    *matCellDef="let row"> {{row.representante}} </td>
+    </ng-container> 
+
+    <ng-container n matColumnDef="poblacion">
+      <th     *matHeaderCellDef mat-sort-header> Poblacion </th>
+      <td    *matCellDef="let row"> {{row.poblacion}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="provincia">
+      <th     *matHeaderCellDef mat-sort-header> Provincia </th>
+      <td    *matCellDef="let row"> {{row.provincia}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="factura">
+      <th *matHeaderCellDef mat-sort-header> Factura </th>
+      <td *matCellDef="let row" >
+        <ng-container *ngIf="row.factura_exist"> 
+           <a> <i (click)="getPDF(row.factura)" > Disponible </i></a>   
+        </ng-container >
+        <ng-container *ngIf="!row.factura_exist">
+             {{row.factura}} 
+        </ng-container> </td>
+      
+    </ng-container> 
+
+    <tr mat-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+ 
+
+</div>
+<div> <mat-paginator  [pageSizeOptions]="[10, 25, 50]" ></mat-paginator> </div>
+
+

@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tiposApoyo">
+            <h2><span jhiTranslate="torgaPedidosApp.tiposApoyo.detail.title">Tipos Apoyo</span> {{tiposApoyo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.tiposApoyo.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{tiposApoyo.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiposApoyo.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="tiposApoyo.imagen">
+                        <a (click)="openFile(tiposApoyo.imagenContentType, tiposApoyo.imagen)">
+                            <img [src]="'data:' + tiposApoyo.imagenContentType + ';base64,' + tiposApoyo.imagen" style="max-width: 100%;" alt="tiposApoyo image"/>
+                        </a>
+                        {{tiposApoyo.imagenContentType}}, {{byteSize(tiposApoyo.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiposApoyo.precio">Precio</span></dt>
+                <dd>
+                    <span>{{tiposApoyo.precio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiposApoyo.altura">Altura</span></dt>
+                <dd>
+                    <span>{{tiposApoyo.altura}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiposApoyo.ancho">Ancho</span></dt>
+                <dd>
+                    <span>{{tiposApoyo.ancho}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiposApoyo.fondo">Fondo</span></dt>
+                <dd>
+                    <span>{{tiposApoyo.fondo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiposApoyo.productoApoyo">Producto Apoyo</span></dt>
+                <dd>
+                    <div *ngIf="tiposApoyo.productoApoyo">
+                        <a [routerLink]="['/productos-dormitorio', tiposApoyo.productoApoyo?.id, 'view']">{{tiposApoyo.productoApoyo?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiposApoyo.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="tiposApoyo.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', tiposApoyo.productosDormitorio?.id, 'view']">{{tiposApoyo.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiposApoyo.dimensionesProducto">Dimensiones Producto</span></dt>
+                <dd>
+                    <div *ngIf="tiposApoyo.dimensionesProducto">
+                        <a [routerLink]="['/dimensiones-producto', tiposApoyo.dimensionesProducto?.id, 'view']">{{tiposApoyo.dimensionesProducto?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tipos-apoyo', tiposApoyo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

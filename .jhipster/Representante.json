@@ -1,0 +1,33 @@
+{
+    "name": "Representante",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "usuario",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cliente",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "representates"
+        }
+    ],
+    "changelogDate": "20190202121519",
+    "entityTableName": "representante",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

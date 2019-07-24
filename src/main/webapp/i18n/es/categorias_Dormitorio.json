@@ -1,0 +1,21 @@
+{
+    "torgaPedidosApp": {
+        "categorias_Dormitorio": {
+            "home": {
+                "title": "Categorias Dormitorios",
+                "createLabel": "Crear nuevo Categorias Dormitorio",
+                "createOrEditLabel": "Crear o editar Categorias Dormitorio"
+            },
+            "created": "Un nuevo Categorias Dormitorio ha sido creado con el identificador {{ param }}",
+            "updated": "Un Categorias Dormitorio ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Categorias Dormitorio ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Categorias Dormitorio {{ id }}?"
+            },
+            "detail": {
+                "title": "Categorias Dormitorio"
+            },
+            "nombreCategoriaDormitorio": "Nombre Categoria Dormitorio"
+        }
+    }
+}

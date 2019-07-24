@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productosDormitorio">
+            <h2><span jhiTranslate="torgaPedidosApp.productosDormitorio.detail.title">Productos Dormitorio</span> {{productosDormitorio.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.productosDormitorio.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{productosDormitorio.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosDormitorio.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="productosDormitorio.imagen">
+                        <a (click)="openFile(productosDormitorio.imagenContentType, productosDormitorio.imagen)">
+                            <img [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" style="max-width: 100%;" alt="productosDormitorio image"/>
+                        </a>
+                        {{productosDormitorio.imagenContentType}}, {{byteSize(productosDormitorio.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosDormitorio.categoriasDormi">Categorias Dormi</span></dt>
+                <dd>
+                    <div *ngIf="productosDormitorio.categoriasDormiId">
+                        <a [routerLink]="['/categorias-dormi', productosDormitorio.categoriasDormiId, 'view']">{{productosDormitorio.categoriasDormiId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/productos-dormitorio', productosDormitorio.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

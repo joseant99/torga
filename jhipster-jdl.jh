@@ -1,0 +1,74 @@
+entity Cliente{
+	
+    codCliente String required,
+    nombre String ,
+    poblacion String,
+    provincia String,
+    usuario String
+
+}
+
+
+entity ReferenciaClientes{
+	
+    referenciaCliente String required
+}
+
+entity Representante{
+	
+    nombre String required,
+    usuario String
+  
+}
+
+entity Estados {
+    estadoPedido String required
+}
+
+entity Transportistas {
+    transportistaPedido String required
+}
+
+entity Logistica{
+	
+    numPedido String required,
+    ruta String,
+    carro String,
+    fechaEntrega LocalDate,
+    fechaPedido LocalDate
+}
+
+entity Pedidos{
+	
+    numPedido String required,
+    factura String,
+    confirmacion String,
+    importe Float
+}
+
+
+
+relationship OneToMany {
+	ReferenciaClientes{pedidos(referenciaCliente)} to Pedidos{referenciaclientes(referenciaCliente)},
+    ReferenciaClientes{logistica(referenciaCliente)} to Logistica{referenciaclientes(referenciaCliente)},
+	Representante{cliente(codCliente)} to Cliente{representates(nombre)},
+    Cliente{referenciaclientes(referenciaCliente)} to ReferenciaClientes{cliente(nombre)},
+    Estados {logistica(referenciaCliente)} to Logistica{estados(estadoPedido)},
+    Transportistas {logistica(referenciaCliente)} to Logistica{transportistas(transportistaPedido)}
+}
+
+relationship OneToOne{
+	Pedidos{logistica(referenciaCliente)} to Logistica{pedidos(referenciaCliente)},
+}
+
+
+// Set pagination options
+paginate Logistica, Pedidos, Cliente with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+service * with serviceClass
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

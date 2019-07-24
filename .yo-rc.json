@@ -1,0 +1,77 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.torga.pedidos",
+            "nativeLanguage": "es"
+        },
+        "jhipsterVersion": "5.7.2",
+        "applicationType": "monolith",
+        "baseName": "torgaPedidos",
+        "packageName": "com.torga.pedidos",
+        "packageFolder": "com/torga/pedidos",
+        "serverPort": "443",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "mysql",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": "eureka",
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "OGQ1M2QyMTNiNjQzMjk4NmU5OGJlN2Y3ZWEwNTFkOTRiODA5NTU4MjcyMzU3MjliNjAwYjIxMGQ5NmZhNGQ2OGJiOWRmNWFkY2NiM2ExNmYyNWZkOWEwOTkyNTA3NGJmODRkOGZhNmRlNzRkOGU1YTU1ODYxNzllOGNhMDlkNWM=",
+        "clientFramework": "angularX",
+        "useSass": false,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "es",
+        "languages": ["es"],
+        "aws": {
+            "apps": [
+                {
+                    "baseName": "torgaPedidos",
+                    "performance": "medium",
+                    "fargate": {
+                        "CPU": "2048",
+                        "memory": "4GB",
+                        "taskCount": 2
+                    },
+                    "database": {
+                        "size": "db.t2.medium",
+                        "supportedEngines": ["mariadb", "mysql"],
+                        "instances": 1
+                    },
+                    "scaling": "medium",
+                    "dbType": "mysql",
+                    "auroraEngine": "aurora-mysql",
+                    "auroraFamily": "aurora-mysql5.7",
+                    "auroraClusterParameterGroupName": "default.aurora-mysql5.7",
+                    "auroraDbParam": "sql_mode: IGNORE_SPACE"
+                }
+            ],
+            "vpc": {
+                "id": "vpc-30c50359",
+                "cidr": "172.31.0.0/16",
+                "elbSubnets": ["subnet-3e784274", "subnet-36e5265f", "subnet-017a9e7a"],
+                "appSubnets": ["subnet-3e784274", "subnet-36e5265f", "subnet-017a9e7a"],
+                "appSubnetsLaunchWithPublicIP": true
+            },
+            "applicationName": "torga-pedidos",
+            "environmentName": "torga-pedidos-env",
+            "bucketName": "torga-pedidos",
+            "instanceType": "t2.micro",
+            "awsRegion": "eu-central-1",
+            "dbName": "torgaPedidos",
+            "dbInstanceClass": "db.t2.micro",
+            "region": "eu-west-3",
+            "cloudFormationName": "torga",
+            "s3BucketName": "torgapedidos-1563789345842"
+        }
+    }
+}

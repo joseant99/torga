@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-acabados-composicion-heading" jhiTranslate="torgaPedidosApp.acabadosComposicion.home.createOrEditLabel">Create or edit a Acabados Composicion</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!acabadosComposicion.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="acabadosComposicion.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.acabadosComposicion.productosComposicion" for="field_productosComposicion">Productos Composicion</label>
+                    <select class="form-control" id="field_productosComposicion" name="productosComposicion" [(ngModel)]="acabadosComposicion.productosComposicion" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productosComposicionOption.id === acabadosComposicion.productosComposicion?.id ? acabadosComposicion.productosComposicion : productosComposicionOption" *ngFor="let productosComposicionOption of productoscomposicions; trackBy: trackProductosComposicionById">{{productosComposicionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.acabadosComposicion.acabados" for="field_acabados">Acabados</label>
+                    <select class="form-control" id="field_acabados" name="acabados" [(ngModel)]="acabadosComposicion.acabados"  required>
+                        <option *ngIf="!editForm.value.acabados" [ngValue]="null" selected></option>
+                        <option [ngValue]="acabadosOption.id === acabadosComposicion.acabados?.id ? acabadosComposicion.acabados : acabadosOption" *ngFor="let acabadosOption of acabados; trackBy: trackAcabadosById">{{acabadosOption.nombre}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.acabados?.dirty && editForm.controls.acabados?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.acabados?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

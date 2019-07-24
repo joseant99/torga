@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity AcaProd.
+    -->
+    <changeSet id="20190701151016-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="aca_prods_id"
+                                 baseTableName="aca_prod_acabados"
+                                 constraintName="fk_aca_prod_acabados_aca_prods_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aca_prod"/>
+        <addForeignKeyConstraint baseColumnNames="acabados_id"
+                                 baseTableName="aca_prod_acabados"
+                                 constraintName="fk_aca_prod_acabados_acabados_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="acabados"/>
+        
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id"
+                                 baseTableName="aca_prod"
+                                 constraintName="fk_aca_prod_productos_dormitorio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="productos_dormitorio"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipo_producto_id"
+                                 baseTableName="aca_prod"
+                                 constraintName="fk_aca_prod_tipo_producto_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipo_producto"/>
+
+    </changeSet>
+</databaseChangeLog>

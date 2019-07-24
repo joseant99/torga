@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="acaProd">
+            <h2><span jhiTranslate="torgaPedidosApp.acaProd.detail.title">Aca Prod</span> {{acaProd.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.acaProd.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="acaProd.imagen">
+                        <a (click)="openFile(acaProd.imagenContentType, acaProd.imagen)">
+                            <img [src]="'data:' + acaProd.imagenContentType + ';base64,' + acaProd.imagen" style="max-width: 100%;" alt="acaProd image"/>
+                        </a>
+                        {{acaProd.imagenContentType}}, {{byteSize(acaProd.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.acaProd.acabados">Acabados</span></dt>
+                <dd>
+                    <span *ngFor="let acabados of acaProd.acabados; let last = last">
+                        <a [routerLink]="['/acabados', acabados?.id, 'view' ]">{{acabados.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.acaProd.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="acaProd.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', acaProd.productosDormitorio?.id, 'view']">{{acaProd.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.acaProd.tipoProducto">Tipo Producto</span></dt>
+                <dd>
+                    <div *ngIf="acaProd.tipoProducto">
+                        <a [routerLink]="['/tipo-producto', acaProd.tipoProducto?.id, 'view']">{{acaProd.tipoProducto?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/aca-prod', acaProd.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

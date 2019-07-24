@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="referenciaClientes">
+            <h2><span jhiTranslate="torgaPedidosApp.referenciaClientes.detail.title">Referencia Clientes</span> {{referenciaClientes.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.referenciaClientes.referenciaCliente">Referencia Cliente</span></dt>
+                <dd>
+                    <span>{{referenciaClientes.referenciaCliente}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.referenciaClientes.cliente">Cliente</span></dt>
+                <dd>
+                    <div *ngIf="referenciaClientes.cliente">
+                        <a [routerLink]="['/cliente', referenciaClientes.cliente?.id, 'view']">{{referenciaClientes.cliente?.nombre}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/referencia-clientes', referenciaClientes.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

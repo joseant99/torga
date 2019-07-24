@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productosComposicion">
+            <h2><span jhiTranslate="torgaPedidosApp.productosComposicion.detail.title">Productos Composicion</span> {{productosComposicion.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.productosComposicion.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="productosComposicion.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', productosComposicion.productosDormitorio?.id, 'view']">{{productosComposicion.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosComposicion.dimensionesProductoTipo">Dimensiones Producto Tipo</span></dt>
+                <dd>
+                    <div *ngIf="productosComposicion.dimensionesProductoTipo">
+                        <a [routerLink]="['/dimensiones-producto-tipo', productosComposicion.dimensionesProductoTipo?.id, 'view']">{{productosComposicion.dimensionesProductoTipo?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosComposicion.composicion">Composicion</span></dt>
+                <dd>
+                    <div *ngIf="productosComposicion.composicion">
+                        <a [routerLink]="['/composicion', productosComposicion.composicion?.id, 'view']">{{productosComposicion.composicion?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosComposicion.tipoProducto">Tipo Producto</span></dt>
+                <dd>
+                    <div *ngIf="productosComposicion.tipoProducto">
+                        <a [routerLink]="['/tipo-producto', productosComposicion.tipoProducto?.id, 'view']">{{productosComposicion.tipoProducto?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosComposicion.tiposApoyo">Tipos Apoyo</span></dt>
+                <dd>
+                    <div *ngIf="productosComposicion.tiposApoyo">
+                        <a [routerLink]="['/tipos-apoyo', productosComposicion.tiposApoyo?.id, 'view']">{{productosComposicion.tiposApoyo?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/productos-composicion', productosComposicion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

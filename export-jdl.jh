@@ -1,0 +1,62 @@
+// JDL definition for application 'torgaPedidos' generated with command 'jhipster export-jdl'
+
+entity Cliente {
+  codCliente String required,
+  nombre String,
+  poblacion String,
+  provincia String,
+  usuario String
+}
+
+entity ReferenciaClientes {
+  referenciaCliente String required
+}
+entity Representante {
+  nombre String required,
+  usuario String
+}
+entity Logistica {
+  numPedido String required,
+  ruta String,
+  carro String,
+  transportista Transportista,
+  estado Estados,
+  fechaEntrega LocalDate,
+  fechaPedido LocalDate
+}
+entity Pedidos {
+  numPedido String required,
+  factura String,
+  confirmacion String,
+  importe Float
+}
+
+enum Transportista {
+  PASCUAL_BRU,
+  TORO,
+  PINEDA,
+  MUEBLES_TORGA,
+  NACEX_SEUR
+}
+
+enum Estados {
+  PROCESADO,
+  FABRICACION,
+  LISTO_PARA_ENVIAR,
+  EN_REPARTO,
+  ENTREGADO
+}
+
+relationship OneToOne {
+  Pedidos{logistica(referenciaCliente)} to Logistica{pedidos}
+}
+relationship OneToMany {
+  Representante{cliente} to Cliente{representates(nombre)},
+  Cliente{referenciaclientes} to ReferenciaClientes{cliente(nombre)},
+  ReferenciaClientes{logistica} to Logistica{referenciaclientes(referenciaCliente)},
+  ReferenciaClientes{pedidos} to Pedidos{referenciaclientes(referenciaCliente)}
+}
+
+paginate Cliente with infinite-scroll
+paginate Logistica, Pedidos with pagination
+service Cliente, ReferenciaClientes, Representante, Logistica, Pedidos with serviceClass

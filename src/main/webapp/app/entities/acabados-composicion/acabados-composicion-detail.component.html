@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="acabadosComposicion">
+            <h2><span jhiTranslate="torgaPedidosApp.acabadosComposicion.detail.title">Acabados Composicion</span> {{acabadosComposicion.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.acabadosComposicion.productosComposicion">Productos Composicion</span></dt>
+                <dd>
+                    <div *ngIf="acabadosComposicion.productosComposicion">
+                        <a [routerLink]="['/productos-composicion', acabadosComposicion.productosComposicion?.id, 'view']">{{acabadosComposicion.productosComposicion?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.acabadosComposicion.acabados">Acabados</span></dt>
+                <dd>
+                    <div *ngIf="acabadosComposicion.acabados">
+                        <a [routerLink]="['/acabados', acabadosComposicion.acabados?.id, 'view']">{{acabadosComposicion.acabados?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/acabados-composicion', acabadosComposicion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

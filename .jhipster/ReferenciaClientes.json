@@ -1,0 +1,41 @@
+{
+    "name": "ReferenciaClientes",
+    "fields": [
+        {
+            "fieldName": "referenciaCliente",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "pedidos",
+            "otherEntityName": "pedidos",
+            "otherEntityRelationshipName": "referenciaclientes"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "logistica",
+            "otherEntityName": "logistica",
+            "otherEntityRelationshipName": "referenciaclientes"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "cliente",
+            "otherEntityName": "cliente",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "changelogDate": "20190202121518",
+    "entityTableName": "referencia_clientes",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,165 @@
+<div style="width:60%;">
+    <h2 id="page-heading">
+        <span style="margin-left:40%">1.Mesitas</span>
+       
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div style="width:100%" id="producto">
+    <table>
+    	<tbody>
+    		<tr>
+    			Ancho:
+    			<td style="border:1px solid black;width:95px;padding-left:10px" class="selectectAncho" id="ancho0">Indiferente</td>
+				<td style="border:1px solid black" id="ancho1" (click)='filtroAncho(1,"ancho")'></td>
+				<td id="ancho2" (click)='filtroAncho(2,"ancho")'></td>
+    			<td  id="ancho3" (click)='filtroAncho(3,"ancho")'></td>
+    			<td  id="ancho4" (click)='filtroAncho(4,"ancho")'></td>
+    			<td  id="ancho5" (click)='filtroAncho(5,"ancho")'></td>
+    		</tr>
+    		<tr>
+    			Altura:
+    			<td style="border:1px solid black;width:95px;padding-left:10px" class="selectectAltura" id="altura0">Indiferente</td>
+    			<td style="border:1px solid black" id="altura1" (click)='filtroAncho(1,"altura")'></td>
+    			<td id="altura2" (click)='filtroAncho(2,"altura")'></td>
+    			<td  id="altura3" (click)='filtroAncho(3,"altura")'></td>
+    			<td  id="altura4" (click)='filtroAncho(4,"altura")'></td>
+    			<td  id="altura5" (click)='filtroAncho(5,"altura")'></td>
+    		</tr>
+    		<tr>
+    			Fondo:
+    			<td style="border:1px solid black;width:95px;padding-left:10px" class="selectectFondo">Indiferente</td>
+    			<td style="border:1px solid black" id="fondo1" (click)='filtroAncho(1,"fondo")'></td>
+    			<td id="fondo2" (click)='filtroAncho(2,"fondo")'></td>
+    			<td  id="fondo3" (click)='filtroAncho(3,"fondo")'></td>
+    			<td  id="fondo4" (click)='filtroAncho(4,"fondo")'></td>
+    			<td  id="fondo5" (click)='filtroAncho(5,"fondo")'></td>
+    		</tr>
+    	</tbody>
+    </table>
+	    <div id="productosFiltrados">
+	    <div (click)='open1(1)' id="prod1" class="productoColor" style="float:left"></div>
+	    <div (click)='open1(2)' id="prod2" class="productoColor" style="float:left"></div>
+	    <div (click)='open1(3)' id="prod3" class="productoColor" style="float:left"></div>
+	    <div (click)='open1(4)' id="prod4" class="productoColor" style="float:left"></div>
+	    <div (click)='open1(5)' id="prod5" class="productoColor" style="float:left"></div>
+        <div (click)='open1(6)' id="prod6" class="productoColor" style="float:left"></div>
+        <div (click)='open1(7)' id="prod7" class="productoColor" style="float:left"></div>
+        <div (click)='open1(8)' id="prod8" class="productoColor" style="float:left"></div>
+        <div (click)='open1(9)' id="prod9" class="productoColor" style="float:left"></div>
+        <div (click)='open1(10)' id="prod10" class="productoColor" style="float:left"></div>
+        <div (click)='open1(11)' id="prod11" class="productoColor" style="float:left"></div>
+        <div (click)='open1(12)' id="prod12" class="productoColor" style="float:left"></div>
+        <div (click)='open1(13)' id="prod13" class="productoColor" style="float:left"></div>
+        <div (click)='open1(14)' id="prod14" class="productoColor" style="float:left"></div>
+        <div (click)='open1(15)' id="prod15" class="productoColor" style="float:left"></div>
+        <div (click)='open1(16)' id="prod16" class="productoColor" style="float:left"></div>
+        <div (click)='open1(17)' id="prod17" class="productoColor" style="float:left"></div>
+        <div (click)='open1(18)' id="prod18" class="productoColor" style="float:left"></div>
+        <div (click)='open1(19)' id="prod19" class="productoColor" style="float:left"></div>
+        <div (click)='open1(20)' id="prod20" class="productoColor" style="float:left"></div>
+        <div (click)='open1(21)' id="prod21" class="productoColor" style="float:left"></div>
+        <div (click)='open1(22)' id="prod22" class="productoColor" style="float:left"></div>
+        <div (click)='open1(23)' id="prod23" class="productoColor" style="float:left"></div>
+        <div (click)='open1(24)' id="prod24" class="productoColor" style="float:left"></div>
+    
+    
+    </div>
+    <div id="ProductosCargados">
+        <div *ngFor="let productosDormitorio of productosDormitorios" style="float:left;margin-left:50px;margin-bottom:50px" [id]='productosDormitorio.id' class="productosColor">
+    	<div *ngIf="productosDormitorio.categoriasDormiId == 1">
+	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
+	 		<img title="Foto de linea de codigo"" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" style="max-height: 250px;max-width: 250px;    opacity: 0.7;" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
+    	</div>
+    	</div>	
+    </div>
+	<div id="dimensiones"style="width:100%;float:left">
+
+		<h2 id="medidas" style='margin-left:40%;float:left;display:none'>2.Medidas</h2>
+		</br>		
+		<div style="float:left;margin-left:10%;margin-bottom:50px;" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
+		</div>   
+		<div style="float:left;margin-left:10%;margin-bottom:50px" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
+		</div>   
+		<div style="float:left;margin-left:10%;margin-bottom:50px" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
+		</div>   
+		<div style="float:left;margin-left:10%;margin-bottom:50px" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
+		</div>   
+	</div>  
+	
+	<div id="acabados"style="width:100%;float:left">
+			<h2 id="acabado" style='margin-left:40%;float:left;display:none'>3.Acabados</h2>
+			<div id="forms" style="float:right;">
+			<input id="idioma" style="display:none">
+				<div id="acaba1" (change)="anadirCalculadora()"></div>		
+				<div id="acaba2" (change)="anadirCalculadora()"></div>			
+				<div id="acaba3" (change)="anadirCalculadora()"></div>			
+				<div id="acaba4" (change)="anadirCalculadora()"></div>			
+			</div>
+
+	</div>  
+	<div id="apoyo"style="width:100%;float:left;margin-top:50px">
+			<h2 id="nombreApoyo" style='margin-left:40%;float:left;display:none'>4.Sistema de Apoyo</h2>
+			</br>	
+			<div style="float:left;width:100%;margin-bottom:50px">
+				<div style="float:left;margin-left:10%;"" class="apoyoCogido1" (click)="apoyoCogido(1)"> 
+				</div>  
+			
+				<div style="float:left;margin-left:10%;" class="apoyoCogido2" (click)="apoyoCogido(2)"> 
+				</div>
+			</div>	
+			 
+			<div style="float:left;width:100%">
+				<div style="float:left;margin-left:10%;" class="apoyoCogido3" (click)="apoyoCogido(3)"> 
+				</div>   
+				<div style="float:left;margin-left:10%;" class="apoyoCogido4" (click)="apoyoCogido(4)"> 
+				</div>  
+			</div>	
+			 
+		
+	</div>  
+	
+	
+	
+	<div id="terminarConfiguracion" style="display:none">
+			<h2 id="configuracion" style='margin-left:20%;float:left;margin-bottom:50px'>&#191;Cuantas unidades quieres de esta configuracion?</h2>
+		<div style="float:left"><img src="../../../content/images/1.png" height="200" width="200">
+		</div>	
+		<div style="float:left"><img src="../../../content/images/2.jpg" height="200" width="200">
+		</div>
+		<div style="float:left"><img src="../../../content/images/3.jpg" height="200" width="200">
+		</div>
+		<div style="float:left"><img src="../../../content/images/4.png" height="200" width="200">
+		</div>
+	
+	</div>
+	
+	
+</div>
+<div style="width:20%;background-color:#DFDDDC;margin-left:57%;height:600px;position:fixed">
+<p style="margin-left:80px;font-size: 20px;">Calculadora</p>
+	<div style="background-color:white;width:86%;height: 75%;margin-left:25px;">
+			<div id="calculadora" style="float:left;width:100%;height:100%">
+			<div style="width:100%;height:7%;background-color:gray;color:white;top:0;">				
+				<strong><p id="nombreMesita"></p></strong>
+			</div>
+					<div id="datos" style="float:left;margin-left:5px">
+							
+					</div>
+					<div style="float:left;margin-left:50px;"id="precios">
+					
+					</div>
+					<div style="float:left;margin-left:20px;"id="precioCalculado">
+						
+					</div>
+					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 405px;">				
+						<p >Precio Total <strong id="total">0</strong>&euro;</p>
+					</div>
+			</div>
+		<button style="width:100%;height:10%;margin-top:30px;font-size:16px;background-color:#FBCD13">Mandar articulo/s al carro de la compra</button>
+	
+	</div>
+</div>
+
+
+

@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-logistica-heading" jhiTranslate="torgaPedidosApp.logistica.home.createOrEditLabel">Create or edit a Logistica</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!logistica.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="logistica.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.logistica.numPedido" for="field_numPedido">Num Pedido</label>
+                    <input type="text" class="form-control" name="numPedido" id="field_numPedido"
+                        [(ngModel)]="logistica.numPedido" required/>
+                    <div [hidden]="!(editForm.controls.numPedido?.dirty && editForm.controls.numPedido?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.numPedido?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.logistica.ruta" for="field_ruta">Ruta</label>
+                    <input type="text" class="form-control" name="ruta" id="field_ruta"
+                        [(ngModel)]="logistica.ruta" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.logistica.carro" for="field_carro">Carro</label>
+                    <input type="text" class="form-control" name="carro" id="field_carro"
+                        [(ngModel)]="logistica.carro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.logistica.fechaEntrega" for="field_fechaEntrega">Fecha Entrega</label>
+                    <div class="input-group">
+                        <input id="field_fechaEntrega" type="text" class="form-control" name="fechaEntrega" ngbDatepicker  #fechaEntregaDp="ngbDatepicker" [(ngModel)]="logistica.fechaEntrega"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaEntregaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.logistica.fechaPedido" for="field_fechaPedido">Fecha Pedido</label>
+                    <div class="input-group">
+                        <input id="field_fechaPedido" type="text" class="form-control" name="fechaPedido" ngbDatepicker  #fechaPedidoDp="ngbDatepicker" [(ngModel)]="logistica.fechaPedido"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaPedidoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.logistica.referenciaclientes" for="field_referenciaclientes">Referenciaclientes</label>
+                    <select class="form-control" id="field_referenciaclientes" name="referenciaclientes" [(ngModel)]="logistica.referenciaclientes" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="referenciaClientesOption.id === logistica.referenciaclientes?.id ? logistica.referenciaclientes : referenciaClientesOption" *ngFor="let referenciaClientesOption of referenciaclientes; trackBy: trackReferenciaClientesById">{{referenciaClientesOption.referenciaCliente}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.logistica.estados" for="field_estados">Estados</label>
+                    <select class="form-control" id="field_estados" name="estados" [(ngModel)]="logistica.estados" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="estadosOption.id === logistica.estados?.id ? logistica.estados : estadosOption" *ngFor="let estadosOption of estados; trackBy: trackEstadosById">{{estadosOption.estadoPedido}}</option>
+                    </select>
+                </div>
+                <div class="form-group"> 
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.logistica.transportistas" for="field_transportistas">Transportistas</label>
+                    <select class="form-control" id="field_transportistas" name="transportistas" [(ngModel)]="logistica.transportistas" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transportistasOption.id === logistica.transportistas?.id ? logistica.transportistas : transportistasOption" *ngFor="let transportistasOption of transportistas; trackBy: trackTransportistasById">{{transportistasOption.transportistaPedido}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

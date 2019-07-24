@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "representante": {
+            "home": {
+                "title": "Representantes",
+                "createLabel": "Crear nuevo Representante",
+                "createOrEditLabel": "Crear o editar Representante"
+            },
+            "created": "Un nuevo Representante ha sido creado con el identificador {{ param }}",
+            "updated": "Un Representante ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Representante ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Representante {{ id }}?"
+            },
+            "detail": {
+                "title": "Representante"
+            },
+            "nombre": "Nombre",
+            "usuario": "Usuario",
+            "cliente": "Cliente"
+        }
+    }
+}

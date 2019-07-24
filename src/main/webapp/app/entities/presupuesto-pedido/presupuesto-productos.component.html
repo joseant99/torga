@@ -1,0 +1,50 @@
+<div>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div id="imprimir">
+	    <div style="margin-top:50px;float:left;width:100%;margin-bottom:40px;margin-left:50px" *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let i=index;">
+	    	<div style="width:100%;margin-bottom:70px" *ngIf="i===0">
+	    		<p style="text-align:center;font-size:30px">PRESUPUESTO: {{productosPresupuestoPedidos.presupuestoPedido?.codigo}}</p>
+	    		<p style="text-align:center;font-size:30px">FECHA:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_presupuesto}}</p>
+	    	</div>
+	    	<div style="float:left;width:40%;margin-lefT:100px">
+	    		 		<img width="300px" title="Foto de linea de codigo"" class="producto" [src]="'data:' + productosPresupuestoPedidos.productosDormitorio.imagenContentType + ';base64,' + productosPresupuestoPedidos.productosDormitorio.imagen" style="max-height: 350px;max-width: 350px;"  alt="productosDormitorio image"/>
+	    	</div>
+	    	<div style="float:right;width:35%;margin-left:50px">
+	    		<p style="font-size:30px"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}&euro;</strong></p>
+	    		<p>Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
+	    		<p>Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
+	    		<p>Fondo &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.fondo}}</p>
+	    	</div>
+	    </div>
+    </div>
+    <hr style="width:100%;background-color:black;float:left;height:15px"></hr>
+  	
+</div>
+<div style="width:100%;float:left">
+  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalPasarPedido">Generar Pedido</button></p>
+  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7">Datos del Cliente</button></p>
+  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="imprimir()">Imprimir</button></p>
+  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7">Contacto con Fabrica</button></p>
+  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" [routerLink]="['/presupuesto-edicion']">Editar Presupuesto</button></p>
+  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="eliminar()" [routerLink]="['/presupuesto-usuario']">Elimiar Presupuesto</button></p>
+  		<p style="text-align:center"><button style="width:200px;background-color:#A4D9F4"[routerLink]="['/presupuesto-usuario']">Salir</button></p>
+  	</div>
+<div class="modal fade" id="modalPasarPedido" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">GENERAR PEDIDO</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p style="text-align:center">&#191;Est&#225;s Seguro?</p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="pedido()" data-dismiss="modal" >Si</button></p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">No</button></p>
+	        </div>
+	        	<p id="verPresupuesto" style="display:none"> <a data-dismiss="modal" routerLink="../presupuesto-usuario"  routerLinkActive="active"><span>Abrir Presupuesto</span></a></p>
+	      </div>
+	      
+	    </div>
+	  </div>	  	 

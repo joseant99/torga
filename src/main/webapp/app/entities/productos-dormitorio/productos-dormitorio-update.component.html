@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-productos-dormitorio-heading" jhiTranslate="torgaPedidosApp.productosDormitorio.home.createOrEditLabel">Create or edit a Productos Dormitorio</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!productosDormitorio.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="productosDormitorio.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosDormitorio.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="productosDormitorio.nombre" required/>
+                    <div [hidden]="!(editForm.controls.nombre?.dirty && editForm.controls.nombre?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nombre?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosDormitorio.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" style="max-height: 100px;" *ngIf="productosDormitorio.imagen" alt="productosDormitorio image"/>
+                        <div *ngIf="productosDormitorio.imagen" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{productosDormitorio.imagenContentType}}, {{byteSize(productosDormitorio.imagen)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, productosDormitorio, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                        [(ngModel)]="productosDormitorio.imagen" required/>
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                        [(ngModel)]="productosDormitorio.imagenContentType" />
+                    <div [hidden]="!(editForm.controls.imagen?.dirty && editForm.controls.imagen?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imagen?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosDormitorio.categoriasDormi" for="field_categoriasDormi">Categorias Dormi</label>
+                    <select class="form-control" id="field_categoriasDormi" name="categoriasDormi" [(ngModel)]="productosDormitorio.categoriasDormiId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="categoriasDormiOption.id" *ngFor="let categoriasDormiOption of categoriasdormis; trackBy: trackCategoriasDormiById">{{categoriasDormiOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.interiores.home.title">Interiores</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-interiores" [routerLink]="['/interiores/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.interiores.home.createLabel">
+            Create new Interiores
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="interiores">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imagen"><span jhiTranslate="torgaPedidosApp.interiores.imagen">Imagen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productosDormitorio.id"><span jhiTranslate="torgaPedidosApp.interiores.productosDormitorio">Productos Dormitorio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dimensionesProductoTipo.id"><span jhiTranslate="torgaPedidosApp.interiores.dimensionesProductoTipo">Dimensiones Producto Tipo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let interiores of interiores ;trackBy: trackId">
+                <td><a [routerLink]="['/interiores', interiores.id, 'view' ]">{{interiores.id}}</a></td>
+                <td>
+                    <a *ngIf="interiores.imagen" (click)="openFile(interiores.imagenContentType, interiores.imagen)">
+                        <img [src]="'data:' + interiores.imagenContentType + ';base64,' + interiores.imagen" style="max-height: 30px;" alt="interiores image"/>
+                    </a>
+                    <span *ngIf="interiores.imagen">{{interiores.imagenContentType}}, {{byteSize(interiores.imagen)}}</span>
+                </td>
+                <td>
+                    <div *ngIf="interiores.productosDormitorio">
+                        <a [routerLink]="['../productos-dormitorio', interiores.productosDormitorio?.id, 'view' ]" >{{interiores.productosDormitorio?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="interiores.dimensionesProductoTipo">
+                        <a [routerLink]="['../dimensiones-producto-tipo', interiores.dimensionesProductoTipo?.id, 'view' ]" >{{interiores.dimensionesProductoTipo?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/interiores', interiores.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/interiores', interiores.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'interiores/'+ interiores.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="interiores && interiores.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

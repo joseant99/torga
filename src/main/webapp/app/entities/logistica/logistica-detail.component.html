@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="logistica">
+            <h2><span jhiTranslate="torgaPedidosApp.logistica.detail.title">Logistica</span> {{logistica.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.logistica.numPedido">Num Pedido</span></dt>
+                <dd>
+                    <span>{{logistica.numPedido}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.logistica.ruta">Ruta</span></dt>
+                <dd>
+                    <span>{{logistica.ruta}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.logistica.carro">Carro</span></dt>
+                <dd>
+                    <span>{{logistica.carro}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.logistica.fechaEntrega">Fecha Entrega</span></dt>
+                <dd>
+                    <span>{{logistica.fechaEntrega}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.logistica.fechaPedido">Fecha Pedido</span></dt>
+                <dd>
+                    <span>{{logistica.fechaPedido}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.logistica.referenciaclientes">Referenciaclientes</span></dt>
+                <dd>
+                    <div *ngIf="logistica.referenciaclientes">
+                        <a [routerLink]="['/referencia-clientes', logistica.referenciaclientes?.id, 'view']">{{logistica.referenciaclientes?.referenciaCliente}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.logistica.estados">Estados</span></dt>
+                <dd>
+                    <!-- <div *ngIf="logistica.estados">
+                        <a [routerLink]="['/estados', logistica.estados?.id, 'view']">{{logistica.estados?.estadoPedido}}</a>
+                    </div> -->
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.logistica.transportistas">Transportistas</span></dt>
+                <dd>
+                        
+                    <div *ngIf="logistica.transportistas">
+                        
+                        <a [routerLink]="['/transportistas', logistica.transportistas?.id, 'view']">{{logistica.transportistas?.transportistaPedido}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/logistica', logistica.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

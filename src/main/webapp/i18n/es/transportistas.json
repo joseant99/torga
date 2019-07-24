@@ -1,0 +1,21 @@
+{
+    "torgaPedidosApp": {
+        "transportistas": {
+            "home": {
+                "title": "Transportistas",
+                "createLabel": "Crear nuevo Transportista",
+                "createOrEditLabel": "Crear o editar Transportista"
+            },
+            "created": "Un nuevo Transportista ha sido creado con el identificador {{ param }}",
+            "updated": "Un Transportista ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Transportista ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Transportista {{ id }}?"
+            },
+            "detail": {
+                "title": "Transportista"
+            },
+            "transportistaPedido": "Transportista"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cliente">
+            <h2><span jhiTranslate="torgaPedidosApp.cliente.detail.title">Cliente</span> {{cliente.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.cliente.codCliente">Cod Cliente</span></dt>
+                <dd>
+                    <span>{{cliente.codCliente}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.cliente.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{cliente.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.cliente.poblacion">Poblacion</span></dt>
+                <dd>
+                    <span>{{cliente.poblacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.cliente.provincia">Provincia</span></dt>
+                <dd>
+                    <span>{{cliente.provincia}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.cliente.usuario">Usuario</span></dt>
+                <dd>
+                    <span>{{cliente.usuario}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.cliente.representates">Representates</span></dt>
+                <dd>
+                    <div *ngIf="cliente.representates">
+                        <a [routerLink]="['/representante', cliente.representates?.id, 'view']">{{cliente.representates?.nombre}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cliente', cliente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.dimensionesProducto.home.title">Dimensiones Productos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dimensiones-producto" [routerLink]="['/dimensiones-producto/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Dimensiones Producto
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="dimensionesProductos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span >ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ancho"><span >Ancho</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="alto"><span >Alto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fondo"><span >Fondo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mensaje"><span >Mensaje</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imagen"><span >Imagen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="precio"><span >Precio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="anchoIdeal"><span>Ancho Ideal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productosDormitorioId"><span>Productos Dormitorio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dimensionesProducto of dimensionesProductos ;trackBy: trackId">
+                <td><a [routerLink]="['/dimensiones-producto', dimensionesProducto.id, 'view' ]">{{dimensionesProducto.id}}</a></td>
+                <td>{{dimensionesProducto.ancho}}</td>
+                <td>{{dimensionesProducto.alto}}</td>
+                <td>{{dimensionesProducto.fondo}}</td>
+                <td>{{dimensionesProducto.mensaje}}</td>
+                <td>
+                    <a *ngIf="dimensionesProducto.imagen" (click)="openFile(dimensionesProducto.imagenContentType, dimensionesProducto.imagen)">
+                        <img [src]="'data:' + dimensionesProducto.imagenContentType + ';base64,' + dimensionesProducto.imagen" style="max-height: 30px;" alt="dimensionesProducto image"/>
+                    </a>
+                    <span *ngIf="dimensionesProducto.imagen">{{dimensionesProducto.imagenContentType}}, {{byteSize(dimensionesProducto.imagen)}}</span>
+                </td>
+                <td>{{dimensionesProducto.precio}}</td>
+                <td>{{dimensionesProducto.anchoIdeal}}</td>
+                <td>
+                    <div *ngIf="dimensionesProducto.productosDormitorioId">
+                        <a [routerLink]="['../productos-dormitorio', dimensionesProducto.productosDormitorioId , 'view' ]" >{{dimensionesProducto.productosDormitorioId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/dimensiones-producto', dimensionesProducto.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/dimensiones-producto', dimensionesProducto.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'dimensiones-producto/'+ dimensionesProducto.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="dimensionesProductos && dimensionesProductos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

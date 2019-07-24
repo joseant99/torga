@@ -1,0 +1,21 @@
+{
+    "torgaPedidosApp": {
+        "categoriasDormi": {
+            "home": {
+                "title": "Categorias Dormis",
+                "createLabel": "Crear nuevo Categorias Dormi",
+                "createOrEditLabel": "Crear o editar Categorias Dormi"
+            },
+            "created": "Un nuevo Categorias Dormi ha sido creado con el identificador {{ param }}",
+            "updated": "Un Categorias Dormi ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Categorias Dormi ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Categorias Dormi {{ id }}?"
+            },
+            "detail": {
+                "title": "Categorias Dormi"
+            },
+            "nombre": "Nombre"
+        }
+    }
+}

@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.home.title">Dimensiones Producto Tipos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dimensiones-producto-tipo" [routerLink]="['/dimensiones-producto-tipo/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.home.createLabel">
+            Create new Dimensiones Producto Tipo
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="dimensionesProductoTipos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ancho"><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.ancho">Ancho</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="alto"><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.alto">Alto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fondo"><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.fondo">Fondo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mensaje"><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.mensaje">Mensaje</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imagen"><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.imagen">Imagen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="precio"><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.precio">Precio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="anchoMesitaIdeal"><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.anchoMesitaIdeal">Ancho Mesita Ideal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productosDormitorio.id"><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.productosDormitorio">Productos Dormitorio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipoProducto.id"><span jhiTranslate="torgaPedidosApp.dimensionesProductoTipo.tipoProducto">Tipo Producto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dimensionesProductoTipo of dimensionesProductoTipos ;trackBy: trackId">
+                <td><a [routerLink]="['/dimensiones-producto-tipo', dimensionesProductoTipo.id, 'view' ]">{{dimensionesProductoTipo.id}}</a></td>
+                <td>{{dimensionesProductoTipo.ancho}}</td>
+                <td>{{dimensionesProductoTipo.alto}}</td>
+                <td>{{dimensionesProductoTipo.fondo}}</td>
+                <td>{{dimensionesProductoTipo.mensaje}}</td>
+                <td>
+                    <a *ngIf="dimensionesProductoTipo.imagen" (click)="openFile(dimensionesProductoTipo.imagenContentType, dimensionesProductoTipo.imagen)">
+                        <img [src]="'data:' + dimensionesProductoTipo.imagenContentType + ';base64,' + dimensionesProductoTipo.imagen" style="max-height: 30px;" alt="dimensionesProductoTipo image"/>
+                    </a>
+                    <span *ngIf="dimensionesProductoTipo.imagen">{{dimensionesProductoTipo.imagenContentType}}, {{byteSize(dimensionesProductoTipo.imagen)}}</span>
+                </td>
+                <td>{{dimensionesProductoTipo.precio}}</td>
+                <td>{{dimensionesProductoTipo.anchoMesitaIdeal}}</td>
+                <td>
+                    <div *ngIf="dimensionesProductoTipo.productosDormitorio">
+                        <a [routerLink]="['../productos-dormitorio', dimensionesProductoTipo.productosDormitorio?.id, 'view' ]" >{{dimensionesProductoTipo.productosDormitorio?.nombre}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="dimensionesProductoTipo.tipoProducto">
+                        <a [routerLink]="['../tipo-producto', dimensionesProductoTipo.tipoProducto?.id, 'view' ]" >{{dimensionesProductoTipo.tipoProducto?.mensaje}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/dimensiones-producto-tipo', dimensionesProductoTipo.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/dimensiones-producto-tipo', dimensionesProductoTipo.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'dimensiones-producto-tipo/'+ dimensionesProductoTipo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="dimensionesProductoTipos && dimensionesProductoTipos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

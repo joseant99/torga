@@ -1,0 +1,70 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productoApoyo",
+            "otherEntityName": "productosDormitorio",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "productosDormitorio",
+            "otherEntityName": "productosDormitorio",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "dimensionesProducto",
+            "otherEntityName": "dimensionesProducto",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "imagen",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "precio",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "altura",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "ancho",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fondo",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20190703074603",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "tipos_apoyo",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

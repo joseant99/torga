@@ -1,0 +1,24 @@
+{
+    "torgaPedidosApp": {
+        "acaProd": {
+            "home": {
+                "title": "Aca Prods",
+                "createLabel": "Crear nuevo Aca Prod",
+                "createOrEditLabel": "Crear o editar Aca Prod"
+            },
+            "created": "Un nuevo Aca Prod ha sido creado con el identificador {{ param }}",
+            "updated": "Un Aca Prod ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Aca Prod ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Aca Prod {{ id }}?"
+            },
+            "detail": {
+                "title": "Aca Prod"
+            },
+            "imagen": "Imagen",
+            "acabados": "Acabados",
+            "productosDormitorio": "Productos Dormitorio",
+            "tipoProducto": "Tipo Producto"
+        }
+    }
+}

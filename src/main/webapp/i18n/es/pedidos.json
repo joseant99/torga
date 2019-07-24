@@ -1,0 +1,26 @@
+{
+    "torgaPedidosApp": {
+        "pedidos": {
+            "home": {
+                "title": "Pedidos",
+                "createLabel": "Crear nuevo Pedidos",
+                "createOrEditLabel": "Crear o editar Pedidos"
+            },
+            "created": "Un nuevo Pedidos ha sido creado con el identificador {{ param }}",
+            "updated": "Un Pedidos ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Pedidos ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Pedidos {{ id }}?"
+            },
+            "detail": {
+                "title": "Pedidos"
+            },
+            "numPedido": "Num Pedido",
+            "factura": "Factura",
+            "confirmacion": "Confirmacion",
+            "importe": "Importe",
+            "logistica": "Logistica",
+            "referenciaclientes": "Referenciaclientes"
+        }
+    }
+}

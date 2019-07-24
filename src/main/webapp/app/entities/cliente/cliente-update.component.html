@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-cliente-heading" jhiTranslate="torgaPedidosApp.cliente.home.createOrEditLabel">Create or edit a Cliente</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!cliente.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="cliente.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.cliente.codCliente" for="field_codCliente">Cod Cliente</label>
+                    <input type="text" class="form-control" name="codCliente" id="field_codCliente"
+                        [(ngModel)]="cliente.codCliente" required/>
+                    <div [hidden]="!(editForm.controls.codCliente?.dirty && editForm.controls.codCliente?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.codCliente?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.cliente.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="cliente.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.cliente.poblacion" for="field_poblacion">Poblacion</label>
+                    <input type="text" class="form-control" name="poblacion" id="field_poblacion"
+                        [(ngModel)]="cliente.poblacion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.cliente.provincia" for="field_provincia">Provincia</label>
+                    <input type="text" class="form-control" name="provincia" id="field_provincia"
+                        [(ngModel)]="cliente.provincia" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.cliente.usuario" for="field_usuario">Usuario</label>
+                    <input type="text" class="form-control" name="usuario" id="field_usuario"
+                        [(ngModel)]="cliente.usuario" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.cliente.representates" for="field_representates">Representates</label>
+                    <select class="form-control" id="field_representates" name="representates" [(ngModel)]="cliente.representates" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="representanteOption.id === cliente.representates?.id ? cliente.representates : representanteOption" *ngFor="let representanteOption of representantes; trackBy: trackRepresentanteById">{{representanteOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

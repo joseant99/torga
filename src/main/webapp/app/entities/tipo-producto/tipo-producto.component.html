@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.tipoProducto.home.title">Tipo Productos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tipo-producto" [routerLink]="['/tipo-producto/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.tipoProducto.home.createLabel">
+            Create new Tipo Producto
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="tipoProductos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mensaje"><span jhiTranslate="torgaPedidosApp.tipoProducto.mensaje">Mensaje</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imagen"><span jhiTranslate="torgaPedidosApp.tipoProducto.imagen">Imagen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productosDormitorio.id"><span jhiTranslate="torgaPedidosApp.tipoProducto.productosDormitorio">Productos Dormitorio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tipoProducto of tipoProductos ;trackBy: trackId">
+                <td><a [routerLink]="['/tipo-producto', tipoProducto.id, 'view' ]">{{tipoProducto.id}}</a></td>
+                <td>{{tipoProducto.mensaje}}</td>
+                <td>
+                    <a *ngIf="tipoProducto.imagen" (click)="openFile(tipoProducto.imagenContentType, tipoProducto.imagen)">
+                        <img [src]="'data:' + tipoProducto.imagenContentType + ';base64,' + tipoProducto.imagen" style="max-height: 30px;" alt="tipoProducto image"/>
+                    </a>
+                    <span *ngIf="tipoProducto.imagen">{{tipoProducto.imagenContentType}}, {{byteSize(tipoProducto.imagen)}}</span>
+                </td>
+                <td>
+                    <div *ngIf="tipoProducto.productosDormitorio">
+                        <a [routerLink]="['../productos-dormitorio', tipoProducto.productosDormitorio?.id, 'view' ]" >{{tipoProducto.productosDormitorio?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/tipo-producto', tipoProducto.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/tipo-producto', tipoProducto.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tipo-producto/'+ tipoProducto.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="tipoProductos && tipoProductos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

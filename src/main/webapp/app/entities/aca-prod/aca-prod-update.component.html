@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-aca-prod-heading" jhiTranslate="torgaPedidosApp.acaProd.home.createOrEditLabel">Create or edit a Aca Prod</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!acaProd.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="acaProd.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.acaProd.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + acaProd.imagenContentType + ';base64,' + acaProd.imagen" style="max-height: 100px;" *ngIf="acaProd.imagen" alt="acaProd image"/>
+                        <div *ngIf="acaProd.imagen" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{acaProd.imagenContentType}}, {{byteSize(acaProd.imagen)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, acaProd, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                        [(ngModel)]="acaProd.imagen" />
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                        [(ngModel)]="acaProd.imagenContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="torgaPedidosApp.acaProd.acabados" for="field_acabados">Acabados</label>
+                    <select class="form-control" id="field_acabados" multiple name="acabados" [(ngModel)]="acaProd.acabados" required>
+                        <option [ngValue]="getSelected(acaProd.acabados, acabadosOption)" *ngFor="let acabadosOption of acabados; trackBy: trackAcabadosById">{{acabadosOption.nombre}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.acabados?.dirty && editForm.controls.acabados?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.acabados?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.acaProd.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="acaProd.productosDormitorio"  required>
+                        <option *ngIf="!editForm.value.productosDormitorio" [ngValue]="null" selected></option>
+                        <option [ngValue]="productosDormitorioOption.id === acaProd.productosDormitorio?.id ? acaProd.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.productosDormitorio?.dirty && editForm.controls.productosDormitorio?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.productosDormitorio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.acaProd.tipoProducto" for="field_tipoProducto">Tipo Producto</label>
+                    <select class="form-control" id="field_tipoProducto" name="tipoProducto" [(ngModel)]="acaProd.tipoProducto" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoProductoOption.id === acaProd.tipoProducto?.id ? acaProd.tipoProducto : tipoProductoOption" *ngFor="let tipoProductoOption of tipoproductos; trackBy: trackTipoProductoById">{{tipoProductoOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

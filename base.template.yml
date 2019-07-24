@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  applicationStackS3Bucket:
+    Type: String
+    Description: Name of the S3 bucket containing the application.template.yml template file
+    Default: torgapedidos-1563789345842
+  torgaPedidosDBPassword:
+    Type: String
+    Description: Aurora master database password for torgaPedidos
+    NoEcho: true
+
+  shouldDeployService:
+    Type: String
+    Description: Should the ECS service be initialised
+    AllowedValues:
+        - true
+        - false
+    Default: false
+Resources:
+  torgaPedidos:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      Parameters:
+        parentStackName: !Ref AWS::StackName
+        repositoryName: torga/torgaPedidos
+        shouldDeployService: !Ref shouldDeployService
+        databasePassword: !Ref torgaPedidosDBPassword
+      TemplateURL: !Join [ '', [ 'https://s3.amazonaws.com/',!Ref applicationStackS3Bucket, '/torgaPedidos.template.yml'] ]
+
+Outputs:
+  LoadBalancerOutputtorgaPedidos:
+    Description: The external DNS address of the load-balancers
+    Value: !GetAtt torgaPedidos.Outputs.LoadBalancerOutput
+

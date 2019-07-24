@@ -1,0 +1,51 @@
+{
+    "name": "Cliente",
+    "fields": [
+        {
+            "fieldName": "codCliente",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "poblacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "provincia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "usuario",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "referenciaclientes",
+            "otherEntityName": "referenciaClientes",
+            "otherEntityRelationshipName": "cliente"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "representates",
+            "otherEntityName": "representante",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "changelogDate": "20190202121517",
+    "entityTableName": "cliente",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

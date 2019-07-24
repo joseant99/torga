@@ -1,0 +1,136 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-dimensiones-producto-heading" >Create or edit a Dimensiones Producto</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!dimensionesProducto.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="dimensionesProducto.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label"  for="field_ancho">Ancho</label>
+                    <input type="number" class="form-control" name="ancho" id="field_ancho"
+                        [(ngModel)]="dimensionesProducto.ancho" required/>
+                    <div [hidden]="!(editForm.controls.ancho?.dirty && editForm.controls.ancho?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.ancho?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.ancho?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label"  for="field_alto">Alto</label>
+                    <input type="number" class="form-control" name="alto" id="field_alto"
+                        [(ngModel)]="dimensionesProducto.alto" required/>
+                    <div [hidden]="!(editForm.controls.alto?.dirty && editForm.controls.alto?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.alto?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.alto?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label"  for="field_fondo">Fondo</label>
+                    <input type="number" class="form-control" name="fondo" id="field_fondo"
+                        [(ngModel)]="dimensionesProducto.fondo" required/>
+                    <div [hidden]="!(editForm.controls.fondo?.dirty && editForm.controls.fondo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fondo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.fondo?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label"  for="field_mensaje">Mensaje</label>
+                    <input type="text" class="form-control" name="mensaje" id="field_mensaje"
+                        [(ngModel)]="dimensionesProducto.mensaje" required/>
+                    <div [hidden]="!(editForm.controls.mensaje?.dirty && editForm.controls.mensaje?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.mensaje?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label"  for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + dimensionesProducto.imagenContentType + ';base64,' + dimensionesProducto.imagen" style="max-height: 100px;" *ngIf="dimensionesProducto.imagen" alt="dimensionesProducto image"/>
+                        <div *ngIf="dimensionesProducto.imagen" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{dimensionesProducto.imagenContentType}}, {{byteSize(dimensionesProducto.imagen)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, dimensionesProducto, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                        [(ngModel)]="dimensionesProducto.imagen" required/>
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                        [(ngModel)]="dimensionesProducto.imagenContentType" />
+                    <div [hidden]="!(editForm.controls.imagen?.dirty && editForm.controls.imagen?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imagen?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_precio">Precio</label>
+                    <input type="number" class="form-control" name="precio" id="field_precio"
+                        [(ngModel)]="dimensionesProducto.precio" required/>
+                    <div [hidden]="!(editForm.controls.precio?.dirty && editForm.controls.precio?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.precio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.precio?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label"  for="field_anchoIdeal">Ancho Ideal</label>
+                    <input type="number" class="form-control" name="anchoIdeal" id="field_anchoIdeal"
+                        [(ngModel)]="dimensionesProducto.anchoIdeal" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="dimensionesProducto.productosDormitorioId"  required>
+                        <option *ngIf="!editForm.value.productosDormitorio" [ngValue]="null" selected></option>
+                        <option [ngValue]="productosDormitorioOption.id" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.productosDormitorio?.dirty && editForm.controls.productosDormitorio?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.productosDormitorio?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
