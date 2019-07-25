@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
+import * as $ from 'jquery';
 
 import { LoginModalService, AccountService, Account } from 'app/core';
 
@@ -50,11 +51,28 @@ export class HomeComponent implements OnInit {
                     this.router.navigate(['/admintorga']);
                 } else if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
                     this.router.navigate(['/representantetorga']);
+                } else if (account.authorities.indexOf('ROLE_USER') >= 0) {
+                    this.router.navigate(['/clientetorga']);
                 } else {
                     this.account = account;
                 }
             });
         });
+    }
+    public iniciarSesion() {
+        $('.form').removeAttr('style');
+        $('.form1').attr('style');
+        $('.form').attr('style');
+        $('.form1').css({ display: 'none' });
+        $('.form').css({ 'margin-top': '115px' });
+    }
+
+    public registro() {
+        $('.form1').removeAttr('style');
+        $('.form').attr('style');
+        $('.form1').attr('style');
+        $('.form').css({ display: 'none' });
+        $('.form1').css({ 'margin-top': '115px' });
     }
 
     isAuthenticated() {
@@ -70,7 +88,7 @@ export class HomeComponent implements OnInit {
     }
 
     requestResetPassword() {
-        this.router.navigate(['/reset', 'request']);
+        $('#modalInformacion').modal('show');
     }
 
     login() {

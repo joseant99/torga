@@ -120,6 +120,30 @@
 	                        
 					  </div>
       	 </ul>
+      	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a  id="comercial" data-toggle="collapse" data-target="#menuTienda">
+                        <span>
+                            <span style="color:black;font-size:20px;">Gestion Tienda</span>
+                        </span>
+					</a>
+					<div id="menuTienda" class="collapse">
+						   <ul aria-labelledby="menuComercial">
+						     	<li>
+		                            <a routerLink="presupuesto-usuario"  routerLinkActive="active" >
+		                                <span >Datos Generales</span>
+		                            </a>
+		                        </li>
+		                        
+		                        <li>
+		                            <a routerLink="pedidos-usuario"  routerLinkActive="active" >
+		                                <span >Usuarios</span>
+		                            </a>
+		                        </li>
+	                        </ul>
+	                        
+					  </div>
+      	 </ul>
        
     </div>
      

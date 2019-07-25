@@ -41,12 +41,11 @@
 </div> -->
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto"> 
+    <div class="row" style="background-color:#CDCFCE;float:right;width:45%;height:845px;position:sticky">
+        <div style="width:100%"> 
             <!-- <div class="modal-body"> -->
-            <div class="card card-signin my-5">
-            <div class="card-body">
-            <h1 class="card-title text-center">√ùrea clientes</h1>
+            <div >
+            <div style="width:100%">
             <br><br>
             <div class="row justify-content-center">
             
@@ -57,8 +56,13 @@
                 </div>
 
 
-                <div class="col-md-8">
-                    <form class="form" role="form" (ngSubmit)="login()">
+                <div style="width:80%">
+                <div style="float:left;width:100%">
+	                <button (click)="iniciarSesion()" style="width: 40%;height: 70px;float:left">Iniciar Sesion</button>
+	                <button (click)="registro()" style="width: 40%;height: 70px;float:right">No tengo claves de acceso</button>
+                </div>
+               
+                    <form class="form" style="display:none;" role="form" (ngSubmit)="login()">
                         <div class="form-group">
                             <label class="username-label" for="username" jhiTranslate="global.form.username">Login</label>
                             <input type="text" class="form-control" name="username" id="username" placeholder="{{'global.form.username.placeholder' | translate}}"
@@ -69,25 +73,46 @@
                             <input type="password" class="form-control" name="password" id="password" placeholder="{{'login.form.password.placeholder' | translate}}"
                                 [(ngModel)]="password">
                         </div>
-                        <div class="form-check">
-                            <label class="form-check-label" for="rememberMe">
-                                <input class="form-check-input" type="checkbox" name="rememberMe" id="rememberMe" [(ngModel)]="rememberMe" checked>
-                                <span jhiTranslate="login.form.rememberme">Remember me</span>
-                            </label>
+                        
+                        <br>
+                       <p style="text-align:center"> <button type="submit" class="btn btn-primary " style="background-color:white;color:black"  jhiTranslate="login.form.button">Access</button></p>
+                    
+               
+                       <p style="text-align:center"> <a class="alert-link" data-toggle="modal" data-target="#modalInformacion" jhiTranslate="login.password.forgot">Did you forget your password?</a></p>
+
+                    </form>
+                    
+                    <div class="form1" style="display:none">
+                        <div class="form-group">
+                            <label >Nombre y Apellidos</label>
+                            <input type="text" class="form-control"  id="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label >Telefono de Contacto</label>
+                            <input type="text" class="form-control"  id="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label >Nombre Comercial de la Tienda</label>
+                            <input type="text" class="form-control"  id="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label >Provincia donde se encuentra la tienda</label>
+                            <input type="text" class="form-control"  id="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label >Municipio</label>
+                            <input type="text" class="form-control"  id="nombre">
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary " style="background-color: #004952"  jhiTranslate="login.form.button">Sign in</button>
+                        <p style="text-align:center"><button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalAcceso"  style="background-color: white;color:black">Solicitar Claves</button></p>
                     
                     
-                    </form>
-                    <p></p>
-                    <div class="row">
-                        <a class="alert-link" (click)="requestResetPassword()" jhiTranslate="login.password.forgot">Did you forget your password?</a>
                     </div>
-                    <!-- <div class="alert alert-warning">
+       				
+                     <!--<div class="alert alert-warning">
                         <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>
                         <a class="alert-link" (click)="register()" jhiTranslate="global.messages.info.register.link">Register a new account</a>
-                    </div> -->
+                    </div>--> 
                 </div>
             </div>
         </div>
@@ -95,5 +120,40 @@
      </div>
     </div>
 </div>
-
+ <div class="modal fade" id="modalInformacion" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">&#191;Has olvidado las claves de acceso?</h4>
+	        </div>
+	        <div class="modal-body">
+	         <p style="font-size: 20px;text-align: center;">Llama a este numero para restaurarlas</p>
+	         <h2 style="font-size:92px">635 762 551</h2>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+  
+   <div class="modal fade" id="modalAcceso" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-body">
+	         <p style="font-size: 20px;text-align: center;">Las claves de acceso se han solicitado correctamente</p>
+	         <p style="font-size: 16px;text-align: center;">Te llamaremos en breve para verificar que los datos son correctos y proporcionarte el usuario y contraseÒa</p>
+	        	          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+	        </div>
+	        <div class="modal-footer">
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
   
