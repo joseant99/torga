@@ -1,0 +1,102 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-datos-usuario-heading" jhiTranslate="torgaPedidosApp.datosUsuario.home.createOrEditLabel">Create or edit a Datos Usuario</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!datosUsuario.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="datosUsuario.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.nombreCompleto" for="field_nombreCompleto">Nombre Completo</label>
+                    <input type="text" class="form-control" name="nombreCompleto" id="field_nombreCompleto"
+                        [(ngModel)]="datosUsuario.nombreCompleto" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="datosUsuario.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.telefono" for="field_telefono">Telefono</label>
+                    <input type="text" class="form-control" name="telefono" id="field_telefono"
+                        [(ngModel)]="datosUsuario.telefono" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.nombreComercial" for="field_nombreComercial">Nombre Comercial</label>
+                    <input type="text" class="form-control" name="nombreComercial" id="field_nombreComercial"
+                        [(ngModel)]="datosUsuario.nombreComercial" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.direccion" for="field_direccion">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="field_direccion"
+                        [(ngModel)]="datosUsuario.direccion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.codPostal" for="field_codPostal">Cod Postal</label>
+                    <input type="text" class="form-control" name="codPostal" id="field_codPostal"
+                        [(ngModel)]="datosUsuario.codPostal" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.logo" for="field_logo">Logo</label>
+                    <div>
+                        <img [src]="'data:' + datosUsuario.logoContentType + ';base64,' + datosUsuario.logo" style="max-height: 100px;" *ngIf="datosUsuario.logo" alt="datosUsuario image"/>
+                        <div *ngIf="datosUsuario.logo" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{datosUsuario.logoContentType}}, {{byteSize(datosUsuario.logo)}}</span>
+                            <button type="button" (click)="clearInputImage('logo', 'logoContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_logo" (change)="setFileData($event, datosUsuario, 'logo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="logo" id="field_logo"
+                        [(ngModel)]="datosUsuario.logo" />
+                    <input type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"
+                        [(ngModel)]="datosUsuario.logoContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.cif" for="field_cif">Cif</label>
+                    <input type="text" class="form-control" name="cif" id="field_cif"
+                        [(ngModel)]="datosUsuario.cif" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.nombreFiscal" for="field_nombreFiscal">Nombre Fiscal</label>
+                    <input type="text" class="form-control" name="nombreFiscal" id="field_nombreFiscal"
+                        [(ngModel)]="datosUsuario.nombreFiscal" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.provincias" for="field_provincias">Provincias</label>
+                    <select class="form-control" id="field_provincias" name="provincias" [(ngModel)]="datosUsuario.provincias" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="provinciasOption.id === datosUsuario.provincias?.id ? datosUsuario.provincias : provinciasOption" *ngFor="let provinciasOption of provincias; trackBy: trackProvinciasById">{{provinciasOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.municipios" for="field_municipios">Municipios</label>
+                    <select class="form-control" id="field_municipios" name="municipios" [(ngModel)]="datosUsuario.municipios" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="municipiosOption.id === datosUsuario.municipios?.id ? datosUsuario.municipios : municipiosOption" *ngFor="let municipiosOption of municipios; trackBy: trackMunicipiosById">{{municipiosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="datosUsuario.user" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === datosUsuario.user?.id ? datosUsuario.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

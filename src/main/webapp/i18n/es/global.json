@@ -32,6 +32,9 @@
                 "interiores": "Interiores",
                 "presupuestoPedido": "Presupuesto Pedido",
                 "productosPresupuestoPedidos": "Productos Presupuesto Pedidos",
+                "provincias": "Provincias",
+                "municipios": "Municipios",
+                "datosUsuario": "Datos Usuario",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

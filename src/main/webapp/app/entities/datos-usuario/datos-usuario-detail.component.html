@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="datosUsuario">
+            <h2><span jhiTranslate="torgaPedidosApp.datosUsuario.detail.title">Datos Usuario</span> {{datosUsuario.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.nombreCompleto">Nombre Completo</span></dt>
+                <dd>
+                    <span>{{datosUsuario.nombreCompleto}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.email">Email</span></dt>
+                <dd>
+                    <span>{{datosUsuario.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{datosUsuario.telefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.nombreComercial">Nombre Comercial</span></dt>
+                <dd>
+                    <span>{{datosUsuario.nombreComercial}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{datosUsuario.direccion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.codPostal">Cod Postal</span></dt>
+                <dd>
+                    <span>{{datosUsuario.codPostal}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.logo">Logo</span></dt>
+                <dd>
+                    <div *ngIf="datosUsuario.logo">
+                        <a (click)="openFile(datosUsuario.logoContentType, datosUsuario.logo)">
+                            <img [src]="'data:' + datosUsuario.logoContentType + ';base64,' + datosUsuario.logo" style="max-width: 100%;" alt="datosUsuario image"/>
+                        </a>
+                        {{datosUsuario.logoContentType}}, {{byteSize(datosUsuario.logo)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.cif">Cif</span></dt>
+                <dd>
+                    <span>{{datosUsuario.cif}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.nombreFiscal">Nombre Fiscal</span></dt>
+                <dd>
+                    <span>{{datosUsuario.nombreFiscal}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.provincias">Provincias</span></dt>
+                <dd>
+                    <div *ngIf="datosUsuario.provincias">
+                        <a [routerLink]="['/provincias', datosUsuario.provincias?.id, 'view']">{{datosUsuario.provincias?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.municipios">Municipios</span></dt>
+                <dd>
+                    <div *ngIf="datosUsuario.municipios">
+                        <a [routerLink]="['/municipios', datosUsuario.municipios?.id, 'view']">{{datosUsuario.municipios?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosUsuario.user">User</span></dt>
+                <dd>
+                    {{datosUsuario.user?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/datos-usuario', datosUsuario.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="municipios">
+            <h2><span jhiTranslate="torgaPedidosApp.municipios.detail.title">Municipios</span> {{municipios.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.municipios.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{municipios.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.municipios.provincias">Provincias</span></dt>
+                <dd>
+                    <div *ngIf="municipios.provincias">
+                        <a [routerLink]="['/provincias', municipios.provincias?.id, 'view']">{{municipios.provincias?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/municipios', municipios.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

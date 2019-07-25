@@ -3,3 +3,4 @@ export * from './vista-admin.component';
 export * from './vista-admin.route';
 export * from './vista-admin.module';
 export * from './vista-admin-upload.component';
+export * from './inicio.component';

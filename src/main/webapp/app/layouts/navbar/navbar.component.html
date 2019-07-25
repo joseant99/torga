@@ -103,7 +103,7 @@
 		                    
 		                        <li>
 		                            <a routerLink="productos-dormitorio/chinfonier"  routerLinkActive="active" >
-		                                <span >Incidencias</span>
+		                                <span >{{contador}}</span>
 		                            </a>
 		                        </li>
 		                        <li>
@@ -136,14 +136,23 @@
 		                        </li>
 		                        
 		                        <li>
-		                            <a routerLink="pedidos-usuario"  routerLinkActive="active" >
-		                                <span >Usuarios</span>
+		                            <a routerLink="datos-usuario"  routerLinkActive="active" >
+		                                <span >datos</span>
 		                            </a>
 		                        </li>
 	                        </ul>
 	                        
 					  </div>
       	 </ul>
+      	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li *jhiHasAnyAuthority="['ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a  id="comercial" data-toggle="collapse" data-target="#menuComercial">
+                        <span>
+                           <p style="text-align:center"> <span id="contadorDatos" style="color:black;font-size:20px;">{{contador}}</span></p>
+                        </span>
+					</a>
+			</li>
+		</ul>
        
     </div>
      

@@ -8,6 +8,7 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { VERSION } from 'app/app.constants';
 import { JhiLanguageHelper, Account, AccountService, LoginModalService, LoginService } from 'app/core';
 import { ProfileService } from '../profiles/profile.service';
+import { DatosUsuarioService } from '../../entities/datos-usuario/datos-usuario.service';
 
 @Component({
     selector: 'jhi-navbar',
@@ -24,12 +25,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     account: Account;
     link: string;
     settingsAccount: any;
+    contador: any;
 
     constructor(
         private loginService: LoginService,
         private languageService: JhiLanguageService,
         private languageHelper: JhiLanguageHelper,
         private sessionStorage: SessionStorageService,
+        protected datosUsuarioService: DatosUsuarioService,
         private accountService: AccountService,
         private loginModalService: LoginModalService,
         private profileService: ProfileService,
@@ -56,6 +59,29 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             this.account = account;
         });
         this.registerAuthenticationSuccess();
+        var cont = 0;
+        this.datosUsuarioService
+            .query({
+                size: 10000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data['body'].length; i++) {
+                    if (
+                        data['body'][i]['direccion'] == null ||
+                        (data['body'][i]['direccion'] == '' && data['body'][i]['codPostal'] == null) ||
+                        (data['body'][i]['codPostal'] == '' && data['body'][i]['cif'] == null) ||
+                        (data['body'][i]['cif'] == '' && data['body'][i]['nombreFiscal'] == null) ||
+                        data['body'][i]['nombreFiscal'] == ''
+                    ) {
+                        cont++;
+                        this.contador = cont;
+                        if (this.contador > 0) {
+                            $('#contadorDatos').css({ color: 'red' });
+                            $('#contadorDatos').css({ 'font-size': '36px' });
+                        }
+                    }
+                }
+            });
     }
     registerAuthenticationSuccess() {
         this.eventManager.subscribe('authenticationSuccess', message => {

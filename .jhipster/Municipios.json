@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "provincias",
+            "otherEntityName": "provincias",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190725095218",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "municipios",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

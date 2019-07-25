@@ -1,0 +1,99 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.datosUsuario.home.title">Datos Usuarios</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-datos-usuario" [routerLink]="['/datos-usuario/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.datosUsuario.home.createLabel">
+            Create new Datos Usuario
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="datosUsuarios">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nombreCompleto"><span jhiTranslate="torgaPedidosApp.datosUsuario.nombreCompleto">Nombre Completo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="email"><span jhiTranslate="torgaPedidosApp.datosUsuario.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="telefono"><span jhiTranslate="torgaPedidosApp.datosUsuario.telefono">Telefono</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nombreComercial"><span jhiTranslate="torgaPedidosApp.datosUsuario.nombreComercial">Nombre Comercial</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="direccion"><span jhiTranslate="torgaPedidosApp.datosUsuario.direccion">Direccion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codPostal"><span jhiTranslate="torgaPedidosApp.datosUsuario.codPostal">Cod Postal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="logo"><span jhiTranslate="torgaPedidosApp.datosUsuario.logo">Logo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cif"><span jhiTranslate="torgaPedidosApp.datosUsuario.cif">Cif</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nombreFiscal"><span jhiTranslate="torgaPedidosApp.datosUsuario.nombreFiscal">Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="provincias.id"><span jhiTranslate="torgaPedidosApp.datosUsuario.provincias">Provincias</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="municipios.id"><span jhiTranslate="torgaPedidosApp.datosUsuario.municipios">Municipios</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.datosUsuario.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let datosUsuario of datosUsuarios ;trackBy: trackId">
+                <td><a [routerLink]="['/datos-usuario', datosUsuario.id, 'view' ]">{{datosUsuario.id}}</a></td>
+                <td>{{datosUsuario.nombreCompleto}}</td>
+                <td>{{datosUsuario.email}}</td>
+                <td>{{datosUsuario.telefono}}</td>
+                <td>{{datosUsuario.nombreComercial}}</td>
+                <td>{{datosUsuario.direccion}}</td>
+                <td>{{datosUsuario.codPostal}}</td>
+                <td>
+                    <a *ngIf="datosUsuario.logo" (click)="openFile(datosUsuario.logoContentType, datosUsuario.logo)">
+                        <img [src]="'data:' + datosUsuario.logoContentType + ';base64,' + datosUsuario.logo" style="max-height: 30px;" alt="datosUsuario image"/>
+                    </a>
+                    <span *ngIf="datosUsuario.logo">{{datosUsuario.logoContentType}}, {{byteSize(datosUsuario.logo)}}</span>
+                </td>
+                <td>{{datosUsuario.cif}}</td>
+                <td>{{datosUsuario.nombreFiscal}}</td>
+                <td>
+                    <div *ngIf="datosUsuario.provincias">
+                        <a [routerLink]="['../provincias', datosUsuario.provincias?.id, 'view' ]" >{{datosUsuario.provincias?.nombre}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="datosUsuario.municipios">
+                        <a [routerLink]="['../municipios', datosUsuario.municipios?.id, 'view' ]" >{{datosUsuario.municipios?.nombre}}</a>
+                    </div>
+                </td>
+                <td>
+                    {{datosUsuario.user?.login}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/datos-usuario', datosUsuario.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/datos-usuario', datosUsuario.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'datos-usuario/'+ datosUsuario.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="datosUsuarios && datosUsuarios.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

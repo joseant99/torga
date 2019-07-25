@@ -3,6 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
 import { VistaAdminComponent } from './vista-admin.component';
+import { inicioComponent } from './inicio.component';
 import { VistaAdminService } from './vista-admin.service';
 import { UploadPopupComponent } from './vista-admin-upload.component';
 
@@ -17,6 +18,15 @@ export const vistadminRoute: Routes = [
         component: VistaAdminComponent,
         data: {
             authorities: ['ROLE_ADMIN'],
+            pageTitle: 'torgaPedidosApp.admin.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'inicio',
+        component: inicioComponent,
+        data: {
+            authorities: [],
             pageTitle: 'torgaPedidosApp.admin.home.title'
         },
         canActivate: [UserRouteAccessService]

@@ -1,0 +1,72 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "provincias",
+            "otherEntityName": "provincias",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "municipios",
+            "otherEntityName": "municipios",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "datosUsuario"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombreCompleto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombreComercial",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codPostal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "cif",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombreFiscal",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190725111554",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "datos_usuario",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

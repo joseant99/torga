@@ -1,0 +1,21 @@
+{
+    "torgaPedidosApp": {
+        "provincias": {
+            "home": {
+                "title": "Provincias",
+                "createLabel": "Crear nuevo Provincias",
+                "createOrEditLabel": "Crear o editar Provincias"
+            },
+            "created": "Un nuevo Provincias ha sido creado con el identificador {{ param }}",
+            "updated": "Un Provincias ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Provincias ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Provincias {{ id }}?"
+            },
+            "detail": {
+                "title": "Provincias"
+            },
+            "nombre": "Nombre"
+        }
+    }
+}

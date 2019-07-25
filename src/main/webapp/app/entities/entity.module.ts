@@ -26,6 +26,7 @@ import { TorgaPedidosProductosComposicionModule } from './productos-composicion/
 import { TorgaPedidosAcabadosComposicionModule } from './acabados-composicion/acabados-composicion.module';
 import { TorgaPedidosInterioresModule } from './interiores/interiores.module';
 import { TorgaPedidosPresupuestoPedidoModule } from './presupuesto-pedido/presupuesto-pedido.module';
+import { TorgaPedidosDatosUsuarioModule } from './datos-usuario/datos-usuario.module';
 
 @NgModule({
     // prettier-ignore
@@ -55,6 +56,7 @@ import { TorgaPedidosPresupuestoPedidoModule } from './presupuesto-pedido/presup
         TorgaPedidosTiposApoyoModule,
         TorgaPedidosTipoProductoModule,
         TorgaPedidosDimensionesProductoTipoModule,
+        TorgaPedidosDatosUsuarioModule
     ],
     declarations: [],
     entryComponents: [],

@@ -40,8 +40,9 @@
     </div>
 </div> -->
 
-<div class="container">
-    <div class="row" style="background-color:#CDCFCE;float:right;width:45%;height:845px;position:sticky">
+<div>
+	<div class="row" style="float:left;width:55%;"><img src="../../content/images/TG_SA18_Sc30-CL02 copia.jpg" style="width:100%"></div>
+    <div class="row" style="background-color:#CDCFCE;float:right;width:35%;height:845px;">
         <div style="width:100%"> 
             <!-- <div class="modal-body"> -->
             <div >
@@ -89,22 +90,30 @@
                         </div>
                         <div class="form-group">
                             <label >Telefono de Contacto</label>
-                            <input type="text" class="form-control"  id="telefono">
+                            <input type="number" class="form-control"  id="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label >Correo Electronico</label>
+                            <input type="email" class="form-control"  id="email">
                         </div>
                         <div class="form-group">
                             <label >Nombre Comercial de la Tienda</label>
-                            <input type="text" class="form-control"  id="nombre">
+                           	<input type="text" class="form-control"  id="comercial">
                         </div>
                         <div class="form-group">
                             <label >Provincia donde se encuentra la tienda</label>
-                            <input type="text" class="form-control"  id="nombre">
+                             <select id="provincia" class="form-control" (change)="cargarMunicipios()">
+                            	<option></option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label >Municipio</label>
-                            <input type="text" class="form-control"  id="nombre">
+                            <select id="municipios" class="form-control">
+                            	<option></option>
+                            </select>
                         </div>
                         <br>
-                        <p style="text-align:center"><button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalAcceso"  style="background-color: white;color:black">Solicitar Claves</button></p>
+                        <p style="text-align:center"><button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalAcceso" (click)="solicitarClaves()"  style="background-color: white;color:black">Solicitar Claves</button></p>
                     
                     
                     </div>
@@ -147,10 +156,8 @@
 	      <div class="modal-content">
 	        <div class="modal-body">
 	         <p style="font-size: 20px;text-align: center;">Las claves de acceso se han solicitado correctamente</p>
-	         <p style="font-size: 16px;text-align: center;">Te llamaremos en breve para verificar que los datos son correctos y proporcionarte el usuario y contraseña</p>
-	        	          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-	        </div>
-	        <div class="modal-footer">
+	         <p style="font-size: 16px;text-align: center;">Te llamaremos en breve para verificar que los datos son correctos y proporcionarte el usuario y contrase&ntilde;a</p>
+	         <p style="text-align:center;"> <button type="button" class="btn btn-default" data-dismiss="modal" style="border:1px solid black">Aceptar</button></p>
 	        </div>
 	      </div>
 	      

@@ -37,4 +37,10 @@
     <include file="config/liquibase/changelog/20190716094251b_added_entity_constraints_PresupuestoPedido.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190716151217_added_entity_ProductosPresupuestoPedidos.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190716151217_added_entity_constraints_ProductosPresupuestoPedidos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190725090250_added_entity_Provincias.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190725095218_added_entity_Municipios.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190725095218_added_entity_constraints_Municipios.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190725111554_added_entity_DatosUsuario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190725111554_added_entity_constraints_DatosUsuario.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>
+

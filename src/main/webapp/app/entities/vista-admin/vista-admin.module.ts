@@ -5,7 +5,7 @@ import { MatPaginatorModule, MatSortModule, MatPaginatorIntl } from '@angular/ma
 import { getSpanishPaginatorIntl } from 'app/entities/vista-cliente/spanish-paginator-intl';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TorgaPedidosSharedModule } from 'app/shared';
-import { VistaAdminComponent, vistadminRoute, adminPopupRoute, UploadPopupComponent, UploadDialogComponent } from './';
+import { VistaAdminComponent, vistadminRoute, adminPopupRoute, UploadPopupComponent, UploadDialogComponent, inicioComponent } from './';
 
 const ENTITY_STATES = [...vistadminRoute, ...adminPopupRoute];
 
@@ -18,10 +18,10 @@ const ENTITY_STATES = [...vistadminRoute, ...adminPopupRoute];
         BrowserAnimationsModule,
         RouterModule.forChild(ENTITY_STATES)
     ],
-    declarations: [VistaAdminComponent, UploadPopupComponent, UploadDialogComponent],
+    declarations: [VistaAdminComponent, UploadPopupComponent, UploadDialogComponent, inicioComponent],
     exports: [MatSortModule],
     providers: [{ provide: MatPaginatorIntl, useValue: getSpanishPaginatorIntl() }],
-    entryComponents: [VistaAdminComponent, UploadPopupComponent, UploadDialogComponent],
+    entryComponents: [VistaAdminComponent, UploadPopupComponent, UploadDialogComponent, inicioComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TorgaPedidosVistaAdminModule {}
