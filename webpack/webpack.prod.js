@@ -119,5 +119,10 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
           skipWaiting: true,
         })
     ],
-    mode: 'production'
+    mode: 'production',
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    }
 });
