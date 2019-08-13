@@ -39,6 +39,6 @@ export class MunicipiosService {
 
     query1(req?: any): Observable<EntityArrayResponseType> {
         const options = createRequestOption(req);
-        return this.http.get<IMunicipios[]>(this.resourceUrl1);
+        return this.http.get<IMunicipios[]>(this.resourceUrl1, { params: options, observe: 'response' });
     }
 }

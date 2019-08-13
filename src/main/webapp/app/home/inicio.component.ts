@@ -3,6 +3,7 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { JhiEventManager } from 'ng-jhipster';
 import * as $ from 'jquery';
+import { Observable } from 'rxjs';
 
 import { LoginModalService, AccountService, Account } from 'app/core';
 
@@ -27,7 +28,6 @@ export class inicioComponent implements OnInit {
     provincias: any;
     municipios: any;
     authenticationError: boolean;
-    municipios: IMunicipios[];
     password: string;
     rememberMe: boolean;
     username: string;
@@ -54,7 +54,7 @@ export class inicioComponent implements OnInit {
         this.registerAuthenticationSuccess();
 
         this.municipiosService.query1({}).subscribe(data => {
-            for (let i = 0; i < data.length; i++) {
+            for (let i = 0; i < data['body'].length; i++) {
                 municipios[i] = data[i];
             }
         });
@@ -121,7 +121,7 @@ export class inicioComponent implements OnInit {
         $('#municipios').empty();
         $('#municipios').append('<option></option>');
         this.municipiosService.query1({}).subscribe(data => {
-            for (let i = 0; i < data.length; i++) {
+            for (let i = 0; i < data['body'].length; i++) {
                 if (data[i]['provincias']['id'] == idProv) {
                     $('#municipios').append('<option value="' + data[i]['id'] + '">' + data[i]['nombre'] + '</option>');
                 }
@@ -150,6 +150,14 @@ export class inicioComponent implements OnInit {
         var telefono = $('#telefono').val();
         var comercial = $('#comercial').val();
         var email = $('#email').val();
+        var nombre = $('#nombre').val();
+        var nombreBueno = nombre.toString();
+        var telefono = $('#telefono').val();
+        var telefonoInt = telefono.toString();
+        var comercial = $('#comercial').val();
+        var comercialBueno = comercial.toString();
+        var email = $('#email').val();
+        var emailBueno = email.toString();
         if (idMun != '') {
             for (let i = 0; i < this.municipios.length; i++) {
                 if (this.municipios[i]['id'] == idMun) {
@@ -166,11 +174,18 @@ export class inicioComponent implements OnInit {
         }
 
         if (idProv != '' && idMun != '' && nombre != '' && telefono != '' && comercial != '' && email != '') {
-            const datos = {
-                nombreCompleto: nombre,
-                email: email,
-                telefono: telefono,
-                nombreComercial: comercial,
+            const datos: {
+                nombreCompleto: string;
+                email: string;
+                telefono: string;
+                nombreComercial: string;
+                provincias: object;
+                municipios: object;
+            } = {
+                nombreCompleto: nombreBueno,
+                email: emailBueno,
+                telefono: telefonoInt,
+                nombreComercial: comercialBueno,
                 provincias: provincia,
                 municipios: municipio
             };

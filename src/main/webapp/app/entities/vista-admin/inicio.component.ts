@@ -3,6 +3,8 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { JhiEventManager } from 'ng-jhipster';
 import * as $ from 'jquery';
+import { Observable } from 'rxjs';
+import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
 
 import { LoginModalService, AccountService, Account } from 'app/core';
 
