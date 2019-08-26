@@ -83,8 +83,12 @@
 		</div>   
 		<div style="float:left;margin-left:10%;margin-bottom:50px" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
 		</div>   
-		<div style="float:left;margin-left:10%;margin-bottom:50px" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
-		</div>   
+		<div style="float:left;margin-left:9%;margin-bottom:50px" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
+		</div>
+		<div style="float:left;margin-left:9%;margin-bottom:50px" class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
+		</div> 
+		<div style="float:left;margin-left:9%;margin-bottom:50px" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
+		</div>      
 	</div>  
 	
 	<div id="acabados"style="width:100%;float:left">
@@ -134,31 +138,212 @@
 	
 	</div>
 	
-	
+	<div class="modal fade" id="modalPresupuesto" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Vas a generar un presupuesto</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p style="text-align:center">&#191;Est&#225;s Seguro?</p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="generarPresupuesto()">Si</button></p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">No</button></p>
+	        </div>
+	        	<p id="verPresupuesto" style="display:none"> <a data-dismiss="modal" routerLink="../presupuesto-usuario"  routerLinkActive="active"><span>Abrir Presupuesto</span></a></p>
+	      </div>
+	      
+	    </div>
+	  </div>
 </div>
-<div style="width:20%;background-color:#DFDDDC;margin-left:57%;height:600px;position:fixed">
-<p style="margin-left:80px;font-size: 20px;">Calculadora</p>
-	<div style="background-color:white;width:86%;height: 75%;margin-left:25px;">
-			<div id="calculadora" style="float:left;width:100%;height:100%">
-			<div style="width:100%;height:7%;background-color:gray;color:white;top:0;">				
-				<strong><p id="nombreMesita"></p></strong>
-			</div>
-					<div id="datos" style="float:left;margin-left:5px">
-							
-					</div>
-					<div style="float:left;margin-left:50px;"id="precios">
-					
-					</div>
-					<div style="float:left;margin-left:20px;"id="precioCalculado">
+<div style="width:25%;background-color:#DFDDDC;margin-left:57%;height:800px;position:fixed;top: 50px;">
+
+ <ul class="nav nav-tabs" style="margin-left: 75px;margin-bottom: 20px;">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#calculadora">Calculadora</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#carrito">Carrito</a>
+    </li>
+
+  </ul>	
+  <div style="background-color:white;width:86%;height: 75%;margin-left:25px;">
+  
+ 	 <div class="tab-content">
+
+	
+			<div id="calculadora" class="container tab-pane fade" style="height:600px;overflow:scroll;">
+				<div style="width:100%;height:7%;background-color:gray;color:white;top:0;">				
+					<strong><p id="nombreMesita"></p></strong>
+				</div>
+			
+					<div id="productoCalculadora1" style="float:left">
+						<div id="datos1" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios1">
 						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado1">
+							
+						</div>
 					</div>
-					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 405px;">				
+					<div id="productoCalculadora2" style="float:left">
+						<div id="datos2" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios2">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado2">
+							
+						</div>
+					</div>
+					<div id="productoCalculadora3" style="float:left">
+						<div id="datos3" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios3">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado3">
+							
+						</div>
+					</div>
+					
+					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 520px;">				
 						<p >Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
+				<button style="width: 86%;height: 7%; bottom: 35px;position: absolute;font-size:16px;background-color:#FBCD13" (click)="enviarCarrito()">Mandar articulo/s al carro de la compra</button>
+					
 			</div>
-		<button style="width:100%;height:10%;margin-top:30px;font-size:16px;background-color:#FBCD13">Mandar articulo/s al carro de la compra</button>
+			
+			<div id="carrito" class="container tab-pane fade" style="height:600px;overflow:scroll;">
+					<div id="productoCarrito1" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(1)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos1" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios1">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado1">
+							
+						</div>
+					</div>
+					<div id="productoCarrito2" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(2)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos2" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios2">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado2">
+							
+						</div>
+					</div>
+					<div id="productoCarrito3" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(3)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos3" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios3">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado3">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito4" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(4)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos4" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios4">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado4">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito5" style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(5)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos5" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios5">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado5">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito6" style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(6)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos6" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios6">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado6">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito7" style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(7)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos7" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios7">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado7">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito8"  style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(8)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos8" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios8">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado8">
+							
+						</div>
+					</div>	<div id="productoCarrito9" style="display:none">
+					<div style="float:left"  (click)="borrarCarritoProd(9)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos9" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios9">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado9">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito10"  style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(10)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos10" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios10">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado10">
+							
+						</div>
+					</div>	
+				<button style="width: 86%;height: 7%; bottom: 35px;left:35px;position: absolute;font-size:16px;background-color:#75D775" data-toggle="modal" data-target="#modalPresupuesto" >Finalizar y Generar<br> Presupuesto</button>
+			</div>
 	
 	</div>
+</div>
 </div>
 
 

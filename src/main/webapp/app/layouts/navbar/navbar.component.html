@@ -24,66 +24,101 @@
 	        </li>
 	    </ul>
 			  
-	    
+	     <a style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']">
+                        <span>
+                            <span style="color:black;font-size:20px;">NOTICIAS</span>
+                        </span>
+		</a>
 	    <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
 	        <fa-icon icon="bars"></fa-icon>
 	    </a>
-	     <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_USER']" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a  id="admin-menu" data-toggle="collapse" data-target="#demo">
+	   
+      	 
+      	 
+      	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a  id="tarifa" data-toggle="collapse" data-target="#menuTarifa">
                         <span>
-                            <span style="color:black;font-size:20px;">Nativ Dormitorios</span>
+                            <span style="color:black;font-size:20px;margin-top: -20px;">TARIFA</span>
                         </span>
 					</a>
-					<div id="demo" class="collapse">
-						   <ul aria-labelledby="admin-menu">
-						     	<li>
-		                            <a routerLink="productos-dormitorio/cabeceros"  routerLinkActive="active" >
-		                                <span >Cabeceros</span>
-		                            </a>
-		                        </li>
-		                        
-		                        <li>
-		                            <a routerLink="productos-dormitorio/categoria/1"  routerLinkActive="active" >
-		                                <span >Mesitas</span>
-		                            </a>
-		                        </li>
-		                        
-		                    
-		                        <li>
-		                            <a routerLink="productos-dormitorio/chinfonier"  routerLinkActive="active" >
-		                                <span >Chifonieres</span>
-		                            </a>
-		                        </li>
-		                        <li>
-		                            <a routerLink="productos-dormitorio/apoyo"  routerLinkActive="active" >
-		                                <span >Sistemas de apoyo</span>
-		                            </a>
-		                        </li>
-		                         <li>
-		                            <a routerLink="productos-dormitorio/canape"  routerLinkActive="active" >
-		                                <span >Ba&ntilde;eras y canapes</span>
-		                            </a>
-		                        </li>
-		                        <li>
-		                            <a routerLink="composicion-ver"  routerLinkActive="active" >
-		                                <span >Composiciones</span>
-		                            </a>
+					<div id="menuTarifa" class="collapse">
+						   <ul aria-labelledby="#menuTarifa">
+						     	<li style="list-style: none;">
+		                                <a  id="torgaTarifa" data-toggle="collapse" data-target="#menuTarifaTorga">
+					                        <span>
+					                            <span style="color:#7AB5CA;font-size:20px;">TORGA</span>
+					                        </span>
+										</a>
+										<div id="menuTarifaTorga" class="collapse">
+												<li style="list-style: none;">
+						                            <a  id="torgaTarifaComedores" data-toggle="collapse" data-target="#torgaTarifaComedores">
+								                        <span>
+								                            <span style="color:#7AB5CA;font-size:15px;">NATIV COMEDORES</span>
+								                        </span>
+													</a>
+													<div id="torgaTarifaComedores" class="collapse">
+                    
+												 	</div>
+						                    	</li>
+						                        
+						                    
+						                            <a  id="torgaTarifaDormitorios" data-toggle="collapse" data-target="#torgaTarifaDormitorios">
+								                        <span>
+								                            <span style="color:#7AB5CA;font-size:15px;">NATIV DORMITORIOS</span>
+								                        </span>
+													</a>
+														<div id="torgaTarifaDormitorios" class="collapse">
+														     	<li>
+										                            <a routerLink="productos-dormitorio/cabeceros"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Cabeceros</span>
+										                            </a>
+											                        </li>
+											                        
+											                        <li>
+											                            <a routerLink="productos-dormitorio/categoria/1"  routerLinkActive="active" >
+											                                <span style="color:#7AB5CA;">Mesitas</span>
+											                            </a>
+											                        </li>
+											                        
+											                    
+											                        <li>
+											                            <a routerLink="productos-dormitorio/chinfonier"  routerLinkActive="active" >
+											                                <span style="color:#7AB5CA;">Chifonieres</span>
+											                            </a>
+											                        </li>
+											                        <li>
+											                            <a routerLink="productos-dormitorio/apoyo"  routerLinkActive="active" >
+											                                <span style="color:#7AB5CA;">Sistemas de apoyo</span>
+											                            </a>
+											                        </li>
+											                         <li>
+											                            <a routerLink="productos-dormitorio/canape"  routerLinkActive="active" >
+											                                <span style="color:#7AB5CA;">Ba&ntilde;eras y canapes</span>
+											                            </a>
+											                        </li>
+											                        <li>
+											                            <a routerLink="composicion-ver"  routerLinkActive="active" >
+											                                <span style="color:#7AB5CA;">Composiciones</span>
+											                            </a>
+											                        </li>
+									         
+									                        
+													  </div>
+														                      
+					                        
+									  </div>
 		                        </li>
 	                        </ul>
 	                        
 					  </div>
-       </ul>
-       
-           <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
-	        <fa-icon icon="bars"></fa-icon>
-	    	</a>
-	    	
-	     <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      	 </ul>
+      	 
+      	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a  id="comercial" data-toggle="collapse" data-target="#menuComercial">
                         <span>
-                            <span style="color:black;font-size:20px;">Comercial</span>
+                            <span style="color:black;font-size:20px;margin-top: -20px;">Comercial</span>
                         </span>
 					</a>
 					<div id="menuComercial" class="collapse">
@@ -120,11 +155,18 @@
 	                        
 					  </div>
       	 </ul>
+      	 
+ 		<a style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']">
+                        <span>
+                            <span style="color:black;font-size:20px;margin-top: -20px;">CONTACTO FABRICA</span>
+                        </span>
+		</a>
+      	 
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a  id="comercial" data-toggle="collapse" data-target="#menuTienda">
                         <span>
-                            <span style="color:black;font-size:20px;">Gestion Tienda</span>
+                            <span style="color:black;font-size:20px;margin-top: -20px;">Gestion Tienda</span>
                         </span>
 					</a>
 					<div id="menuTienda" class="collapse">
@@ -145,7 +187,7 @@
 					  </div>
       	 </ul>
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li *jhiHasAnyAuthority="['ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a  id="comercial" data-toggle="collapse" data-target="#menuComercial">
                         <span>
                            <p style="text-align:center"> <span id="contadorDatos" style="color:black;font-size:20px;">{{contador}}</span></p>

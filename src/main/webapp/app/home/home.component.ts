@@ -122,8 +122,8 @@ export class HomeComponent implements OnInit {
         $('#municipios').append('<option></option>');
         this.municipiosService.query1({}).subscribe(data => {
             for (let i = 0; i < data['body'].length; i++) {
-                if (data[i]['provincias']['id'] == idProv) {
-                    $('#municipios').append('<option value="' + data[i]['id'] + '">' + data[i]['nombre'] + '</option>');
+                if (data['body'][i]['provincias']['id'] == idProv) {
+                    $('#municipios').append('<option value="' + data['body'][i]['id'] + '">' + data['body'][i]['nombre'] + '</option>');
                 }
             }
         });

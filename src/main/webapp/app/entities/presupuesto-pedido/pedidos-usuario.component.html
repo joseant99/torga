@@ -20,7 +20,7 @@
             </thead>
             <tbody>
             <tr *ngFor="let presupuestoPedido of presupuestoPedidos ;">
-                <td *ngIf="presupuestoPedido != undefined"><a [routerLink]="['/presupuesto-pedido', presupuestoPedido.id, 'view' ]">{{presupuestoPedido.id}}</a></td>
+                <td *ngIf="presupuestoPedido != undefined"><a>{{presupuestoPedido.id}}</a></td>
                 <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</td>
                 <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.pedido}}</td>
                 <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_presupuesto}}</td>

@@ -101,7 +101,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                 $('#productoCarrito' + i).css({ float: 'left' });
                 $('#productoCarrito' + i).attr('class', 'prod' + i);
                 $('#productoCarrito' + i + ' #datos' + i).append(
-                    '<strong id="nombreProd' + i + '"><font>' + sesion[0]['nombre'] + '</font></strong>'
+                    '<strong id="nombreProd' + i + '"><font>' + sesion[1]['productosDormitorio']['nombre'] + '</font></strong>'
                 );
                 $('#productoCarrito' + i + ' #datos' + i).append('<br>');
                 $('#productoCarrito' + i + ' #precios' + i).append('<font>-</font>');
@@ -772,6 +772,53 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                     contadorDimen++;
                 }
             });
+        }
+
+        for (let i = 1; i <= 100; i++) {
+            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+            if (sesion != null) {
+                console.log(sessionStorage);
+                $('#productoCarrito' + i).removeAttr('style');
+                $('#productoCarrito' + i).attr('style');
+                $('#productoCarrito' + i).css({ float: 'left' });
+                $('#productoCarrito' + i).attr('class', 'prod' + i);
+                $('#productoCarrito' + i + ' #datos' + i).append(
+                    '<strong id="nombreProd' + i + '"><font>' + sesion[1]['productosDormitorio']['nombre'] + '</font></strong>'
+                );
+                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
+                $('#productoCarrito' + i + ' #precios' + i).append('<font>-</font>');
+                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
+                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
+                $('#productoCarrito' + i + ' #datos' + i).append('<font>Ancho</font>');
+                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
+                $('#productoCarrito' + i + ' #precios' + i).append('<font id="ancho' + i + '">' + sesion[1]['ancho'] + '</font>');
+                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
+                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
+                $('#productoCarrito' + i + ' #datos' + i).append('<font>Alto</font>');
+                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
+                $('#productoCarrito' + i + ' #precios' + i).append('<font id="alto' + i + '">' + sesion[1]['alto'] + '</font>');
+                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
+                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
+                $('#productoCarrito' + i + ' #datos' + i).append('<font>Fondo</font>');
+                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
+                $('#productoCarrito' + i + ' #precios' + i).append('<font id="fondo' + i + '">' + sesion[1]['fondo'] + '</font>');
+                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
+                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
+                for (let j = 1; j <= sesion.length - 2; j++) {
+                    $('#productoCarrito' + i + ' #datos' + i).append('<font>Acabado ' + j + '</font>');
+                    $('#productoCarrito' + i + ' #datos' + i).append('<br>');
+                    $('#productoCarrito' + i + ' #precios' + i).append(
+                        '<font id="acabado' + i + '' + j + '">' + sesion[1 + j]['nombre'] + '</font>'
+                    );
+                    $('#productoCarrito' + i + ' #precios' + i).append('<br>');
+                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
+                }
+            }
         }
     }
 

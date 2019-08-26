@@ -20,11 +20,11 @@
             </thead>
             <tbody>
             <tr *ngFor="let presupuestoPedido of presupuestoPedidos;">
-                <td *jhiHasAnyAuthority="'ROLE_ADMIN'"><a [routerLink]="['/presupuesto-pedido', presupuestoPedido.id, 'view' ]"  >{{presupuestoPedido.id}}</a></td>
+                <td *ngIf="presupuestoPedido != undefined" ><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.id}}</i></td>
                 <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</td>
-                <td *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.pedido}}</td>
+                <td *ngIf="presupuestoPedido != undefined"><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.pedido}}</i></td>
                 <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_presupuesto}}</td>
-                <td *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.fecha_pedido}}</td>
+                <td *ngIf="presupuestoPedido != undefined"><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.fecha_pedido}}</i></td>
                 <td *ngIf="presupuestoPedido != undefined">
                     {{presupuestoPedido.user?.login}}
                 </td>

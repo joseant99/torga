@@ -72,6 +72,30 @@ Generic styles
     border: none;
 }
 
+#imagenInicio {
+    float: left;
+    width: 55%;
+}
+#cuadroInicio {
+    background-color: #cdcfce;
+    float: right;
+    width: 35%;
+    height: 845px;
+}
+
+@media screen and (max-width: 680px) {
+    #cuadroInicio {
+        background-color: #cdcfce;
+        float: left;
+        width: 100%;
+        height: 110%;
+    }
+    #imagenInicio {
+        float: left;
+        width: 100%;
+    }
+}
+
 .error {
     color: white;
     background-color: red;
