@@ -35,6 +35,7 @@
                 "provincias": "Provincias",
                 "municipios": "Municipios",
                 "datosUsuario": "Datos Usuario",
+                "acabadosProductosPresupuestoPedido": "Acabados Productos Presupuesto Pedido",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

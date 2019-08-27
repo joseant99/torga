@@ -3,17 +3,17 @@
 <div style="float:left;witdh:100%;top:10px;margin-left:30px;position:fixed">
 	    <ul class="navbar-nav ml-auto">
 	        <li  *jhiHasAnyAuthority="'ROLE_CLIENTE'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-	            <a class="navbar-brand logo" routerLink="clientetorga" (click)="collapseNavbar()">
+	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
 	                <span class="logo-img"></span>
 	            </a>       
 	        </li>
 	        <li *jhiHasAnyAuthority="'ROLE_REPRESENTATE'" class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-	            <a class="navbar-brand logo" routerLink="representantetorga" (click)="collapseNavbar()">
+	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
 	                <span class="logo-img"></span>
 	            </a>            
 	        </li>
 	        <li *jhiHasAnyAuthority="'ROLE_ADMIN'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-	            <a class="navbar-brand logo" routerLink="admintorga" (click)="collapseNavbar()">
+	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
 	                <span class="logo-img"></span>
 	            </a>     
 	        </li>
@@ -26,7 +26,7 @@
 			  
 	     <a style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']">
                         <span>
-                            <span style="color:black;font-size:20px;">NOTICIAS</span>
+                            <span style="color:black;font-size:18px;">NOTICIAS</span>
                         </span>
 		</a>
 	    <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
@@ -36,10 +36,10 @@
       	 
       	 
       	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a  id="tarifa" data-toggle="collapse" data-target="#menuTarifa">
                         <span>
-                            <span style="color:black;font-size:20px;margin-top: -20px;">TARIFA</span>
+                            <span style="color:black;font-size:18px;margin-top: 18px;">TARIFA</span>
                         </span>
 					</a>
 					<div id="menuTarifa" class="collapse">
@@ -47,28 +47,102 @@
 						     	<li style="list-style: none;">
 		                                <a  id="torgaTarifa" data-toggle="collapse" data-target="#menuTarifaTorga">
 					                        <span>
-					                            <span style="color:#7AB5CA;font-size:20px;">TORGA</span>
+					                            <span style="color:#7AB5CA;font-size:16px;">TORGA</span>
 					                        </span>
 										</a>
 										<div id="menuTarifaTorga" class="collapse">
 												<li style="list-style: none;">
-						                            <a  id="torgaTarifaComedores" data-toggle="collapse" data-target="#torgaTarifaComedores">
+						                            <a  id="torgaTarifaComedoresPrincipal" data-toggle="collapse" data-target="#torgaTarifaComedores">
 								                        <span>
-								                            <span style="color:#7AB5CA;font-size:15px;">NATIV COMEDORES</span>
+								                            <span style="color:#7AB5CA;font-size:14px;">NATIV COMEDORES</span>
 								                        </span>
 													</a>
-													<div id="torgaTarifaComedores" class="collapse">
-                    
+													<div id="torgaTarifaComedores" class="collapse" style="font-size:12px;">
+                  												<li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Módulos Bajos</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Aparadores</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Vitrinas</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Singulares</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Escritorios</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Sistemas de Apoyo</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Estanterias colgantes y estantes</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Colgantes Verticales</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Colgantes Verticales Estantería</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Colgantes Horizontales</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Estanterías</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Suplementos TV</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Paneles</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Mesas</span>
+										                            </a>
+											                    </li>
+											                    <li>
+										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                                <span style="color:#7AB5CA;">Composiciones</span>
+										                            </a>
+											                    </li>
 												 	</div>
 						                    	</li>
 						                        
 						                    
-						                            <a  id="torgaTarifaDormitorios" data-toggle="collapse" data-target="#torgaTarifaDormitorios">
+						                            <a  id="torgaTarifaDormitoriosPrincipal" data-toggle="collapse" data-target="#torgaTarifaDormitorios">
 								                        <span>
-								                            <span style="color:#7AB5CA;font-size:15px;">NATIV DORMITORIOS</span>
+								                            <span style="color:#7AB5CA;font-size:14px;">NATIV DORMITORIOS</span>
 								                        </span>
 													</a>
-														<div id="torgaTarifaDormitorios" class="collapse">
+														<div id="torgaTarifaDormitorios" class="collapse" style="font-size:12px">
 														     	<li>
 										                            <a routerLink="productos-dormitorio/cabeceros"  routerLinkActive="active" >
 										                                <span style="color:#7AB5CA;">Cabeceros</span>
@@ -195,12 +269,14 @@
 					</a>
 			</li>
 		</ul>
-       
+                        <a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
+                            <span>CERRAR SESION</span>
+                        </a>
     </div>
      
     
     
-    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"    [ngSwitch]="isAuthenticated()" style="float:left;position:fixed">
+    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"    [ngSwitch]="isAuthenticated()" style="margin-top:350px;POSITION:FIXED">
       
         <ul class="navbar-nav ml-auto" style=" display: block;">
             

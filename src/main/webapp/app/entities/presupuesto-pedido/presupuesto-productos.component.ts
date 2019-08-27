@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
 import { AccountService } from 'app/core';
 import { IProductosPresupuestoPedidos } from 'app/shared/model/productos-presupuesto-pedidos.model';
+import { AcabadosProductosPresupuestoPedidoService } from '../acabados-productos-presupuesto-pedido/acabados-productos-presupuesto-pedido.service';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { PresupuestoPedidoService } from './presupuesto-pedido.service';
@@ -17,7 +18,7 @@ import { ProductosPresupuestoPedidosService } from '../productos-presupuesto-ped
     selector: 'jhi-presupuesto-productos',
     templateUrl: './presupuesto-productos.component.html'
 })
-export class PresupuestoProductosComponent implements OnInit, OnDestroy {
+export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterViewInit {
     currentAccount: any;
     productosPresupuestoPedidos: any;
     error: any;
@@ -25,6 +26,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy {
     success: any;
     presupuestoPedidos: IPresupuestoPedido[];
     eventSubscriber: Subscription;
+    productos: any;
+    acabados: any;
     routeData: any;
     presupuestos = [];
     links: any;
@@ -41,6 +44,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy {
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
+        protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
@@ -115,6 +119,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy {
         );
     }
 
+    ngAfterViewInit() {}
     protected onSaveSuccess() {
         this.isSaving = false;
         this.previousState();
@@ -127,13 +132,12 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy {
     }
     loadAll() {
         var productosPresupuesto = [];
+        var acabados = [];
         var cont = 0;
         var presu = sessionStorage.getItem('presupuesto');
         this.productosPresupuestoPedidosService
             .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
+                size: 1000000
             })
             .subscribe(
                 (res: HttpResponse<IProductosPresupuestoPedidos[]>) => {
@@ -147,10 +151,58 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy {
                     }
 
                     this.paginateProductosPresupuestoPedidos(productosPresupuesto, res.headers);
+                    this.productos = productosPresupuesto;
+
+                    var productos = this.productos;
+                    var acabados = this.acabados;
+                    var apoyo;
+                    setTimeout(function() {
+                        if (productos != undefined && acabados != []) {
+                            for (let i = 0; i < productos.length; i++) {
+                                var contador = 1;
+                                apoyo = undefined;
+                                for (let k = 0; k < acabados.length; k++) {
+                                    if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
+                                        $('.' + productos[i]['id']).append(
+                                            '<p>Acabado ' + contador + '&nbsp;&nbsp;&nbsp; ' + acabados[k]['acabados']['nombre'] + '</p>'
+                                        );
+                                        if (contador == 1 && acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined) {
+                                            apoyo = acabados[k];
+                                        }
+
+                                        contador++;
+                                    }
+                                }
+                                if (apoyo != undefined) {
+                                    $('.' + productos[i]['id']).append(
+                                        '<p>' +
+                                            apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
+                                            '&nbsp;&nbsp;&nbsp; ' +
+                                            apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
+                                            '&euro;</p>'
+                                    );
+                                    var precioTotal = $('.' + productos[i]['id'] + ' #precioTotal').text();
+                                    var precioFloat = parseFloat(precioTotal);
+                                    precioFloat = precioFloat + apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
+                                    $('.' + productos[i]['id'] + ' #precioTotal').text(precioFloat);
+                                }
+                            }
+                        }
+                    }, 100);
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
         console.log(this.paginateProductosPresupuestoPedidos);
+        this.acabadosProductosPresupuestoPedidoService
+            .query({
+                size: 1000000
+            })
+            .subscribe(data => {
+                $.each(data['body'], function(index, value) {
+                    acabados[index] = value;
+                });
+            });
+        this.acabados = acabados;
     }
 
     loadPage(page: number) {
@@ -185,6 +237,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         var presupuestos = [];
+        var acabados = [];
         this.loadAll();
         this.accountService.identity().then(account => {
             this.currentAccount = account;
@@ -202,7 +255,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy {
                     presupuestos[index] = value;
                 });
             });
-        this.presupuestos = presupuestos;
     }
 
     ngOnDestroy() {

@@ -75,6 +75,7 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.Provincias.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.Municipios.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.DatosUsuario.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.AcabadosProductosPresupuestoPedido.class.getName() , jcacheConfiguration);
 
 
 

@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "acabados",
+            "otherEntityName": "acabados",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "productosPresupuestoPedidos",
+            "otherEntityName": "productosPresupuestoPedidos",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20190826075309",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "aca_prod_pre_ped",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

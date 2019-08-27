@@ -14,6 +14,7 @@ import { ProductosDormitorioChinfonierComponent } from './productos-dormitorio-c
 import { ProductosDormitorioCabecerosComponent } from './productos-dormitorio-cabeceros.component';
 import { ProductosDormitorioApoyoComponent } from './productos-dormitorio-apoyo.component';
 import { ProductosDormitorioCanapeComponent } from './productos-dormitorio-canape.component';
+import { ProductosModulosBajosComponent } from './productos-modulos-bajos.component';
 import { ProductosDormitorioUpdateComponent } from './productos-dormitorio-update.component';
 import { ProductosDormitorioDeletePopupComponent } from './productos-dormitorio-delete-dialog.component';
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
@@ -42,7 +43,20 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-modulos-bajos',
+        component: ProductosModulosBajosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -55,7 +69,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -68,7 +82,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -81,7 +95,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -94,7 +108,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -107,7 +121,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -120,7 +134,7 @@ export const productosDormitorioRoute: Routes = [
             productosDormitorio: ProductosDormitorioResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -132,7 +146,7 @@ export const productosDormitorioRoute: Routes = [
             productosDormitorio: ProductosDormitorioResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -144,7 +158,7 @@ export const productosDormitorioRoute: Routes = [
             productosDormitorio: ProductosDormitorioResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -159,7 +173,7 @@ export const productosDormitorioPopupRoute: Routes = [
             productosDormitorio: ProductosDormitorioResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
         canActivate: [UserRouteAccessService],

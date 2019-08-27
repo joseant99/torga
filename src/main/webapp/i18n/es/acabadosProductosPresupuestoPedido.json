@@ -1,0 +1,22 @@
+{
+    "torgaPedidosApp": {
+        "acabadosProductosPresupuestoPedido": {
+            "home": {
+                "title": "Acabados Productos Presupuesto Pedidos",
+                "createLabel": "Crear nuevo Acabados Productos Presupuesto Pedido",
+                "createOrEditLabel": "Crear o editar Acabados Productos Presupuesto Pedido"
+            },
+            "created": "Un nuevo Acabados Productos Presupuesto Pedido ha sido creado con el identificador {{ param }}",
+            "updated": "Un Acabados Productos Presupuesto Pedido ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Acabados Productos Presupuesto Pedido ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Acabados Productos Presupuesto Pedido {{ id }}?"
+            },
+            "detail": {
+                "title": "Acabados Productos Presupuesto Pedido"
+            },
+            "acabados": "Acabados",
+            "productosPresupuestoPedidos": "Productos Presupuesto Pedidos"
+        }
+    }
+}

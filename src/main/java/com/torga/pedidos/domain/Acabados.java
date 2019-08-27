@@ -33,7 +33,7 @@ public class Acabados implements Serializable {
     @NotNull
     @Column(name = "precio", nullable = false)
     private Float precio;
-
+ 
     
     @Lob
     @Column(name = "imagen_fondo", nullable = false)

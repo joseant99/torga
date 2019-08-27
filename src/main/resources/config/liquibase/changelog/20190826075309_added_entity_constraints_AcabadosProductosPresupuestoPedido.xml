@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity AcabadosProductosPresupuestoPedido.
+    -->
+    <changeSet id="20190826075309-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="acabados_id"
+                                 baseTableName="aca_prod_pre_ped"
+                                 constraintName="fk_acabados_productos_presupuesto_pedido_acabados_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="acabados"/>
+
+        <addForeignKeyConstraint baseColumnNames="productos_presupuesto_pedidos_id"
+                                 baseTableName="aca_prod_pre_ped"
+                                 constraintName="acabados_productos_presupuesto__productos_presupuesto_pedidos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="productos_presupuesto_pedidos"/>
+
+    </changeSet>
+</databaseChangeLog>

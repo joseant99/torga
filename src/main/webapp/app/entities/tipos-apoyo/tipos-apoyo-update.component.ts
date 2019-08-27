@@ -38,12 +38,16 @@ export class TiposApoyoUpdateComponent implements OnInit {
         this.activatedRoute.data.subscribe(({ tiposApoyo }) => {
             this.tiposApoyo = tiposApoyo;
         });
-        this.productosDormitorioService.query().subscribe(
-            (res: HttpResponse<IProductosDormitorio[]>) => {
-                this.productosdormitorios = res.body;
-            },
-            (res: HttpErrorResponse) => this.onError(res.message)
-        );
+        this.productosDormitorioService
+            .query({
+                size: 10000000
+            })
+            .subscribe(
+                (res: HttpResponse<IProductosDormitorio[]>) => {
+                    this.productosdormitorios = res.body;
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
         this.dimensionesProductoService.query().subscribe(
             (res: HttpResponse<IDimensionesProducto[]>) => {
                 this.dimensionesproductos = res.body;

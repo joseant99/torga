@@ -13,6 +13,7 @@ import { ProductosComposicionService } from '../productos-composicion/productos-
 import { DimensionesProductoTipoService } from '../dimensiones-producto-tipo/dimensiones-producto-tipo.service';
 import { AcabadosComposicionService } from '../acabados-composicion/acabados-composicion.service';
 import { AcaProdService } from '../aca-prod/aca-prod.service';
+import { AcabadosProductosPresupuestoPedidoService } from '../acabados-productos-presupuesto-pedido/acabados-productos-presupuesto-pedido.service';
 import { AcabadosService } from '../acabados/acabados.service';
 import { ProductosDormitorioService } from '../productos-dormitorio/productos-dormitorio.service';
 import { InterioresService } from '../interiores/interiores.service';
@@ -22,6 +23,7 @@ import { AccountService, UserService, User } from 'app/core';
 import { ProductosPresupuestoPedidosService } from '../productos-presupuesto-pedidos/productos-presupuesto-pedidos.service';
 import { Observable } from 'rxjs';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
+import { TiposApoyoService } from '../tipos-apoyo/tipos-apoyo.service';
 
 @Component({
     selector: 'jhi-composicion',
@@ -34,6 +36,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
     error: any;
     todasDimension: any;
     todasDimensiones: any;
+    acaProdPed: any;
     todosAcabados: any;
     acaProd: any;
     user: any;
@@ -41,6 +44,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
     presupuestoPedido: IPresupuestoPedido;
     isSaving: boolean;
     apoyo: any;
+    sistemasApoyo: any;
     interiores: any;
     presupuesto: any;
     success: any;
@@ -57,7 +61,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
 
     constructor(
         protected composicionService: ComposicionService,
+        protected tiposApoyoService: TiposApoyoService,
         protected acabadosService: AcabadosService,
+        protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected interioresService: InterioresService,
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected userService: UserService,
@@ -86,12 +92,38 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
     ngAfterViewInit() {
         var todasDimensiones = [];
         var todosAcabados = [];
+        var sistemasApoyo = [];
         var acaProd = [];
         var acabados = [];
         var apoyo = [];
         var presupuesto = [];
         var interiores = [];
         var usuarios = [];
+        var numeroProductos = [];
+        this.productosPresupuestoPedidosService
+            .query({
+                size: 1000
+            })
+            .subscribe(data => {
+                $.each(data['body'], function(index, value) {
+                    numeroProductos[index] = value;
+                });
+            });
+        this.acaProdPed = numeroProductos;
+
+        this.tiposApoyoService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(data => {
+                $.each(data['body'], function(index, value) {
+                    sistemasApoyo[index] = value;
+                });
+            });
+        this.sistemasApoyo = sistemasApoyo;
+
         for (let i = 1; i <= 100; i++) {
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
             if (sesion != null) {
@@ -126,14 +158,26 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                 $('#productoCarrito' + i + ' #precios' + i).append('<br>');
                 $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
                 $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                for (let j = 1; j <= sesion.length - 2; j++) {
-                    $('#productoCarrito' + i + ' #datos' + i).append('<font>Acabado ' + j + '</font>');
+                for (let j = 1; j < 100; j++) {
+                    if (sesion[1]['acabado' + j] != undefined) {
+                        $('#productoCarrito' + i + ' #datos' + i).append('<font>Acabado ' + j + '</font>');
+                        $('#productoCarrito' + i + ' #datos' + i).append('<br>');
+                        $('#productoCarrito' + i + ' #precios' + i).append(
+                            '<font id="acabado' + i + '' + j + '">' + sesion[1]['acabado' + j]['nombre'] + '</font>'
+                        );
+                        $('#productoCarrito' + i + ' #precios' + i).append('<br>');
+                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
+                    }
+                }
+                if (sesion[1]['apoyo'] != undefined) {
+                    $('#productoCarrito' + i + ' #datos' + i).append('<font>' + sesion[1]['apoyo']['productoApoyo']['nombre'] + '</font>');
                     $('#productoCarrito' + i + ' #datos' + i).append('<br>');
                     $('#productoCarrito' + i + ' #precios' + i).append(
-                        '<font id="acabado' + i + '' + j + '">' + sesion[1 + j]['nombre'] + '</font>'
+                        '<font id="sistemaApoyo' + i + '" class="' + sesion[1]['apoyo']['id'] + '">-</font>'
                     );
                     $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>' + sesion[1]['apoyo']['precio'] + '&euro;</font>');
                     $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
                 }
             }
@@ -151,7 +195,6 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                 });
             });
         this.todasDimensiones = todasDimensiones;
-
         this.interioresService
             .query({
                 page: this.page - 1,
@@ -322,7 +365,15 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                             }
                         }
                         if (value['tiposApoyo'] != null) {
-                            $('#datos' + contador).append('<font>' + value['tiposApoyo']['productoApoyo']['nombre'] + '</font>');
+                            $('#datos' + contador).append(
+                                '<font id="apoyo' +
+                                    contador +
+                                    '" class="' +
+                                    value['tiposApoyo']['id'] +
+                                    '">' +
+                                    value['tiposApoyo']['productoApoyo']['nombre'] +
+                                    '</font>'
+                            );
                             $('#datos' + contador).append('<br>');
                         }
 
@@ -362,7 +413,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                         contador +
                                         '' +
                                         contAca +
-                                        '">' +
+                                        '"class = "' +
+                                        acabados1[i]['acabados']['id'] +
+                                        '"> ' +
                                         acabados1[i]['acabados']['nombre'] +
                                         '</font>'
                                 );
@@ -760,13 +813,38 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         for (let i = 1; i <= 3; i++) {
             const idProd = $('#nombreProd' + i).attr('class');
             const dimen = $('#ancho' + i).attr('class');
+            const idApoyo = $('#apoyo' + i).attr('class');
             const todasDimensiones = this.todasDimensiones;
             console.log(sessionStorage);
             const prod = [];
             const prods = this.apoyo;
+            const apoyoBueno = [];
+            const sistemasApoyo = this.sistemasApoyo;
+            for (let k = 0; k < sistemasApoyo.length; k++) {
+                if (sistemasApoyo[k]['id'] == idApoyo) {
+                    apoyoBueno[1] = sistemasApoyo[k];
+                }
+            }
+            const aca = [];
+            var acabadoCogido;
+            for (let j = 1; j <= 100; j++) {
+                acabadoCogido = $('#nombreAcabado' + i + '' + j).attr('class');
+                if (acabadoCogido != undefined) {
+                    var id1 = parseFloat(acabadoCogido);
+                    for (let k = 0; k < 16; k++) {
+                        if (acabados[k]['id'] == id1) {
+                            aca[j] = acabados[k];
+                        }
+                    }
+                }
+            }
 
             $.each(todasDimensiones, function(index, value) {
                 if (value['id'] == dimen) {
+                    for (let w = 1; w < aca.length; w++) {
+                        value['acabado' + w] = aca[w];
+                    }
+                    value['apoyo'] = apoyoBueno[1];
                     prod[1] = value;
                     sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
                     contadorDimen++;
@@ -808,14 +886,26 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                 $('#productoCarrito' + i + ' #precios' + i).append('<br>');
                 $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
                 $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                for (let j = 1; j <= sesion.length - 2; j++) {
-                    $('#productoCarrito' + i + ' #datos' + i).append('<font>Acabado ' + j + '</font>');
+                for (let j = 1; j < 100; j++) {
+                    if (sesion[1]['acabado' + j] != undefined) {
+                        $('#productoCarrito' + i + ' #datos' + i).append('<font>Acabado ' + j + '</font>');
+                        $('#productoCarrito' + i + ' #datos' + i).append('<br>');
+                        $('#productoCarrito' + i + ' #precios' + i).append(
+                            '<font id="acabado' + i + '' + j + '">' + sesion[1]['acabado' + j]['nombre'] + '</font>'
+                        );
+                        $('#productoCarrito' + i + ' #precios' + i).append('<br>');
+                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
+                    }
+                }
+                if (sesion[1]['apoyo'] != undefined) {
+                    $('#productoCarrito' + i + ' #datos' + i).append('<font>' + sesion[1]['apoyo']['productoApoyo']['nombre'] + '</font>');
                     $('#productoCarrito' + i + ' #datos' + i).append('<br>');
                     $('#productoCarrito' + i + ' #precios' + i).append(
-                        '<font id="acabado' + i + '' + j + '">' + sesion[1 + j]['nombre'] + '</font>'
+                        '<font id="sistemaApoyo' + i + '" class="' + sesion[1]['apoyo']['id'] + '">-</font>'
                     );
                     $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>' + sesion[1]['apoyo']['precio'] + '&euro;</font>');
                     $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
                 }
             }
@@ -824,27 +914,54 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
 
     public generarPresupuesto() {
         var nombreTexto = [];
+        var prodAca = [];
         var ancho = [];
         var alto = [];
         var fondo = [];
         var nombre;
+        var idApoyo;
         var ancho = [];
         var alto = [];
         var fondo = [];
         var productosFinal = [];
         var dimensionesFinal = [];
+        var nombreAcabado = [];
+        var numeroAcaProd = [];
+        var apoyosFinal = [];
         var anchoTexto;
         var altoTexto;
         var fondoTexto;
         var contadorProd = 0;
+        var contadorAcabados = 0;
         var contadorAlto = 0;
         var contadorFondo = 0;
         var contadorAncho = 0;
+        var contadorApoyo = 0;
         var contadorDimension = 0;
         var contadorProductos = 0;
         var todasDimensiones = this.todasDimensiones;
+        var acabados = this.acabados;
         var productos = this.apoyo;
+        var apoyos = this.sistemasApoyo;
+        var nombreAcabado1;
         for (let j = 1; j <= 10; j++) {
+            for (let k = 1; k < 100; k++) {
+                nombreAcabado1 = $('#acabado' + j + '' + k).text();
+                if (nombreAcabado1 != '') {
+                    nombreAcabado[contadorAcabados] = nombreAcabado1;
+                    numeroAcaProd[j] = contadorAcabados;
+                    contadorAcabados++;
+                }
+            }
+
+            idApoyo = $('#apoyo' + j).attr('class');
+            for (let o = 0; o < apoyos.length; o++) {
+                if (apoyos[o]['id'] == idApoyo) {
+                    apoyosFinal[contadorApoyo] = apoyos[o];
+                    contadorApoyo++;
+                }
+            }
+
             nombre = $('#nombreProd' + j).text();
             anchoTexto = $('#ancho' + j).text();
             altoTexto = $('#alto' + j).text();
@@ -910,7 +1027,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
             user: usuario,
             fecha_presupuesto: output
         };
-
+        this.numeroProdPed;
         this.presupuestoPedido = prueba;
         console.log(this.presupuestoPedido);
         this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
@@ -928,13 +1045,46 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         };
 
         for (let m = 0; m < productosFinal.length; m++) {
-            const prodPrePed = {
-                productosDormitorio: productosFinal[m],
-                presupuestoPedido: prueba1,
-                dimensionesProductoTipo: dimensionesFinal[m]
-            };
+            if (apoyosFinal[m] == undefined) {
+                const prodPrePed = {
+                    productosDormitorio: productosFinal[m],
+                    presupuestoPedido: prueba1,
+                    dimensionesProductoTipo: dimensionesFinal[m]
+                };
+            } else {
+                const prodPrePed = {
+                    productosDormitorio: productosFinal[m],
+                    presupuestoPedido: prueba1,
+                    dimensionesProductoTipo: dimensionesFinal[m],
+                    tiposApoyo: apoyosFinal[m]
+                };
+            }
+
+            prodAca[m] = prodPrePed;
             this.productosPresupuestoPedidos = prodPrePed;
             this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
+        }
+        let b = 0;
+        for (let w = 1; w < numeroAcaProd.length; w++) {
+            if (b != 0) {
+                b = numeroAcaProd[w];
+            }
+            for (b; b < nombreAcabado.length; b++) {
+                if (b <= numeroAcaProd[w]) {
+                    for (let g = 0; g < acabados.length; g++) {
+                        if (acabados[g]['nombre'] == nombreAcabado[b]) {
+                            var acaPedProd = this.acaProdPed.length;
+                            acaPedProd = this.acaProdPed[acaPedProd - 1];
+                            prodAca[w - 1]['id'] = acaPedProd['id'] + w;
+                            const acabados1 = {
+                                acabados: acabados[g],
+                                productosPresupuestoPedidos: prodAca[w - 1]
+                            };
+                            this.subscribeToSaveResponse(this.acabadosProductosPresupuestoPedidoService.create(acabados1));
+                        }
+                    }
+                }
+            }
         }
     }
     loadPage(page: number) {
@@ -1047,5 +1197,12 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
     }
     protected onSaveError() {
         this.isSaving = false;
+    }
+
+    protected subscribeToSaveResponse2(result: Observable<HttpResponse<IAcabadosProductosPresupuestoPedido>>) {
+        result.subscribe(
+            (res: HttpResponse<IAcabadosProductosPresupuestoPedido>) => this.onSaveSuccess(),
+            (res: HttpErrorResponse) => this.onSaveError()
+        );
     }
 }

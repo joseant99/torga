@@ -10,7 +10,7 @@
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th  jhiSortBy="id" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="global.field.id" >ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo" *jhiHasAnyAuthority="'ROLE_ADMIN'">><span jhiTranslate="torgaPedidosApp.presupuestoPedido.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="pedido" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.pedido">Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="fecha_presupuesto"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto">Fecha Presupuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="fecha_pedido" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_pedido">Fecha Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -21,7 +21,7 @@
             <tbody>
             <tr *ngFor="let presupuestoPedido of presupuestoPedidos;">
                 <td *ngIf="presupuestoPedido != undefined" ><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.id}}</i></td>
-                <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</td>
+                <td *ngIf="presupuestoPedido != undefined"><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.codigo}}</i></td>
                 <td *ngIf="presupuestoPedido != undefined"><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.pedido}}</i></td>
                 <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_presupuesto}}</td>
                 <td *ngIf="presupuestoPedido != undefined"><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.fecha_pedido}}</i></td>

@@ -10,8 +10,8 @@
 	    	<div style="float:left;width:40%;margin-lefT:100px">
 	    		 		<img width="300px" title="Foto de linea de codigo"" class="producto" [src]="'data:' + productosPresupuestoPedidos.productosDormitorio.imagenContentType + ';base64,' + productosPresupuestoPedidos.productosDormitorio.imagen" style="max-height: 350px;max-width: 350px;"  alt="productosDormitorio image"/>
 	    	</div>
-	    	<div style="float:right;width:35%;margin-left:50px">
-	    		<p style="font-size:30px"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}&euro;</strong></p>
+	    	<div class="{{productosPresupuestoPedidos.id}}" style="float:right;width:35%;margin-left:50px">
+	    		<p style="font-size:30px"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</i>&euro;</strong></p>
 	    		<p>Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
 	    		<p>Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
 	    		<p>Fondo &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.fondo}}</p>
