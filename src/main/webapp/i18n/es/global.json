@@ -37,6 +37,7 @@
                 "datosUsuario": "Datos Usuario",
                 "acabadosProductosPresupuestoPedido": "Acabados Productos Presupuesto Pedido",
                 "iluminacion": "Iluminacion",
+                "iluminacionProdPrePed": "Iluminacion Prod Pre Ped",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

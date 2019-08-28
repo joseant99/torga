@@ -1,0 +1,22 @@
+{
+    "torgaPedidosApp": {
+        "iluminacionProdPrePed": {
+            "home": {
+                "title": "Iluminacion Prod Pre Peds",
+                "createLabel": "Crear nuevo Iluminacion Prod Pre Ped",
+                "createOrEditLabel": "Crear o editar Iluminacion Prod Pre Ped"
+            },
+            "created": "Un nuevo Iluminacion Prod Pre Ped ha sido creado con el identificador {{ param }}",
+            "updated": "Un Iluminacion Prod Pre Ped ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Iluminacion Prod Pre Ped ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Iluminacion Prod Pre Ped {{ id }}?"
+            },
+            "detail": {
+                "title": "Iluminacion Prod Pre Ped"
+            },
+            "productosPresupuestoPedidos": "Productos Presupuesto Pedidos",
+            "iluminacion": "Iluminacion"
+        }
+    }
+}

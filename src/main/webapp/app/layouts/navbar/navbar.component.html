@@ -24,11 +24,26 @@
 	        </li>
 	    </ul>
 			  
-	     <a style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']">
-                        <span>
-                            <span style="color:black;font-size:18px;">NOTICIAS</span>
-                        </span>
-		</a>
+
+					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
+	       		 		<li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	                    <a  id="noticias" data-toggle="collapse" data-target="#menuNoticias">
+	                        <span>
+	                            <span style="color:black;font-size:18px;margin-top: 18px;">NOTICIAS</span>
+	                        </span>
+						</a>
+						<div id="menuNoticias" class="collapse">
+						   <ul aria-labelledby="#menuNoticias">
+						     	<li style="list-style: none;">
+		                               
+					                        <span>
+					                            <span style="color:#7AB5CA;font-size:16px;">TORGA</span>
+					                        </span>
+										
+								</li>
+							</ul>
+					</div>
+		
 	    <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
 	        <fa-icon icon="bars"></fa-icon>
 	    </a>
@@ -246,16 +261,21 @@
 					<div id="menuTienda" class="collapse">
 						   <ul aria-labelledby="menuComercial">
 						     	<li>
-		                            <a routerLink="presupuesto-usuario"  routerLinkActive="active" >
+		                            <a routerLink="datos-generales"  routerLinkActive="active" >
 		                                <span >Datos Generales</span>
 		                            </a>
 		                        </li>
-		                        
+		                        <li>
+		                            <a routerLink=""  routerLinkActive="active" >
+		                                <span >Usuarios</span>
+		                            </a>
+		                        </li>
 		                        <li>
 		                            <a routerLink="datos-usuario"  routerLinkActive="active" >
 		                                <span >datos</span>
 		                            </a>
 		                        </li>
+		                        
 	                        </ul>
 	                        
 					  </div>

@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="iluminacionProdPrePed">
+            <h2><span jhiTranslate="torgaPedidosApp.iluminacionProdPrePed.detail.title">Iluminacion Prod Pre Ped</span> {{iluminacionProdPrePed.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.iluminacionProdPrePed.productosPresupuestoPedidos">Productos Presupuesto Pedidos</span></dt>
+                <dd>
+                    <div *ngIf="iluminacionProdPrePed.productosPresupuestoPedidos">
+                        <a [routerLink]="['/productos-presupuesto-pedidos', iluminacionProdPrePed.productosPresupuestoPedidos?.id, 'view']">{{iluminacionProdPrePed.productosPresupuestoPedidos?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.iluminacionProdPrePed.iluminacion">Iluminacion</span></dt>
+                <dd>
+                    <div *ngIf="iluminacionProdPrePed.iluminacion">
+                        <a [routerLink]="['/iluminacion', iluminacionProdPrePed.iluminacion?.id, 'view']">{{iluminacionProdPrePed.iluminacion?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/iluminacion-prod-pre-ped', iluminacionProdPrePed.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

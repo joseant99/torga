@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity IluminacionProdPrePed.
+    -->
+    <changeSet id="20190828100029-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="productos_presupuesto_pedidos_id"
+                                 baseTableName="iluminacion_prod_pre_ped"
+                                 constraintName="fk_iluminacion_prod_pre_ped_productos_presupuesto_pedidos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="productos_presupuesto_pedidos"/>
+
+        <addForeignKeyConstraint baseColumnNames="iluminacion_id"
+                                 baseTableName="iluminacion_prod_pre_ped"
+                                 constraintName="fk_iluminacion_prod_pre_ped_iluminacion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="iluminacion"/>
+
+    </changeSet>
+</databaseChangeLog>

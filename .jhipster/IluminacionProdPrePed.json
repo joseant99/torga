@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productosPresupuestoPedidos",
+            "otherEntityName": "productosPresupuestoPedidos",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "iluminacion",
+            "otherEntityName": "iluminacion",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20190828100029",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "iluminacion_prod_pre_ped",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

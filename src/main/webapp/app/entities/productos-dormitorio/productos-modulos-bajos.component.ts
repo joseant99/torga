@@ -24,6 +24,7 @@ import { ITEMS_PER_PAGE } from 'app/shared';
 import { ProductosDormitorioService } from './productos-dormitorio.service';
 import { AcabadosService } from 'app/entities/acabados';
 import * as $ from 'jquery';
+import { IluminacionProdPrePedService } from '../iluminacion-prod-pre-ped/iluminacion-prod-pre-ped.service';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 
 @Component({
@@ -64,6 +65,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         protected tiposApoyoService: TiposApoyoService,
         protected dimensionesProductoTipoService: DimensionesProductoTipoService,
         protected acabadosService: AcabadosService,
+        protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected iluminacionService: IluminacionService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected acaProdService: AcaProdService,
@@ -107,6 +109,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('.dimensionesColor1').css({ 'background-color': 'white' });
         $('.dimensionesColor2').css({ 'background-color': 'white' });
         $('.dimensionesColor3').css({ 'background-color': 'white' });
+        $('#iluminacion').removeAttr('style');
+        $('#iluminacion').attr('style');
+        $('#iluminacion').css({ display: 'none' });
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
@@ -138,6 +146,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('.dimensionesColor2').empty();
         $('.dimensionesColor3').empty();
         $('.dimensionesColor4').empty();
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
         $('.dimensionesColor5').empty();
         $('.dimensionesColor6').empty();
         $('.dimensionesColor1').css({ 'background-color': 'white' });
@@ -323,6 +334,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('#precios').empty();
         $('#precioCalculado').empty();
         $('#total').text('0');
+        $('#iluminacion').removeAttr('style');
+        $('#iluminacion').attr('style');
+        $('#iluminacion').css({ display: 'none' });
     }
 
     public open1(id) {
@@ -345,6 +359,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('.dimensionesColor2').empty();
         $('.dimensionesColor3').empty();
         $('.dimensionesColor4').empty();
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
         $('.dimensionesColor5').empty();
         $('.dimensionesColor6').empty();
         $('.dimensionesColor1').css({ 'background-color': 'white' });
@@ -513,6 +530,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('.dimensionesColor2').css({ 'background-color': 'white' });
         $('.dimensionesColor3').css({ 'background-color': 'white' });
         $('.dimensionesColor4').css({ 'background-color': 'white' });
+        $('#iluminacion').removeAttr('style');
+        $('#iluminacion').attr('style');
+        $('#iluminacion').css({ display: 'none' });
     }
 
     public filtroAncho(id, filtro) {
@@ -656,6 +676,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('.apoyoCogido1').empty();
         $('.apoyoCogido2').empty();
         $('.apoyoCogido3').empty();
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
         $('.apoyoCogido4').empty();
         $('#acaba4').empty();
         $('#acaba3').empty();
@@ -666,6 +689,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('#acaba2').empty();
         $('#datos1').empty();
         $('#precios1').empty();
+        $('#iluminacion').removeAttr('style');
+        $('#iluminacion').attr('style');
+        $('#iluminacion').css({ display: 'none' });
         $('#precioCalculado1').empty();
         $('.dimensionesColor1').css({ 'background-color': 'white' });
         $('.dimensionesColor2').css({ 'background-color': 'white' });
@@ -809,6 +835,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             });
     }
     public cambiarAcabado(idImagen, id, id1) {
+        $('#iluminacion').removeAttr('style');
+        $('#iluminacion').attr('style');
+        $('#iluminacion').css({ display: 'none' });
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
         var k = 1;
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
         var todosAcabados = this.acabados;
@@ -952,6 +984,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     }
 
     public anadirCalculadora() {
+        $('#iluminacion').removeAttr('style');
+        $('#iluminacion').attr('style');
+        $('#iluminacion').css({ display: 'none' });
         var valoresAca = [];
         var cont = 1;
         var contadorApoyo = 0;
@@ -972,6 +1007,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('.apoyoCogido2').empty();
         $('.apoyoCogido3').empty();
         $('.apoyoCogido4').empty();
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
         $('.apoyoCogido5').empty();
         $('#apoyoRaya').remove();
         $('#apoyo1').remove();
@@ -1085,15 +1123,21 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     }
 
     public apoyoCogido(id) {
+        $('#iluminacion').removeAttr('style');
+        $('#iluminacion').attr('style');
+        $('#iluminacion').css({ display: 'none' });
         $('.apoyoCogido1').css({ 'background-color': 'white' });
         $('.apoyoCogido5').css({ 'background-color': 'white' });
         $('.apoyoCogido2').css({ 'background-color': 'white' });
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
         $('.apoyoCogido3').css({ 'background-color': 'white' });
         $('.apoyoCogido4').css({ 'background-color': 'white' });
         $('.apoyoCogido' + id).css({ 'background-color': '#DFDDDC' });
         var idApoyo = $('.apoyoCogido' + id + ' #imagenApoyo').attr('class');
         var idProd = $('#nombreMesita').attr('class');
-        const h = $('#ancho1').text();
+        const h = $('#productoCalculadora1  #precios1 #ancho1').text();
         var dimension = [];
         var datos = [];
         var datosApoyo;
@@ -1119,6 +1163,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             });
 
         var iluminacion = this.iluminacion;
+        var texto = 0;
         for (let k = 0; k < iluminacion.length; k++) {
             if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
                 $('#iluminacion').removeAttr('style');
@@ -1126,9 +1171,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 $('#iluminacion').css({ width: '100%' });
                 $('#iluminacion').css({ float: 'left' });
                 $('#ilu1').attr('class', iluminacion[k]['id']);
+                texto = 0;
+            } else {
+                texto = 1;
             }
         }
-
+        if (texto == 1) {
+            $('#textoFinal').removeAttr('style');
+            $('#textoFinal').attr('style');
+            $('#textoFinal').css({ width: '100%' });
+            $('#textoFinal').css({ float: 'left' });
+        }
         $('#botonCalculadora').attr('disabled', false);
         $('#terminarConfiguracion').removeAttr('style');
         $('#terminarConfiguracion').attr('style');
@@ -1154,6 +1207,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     $('#textoFinal').css({ float: 'left' });
                 }
             }
+        } else {
+            $('#textoFinal').removeAttr('style');
+            $('#textoFinal').attr('style');
+            $('#textoFinal').css({ width: '100%' });
+            $('#textoFinal').css({ float: 'left' });
         }
     }
 
@@ -1168,6 +1226,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         var acabados = this.acabados;
         var todosAcabados = this.todosAcabados;
         var iluminacion = this.iluminacion;
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
+        $('#iluminacion').removeAttr('style');
+        $('#iluminacion').attr('style');
+        $('#iluminacion').css({ display: 'none' });
         var conta = 0;
         for (let k = 1; k < sessionStorage.length; k++) {
             if (sessionStorage['prod' + k] != null) {
@@ -1356,10 +1420,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         var contadorApoyo = 0;
         var contadorDimension = 0;
         var contadorProductos = 0;
+        var contadorIlu = 0;
         var todasDimensiones = this.todasDimensiones;
         var acabados = this.acabados;
         var productos = this.apoyo;
         var apoyos = this.sistemasApoyo;
+        var idIlu;
+        var prodIlu = [];
+        var iluFinal = [];
+        var iluminacion = this.iluminacion;
         var nombreAcabado1;
         for (let j = 1; j <= 10; j++) {
             for (let k = 1; k < 100; k++) {
@@ -1370,8 +1439,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     contadorAcabados++;
                 }
             }
+            idIlu = $('#productoCarrito' + j + '  #precios' + j + ' #iluminacionCarr' + j + '').attr('class');
+            for (let i = 0; i < iluminacion.length; i++) {
+                if (idIlu != '' && idIlu != undefined) {
+                    if (iluminacion[i]['id'] == idIlu) {
+                        iluFinal[contadorIlu] = iluminacion[i];
+                        contadorIlu++;
+                    }
+                }
+            }
 
-            idApoyo = $('#apoyo' + j).attr('class');
+            idApoyo = $('#sistemaApoyo' + j).attr('class');
             for (let o = 0; o < apoyos.length; o++) {
                 if (apoyos[o]['id'] == idApoyo) {
                     apoyosFinal[contadorApoyo] = apoyos[o];
@@ -1478,8 +1556,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             }
 
             prodAca[m] = prodPrePed;
+            prodIlu[m] = prodPrePed;
             this.productosPresupuestoPedidos = prodPrePed;
             this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
+            if (iluFinal[m] != undefined && iluFinal[m] != '') {
+                var acaPedProd = this.acaProdPed.length;
+                acaPedProd = this.acaProdPed[acaPedProd - 1];
+                prodIlu[m]['id'] = acaPedProd['id'] + m + 1;
+                const iluProd = {
+                    iluminacion: iluFinal[m],
+                    productosPresupuestoPedidos: prodIlu[m]
+                };
+                this.subscribeToSaveResponse(this.iluminacionProdPrePedService.create(iluProd));
+            }
         }
         let b = 0;
         for (let w = 1; w < numeroAcaProd.length; w++) {

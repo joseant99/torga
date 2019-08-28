@@ -9,6 +9,7 @@ import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
 import { AccountService } from 'app/core';
 import { IProductosPresupuestoPedidos } from 'app/shared/model/productos-presupuesto-pedidos.model';
 import { AcabadosProductosPresupuestoPedidoService } from '../acabados-productos-presupuesto-pedido/acabados-productos-presupuesto-pedido.service';
+import { IluminacionProdPrePedService } from '../iluminacion-prod-pre-ped/iluminacion-prod-pre-ped.service';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { PresupuestoPedidoService } from './presupuesto-pedido.service';
@@ -28,6 +29,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     eventSubscriber: Subscription;
     productos: any;
     acabados: any;
+    iluminacion: any;
     routeData: any;
     presupuestos = [];
     links: any;
@@ -42,6 +44,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
+        protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
@@ -155,8 +158,10 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                     var productos = this.productos;
                     var acabados = this.acabados;
+                    var iluminacion = this.iluminacion;
                     var apoyo;
                     setTimeout(function() {
+                        console.log(iluminacion);
                         if (productos != undefined && acabados != []) {
                             for (let i = 0; i < productos.length; i++) {
                                 var contador = 1;
@@ -186,13 +191,23 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                     precioFloat = precioFloat + apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
                                     $('.' + productos[i]['id'] + ' #precioTotal').text(precioFloat);
                                 }
+                                for (let j = 0; j < iluminacion.length; j++) {
+                                    if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
+                                        $('.' + productos[i]['id']).append(
+                                            '<p>Iluminacion&nbsp;&nbsp;&nbsp;' + iluminacion[j]['iluminacion']['precio'] + '&euro;</p>'
+                                        );
+                                        var precioTotal = $('.' + productos[i]['id'] + ' #precioTotal').text();
+                                        var precioFloat = parseFloat(precioTotal);
+                                        precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
+                                        $('.' + productos[i]['id'] + ' #precioTotal').text(precioFloat);
+                                    }
+                                }
                             }
                         }
                     }, 100);
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
-        console.log(this.paginateProductosPresupuestoPedidos);
         this.acabadosProductosPresupuestoPedidoService
             .query({
                 size: 1000000
@@ -203,6 +218,18 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 });
             });
         this.acabados = acabados;
+        var ilu = [];
+
+        this.iluminacionProdPrePedService
+            .query({
+                size: 1000000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data['body'].length; i++) {
+                    ilu[i] = data['body'][i];
+                }
+            });
+        this.iluminacion = ilu;
     }
 
     loadPage(page: number) {
