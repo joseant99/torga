@@ -9,6 +9,7 @@ import { VERSION } from 'app/app.constants';
 import { JhiLanguageHelper, Account, AccountService, LoginModalService, LoginService } from 'app/core';
 import { ProfileService } from '../profiles/profile.service';
 import { DatosUsuarioService } from '../../entities/datos-usuario/datos-usuario.service';
+import * as $ from 'jquery';
 
 @Component({
     selector: 'jhi-navbar',

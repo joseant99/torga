@@ -36,6 +36,7 @@
                 "municipios": "Municipios",
                 "datosUsuario": "Datos Usuario",
                 "acabadosProductosPresupuestoPedido": "Acabados Productos Presupuesto Pedido",
+                "iluminacion": "Iluminacion",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,0 +1,22 @@
+{
+    "torgaPedidosApp": {
+        "iluminacion": {
+            "home": {
+                "title": "Iluminacions",
+                "createLabel": "Crear nuevo Iluminacion",
+                "createOrEditLabel": "Crear o editar Iluminacion"
+            },
+            "created": "Un nuevo Iluminacion ha sido creado con el identificador {{ param }}",
+            "updated": "Un Iluminacion ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Iluminacion ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Iluminacion {{ id }}?"
+            },
+            "detail": {
+                "title": "Iluminacion"
+            },
+            "precio": "Precio",
+            "productosDormitorio": "Productos Dormitorio"
+        }
+    }
+}

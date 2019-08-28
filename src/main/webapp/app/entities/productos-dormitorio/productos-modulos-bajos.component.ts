@@ -17,6 +17,7 @@ import { ProductosPresupuestoPedidosService } from '../productos-presupuesto-ped
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
 import { AccountService, UserService, User } from 'app/core';
 import { Observable } from 'rxjs';
+import { IluminacionService } from '../iluminacion/iluminacion.service';
 import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
 import { IProductosPresupuestoPedidos } from 'app/shared/model/productos-presupuesto-pedidos.model';
 import { ITEMS_PER_PAGE } from 'app/shared';
@@ -39,6 +40,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     apoyo: any;
     isSaving: boolean;
     acaProd: IAcaProd;
+    iluminacion: any;
     acabados: any;
     todosAcabados: any;
     presupuestoPedido: IPresupuestoPedido;
@@ -62,6 +64,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         protected tiposApoyoService: TiposApoyoService,
         protected dimensionesProductoTipoService: DimensionesProductoTipoService,
         protected acabadosService: AcabadosService,
+        protected iluminacionService: IluminacionService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected acaProdService: AcaProdService,
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
@@ -1114,11 +1117,44 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     }
                 });
             });
+
+        var iluminacion = this.iluminacion;
+        for (let k = 0; k < iluminacion.length; k++) {
+            if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
+                $('#iluminacion').removeAttr('style');
+                $('#iluminacion').attr('style');
+                $('#iluminacion').css({ width: '100%' });
+                $('#iluminacion').css({ float: 'left' });
+                $('#ilu1').attr('class', iluminacion[k]['id']);
+            }
+        }
+
         $('#botonCalculadora').attr('disabled', false);
         $('#terminarConfiguracion').removeAttr('style');
         $('#terminarConfiguracion').attr('style');
         $('#terminarConfiguracion').css({ float: 'left' });
         $('#terminarConfiguracion').css({ width: '100%' });
+    }
+
+    public ilumina(id) {
+        var iluminacion = this.iluminacion;
+        $('#ilu' + id).css({ 'background-color': '#DFDDDC' });
+        if (id == 1) {
+            var ilu = $('#ilu1').attr('class');
+            for (let k = 0; k < iluminacion.length; k++) {
+                if (iluminacion[k]['id'] == ilu) {
+                    $('#datos1').append('<p id="nombreIluminacion">Iluminacion</p>');
+                    $('#precios1').append('<p id="iluminacionRaya">-</p>');
+                    $('#precioCalculado1').append(
+                        '<p id="iluminacion1" class="' + iluminacion[k]['id'] + '">' + iluminacion[k]['precio'] + '&euro;</p>'
+                    );
+                    $('#textoFinal').removeAttr('style');
+                    $('#textoFinal').attr('style');
+                    $('#textoFinal').css({ width: '100%' });
+                    $('#textoFinal').css({ float: 'left' });
+                }
+            }
+        }
     }
 
     public borrarCarritoProd(id) {
@@ -1131,6 +1167,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         var contador = 1;
         var acabados = this.acabados;
         var todosAcabados = this.todosAcabados;
+        var iluminacion = this.iluminacion;
         var conta = 0;
         for (let k = 1; k < sessionStorage.length; k++) {
             if (sessionStorage['prod' + k] != null) {
@@ -1144,15 +1181,23 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             const idProd = $('#nombreProd' + i).attr('class');
             const dimen = $('#productoCalculadora1 #precios1 #ancho' + i).attr('class');
             const idApoyo = $('#productoCalculadora1 #precioCalculado1 #apoyo' + i).attr('class');
+            const idIluminacion = $('#productoCalculadora1 #precioCalculado1 #iluminacion' + i).attr('class');
             const todasDimensiones = this.todasDimensiones;
             console.log(sessionStorage);
             const prod = [];
             const prods = this.apoyo;
             const apoyoBueno = [];
+            const iluBuena = [];
             const sistemasApoyo = this.sistemasApoyo;
             for (let k = 0; k < sistemasApoyo.length; k++) {
                 if (sistemasApoyo[k]['id'] == idApoyo) {
                     apoyoBueno[1] = sistemasApoyo[k];
+                }
+            }
+
+            for (let k = 0; k < iluminacion.length; k++) {
+                if (iluminacion[k]['id'] == idIluminacion) {
+                    iluBuena[1] = iluminacion[k];
                 }
             }
             const aca = [];
@@ -1175,6 +1220,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         value['acabado' + w] = aca[w];
                     }
                     value['apoyo'] = apoyoBueno[1];
+                    value['iluminacion'] = iluBuena[1];
                     prod[1] = value;
                     sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
                     contadorDimen++;
@@ -1236,6 +1282,18 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     );
                     $('#productoCarrito' + i + ' #precios' + i).append('<br>');
                     $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>' + sesion[1]['apoyo']['precio'] + '&euro;</font>');
+                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
+                }
+                if (sesion[1]['iluminacion'] != undefined) {
+                    $('#productoCarrito' + i + ' #datos' + i).append('<font>Iluminacion</font>');
+                    $('#productoCarrito' + i + ' #datos' + i).append('<br>');
+                    $('#productoCarrito' + i + ' #precios' + i).append(
+                        '<font id="iluminacionCarr' + i + '" class="' + sesion[1]['iluminacion']['id'] + '">-</font>'
+                    );
+                    $('#productoCarrito' + i + ' #precios' + i).append('<br>');
+                    $('#productoCarrito' + i + ' #precioCalculado' + i).append(
+                        '<font>' + sesion[1]['iluminacion']['precio'] + '&euro;</font>'
+                    );
                     $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
                 }
             }
@@ -1580,6 +1638,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         var acabados = [];
         var sistemasApoyo = [];
         var numeroProductos = [];
+        var ilu = [];
+
+        this.iluminacionService
+            .query({
+                size: 1000000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data['body'].length; i++) {
+                    ilu[i] = data['body'][i];
+                }
+            });
+        this.iluminacion = ilu;
+
         this.productosPresupuestoPedidosService
             .query({
                 size: 1000
