@@ -50,4 +50,6 @@
     <include file="config/liquibase/changelog/20190828100029_added_entity_constraints_IluminacionProdPrePed.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190828160402_added_entity_Vendedores.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190828160402_added_entity_constraints_Vendedores.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190830071649_added_entity_PagosTienda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190830071649_added_entity_constraints_PagosTienda.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>

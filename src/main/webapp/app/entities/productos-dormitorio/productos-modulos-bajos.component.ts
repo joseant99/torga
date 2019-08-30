@@ -44,6 +44,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     iluminacion: any;
     acabados: any;
     todosAcabados: any;
+    precioTienda: any;
     presupuestoPedido: IPresupuestoPedido;
     presupuesto: any;
     productosPresupuestoPedidos: IProductosPresupuestoPedidos;
@@ -133,9 +134,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
 
     public open(producto, productoNombre) {
         $('#calculadora').attr('class', 'container tab-pane fade active show');
-        $('#medidas').removeAttr('style');
-        $('#medidas').attr('style');
-        $('#medidas').css({ 'margin-left': '40%' });
+        $('#dimensiones #medidas').removeAttr('style');
+        $('#dimensiones #medidas').attr('style');
+        $('#dimensiones #medidas').css({ 'margin-left': '40%' });
         $('#productoCalculadora1 #precios1').empty();
         $('#productoCalculadora1 #precioCalculado1').empty();
         $('#productoCalculadora1 #datos1').empty();
@@ -158,7 +159,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
         $('#imagenAcabado').remove();
-        $('#medidas').css({ display: 'none' });
         $('#acabado').css({ display: 'none' });
         $('.productosColor').css({ 'background-color': 'white' });
         $('#nombreApoyoTitulo').css({ display: 'none' });
@@ -171,6 +171,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
 
         var cont = 0;
         var datos = [];
+        var precioTienda = this.precioTienda;
         this.dimensionesProductoTipoService
             .query({
                 page: this.page - 1,
@@ -183,6 +184,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     if (producto == value['productosDormitorio']['id']) {
                         if (cont == 0) {
                             var image = document.createElement('img');
+                            var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor1').append(
@@ -191,7 +195,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     '" class="dimensionesId1">' +
                                     value['mensaje'] +
                                     '</p><hr style="width:100%;color:black"></hr><p style="float:right"><strong>Desde ' +
-                                    value['precio'] +
+                                    precio +
                                     '</strong>&euro;</p>'
                             );
                             $('.dimensionesColor1').append(
@@ -204,6 +208,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         }
                         if (cont == 1) {
                             var image = document.createElement('img');
+                            var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor2').append(
@@ -215,7 +222,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     '" class="dimensionesId1">' +
                                     value['mensaje'] +
                                     '</p><hr style="width:100%;color:black"></hr><p style="float:right"><strong>Desde ' +
-                                    value['precio'] +
+                                    precio +
                                     '</strong>&euro;</p>'
                             );
                             $('.dimensionesColor2').append(
@@ -228,6 +235,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         }
                         if (cont == 2) {
                             var image = document.createElement('img');
+                            var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor3').append(
@@ -236,7 +246,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     '" class="dimensionesId3">' +
                                     value['mensaje'] +
                                     '</p><hr style="width:100%;color:black"></hr><p style="float:right"><strong>Desde ' +
-                                    value['precio'] +
+                                    precio +
                                     '</strong>&euro;</p>'
                             );
                             $('.dimensionesColor3').append(
@@ -249,6 +259,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         }
                         if (cont == 3) {
                             var image = document.createElement('img');
+                            var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor4').append(
@@ -257,7 +270,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     '" class="dimensionesId4">' +
                                     value['mensaje'] +
                                     '</p><hr style="width:100%;color:black"></hr><p style="float:right"><strong>Desde ' +
-                                    value['precio'] +
+                                    precio +
                                     '</strong>&euro;</p>'
                             );
                             $('.dimensionesColor4').append(
@@ -270,6 +283,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         }
                         if (cont == 4) {
                             var image = document.createElement('img');
+                            var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor5').append(
@@ -278,7 +294,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     '" class="dimensionesId5">' +
                                     value['mensaje'] +
                                     '</p><hr style="width:100%;color:black"></hr><p style="float:right"><strong>Desde ' +
-                                    value['precio'] +
+                                    precio +
                                     '</strong>&euro;</p>'
                             );
                             $('.dimensionesColor5').append(
@@ -291,6 +307,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         }
                         if (cont == 5) {
                             var image = document.createElement('img');
+                            var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor6').append(
@@ -299,7 +318,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     '" class="dimensionesId6">' +
                                     value['mensaje'] +
                                     '</p><hr style="width:100%;color:black"></hr><p style="float:right"><strong>Desde ' +
-                                    value['precio'] +
+                                    precio +
                                     '</strong>&euro;</p>'
                             );
                             $('.dimensionesColor6').append(
@@ -668,6 +687,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     }
 
     public dimensionesCogidas(id) {
+        var precioTienda = this.precioTienda;
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
@@ -720,9 +740,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         $('#datos1').append('<p>Ancho</p>');
                         $('#datos1').append('<p>Alto</p>');
                         $('#datos1').append('<p>Fondo</p>');
+
                         var total = $('#total').text();
                         var totalfloat = parseFloat(total);
-                        totalfloat = totalfloat + value['precio'];
+                        var precio = parseFloat(value['precio']);
+                        precio = precio * precioTienda;
+                        precio = Math.round(precio * 100) / 100;
+                        totalfloat = totalfloat + precio;
                         $('#total').text(totalfloat);
                         $('#precioDimension').text(totalfloat);
                         $('#precios1').append('<p class="' + value['id'] + '" id="ancho1">' + value['ancho'] + '</p>');
@@ -1124,6 +1148,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
 
     public apoyoCogido(id) {
         $('#iluminacion').removeAttr('style');
+        var precioTienda = this.precioTienda;
         $('#iluminacion').attr('style');
         $('#iluminacion').css({ display: 'none' });
         $('.apoyoCogido1').css({ 'background-color': 'white' });
@@ -1151,12 +1176,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 datos = data['body'];
                 $.each(datos, function(index, value) {
                     if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
+                        var precio = parseFloat(value['precio']);
+                        precio = precio * precioTienda;
+                        precio = Math.round(precio * 100) / 100;
                         $('#datos1').append('<p id="nombreApoyo">' + value['productoApoyo']['nombre'] + '</p>');
                         $('#precios1').append('<p id="apoyoRaya">-</p>');
-                        $('#precioCalculado1').append('<p id="apoyo1" class="' + value['id'] + '">' + value['precio'] + '&euro;</p>');
+                        $('#precioCalculado1').append('<p id="apoyo1" class="' + value['id'] + '">' + precio + '&euro;</p>');
                         var total = $('#total').text();
                         var totalfloat = parseFloat(total);
-                        totalfloat = totalfloat + value['precio'];
+                        totalfloat = totalfloat + precio;
                         $('#total').text(totalfloat);
                     }
                 });
@@ -1190,21 +1218,27 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     }
 
     public ilumina(id) {
+        var precioTienda = this.precioTienda;
         var iluminacion = this.iluminacion;
         $('#ilu' + id).css({ 'background-color': '#DFDDDC' });
         if (id == 1) {
             var ilu = $('#ilu1').attr('class');
             for (let k = 0; k < iluminacion.length; k++) {
                 if (iluminacion[k]['id'] == ilu) {
+                    var precio = parseFloat(iluminacion[k]['precio']);
+                    precio = precio * precioTienda;
+                    precio = Math.round(precio * 100) / 100;
                     $('#datos1').append('<p id="nombreIluminacion">Iluminacion</p>');
                     $('#precios1').append('<p id="iluminacionRaya">-</p>');
-                    $('#precioCalculado1').append(
-                        '<p id="iluminacion1" class="' + iluminacion[k]['id'] + '">' + iluminacion[k]['precio'] + '&euro;</p>'
-                    );
+                    $('#precioCalculado1').append('<p id="iluminacion1" class="' + iluminacion[k]['id'] + '">' + precio + '&euro;</p>');
                     $('#textoFinal').removeAttr('style');
                     $('#textoFinal').attr('style');
                     $('#textoFinal').css({ width: '100%' });
                     $('#textoFinal').css({ float: 'left' });
+                    var total = $('#total').text();
+                    var totalfloat = parseFloat(total);
+                    totalfloat = totalfloat + precio;
+                    $('#total').text(totalfloat);
                 }
             }
         } else {
@@ -1642,6 +1676,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
+        this.precioTienda = sessionStorage.getItem('precioTienda');
         this.registerChangeInProductosDormitorios();
     }
 

@@ -2,17 +2,22 @@
 <nav class="navbar navbar-dark navbar-expand-md bg-white" style="float:left; width:10%;height:900px;margin-right:40px;margin-left:10px;position:sticky">
 <div style="float:left;witdh:100%;top:10px;margin-left:30px;position:fixed">
 	    <ul class="navbar-nav ml-auto">
-	        <li  *jhiHasAnyAuthority="'ROLE_CLIENTE'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	        <li  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
 	                <span class="logo-img"></span>
 	            </a>       
 	        </li>
-	        <li *jhiHasAnyAuthority="'ROLE_REPRESENTATE'" class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	        <li *jhiHasAnyAuthority="'ROLE_REPRESENTATE','ROLE_USER'" class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
 	                <span class="logo-img"></span>
 	            </a>            
 	        </li>
-	        <li *jhiHasAnyAuthority="'ROLE_ADMIN'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	        <li *jhiHasAnyAuthority="'ROLE_ADMIN','ROLE_USER'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
+	                <span class="logo-img"></span>
+	            </a>     
+	        </li>
+	        <li *jhiHasAnyAuthority="'ROLE_USER'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
 	                <span class="logo-img"></span>
 	            </a>     
@@ -22,6 +27,7 @@
 	                <span class="logo-img"></span>
 	            </a>     
 	        </li>
+	        
 	    </ul>
 			  
 

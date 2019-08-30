@@ -5,12 +5,13 @@ import { JhiEventManager } from 'ng-jhipster';
 import * as $ from 'jquery';
 import { Observable } from 'rxjs';
 import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
-
+import { ActivatedRoute } from '@angular/router';
 import { LoginModalService, AccountService, Account } from 'app/core';
-
+import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 import { LoginService } from 'app/core/login/login.service';
 import { Router } from '@angular/router';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
+import { PagosTiendaService } from '../pagos-tienda/pagos-tienda.service';
 
 @Component({
     selector: 'jhi-inicio',
@@ -18,6 +19,7 @@ import { StateStorageService } from 'app/core/auth/state-storage.service';
 })
 export class inicioComponent implements OnInit {
     account: Account;
+    currentAccount: any;
     modalRef: NgbModalRef;
     isSaving: boolean;
     provincias: any;
@@ -25,6 +27,7 @@ export class inicioComponent implements OnInit {
     authenticationError: boolean;
     password: string;
     rememberMe: boolean;
+    pagosTienda: any;
     username: string;
     credentials: any;
 
@@ -34,10 +37,63 @@ export class inicioComponent implements OnInit {
         private eventManager: JhiEventManager,
         private loginService: LoginService,
         private router: Router,
+        protected activatedRoute: ActivatedRoute,
+        protected pagosTiendaService: PagosTiendaService,
+        protected datosUsuarioService: DatosUsuarioService,
         private stateStorageService: StateStorageService
     ) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.accountService.identity().then(account => {
+            this.currentAccount = account;
+        });
+        var usuarioBuscado;
+        var tiendaUsuario;
+        var pagos = [];
+        this.pagosTiendaService
+            .query({
+                size: 10000000
+            })
+            .subscribe(
+                (res: HttpResponse<IPagosTienda[]>) => {
+                    for (let j = 0; j < res.body.length; j++) {
+                        pagos[j] = res.body[j];
+                    }
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+        var authorities = this.accountService.userIdentity.authorities;
+        for (let i = 0; i < authorities.length; i++) {
+            if (authorities[i] != 'ROLE_CLIENTE') {
+                usuarioBuscado = this.accountService.userIdentity;
+            }
+        }
+        if (usuarioBuscado != undefined) {
+            this.datosUsuarioService
+                .query({
+                    size: 10000000
+                })
+                .subscribe(
+                    (res: HttpResponse<IDatosUsuario[]>) => {
+                        for (let k = 0; k < res.body.length; k++) {
+                            if (res.body[k]['user'] != null) {
+                                if (res.body[k]['user']['id'] == usuarioBuscado['id']) {
+                                    tiendaUsuario = res.body[k];
+                                }
+                            }
+                        }
+                        for (let h = 0; h < pagos.length; h++) {
+                            if (pagos[h]['datosUsuario']['id'] == tiendaUsuario['id']) {
+                                sessionStorage.setItem('precioTienda', JSON.stringify(pagos[h]['precioTienda']));
+                            } else {
+                                sessionStorage.setItem('precioTienda', JSON.stringify(1));
+                            }
+                        }
+                    },
+                    (res: HttpErrorResponse) => this.onError(res.message)
+                );
+        }
+    }
 
     isAuthenticated() {
         return this.accountService.isAuthenticated();

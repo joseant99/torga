@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "datosUsuario",
+            "otherEntityName": "datosUsuario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "pago",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descuento",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "precioTienda",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20190830071649",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "pagos_tienda",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

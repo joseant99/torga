@@ -79,7 +79,7 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.Iluminacion.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.IluminacionProdPrePed.class.getName() , jcacheConfiguration);       
             cm.createCache(com.torga.pedidos.domain.Vendedores.class.getName() , jcacheConfiguration);
-
+            cm.createCache(com.torga.pedidos.domain.PagosTienda.class.getName() , jcacheConfiguration);
         };
     }
 }

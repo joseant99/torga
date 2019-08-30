@@ -39,6 +39,7 @@
                 "iluminacion": "Iluminacion",
                 "iluminacionProdPrePed": "Iluminacion Prod Pre Ped",
                 "vendedores": "Vendedores",
+                "pagosTienda": "Pagos Tienda",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
