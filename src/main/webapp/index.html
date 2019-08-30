@@ -102,6 +102,19 @@
 		  });
 		});
 </script>
+
+<script>
+	function nuevoPago(id){
+		var pagoTienda=$("#pagoTienda"+id).val();
+    	var descuento =$("#descuentoTienda"+id).val();
+    		if(pagoTienda != "" && descuento != ""){
+    			$("#pagos").append("<br><br>");
+    			$("#pagos").append('<div style="margin-left:0%" class="form-group row" id="'+id+'"><label for="pagoComercial" class="col-sm-1 col-form-label">PAGO</label><div class="col-sm-2"><input type="text" style="text-align:center;height:70px" class="form-control" id="pagoTienda'+(id+1)+'" value="" onchange="nuevoPago('+(id+1)+')"></div><label for="pagoComercial" class="col-sm-4 col-form-label">PUEDE CONLLEVAR UN DESCUENTO MÁXIMO DEL</label><div class="col-sm-2"><input type="text" style="text-align:center;height:70px" class="form-control" id="descuentoTienda'+(id+1)+'" value="" onchange="nuevoPago('+(id+1)+')"></div></div>');
+    			var altura = $(document).height();
+    			$("html, body").animate({scrollTop:altura+"px"});
+    		}
+	}
+</script>
     
     <!-- uncomment this for adding service worker
         <script>

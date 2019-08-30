@@ -5,6 +5,7 @@ import { TorgaPedidosSharedModule } from 'app/shared';
 import { TorgaPedidosAdminModule } from 'app/admin/admin.module';
 import {
     DatosUsuarioComponent,
+    GestionFabricantesComponent,
     DatosGeneralesComponent,
     DatosUsuarioDetailComponent,
     DatosUsuarioUpdateComponent,
@@ -22,12 +23,14 @@ const ENTITY_STATES = [...datosUsuarioRoute, ...datosUsuarioPopupRoute];
         DatosUsuarioComponent,
         DatosUsuarioDetailComponent,
         DatosGeneralesComponent,
+        GestionFabricantesComponent,
         DatosUsuarioUpdateComponent,
         DatosUsuarioDeleteDialogComponent,
         DatosUsuarioDeletePopupComponent
     ],
     entryComponents: [
         DatosUsuarioComponent,
+        GestionFabricantesComponent,
         DatosUsuarioUpdateComponent,
         DatosGeneralesComponent,
         DatosUsuarioDeleteDialogComponent,

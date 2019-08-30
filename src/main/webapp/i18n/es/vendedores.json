@@ -1,0 +1,22 @@
+{
+    "torgaPedidosApp": {
+        "vendedores": {
+            "home": {
+                "title": "Vendedores",
+                "createLabel": "Crear nuevo Vendedores",
+                "createOrEditLabel": "Crear o editar Vendedores"
+            },
+            "created": "Un nuevo Vendedores ha sido creado con el identificador {{ param }}",
+            "updated": "Un Vendedores ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Vendedores ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Vendedores {{ id }}?"
+            },
+            "detail": {
+                "title": "Vendedores"
+            },
+            "user": "User",
+            "datosUsuario": "Datos Usuario"
+        }
+    }
+}

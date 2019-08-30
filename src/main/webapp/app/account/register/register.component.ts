@@ -6,7 +6,7 @@ import { JhiLanguageService } from 'ng-jhipster';
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
 import { LoginModalService } from 'app/core';
 import { Register } from './register.service';
-
+import * as $ from 'jquery';
 @Component({
     selector: 'jhi-register',
     templateUrl: './register.component.html'

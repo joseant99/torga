@@ -1,4 +1,92 @@
-<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores1"></button>
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.vendedores.home.title">Vendedores</span>
+            <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-productos-dormitorio"  data-toggle="modal" data-target="#myModalColores1">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.vendedores.home.createLabel">
+            Create new Vendedores
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="vendedores">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="user.login"><span >Usuario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.login"><span >Constrase&ntilde;a</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="datosUsuario.id"><span>Tipo de Cuenta</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody *ngFor="let vendedores of vendedores ;trackBy: trackId ; let i=index;">
+           
+						<tr *ngIf="i === 0">
+	                    	<td *ngIf="i === 0">
+	                        	{{vendedores.datosUsuario.user?.login}}
+	                        </td>
+	                        <td *ngIf="i === 0" class="hidetext">{{vendedores.datosUsuario.user?.login}}</td>
+	                        <td *ngIf="i === 0">Administrador</td>
+	                          <td>
+				             	 <button type="submit"
+	                                [routerLink]="['/', { outlets: { popup: 'vendedores/'+ vendedores.id + '/delete'} }]"
+	                                replaceUrl="true"
+	                                queryParamsHandling="merge"
+	                                class="btn btn-danger btn-sm">
+		                            <fa-icon [icon]="'times'"></fa-icon>
+		                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+		                        </button>
+				             </td>
+                        </tr>
+                        <tr *ngIf="i === 0">
+							 <td *ngIf="i === 0">
+	                    		{{vendedores.user?.login}}
+				             </td>
+				             <td *ngIf="i === 0" class="hidetext">
+				                    {{vendedores.user?.login}}
+				             </td>
+				             <td *ngIf="i === 0">Vendedor</td>
+				               <td>
+				             	 <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'vendedores/'+ vendedores.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+		                            <fa-icon [icon]="'times'"></fa-icon>
+		                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+		                        </button>
+				             </td>
+			             </tr>
+						
+						<tr *ngIf="i !== 0">
+	                    	 <td *ngIf="i !== 0">
+	                    		{{vendedores.user?.login}}
+				             </td *ngIf="i !== 0">
+				             <td *ngIf="i !== 0" class="hidetext">
+				                    {{vendedores.user?.login}}
+				             </td>
+				             <td *ngIf="i !== 0">Vendedor</td>
+				             <td>
+				             	 <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'vendedores/'+ vendedores.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+		                            <fa-icon [icon]="'times'"></fa-icon>
+		                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+		                        </button>
+				             </td>
+               			</tr>
+                   
+           
+                
+          
+            </tbody>
+        </table>
+    </div>
+    
+    
 
 <div class="modal fade" id="myModalColores1" role="dialog">
 		    <div class="modal-dialog modal-lg">
@@ -6,7 +94,7 @@
 		      <!-- Modal content-->
 		      <div class="modal-content">
 		        <div class="modal-header">
-		          <h4 class="modal-title">Escoge un acabado</h4>
+		          <h4 class="modal-title">Registro nuevo vendedor</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
@@ -15,15 +103,15 @@
         <div class="col-md-8">
             <h1 jhiTranslate="register.title">Registration</h1>
 
-            <div class="alert alert-success" *ngIf="success" jhiTranslate="register.messages.success">
-                <strong>Registration saved!</strong> Please check your email for confirmation.
+            <div class="alert alert-success" *ngIf="success" >
+                <strong>Registro Realizado.</strong> ACTUALIZA LA PAGINA PARA QUE APARAZCAAN LOS NUEVOS USUARIOS<br><a data-dismiss="modal">Cerrar</a>
             </div>
 
             <div class="alert alert-danger" *ngIf="error" jhiTranslate="register.messages.error.fail">
                 <strong>Registration failed!</strong> Please try again later.
             </div>
 
-            <div class="alert alert-danger" *ngIf="errorUserExists" jhiTranslate="register.messages.error.userexists">
+            <div class="alert alert-danger" *ngIf="errorUserExists != null" jhiTranslate="register.messages.error.userexists">
                 <strong>Login name already registered!</strong> Please choose another one.
             </div>
 
@@ -38,9 +126,9 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form name="form" role="form" (ngSubmit)="register()" #registerForm="ngForm" *ngIf="!success">
+            <form name="form" role="form" (ngSubmit)="register()" #registerForm="ngForm">
                 <div class="form-group">
-                    <label class="form-control-label" for="login" jhiTranslate="global.form.username">Username</label>
+                    <label class="form-control-label" for="login">Usuario</label>
                     <input type="text" class="form-control" [(ngModel)]="registerAccount.login" id="login" name="login" #login="ngModel" placeholder="{{'global.form.username.placeholder' | translate}}"
                             required minlength="1" maxlength="50" pattern="^[_.@A-Za-z0-9-]*$">
                     <div *ngIf="login.dirty && login.invalid">
@@ -62,7 +150,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="email" jhiTranslate="global.form.email">Email</label>
+                    <label class="form-control-label" for="email" >Email</label>
                     <input type="email" class="form-control" id="email" name="email" #email="ngModel" placeholder="{{'global.form.email.placeholder' | translate}}"
                             [(ngModel)]="registerAccount.email" minlength=5 maxlength=254 email required>
                     <div *ngIf="email.dirty && email.invalid">
@@ -85,7 +173,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="password" jhiTranslate="global.form.newpassword">New password</label>
+                    <label class="form-control-label" for="password" >Contrase&ntilde;a</label>
                     <input type="password" class="form-control" id="password" name="password" #password="ngModel" placeholder="{{'global.form.newpassword.placeholder' | translate}}"
                             [(ngModel)]="registerAccount.password" minlength=4 maxlength=50 required>
                     <div *ngIf="password.dirty && password.invalid">
@@ -105,7 +193,7 @@
                     <jhi-password-strength-bar [passwordToCheck]="registerAccount.password"></jhi-password-strength-bar>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="confirmPassword" jhiTranslate="global.form.confirmpassword">New password confirmation</label>
+                    <label class="form-control-label" for="confirmPassword" >Contrase&ntilde;a confirmation</label>
                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" #confirmPasswordInput="ngModel" placeholder="{{'global.form.confirmpassword.placeholder' | translate}}"
                             [(ngModel)]="confirmPassword" minlength=4 maxlength=50 required>
                     <div *ngIf="confirmPasswordInput.dirty && confirmPasswordInput.invalid">
@@ -140,3 +228,5 @@
 	  </div>
 
 
+    
+</div>

@@ -27,11 +27,13 @@ import { TorgaPedidosAcabadosComposicionModule } from './acabados-composicion/ac
 import { TorgaPedidosInterioresModule } from './interiores/interiores.module';
 import { TorgaPedidosPresupuestoPedidoModule } from './presupuesto-pedido/presupuesto-pedido.module';
 import { TorgaPedidosDatosUsuarioModule } from './datos-usuario/datos-usuario.module';
+import { TorgaPedidosVendedoresModule } from './vendedores/vendedores.module';
 
 @NgModule({
     // prettier-ignore
     imports: [
         TorgaPedidosClienteModule,
+        TorgaPedidosVendedoresModule,
         TorgaPedidosProductosComposicionModule,
         TorgaPedidosAcabadosComposicionModule,
         TorgaPedidosComposicionModule,

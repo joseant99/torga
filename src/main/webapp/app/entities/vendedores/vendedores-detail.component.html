@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vendedores">
+            <h2><span jhiTranslate="torgaPedidosApp.vendedores.detail.title">Vendedores</span> {{vendedores.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.vendedores.user">User</span></dt>
+                <dd>
+                    {{vendedores.user?.login}}
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.vendedores.datosUsuario">Datos Usuario</span></dt>
+                <dd>
+                    <div *ngIf="vendedores.datosUsuario">
+                        <a [routerLink]="['/datos-usuario', vendedores.datosUsuario?.id, 'view']">{{vendedores.datosUsuario?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vendedores', vendedores.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

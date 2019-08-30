@@ -38,6 +38,7 @@
                 "acabadosProductosPresupuestoPedido": "Acabados Productos Presupuesto Pedido",
                 "iluminacion": "Iluminacion",
                 "iluminacionProdPrePed": "Iluminacion Prod Pre Ped",
+                "vendedores": "Vendedores",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

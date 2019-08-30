@@ -32,6 +32,7 @@
 	                            <span style="color:black;font-size:18px;margin-top: 18px;">NOTICIAS</span>
 	                        </span>
 						</a>
+						</li>
 						<div id="menuNoticias" class="collapse">
 						   <ul aria-labelledby="#menuNoticias">
 						     	<li style="list-style: none;">
@@ -43,6 +44,7 @@
 								</li>
 							</ul>
 					</div>
+					</ul>
 		
 	    <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
 	        <fa-icon icon="bars"></fa-icon>
@@ -204,7 +206,7 @@
       	 </ul>
       	 
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a  id="comercial" data-toggle="collapse" data-target="#menuComercial">
                         <span>
                             <span style="color:black;font-size:20px;margin-top: -20px;">Comercial</span>
@@ -245,39 +247,69 @@
 					  </div>
       	 </ul>
       	 
- 		<a style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']">
+ 		<a style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']">
                         <span>
                             <span style="color:black;font-size:20px;margin-top: -20px;">CONTACTO FABRICA</span>
                         </span>
 		</a>
-      	 
+      	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a  id="fabricante" data-toggle="collapse" data-target="#menuFabricanteTorga">
+                        <span>
+                            <span style="color:black;font-size:20px;margin-top: -20px;">Gestion Fabricantes</span>
+                        </span>
+					</a>
+					<div id="menuFabricanteTorga" class="collapse">
+						<ul>
+							<li style="list-style: none;">
+							 <a  routerLink="gestion-fabricantes"  routerLinkActive="active"  id="fabricanteTorga" data-toggle="collapse">
+		                        <span>
+		                            <span style="color:#7AB5CA;font-size:16px;margin-top: -20px;">TORGA</span>
+		                        </span>
+							</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a  id="comercial" data-toggle="collapse" data-target="#menuTienda">
+                    <a  id="comercial" data-toggle="collapse" data-target="#menuComercialTorga">
                         <span>
                             <span style="color:black;font-size:20px;margin-top: -20px;">Gestion Tienda</span>
                         </span>
 					</a>
-					<div id="menuTienda" class="collapse">
-						   <ul aria-labelledby="menuComercial">
-						     	<li>
-		                            <a routerLink="datos-generales"  routerLinkActive="active" >
-		                                <span >Datos Generales</span>
-		                            </a>
-		                        </li>
-		                        <li>
-		                            <a routerLink=""  routerLinkActive="active" >
-		                                <span >Usuarios</span>
-		                            </a>
-		                        </li>
-		                        <li>
-		                            <a routerLink="datos-usuario"  routerLinkActive="active" >
-		                                <span >datos</span>
-		                            </a>
-		                        </li>
+					<div id="menuComercialTorga" class="collapse">
+					<ul>
+						<li style="list-style: none;">
+						 <a  id="comercialTorga" data-toggle="collapse" data-target="#menuTienda">
+	                        <span>
+	                            <span style="color:#7AB5CA;font-size:16px;margin-top: -20px;">TORGA</span>
+	                        </span>
+						</a>
+					
+						<div id="menuTienda" class="collapse" style="font-size:12px;color:#7AB5CA;">
+							  
+							     	<li >
+			                            <a routerLink="datos-generales"  routerLinkActive="active" >
+			                                <span style="color:#7AB5CA;">Datos Generales</span>
+			                            </a>
+			                        </li>
+			                        <li>
+			                            <a routerLink="vendedores-usuario"  routerLinkActive="active" >
+			                                <span style="color:#7AB5CA;">Usuarios</span>
+			                            </a>
+			                        </li>
+			                        <li>
+			                            <a routerLink="datos-usuario"  routerLinkActive="active" >
+			                                <span style="color:#7AB5CA;">datos</span>
+			                            </a>
+			                        </li>
+			                        
+		                     
 		                        
-	                        </ul>
-	                        
+						  </div>
+						 </li></ul>
 					  </div>
       	 </ul>
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
@@ -288,7 +320,10 @@
                         </span>
 					</a>
 			</li>
-		</ul>
+		</ul> 
+						<a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
+                            <span>SUGERENCIAS</span>
+                        </a><br>
                         <a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
                             <span>CERRAR SESION</span>
                         </a>

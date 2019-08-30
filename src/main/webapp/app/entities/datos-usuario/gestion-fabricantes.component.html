@@ -1,0 +1,117 @@
+<div>
+    <div *ngIf="datosUsuarios">
+    		<div style="text-align:center">
+    			<h2>TORGA</h2>
+    			<br><br>
+    			<div style="margin-left:30%" class="form-group row">
+				    <label for="nombreComercial" class="col-sm-2 col-form-label">Nombre Fiscal de la tienda:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="nombreFiscal" value="{{tiendaAdmin.nombreFiscal}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="nombreComercial" class="col-sm-2 col-form-label">CIF/NIF:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="CIF" value="{{tiendaAdmin.cif}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Direccion Fiscal:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="direccion" value="{{tiendaAdmin.direccion}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Provincia:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="provincia" value="{{tiendaAdmin.provincias.nombre}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Municipio:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="municipio" value="{{tiendaAdmin.municipios.nombre}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Codigo Postal:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{tiendaAdmin.codPostal}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Telefono:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{tiendaAdmin.telefono}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Correo Electronico:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{tiendaAdmin.email}}" disabled>
+				    </div>
+				  </div>
+    		</div>	
+    		<br><br><br>
+    		<div style="text-align:center">
+    			<h2>REPRESENTANTE</h2>
+    			<br><br>
+    			<div style="margin-left:30%" class="form-group row">
+				    <label for="nombreComercial" class="col-sm-2 col-form-label">REPRESENTANTE:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="nombreFiscal" value="" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="nombreComercial" class="col-sm-2 col-form-label">CORREO ELECTRONICO:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="CIF" value="" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">TELEFONO:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="direccion" value="" disabled>
+				    </div>
+				  </div>
+    		</div>
+    		<br><br><br>
+    		<div style="text-align:center">
+    			<h2>GESTI&#211;N DEL FABRICANTE</h2>
+    			<br><br>
+    			<div style="margin-left:0%" class="form-group row">
+				    <label style="padding-left: 150px" for="nombreComercial" class="col-sm-5 col-form-label">SI COMPRAMOS AL FABRICANTE UN MUEBLE POR 100&euro;,<br> &#191;A CUANTO VAMOS A VENDERLO?</label>
+				    <div class="col-sm-4">
+				      <input type="number" style="text-align:center;height:70px" class="form-control" id="precioTienda" value="" (change)="precioTienda()">
+				    </div>
+				  </div>
+				  <div style="margin-left:15%" class="form-group row">
+				  	<label for="email" class="col-sm-4 col-form-label">POR LO TANTO LA TIENDA MARCA:</label>
+				  	<div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="precioTiendaCalculado" value="" disabled>
+				    </div>
+				  </div> 
+    		</div>
+    		<br><br><br>
+    		<div style="text-align:center" id="pagos">
+    			<h2>PAGOS QUE ACEPTA TIENDA A CLIENTE FINAL Y SUS DESCUENTOS ASOCIADOS</h2>
+    			<br><br>
+    			<div style="margin-left:0%" class="form-group row" id ="1">
+				    <label for="pagoComercial" class="col-sm-1 col-form-label">PAGO</label>
+				    <div class="col-sm-2">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="pagoTienda1" value="" (change)="nuevoPago(1)">
+				    </div>
+				    <label for="pagoComercial" class="col-sm-4 col-form-label">PUEDE CONLLEVAR UN DESCUENTO MÁXIMO DEL</label>
+				    <div class="col-sm-2">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="descuentoTienda1" value="" (change)="nuevoPago(1)">
+				    </div>
+				  </div>	  
+    		</div>		
+    		<p style="text-align:center"><button style="width: 10%;height: 50px;">GUARDAR</button></p>		
+    	
+    	
+    		
+    </div>
+    
+</div>
+
