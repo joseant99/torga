@@ -7,11 +7,11 @@
 	    		<p style="text-align:center;font-size:30px">PRESUPUESTO: {{productosPresupuestoPedidos.presupuestoPedido?.codigo}}</p>
 	    		<p style="text-align:center;font-size:30px">FECHA:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_presupuesto}}</p>
 	    	</div>
-	    	<div style="float:left;width:40%;margin-lefT:100px">
-	    		 		<img width="300px" title="Foto de linea de codigo"" class="producto" [src]="'data:' + productosPresupuestoPedidos.productosDormitorio.imagenContentType + ';base64,' + productosPresupuestoPedidos.productosDormitorio.imagen" style="max-height: 350px;max-width: 350px;"  alt="productosDormitorio image"/>
+	    	<div style="float:left;width:40%;margin-left:100px" id="imagen{{i}}">
+	    		 		<img width="395px" title="Foto de linea de codigo"" class="producto" [src]="'data:' + productosPresupuestoPedidos.productosDormitorio.imagenContentType + ';base64,' + productosPresupuestoPedidos.productosDormitorio.imagen" style="max-height: 220px;max-width: 395px;"  alt="productosDormitorio image"/>
 	    	</div>
-	    	<div class="{{productosPresupuestoPedidos.id}}" style="float:right;width:35%;margin-left:50px">
-	    		<p style="font-size:30px"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</i>&euro;</strong></p>
+	    	<div class="{{productosPresupuestoPedidos.id}}Datos" style="float:right;width:35%;margin-left:50px">
+	    		<p style="font-size:30px"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</i>&euro;</strong></p>
 	    		<p>Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
 	    		<p>Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
 	    		<p>Fondo &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.fondo}}</p>
@@ -21,14 +21,61 @@
     <hr style="width:100%;background-color:black;float:left;height:0px"></hr>
   	
 </div>
-<div style="width:100%;float:left">
-  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalPasarPedido">Generar Pedido</button></p>
-  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7">Datos del Cliente</button></p>
-  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="imprimir()">Imprimir</button></p>
-  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7">Contacto con Fabrica</button></p>
-  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" [routerLink]="['/presupuesto-edicion']">Editar Presupuesto</button></p>
-  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="eliminar()" [routerLink]="['/presupuesto-usuario']">Elimiar Presupuesto</button></p>
-  		<p style="text-align:center"><button style="width:200px;background-color:#A4D9F4"[routerLink]="['/presupuesto-usuario']">Salir</button></p>
+<div style="float:left;width:100%">
+		<div style="float:left;width:100%;margin-bottom:15px">
+			<div style="float:left;margin-left:25%;font-size:25px"><p>FORMA DE PAGO</p>
+			
+			</div>
+			<div style="float:right;margin-right:25%" id="pago" (change)="pago()"></div>
+		</div>
+		<div style="float:left;width:100%;margin-bottom:15px">
+			<div style="float:left;margin-left:25%;font-size:25px"><p>SUBTOTAL</p>
+			
+			</div>
+			<div style="float:right;margin-right:25%" id="subtotalPago"><p style="font-size:25px" id="precioSubtotal">0</p></div>
+		</div>
+		<div style="float:left;width:100%;margin-bottom:15px">
+			<div style="float:left;margin-left:25%;font-size:25px"><p>DESCUENTO(%)</p>
+			
+			</div>
+			<div style="float:right;margin-right:25%"><input type="number" min="0" (change)="descuento()" name="descuento" id="descuentoPago"/></div>
+		</div>
+		
+		<div style="float:left;width:100%;margin-bottom:15px">
+			<div style="float:left;margin-left:25%;font-size:25px"><p>TOTAL DESCUENTO</p>
+			
+			</div>
+			<div style="float:right;margin-right:25%" id="descuentoCalculado"></div>
+		</div>
+		<div style="float:left;width:100%;margin-bottom:15px">
+			<div style="float:left;margin-left:25%;font-size:25px"><strong><p>PRECIO SIN IVA</p></strong>
+			
+			</div>
+			<div style="float:right;margin-right:25%" id="totalDescuento"><p id="totalDescuentoTexto" style="font-size:25px"></p></div>
+		</div>
+		<div style="float:left;width:100%;margin-bottom:15px">
+			<div style="float:left;margin-left:25%;font-size:25px"><p>IVA</p>
+			</div>
+			<div style="float:right;margin-right:25%" id="ivaQuitar"></div>
+		</div>
+		<div style="float:left;width:100%;margin-bottom:15px">
+			<div style="float:left;margin-left:25%;font-size:25px"><strong><p>PRECIO CON IVA</p></strong>
+			
+			</div>
+			<div style="float:right;margin-right:25%" id="precioCalculadoIva"></div>
+		</div>
+		
+		
+		<div style="float:left;width:100%">
+			<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalPasarPedido">Generar Pedido</button></p>
+	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7">Datos del Cliente</button></p>
+	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="imprimir()">Imprimir</button></p>
+	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7">Contacto con Fabrica</button></p>
+	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" [routerLink]="['/presupuesto-edicion']">Editar Presupuesto</button></p>
+	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="eliminar()" [routerLink]="['/presupuesto-usuario']">Elimiar Presupuesto</button></p>
+	  		<p style="text-align:center"><button style="width:200px;background-color:#A4D9F4"[routerLink]="['/presupuesto-usuario']">Salir</button></p>
+		</div>
+  		
   	</div>
 <div class="modal fade" id="modalPasarPedido" role="dialog">
 	    <div class="modal-dialog">

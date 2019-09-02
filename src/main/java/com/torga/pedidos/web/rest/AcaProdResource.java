@@ -97,7 +97,7 @@ public class AcaProdResource {
         if (eagerload) {
             page = acaProdRepository.findAllWithEagerRelationships(pageable);
         } else {
-            page = acaProdRepository.findAll(pageable);
+        	page = acaProdRepository.findAllWithEagerRelationships(pageable);
         }
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, String.format("/api/aca-prods?eagerload=%b", eagerload));
         return ResponseEntity.ok().headers(headers).body(page.getContent());

@@ -115,6 +115,26 @@
     		}
 	}
 </script>
+<script>
+	function interior(id){
+		        var id = $('.dimensionesColor'+id + ' #imagenDimensiones').attr("class");
+		        var interiores = JSON.parse(sessionStorage.getItem('interiores'));;
+		        $.each(interiores, function(index, value) {
+		            if (value['dimensionesProductoTipo']['id'] == id) {
+		                $('#imagenInterior').append(
+		                    '<img  src="data:image/gif;base64,' +
+		                        value['imagen'] +
+		                        '" id="imagenInterior" class="' +
+		                        value['id'] +
+		                        '" width="1000px" height="400px" style="text-align:center;margin-left:240px;margin-bottom:25px;">'
+		                );
+		                $('#modalInformacion').modal('show');
+		            }
+		        });
+		    
+
+	}
+</script>
     
     <!-- uncomment this for adding service worker
         <script>

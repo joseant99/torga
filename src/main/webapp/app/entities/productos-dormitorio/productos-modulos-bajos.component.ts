@@ -26,6 +26,7 @@ import { AcabadosService } from 'app/entities/acabados';
 import * as $ from 'jquery';
 import { IluminacionProdPrePedService } from '../iluminacion-prod-pre-ped/iluminacion-prod-pre-ped.service';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
+import { InterioresService } from '../interiores/interiores.service';
 
 @Component({
     selector: 'jhi-productos-dormitorio',
@@ -50,6 +51,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     productosPresupuestoPedidos: IProductosPresupuestoPedidos;
     user: any;
     todasDimensiones: any;
+    interiores: any;
     eventSubscriber: Subscription;
     routeData: any;
     links: any;
@@ -68,6 +70,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         protected acabadosService: AcabadosService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected iluminacionService: IluminacionService,
+        protected interioresService: InterioresService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected acaProdService: AcaProdService,
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
@@ -205,6 +208,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     value['id'] +
                                     '" width="300px" style=" opacity: 0.7;">'
                             );
+
+                            $('.dimensionesColor1').append(
+                                '<div onclick="interior(1)" style="float: right;margin-top: 275px; margin-left: 10px;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
                         }
                         if (cont == 1) {
                             var image = document.createElement('img');
@@ -232,6 +239,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     value +
                                     '" width="300px"  style=" opacity: 0.7;">'
                             );
+                            $('.dimensionesColor2').append(
+                                '<div onclick="interior(2)" style="float: right;margin-top: 275px; margin-left: 10px;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
                         }
                         if (cont == 2) {
                             var image = document.createElement('img');
@@ -255,6 +265,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     '" id="imagenDimensiones" class="' +
                                     value +
                                     '" width="300px"  style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor3').append(
+                                '<div onclick="interior(3)" style="float: right;margin-top: 275px; margin-left: 10px;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 3) {
@@ -280,6 +293,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     value +
                                     '" width="300px"  style=" opacity: 0.7;">'
                             );
+                            $('.dimensionesColor4').append(
+                                '<div onclick="interior(4)" style="float: right;margin-top: 275px; margin-left: 10px;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
                         }
                         if (cont == 4) {
                             var image = document.createElement('img');
@@ -304,6 +320,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     value +
                                     '" width="300px"  style=" opacity: 0.7;">'
                             );
+                            $('.dimensionesColor5').append(
+                                '<div onclick="interior(5)" style="float: right;margin-top: 275px; margin-left: 10px;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
                         }
                         if (cont == 5) {
                             var image = document.createElement('img');
@@ -327,6 +346,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     '" id="imagenDimensiones" class="' +
                                     value +
                                     '" width="300px"  style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor6').append(
+                                '<div onclick="interior(6)" style="float: right;margin-top: 275px; margin-left: 10px;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         cont++;
@@ -785,62 +807,35 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                             $('#acabados').append(
                                 '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                     imagen +
-                                    '" id="imagenDimensiones" width="400px" height="400px"  style=" opacity: 0.7;margin-left:150px">'
+                                    '" id="imagenDimensiones" width="395px" height="220px"  style=" opacity: 0.7;margin-left:150px">'
                             );
                         }
 
                         contador++;
                         var idAca = value['id'];
+                        for (let m = 0; m < value['acabados'].length; m++) {
+                            $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
+                                '<img  src="data:image/gif;base64,' +
+                                    value['acabados'][m]['imagenFondo'] +
+                                    '" id="imagenAcabado' +
+                                    i +
+                                    '" class="' +
+                                    value['acabados'][m]['id'] +
+                                    '" height="160px" width="280px" style=" opacity: 0.7;">'
+                            );
+                            $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
+                                '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
+                                    value['acabados'][m]['nombre'] +
+                                    '</strong></p>'
+                            );
 
-                        $.each(acabados, function(index1, value1) {
-                            if (idAca == 23) {
-                                if (value1['id'] == 1 || value1['id'] == 2) {
-                                    $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                        '<img  src="data:image/gif;base64,' +
-                                            value1['imagenFondo'] +
-                                            '" id="imagenAcabado' +
-                                            i +
-                                            '" class="' +
-                                            value1['id'] +
-                                            '" height="160px" width="280px" style=" opacity: 0.7;">'
-                                    );
-                                    $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                        '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                                            value1['nombre'] +
-                                            '</strong></p>'
-                                    );
+                            i++;
+                            $('.cambiarAca' + u).attr('style');
+                            $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
+                            $('.cambiarAca' + u).css({ 'margin-top': '15px' });
+                            $('.cambiarAca' + u).text('Cambiar Acabado');
+                        }
 
-                                    i++;
-                                    $('.cambiarAca' + u).attr('style');
-                                    $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
-                                    $('.cambiarAca' + u).css({ 'margin-top': '15px' });
-                                    $('.cambiarAca' + u).text('Cambiar Acabado');
-                                }
-                            } else {
-                                if (value1['id'] != 1 && value1['id'] != 2 && value1['id'] != 15 && value1['id'] != 16) {
-                                    $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                        '<img  src="data:image/gif;base64,' +
-                                            value1['imagenFondo'] +
-                                            '" id="imagenAcabado' +
-                                            i +
-                                            '" class="' +
-                                            value1['id'] +
-                                            '" height="160px" width="280px" style=" opacity: 0.7;">'
-                                    );
-                                    $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                        '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                                            value1['nombre'] +
-                                            '</strong></p>'
-                                    );
-
-                                    i++;
-                                    $('.cambiarAca' + u).attr('style');
-                                    $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
-                                    $('.cambiarAca' + u).css({ 'margin-top': '15px' });
-                                    $('.cambiarAca' + u).text('Cambiar Acabado');
-                                }
-                            }
-                        });
                         $('#aca1' + u).append(
                             '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
                                 u +
@@ -886,6 +881,27 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         value['nombre'] +
                         '</p>'
                 );
+                if (id1 == 1) {
+                    $('#tapa').remove();
+                    $('#acabados').append(
+                        '<img id="tapa" style="position: absolute;left: 65px;margin-top: -70px;" src="../../../content/images/TAPA-' +
+                            value['nombre'] +
+                            '.png">'
+                    );
+                }
+                if (id1 == 2) {
+                    $('#cajon').remove();
+                    $('#acabados').append(
+                        '<img id="cajon" style="position: absolute;left: 65px;margin-top: -70px;" src="../../../content/images/CAJON.png">'
+                    );
+                }
+                if (id1 == 3) {
+                    $('#casco').remove();
+                    $('#acabados').append(
+                        '<img id="casco" style="position: absolute;left: 65px;margin-top: -70px;" src="../../../content/images/CASCO.png">'
+                    );
+                }
+
                 $('#datos1').append('<p id="val' + id1 + '">Acabado ' + id1 + '</p>');
                 $('#precios1').append('<p id="val' + id1 + 'Dato" class="' + value['id'] + '">' + value['nombre'] + '</p>');
                 $('#precioCalculado1').append('<p id="valor' + id1 + '">' + value['precio'] + '</p>');
@@ -1256,6 +1272,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     }
 
     public enviarCarrito() {
+        for (let j = 1; j <= 10; j++) {
+            $('#productoCarrito' + j + ' #datos' + j).empty();
+            $('#productoCarrito' + j + ' #precios' + j).empty();
+            $('#productoCarrito' + j + ' #precioCalculado' + j).empty();
+        }
         var contador = 1;
         var acabados = this.acabados;
         var todosAcabados = this.todosAcabados;
@@ -1492,9 +1513,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             }
 
             nombre = $('#nombreProd' + j).text();
-            anchoTexto = $('#ancho' + j).text();
-            altoTexto = $('#alto' + j).text();
-            fondoTexto = $('#fondo' + j).text();
+            anchoTexto = $('#productoCarrito' + j + ' #ancho' + j).text();
+            altoTexto = $('#productoCarrito' + j + ' #alto' + j).text();
+            fondoTexto = $('#productoCarrito' + j + ' #fondo' + j).text();
 
             if (nombre != '') {
                 nombreTexto[contadorProd] = nombre;
@@ -1763,6 +1784,21 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         var sistemasApoyo = [];
         var numeroProductos = [];
         var ilu = [];
+        var interiores = [];
+
+        this.interioresService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(data => {
+                $.each(data['body'], function(index, value) {
+                    interiores[index] = value;
+                    sessionStorage.setItem('interiores', JSON.stringify(interiores));
+                });
+            });
+        this.interiores = interiores;
 
         this.iluminacionService
             .query({
@@ -1882,14 +1918,38 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 $('#productoCarrito' + i + ' #precios' + i).append('<br>');
                 $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
                 $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                for (let j = 1; j <= sesion.length - 2; j++) {
-                    $('#productoCarrito' + i + ' #datos' + i).append('<font>Acabado ' + j + '</font>');
+                for (let j = 1; j < 100; j++) {
+                    if (sesion[1]['acabado' + j] != undefined) {
+                        $('#productoCarrito' + i + ' #datos' + i).append('<font>Acabado ' + j + '</font>');
+                        $('#productoCarrito' + i + ' #datos' + i).append('<br>');
+                        $('#productoCarrito' + i + ' #precios' + i).append(
+                            '<font id="acabado' + i + '' + j + '">' + sesion[1]['acabado' + j]['nombre'] + '</font>'
+                        );
+                        $('#productoCarrito' + i + ' #precios' + i).append('<br>');
+                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
+                    }
+                }
+                if (sesion[1]['apoyo'] != undefined) {
+                    $('#productoCarrito' + i + ' #datos' + i).append('<font>' + sesion[1]['apoyo']['productoApoyo']['nombre'] + '</font>');
                     $('#productoCarrito' + i + ' #datos' + i).append('<br>');
                     $('#productoCarrito' + i + ' #precios' + i).append(
-                        '<font id="acabado' + i + '' + j + '">' + sesion[1 + j]['nombre'] + '</font>'
+                        '<font id="sistemaApoyo' + i + '" class="' + sesion[1]['apoyo']['id'] + '">-</font>'
                     );
                     $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
+                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>' + sesion[1]['apoyo']['precio'] + '&euro;</font>');
+                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
+                }
+                if (sesion[1]['iluminacion'] != undefined) {
+                    $('#productoCarrito' + i + ' #datos' + i).append('<font>Iluminacion</font>');
+                    $('#productoCarrito' + i + ' #datos' + i).append('<br>');
+                    $('#productoCarrito' + i + ' #precios' + i).append(
+                        '<font id="iluminacionCarr' + i + '" class="' + sesion[1]['iluminacion']['id'] + '">-</font>'
+                    );
+                    $('#productoCarrito' + i + ' #precios' + i).append('<br>');
+                    $('#productoCarrito' + i + ' #precioCalculado' + i).append(
+                        '<font>' + sesion[1]['iluminacion']['precio'] + '&euro;</font>'
+                    );
                     $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
                 }
             }

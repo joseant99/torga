@@ -77,17 +77,23 @@
 
 		<h2 id="medidas" style='margin-left:40%;float:left;display:none'>2.Medidas</h2>
 		</br>		
-		<div style="float:left;margin-left:8%;margin-bottom:50px;" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
-		</div>   
-		<div style="float:left;margin-left:8%;margin-bottom:50px" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
-		</div>   
-		<div style="float:left;margin-left:8%;margin-bottom:50px" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
-		</div>   
-		<div style="float:left;margin-left:8%;margin-bottom:50px" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
+		
+		<div style="float:left;margin-left:7%;margin-bottom:50px;" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
 		</div>
-		<div style="float:left;margin-left:8%;margin-bottom:50px" class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
+		   
+		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
+		</div>  
+		 
+		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
+		</div>  
+		 
+		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
+		</div>
+		
+		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
 		</div> 
-		<div style="float:left;margin-left:8%;margin-bottom:50px" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
+		
+		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
 		</div>      
 	</div>  
 	
@@ -169,7 +175,25 @@
 	      
 	    </div>
 	  </div>
-	  
+	   <div class="modal fade" id="modalInformacion" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Interior</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div id="arriba" style="float:left;width:100%"></div>
+	          <div id="imagenInterior" style="float:left"></div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
 	  <div class="modal fade" id="myModalColores1" role="dialog">
 		    <div class="modal-dialog modal-lg">
 		    

@@ -38,12 +38,16 @@ export class InterioresUpdateComponent implements OnInit {
         this.activatedRoute.data.subscribe(({ interiores }) => {
             this.interiores = interiores;
         });
-        this.productosDormitorioService.query().subscribe(
-            (res: HttpResponse<IProductosDormitorio[]>) => {
-                this.productosdormitorios = res.body;
-            },
-            (res: HttpErrorResponse) => this.onError(res.message)
-        );
+        this.productosDormitorioService
+            .query({
+                size: 10000000
+            })
+            .subscribe(
+                (res: HttpResponse<IProductosDormitorio[]>) => {
+                    this.productosdormitorios = res.body;
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
         this.dimensionesProductoTipoService.query().subscribe(
             (res: HttpResponse<IDimensionesProductoTipo[]>) => {
                 this.dimensionesproductotipos = res.body;

@@ -10,7 +10,7 @@ import { AccountService } from 'app/core';
 import { IProductosPresupuestoPedidos } from 'app/shared/model/productos-presupuesto-pedidos.model';
 import { AcabadosProductosPresupuestoPedidoService } from '../acabados-productos-presupuesto-pedido/acabados-productos-presupuesto-pedido.service';
 import { IluminacionProdPrePedService } from '../iluminacion-prod-pre-ped/iluminacion-prod-pre-ped.service';
-
+import { PagosTiendaService } from '../pagos-tienda/pagos-tienda.service';
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { PresupuestoPedidoService } from './presupuesto-pedido.service';
 import { ProductosPresupuestoPedidosService } from '../productos-presupuesto-pedidos/productos-presupuesto-pedidos.service';
@@ -47,6 +47,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
+        protected pagosTiendaService: PagosTiendaService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
@@ -152,7 +153,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                             }
                         }
                     }
-
+                    console.log(productosPresupuesto);
                     this.paginateProductosPresupuestoPedidos(productosPresupuesto, res.headers);
                     this.productos = productosPresupuesto;
 
@@ -161,16 +162,27 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     var iluminacion = this.iluminacion;
                     var apoyo;
                     setTimeout(function() {
-                        console.log(iluminacion);
                         if (productos != undefined && acabados != []) {
                             for (let i = 0; i < productos.length; i++) {
                                 var contador = 1;
                                 apoyo = undefined;
                                 for (let k = 0; k < acabados.length; k++) {
                                     if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
-                                        $('.' + productos[i]['id']).append(
+                                        $('.' + productos[i]['id'] + 'Datos').append(
                                             '<p>Acabado ' + contador + '&nbsp;&nbsp;&nbsp; ' + acabados[k]['acabados']['nombre'] + '</p>'
                                         );
+                                        if (i == 0) {
+                                            $('#imagen' + i).append(
+                                                '<img id="tapa" style="position: absolute;left: 65px;margin-top: -70px;" src="../../../content/images/TAPA-Nature.png">'
+                                            );
+                                            $('#imagen' + i).append(
+                                                '<img id="cajon" style="position: absolute;left: 65px;margin-top: -70px;" src="../../../content/images/CAJON.png">'
+                                            );
+                                            $('#imagen' + i).append(
+                                                '<img id="cajon" style="position: absolute;left: 65px;margin-top: -70px;" src="../../../content/images/CASCO.png">'
+                                            );
+                                        }
+
                                         if (contador == 1 && acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined) {
                                             apoyo = acabados[k];
                                         }
@@ -179,27 +191,57 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                     }
                                 }
                                 if (apoyo != undefined) {
-                                    $('.' + productos[i]['id']).append(
+                                    $('.' + productos[i]['id'] + 'Datos').append(
                                         '<p>' +
                                             apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
                                             '&nbsp;&nbsp;&nbsp; ' +
                                             apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
                                             '&euro;</p>'
                                     );
-                                    var precioTotal = $('.' + productos[i]['id'] + ' #precioTotal').text();
-                                    var precioFloat = parseFloat(precioTotal);
+                                    var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                    if (precioTotal != '') {
+                                        var precioFloat = parseFloat(precioTotal);
+                                    }
                                     precioFloat = precioFloat + apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
-                                    $('.' + productos[i]['id'] + ' #precioTotal').text(precioFloat);
+                                    var subTotal = parseFloat($('#precioSubtotal').text());
+                                    subTotal = subTotal + precioFloat;
+                                    $('#precioSubtotal').text(subTotal);
+                                    $('#totalDescuentoTexto').text(subTotal);
+                                    var iva = subTotal * 0.21;
+                                    $('#ivaPrecioQuitar').remove();
+                                    $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + '</p>');
+                                    iva = subTotal + iva;
+                                    $('#precioIvaSumado').remove();
+                                    $('#precioCalculadoIva').append(
+                                        '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
+                                    );
+                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat);
                                 }
+
                                 for (let j = 0; j < iluminacion.length; j++) {
                                     if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
-                                        $('.' + productos[i]['id']).append(
+                                        $('.' + productos[i]['id'] + 'Datos').append(
                                             '<p>Iluminacion&nbsp;&nbsp;&nbsp;' + iluminacion[j]['iluminacion']['precio'] + '&euro;</p>'
                                         );
-                                        var precioTotal = $('.' + productos[i]['id'] + ' #precioTotal').text();
+                                        var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
                                         var precioFloat = parseFloat(precioTotal);
                                         precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
-                                        $('.' + productos[i]['id'] + ' #precioTotal').text(precioFloat);
+                                        var subTotal = parseFloat($('#precioSubtotal').text());
+                                        if (subTotal == 0) {
+                                            subTotal = precioFloat;
+                                        }
+
+                                        $('#precioSubtotal').text(precioFloat);
+                                        var iva = precioFloat * 0.21;
+                                        $('#ivaPrecioQuitar').remove();
+                                        $('#ivaQuitar').append('<p id="ivaPrecioQuitar" style="font-size:25px">' + iva.toFixed(2) + '</p>');
+                                        iva = precioFloat + iva;
+                                        $('#precioIvaSumado').remove();
+                                        $('#precioCalculadoIva').append(
+                                            '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
+                                        );
+                                        $('#totalDescuentoTexto').text(precioFloat);
+                                        $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat);
                                     }
                                 }
                             }
@@ -282,8 +324,72 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     presupuestos[index] = value;
                 });
             });
+
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        this.pagosTiendaService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<IPagosTienda[]>) => {
+                    $('#pago').html('<form><select style="width:150px;height:50px" class="tipoPago"><option></option></select></form>');
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (res.body[i]['datosUsuario']['id'] == tienda['id']) {
+                            $('.tipoPago').append('<option value="' + res.body[i]['id'] + '">' + res.body[i]['pago'] + '</option>');
+                        }
+                    }
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+    }
+    public descuento() {
+        var maximo = parseFloat($('#descuentoPago').attr('max'));
+        var precioNormal = parseFloat($('#precioSubtotal').text());
+        var valor = parseFloat($('#descuentoPago').val());
+        if (valor <= maximo) {
+            $('#descuentoPago').css({ border: '0' });
+            var precioDescuento = precioNormal * (valor / 100);
+            $('#precioConDescuento').remove();
+            $('#descuentoCalculado').append(
+                '<p id="precioConDescuento" style="font-size:25px">-' + precioDescuento.toFixed(2) + '&euro;</p>'
+            );
+            precioDescuento = precioNormal - precioDescuento;
+            $('#totalDescuentoTexto').text(precioDescuento.toFixed(2));
+            var iva = precioDescuento * 0.21;
+            $('#ivaPrecioQuitar').remove();
+            $('#ivaQuitar').append('<p id="ivaPrecioQuitar" style="font-size:25px">' + iva.toFixed(2) + '</p>');
+            iva = precioDescuento + iva;
+            $('#precioIvaSumado').remove();
+            $('#precioCalculadoIva').append('<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>');
+        } else {
+            $('#descuentoPago').css({ border: 'red 1px solid' });
+        }
     }
 
+    public pago() {
+        var id = $('.tipoPago').val();
+
+        this.pagosTiendaService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<IPagosTienda[]>) => {
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (res.body[i]['id'] == id) {
+                            var arr = res.body[i]['descuento'].split('%');
+                            console.log(arr);
+                            $('#descuentoPago').attr('max', arr[0]);
+                        }
+                    }
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+    }
     ngOnDestroy() {
         this.eventManager.destroy(this.eventSubscriber);
     }

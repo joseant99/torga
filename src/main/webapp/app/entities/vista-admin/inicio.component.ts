@@ -12,6 +12,7 @@ import { LoginService } from 'app/core/login/login.service';
 import { Router } from '@angular/router';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
 import { PagosTiendaService } from '../pagos-tienda/pagos-tienda.service';
+import { VendedoresService } from '../vendedores/vendedores.service';
 
 @Component({
     selector: 'jhi-inicio',
@@ -33,6 +34,7 @@ export class inicioComponent implements OnInit {
 
     constructor(
         private accountService: AccountService,
+        protected vendedoresService: VendedoresService,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
         private loginService: LoginService,
@@ -48,8 +50,11 @@ export class inicioComponent implements OnInit {
             this.currentAccount = account;
         });
         var usuarioBuscado;
+        var cliente;
         var tiendaUsuario;
         var pagos = [];
+        var vendedores = [];
+        var dato = 0;
         this.pagosTiendaService
             .query({
                 size: 10000000
@@ -62,12 +67,29 @@ export class inicioComponent implements OnInit {
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
+
+        this.vendedoresService
+            .query({
+                size: 10000000
+            })
+            .subscribe(
+                (res: HttpResponse<IVendedores[]>) => {
+                    for (let j = 0; j < res.body.length; j++) {
+                        vendedores[j] = res.body[j];
+                    }
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+
         var authorities = this.accountService.userIdentity.authorities;
         for (let i = 0; i < authorities.length; i++) {
             if (authorities[i] != 'ROLE_CLIENTE') {
                 usuarioBuscado = this.accountService.userIdentity;
+            } else {
+                cliente = this.accountService.userIdentity;
             }
         }
+
         if (usuarioBuscado != undefined) {
             this.datosUsuarioService
                 .query({
@@ -79,19 +101,55 @@ export class inicioComponent implements OnInit {
                             if (res.body[k]['user'] != null) {
                                 if (res.body[k]['user']['id'] == usuarioBuscado['id']) {
                                     tiendaUsuario = res.body[k];
+                                    sessionStorage.setItem('tiendaUsuario', JSON.stringify(tiendaUsuario));
                                 }
                             }
                         }
                         for (let h = 0; h < pagos.length; h++) {
                             if (pagos[h]['datosUsuario']['id'] == tiendaUsuario['id']) {
                                 sessionStorage.setItem('precioTienda', JSON.stringify(pagos[h]['precioTienda']));
+                                dato = 1;
                             } else {
-                                sessionStorage.setItem('precioTienda', JSON.stringify(1));
+                                if (dato == 0) {
+                                    sessionStorage.setItem('precioTienda', JSON.stringify(1));
+                                }
                             }
                         }
                     },
                     (res: HttpErrorResponse) => this.onError(res.message)
                 );
+        } else {
+            if (cliente != undefined) {
+                this.datosUsuarioService
+                    .query({
+                        size: 10000000
+                    })
+                    .subscribe(
+                        (res: HttpResponse<IDatosUsuario[]>) => {
+                            for (let k = 0; k < res.body.length; k++) {
+                                for (let d = 0; d < vendedores.length; d++) {
+                                    if (res.body[k]['user'] != null) {
+                                        if (cliente['id'] == vendedores[d]['user']['id']) {
+                                            tiendaUsuario = vendedores[d]['datosUsuario'];
+                                            sessionStorage.setItem('tiendaUsuario', JSON.stringify(tiendaUsuario));
+                                        }
+                                    }
+                                }
+                            }
+                            for (let h = 0; h < pagos.length; h++) {
+                                if (pagos[h]['datosUsuario']['id'] == tiendaUsuario['id']) {
+                                    sessionStorage.setItem('precioTienda', JSON.stringify(pagos[h]['precioTienda']));
+                                    dato = 1;
+                                } else {
+                                    if (dato == 0) {
+                                        sessionStorage.setItem('precioTienda', JSON.stringify(1));
+                                    }
+                                }
+                            }
+                        },
+                        (res: HttpErrorResponse) => this.onError(res.message)
+                    );
+            }
         }
     }
 
