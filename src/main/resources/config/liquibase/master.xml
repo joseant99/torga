@@ -52,4 +52,8 @@
     <include file="config/liquibase/changelog/20190828160402_added_entity_constraints_Vendedores.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190830071649_added_entity_PagosTienda.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190830071649_added_entity_constraints_PagosTienda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190903073113_added_entity_MedidasEspeciales.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190903073113_added_entity_constraints_MedidasEspeciales.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190904073553_added_entity_MedEspProductoPedidoPresu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190904073553_added_entity_constraints_MedEspProductoPedidoPresu.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>

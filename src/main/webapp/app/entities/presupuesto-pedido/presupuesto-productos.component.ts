@@ -14,6 +14,7 @@ import { PagosTiendaService } from '../pagos-tienda/pagos-tienda.service';
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { PresupuestoPedidoService } from './presupuesto-pedido.service';
 import { ProductosPresupuestoPedidosService } from '../productos-presupuesto-pedidos/productos-presupuesto-pedidos.service';
+import { MedEspProductoPedidoPresuService } from '../med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.service';
 
 @Component({
     selector: 'jhi-presupuesto-productos',
@@ -50,6 +51,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         protected pagosTiendaService: PagosTiendaService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected accountService: AccountService,
+        protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
         protected eventManager: JhiEventManager
@@ -135,6 +137,17 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         this.isSaving = false;
     }
     loadAll() {
+        var medidasEspeciales = [];
+        this.medEspProductoPedidoPresuService
+            .query({
+                size: 10000000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data['body'].length; i++) {
+                    medidasEspeciales[i] = data['body'][i];
+                }
+            });
+
         var productosPresupuesto = [];
         var acabados = [];
         var cont = 0;
@@ -148,12 +161,29 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     for (let i = 0; i < res.body.length; i++) {
                         if (res.body[i]['presupuestoPedido'] != null) {
                             if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
-                                productosPresupuesto[cont] = res.body[i];
-                                cont++;
+                                if (res.body[i]['dimensionesProductoTipo']['mensaje'] == 'Medidas Especiales') {
+                                    for (let k = 0; k < medidasEspeciales.length; k++) {
+                                        if (medidasEspeciales[k]['productosPresupuestoPedidos']['id'] == res.body[i]['id']) {
+                                            res.body[i]['dimensionesProductoTipo']['ancho'] = medidasEspeciales[k]['ancho'];
+                                            res.body[i]['dimensionesProductoTipo']['alto'] = medidasEspeciales[k]['alto'];
+                                            res.body[i]['dimensionesProductoTipo']['fondo'] = medidasEspeciales[k]['fondo'];
+                                            res.body[i]['dimensionesProductoTipo']['precio'] = medidasEspeciales[k]['precio'];
+                                            var precioEspecial = parseFloat(medidasEspeciales[k]['precio']);
+                                            var menosPrecio = precioEspecial * 0.3;
+                                            menosPrecio = precioEspecial - menosPrecio;
+                                            var incremento = menosPrecio * 0.3;
+                                            res.body[i]['dimensionesProductoTipo']['incremento'] = incremento.toFixed(2);
+                                            productosPresupuesto[cont] = res.body[i];
+                                            cont++;
+                                        }
+                                    }
+                                } else {
+                                    productosPresupuesto[cont] = res.body[i];
+                                    cont++;
+                                }
                             }
                         }
                     }
-                    console.log(productosPresupuesto);
                     this.paginateProductosPresupuestoPedidos(productosPresupuesto, res.headers);
                     this.productos = productosPresupuesto;
 

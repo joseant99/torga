@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productosPresupuestoPedidos",
+            "otherEntityName": "productosPresupuestoPedidos",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ancho",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fondo",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "alto",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "precio",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20190904073553",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "med_esp_producto_pedido_presu",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

@@ -1,0 +1,27 @@
+{
+    "torgaPedidosApp": {
+        "medidasEspeciales": {
+            "home": {
+                "title": "Medidas Especiales",
+                "createLabel": "Crear nuevo Medidas Especiales",
+                "createOrEditLabel": "Crear o editar Medidas Especiales"
+            },
+            "created": "Un nuevo Medidas Especiales ha sido creado con el identificador {{ param }}",
+            "updated": "Un Medidas Especiales ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Medidas Especiales ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Medidas Especiales {{ id }}?"
+            },
+            "detail": {
+                "title": "Medidas Especiales"
+            },
+            "ancho": "Ancho",
+            "fondo": "Fondo",
+            "alto": "Alto",
+            "precio": "Precio",
+            "min": "Min",
+            "max": "Max",
+            "productosDormitorio": "Productos Dormitorio"
+        }
+    }
+}

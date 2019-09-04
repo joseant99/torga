@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-med-esp-producto-pedido-presu-heading" jhiTranslate="torgaPedidosApp.medEspProductoPedidoPresu.home.createOrEditLabel">Create or edit a Med Esp Producto Pedido Presu</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!medEspProductoPedidoPresu.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="medEspProductoPedidoPresu.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.medEspProductoPedidoPresu.ancho" for="field_ancho">Ancho</label>
+                    <input type="number" class="form-control" name="ancho" id="field_ancho"
+                        [(ngModel)]="medEspProductoPedidoPresu.ancho" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.medEspProductoPedidoPresu.fondo" for="field_fondo">Fondo</label>
+                    <input type="number" class="form-control" name="fondo" id="field_fondo"
+                        [(ngModel)]="medEspProductoPedidoPresu.fondo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.medEspProductoPedidoPresu.alto" for="field_alto">Alto</label>
+                    <input type="number" class="form-control" name="alto" id="field_alto"
+                        [(ngModel)]="medEspProductoPedidoPresu.alto" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.medEspProductoPedidoPresu.precio" for="field_precio">Precio</label>
+                    <input type="number" class="form-control" name="precio" id="field_precio"
+                        [(ngModel)]="medEspProductoPedidoPresu.precio" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.medEspProductoPedidoPresu.productosPresupuestoPedidos" for="field_productosPresupuestoPedidos">Productos Presupuesto Pedidos</label>
+                    <select class="form-control" id="field_productosPresupuestoPedidos" name="productosPresupuestoPedidos" [(ngModel)]="medEspProductoPedidoPresu.productosPresupuestoPedidos" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productosPresupuestoPedidosOption.id === medEspProductoPedidoPresu.productosPresupuestoPedidos?.id ? medEspProductoPedidoPresu.productosPresupuestoPedidos : productosPresupuestoPedidosOption" *ngFor="let productosPresupuestoPedidosOption of productospresupuestopedidos; trackBy: trackProductosPresupuestoPedidosById">{{productosPresupuestoPedidosOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

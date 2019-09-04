@@ -28,6 +28,8 @@ import { TorgaPedidosInterioresModule } from './interiores/interiores.module';
 import { TorgaPedidosPresupuestoPedidoModule } from './presupuesto-pedido/presupuesto-pedido.module';
 import { TorgaPedidosDatosUsuarioModule } from './datos-usuario/datos-usuario.module';
 import { TorgaPedidosVendedoresModule } from './vendedores/vendedores.module';
+import { TorgaPedidosMedidasEspecialesModule } from './medidas-especiales/medidas-especiales.module';
+import { TorgaPedidosMedEspProductoPedidoPresuModule } from './med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.module';
 
 @NgModule({
     // prettier-ignore
@@ -40,6 +42,7 @@ import { TorgaPedidosVendedoresModule } from './vendedores/vendedores.module';
         TorgaPedidosInterioresModule,
         TorgaPedidosReferenciaClientesModule,
         TorgaPedidosRepresentanteModule,
+        TorgaPedidosMedEspProductoPedidoPresuModule,
         TorgaPedidosLogisticaModule,
         TorgaPedidosPedidosModule,
         TorgaPedidosVistaClienteModule,
@@ -49,8 +52,9 @@ import { TorgaPedidosVendedoresModule } from './vendedores/vendedores.module';
         TorgaPedidosEstadosModule,
         TorgaPedidosCategorias_DormitorioModule,
         TorgaPedidosCategoriasDormiModule,
+        TorgaPedidosMedidasEspecialesModule,
         TorgaPedidosProductosDormitorioModule,
-        TorgaPedidosDimensionesProductoModule,
+        TorgaPedidosDimensionesProductoModule, 
         TorgaPedidosAcabadosModule,
         TorgaPedidosPresupuestoPedidoModule,
         TorgaPedidosAcabadosProductoModule,

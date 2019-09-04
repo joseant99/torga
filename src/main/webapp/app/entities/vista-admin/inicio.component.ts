@@ -173,6 +173,9 @@ export class inicioComponent implements OnInit {
         this.isSaving = false;
         this.previousState();
     }
+    protected onError(errorMessage: string) {
+        this.jhiAlertService.error(errorMessage, null, null);
+    }
     previousState() {}
     protected onSaveError() {
         this.isSaving = false;

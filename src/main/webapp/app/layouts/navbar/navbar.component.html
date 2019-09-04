@@ -1,6 +1,6 @@
 
-<nav class="navbar navbar-dark navbar-expand-md bg-white" style="float:left; width:10%;height:900px;margin-right:40px;margin-left:10px;position:sticky">
-<div style="float:left;witdh:100%;top:10px;margin-left:30px;position:fixed">
+<nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal">
+<div style="float:left;witdh:100%;top:10px;position:fixed">
 	    <ul class="navbar-nav ml-auto">
 	        <li  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
@@ -11,11 +11,6 @@
 	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
 	                <span class="logo-img"></span>
 	            </a>            
-	        </li>
-	        <li *jhiHasAnyAuthority="'ROLE_ADMIN','ROLE_USER'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
-	                <span class="logo-img"></span>
-	            </a>     
 	        </li>
 	        <li *jhiHasAnyAuthority="'ROLE_USER'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
@@ -255,7 +250,7 @@
       	 
  		<a style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']">
                         <span>
-                            <span style="color:black;font-size:20px;margin-top: -20px;">CONTACTO FABRICA</span>
+                            <span style="color:black;font-size:18px;margin-top: -20px;">CONTACTO FABRICA</span>
                         </span>
 		</a>
       	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
@@ -449,6 +444,12 @@
                         <a class="dropdown-item" routerLink="interiores" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
                             <span>Interiores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="medidas-especiales" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span>Medidas Especiales</span>
                         </a>
                     </li>
                   </ul>

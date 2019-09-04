@@ -40,6 +40,8 @@
                 "iluminacionProdPrePed": "Iluminacion Prod Pre Ped",
                 "vendedores": "Vendedores",
                 "pagosTienda": "Pagos Tienda",
+                "medidasEspeciales": "Medidas Especiales",
+                "medEspProductoPedidoPresu": "Med Esp Producto Pedido Presu",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

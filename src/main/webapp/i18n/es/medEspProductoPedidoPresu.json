@@ -1,0 +1,25 @@
+{
+    "torgaPedidosApp": {
+        "medEspProductoPedidoPresu": {
+            "home": {
+                "title": "Med Esp Producto Pedido Presus",
+                "createLabel": "Crear nuevo Med Esp Producto Pedido Presu",
+                "createOrEditLabel": "Crear o editar Med Esp Producto Pedido Presu"
+            },
+            "created": "Un nuevo Med Esp Producto Pedido Presu ha sido creado con el identificador {{ param }}",
+            "updated": "Un Med Esp Producto Pedido Presu ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Med Esp Producto Pedido Presu ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Med Esp Producto Pedido Presu {{ id }}?"
+            },
+            "detail": {
+                "title": "Med Esp Producto Pedido Presu"
+            },
+            "ancho": "Ancho",
+            "fondo": "Fondo",
+            "alto": "Alto",
+            "precio": "Precio",
+            "productosPresupuestoPedidos": "Productos Presupuesto Pedidos"
+        }
+    }
+}

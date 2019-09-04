@@ -63,6 +63,22 @@ Generic styles
     border-left: 5px solid green;
 }
 
+#menuPrincipal {
+    float: left;
+    width: 10%;
+    height: 900px;
+    margin-right: 40px;
+    position: sticky;
+}
+
+@media screen and (max-width: 1500px) {
+    #menuPrincipal {
+        float: left;
+        width: 100%;
+        position: sticky;
+    }
+}
+
 .ng-invalid:not(form) {
     border-left: 5px solid red;
 }

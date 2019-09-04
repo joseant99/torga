@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productosDormitorio",
+            "otherEntityName": "productosDormitorio",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ancho",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fondo",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "alto",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "precio",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "min",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "max",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20190903073113",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "medidas_especiales",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}
