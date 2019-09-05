@@ -72,7 +72,7 @@
 		
 		<div style="float:left;width:100%">
 			<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalPasarPedido">Generar Pedido</button></p>
-	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7">Datos del Cliente</button></p>
+	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="imprimir()">Imprimir</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7">Contacto con Fabrica</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" [routerLink]="['/presupuesto-edicion']">Editar Presupuesto</button></p>
@@ -98,4 +98,39 @@
 	      </div>
 	      
 	    </div>
-	  </div>	  	 
+	  </div>
+	  
+<div class="modal fade" id="modalDatosCliente" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Datos Cliente</h4>
+	        </div>
+	        <div class="modal-body">
+				<div style="width:100%;float:left"><input style="margin-left:20px;float:right;"type="text" id="nombre" class="id"/><label style="float:right;padding-bottom:5px;">Nombre y apellidos:</label></div>
+				<div style="width:100%;float:left"><input style="margin-left:20px;float:right"type="text" id="correo"/><label style="float:right;padding-bottom:5px;">Correo:</label></div>
+				<div style="width:100%;float:left"><input style="margin-left:20px;float:right;"type="text" id="telefono"/><label style="float:right;padding-bottom:5px;">Telefono:</label></div>
+				<div style="width:100%;float:left"><input style="margin-left:20px;float:right;"type="text" id="direccion"/><label style="float:right;padding-bottom:5px;">Direccion:</label></div>
+				<div style="width:100%;float:left">
+                             <select style="float:right;margin-left:20px" id="provincia"  (change)="cargarMunicipios()">
+                            	<option></option>
+                            </select><label style="float:right;padding-bottom:5px;">Ciudad</label>
+                </div>
+                <div style="width:100%;float:left">
+                             <select style="float:right;margin-left:20px" id="municipios">
+                            	<option></option>
+                            </select><label style="float:right;padding-bottom:5px;">Poblacion</label>
+                </div>
+                            
+				<div style="width:100%;float:left"><input style="margin-left:20px;float:right;"type="text" id="codPostal"/><label style="float:right;padding-bottom:5px;">Codigo Postal:</label></div>
+				<div style="width:100%;float:left"><input style="margin-left:20px;float:right;"type="text" id="enviar"/><label style="float:right;padding-bottom:5px;">Acepto que mis datos sean tratados<br> para fines comerciales:</label></div>
+				<div style="width:100%;float:left"><input style="margin-left:20px;float:right;"type="text" id="mandar"/><label style="float:right;padding-bottom:5px;">Mandar Presupuesto:</label></div>
+				<div style="width:100%;float:left"><p style="text-align:center;margin-top:10px"><button (click)="modificarDatos()">MODIFICAR</button></p></div>
+	        </div>
+	        	
+	      </div>
+	      
+	    </div>
+</div>	 	  	 

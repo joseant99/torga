@@ -10,7 +10,7 @@ import { TorgaPedidosVistaRepresentanteModule } from './vista-representante/vist
 import { TorgaPedidosVistaAdminModule } from './vista-admin/vista-admin.module';
 import { TorgaPedidosTransportistasModule } from './transportistas/transportistas.module';
 import { TorgaPedidosEstadosModule } from './estados/estados.module';
-
+import { TorgaPedidosRepresenTorgaModule } from './represen-torga/represen-torga.module';
 import { TorgaPedidosCategorias_DormitorioModule } from './categorias-dormitorio/categorias-dormitorio.module';
 import { TorgaPedidosCategoriasDormiModule } from './categorias-dormi/categorias-dormi.module';
 import { TorgaPedidosProductosDormitorioModule } from './productos-dormitorio/productos-dormitorio.module';
@@ -30,17 +30,20 @@ import { TorgaPedidosDatosUsuarioModule } from './datos-usuario/datos-usuario.mo
 import { TorgaPedidosVendedoresModule } from './vendedores/vendedores.module';
 import { TorgaPedidosMedidasEspecialesModule } from './medidas-especiales/medidas-especiales.module';
 import { TorgaPedidosMedEspProductoPedidoPresuModule } from './med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.module';
+import { TorgaPedidosRepresentanteTiendaModule } from './representante-tienda/representante-tienda.module';
 
 @NgModule({
     // prettier-ignore
     imports: [
         TorgaPedidosClienteModule,
         TorgaPedidosVendedoresModule,
+        TorgaPedidosRepresenTorgaModule,
         TorgaPedidosProductosComposicionModule,
         TorgaPedidosAcabadosComposicionModule,
         TorgaPedidosComposicionModule,
         TorgaPedidosInterioresModule,
         TorgaPedidosReferenciaClientesModule,
+        TorgaPedidosRepresentanteTiendaModule,
         TorgaPedidosRepresentanteModule,
         TorgaPedidosMedEspProductoPedidoPresuModule,
         TorgaPedidosLogisticaModule,

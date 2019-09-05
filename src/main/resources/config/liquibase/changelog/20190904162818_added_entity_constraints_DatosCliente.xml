@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity DatosCliente.
+    -->
+    <changeSet id="20190904162818-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="provincias_id"
+                                 baseTableName="datos_cliente"
+                                 constraintName="fk_datos_cliente_provincias_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="provincias"/>
+
+        <addForeignKeyConstraint baseColumnNames="municipios_id"
+                                 baseTableName="datos_cliente"
+                                 constraintName="fk_datos_cliente_municipios_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="municipios"/>
+
+        <addForeignKeyConstraint baseColumnNames="presupuesto_pedido_id"
+                                 baseTableName="datos_cliente"
+                                 constraintName="fk_datos_cliente_presupuesto_pedido_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="presupuesto_pedido"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -12,6 +12,7 @@ import { PresupuestoPedidoDetailComponent } from './presupuesto-pedido-detail.co
 import { PresupuestoPedidoUpdateComponent } from './presupuesto-pedido-update.component';
 import { PresupuestoUsuarioComponent } from './presupuesto-usuario.component';
 import { PresupuestoProductosComponent } from './presupuesto-productos.component';
+import { PedidosProductosComponent } from './pedidos-productos.component';
 import { PresupuestoEdicionComponent } from './presupuesto-edicion.component';
 import { PedidosUsuarioComponent } from './pedidos-usuario.component';
 import { PresupuestoPedidoDeletePopupComponent } from './presupuesto-pedido-delete-dialog.component';
@@ -89,6 +90,19 @@ export const presupuestoPedidoRoute: Routes = [
     {
         path: 'presupuesto-producto',
         component: PresupuestoProductosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.presupuestoPedido.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'pedidos-producto',
+        component: PedidosProductosComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

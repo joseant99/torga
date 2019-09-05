@@ -1,8 +1,11 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
+import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
+import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
 
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
 import { IVendedores } from 'app/shared/model/vendedores.model';
@@ -18,7 +21,7 @@ import { JhiLanguageService } from 'ng-jhipster';
     selector: 'jhi-vendedores',
     templateUrl: './vendedores-usuario.component.html'
 })
-export class VendedoresUsuarioComponent implements OnInit, OnDestroy, AfterViewInit {
+export class VendedoresUsuarioComponent implements OnInit, OnDestroy {
     currentAccount: any;
     vendedores: any;
     error: any;
@@ -26,6 +29,7 @@ export class VendedoresUsuarioComponent implements OnInit, OnDestroy, AfterViewI
     eventSubscriber: Subscription;
     routeData: any;
     links: any;
+    isSaving: boolean;
     totalItems: any;
     queryCount: any;
     itemsPerPage: any;
@@ -38,12 +42,8 @@ export class VendedoresUsuarioComponent implements OnInit, OnDestroy, AfterViewI
     reverse: any;
     registerAccount: any;
     confirmPassword: string;
-    doNotMatch: string;
-    error: string;
     errorEmailExists: string;
     errorUserExists: string;
-    registerAccount: any;
-    success: boolean;
     modalRef: NgbModalRef;
 
     constructor(
@@ -191,6 +191,7 @@ export class VendedoresUsuarioComponent implements OnInit, OnDestroy, AfterViewI
         var auth = this.authorities;
         var cuentaNueva = this.registerAccount;
         var usuario;
+        var vendedores;
         this.userService
             .query({
                 size: 1000000
@@ -199,7 +200,7 @@ export class VendedoresUsuarioComponent implements OnInit, OnDestroy, AfterViewI
                 (res: HttpResponse<User[]>) => {
                     for (let i = 0; i < res.body.length; i++) {
                         if (res.body[i]['login'] == cuentaNueva['login']) {
-                            const vendedores = {
+                            vendedores = {
                                 user: res.body[i],
                                 datosUsuario: tienda
                             };
@@ -213,9 +214,8 @@ export class VendedoresUsuarioComponent implements OnInit, OnDestroy, AfterViewI
     trackId(index: number, item: IVendedores) {
         return item.id;
     }
-    protected subscribeToSaveResponse(result: Observable<HttpResponse<IVendedores>>) {
-        result.subscribe((res: HttpResponse<IVendedores>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
-    }
+
+    protected subscribeToSaveResponse(result) {}
 
     registerChangeInVendedores() {
         this.eventSubscriber = this.eventManager.subscribe('vendedoresListModification', response => this.loadAll());

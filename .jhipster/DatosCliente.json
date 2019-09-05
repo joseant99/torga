@@ -1,0 +1,61 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "provincias",
+            "otherEntityName": "provincias",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "municipios",
+            "otherEntityName": "municipios",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "presupuestoPedido",
+            "otherEntityName": "presupuestoPedido",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "correo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigoPostal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fines",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "enviar",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190904162818",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "datos_cliente",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

@@ -1,0 +1,22 @@
+{
+    "torgaPedidosApp": {
+        "representanteTienda": {
+            "home": {
+                "title": "Representante Tiendas",
+                "createLabel": "Crear nuevo Representante Tienda",
+                "createOrEditLabel": "Crear o editar Representante Tienda"
+            },
+            "created": "Un nuevo Representante Tienda ha sido creado con el identificador {{ param }}",
+            "updated": "Un Representante Tienda ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Representante Tienda ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Representante Tienda {{ id }}?"
+            },
+            "detail": {
+                "title": "Representante Tienda"
+            },
+            "represenTorga": "Represen Torga",
+            "datosUsuario": "Datos Usuario"
+        }
+    }
+}

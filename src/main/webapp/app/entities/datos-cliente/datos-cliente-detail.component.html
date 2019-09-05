@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="datosCliente">
+            <h2><span jhiTranslate="torgaPedidosApp.datosCliente.detail.title">Datos Cliente</span> {{datosCliente.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.datosCliente.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{datosCliente.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosCliente.correo">Correo</span></dt>
+                <dd>
+                    <span>{{datosCliente.correo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosCliente.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{datosCliente.telefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosCliente.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{datosCliente.direccion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosCliente.codigoPostal">Codigo Postal</span></dt>
+                <dd>
+                    <span>{{datosCliente.codigoPostal}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosCliente.fines">Fines</span></dt>
+                <dd>
+                    <span>{{datosCliente.fines}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosCliente.enviar">Enviar</span></dt>
+                <dd>
+                    <span>{{datosCliente.enviar}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosCliente.provincias">Provincias</span></dt>
+                <dd>
+                    <div *ngIf="datosCliente.provincias">
+                        <a [routerLink]="['/provincias', datosCliente.provincias?.id, 'view']">{{datosCliente.provincias?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosCliente.municipios">Municipios</span></dt>
+                <dd>
+                    <div *ngIf="datosCliente.municipios">
+                        <a [routerLink]="['/municipios', datosCliente.municipios?.id, 'view']">{{datosCliente.municipios?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.datosCliente.presupuestoPedido">Presupuesto Pedido</span></dt>
+                <dd>
+                    <div *ngIf="datosCliente.presupuestoPedido">
+                        <a [routerLink]="['/presupuesto-pedido', datosCliente.presupuestoPedido?.id, 'view']">{{datosCliente.presupuestoPedido?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/datos-cliente', datosCliente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

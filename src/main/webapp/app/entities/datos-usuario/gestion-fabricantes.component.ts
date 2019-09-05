@@ -6,12 +6,12 @@ import { JhiEventManager, JhiParseLinks, JhiAlertService, JhiDataUtils } from 'n
 
 import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
 import { AccountService } from 'app/core';
-
+import { Observable } from 'rxjs';
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { DatosUsuarioService } from './datos-usuario.service';
 import { PagosTiendaService } from '../pagos-tienda/pagos-tienda.service';
 import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
-
+import { RepresentanteTiendaService } from '../representante-tienda/representante-tienda.service';
 @Component({
     selector: 'jhi-gestion-fabricantes',
     templateUrl: './gestion-fabricantes.component.html'
@@ -38,6 +38,7 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
 
     constructor(
         protected datosUsuarioService: DatosUsuarioService,
+        protected representanteTiendaService: RepresentanteTiendaService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
@@ -61,6 +62,7 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
         var cont = 0;
         var contador = 1;
         var tiendaBuena = [];
+        var representante;
         this.datosUsuarioService
             .query({
                 size: 1000000
@@ -83,6 +85,25 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
                     this.tiendaInsert = tiendaBuena[0];
                     this.tiendaAdmin = tiendaBuenaAdmin[1];
                     this.paginateDatosUsuarios(tiendaBuena, res.headers);
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+
+        this.representanteTiendaService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<IRepresentanteTienda[]>) => {
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (tiendaBuena[0]['id'] == res.body[i]['datosUsuario']['id']) {
+                            $('#nombreRepresentante').val(res.body[i]['represenTorga']['nombre']);
+                            $('#emailRepresentante').val(res.body[i]['represenTorga']['email']);
+                            $('#telefonoRepresentante').val(res.body[i]['represenTorga']['telefono']);
+                        }
+                    }
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
@@ -199,11 +220,8 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
     }
 
     public guardarPago() {
-        //comprobar si se a cambiado el dato del precio para actualizar todos
-        //comprobar si a cambiado los datos de pago y actualizarlo
-        // si no a cambiado insert
         var pagos = this.pagosTienda;
-        var funcion = 0;
+        var funcion;
         var funcion1 = 0;
         var length = pagos.length + 1;
         var comprobar = $('#pagoTienda' + length).val();
@@ -229,25 +247,30 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
                 }
             }
         }
-
-        var precioTienda = $('#precioTienda').val();
+        var precioTienda;
+        var tienda;
+        precioTienda = $('#precioTienda').val();
+        precioTienda = parseFloat(precioTienda);
         var tienda = this.tiendaInsert;
         var idPago;
+        var precioSubidaBD = 0;
         var pagoCompro;
         var descuentoCompro;
-        if (precioTienda != '') {
+        if (precioTienda != 0) {
             $('#textoErrorPrecio').remove();
             $('#precioTienda').removeAttr('style');
             $('#precioTienda').attr('style');
             $('#precioTienda').css({ 'text-align': 'center' });
             $('#precioTienda').css({ height: '70px' });
-            var precioSubidaBD = precioTienda / 100;
+            precioSubidaBD = precioTienda / 100;
 
             if (funcion1 == 1) {
                 for (let i = length - 1; i <= 40; i++) {
                     var pagoTienda = $('#pagoTienda' + i).val();
                     var descuento = $('#descuentoTienda' + i).val();
-                    if (pagoTienda != '' && descuento != '' && pagoTienda != undefined && descuento != undefined) {
+                    pagoTienda = pagoTienda.toString();
+                    descuento = descuento.toString();
+                    if (pagoTienda != '' && descuento != '' && descuento != undefined) {
                         const pagosTienda = {
                             precioTienda: precioSubidaBD,
                             datosUsuario: tienda,

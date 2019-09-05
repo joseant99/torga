@@ -42,6 +42,9 @@
                 "pagosTienda": "Pagos Tienda",
                 "medidasEspeciales": "Medidas Especiales",
                 "medEspProductoPedidoPresu": "Med Esp Producto Pedido Presu",
+                "represenTorga": "Represen Torga",
+                "representanteTienda": "Representante Tienda",
+                "datosCliente": "Datos Cliente",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

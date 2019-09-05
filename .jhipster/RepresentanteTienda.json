@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "represenTorga",
+            "otherEntityName": "represenTorga",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "datosUsuario",
+            "otherEntityName": "datosUsuario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20190904141047",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "representante_tienda",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

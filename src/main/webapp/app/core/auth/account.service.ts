@@ -9,9 +9,9 @@ import { Account } from 'app/core/user/account.model';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
-    private userIdentity: any;
-    private authenticated = false;
-    private authenticationState = new Subject<any>();
+    public userIdentity: any;
+    public authenticated = false;
+    public authenticationState = new Subject<any>();
 
     constructor(private languageService: JhiLanguageService, private sessionStorage: SessionStorageService, private http: HttpClient) {}
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -15,6 +15,12 @@ import { ITEMS_PER_PAGE } from 'app/shared';
 import { PresupuestoPedidoService } from './presupuesto-pedido.service';
 import { ProductosPresupuestoPedidosService } from '../productos-presupuesto-pedidos/productos-presupuesto-pedidos.service';
 import { MedEspProductoPedidoPresuService } from '../med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.service';
+import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
+import { ProvinciasService } from '../provincias/provincias.service';
+import { MunicipiosService } from '../municipios/municipios.service';
+import { IMunicipios } from 'app/shared/model/municipios.model';
+import { DatosClienteService } from '../datos-cliente/datos-cliente.service';
+import { IDatosCliente } from 'app/shared/model/datos-cliente.model';
 
 @Component({
     selector: 'jhi-presupuesto-productos',
@@ -29,6 +35,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     presupuestoPedidos: IPresupuestoPedido[];
     eventSubscriber: Subscription;
     productos: any;
+    provincias: any;
+    municipios: any;
     acabados: any;
     iluminacion: any;
     routeData: any;
@@ -48,6 +56,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
+        protected provinciasService: ProvinciasService,
+        protected municipiosService: MunicipiosService,
+        protected datosClienteService: DatosClienteService,
         protected pagosTiendaService: PagosTiendaService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected accountService: AccountService,
@@ -136,6 +147,13 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     protected onSaveError() {
         this.isSaving = false;
     }
+    protected subscribeToSaveResponse3(result: Observable<HttpResponse<IDatosCliente>>) {
+        result.subscribe((res: HttpResponse<IDatosCliente>) => this.onSaveSuccess3(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+    protected onSaveSuccess3() {
+        this.isSaving = false;
+    }
+
     loadAll() {
         var medidasEspeciales = [];
         this.medEspProductoPedidoPresuService
@@ -302,6 +320,40 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 }
             });
         this.iluminacion = ilu;
+
+        this.datosClienteService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<IDatosCliente[]>) => {
+                    for (let m = 0; m < res.body.length; m++) {
+                        if (res.body[m]['presupuestoPedido']['id'] == presu) {
+                            $('#nombre').val(res.body[m]['nombre']);
+                            $('#correo').val(res.body[m]['correo']);
+                            $('#telefono').val(res.body[m]['telefono']);
+                            $('#provincia').val(res.body[m]['provincias']['nombre']);
+                            $('#municipios').val(res.body[m]['municipios']['nombre']);
+                            $('#direccion').val(res.body[m]['direccion']);
+                            $('#codPostal').val(res.body[m]['codigoPostal']);
+                            $('#enviar').val(res.body[m]['fines']);
+                            $('#mandar').val(res.body[m]['enviar']);
+                            $('#nombre').css({ 'background-color': '#D7D9DA' });
+                            $('#correo').css({ 'background-color': '#D7D9DA' });
+                            $('#telefono').css({ 'background-color': '#D7D9DA' });
+                            $('#provincia').css({ 'background-color': '#D7D9DA' });
+                            $('#municipios').css({ 'background-color': '#D7D9DA' });
+                            $('#direccion').css({ 'background-color': '#D7D9DA' });
+                            $('#codPostal').css({ 'background-color': '#D7D9DA' });
+                            $('#enviar').css({ 'background-color': '#D7D9DA' });
+                            $('#mandar').css({ 'background-color': '#D7D9DA' });
+                        }
+                    }
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
     }
 
     loadPage(page: number) {
@@ -320,6 +372,88 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             }
         });
         this.loadAll();
+    }
+
+    public modificarDatos() {
+        var id;
+        var nombre;
+        var correo;
+        var telefono;
+        var provinciaCoger;
+        var municipioCoger;
+        var provinciaBuena;
+        var municipioBueno;
+        var direccion;
+        var provincias = this.provincias;
+        var municipios = this.municipios;
+        var todosPresupuestos = this.productosPresupuestoPedidos;
+        var codPostal;
+        var pres;
+        var enviar;
+        var mandar;
+        id = $('#nombre').attr('class');
+        if (id == 'id') {
+            nombre = $('#nombre').val();
+            correo = $('#correo').val();
+            telefono = $('#telefono').val();
+            provinciaCoger = $('#provincia').val();
+            municipioCoger = $('#municipios').val();
+            direccion = $('#direccion').val();
+            codPostal = $('#codPostal').val();
+            enviar = $('#enviar').val();
+            mandar = $('#mandar').val();
+            for (let i = 0; i < provincias.length; i++) {
+                if (provincias[i]['id'] == provinciaCoger) {
+                    provinciaBuena = provincias[i];
+                }
+            }
+
+            for (let k = 0; k < municipios.length; k++) {
+                if (municipios[k]['id'] == municipioCoger) {
+                    municipioBueno = municipios[k];
+                }
+            }
+
+            for (let i = 0; i < todosPresupuestos.length; i++) {
+                if (todosPresupuestos[i]['presupuestoPedido'] != null) {
+                    if (todosPresupuestos[i]['presupuestoPedido']['id'] == sessionStorage.getItem('presupuesto')) {
+                        pres = todosPresupuestos[i]['presupuestoPedido'];
+                    }
+                }
+            }
+            const datos = {
+                nombre: nombre,
+                correo: correo,
+                telefono: telefono,
+                direccion: direccion,
+                codigoPostal: codPostal,
+                fines: enviar,
+                enviar: mandar,
+                provincias: provinciaBuena,
+                municipios: municipioBueno,
+                presupuestoPedido: pres
+            };
+            this.subscribeToSaveResponse3(this.datosClienteService.create(datos));
+            $('#nombre').css({ 'background-color': '#D7D9DA' });
+            $('#correo').css({ 'background-color': '#D7D9DA' });
+            $('#telefono').css({ 'background-color': '#D7D9DA' });
+            $('#provincia').css({ 'background-color': '#D7D9DA' });
+            $('#municipios').css({ 'background-color': '#D7D9DA' });
+            $('#direccion').css({ 'background-color': '#D7D9DA' });
+            $('#codPostal').css({ 'background-color': '#D7D9DA' });
+            $('#enviar').css({ 'background-color': '#D7D9DA' });
+            $('#mandar').css({ 'background-color': '#D7D9DA' });
+        } else {
+            nombre = $('#nombre').val();
+            correo = $('#correo').val();
+            telefono = $('#telefono').val();
+            provincia = $('#provincia').val();
+            municipio = $('#municipio').val();
+            direccion = $('#direccion').val();
+            codPostal = $('#codPostal').val();
+            enviar = $('#enviar').val();
+            mandar = $('#mandar').val();
+        }
     }
 
     clear() {
@@ -342,6 +476,30 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             this.currentAccount = account;
         });
         this.registerChangeInProductosPresupuestoPedidos();
+
+        var municipios = [];
+        var provincias = [];
+        this.accountService.identity().then(account => {
+            this.account = account;
+        });
+
+        this.municipiosService.query1({}).subscribe(data => {
+            for (let i = 0; i < data['body'].length; i++) {
+                municipios[i] = data['body'][i];
+            }
+        });
+        this.municipios = municipios;
+
+        this.provinciasService
+            .query({
+                size: 100000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data['body'].length; i++) {
+                    provincias[i] = data['body'][i];
+                }
+            });
+        this.provincias = provincias;
 
         this.productosPresupuestoPedidosService
             .query({
@@ -374,10 +532,37 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
     }
+
+    public cargarMunicipios() {
+        var idProv = $('#provincia').val();
+        $('#municipios').empty();
+        $('#municipios').append('<option></option>');
+        this.municipiosService.query1({}).subscribe(data => {
+            for (let i = 0; i < data['body'].length; i++) {
+                if (data['body'][i]['provincias']['id'] == idProv) {
+                    $('#municipios').append('<option value="' + data['body'][i]['id'] + '">' + data['body'][i]['nombre'] + '</option>');
+                }
+            }
+        });
+    }
+
+    public provinciasCargar() {
+        this.provinciasService
+            .query({
+                size: 100000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data['body'].length; i++) {
+                    $('#provincia').append('<option value="' + data['body'][i]['id'] + '">' + data['body'][i]['nombre'] + '</option>');
+                }
+            });
+    }
     public descuento() {
+        var valor;
         var maximo = parseFloat($('#descuentoPago').attr('max'));
         var precioNormal = parseFloat($('#precioSubtotal').text());
-        var valor = parseFloat($('#descuentoPago').val());
+        valor = $('#descuentoPago').val();
+        valor = parseFloat(valor);
         if (valor <= maximo) {
             $('#descuentoPago').css({ border: '0' });
             var precioDescuento = precioNormal * (valor / 100);

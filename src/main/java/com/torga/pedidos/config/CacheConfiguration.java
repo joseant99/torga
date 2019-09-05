@@ -82,6 +82,9 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.PagosTienda.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.MedidasEspeciales.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.MedEspProductoPedidoPresu.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.RepresenTorga.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.RepresentanteTienda.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.DatosCliente.class.getName() , jcacheConfiguration);
         };
     }
 }

@@ -29,6 +29,7 @@ import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { InterioresService } from '../interiores/interiores.service';
 import { MedidasEspecialesService } from '../medidas-especiales/medidas-especiales.service';
 import { MedEspProductoPedidoPresuService } from '../med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.service';
+import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
 
 @Component({
     selector: 'jhi-productos-dormitorio',
@@ -48,6 +49,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     iluminacion: any;
     acabados: any;
     todosAcabados: any;
+    acaProdPed: any;
     precioTienda: any;
     presupuestoPedido: IPresupuestoPedido;
     presupuesto: any;
@@ -1070,13 +1072,16 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         var precioTienda = this.precioTienda;
         var imagen;
         var cont = 0;
+        var acabados = [];
         var dimensiones = this.todasDimensiones;
         var dimensionProxima;
         var idProd = $('#nombreMesita').attr('class');
         var idDimenTipo = $('#dimensionEspecial').attr('class');
         if (id == 1) {
             $('#anchoInputEspeciales').css({ border: 'gray 1px solid' });
-            var valor = parseFloat($('#anchoInputEspeciales').val());
+            var valor;
+            valor = $('#anchoInputEspeciales').val();
+            valor = parseFloat(valor);
             var max = parseFloat($('#anchoInputEspeciales').attr('max'));
             var min = parseFloat($('#anchoInputEspeciales').attr('min'));
             if (max >= valor && min <= valor) {
@@ -1239,7 +1244,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         if (id == 2) {
             $('#fondoInputEspeciales').css({ border: 'gray 1px solid' });
             var ancho = $('#anchosSelect').val();
-            var valor = parseFloat($('#inputFondoAncho').val());
+            var valor;
+            valor = $('#inputFondoAncho').val();
+            valor = parseFloat(valor);
             var max = parseFloat($('#inputFondoAncho').attr('max'));
             var min = parseFloat($('#inputFondoAncho').attr('min'));
             if (max >= valor && min <= valor) {
@@ -1360,7 +1367,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         if (id == 3) {
             $('#fondoInputEspeciales').css({ border: 'gray 1px solid' });
             var ancho = $('#anchosSelect').val();
-            var valor = parseFloat($('#inputAltoAncho').val());
+            var valor;
+            valor = $('#inputAltoAncho').val();
+            valor = parseFloat(valor);
             var max = parseFloat($('#inputAltoAncho').attr('max'));
             var min = parseFloat($('#inputAltoAncho').attr('min'));
             if (max >= valor && min <= valor) {
@@ -1681,7 +1690,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         for (let j = 1; j <= 5; j++) {
             $('.apoyoCogido' + j).css({ 'background-color': 'white' });
         }
-        for (let k = 1; k < valoresAca.length; k++) {
+        let k = 1;
+        for (k = 1; k < valoresAca.length; k++) {
             $('#val' + k).remove();
             $('#valor' + k).remove();
             $('#val' + k + 'Dato').remove();
@@ -1850,7 +1860,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             $('#textoFinal').css({ width: '100%' });
             $('#textoFinal').css({ float: 'left' });
         }
-        $('#botonCalculadora').attr('disabled', false);
+        $('#botonCalculadora').removeAttr('disabled');
         $('#terminarConfiguracion').removeAttr('style');
         $('#terminarConfiguracion').attr('style');
         $('#terminarConfiguracion').css({ float: 'left' });
@@ -2225,7 +2235,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             user: usuario,
             fecha_presupuesto: output
         };
-        this.numeroProdPed;
         this.presupuestoPedido = prueba;
         console.log(this.presupuestoPedido);
         this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
@@ -2241,16 +2250,16 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             user: usuario,
             fecha_presupuesto: output
         };
-
+        var prodPrePed;
         for (let m = 0; m < productosFinal.length; m++) {
             if (apoyosFinal[m] == undefined) {
-                const prodPrePed = {
+                prodPrePed = {
                     productosDormitorio: productosFinal[m],
                     presupuestoPedido: prueba1,
                     dimensionesProductoTipo: dimensionesFinal[m]
                 };
             } else {
-                const prodPrePed = {
+                prodPrePed = {
                     productosDormitorio: productosFinal[m],
                     presupuestoPedido: prueba1,
                     dimensionesProductoTipo: dimensionesFinal[m],

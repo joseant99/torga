@@ -9,6 +9,7 @@ import { IluminacionService } from '../iluminacion/iluminacion.service';
 import { ProductosDormitorioService } from './productos-dormitorio.service';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { CategoriasDormiService } from 'app/entities/categorias-dormi';
+import { IIluminacion } from 'app/shared/model/iluminacion.model';
 import * as $ from 'jquery';
 
 @Component({
@@ -74,7 +75,7 @@ export class ProductosDormitorioUpdateComponent implements OnInit, AfterViewInit
             this.id = this.productosDormitorio1['tamaño']['id'];
         }
     }
-    AfterViewInit() {
+    ngAfterViewInit() {
         var tamaño = this.productosDormitorio1.length;
         this.id = this.productosDormitorio1['tamaño']['id'];
     }
@@ -105,8 +106,10 @@ export class ProductosDormitorioUpdateComponent implements OnInit, AfterViewInit
             this.subscribeToSaveResponse(this.productosDormitorioService.update(this.productosDormitorio));
         } else {
             this.subscribeToSaveResponse(this.productosDormitorioService.create(this.productosDormitorio));
-            var precio1 = $('#field_precio').val();
-            if (precio1 != 0 && precio1 != '' && precio1 != undefined) {
+            var precio1;
+            precio1 = $('#field_precio').val();
+            precio1 = parseFloat(precio1);
+            if (precio1 != 0) {
                 var tamaño = this.productosDormitorio1.length;
                 if (this.productosDormitorio1[tamaño - 1] != undefined) {
                     this.id = this.productosDormitorio1[tamaño - 1]['id'];

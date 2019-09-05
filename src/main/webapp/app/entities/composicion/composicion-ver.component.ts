@@ -24,6 +24,7 @@ import { ProductosPresupuestoPedidosService } from '../productos-presupuesto-ped
 import { Observable } from 'rxjs';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { TiposApoyoService } from '../tipos-apoyo/tipos-apoyo.service';
+import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
 
 @Component({
     selector: 'jhi-composicion',
@@ -1027,7 +1028,6 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
             user: usuario,
             fecha_presupuesto: output
         };
-        this.numeroProdPed;
         this.presupuestoPedido = prueba;
         console.log(this.presupuestoPedido);
         this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
@@ -1035,6 +1035,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var id = localStorage.getItem('ultimoPresupuesto');
         var id1 = parseFloat(id);
         id1 = id1 + 1;
+        var prodPrePed;
         localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
         const prueba1 = {
             id: id1,
@@ -1046,13 +1047,13 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
 
         for (let m = 0; m < productosFinal.length; m++) {
             if (apoyosFinal[m] == undefined) {
-                const prodPrePed = {
+                prodPrePed = {
                     productosDormitorio: productosFinal[m],
                     presupuestoPedido: prueba1,
                     dimensionesProductoTipo: dimensionesFinal[m]
                 };
             } else {
-                const prodPrePed = {
+                prodPrePed = {
                     productosDormitorio: productosFinal[m],
                     presupuestoPedido: prueba1,
                     dimensionesProductoTipo: dimensionesFinal[m],

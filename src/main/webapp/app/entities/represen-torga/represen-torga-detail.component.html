@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="represenTorga">
+            <h2><span jhiTranslate="torgaPedidosApp.represenTorga.detail.title">Represen Torga</span> {{represenTorga.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.represenTorga.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{represenTorga.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.represenTorga.apellidos">Apellidos</span></dt>
+                <dd>
+                    <span>{{represenTorga.apellidos}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.represenTorga.email">Email</span></dt>
+                <dd>
+                    <span>{{represenTorga.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.represenTorga.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{represenTorga.telefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.represenTorga.user">User</span></dt>
+                <dd>
+                    {{represenTorga.user?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/represen-torga', represenTorga.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

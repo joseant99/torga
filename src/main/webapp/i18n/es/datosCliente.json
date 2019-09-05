@@ -1,0 +1,30 @@
+{
+    "torgaPedidosApp": {
+        "datosCliente": {
+            "home": {
+                "title": "Datos Clientes",
+                "createLabel": "Crear nuevo Datos Cliente",
+                "createOrEditLabel": "Crear o editar Datos Cliente"
+            },
+            "created": "Un nuevo Datos Cliente ha sido creado con el identificador {{ param }}",
+            "updated": "Un Datos Cliente ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Datos Cliente ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Datos Cliente {{ id }}?"
+            },
+            "detail": {
+                "title": "Datos Cliente"
+            },
+            "nombre": "Nombre",
+            "correo": "Correo",
+            "telefono": "Telefono",
+            "direccion": "Direccion",
+            "codigoPostal": "Codigo Postal",
+            "fines": "Fines",
+            "enviar": "Enviar",
+            "provincias": "Provincias",
+            "municipios": "Municipios",
+            "presupuestoPedido": "Presupuesto Pedido"
+        }
+    }
+}

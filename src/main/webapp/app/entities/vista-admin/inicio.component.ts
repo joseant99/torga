@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
 import { PagosTiendaService } from '../pagos-tienda/pagos-tienda.service';
 import { VendedoresService } from '../vendedores/vendedores.service';
+import { IVendedores } from 'app/shared/model/vendedores.model';
+import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
 
 @Component({
     selector: 'jhi-inicio',
@@ -173,9 +175,7 @@ export class inicioComponent implements OnInit {
         this.isSaving = false;
         this.previousState();
     }
-    protected onError(errorMessage: string) {
-        this.jhiAlertService.error(errorMessage, null, null);
-    }
+    protected onError(errorMessage: string) {}
     previousState() {}
     protected onSaveError() {
         this.isSaving = false;

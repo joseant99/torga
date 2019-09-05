@@ -24,6 +24,7 @@ import { ProductosDormitorioService } from './productos-dormitorio.service';
 import { AcabadosService } from 'app/entities/acabados';
 import * as $ from 'jquery';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
+import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
 
 @Component({
     selector: 'jhi-productos-dormitorio',
@@ -39,6 +40,7 @@ export class ProductosDormitorioCategoriaComponent implements OnInit, OnDestroy,
     apoyo: any;
     isSaving: boolean;
     acaProd: IAcaProd;
+    acaProdPed: any;
     acabados: any;
     todosAcabados: any;
     presupuestoPedido: IPresupuestoPedido;
@@ -703,8 +705,8 @@ export class ProductosDormitorioCategoriaComponent implements OnInit, OnDestroy,
         $('.apoyoCogido2').empty();
         $('.apoyoCogido3').empty();
         $('.apoyoCogido4').empty();
-
-        for (let k = 1; k < valoresAca.length; k++) {
+        let k = 1;
+        for (k = 1; k < valoresAca.length; k++) {
             $('#val' + k).remove();
             $('#valor' + k).remove();
             $('#val' + k + 'Dato').remove();
@@ -1083,7 +1085,7 @@ export class ProductosDormitorioCategoriaComponent implements OnInit, OnDestroy,
             user: usuario,
             fecha_presupuesto: output
         };
-        this.numeroProdPed;
+
         this.presupuestoPedido = prueba;
         console.log(this.presupuestoPedido);
         this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
@@ -1091,6 +1093,7 @@ export class ProductosDormitorioCategoriaComponent implements OnInit, OnDestroy,
         var id = localStorage.getItem('ultimoPresupuesto');
         var id1 = parseFloat(id);
         id1 = id1 + 1;
+        var prodPrePed;
         localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
         const prueba1 = {
             id: id1,
@@ -1102,13 +1105,13 @@ export class ProductosDormitorioCategoriaComponent implements OnInit, OnDestroy,
 
         for (let m = 0; m < productosFinal.length; m++) {
             if (apoyosFinal[m] == undefined) {
-                const prodPrePed = {
+                prodPrePed = {
                     productosDormitorio: productosFinal[m],
                     presupuestoPedido: prueba1,
                     dimensionesProductoTipo: dimensionesFinal[m]
                 };
             } else {
-                const prodPrePed = {
+                prodPrePed = {
                     productosDormitorio: productosFinal[m],
                     presupuestoPedido: prueba1,
                     dimensionesProductoTipo: dimensionesFinal[m],

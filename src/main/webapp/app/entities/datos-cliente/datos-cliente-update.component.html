@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-datos-cliente-heading" jhiTranslate="torgaPedidosApp.datosCliente.home.createOrEditLabel">Create or edit a Datos Cliente</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!datosCliente.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="datosCliente.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosCliente.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="datosCliente.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosCliente.correo" for="field_correo">Correo</label>
+                    <input type="text" class="form-control" name="correo" id="field_correo"
+                        [(ngModel)]="datosCliente.correo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosCliente.telefono" for="field_telefono">Telefono</label>
+                    <input type="text" class="form-control" name="telefono" id="field_telefono"
+                        [(ngModel)]="datosCliente.telefono" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosCliente.direccion" for="field_direccion">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="field_direccion"
+                        [(ngModel)]="datosCliente.direccion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosCliente.codigoPostal" for="field_codigoPostal">Codigo Postal</label>
+                    <input type="text" class="form-control" name="codigoPostal" id="field_codigoPostal"
+                        [(ngModel)]="datosCliente.codigoPostal" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosCliente.fines" for="field_fines">Fines</label>
+                    <input type="text" class="form-control" name="fines" id="field_fines"
+                        [(ngModel)]="datosCliente.fines" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosCliente.enviar" for="field_enviar">Enviar</label>
+                    <input type="text" class="form-control" name="enviar" id="field_enviar"
+                        [(ngModel)]="datosCliente.enviar" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosCliente.provincias" for="field_provincias">Provincias</label>
+                    <select class="form-control" id="field_provincias" name="provincias" [(ngModel)]="datosCliente.provincias" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="provinciasOption.id === datosCliente.provincias?.id ? datosCliente.provincias : provinciasOption" *ngFor="let provinciasOption of provincias; trackBy: trackProvinciasById">{{provinciasOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosCliente.municipios" for="field_municipios">Municipios</label>
+                    <select class="form-control" id="field_municipios" name="municipios" [(ngModel)]="datosCliente.municipios" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="municipiosOption.id === datosCliente.municipios?.id ? datosCliente.municipios : municipiosOption" *ngFor="let municipiosOption of municipios; trackBy: trackMunicipiosById">{{municipiosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosCliente.presupuestoPedido" for="field_presupuestoPedido">Presupuesto Pedido</label>
+                    <select class="form-control" id="field_presupuestoPedido" name="presupuestoPedido" [(ngModel)]="datosCliente.presupuestoPedido" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="presupuestoPedidoOption.id === datosCliente.presupuestoPedido?.id ? datosCliente.presupuestoPedido : presupuestoPedidoOption" *ngFor="let presupuestoPedidoOption of presupuestopedidos; trackBy: trackPresupuestoPedidoById">{{presupuestoPedidoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

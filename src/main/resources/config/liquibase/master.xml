@@ -35,7 +35,7 @@
     <include file="config/liquibase/changelog/20190715070115_added_entity_constraints_Interiores.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190716094251b_added_entity_PresupuestoPedido.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190716094251b_added_entity_constraints_PresupuestoPedido.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190716151217_added_entity_ProductosPresupuestoPedidos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190716151217_added_entity_ProductosPresupuestoPedidos.xml" relativeToChangelogFile="false"/> 
     <include file="config/liquibase/changelog/20190716151217_added_entity_constraints_ProductosPresupuestoPedidos.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190725090250_added_entity_Provincias.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190725095218_added_entity_Municipios.xml" relativeToChangelogFile="false"/>
@@ -56,4 +56,10 @@
     <include file="config/liquibase/changelog/20190903073113_added_entity_constraints_MedidasEspeciales.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190904073553_added_entity_MedEspProductoPedidoPresu.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190904073553_added_entity_constraints_MedEspProductoPedidoPresu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190904134143_added_entity_RepresenTorga.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190904134143_added_entity_constraints_RepresenTorga.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190904141047_added_entity_RepresentanteTienda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190904141047_added_entity_constraints_RepresentanteTienda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190904162818_added_entity_DatosCliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190904162818_added_entity_constraints_DatosCliente.xml" relativeToChangelogFile="false"/>                
 </databaseChangeLog>
