@@ -1,5 +1,6 @@
 package com.torga.pedidos.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -7,6 +8,8 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -35,6 +38,11 @@ public class PagosTienda implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties("")
     private DatosUsuario datosUsuario;
+
+    @ManyToMany(mappedBy = "pagosTiendas")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JsonIgnore
+    private Set<PagosTorgaTiendas> pagosTorgaTiendas = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -95,6 +103,31 @@ public class PagosTienda implements Serializable {
 
     public void setDatosUsuario(DatosUsuario datosUsuario) {
         this.datosUsuario = datosUsuario;
+    }
+
+    public Set<PagosTorgaTiendas> getPagosTorgaTiendas() {
+        return pagosTorgaTiendas;
+    }
+
+    public PagosTienda pagosTorgaTiendas(Set<PagosTorgaTiendas> pagosTorgaTiendas) {
+        this.pagosTorgaTiendas = pagosTorgaTiendas;
+        return this;
+    }
+
+    public PagosTienda addPagosTorgaTiendas(PagosTorgaTiendas pagosTorgaTiendas) {
+        this.pagosTorgaTiendas.add(pagosTorgaTiendas);
+        pagosTorgaTiendas.getPagosTiendas().add(this);
+        return this;
+    }
+
+    public PagosTienda removePagosTorgaTiendas(PagosTorgaTiendas pagosTorgaTiendas) {
+        this.pagosTorgaTiendas.remove(pagosTorgaTiendas);
+        pagosTorgaTiendas.getPagosTiendas().remove(this);
+        return this;
+    }
+
+    public void setPagosTorgaTiendas(Set<PagosTorgaTiendas> pagosTorgaTiendas) {
+        this.pagosTorgaTiendas = pagosTorgaTiendas;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -471,6 +471,13 @@
                         </a>
                     </li>
                     <li>
+                        <a class="dropdown-item" routerLink="pagos-torga-tiendas" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span>Dar pagos de torga a tiendas</span>
+                        </a>
+                    </li>
+                    
+                    <li>
                         <a class="dropdown-item" routerLink="referencia-clientes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.referenciaClientes">Referencia Clientes</span>

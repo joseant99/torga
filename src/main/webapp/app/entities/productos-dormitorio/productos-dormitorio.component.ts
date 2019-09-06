@@ -9,6 +9,7 @@ import { AccountService } from 'app/core';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { ProductosDormitorioService } from './productos-dormitorio.service';
+import { CategoriasDormiService } from '../categorias-dormi/categorias-dormi.service';
 
 @Component({
     selector: 'jhi-productos-dormitorio',
@@ -24,6 +25,8 @@ export class ProductosDormitorioComponent implements OnInit, OnDestroy {
     links: any;
     totalItems: any;
     queryCount: any;
+    productosFiltro: any;
+    categorias: any;
     itemsPerPage: any;
     page: any;
     predicate: any;
@@ -32,6 +35,7 @@ export class ProductosDormitorioComponent implements OnInit, OnDestroy {
 
     constructor(
         protected productosDormitorioService: ProductosDormitorioService,
+        protected categoriasDormiService: CategoriasDormiService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
@@ -60,6 +64,20 @@ export class ProductosDormitorioComponent implements OnInit, OnDestroy {
                 (res: HttpResponse<IProductosDormitorio[]>) => this.paginateProductosDormitorios(res.body, res.headers),
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
+
+        this.categoriasDormiService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<ICategoriasDormi[]>) => {
+                    this.categorias = res.body;
+                    console.log(this.categorias);
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
     }
 
     loadPage(page: number) {
@@ -68,7 +86,43 @@ export class ProductosDormitorioComponent implements OnInit, OnDestroy {
             this.transition();
         }
     }
-
+    public filtroCategorias() {
+        var valor;
+        valor = $('#filtroCategoriasSelect').val();
+        if (valor == 'todas') {
+            $('#filtroCategorias').empty();
+            $('#filtroCategorias').attr('style');
+            $('#filtroCategorias').css({ display: 'none' });
+            $('#filtro').removeAttr('style');
+        } else {
+            $('#filtro').attr('style');
+            $('#filtro').css({ display: 'none' });
+            $('#filtroCategorias').empty();
+            $('#filtroCategorias').removeAttr('style');
+            this.productosDormitorioService
+                .query({
+                    size: 100000
+                })
+                .subscribe(
+                    (res: HttpResponse<IProductosDormitorio[]>) => {
+                        for (let i = 0; i < res.body.length; i++) {
+                            if (res.body[i]['categoriasDormiId'] == valor) {
+                                $('#filtroCategorias').append(
+                                    '<tr><td><a [routerLink]="["/productos-dormitorio", ' +
+                                        res.body[i]['id'] +
+                                        ', "view" ]">' +
+                                        res.body[i]['id'] +
+                                        '</a></td><td>' +
+                                        res.body[i]['nombre'] +
+                                        '</td></tr>'
+                                );
+                            }
+                        }
+                    },
+                    (res: HttpErrorResponse) => this.onError(res.message)
+                );
+        }
+    }
     transition() {
         this.router.navigate(['/productos-dormitorio'], {
             queryParams: {

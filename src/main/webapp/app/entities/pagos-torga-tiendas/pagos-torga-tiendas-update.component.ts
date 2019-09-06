@@ -4,37 +4,39 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { JhiAlertService } from 'ng-jhipster';
 
-import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
-import { PagosTiendaService } from './pagos-tienda.service';
+import { IPagosTorgaTiendas } from 'app/shared/model/pagos-torga-tiendas.model';
+import { PagosTorgaTiendasService } from './pagos-torga-tiendas.service';
 import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
 import { DatosUsuarioService } from 'app/entities/datos-usuario';
-import { IPagosTorgaTiendas } from 'app/shared/model/pagos-torga-tiendas.model';
-import { PagosTorgaTiendasService } from 'app/entities/pagos-torga-tiendas';
+import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
+import { PagosTiendaService } from 'app/entities/pagos-tienda';
 
 @Component({
-    selector: 'jhi-pagos-tienda-update',
-    templateUrl: './pagos-tienda-update.component.html'
+    selector: 'jhi-pagos-torga-tiendas-update',
+    templateUrl: './pagos-torga-tiendas-update.component.html'
 })
-export class PagosTiendaUpdateComponent implements OnInit {
-    pagosTienda: IPagosTienda;
+export class PagosTorgaTiendasUpdateComponent implements OnInit {
+    pagosTorgaTiendas: IPagosTorgaTiendas;
     isSaving: boolean;
 
     datosusuarios: IDatosUsuario[];
 
-    pagostorgatiendas: IPagosTorgaTiendas[];
+    pagostiendas: any;
 
     constructor(
         protected jhiAlertService: JhiAlertService,
-        protected pagosTiendaService: PagosTiendaService,
-        protected datosUsuarioService: DatosUsuarioService,
         protected pagosTorgaTiendasService: PagosTorgaTiendasService,
+        protected datosUsuarioService: DatosUsuarioService,
+        protected pagosTiendaService: PagosTiendaService,
         protected activatedRoute: ActivatedRoute
     ) {}
 
     ngOnInit() {
         this.isSaving = false;
-        this.activatedRoute.data.subscribe(({ pagosTienda }) => {
-            this.pagosTienda = pagosTienda;
+        var cont = 0;
+        var pagos = [];
+        this.activatedRoute.data.subscribe(({ pagosTorgaTiendas }) => {
+            this.pagosTorgaTiendas = pagosTorgaTiendas;
         });
         this.datosUsuarioService.query().subscribe(
             (res: HttpResponse<IDatosUsuario[]>) => {
@@ -42,9 +44,15 @@ export class PagosTiendaUpdateComponent implements OnInit {
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
-        this.pagosTorgaTiendasService.query().subscribe(
-            (res: HttpResponse<IPagosTorgaTiendas[]>) => {
-                this.pagostorgatiendas = res.body;
+        this.pagosTiendaService.query().subscribe(
+            (res: HttpResponse<IPagosTienda[]>) => {
+                for (let i = 0; i < res.body.length; i++) {
+                    if (res.body[i]['datosUsuario']['user']['id'] == 3) {
+                        pagos[cont] = res.body[i];
+                        cont++;
+                    }
+                }
+                this.pagostiendas = pagos;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -56,15 +64,15 @@ export class PagosTiendaUpdateComponent implements OnInit {
 
     save() {
         this.isSaving = true;
-        if (this.pagosTienda.id !== undefined) {
-            this.subscribeToSaveResponse(this.pagosTiendaService.update(this.pagosTienda));
+        if (this.pagosTorgaTiendas.id !== undefined) {
+            this.subscribeToSaveResponse(this.pagosTorgaTiendasService.update(this.pagosTorgaTiendas));
         } else {
-            this.subscribeToSaveResponse(this.pagosTiendaService.create(this.pagosTienda));
+            this.subscribeToSaveResponse(this.pagosTorgaTiendasService.create(this.pagosTorgaTiendas));
         }
     }
 
-    protected subscribeToSaveResponse(result: Observable<HttpResponse<IPagosTienda>>) {
-        result.subscribe((res: HttpResponse<IPagosTienda>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<IPagosTorgaTiendas>>) {
+        result.subscribe((res: HttpResponse<IPagosTorgaTiendas>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
 
     protected onSaveSuccess() {
@@ -84,7 +92,7 @@ export class PagosTiendaUpdateComponent implements OnInit {
         return item.id;
     }
 
-    trackPagosTorgaTiendasById(index: number, item: IPagosTorgaTiendas) {
+    trackPagosTiendaById(index: number, item: IPagosTienda) {
         return item.id;
     }
 

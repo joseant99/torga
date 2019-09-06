@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-pagos-torga-tiendas-heading" jhiTranslate="torgaPedidosApp.pagosTorgaTiendas.home.createOrEditLabel">Create or edit a Pagos Torga Tiendas</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!pagosTorgaTiendas.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="pagosTorgaTiendas.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.pagosTorgaTiendas.grupo" for="field_grupo">Grupo</label>
+                    <input type="text" class="form-control" name="grupo" id="field_grupo"
+                        [(ngModel)]="pagosTorgaTiendas.grupo" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.pagosTorgaTiendas.datosUsuario" for="field_datosUsuario">Datos Usuario</label>
+                    <select class="form-control" id="field_datosUsuario" name="datosUsuario" [(ngModel)]="pagosTorgaTiendas.datosUsuario" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="datosUsuarioOption.id === pagosTorgaTiendas.datosUsuario?.id ? pagosTorgaTiendas.datosUsuario : datosUsuarioOption" *ngFor="let datosUsuarioOption of datosusuarios; trackBy: trackDatosUsuarioById">{{datosUsuarioOption.nombreComercial}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="torgaPedidosApp.pagosTorgaTiendas.pagosTienda" for="field_pagosTienda">Pagos Tienda</label>
+                    <select class="form-control" id="field_pagosTienda" multiple name="pagosTienda" [(ngModel)]="pagosTorgaTiendas.pagosTiendas">
+                        <option [ngValue]="getSelected(pagosTorgaTiendas.pagosTiendas, pagosTiendaOption)" *ngFor="let pagosTiendaOption of pagostiendas; trackBy: trackPagosTiendaById">{{pagosTiendaOption.pago}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

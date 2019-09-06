@@ -45,6 +45,7 @@
                 "represenTorga": "Represen Torga",
                 "representanteTienda": "Representante Tienda",
                 "datosCliente": "Datos Cliente",
+                "pagosTorgaTiendas": "Pagos Torga Tiendas",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

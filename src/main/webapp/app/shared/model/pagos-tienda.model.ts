@@ -1,4 +1,5 @@
 import { IDatosUsuario } from 'app/shared/model//datos-usuario.model';
+import { IPagosTorgaTiendas } from 'app/shared/model//pagos-torga-tiendas.model';
 
 export interface IPagosTienda {
     id?: number;
@@ -6,6 +7,7 @@ export interface IPagosTienda {
     descuento?: string;
     precioTienda?: number;
     datosUsuario?: IDatosUsuario;
+    pagosTorgaTiendas?: IPagosTorgaTiendas[];
 }
 
 export class PagosTienda implements IPagosTienda {
@@ -14,6 +16,7 @@ export class PagosTienda implements IPagosTienda {
         public pago?: string,
         public descuento?: string,
         public precioTienda?: number,
-        public datosUsuario?: IDatosUsuario
+        public datosUsuario?: IDatosUsuario,
+        public pagosTorgaTiendas?: IPagosTorgaTiendas[]
     ) {}
 }

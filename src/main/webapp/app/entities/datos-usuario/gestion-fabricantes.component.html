@@ -76,6 +76,27 @@
 				  </div>
     		</div>
     		<br><br><br>
+    		<div style="text-align:center" >
+    			<h2>PAGOS QUE ACEPTA FÁBRICA A TIENDA Y SUS DESCUENTOS ASOCIADOS</h2>
+    			<br><br>
+    			<div  class="form-group row" *ngFor="let pagoTorga of torga ;">
+				    <label for="nombreComercial" class="col-sm-1 col-form-label">PAGOS:</label>
+				    <div class="col-sm-2">
+				      <input type="text" style="text-align:center;height:70px" class="form-control"  value="{{pagoTorga.pago}}" disabled>
+				    </div>
+				    <label for="nombreComercial" class="col-sm-2 col-form-label">CONLLEVA UN DESCUENTO DEL:</label>
+				    <div class="col-sm-2">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" value="{{pagoTorga.descuento}}" disabled>
+				    </div>
+				    <label for="nombreComercial" *ngIf="grupo !== ''" class="col-sm-1 col-form-label">MAS:</label>
+				    <div class="col-sm-2" *ngIf="grupo !== ''">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" value="{{grupo}}" disabled>
+				    </div>
+				    <label for="nombreComercial" *ngIf="grupo !== ''" class="col-sm-1 col-form-label">DE GRUPO:</label>
+				  </div>
+				  
+    		</div>
+    		<br><br><br>
     		<div style="text-align:center">
     			<h2>GESTI&#211;N DEL FABRICANTE</h2>
     			<br><br>

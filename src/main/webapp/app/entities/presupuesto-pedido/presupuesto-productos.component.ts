@@ -98,6 +98,19 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             }
         }
     }
+    public mostrarPrecioFabrica() {
+        var productos = this.productos;
+        for (let i = 0; i < productos.length; i++) {
+            $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).removeAttr('style');
+            $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).attr('style');
+            $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).css({ float: 'right' });
+            $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).css({ 'margin-right': '10%' });
+            $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).removeAttr('style');
+            $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).attr('style');
+            $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).css({ float: 'right' });
+            $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).css({ 'margin-right': '20%' });
+        }
+    }
 
     public pedido() {
         console.log(this.presupuestos);
@@ -168,6 +181,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
         var productosPresupuesto = [];
         var acabados = [];
+        var precioTienda = this.precioTienda;
         var cont = 0;
         var presu = sessionStorage.getItem('presupuesto');
         this.productosPresupuestoPedidosService
@@ -263,7 +277,13 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                     $('#precioCalculadoIva').append(
                                         '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
                                     );
-                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat);
+                                    var total;
+                                    total = precioFloat * precioTienda;
+                                    console.log(total);
+                                    total = total - precioFloat;
+                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat * precioTienda);
+                                    $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
+                                    $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
                                 }
 
                                 for (let j = 0; j < iluminacion.length; j++) {
@@ -272,8 +292,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             '<p>Iluminacion&nbsp;&nbsp;&nbsp;' + iluminacion[j]['iluminacion']['precio'] + '&euro;</p>'
                                         );
                                         var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                        var fabrica = $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text();
+                                        var ganancias = $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text();
                                         var precioFloat = parseFloat(precioTotal);
+                                        fabrica = parseFloat(fabrica);
+                                        ganancias = parseFloat(fabrica);
                                         precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
+                                        fabrica = fabrica + iluminacion[j]['iluminacion']['precio'] / 2;
+                                        ganancias = ganancias + iluminacion[j]['iluminacion']['precio'] / 2;
                                         var subTotal = parseFloat($('#precioSubtotal').text());
                                         if (subTotal == 0) {
                                             subTotal = precioFloat;
@@ -290,6 +316,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                         );
                                         $('#totalDescuentoTexto').text(precioFloat);
                                         $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat);
+                                        $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(fabrica);
+                                        $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(ganancias);
                                     }
                                 }
                             }
@@ -469,6 +497,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     }
 
     ngOnInit() {
+        this.precioTienda = sessionStorage.getItem('precioTienda');
         var presupuestos = [];
         var acabados = [];
         this.loadAll();

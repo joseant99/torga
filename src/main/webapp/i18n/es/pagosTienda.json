@@ -18,7 +18,8 @@
             "pago": "Pago",
             "descuento": "Descuento",
             "precioTienda": "Precio Tienda",
-            "datosUsuario": "Datos Usuario"
+            "datosUsuario": "Datos Usuario",
+            "pagosTorgaTiendas": "Pagos Torga Tiendas"
         }
     }
 }

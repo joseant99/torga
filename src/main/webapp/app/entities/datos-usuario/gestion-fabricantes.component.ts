@@ -12,6 +12,7 @@ import { DatosUsuarioService } from './datos-usuario.service';
 import { PagosTiendaService } from '../pagos-tienda/pagos-tienda.service';
 import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
 import { RepresentanteTiendaService } from '../representante-tienda/representante-tienda.service';
+import { PagosTorgaTiendasService } from '../pagos-torga-tiendas/pagos-torga-tiendas.service';
 @Component({
     selector: 'jhi-gestion-fabricantes',
     templateUrl: './gestion-fabricantes.component.html'
@@ -24,6 +25,8 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
     eventSubscriber: Subscription;
     routeData: any;
     links: any;
+    torga: any;
+    grupo: any;
     totalItems: any;
     isSaving: boolean;
     queryCount: any;
@@ -45,6 +48,7 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
         protected activatedRoute: ActivatedRoute,
         protected pagosTiendaService: PagosTiendaService,
         protected dataUtils: JhiDataUtils,
+        protected pagosTorgaTiendasService: PagosTorgaTiendasService,
         protected router: Router,
         protected eventManager: JhiEventManager
     ) {
@@ -62,7 +66,9 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
         var cont = 0;
         var contador = 1;
         var tiendaBuena = [];
+        var tiendaBuenaAdmin = [];
         var representante;
+        var cont1 = 0;
         this.datosUsuarioService
             .query({
                 size: 1000000
@@ -71,7 +77,6 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
                 (res: HttpResponse<IDatosUsuario[]>) => {
                     var idCuenta = this.currentAccount['id'];
 
-                    var tiendaBuenaAdmin = [];
                     for (let i = 0; i < res.body.length; i++) {
                         if (res.body[i]['user'] != null) {
                             if (res.body[i]['user']['id'] == idCuenta) {
@@ -88,7 +93,29 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
-
+        var torga = [];
+        var grupo;
+        this.pagosTorgaTiendasService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<IPagosTorgaTiendas[]>) => {
+                    for (let j = 0; j < res.body.length; j++) {
+                        if (tiendaBuenaAdmin[1]['id'] == res.body[j]['datosUsuario']['id']) {
+                            torga[cont1] = res.body[j]['pagosTiendas'];
+                            grupo = res.body[j]['grupo'];
+                            cont1++;
+                        }
+                    }
+                    this.torga = torga[0];
+                    this.grupo = grupo;
+                    console.log(this.torga);
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
         this.representanteTiendaService
             .query({
                 page: this.page - 1,

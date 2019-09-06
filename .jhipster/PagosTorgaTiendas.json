@@ -9,32 +9,25 @@
             "otherEntityField": "id"
         },
         {
-            "relationshipName": "pagosTorgaTiendas",
-            "otherEntityName": "pagosTorgaTiendas",
+            "relationshipName": "pagosTienda",
+            "otherEntityName": "pagosTienda",
             "relationshipType": "many-to-many",
-            "ownerSide": false,
-            "otherEntityRelationshipName": "pagosTienda"
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pagosTorgaTiendas"
         }
     ],
     "fields": [
         {
-            "fieldName": "pago",
+            "fieldName": "grupo",
             "fieldType": "String"
-        },
-        {
-            "fieldName": "descuento",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "precioTienda",
-            "fieldType": "Float"
         }
     ],
-    "changelogDate": "20190830071649",
+    "changelogDate": "20190905101016",
     "dto": "no",
     "searchEngine": false,
     "service": "no",
-    "entityTableName": "pagos_tienda",
+    "entityTableName": "pagos_torga_tiendas",
     "jpaMetamodelFiltering": false,
     "pagination": "pagination"
 }

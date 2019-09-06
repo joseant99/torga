@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pagosTorgaTiendas">
+            <h2><span jhiTranslate="torgaPedidosApp.pagosTorgaTiendas.detail.title">Pagos Torga Tiendas</span> {{pagosTorgaTiendas.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.pagosTorgaTiendas.grupo">Grupo</span></dt>
+                <dd>
+                    <span>{{pagosTorgaTiendas.grupo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.pagosTorgaTiendas.datosUsuario">Datos Usuario</span></dt>
+                <dd>
+                    <div *ngIf="pagosTorgaTiendas.datosUsuario">
+                        <a [routerLink]="['/datos-usuario', pagosTorgaTiendas.datosUsuario?.id, 'view']">{{pagosTorgaTiendas.datosUsuario?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.pagosTorgaTiendas.pagosTienda">Pagos Tienda</span></dt>
+                <dd>
+                    <span *ngFor="let pagosTienda of pagosTorgaTiendas.pagosTiendas; let last = last">
+                        <a [routerLink]="['/pagos-tienda', pagosTienda?.id, 'view' ]">{{pagosTienda.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pagos-torga-tiendas', pagosTorgaTiendas.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

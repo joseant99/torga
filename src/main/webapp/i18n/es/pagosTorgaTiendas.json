@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "pagosTorgaTiendas": {
+            "home": {
+                "title": "Pagos Torga Tiendas",
+                "createLabel": "Crear nuevo Pagos Torga Tiendas",
+                "createOrEditLabel": "Crear o editar Pagos Torga Tiendas"
+            },
+            "created": "Un nuevo Pagos Torga Tiendas ha sido creado con el identificador {{ param }}",
+            "updated": "Un Pagos Torga Tiendas ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Pagos Torga Tiendas ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Pagos Torga Tiendas {{ id }}?"
+            },
+            "detail": {
+                "title": "Pagos Torga Tiendas"
+            },
+            "grupo": "Grupo",
+            "datosUsuario": "Datos Usuario",
+            "pagosTienda": "Pagos Tienda"
+        }
+    }
+}
