@@ -31,6 +31,7 @@ import { TorgaPedidosVendedoresModule } from './vendedores/vendedores.module';
 import { TorgaPedidosMedidasEspecialesModule } from './medidas-especiales/medidas-especiales.module';
 import { TorgaPedidosMedEspProductoPedidoPresuModule } from './med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.module';
 import { TorgaPedidosRepresentanteTiendaModule } from './representante-tienda/representante-tienda.module';
+import { TorgaPedidosContactoFabricaModule } from './contacto-fabrica/contacto-fabrica.module';
 import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos-torga-tiendas.module';
 
 @NgModule({
@@ -50,6 +51,7 @@ import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos
         TorgaPedidosMedEspProductoPedidoPresuModule,
         TorgaPedidosLogisticaModule,
         TorgaPedidosPedidosModule,
+        TorgaPedidosContactoFabricaModule,
         TorgaPedidosVistaClienteModule,
         TorgaPedidosVistaRepresentanteModule,
         TorgaPedidosVistaAdminModule,

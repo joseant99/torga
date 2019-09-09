@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-contacto-fabrica-heading" jhiTranslate="torgaPedidosApp.contactoFabrica.home.createOrEditLabel">Create or edit a Contacto Fabrica</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!contactoFabrica.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="contactoFabrica.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.contactoFabrica.fechaInicio" for="field_fechaInicio">Fecha Inicio</label>
+                    <input type="text" class="form-control" name="fechaInicio" id="field_fechaInicio"
+                        [(ngModel)]="contactoFabrica.fechaInicio" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.contactoFabrica.tipo" for="field_tipo">Tipo</label>
+                    <input type="text" class="form-control" name="tipo" id="field_tipo"
+                        [(ngModel)]="contactoFabrica.tipo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.contactoFabrica.estado" for="field_estado">Estado</label>
+                    <input type="text" class="form-control" name="estado" id="field_estado"
+                        [(ngModel)]="contactoFabrica.estado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.contactoFabrica.albaran" for="field_albaran">Albaran</label>
+                    <input type="text" class="form-control" name="albaran" id="field_albaran"
+                        [(ngModel)]="contactoFabrica.albaran" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.contactoFabrica.factura" for="field_factura">Factura</label>
+                    <input type="text" class="form-control" name="factura" id="field_factura"
+                        [(ngModel)]="contactoFabrica.factura" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.contactoFabrica.codigo" for="field_codigo">Codigo</label>
+                    <input type="text" class="form-control" name="codigo" id="field_codigo"
+                        [(ngModel)]="contactoFabrica.codigo" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.contactoFabrica.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="contactoFabrica.user" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === contactoFabrica.user?.id ? contactoFabrica.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

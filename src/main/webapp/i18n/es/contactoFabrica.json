@@ -1,0 +1,27 @@
+{
+    "torgaPedidosApp": {
+        "contactoFabrica": {
+            "home": {
+                "title": "Contacto Fabricas",
+                "createLabel": "Crear nuevo Contacto Fabrica",
+                "createOrEditLabel": "Crear o editar Contacto Fabrica"
+            },
+            "created": "Un nuevo Contacto Fabrica ha sido creado con el identificador {{ param }}",
+            "updated": "Un Contacto Fabrica ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Contacto Fabrica ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Contacto Fabrica {{ id }}?"
+            },
+            "detail": {
+                "title": "Contacto Fabrica"
+            },
+            "fechaInicio": "Fecha Inicio",
+            "tipo": "Tipo",
+            "estado": "Estado",
+            "albaran": "Albaran",
+            "factura": "Factura",
+            "codigo": "Codigo",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,76 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.contactoFabrica.home.title">Contacto Fabricas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-contacto-fabrica" [routerLink]="['/contacto-fabrica/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.contactoFabrica.home.createLabel">
+            Create new Contacto Fabrica
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="contactoFabricas">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fechaInicio"><span jhiTranslate="torgaPedidosApp.contactoFabrica.fechaInicio">Fecha Inicio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipo"><span jhiTranslate="torgaPedidosApp.contactoFabrica.tipo">Tipo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estado"><span jhiTranslate="torgaPedidosApp.contactoFabrica.estado">Estado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="albaran"><span jhiTranslate="torgaPedidosApp.contactoFabrica.albaran">Albaran</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="factura"><span jhiTranslate="torgaPedidosApp.contactoFabrica.factura">Factura</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.contactoFabrica.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.contactoFabrica.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let contactoFabrica of contactoFabricas ;trackBy: trackId">
+                <td><a [routerLink]="['/contacto-fabrica', contactoFabrica.id, 'view' ]">{{contactoFabrica.id}}</a></td>
+                <td>{{contactoFabrica.fechaInicio}}</td>
+                <td>{{contactoFabrica.tipo}}</td>
+                <td>{{contactoFabrica.estado}}</td>
+                <td>{{contactoFabrica.albaran}}</td>
+                <td>{{contactoFabrica.factura}}</td>
+                <td>{{contactoFabrica.codigo}}</td>
+                <td>
+                    {{contactoFabrica.user?.login}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/contacto-fabrica', contactoFabrica.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/contacto-fabrica', contactoFabrica.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'contacto-fabrica/'+ contactoFabrica.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="contactoFabricas && contactoFabricas.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

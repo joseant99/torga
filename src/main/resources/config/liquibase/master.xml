@@ -64,4 +64,6 @@
     <include file="config/liquibase/changelog/20190904162818_added_entity_constraints_DatosCliente.xml" relativeToChangelogFile="false"/>                
     <include file="config/liquibase/changelog/20190905101016_added_entity_PagosTorgaTiendas.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190905101016_added_entity_constraints_PagosTorgaTiendas.xml" relativeToChangelogFile="false"/>             
+    <include file="config/liquibase/changelog/20190909090400_added_entity_ContactoFabrica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190909090400_added_entity_constraints_ContactoFabrica.xml" relativeToChangelogFile="false"/>   
 </databaseChangeLog>

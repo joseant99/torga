@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "contactoFabrica"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "fechaInicio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "albaran",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "factura",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190909090400",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "contacto_fabrica",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

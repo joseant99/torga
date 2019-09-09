@@ -248,11 +248,26 @@
 					  </div>
       	 </ul>
       	 
- 		<a style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']">
+      	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a  id="cntacto" data-toggle="collapse" data-target="#menuContactoTorga">
                         <span>
-                            <span style="color:black;font-size:18px;margin-top: -20px;">CONTACTO FABRICA</span>
+                            <span style="color:black;font-size:20px;margin-top: -20px;">Contacto Fabrica</span>
                         </span>
-		</a>
+					</a>
+					<div id="menuContactoTorga" class="collapse">
+						<ul>
+							<li style="list-style: none;">
+							 <a  routerLink="contacto-fabrica-clientes"  routerLinkActive="active"  id="fabricanteTorga" data-toggle="collapse">
+		                        <span>
+		                            <span style="color:#7AB5CA;font-size:16px;margin-top: -20px;">TORGA</span>
+		                        </span>
+							</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
       	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a  id="fabricante" data-toggle="collapse" data-target="#menuFabricanteTorga">

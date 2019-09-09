@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contactoFabrica">
+            <h2><span jhiTranslate="torgaPedidosApp.contactoFabrica.detail.title">Contacto Fabrica</span> {{contactoFabrica.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.contactoFabrica.fechaInicio">Fecha Inicio</span></dt>
+                <dd>
+                    <span>{{contactoFabrica.fechaInicio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.contactoFabrica.tipo">Tipo</span></dt>
+                <dd>
+                    <span>{{contactoFabrica.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.contactoFabrica.estado">Estado</span></dt>
+                <dd>
+                    <span>{{contactoFabrica.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.contactoFabrica.albaran">Albaran</span></dt>
+                <dd>
+                    <span>{{contactoFabrica.albaran}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.contactoFabrica.factura">Factura</span></dt>
+                <dd>
+                    <span>{{contactoFabrica.factura}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.contactoFabrica.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{contactoFabrica.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.contactoFabrica.user">User</span></dt>
+                <dd>
+                    {{contactoFabrica.user?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contacto-fabrica', contactoFabrica.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
