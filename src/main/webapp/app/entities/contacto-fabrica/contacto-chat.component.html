@@ -8,19 +8,19 @@
     <p style="text-align:center"><label>Con codigo:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="text-align:center" value="{{contactoFabrica.codigo}}" disabled/></p>
     
     <div id="mensajes" style="border:1px solid gray;width:60%;margin-left:20%;height:500px;overflow: scroll;">
-    	
+    	<p style="float:right;padding-left:100%" *ngFor="let mensaje of mensajes ">{{mensaje.texto}}</p>
     </div>
     <div style="width:60%;background-color:gray;margin-left:20%;height:120px">
-    	<div style="float:left;width:65%">
-    		<input style="width:80%" id="textoMensaje" />
-    		<form>
+    	<div style="float:left;width:65%;text-align:center">
+    		<input style="width:95%;margin-top:10px" id="textoMensaje" />
+    		<form style="margin-top: 25px;">
 			  <div class="form-group">
-			    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+			    <input type="file" id="file_imagen" (change)="setFileData($event, contactoFabricas, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage" />
 			  </div>
 			</form>
     	</div>
-    	<div style="float:right;width:35%;height:85%">
-    		<button (click)="mensajes()" style="height:100%;width:90%">Mandar</button>
+    	<div style="float:right;width:35%;height:85%;text-align:center">
+    		<button (click)="mensajes1()" style="height:100%;width:90%;margin-top: 10px;background-color:#99CF8B">Mandar</button>
     	</div>
     </div>
 </div>

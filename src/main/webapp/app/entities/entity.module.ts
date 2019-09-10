@@ -28,6 +28,7 @@ import { TorgaPedidosInterioresModule } from './interiores/interiores.module';
 import { TorgaPedidosPresupuestoPedidoModule } from './presupuesto-pedido/presupuesto-pedido.module';
 import { TorgaPedidosDatosUsuarioModule } from './datos-usuario/datos-usuario.module';
 import { TorgaPedidosVendedoresModule } from './vendedores/vendedores.module';
+import { TorgaPedidosMensajesModule } from './mensajes/mensajes.module';
 import { TorgaPedidosMedidasEspecialesModule } from './medidas-especiales/medidas-especiales.module';
 import { TorgaPedidosMedEspProductoPedidoPresuModule } from './med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.module';
 import { TorgaPedidosRepresentanteTiendaModule } from './representante-tienda/representante-tienda.module';
@@ -54,6 +55,7 @@ import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos
         TorgaPedidosContactoFabricaModule,
         TorgaPedidosVistaClienteModule,
         TorgaPedidosVistaRepresentanteModule,
+        TorgaPedidosMensajesModule,
         TorgaPedidosVistaAdminModule,
         TorgaPedidosTransportistasModule,
         TorgaPedidosEstadosModule,

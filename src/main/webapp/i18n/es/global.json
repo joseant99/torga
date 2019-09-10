@@ -47,6 +47,7 @@
                 "datosCliente": "Datos Cliente",
                 "pagosTorgaTiendas": "Pagos Torga Tiendas",
                 "contactoFabrica": "Contacto Fabrica",
+                "mensajes": "Mensajes",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

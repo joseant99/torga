@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
+import { JhiEventManager, JhiParseLinks, JhiAlertService, JhiDataUtils } from 'ng-jhipster';
 
 import { IContactoFabrica } from 'app/shared/model/contacto-fabrica.model';
 import { AccountService } from 'app/core';
@@ -10,6 +10,7 @@ import { PresupuestoPedidoService } from '../presupuesto-pedido/presupuesto-pedi
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { ContactoFabricaService } from './contacto-fabrica.service';
+import { MensajesService } from '../mensajes/mensajes.service';
 
 @Component({
     selector: 'jhi-contacto-fabrica',
@@ -25,6 +26,7 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
     links: any;
     totalItems: any;
     queryCount: any;
+    mensajes: any;
     contactoOriginal: any;
     presupuestosTabla: any;
     pedidosTabla: any;
@@ -38,9 +40,11 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
 
     constructor(
         protected contactoFabricaService: ContactoFabricaService,
+        protected dataUtils: JhiDataUtils,
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
+        protected mensajesService: MensajesService,
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
@@ -73,86 +77,7 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
         });
         this.loadAll();
     }
-    public quitarActive(id) {
-        if (id == 1) {
-            $('#home').attr('class', 'active show');
-            $('#menu1').removeAttr('class');
-            $('#menu1').attr('class', 'tab-pane fade');
-            $('#menu2').removeAttr('class');
-            $('#menu2').attr('class', 'tab-pane fade');
-            $('#menu3').removeAttr('class');
-            $('#menu3').attr('class', 'tab-pane fade');
-            $('#menu4').removeAttr('class');
-            $('#menu4').attr('class', 'tab-pane fade');
-            $('#menu5').removeAttr('class');
-            $('#menu5').attr('class', 'tab-pane fade');
-        }
-        if (id == 2) {
-            $('#menu1').attr('class', 'active show');
-            $('#home').removeAttr('class');
-            $('#home').attr('class', 'tab-pane fade');
-            $('#menu2').removeAttr('class');
-            $('#menu2').attr('class', 'tab-pane fade');
-            $('#menu3').removeAttr('class');
-            $('#menu3').attr('class', 'tab-pane fade');
-            $('#menu4').removeAttr('class');
-            $('#menu4').attr('class', 'tab-pane fade');
-            $('#menu5').removeAttr('class');
-            $('#menu5').attr('class', 'tab-pane fade');
-        }
-        if (id == 3) {
-            $('#menu2').attr('class', 'active show');
-            $('#home').removeAttr('class');
-            $('#home').attr('class', 'tab-pane fade');
-            $('#menu1').removeAttr('class');
-            $('#menu1').attr('class', 'tab-pane fade');
-            $('#menu3').removeAttr('class');
-            $('#menu3').attr('class', 'tab-pane fade');
-            $('#menu4').removeAttr('class');
-            $('#menu4').attr('class', 'tab-pane fade');
-            $('#menu5').removeAttr('class');
-            $('#menu5').attr('class', 'tab-pane fade');
-        }
-        if (id == 4) {
-            $('#menu3').attr('class', 'active show');
-            $('#home').removeAttr('class');
-            $('#home').attr('class', 'tab-pane fade');
-            $('#menu2').removeAttr('class');
-            $('#menu2').attr('class', 'tab-pane fade');
-            $('#menu1').removeAttr('class');
-            $('#menu1').attr('class', 'tab-pane fade');
-            $('#menu4').removeAttr('class');
-            $('#menu4').attr('class', 'tab-pane fade');
-            $('#menu5').removeAttr('class');
-            $('#menu5').attr('class', 'tab-pane fade');
-        }
-        if (id == 5) {
-            $('#menu4').attr('class', 'active show');
-            $('#home').removeAttr('class');
-            $('#home').attr('class', 'tab-pane fade');
-            $('#menu2').removeAttr('class');
-            $('#menu2').attr('class', 'tab-pane fade');
-            $('#menu1').removeAttr('class');
-            $('#menu1').attr('class', 'tab-pane fade');
-            $('#menu3').removeAttr('class');
-            $('#menu3').attr('class', 'tab-pane fade');
-            $('#menu5').removeAttr('class');
-            $('#menu5').attr('class', 'tab-pane fade');
-        }
-        if (id == 6) {
-            $('#menu5').attr('class', 'active show');
-            $('#home').removeAttr('class');
-            $('#home').attr('class', 'tab-pane fade');
-            $('#menu2').removeAttr('class');
-            $('#menu2').attr('class', 'tab-pane fade');
-            $('#menu1').removeAttr('class');
-            $('#menu1').attr('class', 'tab-pane fade');
-            $('#menu3').removeAttr('class');
-            $('#menu3').attr('class', 'tab-pane fade');
-            $('#menu4').removeAttr('class');
-            $('#menu4').attr('class', 'tab-pane fade');
-        }
-    }
+
     clear() {
         this.page = 0;
         this.router.navigate([
@@ -166,6 +91,8 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        var mensajes = [];
+        var cont = 0;
         this.loadAll();
         this.accountService.identity().then(account => {
             this.currentAccount = account;
@@ -193,10 +120,37 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
             this.contactoFabrica = contactoFabrica;
         });
         this.registerChangeInContactoFabricas();
+        var contactoFabrica = this.contactoFabrica;
+        var account = this.currentAccount;
+        this.mensajesService
+            .query({
+                size: 100000
+            })
+            .subscribe(
+                (res: HttpResponse<IMensajes[]>) => {
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (res.body[i]['contactoFabrica']['id'] == contactoFabrica['id']) {
+                            mensajes[cont] = res.body[i];
+                            cont++;
+                        }
+                    }
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+
+        this.mensajes = mensajes;
     }
-    public mensajes() {
+    public mensajes1() {
+        var contacto = this.contactoOriginal;
+        var user = this.currentAccount;
         var mensaje = $('#textoMensaje').val();
         $('#mensajes').append('<p style="float:right;padding-left: 100%;">' + mensaje + '</p>');
+        const mensajes = {
+            texto: mensaje,
+            contactoFabrica: contacto,
+            user: user
+        };
+        this.subscribeToSaveResponse(this.mensajesService.create(mensajes));
         $('#textoMensaje').val('');
     }
     ngOnDestroy() {
@@ -210,43 +164,6 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
     registerChangeInContactoFabricas() {
         this.eventSubscriber = this.eventManager.subscribe('contactoFabricaListModification', response => this.loadAll());
     }
-    public llenarModal(id) {
-        var pedidos = this.pedidos;
-        var usuario = this.currentAccount;
-        if (id == 1) {
-            $('#relacion').val('Presupuestos');
-            for (let i = 0; i < pedidos.length; i++) {
-                if (usuario['id'] == pedidos[i]['user']['id'] && pedidos[i]['pedido'] == 0) {
-                    $('#opciones').append('<option value="' + pedidos[i]['id'] + '">' + pedidos[i]['codigo'] + '</option>');
-                }
-            }
-            $('#opciones').append();
-        }
-        if (id == 2) {
-            $('#relacion').val('Pedidos');
-            for (let i = 0; i < pedidos.length; i++) {
-                if (usuario['id'] == pedidos[i]['user']['id'] && pedidos[i]['pedido'] == 1) {
-                    $('#opciones').append('<option value="' + pedidos[i]['id'] + '">' + pedidos[i]['codigo'] + '</option>');
-                }
-            }
-        }
-        if (id == 3) {
-            $('#relacion').val('Presupuestos');
-            $('#opciones').append();
-        }
-        if (id == 4) {
-            $('#relacion').val('Presupuestos');
-            $('#opciones').append();
-        }
-        if (id == 5) {
-            $('#relacion').val('Presupuestos');
-            $('#opciones').append();
-        }
-        if (id == 6) {
-            $('#relacion').val('Presupuestos');
-            $('#opciones').append();
-        }
-    }
 
     sort() {
         const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
@@ -255,40 +172,8 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
         }
         return result;
     }
-
-    public crearChat() {
-        var tipo = $('#relacion').val();
-        var numero;
-        var idPed = $('#opciones').val();
-        var d = new Date();
-
-        var month = d.getMonth() + 1;
-        var day = d.getDate();
-
-        var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
-        if (tipo == 'Presupuestos') {
-            numero = 1;
-            const contacto = {
-                fechaInicio: output,
-                tipo: numero,
-                codigo: idPed,
-                user: this.currentAccount
-            };
-            this.subscribeToSaveResponse(this.contactoFabricaService.create(contacto));
-        }
-        if (tipo == 'Pedidos') {
-            numero = 2;
-            const contacto = {
-                fechaInicio: output,
-                tipo: numero,
-                codigo: idPed,
-                user: this.currentAccount
-            };
-            this.subscribeToSaveResponse(this.contactoFabricaService.create(contacto));
-        }
-    }
-    protected subscribeToSaveResponse(result: Observable<HttpResponse<IContactoFabrica>>) {
-        result.subscribe((res: HttpResponse<IContactoFabrica>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<IMensajes>>) {
+        result.subscribe((res: HttpResponse<IMensajes>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
 
     protected onSaveSuccess() {
@@ -303,6 +188,10 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
         this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
         this.queryCount = this.totalItems;
         this.contactoFabricas = data;
+    }
+
+    setFileData(event, entity, field, isImage) {
+        this.dataUtils.setFileData(event, entity, field, isImage);
     }
 
     protected onError(errorMessage: string) {

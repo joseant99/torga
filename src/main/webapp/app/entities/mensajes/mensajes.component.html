@@ -1,0 +1,78 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.mensajes.home.title">Mensajes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-mensajes" [routerLink]="['/mensajes/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.mensajes.home.createLabel">
+            Create new Mensajes
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="mensajes">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="texto"><span jhiTranslate="torgaPedidosApp.mensajes.texto">Texto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productosPresupuestoPedidos.id"><span jhiTranslate="torgaPedidosApp.mensajes.productosPresupuestoPedidos">Productos Presupuesto Pedidos</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contactoFabrica.id"><span jhiTranslate="torgaPedidosApp.mensajes.contactoFabrica">Contacto Fabrica</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.mensajes.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let mensajes of mensajes ;trackBy: trackId">
+                <td><a [routerLink]="['/mensajes', mensajes.id, 'view' ]">{{mensajes.id}}</a></td>
+                <td>{{mensajes.texto}}</td>
+                <td>
+                    <div *ngIf="mensajes.productosPresupuestoPedidos">
+                        <a [routerLink]="['../productos-presupuesto-pedidos', mensajes.productosPresupuestoPedidos?.id, 'view' ]" >{{mensajes.productosPresupuestoPedidos?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="mensajes.contactoFabrica">
+                        <a [routerLink]="['../contacto-fabrica', mensajes.contactoFabrica?.id, 'view' ]" >{{mensajes.contactoFabrica?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    {{mensajes.user?.login}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/mensajes', mensajes.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/mensajes', mensajes.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'mensajes/'+ mensajes.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="mensajes && mensajes.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

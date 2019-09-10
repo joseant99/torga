@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="mensajes">
+            <h2><span jhiTranslate="torgaPedidosApp.mensajes.detail.title">Mensajes</span> {{mensajes.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.mensajes.texto">Texto</span></dt>
+                <dd>
+                    <span>{{mensajes.texto}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.mensajes.productosPresupuestoPedidos">Productos Presupuesto Pedidos</span></dt>
+                <dd>
+                    <div *ngIf="mensajes.productosPresupuestoPedidos">
+                        <a [routerLink]="['/productos-presupuesto-pedidos', mensajes.productosPresupuestoPedidos?.id, 'view']">{{mensajes.productosPresupuestoPedidos?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.mensajes.contactoFabrica">Contacto Fabrica</span></dt>
+                <dd>
+                    <div *ngIf="mensajes.contactoFabrica">
+                        <a [routerLink]="['/contacto-fabrica', mensajes.contactoFabrica?.id, 'view']">{{mensajes.contactoFabrica?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.mensajes.user">User</span></dt>
+                <dd>
+                    {{mensajes.user?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/mensajes', mensajes.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

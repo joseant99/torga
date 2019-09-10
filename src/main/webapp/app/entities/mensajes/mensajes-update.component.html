@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-mensajes-heading" jhiTranslate="torgaPedidosApp.mensajes.home.createOrEditLabel">Create or edit a Mensajes</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!mensajes.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="mensajes.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.mensajes.texto" for="field_texto">Texto</label>
+                    <input type="text" class="form-control" name="texto" id="field_texto"
+                        [(ngModel)]="mensajes.texto" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.mensajes.productosPresupuestoPedidos" for="field_productosPresupuestoPedidos">Productos Presupuesto Pedidos</label>
+                    <select class="form-control" id="field_productosPresupuestoPedidos" name="productosPresupuestoPedidos" [(ngModel)]="mensajes.productosPresupuestoPedidos" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productosPresupuestoPedidosOption.id === mensajes.productosPresupuestoPedidos?.id ? mensajes.productosPresupuestoPedidos : productosPresupuestoPedidosOption" *ngFor="let productosPresupuestoPedidosOption of productospresupuestopedidos; trackBy: trackProductosPresupuestoPedidosById">{{productosPresupuestoPedidosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.mensajes.contactoFabrica" for="field_contactoFabrica">Contacto Fabrica</label>
+                    <select class="form-control" id="field_contactoFabrica" name="contactoFabrica" [(ngModel)]="mensajes.contactoFabrica" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contactoFabricaOption.id === mensajes.contactoFabrica?.id ? mensajes.contactoFabrica : contactoFabricaOption" *ngFor="let contactoFabricaOption of contactofabricas; trackBy: trackContactoFabricaById">{{contactoFabricaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.mensajes.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="mensajes.user" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === mensajes.user?.id ? mensajes.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
