@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-interiores-armarios-heading" jhiTranslate="torgaPedidosApp.interioresArmarios.home.createOrEditLabel">Create or edit a Interiores Armarios</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!interioresArmarios.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="interioresArmarios.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interioresArmarios.ancho" for="field_ancho">Ancho</label>
+                    <input type="number" class="form-control" name="ancho" id="field_ancho"
+                        [(ngModel)]="interioresArmarios.ancho" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interioresArmarios.alto" for="field_alto">Alto</label>
+                    <input type="number" class="form-control" name="alto" id="field_alto"
+                        [(ngModel)]="interioresArmarios.alto" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interioresArmarios.fondo" for="field_fondo">Fondo</label>
+                    <input type="number" class="form-control" name="fondo" id="field_fondo"
+                        [(ngModel)]="interioresArmarios.fondo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interioresArmarios.precio" for="field_precio">Precio</label>
+                    <input type="number" class="form-control" name="precio" id="field_precio"
+                        [(ngModel)]="interioresArmarios.precio" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interioresArmarios.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + interioresArmarios.imagenContentType + ';base64,' + interioresArmarios.imagen" style="max-height: 100px;" *ngIf="interioresArmarios.imagen" alt="interioresArmarios image"/>
+                        <div *ngIf="interioresArmarios.imagen" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{interioresArmarios.imagenContentType}}, {{byteSize(interioresArmarios.imagen)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, interioresArmarios, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                        [(ngModel)]="interioresArmarios.imagen" />
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                        [(ngModel)]="interioresArmarios.imagenContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interioresArmarios.mensaje" for="field_mensaje">Mensaje</label>
+                    <input type="text" class="form-control" name="mensaje" id="field_mensaje"
+                        [(ngModel)]="interioresArmarios.mensaje" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interioresArmarios.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="interioresArmarios.productosDormitorio" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productosDormitorioOption.id === interioresArmarios.productosDormitorio?.id ? interioresArmarios.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

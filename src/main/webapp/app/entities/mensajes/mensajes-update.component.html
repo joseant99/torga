@@ -14,6 +14,28 @@
                     <input type="text" class="form-control" name="texto" id="field_texto"
                         [(ngModel)]="mensajes.texto" />
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.mensajes.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + mensajes.imagenContentType + ';base64,' + mensajes.imagen" style="max-height: 100px;" *ngIf="mensajes.imagen" alt="mensajes image"/>
+                        <div *ngIf="mensajes.imagen" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{mensajes.imagenContentType}}, {{byteSize(mensajes.imagen)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, mensajes, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                        [(ngModel)]="mensajes.imagen" />
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                        [(ngModel)]="mensajes.imagenContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.mensajes.fechaVisto" for="field_fechaVisto">Fecha Visto</label>
+                    <input type="text" class="form-control" name="fechaVisto" id="field_fechaVisto"
+                        [(ngModel)]="mensajes.fechaVisto" />
+                </div>
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="torgaPedidosApp.mensajes.productosPresupuestoPedidos" for="field_productosPresupuestoPedidos">Productos Presupuesto Pedidos</label>

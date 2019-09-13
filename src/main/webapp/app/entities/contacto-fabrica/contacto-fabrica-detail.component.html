@@ -33,6 +33,12 @@
                 <dd>
                     {{contactoFabrica.user?.login}}
                 </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.contactoFabrica.presupuestoPedido">Presupuesto Pedido</span></dt>
+                <dd>
+                    <div *ngIf="contactoFabrica.presupuestoPedido">
+                        <a [routerLink]="['/presupuesto-pedido', contactoFabrica.presupuestoPedido?.id, 'view']">{{contactoFabrica.presupuestoPedido?.id}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

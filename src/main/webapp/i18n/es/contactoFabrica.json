@@ -21,7 +21,8 @@
             "albaran": "Albaran",
             "factura": "Factura",
             "codigo": "Codigo",
-            "user": "User"
+            "user": "User",
+            "presupuestoPedido": "Presupuesto Pedido"
         }
     }
 }

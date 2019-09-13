@@ -1,0 +1,27 @@
+{
+    "torgaPedidosApp": {
+        "interiorArmarioDentro": {
+            "home": {
+                "title": "Interior Armario Dentros",
+                "createLabel": "Crear nuevo Interior Armario Dentro",
+                "createOrEditLabel": "Crear o editar Interior Armario Dentro"
+            },
+            "created": "Un nuevo Interior Armario Dentro ha sido creado con el identificador {{ param }}",
+            "updated": "Un Interior Armario Dentro ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Interior Armario Dentro ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Interior Armario Dentro {{ id }}?"
+            },
+            "detail": {
+                "title": "Interior Armario Dentro"
+            },
+            "imagen": "Imagen",
+            "ancho": "Ancho",
+            "precio": "Precio",
+            "nombre": "Nombre",
+            "precioLuz": "Precio Luz",
+            "interioresArmarios": "Interiores Armarios",
+            "productosDormitorio": "Productos Dormitorio"
+        }
+    }
+}

@@ -833,7 +833,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     var i = 0;
                     $.each(datos, function(index, value) {
                         if (value['productosDormitorio']['id'] == idProd) {
-                            imagen = value['productosDormitorio']['imagen'];
+                            imagen = value['imagen'];
                             if (contador == 1) {
                                 $('#acabados').append('<div style="height: 400px;" id="imagenAcabadoPrincipal"></div>');
                                 $('#acabados #imagenAcabadoPrincipal').append(
@@ -1496,11 +1496,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('#textoFinal').attr('style');
         $('#textoFinal').css({ display: 'none' });
         var k = 1;
+        var nombreAcabado;
+        var nombre = $('#nombreMesita')
+            .text()
+            .toLowerCase();
+        if (nombre == '1 cajon') {
+            nombre = '1cajon';
+        }
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
         var todosAcabados = this.acabados;
         $.each(todosAcabados, function(index, value) {
             if (value['id'] == idAca) {
                 $('#aca1' + id1 + ' #imagenAcabadoPrincipal' + k).remove();
+                nombreAcabado = value['nombre'].toLowerCase();
                 $('#aca1' + id1).append(
                     '<img  src="data:image/gif;base64,' +
                         value['imagenFondo'] +
@@ -1519,19 +1527,31 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 if (id1 == 1) {
                     $('#tapa').remove();
                     $('#acabados #imagenAcabadoPrincipal').append(
-                        '<img id="tapa" style="position: absolute;max-width: 400px;max-height: 400px;margin-left: -232px;" src="../../../content/images/TAPA NOCE.png">'
+                        '<img id="tapa" style="position: absolute;max-width: 400px;max-height: 400px;margin-left: -400px;" src="../../../content/images/TAPA/' +
+                            nombre +
+                            '_tapa_' +
+                            nombreAcabado +
+                            '.png">'
                     );
                 }
                 if (id1 == 2) {
                     $('#cajon').remove();
                     $('#acabados #imagenAcabadoPrincipal').append(
-                        '<img id="cajon" style="position: absolute;max-width: 400px;max-height: 400px;margin-left: -232px;" src="../../../content/images/PRIMER CAJON.png">'
+                        '<img id="cajon" style="position: absolute;max-width: 400px;max-height: 400px;margin-left: -400px;" src="../../../content/images/CAJON/' +
+                            nombre +
+                            '_cajon_' +
+                            nombreAcabado +
+                            '.png">'
                     );
                 }
                 if (id1 == 3) {
                     $('#casco').remove();
-                    $('#acabados').append(
-                        '<img id="casco" style="position: absolute;left: 65px;margin-top: -70px;" src="../../../content/images/CASCO.png">'
+                    $('#acabados #imagenAcabadoPrincipal').append(
+                        '<img id="casco" style="position: absolute;max-width: 400px;max-height: 400px;margin-left: -400px;" src="../../../content/images/CASCO/' +
+                            nombre +
+                            '_casco_' +
+                            nombreAcabado +
+                            '.png">'
                     );
                 }
 

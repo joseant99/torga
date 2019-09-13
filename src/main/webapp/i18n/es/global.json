@@ -48,6 +48,9 @@
                 "pagosTorgaTiendas": "Pagos Torga Tiendas",
                 "contactoFabrica": "Contacto Fabrica",
                 "mensajes": "Mensajes",
+                "imagenesContactoFabrica": "Imagenes Contacto Fabrica",
+                "interioresArmarios": "Interiores Armarios",
+                "interiorArmarioDentro": "Interior Armario Dentro",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

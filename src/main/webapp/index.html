@@ -134,6 +134,17 @@
 		    
 
 	}
+	function esconderMenu(){
+		$("#menuPrincipal").css({"display":"none"});
+		$("#botonEsconder").removeAttr("onclick");
+		$("#botonEsconder").attr("onclick","apareceMenu()");
+	}
+	function apareceMenu(){
+		$("#menuPrincipal").css({"display":"block"});
+		$("#botonEsconder").removeAttr("onclick");
+		$("#botonEsconder").attr("onclick","esconderMenu()");
+	}
+	
 </script>
     
     <!-- uncomment this for adding service worker

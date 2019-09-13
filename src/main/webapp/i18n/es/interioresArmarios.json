@@ -1,0 +1,27 @@
+{
+    "torgaPedidosApp": {
+        "interioresArmarios": {
+            "home": {
+                "title": "Interiores Armarios",
+                "createLabel": "Crear nuevo Interiores Armarios",
+                "createOrEditLabel": "Crear o editar Interiores Armarios"
+            },
+            "created": "Un nuevo Interiores Armarios ha sido creado con el identificador {{ param }}",
+            "updated": "Un Interiores Armarios ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Interiores Armarios ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Interiores Armarios {{ id }}?"
+            },
+            "detail": {
+                "title": "Interiores Armarios"
+            },
+            "ancho": "Ancho",
+            "alto": "Alto",
+            "fondo": "Fondo",
+            "precio": "Precio",
+            "imagen": "Imagen",
+            "mensaje": "Mensaje",
+            "productosDormitorio": "Productos Dormitorio"
+        }
+    }
+}

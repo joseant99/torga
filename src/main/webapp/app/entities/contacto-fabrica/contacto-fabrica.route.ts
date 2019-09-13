@@ -9,12 +9,14 @@ import { ContactoFabrica } from 'app/shared/model/contacto-fabrica.model';
 import { ContactoFabricaService } from './contacto-fabrica.service';
 import { ContactoFabricaComponent } from './contacto-fabrica.component';
 import { ContactoChatComponent } from './contacto-chat.component';
+import { ContactoProyectosComponent } from './contacto-proyectos.component';
+import { ContactoSugerenciasComponent } from './contacto-sugerencias.component';
 import { ContactoFabricaClientesComponent } from './contacto-fabrica-clientes.component';
 import { ContactoFabricaDetailComponent } from './contacto-fabrica-detail.component';
 import { ContactoFabricaUpdateComponent } from './contacto-fabrica-update.component';
 import { ContactoFabricaDeletePopupComponent } from './contacto-fabrica-delete-dialog.component';
 import { IContactoFabrica } from 'app/shared/model/contacto-fabrica.model';
-ContactoFabricaClientesComponent;
+
 @Injectable({ providedIn: 'root' })
 export class ContactoFabricaResolve implements Resolve<IContactoFabrica> {
     constructor(private service: ContactoFabricaService) {}
@@ -59,8 +61,34 @@ export const contactoFabricaRoute: Routes = [
         canActivate: [UserRouteAccessService]
     },
     {
-        path: 'contacto-fabrica/:id/chat',
-        component: ContactoChatComponent,
+        path: 'contacto-sugerencias',
+        component: ContactoSugerenciasComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.contactoFabrica.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'contacto-proyectos',
+        component: ContactoProyectosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.contactoFabrica.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'contacto-fabrica/:id/view',
+        component: ContactoFabricaDetailComponent,
         resolve: {
             contactoFabrica: ContactoFabricaResolve
         },
@@ -71,8 +99,8 @@ export const contactoFabricaRoute: Routes = [
         canActivate: [UserRouteAccessService]
     },
     {
-        path: 'contacto-fabrica/:id/view',
-        component: ContactoFabricaDetailComponent,
+        path: 'contacto-fabrica/:id/chat',
+        component: ContactoChatComponent,
         resolve: {
             contactoFabrica: ContactoFabricaResolve
         },

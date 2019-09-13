@@ -24,6 +24,7 @@ import { TorgaPedidosDimensionesProductoTipoModule } from './dimensiones-product
 import { TorgaPedidosComposicionModule } from './composicion/composicion.module';
 import { TorgaPedidosProductosComposicionModule } from './productos-composicion/productos-composicion.module';
 import { TorgaPedidosAcabadosComposicionModule } from './acabados-composicion/acabados-composicion.module';
+import { TorgaPedidosInterioresArmariosModule } from './interiores-armarios/interiores-armarios.module';
 import { TorgaPedidosInterioresModule } from './interiores/interiores.module';
 import { TorgaPedidosPresupuestoPedidoModule } from './presupuesto-pedido/presupuesto-pedido.module';
 import { TorgaPedidosDatosUsuarioModule } from './datos-usuario/datos-usuario.module';
@@ -33,7 +34,9 @@ import { TorgaPedidosMedidasEspecialesModule } from './medidas-especiales/medida
 import { TorgaPedidosMedEspProductoPedidoPresuModule } from './med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.module';
 import { TorgaPedidosRepresentanteTiendaModule } from './representante-tienda/representante-tienda.module';
 import { TorgaPedidosContactoFabricaModule } from './contacto-fabrica/contacto-fabrica.module';
+import { TorgaPedidosImagenesContactoFabricaModule } from './imagenes-contacto-fabrica/imagenes-contacto-fabrica.module';
 import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos-torga-tiendas.module';
+import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dentro/interior-armario-dentro.module';
 
 @NgModule({
     // prettier-ignore
@@ -45,9 +48,11 @@ import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos
         TorgaPedidosAcabadosComposicionModule,
         TorgaPedidosComposicionModule,
         TorgaPedidosInterioresModule,
+        TorgaPedidosInterioresArmariosModule,
         TorgaPedidosReferenciaClientesModule,
         TorgaPedidosPagosTorgaTiendasModule,
         TorgaPedidosRepresentanteTiendaModule,
+        TorgaPedidosImagenesContactoFabricaModule,
         TorgaPedidosRepresentanteModule,
         TorgaPedidosMedEspProductoPedidoPresuModule,
         TorgaPedidosLogisticaModule,
@@ -56,6 +61,7 @@ import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos
         TorgaPedidosVistaClienteModule,
         TorgaPedidosVistaRepresentanteModule,
         TorgaPedidosMensajesModule,
+        TorgaPedidosInteriorArmarioDentroModule,
         TorgaPedidosVistaAdminModule,
         TorgaPedidosTransportistasModule,
         TorgaPedidosEstadosModule,

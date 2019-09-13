@@ -16,6 +16,8 @@
                 "title": "Mensajes"
             },
             "texto": "Texto",
+            "imagen": "Imagen",
+            "fechaVisto": "Fecha Visto",
             "productosPresupuestoPedidos": "Productos Presupuesto Pedidos",
             "contactoFabrica": "Contacto Fabrica",
             "user": "User"

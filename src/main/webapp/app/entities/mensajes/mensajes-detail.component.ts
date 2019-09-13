@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { JhiDataUtils } from 'ng-jhipster';
 
 import { IMensajes } from 'app/shared/model/mensajes.model';
 
@@ -10,7 +11,7 @@ import { IMensajes } from 'app/shared/model/mensajes.model';
 export class MensajesDetailComponent implements OnInit {
     mensajes: IMensajes;
 
-    constructor(protected activatedRoute: ActivatedRoute) {}
+    constructor(protected dataUtils: JhiDataUtils, protected activatedRoute: ActivatedRoute) {}
 
     ngOnInit() {
         this.activatedRoute.data.subscribe(({ mensajes }) => {
@@ -18,6 +19,13 @@ export class MensajesDetailComponent implements OnInit {
         });
     }
 
+    byteSize(field) {
+        return this.dataUtils.byteSize(field);
+    }
+
+    openFile(contentType, field) {
+        return this.dataUtils.openFile(contentType, field);
+    }
     previousState() {
         window.history.back();
     }

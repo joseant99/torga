@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { JhiEventManager } from 'ng-jhipster';
@@ -15,12 +15,14 @@ import { PagosTiendaService } from '../pagos-tienda/pagos-tienda.service';
 import { VendedoresService } from '../vendedores/vendedores.service';
 import { IVendedores } from 'app/shared/model/vendedores.model';
 import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
-
+import { ContactoFabricaService } from '../contacto-fabrica/contacto-fabrica.service';
+import { MensajesService } from '../mensajes/mensajes.service';
+import { IMensajes } from 'app/shared/model/mensajes.model';
 @Component({
     selector: 'jhi-inicio',
     templateUrl: './inicio.component.html'
 })
-export class inicioComponent implements OnInit {
+export class inicioComponent implements OnInit, AfterViewInit {
     account: Account;
     currentAccount: any;
     modalRef: NgbModalRef;
@@ -33,12 +35,16 @@ export class inicioComponent implements OnInit {
     pagosTienda: any;
     username: string;
     credentials: any;
+    contacto: any;
+    mensajes: any;
 
     constructor(
         private accountService: AccountService,
         protected vendedoresService: VendedoresService,
         private loginModalService: LoginModalService,
+        protected contactoFabricaService: ContactoFabricaService,
         private eventManager: JhiEventManager,
+        protected mensajesService: MensajesService,
         private loginService: LoginService,
         private router: Router,
         protected activatedRoute: ActivatedRoute,
@@ -51,12 +57,72 @@ export class inicioComponent implements OnInit {
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
+        var usuarioContacto = this.accountService.userIdentity;
         var usuarioBuscado;
         var cliente;
         var tiendaUsuario;
         var pagos = [];
         var vendedores = [];
         var dato = 0;
+        var contacto = [];
+        var mensajes = [];
+
+        this.contactoFabricaService
+            .query({
+                size: 1000000
+            })
+            .subscribe(
+                (res: HttpResponse<IContactoFabrica[]>) => {
+                    for (let w = 0; w < res.body.length; w++) {
+                        contacto[w] = res.body[w];
+                    }
+                    this.mensajesService
+                        .query({
+                            size: 100000
+                        })
+                        .subscribe(
+                            (res: HttpResponse<IMensajes[]>) => {
+                                for (let w = 0; w < res.body.length; w++) {
+                                    mensajes[w] = res.body[w];
+                                }
+
+                                if (contacto[0] != undefined) {
+                                    for (let i = 0; i < contacto.length; i++) {
+                                        if (usuarioContacto['firstName'] == 'Administrator') {
+                                            for (let j = 0; j < mensajes.length; j++) {
+                                                if (mensajes[j]['contactoFabrica']['id'] == contacto[i]['id']) {
+                                                    if (mensajes[j]['user']['id'] != usuarioContacto['id']) {
+                                                        sessionStorage.setItem('alertaChat', JSON.stringify(contacto[i]));
+                                                        $('#textoContactoFabrica').css({ color: 'red' });
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            if (contacto[i]['user']['id'] == usuarioContacto['id']) {
+                                                for (let j = 0; j < mensajes.length; j++) {
+                                                    if (mensajes[j]['contactoFabrica']['id'] == contacto[i]['id']) {
+                                                        if (
+                                                            mensajes[j]['user']['id'] != usuarioContacto['id'] &&
+                                                            mensajes[j]['fechaVisto'] == null
+                                                        ) {
+                                                            sessionStorage.setItem('alertaChat', JSON.stringify(contacto[i]));
+                                                            $('#textoContactoFabrica').css({ color: 'red' });
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            (res: HttpErrorResponse) => this.onError(res.message)
+                        );
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+        this.contacto = contacto;
+
+        this.mensajes = mensajes;
         this.pagosTiendaService
             .query({
                 size: 10000000
@@ -212,5 +278,27 @@ export class inicioComponent implements OnInit {
                 //aqui añadimos try catch y comprobamos con la otra tabla de usuario.
                 this.authenticationError = true;
             });
+    }
+
+    ngAfterViewInit() {
+        var contacto = this.contacto;
+        var mensajes = this.mensajes;
+        if (contacto[0] != undefined) {
+            for (let i = 0; i < contacto.length; i++) {
+                if (contacto[i]['firstName'] == 'Administrator') {
+                    alert('pito');
+                } else {
+                    if (contacto[i]['user']['id'] == usuarioContacto['id']) {
+                        for (let j = 0; j < mensajes.length; j++) {
+                            if (mensajes[j]['contactoFabrica']['id'] == contacto[i]['id']) {
+                                if (mensajes[j]['user']['id'] != usuarioContacto['id']) {
+                                    $('#textoContactoFabrica').css({ color: 'red' });
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

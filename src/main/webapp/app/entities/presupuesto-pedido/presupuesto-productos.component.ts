@@ -21,6 +21,7 @@ import { MunicipiosService } from '../municipios/municipios.service';
 import { IMunicipios } from 'app/shared/model/municipios.model';
 import { DatosClienteService } from '../datos-cliente/datos-cliente.service';
 import { IDatosCliente } from 'app/shared/model/datos-cliente.model';
+import { ContactoFabricaService } from '../contacto-fabrica/contacto-fabrica.service';
 
 @Component({
     selector: 'jhi-presupuesto-productos',
@@ -45,6 +46,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     totalItems: any;
     queryCount: any;
     itemsPerPage: any;
+    idPresu: any;
     page: any;
     predicate: any;
     previousPage: any;
@@ -53,6 +55,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
+        protected contactoFabricaService: ContactoFabricaService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
@@ -180,10 +183,34 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             });
 
         var productosPresupuesto = [];
-        var acabados = [];
+        var acabados1 = [];
         var precioTienda = this.precioTienda;
         var cont = 0;
         var presu = sessionStorage.getItem('presupuesto');
+        this.acabadosProductosPresupuestoPedidoService
+            .query({
+                size: 1000000
+            })
+            .subscribe(data => {
+                $.each(data['body'], function(index, value) {
+                    acabados1[index] = value;
+                });
+            });
+        this.acabados = acabados1;
+        var ilu = [];
+
+        this.iluminacionProdPrePedService
+            .query({
+                size: 1000000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data['body'].length; i++) {
+                    ilu[i] = data['body'][i];
+                }
+            });
+        this.iluminacion = ilu;
+        var acabados = this.acabados;
+        var iluminacion = this.iluminacion;
         this.productosPresupuestoPedidosService
             .query({
                 size: 1000000
@@ -220,8 +247,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     this.productos = productosPresupuesto;
 
                     var productos = this.productos;
-                    var acabados = this.acabados;
-                    var iluminacion = this.iluminacion;
+
                     var apoyo;
                     setTimeout(function() {
                         if (productos != undefined && acabados != []) {
@@ -322,32 +348,10 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                 }
                             }
                         }
-                    }, 100);
+                    }, 150);
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
-        this.acabadosProductosPresupuestoPedidoService
-            .query({
-                size: 1000000
-            })
-            .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    acabados[index] = value;
-                });
-            });
-        this.acabados = acabados;
-        var ilu = [];
-
-        this.iluminacionProdPrePedService
-            .query({
-                size: 1000000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data['body'].length; i++) {
-                    ilu[i] = data['body'][i];
-                }
-            });
-        this.iluminacion = ilu;
 
         this.datosClienteService
             .query({
@@ -400,6 +404,34 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             }
         });
         this.loadAll();
+    }
+
+    public contactoPresupuesto() {
+        var pedido = this.productos[0]['presupuestoPedido'];
+        var usuario = this.currentAccount;
+        $('#modal #relacion').val('Presupuestos');
+        if (usuario['id'] == pedido['user']['id'] && pedido['pedido'] == 0) {
+            $('#relacionCodigo').val(pedido['id']);
+        }
+    }
+    public crearChat() {
+        var pedido = this.productos[0]['presupuestoPedido'];
+        var d = new Date();
+
+        var month = d.getMonth() + 1;
+        var day = d.getDate();
+
+        var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
+        var numero = 1;
+        const contacto = {
+            fechaInicio: output,
+            tipo: numero,
+            codigo: pedido['id'],
+            user: this.currentAccount,
+            presupuestoPedido: pedido
+        };
+
+        this.subscribeToSaveResponse2(this.contactoFabricaService.create(contacto));
     }
 
     public modificarDatos() {
@@ -498,14 +530,42 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
     ngOnInit() {
         this.precioTienda = sessionStorage.getItem('precioTienda');
+        $('body').removeAttr('class');
         var presupuestos = [];
+        var saber = 0;
         var acabados = [];
         this.loadAll();
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
         this.registerChangeInProductosPresupuestoPedidos();
-
+        var idPresu = sessionStorage.getItem('presupuesto');
+        this.idPresu = idPresu;
+        this.contactoFabricaService
+            .query({
+                size: 1000000
+            })
+            .subscribe(
+                (res: HttpResponse<IContactoFabrica[]>) => {
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (res.body[i] != undefined) {
+                            if (res.body[i]['user']['id'] == this.currentAccount['id']) {
+                                if (res.body[i]['presupuestoPedido'] != null) {
+                                    if (res.body[i]['presupuestoPedido']['id'] == parseFloat(idPresu)) {
+                                        saber = 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (saber == 1) {
+                        $('#contacto1').remove();
+                    } else {
+                        $('#contacto2').remove();
+                    }
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
         var municipios = [];
         var provincias = [];
         this.accountService.identity().then(account => {
@@ -663,5 +723,30 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
     protected onError(errorMessage: string) {
         this.jhiAlertService.error(errorMessage, null, null);
+    }
+
+    protected subscribeToSaveResponse2(result: Observable<HttpResponse<IContactoFabrica>>) {
+        result.subscribe((res: HttpResponse<IContactoFabrica>) => this.onSaveSuccess2(), (res: HttpErrorResponse) => this.onSaveError2());
+    }
+
+    public onSaveSuccess2() {
+        this.isSaving = false;
+        var ultimo;
+        this.contactoFabricaService
+            .query({
+                size: 1000000
+            })
+            .subscribe(
+                (res: HttpResponse<IContactoFabrica[]>) => {
+                    ultimo = res.body.length;
+                    ultimo = ultimo - 1;
+                    this.router.navigate(['/contacto-fabrica', res.body[ultimo]['id'], 'chat']);
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+    }
+
+    protected onSaveError2() {
+        this.isSaving = false;
     }
 }

@@ -16,6 +16,8 @@
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="texto"><span jhiTranslate="torgaPedidosApp.mensajes.texto">Texto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imagen"><span jhiTranslate="torgaPedidosApp.mensajes.imagen">Imagen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fechaVisto"><span jhiTranslate="torgaPedidosApp.mensajes.fechaVisto">Fecha Visto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="productosPresupuestoPedidos.id"><span jhiTranslate="torgaPedidosApp.mensajes.productosPresupuestoPedidos">Productos Presupuesto Pedidos</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="contactoFabrica.id"><span jhiTranslate="torgaPedidosApp.mensajes.contactoFabrica">Contacto Fabrica</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.mensajes.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -26,6 +28,13 @@
             <tr *ngFor="let mensajes of mensajes ;trackBy: trackId">
                 <td><a [routerLink]="['/mensajes', mensajes.id, 'view' ]">{{mensajes.id}}</a></td>
                 <td>{{mensajes.texto}}</td>
+                <td>
+                    <a *ngIf="mensajes.imagen" (click)="openFile(mensajes.imagenContentType, mensajes.imagen)">
+                        <img [src]="'data:' + mensajes.imagenContentType + ';base64,' + mensajes.imagen" style="max-height: 30px;" alt="mensajes image"/>
+                    </a>
+                    <span *ngIf="mensajes.imagen">{{mensajes.imagenContentType}}, {{byteSize(mensajes.imagen)}}</span>
+                </td>
+                <td>{{mensajes.fechaVisto}}</td>
                 <td>
                     <div *ngIf="mensajes.productosPresupuestoPedidos">
                         <a [routerLink]="['../productos-presupuesto-pedidos', mensajes.productosPresupuestoPedidos?.id, 'view' ]" >{{mensajes.productosPresupuestoPedidos?.id}}</a>

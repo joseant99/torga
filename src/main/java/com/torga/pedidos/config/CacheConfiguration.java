@@ -90,6 +90,9 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.PagosTienda.class.getName() + ".pagosTorgaTiendas", jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.ContactoFabrica.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.Mensajes.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.ImagenesContactoFabrica.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.InterioresArmarios.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.InteriorArmarioDentro.class.getName() , jcacheConfiguration);
         };
     }
 }

@@ -9,6 +9,12 @@
             "otherEntityField": "login",
             "ownerSide": true,
             "otherEntityRelationshipName": "contactoFabrica"
+        },
+        {
+            "relationshipName": "presupuestoPedido",
+            "otherEntityName": "presupuestoPedido",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [

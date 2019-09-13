@@ -3,19 +3,21 @@
     <h2 id="page-heading" style="text-align:center;font-size:45px;margin-bottom:2%">
         <span><strong>Contacto Con Fabrica</strong></span>
     </h2>
+    <a style="float:right" *ngIf="siPresupuesto === 1" [routerLink]="['/presupuesto-producto' ]">Ver Presupuesto</a>
+    <a style="float:right" *ngIf="siPedido === 1" [routerLink]="['/pedidos-producto' ]">Ver pedido</a>
     <p style="text-align:center"><label>Fecha:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="text-align:center" value="{{contactoFabrica.fechaInicio}}" disabled/></p>
     <p style="text-align:center"><label>En relacion a:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="text-align:center" value="{{contactoFabrica.tipo}}" disabled/></p>
     <p style="text-align:center"><label>Con codigo:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="text-align:center" value="{{contactoFabrica.codigo}}" disabled/></p>
     
     <div id="mensajes" style="border:1px solid gray;width:60%;margin-left:20%;height:500px;overflow: scroll;">
-    	<p style="float:right;padding-left:100%" *ngFor="let mensaje of mensajes ">{{mensaje.texto}}</p>
+    	<div style="float:right;padding-left: 100%;" *ngFor="let mensaje of mensajes "><p style="text-align:center">{{mensaje.user.firstName}}</p><p style="font-size: 31px;text-align: center;">{{mensaje.texto}}</p><p *ngIf="mensaje.imagen !== null"><img alt="" style="max-width:100px"[src]="'data:' + mensaje.imagenContentType + ';base64,' + mensaje.imagen"></p></div>
     </div>
     <div style="width:60%;background-color:gray;margin-left:20%;height:120px">
     	<div style="float:left;width:65%;text-align:center">
     		<input style="width:95%;margin-top:10px" id="textoMensaje" />
     		<form style="margin-top: 25px;">
 			  <div class="form-group">
-			    <input type="file" id="file_imagen" (change)="setFileData($event, contactoFabricas, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage" />
+			    <input type="file" id="file_imagen" (change)="setFileData($event, mensajesImagen, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
 			  </div>
 			</form>
     	</div>

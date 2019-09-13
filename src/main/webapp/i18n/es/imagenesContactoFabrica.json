@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "imagenesContactoFabrica": {
+            "home": {
+                "title": "Imagenes Contacto Fabricas",
+                "createLabel": "Crear nuevo Imagenes Contacto Fabrica",
+                "createOrEditLabel": "Crear o editar Imagenes Contacto Fabrica"
+            },
+            "created": "Un nuevo Imagenes Contacto Fabrica ha sido creado con el identificador {{ param }}",
+            "updated": "Un Imagenes Contacto Fabrica ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Imagenes Contacto Fabrica ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Imagenes Contacto Fabrica {{ id }}?"
+            },
+            "detail": {
+                "title": "Imagenes Contacto Fabrica"
+            },
+            "imagen": "Imagen",
+            "contactoFabrica": "Contacto Fabrica",
+            "user": "User"
+        }
+    }
+}

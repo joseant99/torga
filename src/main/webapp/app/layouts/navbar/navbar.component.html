@@ -25,7 +25,8 @@
 	        
 	    </ul>
 			  
-
+					
+	<div id="menuUnico">				
 					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
 	       		 		<li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 	                    <a  id="noticias" data-toggle="collapse" data-target="#menuNoticias">
@@ -194,6 +195,11 @@
 											                                <span style="color:#7AB5CA;">Composiciones</span>
 											                            </a>
 											                        </li>
+											                        <li>
+											                            <a routerLink="armarios-dormitorio"  routerLinkActive="active" >
+											                                <span style="color:#7AB5CA;">Armarios</span>
+											                            </a>
+											                        </li>
 									         
 									                        
 													  </div>
@@ -234,7 +240,7 @@
 		                            </a>
 		                        </li>
 		                        <li>
-		                            <a routerLink="productos-dormitorio/apoyo"  routerLinkActive="active" >
+		                            <a routerLink="contacto-proyectos"  routerLinkActive="active" >
 		                                <span >Proyectos</span>
 		                            </a>
 		                        </li>
@@ -252,7 +258,7 @@
        		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a  id="cntacto" data-toggle="collapse" data-target="#menuContactoTorga">
                         <span>
-                            <span style="color:black;font-size:20px;margin-top: -20px;">Contacto Fabrica</span>
+                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;">Contacto Fabrica</span>
                         </span>
 					</a>
 					<div id="menuContactoTorga" class="collapse">
@@ -337,7 +343,7 @@
 					</a>
 			</li>
 		</ul> 
-						<a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
+						<a  *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']" routerLink ="contacto-sugerencias" routerLinkActive="active">
                             <span>SUGERENCIAS</span>
                         </a><br>
                         <a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
@@ -467,6 +473,12 @@
                             <span>Medidas Especiales</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="interiores-armarios" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span>Interiores Armarios</span>
+                        </a>
+                    </li>
                   </ul>
              </li>
             <li *jhiHasAnyAuthority="'ROLE_ADMIN'"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -491,7 +503,12 @@
                             <span>Dar pagos de torga a tiendas</span>
                         </a>
                     </li>
-                    
+                    <li>
+                        <a class="dropdown-item" routerLink="interior-armario-dentro" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span>interior-armario</span>
+                        </a>
+                    </li>
                     <li>
                         <a class="dropdown-item" routerLink="referencia-clientes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
@@ -697,5 +714,5 @@
         </ul>
     </div>
 </nav>
-
+<a id="botonEsconder" onclick="esconderMenu()"><img style="max-width:100%" src="../../../content/images/icono-hamburguesa.png"></a>
     

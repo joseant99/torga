@@ -7,6 +7,8 @@ import { JhiAlertService } from 'ng-jhipster';
 import { IContactoFabrica } from 'app/shared/model/contacto-fabrica.model';
 import { ContactoFabricaService } from './contacto-fabrica.service';
 import { IUser, UserService } from 'app/core';
+import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
+import { PresupuestoPedidoService } from 'app/entities/presupuesto-pedido';
 
 @Component({
     selector: 'jhi-contacto-fabrica-update',
@@ -18,10 +20,13 @@ export class ContactoFabricaUpdateComponent implements OnInit {
 
     users: IUser[];
 
+    presupuestopedidos: IPresupuestoPedido[];
+
     constructor(
         protected jhiAlertService: JhiAlertService,
         protected contactoFabricaService: ContactoFabricaService,
         protected userService: UserService,
+        protected presupuestoPedidoService: PresupuestoPedidoService,
         protected activatedRoute: ActivatedRoute
     ) {}
 
@@ -33,6 +38,12 @@ export class ContactoFabricaUpdateComponent implements OnInit {
         this.userService.query().subscribe(
             (res: HttpResponse<IUser[]>) => {
                 this.users = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.presupuestoPedidoService.query().subscribe(
+            (res: HttpResponse<IPresupuestoPedido[]>) => {
+                this.presupuestopedidos = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -69,6 +80,10 @@ export class ContactoFabricaUpdateComponent implements OnInit {
     }
 
     trackUserById(index: number, item: IUser) {
+        return item.id;
+    }
+
+    trackPresupuestoPedidoById(index: number, item: IPresupuestoPedido) {
         return item.id;
     }
 }

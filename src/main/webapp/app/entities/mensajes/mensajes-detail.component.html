@@ -9,6 +9,19 @@
                 <dd>
                     <span>{{mensajes.texto}}</span>
                 </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.mensajes.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="mensajes.imagen">
+                        <a (click)="openFile(mensajes.imagenContentType, mensajes.imagen)">
+                            <img [src]="'data:' + mensajes.imagenContentType + ';base64,' + mensajes.imagen" style="max-width: 100%;" alt="mensajes image"/>
+                        </a>
+                        {{mensajes.imagenContentType}}, {{byteSize(mensajes.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.mensajes.fechaVisto">Fecha Visto</span></dt>
+                <dd>
+                    <span>{{mensajes.fechaVisto}}</span>
+                </dd>
                 <dt><span jhiTranslate="torgaPedidosApp.mensajes.productosPresupuestoPedidos">Productos Presupuesto Pedidos</span></dt>
                 <dd>
                     <div *ngIf="mensajes.productosPresupuestoPedidos">

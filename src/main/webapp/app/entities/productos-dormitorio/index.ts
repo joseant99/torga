@@ -3,6 +3,7 @@ export * from './productos-dormitorio-update.component';
 export * from './productos-dormitorio-delete-dialog.component';
 export * from './productos-dormitorio-detail.component';
 export * from './productos-dormitorio.component';
+export * from './armarios-dormitorio.component';
 export * from './productos-dormitorio-categoria.component';
 export * from './productos-dormitorio-chinfonier.component';
 export * from './productos-dormitorio-cabeceros.component';

@@ -22,13 +22,19 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
     success: any;
     eventSubscriber: Subscription;
     routeData: any;
+    presupuestoRojo: any;
     links: any;
     totalItems: any;
     queryCount: any;
     presupuestosTabla: any;
+    incidenciasTabla: any;
     pedidosTabla: any;
     incidenciasTabla: any;
     itemsPerPage: any;
+    abajoPre: any;
+    otrosTabla: any;
+    sugerenciasTabla: any;
+    proyectosTabla: any;
     page: any;
     predicate: any;
     pedidos: any;
@@ -59,8 +65,18 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
         var presupuestos = [];
         var presupuestoTabla = [];
         var pedidosTabla = [];
+        var incidenciasTabla = [];
+        var proyectosTabla = [];
+        var sugerenciasTabla = [];
+        var otrosTabla = [];
         var cont = 0;
         var contPed = 0;
+        var contInc = 0;
+        var contProy = 0;
+        var contSug = 0;
+        var contOtros = 0;
+        var contPre = 0;
+        var sesion = JSON.parse(sessionStorage.getItem('alertaChat'));
         this.contactoFabricaService
             .query({
                 page: this.page - 1,
@@ -71,14 +87,84 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
                 (res: HttpResponse<IContactoFabrica[]>) => {
                     this.paginateContactoFabricas(res.body, res.headers);
                     for (let k = 0; k < res.body.length; k++) {
-                        if (usuario['id'] == res.body[k]['user']['id']) {
+                        if (usuario['firstName'] == 'Administrator') {
                             if (res.body[k]['tipo'] == 1) {
                                 presupuestoTabla[cont] = res.body[k];
                                 cont++;
+                                this.abajoPre = 1;
                             }
                             if (res.body[k]['tipo'] == 2) {
                                 pedidosTabla[contPed] = res.body[k];
                                 contPed;
+                            }
+                            if (res.body[k]['tipo'] == 3) {
+                                incidenciasTabla[contInc] = res.body[k];
+                                contInc++;
+                            }
+
+                            if (res.body[k]['tipo'] == 4) {
+                                proyectosTabla[contProy] = res.body[k];
+                                contProy++;
+                            }
+                            if (res.body[k]['tipo'] == 5) {
+                                sugerenciasTabla[contSug] = res.body[k];
+                                contSug++;
+                            }
+                            if (res.body[k]['tipo'] == 6) {
+                                otrosTabla[contOtros] = res.body[k];
+                                contOtros++;
+                            }
+                        } else {
+                            if (sesion != undefined && cont == 0) {
+                                if (sesion['tipo'] == 1) {
+                                    presupuestoTabla[0] = sesion;
+                                    this.presupuestoRojo = 1;
+                                    $('#presupuestos').css({ color: 'red' });
+                                    sessionStorage.removeItem('alertaChat');
+                                    cont++;
+                                    contPre++;
+                                }
+                            }
+                            if (cont == 0) {
+                                cont++;
+                            }
+
+                            if (usuario['id'] == res.body[k]['user']['id']) {
+                                if (res.body[k]['tipo'] == 1) {
+                                    if (sesion != undefined) {
+                                        if (res.body[k]['id'] != sesion['id']) {
+                                            presupuestoTabla[contPre] = res.body[k];
+                                            contPre++;
+                                            this.abajoPre = 0;
+                                        }
+                                    } else {
+                                        presupuestoTabla[contPre] = res.body[k];
+                                        contPre++;
+                                        this.abajoPre = 1;
+                                        sessionStorage.removeItem('alertaChat');
+                                    }
+                                }
+                                if (res.body[k]['tipo'] == 2) {
+                                    pedidosTabla[contPed] = res.body[k];
+                                    contPed++;
+                                }
+                                if (res.body[k]['tipo'] == 3) {
+                                    incidenciasTabla[contInc] = res.body[k];
+                                    contInc++;
+                                }
+
+                                if (res.body[k]['tipo'] == 4) {
+                                    proyectosTabla[contProy] = res.body[k];
+                                    contProy++;
+                                }
+                                if (res.body[k]['tipo'] == 5) {
+                                    sugerenciasTabla[contSug] = res.body[k];
+                                    contSug++;
+                                }
+                                if (res.body[k]['tipo'] == 6) {
+                                    otrosTabla[contOtros] = res.body[k];
+                                    contOtros++;
+                                }
                             }
                         }
                     }
@@ -86,6 +172,10 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
         this.presupuestosTabla = presupuestoTabla;
+        this.incidenciasTabla = incidenciasTabla;
+        this.proyectosTabla = proyectosTabla;
+        this.sugerenciasTabla = sugerenciasTabla;
+        this.otrosTabla = otrosTabla;
         this.pedidosTabla = pedidosTabla;
         this.presupuestoPedidoService
             .query({
@@ -233,7 +323,7 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
         var pedidos = this.pedidos;
         var usuario = this.currentAccount;
         if (id == 1) {
-            $('#relacion').val('Presupuestos');
+            $('#modal #relacion').val('Presupuestos');
             for (let i = 0; i < pedidos.length; i++) {
                 if (usuario['id'] == pedidos[i]['user']['id'] && pedidos[i]['pedido'] == 0) {
                     $('#opciones').append('<option value="' + pedidos[i]['id'] + '">' + pedidos[i]['codigo'] + '</option>');
@@ -242,7 +332,7 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
             $('#opciones').append();
         }
         if (id == 2) {
-            $('#relacion').val('Pedidos');
+            $('#modal #relacion').val('Pedidos');
             for (let i = 0; i < pedidos.length; i++) {
                 if (usuario['id'] == pedidos[i]['user']['id'] && pedidos[i]['pedido'] == 1) {
                     $('#opciones').append('<option value="' + pedidos[i]['id'] + '">' + pedidos[i]['codigo'] + '</option>');
@@ -250,20 +340,17 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
             }
         }
         if (id == 3) {
-            $('#relacion').val('Presupuestos');
+            $('#relacion').val('Incidencias');
             $('#opciones').append();
         }
         if (id == 4) {
-            $('#relacion').val('Presupuestos');
-            $('#opciones').append();
+            $('#modalOtros #relacion').val('Proyectos');
         }
         if (id == 5) {
-            $('#relacion').val('Presupuestos');
-            $('#opciones').append();
+            $('#modalOtros #relacion').val('Sugerencias');
         }
         if (id == 6) {
-            $('#relacion').val('Presupuestos');
-            $('#opciones').append();
+            $('#modalOtros #relacion').val('Otros');
         }
     }
 
@@ -275,10 +362,24 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
         return result;
     }
 
-    public crearChat() {
-        var tipo = $('#relacion').val();
-        var numero;
-        var idPed = $('#opciones').val();
+    public crearChat(id) {
+        var pedidos = this.pedidos;
+        var pedidoBueno;
+        if (id == 1) {
+            var tipo = $('#modal #relacion').val();
+            var numero;
+            var idPed = $('#modal #opciones').val();
+            for (let i = 0; i < pedidos.length; i++) {
+                if (pedidos[i]['id'] == idPed) {
+                    pedidoBueno = pedidos[i];
+                }
+            }
+        }
+        if (id == 3) {
+            var tipo = $('#modalOtros #relacion').val();
+            var numero;
+        }
+
         var d = new Date();
 
         var month = d.getMonth() + 1;
@@ -291,7 +392,8 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
                 fechaInicio: output,
                 tipo: numero,
                 codigo: idPed,
-                user: this.currentAccount
+                user: this.currentAccount,
+                presupuestoPedido: pedidoBueno
             };
             this.subscribeToSaveResponse(this.contactoFabricaService.create(contacto));
         }
@@ -305,6 +407,46 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
             };
             this.subscribeToSaveResponse(this.contactoFabricaService.create(contacto));
         }
+        if (tipo == 'Incidencias') {
+            numero = 3;
+            const contacto = {
+                fechaInicio: output,
+                tipo: numero,
+                codigo: idPed,
+                user: this.currentAccount
+            };
+            this.subscribeToSaveResponse(this.contactoFabricaService.create(contacto));
+        }
+        if (tipo == 'Proyectos') {
+            numero = 4;
+            const contacto = {
+                fechaInicio: output,
+                tipo: numero,
+                codigo: 'Proy' + this.currentAccount['id'] + numero,
+                user: this.currentAccount
+            };
+            this.subscribeToSaveResponse(this.contactoFabricaService.create(contacto));
+        }
+        if (tipo == 'Sugerencias') {
+            numero = 5;
+            const contacto = {
+                fechaInicio: output,
+                tipo: numero,
+                codigo: 'Sug' + this.currentAccount['id'] + numero,
+                user: this.currentAccount
+            };
+            this.subscribeToSaveResponse(this.contactoFabricaService.create(contacto));
+        }
+        if (tipo == 'Otros') {
+            numero = 6;
+            const contacto = {
+                fechaInicio: output,
+                tipo: numero,
+                codigo: 'Otros' + this.currentAccount['id'] + numero,
+                user: this.currentAccount
+            };
+            this.subscribeToSaveResponse(this.contactoFabricaService.create(contacto));
+        }
     }
     protected subscribeToSaveResponse(result: Observable<HttpResponse<IContactoFabrica>>) {
         result.subscribe((res: HttpResponse<IContactoFabrica>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
@@ -312,6 +454,19 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
 
     protected onSaveSuccess() {
         this.isSaving = false;
+        var ultimo;
+        this.contactoFabricaService
+            .query({
+                size: 1000000
+            })
+            .subscribe(
+                (res: HttpResponse<IContactoFabrica[]>) => {
+                    ultimo = res.body.length;
+                    ultimo = ultimo - 1;
+                    this.router.navigate(['/contacto-fabrica', res.body[ultimo]['id'], 'chat']);
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
     }
 
     protected onSaveError() {

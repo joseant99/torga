@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "interioresArmarios",
+            "otherEntityName": "interioresArmarios",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "productosDormitorio",
+            "otherEntityName": "productosDormitorio",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "imagen",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "ancho",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "precio",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "precioLuz",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20190913100111",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "interior_armario_dentro",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

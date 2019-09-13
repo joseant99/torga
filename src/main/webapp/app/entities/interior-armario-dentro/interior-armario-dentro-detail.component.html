@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="interiorArmarioDentro">
+            <h2><span jhiTranslate="torgaPedidosApp.interiorArmarioDentro.detail.title">Interior Armario Dentro</span> {{interiorArmarioDentro.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.interiorArmarioDentro.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="interiorArmarioDentro.imagen">
+                        <a (click)="openFile(interiorArmarioDentro.imagenContentType, interiorArmarioDentro.imagen)">
+                            <img [src]="'data:' + interiorArmarioDentro.imagenContentType + ';base64,' + interiorArmarioDentro.imagen" style="max-width: 100%;" alt="interiorArmarioDentro image"/>
+                        </a>
+                        {{interiorArmarioDentro.imagenContentType}}, {{byteSize(interiorArmarioDentro.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interiorArmarioDentro.ancho">Ancho</span></dt>
+                <dd>
+                    <span>{{interiorArmarioDentro.ancho}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interiorArmarioDentro.precio">Precio</span></dt>
+                <dd>
+                    <span>{{interiorArmarioDentro.precio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interiorArmarioDentro.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{interiorArmarioDentro.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interiorArmarioDentro.precioLuz">Precio Luz</span></dt>
+                <dd>
+                    <span>{{interiorArmarioDentro.precioLuz}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interiorArmarioDentro.interioresArmarios">Interiores Armarios</span></dt>
+                <dd>
+                    <div *ngIf="interiorArmarioDentro.interioresArmarios">
+                        <a [routerLink]="['/interiores-armarios', interiorArmarioDentro.interioresArmarios?.id, 'view']">{{interiorArmarioDentro.interioresArmarios?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interiorArmarioDentro.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="interiorArmarioDentro.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', interiorArmarioDentro.productosDormitorio?.id, 'view']">{{interiorArmarioDentro.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/interior-armario-dentro', interiorArmarioDentro.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

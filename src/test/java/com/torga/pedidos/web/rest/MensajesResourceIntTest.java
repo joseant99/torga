@@ -19,6 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 import org.springframework.validation.Validator;
 
 import javax.persistence.EntityManager;
@@ -42,6 +43,14 @@ public class MensajesResourceIntTest {
 
     private static final String DEFAULT_TEXTO = "AAAAAAAAAA";
     private static final String UPDATED_TEXTO = "BBBBBBBBBB";
+
+    private static final byte[] DEFAULT_IMAGEN = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_IMAGEN = TestUtil.createByteArray(1, "1");
+    private static final String DEFAULT_IMAGEN_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_IMAGEN_CONTENT_TYPE = "image/png";
+
+    private static final String DEFAULT_FECHA_VISTO = "AAAAAAAAAA";
+    private static final String UPDATED_FECHA_VISTO = "BBBBBBBBBB";
 
     @Autowired
     private MensajesRepository mensajesRepository;
@@ -85,7 +94,10 @@ public class MensajesResourceIntTest {
      */
     public static Mensajes createEntity(EntityManager em) {
         Mensajes mensajes = new Mensajes()
-            .texto(DEFAULT_TEXTO);
+            .texto(DEFAULT_TEXTO)
+            .imagen(DEFAULT_IMAGEN)
+            .imagenContentType(DEFAULT_IMAGEN_CONTENT_TYPE)
+            .fechaVisto(DEFAULT_FECHA_VISTO);
         return mensajes;
     }
 
@@ -110,6 +122,9 @@ public class MensajesResourceIntTest {
         assertThat(mensajesList).hasSize(databaseSizeBeforeCreate + 1);
         Mensajes testMensajes = mensajesList.get(mensajesList.size() - 1);
         assertThat(testMensajes.getTexto()).isEqualTo(DEFAULT_TEXTO);
+        assertThat(testMensajes.getImagen()).isEqualTo(DEFAULT_IMAGEN);
+        assertThat(testMensajes.getImagenContentType()).isEqualTo(DEFAULT_IMAGEN_CONTENT_TYPE);
+        assertThat(testMensajes.getFechaVisto()).isEqualTo(DEFAULT_FECHA_VISTO);
     }
 
     @Test
@@ -142,7 +157,10 @@ public class MensajesResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(mensajes.getId().intValue())))
-            .andExpect(jsonPath("$.[*].texto").value(hasItem(DEFAULT_TEXTO.toString())));
+            .andExpect(jsonPath("$.[*].texto").value(hasItem(DEFAULT_TEXTO.toString())))
+            .andExpect(jsonPath("$.[*].imagenContentType").value(hasItem(DEFAULT_IMAGEN_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].imagen").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGEN))))
+            .andExpect(jsonPath("$.[*].fechaVisto").value(hasItem(DEFAULT_FECHA_VISTO.toString())));
     }
     
     @Test
@@ -156,7 +174,10 @@ public class MensajesResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(mensajes.getId().intValue()))
-            .andExpect(jsonPath("$.texto").value(DEFAULT_TEXTO.toString()));
+            .andExpect(jsonPath("$.texto").value(DEFAULT_TEXTO.toString()))
+            .andExpect(jsonPath("$.imagenContentType").value(DEFAULT_IMAGEN_CONTENT_TYPE))
+            .andExpect(jsonPath("$.imagen").value(Base64Utils.encodeToString(DEFAULT_IMAGEN)))
+            .andExpect(jsonPath("$.fechaVisto").value(DEFAULT_FECHA_VISTO.toString()));
     }
 
     @Test
@@ -180,7 +201,10 @@ public class MensajesResourceIntTest {
         // Disconnect from session so that the updates on updatedMensajes are not directly saved in db
         em.detach(updatedMensajes);
         updatedMensajes
-            .texto(UPDATED_TEXTO);
+            .texto(UPDATED_TEXTO)
+            .imagen(UPDATED_IMAGEN)
+            .imagenContentType(UPDATED_IMAGEN_CONTENT_TYPE)
+            .fechaVisto(UPDATED_FECHA_VISTO);
 
         restMensajesMockMvc.perform(put("/api/mensajes")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -192,6 +216,9 @@ public class MensajesResourceIntTest {
         assertThat(mensajesList).hasSize(databaseSizeBeforeUpdate);
         Mensajes testMensajes = mensajesList.get(mensajesList.size() - 1);
         assertThat(testMensajes.getTexto()).isEqualTo(UPDATED_TEXTO);
+        assertThat(testMensajes.getImagen()).isEqualTo(UPDATED_IMAGEN);
+        assertThat(testMensajes.getImagenContentType()).isEqualTo(UPDATED_IMAGEN_CONTENT_TYPE);
+        assertThat(testMensajes.getFechaVisto()).isEqualTo(UPDATED_FECHA_VISTO);
     }
 
     @Test

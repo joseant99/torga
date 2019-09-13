@@ -75,7 +75,8 @@
 			<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalPasarPedido">Generar Pedido</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="imprimir()">Imprimir</button></p>
-	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7">Contacto con Fabrica</button></p>
+	  		<p id="contacto1" style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>
+	  		<p id="contacto2" style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modal1">Contacto con Fabrica</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" [routerLink]="['/presupuesto-edicion']">Editar Presupuesto</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="eliminar()" [routerLink]="['/presupuesto-usuario']">Elimiar Presupuesto</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#A4D9F4"[routerLink]="['/presupuesto-usuario']">Salir</button></p>
@@ -134,4 +135,50 @@
 	      </div>
 	      
 	    </div>
-</div>	 	  	 
+</div>	 	
+<div class="modal fade" id="modal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Crear un Nuevo Chat</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+			        <div style="width:100%;margin-bottom:1%">
+			        	<label style="font-size:18px">En Relacion A: &nbsp;&nbsp;</label>	          
+			          <input id="relacion" style="height:40px" type="text" disabled/>
+			        </div>  
+			         <div style="width:100%">
+			         	<label style="font-size:18px">De Codigo: &nbsp;&nbsp;</label>
+				        <input id="relacionCodigo" style="height:40px" type="text" disabled/>
+				     </div>
+				     <p style="text-align:center"><button (click)="crearChat(1)">Crear Chat</button></p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>  	 
+	  <div class="modal fade" id="modal1" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Abrir Chat</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+				     <p style="text-align:center"><button class="btn btn-success" (click)="onSaveSuccess2()">Crear Chat</button></p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div> 

@@ -45,6 +45,10 @@ public class ContactoFabrica implements Serializable {
     @JsonIgnoreProperties("")
     private User user;
 
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private PresupuestoPedido presupuestoPedido;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -143,6 +147,19 @@ public class ContactoFabrica implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public PresupuestoPedido getPresupuestoPedido() {
+        return presupuestoPedido;
+    }
+
+    public ContactoFabrica presupuestoPedido(PresupuestoPedido presupuestoPedido) {
+        this.presupuestoPedido = presupuestoPedido;
+        return this;
+    }
+
+    public void setPresupuestoPedido(PresupuestoPedido presupuestoPedido) {
+        this.presupuestoPedido = presupuestoPedido;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

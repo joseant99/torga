@@ -27,6 +27,15 @@
         {
             "fieldName": "texto",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "imagen",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "fechaVisto",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20190909154522",

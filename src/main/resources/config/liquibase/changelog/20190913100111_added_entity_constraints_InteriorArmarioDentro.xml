@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity InteriorArmarioDentro.
+    -->
+    <changeSet id="20190913100111-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="interiores_armarios_id"
+                                 baseTableName="interior_armario_dentro"
+                                 constraintName="fk_interior_armario_dentro_interiores_armarios_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="interiores_armarios"/>
+
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id"
+                                 baseTableName="interior_armario_dentro"
+                                 constraintName="fk_interior_armario_dentro_productos_dormitorio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="productos_dormitorio"/>
+
+    </changeSet>
+</databaseChangeLog>

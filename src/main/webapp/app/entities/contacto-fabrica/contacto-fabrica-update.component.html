@@ -47,6 +47,13 @@
                         <option [ngValue]="userOption.id === contactoFabrica.user?.id ? contactoFabrica.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.contactoFabrica.presupuestoPedido" for="field_presupuestoPedido">Presupuesto Pedido</label>
+                    <select class="form-control" id="field_presupuestoPedido" name="presupuestoPedido" [(ngModel)]="contactoFabrica.presupuestoPedido" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="presupuestoPedidoOption.id === contactoFabrica.presupuestoPedido?.id ? contactoFabrica.presupuestoPedido : presupuestoPedidoOption" *ngFor="let presupuestoPedidoOption of presupuestopedidos; trackBy: trackPresupuestoPedidoById">{{presupuestoPedidoOption.id}}</option>
+                    </select>
+                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

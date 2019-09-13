@@ -26,6 +26,16 @@ public class Mensajes implements Serializable {
     @Column(name = "texto")
     private String texto;
 
+    @Lob
+    @Column(name = "imagen")
+    private byte[] imagen;
+
+    @Column(name = "imagen_content_type")
+    private String imagenContentType;
+
+    @Column(name = "fecha_visto")
+    private String fechaVisto;
+
     @ManyToOne
     @JsonIgnoreProperties("")
     private ProductosPresupuestoPedidos productosPresupuestoPedidos;
@@ -58,6 +68,45 @@ public class Mensajes implements Serializable {
 
     public void setTexto(String texto) {
         this.texto = texto;
+    }
+
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public Mensajes imagen(byte[] imagen) {
+        this.imagen = imagen;
+        return this;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getImagenContentType() {
+        return imagenContentType;
+    }
+
+    public Mensajes imagenContentType(String imagenContentType) {
+        this.imagenContentType = imagenContentType;
+        return this;
+    }
+
+    public void setImagenContentType(String imagenContentType) {
+        this.imagenContentType = imagenContentType;
+    }
+
+    public String getFechaVisto() {
+        return fechaVisto;
+    }
+
+    public Mensajes fechaVisto(String fechaVisto) {
+        this.fechaVisto = fechaVisto;
+        return this;
+    }
+
+    public void setFechaVisto(String fechaVisto) {
+        this.fechaVisto = fechaVisto;
     }
 
     public ProductosPresupuestoPedidos getProductosPresupuestoPedidos() {
@@ -125,6 +174,9 @@ public class Mensajes implements Serializable {
         return "Mensajes{" +
             "id=" + getId() +
             ", texto='" + getTexto() + "'" +
+            ", imagen='" + getImagen() + "'" +
+            ", imagenContentType='" + getImagenContentType() + "'" +
+            ", fechaVisto='" + getFechaVisto() + "'" +
             "}";
     }
 }

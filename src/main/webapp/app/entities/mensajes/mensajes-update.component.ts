@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { JhiAlertService } from 'ng-jhipster';
+import { JhiAlertService, JhiDataUtils } from 'ng-jhipster';
 
 import { IMensajes } from 'app/shared/model/mensajes.model';
 import { MensajesService } from './mensajes.service';
@@ -27,11 +27,13 @@ export class MensajesUpdateComponent implements OnInit {
     users: IUser[];
 
     constructor(
+        protected dataUtils: JhiDataUtils,
         protected jhiAlertService: JhiAlertService,
         protected mensajesService: MensajesService,
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected contactoFabricaService: ContactoFabricaService,
         protected userService: UserService,
+        protected elementRef: ElementRef,
         protected activatedRoute: ActivatedRoute
     ) {}
 
@@ -58,6 +60,22 @@ export class MensajesUpdateComponent implements OnInit {
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
+    }
+
+    byteSize(field) {
+        return this.dataUtils.byteSize(field);
+    }
+
+    openFile(contentType, field) {
+        return this.dataUtils.openFile(contentType, field);
+    }
+
+    setFileData(event, entity, field, isImage) {
+        this.dataUtils.setFileData(event, entity, field, isImage);
+    }
+
+    clearInputImage(field: string, fieldContentType: string, idInput: string) {
+        this.dataUtils.clearInputImage(this.mensajes, this.elementRef, field, fieldContentType, idInput);
     }
 
     previousState() {

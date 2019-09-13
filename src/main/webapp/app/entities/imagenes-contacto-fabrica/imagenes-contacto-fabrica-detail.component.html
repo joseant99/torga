@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="imagenesContactoFabrica">
+            <h2><span jhiTranslate="torgaPedidosApp.imagenesContactoFabrica.detail.title">Imagenes Contacto Fabrica</span> {{imagenesContactoFabrica.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.imagenesContactoFabrica.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="imagenesContactoFabrica.imagen">
+                        <a (click)="openFile(imagenesContactoFabrica.imagenContentType, imagenesContactoFabrica.imagen)">
+                            <img [src]="'data:' + imagenesContactoFabrica.imagenContentType + ';base64,' + imagenesContactoFabrica.imagen" style="max-width: 100%;" alt="imagenesContactoFabrica image"/>
+                        </a>
+                        {{imagenesContactoFabrica.imagenContentType}}, {{byteSize(imagenesContactoFabrica.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.imagenesContactoFabrica.contactoFabrica">Contacto Fabrica</span></dt>
+                <dd>
+                    <div *ngIf="imagenesContactoFabrica.contactoFabrica">
+                        <a [routerLink]="['/contacto-fabrica', imagenesContactoFabrica.contactoFabrica?.id, 'view']">{{imagenesContactoFabrica.contactoFabrica?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.imagenesContactoFabrica.user">User</span></dt>
+                <dd>
+                    {{imagenesContactoFabrica.user?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/imagenes-contacto-fabrica', imagenesContactoFabrica.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

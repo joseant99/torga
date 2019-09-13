@@ -6,6 +6,8 @@ import { TorgaPedidosAdminModule } from 'app/admin/admin.module';
 import {
     ContactoFabricaComponent,
     ContactoChatComponent,
+    ContactoSugerenciasComponent,
+    ContactoProyectosComponent,
     ContactoFabricaClientesComponent,
     ContactoFabricaDetailComponent,
     ContactoFabricaUpdateComponent,
@@ -21,19 +23,23 @@ const ENTITY_STATES = [...contactoFabricaRoute, ...contactoFabricaPopupRoute];
     imports: [TorgaPedidosSharedModule, TorgaPedidosAdminModule, RouterModule.forChild(ENTITY_STATES)],
     declarations: [
         ContactoFabricaComponent,
-        ContactoChatComponent,
-        ContactoFabricaClientesComponent,
         ContactoFabricaDetailComponent,
+        ContactoSugerenciasComponent,
+        ContactoProyectosComponent,
         ContactoFabricaUpdateComponent,
+        ContactoFabricaClientesComponent,
+        ContactoChatComponent,
         ContactoFabricaDeleteDialogComponent,
         ContactoFabricaDeletePopupComponent
     ],
     entryComponents: [
         ContactoFabricaComponent,
-        ContactoFabricaClientesComponent,
-        ContactoChatComponent,
         ContactoFabricaUpdateComponent,
+        ContactoSugerenciasComponent,
+        ContactoProyectosComponent,
         ContactoFabricaDeleteDialogComponent,
+        ContactoChatComponent,
+        ContactoFabricaClientesComponent,
         ContactoFabricaDeletePopupComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -22,6 +22,7 @@
             <th jhiSortBy="factura"><span jhiTranslate="torgaPedidosApp.contactoFabrica.factura">Factura</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.contactoFabrica.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.contactoFabrica.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="presupuestoPedido.id"><span jhiTranslate="torgaPedidosApp.contactoFabrica.presupuestoPedido">Presupuesto Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -36,6 +37,11 @@
                 <td>{{contactoFabrica.codigo}}</td>
                 <td>
                     {{contactoFabrica.user?.login}}
+                </td>
+                <td>
+                    <div *ngIf="contactoFabrica.presupuestoPedido">
+                        <a [routerLink]="['../presupuesto-pedido', contactoFabrica.presupuestoPedido?.id, 'view' ]" >{{contactoFabrica.presupuestoPedido?.id}}</a>
+                    </div>
                 </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
