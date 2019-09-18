@@ -7,9 +7,10 @@ import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 import { IContactoFabrica } from 'app/shared/model/contacto-fabrica.model';
 import { AccountService } from 'app/core';
 import { PresupuestoPedidoService } from '../presupuesto-pedido/presupuesto-pedido.service';
-
+import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { ContactoFabricaService } from './contacto-fabrica.service';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'jhi-contacto-fabrica',
@@ -28,8 +29,8 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
     queryCount: any;
     presupuestosTabla: any;
     incidenciasTabla: any;
+    isSaving: boolean;
     pedidosTabla: any;
-    incidenciasTabla: any;
     itemsPerPage: any;
     abajoPre: any;
     otrosTabla: any;
@@ -88,35 +89,35 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
                     this.paginateContactoFabricas(res.body, res.headers);
                     for (let k = 0; k < res.body.length; k++) {
                         if (usuario['firstName'] == 'Administrator') {
-                            if (res.body[k]['tipo'] == 1) {
+                            if (res.body[k]['tipo'] == '1') {
                                 presupuestoTabla[cont] = res.body[k];
                                 cont++;
                                 this.abajoPre = 1;
                             }
-                            if (res.body[k]['tipo'] == 2) {
+                            if (res.body[k]['tipo'] == '2') {
                                 pedidosTabla[contPed] = res.body[k];
                                 contPed;
                             }
-                            if (res.body[k]['tipo'] == 3) {
+                            if (res.body[k]['tipo'] == '3') {
                                 incidenciasTabla[contInc] = res.body[k];
                                 contInc++;
                             }
 
-                            if (res.body[k]['tipo'] == 4) {
+                            if (res.body[k]['tipo'] == '4') {
                                 proyectosTabla[contProy] = res.body[k];
                                 contProy++;
                             }
-                            if (res.body[k]['tipo'] == 5) {
+                            if (res.body[k]['tipo'] == '5') {
                                 sugerenciasTabla[contSug] = res.body[k];
                                 contSug++;
                             }
-                            if (res.body[k]['tipo'] == 6) {
+                            if (res.body[k]['tipo'] == '6') {
                                 otrosTabla[contOtros] = res.body[k];
                                 contOtros++;
                             }
                         } else {
                             if (sesion != undefined && cont == 0) {
-                                if (sesion['tipo'] == 1) {
+                                if (sesion['tipo'] == '1') {
                                     presupuestoTabla[0] = sesion;
                                     this.presupuestoRojo = 1;
                                     $('#presupuestos').css({ color: 'red' });
@@ -130,7 +131,7 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
                             }
 
                             if (usuario['id'] == res.body[k]['user']['id']) {
-                                if (res.body[k]['tipo'] == 1) {
+                                if (res.body[k]['tipo'] == '1') {
                                     if (sesion != undefined) {
                                         if (res.body[k]['id'] != sesion['id']) {
                                             presupuestoTabla[contPre] = res.body[k];
@@ -144,24 +145,24 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
                                         sessionStorage.removeItem('alertaChat');
                                     }
                                 }
-                                if (res.body[k]['tipo'] == 2) {
+                                if (res.body[k]['tipo'] == '2') {
                                     pedidosTabla[contPed] = res.body[k];
                                     contPed++;
                                 }
-                                if (res.body[k]['tipo'] == 3) {
+                                if (res.body[k]['tipo'] == '3') {
                                     incidenciasTabla[contInc] = res.body[k];
                                     contInc++;
                                 }
 
-                                if (res.body[k]['tipo'] == 4) {
+                                if (res.body[k]['tipo'] == '4') {
                                     proyectosTabla[contProy] = res.body[k];
                                     contProy++;
                                 }
-                                if (res.body[k]['tipo'] == 5) {
+                                if (res.body[k]['tipo'] == '5') {
                                     sugerenciasTabla[contSug] = res.body[k];
                                     contSug++;
                                 }
-                                if (res.body[k]['tipo'] == 6) {
+                                if (res.body[k]['tipo'] == '6') {
                                     otrosTabla[contOtros] = res.body[k];
                                     contOtros++;
                                 }
@@ -368,7 +369,8 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
         if (id == 1) {
             var tipo = $('#modal #relacion').val();
             var numero;
-            var idPed = $('#modal #opciones').val();
+            var idPed;
+            idPed = $('#modal #opciones').val();
             for (let i = 0; i < pedidos.length; i++) {
                 if (pedidos[i]['id'] == idPed) {
                     pedidoBueno = pedidos[i];
@@ -384,8 +386,8 @@ export class ContactoFabricaClientesComponent implements OnInit, OnDestroy {
 
         var month = d.getMonth() + 1;
         var day = d.getDate();
-
-        var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
+        var output;
+        output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
         if (tipo == 'Presupuestos') {
             numero = 1;
             const contacto = {

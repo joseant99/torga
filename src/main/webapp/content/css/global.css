@@ -64,15 +64,19 @@ Generic styles
 }
 
 #menuPrincipal {
-    float: left;
-    width: 10%;
-    height: 900px;
-    margin-right: 40px;
-    position: sticky;
+    width: 15%;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    top: 0;
+    background-color: white;
 }
 #botonEsconder {
-    display: none;
-    width: 50px;
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 80px;
     height: 30px;
 }
 @media screen and (max-width: 1500px) {
@@ -94,6 +98,25 @@ Generic styles
     #textoBienvenido {
         text-align: center;
         margin-top: 50%;
+    }
+}
+.producto {
+    max-height: 333px;
+    max-width: 500px;
+    opacity: 0.7;
+}
+@media screen and (max-width: 1800px) {
+    .producto {
+        max-height: 283px;
+        max-width: 450px;
+        opacity: 0.7;
+    }
+}
+@media screen and (max-width: 1650px) {
+    .producto {
+        max-height: 233px;
+        max-width: 400px;
+        opacity: 0.7;
     }
 }
 

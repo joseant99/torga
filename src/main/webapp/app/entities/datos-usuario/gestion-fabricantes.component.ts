@@ -3,6 +3,8 @@ import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/ht
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiAlertService, JhiDataUtils } from 'ng-jhipster';
+import { IPagosTorgaTiendas } from 'app/shared/model/pagos-torga-tiendas.model';
+import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
 
 import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
 import { AccountService } from 'app/core';

@@ -51,14 +51,14 @@
                     <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioDentro.interioresArmarios" for="field_interioresArmarios">Interiores Armarios</label>
                     <select class="form-control" id="field_interioresArmarios" name="interioresArmarios" [(ngModel)]="interiorArmarioDentro.interioresArmarios" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="interioresArmariosOption.id === interiorArmarioDentro.interioresArmarios?.id ? interiorArmarioDentro.interioresArmarios : interioresArmariosOption" *ngFor="let interioresArmariosOption of interioresarmarios; trackBy: trackInterioresArmariosById">{{interioresArmariosOption.id}}</option>
+                        <option [ngValue]="interioresArmariosOption.id === interiorArmarioDentro.interioresArmarios?.id ? interiorArmarioDentro.interioresArmarios : interioresArmariosOption" *ngFor="let interioresArmariosOption of interioresarmarios; trackBy: trackInterioresArmariosById">{{interioresArmariosOption.mensaje}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioDentro.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
                     <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="interiorArmarioDentro.productosDormitorio" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="productosDormitorioOption.id === interiorArmarioDentro.productosDormitorio?.id ? interiorArmarioDentro.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.id}}</option>
+                        <option [ngValue]="productosDormitorioOption.id === interiorArmarioDentro.productosDormitorio?.id ? interiorArmarioDentro.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
                     </select>
                 </div>
             </div>

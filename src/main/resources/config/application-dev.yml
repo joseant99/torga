@@ -51,7 +51,7 @@ spring:
     datasource:
         driverClassName: com.mysql.jdbc.Driver
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost/torgaPedidos05/09?useSSL=false
+        url: jdbc:mysql://localhost/torgaPedidos09/09?useSSL=false
         username: root
         password: 
         hikari:

@@ -1,0 +1,544 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="jose (generated)" id="1568617709653-1">
+        <createTable tableName="aca_prod_pre_ped">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="aca_prod_pre_pedPK"/>
+            </column>
+            <column name="acabados_id" type="BIGINT"/>
+            <column name="productos_presupuesto_pedidos_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-2">
+        <createTable tableName="contacto_fabrica">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="contacto_fabricaPK"/>
+            </column>
+            <column name="albaran" type="VARCHAR(255)"/>
+            <column name="codigo" type="VARCHAR(255)"/>
+            <column name="estado" type="VARCHAR(255)"/>
+            <column name="factura" type="VARCHAR(255)"/>
+            <column name="fecha_inicio" type="VARCHAR(255)"/>
+            <column name="tipo" type="VARCHAR(255)"/>
+            <column name="presupuesto_pedido_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-3">
+        <createTable tableName="datos_cliente">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="datos_clientePK"/>
+            </column>
+            <column name="codigo_postal" type="VARCHAR(255)"/>
+            <column name="correo" type="VARCHAR(255)"/>
+            <column name="direccion" type="VARCHAR(255)"/>
+            <column name="enviar" type="VARCHAR(255)"/>
+            <column name="fines" type="VARCHAR(255)"/>
+            <column name="nombre" type="VARCHAR(255)"/>
+            <column name="telefono" type="VARCHAR(255)"/>
+            <column name="municipios_id" type="BIGINT"/>
+            <column name="presupuesto_pedido_id" type="BIGINT"/>
+            <column name="provincias_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-4">
+        <createTable tableName="datos_usuario">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="datos_usuarioPK"/>
+            </column>
+            <column name="cif" type="VARCHAR(255)"/>
+            <column name="cod_postal" type="VARCHAR(255)"/>
+            <column name="direccion" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="logo" type="LONGBLOB"/>
+            <column name="logo_content_type" type="VARCHAR(255)"/>
+            <column name="nombre_comercial" type="VARCHAR(255)"/>
+            <column name="nombre_completo" type="VARCHAR(255)"/>
+            <column name="nombre_fiscal" type="VARCHAR(255)"/>
+            <column name="telefono" type="VARCHAR(255)"/>
+            <column name="municipios_id" type="BIGINT"/>
+            <column name="provincias_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-5">
+        <createTable tableName="iluminacion">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="iluminacionPK"/>
+            </column>
+            <column name="precio" type="FLOAT"/>
+            <column name="productos_dormitorio_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-6">
+        <createTable tableName="iluminacion_prod_pre_ped">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="iluminacion_prod_pre_pedPK"/>
+            </column>
+            <column name="iluminacion_id" type="BIGINT"/>
+            <column name="productos_presupuesto_pedidos_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-7">
+        <createTable tableName="imagenes_contacto_fabrica">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="imagenes_contacto_fabricaPK"/>
+            </column>
+            <column name="imagen" type="LONGBLOB"/>
+            <column name="imagen_content_type" type="VARCHAR(255)"/>
+            <column name="contacto_fabrica_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-8">
+        <createTable tableName="interior_armario_dentro">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="interior_armario_dentroPK"/>
+            </column>
+            <column name="ancho" type="FLOAT"/>
+            <column name="imagen" type="LONGBLOB"/>
+            <column name="imagen_content_type" type="VARCHAR(255)"/>
+            <column name="nombre" type="VARCHAR(255)"/>
+            <column name="precio" type="FLOAT"/>
+            <column name="precio_luz" type="FLOAT"/>
+            <column name="interiores_armarios_id" type="BIGINT"/>
+            <column name="productos_dormitorio_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-9">
+        <createTable tableName="interiores">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="interioresPK"/>
+            </column>
+            <column name="imagen" type="LONGBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="imagen_content_type" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dimensiones_producto_tipo_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="productos_dormitorio_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-10">
+        <createTable tableName="interiores_armarios">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="interiores_armariosPK"/>
+            </column>
+            <column name="alto" type="FLOAT"/>
+            <column name="ancho" type="FLOAT"/>
+            <column name="fondo" type="FLOAT"/>
+            <column name="imagen" type="LONGBLOB"/>
+            <column name="imagen_content_type" type="VARCHAR(255)"/>
+            <column name="mensaje" type="VARCHAR(255)"/>
+            <column name="precio" type="FLOAT"/>
+            <column name="productos_dormitorio_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-11">
+        <createTable tableName="med_esp_producto_pedido_presu">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="med_esp_producto_pedido_presuPK"/>
+            </column>
+            <column name="alto" type="FLOAT"/>
+            <column name="ancho" type="FLOAT"/>
+            <column name="fondo" type="FLOAT"/>
+            <column name="precio" type="FLOAT"/>
+            <column name="productos_presupuesto_pedidos_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-12">
+        <createTable tableName="medidas_especiales">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="medidas_especialesPK"/>
+            </column>
+            <column name="alto" type="FLOAT"/>
+            <column name="ancho" type="FLOAT"/>
+            <column name="fondo" type="FLOAT"/>
+            <column name="jhi_max" type="FLOAT"/>
+            <column name="jhi_min" type="FLOAT"/>
+            <column name="precio" type="FLOAT"/>
+            <column name="productos_dormitorio_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-13">
+        <createTable tableName="mensajes">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="mensajesPK"/>
+            </column>
+            <column name="fecha_visto" type="VARCHAR(255)"/>
+            <column name="imagen" type="LONGBLOB"/>
+            <column name="imagen_content_type" type="VARCHAR(255)"/>
+            <column name="texto" type="VARCHAR(255)"/>
+            <column name="contacto_fabrica_id" type="BIGINT"/>
+            <column name="productos_presupuesto_pedidos_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-14">
+        <createTable tableName="municipios">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="municipiosPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+            <column name="provincias_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-15">
+        <createTable tableName="pagos_tienda">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="pagos_tiendaPK"/>
+            </column>
+            <column name="descuento" type="VARCHAR(255)"/>
+            <column name="pago" type="VARCHAR(255)"/>
+            <column name="precio_tienda" type="FLOAT"/>
+            <column name="datos_usuario_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-16">
+        <createTable tableName="pagos_torga_tiendas">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="pagos_torga_tiendasPK"/>
+            </column>
+            <column name="grupo" type="VARCHAR(255)"/>
+            <column name="datos_usuario_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-17">
+        <createTable tableName="pagos_torga_tiendas_pagos_tienda">
+            <column name="pagos_torga_tiendas_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pagos_tiendas_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-18">
+        <createTable tableName="presupuesto_pedido">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="presupuesto_pedidoPK"/>
+            </column>
+            <column name="codigo" type="VARCHAR(1024)"/>
+            <column name="fecha_pedido" type="VARCHAR(255)"/>
+            <column name="fecha_presupuesto" type="VARCHAR(255)"/>
+            <column name="pedido" type="INT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-19">
+        <createTable tableName="productos_presupuesto_pedidos">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="productos_presupuesto_pedidosPK"/>
+            </column>
+            <column name="dimensiones_producto_tipo_id" type="BIGINT"/>
+            <column name="presupuesto_pedido_id" type="BIGINT"/>
+            <column name="productos_dormitorio_id" type="BIGINT"/>
+            <column name="tipo_producto_id" type="BIGINT"/>
+            <column name="tipos_apoyo_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-20">
+        <createTable tableName="provincias">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="provinciasPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-21">
+        <createTable tableName="represen_torga">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="represen_torgaPK"/>
+            </column>
+            <column name="apellidos" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="nombre" type="VARCHAR(255)"/>
+            <column name="telefono" type="VARCHAR(255)"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-22">
+        <createTable tableName="representante_tienda">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="representante_tiendaPK"/>
+            </column>
+            <column name="datos_usuario_id" type="BIGINT"/>
+            <column name="represen_torga_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-23">
+        <createTable tableName="tiradores_armario">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="tiradores_armarioPK"/>
+            </column>
+            <column name="altura" type="FLOAT"/>
+            <column name="imagen" type="LONGBLOB"/>
+            <column name="imagen_content_type" type="VARCHAR(255)"/>
+            <column name="nombre" type="VARCHAR(255)"/>
+            <column name="precio" type="FLOAT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-24">
+        <createTable tableName="vendedores">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="vendedoresPK"/>
+            </column>
+            <column name="datos_usuario_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-25">
+        <addColumn tableName="acabados_composicion">
+            <column name="acabados_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-26">
+        <addColumn tableName="productos_composicion">
+            <column name="tipos_apoyo_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-27">
+        <addPrimaryKey columnNames="pagos_torga_tiendas_id, pagos_tiendas_id" tableName="pagos_torga_tiendas_pagos_tienda"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-28">
+        <addForeignKeyConstraint baseColumnNames="iluminacion_id" baseTableName="iluminacion_prod_pre_ped" constraintName="FK1gdv0vm6nq0y1yaycr40ws53u" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="iluminacion"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-29">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_user_authority" constraintName="FK290okww5jujghp4el5i7mgwu0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-30">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-31">
+        <addForeignKeyConstraint baseColumnNames="productos_composicion_id" baseTableName="acabados_composicion" constraintName="FK2qy17cpkm136mfbvi3jispmha" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_composicion"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-32">
+        <addForeignKeyConstraint baseColumnNames="tipos_apoyo_id" baseTableName="productos_composicion" constraintName="FK2sbd0vev1ex2c7yhrw9botqq" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipos_apoyo"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-33">
+        <addForeignKeyConstraint baseColumnNames="presupuesto_pedido_id" baseTableName="productos_presupuesto_pedidos" constraintName="FK2yvrppfbnlielw114tn0egnhk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="presupuesto_pedido"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-34">
+        <addForeignKeyConstraint baseColumnNames="dimensiones_producto_tipo_id" baseTableName="productos_presupuesto_pedidos" constraintName="FK465rkyk8vh446rbvfesli0o2i" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dimensiones_producto_tipo"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-35">
+        <addForeignKeyConstraint baseColumnNames="datos_usuario_id" baseTableName="pagos_torga_tiendas" constraintName="FK4bfl12efpbcyet0776itvsgvi" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="datos_usuario"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-36">
+        <addForeignKeyConstraint baseColumnNames="authority_name" baseTableName="jhi_user_authority" constraintName="FK4psxl0jtx6nr7rhqbynr6itoc" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-37">
+        <addForeignKeyConstraint baseColumnNames="logistica_id" baseTableName="pedidos" constraintName="FK4yqk9x1ybgwpi19cvtfm6tw5l" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="logistica"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-38">
+        <addForeignKeyConstraint baseColumnNames="dimensiones_producto_tipo_id" baseTableName="productos_composicion" constraintName="FK5462m9v2wjsi756ex07vsng" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dimensiones_producto_tipo"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-39">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="datos_usuario" constraintName="FK57woaujglgvpw29eb1krt4ujk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-40">
+        <addForeignKeyConstraint baseColumnNames="datos_usuario_id" baseTableName="vendedores" constraintName="FK5cw47u2y27jhmb6ooiff8o7wf" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="datos_usuario"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-41">
+        <addForeignKeyConstraint baseColumnNames="presupuesto_pedido_id" baseTableName="datos_cliente" constraintName="FK6pfaj37ht66qy4g02hey8yyyx" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="presupuesto_pedido"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-42">
+        <addForeignKeyConstraint baseColumnNames="productos_presupuesto_pedidos_id" baseTableName="iluminacion_prod_pre_ped" constraintName="FK6u4x3x864suf6xspm3cbjhbkm" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_presupuesto_pedidos"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-43">
+        <addForeignKeyConstraint baseColumnNames="represen_torga_id" baseTableName="representante_tienda" constraintName="FK6vwpapn8ymks07t8c5blprfx5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="represen_torga"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-44">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="tipos_apoyo" constraintName="FK7t3i6hloj240629wixexqmxft" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-45">
+        <addForeignKeyConstraint baseColumnNames="tipo_producto_id" baseTableName="productos_composicion" constraintName="FK8okbdgtwsxny5vchb8005jy73" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_producto"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-46">
+        <addForeignKeyConstraint baseColumnNames="municipios_id" baseTableName="datos_cliente" constraintName="FK8xv3fvlxfijuv8mfvd10b8jt8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="municipios"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-47">
+        <addForeignKeyConstraint baseColumnNames="referenciaclientes_id" baseTableName="logistica" constraintName="FK9fln4p7ofhs43ax9clwqk3e7w" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="referencia_clientes"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-48">
+        <addForeignKeyConstraint baseColumnNames="interiores_armarios_id" baseTableName="interior_armario_dentro" constraintName="FKbf0ua3hytddvcqsxy3vkdcra9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="interiores_armarios"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-49">
+        <addForeignKeyConstraint baseColumnNames="provincias_id" baseTableName="municipios" constraintName="FKc51drb93bmjgnkucbmyppxpsj" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="provincias"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-50">
+        <addForeignKeyConstraint baseColumnNames="pagos_tiendas_id" baseTableName="pagos_torga_tiendas_pagos_tienda" constraintName="FKc8bq2i6vt4qrs9oqtcbd8b2v6" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pagos_tienda"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-51">
+        <addForeignKeyConstraint baseColumnNames="acabados_id" baseTableName="aca_prod_acabados" constraintName="FKcfe9srl3skfngiimuuxp34cp0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="acabados"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-52">
+        <addForeignKeyConstraint baseColumnNames="tipos_apoyo_id" baseTableName="productos_presupuesto_pedidos" constraintName="FKdqnu11uqwxr5uo8ij8136x9lg" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipos_apoyo"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-53">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="interiores" constraintName="FKefornjur1ref8w6jpvn16ctx7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-54">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="tipo_producto" constraintName="FKg78201vvstb9juxhdcbe27m0m" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-55">
+        <addForeignKeyConstraint baseColumnNames="categorias_dormi_id" baseTableName="productos_dormitorio" constraintName="FKg85pvguykb3u6cjbhygcnqt7f" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="categorias_dormi"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-56">
+        <addForeignKeyConstraint baseColumnNames="transportistas_id" baseTableName="logistica" constraintName="FKg9q8nedqt3xgaj1twxlkkacch" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="transportistas"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-57">
+        <addForeignKeyConstraint baseColumnNames="estados_id" baseTableName="logistica" constraintName="FKge78as2oaeuobr8i4k7pe30fw" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="estados"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-58">
+        <addForeignKeyConstraint baseColumnNames="contacto_fabrica_id" baseTableName="mensajes" constraintName="FKgvgditw30dhdam8brllhyyyjr" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="contacto_fabrica"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-59">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="dimensiones_producto" constraintName="FKgvpw4ptiy74i2cynf86sopsgq" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-60">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="interiores_armarios" constraintName="FKgy7e40vvcwqf9clfwkeq3ho39" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-61">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="productos_composicion" constraintName="FKh7uta688t649wg7k934ibiil4" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-62">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="iluminacion" constraintName="FKhmb8fhf918b935jsj1dq41sdd" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-63">
+        <addForeignKeyConstraint baseColumnNames="provincias_id" baseTableName="datos_cliente" constraintName="FKi0547sl1l5bqxo36evvsr9gsr" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="provincias"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-64">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="mensajes" constraintName="FKi7jvyl1qep4e0ye6umlymt39k" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-65">
+        <addForeignKeyConstraint baseColumnNames="dimensiones_producto_id" baseTableName="tipos_apoyo" constraintName="FKid1gnqbgbo76k2doo061cp280" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dimensiones_producto"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-66">
+        <addForeignKeyConstraint baseColumnNames="representates_id" baseTableName="cliente" constraintName="FKix7rt25mr88c7yt3b6f9nophv" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="representante"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-67">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="represen_torga" constraintName="FKj7k4vl7xwuintwkbhr3ba3jcu" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-68">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="vendedores" constraintName="FKk3qvw9qselro58yrbfn52h2ww" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-69">
+        <addForeignKeyConstraint baseColumnNames="tipo_producto_id" baseTableName="aca_prod" constraintName="FKk65avr5t5u562dtgpjnak27n5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_producto"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-70">
+        <addForeignKeyConstraint baseColumnNames="productos_presupuesto_pedidos_id" baseTableName="mensajes" constraintName="FKlg0da29p44cdne0vhosbn2kam" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_presupuesto_pedidos"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-71">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="presupuesto_pedido" constraintName="FKlhr7ubnx97wmac2uj8xtp14xn" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-72">
+        <addForeignKeyConstraint baseColumnNames="municipios_id" baseTableName="datos_usuario" constraintName="FKlhx6720rf8hey2jq31ubemdxf" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="municipios"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-73">
+        <addForeignKeyConstraint baseColumnNames="aca_prods_id" baseTableName="aca_prod_acabados" constraintName="FKljti76f3sb3i0m6h2c2r3woyl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="aca_prod"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-74">
+        <addForeignKeyConstraint baseColumnNames="acabados_id" baseTableName="aca_prod_pre_ped" constraintName="FKlxgqbatw343wva3vtykil0aww" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="acabados"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-75">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="productos_presupuesto_pedidos" constraintName="FKm4txnah4vmevod59mkq89aom5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-76">
+        <addForeignKeyConstraint baseColumnNames="acabados_id" baseTableName="acabados_composicion" constraintName="FKm6dgfjpnps6atewwn2l3rcfm4" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="acabados"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-77">
+        <addForeignKeyConstraint baseColumnNames="composicion_id" baseTableName="productos_composicion" constraintName="FKmn3n1ugtmpkouk5wcblf79yu" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="composicion"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-78">
+        <addForeignKeyConstraint baseColumnNames="provincias_id" baseTableName="datos_usuario" constraintName="FKnbufesllgt78i3ogull0rtg3p" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="provincias"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-79">
+        <addForeignKeyConstraint baseColumnNames="productos_presupuesto_pedidos_id" baseTableName="aca_prod_pre_ped" constraintName="FKncwuuhccora5wfuv9f94n0ycp" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_presupuesto_pedidos"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-80">
+        <addForeignKeyConstraint baseColumnNames="datos_usuario_id" baseTableName="pagos_tienda" constraintName="FKnq1xong9ltxx87kn7mqlktj06" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="datos_usuario"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-81">
+        <addForeignKeyConstraint baseColumnNames="datos_usuario_id" baseTableName="representante_tienda" constraintName="FKo7vtis88s2c6a3mbitfjdsaqj" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="datos_usuario"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-82">
+        <addForeignKeyConstraint baseColumnNames="referenciaclientes_id" baseTableName="pedidos" constraintName="FKoitijw6emrtga05g0r5gjqd1o" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="referencia_clientes"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-83">
+        <addForeignKeyConstraint baseColumnNames="contacto_fabrica_id" baseTableName="imagenes_contacto_fabrica" constraintName="FKolka37k9dxnfbxm5svyrbgfsk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="contacto_fabrica"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-84">
+        <addForeignKeyConstraint baseColumnNames="tipo_producto_id" baseTableName="dimensiones_producto_tipo" constraintName="FKp46gstevgeo0d3h0jfquxqy2r" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_producto"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-85">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="imagenes_contacto_fabrica" constraintName="FKp87yskmp7a6u7qma7t4xpfc8k" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-86">
+        <addForeignKeyConstraint baseColumnNames="dimensiones_producto_tipo_id" baseTableName="interiores" constraintName="FKpwad5hmm0a6am3jtf7gculpg5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dimensiones_producto_tipo"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-87">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="aca_prod" constraintName="FKpwmujhhhsm6kn4u6v4qx4jnix" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-88">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="interior_armario_dentro" constraintName="FKqkjgmxkd446fhl9b7ltbh5n69" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-89">
+        <addForeignKeyConstraint baseColumnNames="producto_apoyo_id" baseTableName="tipos_apoyo" constraintName="FKs881i80umehoncu5knang9e9t" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-90">
+        <addForeignKeyConstraint baseColumnNames="pagos_torga_tiendas_id" baseTableName="pagos_torga_tiendas_pagos_tienda" constraintName="FKsg7qcjxljeommpc3h31sv4h1b" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pagos_torga_tiendas"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-91">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="medidas_especiales" constraintName="FKsx6joxgx0nnksgav5g98auf4t" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-92">
+        <addForeignKeyConstraint baseColumnNames="productos_presupuesto_pedidos_id" baseTableName="med_esp_producto_pedido_presu" constraintName="FKt5b740bq7ngp9iuf2skvpkwpo" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_presupuesto_pedidos"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-93">
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id" baseTableName="dimensiones_producto_tipo" constraintName="FKt71f8requbjq1muiyw9ecfn7y" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="productos_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-94">
+        <addForeignKeyConstraint baseColumnNames="tipo_producto_id" baseTableName="productos_presupuesto_pedidos" constraintName="FKtbo9d2bmlf47ur49714v6c1t2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_producto"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-95">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="contacto_fabrica" constraintName="FKtjno828y4uxvmigssporyqsmk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-96">
+        <addForeignKeyConstraint baseColumnNames="presupuesto_pedido_id" baseTableName="contacto_fabrica" constraintName="FKtl06txv1xru776qpdn8a1cwen" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="presupuesto_pedido"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-97">
+        <addForeignKeyConstraint baseColumnNames="cliente_id" baseTableName="referencia_clientes" constraintName="FKtpfkjhr8ilfqxcthofvw9xvf7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cliente"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-98">
+        <dropTable tableName="acabados_productos"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-99">
+        <dropTable tableName="categorias_dormitorio"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-100">
+        <dropTable tableName="jhi_date_time_wrapper"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-101">
+        <dropColumn columnName="imagen" tableName="acabados_composicion"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-102">
+        <dropColumn columnName="imagen_content_type" tableName="acabados_composicion"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-103">
+        <dropColumn columnName="nombre" tableName="acabados_composicion"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-104">
+        <dropColumn columnName="tipo_apoyo_id" tableName="productos_composicion"/>
+    </changeSet>
+    <changeSet author="jose (generated)" id="1568617709653-105">
+        <dropNotNullConstraint columnDataType="bigint" columnName="tipo_producto_id" tableName="productos_composicion"/>
+    </changeSet>
+</databaseChangeLog>

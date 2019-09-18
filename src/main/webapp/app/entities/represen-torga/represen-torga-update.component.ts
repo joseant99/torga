@@ -6,7 +6,7 @@ import { JhiAlertService } from 'ng-jhipster';
 
 import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
 import { RepresenTorgaService } from './represen-torga.service';
-import { IUser, UserService } from 'app/core';
+import { IUser, UserService, User } from 'app/core';
 
 @Component({
     selector: 'jhi-represen-torga-update',
@@ -15,8 +15,7 @@ import { IUser, UserService } from 'app/core';
 export class RepresenTorgaUpdateComponent implements OnInit {
     represenTorga: IRepresenTorga;
     isSaving: boolean;
-
-    users: IUser[];
+    users: User[];
 
     constructor(
         protected jhiAlertService: JhiAlertService,

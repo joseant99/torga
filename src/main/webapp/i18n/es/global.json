@@ -51,6 +51,8 @@
                 "imagenesContactoFabrica": "Imagenes Contacto Fabrica",
                 "interioresArmarios": "Interiores Armarios",
                 "interiorArmarioDentro": "Interior Armario Dentro",
+                "tiradores": "Tiradores",
+                "tiradoresArmario": "Tiradores Armario",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

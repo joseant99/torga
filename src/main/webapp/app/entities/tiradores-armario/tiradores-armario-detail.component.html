@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tiradoresArmario">
+            <h2><span jhiTranslate="torgaPedidosApp.tiradoresArmario.detail.title">Tiradores Armario</span> {{tiradoresArmario.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.tiradoresArmario.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="tiradoresArmario.imagen">
+                        <a (click)="openFile(tiradoresArmario.imagenContentType, tiradoresArmario.imagen)">
+                            <img [src]="'data:' + tiradoresArmario.imagenContentType + ';base64,' + tiradoresArmario.imagen" style="max-width: 100%;" alt="tiradoresArmario image"/>
+                        </a>
+                        {{tiradoresArmario.imagenContentType}}, {{byteSize(tiradoresArmario.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiradoresArmario.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{tiradoresArmario.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiradoresArmario.precio">Precio</span></dt>
+                <dd>
+                    <span>{{tiradoresArmario.precio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.tiradoresArmario.altura">Altura</span></dt>
+                <dd>
+                    <span>{{tiradoresArmario.altura}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tiradores-armario', tiradoresArmario.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

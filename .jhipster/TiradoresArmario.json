@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "imagen",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "precio",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "altura",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20190916064026",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "tiradores_armario",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

@@ -93,6 +93,8 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.ImagenesContactoFabrica.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.InterioresArmarios.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.InteriorArmarioDentro.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.TiradoresArmario.class.getName() , jcacheConfiguration);
+ 
         };
     }
 }

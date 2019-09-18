@@ -1,0 +1,24 @@
+{
+    "torgaPedidosApp": {
+        "tiradoresArmario": {
+            "home": {
+                "title": "Tiradores Armarios",
+                "createLabel": "Crear nuevo Tiradores Armario",
+                "createOrEditLabel": "Crear o editar Tiradores Armario"
+            },
+            "created": "Un nuevo Tiradores Armario ha sido creado con el identificador {{ param }}",
+            "updated": "Un Tiradores Armario ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Tiradores Armario ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Tiradores Armario {{ id }}?"
+            },
+            "detail": {
+                "title": "Tiradores Armario"
+            },
+            "imagen": "Imagen",
+            "nombre": "Nombre",
+            "precio": "Precio",
+            "altura": "Altura"
+        }
+    }
+}

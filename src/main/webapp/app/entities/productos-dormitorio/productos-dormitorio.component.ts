@@ -6,6 +6,7 @@ import { JhiEventManager, JhiParseLinks, JhiAlertService, JhiDataUtils } from 'n
 
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
 import { AccountService } from 'app/core';
+import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { ProductosDormitorioService } from './productos-dormitorio.service';

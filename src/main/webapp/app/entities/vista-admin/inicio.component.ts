@@ -6,6 +6,7 @@ import * as $ from 'jquery';
 import { Observable } from 'rxjs';
 import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
 import { ActivatedRoute } from '@angular/router';
+import { IContactoFabrica } from 'app/shared/model/contacto-fabrica.model';
 import { LoginModalService, AccountService, Account } from 'app/core';
 import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 import { LoginService } from 'app/core/login/login.service';
@@ -282,6 +283,7 @@ export class inicioComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() {
         var contacto = this.contacto;
+        var usuarioContacto = this.accountService.userIdentity;
         var mensajes = this.mensajes;
         if (contacto[0] != undefined) {
             for (let i = 0; i < contacto.length; i++) {

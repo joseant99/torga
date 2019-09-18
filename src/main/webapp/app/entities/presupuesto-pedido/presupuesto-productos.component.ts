@@ -18,6 +18,7 @@ import { MedEspProductoPedidoPresuService } from '../med-esp-producto-pedido-pre
 import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
 import { ProvinciasService } from '../provincias/provincias.service';
 import { MunicipiosService } from '../municipios/municipios.service';
+import { IContactoFabrica } from 'app/shared/model/contacto-fabrica.model';
 import { IMunicipios } from 'app/shared/model/municipios.model';
 import { DatosClienteService } from '../datos-cliente/datos-cliente.service';
 import { IDatosCliente } from 'app/shared/model/datos-cliente.model';
@@ -42,9 +43,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     iluminacion: any;
     routeData: any;
     presupuestos = [];
+    precioTienda: any;
     links: any;
     totalItems: any;
     queryCount: any;
+    account: any;
     itemsPerPage: any;
     idPresu: any;
     page: any;
@@ -186,15 +189,17 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var acabados1 = [];
         var precioTienda = this.precioTienda;
         var cont = 0;
-        var presu = sessionStorage.getItem('presupuesto');
+        var presu;
+        presu = sessionStorage.getItem('presupuesto');
+
         this.acabadosProductosPresupuestoPedidoService
             .query({
                 size: 1000000
             })
             .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    acabados1[index] = value;
-                });
+                for (let i = 0; i < data['body'].length; i++) {
+                    acabados1[i] = data['body'][i];
+                }
             });
         this.acabados = acabados1;
         var ilu = [];
@@ -318,9 +323,12 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             '<p>Iluminacion&nbsp;&nbsp;&nbsp;' + iluminacion[j]['iluminacion']['precio'] + '&euro;</p>'
                                         );
                                         var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
-                                        var fabrica = $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text();
-                                        var ganancias = $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text();
-                                        var precioFloat = parseFloat(precioTotal);
+                                        var fabrica;
+                                        fabrica = $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text();
+                                        var ganancias;
+                                        ganancias = $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text();
+                                        var precioFloat = 0;
+                                        precioFloat = parseFloat(precioTotal);
                                         fabrica = parseFloat(fabrica);
                                         ganancias = parseFloat(fabrica);
                                         precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
@@ -415,14 +423,16 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         }
     }
     public crearChat() {
-        var pedido = this.productos[0]['presupuestoPedido'];
+        var pedido;
+        pedido = this.productos[0]['presupuestoPedido'];
         var d = new Date();
 
         var month = d.getMonth() + 1;
         var day = d.getDate();
-
-        var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
-        var numero = 1;
+        var output;
+        output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
+        var numero;
+        numero = 1;
         const contacto = {
             fechaInicio: output,
             tipo: numero,
@@ -507,8 +517,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             nombre = $('#nombre').val();
             correo = $('#correo').val();
             telefono = $('#telefono').val();
-            provincia = $('#provincia').val();
-            municipio = $('#municipio').val();
+            provincias = $('#provincia').val();
+            municipios = $('#municipio').val();
             direccion = $('#direccion').val();
             codPostal = $('#codPostal').val();
             enviar = $('#enviar').val();

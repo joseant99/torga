@@ -64,8 +64,8 @@
     <include file="config/liquibase/changelog/20190904162818_added_entity_constraints_DatosCliente.xml" relativeToChangelogFile="false"/>                
     <include file="config/liquibase/changelog/20190905101016_added_entity_PagosTorgaTiendas.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190905101016_added_entity_constraints_PagosTorgaTiendas.xml" relativeToChangelogFile="false"/>             
-    <include file="config/liquibase/changelog/20190909090400_added_entity_ContactoFabrica2.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190909090400_added_entity_constraints_ContactoFabrica2.xml" relativeToChangelogFile="false"/>    
+ 	<include file="config/liquibase/changelog/20190909090400_added_entity_ContactoFabrica2.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190909090400_added_entity_constraints_ContactoFabrica2.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190909154522_added_entity_Mensajes4.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190909154522_added_entity_constraints_Mensajes4.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190910082635_added_entity_ImagenesContactoFabrica2.xml" relativeToChangelogFile="false"/>
@@ -73,5 +73,7 @@
     <include file="config/liquibase/changelog/20190912100731_added_entity_InterioresArmarios.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190912100731_added_entity_constraints_InterioresArmarios.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190913100111_added_entity_InteriorArmarioDentro2.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190913100111_added_entity_constraints_InteriorArmarioDentro2.xml" relativeToChangelogFile="false"/>          
-</databaseChangeLog>
+    <include file="config/liquibase/changelog/20190913100111_added_entity_constraints_InteriorArmarioDentro2.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190916064026_added_entity_TiradoresArmario.xml" relativeToChangelogFile="false"/>           
+</databaseChangeLog> 
+  

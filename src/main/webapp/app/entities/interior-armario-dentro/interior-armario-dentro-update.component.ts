@@ -44,12 +44,16 @@ export class InteriorArmarioDentroUpdateComponent implements OnInit {
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
-        this.productosDormitorioService.query().subscribe(
-            (res: HttpResponse<IProductosDormitorio[]>) => {
-                this.productosdormitorios = res.body;
-            },
-            (res: HttpErrorResponse) => this.onError(res.message)
-        );
+        this.productosDormitorioService
+            .query({
+                size: 10000000
+            })
+            .subscribe(
+                (res: HttpResponse<IProductosDormitorio[]>) => {
+                    this.productosdormitorios = res.body;
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
     }
 
     byteSize(field) {

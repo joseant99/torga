@@ -13,6 +13,7 @@ import { IMensajes } from 'app/shared/model/mensajes.model';
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { ContactoFabricaService } from './contacto-fabrica.service';
 import { MensajesService } from '../mensajes/mensajes.service';
+import { Observable } from 'rxjs';
 import * as $ from 'jquery';
 @Component({
     selector: 'jhi-contacto-fabrica',
@@ -32,7 +33,9 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
     links: any;
     totalItems: any;
     queryCount: any;
+    contactoFabrica: any;
     mensajes: any;
+    isSaving: boolean;
     contactoOriginal: any;
     presupuestosTabla: any;
     pedidosTabla: any;
@@ -101,10 +104,10 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        var mensajes = [];
+        var mensajes;
         var cont = 0;
-        this.imagenesContactoFabrica = [];
-        this.mensajesImagen = [];
+        this.imagenesContactoFabrica;
+        this.mensajesImagen;
         this.loadAll();
         this.accountService.identity().then(account => {
             this.currentAccount = account;
@@ -175,7 +178,8 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
         var imagen = this.mensajesImagen;
         var contacto = this.contactoOriginal;
         var user = this.currentAccount;
-        var mensaje = $('#textoMensaje').val();
+        var mensaje;
+        mensaje = $('#textoMensaje').val();
 
         if (mensaje != '') {
             if (imagen['imagen'] != undefined) {
