@@ -12,7 +12,6 @@ type EntityArrayResponseType = HttpResponse<IProductosDormitorio[]>;
 @Injectable({ providedIn: 'root' })
 export class ProductosDormitorioService {
     public resourceUrl = SERVER_API_URL + 'api/productos-dormitorios';
-    public resourceUrl1 = SERVER_API_URL + 'api/aca-prods-aca';
 
     constructor(protected http: HttpClient) {}
 

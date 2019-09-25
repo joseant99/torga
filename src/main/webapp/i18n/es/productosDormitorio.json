@@ -17,7 +17,8 @@
             },
             "nombre": "Nombre",
             "imagen": "Imagen",
-            "categoriasDormi": "Categorias Dormi"
+            "categoriasDormi": "Categorias Dormi",
+            "puertas": "Puertas"
         }
     }
 }

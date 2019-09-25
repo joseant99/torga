@@ -36,6 +36,8 @@ import { TiradoresArmarioService } from '../tiradores-armario/tiradores-armario.
 import { ITiradoresArmario } from 'app/shared/model/tiradores-armario.model';
 import { IInterioresArmarios } from 'app/shared/model/interiores-armarios.model';
 import { IInteriorArmarioDentro } from 'app/shared/model/interior-armario-dentro.model';
+import { IPuertas } from 'app/shared/model/puertas.model';
+import { PuertasService } from '../puertas/puertas.service';
 
 @Component({
     selector: 'jhi-productos-dormitorio',
@@ -51,22 +53,29 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     tiradores: any;
     valores: any;
     apoyo: any;
+    idInteriorInput: any;
     numeroPuertas: any;
     isSaving: boolean;
     tiradoresBuenos: any;
     especiales: any;
     acaProd: IAcaProd;
+    cogerPuertasInterior: any;
     acabadosProductos: any;
     iluminacion: any;
+    nombreTipoPuerta: any;
     numeroInteriorArmario: any;
     tipoPuerta1: any;
     dimensionesArmarios: any;
     acabados: any;
     interiorArmario: any;
     mismoInterior: any;
+    idInteriorCogido: any;
     acabadosPuertas: any;
     todosAcabados: any;
+    acabadosPuertasTodos: any;
     acaProdPed: any;
+    acabadosInteriorArmario: any;
+    acabadosPuertasId: any;
     precioTienda: any;
     interioresArmarios: any;
     armarios: any;
@@ -74,10 +83,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     presupuesto: any;
     productosPresupuestoPedidos: IProductosPresupuestoPedidos;
     user: any;
+    puertasTabla: any;
     todasDimensiones: any;
     interiores: any;
     eventSubscriber: Subscription;
     routeData: any;
+    posicionInput: any;
+    posicionU: any;
     links: any;
     totalItems: any;
     queryCount: any;
@@ -114,6 +126,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
         protected dataUtils: JhiDataUtils,
+        protected puertasService: PuertasService,
         protected router: Router,
         protected eventManager: JhiEventManager,
         private loginService: LoginService,
@@ -715,6 +728,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     }
 
     public cargarInterioresArmarios() {
+        var cogerPuertasInterior = [];
+        var contPuertasInterior = 0;
         var dimensiones = this.todasDimensiones;
         var productos = this.apoyo;
         var dimensionesArmarios = [];
@@ -772,23 +787,20 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             anchos[contConjunto] = arrayPrueba;
             contConjunto++;
         }
-
+        var aux = [];
         var interiores = this.interioresArmarios;
         var ancho = $('#anchosSelect').val();
         var alto = $('#alturaSelect').val();
         var llevar = 0;
         if (ancho != '' && alto != '') {
-            $('#calculadora').attr('class', 'container tab-pane fade active show');
+            $('#calculadora').attr('class', 'tab-pane fade active show');
             $('#nombreMesita').text('Armario Estandar');
-            $('#productoCalculadora1 #datos1').append('<p>ancho</p>');
-            $('#productoCalculadora1 #precios1').append('<p id="anchoCalculadora">' + ancho + '</p>');
-            $('#productoCalculadora1 #precioCalculado1').append('<p>-</p>');
-            $('#productoCalculadora1 #datos1').append('<p>alto</p>');
-            $('#productoCalculadora1 #precios1').append('<p id="altoCalculadora">' + alto + '</p>');
-            $('#productoCalculadora1 #precioCalculado1').append('<p>-</p>');
-            $('#productoCalculadora1 #datos1').append('<p>fondo</p>');
-            $('#productoCalculadora1 #precios1').append('<p>600</p>');
-            $('#productoCalculadora1 #precioCalculado1').append('<p>-</p>');
+            $('#productoCalculadora1 #cascoEstandar #datos1').append('<p>ancho</p>');
+            $('#productoCalculadora1 #cascoEstandar #precios1').append('<p id="anchoCalculadora">' + ancho + '</p>');
+            $('#productoCalculadora1 #cascoEstandar #datos1').append('<p>alto</p>');
+            $('#productoCalculadora1 #cascoEstandar #precios1').append('<p id="altoCalculadora">' + alto + '</p>');
+            $('#productoCalculadora1 #cascoEstandar #datos1').append('<p>fondo</p>');
+            $('#productoCalculadora1 #cascoEstandar #precios1').append('<p>600</p>');
             $('#textoTituloInterior').append('2. Interiores y Puertas');
             for (let i = 0; i < anchos.length; i++) {
                 if (anchos[i][0] <= ancho && anchos[i][1] >= ancho) {
@@ -815,10 +827,111 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     interiores[k]['imagen'] +
                                     '" width="70%" style=" opacity: 0.7;margin-left:20px;max-height:300px;max-width:400px"></p>'
                             );
+                            aux[0] = interiores[k];
+                            aux[1] = anchos[i];
+                            cogerPuertasInterior[contPuertasInterior] = aux;
+                            contPuertasInterior++;
                             llevar++;
+                            aux = [];
                         }
                     }
                 }
+            }
+            this.cogerPuertasInterior = cogerPuertasInterior;
+        }
+    }
+
+    public guardarIdInterior(id) {
+        this.idInteriorInput = id;
+    }
+
+    public cogidoInterior(id) {
+        var mai = [
+            'A',
+            'B',
+            'C',
+            'D',
+            'E',
+            'F',
+            'G',
+            'H',
+            'I',
+            'J',
+            'K',
+            'L',
+            'M',
+            'N',
+            'O',
+            'P',
+            'Q',
+            'R',
+            'S',
+            'U',
+            'V',
+            'W',
+            'X',
+            'Y',
+            'Z'
+        ];
+        var idInt = this.idInteriorInput;
+        this.idInteriorCogido = id;
+        var interior = this.interiorArmario;
+        for (let i = 0; i < interior.length; i++) {
+            if (interior[i]['id'] == id) {
+                $('.interior' + idInt).val(interior[i]['nombre']);
+                $('.interiorAcabado' + idInt).removeAttr('style');
+                $('.interiorAcabado' + idInt).attr('style');
+                $('.interiorAcabado' + idInt).css({ border: '1px solid black' });
+                $('.interiorAcabado' + idInt).css({ width: '140px' });
+                $('.interiorAcabado' + idInt).css({ height: '30px' });
+                $('.interiorAcabado' + idInt).css({ float: 'left' });
+                $('.interiorLuz' + idInt).removeAttr('style');
+                $('#interioresArmario #datos1 #nombreInteriorDentro' + idInt).remove();
+                $('#interioresArmario #precios1 #precioInteriorDentro' + idInt).remove();
+                $('#interioresArmario #precioCalculado1 #precioCalculadoInteriorDentro' + idInt).remove();
+
+                $('#interioresArmario #datos1').append('<p id="nombreInteriorDentro' + idInt + '">Interior ' + mai[idInt] + '</p>');
+                $('#interioresArmario #precios1').append('<p id="precioInteriorDentro' + idInt + '">Sin luz</p>');
+
+                $('#interioresArmario #precioCalculado1').append(
+                    '<p id="precioCalculadoInteriorDentro' + idInt + '">' + interior[i]['precio'] + '&euro;</p>'
+                );
+            }
+        }
+        $('.interior' + idInt).attr('style');
+        $('.interior' + idInt).css({ 'background-color': '#DFDDDC' });
+        var acabados;
+        this.acaProdService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<IAcaProd[]>) => {
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (res.body[i]['productosDormitorio']['id'] == 50) {
+                            acabados = res.body[i]['acabados'];
+                        }
+                    }
+                    this.acabadosInteriorArmario = acabados;
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+    }
+
+    public cogerLuz(id) {
+        var idInt = this.idInteriorCogido;
+        var interior = this.interiorArmario;
+        for (let i = 0; i < interior.length; i++) {
+            if (interior[i]['id'] == idInt) {
+                $('.interiorLuz' + id).attr('style');
+                $('.interiorLuz' + id).css({ 'background-color': '#DFDDDC' });
+                $('#interioresArmario #precioCalculado1 #precioCalculadoInteriorDentro' + id).remove();
+                $('#interioresArmario #precios1 #precioInteriorDentro' + id).text('Con luz');
+                $('#interioresArmario #precioCalculado1').append(
+                    '<p id="precioCalculadoInteriorDentro' + id + '">' + (interior[i]['precio'] + interior[i]['precioLuz']) + '&euro;</p>'
+                );
             }
         }
     }
@@ -858,15 +971,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     '<p id="acabadoNombrePrincipal" style="color:black;margin-left: 90px;margin-top: -60px;" >' + value['nombre'] + '</p>'
                 );
 
-                $('#datos1').append('<p id="val' + id1 + '">Acabado ' + id1 + '</p>');
-                $('#precios1').append('<p id="val' + id1 + 'Dato" class="' + value['id'] + '">' + value['nombre'] + '</p>');
-                $('#precioCalculado1').append('<p id="valor' + id1 + '">' + value['precio'] + '</p>');
+                $('#cascoEstandar #datos1').append('<p id="val' + id1 + '">Casco</p>');
+                $('#cascoEstandar #precios1').append('<p id="val' + id1 + 'Dato" class="' + value['id'] + '">' + value['nombre'] + '</p>');
                 k++;
             }
         });
     }
 
     public cargarPuertas(id) {
+        var cogerPuerInt = this.cogerPuertasInterior;
+        $('#textoImagenInterior').text('5. ACABADOS PUERTAS E INTERIORES');
+        $('#acabado1').removeAttr('style');
+        $('#tipoAcabados').removeAttr('style');
+        $('#tipoAcabados').css({ 'text-align': 'center' });
+        $('#tiradoresDiv').removeAttr('style');
+        $('#tiradoresDiv').attr('style');
+        $('#tiradoresDiv').css({ float: 'left' });
+        $('#tiradoresDiv').css({ width: '100%' });
+        $('#tiradoresDiv').css({ 'margin-top': '5%' });
         var armarios = this.armarios;
         var dimensiones = this.dimensionesArmarios;
         var ancho = $('#anchoCalculadora').text();
@@ -884,6 +1006,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             $('#interioresArmarios' + j).css({ 'background-color': 'white' });
         }
         var idNueva = $('#mensajeId' + id).attr('class');
+        for (let i = 0; i < cogerPuerInt.length; i++) {
+            if (cogerPuerInt[i][0]['id'] == idInt && cogerPuerInt[i][1][2]['id'] == idNueva) {
+                $('#imagenInteriorPuertas #imagenesLasDos').append(
+                    '<p id="idInterior" class="' +
+                        cogerPuerInt[i][0]['id'] +
+                        '" style="text-align:center"><img  src="data:image/gif;base64,' +
+                        cogerPuerInt[i][1][2]['imagen'] +
+                        '" width="70%" style=" opacity: 0.7;margin-left:20px;max-height:300px;max-width:400px"></p>'
+                );
+                $('#imagenInteriorPuertas #imagenesLasDos').append(
+                    '<p style="text-align:center"><img  src="data:image/gif;base64,' +
+                        cogerPuerInt[i][0]['imagen'] +
+                        '" width="70%" style=" opacity: 0.7;margin-left:20px;max-height:300px;max-width:400px"></p>'
+                );
+            }
+        }
         this.idArmarioCogido = idNueva;
         var interiores = this.interioresArmarios;
         for (let u = 0; u < interiores.length; u++) {
@@ -943,11 +1081,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 this.acabadosPuertas = acabadosPuertas;
             }
         }
-        $('#textoPuertas').text('Escoge el tipo de las puertas con su acabado');
         $('#interioresArmarios' + id).css({ 'background-color': '#DFDDDC' });
-    }
 
-    public cargarTiradores(id, armario) {
         var tipo1 = [];
         var cont = 0;
         var numero = this.numeroPuertas;
@@ -959,14 +1094,16 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var ancho = $('#anchoCalculadora').text();
         var alto = $('#altoCalculadora').text();
         var int = 0;
-        var idInt = $('#altoCalculadora').attr('class');
-        var idNueva = this.idArmarioCogido;
+        var idInt = '';
+        var idNueva = '';
+        idInt = $('#altoCalculadora').attr('class');
+        idNueva = this.idArmarioCogido;
         var dimensiones = this.dimensionesArmarios;
         valor = this.valores;
         tipo1 = this.tipoPuerta1;
         if ($('input:radio[name=radio' + id + ']:checked').val()) {
             tipo1[id] = $('input:radio[name=radio' + id + ']:checked').val();
-            valor[id] = $('#' + armario + ' #select' + id).val();
+            valor[id] = $('#' + armarios + ' #select' + id).val();
             cont++;
         }
         for (let h = 0; h < numero.length; h++) {
@@ -976,7 +1113,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 saber = 0;
             }
         }
-        if (saber == 1) {
+        if (saber == 1 || saber == 0) {
             for (let i = 0; i < dimensiones.length; i++) {
                 if (dimensiones[i]['productosDormitorio']['id'] == idNueva) {
                     if (dimensiones[i]['ancho'] == ancho && dimensiones[i]['alto'] == alto) {
@@ -1034,12 +1171,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         console.log(tipo1);
         this.valores = valor;
         this.tipoPuerta1 = tipo1;
-    }
-    public tiradorFuncion(id) {
-        var idInt;
-        var idNueva;
-        idInt = $('#altoCalculadora').attr('class');
-        idNueva = this.idArmarioCogido;
+
         var int = 0;
         var numero = this.numeroPuertas.length;
         numero = numero / 2;
@@ -1068,6 +1200,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var si = 0;
         var no = 0;
         var aux = [];
+        var idInt1 = parseFloat(idInt);
+        var idNueva1 = parseFloat(idNueva);
         $('.tirador' + id).attr('style');
         $('.tirador' + id).css({ 'background-color': '#DFDDDC' });
         $('#textoInteriores').text('Escoge los interiores');
@@ -1078,7 +1212,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             .subscribe(
                 (res: HttpResponse<IInteriorArmarioDentro[]>) => {
                     for (let v = 0; v < res.body.length; v++) {
-                        if (res.body[v]['interioresArmarios']['id'] == idInt && res.body[v]['productosDormitorio']['id'] == idNueva) {
+                        if (res.body[v]['interioresArmarios']['id'] == idInt1 && res.body[v]['productosDormitorio']['id'] == idNueva1) {
                             if (interior[int - 1] == undefined || interior[int - 1]['nombre'] != res.body[v]['nombre']) {
                                 interior[int] = res.body[v];
 
@@ -1105,6 +1239,214 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
+        var puertasTabla;
+        var contTabla = 0;
+        var idProd = this.idArmarioCogido;
+        this.puertasService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<IPuertas[]>) => {
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (res.body[i]['productosDormitorio']['id'] == idProd) {
+                            puertasTabla = res.body[i]['puertasProductos'];
+                        }
+                    }
+                    this.puertasTabla = puertasTabla;
+                    console.log(this.puertasTabla);
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+
+        var numero = this.numeroPuertas.length;
+
+        $('#puertasArmario').attr('style');
+        $('#puertasArmario').css({ width: '100%' });
+        $('#puertasArmario').css({ float: 'left' });
+        $('#textoPuertas').attr('style');
+        $('#textoPuertas').css({ width: '100%' });
+        $('#textoPuertas').css({ 'background-color': '#DFDDDC' });
+        $('#textoPuertas').text('Puertas');
+        for (let i = 1; i <= numero; i++) {
+            $('#puertasArmario #datos1').append('<p>Puerta ' + i + '</p>');
+        }
+        $('#tiradoresArmario').attr('style');
+        $('#tiradoresArmario').css({ width: '100%' });
+        $('#tiradoresArmario').css({ float: 'left' });
+        $('#textoTirador').attr('style');
+        $('#textoTirador').css({ width: '100%' });
+        $('#textoTirador').css({ 'background-color': '#DFDDDC' });
+        $('#textoTirador').text('Tirador');
+
+        $('#interioresArmario').attr('style');
+        $('#interioresArmario').css({ width: '100%' });
+        $('#interioresArmario').css({ float: 'left' });
+        $('#textoInterior').attr('style');
+        $('#textoInterior').css({ width: '100%' });
+        $('#textoInterior').css({ 'background-color': '#DFDDDC' });
+        $('#textoInterior').text('Interiores');
+    }
+
+    public calculadoraTiradores(id) {
+        var tiradores = this.tiradoresBuenos;
+        var numero = this.numeroPuertas.length;
+        numero = numero / 2;
+        numero = Math.round(numero);
+        for (let i = 0; i < tiradores.length; i++) {
+            if (tiradores[i]['id'] == id) {
+                $('#inputTiradores').val(tiradores[i]['nombre']);
+                $('#tiradoresArmario #datos1 #tiradorDato').remove();
+                $('#tiradoresArmario #precios1 #tiradorUnidades').remove();
+                $('#tiradoresArmario #precioCalculado1 #tiradoresPrecio').remove();
+
+                $('#tiradoresArmario #datos1').append('<p id="tiradorDato">' + tiradores[i]['nombre'] + '</p>');
+                $('#tiradoresArmario #precios1').append('<p id="tiradorUnidades">' + numero + ' unidades</p>');
+                $('#tiradoresArmario #precioCalculado1').append(
+                    '<p id="tiradoresPrecio">' + tiradores[i]['precio'] * numero + '&euro;</p>'
+                );
+            }
+        }
+    }
+
+    public cogerIdAcabados(id, ud) {
+        this.posicionInput = id;
+        this.posicionU = ud;
+    }
+
+    public cargarAcabadosPuertas(id) {
+        var acabados = [];
+        var todos = this.acabadosPuertasTodos;
+        var ud = this.posicionU;
+        var cont = 0;
+        var idNueva = this.idArmarioCogido;
+        var dimensiones = this.dimensionesArmarios;
+        var ancho = $('#anchoCalculadora').text();
+        var alto = $('#altoCalculadora').text();
+        var precio;
+        var numero = this.numeroPuertas.length;
+        var dentro = 0;
+        var puertas = this.puertasTabla;
+        for (let i = 0; i < dimensiones.length; i++) {
+            if (dimensiones[i]['productosDormitorio']['id'] == idNueva && dentro == 0) {
+                if (dimensiones[i]['ancho'] == ancho && dimensiones[i]['alto'] == alto) {
+                    precio = dimensiones[i]['precio'];
+                    dentro = 1;
+                } else {
+                    if (dimensiones[i]['ancho'] == ancho && dimensiones[i]['alto'] != alto) {
+                        if (dimensiones[i]['alto'] > alto) {
+                            precio = dimensiones[i]['precio'];
+                            dentro = 1;
+                        }
+                    } else {
+                        if (dimensiones[i]['ancho'] != ancho && dimensiones[i]['alto'] == alto) {
+                            if (dimensiones[i]['ancho'] > ancho) {
+                                precio = dimensiones[i]['precio'];
+                                dentro = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (let i = 0; i < puertas.length; i++) {
+            if (puertas[i]['id'] == id) {
+                $('#puertasTodo #puertaAcabados .input0' + ud).val(puertas[i]['nombre']);
+                this.nombreTipoPuerta = puertas[i]['nombre'];
+            }
+        }
+
+        $('#puertasArmario #precios1').append('<p>' + this.nombreTipoPuerta + ' </p>');
+        $('#puertasArmario #precioCalculado1').append('<p>' + precio / numero + '&euro;</p>');
+        this.acaProdService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<IAcaProd[]>) => {
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (res.body[i]['productosDormitorio']['id'] == id) {
+                            acabados[cont] = res.body[i]['acabados'];
+                            $('.input' + (cont + 1) + '' + ud).removeAttr('disabled');
+                            $('.input' + (cont + 1) + '' + ud).css({ border: '1px solid' });
+                            cont++;
+                        }
+                    }
+                    todos[ud] = acabados;
+                    this.acabadosPuertasTodos = todos;
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+    }
+
+    public mostrarAcabadosPuerta(id, ud) {
+        this.acabadosPuertasId = this.acabadosPuertasTodos[ud][id];
+        this.cogerIdAcabados(id, ud);
+    }
+
+    public pintarAcabadosCalculadora(id) {
+        var acabados = this.acabados;
+        this.posicionInput;
+        var ud = this.posicionU;
+        var idNueva = this.idArmarioCogido;
+        var dimensiones = this.dimensionesArmarios;
+        var ancho = $('#anchoCalculadora').text();
+        var alto = $('#altoCalculadora').text();
+        var precio;
+        var numero = this.numeroPuertas.length;
+        var dentro = 0;
+        for (let i = 0; i < dimensiones.length; i++) {
+            if (dimensiones[i]['productosDormitorio']['id'] == idNueva && dentro == 0) {
+                if (dimensiones[i]['ancho'] == ancho && dimensiones[i]['alto'] == alto) {
+                    precio = dimensiones[i]['precio'];
+                    dentro = 1;
+                } else {
+                    if (dimensiones[i]['ancho'] == ancho && dimensiones[i]['alto'] != alto) {
+                        if (dimensiones[i]['alto'] > alto) {
+                            precio = dimensiones[i]['precio'];
+                            dentro = 1;
+                        }
+                    } else {
+                        if (dimensiones[i]['ancho'] != ancho && dimensiones[i]['alto'] == alto) {
+                            if (dimensiones[i]['ancho'] > ancho) {
+                                precio = dimensiones[i]['precio'];
+                                dentro = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (let i = 0; i < acabados.length; i++) {
+            if (acabados[i]['id'] == id) {
+                $('.input' + (this.posicionInput + 1) + '' + this.posicionU).append(
+                    '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                        acabados[i]['imagenFondo'] +
+                        '" style="max-width:100%;max-height:100%">'
+                );
+                $('#puertasArmario #precios1').append('<p>' + this.nombreTipoPuerta + ' </p>');
+                $('#puertasArmario #precioCalculado1').append('<p>' + (acabados[i]['precio'] + precio / numero) + '&euro;</p>');
+            }
+        }
+    }
+    public pintarAcabadosInterior(id) {
+        var acabados = this.acabados;
+        var idInt = this.idInteriorInput;
+        for (let i = 0; i < acabados.length; i++) {
+            if (acabados[i]['id'] == id) {
+                $('.interiorAcabado' + idInt).append(
+                    '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                        acabados[i]['imagenFondo'] +
+                        '" style="max-width:100%;max-height:100%">'
+                );
+            }
+        }
     }
 
     public cogerInterior(id, ud, luz) {
@@ -1351,6 +1693,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
         }
+        this.acabadosPuertasTodos = [];
         this.medidasEspecialesService
             .query({
                 size: 1000000
@@ -1401,14 +1744,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         }
 
                         $('#acabado1').append(
-                            '<button class="cambiarAcabado" style="margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
+                            '<p style="margin-left:145px;font-size:25px">Acabado</p><strong class="cambiarAcabado" style="margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
                                 u +
-                                '">Acabado ' +
-                                u +
-                                '</button>'
+                                '">CASCO</strong>'
                         );
                         $('#acabado1').append(
-                            '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                            '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;" data-toggle="modal" data-target="#myModalColores' +
+                                u +
+                                '" />'
                         );
                         u++;
                         i = 0;

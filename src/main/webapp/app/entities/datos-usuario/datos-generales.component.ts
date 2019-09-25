@@ -6,6 +6,7 @@ import { JhiEventManager, JhiParseLinks, JhiAlertService, JhiDataUtils } from 'n
 
 import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
 import { AccountService } from 'app/core';
+import { Observable } from 'rxjs';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { DatosUsuarioService } from './datos-usuario.service';
@@ -29,6 +30,7 @@ export class DatosGeneralesComponent implements OnInit, OnDestroy {
     predicate: any;
     previousPage: any;
     reverse: any;
+    isSaving: boolean;
 
     constructor(
         protected datosUsuarioService: DatosUsuarioService,
@@ -79,7 +81,20 @@ export class DatosGeneralesComponent implements OnInit, OnDestroy {
             this.transition();
         }
     }
+    public guardar(entity) {
+        this.subscribeToSaveResponse(this.datosUsuarioService.update(entity[0]));
+    }
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<IDatosUsuario>>) {
+        result.subscribe((res: HttpResponse<IDatosUsuario>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    }
 
+    protected onSaveSuccess() {
+        this.isSaving = false;
+    }
+
+    protected onSaveError() {
+        this.isSaving = false;
+    }
     transition() {
         this.router.navigate(['/datos-usuario'], {
             queryParams: {
@@ -102,7 +117,9 @@ export class DatosGeneralesComponent implements OnInit, OnDestroy {
         ]);
         this.loadAll();
     }
-
+    setFileData(event, entity, field, isImage) {
+        this.dataUtils.setFileData(event, entity, field, isImage);
+    }
     ngOnInit() {
         this.loadAll();
         this.accountService.identity().then(account => {

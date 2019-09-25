@@ -29,6 +29,7 @@ export class inicioComponent implements OnInit, AfterViewInit {
     modalRef: NgbModalRef;
     isSaving: boolean;
     provincias: any;
+    logo: any;
     municipios: any;
     authenticationError: boolean;
     password: string;
@@ -282,8 +283,8 @@ export class inicioComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        var contacto = this.contacto;
         var usuarioContacto = this.accountService.userIdentity;
+        var contacto = this.contacto;
         var mensajes = this.mensajes;
         if (contacto[0] != undefined) {
             for (let i = 0; i < contacto.length; i++) {

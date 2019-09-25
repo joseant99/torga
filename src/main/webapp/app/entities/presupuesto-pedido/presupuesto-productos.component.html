@@ -9,7 +9,7 @@
 	    		<a style="float:right;margin-right:20%;margin-bottom:50px;" (click)="mostrarPrecioFabrica()"><img style="max-width:50px;" src="../../../content/images/fabrica.png"/></a>
 	    	</div>
 	    	<div style="float:left;width:40%;margin-left:100px" id="imagen{{i}}">
-	    		 		<img width="395px" title="Foto de linea de codigo"" class="producto" [src]="'data:' + productosPresupuestoPedidos.productosDormitorio.imagenContentType + ';base64,' + productosPresupuestoPedidos.productosDormitorio.imagen" style="max-height: 220px;max-width: 395px;"  alt="productosDormitorio image"/>
+	    		 		<img width="500px" height="333px" title="Foto de linea de codigo"" class="producto" [src]="'data:' + productosPresupuestoPedidos.productosDormitorio.imagenContentType + ';base64,' + productosPresupuestoPedidos.productosDormitorio.imagen"  alt="productosDormitorio image"/>
 	    	</div>
 	    	<div class="{{productosPresupuestoPedidos.id}}Datos" style="float:right;width:40%;">
 	    		<p style="font-size:30px"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</i>&euro;</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>

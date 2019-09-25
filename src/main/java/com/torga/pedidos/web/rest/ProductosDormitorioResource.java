@@ -7,24 +7,16 @@ import com.torga.pedidos.web.rest.util.HeaderUtil;
 import com.torga.pedidos.web.rest.util.PaginationUtil;
 import com.torga.pedidos.service.dto.ProductosDormitorioDTO;
 import com.torga.pedidos.service.dto.ProductosDormitorioCriteria;
-import com.torga.pedidos.domain.Pedidos;
-import com.torga.pedidos.domain.ProductosDormitorio;
 import com.torga.pedidos.service.ProductosDormitorioQueryService;
 import io.github.jhipster.web.util.ResponseUtil;
-import net.logstash.logback.encoder.org.apache.commons.lang.ArrayUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.torga.pedidos.domain.Transportistas;
-import com.torga.pedidos.service.TransportistasService;
-import com.torga.pedidos.service.UserService;
 
 import javax.validation.Valid;
 import java.net.URI;
@@ -47,13 +39,11 @@ public class ProductosDormitorioResource {
     private final ProductosDormitorioService productosDormitorioService;
 
     private final ProductosDormitorioQueryService productosDormitorioQueryService;
-    
 
     public ProductosDormitorioResource(ProductosDormitorioService productosDormitorioService, ProductosDormitorioQueryService productosDormitorioQueryService) {
         this.productosDormitorioService = productosDormitorioService;
         this.productosDormitorioQueryService = productosDormitorioQueryService;
     }
-
 
     /**
      * POST  /productos-dormitorios : Create a new productosDormitorio.
@@ -153,56 +143,4 @@ public class ProductosDormitorioResource {
         productosDormitorioService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
-    
-    
-    /**
-     * GET  /productos-dormitorios/:categoria : get list of pedidos.
-     *
-     * @param categoria
-     * @return the ResponseEntity with status 200 (OK) and with body the pedidos, or with status 404 (Not Found)
-     */
-    @GetMapping("/productos-dormitorios/categoria/{id}")
-    @Timed
-    public ResponseEntity<Page<ProductosDormitorio>> findAllBycategoriasDormi(@PathVariable Long id) {
-        log.debug("REST request to get ProductosDormitorio BY findAllBycategoriasDormi : {}", id);
-        Page<ProductosDormitorio> pedidos = (Page<ProductosDormitorio>) ProductosDormitorioService.findAllBycategoriasDormi(id);
-        
-		
-		return ResponseEntity.ok()
-                .body(pedidos);
-    }
-    
-    /**
-     * GET  /productos-dormitorios/:categoria : get list of pedidos.
-     *
-     * @param categoria
-     * @return the ResponseEntity with status 200 (OK) and with body the pedidos, or with status 404 (Not Found)
-     */
-    @GetMapping("/productos-dormitorios/Chinfonier")
-    @Timed
-    public ResponseEntity<Page<ProductosDormitorio>> findAllBycategoriasDormiChinfonier(@PathVariable Long id) {
-        log.debug("REST request to get ProductosDormitorio BY findAllBycategoriasDormi : {}", id);
-        Page<ProductosDormitorio> pedidos = (Page<ProductosDormitorio>) ProductosDormitorioService.findAllBycategoriasDormi(id);
-        
-		
-		return ResponseEntity.ok()
-                .body(pedidos);
-    }
-    /**
-     * GET  /productos-dormitorios/:categoria : get list of pedidos.
-     *
-     * @param categoria
-     * @return the ResponseEntity with status 200 (OK) and with body the pedidos, or with status 404 (Not Found)
-     */
-    @GetMapping("/productos-dormitorios/cabeceros")
-    @Timed
-    public ResponseEntity<Page<ProductosDormitorio>> findAllBycategoriasDormiCabeceros(@PathVariable Long id) {
-        log.debug("REST request to get ProductosDormitorio BY findAllBycategoriasDormi : {}", id);
-        Page<ProductosDormitorio> pedidos = (Page<ProductosDormitorio>) ProductosDormitorioService.findAllBycategoriasDormi(id);
-        
-		
-		return ResponseEntity.ok()
-                .body(pedidos);
-    }
-    
 }

@@ -96,6 +96,10 @@ public class ProductosDormitorioQueryService extends QueryService<ProductosDormi
                 specification = specification.and(buildSpecification(criteria.getCategoriasDormiId(),
                     root -> root.join(ProductosDormitorio_.categoriasDormi, JoinType.LEFT).get(CategoriasDormi_.id)));
             }
+            if (criteria.getPuertasId() != null) {
+                specification = specification.and(buildSpecification(criteria.getPuertasId(),
+                    root -> root.join(ProductosDormitorio_.puertas, JoinType.LEFT).get(Puertas_.id)));
+            }
         }
         return specification;
     }

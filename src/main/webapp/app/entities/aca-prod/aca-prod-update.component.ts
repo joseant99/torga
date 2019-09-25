@@ -49,6 +49,7 @@ export class AcaProdUpdateComponent implements OnInit {
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
+
         this.productosDormitorioService
             .query({
                 size: 1000000
@@ -59,6 +60,7 @@ export class AcaProdUpdateComponent implements OnInit {
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
+
         this.tipoProductoService.query().subscribe(
             (res: HttpResponse<ITipoProducto[]>) => {
                 this.tipoproductos = res.body;

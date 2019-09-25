@@ -10,6 +10,7 @@ import { ContactoFabricaService } from './contacto-fabrica.service';
 import { ContactoFabricaComponent } from './contacto-fabrica.component';
 import { ContactoChatComponent } from './contacto-chat.component';
 import { ContactoProyectosComponent } from './contacto-proyectos.component';
+import { ContactoIncidenciasComponent } from './contacto-incidencias.component';
 import { ContactoSugerenciasComponent } from './contacto-sugerencias.component';
 import { ContactoFabricaClientesComponent } from './contacto-fabrica-clientes.component';
 import { ContactoFabricaDetailComponent } from './contacto-fabrica-detail.component';
@@ -63,6 +64,19 @@ export const contactoFabricaRoute: Routes = [
     {
         path: 'contacto-sugerencias',
         component: ContactoSugerenciasComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.contactoFabrica.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'contacto-incidencias',
+        component: ContactoIncidenciasComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

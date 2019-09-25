@@ -15,6 +15,7 @@ public interface ProductosDormitorioMapper extends EntityMapper<ProductosDormito
     ProductosDormitorioDTO toDto(ProductosDormitorio productosDormitorio);
 
     @Mapping(source = "categoriasDormiId", target = "categoriasDormi")
+    @Mapping(target = "puertas", ignore = true)
     ProductosDormitorio toEntity(ProductosDormitorioDTO productosDormitorioDTO);
 
     default ProductosDormitorio fromId(Long id) {

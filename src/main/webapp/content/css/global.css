@@ -79,6 +79,22 @@ Generic styles
     width: 80px;
     height: 30px;
 }
+#botonEsconderCalcu {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 80px;
+    height: 30px;
+}
+#botonEsconderCarr {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 80px;
+    height: 30px;
+}
 @media screen and (max-width: 1500px) {
     #menuPrincipal {
         float: left;
@@ -89,7 +105,7 @@ Generic styles
 
     #botonEsconder {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 0;
         z-index: 1;
         width: 50px;
@@ -100,11 +116,22 @@ Generic styles
         margin-top: 50%;
     }
 }
+
+#productosDormitorioCargados {
+    margin-left: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+}
+#productosPrincipal {
+    width: 75%;
+    margin-left: 69px;
+}
 .producto {
     max-height: 333px;
     max-width: 500px;
     opacity: 0.7;
 }
+
 @media screen and (max-width: 1800px) {
     .producto {
         max-height: 283px;
@@ -117,6 +144,223 @@ Generic styles
         max-height: 233px;
         max-width: 400px;
         opacity: 0.7;
+    }
+}
+#imagenDimensiones {
+    opacity: 0.7;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+}
+
+#dimensionesColorStyle {
+    float: left;
+    margin-left: 0%;
+    border: 1px solid #dfdddc;
+}
+#interiorMuebles {
+    position: absolute;
+}
+
+.imagenAcabadoPrincipalImg {
+    opacity: 0.7;
+    margin-left: 150px;
+    max-height: 333px;
+    max-width: 500px;
+}
+
+.acabadoPartes {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    margin-top: -333px;
+    margin-left: 150px;
+}
+
+#acabadosPartesDivs {
+    float: right;
+    width: 35%;
+}
+
+.acabadosModal {
+    float: left;
+    width: 280px;
+    height: 160px;
+    margin-left: 80px;
+    margin-top: 30px;
+}
+.productosColor {
+    float: left;
+    border: 1px solid #dfdddc;
+}
+#imagenAcabadoPrincipal {
+    float: left;
+    width: 500px;
+}
+
+#apoyoStyle {
+    float: left;
+    margin-left: 10%;
+}
+#ilu1 {
+    float: left;
+    margin-left: 200px;
+}
+#ilu2 {
+    float: left;
+    margin-left: 200px;
+}
+#calculadoraCarrito {
+    width: 25%;
+    background-color: #dfdddc;
+    margin-left: 57%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#tablaElegirCalcu {
+    margin-left: 75px;
+    margin-bottom: 20px;
+}
+
+#logoImagen {
+    width: 100px;
+    height: 65px;
+    position: absolute;
+}
+@media screen and (max-width: 500px) {
+    #productosPrincipal {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 70px;
+    }
+
+    #productosDormitorioCargados {
+        margin-left: 3%;
+        margin-bottom: 50px;
+        margin-right: 15px;
+    }
+    .producto {
+        max-height: 100px;
+        max-width: 150px;
+        opacity: 0.7;
+    }
+
+    #imagenDimensiones {
+        max-height: 100px;
+        max-width: 150px;
+        opacity: 0.7;
+        margin-left: 7px;
+        margin-right: 8px;
+        margin-bottom: 50px;
+    }
+
+    #dimensionesColorStyle {
+        float: left;
+        margin-left: 0%;
+        margin-bottom: 0px;
+    }
+    #interiorMuebles {
+        position: absolute;
+        margin-top: -30px;
+    }
+
+    .imagenAcabadoPrincipalImg {
+        opacity: 0.7;
+        max-height: 183px;
+        max-width: 300px;
+        margin-left: 18px;
+    }
+    .acabadoPartes {
+        position: absolute;
+        max-width: 300px;
+        max-height: 183px;
+        margin-left: 20px;
+        margin-top: -183px;
+    }
+
+    #acabadosPartesDivs {
+        float: left;
+        width: 100%;
+    }
+    .acabadosModal {
+        float: left;
+        width: 100%;
+        height: 160px;
+        margin-left: -6px;
+        margin-top: 30px;
+    }
+    #imagenAcabadoPrincipal {
+        float: left;
+        width: 300px;
+    }
+
+    #apoyoStyle {
+        float: left;
+        margin-left: 5%;
+        max-width: 150px;
+        max-height: 100px;
+    }
+    #imagenApoyo {
+        max-width: 150px;
+        max-height: 100px;
+    }
+    #ilu1 {
+        float: left;
+        margin-left: 10px;
+    }
+    #ilu2 {
+        float: left;
+        margin-left: 10px;
+    }
+    #imagenIlu {
+        max-width: 150px;
+        max-height: 100px;
+    }
+
+    #botonEsconderCalcu {
+        display: block;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 45px;
+        height: 30px;
+        right: 50px;
+    }
+    #botonEsconderCarr {
+        display: block;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 40px;
+        height: 30px;
+        right: 5px;
+    }
+    #calculadoraCarrito {
+        width: 100%;
+        background-color: #dfdddc;
+        margin-left: 57%;
+        height: 91%;
+        position: fixed;
+        top: 32px;
+        right: 0;
+        bottom: 0;
+        display: none;
+        z-index: 1;
+    }
+    #tablaElegirCalcu {
+        margin-left: 75px;
+        margin-bottom: 20px;
+        display: none;
+    }
+
+    #logoImagen {
+        width: 100px;
+        height: 50px;
+        position: absolute;
     }
 }
 

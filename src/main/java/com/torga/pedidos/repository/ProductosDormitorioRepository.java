@@ -1,10 +1,6 @@
 package com.torga.pedidos.repository;
 
 import com.torga.pedidos.domain.ProductosDormitorio;
-
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +12,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductosDormitorioRepository extends JpaRepository<ProductosDormitorio, Long>, JpaSpecificationExecutor<ProductosDormitorio> {
 
-	public List<ProductosDormitorio> findAllBycategoriasDormi(Long id);
 }

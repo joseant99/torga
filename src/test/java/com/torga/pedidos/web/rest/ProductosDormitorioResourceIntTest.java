@@ -4,6 +4,7 @@ import com.torga.pedidos.TorgaPedidosApp;
 
 import com.torga.pedidos.domain.ProductosDormitorio;
 import com.torga.pedidos.domain.CategoriasDormi;
+import com.torga.pedidos.domain.Puertas;
 import com.torga.pedidos.repository.ProductosDormitorioRepository;
 import com.torga.pedidos.service.ProductosDormitorioService;
 import com.torga.pedidos.service.dto.ProductosDormitorioDTO;
@@ -264,6 +265,25 @@ public class ProductosDormitorioResourceIntTest {
 
         // Get all the productosDormitorioList where categoriasDormi equals to categoriasDormiId + 1
         defaultProductosDormitorioShouldNotBeFound("categoriasDormiId.equals=" + (categoriasDormiId + 1));
+    }
+
+
+    @Test
+    @Transactional
+    public void getAllProductosDormitoriosByPuertasIsEqualToSomething() throws Exception {
+        // Initialize the database
+        Puertas puertas = PuertasResourceIntTest.createEntity(em);
+        em.persist(puertas);
+        em.flush();
+        productosDormitorio.addPuertas(puertas);
+        productosDormitorioRepository.saveAndFlush(productosDormitorio);
+        Long puertasId = puertas.getId();
+
+        // Get all the productosDormitorioList where puertas equals to puertasId
+        defaultProductosDormitorioShouldBeFound("puertasId.equals=" + puertasId);
+
+        // Get all the productosDormitorioList where puertas equals to puertasId + 1
+        defaultProductosDormitorioShouldNotBeFound("puertasId.equals=" + (puertasId + 1));
     }
 
     /**

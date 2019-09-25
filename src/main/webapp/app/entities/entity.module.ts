@@ -37,6 +37,7 @@ import { TorgaPedidosRepresentanteTiendaModule } from './representante-tienda/re
 import { TorgaPedidosContactoFabricaModule } from './contacto-fabrica/contacto-fabrica.module';
 import { TorgaPedidosImagenesContactoFabricaModule } from './imagenes-contacto-fabrica/imagenes-contacto-fabrica.module';
 import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos-torga-tiendas.module';
+import { TorgaPedidosPuertasModule } from './puertas/puertas.module';
 import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dentro/interior-armario-dentro.module';
 
 @NgModule({
@@ -53,6 +54,7 @@ import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dent
         TorgaPedidosReferenciaClientesModule,
         TorgaPedidosPagosTorgaTiendasModule,
         TorgaPedidosRepresentanteTiendaModule,
+        TorgaPedidosPuertasModule,
         TorgaPedidosImagenesContactoFabricaModule,
         TorgaPedidosRepresentanteModule,
         TorgaPedidosMedEspProductoPedidoPresuModule,

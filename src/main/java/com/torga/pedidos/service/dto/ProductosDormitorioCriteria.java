@@ -28,6 +28,8 @@ public class ProductosDormitorioCriteria implements Serializable {
 
     private LongFilter categoriasDormiId;
 
+    private LongFilter puertasId;
+
     public LongFilter getId() {
         return id;
     }
@@ -52,6 +54,14 @@ public class ProductosDormitorioCriteria implements Serializable {
         this.categoriasDormiId = categoriasDormiId;
     }
 
+    public LongFilter getPuertasId() {
+        return puertasId;
+    }
+
+    public void setPuertasId(LongFilter puertasId) {
+        this.puertasId = puertasId;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -65,7 +75,8 @@ public class ProductosDormitorioCriteria implements Serializable {
         return
             Objects.equals(id, that.id) &&
             Objects.equals(nombre, that.nombre) &&
-            Objects.equals(categoriasDormiId, that.categoriasDormiId);
+            Objects.equals(categoriasDormiId, that.categoriasDormiId) &&
+            Objects.equals(puertasId, that.puertasId);
     }
 
     @Override
@@ -73,7 +84,8 @@ public class ProductosDormitorioCriteria implements Serializable {
         return Objects.hash(
         id,
         nombre,
-        categoriasDormiId
+        categoriasDormiId,
+        puertasId
         );
     }
 
@@ -83,6 +95,7 @@ public class ProductosDormitorioCriteria implements Serializable {
                 (id != null ? "id=" + id + ", " : "") +
                 (nombre != null ? "nombre=" + nombre + ", " : "") +
                 (categoriasDormiId != null ? "categoriasDormiId=" + categoriasDormiId + ", " : "") +
+                (puertasId != null ? "puertasId=" + puertasId + ", " : "") +
             "}";
     }
 

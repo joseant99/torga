@@ -53,6 +53,7 @@
                 "interiorArmarioDentro": "Interior Armario Dentro",
                 "tiradores": "Tiradores",
                 "tiradoresArmario": "Tiradores Armario",
+                "puertas": "Puertas",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

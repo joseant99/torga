@@ -1,15 +1,10 @@
 package com.torga.pedidos.service;
 
-import com.torga.pedidos.domain.Pedidos;
-import com.torga.pedidos.domain.ProductosDormitorio;
-import com.torga.pedidos.repository.ProductosDormitorioRepository;
 import com.torga.pedidos.service.dto.ProductosDormitorioDTO;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -40,7 +35,7 @@ public interface ProductosDormitorioService {
      * @param id the id of the entity
      * @return the entity
      */
-     Optional<ProductosDormitorioDTO> findOne(Long id);
+    Optional<ProductosDormitorioDTO> findOne(Long id);
 
     /**
      * Delete the "id" productosDormitorio.
@@ -48,15 +43,4 @@ public interface ProductosDormitorioService {
      * @param id the id of the entity
      */
     void delete(Long id);
-    
-    /**
-     * Get a list of ProductosDormitorio by referenciaclientes_id.
-     *
-     * @param categoriasId
-     * @return the entity
-     */
-    static Page<ProductosDormitorio> findAllBycategoriasDormi(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

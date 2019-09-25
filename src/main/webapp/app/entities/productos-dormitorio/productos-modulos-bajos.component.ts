@@ -143,10 +143,18 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     }
 
     public open(producto, productoNombre) {
+        for (let i = 1; i <= 14; i++) {
+            for (let u = 0; u < 14; u++) {
+                $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
+            }
+        }
+        $('#imagenAcabadoPrincipal').empty();
         $('#calculadora').attr('class', 'container tab-pane fade active show');
         $('#dimensiones #medidas').removeAttr('style');
         $('#dimensiones #medidas').attr('style');
-        $('#dimensiones #medidas').css({ 'margin-left': '40%' });
+        $('#dimensiones #medidas').css({ 'text-align': 'center' });
+        $('#dimensiones #medidas').css({ 'margin-top': '5%' });
+        $('#dimensiones #medidas').css({ 'margin-bottom': '5%' });
         $('#productoCalculadora1 #precios1').empty();
         $('#productoCalculadora1 #precioCalculado1').empty();
         $('#productoCalculadora1 #datos1').empty();
@@ -213,11 +221,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     value['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     value['id'] +
-                                    '" width="400px" style=" opacity: 0.7;">'
+                                    '" width="500px" height="333px" style=" opacity: 0.7;">'
                             );
 
                             $('.dimensionesColor1').append(
-                                '<div onclick="interior(1)"  style="position: absolute;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '<div id="interiorMuebles" onclick="interior(1)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 1) {
@@ -244,10 +252,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     value['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     value +
-                                    '" width="400px"  style=" opacity: 0.7;">'
+                                    '" width="500px" height="333px"  style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor2').append(
-                                '<div onclick="interior(2)"  style="position: absolute;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 2) {
@@ -271,10 +279,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     value['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     value +
-                                    '" width="400px"  style=" opacity: 0.7;">'
+                                    '" width="500px" height="333px" style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor3').append(
-                                '<div onclick="interior(3)"  style="position: absolute;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 3) {
@@ -298,10 +306,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     value['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     value +
-                                    '" width="400px"  style=" opacity: 0.7;">'
+                                    '" width="500px" height="333px" style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor4').append(
-                                '<div onclick="interior(4)"  style="position: absolute;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 4) {
@@ -325,10 +333,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     value['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     value +
-                                    '" width="400px"  style=" opacity: 0.7;">'
+                                    '" width="500px" height="333px"  style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor5').append(
-                                '<div onclick="interior(5)"  style="position: absolute;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 5) {
@@ -352,10 +360,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                                     value['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     value +
-                                    '" width="400px"  style=" opacity: 0.7;">'
+                                    '"width="500px" height="333px"  style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor6').append(
-                                '<div onclick="interior(6)" style="position: absolute;"><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         cont++;
@@ -395,7 +403,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         var productoNombre = $('#nombreMesita' + id).text();
         $('#medidas').removeAttr('style');
         $('#medidas').attr('style');
-        $('#medidas').css({ 'margin-left': '40%' });
+        $('#medidas').css({ 'text-align': 'center' });
 
         $('#productoCalculadora1 #precios1').empty();
         $('#productoCalculadora1 #precioCalculado1').empty();
@@ -716,6 +724,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     }
 
     public dimensionesCogidas(id) {
+        $('#imagenAcabadoPrincipal').empty();
         var precioTienda = this.precioTienda;
         var dimensiones = this.todasDimensiones;
         for (let i = 1; i <= 15; i++) {
@@ -812,7 +821,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         if (acaSi == 0) {
             $('#acabado').removeAttr('style');
             $('#acabado').attr('style');
-            $('#acabado').css({ 'margin-left': '40%' });
+            $('#acabado').css({ 'text-align': 'center' });
+            $('#acabado').css({ 'margin-top': '5%' });
+            $('#acabado').css({ 'margin-bottom': '5%' });
             this.acabadosService.query().subscribe((res: HttpResponse<IAcabados[]>) => {
                 $.each(res['body'], function(index, value) {
                     acabados[index] = value;
@@ -835,11 +846,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         if (value['productosDormitorio']['id'] == idProd) {
                             imagen = value['imagen'];
                             if (contador == 1) {
-                                $('#acabados').append('<div style="height: 400px;" id="imagenAcabadoPrincipal"></div>');
                                 $('#acabados #imagenAcabadoPrincipal').append(
                                     '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" id="imagenDimensiones"  width="500px" height="333px" style=" opacity: 0.7;margin-left:150px;max-height: 333px;max-width: 500px;">'
+                                        '" class="imagenAcabadoPrincipalImg"  width="500px" height="333px">'
                                 );
                             }
 
@@ -906,8 +916,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             $('#medidasEspecialesTexto').removeAttr('style');
             $('#medidasEspecialesTexto').attr('style');
             $('#medidasEspecialesTexto').css({ 'margin-left': '40%' });
-            $('#medidasEspecialesTexto').css({ 'margin-top': '3%' });
-            $('#medidasEspecialesTexto').css({ 'margin-bottom': '3%' });
+            $('#medidasEspecialesTexto').css({ 'margin-top': '5%' });
+            $('#medidasEspecialesTexto').css({ 'margin-bottom': '5%' });
             for (let i = 0; i < medidasEspeciales.length; i++) {
                 if (medidasEspeciales[i]['productosDormitorio']['id'] == idProd) {
                     if (medidasEspeciales[i]['ancho'] == 1) {
@@ -1529,44 +1539,62 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 );
                 if (id1 == 1) {
                     $('#tapa').remove();
-                    $('#acabados #imagenAcabadoPrincipal').append(
-                        '<img id="tapa" width="500px" height="333px" style="position: absolute;max-width: 500px;max-height: 333px;margin-left: -500px;" src="../../../content/images/' +
-                            nombre +
-                            '/CASCO/' +
-                            nombre +
-                            '-1-' +
-                            nombreAcabado +
-                            '.png">'
-                    );
+                    if (nombre == 'mb6' || nombre == 'mb9') {
+                        $('#acabados #imagenAcabadoPrincipal').append(
+                            '<img id="tapa" class="acabadoPartes" width="500px" height="333px" src="../../../content/images/mb5/1/mb5_1_' +
+                                nombreAcabado +
+                                '-min.png">'
+                        );
+                    } else {
+                        $('#acabados #imagenAcabadoPrincipal').append(
+                            '<img id="tapa" class="acabadoPartes" width="500px" height="333px" src="../../../content/images/' +
+                                nombre +
+                                '/1/' +
+                                nombre +
+                                '_1_' +
+                                nombreAcabado +
+                                '-min.png">'
+                        );
+                    }
                 }
                 if (id1 == 2) {
                     $('#cajon').remove();
-                    $('#acabados #imagenAcabadoPrincipal').append(
-                        '<img id="cajon" width="500px" height="333px" style="position: absolute;max-width: 500px;max-height: 333px;margin-left: -500px;" src="../../../content/images/' +
-                            nombre +
-                            '/TAPA/' +
-                            nombre +
-                            '-2-' +
-                            nombreAcabado +
-                            '.png">'
-                    );
+                    if (nombre == 'mb6' || nombre == 'mb9') {
+                        $('#acabados #imagenAcabadoPrincipal').append(
+                            '<img id="cajon" class="acabadoPartes" width="500px" height="333px"  src="../../../content/images/mb5/2/mb5_2_' +
+                                nombreAcabado +
+                                '-min.png">'
+                        );
+                    } else {
+                        $('#acabados #imagenAcabadoPrincipal').append(
+                            '<img id="cajon" class="acabadoPartes" width="500px" height="333px" src="../../../content/images/' +
+                                nombre +
+                                '/2/' +
+                                nombre +
+                                '_2_' +
+                                nombreAcabado +
+                                '-min.png">'
+                        );
+                    }
                 }
                 if (id1 != 2 && id1 != 1) {
                     $('#acabados #imagenAcabadoPrincipal').append(
-                        '<img id="casco" width="500px" height="333px" style="position: absolute;max-width: 500px;max-height: 333px;margin-left: -500px;" src="../../../content/images/' +
+                        '<img id="casco" class="acabadoPartes" width="500px" height="333px" src="../../../content/images/' +
                             nombre +
                             '/' +
                             id1 +
                             '/' +
                             nombre +
-                            '-' +
+                            '_' +
                             id1 +
-                            '-' +
+                            '_' +
                             nombreAcabado +
-                            '.png">'
+                            '-min.png">'
                     );
                 }
-
+                $('#val' + id1).remove();
+                $('#val' + id1 + 'Dato').remove();
+                $('#valor' + id1).remove();
                 $('#datos1').append('<p id="val' + id1 + '">Acabado ' + id1 + '</p>');
                 $('#precios1').append('<p id="val' + id1 + 'Dato" class="' + value['id'] + '">' + value['nombre'] + '</p>');
                 $('#precioCalculado1').append('<p id="valor' + id1 + '">' + value['precio'] + '</p>');
@@ -1725,16 +1753,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         let k = 1;
         for (k = 1; k < valoresAca.length; k++) {
             $('#val' + k).remove();
-            $('#valor' + k).remove();
+            $('#valor' + k + 'Precio').remove();
             $('#val' + k + 'Dato').remove();
-
             if (valoresAca[k] != '') {
                 this.acabadosService.query().subscribe((res: HttpResponse<IAcabados[]>) => {
                     $.each(res['body'], function(index, value) {
                         if (valoresAca[k] == value['id']) {
                             $('#datos1').append('<p id="val' + k + '">Acabado ' + k + '</p>');
                             $('#precios1').append('<p id="val' + k + 'Dato" class="' + value['id'] + '">' + value['nombre'] + '</p>');
-                            $('#precioCalculado1').append('<p id="valor' + k + '">' + value['precio'] + '</p>');
+                            $('#precioCalculado1').append('<p id="valor' + k + 'Precio">' + value['precio'] + '</p>');
                         }
                     });
                 });
@@ -2268,91 +2295,109 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             fecha_presupuesto: output
         };
         this.presupuestoPedido = prueba;
-        console.log(this.presupuestoPedido);
         this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
         var presupuesto = this.presupuesto;
         var id = localStorage.getItem('ultimoPresupuesto');
         var id1 = parseFloat(id);
         id1 = id1 + 1;
         localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
-        const prueba1 = {
-            id: id1,
-            codigo: 'PR-' + usuario['id'],
-            pedido: 0,
-            user: usuario,
-            fecha_presupuesto: output
-        };
-        var prodPrePed;
-        for (let m = 0; m < productosFinal.length; m++) {
-            if (apoyosFinal[m] == undefined) {
-                prodPrePed = {
-                    productosDormitorio: productosFinal[m],
-                    presupuestoPedido: prueba1,
-                    dimensionesProductoTipo: dimensionesFinal[m]
-                };
-            } else {
-                prodPrePed = {
-                    productosDormitorio: productosFinal[m],
-                    presupuestoPedido: prueba1,
-                    dimensionesProductoTipo: dimensionesFinal[m],
-                    tiposApoyo: apoyosFinal[m]
-                };
-            }
-
-            prodAca[m] = prodPrePed;
-            prodIlu[m] = prodPrePed;
-            dimensionEspecialBien[m] = prodPrePed;
-            this.productosPresupuestoPedidos = prodPrePed;
-            this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
-            if (dimensionesFinal[m]['mensaje'] == 'Medidas Especiales') {
-                var acaPedProd = this.acaProdPed.length;
-                acaPedProd = this.acaProdPed[acaPedProd - 1];
-                dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
-                const medEsp = {
-                    productosPresupuestoPedidos: dimensionEspecialBien[m],
-                    ancho: dimensionesFinal[m]['ancho'],
-                    fondo: dimensionesFinal[m]['fondo'],
-                    alto: dimensionesFinal[m]['alto'],
-                    precio: dimensionesFinal[m]['precio']
-                };
-                this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
-            }
-            if (iluFinal[m] != undefined && iluFinal[m] != '') {
-                var acaPedProd = this.acaProdPed.length;
-                acaPedProd = this.acaProdPed[acaPedProd - 1];
-                prodIlu[m]['id'] = acaPedProd['id'] + m + 1;
-                const iluProd = {
-                    iluminacion: iluFinal[m],
-                    productosPresupuestoPedidos: prodIlu[m]
-                };
-                this.subscribeToSaveResponse(this.iluminacionProdPrePedService.create(iluProd));
-            }
-        }
-        let b = 0;
-        for (let w = 1; w < numeroAcaProd.length; w++) {
-            if (b != 0) {
-                b = numeroAcaProd[w];
-            }
-            for (b; b < nombreAcabado.length; b++) {
-                if (b <= numeroAcaProd[w]) {
-                    for (let g = 0; g < acabados.length; g++) {
-                        if (acabados[g]['nombre'] == nombreAcabado[b]) {
-                            var acaPedProd = this.acaProdPed.length;
-                            acaPedProd = this.acaProdPed[acaPedProd - 1];
-                            prodAca[w - 1]['id'] = acaPedProd['id'] + w;
-                            const acabados1 = {
-                                acabados: acabados[g],
-                                productosPresupuestoPedidos: prodAca[w - 1]
-                            };
-                            this.subscribeToSaveResponse(this.acabadosProductosPresupuestoPedidoService.create(acabados1));
+        var idDefinitiva;
+        this.presupuestoPedidoService
+            .query({
+                size: 10000
+            })
+            .subscribe(
+                (res: HttpResponse<IPresupuestoPedido[]>) => {
+                    var aux = [];
+                    for (let w = 0; w < res.body.length; w++) {
+                        if (aux.length == 0 || aux[0]['id'] < res.body[w]['id']) {
+                            aux[0] = res.body[w];
                         }
                     }
-                }
-            }
-        }
+                    idDefinitiva = aux[0]['id'] + 1;
+                    const prueba1 = {
+                        id: idDefinitiva,
+                        codigo: 'PR-' + usuario['id'],
+                        pedido: 0,
+                        user: usuario,
+                        fecha_presupuesto: output
+                    };
+                    var prodPrePed;
+                    for (let m = 0; m < productosFinal.length; m++) {
+                        if (apoyosFinal[m] == undefined) {
+                            prodPrePed = {
+                                productosDormitorio: productosFinal[m],
+                                presupuestoPedido: prueba1,
+                                dimensionesProductoTipo: dimensionesFinal[m]
+                            };
+                        } else {
+                            prodPrePed = {
+                                productosDormitorio: productosFinal[m],
+                                presupuestoPedido: prueba1,
+                                dimensionesProductoTipo: dimensionesFinal[m],
+                                tiposApoyo: apoyosFinal[m]
+                            };
+                        }
+
+                        prodAca[m] = prodPrePed;
+                        prodIlu[m] = prodPrePed;
+                        dimensionEspecialBien[m] = prodPrePed;
+                        this.productosPresupuestoPedidos = prodPrePed;
+                        this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
+                        if (dimensionesFinal[m]['mensaje'] == 'Medidas Especiales') {
+                            var acaPedProd = this.acaProdPed.length;
+                            acaPedProd = this.acaProdPed[acaPedProd - 1];
+                            dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
+                            const medEsp = {
+                                productosPresupuestoPedidos: dimensionEspecialBien[m],
+                                ancho: dimensionesFinal[m]['ancho'],
+                                fondo: dimensionesFinal[m]['fondo'],
+                                alto: dimensionesFinal[m]['alto'],
+                                precio: dimensionesFinal[m]['precio']
+                            };
+                            this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
+                        }
+                        if (iluFinal[m] != undefined && iluFinal[m] != '') {
+                            var acaPedProd = this.acaProdPed.length;
+                            acaPedProd = this.acaProdPed[acaPedProd - 1];
+                            prodIlu[m]['id'] = acaPedProd['id'] + m + 1;
+                            const iluProd = {
+                                iluminacion: iluFinal[m],
+                                productosPresupuestoPedidos: prodIlu[m]
+                            };
+                            this.subscribeToSaveResponse(this.iluminacionProdPrePedService.create(iluProd));
+                        }
+                    }
+                    let b = 0;
+                    for (let w = 1; w < numeroAcaProd.length; w++) {
+                        if (b != 0) {
+                            b = numeroAcaProd[w];
+                        }
+                        for (b; b < nombreAcabado.length; b++) {
+                            if (b <= numeroAcaProd[w]) {
+                                for (let g = 0; g < acabados.length; g++) {
+                                    if (acabados[g]['nombre'] == nombreAcabado[b]) {
+                                        var acaPedProd = this.acaProdPed.length;
+                                        acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                        prodAca[w - 1]['id'] = acaPedProd['id'] + w;
+                                        const acabados1 = {
+                                            acabados: acabados[g],
+                                            productosPresupuestoPedidos: prodAca[w - 1]
+                                        };
+                                        this.subscribeToSaveResponse(this.acabadosProductosPresupuestoPedidoService.create(acabados1));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
     }
 
     loadAll() {
+        var productos = [];
+        var cont = 0;
         this.productosDormitorioService
             .query({
                 page: this.page - 1,
@@ -2360,7 +2405,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 sort: this.sort()
             })
             .subscribe(
-                (res: HttpResponse<IProductosDormitorio[]>) => this.paginateProductosDormitorios(res.body, res.headers),
+                (res: HttpResponse<IProductosDormitorio[]>) => {
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (res.body[i]['categoriasDormiId'] == 8) {
+                            productos[cont] = res.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorios = productos;
+                },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
     }

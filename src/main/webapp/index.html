@@ -87,6 +87,7 @@
         // show an error message if the app loading takes more than 5 sec
         window.onload=function() {
             setTimeout(showError, 4000);
+           
         }
         function showError() {
             var errorElm = document.getElementById("jhipster-error");
@@ -114,6 +115,7 @@
     			$("html, body").animate({scrollTop:altura+"px"});
     		}
 	}
+	
 </script>
 <script>
 	function interior(id){
@@ -144,7 +146,32 @@
 		$("#botonEsconder").removeAttr("onclick");
 		$("#botonEsconder").attr("onclick","esconderMenu()");
 	}
-	
+	function mostrarCalculadora(){
+		$("#calculadoraCarrito").css({"display":"block"});
+		$("#botonEsconderCalcu").removeAttr("onclick");
+		$("#botonEsconderCalcu").attr("onclick","esconderCalcu()");
+		$("#calculadoraCarrito #calculadora").attr("class","container tab-pane fade active show")
+		$("#calculadoraCarrito #carrito").attr("class","container tab-pane fade")
+	}
+	function esconderCalcu(){
+		$("#calculadoraCarrito").css({"display":"none"});
+		$("#botonEsconderCalcu").removeAttr("onclick");
+		$("#botonEsconderCalcu").attr("onclick","mostrarCalculadora()");
+		$("#calculadoraCarrito #calculadora").attr("class","container tab-pane fade")
+	}
+	function mostrarCarrito(){
+		$("#calculadoraCarrito").css({"display":"block"});
+		$("#botonEsconderCarr").removeAttr("onclick");
+		$("#botonEsconderCarr").attr("onclick","esconderCarrito()");
+		$("#calculadoraCarrito #carrito").attr("class","container tab-pane fade active show")
+		$("#calculadoraCarrito #calculadora").attr("class","container tab-pane fade")
+	}
+	function esconderCarrito(){
+		$("#calculadoraCarrito").css({"display":"none"});
+		$("#botonEsconderCarr").removeAttr("onclick");
+		$("#botonEsconderCarr").attr("onclick","mostrarCarrito()");
+		$("#calculadoraCarrito #carrito").attr("class","container tab-pane fade")
+	}
 </script>
     
     <!-- uncomment this for adding service worker

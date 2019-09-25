@@ -7,6 +7,13 @@
             "otherEntityName": "categoriasDormi",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "puertas",
+            "otherEntityName": "puertas",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "puertasProductos"
         }
     ],
     "fields": [

@@ -5,6 +5,7 @@ export * from './contacto-fabrica-detail.component';
 export * from './contacto-fabrica.component';
 export * from './contacto-chat.component';
 export * from './contacto-sugerencias.component';
+export * from './contacto-incidencias.component';
 export * from './contacto-proyectos.component';
 export * from './contacto-fabrica-clientes.component';
 export * from './contacto-fabrica.route';

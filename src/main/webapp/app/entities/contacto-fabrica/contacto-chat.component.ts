@@ -32,6 +32,7 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
     routeData: any;
     links: any;
     totalItems: any;
+    correcto: any;
     queryCount: any;
     contactoFabrica: any;
     mensajes: any;
@@ -104,7 +105,7 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        var mensajes;
+        var mensajes = [];
         var cont = 0;
         this.imagenesContactoFabrica;
         this.mensajesImagen;
@@ -140,6 +141,7 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
         this.registerChangeInContactoFabricas();
         var contactoFabrica = this.contactoFabrica;
         var account = this.accountService.userIdentity;
+        var correcto = [];
         this.mensajesService
             .query({
                 size: 100000
@@ -148,24 +150,31 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
                 (res: HttpResponse<IMensajes[]>) => {
                     for (let i = 0; i < res.body.length; i++) {
                         if (res.body[i]['contactoFabrica']['id'] == contactoFabrica['id']) {
-                            mensajes[cont] = res.body[i];
-                            cont++;
+                            if (res.body[i]['texto'] == 'INC-PROD-CR-TG') {
+                                correcto[0] = res.body[i];
+                            } else {
+                                mensajes[cont] = res.body[i];
+                                cont++;
+                            }
                         }
                     }
-                    if (mensajes[mensajes.length - 1] != undefined) {
-                        if (
-                            mensajes[mensajes.length - 1]['user']['id'] != account['id'] &&
-                            mensajes[mensajes.length - 1]['fechaVisto'] == null
-                        ) {
-                            var d = new Date();
-                            var month = d.getMonth() + 1;
-                            var day = d.getDate();
+                    this.correcto = correcto[0];
+                    if (mensajes[0] != undefined) {
+                        if (mensajes[mensajes.length - 1] != undefined) {
+                            if (
+                                mensajes[mensajes.length - 1]['user']['id'] != account['id'] &&
+                                mensajes[mensajes.length - 1]['fechaVisto'] == null
+                            ) {
+                                var d = new Date();
+                                var month = d.getMonth() + 1;
+                                var day = d.getDate();
 
-                            var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
-                            mensajes[mensajes.length - 1]['fechaVisto'] = output;
-                            $('#textoContactoFabrica').css({ color: 'black' });
-                            sessionStorage.removeItem('alertaChat');
-                            this.subscribeToSaveResponse(this.mensajesService.update(mensajes[mensajes.length - 1]));
+                                var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
+                                mensajes[mensajes.length - 1]['fechaVisto'] = output;
+                                $('#textoContactoFabrica').css({ color: 'black' });
+                                sessionStorage.removeItem('alertaChat');
+                                this.subscribeToSaveResponse(this.mensajesService.update(mensajes[mensajes.length - 1]));
+                            }
                         }
                     }
                 },
@@ -175,26 +184,28 @@ export class ContactoChatComponent implements OnInit, OnDestroy {
         this.mensajes = mensajes;
     }
     public mensajes1() {
-        var imagen = this.mensajesImagen;
+        var imagen = this.mensajes;
         var contacto = this.contactoOriginal;
         var user = this.currentAccount;
         var mensaje;
         mensaje = $('#textoMensaje').val();
 
         if (mensaje != '') {
-            if (imagen['imagen'] != undefined) {
-                $('#mensajes').append(
-                    '<div style="float:right;padding-left: 100%;"><p>' + user['firstName'] + '</p><p>' + mensaje + '</p></div>'
-                );
-                const mensajes = {
-                    texto: mensaje,
-                    contactoFabrica: contacto,
-                    user: user,
-                    imagen: imagen['imagen'],
-                    imagenContentType: imagen['imagenContentType']
-                };
-                this.subscribeToSaveResponse(this.mensajesService.create(mensajes));
-                $('#textoMensaje').val('');
+            if (imagen != undefined) {
+                if (imagen['imagen'] != undefined) {
+                    $('#mensajes').append(
+                        '<div style="float:right;padding-left: 100%;"><p>' + user['firstName'] + '</p><p>' + mensaje + '</p></div>'
+                    );
+                    const mensajes = {
+                        texto: mensaje,
+                        contactoFabrica: contacto,
+                        user: user,
+                        imagen: imagen['imagen'],
+                        imagenContentType: imagen['imagenContentType']
+                    };
+                    this.subscribeToSaveResponse(this.mensajesService.create(mensajes));
+                    $('#textoMensaje').val('');
+                }
             } else {
                 $('#mensajes').append(
                     '<div style="float:right;padding-left: 100%;"><p>' + user['firstName'] + '</p><p>' + mensaje + '</p></div>'

@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="puertas">
+            <h2><span jhiTranslate="torgaPedidosApp.puertas.detail.title">Puertas</span> {{puertas.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.puertas.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{puertas.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertas.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="puertas.imagen">
+                        <a (click)="openFile(puertas.imagenContentType, puertas.imagen)">
+                            <img [src]="'data:' + puertas.imagenContentType + ';base64,' + puertas.imagen" style="max-width: 100%;" alt="puertas image"/>
+                        </a>
+                        {{puertas.imagenContentType}}, {{byteSize(puertas.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertas.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="puertas.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', puertas.productosDormitorio?.id, 'view']">{{puertas.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertas.puertasProductos">Puertas Productos</span></dt>
+                <dd>
+                    <span *ngFor="let puertasProductos of puertas.puertasProductos; let last = last">
+                        <a [routerLink]="['/productos-dormitorio', puertasProductos?.id, 'view' ]">{{puertasProductos.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/puertas', puertas.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

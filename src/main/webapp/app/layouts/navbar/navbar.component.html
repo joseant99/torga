@@ -1,29 +1,6 @@
 
 <nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal">
-<div style="float:left;witdh:100%;top:10px;position:fixed">
-	    <ul class="navbar-nav ml-auto">
-	        <li  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
-	                <span class="logo-img"></span>
-	            </a>       
-	        </li>
-	        <li *jhiHasAnyAuthority="'ROLE_REPRESENTATE','ROLE_USER'" class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
-	                <span class="logo-img"></span>
-	            </a>            
-	        </li>
-	        <li *jhiHasAnyAuthority="'ROLE_USER'"  class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-	            <a class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()">
-	                <span class="logo-img"></span>
-	            </a>     
-	        </li>
-	        <li [ngSwitch]="isAuthenticated()" class="nav-item pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-	            <a *ngSwitchCase="false" class="navbar-brand logo" >
-	                <span class="logo-img"></span>
-	            </a>     
-	        </li>
-	        
-	    </ul>
+<div style="float:left;witdh:100%;top:50px;position:fixed">
 			  
 					
 	<div id="menuUnico">				
@@ -83,7 +60,7 @@
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a routerLink="productos-aparadores"  routerLinkActive="active" >
 										                                <span style="color:#7AB5CA;">Aparadores</span>
 										                            </a>
 											                    </li>
@@ -235,8 +212,8 @@
 		                        
 		                    
 		                        <li>
-		                            <a routerLink="productos-dormitorio/chinfonier"  routerLinkActive="active" >
-		                                <span >{{contador}}</span>
+		                            <a routerLink="contacto-incidencias"  routerLinkActive="active" >
+		                                <span >Inciencias</span>
 		                            </a>
 		                        </li>
 		                        <li>
@@ -508,6 +485,11 @@
                             <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
                             <span>interior-armario</span>
                         </a>
+                    </li><li>
+                        <a class="dropdown-item" routerLink="puertas" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span>puertas</span>
+                        </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="referencia-clientes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
@@ -721,4 +703,10 @@
     </div>
 </nav>
 <a id="botonEsconder" onclick="esconderMenu()"><img style="max-width:100%" src="../../../content/images/icono-hamburguesa.png"></a>
+<a  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'" class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+	                <span class="logo-img"></span>
+</a>
+<a  *jhiHasAnyAuthority="'ROLE_ADMIN'" class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+	                <span class="logo-img"></span>
+</a>
     

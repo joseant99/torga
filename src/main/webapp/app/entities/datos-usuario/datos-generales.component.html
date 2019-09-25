@@ -69,6 +69,14 @@
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{datosUsuario.codPostal}}" disabled>
 				    </div>
 				  </div>
+				<div style="margin-left:30%" class="form-group row">
+				    <label for="logoInput" class="col-sm-2 col-form-label" style="border: 1px solid lightgray;">Adjuntar logo:</label>
+				    <div class="col-sm-4">
+				      <input type="file" style="text-align:center;height:70px;visibility:hidden;color:transparent" (change)="setFileData($event, datosUsuario, 'logo', true)" accept="image/*" class="form-control" id="logoInput" text="Adjuntar Logo:">
+				      <div style="float: left;margin-top: -85px;margin-bottom: -92px;margin-left: 80px;" id="meterLogo" *ngIf='datosUsuario.logo != undefined'><img style="max-width:200px;max-height: 100px;"  [src]="'data:' + datosUsuario.logoContentType + ';base64,' + datosUsuario.logo" /></div>
+				    </div>
+				  </div>
+				 
     		</div>
     		<br><br><br>
     		<div>
@@ -110,7 +118,8 @@
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{datosUsuario.codPostal}}" disabled>
 				    </div>
 				  </div>
-    		</div>		
+    		</div>
+    		<button style="width: 200px;height: 60px;background-color: white" (click) = "guardar(datosUsuarios)">Guardar Cambios</button>		
 	 	</div>
     </div>
     

@@ -45,7 +45,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.isNavbarCollapsed = true;
     }
 
-    ngAfterViewInit() {}
+    ngAfterViewInit() {
+        setTimeout(function() {
+            var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+
+            if (prueba['logo'] != undefined) {
+                this.logo = prueba;
+                $('#logoImagen').remove();
+                $('.logo-img').append('<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>');
+            }
+        }, 10);
+    }
     ngOnInit() {
         this.languageHelper.getAll().then(languages => {
             this.languages = languages;

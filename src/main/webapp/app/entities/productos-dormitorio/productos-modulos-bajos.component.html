@@ -1,6 +1,6 @@
-<div style="width:75%;margin-left:69px">
-    <h2 id="page-heading">
-        <span style="margin-left:40%">1.Modulos Bajos</span>
+<div id="productosPrincipal">
+    <h2 style="text-align:center" id="page-heading">
+        <span ><strong>Modulos Bajos</strong></span>
        
     </h2>
     <jhi-alert></jhi-alert>
@@ -67,36 +67,36 @@
     
     </div>
     <div id="ProductosCargados" style="margin-top:4%">
-        <div *ngFor="let productosDormitorio of productosDormitorios" style="float:left;" [id]='productosDormitorio.id' class="productosColor">
-    	<div *ngIf="productosDormitorio.categoriasDormiId == 8" style="margin-left:50px;margin-bottom:50px;margin-right:50px">
+        <div *ngFor="let productosDormitorio of productosDormitorios" [id]='productosDormitorio.id' class="productosColor">
+    	<div id="productosDormitorioCargados" *ngIf="productosDormitorio.categoriasDormiId == 8">
 	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
 	 		<img title="Foto de linea de codigo" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="333px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
     	</div>
     	</div>	
     </div>
-	<div id="dimensiones"style="width:100%;float:left">
+	<div id="dimensiones"style="width:100%;float:left;">
 
 		<h2 id="medidas" style='margin-left:40%;float:left;display:none'>2.Medidas</h2>
 		</br>		
 		
-		<div style="float:left;margin-left:7%;margin-bottom:50px;" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
+		<div id="dimensionesColorStyle" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
 		</div>
 		   
-		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
+		<div id="dimensionesColorStyle" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
 		</div>  
 		 
-		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
+		<div  id="dimensionesColorStyle" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
 		</div>  
 		 
-		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
+		<div id="dimensionesColorStyle" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
 		</div>
 		
-		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
+		<div id="dimensionesColorStyle" class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
 		</div> 
 		
-		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
+		<div id="dimensionesColorStyle" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
 		</div>
-		<div style="float:left;margin-left:7%;margin-bottom:50px" class="dimensionesColor7" (click)="dimensionesCogidas(7)"> 
+		<div id="dimensionesColorStyle" class="dimensionesColor7" (click)="dimensionesCogidas(7)"> 
 		</div>         
 	</div>  
 	<div id="especiales"style="width:100%;float:left">
@@ -117,7 +117,8 @@
 	<div id="acabados"style="width:100%;float:left">
 
 			<h2 id="acabado" style='margin-left:40%;float:left;display:none'>3.Acabados</h2>
-			<div style="float:right;width: 35%;">
+			<div id="imagenAcabadoPrincipal"></div>
+			<div id="acabadosPartesDivs">
 				<div id="aca11" style="float:left"></div>
 				<div id="aca12" style="float:left"></div>
 				<div id="aca13" style="float:left"></div>
@@ -141,21 +142,21 @@
 			<h2 id="nombreApoyoTitulo" style='margin-left:40%;float:left;display:none'>4.Sistema de Apoyo</h2>
 			</br>	
 			<div style="float:left;width:100%;margin-bottom:50px">
-				<div style="float:left;margin-left:10%;" class="apoyoCogido1" (click)="apoyoCogido(1)"> 
+				<div id="apoyoStyle" class="apoyoCogido1" (click)="apoyoCogido(1)"> 
 				</div>  
 			
-				<div style="float:left;margin-left:10%;" class="apoyoCogido2" (click)="apoyoCogido(2)"> 
+				<div id="apoyoStyle" class="apoyoCogido2" (click)="apoyoCogido(2)"> 
 				</div>
 			</div>	
 			 
 			<div style="float:left;width:100%">
-				<div style="float:left;margin-left:10%;" class="apoyoCogido3" (click)="apoyoCogido(3)"> 
+				<div id="apoyoStyle" class="apoyoCogido3" (click)="apoyoCogido(3)"> 
 				</div>   
-				<div style="float:left;margin-left:10%;" class="apoyoCogido4" (click)="apoyoCogido(4)"> 
+				<div id="apoyoStyle" class="apoyoCogido4" (click)="apoyoCogido(4)"> 
 				</div>  
 			</div>	
 			<div style="float:left;width:100%">
-				<div style="float:left;margin-left:10%;" class="apoyoCogido5" (click)="apoyoCogido(5)"> 
+				<div id="apoyoStyle" class="apoyoCogido5" (click)="apoyoCogido(5)"> 
 				</div>   
 
 			</div>	
@@ -165,9 +166,9 @@
 	
 	<div id="iluminacion"style="display:none">
 		<h2 id="iluminacionTexto" style="margin-left:40%">5.Iluminacion</h2>
-		<div style="float:left;margin-left:200px" id="ilu1"><img src="../../../content/images/si.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(1)'>
+		<div id="ilu1"><img id="imagenIlu" src="../../../content/images/si.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(1)'>
 		</div>	
-		<div style="float:left;margin-left:200px" id="ilu2"><img src="../../../content/images/no.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(2)'>
+		<div id="ilu2"><img id="imagenIlu" src="../../../content/images/no.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(2)'>
 		</div>	
 	</div>
 	<div id="textoFinal" style="display:none">
@@ -221,20 +222,20 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen0" (click)="cambiarAcabado(0,1,1)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen1" (click)="cambiarAcabado(1,1,1)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen2" (click)="cambiarAcabado(2,1,1)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen3" (click)="cambiarAcabado(3,1,1)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen4" (click)="cambiarAcabado(4,1,1)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen5" (click)="cambiarAcabado(5,1,1)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen6" (click)="cambiarAcabado(6,1,1)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen7" (click)="cambiarAcabado(7,1,1)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen8" (click)="cambiarAcabado(8,1,1)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen9" (click)="cambiarAcabado(9,1,1)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen10" (click)="cambiarAcabado(10,1,1)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen11" (click)="cambiarAcabado(11,1,1)" data-dismiss="modal"></div> 
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen12" (click)="cambiarAcabado(12,1,1)" data-dismiss="modal"></div>          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,1)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,1)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,1)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen2" (click)="cambiarAcabado(2,1,1)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen3" (click)="cambiarAcabado(3,1,1)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen4" (click)="cambiarAcabado(4,1,1)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen5" (click)="cambiarAcabado(5,1,1)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen6" (click)="cambiarAcabado(6,1,1)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen7" (click)="cambiarAcabado(7,1,1)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen8" (click)="cambiarAcabado(8,1,1)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen9" (click)="cambiarAcabado(9,1,1)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,1)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,1)" data-dismiss="modal"></div> 
+		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,1)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,1)" data-dismiss="modal"></div>          
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -254,20 +255,20 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen0" (click)="cambiarAcabado(0,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen1" (click)="cambiarAcabado(1,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen2" (click)="cambiarAcabado(2,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen3" (click)="cambiarAcabado(3,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen4" (click)="cambiarAcabado(4,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen5" (click)="cambiarAcabado(5,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen6" (click)="cambiarAcabado(6,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen7" (click)="cambiarAcabado(7,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen8" (click)="cambiarAcabado(8,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen9" (click)="cambiarAcabado(9,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen10" (click)="cambiarAcabado(10,1,2)"  data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen11" (click)="cambiarAcabado(11,1,2)"  data-dismiss="modal"></div> 
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen12" (click)="cambiarAcabado(12,1,2)"  data-dismiss="modal"></div>          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen2" (click)="cambiarAcabado(2,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen3" (click)="cambiarAcabado(3,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen4" (click)="cambiarAcabado(4,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen5" (click)="cambiarAcabado(5,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen6" (click)="cambiarAcabado(6,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen7" (click)="cambiarAcabado(7,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen8" (click)="cambiarAcabado(8,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen9" (click)="cambiarAcabado(9,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,2)"  data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,2)"  data-dismiss="modal"></div> 
+		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,2)"  data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)" data-dismiss="modal"></div>          
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -287,20 +288,20 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen0" (click)="cambiarAcabado(0,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen1" (click)="cambiarAcabado(1,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen2" (click)="cambiarAcabado(2,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen3" (click)="cambiarAcabado(3,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen4" (click)="cambiarAcabado(4,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen5" (click)="cambiarAcabado(5,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen6" (click)="cambiarAcabado(6,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen7" (click)="cambiarAcabado(7,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen8" (click)="cambiarAcabado(8,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen9" (click)="cambiarAcabado(9,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen10" (click)="cambiarAcabado(10,1,3)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen11" (click)="cambiarAcabado(11,1,3)" data-dismiss="modal"></div> 
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen12" (click)="cambiarAcabado(12,1,3)" data-dismiss="modal"></div>          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,3)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen2" (click)="cambiarAcabado(2,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen3" (click)="cambiarAcabado(3,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen4" (click)="cambiarAcabado(4,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen5" (click)="cambiarAcabado(5,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen6" (click)="cambiarAcabado(6,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen7" (click)="cambiarAcabado(7,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen8" (click)="cambiarAcabado(8,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen9" (click)="cambiarAcabado(9,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,3)" data-dismiss="modal"></div> 
+		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,3)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,3)" data-dismiss="modal"></div>          
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -320,20 +321,20 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen0" (click)="cambiarAcabado(0,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen1" (click)="cambiarAcabado(1,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen2" (click)="cambiarAcabado(2,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen3" (click)="cambiarAcabado(3,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen4" (click)="cambiarAcabado(4,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen5" (click)="cambiarAcabado(5,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen6" (click)="cambiarAcabado(6,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen7" (click)="cambiarAcabado(7,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen8" (click)="cambiarAcabado(8,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen9" (click)="cambiarAcabado(9,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen10" (click)="cambiarAcabado(10,1,4)" data-dismiss="modal"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen11" (click)="cambiarAcabado(11,1,4)" data-dismiss="modal"></div> 
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen12" (click)="cambiarAcabado(12,1,4)" data-dismiss="modal"></div>          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,4)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen2" (click)="cambiarAcabado(2,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen3" (click)="cambiarAcabado(3,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen4" (click)="cambiarAcabado(4,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen5" (click)="cambiarAcabado(5,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen6" (click)="cambiarAcabado(6,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen7" (click)="cambiarAcabado(7,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen8" (click)="cambiarAcabado(8,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen9" (click)="cambiarAcabado(9,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,4)" data-dismiss="modal"></div> 
+		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,4)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,4)" data-dismiss="modal"></div>          
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -675,9 +676,9 @@
 	  </div>
 	  
 </div>
-<div style="width:25%;background-color:#DFDDDC;margin-left:57%;height:100%;position:fixed;top: 0;right:0;bottom:0;">
+<div id="calculadoraCarrito">
 
- <ul class="nav nav-tabs" style="margin-left: 75px;margin-bottom: 20px;">
+ <ul id="tablaElegirCalcu" class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link active" data-toggle="tab" href="#calculadora">Calculadora</a>
     </li>
@@ -686,7 +687,7 @@
     </li>
 
   </ul>	
-  <div style="background-color:white;width:86%;height: 85%;margin-left:25px;">
+  <div style="background-color:white;width:86%;height: 85%;margin-left:25px;margin-top:10px">
   
  	 <div class="tab-content">
 
@@ -864,6 +865,7 @@
 	</div>
 </div>
 </div>
-
+<a ><img id="botonEsconderCarr"  onclick="mostrarCarrito()" style="max-width:40%" src="../../../content/images/carr.png"></a>
+<a ><img id="botonEsconderCalcu" onclick="mostrarCalculadora()" style="max-width:40%" src="../../../content/images/calcu.png"></a>
 
 

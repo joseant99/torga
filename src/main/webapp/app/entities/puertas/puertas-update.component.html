@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-puertas-heading" jhiTranslate="torgaPedidosApp.puertas.home.createOrEditLabel">Create or edit a Puertas</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!puertas.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="puertas.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertas.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="puertas.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertas.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + puertas.imagenContentType + ';base64,' + puertas.imagen" style="max-height: 100px;" *ngIf="puertas.imagen" alt="puertas image"/>
+                        <div *ngIf="puertas.imagen" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{puertas.imagenContentType}}, {{byteSize(puertas.imagen)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, puertas, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                        [(ngModel)]="puertas.imagen" />
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                        [(ngModel)]="puertas.imagenContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertas.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="puertas.productosDormitorio" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productosDormitorioOption.id === puertas.productosDormitorio?.id ? puertas.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="torgaPedidosApp.puertas.puertasProductos" for="field_puertasProductos">Puertas Productos</label>
+                    <select class="form-control" id="field_puertasProductos" multiple name="puertasProductos" [(ngModel)]="puertas.puertasProductos">
+                        <option [ngValue]="getSelected(puertas.puertasProductos, productosDormitorioOption)" *ngFor="let productosDormitorioOption of puertas1">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

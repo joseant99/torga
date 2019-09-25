@@ -1,0 +1,24 @@
+{
+    "torgaPedidosApp": {
+        "puertas": {
+            "home": {
+                "title": "Puertas",
+                "createLabel": "Crear nuevo Puertas",
+                "createOrEditLabel": "Crear o editar Puertas"
+            },
+            "created": "Un nuevo Puertas ha sido creado con el identificador {{ param }}",
+            "updated": "Un Puertas ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Puertas ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Puertas {{ id }}?"
+            },
+            "detail": {
+                "title": "Puertas"
+            },
+            "nombre": "Nombre",
+            "imagen": "Imagen",
+            "productosDormitorio": "Productos Dormitorio",
+            "puertasProductos": "Puertas Productos"
+        }
+    }
+}

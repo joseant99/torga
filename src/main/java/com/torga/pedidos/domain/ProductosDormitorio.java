@@ -1,5 +1,6 @@
 package com.torga.pedidos.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -8,6 +9,8 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -18,6 +21,7 @@ import java.util.Objects;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class ProductosDormitorio implements Serializable {
 
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,6 +42,11 @@ public class ProductosDormitorio implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties("")
     private CategoriasDormi categoriasDormi;
+
+    @ManyToMany(mappedBy = "puertasProductos")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JsonIgnore
+    private Set<Puertas> puertas = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -98,6 +107,31 @@ public class ProductosDormitorio implements Serializable {
 
     public void setCategoriasDormi(CategoriasDormi categoriasDormi) {
         this.categoriasDormi = categoriasDormi;
+    }
+
+    public Set<Puertas> getPuertas() {
+        return puertas;
+    }
+
+    public ProductosDormitorio puertas(Set<Puertas> puertas) {
+        this.puertas = puertas;
+        return this;
+    }
+
+    public ProductosDormitorio addPuertas(Puertas puertas) {
+        this.puertas.add(puertas);
+        puertas.getPuertasProductos().add(this);
+        return this;
+    }
+
+    public ProductosDormitorio removePuertas(Puertas puertas) {
+        this.puertas.remove(puertas);
+        puertas.getPuertasProductos().remove(this);
+        return this;
+    }
+
+    public void setPuertas(Set<Puertas> puertas) {
+        this.puertas = puertas;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

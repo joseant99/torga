@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Puertas.
+    -->
+    <changeSet id="20190919092642-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="productos_dormitorio_id"
+                                 baseTableName="puertas"
+                                 constraintName="fk_puertas_productos_dormitorio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="productos_dormitorio"/>
+
+        <addForeignKeyConstraint baseColumnNames="puertas_id"
+                                 baseTableName="puertas_puertas_productos"
+                                 constraintName="fk_puertas_puertas_productos_puertas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="puertas"/>
+        <addForeignKeyConstraint baseColumnNames="puertas_productos_id"
+                                 baseTableName="puertas_puertas_productos"
+                                 constraintName="fk_puertas_puertas_productos_puertas_productos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="productos_dormitorio"/>
+        
+    </changeSet>
+</databaseChangeLog>

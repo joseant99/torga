@@ -23,6 +23,7 @@ import { IMunicipios } from 'app/shared/model/municipios.model';
 import { DatosClienteService } from '../datos-cliente/datos-cliente.service';
 import { IDatosCliente } from 'app/shared/model/datos-cliente.model';
 import { ContactoFabricaService } from '../contacto-fabrica/contacto-fabrica.service';
+import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
 
 @Component({
     selector: 'jhi-presupuesto-productos',
@@ -214,7 +215,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 }
             });
         this.iluminacion = ilu;
-        var acabados = this.acabados;
+        var acabados = [];
         var iluminacion = this.iluminacion;
         this.productosPresupuestoPedidosService
             .query({
@@ -252,111 +253,135 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     this.productos = productosPresupuesto;
 
                     var productos = this.productos;
-
-                    var apoyo;
-                    setTimeout(function() {
-                        if (productos != undefined && acabados != []) {
-                            for (let i = 0; i < productos.length; i++) {
-                                var contador = 1;
-                                apoyo = undefined;
-                                for (let k = 0; k < acabados.length; k++) {
-                                    if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
-                                        $('.' + productos[i]['id'] + 'Datos').append(
-                                            '<p>Acabado ' + contador + '&nbsp;&nbsp;&nbsp; ' + acabados[k]['acabados']['nombre'] + '</p>'
-                                        );
-                                        if (i == 0) {
-                                            $('#imagen' + i).append(
-                                                '<img id="tapa" style="position: absolute;left: 65px;margin-top: -70px;" src="../../../content/images/TAPA-Nature.png">'
-                                            );
-                                            $('#imagen' + i).append(
-                                                '<img id="cajon" style="position: absolute;left: 65px;margin-top: -70px;" src="../../../content/images/CAJON.png">'
-                                            );
-                                            $('#imagen' + i).append(
-                                                '<img id="cajon" style="position: absolute;left: 65px;margin-top: -70px;" src="../../../content/images/CASCO.png">'
-                                            );
-                                        }
-
-                                        if (contador == 1 && acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined) {
-                                            apoyo = acabados[k];
-                                        }
-
-                                        contador++;
-                                    }
-                                }
-                                if (apoyo != undefined) {
-                                    $('.' + productos[i]['id'] + 'Datos').append(
-                                        '<p>' +
-                                            apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
-                                            '&nbsp;&nbsp;&nbsp; ' +
-                                            apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
-                                            '&euro;</p>'
-                                    );
-                                    var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
-                                    if (precioTotal != '') {
-                                        var precioFloat = parseFloat(precioTotal);
-                                    }
-                                    precioFloat = precioFloat + apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
-                                    var subTotal = parseFloat($('#precioSubtotal').text());
-                                    subTotal = subTotal + precioFloat;
-                                    $('#precioSubtotal').text(subTotal);
-                                    $('#totalDescuentoTexto').text(subTotal);
-                                    var iva = subTotal * 0.21;
-                                    $('#ivaPrecioQuitar').remove();
-                                    $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + '</p>');
-                                    iva = subTotal + iva;
-                                    $('#precioIvaSumado').remove();
-                                    $('#precioCalculadoIva').append(
-                                        '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
-                                    );
-                                    var total;
-                                    total = precioFloat * precioTienda;
-                                    console.log(total);
-                                    total = total - precioFloat;
-                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat * precioTienda);
-                                    $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
-                                    $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
-                                }
-
-                                for (let j = 0; j < iluminacion.length; j++) {
-                                    if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
-                                        $('.' + productos[i]['id'] + 'Datos').append(
-                                            '<p>Iluminacion&nbsp;&nbsp;&nbsp;' + iluminacion[j]['iluminacion']['precio'] + '&euro;</p>'
-                                        );
-                                        var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
-                                        var fabrica;
-                                        fabrica = $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text();
-                                        var ganancias;
-                                        ganancias = $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text();
-                                        var precioFloat = 0;
-                                        precioFloat = parseFloat(precioTotal);
-                                        fabrica = parseFloat(fabrica);
-                                        ganancias = parseFloat(fabrica);
-                                        precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
-                                        fabrica = fabrica + iluminacion[j]['iluminacion']['precio'] / 2;
-                                        ganancias = ganancias + iluminacion[j]['iluminacion']['precio'] / 2;
-                                        var subTotal = parseFloat($('#precioSubtotal').text());
-                                        if (subTotal == 0) {
-                                            subTotal = precioFloat;
-                                        }
-
-                                        $('#precioSubtotal').text(precioFloat);
-                                        var iva = precioFloat * 0.21;
-                                        $('#ivaPrecioQuitar').remove();
-                                        $('#ivaQuitar').append('<p id="ivaPrecioQuitar" style="font-size:25px">' + iva.toFixed(2) + '</p>');
-                                        iva = precioFloat + iva;
-                                        $('#precioIvaSumado').remove();
-                                        $('#precioCalculadoIva').append(
-                                            '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
-                                        );
-                                        $('#totalDescuentoTexto').text(precioFloat);
-                                        $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat);
-                                        $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(fabrica);
-                                        $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(ganancias);
-                                    }
-                                }
+                    this.acabadosProductosPresupuestoPedidoService
+                        .query({
+                            size: 1000000
+                        })
+                        .subscribe((res: HttpResponse<IAcabadosProductosPresupuestoPedido[]>) => {
+                            for (let i = 0; i < res.body.length; i++) {
+                                acabados[i] = res.body[i];
                             }
-                        }
-                    }, 150);
+                            var apoyo;
+                            setTimeout(function() {
+                                if (productos != undefined) {
+                                    for (let i = 0; i < productos.length; i++) {
+                                        var contador = 1;
+                                        apoyo = undefined;
+                                        for (let k = 0; k < acabados.length; k++) {
+                                            if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
+                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                    '<p>Acabado ' +
+                                                        contador +
+                                                        '&nbsp;&nbsp;&nbsp; ' +
+                                                        acabados[k]['acabados']['nombre'] +
+                                                        '</p>'
+                                                );
+                                                var prodNombre =
+                                                    acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
+                                                var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
+                                                $('#imagen' + i).append(
+                                                    '<img id="tapa" width="500px" height="333px" style="position: absolute;left: 180px;margin-top: 0px;" src="../../../content/images/' +
+                                                        prodNombre +
+                                                        '/' +
+                                                        (k + 1) +
+                                                        '/' +
+                                                        prodNombre +
+                                                        '_' +
+                                                        (k + 1) +
+                                                        '_' +
+                                                        nombreAcabado +
+                                                        '-min.png">'
+                                                );
+
+                                                if (
+                                                    contador == 1 &&
+                                                    acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined
+                                                ) {
+                                                    apoyo = acabados[k];
+                                                }
+
+                                                contador++;
+                                            }
+                                        }
+                                        if (apoyo != undefined) {
+                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                '<p>' +
+                                                    apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
+                                                    '&nbsp;&nbsp;&nbsp; ' +
+                                                    apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
+                                                    '&euro;</p>'
+                                            );
+                                            var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                            if (precioTotal != '') {
+                                                var precioFloat = parseFloat(precioTotal);
+                                            }
+                                            precioFloat = precioFloat + apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
+                                            var subTotal = parseFloat($('#precioSubtotal').text());
+                                            subTotal = subTotal + precioFloat;
+                                            $('#precioSubtotal').text(subTotal);
+                                            $('#totalDescuentoTexto').text(subTotal);
+                                            var iva = subTotal * 0.21;
+                                            $('#ivaPrecioQuitar').remove();
+                                            $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + '</p>');
+                                            iva = subTotal + iva;
+                                            $('#precioIvaSumado').remove();
+                                            $('#precioCalculadoIva').append(
+                                                '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
+                                            );
+                                            var total;
+                                            total = precioFloat * precioTienda;
+                                            console.log(total);
+                                            total = total - precioFloat;
+                                            $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat * precioTienda);
+                                            $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
+                                            $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
+                                        }
+
+                                        for (let j = 0; j < iluminacion.length; j++) {
+                                            if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
+                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                    '<p>Iluminacion&nbsp;&nbsp;&nbsp;' +
+                                                        iluminacion[j]['iluminacion']['precio'] +
+                                                        '&euro;</p>'
+                                                );
+                                                var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                                var fabrica;
+                                                fabrica = $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text();
+                                                var ganancias;
+                                                ganancias = $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text();
+                                                var precioFloat = 0;
+                                                precioFloat = parseFloat(precioTotal);
+                                                fabrica = parseFloat(fabrica);
+                                                ganancias = parseFloat(fabrica);
+                                                precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
+                                                fabrica = fabrica + iluminacion[j]['iluminacion']['precio'] / 2;
+                                                ganancias = ganancias + iluminacion[j]['iluminacion']['precio'] / 2;
+                                                var subTotal = parseFloat($('#precioSubtotal').text());
+                                                if (subTotal == 0) {
+                                                    subTotal = precioFloat;
+                                                }
+
+                                                $('#precioSubtotal').text(precioFloat);
+                                                var iva = precioFloat * 0.21;
+                                                $('#ivaPrecioQuitar').remove();
+                                                $('#ivaQuitar').append(
+                                                    '<p id="ivaPrecioQuitar" style="font-size:25px">' + iva.toFixed(2) + '</p>'
+                                                );
+                                                iva = precioFloat + iva;
+                                                $('#precioIvaSumado').remove();
+                                                $('#precioCalculadoIva').append(
+                                                    '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
+                                                );
+                                                $('#totalDescuentoTexto').text(precioFloat);
+                                                $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat);
+                                                $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(fabrica);
+                                                $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(ganancias);
+                                            }
+                                        }
+                                    }
+                                }
+                            }, 0);
+                        });
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
