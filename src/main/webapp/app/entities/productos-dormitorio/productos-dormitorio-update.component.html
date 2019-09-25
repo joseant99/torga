@@ -51,6 +51,13 @@
                         <option [ngValue]="categoriasDormiOption.id" *ngFor="let categoriasDormiOption of categoriasdormis; trackBy: trackCategoriasDormiById">{{categoriasDormiOption.id}}</option>
                     </select>
                 </div>
+                <div class="form-group" id="iluminacion">
+                    <label class="form-control-label">&#191;Tiene iluminacion el producto?</label>
+                    <form>
+						  <input type="radio" name="Iluminacion" value="si" (click)="meterPrecio()"> SI<br>
+						  <input type="radio" name="Iluminacion" value="no"> NO<br>
+					</form>
+                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

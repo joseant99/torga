@@ -134,6 +134,77 @@ export class inicioComponent implements OnInit, AfterViewInit {
                     for (let j = 0; j < res.body.length; j++) {
                         pagos[j] = res.body[j];
                     }
+
+                    var authorities = this.accountService.userIdentity.authorities;
+                    for (let i = 0; i < authorities.length; i++) {
+                        if (authorities[i] != 'ROLE_CLIENTE') {
+                            usuarioBuscado = this.accountService.userIdentity;
+                        } else {
+                            cliente = this.accountService.userIdentity;
+                        }
+                    }
+
+                    if (usuarioBuscado != undefined) {
+                        this.datosUsuarioService
+                            .query({
+                                size: 10000000
+                            })
+                            .subscribe(
+                                (res: HttpResponse<IDatosUsuario[]>) => {
+                                    for (let k = 0; k < res.body.length; k++) {
+                                        if (res.body[k]['user'] != null) {
+                                            if (res.body[k]['user']['id'] == usuarioBuscado['id']) {
+                                                tiendaUsuario = res.body[k];
+                                                sessionStorage.setItem('tiendaUsuario', JSON.stringify(tiendaUsuario));
+                                            }
+                                        }
+                                    }
+                                    for (let h = 0; h < pagos.length; h++) {
+                                        if (pagos[h]['datosUsuario']['id'] == tiendaUsuario['id']) {
+                                            sessionStorage.setItem('precioTienda', JSON.stringify(pagos[h]['precioTienda']));
+                                            dato = 1;
+                                        } else {
+                                            if (dato == 0) {
+                                                sessionStorage.setItem('precioTienda', JSON.stringify(1));
+                                            }
+                                        }
+                                    }
+                                },
+                                (res: HttpErrorResponse) => this.onError(res.message)
+                            );
+                    } else {
+                        if (cliente != undefined) {
+                            this.datosUsuarioService
+                                .query({
+                                    size: 10000000
+                                })
+                                .subscribe(
+                                    (res: HttpResponse<IDatosUsuario[]>) => {
+                                        for (let k = 0; k < res.body.length; k++) {
+                                            for (let d = 0; d < vendedores.length; d++) {
+                                                if (res.body[k]['user'] != null) {
+                                                    if (cliente['id'] == vendedores[d]['user']['id']) {
+                                                        tiendaUsuario = vendedores[d]['datosUsuario'];
+                                                        sessionStorage.setItem('tiendaUsuario', JSON.stringify(tiendaUsuario));
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        for (let h = 0; h < pagos.length; h++) {
+                                            if (pagos[h]['datosUsuario']['id'] == tiendaUsuario['id']) {
+                                                sessionStorage.setItem('precioTienda', JSON.stringify(pagos[h]['precioTienda']));
+                                                dato = 1;
+                                            } else {
+                                                if (dato == 0) {
+                                                    sessionStorage.setItem('precioTienda', JSON.stringify(pagos[h]['precioTienda']));
+                                                }
+                                            }
+                                        }
+                                    },
+                                    (res: HttpErrorResponse) => this.onError(res.message)
+                                );
+                        }
+                    }
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
@@ -150,77 +221,6 @@ export class inicioComponent implements OnInit, AfterViewInit {
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
-
-        var authorities = this.accountService.userIdentity.authorities;
-        for (let i = 0; i < authorities.length; i++) {
-            if (authorities[i] != 'ROLE_CLIENTE') {
-                usuarioBuscado = this.accountService.userIdentity;
-            } else {
-                cliente = this.accountService.userIdentity;
-            }
-        }
-
-        if (usuarioBuscado != undefined) {
-            this.datosUsuarioService
-                .query({
-                    size: 10000000
-                })
-                .subscribe(
-                    (res: HttpResponse<IDatosUsuario[]>) => {
-                        for (let k = 0; k < res.body.length; k++) {
-                            if (res.body[k]['user'] != null) {
-                                if (res.body[k]['user']['id'] == usuarioBuscado['id']) {
-                                    tiendaUsuario = res.body[k];
-                                    sessionStorage.setItem('tiendaUsuario', JSON.stringify(tiendaUsuario));
-                                }
-                            }
-                        }
-                        for (let h = 0; h < pagos.length; h++) {
-                            if (pagos[h]['datosUsuario']['id'] == tiendaUsuario['id']) {
-                                sessionStorage.setItem('precioTienda', JSON.stringify(pagos[h]['precioTienda']));
-                                dato = 1;
-                            } else {
-                                if (dato == 0) {
-                                    sessionStorage.setItem('precioTienda', JSON.stringify(1));
-                                }
-                            }
-                        }
-                    },
-                    (res: HttpErrorResponse) => this.onError(res.message)
-                );
-        } else {
-            if (cliente != undefined) {
-                this.datosUsuarioService
-                    .query({
-                        size: 10000000
-                    })
-                    .subscribe(
-                        (res: HttpResponse<IDatosUsuario[]>) => {
-                            for (let k = 0; k < res.body.length; k++) {
-                                for (let d = 0; d < vendedores.length; d++) {
-                                    if (res.body[k]['user'] != null) {
-                                        if (cliente['id'] == vendedores[d]['user']['id']) {
-                                            tiendaUsuario = vendedores[d]['datosUsuario'];
-                                            sessionStorage.setItem('tiendaUsuario', JSON.stringify(tiendaUsuario));
-                                        }
-                                    }
-                                }
-                            }
-                            for (let h = 0; h < pagos.length; h++) {
-                                if (pagos[h]['datosUsuario']['id'] == tiendaUsuario['id']) {
-                                    sessionStorage.setItem('precioTienda', JSON.stringify(pagos[h]['precioTienda']));
-                                    dato = 1;
-                                } else {
-                                    if (dato == 0) {
-                                        sessionStorage.setItem('precioTienda', JSON.stringify(1));
-                                    }
-                                }
-                            }
-                        },
-                        (res: HttpErrorResponse) => this.onError(res.message)
-                    );
-            }
-        }
     }
 
     isAuthenticated() {
@@ -286,6 +286,15 @@ export class inicioComponent implements OnInit, AfterViewInit {
         var usuarioContacto = this.accountService.userIdentity;
         var contacto = this.contacto;
         var mensajes = this.mensajes;
+        setTimeout(function() {
+            var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+
+            if (prueba['logo'] != undefined) {
+                this.logo = prueba;
+                $('#logoImagen').remove();
+                $('.logo-img').append('<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>');
+            }
+        }, 10);
         if (contacto[0] != undefined) {
             for (let i = 0; i < contacto.length; i++) {
                 if (contacto[i]['firstName'] == 'Administrator') {

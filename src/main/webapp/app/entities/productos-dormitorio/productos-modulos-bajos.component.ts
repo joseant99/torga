@@ -2316,7 +2316,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     }
                     idDefinitiva = aux[0]['id'] + 1;
                     const prueba1 = {
-                        id: idDefinitiva,
+                        id: aux[0]['id'],
                         codigo: 'PR-' + usuario['id'],
                         pedido: 0,
                         user: usuario,

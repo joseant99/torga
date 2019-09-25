@@ -8,7 +8,7 @@
     <p style="text-align:center"><label>Fecha:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="text-align:center" value="{{contactoFabrica.fechaInicio}}" disabled/></p>
     <p style="text-align:center"><label>En relacion a:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="text-align:center" value="{{contactoFabrica.tipo}}" disabled/></p>
     <p style="text-align:center"><label>Con codigo:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="text-align:center" value="{{contactoFabrica.codigo}}" disabled/></p>
-    <p style="text-align:center" *ngIf="correcto['texto'] == 'INC-PROD-CR-TG'"><label>Del producto:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="text-align:center" value="{{correcto.productosPresupuestoPedidos.productosDormitorio.nombre}}" disabled/></p>
+    <p style="text-align:center" *ngIf="correcto != undefined "><label>Del producto:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="text-align:center" value="{{correcto.productosPresupuestoPedidos.productosDormitorio.nombre}}" disabled/></p>
     <div id="mensajes" style="border:1px solid gray;width:60%;margin-left:20%;height:500px;overflow: scroll;">
     	<div style="float:right;padding-left: 100%;" *ngFor="let mensaje of mensajes"><p style="text-align:center">{{mensaje.user.firstName}}</p><p style="font-size: 31px;text-align: center;">{{mensaje.texto}}</p><p *ngIf="mensaje.imagen !== null"><img alt="" style="max-width:100px"[src]="'data:' + mensaje.imagenContentType + ';base64,' + mensaje.imagen"></p></div>
     </div>
