@@ -1,0 +1,22 @@
+{
+    "torgaPedidosApp": {
+        "precioTienda": {
+            "home": {
+                "title": "Precio Tiendas",
+                "createLabel": "Crear nuevo Precio Tienda",
+                "createOrEditLabel": "Crear o editar Precio Tienda"
+            },
+            "created": "Un nuevo Precio Tienda ha sido creado con el identificador {{ param }}",
+            "updated": "Un Precio Tienda ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Precio Tienda ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Precio Tienda {{ id }}?"
+            },
+            "detail": {
+                "title": "Precio Tienda"
+            },
+            "precio": "Precio",
+            "datosUsuario": "Datos Usuario"
+        }
+    }
+}

@@ -76,5 +76,8 @@
     <include file="config/liquibase/changelog/20190913100111_added_entity_constraints_InteriorArmarioDentro2.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190916064026_added_entity_TiradoresArmario.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190919092642_added_entity_Puertas.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190919092642_added_entity_constraints_Puertas.xml" relativeToChangelogFile="false"/>           
+    <include file="config/liquibase/changelog/20190919092642_added_entity_constraints_Puertas.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190925135523_added_entity_PrecioTienda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190925135523_added_entity_constraints_PrecioTienda.xml" relativeToChangelogFile="false"/>
+          
 </databaseChangeLog> 

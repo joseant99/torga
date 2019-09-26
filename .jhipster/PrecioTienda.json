@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "datosUsuario",
+            "otherEntityName": "datosUsuario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "precio",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20190925135523",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "precio_tienda",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

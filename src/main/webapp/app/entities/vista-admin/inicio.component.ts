@@ -19,6 +19,9 @@ import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
 import { ContactoFabricaService } from '../contacto-fabrica/contacto-fabrica.service';
 import { MensajesService } from '../mensajes/mensajes.service';
 import { IMensajes } from 'app/shared/model/mensajes.model';
+import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
+import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
+
 @Component({
     selector: 'jhi-inicio',
     templateUrl: './inicio.component.html'

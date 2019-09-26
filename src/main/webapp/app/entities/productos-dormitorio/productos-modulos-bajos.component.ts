@@ -30,7 +30,8 @@ import { InterioresService } from '../interiores/interiores.service';
 import { MedidasEspecialesService } from '../medidas-especiales/medidas-especiales.service';
 import { MedEspProductoPedidoPresuService } from '../med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.service';
 import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
-
+import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
+import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
 @Component({
     selector: 'jhi-productos-dormitorio',
     templateUrl: './productos-modulos-bajos.component.html'
@@ -60,6 +61,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     eventSubscriber: Subscription;
     routeData: any;
     links: any;
+    precioTienda1: any;
     totalItems: any;
     queryCount: any;
     itemsPerPage: any;
@@ -74,6 +76,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         protected medidasEspecialesService: MedidasEspecialesService,
         protected dimensionesProductoTipoService: DimensionesProductoTipoService,
         protected acabadosService: AcabadosService,
+        protected precioTiendaService: PrecioTiendaService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected iluminacionService: IluminacionService,
         protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
@@ -189,6 +192,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
 
         var cont = 0;
         var datos = [];
+        var precioTienda1 = this.precioTienda1;
         var precioTienda = this.precioTienda;
         this.dimensionesProductoTipoService
             .query({
@@ -203,6 +207,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         if (cont == 0) {
                             var image = document.createElement('img');
                             var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda1;
                             precio = precio * precioTienda;
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
@@ -231,6 +236,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         if (cont == 1) {
                             var image = document.createElement('img');
                             var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda1;
                             precio = precio * precioTienda;
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
@@ -261,6 +267,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         if (cont == 2) {
                             var image = document.createElement('img');
                             var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda1;
                             precio = precio * precioTienda;
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
@@ -288,6 +295,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         if (cont == 3) {
                             var image = document.createElement('img');
                             var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda1;
                             precio = precio * precioTienda;
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
@@ -315,6 +323,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         if (cont == 4) {
                             var image = document.createElement('img');
                             var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda1;
                             precio = precio * precioTienda;
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
@@ -342,6 +351,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                         if (cont == 5) {
                             var image = document.createElement('img');
                             var precio = parseFloat(value['precio']);
+                            precio = precio * precioTienda1;
                             precio = precio * precioTienda;
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + value['imagen'];
@@ -1522,6 +1532,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             if (value['id'] == idAca) {
                 $('#aca1' + id1 + ' #imagenAcabadoPrincipal' + k).remove();
                 nombreAcabado = value['nombre'].toLowerCase();
+                if (nombreAcabado == 'marmol blanco') {
+                    nombreAcabado = 'marmolblanco';
+                }
+                if (nombreAcabado == 'marmol negro') {
+                    nombreAcabado = 'marmolnegro';
+                }
                 $('#aca1' + id1).append(
                     '<img  src="data:image/gif;base64,' +
                         value['imagenFondo'] +
@@ -1541,13 +1557,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     $('#tapa').remove();
                     if (nombre == 'mb6' || nombre == 'mb9') {
                         $('#acabados #imagenAcabadoPrincipal').append(
-                            '<img id="tapa" class="acabadoPartes" width="500px" height="333px" src="../../../content/images/mb5/1/mb5_1_' +
+                            '<img id="tapa" class="' +
+                                nombreAcabado +
+                                '" width="500px" height="333px" src="../../../content/images/mb5/1/mb5_1_' +
                                 nombreAcabado +
                                 '-min.png">'
                         );
                     } else {
                         $('#acabados #imagenAcabadoPrincipal').append(
-                            '<img id="tapa" class="acabadoPartes" width="500px" height="333px" src="../../../content/images/' +
+                            '<img id="tapa" class="' +
+                                nombreAcabado +
+                                '" width="500px" height="333px" src="../../../content/images/' +
                                 nombre +
                                 '/1/' +
                                 nombre +
@@ -1561,13 +1581,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     $('#cajon').remove();
                     if (nombre == 'mb6' || nombre == 'mb9') {
                         $('#acabados #imagenAcabadoPrincipal').append(
-                            '<img id="cajon" class="acabadoPartes" width="500px" height="333px"  src="../../../content/images/mb5/2/mb5_2_' +
+                            '<img id="cajon" class="' +
+                                nombreAcabado +
+                                '" width="500px" height="333px"  src="../../../content/images/mb5/2/mb5_2_' +
                                 nombreAcabado +
                                 '-min.png">'
                         );
                     } else {
                         $('#acabados #imagenAcabadoPrincipal').append(
-                            '<img id="cajon" class="acabadoPartes" width="500px" height="333px" src="../../../content/images/' +
+                            '<img id="cajon" class="' +
+                                nombreAcabado +
+                                '" width="500px" height="333px" src="../../../content/images/' +
                                 nombre +
                                 '/2/' +
                                 nombre +
@@ -1579,7 +1603,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 }
                 if (id1 != 2 && id1 != 1) {
                     $('#acabados #imagenAcabadoPrincipal').append(
-                        '<img id="casco" class="acabadoPartes" width="500px" height="333px" src="../../../content/images/' +
+                        '<img id="casco" class="' +
+                            nombreAcabado +
+                            '" width="500px" height="333px" src="../../../content/images/' +
                             nombre +
                             '/' +
                             id1 +
@@ -1645,6 +1671,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     $.each(datos, function(index, value) {
                         if (value['categoriasDormiId'] == 2) {
                             if (contador == 1) {
+                                $('.imagenAcabadoPrincipalImg').attr('style');
+                                $('.imagenAcabadoPrincipalImg').css({ filter: 'brightness(-100%)' });
                                 var image = document.createElement('img');
                                 image.src = 'data:image/gif;base64,' + value['imagen'];
                                 image.id = 'imagenApoyo';
@@ -2542,6 +2570,23 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         var ilu = [];
         var interiores = [];
         var especiales = [];
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        var preciosTiendas;
+        this.precioTiendaService
+            .query({
+                size: 100000
+            })
+            .subscribe(
+                (res: HttpResponse<IPrecioTienda[]>) => {
+                    for (let a = 0; a < res.body.length; a++) {
+                        if (tienda['id'] == res.body[a]['datosUsuario']['id']) {
+                            preciosTiendas = res.body[a]['precio'];
+                        }
+                    }
+                    this.precioTienda1 = preciosTiendas;
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
 
         this.interioresService
             .query({

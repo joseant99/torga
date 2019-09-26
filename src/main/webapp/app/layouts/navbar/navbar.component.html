@@ -456,6 +456,12 @@
                             <span>Interiores Armarios</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="precio-tienda" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span>Precio Tienda</span>
+                        </a>
+                    </li>
                   </ul>
              </li>
             <li *jhiHasAnyAuthority="'ROLE_ADMIN'"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
