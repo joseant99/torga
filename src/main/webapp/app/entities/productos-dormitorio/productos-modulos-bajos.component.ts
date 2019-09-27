@@ -2564,6 +2564,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         this.jhiAlertService.error(errorMessage, null, null);
     }
     public pruebaCargar() {
+        $('body').append(
+            '<div style="width:100%;height:100%;background-color:gray;opacity:0.5;bottom: 0;position:absolute;left: 0;" id="divFOndo"></div>'
+        );
         var todasDimensiones = [];
         var apoyo = [];
         var usuarios = [];
@@ -2777,8 +2780,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                     }
                 }
                 this.acaProdsCar = acaProdSer;
+                $('#divFOndo').remove();
             });
-        $('body').removeAttr('class');
     }
     ngAfterViewInit() {}
 }
