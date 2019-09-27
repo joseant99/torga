@@ -2462,7 +2462,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     }
 
     ngOnInit() {
-        $('body').attr('class', 'modal-open');
         var todasDimensiones = [];
         var contDimenTipo = 0;
         this.dimensionesProductoTipoService
@@ -2480,6 +2479,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 }
                 this.todasDimensiones = todasDimensiones;
             });
+        this.pruebaCargar();
         this.loadAll();
 
         this.accountService.identity().then(account => {
@@ -2563,8 +2563,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     protected onError(errorMessage: string) {
         this.jhiAlertService.error(errorMessage, null, null);
     }
-
-    ngAfterViewInit() {
+    public pruebaCargar() {
         var todasDimensiones = [];
         var apoyo = [];
         var usuarios = [];
@@ -2599,10 +2598,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 sort: this.sort()
             })
             .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    interiores[index] = value;
+                for (let i = 0; i < data.body.length; i++) {
+                    interiores[i] = data.body[i];
                     sessionStorage.setItem('interiores', JSON.stringify(interiores));
-                });
+                }
             });
         this.interiores = interiores;
 
@@ -2622,9 +2621,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 size: 1000
             })
             .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    numeroProductos[index] = value;
-                });
+                for (let i = 0; i < data.body.length; i++) {
+                    numeroProductos[i] = data.body[i];
+                }
             });
         this.acaProdPed = numeroProductos;
 
@@ -2635,9 +2634,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 sort: this.sort()
             })
             .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    sistemasApoyo[index] = value;
-                });
+                for (let i = 0; i < data.body.length; i++) {
+                    sistemasApoyo[i] = data.body[i];
+                }
             });
         this.sistemasApoyo = sistemasApoyo;
         this.acabadosService
@@ -2647,9 +2646,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 sort: this.sort()
             })
             .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    acabados[index] = value;
-                });
+                for (let i = 0; i < data.body.length; i++) {
+                    acabados[i] = data.body[i];
+                }
             });
         this.acabados = acabados;
         this.userService
@@ -2659,9 +2658,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 sort: this.sort()
             })
             .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    usuarios[index] = value;
-                });
+                for (let i = 0; i < data.body.length; i++) {
+                    usuarios[i] = data.body[i];
+                }
             });
         this.user = usuarios;
 
@@ -2672,9 +2671,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 sort: this.sort()
             })
             .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    apoyo[index] = value;
-                });
+                for (let i = 0; i < data.body.length; i++) {
+                    apoyo[i] = data.body[i];
+                }
             });
         this.apoyo = apoyo;
 
@@ -2781,4 +2780,5 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             });
         $('body').removeAttr('class');
     }
+    ngAfterViewInit() {}
 }
