@@ -397,98 +397,112 @@ Generic styles
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(125%);
     }
     .norway {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(140%);
     }
     .noce {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(140%);
     }
     .nature {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(150%);
     }
     .tabak {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(150%);
     }
     .kobe {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(150%);
     }
     .blanco {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(140%);
     }
     .beige {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(140%);
     }
     .latte {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(190%);
     }
     .grafeno {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(150%);
     }
     .lago {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(130%);
     }
     .mare {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(130%);
     }
     .marmolblanco {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(190%);
     }
     .marmolnegro {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
-        margin-left: 18px;
+        margin-left: 20px;
+        margin-top: -183px;
         filter: brightness(190%);
     }
 
