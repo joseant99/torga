@@ -839,13 +839,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('#acabado').css({ 'text-align': 'center' });
             $('#acabado').css({ 'margin-top': '5%' });
             $('#acabado').css({ 'margin-bottom': '5%' });
-            var datos = [];
-            datos = this.acaProdService.todos;
             var contador = 1;
             var contnuevo = 1;
             var u = 1;
             var i = 0;
-            $.each(datos, function(index, value) {
+            $.each(this.acaProdService.todos, function(index, value) {
                 if (value['productosDormitorio']['id'] == idProd) {
                     imagen = value['imagen'];
                     if (contador == 1) {
