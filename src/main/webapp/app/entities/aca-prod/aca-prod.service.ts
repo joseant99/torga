@@ -37,6 +37,6 @@ export class AcaProdService {
     }
 
     query1(req?: any): Observable<EntityArrayResponseType> {
-        this.todos = req.acaProdSer;
+        return (this.todos = req.acaProdSer);
     }
 }

@@ -839,7 +839,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('#acabado').css({ 'text-align': 'center' });
             $('#acabado').css({ 'margin-top': '5%' });
             $('#acabado').css({ 'margin-bottom': '5%' });
-            var datos = [];
+            var datos;
             datos = this.acaProdService.todos;
             var contador = 1;
             var contnuevo = 1;

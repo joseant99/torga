@@ -37,6 +37,6 @@ export class DimensionesProductoTipoService {
     }
 
     query1(req?: any): Observable<EntityArrayResponseType> {
-        this.todos = req.todasDimensiones;
+        return (this.todos = req.todasDimensiones);
     }
 }

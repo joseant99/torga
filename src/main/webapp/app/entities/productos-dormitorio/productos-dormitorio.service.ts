@@ -37,6 +37,6 @@ export class ProductosDormitorioService {
     }
 
     query1(req?: any): Observable<EntityArrayResponseType> {
-        this.todos = req.productos;
+        return (this.todos = req.productos);
     }
 }

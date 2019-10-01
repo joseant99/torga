@@ -36,6 +36,6 @@ export class MedidasEspecialesService {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
     query1(req?: any): Observable<EntityArrayResponseType> {
-        this.todos = req.especiales;
+        return (this.todos = req.especiales);
     }
 }
