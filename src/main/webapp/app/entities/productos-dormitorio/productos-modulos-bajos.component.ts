@@ -839,8 +839,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('#acabado').css({ 'text-align': 'center' });
             $('#acabado').css({ 'margin-top': '5%' });
             $('#acabado').css({ 'margin-bottom': '5%' });
-            var datos;
-            datos = this.acaProdService.todos;
+
+            var datos = this.acaProdService.todos;
             var contador = 1;
             var contnuevo = 1;
             var u = 1;
@@ -2440,7 +2440,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var apoyos = [];
         var cont = 0;
         var todos = this.productosDormitorioService.todos;
-        this.apoyos = this.productosDormitorioService.todos;
+        this.apoyo = this.productosDormitorioService.todos;
         for (let i = 0; i < todos.length; i++) {
             if (todos[i]['categoriasDormiId'] == 8) {
                 productos[cont] = todos[i];

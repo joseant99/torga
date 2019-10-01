@@ -16,6 +16,7 @@ import { DimensionesProductoTipoService } from '../../entities/dimensiones-produ
 import { InterioresService } from '../../entities/interiores/interiores.service';
 import { MedidasEspecialesService } from '../../entities/medidas-especiales/medidas-especiales.service';
 import { ProductosDormitorioService } from '../../entities/productos-dormitorio/productos-dormitorio.service';
+import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
 
 @Component({
     selector: 'jhi-navbar',
