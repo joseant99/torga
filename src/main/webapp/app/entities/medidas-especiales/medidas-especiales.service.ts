@@ -12,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<IMedidasEspeciales[]>;
 @Injectable({ providedIn: 'root' })
 export class MedidasEspecialesService {
     public resourceUrl = SERVER_API_URL + 'api/medidas-especiales';
-
+    public todos = '';
     constructor(protected http: HttpClient) {}
 
     create(medidasEspeciales: IMedidasEspeciales): Observable<EntityResponseType> {
@@ -34,5 +34,8 @@ export class MedidasEspecialesService {
 
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
+    }
+    query1(req?: any): Observable<EntityArrayResponseType> {
+        this.todos = req.especiales;
     }
 }

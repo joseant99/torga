@@ -12,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<IAcaProd[]>;
 @Injectable({ providedIn: 'root' })
 export class AcaProdService {
     public resourceUrl = SERVER_API_URL + 'api/aca-prods';
-
+    public todos = '';
     constructor(protected http: HttpClient) {}
 
     create(acaProd: IAcaProd): Observable<EntityResponseType> {
@@ -34,5 +34,9 @@ export class AcaProdService {
 
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
+    }
+
+    query1(req?: any): Observable<EntityArrayResponseType> {
+        this.todos = req.acaProdSer;
     }
 }

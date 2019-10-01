@@ -32,11 +32,12 @@ import { MedEspProductoPedidoPresuService } from '../med-esp-producto-pedido-pre
 import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
+
 @Component({
     selector: 'jhi-productos-dormitorio',
     templateUrl: './productos-modulos-bajos.component.html'
 })
-export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterViewInit {
+export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     currentAccount: any;
     productosDormitorios: IProductosDormitorio[];
     dimensionesProductos: IDimensionesProducto[];
@@ -59,7 +60,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     user: any;
     todasDimensiones: any;
     interiores: any;
-    eventSubscriber: Subscription;
     routeData: any;
     links: any;
     precioTienda1: any;
@@ -74,6 +74,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     fondos: any;
     previousPage: any;
     reverse: any;
+    eventSubscriber: any;
 
     constructor(
         protected tiposApoyoService: TiposApoyoService,
@@ -155,6 +156,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
             }
         }
+        this.todasDimensiones = this.dimensionesProductoTipoService.todos;
+        this.especiales = this.medidasEspecialesService.todos;
         $('#imagenAcabadoPrincipal').empty();
         $('#calculadora').attr('class', 'container tab-pane fade active show');
         $('#dimensiones #medidas').removeAttr('style');
@@ -197,7 +200,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
 
         var cont = 0;
         var datos;
-        var precioTienda1 = this.precioTienda1;
+        var precioTienda1 = JSON.parse(localStorage.getItem('preciosTiendas'));
         var precioTienda = this.precioTienda;
         var dimensionesPrueba = this.todasDimensiones;
         var datos = dimensionesPrueba;
@@ -400,9 +403,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         $('#iluminacion').removeAttr('style');
         $('#iluminacion').attr('style');
         $('#iluminacion').css({ display: 'none' });
+        var acaprodCont = 0;
+        var acaProdSer = [];
     }
 
     public open1(id) {
+        this.todasDimensiones = this.dimensionesProductoTipoService.todos;
+
         $('#calculadora').attr('class', 'container tab-pane fade active show');
         var altura = $('.selectectAltura').text();
         var ancho = $('.selectectAncho').text();
@@ -733,6 +740,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     public dimensionesCogidas(id) {
         $('#imagenAcabadoPrincipal').empty();
         var precioTienda = this.precioTienda;
+        this.interiores = JSON.parse(sessionStorage.getItem('interiores'));
         var dimensiones = this.todasDimensiones;
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
@@ -832,8 +840,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             $('#acabado').css({ 'margin-top': '5%' });
             $('#acabado').css({ 'margin-bottom': '5%' });
             var datos = [];
-            datos = this.acaProdsCar;
-
+            datos = this.acaProdService.todos;
             var contador = 1;
             var contnuevo = 1;
             var u = 1;
@@ -1748,6 +1755,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 contadorApoyo++;
             }
         }
+
         var datos = [];
         $('.apoyoCogido1').empty();
         $('.apoyoCogido2').empty();
@@ -2165,270 +2173,281 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     }
 
     public generarPresupuesto() {
-        var nombreTexto = [];
-        var prodAca = [];
-        var ancho = [];
-        var alto = [];
-        var fondo = [];
-        var nombre;
-        var idApoyo;
-        var ancho = [];
-        var alto = [];
-        var fondo = [];
-        var productosFinal = [];
-        var dimensionesFinal = [];
-        var nombreAcabado = [];
-        var numeroAcaProd = [];
-        var apoyosFinal = [];
-        var dimensionEspecialBien = [];
-        var anchoTexto;
-        var altoTexto;
-        var fondoTexto;
-        var contadorProd = 0;
-        var contadorAcabados = 0;
-        var contadorAlto = 0;
-        var contadorFondo = 0;
-        var contadorAncho = 0;
-        var contadorApoyo = 0;
-        var contadorDimension = 0;
-        var contadorProductos = 0;
-        var idDimenEsp;
-        var precioTexto;
-        var contadorIlu = 0;
-        var todasDimensiones = this.todasDimensiones;
-        var acabados = this.acabados;
-        var productos = this.apoyo;
-        var apoyos = this.sistemasApoyo;
-        var idIlu;
-        var prodIlu = [];
-        var iluFinal = [];
-        var iluminacion = this.iluminacion;
-        var nombreAcabado1;
-        for (let j = 1; j <= 10; j++) {
-            for (let k = 1; k < 100; k++) {
-                nombreAcabado1 = $('#acabado' + j + '' + k).text();
-                if (nombreAcabado1 != '') {
-                    nombreAcabado[contadorAcabados] = nombreAcabado1;
-                    numeroAcaProd[j] = contadorAcabados;
-                    contadorAcabados++;
-                }
-            }
-            idIlu = $('#productoCarrito' + j + '  #precios' + j + ' #iluminacionCarr' + j + '').attr('class');
-            for (let i = 0; i < iluminacion.length; i++) {
-                if (idIlu != '' && idIlu != undefined) {
-                    if (iluminacion[i]['id'] == idIlu) {
-                        iluFinal[contadorIlu] = iluminacion[i];
-                        contadorIlu++;
-                    }
-                }
-            }
+        this.todasDimensiones = this.dimensionesProductoTipoService.todos;
 
-            idApoyo = $('#sistemaApoyo' + j).attr('class');
-            for (let o = 0; o < apoyos.length; o++) {
-                if (apoyos[o]['id'] == idApoyo) {
-                    apoyosFinal[contadorApoyo] = apoyos[o];
-                    contadorApoyo++;
-                }
-            }
-
-            nombre = $('#nombreProd' + j).text();
-            anchoTexto = $('#productoCarrito' + j + ' #ancho' + j).text();
-            idDimenEsp = $('#productoCarrito' + j + ' #ancho' + j).attr('class');
-            precioTexto = $('#productoCarrito' + j + ' #alto' + j).attr('class');
-            altoTexto = $('#productoCarrito' + j + ' #alto' + j).text();
-            fondoTexto = $('#productoCarrito' + j + ' #fondo' + j).text();
-
-            if (nombre != '') {
-                nombreTexto[contadorProd] = nombre;
-                contadorProd++;
-            }
-            if (anchoTexto != '') {
-                ancho[contadorAncho] = anchoTexto;
-                contadorAncho++;
-            }
-            if (altoTexto != '') {
-                alto[contadorAlto] = altoTexto;
-                contadorAlto++;
-            }
-            if (fondoTexto != '') {
-                fondo[contadorFondo] = fondoTexto;
-                contadorFondo++;
-            }
-
-            if (nombre != '' && anchoTexto != '' && altoTexto != '' && fondoTexto != '') {
-                for (let k = 0; k < productos.length; k++) {
-                    if (productos[k]['nombre'] == nombre) {
-                        productosFinal[contadorProductos] = productos[k];
-                        contadorProductos++;
-                    }
-                }
-                for (let h = 0; h < todasDimensiones.length; h++) {
-                    if (
-                        todasDimensiones[h]['ancho'] == anchoTexto &&
-                        todasDimensiones[h]['alto'] == altoTexto &&
-                        todasDimensiones[h]['fondo'] == fondoTexto &&
-                        nombre == todasDimensiones[h]['productosDormitorio']['nombre']
-                    ) {
-                        dimensionesFinal[contadorDimension] = todasDimensiones[h];
-                        contadorDimension++;
-                    } else {
-                        if (todasDimensiones[h]['id'] == idDimenEsp && todasDimensiones[h]['mensaje'] == 'Medidas Especiales') {
-                            todasDimensiones[h]['precio'] = precioTexto;
-                            todasDimensiones[h]['alto'] = altoTexto;
-                            todasDimensiones[h]['ancho'] = anchoTexto;
-                            todasDimensiones[h]['fondo'] = fondoTexto;
-                            dimensionesFinal[contadorDimension] = todasDimensiones[h];
-                            contadorDimension++;
-                        }
-                    }
-                }
-            }
-        }
-
-        this.isSaving = true;
-        var usuarios = this.user;
-        var usuario;
-        var idUsu = this.currentAccount['id'];
-        for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i]['id'] == idUsu) {
-                usuario = usuarios[i];
-            }
-        }
-        var d = new Date();
-
-        var month = d.getMonth() + 1;
-        var day = d.getDate();
-
-        var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
-
-        const prueba = {
-            codigo: 'PR-' + usuario['id'],
-            pedido: 0,
-            user: usuario,
-            fecha_presupuesto: output
-        };
-        this.presupuestoPedido = prueba;
-        this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
-        var presupuesto = this.presupuesto;
-        var id = localStorage.getItem('ultimoPresupuesto');
-        var id1 = parseFloat(id);
-        id1 = id1 + 1;
-        localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
-        var idDefinitiva;
-        this.presupuestoPedidoService
+        var numeroProductos = [];
+        this.productosPresupuestoPedidosService
             .query({
-                size: 10000
+                size: 1000
             })
-            .subscribe(
-                (res: HttpResponse<IPresupuestoPedido[]>) => {
-                    var aux = [];
-                    for (let w = 0; w < res.body.length; w++) {
-                        if (aux.length == 0 || aux[0]['id'] < res.body[w]['id']) {
-                            aux[0] = res.body[w];
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    numeroProductos[i] = data.body[i];
+                }
+                this.acaProdPed = numeroProductos;
+                if (numeroProductos.length != 0) {
+                    var nombreTexto = [];
+                    var prodAca = [];
+                    var ancho = [];
+                    var alto = [];
+                    var fondo = [];
+                    var nombre;
+                    var idApoyo;
+                    var ancho = [];
+                    var alto = [];
+                    var fondo = [];
+                    var productosFinal = [];
+                    var dimensionesFinal = [];
+                    var nombreAcabado = [];
+                    var numeroAcaProd = [];
+                    var apoyosFinal = [];
+                    var dimensionEspecialBien = [];
+                    var anchoTexto;
+                    var altoTexto;
+                    var fondoTexto;
+                    var contadorProd = 0;
+                    var contadorAcabados = 0;
+                    var contadorAlto = 0;
+                    var contadorFondo = 0;
+                    var contadorAncho = 0;
+                    var contadorApoyo = 0;
+                    var contadorDimension = 0;
+                    var contadorProductos = 0;
+                    var idDimenEsp;
+                    var precioTexto;
+                    var todasDimensiones = this.todasDimensiones;
+                    var contadorIlu = 0;
+                    var acabados = this.acabados;
+                    var productos = this.apoyo;
+                    var apoyos = this.sistemasApoyo;
+                    var idIlu;
+                    var prodIlu = [];
+                    var iluFinal = [];
+                    var iluminacion = this.iluminacion;
+                    var nombreAcabado1;
+                    for (let j = 1; j <= 10; j++) {
+                        for (let k = 1; k < 100; k++) {
+                            nombreAcabado1 = $('#acabado' + j + '' + k).text();
+                            if (nombreAcabado1 != '') {
+                                nombreAcabado[contadorAcabados] = nombreAcabado1;
+                                numeroAcaProd[j] = contadorAcabados;
+                                contadorAcabados++;
+                            }
                         }
-                    }
-                    idDefinitiva = aux[0]['id'] + 1;
-                    const prueba1 = {
-                        id: aux[0]['id'],
-                        codigo: 'PR-' + usuario['id'],
-                        pedido: 0,
-                        user: usuario,
-                        fecha_presupuesto: output
-                    };
-                    var prodPrePed;
-                    for (let m = 0; m < productosFinal.length; m++) {
-                        if (apoyosFinal[m] == undefined) {
-                            prodPrePed = {
-                                productosDormitorio: productosFinal[m],
-                                presupuestoPedido: prueba1,
-                                dimensionesProductoTipo: dimensionesFinal[m]
-                            };
-                        } else {
-                            prodPrePed = {
-                                productosDormitorio: productosFinal[m],
-                                presupuestoPedido: prueba1,
-                                dimensionesProductoTipo: dimensionesFinal[m],
-                                tiposApoyo: apoyosFinal[m]
-                            };
+                        idIlu = $('#productoCarrito' + j + '  #precios' + j + ' #iluminacionCarr' + j + '').attr('class');
+                        for (let i = 0; i < iluminacion.length; i++) {
+                            if (idIlu != '' && idIlu != undefined) {
+                                if (iluminacion[i]['id'] == idIlu) {
+                                    iluFinal[contadorIlu] = iluminacion[i];
+                                    contadorIlu++;
+                                }
+                            }
                         }
 
-                        prodAca[m] = prodPrePed;
-                        prodIlu[m] = prodPrePed;
-                        dimensionEspecialBien[m] = prodPrePed;
-                        this.productosPresupuestoPedidos = prodPrePed;
-                        this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
-                        if (dimensionesFinal[m]['mensaje'] == 'Medidas Especiales') {
-                            var acaPedProd = this.acaProdPed.length;
-                            acaPedProd = this.acaProdPed[acaPedProd - 1];
-                            dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
-                            const medEsp = {
-                                productosPresupuestoPedidos: dimensionEspecialBien[m],
-                                ancho: dimensionesFinal[m]['ancho'],
-                                fondo: dimensionesFinal[m]['fondo'],
-                                alto: dimensionesFinal[m]['alto'],
-                                precio: dimensionesFinal[m]['precio']
-                            };
-                            this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
+                        idApoyo = $('#sistemaApoyo' + j).attr('class');
+                        for (let o = 0; o < apoyos.length; o++) {
+                            if (apoyos[o]['id'] == idApoyo) {
+                                apoyosFinal[contadorApoyo] = apoyos[o];
+                                contadorApoyo++;
+                            }
                         }
-                        if (iluFinal[m] != undefined && iluFinal[m] != '') {
-                            var acaPedProd = this.acaProdPed.length;
-                            acaPedProd = this.acaProdPed[acaPedProd - 1];
-                            prodIlu[m]['id'] = acaPedProd['id'] + m + 1;
-                            const iluProd = {
-                                iluminacion: iluFinal[m],
-                                productosPresupuestoPedidos: prodIlu[m]
-                            };
-                            this.subscribeToSaveResponse(this.iluminacionProdPrePedService.create(iluProd));
+
+                        nombre = $('#nombreProd' + j).text();
+                        anchoTexto = $('#productoCarrito' + j + ' #ancho' + j).text();
+                        idDimenEsp = $('#productoCarrito' + j + ' #ancho' + j).attr('class');
+                        precioTexto = $('#productoCarrito' + j + ' #alto' + j).attr('class');
+                        altoTexto = $('#productoCarrito' + j + ' #alto' + j).text();
+                        fondoTexto = $('#productoCarrito' + j + ' #fondo' + j).text();
+
+                        if (nombre != '') {
+                            nombreTexto[contadorProd] = nombre;
+                            contadorProd++;
                         }
-                    }
-                    let b = 0;
-                    for (let w = 1; w < numeroAcaProd.length; w++) {
-                        if (b != 0) {
-                            b = numeroAcaProd[w];
+                        if (anchoTexto != '') {
+                            ancho[contadorAncho] = anchoTexto;
+                            contadorAncho++;
                         }
-                        for (b; b < nombreAcabado.length; b++) {
-                            if (b <= numeroAcaProd[w]) {
-                                for (let g = 0; g < acabados.length; g++) {
-                                    if (acabados[g]['nombre'] == nombreAcabado[b]) {
-                                        var acaPedProd = this.acaProdPed.length;
-                                        acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                        prodAca[w - 1]['id'] = acaPedProd['id'] + w;
-                                        const acabados1 = {
-                                            acabados: acabados[g],
-                                            productosPresupuestoPedidos: prodAca[w - 1]
-                                        };
-                                        this.subscribeToSaveResponse(this.acabadosProductosPresupuestoPedidoService.create(acabados1));
+                        if (altoTexto != '') {
+                            alto[contadorAlto] = altoTexto;
+                            contadorAlto++;
+                        }
+                        if (fondoTexto != '') {
+                            fondo[contadorFondo] = fondoTexto;
+                            contadorFondo++;
+                        }
+
+                        if (nombre != '' && anchoTexto != '' && altoTexto != '' && fondoTexto != '') {
+                            for (let k = 0; k < productos.length; k++) {
+                                if (productos[k]['nombre'] == nombre) {
+                                    productosFinal[contadorProductos] = productos[k];
+                                    contadorProductos++;
+                                }
+                            }
+                            for (let h = 0; h < todasDimensiones.length; h++) {
+                                if (
+                                    todasDimensiones[h]['ancho'] == anchoTexto &&
+                                    todasDimensiones[h]['alto'] == altoTexto &&
+                                    todasDimensiones[h]['fondo'] == fondoTexto &&
+                                    nombre == todasDimensiones[h]['productosDormitorio']['nombre']
+                                ) {
+                                    dimensionesFinal[contadorDimension] = todasDimensiones[h];
+                                    contadorDimension++;
+                                } else {
+                                    if (todasDimensiones[h]['id'] == idDimenEsp && todasDimensiones[h]['mensaje'] == 'Medidas Especiales') {
+                                        todasDimensiones[h]['precio'] = precioTexto;
+                                        todasDimensiones[h]['alto'] = altoTexto;
+                                        todasDimensiones[h]['ancho'] = anchoTexto;
+                                        todasDimensiones[h]['fondo'] = fondoTexto;
+                                        dimensionesFinal[contadorDimension] = todasDimensiones[h];
+                                        contadorDimension++;
                                     }
                                 }
                             }
                         }
                     }
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
+
+                    this.isSaving = true;
+                    var usuarios = this.user;
+                    var usuario;
+                    var idUsu = this.currentAccount['id'];
+                    for (let i = 0; i < usuarios.length; i++) {
+                        if (usuarios[i]['id'] == idUsu) {
+                            usuario = usuarios[i];
+                        }
+                    }
+                    var d = new Date();
+
+                    var month = d.getMonth() + 1;
+                    var day = d.getDate();
+
+                    var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
+
+                    const prueba = {
+                        codigo: 'PR-' + usuario['id'],
+                        pedido: 0,
+                        user: usuario,
+                        fecha_presupuesto: output
+                    };
+                    this.presupuestoPedido = prueba;
+                    this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
+                    var presupuesto = this.presupuesto;
+                    var id = localStorage.getItem('ultimoPresupuesto');
+                    var id1 = parseFloat(id);
+                    id1 = id1 + 1;
+                    localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
+                    var idDefinitiva;
+                    this.presupuestoPedidoService
+                        .query({
+                            size: 10000
+                        })
+                        .subscribe(
+                            (res: HttpResponse<IPresupuestoPedido[]>) => {
+                                var aux = [];
+                                for (let w = 0; w < res.body.length; w++) {
+                                    if (aux.length == 0 || aux[0]['id'] < res.body[w]['id']) {
+                                        aux[0] = res.body[w];
+                                    }
+                                }
+                                idDefinitiva = aux[0]['id'] + 1;
+                                const prueba1 = {
+                                    id: aux[0]['id'],
+                                    codigo: 'PR-' + usuario['id'],
+                                    pedido: 0,
+                                    user: usuario,
+                                    fecha_presupuesto: output
+                                };
+                                var prodPrePed;
+                                for (let m = 0; m < productosFinal.length; m++) {
+                                    if (apoyosFinal[m] == undefined) {
+                                        prodPrePed = {
+                                            productosDormitorio: productosFinal[m],
+                                            presupuestoPedido: prueba1,
+                                            dimensionesProductoTipo: dimensionesFinal[m]
+                                        };
+                                    } else {
+                                        prodPrePed = {
+                                            productosDormitorio: productosFinal[m],
+                                            presupuestoPedido: prueba1,
+                                            dimensionesProductoTipo: dimensionesFinal[m],
+                                            tiposApoyo: apoyosFinal[m]
+                                        };
+                                    }
+
+                                    prodAca[m] = prodPrePed;
+                                    prodIlu[m] = prodPrePed;
+                                    dimensionEspecialBien[m] = prodPrePed;
+                                    this.productosPresupuestoPedidos = prodPrePed;
+                                    this.subscribeToSaveResponse1(
+                                        this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                    );
+                                    if (dimensionesFinal[m]['mensaje'] == 'Medidas Especiales') {
+                                        var acaPedProd = this.acaProdPed.length;
+                                        acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                        dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
+                                        const medEsp = {
+                                            productosPresupuestoPedidos: dimensionEspecialBien[m],
+                                            ancho: dimensionesFinal[m]['ancho'],
+                                            fondo: dimensionesFinal[m]['fondo'],
+                                            alto: dimensionesFinal[m]['alto'],
+                                            precio: dimensionesFinal[m]['precio']
+                                        };
+                                        this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
+                                    }
+                                    if (iluFinal[m] != undefined && iluFinal[m] != '') {
+                                        var acaPedProd = this.acaProdPed.length;
+                                        acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                        prodIlu[m]['id'] = acaPedProd['id'] + m + 1;
+                                        const iluProd = {
+                                            iluminacion: iluFinal[m],
+                                            productosPresupuestoPedidos: prodIlu[m]
+                                        };
+                                        this.subscribeToSaveResponse(this.iluminacionProdPrePedService.create(iluProd));
+                                    }
+                                }
+                                let b = 0;
+                                for (let w = 1; w < numeroAcaProd.length; w++) {
+                                    if (b != 0) {
+                                        b = numeroAcaProd[w];
+                                    }
+                                    for (b; b < nombreAcabado.length; b++) {
+                                        if (b <= numeroAcaProd[w]) {
+                                            for (let g = 0; g < acabados.length; g++) {
+                                                if (acabados[g]['nombre'] == nombreAcabado[b]) {
+                                                    var acaPedProd = this.acaProdPed.length;
+                                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                                    prodAca[w - 1]['id'] = acaPedProd['id'] + w;
+                                                    const acabados1 = {
+                                                        acabados: acabados[g],
+                                                        productosPresupuestoPedidos: prodAca[w - 1]
+                                                    };
+                                                    this.subscribeToSaveResponse(
+                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                    );
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            (res: HttpErrorResponse) => this.onError(res.message)
+                        );
+                }
+            });
     }
 
     loadAll() {
         var productos = [];
+        var apoyos = [];
         var cont = 0;
-        this.productosDormitorioService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(
-                (res: HttpResponse<IProductosDormitorio[]>) => {
-                    for (let i = 0; i < res.body.length; i++) {
-                        if (res.body[i]['categoriasDormiId'] == 8) {
-                            productos[cont] = res.body[i];
-                            cont++;
-                        }
-                    }
-                    this.productosDormitorios = productos;
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
+        var todos = this.productosDormitorioService.todos;
+        this.apoyos = this.productosDormitorioService.todos;
+        for (let i = 0; i < todos.length; i++) {
+            if (todos[i]['categoriasDormiId'] == 8) {
+                productos[cont] = todos[i];
+                cont++;
+            }
+        }
+        this.productosDormitorios = productos;
     }
 
     loadPage(page: number) {
@@ -2464,33 +2483,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
     ngOnInit() {
         var todasDimensiones = [];
         var contDimenTipo = 0;
-        this.dimensionesProductoTipoService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                for (let k = 0; k < data.body.length; k++) {
-                    if (data.body[k]['productosDormitorio']['categoriasDormi']['id'] == 8) {
-                        todasDimensiones[contDimenTipo] = data.body[k];
-                        contDimenTipo++;
-                    }
-                }
-                this.todasDimensiones = todasDimensiones;
-            });
-        this.pruebaCargar();
         this.loadAll();
+        this.pruebaCargar();
 
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
         this.precioTienda = sessionStorage.getItem('precioTienda');
-        this.registerChangeInProductosDormitorios();
     }
 
     ngOnDestroy() {
-        this.eventManager.destroy(this.eventSubscriber);
+        this.eventSubscriber;
     }
 
     byteSize(field) {
@@ -2564,9 +2567,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         this.jhiAlertService.error(errorMessage, null, null);
     }
     public pruebaCargar() {
-        $('body').append(
-            '<div style="width:100%;height:100%;background-color:gray;opacity:0.5;bottom: 0;position:absolute;left: 0;" id="divFOndo"></div>'
-        );
         var todasDimensiones = [];
         var apoyo = [];
         var usuarios = [];
@@ -2577,40 +2577,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
         var interiores = [];
         var especiales = [];
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        var preciosTiendas;
-        this.precioTiendaService
-            .query({
-                size: 100000
-            })
-            .subscribe(
-                (res: HttpResponse<IPrecioTienda[]>) => {
-                    for (let a = 0; a < res.body.length; a++) {
-                        if (tienda['id'] == res.body[a]['datosUsuario']['id']) {
-                            preciosTiendas = res.body[a]['precio'];
-                        }
-                    }
-                    this.precioTienda1 = preciosTiendas;
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
-
-        this.interioresService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    interiores[i] = data.body[i];
-                    sessionStorage.setItem('interiores', JSON.stringify(interiores));
-                }
-            });
-        this.interiores = interiores;
 
         this.iluminacionService
             .query({
-                size: 1000000
+                size: 100000
             })
             .subscribe(data => {
                 for (let i = 0; i < data['body'].length; i++) {
@@ -2619,29 +2589,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             });
         this.iluminacion = ilu;
 
-        this.productosPresupuestoPedidosService
-            .query({
-                size: 1000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    numeroProductos[i] = data.body[i];
-                }
-            });
-        this.acaProdPed = numeroProductos;
-
-        this.tiposApoyoService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    sistemasApoyo[i] = data.body[i];
-                }
-            });
-        this.sistemasApoyo = sistemasApoyo;
         this.acabadosService
             .query({
                 page: this.page - 1,
@@ -2667,7 +2614,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             });
         this.user = usuarios;
 
-        this.productosDormitorioService
+        this.tiposApoyoService
             .query({
                 page: this.page - 1,
                 size: this.itemsPerPage,
@@ -2675,10 +2622,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
             })
             .subscribe(data => {
                 for (let i = 0; i < data.body.length; i++) {
-                    apoyo[i] = data.body[i];
+                    sistemasApoyo[i] = data.body[i];
                 }
             });
-        this.apoyo = apoyo;
+        this.sistemasApoyo = sistemasApoyo;
 
         for (let i = 1; i <= 100; i++) {
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
@@ -2754,34 +2701,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy, AfterV
                 }
             }
         }
-        this.medidasEspecialesService
-            .query({
-                size: 1000000
-            })
-            .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    especiales[index] = value;
-                });
-            });
-        this.especiales = especiales;
-        var acaprodCont = 0;
-        var acaProdSer = [];
-        this.acaProdService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    if (data.body[i]['productosDormitorio']['categoriasDormi']['id'] == 8) {
-                        acaProdSer[acaprodCont] = data.body[i];
-                        acaprodCont++;
-                    }
-                }
-                this.acaProdsCar = acaProdSer;
-                $('#divFOndo').remove();
-            });
+        this.eventSubscriber = Subscription;
     }
-    ngAfterViewInit() {}
 }

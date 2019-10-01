@@ -6,6 +6,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2Webstorage } from 'ngx-webstorage';
 import { NgJhipsterModule } from 'ng-jhipster';
+import { CookieService } from 'ngx-cookie-service';
+import { CookieModule } from 'ngx-cookie';
 
 import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
@@ -37,7 +39,8 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         TorgaPedidosCoreModule,
         TorgaPedidosHomeModule,
         TorgaPedidosAccountModule,
-        TorgaPedidosEntityModule
+        TorgaPedidosEntityModule,
+        CookieModule.forRoot()
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [
@@ -60,7 +63,8 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
             provide: HTTP_INTERCEPTORS,
             useClass: NotificationInterceptor,
             multi: true
-        }
+        },
+        CookieService
     ],
     bootstrap: [JhiMainComponent]
 })

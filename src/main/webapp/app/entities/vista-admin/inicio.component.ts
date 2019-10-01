@@ -50,6 +50,7 @@ export class inicioComponent implements OnInit, AfterViewInit {
         protected contactoFabricaService: ContactoFabricaService,
         private eventManager: JhiEventManager,
         protected mensajesService: MensajesService,
+        protected precioTiendaService: PrecioTiendaService,
         private loginService: LoginService,
         private router: Router,
         protected activatedRoute: ActivatedRoute,
@@ -289,6 +290,23 @@ export class inicioComponent implements OnInit, AfterViewInit {
         var usuarioContacto = this.accountService.userIdentity;
         var contacto = this.contacto;
         var mensajes = this.mensajes;
+        var tiendaUsuario = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        var preciosTiendas;
+        this.precioTiendaService
+            .query({
+                size: 100000
+            })
+            .subscribe(
+                (res: HttpResponse<IPrecioTienda[]>) => {
+                    for (let a = 0; a < res.body.length; a++) {
+                        if (tiendaUsuario['id'] == res.body[a]['datosUsuario']['id']) {
+                            preciosTiendas = res.body[a]['precio'];
+                        }
+                    }
+                    localStorage.setItem('preciosTiendas', JSON.stringify(preciosTiendas));
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
         setTimeout(function() {
             var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
 
