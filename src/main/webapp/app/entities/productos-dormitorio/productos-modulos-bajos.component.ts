@@ -198,7 +198,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         }
         var dimensionesPrueba = this.todasDimensiones;
 
-        var precioTienda1 = JSON.parse(localStorage.getItem('preciosTiendas'));
+        var precioTienda1 = localStorage.getItem('preciosTiendas');
         var precioTienda = this.precioTienda;
 
         this.dimensionesProductoTipoService.findProducto(producto).subscribe(data => {
