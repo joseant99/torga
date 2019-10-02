@@ -58,87 +58,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     ngAfterViewInit() {
-        var productos = [];
-        this.productosDormitorioService
-            .query({
-                size: 1000000
-            })
-            .subscribe(
-                (res: HttpResponse<IProductosDormitorio[]>) => {
-                    for (let i = 0; i < res.body.length; i++) {
-                        productos[i] = res.body[i];
-                    }
-
-                    this.productosDormitorioService.query1({
-                        productos
-                    });
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
-        var todasDimensiones = [];
-        this.dimensionesProductoTipoService
-            .query({
-                size: 1000000
-            })
-            .subscribe(data => {
-                for (let k = 0; k < data.body.length; k++) {
-                    todasDimensiones[k] = data.body[k];
-                }
-                this.dimensionesProductoTipoService.query1({
-                    todasDimensiones
-                });
-            });
-
         setTimeout(function() {
             var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-
             if (prueba['logo'] != undefined) {
                 this.logo = prueba;
                 $('#logoImagen').remove();
                 $('.logo-img').append('<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>');
             }
         }, 10);
-
-        var acaProdSer = [];
-        this.acaProdService
-            .query({
-                size: 1000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    acaProdSer[i] = data.body[i];
-                }
-                this.acaProdSer = acaProdSer;
-                this.acaProdService.query1({
-                    acaProdSer
-                });
-            });
-
-        var interiores = [];
-        this.interioresService
-            .query({
-                size: 100000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    interiores[i] = data.body[i];
-                }
-                sessionStorage.setItem('interiores', JSON.stringify(interiores));
-            });
-
-        var especiales = [];
-        this.medidasEspecialesService
-            .query({
-                size: 1000000
-            })
-            .subscribe(data => {
-                for (let w = 0; w < data.body.length; w++) {
-                    especiales[w] = data.body[w];
-                }
-                this.medidasEspecialesService.query1({
-                    especiales
-                });
-            });
     }
     ngOnInit() {
         this.languageHelper.getAll().then(languages => {
@@ -183,90 +110,24 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             this.accountService.identity().then(account => {
                 this.account = account;
             });
-            var productos = [];
-            this.productosDormitorioService
-                .query({
-                    size: 1000000
-                })
-                .subscribe(
-                    (res: HttpResponse<IProductosDormitorio[]>) => {
-                        for (let i = 0; i < res.body.length; i++) {
-                            productos[i] = res.body[i];
-                        }
-
-                        this.productosDormitorioService.query1({
-                            productos
-                        });
-                    },
-                    (res: HttpErrorResponse) => this.onError(res.message)
-                );
-
-            var todasDimensiones = [];
-            this.dimensionesProductoTipoService
-                .query({
-                    size: 1000000
-                })
-                .subscribe(data => {
-                    for (let k = 0; k < data.body.length; k++) {
-                        todasDimensiones[k] = data.body[k];
-                    }
-                    this.dimensionesProductoTipoService.query1({
-                        todasDimensiones
-                    });
-                });
-
             setTimeout(function() {
                 var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-
                 if (prueba['logo'] != undefined) {
                     this.logo = prueba;
                     $('#logoImagen').remove();
                     $('.logo-img').append('<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>');
                 }
             }, 10);
-
-            var acaProdSer = [];
-            this.acaProdService
-                .query({
-                    size: 1000
-                })
-                .subscribe(data => {
-                    for (let i = 0; i < data.body.length; i++) {
-                        acaProdSer[i] = data.body[i];
-                    }
-                    this.acaProdSer = acaProdSer;
-                    this.acaProdService.query1({
-                        acaProdSer
-                    });
-                });
-
-            var interiores = [];
-            this.interioresService
-                .query({
-                    size: 100000
-                })
-                .subscribe(data => {
-                    for (let i = 0; i < data.body.length; i++) {
-                        interiores[i] = data.body[i];
-                    }
-                    sessionStorage.setItem('interiores', JSON.stringify(interiores));
-                });
-
-            var especiales = [];
-            this.medidasEspecialesService
-                .query({
-                    size: 1000000
-                })
-                .subscribe(data => {
-                    for (let w = 0; w < data.body.length; w++) {
-                        especiales[w] = data.body[w];
-                    }
-                    this.medidasEspecialesService.query1({
-                        especiales
-                    });
-                });
         });
     }
+
+    public cargarProductosCategoria(id, url) {
+        this.productosDormitorioService.categoria(id).subscribe(data => {
+            this.productosDormitorioService.todos = data.body;
+            this.router.navigate(['/' + url + '']);
+        });
+    }
+
     changeLanguage(languageKey: string) {
         this.sessionStorage.store('locale', languageKey);
         this.languageService.changeLanguage(languageKey);

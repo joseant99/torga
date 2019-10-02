@@ -37,6 +37,7 @@ public interface ProductosDormitorioService {
      */
     Optional<ProductosDormitorioDTO> findOne(Long id);
 
+
     /**
      * Delete the "id" productosDormitorio.
      *

@@ -1,5 +1,6 @@
 package com.torga.pedidos.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.criteria.JoinType;
@@ -103,4 +104,8 @@ public class ProductosDormitorioQueryService extends QueryService<ProductosDormi
         }
         return specification;
     }
+
+	public Collection<ProductosDormitorio> findByCategoria(Long id) {
+		return (Collection<ProductosDormitorio>) (productosDormitorioRepository.findByCategoriaDormi(id));
+	}
 }

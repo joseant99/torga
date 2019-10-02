@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -96,6 +96,20 @@ public class DimensionesProductoTipoResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/dimensiones-producto-tipos");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
+    
+    
+    
+    @GetMapping("/dimensiones-producto-tipos-buscado-prod/{id}")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProducto(@PathVariable Long id) {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findProducto(id);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    
+    
+    
 
     /**
      * GET  /dimensiones-producto-tipos/:id : get the "id" dimensionesProductoTipo.

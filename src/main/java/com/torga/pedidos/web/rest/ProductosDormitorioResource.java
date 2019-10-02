@@ -7,6 +7,8 @@ import com.torga.pedidos.web.rest.util.HeaderUtil;
 import com.torga.pedidos.web.rest.util.PaginationUtil;
 import com.torga.pedidos.service.dto.ProductosDormitorioDTO;
 import com.torga.pedidos.service.dto.ProductosDormitorioCriteria;
+import com.torga.pedidos.domain.ProductosDormitorio;
+import com.torga.pedidos.repository.ProductosDormitorioRepository;
 import com.torga.pedidos.service.ProductosDormitorioQueryService;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
@@ -21,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -102,7 +104,14 @@ public class ProductosDormitorioResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/productos-dormitorios");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
+    
 
+    @GetMapping("/productos-dormitorios-categoria/{id}")
+    @Timed
+    public ResponseEntity<Collection<ProductosDormitorio>> getProductosDormitoriosCategoria(@PathVariable Long id) {
+        Collection<ProductosDormitorio> page =  (Collection<ProductosDormitorio>) productosDormitorioQueryService.findByCategoria(id);
+        return ResponseEntity.ok().body(page);
+    }
     /**
     * GET  /productos-dormitorios/count : count all the productosDormitorios.
     *
