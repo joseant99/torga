@@ -102,6 +102,14 @@ public class AcaProdResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, String.format("/api/aca-prods?eagerload=%b", eagerload));
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
+    
+    
+    @GetMapping("/aca-prods-id/{id}")
+    @Timed
+    public ResponseEntity<List<AcaProd>> getAllAcaProdsId(Pageable pageable, boolean eagerload, @PathVariable Long id) {
+            Page<AcaProd> page = acaProdRepository.findAllWithEagerRelationshipsProd(pageable,id);
+        return ResponseEntity.ok().body(page.getContent());
+    }
 
     /**
      * GET  /aca-prods/:id : get the "id" acaProd.

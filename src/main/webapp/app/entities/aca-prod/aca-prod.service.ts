@@ -12,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<IAcaProd[]>;
 @Injectable({ providedIn: 'root' })
 export class AcaProdService {
     public resourceUrl = SERVER_API_URL + 'api/aca-prods';
-    public todos = '';
+    public todos;
     constructor(protected http: HttpClient) {}
 
     create(acaProd: IAcaProd): Observable<EntityResponseType> {
@@ -38,5 +38,9 @@ export class AcaProdService {
 
     query1(req?: any): Observable<EntityArrayResponseType> {
         return (this.todos = req.acaProdSer);
+    }
+
+    findAca(id: number): Observable<EntityResponseType> {
+        return this.http.get<IAcaProd>(`${this.resourceUrl}-id/${id}`, { observe: 'response' });
     }
 }

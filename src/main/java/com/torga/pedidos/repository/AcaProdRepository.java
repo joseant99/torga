@@ -20,7 +20,11 @@ public interface AcaProdRepository extends JpaRepository<AcaProd, Long> {
     @Query(value = "select distinct aca_prod from AcaProd aca_prod left join fetch aca_prod.acabados",
         countQuery = "select count(distinct aca_prod) from AcaProd aca_prod")
     Page<AcaProd> findAllWithEagerRelationships(Pageable pageable);
-
+    
+    @Query(value = "select distinct aca_prod from AcaProd aca_prod left join fetch aca_prod.acabados where aca_prod.productosDormitorio.id =:id",
+            countQuery = "select count(distinct aca_prod) from AcaProd aca_prod")
+        Page<AcaProd> findAllWithEagerRelationshipsProd(Pageable pageable,@Param("id")Long id);
+    
     @Query(value = "select distinct aca_prod from AcaProd aca_prod left join fetch aca_prod.acabados")
     List<AcaProd> findAllWithEagerRelationships();
 

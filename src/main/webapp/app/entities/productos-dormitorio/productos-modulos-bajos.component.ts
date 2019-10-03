@@ -156,6 +156,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
             }
         }
+
         this.todasDimensiones = this.dimensionesProductoTipoService.todos;
         this.especiales = this.medidasEspecialesService.todos;
         $('#imagenAcabadoPrincipal').empty();
@@ -202,6 +203,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var precioTienda = this.precioTienda;
 
         this.dimensionesProductoTipoService.findProducto(producto).subscribe(data => {
+            this.dimensionesProductoTipoService.todos = data.body;
             var cont = 0;
             var dimensionesPrueba;
             dimensionesPrueba = data.body;
@@ -747,7 +749,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('#imagenAcabadoPrincipal').empty();
         var precioTienda = this.precioTienda;
         this.interiores = JSON.parse(sessionStorage.getItem('interiores'));
-        var dimensiones = this.todasDimensiones;
+        var dimensiones = this.dimensionesProductoTipoService.todos;
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
@@ -849,56 +851,59 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             var contnuevo = 1;
             var u = 1;
             var i = 0;
-            $.each(this.acaProdService.todos, function(index, value) {
-                if (value['productosDormitorio']['id'] == idProd) {
-                    imagen = value['imagen'];
-                    if (contador == 1) {
-                        $('#acabados #imagenAcabadoPrincipal').append(
-                            '<img id="imagenAcabado" src="data:image/gif;base64,' +
-                                imagen +
-                                '" class="imagenAcabadoPrincipalImg"  width="500px" height="333px">'
+            this.acaProdService.findAca(idProd).subscribe(data => {
+                this.acaProdService.todos = data.body;
+                $.each(this.acaProdService.todos, function(index, value) {
+                    if (value['productosDormitorio']['id'] == idProd) {
+                        imagen = value['imagen'];
+                        if (contador == 1) {
+                            $('#acabados #imagenAcabadoPrincipal').append(
+                                '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                                    imagen +
+                                    '" class="imagenAcabadoPrincipalImg"  width="500px" height="333px">'
+                            );
+                        }
+
+                        contador++;
+                        var idAca = value['id'];
+                        for (let m = 0; m < value['acabados'].length; m++) {
+                            $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
+                                '<img  src="data:image/gif;base64,' +
+                                    value['acabados'][m]['imagenFondo'] +
+                                    '" id="imagenAcabado' +
+                                    i +
+                                    '" class="' +
+                                    value['acabados'][m]['id'] +
+                                    '" height="160px" width="280px" style=" opacity: 0.7;">'
+                            );
+                            $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
+                                '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
+                                    value['acabados'][m]['nombre'] +
+                                    '</strong></p>'
+                            );
+
+                            i++;
+                            $('.cambiarAca' + u).attr('style');
+                            $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
+                            $('.cambiarAca' + u).css({ 'margin-top': '15px' });
+                            $('.cambiarAca' + u).text('Cambiar Acabado');
+                        }
+
+                        $('#aca1' + u).append(
+                            '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
+                                u +
+                                '">Acabado ' +
+                                u +
+                                '</button>'
                         );
+                        $('#aca1' + u).append(
+                            '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                        );
+                        u++;
+                        i = 0;
+                        contnuevo++;
                     }
-
-                    contador++;
-                    var idAca = value['id'];
-                    for (let m = 0; m < value['acabados'].length; m++) {
-                        $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                            '<img  src="data:image/gif;base64,' +
-                                value['acabados'][m]['imagenFondo'] +
-                                '" id="imagenAcabado' +
-                                i +
-                                '" class="' +
-                                value['acabados'][m]['id'] +
-                                '" height="160px" width="280px" style=" opacity: 0.7;">'
-                        );
-                        $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                            '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                                value['acabados'][m]['nombre'] +
-                                '</strong></p>'
-                        );
-
-                        i++;
-                        $('.cambiarAca' + u).attr('style');
-                        $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
-                        $('.cambiarAca' + u).css({ 'margin-top': '15px' });
-                        $('.cambiarAca' + u).text('Cambiar Acabado');
-                    }
-
-                    $('#aca1' + u).append(
-                        '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
-                            u +
-                            '">Acabado ' +
-                            u +
-                            '</button>'
-                    );
-                    $('#aca1' + u).append(
-                        '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
-                    );
-                    u++;
-                    i = 0;
-                    contnuevo++;
-                }
+                });
             });
         }
     }

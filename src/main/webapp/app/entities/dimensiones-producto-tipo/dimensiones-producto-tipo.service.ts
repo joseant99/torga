@@ -12,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<IDimensionesProductoTipo[]>;
 @Injectable({ providedIn: 'root' })
 export class DimensionesProductoTipoService {
     public resourceUrl = SERVER_API_URL + 'api/dimensiones-producto-tipos';
-    public todos = '';
+    public todos;
     constructor(protected http: HttpClient) {}
 
     create(dimensionesProductoTipo: IDimensionesProductoTipo): Observable<EntityResponseType> {
