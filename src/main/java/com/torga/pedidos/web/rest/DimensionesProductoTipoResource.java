@@ -107,6 +107,30 @@ public class DimensionesProductoTipoResource {
         return ResponseEntity.ok().body(page);
     }
     
+    @GetMapping("/dimensiones-producto-tipos-filtrado/{id}/{ancho}")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltrado(@PathVariable("id") Long id , @PathVariable("ancho") Float ancho ) {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findFiltro(id,ancho);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    @GetMapping("/dimensiones-producto-tipos-filtrado-altura/{id}/{altura}")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltradoAltura(@PathVariable("id") Long id , @PathVariable("altura") Float altura ) {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findFiltroAltura(id,altura);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    @GetMapping("/dimensiones-producto-tipos-filtrado-altura-ancho/{id}/{ancho}/{altura}")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltradoAlturaAncho(@PathVariable("id") Long id , @PathVariable("altura") Float altura , @PathVariable("ancho") Float ancho ) {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findFiltroAlturaAncho(id,altura,ancho);
+        return ResponseEntity.ok().body(page);
+    }
+    
     
     
     

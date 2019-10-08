@@ -40,7 +40,18 @@ export class DimensionesProductoTipoService {
         return (this.todos = req.todasDimensiones);
     }
 
-    findProducto(id: number): Observable<EntityResponseType> {
+    findProducto(id: any): Observable<EntityResponseType> {
         return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-buscado-prod/${id}`, { observe: 'response' });
+    }
+    findFiltro(id: number, ancho: any): Observable<EntityResponseType> {
+        return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-filtrado/${id}/${ancho}`, { observe: 'response' });
+    }
+    findFiltroAltura(id: number, altura: any): Observable<EntityResponseType> {
+        return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-filtrado-altura/${id}/${altura}`, { observe: 'response' });
+    }
+    findFiltroAlturaAncho(id: number, altura: any, ancho: any): Observable<EntityResponseType> {
+        return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-filtrado-altura-ancho/${id}/${ancho}/${altura}`, {
+            observe: 'response'
+        });
     }
 }

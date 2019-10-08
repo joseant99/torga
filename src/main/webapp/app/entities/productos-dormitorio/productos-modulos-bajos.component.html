@@ -11,7 +11,7 @@
 
     		<tr>
     			Ancho:
-    			<td style="border:1px solid black;width:95px;padding-left:10px" class="selectectAncho" id="ancho0">Indiferente</td>
+    			<td style="border:1px solid black;width:95px;padding-left:10px" class="selectectAncho" (click)='filtroAncho(0,"ancho")' id="ancho0">Indiferente</td>
 				<td style="border:1px solid black" id="ancho1" (click)='filtroAncho(1,"ancho")'>75</td>
 				<td style="border:1px solid black" id="ancho2" (click)='filtroAncho(2,"ancho")'>100</td>
 				<td style="border:1px solid black" id="ancho3" (click)='filtroAncho(3,"ancho")'>125</td>
@@ -21,7 +21,7 @@
     		</tr>
     		<tr>
     			Altura:
-    			<td style="border:1px solid black;width:95px;padding-left:10px" class="selectectAltura" id="altura0">Indiferente</td>
+    			<td style="border:1px solid black;width:95px;padding-left:10px" class="selectectAltura" (click)='filtroAncho(0,"altura")' id="altura0">Indiferente</td>
     			<td style="border:1px solid black" id="altura1" (click)='filtroAncho(1,"altura")'>27.5</td>
     			<td style="border:1px solid black" id="altura2" (click)='filtroAncho(2,"altura")'>50</td>
     		</tr>
@@ -33,32 +33,32 @@
     		</tr>
     	</tbody>
     </table>
-	    <div id="productosFiltrados">
-	    <div (click)='open1(1)' id="prod1" class="productoColor" style="float:left"></div>
-	    <div (click)='open1(2)' id="prod2" class="productoColor" style="float:left"></div>
-	    <div (click)='open1(3)' id="prod3" class="productoColor" style="float:left"></div>
-	    <div (click)='open1(4)' id="prod4" class="productoColor" style="float:left"></div>
-	    <div (click)='open1(5)' id="prod5" class="productoColor" style="float:left"></div>
-        <div (click)='open1(6)' id="prod6" class="productoColor" style="float:left"></div>
-        <div (click)='open1(7)' id="prod7" class="productoColor" style="float:left"></div>
-        <div (click)='open1(8)' id="prod8" class="productoColor" style="float:left"></div>
-        <div (click)='open1(9)' id="prod9" class="productoColor" style="float:left"></div>
-        <div (click)='open1(10)' id="prod10" class="productoColor" style="float:left"></div>
-        <div (click)='open1(11)' id="prod11" class="productoColor" style="float:left"></div>
-        <div (click)='open1(12)' id="prod12" class="productoColor" style="float:left"></div>
-        <div (click)='open1(13)' id="prod13" class="productoColor" style="float:left"></div>
-        <div (click)='open1(14)' id="prod14" class="productoColor" style="float:left"></div>
-        <div (click)='open1(15)' id="prod15" class="productoColor" style="float:left"></div>
-        <div (click)='open1(16)' id="prod16" class="productoColor" style="float:left"></div>
-        <div (click)='open1(17)' id="prod17" class="productoColor" style="float:left"></div>
-        <div (click)='open1(18)' id="prod18" class="productoColor" style="float:left"></div>
-        <div (click)='open1(19)' id="prod19" class="productoColor" style="float:left"></div>
-        <div (click)='open1(20)' id="prod20" class="productoColor" style="float:left"></div>
-        <div (click)='open1(21)' id="prod21" class="productoColor" style="float:left"></div>
-        <div (click)='open1(22)' id="prod22" class="productoColor" style="float:left"></div>
-        <div (click)='open1(23)' id="prod23" class="productoColor" style="float:left"></div>
-        <div (click)='open1(24)' id="prod24" class="productoColor" style="float:left"></div>
-    
+	    <div id="productosFiltrados" style="margin-top:4%">
+		    <div (click)='open1(1)' id="prod1" class="productoColor" style="float:left"></div>
+		    <div (click)='open1(2)' id="prod2" class="productoColor" style="float:left"></div>
+		    <div (click)='open1(3)' id="prod3" class="productoColor" style="float:left"></div>
+		    <div (click)='open1(4)' id="prod4" class="productoColor" style="float:left"></div>
+		    <div (click)='open1(5)' id="prod5" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(6)' id="prod6" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(7)' id="prod7" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(8)' id="prod8" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(9)' id="prod9" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(10)' id="prod10" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(11)' id="prod11" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(12)' id="prod12" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(13)' id="prod13" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(14)' id="prod14" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(15)' id="prod15" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(16)' id="prod16" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(17)' id="prod17" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(18)' id="prod18" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(19)' id="prod19" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(20)' id="prod20" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(21)' id="prod21" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(22)' id="prod22" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(23)' id="prod23" class="productoColor" style="float:left"></div>
+	        <div (click)='open1(24)' id="prod24" class="productoColor" style="float:left"></div>
+	    
     
     </div>
     <div id="ProductosCargados" style="margin-top:4%">
