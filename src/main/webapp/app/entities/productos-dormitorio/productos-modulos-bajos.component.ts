@@ -752,17 +752,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     var contador = 1;
                     $.each(data['body'], function(index, value) {
                         $('#ProductosCargados').css({ display: 'none' });
-                        var imagen = value[4]['imagen'];
+                        var imagen = value['productosDormitorio']['imagen'];
                         $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
                         $('.prodDiv' + contador).append(
                             '<p id="nombreMesita' +
                                 contador +
                                 '" class="' +
-                                value[4]['id'] +
+                                value['productosDormitorio']['id'] +
                                 '" style="text-align:center">' +
-                                value[4]['nombre'] +
+                                value['productosDormitorio']['nombre'] +
                                 '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                value[3] +
+                                value['precio'] +
                                 '</strong>&euro;</p>'
                         );
                         $('.prodDiv' + contador).append(
@@ -790,15 +790,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
                             $('#ProductosCargados').empty();
-                            var imagen = value[4]['imagen'];
+                            var imagen = value['productosDormitorio']['imagen'];
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
                                     contador +
                                     '" class="' +
-                                    value[4]['id'] +
+                                    value['productosDormitorio']['id'] +
                                     '" style="text-align:center">' +
-                                    value[4]['nombre'] +
+                                    value['productosDormitorio']['nombre'] +
                                     '</p><hr style="width:100%;color:black"></hr>'
                             );
                             $('.prodDiv' + contador).append(
@@ -839,16 +839,16 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $.each(data['body'], function(index, value) {
                             $('#ProductosCargados').css({ display: 'none' });
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
-                            var imagen = value[4]['imagen'];
+                            var imagen = value['productosDormitorio']['imagen'];
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
                                     contador +
                                     '" class="' +
-                                    value[4]['id'] +
+                                    value['productosDormitorio']['id'] +
                                     '" style="text-align:center">' +
-                                    value[4]['nombre'] +
+                                    value['productosDormitorio']['nombre'] +
                                     '-' +
-                                    value[1] +
+                                    value['alto'] +
                                     '</p><hr style="width:100%;color:black"></hr>'
                             );
                             $('.prodDiv' + contador).append(
@@ -874,15 +874,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     var contador = 1;
                     $.each(data['body'], function(index, value) {
                         $('#ProductosCargados').empty();
-                        var imagen = value[4]['imagen'];
+                        var imagen = value['productosDormitorio']['imagen'];
                         $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
                         $('.prodDiv' + contador).append(
                             '<p id="nombreMesita' +
                                 contador +
                                 '" class="' +
-                                value[4]['id'] +
+                                value['productosDormitorio']['id'] +
                                 '" style="text-align:center">' +
-                                value[4]['nombre'] +
+                                value['productosDormitorio']['nombre'] +
                                 '</p><hr style="width:100%;color:black"></hr>'
                         );
                         $('.prodDiv' + contador).append(
