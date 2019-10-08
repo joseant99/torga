@@ -683,6 +683,42 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     }
 
     public filtroAncho(id, filtro) {
+        $('#productoCalculadora1 #precios1').empty();
+        $('#productoCalculadora1 #precioCalculado1').empty();
+        $('#productoCalculadora1 #datos1').empty();
+        $('#nombreMesita').empty();
+        $('#precioDimension').empty();
+        $('#imagenAcabadoPrincipal').empty();
+        $('#total').empty();
+        $('.dimensionesColor1').empty();
+        $('.dimensionesColor2').empty();
+        $('.dimensionesColor3').empty();
+        $('.dimensionesColor4').empty();
+        $('.dimensionesColor5').empty();
+        $('.dimensionesColor6').empty();
+        $('.dimensionesColor1').css({ 'background-color': 'white' });
+        $('.dimensionesColor2').css({ 'background-color': 'white' });
+        $('.dimensionesColor3').css({ 'background-color': 'white' });
+        $('#iluminacion').removeAttr('style');
+        $('#iluminacion').attr('style');
+        $('#iluminacion').css({ display: 'none' });
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
+        $('.dimensionesColor4').css({ 'background-color': 'white' });
+        $('.dimensionesColor5').css({ 'background-color': 'white' });
+        $('.dimensionesColor6').css({ 'background-color': 'white' });
+        $('#imagenAcabado').remove();
+        $('#medidas').css({ display: 'none' });
+        $('#acabado').css({ display: 'none' });
+        $('.productosColor').css({ 'background-color': 'white' });
+        $('#nombreApoyoTitulo').css({ display: 'none' });
+        for (let i = 1; i <= 5; i++) {
+            $('.apoyoCogido' + i).empty();
+        }
+        for (let i = 1; i <= 15; i++) {
+            $('#aca1' + i).empty();
+        }
         if (filtro == 'ancho') {
             var altura = $('.selectectAltura').text();
             $('.productoColor').empty();
@@ -740,6 +776,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 });
             } else {
                 if (altura != 'Indiferente') {
+                    $('#ancho0').removeAttr('class');
+                    $('#ancho1').removeAttr('class');
+                    $('#ancho2').removeAttr('class');
+                    $('#ancho3').removeAttr('class');
+                    $('#ancho4').removeAttr('class');
+                    $('#ancho5').removeAttr('class');
+                    $('#ancho6').removeAttr('class');
                     $('#ancho' + id).attr('class', 'selectectAncho');
                     $('#ancho0').removeAttr('class');
                     var anchoFiltrado = $('#ancho' + id).text();

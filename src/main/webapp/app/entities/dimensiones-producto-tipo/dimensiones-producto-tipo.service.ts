@@ -39,7 +39,6 @@ export class DimensionesProductoTipoService {
     query1(req?: any): Observable<EntityArrayResponseType> {
         return (this.todos = req.todasDimensiones);
     }
-
     findProducto(id: any): Observable<EntityResponseType> {
         return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-buscado-prod/${id}`, { observe: 'response' });
     }
