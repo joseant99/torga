@@ -711,7 +711,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     $('#prod' + i).empty();
                 }
                 $('#ancho' + id).attr('class', 'selectectAncho');
-                var anchoFiltrado = $('#ancho' + id).text();
+                var anchoFiltrado = $('.selectectAncho').text();
                 this.dimensionesProductoTipoService.findFiltro(8, anchoFiltrado).subscribe(data => {
                     var contador = 1;
                     $.each(data['body'], function(index, value) {
