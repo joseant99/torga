@@ -19,12 +19,15 @@ public interface DimensionesProductoTipoRepository extends JpaRepository<Dimensi
 	@Query("SELECT u FROM DimensionesProductoTipo u WHERE u.productosDormitorio.id = ?1")
 	Collection<DimensionesProductoTipo> findProducto(Long id);
 	
-	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.ancho = ?2")
+	@Query("SELECT u FROM DimensionesProductoTipo u WHERE u.id = ?1")
+	Collection<DimensionesProductoTipo> findDimensiones(Long id);
+	
+	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.ancho = ?2")
 	Collection<DimensionesProductoTipo> findFiltro(Long id, Float ancho);
 	
-	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.alto = ?2")
+	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.alto = ?2")
 	Collection<DimensionesProductoTipo> findFiltroAltura(Long id, Float altura);
 	
-	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.alto = ?2 and u.ancho = ?3")
+	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.alto = ?2 and u.ancho = ?3")
 	Collection<DimensionesProductoTipo> findFiltroAlturaAncho(Long id, Float altura, Float ancho);
 }

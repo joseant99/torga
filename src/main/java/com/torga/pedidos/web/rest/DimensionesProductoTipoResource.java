@@ -107,6 +107,14 @@ public class DimensionesProductoTipoResource {
         return ResponseEntity.ok().body(page);
     }
     
+    @GetMapping("/dimensiones-producto-tipos-buscado-dimensiones/{id}")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimension(@PathVariable Long id) {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findDimensiones(id);
+        return ResponseEntity.ok().body(page);
+    }
+    
     @GetMapping("/dimensiones-producto-tipos-filtrado/{id}/{ancho}")
     @Timed
     public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltrado(@PathVariable("id") Long id , @PathVariable("ancho") Float ancho ) {

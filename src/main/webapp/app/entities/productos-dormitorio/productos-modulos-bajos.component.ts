@@ -422,7 +422,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
             }
         }
-        var producto = $('#nombreMesita' + producto1).attr('class');
+        var productoprueba = $('#nombreMesita' + producto1).attr('class');
+        var idDimen = productoprueba.split(' ')[1];
+        var producto = productoprueba.split(' ')[0];
         this.todasDimensiones = this.dimensionesProductoTipoService.todos;
         this.especiales = this.medidasEspecialesService.todos;
         $('#imagenAcabadoPrincipal').empty();
@@ -468,193 +470,384 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         precioTienda1 = localStorage.getItem('preciosTiendas');
         var precioTienda = this.precioTienda;
 
-        this.dimensionesProductoTipoService.findProducto(producto).subscribe(data => {
-            this.dimensionesProductoTipoService.todos = data.body;
-            var cont = 0;
-            var dimensionesPrueba;
-            dimensionesPrueba = data.body;
-            var datos = dimensionesPrueba;
+        var alturaFiltrado = $('.selectectAltura').text();
+        var anchoFiltrado = $('.selectectAncho').text();
 
-            for (let i = 0; i < datos.length; i++) {
-                if (producto == datos[i]['productosDormitorio']['id']) {
-                    $('#nombreMesita').text(datos[i]['productosDormitorio']['nombre']);
-                    if (cont == 0) {
-                        var image = document.createElement('img');
-                        var precio = parseFloat(datos[i]['precio']);
-                        precio = precio * precioTienda1;
-                        precio = precio * precioTienda;
-                        precio = Math.round(precio * 100) / 100;
-                        image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
-                        image.id = 'imagenDimensiones';
-                        $('.dimensionesColor1').append(
-                            '<p id="' +
-                                datos[i]['id'] +
-                                '" class="dimensionesId1">' +
-                                datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
-                        );
-                        $('.dimensionesColor1').append(
-                            '<img  src="data:image/gif;base64,' +
-                                datos[i]['imagen'] +
-                                '" id="imagenDimensiones" class="' +
-                                datos[i]['id'] +
-                                '" width="500px" height="333px" style=" opacity: 0.7;">'
-                        );
+        if (anchoFiltrado != 'Indiferente') {
+            this.dimensionesProductoTipoService.findDimension(idDimen).subscribe(data => {
+                this.dimensionesProductoTipoService.todos = data.body;
+                var cont = 0;
+                var dimensionesPrueba;
+                dimensionesPrueba = data.body;
+                var datos = dimensionesPrueba;
 
-                        $('.dimensionesColor1').append(
-                            '<div id="interiorMuebles" onclick="interior(1)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
-                        );
+                for (let i = 0; i < datos.length; i++) {
+                    if (producto == datos[i]['productosDormitorio']['id']) {
+                        $('#nombreMesita').text(datos[i]['productosDormitorio']['nombre']);
+                        if (cont == 0) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor1').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId1">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor1').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i]['id'] +
+                                    '" width="500px" height="333px" style=" opacity: 0.7;">'
+                            );
+
+                            $('.dimensionesColor1').append(
+                                '<div id="interiorMuebles" onclick="interior(1)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        if (cont == 1) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor2').append(
+                                '<p id="' + datos[i]['id'] + '" class="dimensionesId2">' + datos[i]['mensaje'] + '</p>'
+                            );
+                            $('.dimensionesColor2').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId1">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor2').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i] +
+                                    '" width="500px" height="333px"  style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor2').append(
+                                '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        if (cont == 2) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor3').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId3">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor3').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i] +
+                                    '" width="500px" height="333px" style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor3').append(
+                                '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        if (cont == 3) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor4').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId4">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor4').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i] +
+                                    '" width="500px" height="333px" style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor4').append(
+                                '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        if (cont == 4) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor5').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId5">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor5').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i] +
+                                    '" width="500px" height="333px"  style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor5').append(
+                                '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        if (cont == 5) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor6').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId6">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor6').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i] +
+                                    '"width="500px" height="333px"  style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor6').append(
+                                '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        cont++;
                     }
-                    if (cont == 1) {
-                        var image = document.createElement('img');
-                        var precio = parseFloat(datos[i]['precio']);
-                        precio = precio * precioTienda1;
-                        precio = precio * precioTienda;
-                        precio = Math.round(precio * 100) / 100;
-                        image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
-                        image.id = 'imagenDimensiones';
-                        $('.dimensionesColor2').append(
-                            '<p id="' + datos[i]['id'] + '" class="dimensionesId2">' + datos[i]['mensaje'] + '</p>'
-                        );
-                        $('.dimensionesColor2').append(
-                            '<p id="' +
-                                datos[i]['id'] +
-                                '" class="dimensionesId1">' +
-                                datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
-                        );
-                        $('.dimensionesColor2').append(
-                            '<img  src="data:image/gif;base64,' +
-                                datos[i]['imagen'] +
-                                '" id="imagenDimensiones" class="' +
-                                datos[i] +
-                                '" width="500px" height="333px"  style=" opacity: 0.7;">'
-                        );
-                        $('.dimensionesColor2').append(
-                            '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
-                        );
-                    }
-                    if (cont == 2) {
-                        var image = document.createElement('img');
-                        var precio = parseFloat(datos[i]['precio']);
-                        precio = precio * precioTienda1;
-                        precio = precio * precioTienda;
-                        precio = Math.round(precio * 100) / 100;
-                        image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
-                        image.id = 'imagenDimensiones';
-                        $('.dimensionesColor3').append(
-                            '<p id="' +
-                                datos[i]['id'] +
-                                '" class="dimensionesId3">' +
-                                datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
-                        );
-                        $('.dimensionesColor3').append(
-                            '<img  src="data:image/gif;base64,' +
-                                datos[i]['imagen'] +
-                                '" id="imagenDimensiones" class="' +
-                                datos[i] +
-                                '" width="500px" height="333px" style=" opacity: 0.7;">'
-                        );
-                        $('.dimensionesColor3').append(
-                            '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
-                        );
-                    }
-                    if (cont == 3) {
-                        var image = document.createElement('img');
-                        var precio = parseFloat(datos[i]['precio']);
-                        precio = precio * precioTienda1;
-                        precio = precio * precioTienda;
-                        precio = Math.round(precio * 100) / 100;
-                        image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
-                        image.id = 'imagenDimensiones';
-                        $('.dimensionesColor4').append(
-                            '<p id="' +
-                                datos[i]['id'] +
-                                '" class="dimensionesId4">' +
-                                datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
-                        );
-                        $('.dimensionesColor4').append(
-                            '<img  src="data:image/gif;base64,' +
-                                datos[i]['imagen'] +
-                                '" id="imagenDimensiones" class="' +
-                                datos[i] +
-                                '" width="500px" height="333px" style=" opacity: 0.7;">'
-                        );
-                        $('.dimensionesColor4').append(
-                            '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
-                        );
-                    }
-                    if (cont == 4) {
-                        var image = document.createElement('img');
-                        var precio = parseFloat(datos[i]['precio']);
-                        precio = precio * precioTienda1;
-                        precio = precio * precioTienda;
-                        precio = Math.round(precio * 100) / 100;
-                        image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
-                        image.id = 'imagenDimensiones';
-                        $('.dimensionesColor5').append(
-                            '<p id="' +
-                                datos[i]['id'] +
-                                '" class="dimensionesId5">' +
-                                datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
-                        );
-                        $('.dimensionesColor5').append(
-                            '<img  src="data:image/gif;base64,' +
-                                datos[i]['imagen'] +
-                                '" id="imagenDimensiones" class="' +
-                                datos[i] +
-                                '" width="500px" height="333px"  style=" opacity: 0.7;">'
-                        );
-                        $('.dimensionesColor5').append(
-                            '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
-                        );
-                    }
-                    if (cont == 5) {
-                        var image = document.createElement('img');
-                        var precio = parseFloat(datos[i]['precio']);
-                        precio = precio * precioTienda1;
-                        precio = precio * precioTienda;
-                        precio = Math.round(precio * 100) / 100;
-                        image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
-                        image.id = 'imagenDimensiones';
-                        $('.dimensionesColor6').append(
-                            '<p id="' +
-                                datos[i]['id'] +
-                                '" class="dimensionesId6">' +
-                                datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
-                        );
-                        $('.dimensionesColor6').append(
-                            '<img  src="data:image/gif;base64,' +
-                                datos[i]['imagen'] +
-                                '" id="imagenDimensiones" class="' +
-                                datos[i] +
-                                '"width="500px" height="333px"  style=" opacity: 0.7;">'
-                        );
-                        $('.dimensionesColor6').append(
-                            '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
-                        );
-                    }
-                    cont++;
                 }
-            }
-        });
+            });
+        } else {
+            this.dimensionesProductoTipoService.findProducto(producto).subscribe(data => {
+                this.dimensionesProductoTipoService.todos = data.body;
+                var cont = 0;
+                var dimensionesPrueba;
+                dimensionesPrueba = data.body;
+                var datos = dimensionesPrueba;
 
+                for (let i = 0; i < datos.length; i++) {
+                    if (producto == datos[i]['productosDormitorio']['id']) {
+                        $('#nombreMesita').text(datos[i]['productosDormitorio']['nombre']);
+                        if (cont == 0) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor1').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId1">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor1').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i]['id'] +
+                                    '" width="500px" height="333px" style=" opacity: 0.7;">'
+                            );
+
+                            $('.dimensionesColor1').append(
+                                '<div id="interiorMuebles" onclick="interior(1)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        if (cont == 1) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor2').append(
+                                '<p id="' + datos[i]['id'] + '" class="dimensionesId2">' + datos[i]['mensaje'] + '</p>'
+                            );
+                            $('.dimensionesColor2').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId1">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor2').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i] +
+                                    '" width="500px" height="333px"  style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor2').append(
+                                '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        if (cont == 2) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor3').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId3">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor3').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i] +
+                                    '" width="500px" height="333px" style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor3').append(
+                                '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        if (cont == 3) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor4').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId4">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor4').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i] +
+                                    '" width="500px" height="333px" style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor4').append(
+                                '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        if (cont == 4) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor5').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId5">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor5').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i] +
+                                    '" width="500px" height="333px"  style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor5').append(
+                                '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        if (cont == 5) {
+                            var image = document.createElement('img');
+                            var precio = parseFloat(datos[i]['precio']);
+                            precio = precio * precioTienda1;
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
+                            image.id = 'imagenDimensiones';
+                            $('.dimensionesColor6').append(
+                                '<p id="' +
+                                    datos[i]['id'] +
+                                    '" class="dimensionesId6">' +
+                                    datos[i]['mensaje'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
+                            );
+                            $('.dimensionesColor6').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    datos[i]['imagen'] +
+                                    '" id="imagenDimensiones" class="' +
+                                    datos[i] +
+                                    '"width="500px" height="333px"  style=" opacity: 0.7;">'
+                            );
+                            $('.dimensionesColor6').append(
+                                '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                            );
+                        }
+                        cont++;
+                    }
+                }
+            });
+        }
         $('.productoColor').css({ 'background-color': 'white' });
         $('#prod' + producto1).css({ 'background-color': '#DFDDDC' });
 
@@ -776,6 +969,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         contador +
                                         '" class="' +
                                         value[4]['id'] +
+                                        ' ' +
+                                        value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
                                         '-' +
@@ -824,6 +1019,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     contador +
                                     '" class="' +
                                     value[4]['id'] +
+                                    ' ' +
+                                    value[5] +
                                     '" style="text-align:center">' +
                                     value[4]['nombre'] +
                                     '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
@@ -864,6 +1061,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         contador +
                                         '" class="' +
                                         value[4]['id'] +
+                                        ' ' +
+                                        value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
                                         '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
@@ -936,6 +1135,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         contador +
                                         '" class="' +
                                         value[4]['id'] +
+                                        ' ' +
+                                        value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
                                         '-' +
@@ -980,6 +1181,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     contador +
                                     '" class="' +
                                     value[4]['id'] +
+                                    ' ' +
+                                    value[5] +
                                     '" style="text-align:center">' +
                                     value[4]['nombre'] +
                                     '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
@@ -1015,6 +1218,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     contador +
                                     '" class="' +
                                     value[4]['id'] +
+                                    ' ' +
+                                    value[5] +
                                     '" style="text-align:center">' +
                                     value[4]['nombre'] +
                                     '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
