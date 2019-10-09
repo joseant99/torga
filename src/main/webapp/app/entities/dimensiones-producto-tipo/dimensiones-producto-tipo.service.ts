@@ -53,6 +53,9 @@ export class DimensionesProductoTipoService {
             observe: 'response'
         });
     }
+    findFiltroFondo(id: number, fondo: any): Observable<EntityResponseType> {
+        return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-filtrado-fondo/${id}/${fondo}`, { observe: 'response' });
+    }
 
     findDimension(id: any): Observable<EntityResponseType> {
         return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-buscado-dimensiones/${id}`, { observe: 'response' });

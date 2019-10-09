@@ -123,6 +123,14 @@ public class DimensionesProductoTipoResource {
         return ResponseEntity.ok().body(page);
     }
     
+    @GetMapping("/dimensiones-producto-tipos-filtrado-fondo/{id}/{fondo}")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltradoFondo(@PathVariable("id") Long id , @PathVariable("fondo") Float fondo ) {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findFiltroFondo(id,fondo);
+        return ResponseEntity.ok().body(page);
+    }
+    
     @GetMapping("/dimensiones-producto-tipos-filtrado-altura/{id}/{altura}")
     @Timed
     public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltradoAltura(@PathVariable("id") Long id , @PathVariable("altura") Float altura ) {

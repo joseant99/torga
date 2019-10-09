@@ -30,4 +30,7 @@ public interface DimensionesProductoTipoRepository extends JpaRepository<Dimensi
 	
 	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.alto = ?2 and u.ancho = ?3")
 	Collection<DimensionesProductoTipo> findFiltroAlturaAncho(Long id, Float altura, Float ancho);
+	
+	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.fondo = ?2")
+	Collection<DimensionesProductoTipo> findFiltroFondo(Long id, Float fondo);
 }
