@@ -1811,12 +1811,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var nombre = $('#nombreMesita')
             .text()
             .toLowerCase();
+        var res = nombre.split(' ')[0];
+
         if (nombre == '1 cajon') {
             nombre = '1cajon';
         }
-        if (nombre == 'mb2') {
-            nombre = 'mb1';
+        if (res == 'mb2') {
+            res = 'mb1';
         }
+        nombre = res;
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
         var todosAcabados = this.acabados;
         $.each(todosAcabados, function(index, value) {
