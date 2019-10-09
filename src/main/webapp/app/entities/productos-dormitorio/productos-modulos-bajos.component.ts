@@ -914,7 +914,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         }
         if (filtro == 'ancho') {
             var altura = $('.selectectAltura').text();
-            $('.productoColor').empty();
+
             if (id == 0 && altura == 'Indiferente') {
                 for (let i = 1; i <= 24; i++) {
                     $('#prod' + i).empty();
@@ -929,6 +929,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $('#ancho6').removeAttr('class');
             } else {
                 if (altura != 'Indiferente' && id == 0) {
+                    for (let i = 1; i <= 24; i++) {
+                        $('#prod' + i).empty();
+                    }
                     $('#ancho0').attr('class', 'selectectAncho');
                     $('#ancho1').removeAttr('class');
                     $('#ancho2').removeAttr('class');
@@ -1051,7 +1054,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         this.dimensionesProductoTipoService.findFiltroAlturaAncho(8, altura, anchoFiltrado).subscribe(data => {
                             var contador = 1;
                             $.each(data['body'], function(index, value) {
-                                $('#ProductosCargados').empty();
                                 var imagen = value[4]['imagen'];
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
@@ -1210,7 +1212,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     this.dimensionesProductoTipoService.findFiltroAlturaAncho(8, alturaFiltrado, anchoFiltrado).subscribe(data => {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
-                            $('#ProductosCargados').empty();
                             var imagen = value[4]['imagen'];
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
                             $('.prodDiv' + contador).append(
