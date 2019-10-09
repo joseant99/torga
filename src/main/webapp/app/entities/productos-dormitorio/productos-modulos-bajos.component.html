@@ -1,6 +1,6 @@
 <div id="productosPrincipal">
     <h2 style="text-align:center" id="page-heading">
-        <span ><strong>Modulos Bajos</strong></span>
+        <span ><strong>MODULOS BAJOS</strong></span>
 
     </h2>
     <jhi-alert></jhi-alert>
@@ -62,6 +62,7 @@
     
     </div>
     <div id="ProductosCargados" style="margin-top:4%">
+    	<h2 style="text-align:center;margin-bottom:4%">PASO 1: Escoge Modelo</h2>
         <div *ngFor="let productosDormitorio of productosDormitorios" [id]='productosDormitorio.id' class="productosColor">
     	<div id="productosDormitorioCargados">
 	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
@@ -71,7 +72,7 @@
     </div>
 	<div id="dimensiones"style="width:100%;float:left;">
 
-		<h2 id="medidas" style='margin-left:40%;float:left;display:none'>2.Medidas</h2>
+		<h2 id="medidas" style='margin-left:40%;float:left;display:none'>Paso 2: Medidas</h2>
 		</br>		
 		
 		<div id="dimensionesColorStyle" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
@@ -111,7 +112,7 @@
 	</div>
 	<div id="acabados"style="width:100%;float:left">
 
-			<h2 id="acabado" style='margin-left:40%;float:left;display:none'>3.Acabados</h2>
+			<h2 id="acabado" style='margin-left:40%;float:left;display:none'>Paso 3: Acabados</h2>
 			<div id="imagenAcabadoPrincipal"></div>
 			<div id="acabadosPartesDivs">
 				<div id="aca11" style="float:left"></div>
@@ -134,7 +135,7 @@
 
 	</div>  
 	<div id="apoyo"style="width:100%;float:left;margin-top:50px">
-			<h2 id="nombreApoyoTitulo" style='margin-left:40%;float:left;display:none'>4.Sistema de Apoyo</h2>
+			<h2 id="nombreApoyoTitulo" style='margin-left:40%;float:left;display:none'>Paso 4: Sistema de Apoyo</h2>
 			</br>	
 			<div style="float:left;width:100%;margin-bottom:50px">
 				<div id="apoyoStyle" class="apoyoCogido1" (click)="apoyoCogido(1)"> 
@@ -160,7 +161,7 @@
 	</div>  	
 	
 	<div id="iluminacion"style="display:none">
-		<h2 id="iluminacionTexto" style="margin-left:40%">5.Iluminacion</h2>
+		<h2 id="iluminacionTexto" style="margin-left:40%">Paso 5: Iluminacion</h2>
 		<div id="ilu1"><img id="imagenIlu" src="../../../content/images/si.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(1)'>
 		</div>	
 		<div id="ilu2"><img id="imagenIlu" src="../../../content/images/no.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(2)'>
