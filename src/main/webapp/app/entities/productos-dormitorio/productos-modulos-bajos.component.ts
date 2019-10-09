@@ -834,34 +834,59 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     $('#altura2').removeAttr('class');
                     $('#altura' + id).attr('class', 'selectectAltura');
                     $('#altura0').removeAttr('class');
+                    var idAux = [];
+                    var saberNumero = 1;
                     var altura = $('.selectectAltura').text();
                     var alturaFiltrado = $('#altura' + id).text();
                     this.dimensionesProductoTipoService.findFiltroAltura(8, alturaFiltrado).subscribe(data => {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
-                            $('#ProductosCargados').css({ display: 'none' });
-                            $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
-                            var imagen = value[4]['imagen'];
-                            $('.prodDiv' + contador).append(
-                                '<p id="nombreMesita' +
-                                    contador +
-                                    '" class="' +
-                                    value[4]['id'] +
-                                    '" style="text-align:center">' +
-                                    value[4]['nombre'] +
-                                    '-' +
-                                    value[0] +
-                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                    value[3] +
-                                    '</strong>&euro;</p>'
-                            );
-                            $('.prodDiv' + contador).append(
-                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                    imagen +
-                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                            );
-                            $('#prod' + contador).css({ border: '1px solid #dfdddc' });
-                            contador++;
+                            if (idAux[0] == undefined) {
+                                idAux[0] = value[4]['id'];
+                            }
+                            for (let i = 0; i < contador; i++) {
+                                if (idAux[i] != value[4]['id']) {
+                                    if (saberNumero != 0) {
+                                        saberNumero = 1;
+                                    }
+                                } else {
+                                    saberNumero = 0;
+                                }
+                            }
+                            if (idAux[1] == undefined) {
+                                saberNumero = 1;
+                            }
+                            if (saberNumero == 1) {
+                                idAux[idAux.length] = value[4]['id'];
+                                $('#ProductosCargados').css({ display: 'none' });
+                                $('#prod' + contador).append(
+                                    '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
+                                );
+                                var imagen = value[4]['imagen'];
+                                $('.prodDiv' + contador).append(
+                                    '<p id="nombreMesita' +
+                                        contador +
+                                        '" class="' +
+                                        value[4]['id'] +
+                                        '" style="text-align:center">' +
+                                        value[4]['nombre'] +
+                                        '-' +
+                                        value[0] +
+                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
+                                        value[3] +
+                                        '</strong>&euro;</p>'
+                                );
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                );
+                                $('#prod' + contador).css({ border: '1px solid #dfdddc' });
+                                contador++;
+                                saberNumero = 1;
+                            } else {
+                                saberNumero = 1;
+                            }
                         });
                     });
                 }
