@@ -959,40 +959,78 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     });
                 }
             } else {
-                $('#altura1').removeAttr('class');
-                $('#altura2').removeAttr('class');
-                $('#altura' + id).attr('class', 'selectectAltura');
-                $('#altura0').removeAttr('class');
-                var altura = '';
-                altura = $('.selectectAltura').text();
-                var alturaFiltrado = '';
-                alturaFiltrado = $('#altura' + id).text();
-                this.dimensionesProductoTipoService.findFiltroAlturaAncho(8, alturaFiltrado, anchoFiltrado).subscribe(data => {
-                    var contador = 1;
-                    $.each(data['body'], function(index, value) {
-                        $('#ProductosCargados').empty();
-                        var imagen = value[4]['imagen'];
-                        $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
-                        $('.prodDiv' + contador).append(
-                            '<p id="nombreMesita' +
-                                contador +
-                                '" class="' +
-                                value[4]['id'] +
-                                '" style="text-align:center">' +
-                                value[4]['nombre'] +
-                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                value[3] +
-                                '</strong>&euro;</p>'
-                        );
-                        $('.prodDiv' + contador).append(
-                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                imagen +
-                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                        );
-                        $('#prod' + contador).css({ border: '1px solid #dfdddc' });
-                        contador++;
+                if (id == 0) {
+                    for (let i = 1; i <= 24; i++) {
+                        $('#prod' + i).empty();
+                    }
+                    $('#ProductosCargados').css({ display: 'block' });
+                    $('#altura0').attr('class', 'selectectAltura');
+                    $('#altura1').removeAttr('class');
+                    $('#altura2').removeAttr('class');
+
+                    var anchoFiltrado = $('.selectectAncho').text();
+                    this.dimensionesProductoTipoService.findFiltro(8, anchoFiltrado).subscribe(data => {
+                        var contador = 1;
+                        $.each(data['body'], function(index, value) {
+                            $('#ProductosCargados').css({ display: 'none' });
+                            var imagen = value[4]['imagen'];
+                            $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
+                            $('.prodDiv' + contador).append(
+                                '<p id="nombreMesita' +
+                                    contador +
+                                    '" class="' +
+                                    value[4]['id'] +
+                                    '" style="text-align:center">' +
+                                    value[4]['nombre'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
+                                    value[3] +
+                                    '</strong>&euro;</p>'
+                            );
+                            $('.prodDiv' + contador).append(
+                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                    imagen +
+                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                            );
+                            $('#prod' + contador).css({ border: '1px solid #dfdddc' });
+                            contador++;
+                        });
                     });
-                });
+                } else {
+                    $('#altura1').removeAttr('class');
+                    $('#altura2').removeAttr('class');
+                    $('#altura' + id).attr('class', 'selectectAltura');
+                    $('#altura0').removeAttr('class');
+                    var altura = '';
+                    altura = $('.selectectAltura').text();
+                    var alturaFiltrado = '';
+                    alturaFiltrado = $('#altura' + id).text();
+                    this.dimensionesProductoTipoService.findFiltroAlturaAncho(8, alturaFiltrado, anchoFiltrado).subscribe(data => {
+                        var contador = 1;
+                        $.each(data['body'], function(index, value) {
+                            $('#ProductosCargados').empty();
+                            var imagen = value[4]['imagen'];
+                            $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
+                            $('.prodDiv' + contador).append(
+                                '<p id="nombreMesita' +
+                                    contador +
+                                    '" class="' +
+                                    value[4]['id'] +
+                                    '" style="text-align:center">' +
+                                    value[4]['nombre'] +
+                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
+                                    value[3] +
+                                    '</strong>&euro;</p>'
+                            );
+                            $('.prodDiv' + contador).append(
+                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                    imagen +
+                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                            );
+                            $('#prod' + contador).css({ border: '1px solid #dfdddc' });
+                            contador++;
+                        });
+                    });
+                }
             }
         }
     }
