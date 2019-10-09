@@ -221,7 +221,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor1').append(
-                            '<p id="' +
+                            '<p style="text-align:center" id="' +
                                 datos[i]['id'] +
                                 '" class="dimensionesId1">' +
                                 datos[i]['mensaje'] +
@@ -250,10 +250,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor2').append(
-                            '<p id="' + datos[i]['id'] + '" class="dimensionesId2">' + datos[i]['mensaje'] + '</p>'
-                        );
-                        $('.dimensionesColor2').append(
-                            '<p id="' +
+                            '<p style="text-align:center" id="' +
                                 datos[i]['id'] +
                                 '" class="dimensionesId1">' +
                                 datos[i]['mensaje'] +
@@ -281,7 +278,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor3').append(
-                            '<p id="' +
+                            '<p style="text-align:center" id="' +
                                 datos[i]['id'] +
                                 '" class="dimensionesId3">' +
                                 datos[i]['mensaje'] +
@@ -309,7 +306,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor4').append(
-                            '<p id="' +
+                            '<p style="text-align:center" id="' +
                                 datos[i]['id'] +
                                 '" class="dimensionesId4">' +
                                 datos[i]['mensaje'] +
@@ -337,7 +334,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor5').append(
-                            '<p id="' +
+                            '<p style="text-align:center" id="' +
                                 datos[i]['id'] +
                                 '" class="dimensionesId5">' +
                                 datos[i]['mensaje'] +
@@ -365,7 +362,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor6').append(
-                            '<p id="' +
+                            '<p style="text-align:center" id="' +
                                 datos[i]['id'] +
                                 '" class="dimensionesId6">' +
                                 datos[i]['mensaje'] +
@@ -493,7 +490,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor1').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId1">' +
                                     datos[i]['mensaje'] +
@@ -521,11 +518,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
+
                             $('.dimensionesColor2').append(
-                                '<p id="' + datos[i]['id'] + '" class="dimensionesId2">' + datos[i]['mensaje'] + '</p>'
-                            );
-                            $('.dimensionesColor2').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId1">' +
                                     datos[i]['mensaje'] +
@@ -553,7 +548,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor3').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId3">' +
                                     datos[i]['mensaje'] +
@@ -581,7 +576,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor4').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId4">' +
                                     datos[i]['mensaje'] +
@@ -609,7 +604,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor5').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId5">' +
                                     datos[i]['mensaje'] +
@@ -637,7 +632,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor6').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId6">' +
                                     datos[i]['mensaje'] +
@@ -680,7 +675,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor1').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId1">' +
                                     datos[i]['mensaje'] +
@@ -708,11 +703,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
+
                             $('.dimensionesColor2').append(
-                                '<p id="' + datos[i]['id'] + '" class="dimensionesId2">' + datos[i]['mensaje'] + '</p>'
-                            );
-                            $('.dimensionesColor2').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId1">' +
                                     datos[i]['mensaje'] +
@@ -740,7 +733,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor3').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId3">' +
                                     datos[i]['mensaje'] +
@@ -768,7 +761,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor4').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId4">' +
                                     datos[i]['mensaje'] +
@@ -796,7 +789,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor5').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId5">' +
                                     datos[i]['mensaje'] +
@@ -824,7 +817,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor6').append(
-                                '<p id="' +
+                                '<p style="text-align:center" id="' +
                                     datos[i]['id'] +
                                     '" class="dimensionesId6">' +
                                     datos[i]['mensaje'] +
