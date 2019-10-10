@@ -131,6 +131,33 @@ public class DimensionesProductoTipoResource {
         return ResponseEntity.ok().body(page);
     }
     
+    
+    @GetMapping("/dimensiones-producto-tipos-filtrado-fondo-ancho/{id}/{fondo}/{ancho}")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltradoFondoAncho(@PathVariable("id") Long id , @PathVariable("fondo") Float fondo , @PathVariable("ancho") Float ancho ) {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findFiltroFondoAncho(id,fondo,ancho);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    @GetMapping("/dimensiones-producto-tipos-filtrado-fondo-alto/{id}/{fondo}/{alto}")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltradoFondoAlto(@PathVariable("id") Long id , @PathVariable("fondo") Float fondo , @PathVariable("alto") Float alto ) {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findFiltroFondoAlto(id,fondo,alto);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    
+    @GetMapping("/dimensiones-producto-tipos-filtrado-fondo-alto-ancho/{id}/{fondo}/{alto}/{ancho}")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltradoFondoAltoAncho(@PathVariable("id") Long id , @PathVariable("fondo") Float fondo , @PathVariable("alto") Float alto , @PathVariable("ancho") Float ancho ) {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findFiltroFondoAltoAncho(id,fondo,alto,ancho);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    
     @GetMapping("/dimensiones-producto-tipos-filtrado-altura/{id}/{altura}")
     @Timed
     public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltradoAltura(@PathVariable("id") Long id , @PathVariable("altura") Float altura ) {

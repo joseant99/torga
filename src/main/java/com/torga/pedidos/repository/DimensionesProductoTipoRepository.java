@@ -33,5 +33,14 @@ public interface DimensionesProductoTipoRepository extends JpaRepository<Dimensi
 	
 	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.fondo = ?2 order by u.productosDormitorio.nombre")
 	Collection<DimensionesProductoTipo> findFiltroFondo(Long id, Float fondo);
+	
+	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.fondo = ?2 and u.ancho =?3 order by u.productosDormitorio.nombre")
+	Collection<DimensionesProductoTipo> findFiltroFondoAncho(Long id, Float fondo, Float ancho);
+	
+	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.fondo = ?2 and u.alto =?3 order by u.productosDormitorio.nombre")
+	Collection<DimensionesProductoTipo> findFiltroFondoAlto(Long id, Float fondo, Float alto);
+	
+	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.fondo = ?2 and u.alto =?3 and u.ancho =?4 order by u.productosDormitorio.nombre")
+	Collection<DimensionesProductoTipo> findFiltroFondoAltoAncho(Long id, Float fondo, Float alto, Float ancho);
 }
  

@@ -57,6 +57,24 @@ export class DimensionesProductoTipoService {
         return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-filtrado-fondo/${id}/${fondo}`, { observe: 'response' });
     }
 
+    findFiltroFondoAncho(id: number, fondo: any, ancho: any): Observable<EntityResponseType> {
+        return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-filtrado-fondo-ancho/${id}/${fondo}/${ancho}`, {
+            observe: 'response'
+        });
+    }
+
+    findFiltroFondoAlto(id: number, fondo: any, alto: any): Observable<EntityResponseType> {
+        return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-filtrado-fondo-alto/${id}/${fondo}/${alto}`, {
+            observe: 'response'
+        });
+    }
+
+    findFiltroFondoAltoAncho(id: number, fondo: any, alto: any, ancho: any): Observable<EntityResponseType> {
+        return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-filtrado-fondo-alto-ancho/${id}/${fondo}/${alto}/${ancho}`, {
+            observe: 'response'
+        });
+    }
+
     findDimension(id: any): Observable<EntityResponseType> {
         return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-buscado-dimensiones/${id}`, { observe: 'response' });
     }
