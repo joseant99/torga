@@ -92,7 +92,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected userService: UserService,
         protected dimensionesProductoService: DimensionesProductoService,
-        protected productosDormitorioService: ProductosDormitorioService,
+        public productosDormitorioService: ProductosDormitorioService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
