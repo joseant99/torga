@@ -917,6 +917,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     $('#prod' + i).empty();
                 }
                 $('#ProductosCargados').css({ display: 'block' });
+                $('#ProductosCargados1').css({ display: 'block' });
                 $('#ancho0').attr('class', 'selectectAncho');
                 $('#ancho1').removeAttr('class');
                 $('#ancho2').removeAttr('class');
@@ -960,6 +961,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             if (saberNumero == 1) {
                                 idAux[idAux.length] = value[4]['id'];
                                 $('#ProductosCargados').css({ display: 'none' });
+                                $('#ProductosCargados1').css({ display: 'none' });
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
@@ -1012,6 +1014,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
                             $('#ProductosCargados').css({ display: 'none' });
+                            $('#ProductosCargados1').css({ display: 'none' });
                             var imagen = value[4]['imagen'];
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
                             $('.prodDiv' + contador).append(
@@ -1050,6 +1053,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         }
                         $('#ancho' + id).attr('class', 'selectectAncho');
                         $('#ancho0').removeAttr('class');
+                        $('#ProductosCargados1').css({ display: 'none' });
+                        $('#ProductosCargados').css({ display: 'none' });
                         var anchoFiltrado = $('#ancho' + id).text();
                         this.dimensionesProductoTipoService.findFiltroAlturaAncho(8, altura, anchoFiltrado).subscribe(data => {
                             var contador = 1;
@@ -1095,6 +1100,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $('#prod' + i).empty();
                     }
                     $('#ProductosCargados').css({ display: 'block' });
+                    $('#ProductosCargados1').css({ display: 'block' });
                     $('#altura0').attr('class', 'selectectAltura');
                     $('#altura1').removeAttr('class');
                     $('#altura2').removeAttr('class');
@@ -1128,6 +1134,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             if (saberNumero == 1) {
                                 idAux[idAux.length] = value[4]['id'];
                                 $('#ProductosCargados').css({ display: 'none' });
+                                $('#ProductosCargados1').css({ display: 'none' });
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
@@ -1167,6 +1174,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $('#prod' + i).empty();
                     }
                     $('#ProductosCargados').css({ display: 'block' });
+                    $('#ProductosCargados1').css({ display: 'block' });
                     $('#altura0').attr('class', 'selectectAltura');
                     $('#altura1').removeAttr('class');
                     $('#altura2').removeAttr('class');
@@ -1176,6 +1184,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
                             $('#ProductosCargados').css({ display: 'none' });
+                            $('#ProductosCargados1').css({ display: 'none' });
                             var imagen = value[4]['imagen'];
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
                             $('.prodDiv' + contador).append(
@@ -1209,6 +1218,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     altura = $('.selectectAltura').text();
                     var alturaFiltrado = '';
                     alturaFiltrado = $('#altura' + id).text();
+                    $('#ProductosCargados1').css({ display: 'none' });
+                    $('#ProductosCargados1').css({ display: 'none' });
                     this.dimensionesProductoTipoService.findFiltroAlturaAncho(8, alturaFiltrado, anchoFiltrado).subscribe(data => {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
@@ -1248,6 +1259,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $('#prod' + i).empty();
                     }
                     $('#ProductosCargados').css({ display: 'block' });
+                    $('#ProductosCargados1').css({ display: 'none' });
                     $('#fondo0').attr('class', 'selectectFondo');
                     $('#fondo1').removeAttr('class');
                     $('#fondo2').removeAttr('class');
@@ -1283,6 +1295,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             if (saberNumero == 1) {
                                 idAux[idAux.length] = value[4]['id'];
                                 $('#ProductosCargados').css({ display: 'none' });
+                                $('#ProductosCargados1').css({ display: 'none' });
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
@@ -1329,6 +1342,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             var contador = 1;
                             $.each(data['body'], function(index, value) {
                                 $('#ProductosCargados').css({ display: 'none' });
+                                $('#ProductosCargados1').css({ display: 'none' });
                                 var imagen = value[4]['imagen'];
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
@@ -1387,6 +1401,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     if (saberNumero == 1) {
                                         idAux[idAux.length] = value[4]['id'];
                                         $('#ProductosCargados').css({ display: 'none' });
+                                        $('#ProductosCargados1').css({ display: 'none' });
                                         $('#prod' + contador).append(
                                             '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                         );
@@ -1432,6 +1447,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     var contador = 1;
                                     $.each(data['body'], function(index, value) {
                                         var imagen = value[4]['imagen'];
+                                        $('#ProductosCargados').css({ display: 'none' });
+                                        $('#ProductosCargados1').css({ display: 'none' });
+
                                         $('#prod' + contador).append(
                                             '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                         );
@@ -1473,6 +1491,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
                         this.dimensionesProductoTipoService.findFiltroFondoAncho(8, fondoFiltrado, anchoFiltrado).subscribe(data => {
                             var contador = 1;
+                            $('#ProductosCargados').css({ display: 'none' });
+                            $('#ProductosCargados1').css({ display: 'none' });
                             $.each(data['body'], function(index, value) {
                                 var imagen = value[4]['imagen'];
                                 $('#prod' + contador).append(
@@ -1533,6 +1553,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     if (saberNumero == 1) {
                                         idAux[idAux.length] = value[4]['id'];
                                         $('#ProductosCargados').css({ display: 'none' });
+                                        $('#ProductosCargados1').css({ display: 'none' });
+
                                         $('#prod' + contador).append(
                                             '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                         );
@@ -1578,6 +1600,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     .findFiltroFondoAltoAncho(8, fondoFiltrado, altura, anchoFiltrado)
                                     .subscribe(data => {
                                         var contador = 1;
+                                        $('#ProductosCargados').css({ display: 'none' });
+                                        $('#ProductosCargados1').css({ display: 'none' });
+
                                         $.each(data['body'], function(index, value) {
                                             var imagen = value[4]['imagen'];
                                             $('#prod' + contador).append(
