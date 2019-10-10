@@ -225,7 +225,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['id'] +
                                 '" class="dimensionesId1">' +
                                 datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                 precio +
                                 '&euro;</strong></p>'
                         );
@@ -254,7 +254,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['id'] +
                                 '" class="dimensionesId1">' +
                                 datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                 precio +
                                 '&euro;</strong></p>'
                         );
@@ -282,7 +282,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['id'] +
                                 '" class="dimensionesId3">' +
                                 datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                 precio +
                                 '&euro;</strong></p>'
                         );
@@ -310,7 +310,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['id'] +
                                 '" class="dimensionesId4">' +
                                 datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                 precio +
                                 '&euro;</strong></p>'
                         );
@@ -338,7 +338,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['id'] +
                                 '" class="dimensionesId5">' +
                                 datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                 precio +
                                 '&euro;</strong></p>'
                         );
@@ -366,7 +366,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['id'] +
                                 '" class="dimensionesId6">' +
                                 datos[i]['mensaje'] +
-                                '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                 precio +
                                 '&euro;</strong></p>'
                         );
@@ -494,7 +494,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId1">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -524,7 +524,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId1">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -552,7 +552,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId3">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -580,7 +580,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId4">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -608,7 +608,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId5">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -636,7 +636,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId6">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -679,7 +679,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId1">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -709,7 +709,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId1">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -737,7 +737,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId3">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -765,7 +765,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId4">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -793,7 +793,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId5">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -821,7 +821,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['id'] +
                                     '" class="dimensionesId6">' +
                                     datos[i]['mensaje'] +
-                                    '</p><hr style="width:100%;color:black;margin-left:50px;margin-right:50px"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
+                                    '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
                                     precio +
                                     '&euro;</strong></p>'
                             );
@@ -869,6 +869,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     }
 
     public filtroAncho(id, filtro) {
+        $('.productoColor').css({ 'background-color': 'white' });
         $('#productoCalculadora1 #precios1').empty();
         $('#productoCalculadora1 #precioCalculado1').empty();
         $('#productoCalculadora1 #datos1').empty();
