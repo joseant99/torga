@@ -64,6 +64,14 @@
     </div>
     <div id="ProductosCargados" style="margin-top:4%">
     	
+        <div *ngFor="let productosDormitorio of productosDormitorios" [id]='productosDormitorio.id' class="productosColor">
+    	<div id="productosDormitorioCargados">
+	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
+	 		<img title="Foto de linea de codigo" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="333px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
+    	</div>
+    	</div>	
+    </div>
+    <div *ngIf="productosDormitorios === undefined" id="ProductosCargados" style="margin-top:4%">
         <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColor">
     	<div id="productosDormitorioCargados">
 	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
