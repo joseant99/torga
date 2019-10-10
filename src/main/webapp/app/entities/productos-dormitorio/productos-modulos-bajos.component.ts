@@ -388,7 +388,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
         $('.productosColor').css({ 'background-color': 'white' });
         $('#' + producto).css({ 'background-color': '#DFDDDC' });
-        $('#nombreMesita').text(productoNombre);
+        var nombreProductoEditado = productoNombre.split(' ')[0];
+        $('#nombreMesita').text(nombreProductoEditado);
         $('#nombreMesita').attr('class', producto);
         $('#terminarConfiguracion').css({ display: 'none' });
         $('#nombreApoyo').css({ display: 'none' });
@@ -656,6 +657,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 }
             });
         } else {
+            var productoNombre;
             this.dimensionesProductoTipoService.findProducto(producto).subscribe(data => {
                 this.dimensionesProductoTipoService.todos = data.body;
                 var cont = 0;
@@ -665,7 +667,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
                 for (let i = 0; i < datos.length; i++) {
                     if (producto == datos[i]['productosDormitorio']['id']) {
-                        $('#nombreMesita').text(datos[i]['productosDormitorio']['nombre']);
+                        productoNombre = datos[i]['productosDormitorio']['nombre'];
                         if (cont == 0) {
                             var image = document.createElement('img');
                             var precio = parseFloat(datos[i]['precio']);
@@ -843,7 +845,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         }
         $('.productoColor').css({ 'background-color': 'white' });
         $('#prod' + producto1).css({ 'background-color': '#DFDDDC' });
-
+        var nombreProductoEditado = productoNombre.split(' ')[0];
+        $('#nombreMesita').text(nombreProductoEditado);
         $('#nombreMesita').attr('class', producto);
         $('#terminarConfiguracion').css({ display: 'none' });
         $('#nombreApoyo').css({ display: 'none' });
@@ -1042,6 +1045,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $('#ancho4').removeAttr('class');
                         $('#ancho5').removeAttr('class');
                         $('#ancho6').removeAttr('class');
+                        for (let i = 1; i <= 24; i++) {
+                            $('#prod' + i).empty();
+                        }
                         $('#ancho' + id).attr('class', 'selectectAncho');
                         $('#ancho0').removeAttr('class');
                         var anchoFiltrado = $('#ancho' + id).text();
@@ -1655,6 +1661,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         for (let h = 0; h < datos.length; h++) {
             if (datos[h]['id'] == idDimenTipo) {
                 if (datos[h]['mensaje'] != 'Medidas Especiales') {
+                    var text = $('#nombreMesita').text();
+                    $('#nombreMesita').text(text + ' ' + datos[h]['mensaje']);
                     $('#datos1').append('<p>Ancho</p>');
                     $('#datos1').append('<p>Alto</p>');
                     $('#datos1').append('<p>Fondo</p>');
@@ -3315,7 +3323,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var apoyos = [];
         var cont = 0;
         var todos = this.productosDormitorioService.todos;
-        this.productosDormitorios = todos;
+
+        if (todos != undefined) {
+            this.productosDormitorios = todos;
+        } else {
+            this.productosDormitorioService.categoria(8).subscribe(data => {
+                this.productosDormitorioService.todos = data.body;
+            });
+            this.productosDormitorios = this.productosDormitorioService.todos;
+        }
     }
 
     loadPage(page: number) {

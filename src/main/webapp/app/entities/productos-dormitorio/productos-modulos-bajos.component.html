@@ -6,6 +6,7 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div style="width:100%" id="producto">
+    <h2 style="text-align:center;margin-bottom:4%">PASO 1: Escoge Modelo</h2>
     <table style="margin-top: 2%;">
     	<tbody>
 
@@ -62,8 +63,8 @@
     
     </div>
     <div id="ProductosCargados" style="margin-top:4%">
-    	<h2 style="text-align:center;margin-bottom:4%">PASO 1: Escoge Modelo</h2>
-        <div *ngFor="let productosDormitorio of productosDormitorios" [id]='productosDormitorio.id' class="productosColor">
+    	
+        <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColor">
     	<div id="productosDormitorioCargados">
 	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
 	 		<img title="Foto de linea de codigo" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="333px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
