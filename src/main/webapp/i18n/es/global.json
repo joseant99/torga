@@ -55,6 +55,7 @@
                 "tiradoresArmario": "Tiradores Armario",
                 "puertas": "Puertas",
                 "precioTienda": "Precio Tienda",
+                "precioTiendaProductos": "Precio Tienda Productos",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

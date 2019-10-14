@@ -32,6 +32,7 @@ import { MedEspProductoPedidoPresuService } from '../med-esp-producto-pedido-pre
 import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
+import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
 
 @Component({
     selector: 'jhi-productos-dormitorio',
@@ -84,6 +85,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         protected precioTiendaService: PrecioTiendaService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected iluminacionService: IluminacionService,
+        protected precioTiendaProductosService: PrecioTiendaProductosService,
         protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
         protected interioresService: InterioresService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
@@ -157,7 +159,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
             }
         }
-
+        var precioFinalProd = 0;
+        var todosProdPre = this.precioTiendaProductosService.todos;
+        for (let i = 0; i < todosProdPre.length; i++) {
+            if (todosProdPre[i][2] == producto) {
+                precioFinalProd = todosProdPre[i][1] + 100;
+                precioFinalProd = precioFinalProd / 100;
+                this.precioTienda = precioFinalProd;
+            }
+        }
         this.todasDimensiones = this.dimensionesProductoTipoService.todos;
         this.especiales = this.medidasEspecialesService.todos;
         $('#imagenAcabadoPrincipal').empty();
@@ -3398,11 +3408,23 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+
+        this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
+            this.precioTiendaProductosService.todos = data.body;
+        });
         this.precioTienda = sessionStorage.getItem('precioTienda');
     }
 
     ngOnDestroy() {
-        this.eventSubscriber;
+        var prod = $('#calculadoraCarrito #nombreMesita').text();
+        if (prod != '') {
+            alert('prod');
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            this.eventSubscriber;
+        }
     }
 
     byteSize(field) {

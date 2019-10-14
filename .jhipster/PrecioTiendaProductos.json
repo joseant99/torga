@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productosDormitorio",
+            "otherEntityName": "productosDormitorio",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "datosUsuario",
+            "otherEntityName": "datosUsuario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "porcentaje",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20191011092807",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "precio_tienda_productos",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

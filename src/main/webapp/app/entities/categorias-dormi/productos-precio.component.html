@@ -1,0 +1,36 @@
+<div>
+    <h2 id="page-heading" style="text-align:center">
+        <span>PRECIO PRODUCTOS</span>
+    </h2>
+    <br/>
+    <div class="table-responsive" style="float:left;width:50%">
+			<a  id="torgaTarifa" data-toggle="collapse" data-target="#menuTarifaTorga">
+    			<li style="font-size:25px">NATIV COMEDORES</li>
+    		</a>
+    		<div id="menuTarifaTorga" class="collapse">
+    			<ol>
+    				<li *ngFor="let comedor of comedores" (click)="productosCategoria(comedor.id)" style="margin-left:25%;font-size:20px">{{comedor.nombre}}</li>
+    			</ol>			
+    		</div>
+    		
+    		
+    		<a  id="torgaDormi" data-toggle="collapse" data-target="#menuTarifaDormi">
+    			<li style="font-size:25px">NATIV DORMITORIOS</li>
+    		</a>
+    		<div id="menuTarifaDormi" class="collapse">
+    			<ol>
+    				<li *ngFor="let comedor of dormitorio" (click)="productosCategoria(comedor.id)" style="margin-left:25%;font-size:20px">{{comedor.nombre}}</li>
+    			</ol>			
+    		</div>
+        
+    </div>
+    
+    <div style="text-align:center;float:left;position:absolute;margin-left:35%" *ngIf="productosDormitorioService.todos !== undefined">
+    	<p style="text-align:right;margin-right: 80px;font-size: 30px;">%</p>
+    	<p style="font-size:25px"><i>Todos los {{productosDormitorioService.todos[0].categoriasDormi.nombre}}</i><input style="float:right;width: 180px;height: 30px;text-align:center" (change)="todasCategorias()" id="porcentajeTotal" type="number"></p>
+    	<p *ngFor="let producto of productosDormitorioService.todos;let u=index;"><i style="width: 200px;float: left;margin-top: 20px;text-align: left;">{{producto.nombre}}</i><img title="Foto de linea de codigo" class="producto" [src]="'data:' + producto.imagenContentType + ';base64,' + producto.imagen" height="63px" width="130px" alt="productosDormitorio image"/><input style="margin-left:100px;text-align:center" id="porcentaje{{u}}" class="{{producto.porcentaje}}" type="number" value="{{producto.porcentaje}}"></p>
+    	<p style="text-align:center"><button (click)="guardar()">Guardar</button></p>
+    
+    </div>
+    
+</div>

@@ -8,6 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { CategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { CategoriasDormiService } from './categorias-dormi.service';
 import { CategoriasDormiComponent } from './categorias-dormi.component';
+import { ProductosPrecioComponent } from './productos-precio.component';
 import { CategoriasDormiFormularioComponent } from './categorias-dormi-formulario.component';
 import { CategoriasDormiDetailComponent } from './categorias-dormi-detail.component';
 import { CategoriasDormiUpdateComponent } from './categorias-dormi-update.component';
@@ -34,6 +35,19 @@ export const categoriasDormiRoute: Routes = [
     {
         path: 'categorias-dormi',
         component: CategoriasDormiComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.categoriasDormi.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-precio',
+        component: ProductosPrecioComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

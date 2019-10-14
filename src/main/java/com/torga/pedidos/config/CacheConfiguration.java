@@ -98,6 +98,7 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.Puertas.class.getName() + ".puertasProductos", jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.ProductosDormitorio.class.getName() + ".puertas", jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.PrecioTienda.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.PrecioTiendaProductos.class.getName() , jcacheConfiguration);
 
  
         };

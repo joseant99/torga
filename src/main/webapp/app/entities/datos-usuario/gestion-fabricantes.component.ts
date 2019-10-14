@@ -114,7 +114,6 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
                     }
                     this.torga = torga[0];
                     this.grupo = grupo;
-                    console.log(this.torga);
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
@@ -151,15 +150,7 @@ export class GestionFabricantesComponent implements OnInit, OnDestroy {
                     }
                     this.pagosTienda = pagos;
                     for (let j = 0; j < pagos.length; j++) {
-                        if (pagos[j]['pago'] == null && pagos[j]['descuento'] == null) {
-                            var precioTienda = pagos[j]['precioTienda'] * 100;
-                            $('#precioTienda').val(precioTienda);
-                            $('#precioTiendaCalculado').val(precioTienda + '%');
-                        }
                         if (pagos[j]['pago'] != null && pagos[j]['descuento'] != null) {
-                            var precioTienda = pagos[j]['precioTienda'] * 100;
-                            $('#precioTienda').val(precioTienda);
-                            $('#precioTiendaCalculado').val(precioTienda + '%');
                             $('#pagoTienda' + contador).val(pagos[j]['pago']);
                             $('#pagoTienda' + contador).attr('class', pagos[j]['id']);
                             $('#descuentoTienda' + contador).val(pagos[j]['descuento']);

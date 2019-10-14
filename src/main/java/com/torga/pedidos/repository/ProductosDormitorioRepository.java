@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface ProductosDormitorioRepository extends JpaRepository<ProductosDormitorio, Long>, JpaSpecificationExecutor<ProductosDormitorio> {
-	@Query("Select u from ProductosDormitorio u where u.categoriasDormi.id = ?1")
+	@Query("Select u from ProductosDormitorio u where u.categoriasDormi.id = ?1 order by u.id")
 	Collection<ProductosDormitorio> findByCategoriaDormi(Long id);
 
 }

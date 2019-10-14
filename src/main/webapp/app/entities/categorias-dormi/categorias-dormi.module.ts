@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { TorgaPedidosSharedModule } from 'app/shared';
 import {
     CategoriasDormiComponent,
+    ProductosPrecioComponent,
     CategoriasDormiFormularioComponent,
     CategoriasDormiDetailComponent,
     CategoriasDormiUpdateComponent,
@@ -19,6 +20,7 @@ const ENTITY_STATES = [...categoriasDormiRoute, ...categoriasDormiPopupRoute];
     imports: [TorgaPedidosSharedModule, RouterModule.forChild(ENTITY_STATES)],
     declarations: [
         CategoriasDormiComponent,
+        ProductosPrecioComponent,
         CategoriasDormiFormularioComponent,
         CategoriasDormiDetailComponent,
         CategoriasDormiUpdateComponent,
@@ -27,6 +29,7 @@ const ENTITY_STATES = [...categoriasDormiRoute, ...categoriasDormiPopupRoute];
     ],
     entryComponents: [
         CategoriasDormiComponent,
+        ProductosPrecioComponent,
         CategoriasDormiUpdateComponent,
         CategoriasDormiDeleteDialogComponent,
         CategoriasDormiDeletePopupComponent

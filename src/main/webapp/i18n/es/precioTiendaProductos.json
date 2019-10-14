@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "precioTiendaProductos": {
+            "home": {
+                "title": "Precio Tienda Productos",
+                "createLabel": "Crear nuevo Precio Tienda Productos",
+                "createOrEditLabel": "Crear o editar Precio Tienda Productos"
+            },
+            "created": "Un nuevo Precio Tienda Productos ha sido creado con el identificador {{ param }}",
+            "updated": "Un Precio Tienda Productos ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Precio Tienda Productos ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Precio Tienda Productos {{ id }}?"
+            },
+            "detail": {
+                "title": "Precio Tienda Productos"
+            },
+            "porcentaje": "Porcentaje",
+            "productosDormitorio": "Productos Dormitorio",
+            "datosUsuario": "Datos Usuario"
+        }
+    }
+}
