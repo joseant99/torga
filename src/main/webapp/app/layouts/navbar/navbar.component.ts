@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiLanguageService } from 'ng-jhipster';
@@ -17,7 +17,6 @@ import { InterioresService } from '../../entities/interiores/interiores.service'
 import { MedidasEspecialesService } from '../../entities/medidas-especiales/medidas-especiales.service';
 import { ProductosDormitorioService } from '../../entities/productos-dormitorio/productos-dormitorio.service';
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
-
 @Component({
     selector: 'jhi-navbar',
     templateUrl: './navbar.component.html',
@@ -27,6 +26,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     inProduction: boolean;
     isNavbarCollapsed: boolean;
     languages: any[];
+    ruta: any;
     swaggerEnabled: boolean;
     modalRef: NgbModalRef;
     acaProdSer: any;
@@ -66,6 +66,22 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 $('.logo-img').append('<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>');
             }
         }, 10);
+    }
+    @ViewChild('myModel') myModal;
+    public llamarRuta(ruta, bool) {
+        var prod = $('#calculadoraCarrito #nombreMesita').text();
+        if (prod != '') {
+            if (bool == false) {
+                this.myModal.nativeElement.className = 'modal fade show';
+                this.ruta = ruta;
+                $('#modalPreguntarSalida').modal('show');
+            } else {
+                this.router.navigate(['/' + ruta]);
+                $('#modalPreguntarSalida').modal('hide');
+            }
+        } else {
+            this.router.navigate(['/' + ruta]);
+        }
     }
     ngOnInit() {
         this.languageHelper.getAll().then(languages => {

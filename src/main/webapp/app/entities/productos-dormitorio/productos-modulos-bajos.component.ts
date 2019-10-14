@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { HttpErrorResponse, HttpHeaders, HttpResponse, HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationCancel } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiAlertService, JhiDataUtils } from 'ng-jhipster';
 import { LoginService } from 'app/core/login/login.service';
@@ -3417,14 +3417,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        var prod = $('#calculadoraCarrito #nombreMesita').text();
-        if (prod != '') {
-            alert('prod');
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            this.eventSubscriber;
-        }
+        this.eventSubscriber;
     }
 
     byteSize(field) {

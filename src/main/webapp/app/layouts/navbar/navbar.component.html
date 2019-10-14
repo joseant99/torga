@@ -729,16 +729,37 @@
     </div>
 </nav>
 <a id="botonEsconder" onclick="esconderMenu()"><img style="max-width:100%" src="../../../content/images/icono-hamburguesa.png"></a>
-<a  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'" class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+<a  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'" class="navbar-brand logo" (click)="llamarRuta(inicio,false)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
 	                <span class="logo-img"></span>
 </a>
-<a  *jhiHasAnyAuthority="'ROLE_ADMIN'" class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+<a  *jhiHasAnyAuthority="'ROLE_ADMIN'" class="navbar-brand logo" (click)="llamarRuta('inicio',false)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
 	                <span class="logo-img"></span>
 </a>
-<a  *jhiHasAnyAuthority="'ROLE_USER'" class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+<a  *jhiHasAnyAuthority="'ROLE_USER'" class="navbar-brand logo" (click)="llamarRuta('inicio',false)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
 	                <span class="logo-img"></span>
 </a>
-<a  *jhiHasAnyAuthority="'ROLE_CLIENTE'" class="navbar-brand logo" routerLink="inicio" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+<a  *jhiHasAnyAuthority="'ROLE_CLIENTE'" class="navbar-brand logo" (click)="llamarRuta('inicio',false)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
 	                <span class="logo-img"></span>
 </a>
-    
+
+<div #myModel class="modal fade" id="modalPreguntarSalida" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">¿Desea abandonar la pagina?</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p style="text-align:center">Aun no has finalizado la configuracion del articulo ¿Desea abandonar la pagina?</p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="llamarRuta(ruta,true)">Si</button></p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">No</button></p>
+	        </div>
+	        	<p id="verPresupuesto" style="display:none"> <a data-dismiss="modal" routerLink="../presupuesto-usuario"  routerLinkActive="active"><span>Abrir Presupuesto</span></a></p>
+	      </div>
+	      
+	    </div>
+	  </div>
+</div>  
+
+
