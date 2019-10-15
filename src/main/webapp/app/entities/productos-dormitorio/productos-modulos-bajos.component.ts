@@ -53,6 +53,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     acabados: any;
     todosAcabados: any;
     acaProdsCar: any;
+    ruta: any;
+
     acaProdPed: any;
     precioTienda: any;
     presupuestoPedido: IPresupuestoPedido;
@@ -1647,8 +1649,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             }
         }
     }
-
     public dimensionesCogidas(id) {
+        $('#imagenProdEspeciales').empty();
+        $('#medidasAncho').empty();
+        $('#medidasFondo').empty();
+        $('#medidasAlto').empty();
         $('#imagenAcabadoPrincipal').empty();
         var precioTienda = this.precioTienda;
         this.interiores = JSON.parse(sessionStorage.getItem('interiores'));
@@ -1668,6 +1673,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('.apoyoCogido4').empty();
         $('#acaba4').empty();
         $('#acaba3').empty();
+        $('#especiales').css({ display: 'none' });
 
         $('#acaba1').empty();
         $('#acaba2').empty();
@@ -1678,6 +1684,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('#iluminacion').css({ display: 'none' });
         $('#precioCalculado1').empty();
         $('.dimensionesColor1').css({ 'background-color': 'white' });
+        $('.dimensionesColor5').css({ 'background-color': 'white' });
+        $('.dimensionesColor6').css({ 'background-color': 'white' });
         $('.dimensionesColor2').css({ 'background-color': 'white' });
         $('.dimensionesColor3').css({ 'background-color': 'white' });
         $('.dimensionesColor4').css({ 'background-color': 'white' });
@@ -1719,6 +1727,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     $('#precioCalculado1').append('<p>-</p>');
                     acaSi = 0;
                 } else {
+                    $('#especiales').css({ display: 'block' });
+
                     $('#especialesTexto').removeAttr('style');
                     $('#especialesTexto').attr('style');
                     $('#especialesTexto').css({ 'margin-left': '40%' });
@@ -1738,6 +1748,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     $('#especialesAlto').css({ 'margin-left': '13%' });
                     $('#especialesAlto').css({ border: '1px gray solid' });
                     $('#especialesAlto').css({ 'text-align': 'center' });
+                    $('#especialesAncho').empty();
+                    $('#especialesFondo').empty();
+                    $('#especialesAlto').empty();
                     $('#especialesAncho').append('<p class="' + datos[h]['id'] + '" id="dimensionEspecial">ANCHO</p>');
                     $('#especialesFondo').append('<p>FONDO</p>');
                     $('#especialesAlto').append('<p>ALTO</p>');
@@ -1815,8 +1828,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
     public especiales1(id) {
         var medidasEspeciales = this.especiales;
+        $('#especiales').removeAttr('style');
+        $('#especiales').attr('style');
+        $('#especiales').css({ width: '100%' });
+        $('#especiales').css({ float: 'left' });
         var idProd = $('#nombreMesita').attr('class');
-        var dimensiones = this.todasDimensiones;
+        var dimensiones = this.dimensionesProductoTipoService.todos;
         var dimen = [];
         var cont = 0;
         for (let h = 0; h < dimensiones.length; h++) {
@@ -1825,172 +1842,186 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 cont++;
             }
         }
-        if (id == 1) {
-            $('#especialesFondo').css({ 'background-color': 'white' });
-            $('#especialesAlto').css({ 'background-color': 'white' });
-            $('#especialesAncho').css({ 'background-color': '#DFDDDC' });
-            $('#medidasEspecialesTexto').removeAttr('style');
-            $('#medidasEspecialesTexto').attr('style');
-            $('#medidasEspecialesTexto').css({ 'margin-left': '40%' });
-            $('#medidasEspecialesTexto').css({ 'margin-top': '5%' });
-            $('#medidasEspecialesTexto').css({ 'margin-bottom': '5%' });
-            for (let i = 0; i < medidasEspeciales.length; i++) {
-                if (medidasEspeciales[i]['productosDormitorio']['id'] == idProd) {
-                    if (medidasEspeciales[i]['ancho'] == 1) {
-                        $('#medidasAncho').removeAttr('style');
-                        $('#medidasAncho').attr('style');
-                        $('#medidasAncho').css({ width: '58%' });
-                        $('#medidasAncho').css({ float: 'right' });
-                        $('#medidasAncho').css({ 'margin-bottom': '10%' });
-                        $('#imagenProdEspeciales').append(
-                            '<img  src="data:image/gif;base64,' +
-                                medidasEspeciales[i]['productosDormitorio']['imagen'] +
-                                '" id="imagenMedidasEspeciales" style="max-width:100%;max-height:400px">'
-                        );
-                        $('#medidasAncho').append(
-                            '<p style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
-                                medidasEspeciales[i]['min'] +
-                                ' y ' +
-                                medidasEspeciales[i]['max'] +
-                                '</p>'
-                        );
-                        $('#cambioAncho').append(
-                            '<input style="float:left;text-align: center;" value="" min="' +
-                                medidasEspeciales[i]['min'] +
-                                '" max="' +
-                                medidasEspeciales[i]['max'] +
-                                '"  type="number" id="anchoInputEspeciales"/>'
-                        );
-                        $('#medidasFondo').append('<input style="float:left;margin-left:2%" id="inputFondoAncho" value="" disabled />');
-                        $('#medidasFondo').removeAttr('style');
-                        $('#medidasFondo').attr('style');
-                        $('#medidasFondo').css({ width: '58%' });
-                        $('#medidasFondo').css({ float: 'right' });
-                        $('#medidasFondo').css({ 'margin-bottom': '10%' });
-                        $('#medidasAlto').removeAttr('style');
-                        $('#medidasAlto').attr('style');
-                        $('#medidasAlto').css({ width: '58%' });
-                        $('#medidasAlto').css({ float: 'right' });
-                        $('#medidasAlto').append('<input style="float:left;margin-left:2%" id="inputAltoAncho" value="" disabled />');
-                    }
-                }
-            }
-        }
-
-        if (id == 2) {
-            console.log(dimen);
-            $('#especialesFondo').css({ 'background-color': '#DFDDDC' });
-            $('#especialesAlto').css({ 'background-color': 'white' });
-            $('#especialesAncho').css({ 'background-color': 'white' });
-            $('#medidasEspecialesTexto').removeAttr('style');
-            $('#medidasEspecialesTexto').attr('style');
-            $('#medidasEspecialesTexto').css({ 'margin-left': '40%' });
-            $('#medidasEspecialesTexto').css({ 'margin-bottom': '3%' });
-            for (let i = 0; i < medidasEspeciales.length; i++) {
-                if (medidasEspeciales[i]['productosDormitorio']['id'] == idProd) {
-                    if (medidasEspeciales[i]['fondo'] == 1) {
-                        $('#medidasAncho').removeAttr('style');
-                        $('#medidasAncho').attr('style');
-                        $('#medidasAncho').css({ width: '58%' });
-                        $('#medidasAncho').css({ float: 'right' });
-                        $('#medidasAncho').css({ 'margin-bottom': '10%' });
-                        $('#imagenProdEspeciales').append(
-                            '<img  src="data:image/gif;base64,' +
-                                medidasEspeciales[i]['productosDormitorio']['imagen'] +
-                                '" id="imagenMedidasEspeciales" style="max-width:100%;max-height:400px">'
-                        );
-                        $('#medidasAncho').append(
-                            '<form><select id="anchosSelect" style="margin-left: 2%;width: 30%;text-align:center"><option></option></select></form'
-                        );
-                        for (let j = 0; j < dimen.length; j++) {
-                            $('#anchosSelect').append('<option value="' + dimen[j]['id'] + '">' + dimen[j]['ancho'] + '</option>');
+        this.medidasEspecialesService.findProd(idProd).subscribe(data => {
+            medidasEspeciales = data['body'];
+            if (id == 1) {
+                $('#imagenProdEspeciales').empty();
+                $('#medidasAncho').empty();
+                $('#medidasFondo').empty();
+                $('#medidasAlto').empty();
+                $('#especialesFondo').css({ 'background-color': 'white' });
+                $('#especialesAlto').css({ 'background-color': 'white' });
+                $('#especialesAncho').css({ 'background-color': '#DFDDDC' });
+                $('#medidasEspecialesTexto').removeAttr('style');
+                $('#medidasEspecialesTexto').attr('style');
+                $('#medidasEspecialesTexto').css({ 'margin-left': '40%' });
+                $('#medidasEspecialesTexto').css({ 'margin-top': '5%' });
+                $('#medidasEspecialesTexto').css({ 'margin-bottom': '5%' });
+                for (let i = 0; i < medidasEspeciales.length; i++) {
+                    if (medidasEspeciales[i]['productosDormitorio']['id'] == idProd) {
+                        if (medidasEspeciales[i]['ancho'] == 1) {
+                            $('#medidasAncho').removeAttr('style');
+                            $('#medidasAncho').attr('style');
+                            $('#medidasAncho').css({ width: '58%' });
+                            $('#medidasAncho').css({ float: 'right' });
+                            $('#medidasAncho').css({ 'margin-bottom': '10%' });
+                            $('#imagenProdEspeciales').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    medidasEspeciales[i]['productosDormitorio']['imagen'] +
+                                    '" id="imagenMedidasEspeciales" style="max-width:100%;max-height:400px">'
+                            );
+                            $('#medidasAncho').append(
+                                '<p style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
+                                    medidasEspeciales[i]['min'] +
+                                    ' y ' +
+                                    medidasEspeciales[i]['max'] +
+                                    '</p>'
+                            );
+                            $('#cambioAncho').append(
+                                '<input style="float:left;text-align: center;" value="" min="' +
+                                    medidasEspeciales[i]['min'] +
+                                    '" max="' +
+                                    medidasEspeciales[i]['max'] +
+                                    '"  type="number" id="anchoInputEspeciales"/>'
+                            );
+                            $('#medidasFondo').append('<input style="float:left;margin-left:2%" id="inputFondoAncho" value="" disabled />');
+                            $('#medidasFondo').removeAttr('style');
+                            $('#medidasFondo').attr('style');
+                            $('#medidasFondo').css({ width: '58%' });
+                            $('#medidasFondo').css({ float: 'right' });
+                            $('#medidasFondo').css({ 'margin-bottom': '10%' });
+                            $('#medidasAlto').removeAttr('style');
+                            $('#medidasAlto').attr('style');
+                            $('#medidasAlto').css({ width: '58%' });
+                            $('#medidasAlto').css({ float: 'right' });
+                            $('#medidasAlto').append('<input style="float:left;margin-left:2%" id="inputAltoAncho" value="" disabled />');
                         }
-
-                        $('#medidasFondo').append(
-                            '<p style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
-                                medidasEspeciales[i]['min'] +
-                                ' y ' +
-                                medidasEspeciales[i]['max'] +
-                                '</p>'
-                        );
-                        $('#cambioFondo').append(
-                            '<input type="number" style="float:left;margin-left:2%" id="inputFondoAncho" max="' +
-                                medidasEspeciales[i]['max'] +
-                                '" min="' +
-                                medidasEspeciales[i]['min'] +
-                                '" value="" />'
-                        );
-                        $('#medidasFondo').removeAttr('style');
-                        $('#medidasFondo').attr('style');
-                        $('#medidasFondo').css({ width: '58%' });
-                        $('#medidasFondo').css({ float: 'right' });
-                        $('#medidasFondo').css({ 'margin-bottom': '10%' });
-                        $('#medidasAlto').removeAttr('style');
-                        $('#medidasAlto').attr('style');
-                        $('#medidasAlto').css({ width: '58%' });
-                        $('#medidasAlto').css({ float: 'right' });
-                        $('#medidasAlto').append('<input style="float:left;margin-left:2%" id="inputAltoAncho" value="" disabled />');
                     }
                 }
             }
-        }
 
-        if (id == 3) {
-            $('#especialesFondo').css({ 'background-color': 'white' });
-            $('#especialesAlto').css({ 'background-color': '#DFDDDC' });
-            $('#especialesAncho').css({ 'background-color': 'white' });
-            $('#medidasEspecialesTexto').removeAttr('style');
-            $('#medidasEspecialesTexto').attr('style');
-            $('#medidasEspecialesTexto').css({ 'margin-left': '40%' });
-            $('#medidasEspecialesTexto').css({ 'margin-bottom': '3%' });
-            for (let i = 0; i < medidasEspeciales.length; i++) {
-                if (medidasEspeciales[i]['productosDormitorio']['id'] == idProd) {
-                    if (medidasEspeciales[i]['alto'] == 1) {
-                        $('#medidasAncho').removeAttr('style');
-                        $('#medidasAncho').attr('style');
-                        $('#medidasAncho').css({ width: '58%' });
-                        $('#medidasAncho').css({ float: 'right' });
-                        $('#medidasAncho').css({ 'margin-bottom': '10%' });
-                        $('#imagenProdEspeciales').append(
-                            '<img  src="data:image/gif;base64,' +
-                                medidasEspeciales[i]['productosDormitorio']['imagen'] +
-                                '" id="imagenMedidasEspeciales" style="max-width:100%;max-height:400px">'
-                        );
-                        $('#medidasAncho').append(
-                            '<form><select id="anchosSelect" style="margin-left: 2%;width: 30%;text-align:center"><option></option></select></form'
-                        );
-                        for (let j = 0; j < dimen.length; j++) {
-                            $('#anchosSelect').append('<option value="' + dimen[j]['id'] + '">' + dimen[j]['ancho'] + '</option>');
+            if (id == 2) {
+                $('#imagenProdEspeciales').empty();
+                $('#medidasAncho').empty();
+                $('#medidasFondo').empty();
+                $('#medidasAlto').empty();
+                $('#especialesFondo').css({ 'background-color': '#DFDDDC' });
+                $('#especialesAlto').css({ 'background-color': 'white' });
+                $('#especialesAncho').css({ 'background-color': 'white' });
+                $('#medidasEspecialesTexto').removeAttr('style');
+                $('#medidasEspecialesTexto').attr('style');
+                $('#medidasEspecialesTexto').css({ 'margin-left': '40%' });
+                $('#medidasEspecialesTexto').css({ 'margin-bottom': '3%' });
+                for (let i = 0; i < medidasEspeciales.length; i++) {
+                    if (medidasEspeciales[i]['productosDormitorio']['id'] == idProd) {
+                        if (medidasEspeciales[i]['fondo'] == 1) {
+                            $('#medidasAncho').removeAttr('style');
+                            $('#medidasAncho').attr('style');
+                            $('#medidasAncho').css({ width: '58%' });
+                            $('#medidasAncho').css({ float: 'right' });
+                            $('#medidasAncho').css({ 'margin-bottom': '10%' });
+                            $('#imagenProdEspeciales').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    medidasEspeciales[i]['productosDormitorio']['imagen'] +
+                                    '" id="imagenMedidasEspeciales" style="max-width:100%;max-height:400px">'
+                            );
+                            $('#medidasAncho').append(
+                                '<form><select id="anchosSelect" style="margin-left: 2%;width: 30%;text-align:center"><option></option></select></form'
+                            );
+                            for (let j = 0; j < dimen.length; j++) {
+                                $('#anchosSelect').append('<option value="' + dimen[j]['id'] + '">' + dimen[j]['ancho'] + '</option>');
+                            }
+
+                            $('#medidasFondo').append(
+                                '<p style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
+                                    medidasEspeciales[i]['min'] +
+                                    ' y ' +
+                                    medidasEspeciales[i]['max'] +
+                                    '</p>'
+                            );
+                            $('#cambioFondo').append(
+                                '<input type="number" style="float:left;margin-left:2%" id="inputFondoAncho" max="' +
+                                    medidasEspeciales[i]['max'] +
+                                    '" min="' +
+                                    medidasEspeciales[i]['min'] +
+                                    '" value="" />'
+                            );
+                            $('#medidasFondo').removeAttr('style');
+                            $('#medidasFondo').attr('style');
+                            $('#medidasFondo').css({ width: '58%' });
+                            $('#medidasFondo').css({ float: 'right' });
+                            $('#medidasFondo').css({ 'margin-bottom': '10%' });
+                            $('#medidasAlto').removeAttr('style');
+                            $('#medidasAlto').attr('style');
+                            $('#medidasAlto').css({ width: '58%' });
+                            $('#medidasAlto').css({ float: 'right' });
+                            $('#medidasAlto').append('<input style="float:left;margin-left:2%" id="inputAltoAncho" value="" disabled />');
                         }
-
-                        $('#medidasAlto').append(
-                            '<p style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
-                                medidasEspeciales[i]['min'] +
-                                ' y ' +
-                                medidasEspeciales[i]['max'] +
-                                '</p>'
-                        );
-                        $('#cambioAlto').append(
-                            '<input type="number" style="float:left;margin-left:2%" id="inputAltoAncho" max="' +
-                                medidasEspeciales[i]['max'] +
-                                '" min="' +
-                                medidasEspeciales[i]['min'] +
-                                '" value="" />'
-                        );
-                        $('#medidasFondo').removeAttr('style');
-                        $('#medidasFondo').attr('style');
-                        $('#medidasFondo').css({ width: '58%' });
-                        $('#medidasFondo').css({ float: 'right' });
-                        $('#medidasFondo').css({ 'margin-bottom': '10%' });
-                        $('#medidasAlto').removeAttr('style');
-                        $('#medidasAlto').attr('style');
-                        $('#medidasAlto').css({ width: '58%' });
-                        $('#medidasAlto').css({ float: 'right' });
-                        $('#medidasFondo').append('<input style="float:left;margin-left:2%" id="inputfondoAlto" value="" disabled />');
                     }
                 }
             }
-        }
+
+            if (id == 3) {
+                $('#imagenProdEspeciales').empty();
+                $('#medidasAncho').empty();
+                $('#medidasFondo').empty();
+                $('#medidasAlto').empty();
+                $('#especialesFondo').css({ 'background-color': 'white' });
+                $('#especialesAlto').css({ 'background-color': '#DFDDDC' });
+                $('#especialesAncho').css({ 'background-color': 'white' });
+                $('#medidasEspecialesTexto').removeAttr('style');
+                $('#medidasEspecialesTexto').attr('style');
+                $('#medidasEspecialesTexto').css({ 'margin-left': '40%' });
+                $('#medidasEspecialesTexto').css({ 'margin-bottom': '3%' });
+                for (let i = 0; i < medidasEspeciales.length; i++) {
+                    if (medidasEspeciales[i]['productosDormitorio']['id'] == idProd) {
+                        if (medidasEspeciales[i]['alto'] == 1) {
+                            $('#medidasAncho').removeAttr('style');
+                            $('#medidasAncho').attr('style');
+                            $('#medidasAncho').css({ width: '58%' });
+                            $('#medidasAncho').css({ float: 'right' });
+                            $('#medidasAncho').css({ 'margin-bottom': '10%' });
+                            $('#imagenProdEspeciales').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    medidasEspeciales[i]['productosDormitorio']['imagen'] +
+                                    '" id="imagenMedidasEspeciales" style="max-width:100%;max-height:400px">'
+                            );
+                            $('#medidasAncho').append(
+                                '<form><select id="anchosSelect" style="margin-left: 2%;width: 30%;text-align:center"><option></option></select></form'
+                            );
+                            for (let j = 0; j < dimen.length; j++) {
+                                $('#anchosSelect').append('<option value="' + dimen[j]['id'] + '">' + dimen[j]['ancho'] + '</option>');
+                            }
+
+                            $('#medidasAlto').append(
+                                '<p style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
+                                    medidasEspeciales[i]['min'] +
+                                    ' y ' +
+                                    medidasEspeciales[i]['max'] +
+                                    '</p>'
+                            );
+                            $('#cambioAlto').append(
+                                '<input type="number" style="float:left;margin-left:2%" id="inputAltoAncho" max="' +
+                                    medidasEspeciales[i]['max'] +
+                                    '" min="' +
+                                    medidasEspeciales[i]['min'] +
+                                    '" value="" />'
+                            );
+                            $('#medidasFondo').removeAttr('style');
+                            $('#medidasFondo').attr('style');
+                            $('#medidasFondo').css({ width: '58%' });
+                            $('#medidasFondo').css({ float: 'right' });
+                            $('#medidasFondo').css({ 'margin-bottom': '10%' });
+                            $('#medidasAlto').removeAttr('style');
+                            $('#medidasAlto').attr('style');
+                            $('#medidasAlto').css({ width: '58%' });
+                            $('#medidasAlto').css({ float: 'right' });
+                            $('#medidasFondo').append('<input style="float:left;margin-left:2%" id="inputfondoAlto" value="" disabled />');
+                        }
+                    }
+                }
+            }
+        });
     }
 
     public cambioMedidas(id) {
@@ -2447,6 +2478,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 if (nombreAcabado == 'marmol negro') {
                     nombreAcabado = 'marmolnegro';
                 }
+                if (nombreAcabado == 'cristal bronce') {
+                    nombreAcabado = 'bronce';
+                }
+                if (nombreAcabado == 'cristal transparente') {
+                    nombreAcabado = 'transparente';
+                }
                 $('#aca1' + id1).append(
                     '<img  src="data:image/gif;base64,' +
                         value['imagenFondo'] +
@@ -2464,13 +2501,23 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 );
                 if (id1 == 1) {
                     $('#tapa').remove();
-                    if (nombre == 'mb6' || nombre == 'mb9') {
+                    if (
+                        nombre == 'mb6' ||
+                        nombre == 'mb9' ||
+                        nombre == 'mb7' ||
+                        nombre == 'mb8' ||
+                        nombre == 'mb10' ||
+                        nombre == 'mb11' ||
+                        nombre == 'mb12' ||
+                        nombre == 'mb13' ||
+                        nombre == 'mb14'
+                    ) {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
                                 '" width="500px" height="333px" src="../../../content/images/mb5/1/mb5_1_' +
                                 nombreAcabado +
-                                '-min.png">'
+                                '_optimized.png">'
                         );
                     } else {
                         $('#acabados #imagenAcabadoPrincipal').append(
@@ -2482,19 +2529,29 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 nombre +
                                 '_1_' +
                                 nombreAcabado +
-                                '-min.png">'
+                                '_optimized.png">'
                         );
                     }
                 }
                 if (id1 == 2) {
                     $('#cajon').remove();
-                    if (nombre == 'mb6' || nombre == 'mb9') {
+                    if (
+                        nombre == 'mb6' ||
+                        nombre == 'mb9' ||
+                        nombre == 'mb7' ||
+                        nombre == 'mb8' ||
+                        nombre == 'mb10' ||
+                        nombre == 'mb11' ||
+                        nombre == 'mb12' ||
+                        nombre == 'mb13' ||
+                        nombre == 'mb14'
+                    ) {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="cajon" class="' +
                                 nombreAcabado +
                                 '" width="500px" height="333px"  src="../../../content/images/mb5/2/mb5_2_' +
                                 nombreAcabado +
-                                '-min.png">'
+                                '_optimiZed.png">'
                         );
                     } else {
                         $('#acabados #imagenAcabadoPrincipal').append(
@@ -2506,26 +2563,51 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 nombre +
                                 '_2_' +
                                 nombreAcabado +
-                                '-min.png">'
+                                '_optimized.png">'
                         );
                     }
                 }
                 if (id1 != 2 && id1 != 1) {
-                    $('#acabados #imagenAcabadoPrincipal').append(
-                        '<img id="casco" class="' +
-                            nombreAcabado +
-                            '" width="500px" height="333px" src="../../../content/images/' +
-                            nombre +
-                            '/' +
-                            id1 +
-                            '/' +
-                            nombre +
-                            '_' +
-                            id1 +
-                            '_' +
-                            nombreAcabado +
-                            '-min.png">'
-                    );
+                    if (nombreAcabado == 'bronce' || nombreAcabado == 'transparente') {
+                        var nombreMayus = nombreAcabado.toUpperCase();
+                        var color = $('#val1Dato').text();
+                        color = color.toLowerCase();
+                        $('#acabados #imagenAcabadoPrincipal').append(
+                            '<img id="casco" class="' +
+                                nombreAcabado +
+                                '" width="500px" height="333px" src="../../../content/images/' +
+                                nombre +
+                                '/' +
+                                id1 +
+                                ' ' +
+                                nombreMayus +
+                                '/' +
+                                nombre +
+                                '_' +
+                                id1 +
+                                '_' +
+                                color +
+                                '_' +
+                                nombreAcabado +
+                                '_optimized.png">'
+                        );
+                    } else {
+                        $('#acabados #imagenAcabadoPrincipal').append(
+                            '<img id="casco" class="' +
+                                nombreAcabado +
+                                '" width="500px" height="333px" src="../../../content/images/' +
+                                nombre +
+                                '/' +
+                                id1 +
+                                '/' +
+                                nombre +
+                                '_' +
+                                id1 +
+                                '_' +
+                                nombreAcabado +
+                                '_optimized.png">'
+                        );
+                    }
                 }
                 $('#val' + id1).remove();
                 $('#val' + id1 + 'Dato').remove();

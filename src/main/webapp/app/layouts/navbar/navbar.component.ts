@@ -17,6 +17,8 @@ import { InterioresService } from '../../entities/interiores/interiores.service'
 import { MedidasEspecialesService } from '../../entities/medidas-especiales/medidas-especiales.service';
 import { ProductosDormitorioService } from '../../entities/productos-dormitorio/productos-dormitorio.service';
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
     selector: 'jhi-navbar',
     templateUrl: './navbar.component.html',
@@ -31,6 +33,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     modalRef: NgbModalRef;
     acaProdSer: any;
     version: string;
+    closeResult: string;
     account: Account;
     link: string;
     settingsAccount: any;
@@ -50,6 +53,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         protected medidasEspecialesService: MedidasEspecialesService,
         protected jhiAlertService: JhiAlertService,
         private router: Router,
+        private modalService: NgbModal,
         protected productosDormitorioService: ProductosDormitorioService,
         private eventManager: JhiEventManager
     ) {
@@ -67,22 +71,40 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             }
         }, 10);
     }
-    @ViewChild('myModel') myModal;
-    public llamarRuta(ruta, bool) {
+
+    open(ruta, bool, content) {
         var prod = $('#calculadoraCarrito #nombreMesita').text();
         if (prod != '') {
             if (bool == false) {
-                this.myModal.nativeElement.className = 'modal fade show';
                 this.ruta = ruta;
-                $('#modalPreguntarSalida').modal('show');
+                $('#modalPreguntarSalida').attr('style');
+                this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+                    result => {
+                        this.closeResult = `Closed with: ${result}`;
+                    },
+                    reason => {
+                        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+                    }
+                );
             } else {
                 this.router.navigate(['/' + ruta]);
-                $('#modalPreguntarSalida').modal('hide');
+                this.modalService.dismissAll();
             }
         } else {
             this.router.navigate(['/' + ruta]);
         }
     }
+
+    private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+            return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+            return 'by clicking on a backdrop';
+        } else {
+            return `with: ${reason}`;
+        }
+    }
+
     ngOnInit() {
         this.languageHelper.getAll().then(languages => {
             this.languages = languages;

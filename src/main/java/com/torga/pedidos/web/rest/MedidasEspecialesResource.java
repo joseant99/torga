@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -94,6 +94,22 @@ public class MedidasEspecialesResource {
         Page<MedidasEspeciales> page = medidasEspecialesRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/medidas-especiales");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+    
+    
+    
+    /**
+     * GET  /medidas-especiales : get all the medidasEspeciales.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of medidasEspeciales in body
+     */
+    @GetMapping("/medidas-especiales-bus/{id}")
+    @Timed
+    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds(@PathVariable Long id) {
+        log.debug("REST request to get a page of MedidasEspeciales");
+        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd(id);
+        return ResponseEntity.ok().body(page);
     }
 
     /**

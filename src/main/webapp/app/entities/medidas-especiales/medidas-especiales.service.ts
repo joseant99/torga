@@ -38,4 +38,7 @@ export class MedidasEspecialesService {
     query1(req?: any): Observable<EntityArrayResponseType> {
         return (this.todos = req.especiales);
     }
+    findProd(id: any): Observable<EntityResponseType> {
+        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus/${id}`, { observe: 'response' });
+    }
 }

@@ -192,6 +192,22 @@ Generic styles
     margin-left: 150px;
     filter: brightness(140%);
 }
+.bronce {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    margin-top: -333px;
+    margin-left: 150px;
+    filter: brightness(140%);
+}
+.transparente {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    margin-top: -333px;
+    margin-left: 150px;
+    filter: brightness(140%);
+}
 .noce {
     position: absolute;
     max-width: 500px;
@@ -402,6 +418,22 @@ Generic styles
         filter: brightness(125%);
     }
     .norway {
+        position: absolute;
+        max-width: 300px;
+        max-height: 183px;
+        margin-left: 20px;
+        margin-top: -183px;
+        filter: brightness(140%);
+    }
+    .bronce {
+        position: absolute;
+        max-width: 300px;
+        max-height: 183px;
+        margin-left: 20px;
+        margin-top: -183px;
+        filter: brightness(140%);
+    }
+    .transparente {
         position: absolute;
         max-width: 300px;
         max-height: 183px;
