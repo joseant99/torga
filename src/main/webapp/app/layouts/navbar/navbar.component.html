@@ -729,7 +729,7 @@
     </div>
 </nav>
 <a id="botonEsconder" onclick="esconderMenu()"><img style="max-width:100%" src="../../../content/images/icono-hamburguesa.png"></a>
-<a  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'" class="navbar-brand logo" (click)="llamarRuta(inicio,false)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+<a  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'" class="navbar-brand logo" (click)="open('inicio',false,myModel)"(click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
 	                <span class="logo-img"></span>
 </a>
 <a  *jhiHasAnyAuthority="'ROLE_ADMIN'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">

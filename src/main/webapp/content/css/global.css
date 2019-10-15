@@ -198,7 +198,6 @@ Generic styles
     max-height: 333px;
     margin-top: -333px;
     margin-left: 150px;
-    filter: brightness(140%);
 }
 .transparente {
     position: absolute;
@@ -206,7 +205,6 @@ Generic styles
     max-height: 333px;
     margin-top: -333px;
     margin-left: 150px;
-    filter: brightness(140%);
 }
 .noce {
     position: absolute;
@@ -431,7 +429,6 @@ Generic styles
         max-height: 183px;
         margin-left: 20px;
         margin-top: -183px;
-        filter: brightness(140%);
     }
     .transparente {
         position: absolute;
@@ -439,7 +436,6 @@ Generic styles
         max-height: 183px;
         margin-left: 20px;
         margin-top: -183px;
-        filter: brightness(140%);
     }
     .noce {
         position: absolute;
