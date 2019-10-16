@@ -31,6 +31,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     ruta: any;
     swaggerEnabled: boolean;
     modalRef: NgbModalRef;
+    id: any;
     acaProdSer: any;
     version: string;
     closeResult: string;
@@ -87,11 +88,51 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     }
                 );
             } else {
+                this.productosDormitorioService.todos = undefined;
                 this.router.navigate(['/' + ruta]);
                 this.modalService.dismissAll();
+                $('#menuPrincipal').css({ display: 'none' });
+                $('#botonEsconder').removeAttr('onclick');
+                $('#botonEsconder').attr('onclick', 'apareceMenu()');
             }
         } else {
             this.router.navigate(['/' + ruta]);
+            this.productosDormitorioService.todos = undefined;
+            $('#menuPrincipal').css({ display: 'none' });
+            $('#botonEsconder').removeAttr('onclick');
+            $('#botonEsconder').attr('onclick', 'apareceMenu()');
+        }
+    }
+
+    open1(ruta, bool, content, id) {
+        var prod = $('#nombreMesita').text();
+        if (prod != '') {
+            if (bool == false) {
+                this.ruta = ruta;
+                this.id = id;
+                $('#modalPreguntarSalida').attr('style');
+                this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+                    result => {
+                        this.closeResult = `Closed with: ${result}`;
+                    },
+                    reason => {
+                        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+                    }
+                );
+            } else {
+                this.productosDormitorioService.todos = undefined;
+                this.cargarProductosCategoria(id, ruta);
+                this.modalService.dismissAll();
+                $('#menuPrincipal').css({ display: 'none' });
+                $('#botonEsconder').removeAttr('onclick');
+                $('#botonEsconder').attr('onclick', 'apareceMenu()');
+            }
+        } else {
+            this.productosDormitorioService.todos = undefined;
+            this.cargarProductosCategoria(id, ruta);
+            $('#menuPrincipal').css({ display: 'none' });
+            $('#botonEsconder').removeAttr('onclick');
+            $('#botonEsconder').attr('onclick', 'apareceMenu()');
         }
     }
 
@@ -120,6 +161,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         });
         this.registerAuthenticationSuccess();
         var cont = 0;
+        this.contador = 0;
         this.datosUsuarioService
             .query({
                 size: 10000
@@ -169,6 +211,60 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     changeLanguage(languageKey: string) {
         this.sessionStorage.store('locale', languageKey);
         this.languageService.changeLanguage(languageKey);
+    }
+
+    public tarifa() {
+        $('#menuComercialTorga').attr('class', 'collapse');
+        $('#menuTienda').attr('class', 'collapse');
+        $('#menuFabricanteTorga').attr('class', 'collapse');
+        $('#menuFabricanteTorgaDentro').attr('class', 'collapse');
+        $('#menuContactoTorga').attr('class', 'collapse');
+        $('#menuComercial').attr('class', 'collapse');
+    }
+
+    public comercial() {
+        $('#menuComercialTorga').attr('class', 'collapse');
+        $('#menuTienda').attr('class', 'collapse');
+        $('#menuFabricanteTorga').attr('class', 'collapse');
+        $('#menuFabricanteTorgaDentro').attr('class', 'collapse');
+        $('#menuContactoTorga').attr('class', 'collapse');
+        $('#menuTarifa').attr('class', 'collapse');
+        $('#menuTarifaTorga').attr('class', 'collapse');
+        $('#menuTarifaComedores').attr('class', 'collapse');
+        $('#menuTarifaDormitorios').attr('class', 'collapse');
+    }
+
+    public contacto() {
+        $('#menuComercialTorga').attr('class', 'collapse');
+        $('#menuTienda').attr('class', 'collapse');
+        $('#menuFabricanteTorga').attr('class', 'collapse');
+        $('#menuComercial').attr('class', 'collapse');
+        $('#menuFabricanteTorgaDentro').attr('class', 'collapse');
+        $('#menuTarifa').attr('class', 'collapse');
+        $('#menuTarifaTorga').attr('class', 'collapse');
+        $('#menuTarifaComedores').attr('class', 'collapse');
+        $('#menuTarifaDormitorios').attr('class', 'collapse');
+    }
+
+    public fabricantes() {
+        $('#menuComercialTorga').attr('class', 'collapse');
+        $('#menuTienda').attr('class', 'collapse');
+        $('#menuComercial').attr('class', 'collapse');
+        $('#menuTarifa').attr('class', 'collapse');
+        $('#menuContactoTorga').attr('class', 'collapse');
+        $('#menuTarifaTorga').attr('class', 'collapse');
+        $('#menuTarifaComedores').attr('class', 'collapse');
+        $('#menuTarifaDormitorios').attr('class', 'collapse');
+    }
+    public gestionTienda() {
+        $('#menuComercial').attr('class', 'collapse');
+        $('#menuTarifa').attr('class', 'collapse');
+        $('#menuContactoTorga').attr('class', 'collapse');
+        $('#menuTarifaTorga').attr('class', 'collapse');
+        $('#menuTarifaComedores').attr('class', 'collapse');
+        $('#menuTarifaDormitorios').attr('class', 'collapse');
+        $('#menuFabricanteTorga').attr('class', 'collapse');
+        $('#menuFabricanteTorgaDentro').attr('class', 'collapse');
     }
 
     collapseNavbar() {

@@ -33,7 +33,7 @@
       	 
       	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a  id="tarifa" data-toggle="collapse" data-target="#menuTarifa">
+                    <a (click)="tarifa()" id="tarifa" data-toggle="collapse" data-target="#menuTarifa" >
                         <span>
                             <span style="color:black;font-size:18px;margin-top: 18px;">TARIFA</span>
                         </span>
@@ -55,77 +55,77 @@
 													</a>
 													<div id="torgaTarifaComedores" class="collapse" style="font-size:12px;">
                   												<li>
-										                            <a (click)="cargarProductosCategoria(8,'productos-modulos-bajos')" routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,8)" routerLinkActive="active" >
 										                                <span style="color:#7AB5CA;">Módulos Bajos</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-aparadores"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-aparadores',false,myModel1,11)" routerLinkActive="active" >
 										                                <span style="color:#7AB5CA;">Aparadores</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,12)">
 										                                <span style="color:#7AB5CA;">Vitrinas</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,13)">
 										                                <span style="color:#7AB5CA;">Singulares</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,14)">
 										                                <span style="color:#7AB5CA;">Escritorios</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,2)" >
 										                                <span style="color:#7AB5CA;">Sistemas de Apoyo</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,15)">
 										                                <span style="color:#7AB5CA;">Estanterias colgantes y estantes</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,16)" >
 										                                <span style="color:#7AB5CA;">Colgantes Verticales</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,17)">
 										                                <span style="color:#7AB5CA;">Colgantes Verticales Estantería</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,18)">
 										                                <span style="color:#7AB5CA;">Colgantes Horizontales</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,19)">
 										                                <span style="color:#7AB5CA;">Estanterías</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,20)">
 										                                <span style="color:#7AB5CA;">Suplementos TV</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,21)">
 										                                <span style="color:#7AB5CA;">Paneles</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,22)">
 										                                <span style="color:#7AB5CA;">Mesas</span>
 										                            </a>
 											                    </li>
 											                    <li>
-										                            <a routerLink="productos-modulos-bajos"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,12)">
 										                                <span style="color:#7AB5CA;">Composiciones</span>
 										                            </a>
 											                    </li>
@@ -140,30 +140,30 @@
 													</a>
 														<div id="torgaTarifaDormitorios" class="collapse" style="font-size:12px">
 														     	<li>
-										                            <a routerLink="productos-dormitorio/cabeceros"  routerLinkActive="active" >
+										                            <a (click)="open1('productos-dormitorio/cabeceros',false,myModel1,4)">
 										                                <span style="color:#7AB5CA;">Cabeceros</span>
 										                            </a>
 											                        </li>
 											                        
 											                        <li>
-											                            <a routerLink="productos-dormitorio/categoria/1"  routerLinkActive="active" >
+											                            <a (click)="open1('productos-dormitorio/categoria/1',false,myModel1,1)">
 											                                <span style="color:#7AB5CA;">Mesitas</span>
 											                            </a>
 											                        </li>
 											                        
 											                    
 											                        <li>
-											                            <a routerLink="productos-dormitorio/chinfonier"  routerLinkActive="active" >
+											                            <a (click)="open1('productos-dormitorio/chinfonier',false,myModel1,3)">
 											                                <span style="color:#7AB5CA;">Chifonieres</span>
 											                            </a>
 											                        </li>
 											                        <li>
-											                            <a routerLink="productos-dormitorio/apoyo"  routerLinkActive="active" >
+											                            <a (click)="open1('productos-dormitorio/apoyo',false,myModel1,2)" >
 											                                <span style="color:#7AB5CA;">Sistemas de apoyo</span>
 											                            </a>
 											                        </li>
 											                         <li>
-											                            <a routerLink="productos-dormitorio/canape"  routerLinkActive="active" >
+											                            <a (click)="open1('productos-dormitorio/canape',false,myModel1,5)">
 											                                <span style="color:#7AB5CA;">Ba&ntilde;eras y canapes</span>
 											                            </a>
 											                        </li>
@@ -173,7 +173,7 @@
 											                            </a>
 											                        </li>
 											                        <li>
-											                            <a routerLink="armarios-dormitorio"  routerLinkActive="active" >
+											                            <a (click)="open1('armarios-dormitorio',false,myModel1,9)">
 											                                <span style="color:#7AB5CA;">Armarios</span>
 											                            </a>
 											                        </li>
@@ -191,7 +191,7 @@
       	 
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a  id="comercial" data-toggle="collapse" data-target="#menuComercial">
+                    <a (click)="comercial()" id="comercial" data-toggle="collapse" data-target="#menuComercial">
                         <span>
                             <span style="color:black;font-size:20px;margin-top: -20px;">Comercial</span>
                         </span>
@@ -199,30 +199,30 @@
 					<div id="menuComercial" class="collapse">
 						   <ul aria-labelledby="menuComercial">
 						     	<li>
-		                            <a routerLink="presupuesto-usuario"  routerLinkActive="active" >
+		                            <a (click)="open('presupuesto-usuario',false,myModel)">
 		                                <span >Presupuestos</span>
 		                            </a>
 		                        </li>
 		                        
 		                        <li>
-		                            <a routerLink="pedidos-usuario"  routerLinkActive="active" >
+		                            <a (click)="open('pedidos-usuario',false,myModel)">
 		                                <span >Pedidos</span>
 		                            </a>
 		                        </li>
 		                        
 		                    
 		                        <li>
-		                            <a routerLink="contacto-incidencias"  routerLinkActive="active" >
+		                            <a (click)="open('contacto-incidencias',false,myModel)">
 		                                <span >Inciencias</span>
 		                            </a>
 		                        </li>
 		                        <li>
-		                            <a routerLink="contacto-proyectos"  routerLinkActive="active" >
+		                            <a (click)="open('contacto-proyectos',false,myModel)">
 		                                <span >Proyectos</span>
 		                            </a>
 		                        </li>
 		                        <li>
-		                            <a routerLink="productos-dormitorio/apoyo"  routerLinkActive="active" >
+		                            <a (click)="open('productos-dormitorio/apoyo',false,myModel)">
 		                                <span >Mis Clientes</span>
 		                            </a>
 		                        </li>
@@ -233,7 +233,7 @@
       	 
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a  id="cntacto" data-toggle="collapse" data-target="#menuContactoTorga">
+                    <a (click)="contacto()" id="cntacto" data-toggle="collapse" data-target="#menuContactoTorga">
                         <span>
                             <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;">Contacto Fabrica</span>
                         </span>
@@ -241,7 +241,7 @@
 					<div id="menuContactoTorga" class="collapse">
 						<ul>
 							<li style="list-style: none;">
-							 <a  routerLink="contacto-fabrica-clientes"  routerLinkActive="active"  id="fabricanteTorga" data-toggle="collapse">
+							 <a (click)="open('contacto-fabrica-clientes',false,myModel)" id="fabricanteTorga" data-toggle="collapse">
 		                        <span>
 		                            <span style="color:#7AB5CA;font-size:16px;margin-top: -20px;">TORGA</span>
 		                        </span>
@@ -253,7 +253,7 @@
 			</ul>
       	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a  id="fabricante" data-toggle="collapse" data-target="#menuFabricanteTorga">
+                    <a (click)="fabricantes()" id="fabricante" data-toggle="collapse" data-target="#menuFabricanteTorga">
                         <span>
                             <span style="color:black;font-size:20px;margin-top: -20px;">Gestion Fabricantes</span>
                         </span>
@@ -272,12 +272,12 @@
 							<div id="menuFabricantesTorgaDentro" class="collapse" style="font-size:12px;color:#7AB5CA;">
 								  
 								     	<li >
-				                            <a routerLink="gestion-fabricantes"   routerLinkActive="active" >
+				                            <a (click)="open('gestion-fabricantes',false,myModel)">
 				                                <span style="color:#7AB5CA;">Gestion</span>
 				                            </a>
 				                        </li>
 				                        <li>
-				                            <a routerLink="productos-precio"  routerLinkActive="active" >
+				                            <a (click)="open('productos-precio',false,myModel)">
 				                                <span style="color:#7AB5CA;">Productos</span>
 				                            </a>
 				                        </li>
@@ -293,7 +293,7 @@
 			</ul>
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a  id="comercial" data-toggle="collapse" data-target="#menuComercialTorga">
+                    <a (click)="gestionTienda()"  id="comercial" data-toggle="collapse" data-target="#menuComercialTorga">
                         <span>
                             <span style="color:black;font-size:20px;margin-top: -20px;">Gestion Tienda</span>
                         </span>
@@ -310,22 +310,15 @@
 						<div id="menuTienda" class="collapse" style="font-size:12px;color:#7AB5CA;">
 							  
 							     	<li >
-			                            <a routerLink="datos-generales"  routerLinkActive="active" >
+			                            <a (click)="open('datos-generales',false,myModel)">
 			                                <span style="color:#7AB5CA;">Datos Generales</span>
 			                            </a>
 			                        </li>
 			                        <li>
-			                            <a routerLink="vendedores-usuario"  routerLinkActive="active" >
+			                            <a (click)="open('vendedores-usuario',false,myModel)">
 			                                <span style="color:#7AB5CA;">Usuarios</span>
 			                            </a>
 			                        </li>
-			                        <li>
-			                            <a routerLink="datos-usuario"  routerLinkActive="active" >
-			                                <span style="color:#7AB5CA;">datos</span>
-			                            </a>
-			                        </li>
-			                        
-		                     
 		                        
 						  </div>
 						 </li></ul>
@@ -333,14 +326,14 @@
       	 </ul>
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a  id="comercial" data-toggle="collapse" data-target="#menuComercial">
+                    <a  id="comercial" data-toggle="collapse" data-target="#menuComercial" (click)="open('datos-usuario',false,myModel)">
                         <span>
                            <p style="text-align:center"> <span id="contadorDatos" style="color:black;font-size:20px;">{{contador}}</span></p>
                         </span>
 					</a>
 			</li>
 		</ul> 
-						<a  *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']" routerLink ="contacto-sugerencias" routerLinkActive="active">
+						<a  *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']" (click)="open('contacto-sugerencias',false,myModel)">
                             <span>SUGERENCIAS</span>
                         </a><br>
                         <a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
@@ -751,6 +744,20 @@
   <div class="modal-body">
    			 <p style="text-align:center">Aun no has finalizado la configuracion del articulo &#191;Desea abandonar la pagina?</p>
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="open(ruta,true,myModel)">Si</button></p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" (click)="modal.close()">No</button></p>
+  </div>
+</ng-template>
+
+<ng-template #myModel1 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">&#191;Desea abandonar la pagina?</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   			 <p style="text-align:center">Aun no has finalizado la configuracion del articulo &#191;Desea abandonar la pagina?</p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="open1(ruta,true,myModel1,id)">Si</button></p>
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" (click)="modal.close()">No</button></p>
   </div>
 </ng-template>
