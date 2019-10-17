@@ -278,19 +278,28 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 );
                                                 var prodNombre =
                                                     acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
+                                                prodNombre = prodNombre.split(' ')[0];
                                                 var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
+                                                if (nombreAcabado == 'marmol blanco') {
+                                                    nombreAcabado = 'marmolblanco';
+                                                }
+                                                if (nombreAcabado == 'marmol negro') {
+                                                    nombreAcabado = 'marmolnegro';
+                                                }
                                                 $('#imagen' + i).append(
-                                                    '<img id="tapa" width="500px" height="333px" style="position: absolute;left: 180px;margin-top: 0px;" src="../../../content/images/' +
+                                                    '<img id="tapa" class="' +
+                                                        nombreAcabado +
+                                                        '" width="500px" height="333px" style="position: absolute;left: 30px;margin-top: 5px;" src="../../../content/images/' +
                                                         prodNombre +
                                                         '/' +
-                                                        (k + 1) +
+                                                        contador +
                                                         '/' +
                                                         prodNombre +
                                                         '_' +
-                                                        (k + 1) +
+                                                        contador +
                                                         '_' +
                                                         nombreAcabado +
-                                                        '-min.png">'
+                                                        '_optimized.png">'
                                                 );
 
                                                 if (

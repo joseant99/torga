@@ -11,4 +11,5 @@ export * from './productos-dormitorio-cabeceros.component';
 export * from './productos-dormitorio-apoyo.component';
 export * from './productos-dormitorio-canape.component';
 export * from './productos-modulos-bajos.component';
+export * from './productos-singulares.component';
 export * from './productos-aparadores.component';

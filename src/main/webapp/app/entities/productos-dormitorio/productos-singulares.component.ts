@@ -36,9 +36,9 @@ import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-
 
 @Component({
     selector: 'jhi-productos-dormitorio',
-    templateUrl: './productos-modulos-bajos.component.html'
+    templateUrl: './productos-singulares.component.html'
 })
-export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
+export class ProductosSingularesComponent implements OnInit, OnDestroy {
     currentAccount: any;
     productosDormitorios: IProductosDormitorio[];
     dimensionesProductos: IDimensionesProducto[];
@@ -249,7 +249,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i]['id'] +
-                                '" width="500px" height="283.73px" style=" opacity: 0.7;">'
+                                '" width="500px" height="892.75px" style=" opacity: 0.7;">'
                         );
 
                         $('.dimensionesColor1').append(
@@ -278,7 +278,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px"  style=" opacity: 0.7;">'
+                                '" width="500px" height="892.75px"  style=" opacity: 0.7;">'
                         );
                         $('.dimensionesColor2').append(
                             '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -306,7 +306,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px" style=" opacity: 0.7;">'
+                                '" width="500px" height="892.75px" style=" opacity: 0.7;">'
                         );
                         $('.dimensionesColor3').append(
                             '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -334,7 +334,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px" style=" opacity: 0.7;">'
+                                '" width="500px" height="892.75px" style=" opacity: 0.7;">'
                         );
                         $('.dimensionesColor4').append(
                             '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -362,7 +362,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px"  style=" opacity: 0.7;">'
+                                '" width="500px" height="892.75px"  style=" opacity: 0.7;">'
                         );
                         $('.dimensionesColor5').append(
                             '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -390,7 +390,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '"width="500px" height="283.73px"  style=" opacity: 0.7;">'
+                                '"width="500px" height="892.75px"  style=" opacity: 0.7;">'
                         );
                         $('.dimensionesColor6').append(
                             '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -521,7 +521,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
-                                    '" width="500px" height="283.73px" style=" opacity: 0.7;">'
+                                    '" width="500px" height="892.75px" style=" opacity: 0.7;">'
                             );
 
                             $('.dimensionesColor1').append(
@@ -551,7 +551,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;">'
+                                    '" width="500px" height="892.75px"  style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor2').append(
                                 '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -579,7 +579,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px" style=" opacity: 0.7;">'
+                                    '" width="500px" height="892.75px" style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor3').append(
                                 '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -607,7 +607,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px" style=" opacity: 0.7;">'
+                                    '" width="500px" height="892.75px" style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor4').append(
                                 '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -635,7 +635,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;">'
+                                    '" width="500px" height="892.75px"  style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor5').append(
                                 '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -663,7 +663,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '"width="500px" height="283.73px"  style=" opacity: 0.7;">'
+                                    '"width="500px" height="892.75px"  style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor6').append(
                                 '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -709,7 +709,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
-                                    '" width="500px" height="283.73px" style=" opacity: 0.7;">'
+                                    '" width="500px" height="892.75px" style=" opacity: 0.7;">'
                             );
 
                             $('.dimensionesColor1').append(
@@ -739,7 +739,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;">'
+                                    '" width="500px" height="892.75px"  style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor2').append(
                                 '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -767,7 +767,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px" style=" opacity: 0.7;">'
+                                    '" width="500px" height="892.75px" style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor3').append(
                                 '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -823,7 +823,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;">'
+                                    '" width="500px" height="892.75px"  style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor5').append(
                                 '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -851,7 +851,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '"width="500px" height="283.73px"  style=" opacity: 0.7;">'
+                                    '"width="500px" height="892.75px"  style=" opacity: 0.7;">'
                             );
                             $('.dimensionesColor6').append(
                                 '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
@@ -959,7 +959,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     var idAux = [];
                     var saberNumero = 1;
                     var alturaFiltrado = $('.selectectAltura').text();
-                    this.dimensionesProductoTipoService.findFiltroAltura(8, alturaFiltrado).subscribe(data => {
+                    this.dimensionesProductoTipoService.findFiltroAltura(13, alturaFiltrado).subscribe(data => {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
                             if (idAux[0] == undefined) {
@@ -1029,7 +1029,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     }
                     $('#ancho' + id).attr('class', 'selectectAncho');
                     var anchoFiltrado = $('.selectectAncho').text();
-                    this.dimensionesProductoTipoService.findFiltro(8, anchoFiltrado).subscribe(data => {
+                    this.dimensionesProductoTipoService.findFiltro(13, anchoFiltrado).subscribe(data => {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
                             $('#ProductosCargados').css({ display: 'none' });
@@ -1075,7 +1075,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $('#ProductosCargados1').css({ display: 'none' });
                         $('#ProductosCargados').css({ display: 'none' });
                         var anchoFiltrado = $('#ancho' + id).text();
-                        this.dimensionesProductoTipoService.findFiltroAlturaAncho(8, altura, anchoFiltrado).subscribe(data => {
+                        this.dimensionesProductoTipoService.findFiltroAlturaAncho(13, altura, anchoFiltrado).subscribe(data => {
                             var contador = 1;
                             $.each(data['body'], function(index, value) {
                                 var imagen = value[4]['imagen'];
@@ -1132,7 +1132,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     var saberNumero = 1;
                     var altura = $('.selectectAltura').text();
                     var alturaFiltrado = $('#altura' + id).text();
-                    this.dimensionesProductoTipoService.findFiltroAltura(8, alturaFiltrado).subscribe(data => {
+                    this.dimensionesProductoTipoService.findFiltroAltura(13, alturaFiltrado).subscribe(data => {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
                             if (idAux[0] == undefined) {
@@ -1199,7 +1199,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     $('#altura2').removeAttr('class');
 
                     var anchoFiltrado = $('.selectectAncho').text();
-                    this.dimensionesProductoTipoService.findFiltro(8, anchoFiltrado).subscribe(data => {
+                    this.dimensionesProductoTipoService.findFiltro(13, anchoFiltrado).subscribe(data => {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
                             $('#ProductosCargados').css({ display: 'none' });
@@ -1239,7 +1239,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     alturaFiltrado = $('#altura' + id).text();
                     $('#ProductosCargados1').css({ display: 'none' });
                     $('#ProductosCargados1').css({ display: 'none' });
-                    this.dimensionesProductoTipoService.findFiltroAlturaAncho(8, alturaFiltrado, anchoFiltrado).subscribe(data => {
+                    this.dimensionesProductoTipoService.findFiltroAlturaAncho(13, alturaFiltrado, anchoFiltrado).subscribe(data => {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
                             var imagen = value[4]['imagen'];
@@ -1293,7 +1293,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     var fondoFiltrado = $('.selectectFondo').text();
                     var idAux = [];
                     var saberNumero = 1;
-                    this.dimensionesProductoTipoService.findFiltroFondo(8, fondoFiltrado).subscribe(data => {
+                    this.dimensionesProductoTipoService.findFiltroFondo(13, fondoFiltrado).subscribe(data => {
                         var contador = 1;
                         $.each(data['body'], function(index, value) {
                             if (idAux[0] == undefined) {
@@ -1357,7 +1357,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         }
                         $('#fondo' + id).attr('class', 'selectectFondo');
 
-                        this.dimensionesProductoTipoService.findFiltro(8, anchoFiltrado).subscribe(data => {
+                        this.dimensionesProductoTipoService.findFiltro(13, anchoFiltrado).subscribe(data => {
                             var contador = 1;
                             $.each(data['body'], function(index, value) {
                                 $('#ProductosCargados').css({ display: 'none' });
@@ -1399,7 +1399,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#fondo' + id).attr('class', 'selectectFondo');
                             var idAux = [];
                             var saberNumero = 1;
-                            this.dimensionesProductoTipoService.findFiltroAltura(8, altura).subscribe(data => {
+                            this.dimensionesProductoTipoService.findFiltroAltura(13, altura).subscribe(data => {
                                 var contador = 1;
                                 $.each(data['body'], function(index, value) {
                                     if (idAux[0] == undefined) {
@@ -1462,7 +1462,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     $('#prod' + i).empty();
                                 }
                                 $('#fondo' + id).attr('class', 'selectectFondo');
-                                this.dimensionesProductoTipoService.findFiltroAlturaAncho(8, altura, anchoFiltrado).subscribe(data => {
+                                this.dimensionesProductoTipoService.findFiltroAlturaAncho(13, altura, anchoFiltrado).subscribe(data => {
                                     var contador = 1;
                                     $.each(data['body'], function(index, value) {
                                         var imagen = value[4]['imagen'];
@@ -1508,7 +1508,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $('#fondo' + id).attr('class', 'selectectFondo');
                         var fondoFiltrado = $('.selectectFondo').text();
 
-                        this.dimensionesProductoTipoService.findFiltroFondoAncho(8, fondoFiltrado, anchoFiltrado).subscribe(data => {
+                        this.dimensionesProductoTipoService.findFiltroFondoAncho(13, fondoFiltrado, anchoFiltrado).subscribe(data => {
                             var contador = 1;
                             $('#ProductosCargados').css({ display: 'none' });
                             $('#ProductosCargados1').css({ display: 'none' });
@@ -1551,7 +1551,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             var fondoFiltrado = $('.selectectFondo').text();
                             var idAux = [];
                             var saberNumero = 1;
-                            this.dimensionesProductoTipoService.findFiltroFondoAlto(8, fondoFiltrado, altura).subscribe(data => {
+                            this.dimensionesProductoTipoService.findFiltroFondoAlto(13, fondoFiltrado, altura).subscribe(data => {
                                 var contador = 1;
                                 $.each(data['body'], function(index, value) {
                                     if (idAux[0] == undefined) {
@@ -1616,7 +1616,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 var fondoFiltrado = $('.selectectFondo').text();
 
                                 this.dimensionesProductoTipoService
-                                    .findFiltroFondoAltoAncho(8, fondoFiltrado, altura, anchoFiltrado)
+                                    .findFiltroFondoAltoAncho(13, fondoFiltrado, altura, anchoFiltrado)
                                     .subscribe(data => {
                                         var contador = 1;
                                         $('#ProductosCargados').css({ display: 'none' });
@@ -3351,7 +3351,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         if (todos != undefined) {
             this.productosDormitorios = todos;
         } else {
-            this.productosDormitorioService.categoria(8).subscribe(data => {
+            this.productosDormitorioService.categoria(13).subscribe(data => {
                 this.productosDormitorioService.todos = data.body;
             });
             this.productosDormitorios = this.productosDormitorioService.todos;
@@ -3399,7 +3399,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         });
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
 
-        this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
+        this.precioTiendaProductosService.findProdId(13, tienda.id).subscribe(data => {
             this.precioTiendaProductosService.todos = data.body;
         });
         this.precioTienda = sessionStorage.getItem('precioTienda');

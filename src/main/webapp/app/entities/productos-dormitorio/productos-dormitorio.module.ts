@@ -15,6 +15,7 @@ import {
     ProductosDormitorioApoyoComponent,
     ProductosDormitorioCanapeComponent,
     ProductosAparadoresComponent,
+    ProductosSingularesComponent,
     ProductosDormitorioDeleteDialogComponent,
     productosDormitorioRoute,
     productosDormitorioPopupRoute
@@ -31,6 +32,7 @@ const ENTITY_STATES = [...productosDormitorioRoute, ...productosDormitorioPopupR
         ProductosDormitorioCanapeComponent,
         ProductosDormitorioCabecerosComponent,
         ProductosAparadoresComponent,
+        ProductosSingularesComponent,
         ProductosDormitorioChinfonierComponent,
         ProductosModulosBajosComponent,
         ArmariosDormitorioComponent,
@@ -49,6 +51,7 @@ const ENTITY_STATES = [...productosDormitorioRoute, ...productosDormitorioPopupR
         ProductosDormitorioCanapeComponent,
         ProductosDormitorioChinfonierComponent,
         ProductosDormitorioUpdateComponent,
+        ProductosSingularesComponent,
         ProductosModulosBajosComponent,
         ProductosDormitorioDeleteDialogComponent,
         ProductosDormitorioDeletePopupComponent
