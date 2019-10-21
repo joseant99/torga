@@ -106,6 +106,13 @@ public class DimensionesProductoTipoResource {
         Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findProducto(id);
         return ResponseEntity.ok().body(page);
     }
+    @GetMapping("/dimensiones-producto-tipos-buscado-nombre/{id}")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoNombre(@PathVariable String id) {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findProductoNombre(id);
+        return ResponseEntity.ok().body(page);
+    }
     
     @GetMapping("/dimensiones-producto-tipos-buscado-dimensiones/{id}")
     @Timed

@@ -63,18 +63,18 @@
     </div>
     <div id="ProductosCargados" style="margin-top:4%">
     	
-        <div *ngFor="let productosDormitorio of productosDormitorios" [id]='productosDormitorio.id' class="productosColor">
+        <div *ngFor="let productosDormitorio of productosDormitorios" [id]='productosDormitorio.id' class="productosColorSin{{productosDormitorio.id}}">
     	<div id="productosDormitorioCargados">
 	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
-	 		<img title="Foto de linea de codigo" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="892.75px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
+	 		<img style="margin-left: 100px;" title="Foto de linea de codigo" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="592.75px" width="300px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
     	</div>
     	</div>	
     </div>
     <div *ngIf="productosDormitorios === undefined" id="ProductosCargados1" style="margin-top:4%">
-        <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColor">
+        <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColorSin{{productosDormitorio.id}}">
     	<div id="productosDormitorioCargados">
 	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
-	 		<img title="Foto de linea de codigo" class="" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="892.75px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
+	 		<img title="Foto de linea de codigo" style="margin-left: 100px;" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="592.75px" width="300px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
     	</div>
     	</div>	
     </div>
@@ -83,24 +83,24 @@
 		<h2 id="medidas" style='margin-left:40%;float:left;display:none'>Paso 2: Medidas</h2>
 		</br>		
 		
-		<div id="dimensionesColorStyleSin" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
+		<div class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
 		</div>
 		   
-		<div id="dimensionesColorStyleSin" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
+		<div class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
 		</div>  
 		 
-		<div  id="dimensionesColorStyleSin" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
+		<div class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
 		</div>  
 		 
-		<div id="dimensionesColorStyleSin" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
+		<div class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
 		</div>
 		
-		<div id="dimensionesColorStyleSin" class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
+		<div class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
 		</div> 
 		
-		<div id="dimensionesColorStyleSin" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
+		<div class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
 		</div>
-		<div id="dimensionesColorStyleSin" class="dimensionesColor7" (click)="dimensionesCogidas(7)"> 
+		<div class="dimensionesColor7" (click)="dimensionesCogidas(7)"> 
 		</div>         
 	</div>  
 	<div id="especiales"style="width:100%;float:left">
@@ -138,9 +138,6 @@
 				<div id="aca113" style="float:left"></div>
 				<div id="aca114" style="float:left"></div>
 			</div>
-			
-			
-
 	</div>  
 	<div id="apoyo"style="width:100%;float:left;margin-top:50px">
 			<h2 id="nombreApoyoTitulo" style='margin-left:40%;float:left;display:none'>Paso 4: Sistema de Apoyo</h2>

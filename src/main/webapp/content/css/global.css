@@ -183,7 +183,8 @@ Generic styles
 #dimensionesColorStyleSin {
     float: left;
     margin-left: 0%;
-    height: 892.75px;
+    height: 592.75px;
+    width: 44%;
 }
 
 #interiorMuebles {
@@ -195,6 +196,148 @@ Generic styles
     margin-left: 150px;
     max-height: 333px;
     max-width: 500px;
+}
+
+.imagenAcabadoPrincipalImgSin {
+    opacity: 0.7;
+    margin-left: 150px;
+    max-height: 592.75px;
+    max-width: 500px;
+    margin-right: 150px;
+}
+
+.acabadoPartes {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    margin-top: -333px;
+    margin-left: 150px;
+}
+.pietrasin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(125%);
+}
+.norwaysin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(140%);
+}
+.broncesin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+}
+.transparentesin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+}
+.nocesin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(140%);
+}
+.naturesin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(150%);
+}
+.tabaksin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(150%);
+}
+.kobesin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(150%);
+}
+.blancosin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(140%);
+}
+.beigesin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(140%);
+}
+.lattesin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(190%);
+}
+.grafenosin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(150%);
+}
+.lagosin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(130%);
+}
+.maresin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(130%);
+}
+.marmolblancosin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(190%);
+}
+.marmolnegrosin {
+    position: absolute;
+    max-width: 500px;
+    max-height: 592.75px;
+    margin-top: -592.75px;
+    margin-left: 150px;
+    filter: brightness(190%);
 }
 
 .acabadoPartes {
@@ -347,59 +490,247 @@ Generic styles
     float: left;
     border: 1px solid #dfdddc;
 }
+.productosColorSin {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin72 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin73 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin74 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin75 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin76 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin77 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin78 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin79 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin80 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin81 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin81 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin82 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin83 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin84 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin85 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin86 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin87 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin88 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin89 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+}
+.productosColorSin90 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin91 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
+.productosColorSin92 {
+    float: left;
+    border: 1px solid #dfdddc;
+    width: 44%;
+    margin-right: 100%;
+}
 .productosColor33 {
     float: left;
     border: 1px solid #dfdddc;
     margin-right: 100%;
 }
-.productosColor34 {
+.productosColor14 {
     float: left;
     border: 1px solid #dfdddc;
     margin-right: 100%;
 }
-.productosColor35 {
+.productosColor69 {
     float: left;
     border: 1px solid #dfdddc;
     margin-right: 100%;
 }
-.productosColor52 {
+.productosColor62 {
     float: left;
     border: 1px solid #dfdddc;
     margin-right: 100%;
 }
-.productosColor46 {
+.productosColor63 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor64 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor65 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor66 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor67 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor68 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor69 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor53 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor107 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor108 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor109 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor119 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor114 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor110 {
     float: left;
     border: 1px solid #dfdddc;
 }
-.productosColor51 {
+.productosColor111 {
     float: left;
     border: 1px solid #dfdddc;
 }
-.productosColor55 {
+.productosColor112 {
     float: left;
     border: 1px solid #dfdddc;
 }
-.productosColor56 {
+.productosColor113 {
     float: left;
     border: 1px solid #dfdddc;
 }
-.productosColor57 {
+.productosColor115 {
     float: left;
     border: 1px solid #dfdddc;
 }
-.productosColor58 {
+.productosColor116 {
     float: left;
     border: 1px solid #dfdddc;
 }
-.productosColor59 {
+.productosColor117 {
     float: left;
     border: 1px solid #dfdddc;
 }
-.productosColor60 {
-    float: left;
-    border: 1px solid #dfdddc;
-}
-.productosColor61 {
+.productosColor118 {
     float: left;
     border: 1px solid #dfdddc;
 }

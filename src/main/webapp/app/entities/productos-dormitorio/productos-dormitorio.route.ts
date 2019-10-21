@@ -18,6 +18,7 @@ import { ProductosDormitorioCanapeComponent } from './productos-dormitorio-canap
 import { ProductosModulosBajosComponent } from './productos-modulos-bajos.component';
 import { ProductosAparadoresComponent } from './productos-aparadores.component';
 import { ProductosSingularesComponent } from './productos-singulares.component';
+import { ProductosBuscadorComponent } from './productos-buscador.component';
 import { ProductosDormitorioUpdateComponent } from './productos-dormitorio-update.component';
 import { ProductosDormitorioDeletePopupComponent } from './productos-dormitorio-delete-dialog.component';
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
@@ -68,6 +69,19 @@ export const productosDormitorioRoute: Routes = [
     {
         path: 'productos-modulos-bajos',
         component: ProductosModulosBajosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-buscador',
+        component: ProductosBuscadorComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },
