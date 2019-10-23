@@ -66,7 +66,7 @@
         <div *ngFor="let productosDormitorio of productosDormitorios" [id]='productosDormitorio.id' class="productosColorSin{{productosDormitorio.id}}">
     	<div id="productosDormitorioCargados">
 	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
-	 		<img style="margin-left: 100px;" title="Foto de linea de codigo" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="592.75px" width="300px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
+	 		<img style="margin-left: 100px;" title="Foto de linea de codigo" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="535.75px" width="300px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
     	</div>
     	</div>	
     </div>
@@ -74,7 +74,7 @@
         <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColorSin{{productosDormitorio.id}}">
     	<div id="productosDormitorioCargados">
 	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
-	 		<img title="Foto de linea de codigo" style="margin-left: 100px;" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="592.75px" width="300px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
+	 		<img title="Foto de linea de codigo" style="margin-left: 100px;" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="535.75px" width="300px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
     	</div>
     	</div>	
     </div>

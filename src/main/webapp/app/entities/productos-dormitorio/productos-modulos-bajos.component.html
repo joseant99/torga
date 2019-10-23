@@ -680,6 +680,24 @@
 		    </div>
 	  </div>
 	  
+	   <div class="modal fade" id="myModalComposicion" role="dialog">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body" style="height:750px">	          
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
 </div>
 <div id="calculadoraCarrito">
 
@@ -745,6 +763,7 @@
 			</div>
 			
 			<div id="carrito" class="container tab-pane fade" style="height:600px;overflow:scroll;">
+			<button data-toggle="modal" data-target="#myModalComposicion" (click)="cargarComposicion()">Composicion</button>
 					<div id="productoCarrito1" style="display:none">
 					<div style="float:left" (click)="borrarCarritoProd(1)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
 						<div id="datos1" style="float:left;margin-left:5px">

@@ -474,6 +474,148 @@ Generic styles
     filter: brightness(190%);
 }
 
+#mb6 {
+    bottom: 42px;
+}
+#mb7 {
+    bottom: 42px;
+}
+#mb8 {
+    bottom: 42px;
+}
+#mb9 {
+    bottom: 42px;
+}
+#mb10 {
+    bottom: 42px;
+}
+#mb11 {
+    bottom: 42px;
+}
+#mb12 {
+    bottom: 42px;
+}
+#mb13 {
+    bottom: 42px;
+}
+#mb14 {
+    bottom: 42px;
+}
+#mb4 {
+    bottom: 60px;
+    margin-left: 75px;
+}
+.pietraModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(125%);
+    bottom: 0;
+}
+.norwayModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    bottom: 0;
+    filter: brightness(140%);
+}
+.bronceModal {
+    position: absolute;
+    max-width: 500px;
+    bottom: 0;
+    max-height: 333px;
+}
+.transparenteModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    bottom: 0;
+}
+.noceModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(140%);
+    bottom: 0;
+}
+.natureModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(150%);
+    bottom: 0;
+}
+.tabakModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(150%);
+    bottom: 0;
+}
+.kobeModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(150%);
+    bottom: 0;
+}
+.blancoModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(140%);
+    bottom: 0;
+}
+.beigeModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(140%);
+    bottom: 0;
+}
+.latteModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(190%);
+    bottom: 0;
+}
+.grafenoModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(150%);
+    bottom: 0;
+}
+.lagoModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(130%);
+    bottom: 0;
+}
+.mareModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(130%);
+    bottom: 0;
+}
+.marmolblancoModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(190%);
+    bottom: 0;
+}
+.marmolnegroModal {
+    position: absolute;
+    max-width: 500px;
+    max-height: 333px;
+    filter: brightness(190%);
+    bottom: 0;
+}
+
 #acabadosPartesDivs {
     float: right;
     width: 35%;

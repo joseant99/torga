@@ -45,9 +45,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     productosDormitorioPrueba: IProductosDormitorio;
     error: any;
     success: any;
+    productosArrayNombre: any;
     apoyo: any;
     isSaving: boolean;
     especiales: any;
+    medidasModal: any;
     acaProd: IAcaProd;
     iluminacion: any;
     acabados: any;
@@ -122,6 +124,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('#productoCalculadora1 #datos1').empty();
         $('#nombreMesita').empty();
         $('#precioDimension').empty();
+        $('.productosColor107').css({ 'background-color': 'white' });
+        $('.productosColor108').css({ 'background-color': 'white' });
+        $('.productosColor109').css({ 'background-color': 'white' });
+        $('.productosColor110').css({ 'background-color': 'white' });
+        $('.productosColor111').css({ 'background-color': 'white' });
+        $('.productosColor112').css({ 'background-color': 'white' });
+        $('.productosColor113').css({ 'background-color': 'white' });
+        $('.productosColor114').css({ 'background-color': 'white' });
+        $('.productosColor115').css({ 'background-color': 'white' });
+        $('.productosColor116').css({ 'background-color': 'white' });
+        $('.productosColor117').css({ 'background-color': 'white' });
+        $('.productosColor118').css({ 'background-color': 'white' });
+        $('.productosColor119').css({ 'background-color': 'white' });
         $('#imagenAcabadoPrincipal').empty();
         $('#total').empty();
         $('.dimensionesColor1').empty();
@@ -200,6 +215,21 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
+
+        $('.productosColor107').css({ 'background-color': 'white' });
+        $('.productosColor108').css({ 'background-color': 'white' });
+        $('.productosColor109').css({ 'background-color': 'white' });
+        $('.productosColor110').css({ 'background-color': 'white' });
+        $('.productosColor111').css({ 'background-color': 'white' });
+        $('.productosColor112').css({ 'background-color': 'white' });
+        $('.productosColor113').css({ 'background-color': 'white' });
+        $('.productosColor114').css({ 'background-color': 'white' });
+        $('.productosColor115').css({ 'background-color': 'white' });
+        $('.productosColor116').css({ 'background-color': 'white' });
+        $('.productosColor117').css({ 'background-color': 'white' });
+        $('.productosColor118').css({ 'background-color': 'white' });
+        $('.productosColor119').css({ 'background-color': 'white' });
+
         $('#imagenAcabado').remove();
         $('#acabado').css({ display: 'none' });
         $('.productosColor').css({ 'background-color': 'white' });
@@ -236,7 +266,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor1').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor1').append(
                             '<img  src="data:image/gif;base64,' +
@@ -259,7 +295,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor2').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor2').append(
                             '<img  src="data:image/gif;base64,' +
@@ -281,7 +323,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor3').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor3').append(
                             '<img  src="data:image/gif;base64,' +
@@ -303,7 +351,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor4').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor4').append(
                             '<img  src="data:image/gif;base64,' +
@@ -325,7 +379,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor5').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor5').append(
                             '<img  src="data:image/gif;base64,' +
@@ -347,7 +407,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor6').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor6').append(
                             '<img  src="data:image/gif;base64,' +
@@ -431,6 +497,21 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
+
+        $('.productosColor107').css({ 'background-color': 'white' });
+        $('.productosColor108').css({ 'background-color': 'white' });
+        $('.productosColor109').css({ 'background-color': 'white' });
+        $('.productosColor110').css({ 'background-color': 'white' });
+        $('.productosColor111').css({ 'background-color': 'white' });
+        $('.productosColor112').css({ 'background-color': 'white' });
+        $('.productosColor113').css({ 'background-color': 'white' });
+        $('.productosColor114').css({ 'background-color': 'white' });
+        $('.productosColor115').css({ 'background-color': 'white' });
+        $('.productosColor116').css({ 'background-color': 'white' });
+        $('.productosColor117').css({ 'background-color': 'white' });
+        $('.productosColor118').css({ 'background-color': 'white' });
+        $('.productosColor119').css({ 'background-color': 'white' });
+
         $('#imagenAcabado').remove();
         $('#acabado').css({ display: 'none' });
         $('.productosColor').css({ 'background-color': 'white' });
@@ -471,7 +552,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor1').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor1').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -495,7 +582,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
 
                             $('.dimensionesColor2').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor2').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -517,7 +610,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor3').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor3').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -539,7 +638,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor4').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor4').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -561,7 +666,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor5').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor5').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -583,7 +694,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor6').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor6').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -623,7 +740,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor1').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor1').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -647,7 +770,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
 
                             $('.dimensionesColor2').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor2').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -669,7 +798,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor3').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor3').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -691,7 +826,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor4').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor4').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -713,7 +854,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor5').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor5').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -735,7 +882,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor6').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor6').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -3086,6 +3239,20 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
+
+        $('.productosColor107').css({ 'background-color': 'white' });
+        $('.productosColor108').css({ 'background-color': 'white' });
+        $('.productosColor109').css({ 'background-color': 'white' });
+        $('.productosColor110').css({ 'background-color': 'white' });
+        $('.productosColor111').css({ 'background-color': 'white' });
+        $('.productosColor112').css({ 'background-color': 'white' });
+        $('.productosColor113').css({ 'background-color': 'white' });
+        $('.productosColor114').css({ 'background-color': 'white' });
+        $('.productosColor115').css({ 'background-color': 'white' });
+        $('.productosColor116').css({ 'background-color': 'white' });
+        $('.productosColor117').css({ 'background-color': 'white' });
+        $('.productosColor118').css({ 'background-color': 'white' });
+        $('.productosColor119').css({ 'background-color': 'white' });
         $('#imagenAcabado').remove();
         $('#medidas').css({ display: 'none' });
         $('#acabado').css({ display: 'none' });
@@ -3099,6 +3266,188 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         }
     }
 
+    public cargarComposicion() {
+        var productosArrayNombres = this.productosArrayNombre;
+        var medidas = this.medidasModal;
+        var acabados = [];
+        $('#myModalComposicion .modal-body').empty();
+        var contAca = 1;
+        var nombreCarpeta;
+        for (let i = 1; i <= 100; i++) {
+            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+            if (sesion != null) {
+                $('#myModalComposicion .modal-body').append(
+                    '<div style="float: left;width: 500px;text-align: center;" id="cuerpo' + i + '"></div>'
+                );
+                var nombre = productosArrayNombres[sesion[1]['productosDormitorio']['id']];
+                console.log(nombre);
+                for (let j = 1; j < 15; j++) {
+                    if (sesion[1]['acabado' + j] != undefined) {
+                        acabados[contAca] = sesion[1]['acabado' + j]['nombre'];
+                        contAca++;
+                    }
+                }
+
+                if (
+                    nombre == 'mb6' ||
+                    nombre == 'mb9' ||
+                    nombre == 'mb7' ||
+                    nombre == 'mb8' ||
+                    nombre == 'mb10' ||
+                    nombre == 'mb11' ||
+                    nombre == 'mb12' ||
+                    nombre == 'mb13' ||
+                    nombre == 'mb14'
+                ) {
+                    nombreCarpeta = 'mb5';
+                } else {
+                    nombreCarpeta = nombre;
+                }
+
+                contAca = 1;
+                for (let k = 1; k < acabados.length; k++) {
+                    if (k == 1) {
+                        if (i == 1) {
+                            $('#cuerpo' + i).append(
+                                '<img style="z-index:100" id="' +
+                                    nombre +
+                                    '" class="' +
+                                    acabados[k].toLowerCase() +
+                                    'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                    nombreCarpeta +
+                                    '/' +
+                                    k +
+                                    '/' +
+                                    nombreCarpeta +
+                                    '_' +
+                                    k +
+                                    '_' +
+                                    acabados[k].toLowerCase() +
+                                    '_optimized.png"><p> </p>'
+                            );
+                        } else {
+                            var prodMed = this.medidasModal[nombre];
+                            var left = prodMed.split(';')[0];
+                            var bottom = prodMed.split(';')[1];
+                            $('#cuerpo' + i).append(
+                                '<img style="z-index:' +
+                                    (100 - i) +
+                                    ';' +
+                                    left +
+                                    ';' +
+                                    bottom +
+                                    '"  class="' +
+                                    acabados[k].toLowerCase() +
+                                    'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                    nombreCarpeta +
+                                    '/' +
+                                    k +
+                                    '/' +
+                                    nombreCarpeta +
+                                    '_' +
+                                    k +
+                                    '_' +
+                                    acabados[k].toLowerCase() +
+                                    '_optimized.png"><p> </p>'
+                            );
+                        }
+                    } else {
+                        if (k == 2) {
+                            if (i == 1) {
+                                $('#cuerpo' + i).append(
+                                    '<img style="margin-top:-15px;z-index:100" id="' +
+                                        nombre +
+                                        '" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                        nombreCarpeta +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombreCarpeta +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png"><p> </p>'
+                                );
+                            } else {
+                                var prodMed = this.medidasModal[nombre];
+                                var left = prodMed.split(';')[0];
+                                var bottom = prodMed.split(';')[1];
+                                $('#cuerpo' + i).append(
+                                    '<img style="z-index:' +
+                                        (100 - i) +
+                                        ';margin-top:-15px;' +
+                                        left +
+                                        ';' +
+                                        bottom +
+                                        '" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                        nombreCarpeta +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombreCarpeta +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png"><p> </p>'
+                                );
+                            }
+                        } else {
+                            if (i == 1) {
+                                $('#cuerpo' + i).append(
+                                    '<img style="margin-top:-15px;z-index:100" id="' +
+                                        nombre +
+                                        '" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                        nombre +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png"><p> </p>'
+                                );
+                            } else {
+                                var prodMed = this.medidasModal[nombre];
+                                var left = prodMed.split(';')[0];
+                                var bottom = prodMed.split(';')[1];
+                                $('#cuerpo' + i).append(
+                                    '<img style="z-index:' +
+                                        (100 - i) +
+                                        ';margin-top:-15px;' +
+                                        left +
+                                        ';' +
+                                        bottom +
+                                        '" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                        nombre +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png"><p> </p>'
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     public generarPresupuesto() {
         this.todasDimensiones = this.dimensionesProductoTipoService.todos;
 
@@ -3419,6 +3768,35 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var especiales = [];
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
 
+        var medidasModal = [];
+        medidasModal['mb4'] = 'margin-left:-140px;bottom:125px';
+        medidasModal['mb1'] = 'margin-left:-60px;bottom:105px';
+        medidasModal['mb6'] = 'margin-left:-70px;bottom:140px';
+        medidasModal['mb7'] = 'margin-left:-70px;bottom:140px';
+        medidasModal['mb8'] = 'margin-left:-70px;bottom:140px';
+        medidasModal['mb9'] = 'margin-left:-70px;bottom:140px';
+        medidasModal['mb10'] = 'margin-left:-70px;bottom:140px';
+        medidasModal['mb11'] = 'margin-left:-70px;bottom:140px';
+        medidasModal['mb12'] = 'margin-left:-70px;bottom:140px';
+        medidasModal['mb13'] = 'margin-left:-70px;bottom:140px';
+        medidasModal['mb14'] = 'margin-left:-70px;bottom:140px';
+        this.medidasModal = medidasModal;
+
+        var productosArrayNombres = [];
+        productosArrayNombres[107] = 'mb1';
+        productosArrayNombres[108] = 'mb';
+        productosArrayNombres[109] = 'mb4';
+        productosArrayNombres[110] = 'mb6';
+        productosArrayNombres[111] = 'mb5';
+        productosArrayNombres[112] = 'mb8';
+        productosArrayNombres[113] = 'mb7';
+        productosArrayNombres[114] = 'mb9';
+        productosArrayNombres[115] = 'mb11';
+        productosArrayNombres[116] = 'mb10';
+        productosArrayNombres[117] = 'mb13';
+        productosArrayNombres[118] = 'mb12';
+        productosArrayNombres[119] = 'mb14';
+        this.productosArrayNombre = productosArrayNombres;
         this.iluminacionService
             .query({
                 size: 100000

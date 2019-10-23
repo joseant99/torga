@@ -153,6 +153,9 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
+        for (let i = 72; i <= 92; i++) {
+            $('.productosColor' + i).css({ 'background-color': 'white' });
+        }
     }
 
     public open(producto, productoNombre) {
@@ -200,6 +203,11 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
+
+        for (let i = 72; i <= 92; i++) {
+            $('.productosColor' + i).css({ 'background-color': 'white' });
+        }
+
         $('#imagenAcabado').remove();
         $('#acabado').css({ display: 'none' });
         $('.productosColor').css({ 'background-color': 'white' });
@@ -237,7 +245,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor1').attr('id', 'dimensionesColorStyleSin');
                         $('.dimensionesColor1').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor1').append(
                             '<img  src="data:image/gif;base64,' +
@@ -261,7 +275,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor2').attr('id', 'dimensionesColorStyleSin');
                         $('.dimensionesColor2').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor2').append(
                             '<img  src="data:image/gif;base64,' +
@@ -283,7 +303,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor3').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor3').attr('id', 'dimensionesColorStyleSin');
                         $('.dimensionesColor3').append(
@@ -306,7 +332,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor4').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor4').attr('id', 'dimensionesColorStyleSin');
                         $('.dimensionesColor4').append(
@@ -329,7 +361,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor5').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor5').attr('id', 'dimensionesColorStyleSin');
                         $('.dimensionesColor5').append(
@@ -352,7 +390,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                         image.id = 'imagenDimensiones';
                         $('.dimensionesColor6').append(
-                            '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                precio +
+                                '&euro;</strong></p>'
                         );
                         $('.dimensionesColor6').attr('id', 'dimensionesColorStyleSin');
                         $('.dimensionesColor6').append(
@@ -403,6 +447,10 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             for (let u = 0; u < 14; u++) {
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
             }
+        }
+
+        for (let i = 72; i <= 92; i++) {
+            $('.productosColor' + i).css({ 'background-color': 'white' });
         }
         var productoprueba = $('#nombreMesita' + producto1).attr('class');
         var idDimen = productoprueba.split(' ')[1];
@@ -478,7 +526,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor1').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor1').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor1').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -502,7 +556,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor2').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor2').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor2').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -525,7 +585,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor3').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor3').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor3').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -548,7 +614,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor4').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor4').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor4').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -571,7 +643,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor5').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor5').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor5').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -594,7 +672,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor6').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor6').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor6').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -635,7 +719,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor1').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor1').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor1').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -659,7 +749,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor2').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor2').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor2').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -682,7 +778,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor3').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor3').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor3').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -705,7 +807,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor4').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor4').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor4').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -728,7 +836,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor5').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor5').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor5').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -751,7 +865,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             image.id = 'imagenDimensiones';
                             $('.dimensionesColor6').attr('id', 'dimensionesColorStyleSin');
                             $('.dimensionesColor6').append(
-                                '<p style="position:absolute;z-index:1"><strong>Desde ' + precio + '&euro;</strong></p>'
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
+                                    precio +
+                                    '&euro;</strong></p>'
                             );
                             $('.dimensionesColor6').append(
                                 '<img  src="data:image/gif;base64,' +
@@ -3101,6 +3221,11 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').empty();
         $('.dimensionesColor5').empty();
         $('.dimensionesColor6').empty();
+
+        for (let i = 72; i <= 92; i++) {
+            $('.productosColorSin' + i).css({ 'background-color': 'white' });
+        }
+
         $('.dimensionesColor1').css({ 'background-color': 'white' });
         $('.dimensionesColor2').css({ 'background-color': 'white' });
         $('.dimensionesColor3').css({ 'background-color': 'white' });
