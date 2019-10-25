@@ -60,7 +60,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -73,7 +73,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -86,7 +86,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -99,7 +99,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -112,7 +112,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -125,7 +125,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -138,7 +138,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -151,7 +151,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -164,7 +164,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },
@@ -177,7 +177,7 @@ export const productosDormitorioRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
         },

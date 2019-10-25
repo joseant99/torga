@@ -1,0 +1,137 @@
+<div>
+
+    <h2 id="page-heading" style="text-align:center">
+        <span>Pedidos</span>
+    </h2>
+
+    <br/>
+    <div  style="width:100%">
+		    <div class="tab-content">
+		    	<button type="button" class="btn btn-primary" style="float:right;margin-bottom:20px" data-toggle="modal" data-target="#modalIncidencias" (click)="llenarModal(3)">Empezar nuevo chat</button>
+					        <table class="table table-striped">
+					            <thead>
+					            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+					            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+					            <th jhiSortBy="fechaInicio"><span jhiTranslate="torgaPedidosApp.contactoFabrica.fechaInicio">Fecha Inicio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+					            <th jhiSortBy="tipo"><span jhiTranslate="torgaPedidosApp.contactoFabrica.tipo">Tipo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+					            <th jhiSortBy="estado"><span jhiTranslate="torgaPedidosApp.contactoFabrica.estado">Estado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+					            <th jhiSortBy="albaran"><span jhiTranslate="torgaPedidosApp.contactoFabrica.albaran">Albaran</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+					            <th jhiSortBy="factura"><span jhiTranslate="torgaPedidosApp.contactoFabrica.factura">Factura</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+					            <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.contactoFabrica.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+					            <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.contactoFabrica.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+					            <th></th>
+					            </tr>
+					            </thead>
+					            <tbody>
+					            <tr *ngFor="let contactoFabrica of pedidosTabla ;trackBy: trackId">
+					                <td><a [routerLink]="['/contacto-fabrica', contactoFabrica.id, 'view' ]">{{contactoFabrica.id}}</a></td>
+					                <td>{{contactoFabrica.fechaInicio}}</td>
+					                <td>Pedidos</td>
+					                <td>{{contactoFabrica.estado}}</td>
+					                <td>{{contactoFabrica.albaran}}</td>
+					                <td>{{contactoFabrica.factura}}</td>
+					                <td>{{contactoFabrica.codigo}}</td>
+					                <td>
+					                    {{contactoFabrica.user?.login}}
+					                </td>
+					               <td>
+					                	<button type="submit"
+				                                [routerLink]="['/contacto-fabrica', contactoFabrica.id, 'chat']"
+				                                class="btn btn-primary btn-sm">
+				                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+				                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Chat</span>
+				                        </button>
+					                </td>
+					            </tr>
+					            </tbody>
+					        </table>
+		    
+	<div class="modal fade" id="modal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Crear un Nuevo Chat</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+			        <div style="width:100%;margin-bottom:1%">
+			        	<label style="font-size:18px">En Relacion A: &nbsp;&nbsp;</label>	          
+			          <input id="relacion" style="height:40px" type="text" disabled/>
+			        </div>  
+			         <div style="width:100%">
+			         	<label style="font-size:18px">De Codigo: &nbsp;&nbsp;</label>
+				          <select id="opciones" style="height:40px">
+				          		<option></option>
+				          </select>
+				     </div>
+				     <p style="text-align:center"><button (click)="crearChat(1)">Crear Chat</button></p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalIncidencias" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Crear un Nuevo Chat</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+			        <div style="width:100%;margin-bottom:1%">
+			        	<label style="font-size:18px">En Relacion A: &nbsp;&nbsp;</label>	          
+			          <input id="relacion" style="height:40px" type="text" disabled/>
+			        </div>  
+			         <div style="width:100%">
+			         	<label style="font-size:18px">De Codigo: &nbsp;&nbsp;</label>
+				          <select id="opciones" style="height:40px" (change)="cargarProd()">
+				          		<option></option>
+				          </select>
+				     </div>
+				      <div style="width:100%">
+			         	<label style="font-size:18px">Del Producto: &nbsp;&nbsp;</label>
+				          <select id="opcionesProducto" style="height:40px">
+				          		<option></option>
+				          </select>
+				     </div>
+				     <p style="text-align:center"><button (click)="crearChat(2)">Crear Chat</button></p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	   <div class="modal fade" id="modalOtros" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Crear un Nuevo Chat</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+			        <div style="width:100%;margin-bottom:1%">
+			        	<label style="font-size:18px">En Relacion A: &nbsp;&nbsp;</label>	          
+			          <input id="relacion" style="height:40px" type="text" disabled/>
+			        </div>  
+				     <p style="text-align:center"><button (click)="crearChat(3)">Crear Chat</button></p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+</div>
+

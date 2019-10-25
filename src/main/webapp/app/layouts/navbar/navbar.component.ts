@@ -16,9 +16,14 @@ import { DimensionesProductoTipoService } from '../../entities/dimensiones-produ
 import { InterioresService } from '../../entities/interiores/interiores.service';
 import { MedidasEspecialesService } from '../../entities/medidas-especiales/medidas-especiales.service';
 import { ProductosDormitorioService } from '../../entities/productos-dormitorio/productos-dormitorio.service';
+import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
+import { PresupuestoPedidoService } from '../../entities/presupuesto-pedido/presupuesto-pedido.service';
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-
+import { RepresentanteTiendaService } from '../../entities/representante-tienda/representante-tienda.service';
+import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
+import { RepresenTorgaService } from '../../entities/represen-torga/represen-torga.service';
+import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
 @Component({
     selector: 'jhi-navbar',
     templateUrl: './navbar.component.html',
@@ -33,6 +38,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     modalRef: NgbModalRef;
     id: any;
     acaProdSer: any;
+    numeroPedidos: any;
+    numeroPresupuestos: any;
     version: string;
     closeResult: string;
     account: Account;
@@ -47,7 +54,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         private sessionStorage: SessionStorageService,
         protected datosUsuarioService: DatosUsuarioService,
         private accountService: AccountService,
+        protected representanteTiendaService: RepresentanteTiendaService,
+        protected presupuestoPedidoService: PresupuestoPedidoService,
         protected acaProdService: AcaProdService,
+        protected represenTorgaService: RepresenTorgaService,
         private loginModalService: LoginModalService,
         private profileService: ProfileService,
         protected interioresService: InterioresService,
@@ -145,12 +155,71 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             return `with: ${reason}`;
         }
     }
-
+    public presupuestosCargar() {
+        var auto = this.accountService.userIdentity;
+        var autoBueno;
+        for (let i = 0; i < auto.length; i++) {
+            if (auto[i] == 'ROLE_ADMIN') {
+                autoBueno = 'admin';
+            } else {
+                if (auto[i] == 'ROLE_REPRESENTATE') {
+                    autoBueno = 'repre';
+                }
+            }
+        }
+        this.presupuestoPedidoService
+            .query({
+                size: 10000000
+            })
+            .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
+                var numero = 0;
+                var numeroPedidos = 0;
+                var d = new Date();
+                var month = d.getMonth() + 1;
+                var day = d.getDate();
+                var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
+                for (let i = 0; i < res.body.length; i++) {
+                    if (autoBueno == 'admin') {
+                        if (res.body[i]['fecha_presupuesto'] == output) {
+                            numero++;
+                        }
+                        if (res.body[i]['fecha_pedido'] == output) {
+                            numeroPedidos++;
+                        }
+                    } else {
+                        if (autoBueno == 'repre') {
+                            var todos = this.representanteTiendaService.todos;
+                            for (let K = 0; K < todos.length; K++) {
+                                var usuario = todos[K]['datosUsuario']['user']['id'];
+                                if (res.body[i]['user']['id'] == usuario && res.body[i]['fecha_presupuesto'] == output) {
+                                    numero++;
+                                }
+                                if (res.body[i]['user']['id'] == usuario && res.body[i]['fecha_pedido'] == output) {
+                                    numeroPedidos++;
+                                }
+                            }
+                        }
+                    }
+                }
+                this.numeroPresupuestos = numero;
+                this.numeroPedidos = numeroPedidos;
+            });
+    }
     ngOnInit() {
         this.languageHelper.getAll().then(languages => {
             this.languages = languages;
         });
-
+        if (this.representanteTiendaService.todos == undefined) {
+            var account = this.accountService.userIdentity;
+            if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                this.represenTorgaService.findUsu(account.id).subscribe(data => {
+                    this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
+                        this.representanteTiendaService.todos = data.body;
+                        this.representanteTiendaService.representante = data.body[0]['represenTorga'];
+                    });
+                });
+            }
+        }
         this.profileService.getProfileInfo().then(profileInfo => {
             this.inProduction = profileInfo.inProduction;
             this.swaggerEnabled = profileInfo.swaggerEnabled;
@@ -270,7 +339,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     collapseNavbar() {
         this.isNavbarCollapsed = true;
     }
-
     isAuthenticated() {
         return this.accountService.isAuthenticated();
     }

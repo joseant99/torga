@@ -15,6 +15,10 @@ import { ProvinciasService } from '../entities/provincias/provincias.service';
 import { DatosUsuarioService } from '../entities/datos-usuario/datos-usuario.service';
 import { IMunicipios } from 'app/shared/model/municipios.model';
 import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
+import { RepresenTorgaService } from '../entities/represen-torga/represen-torga.service';
+import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
+import { RepresentanteTiendaService } from '../entities/representante-tienda/representante-tienda.service';
+import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
 
 @Component({
     selector: 'jhi-home',
@@ -39,6 +43,8 @@ export class HomeComponent implements OnInit {
         protected datosUsuarioService: DatosUsuarioService,
         protected provinciasService: ProvinciasService,
         protected municipiosService: MunicipiosService,
+        protected representanteTiendaService: RepresentanteTiendaService,
+        protected represenTorgaService: RepresenTorgaService,
         private eventManager: JhiEventManager,
         private loginService: LoginService,
         private router: Router,
@@ -75,13 +81,21 @@ export class HomeComponent implements OnInit {
     registerAuthenticationSuccess() {
         this.eventManager.subscribe('authenticationSuccess', message => {
             this.accountService.identity().then(account => {
-                console.log(this.account);
+                console.log(account);
                 //REDIRECCIONAR SEGUN EL ROL QUE TENGAN
                 if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                    this.represenTorgaService.findUsu(account.id).subscribe(data => {
+                        this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
+                            this.representanteTiendaService.todos = data.body;
+                            this.representanteTiendaService.representante = data.body[0]['represenTorga'];
+                            console.log(this.representanteTiendaService.todos);
+                            console.log(this.representanteTiendaService.representante);
+                        });
+                    });
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_USER') >= 0) {
                     this.router.navigate(['/inicio']);

@@ -9,7 +9,10 @@ import { AccountService } from 'app/core';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { PresupuestoPedidoService } from './presupuesto-pedido.service';
-
+import { RepresentanteTiendaService } from '../representante-tienda/representante-tienda.service';
+import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
+import { RepresenTorgaService } from '../represen-torga/represen-torga.service';
+import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
 @Component({
     selector: 'jhi-presupuesto-usuario',
     templateUrl: './presupuesto-usuario.component.html'
@@ -23,6 +26,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
     routeData: any;
     tamano: any;
     todos: any;
+    tiendas: any;
     links: any;
     totalItems: any;
     queryCount: any;
@@ -36,6 +40,8 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
+        protected represenTorgaService: RepresenTorgaService,
+        protected representanteTiendaService: RepresentanteTiendaService,
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
@@ -55,7 +61,9 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         var idUsu = this.accountService['userIdentity']['id'];
         var auto = this.accountService['userIdentity']['authorities'][1];
         var cogidos = [];
+        var account = this.accountService['userIdentity'];
         var contador = 0;
+        var todos = this.representanteTiendaService.todos;
         this.presupuestoPedidoService
             .query({
                 page: this.page - 1,
@@ -70,9 +78,18 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
                             contador++;
                         }
                     } else {
-                        if (value['user']['id'] == idUsu && value['pedido'] == 0) {
-                            cogidos[index] = value;
-                            contador++;
+                        if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                            for (let k = 0; k < todos.length; k++) {
+                                if (todos[k]['datosUsuario']['user']['id'] == value['user']['id'] && value['pedido'] == 0) {
+                                    cogidos[index] = value;
+                                    contador++;
+                                }
+                            }
+                        } else {
+                            if (value['user']['id'] == idUsu && value['pedido'] == 0) {
+                                cogidos[index] = value;
+                                contador++;
+                            }
                         }
                     }
                 });
@@ -95,6 +112,27 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
             this.previousPage = page;
             this.transition();
         }
+    }
+
+    public sacarPresupuestos() {
+        var val = $('#tiendaSelect').val();
+        var presu = [];
+        var cont = 0;
+        this.presupuestoPedidoService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
+                for (let i = 0; i < res.body.length; i++) {
+                    if (res.body[i]['user']['id'] == val) {
+                        presu[cont] = res.body[i];
+                        cont++;
+                    }
+                }
+                this.presupuestoPedidos = presu;
+            });
     }
 
     transition() {
@@ -121,7 +159,34 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.loadAll();
+        if (this.representanteTiendaService.todos == undefined) {
+            var account = this.accountService.userIdentity;
+            if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                this.represenTorgaService.findUsu(account.id).subscribe(data => {
+                    this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
+                        this.representanteTiendaService.todos = data.body;
+                        var tiendas = [];
+                        for (let m = 0; m < data.body['length']; m++) {
+                            tiendas[m] = data.body[m]['datosUsuario'];
+                        }
+                        this.tiendas = tiendas;
+                        this.representanteTiendaService.representante = data.body[0]['represenTorga'];
+                        this.loadAll();
+                    });
+                });
+            } else {
+                this.loadAll();
+            }
+        } else {
+            var todos = this.representanteTiendaService.todos;
+            var tiendas = [];
+            for (let m = 0; m < todos['length']; m++) {
+                tiendas[m] = todos[m]['datosUsuario'];
+            }
+            this.tiendas = tiendas;
+            this.loadAll();
+        }
+
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
@@ -152,7 +217,6 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         this.queryCount = this.totalItems;
         this.presupuestoPedidos = data;
     }
-
     protected onError(errorMessage: string) {
         this.jhiAlertService.error(errorMessage, null, null);
     }

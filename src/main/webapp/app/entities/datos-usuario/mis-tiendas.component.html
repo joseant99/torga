@@ -1,0 +1,52 @@
+<div>
+    <h2 style="text-align:center" id="page-heading">
+        <span>MIS TIENDAS</span>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive">
+    	
+    	<p style="text-align:center">
+    		<label>TIENDAS : </label><select id="tiendaSelect" (change)="cargarTienda()"><option></option><option *ngFor="let datosUsuario of tiendas ;trackBy: trackId" value="{{datosUsuario.id}}">{{datosUsuario.nombreComercial}}</option></select>
+    	</p>
+    	<h2 style="text-align:center;margin-bottom:50px" *ngIf="datosUsuarios">Datos Tienda</h2>
+    	<p style="text-align:center" *ngIf="datosUsuarios">
+    		<label style="margin-right: 50px;font-size: 16px;width: 200px;">Nombre Comercial</label><input style="text-align:center;height:70px;border-radius: .25rem;background-color:#e9ecef;width:300px;border: 1px crimson;" value="{{datosUsuarios.nombreComercial}}" disabled>    	
+    	</p>
+    	<p style="text-align:center" *ngIf="datosUsuarios">
+    	    <label style="margin-right: 50px;font-size: 16px;width: 200px;">Telefono</label><input style="text-align:center;height:70px;border-radius: .25rem;background-color:#e9ecef;width:300px;border: 1px crimson;" value="{{datosUsuarios.telefono}}" disabled>
+    	</p>
+    	<p style="text-align:center" *ngIf="datosUsuarios">
+    	    <label style="margin-right: 50px;font-size: 16px;width: 200px;">Email</label><input style="text-align:center;height:70px;border-radius: .25rem;background-color:#e9ecef;width:300px;border: 1px crimson;" value="{{datosUsuarios.email}}" disabled>
+    	</p>
+    	<p style="text-align:center" *ngIf="datosUsuarios">
+    	    <label style="margin-right: 50px;font-size: 16px;width: 200px;">Direccion</label><input style="text-align:center;height:70px;border-radius: .25rem;background-color:#e9ecef;width:300px;border: 1px crimson;" value="{{datosUsuarios.direccion}}" disabled>
+    	</p>
+       <p style="text-align:center" *ngIf="datosUsuarios">
+    	    <label style="margin-right: 50px;font-size: 16px;width: 200px;">Provincia</label><input style="text-align:center;height:70px;border-radius: .25rem;background-color:#e9ecef;width:300px;border: 1px crimson;" value="{{datosUsuarios.provincias.nombre}}" disabled>
+    	</p>
+    	<p style="text-align:center" *ngIf="datosUsuarios">
+    	    <label style="margin-right: 50px;font-size: 16px;width: 200px;">Municipio</label><input style="text-align:center;height:70px;border-radius: .25rem;background-color:#e9ecef;width:300px;border: 1px crimson;" value="{{datosUsuarios.municipios.nombre}}" disabled>
+    	</p>
+    	<p style="text-align:center" *ngIf="datosUsuarios">
+    	    <label style="margin-right: 50px;font-size: 16px;width: 200px;">Cod Postal</label><input style="text-align:center;height:70px;border-radius: .25rem;background-color:#e9ecef;width:300px;border: 1px crimson;" value="{{datosUsuarios.codPostal}}" disabled>
+    	</p>
+    	<h2 *ngIf="torga" style="text-align:center">Gestion del Cobro</h2>
+    	<div style="width: 100%;padding-left: 10%;"  class="form-group row" *ngFor="let pagoTorga of torga ;">
+				    <label for="nombreComercial" class="col-sm-1 col-form-label">PAGOS:</label>
+				    <div class="col-sm-2">
+				      <input type="text" style="text-align:center;height:70px" class="form-control"  value="{{pagoTorga.pago}}" disabled>
+				    </div>
+				    <label for="nombreComercial" class="col-sm-2 col-form-label">CONLLEVA UN DESCUENTO DEL:</label>
+				    <div class="col-sm-2">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" value="{{pagoTorga.descuento}}" disabled>
+				    </div>
+				    <label for="nombreComercial" *ngIf="grupo !== ''" class="col-sm-1 col-form-label">MAS:</label>
+				    <div class="col-sm-2" *ngIf="grupo !== ''">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" value="{{grupo}}" disabled>
+				    </div>
+				    <label for="nombreComercial" *ngIf="grupo !== ''" class="col-sm-1 col-form-label">DE GRUPO:</label>
+		</div>
+    	
+</div>
+   

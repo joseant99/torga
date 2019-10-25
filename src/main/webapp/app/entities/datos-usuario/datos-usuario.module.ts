@@ -7,6 +7,7 @@ import {
     DatosUsuarioComponent,
     GestionFabricantesComponent,
     DatosGeneralesComponent,
+    MisTiendasComponent,
     DatosUsuarioDetailComponent,
     DatosUsuarioUpdateComponent,
     DatosUsuarioDeletePopupComponent,
@@ -23,6 +24,7 @@ const ENTITY_STATES = [...datosUsuarioRoute, ...datosUsuarioPopupRoute];
         DatosUsuarioComponent,
         DatosUsuarioDetailComponent,
         DatosGeneralesComponent,
+        MisTiendasComponent,
         GestionFabricantesComponent,
         DatosUsuarioUpdateComponent,
         DatosUsuarioDeleteDialogComponent,
@@ -32,6 +34,7 @@ const ENTITY_STATES = [...datosUsuarioRoute, ...datosUsuarioPopupRoute];
         DatosUsuarioComponent,
         GestionFabricantesComponent,
         DatosUsuarioUpdateComponent,
+        MisTiendasComponent,
         DatosGeneralesComponent,
         DatosUsuarioDeleteDialogComponent,
         DatosUsuarioDeletePopupComponent

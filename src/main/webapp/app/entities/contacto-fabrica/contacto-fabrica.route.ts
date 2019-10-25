@@ -11,7 +11,9 @@ import { ContactoFabricaComponent } from './contacto-fabrica.component';
 import { ContactoChatComponent } from './contacto-chat.component';
 import { ContactoProyectosComponent } from './contacto-proyectos.component';
 import { ContactoIncidenciasComponent } from './contacto-incidencias.component';
+import { ContactoPresupuestosComponent } from './contacto-presupuestos.component';
 import { ContactoSugerenciasComponent } from './contacto-sugerencias.component';
+import { ContactoPedidosComponent } from './contacto-pedidos.component';
 import { ContactoFabricaClientesComponent } from './contacto-fabrica-clientes.component';
 import { ContactoFabricaDetailComponent } from './contacto-fabrica-detail.component';
 import { ContactoFabricaUpdateComponent } from './contacto-fabrica-update.component';
@@ -69,6 +71,32 @@ export const contactoFabricaRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.contactoFabrica.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'contacto-pedidos',
+        component: ContactoPedidosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.contactoFabrica.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'contacto-presupuestos',
+        component: ContactoPresupuestosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.contactoFabrica.home.title'
         },

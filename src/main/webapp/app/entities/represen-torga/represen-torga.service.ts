@@ -35,4 +35,8 @@ export class RepresenTorgaService {
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
+
+    findUsu(id: any): Observable<EntityResponseType> {
+        return this.http.get<IRepresenTorga>(`${this.resourceUrl}-id/${id}`, { observe: 'response' });
+    }
 }

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -94,6 +94,15 @@ public class RepresentanteTiendaResource {
         Page<RepresentanteTienda> page = representanteTiendaRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/representante-tiendas");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+    
+
+    @GetMapping("/representante-tiendas-bus/{id}")
+    @Timed
+    public ResponseEntity<Collection<RepresentanteTienda>> getAllRepresentanteTiendasBus(@PathVariable Long id) {
+        log.debug("REST request to get a page of RepresentanteTiendas");
+        Collection<RepresentanteTienda> page = representanteTiendaRepository.findIdUsu(id);
+        return ResponseEntity.ok().body(page);
     }
 
     /**

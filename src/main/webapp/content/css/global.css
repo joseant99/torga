@@ -505,6 +505,11 @@ Generic styles
     bottom: 60px;
     margin-left: 75px;
 }
+#sg1 {
+    bottom: 105px;
+    margin-left: 275px;
+}
+
 .pietraModal {
     position: absolute;
     max-width: 500px;

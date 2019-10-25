@@ -187,8 +187,11 @@
 	      <div class="modal-content">
 	        <div class="modal-header">
 	          <h4 class="modal-title">Vas a generar un presupuesto</h4>
+	          
 	        </div>
 	        <div class="modal-body">
+	        	<label *jhiHasAnyAuthority="['ROLE_REPRESENTATE']">Seleccion Tienda</label>
+	          <select id="selectTienda" *jhiHasAnyAuthority="['ROLE_REPRESENTATE']"><option></option><option *ngFor="let tienda of tiendasRepresentante" value="{{tienda.id}}">{{tienda.datosUsuario.nombreComercial}}</option></select>
 	          <p style="text-align:center">&#191;Est&#225;s Seguro?</p>
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="generarPresupuesto()">Si</button></p>
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">No</button></p>

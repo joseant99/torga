@@ -33,6 +33,10 @@ import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-p
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
 import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
+import { RepresentanteTiendaService } from '../representante-tienda/representante-tienda.service';
+import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
+import { RepresenTorgaService } from '../represen-torga/represen-torga.service';
+import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
 
 @Component({
     selector: 'jhi-productos-dormitorio',
@@ -56,7 +60,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     todosAcabados: any;
     acaProdsCar: any;
     ruta: any;
-
+    tiendasRepresentante: any;
     acaProdPed: any;
     precioTienda: any;
     presupuestoPedido: IPresupuestoPedido;
@@ -100,6 +104,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         protected dimensionesProductoService: DimensionesProductoService,
         public productosDormitorioService: ProductosDormitorioService,
         protected parseLinks: JhiParseLinks,
+        protected represenTorgaService: RepresenTorgaService,
+        protected representanteTiendaService: RepresentanteTiendaService,
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
@@ -3308,12 +3314,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 for (let k = 1; k < acabados.length; k++) {
                     if (k == 1) {
                         if (i == 1) {
+                            var prodMed = this.medidasModal[nombre];
+                            var height = prodMed.split(';')[3];
+                            var width = prodMed.split(';')[2];
                             $('#cuerpo' + i).append(
-                                '<img style="z-index:100" id="' +
+                                '<img style="z-index:100;' +
+                                    height +
+                                    ';' +
+                                    width +
+                                    '" id="' +
                                     nombre +
                                     '" class="' +
                                     acabados[k].toLowerCase() +
-                                    'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                    'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                     nombreCarpeta +
                                     '/' +
                                     k +
@@ -3329,6 +3342,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             var prodMed = this.medidasModal[nombre];
                             var left = prodMed.split(';')[0];
                             var bottom = prodMed.split(';')[1];
+                            var height = prodMed.split(';')[3];
+                            var width = prodMed.split(';')[2];
                             $('#cuerpo' + i).append(
                                 '<img style="z-index:' +
                                     (100 - i) +
@@ -3336,9 +3351,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     left +
                                     ';' +
                                     bottom +
+                                    ';' +
+                                    height +
+                                    ';' +
+                                    width +
                                     '"  class="' +
                                     acabados[k].toLowerCase() +
-                                    'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                    'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                     nombreCarpeta +
                                     '/' +
                                     k +
@@ -3354,12 +3373,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     } else {
                         if (k == 2) {
                             if (i == 1) {
+                                var prodMed = this.medidasModal[nombre];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
                                 $('#cuerpo' + i).append(
-                                    '<img style="margin-top:-15px;z-index:100" id="' +
+                                    '<img style="margin-top:-15px;z-index:100;' +
+                                        height +
+                                        ';' +
+                                        width +
+                                        '" id="' +
                                         nombre +
                                         '" class="' +
                                         acabados[k].toLowerCase() +
-                                        'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                         nombreCarpeta +
                                         '/' +
                                         k +
@@ -3375,6 +3401,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 var prodMed = this.medidasModal[nombre];
                                 var left = prodMed.split(';')[0];
                                 var bottom = prodMed.split(';')[1];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
                                 $('#cuerpo' + i).append(
                                     '<img style="z-index:' +
                                         (100 - i) +
@@ -3382,9 +3410,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         left +
                                         ';' +
                                         bottom +
+                                        ';' +
+                                        height +
+                                        ';' +
+                                        width +
                                         '" class="' +
                                         acabados[k].toLowerCase() +
-                                        'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                         nombreCarpeta +
                                         '/' +
                                         k +
@@ -3399,12 +3431,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             }
                         } else {
                             if (i == 1) {
+                                var prodMed = this.medidasModal[nombre];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
                                 $('#cuerpo' + i).append(
-                                    '<img style="margin-top:-15px;z-index:100" id="' +
+                                    '<img style="margin-top:-15px;z-index:100;' +
+                                        height +
+                                        ';' +
+                                        width +
+                                        '" id="' +
                                         nombre +
                                         '" class="' +
                                         acabados[k].toLowerCase() +
-                                        'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                         nombre +
                                         '/' +
                                         k +
@@ -3420,6 +3459,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 var prodMed = this.medidasModal[nombre];
                                 var left = prodMed.split(';')[0];
                                 var bottom = prodMed.split(';')[1];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
                                 $('#cuerpo' + i).append(
                                     '<img style="z-index:' +
                                         (100 - i) +
@@ -3427,9 +3468,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         left +
                                         ';' +
                                         bottom +
+                                        ';' +
+                                        height +
+                                        ';' +
+                                        width +
                                         '" class="' +
                                         acabados[k].toLowerCase() +
-                                        'Modal" width="500px" height="333px" src="../../../content/images/' +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                         nombre +
                                         '/' +
                                         k +
@@ -3445,6 +3490,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         }
                     }
                 }
+                acabados = [];
             }
         }
     }
@@ -3489,13 +3535,24 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         contAcab = 1;
                         numeroAcaProd[j] = acab;
                     }
-                    this.isSaving = true;
-                    var usuarios = this.user;
-                    var usuario;
-                    var idUsu = this.currentAccount['id'];
-                    for (let i = 0; i < usuarios.length; i++) {
-                        if (usuarios[i]['id'] == idUsu) {
-                            usuario = usuarios[i];
+                    var account = this.accountService.userIdentity;
+                    if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                        var idTienda = $('#selectTienda').val();
+                        var todosTiendas = this.representanteTiendaService.todos;
+                        for (let w = 0; w < todosTiendas['length']; w++) {
+                            if (todosTiendas[w]['id'] == idTienda) {
+                                var usuario = todosTiendas[w]['datosUsuario']['user'];
+                            }
+                        }
+                    } else {
+                        this.isSaving = true;
+                        var usuarios = this.user;
+                        var usuario;
+                        var idUsu = this.currentAccount['id'];
+                        for (let i = 0; i < usuarios.length; i++) {
+                            if (usuarios[i]['id'] == idUsu) {
+                                usuario = usuarios[i];
+                            }
                         }
                     }
                     var d = new Date();
@@ -3769,21 +3826,25 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
 
         var medidasModal = [];
-        medidasModal['mb4'] = 'margin-left:-140px;bottom:125px';
-        medidasModal['mb1'] = 'margin-left:-60px;bottom:105px';
-        medidasModal['mb6'] = 'margin-left:-70px;bottom:140px';
-        medidasModal['mb7'] = 'margin-left:-70px;bottom:140px';
-        medidasModal['mb8'] = 'margin-left:-70px;bottom:140px';
-        medidasModal['mb9'] = 'margin-left:-70px;bottom:140px';
-        medidasModal['mb10'] = 'margin-left:-70px;bottom:140px';
-        medidasModal['mb11'] = 'margin-left:-70px;bottom:140px';
-        medidasModal['mb12'] = 'margin-left:-70px;bottom:140px';
-        medidasModal['mb13'] = 'margin-left:-70px;bottom:140px';
-        medidasModal['mb14'] = 'margin-left:-70px;bottom:140px';
+        medidasModal['mb4'] = 'margin-left:-140px;bottom:125px;max-width:500px;max-height:300px;';
+        medidasModal['mb1'] = 'margin-left:-60px;bottom:105px;max-width:500px;max-height:300px;';
+        medidasModal['mb6'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb7'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb8'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb9'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb10'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb11'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb12'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb13'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb14'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg1'] = 'margin-left:-130px;bottom:113px;max-width:300px;max-height:535.65px;';
+
         this.medidasModal = medidasModal;
 
         var productosArrayNombres = [];
         productosArrayNombres[107] = 'mb1';
+        productosArrayNombres[72] = 'sg1';
+        productosArrayNombres[73] = 'sg1';
         productosArrayNombres[108] = 'mb';
         productosArrayNombres[109] = 'mb4';
         productosArrayNombres[110] = 'mb6';
@@ -3807,7 +3868,16 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 }
             });
         this.iluminacion = ilu;
-
+        var account = this.accountService.userIdentity;
+        if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+            this.represenTorgaService.findUsu(account.id).subscribe(data => {
+                this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
+                    this.representanteTiendaService.todos = data.body;
+                    this.representanteTiendaService.representante = data.body[0]['represenTorga'];
+                    this.tiendasRepresentante = data.body;
+                });
+            });
+        }
         this.acabadosService
             .query({
                 page: this.page - 1,

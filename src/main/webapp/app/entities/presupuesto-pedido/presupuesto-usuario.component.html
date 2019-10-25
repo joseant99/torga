@@ -3,9 +3,9 @@
         <span >Presupuesto</span>
         
     </h2>
-    <jhi-alert></jhi-alert>
     <br/>
     <div class="table-responsive" *ngIf="presupuestoPedidos">
+    	<p style="text-align:center">TIENDAS: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="tiendaSelect" (change)="sacarPresupuestos()" *jhiHasAnyAuthority="'ROLE_REPRESENTATE'"><option></option><option *ngFor="let tienda of tiendas" value="{{tienda.user.id}}">{{tienda.nombreComercial}}</option></select></p>
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
@@ -20,11 +20,11 @@
             </thead>
             <tbody>
             <tr *ngFor="let presupuestoPedido of presupuestoPedidos;">
-                <td *ngIf="presupuestoPedido != undefined" ><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.id}}</i></td>
-                <td *ngIf="presupuestoPedido != undefined"><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.codigo}}</i></td>
-                <td *ngIf="presupuestoPedido != undefined"><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.pedido}}</i></td>
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'" ><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.id}}</i></td>
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'"><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</i></td>
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'"><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.pedido}}</i></td>
                 <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_presupuesto}}</td>
-                <td *ngIf="presupuestoPedido != undefined"><i *jhiHasAnyAuthority="'ROLE_ADMIN'">{{presupuestoPedido.fecha_pedido}}</i></td>
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'"><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_pedido}}</i></td>
                 <td *ngIf="presupuestoPedido != undefined">
                     {{presupuestoPedido.user?.login}}
                 </td>
