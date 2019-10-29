@@ -111,8 +111,6 @@ Generic styles
         position: fixed;
         top: 0;
         z-index: 1;
-        width: 50px;
-        height: 30px;
     }
     #textoBienvenido {
         text-align: center;
@@ -918,9 +916,80 @@ Generic styles
 }
 
 #logoImagen {
-    width: 100px;
-    height: 65px;
+    width: 180px;
+    height: 45px;
     position: absolute;
+}
+#menuFijoArriba {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    top: 0;
+    height: 70px;
+    background-color: white;
+}
+
+#cestaImagen {
+    right: 50px;
+    position: fixed;
+}
+#imagenCesta {
+    float: right;
+    top: 0;
+    width: 13%;
+    right: 11px;
+}
+
+#imagenLogoCuenta {
+    margin-left: 120px;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+}
+#botonEsconder {
+    max-width: 100%;
+    margin-left: 120px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 1400px) {
+    #imagenLogoCuenta {
+        margin-left: 45%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #imagenLogoCuenta {
+        margin-left: 38%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #imagenLogoCuenta {
+        margin-left: 35%;
+    }
+    #botonEsconder {
+        max-width: 100%;
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+    #cestaImagen {
+        right: 0px;
+        position: fixed;
+        margin-top: 7px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #imagenLogoCuenta {
+        margin-left: 30%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #imagenLogoCuenta {
+        margin-left: 22%;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -1190,8 +1259,6 @@ Generic styles
     }
 
     #logoImagen {
-        width: 100px;
-        height: 50px;
         position: absolute;
     }
 }
@@ -1268,7 +1335,41 @@ Generic styles
 #bodyInicio {
     overflow: hidden;
 }
-@media screen and (max-width: 680px) {
+#imagenFOndoMueble {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+@media screen and (max-width: 1450px) {
+    #formInicioSesion {
+        float: left;
+        width: 50%;
+        margin-left: 0%;
+        border-right: 1px solid #d9d9d9;
+        padding-right: 90px;
+        height: 500px;
+        font-size: 20px;
+    }
+    #divCajonSolicitarAcceso {
+        float: left;
+        width: 50%;
+        margin-right: 0%;
+        padding-left: 90px;
+        height: 500px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    #imagenFOndoMueble {
+        width: auto;
+        height: 100%;
+        position: fixed;
+    }
+}
+
+@media screen and (max-width: 850px) {
     #cuadroInicio {
         background-color: #f5f5f5;
         float: left;

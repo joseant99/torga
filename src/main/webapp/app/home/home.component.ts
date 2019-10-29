@@ -56,6 +56,9 @@ export class HomeComponent implements OnInit {
         var provincias = [];
         $('body').attr('id', 'bodyInicio');
         $('#botonEsconder').css({ display: 'none' });
+        $('#cestaImagen').css({ display: 'none' });
+        $('#menuFijoArriba').attr('style');
+        $('#menuFijoArriba').css({ display: 'none' });
         this.accountService.identity().then(account => {
             this.account = account;
         });
@@ -84,9 +87,15 @@ export class HomeComponent implements OnInit {
         this.eventManager.subscribe('authenticationSuccess', message => {
             this.accountService.identity().then(account => {
                 $('body').removeAttr('id');
+                $('#cestaImagen').removeAttr('style');
+                $('#cestaImagen').attr('style');
+                $('#cestaImagen').css({ 'max-width': '100%' });
+                $('#cestaImagen').css({ right: '50px' });
                 $('#botonEsconder').removeAttr('style');
                 $('#botonEsconder').attr('style');
                 $('#botonEsconder').css({ 'max-width': '100%' });
+                $('#menuFijoArriba').removeAttr('style');
+
                 if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
