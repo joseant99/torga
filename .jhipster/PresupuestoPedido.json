@@ -9,6 +9,14 @@
             "otherEntityField": "login",
             "ownerSide": true,
             "otherEntityRelationshipName": "presupuestoPedido"
+        },
+        {
+            "relationshipName": "usuarioCreadoPre",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "presupuestoPedido"
         }
     ],
     "fields": [

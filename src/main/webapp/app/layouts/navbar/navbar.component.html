@@ -1,5 +1,21 @@
-
-<nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal">
+<div style=" position: fixed;z-index: 9;">
+	<a id="botonEsconder" style="max-width:100%;" onclick="apareceMenu()"><img style="max-width:100%;" src="../../../content/images/icono-hamburguesa.png"></a>
+<a  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'" class="navbar-brand logo" (click)="open('inicio',false,myModel)"(click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+	                <span class="logo-img"></span>
+</a>
+<a  *jhiHasAnyAuthority="'ROLE_USER'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+	                <span class="logo-img"></span>
+</a>
+<a  *jhiHasAnyAuthority="'ROLE_CLIENTE'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+	                <span class="logo-img"></span>
+</a>
+<a  *jhiHasAnyAuthority="'ROLE_REPRESENTATE'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
+	                <span class="logo-img"></span>
+</a>
+	
+<p></p>
+</div>
+<nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal" style="display:none">
 <div style="float:left;witdh:100%;top:50px;position:fixed">
 			  
 					
@@ -741,22 +757,7 @@
         </ul>
     </div>
 </nav>
-<a id="botonEsconder" onclick="esconderMenu()"><img style="max-width:100%" src="../../../content/images/icono-hamburguesa.png"></a>
-<a  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'" class="navbar-brand logo" (click)="open('inicio',false,myModel)"(click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
-	                <span class="logo-img"></span>
-</a>
-<a  *jhiHasAnyAuthority="'ROLE_ADMIN'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
-	                <span class="logo-img"></span>
-</a>
-<a  *jhiHasAnyAuthority="'ROLE_USER'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
-	                <span class="logo-img"></span>
-</a>
-<a  *jhiHasAnyAuthority="'ROLE_CLIENTE'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
-	                <span class="logo-img"></span>
-</a>
-<a  *jhiHasAnyAuthority="'ROLE_REPRESENTATE'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" style="margin-left: 100px;z-index: 1;position: fixed;top: 0;">
-	                <span class="logo-img"></span>
-</a>
+
 <ng-template #myModel let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">&#191;Desea abandonar la pagina?</h4>

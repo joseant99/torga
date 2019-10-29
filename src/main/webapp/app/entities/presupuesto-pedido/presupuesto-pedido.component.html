@@ -20,6 +20,7 @@
             <th jhiSortBy="fecha_presupuesto"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto">Fecha Presupuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="fecha_pedido"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_pedido">Fecha Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="usuarioCreadoPre.login"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.usuarioCreadoPre">Usuario Creado Pre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -32,6 +33,9 @@
                 <td>{{presupuestoPedido.fecha_pedido}}</td>
                 <td>
                     {{presupuestoPedido.user?.login}}
+                </td>
+                <td>
+                    {{presupuestoPedido.usuarioCreadoPre?.login}}
                 </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">

@@ -19,7 +19,8 @@
             "pedido": "Pedido",
             "fecha_presupuesto": "Fecha Presupuesto",
             "fecha_pedido": "Fecha Pedido",
-            "user": "User"
+            "user": "User",
+            "usuarioCreadoPre": "Usuario Creado Pre"
         }
     }
 }

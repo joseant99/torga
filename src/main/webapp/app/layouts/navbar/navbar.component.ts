@@ -156,17 +156,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         }
     }
     public presupuestosCargar() {
-        var auto = this.accountService.userIdentity;
+        var account = this.accountService.userIdentity;
+
         var autoBueno;
-        for (let i = 0; i < auto.length; i++) {
-            if (auto[i] == 'ROLE_ADMIN') {
-                autoBueno = 'admin';
-            } else {
-                if (auto[i] == 'ROLE_REPRESENTATE') {
-                    autoBueno = 'repre';
-                }
+
+        if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+            autoBueno = 'admin';
+        } else {
+            if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                autoBueno = 'repre';
             }
         }
+
         this.presupuestoPedidoService
             .query({
                 size: 10000000

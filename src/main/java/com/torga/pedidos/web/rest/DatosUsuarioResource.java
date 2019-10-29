@@ -95,6 +95,15 @@ public class DatosUsuarioResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/datos-usuarios");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
+    
+    
+    @GetMapping("/datos-usuarios-id/{id}")
+    @Timed
+    public ResponseEntity<List<DatosUsuario>> getAllDatosUsuariosId(@PathVariable Long id) {
+        log.debug("REST request to get a page of DatosUsuarios");
+        List<DatosUsuario> page = datosUsuarioRepository.findByUserIsCurrentUser();
+        return ResponseEntity.ok().body(page);
+    }
 
     /**
      * GET  /datos-usuarios/:id : get the "id" datosUsuario.

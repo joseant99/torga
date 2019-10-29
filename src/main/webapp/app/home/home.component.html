@@ -41,7 +41,7 @@
 </div> -->
 
 <div>
-	<div class="row" id="imagenInicio"><img src="../../content/images/TG_SA18_Sc30-CL02 copia.jpg" style="width:100%"></div>
+	<p style="text-align:center;margin-top:-36px;"><img id="imagenTorgaIniciarSesion" alt="" src="../../content/images/LOGOTORGA.png"></p>
     <div class="row" id="cuadroInicio">
         <div style="width:100%"> 
             <!-- <div class="modal-body"> -->
@@ -56,64 +56,47 @@
                     </div>
                 </div>
 
-
-                <div style="width:80%">
-                <div style="float:left;width:100%">
-	                <button (click)="iniciarSesion()" style="width: 40%;height: 70px;float:left">Iniciar Sesion</button>
-	                <button (click)="registro()" style="width: 40%;height: 70px;float:right">No tengo claves de acceso</button>
-                </div>
-               
-                    <form class="form" style="display:none;" role="form" (ngSubmit)="login()">
+				
+                <div class="divContenedorInicioSesion">
+                
+               <div id="divTextoInicioSesion">
+					<p id="textoInicioSesion">INICIO DE SESION</p>               
+               </div>
+                    <form id="formInicioSesion" class="form" role="form" (ngSubmit)="login()">
+                    	<label id="clientesExistentes">CLIENTES EXISTENTES</label>
                         <div class="form-group">
-                            <label class="username-label" for="username" jhiTranslate="global.form.username">Login</label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="{{'global.form.username.placeholder' | translate}}"
+                            <label class="username-label" for="username" style="font-weight: 300;" jhiTranslate="global.form.username">Login*</label>
+                            <input style="font-style:italic;font-weight:300" type="text" class="form-control" name="username" id="username" placeholder="{{'global.form.username.placeholder' | translate}}"
                             [(ngModel)]="username">
                         </div>
                         <div class="form-group">
-                            <label for="password" jhiTranslate="login.form.password">Password</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="{{'login.form.password.placeholder' | translate}}"
+                            <label for="password" jhiTranslate="login.form.password" style="font-weight: 300;">Password*</label>
+                            <input style="font-style:italic;font-weight:300" type="password" class="form-control" name="password" id="password" placeholder="{{'login.form.password.placeholder' | translate}}"
                                 [(ngModel)]="password">
                         </div>
                         
                         <br>
-                       <p style="text-align:center"> <button type="submit" class="btn btn-primary " style="background-color:white;color:black"  jhiTranslate="login.form.button">Access</button></p>
+                       <p style="text-align:center"> <button type="submit" class="btn btn-primary " style="background-color: #242424;color: white;width: 100%;letter-spacing: 1px;">INICIAR SESION</button></p>
                     
                
-                       <p style="text-align:center"> <a class="alert-link" data-toggle="modal" data-target="#modalInformacion" jhiTranslate="login.password.forgot">Did you forget your password?</a></p>
+                       <p style="text-align:center;FONT-SIZE: 15PX;MARGIN-TOP: 50PX;"> <a class="alert-link" data-toggle="modal" data-target="#modalInformacion" jhiTranslate="login.password.forgot">Did you forget your password?</a></p>
 
                     </form>
                     
-                    <div class="form1" style="display:none">
-                        <div class="form-group">
-                            <label >Nombre y Apellidos</label>
-                            <input type="text" class="form-control"  id="nombre">
+                    <div class="form1" id="divCajonSolicitarAcceso">
+                    <label id="solicitarAccesoTexto">SOLICITAR ACCESO</label>
+                    	 <div class="form-group">
+                            <label style="font-weight: 300;">Tienda*</label>
+                           	<input style="font-style:italic;font-weight:300" type="text" class="form-control"  id="comercial">
                         </div>
-                        <div class="form-group">
-                            <label >Telefono de Contacto</label>
-                            <input type="number" class="form-control"  id="telefono">
+                       
+                        <div  class="form-group">
+                            <label style="font-weight: 300;">Numero de Telefono*</label>
+                            <input style="font-style:italic;font-weight:300" type="number" class="form-control"  id="telefono">
                         </div>
-                        <div class="form-group">
-                            <label >Correo Electronico</label>
-                            <input type="email" class="form-control"  id="email">
-                        </div>
-                        <div class="form-group">
-                            <label >Nombre Comercial de la Tienda</label>
-                           	<input type="text" class="form-control"  id="comercial">
-                        </div>
-                        <div class="form-group">
-                            <label >Provincia donde se encuentra la tienda</label>
-                             <select id="provincia" class="form-control" (change)="cargarMunicipios()">
-                            	<option></option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label >Municipio</label>
-                            <select id="municipios" class="form-control">
-                            	<option></option>
-                            </select>
-                        </div>
+                       
                         <br>
-                        <p style="text-align:center"><button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalAcceso" (click)="solicitarClaves()"  style="background-color: white;color:black">Solicitar Claves</button></p>
+                        <p style="text-align:center"><button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalAcceso" (click)="solicitarClaves()"  style="background-color: WHITE;color: #242424;width: 100%;letter-spacing: 1px;">ENVIAR</button></p>
                     
                     
                     </div>

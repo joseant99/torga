@@ -199,7 +199,7 @@ export class VendedoresUsuarioComponent implements OnInit, OnDestroy {
             .subscribe(
                 (res: HttpResponse<User[]>) => {
                     for (let i = 0; i < res.body.length; i++) {
-                        if (res.body[i]['login'] == cuentaNueva['login']) {
+                        if (res.body[i]['login'] == cuentaNueva['login'].toLowerCase()) {
                             vendedores = {
                                 user: res.body[i],
                                 datosUsuario: tienda

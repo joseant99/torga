@@ -9,7 +9,10 @@ h3,
 h4 {
     font-weight: 300;
 }
-
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
 body {
     background: white;
 }
@@ -1210,25 +1213,120 @@ Generic styles
     width: 55%;
 }
 #cuadroInicio {
-    background-color: #cdcfce;
-    float: right;
+    background-color: #f5f5f5;
+    color: #242424;
+    width: 100%;
+    height: 865px;
+    margin-right: 0;
+    margin-left: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#imagenTorgaIniciarSesion {
+    max-width: 10%;
+}
+.divContenedorInicioSesion {
+    width: 80%;
+}
+#formInicioSesion {
+    float: left;
     width: 35%;
-    height: 845px;
+    margin-left: 15%;
+    border-right: #d9d9d9 1px solid;
+    padding-right: 90px;
+    height: 500px;
+    font-size: 20px;
+}
+#textoInicioSesion {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+#divTextoInicioSesion {
+    width: 100%;
+    margin-bottom: 120px;
+}
+#clientesExistentes {
+    letter-spacing: 2px;
+    margin-bottom: 70px;
 }
 
+#divCajonSolicitarAcceso {
+    float: left;
+    width: 35%;
+    margin-right: 12%;
+    padding-left: 90px;
+    height: 500px;
+    font-size: 20px;
+}
+
+#solicitarAccesoTexto {
+    letter-spacing: 2px;
+    margin-bottom: 70px;
+}
+#bodyInicio {
+    overflow: hidden;
+}
 @media screen and (max-width: 680px) {
     #cuadroInicio {
-        background-color: #cdcfce;
+        background-color: #f5f5f5;
         float: left;
         width: 100%;
-        height: 110%;
     }
-    #imagenInicio {
+    #imagenTorgaIniciarSesion {
+        max-width: 30%;
+    }
+    .divContenedorInicioSesion {
+        width: 100%;
+    }
+    #formInicioSesion {
         float: left;
         width: 100%;
+        margin-left: 0%;
+        padding-left: 6%;
+        border-right: 0;
+        padding-right: 6%;
+        height: 47%;
+        border-bottom: #d9d9d9 1px solid;
+        font-size: 15px;
+    }
+    #textoInicioSesion {
+        text-align: center;
+        font-size: 25px;
+        letter-spacing: 2px;
+        margin-top: 0px;
+    }
+    #divTextoInicioSesion {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #clientesExistentes {
+        letter-spacing: 2px;
+        margin-bottom: 35px;
+        width: 100%;
+        text-align: center;
+    }
+    #divCajonSolicitarAcceso {
+        float: left;
+        width: 100%;
+        margin-right: 0;
+        padding-left: 6%;
+        height: 47%;
+        font-size: 15px;
+        padding-right: 6%;
+    }
+    #solicitarAccesoTexto {
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+    #bodyInicio {
+        overflow: scroll;
     }
 }
-
 .error {
     color: white;
     background-color: red;
@@ -1263,6 +1361,16 @@ Generic styles
 .hand,
 [jhisortby] {
     cursor: pointer;
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.jh-card {
+    padding: 0;
+    border: none;
+    margin-top: 50px;
 }
 
 /* ==========================================================================

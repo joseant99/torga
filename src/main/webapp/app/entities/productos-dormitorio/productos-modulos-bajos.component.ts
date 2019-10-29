@@ -3544,14 +3544,36 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 var usuario = todosTiendas[w]['datosUsuario']['user'];
                             }
                         }
-                    } else {
-                        this.isSaving = true;
                         var usuarios = this.user;
-                        var usuario;
+                        var usuarioCreado;
                         var idUsu = this.currentAccount['id'];
                         for (let i = 0; i < usuarios.length; i++) {
                             if (usuarios[i]['id'] == idUsu) {
-                                usuario = usuarios[i];
+                                usuarioCreado = usuarios[i];
+                            }
+                        }
+                    } else {
+                        if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                            var idTienda = $('#selectTienda').val();
+                            var tiendaUsuarioAdmin = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+                            var usuario = tiendaUsuarioAdmin['user'];
+                            var usuarios = this.user;
+                            var usuarioCreado;
+                            var idUsu = this.currentAccount['id'];
+                            for (let i = 0; i < usuarios.length; i++) {
+                                if (usuarios[i]['id'] == idUsu) {
+                                    usuarioCreado = usuarios[i];
+                                }
+                            }
+                        } else {
+                            this.isSaving = true;
+                            var usuarios = this.user;
+                            var usuario;
+                            var idUsu = this.currentAccount['id'];
+                            for (let i = 0; i < usuarios.length; i++) {
+                                if (usuarios[i]['id'] == idUsu) {
+                                    usuario = usuarios[i];
+                                }
                             }
                         }
                     }
@@ -3559,15 +3581,34 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
                     var month = d.getMonth() + 1;
                     var day = d.getDate();
-
+                    var prueba;
                     var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
-
-                    const prueba = {
-                        codigo: 'PR-' + usuario['id'],
-                        pedido: 0,
-                        user: usuario,
-                        fecha_presupuesto: output
-                    };
+                    if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                        prueba = {
+                            codigo: 'PR-' + usuario['id'],
+                            pedido: 0,
+                            user: usuario,
+                            fecha_presupuesto: output,
+                            usuarioCreadoPre: usuarioCreado
+                        };
+                    } else {
+                        if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                            prueba = {
+                                codigo: 'PR-' + usuario['id'],
+                                pedido: 0,
+                                user: usuario,
+                                fecha_presupuesto: output,
+                                usuarioCreadoPre: usuarioCreado
+                            };
+                        } else {
+                            prueba = {
+                                codigo: 'PR-' + usuario['id'],
+                                pedido: 0,
+                                user: usuario,
+                                fecha_presupuesto: output
+                            };
+                        }
+                    }
                     this.presupuestoPedido = prueba;
                     this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
                     var presupuesto = this.presupuesto;

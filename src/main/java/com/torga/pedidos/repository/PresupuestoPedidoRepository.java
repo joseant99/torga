@@ -16,4 +16,7 @@ public interface PresupuestoPedidoRepository extends JpaRepository<PresupuestoPe
     @Query("select presupuesto_pedido from PresupuestoPedido presupuesto_pedido where presupuesto_pedido.user.login = ?#{principal.username}")
     List<PresupuestoPedido> findByUserIsCurrentUser();
 
+    @Query("select presupuesto_pedido from PresupuestoPedido presupuesto_pedido where presupuesto_pedido.usuarioCreadoPre.login = ?#{principal.username}")
+    List<PresupuestoPedido> findByUsuarioCreadoPreIsCurrentUser();
+
 }

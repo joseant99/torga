@@ -35,4 +35,8 @@ export class DatosUsuarioService {
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
+
+    findCoger(id: any): Observable<EntityResponseType> {
+        return this.http.get<IDatosUsuario>(`${this.resourceUrl}-id/${id}`, { observe: 'response' });
+    }
 }

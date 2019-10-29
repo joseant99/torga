@@ -7,6 +7,7 @@ export interface IPresupuestoPedido {
     fecha_presupuesto?: string;
     fecha_pedido?: string;
     user?: IUser;
+    usuarioCreadoPre?: IUser;
 }
 
 export class PresupuestoPedido implements IPresupuestoPedido {
@@ -16,6 +17,7 @@ export class PresupuestoPedido implements IPresupuestoPedido {
         public pedido?: number,
         public fecha_presupuesto?: string,
         public fecha_pedido?: string,
-        public user?: IUser
+        public user?: IUser,
+        public usuarioCreadoPre?: IUser
     ) {}
 }

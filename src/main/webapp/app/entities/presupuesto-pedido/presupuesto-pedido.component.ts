@@ -6,11 +6,9 @@ import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 
 import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
 import { AccountService } from 'app/core';
-import { IProductosPresupuestoPedidos } from 'app/shared/model/productos-presupuesto-pedidos.model';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { PresupuestoPedidoService } from './presupuesto-pedido.service';
-import { ProductosPresupuestoPedidosService } from '../productos-presupuesto-pedidos/productos-presupuesto-pedidos.service';
 
 @Component({
     selector: 'jhi-presupuesto-pedido',
@@ -19,7 +17,6 @@ import { ProductosPresupuestoPedidosService } from '../productos-presupuesto-ped
 export class PresupuestoPedidoComponent implements OnInit, OnDestroy {
     currentAccount: any;
     presupuestoPedidos: IPresupuestoPedido[];
-    productosPresupuestoPedidos: any;
     error: any;
     success: any;
     eventSubscriber: Subscription;
@@ -35,7 +32,6 @@ export class PresupuestoPedidoComponent implements OnInit, OnDestroy {
 
     constructor(
         protected presupuestoPedidoService: PresupuestoPedidoService,
-        protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
@@ -53,15 +49,14 @@ export class PresupuestoPedidoComponent implements OnInit, OnDestroy {
     }
 
     loadAll() {
-        sessionStorage.getItem('presupuesto');
-        this.productosPresupuestoPedidosService
+        this.presupuestoPedidoService
             .query({
                 page: this.page - 1,
                 size: this.itemsPerPage,
                 sort: this.sort()
             })
             .subscribe(
-                (res: HttpResponse<IProductosPresupuestoPedidos[]>) => this.productosPresupuestoPedidos(res.body, res.headers),
+                (res: HttpResponse<IPresupuestoPedido[]>) => this.paginatePresupuestoPedidos(res.body, res.headers),
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
     }

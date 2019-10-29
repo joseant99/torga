@@ -12,7 +12,6 @@ import {
     PresupuestoPedidoDeletePopupComponent,
     PresupuestoPedidoDeleteDialogComponent,
     PresupuestoProductosComponent,
-    PedidosProductosComponent,
     PresupuestoEdicionComponent,
     presupuestoPedidoRoute,
     presupuestoPedidoPopupRoute
@@ -28,7 +27,6 @@ const ENTITY_STATES = [...presupuestoPedidoRoute, ...presupuestoPedidoPopupRoute
         PresupuestoPedidoUpdateComponent,
         PresupuestoUsuarioComponent,
         PedidosUsuarioComponent,
-        PedidosProductosComponent,
         PresupuestoEdicionComponent,
         PresupuestoProductosComponent,
         PresupuestoPedidoDeleteDialogComponent,
@@ -39,7 +37,6 @@ const ENTITY_STATES = [...presupuestoPedidoRoute, ...presupuestoPedidoPopupRoute
         PresupuestoPedidoComponent,
         PresupuestoUsuarioComponent,
         PedidosUsuarioComponent,
-        PedidosProductosComponent,
         PresupuestoPedidoUpdateComponent,
         PresupuestoEdicionComponent,
         PresupuestoProductosComponent,

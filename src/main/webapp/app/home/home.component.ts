@@ -54,6 +54,8 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         var municipios = [];
         var provincias = [];
+        $('body').attr('id', 'bodyInicio');
+        $('#botonEsconder').css({ display: 'none' });
         this.accountService.identity().then(account => {
             this.account = account;
         });
@@ -81,8 +83,10 @@ export class HomeComponent implements OnInit {
     registerAuthenticationSuccess() {
         this.eventManager.subscribe('authenticationSuccess', message => {
             this.accountService.identity().then(account => {
-                console.log(account);
-                //REDIRECCIONAR SEGUN EL ROL QUE TENGAN
+                $('body').removeAttr('id');
+                $('#botonEsconder').removeAttr('style');
+                $('#botonEsconder').attr('style');
+                $('#botonEsconder').css({ 'max-width': '100%' });
                 if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
@@ -92,10 +96,9 @@ export class HomeComponent implements OnInit {
                         this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
                             this.representanteTiendaService.todos = data.body;
                             this.representanteTiendaService.representante = data.body[0]['represenTorga'];
-                            console.log(this.representanteTiendaService.todos);
-                            console.log(this.representanteTiendaService.representante);
                         });
                     });
+
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_USER') >= 0) {
                     this.router.navigate(['/inicio']);
