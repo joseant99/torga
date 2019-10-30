@@ -13,18 +13,18 @@
 	                <span class="logo-img"></span>
 </a>
 	
-	<a id="cestaImagen"><img id="imagenCesta" src="../../../content/images/CESTA-min.jpg"></a>
+	<a id="cestaImagen" data-toggle="modal" data-target="#modalCesta"  (click)="abrirCesta()"><img id="imagenCesta" src="../../../content/images/CESTA-min.jpg"></a>
 </div>
 <nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal" style="display:none">
-<div style="float:left;witdh:100%;top:50px;position:fixed">
+<div style="float:left;width:100%;top:50px;margin-top: 52px;">
 			  
 					
 	<div id="menuUnico">				
 					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
-	       		 		<li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	       		 		<li style="margin-top: -20px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 	                    <a  id="noticias" data-toggle="collapse" data-target="#menuNoticias">
 	                        <span>
-	                            <span style="color:black;font-size:18px;margin-top: 18px;">NOTICIAS</span>
+	                            <span style="color:black;font-size:18px;margin-top: 18px;font-weight: 400;">NOTICIAS</span>
 	                        </span>
 						</a>
 						</li>
@@ -39,296 +39,248 @@
 								</li>
 							</ul>
 					</div>
-					</ul>
-		
-	    <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
-	        <fa-icon icon="bars"></fa-icon>
-	    </a>
-	   
-      	 
-      	 
-      	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a (click)="tarifa()" id="tarifa" data-toggle="collapse" data-target="#menuTarifa" >
-                        <span>
-                            <span style="color:black;font-size:18px;margin-top: 18px;">CONFIGURADOR</span>
-                        </span>
-					</a>
-					<div id="menuTarifa" class="collapse">
-						   <ul aria-labelledby="#menuTarifa">
-						     	<li style="list-style: none;">
-		                                <a  id="torgaTarifa" data-toggle="collapse" data-target="#menuTarifaTorga">
-					                        <span>
-					                            <span style="font-size:16px;">TORGA</span>
-					                        </span>
-										</a>
-										<div id="menuTarifaTorga" class="collapse">
-												<li style="list-style: none;">
+					</ul> 
+
+	   <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+	       		 		<li id="liTitulo1" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 						                            <a  id="torgaTarifaComedoresPrincipal" data-toggle="collapse" data-target="#torgaTarifaComedores">
 								                        <span>
-								                            <span style="font-size:14px;">NATIV COMEDORES</span>
+								                            <span (click)="funcionQuitarRaya(1)" style="color:black;font-size:18px;margin-top: 18px;font-weight: 400;">NATIV COMEDORES</span>
+								                            <span id="mas1" (click)="funcionQuitarRaya(1)" style="float: right;font-weight: 400;font-size: 20px; margin-top: -5px;  ">+</span> 
 								                        </span>
 													</a>
-													<div id="torgaTarifaComedores" class="collapse" style="font-size:12px;">
-                  												<li>
+													</li>
+													<div id="torgaTarifaComedores" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">
+                  												<li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,8)" routerLinkActive="active" >
-										                                <span style="color:#7AB5CA;">Módulos Bajos</span>
+										                                <span style="font-weight: 400;">Módulos Bajos</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-aparadores',false,myModel1,11)" routerLinkActive="active" >
-										                                <span >Aparadores</span>
+										                                <span style="font-weight: 400;">Aparadores</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,12)">
-										                                <span>Vitrinas</span>
+										                                <span style="font-weight: 400;">Vitrinas</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-singulares',false,myModel1,13)">
-										                                <span >Singulares</span>
+										                                <span style="font-weight: 400;">Singulares</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,14)">
-										                                <span >Escritorios</span>
+										                                <span style="font-weight: 400;">Escritorios</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,2)" >
-										                                <span >Sistemas de Apoyo</span>
+										                                <span style="font-weight: 400;">Sistemas de Apoyo</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,15)">
-										                                <span >Estanterias colgantes y estantes</span>
+										                                <span style="font-weight: 400;">Estanterias colgantes y estantes</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,16)" >
-										                                <span >Colgantes Verticales</span>
+										                                <span style="font-weight: 400;">Colgantes Verticales</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,17)">
-										                                <span>Colgantes Verticales Estantería</span>
+										                                <span style="font-weight: 400;">Colgantes Verticales Estantería</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,18)">
-										                                <span>Colgantes Horizontales</span>
+										                                <span style="font-weight: 400;">Colgantes Horizontales</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,19)">
-										                                <span>Estanterías</span>
+										                                <span style="font-weight: 400;">Estanterías</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,20)">
-										                                <span>Suplementos TV</span>
+										                                <span style="font-weight: 400;">Suplementos TV</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,21)">
-										                                <span>Paneles</span>
+										                                <span style="font-weight: 400;">Paneles</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,22)">
-										                                <span>Mesas</span>
+										                                <span style="font-weight: 400;">Mesas</span>
 										                            </a>
 											                    </li>
-											                    <li>
+											                    <li style="margin-top:10px;padding-bottom: 10px;">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,12)">
-										                                <span>Composiciones</span>
+										                                <span style="font-weight: 400;">Composiciones</span>
 										                            </a>
 											                    </li>
 												 	</div>
 						                    	</li>
-						                        
-						                    
-						                            <a  id="torgaTarifaDormitoriosPrincipal" data-toggle="collapse" data-target="#torgaTarifaDormitorios">
+						                    </ul>
+      	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+	       		 		<li id="liTitulo2" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+						                             <a  id="torgaTarifaDormitoriosPrincipal" data-toggle="collapse" data-target="#torgaTarifaDormitorios">
 								                        <span>
-								                            <span style="font-size:14px;">NATIV DORMITORIOS</span>
+								                            <span (click)="funcionQuitarRaya(2)" style="color:black;font-size:18px;margin-top: 18px;font-weight: 400;">NATIV DORMITORIOS</span>
+								                            <span id="mas2" (click)="funcionQuitarRaya(2)" style="float: right;font-weight: 400;font-size: 20px; margin-top: -5px;  ">+</span> 
 								                        </span>
 													</a>
-														<div id="torgaTarifaDormitorios" class="collapse" style="font-size:12px">
-														     	<li>
+													</li>
+													
+														<div id="torgaTarifaDormitorios" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">
+														     	<li style="margin-top:10px;margin-bottom:10px">
 										                            <a (click)="open1('productos-dormitorio/cabeceros',false,myModel1,4)">
-										                                <span >Cabeceros</span>
+										                                <span style="font-weight: 400;">Cabeceros</span>
 										                            </a>
 											                        </li>
 											                        
-											                        <li>
+											                        <li style="margin-top:10px;margin-bottom:10px">
 											                            <a (click)="open1('productos-dormitorio/categoria/1',false,myModel1,1)">
-											                                <span >Mesitas</span>
+											                                <span style="font-weight: 400;">Mesitas</span>
 											                            </a>
 											                        </li>
 											                        
 											                    
-											                        <li>
+											                        <li style="margin-top:10px;margin-bottom:10px">
 											                            <a (click)="open1('productos-dormitorio/chinfonier',false,myModel1,3)">
-											                                <span >Chifonieres</span>
+											                                <span style="font-weight: 400;">Chifonieres</span>
 											                            </a>
 											                        </li>
-											                        <li>
+											                        <li style="margin-top:10px;margin-bottom:10px">
 											                            <a (click)="open1('productos-dormitorio/apoyo',false,myModel1,2)" >
-											                                <span >Sistemas de apoyo</span>
+											                                <span style="font-weight: 400;">Sistemas de apoyo</span>
 											                            </a>
 											                        </li>
-											                         <li>
+											                         <li style="margin-top:10px;margin-bottom:10px">
 											                            <a (click)="open1('productos-dormitorio/canape',false,myModel1,5)">
-											                                <span >Ba&ntilde;eras y canapes</span>
+											                                <span style="font-weight: 400;">Ba&ntilde;eras y canapes</span>
 											                            </a>
 											                        </li>
-											                        <li>
+											                        <li style="margin-top:10px;margin-bottom:10px">
 											                            <a routerLink="composicion-ver"  routerLinkActive="active" >
-											                                <span >Composiciones</span>
+											                                <span style="font-weight: 400;">Composiciones</span>
 											                            </a>
 											                        </li>
-											                        <li>
+											                        <li style="margin-top:10px;padding-bottom: 10px;">
 											                            <a (click)="open1('armarios-dormitorio',false,myModel1,9)">
-											                                <span>Armarios</span>
+											                                <span style="font-weight: 400;">Armarios</span>
 											                            </a>
 											                        </li>
 									         
 									                        
 													  </div>
-														                      
-					                        
-									  </div>
-		                        </li>
-	                        </ul>
-	                        
-					  </div>
-      	 </ul>
+						                    	</li>
+						                    </ul>
+      	  
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a (click)="contacto()" id="cntacto" data-toggle="collapse" data-target="#menuBuscador">
+       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a (click)="contacto()" id="cntacto" (click)="open('productos-buscador',false,myModel)">
                         <span>
-                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;">BUSCADOR</span>
+                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">BUSCADOR</span>
                         </span>
 					</a>
-					<div id="menuBuscador" class="collapse">
-						<ul>
-							<li style="list-style: none;">
-							 <a (click)="open('productos-buscador',false,myModel)" id="fabricanteTorga" data-toggle="collapse">
-		                        <span>
-		                            <span style="font-size:16px;margin-top: -20px;">TORGA</span>
-		                        </span>
-							</a>
-							</li>
-						</ul>
-					</div>
+					
 				</li>
 			</ul>
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+       		 <li id="liTitulo3" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a (click)="comercial()" (click)="presupuestosCargar()" id="comercial" data-toggle="collapse" data-target="#menuComercial">
                         <span>
-                            <span style="color:black;font-size:20px;margin-top: -20px;">COMERCIAL</span>
+                            <span (click)="funcionQuitarRaya(3)" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">COMERCIAL</span>
+                            <span id="mas3" (click)="funcionQuitarRaya(3)" style="float: right;font-weight: 400;font-size: 20px; margin-top: -5px;  ">+</span>   
                         </span>
 					</a>
-					<div id="menuComercial" class="collapse">
-						   <ul aria-labelledby="menuComercial">
-						     	<li>
+					</li>
+					<div id="menuComercial" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">
+						     	<li style="margin-top:10px;margin-bottom:10px">
 		                            <a (click)="open('presupuesto-usuario',false,myModel)">
-		                                <span >Presupuestos <i *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_REPRESENTATE']">{{numeroPresupuestos}}</i></span>
+		                                <span style="font-weight: 400;">Presupuestos <i *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_REPRESENTATE']">{{numeroPresupuestos}}</i></span>
 		                            </a>
 		                        </li>
 		                        
-		                        <li>
+		                        <li style="margin-top:10px;padding-bottom: 10px;">
 		                            <a (click)="open('pedidos-usuario',false,myModel)">
-		                                <span >Pedidos <i *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_REPRESENTATE']">{{numeroPedidos}}</i></span>
+		                                <span style="font-weight: 400;">Pedidos <i *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_REPRESENTATE']">{{numeroPedidos}}</i></span>
 		                            </a>
-		                        </li>
-	                        </ul>
-	                        
+		                        </li>   
 					  </div>
       	 </ul>
       	 
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a (click)="contacto()" id="cntacto" data-toggle="collapse" data-target="#menuContactoTorga">
+       		 <li id="liTitulo4" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a (click)="contacto()" id="cntacto" data-toggle="collapse" data-target="#menuContacto">
                         <span>
-                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;">CONTACTO FABRICA</span>
+                            <span (click)="funcionQuitarRaya(4)" id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">CONTACTO FABRICA</span>
+                            <span id="mas4" (click)="funcionQuitarRaya(4)" style="float: right;font-weight: 400;font-size: 20px; margin-top: -5px;  ">+</span>   
                         </span>
 					</a>
-					<div id="menuContactoTorga" class="collapse">
-						<ul>
-							<li style="list-style: none;">
-							 <a  data-toggle="collapse" data-target="#menuContacto">
-		                        <span>
-		                            <span style="font-size:16px;margin-top: -20px;">TORGA</span>
-		                        </span>
-							</a>
-								<div id="menuContacto" class="collapse" style="font-size:12px;">
-										<li>
+					<li>
+								<div id="menuContacto" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">
+										<li style="margin-top:10px;margin-bottom:10px">
 				                            <a (click)="open('contacto-incidencias',false,myModel)">
-				                                <span >Inciencias</span>
+				                                <span style="font-weight: 400;">Inciencias</span>
 				                            </a>
 				                        </li>
-				                        <li>
+				                        <li style="margin-top:10px;margin-bottom:10px">
 				                            <a (click)="open('contacto-proyectos',false,myModel)">
-				                                <span >Proyectos</span>
+				                                <span style="font-weight: 400;">Proyectos</span>
 				                            </a>
 				                        </li>
-				                        <li>
+				                        <li style="margin-top:10px;margin-bottom:10px">
 				                            <a (click)="open('contacto-presupuestos',false,myModel)">
-				                                <span >Presupuestos</span>
+				                                <span style="font-weight: 400;">Presupuestos</span>
 				                            </a>
 				                        </li>
-				                        <li>
+				                        <li style="margin-top:10px;padding-bottom: 10px;">
 				                            <a (click)="open('contacto-pedidos',false,myModel)">
-				                                <span >Pedidos</span>
+				                                <span style="font-weight: 400;">Pedidos</span>
 				                            </a>
 				                        </li>
 								     	
-							  </div>
-							</li>
-						</ul>
+
 					</div>
-				</li>
 			</ul>
 			
 			
 			
 			
       	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a (click)="fabricantes()" id="fabricante" data-toggle="collapse" data-target="#menuFabricanteTorga">
+       		 <li id="liTitulo5" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a (click)="fabricantes()" id="fabricante" data-toggle="collapse" data-target="#menuFabricantesTorgaDentro">
                         <span>
-                            <span style="color:black;font-size:20px;margin-top: -20px;">GESTION FABRICANTES</span>
+                            <span (click)="funcionQuitarRaya(5)"  style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">FABRICANTES</span>
+                            <span id="mas5" (click)="funcionQuitarRaya(5)" style="float: right;font-weight: 400;font-size: 20px; margin-top: -5px;  ">+</span>   
                         </span>
 					</a>
-					<div id="menuFabricanteTorga" class="collapse">
-						<ul>
-							<li style="list-style: none;">
-							 
-							
-							<a  id="fabricantesTorga" data-toggle="collapse" data-target="#menuFabricantesTorgaDentro">
-		                        <span>
-		                            <span style="font-size:16px;margin-top: -20px;">TORGA</span>
-		                        </span>
-							</a>
+					</li>
 						
-							<div id="menuFabricantesTorgaDentro" class="collapse" style="font-size:12px;color:#7AB5CA;">
+							<div id="menuFabricantesTorgaDentro" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">
 								  
-								     	<li >
+								     	<li style="margin-top:10px;margin-bottom:10px">
 				                            <a (click)="open('gestion-fabricantes',false,myModel)">
-				                                <span>Gestion Fabricante</span>
+				                                <span style="font-weight: 400;">Gestion Fabricante</span>
 				                            </a>
 				                        </li>
-				                        <li>
+				                        <li style="margin-top:10px;margin-bottom:10px">
 				                            <a (click)="open('productos-precio',false,myModel)">
-				                                <span>Gestion Del Pago</span>
+				                                <span style="font-weight: 400;">Gestion Del Pago</span>
 				                            </a>
 				                        </li>
-				                        <li>
+				                        <li style="margin-top:10px;padding-bottom: 10px;">
 				                            <a (click)="open('productos-precio',false,myModel)">
-				                                <span>Gestion Productos</span>
+				                                <span style="font-weight: 400;">Gestion Productos</span>
 				                            </a>
 				                        </li>
 				                        
@@ -336,71 +288,63 @@
 			                     
 			                        
 							  </div>
-							</li>
-						</ul>
-					</div>
-				</li>
 			</ul>
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+       		 <li id="liTitulo6" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a (click)="gestionTienda()"  id="comercial" data-toggle="collapse" data-target="#menuTienda">
                         <span>
-                            <span style="color:black;font-size:20px;margin-top: -20px;">GESTION TIENDA</span>
+                            <span (click)="funcionQuitarRaya(6)" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">TIENDA</span>
+                            <span id="mas6" (click)="funcionQuitarRaya(6)" style="float: right;font-weight: 400;font-size: 20px; margin-top: -5px;  ">+</span>   
                         </span>
 					</a>
-
-					<ul>
+			</li>
 						
 					
-						<div id="menuTienda" class="collapse" style="font-size:12px;color:#7AB5CA;">		  
-							     	<li >
+						<div id="menuTienda" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">		  
+							     	<li style="margin-top:10px;padding-bottom: 10px;">
 			                            <a (click)="open('datos-generales',false,myModel)">
-			                                <span>Datos Tienda</span>
+			                                <span style="font-weight: 400;">Datos Tienda</span>
 			                            </a>
 			                        </li>  
-						  </div></ul>
+						  </div>
       	 </ul>
       	 
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a id="comercial" data-toggle="collapse" data-target="#mistiendas">
+       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a id="comercial">
                         <span>
-                            <span style="color:black;font-size:20px;margin-top: -20px;">MIS TIENDAS</span>
+                            <span (click)="open('mis-tiendas',false,myModel)" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">MIS TIENDAS</span>
                         </span>
 					</a>
-					<ul>
-						<div id="mistiendas" class="collapse" style="font-size:12px;color:#7AB5CA;">		  
-							     	<li style="list-style: none;">
-			                            <a (click)="open('mis-tiendas',false,myModel)">
-			                                <span style="font-size:16px;margin-top: -20px;">TORGA</span>
-			                            </a>
-			                        </li>  
-						  </div></ul>
+				</li>	
       	 </ul>
       	 
       	 
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+       		 <li id="liTitulo7" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a (click)="contacto()" id="cntacto" data-toggle="collapse" data-target="#menuGestionUsuario">
                         <span>
-                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;">GESTION DE USUARIOS</span>
+                            <span (click)="funcionQuitarRaya(7)"  id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">USUARIOS</span>
+                            <span id="mas7" (click)="funcionQuitarRaya(7)" style="float: right;font-weight: 400;font-size: 20px; margin-top: -5px;  ">+</span>
                         </span>
 					</a>
-					<div id="menuGestionUsuario" class="collapse">
-						<ul>
-							<li style="list-style: none;">
+					</li>
+					<div id="menuGestionUsuario" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">
+						
+							<li style="margin-top:10px;padding-bottom: 10px;">
 							 <a (click)="open('vendedores-usuario',false,myModel)" id="gestionUsuario" data-toggle="collapse">
 		                        <span>
-		                            <span style="font-size:16px;margin-top: -20px;">Usuarios Tienda</span>
+		                            <span style="font-weight: 400;">Usuarios Tienda</span>
 		                        </span>
 							</a>
 							</li>
-						</ul>
+					
 					</div>
-				</li>
 			</ul>
+			
+			
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -20px;" *jhiHasAnyAuthority="['ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+       		 <li style="margin-top: -31px;" *jhiHasAnyAuthority="['ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a  id="comercial" data-toggle="collapse" data-target="#menuComercial" (click)="open('datos-usuario',false,myModel)">
                         <span>
                            <p style="text-align:center"> <span id="contadorDatos" style="color:black;font-size:20px;">{{contador}}</span></p>
@@ -409,10 +353,10 @@
 			</li>
 		</ul> 
 						<a  *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']" (click)="open('contacto-sugerencias',false,myModel)">
-                            <span>SUGERENCIAS</span>
+                            <span style="font-weight: 400;">SUGERENCIAS</span>
                         </a><br>
                         <a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
-                            <span>CERRAR SESION</span>
+                            <span style="font-weight: 400;">CERRAR SESION</span>
                         </a>
     </div>
      
@@ -786,6 +730,25 @@
   </div>
 </ng-template>
 
-
+	<div class="modal fade" id="modalCesta" role="dialog">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title" style="text-align:center;width: 100%;font-size: 25px;">CESTA</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+			        
+		        </div>
+		       <div class="modal-footer">
+			       <p style="width:100%"><button style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;margin-left: 75px;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>
+			        <button style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;margin-right: 75px;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary ">GENERAR PRESUPUESTO</button></p>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
 
 

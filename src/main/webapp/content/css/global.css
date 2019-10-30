@@ -67,12 +67,16 @@ Generic styles
 }
 
 #menuPrincipal {
-    width: 15%;
+    width: 20%;
     position: fixed;
     z-index: 1;
     bottom: 0;
     top: 0;
-    background-color: white;
+    background-color: #f5f5f5 !important;
+    overflow: scroll;
+}
+#menuPrincipal::-webkit-scrollbar {
+    display: none;
 }
 #botonEsconder {
     display: block;
@@ -101,7 +105,7 @@ Generic styles
 @media screen and (max-width: 1500px) {
     #menuPrincipal {
         float: left;
-        width: 60%;
+        width: 30%;
         position: fixed;
         z-index: 1;
     }
@@ -118,14 +122,50 @@ Generic styles
     }
 }
 
+@media screen and (max-width: 1100px) {
+    #menuPrincipal {
+        float: left;
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+    }
+}
+@media screen and (max-width: 850px) {
+    #menuPrincipal {
+        float: left;
+        width: 50%;
+        position: fixed;
+        z-index: 1;
+    }
+}
+@media screen and (max-width: 650px) {
+    #menuPrincipal {
+        float: left;
+        width: 70%;
+        position: fixed;
+        z-index: 1;
+    }
+}
+@media screen and (max-width: 450px) {
+    #menuPrincipal {
+        float: left;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+    }
+}
 #productosDormitorioCargados {
     margin-left: 50px;
     margin-bottom: 50px;
     margin-right: 50px;
+    margin-top: 50px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 #productosPrincipal {
     width: 75%;
     margin-left: 69px;
+    margin-top: 70px;
 }
 .producto {
     max-height: 333px;
@@ -905,7 +945,7 @@ Generic styles
     margin-left: 57%;
     height: 100%;
     position: fixed;
-    top: 0;
+    top: 70px;
     right: 0;
     bottom: 0;
 }
@@ -948,7 +988,7 @@ Generic styles
 }
 #botonEsconder {
     max-width: 100%;
-    margin-left: 120px;
+    margin-left: 50px;
     margin-top: 5px;
 }
 
@@ -1366,6 +1406,7 @@ Generic styles
         width: auto;
         height: 100%;
         position: fixed;
+        left: -615px;
     }
 }
 

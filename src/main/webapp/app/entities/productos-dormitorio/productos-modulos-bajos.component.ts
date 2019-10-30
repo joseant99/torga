@@ -981,7 +981,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         if (filtro == 'ancho') {
             var altura = $('.selectectAltura').text();
 
-            if (id == 0 && altura == 'Indiferente') {
+            if (id == 0 && altura == 'Todos') {
                 for (let i = 1; i <= 24; i++) {
                     $('#prod' + i).empty();
                 }
@@ -995,7 +995,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $('#ancho5').removeAttr('class');
                 $('#ancho6').removeAttr('class');
             } else {
-                if (altura != 'Indiferente' && id == 0) {
+                if (altura != 'Todos' && id == 0) {
                     for (let i = 1; i <= 24; i++) {
                         $('#prod' + i).empty();
                     }
@@ -1066,7 +1066,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 }
             }
             if (id != 0) {
-                if (altura == 'Indiferente') {
+                if (altura == 'Todos') {
                     $('#ancho0').removeAttr('class');
                     $('#ancho1').removeAttr('class');
                     $('#ancho2').removeAttr('class');
@@ -1109,7 +1109,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         });
                     });
                 } else {
-                    if (altura != 'Indiferente') {
+                    if (altura != 'Todos') {
                         $('#ancho0').removeAttr('class');
                         $('#ancho1').removeAttr('class');
                         $('#ancho2').removeAttr('class');
@@ -1163,7 +1163,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $('#prod' + i).empty();
             }
             var anchoFiltrado = $('.selectectAncho').text();
-            if (anchoFiltrado == 'Indiferente') {
+            if (anchoFiltrado == 'Todos') {
                 if (id == 0) {
                     for (let i = 1; i <= 24; i++) {
                         $('#prod' + i).empty();
@@ -1322,7 +1322,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         if (filtro == 'fondo') {
             var altura = $('.selectectAltura').text();
             var anchoFiltrado = $('.selectectAncho').text();
-            if (anchoFiltrado == 'Indiferente' && altura == 'Indiferente') {
+            if (anchoFiltrado == 'Todos' && altura == 'Todos') {
                 if (id == 0) {
                     for (let i = 1; i <= 24; i++) {
                         $('#prod' + i).empty();
@@ -1398,7 +1398,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 }
             } else {
                 if (id == 0) {
-                    if (anchoFiltrado != 'Indiferente' && altura == 'Indiferente') {
+                    if (anchoFiltrado != 'Todos' && altura == 'Todos') {
                         $('#fondo0').removeAttr('class');
                         $('#fondo1').removeAttr('class');
                         $('#fondo2').removeAttr('class');
@@ -1439,7 +1439,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             });
                         });
                     } else {
-                        if (anchoFiltrado == 'Indiferente' && altura != 'Indiferente') {
+                        if (anchoFiltrado == 'Todos' && altura != 'Todos') {
                             $('#fondo0').removeAttr('class');
                             $('#fondo1').removeAttr('class');
                             $('#fondo2').removeAttr('class');
@@ -1504,7 +1504,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 });
                             });
                         } else {
-                            if (anchoFiltrado != 'Indiferente' && altura != 'Indiferente') {
+                            if (anchoFiltrado != 'Todos' && altura != 'Todos') {
                                 $('#fondo0').removeAttr('class');
                                 $('#fondo1').removeAttr('class');
                                 $('#fondo2').removeAttr('class');
@@ -1548,7 +1548,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         }
                     }
                 } else {
-                    if (anchoFiltrado != 'Indiferente' && altura == 'Indiferente') {
+                    if (anchoFiltrado != 'Todos' && altura == 'Todos') {
                         $('#fondo0').removeAttr('class');
                         $('#fondo1').removeAttr('class');
                         $('#fondo2').removeAttr('class');
@@ -1590,7 +1590,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             });
                         });
                     } else {
-                        if (anchoFiltrado == 'Indiferente' && altura != 'Indiferente') {
+                        if (anchoFiltrado == 'Todos' && altura != 'Todos') {
                             $('#fondo0').removeAttr('class');
                             $('#fondo1').removeAttr('class');
                             $('#fondo2').removeAttr('class');
@@ -1655,7 +1655,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 });
                             });
                         } else {
-                            if (anchoFiltrado != 'Indiferente' && altura != 'Indiferente') {
+                            if (anchoFiltrado != 'Todos' && altura != 'Todos') {
                                 $('#fondo0').removeAttr('class');
                                 $('#fondo1').removeAttr('class');
                                 $('#fondo2').removeAttr('class');

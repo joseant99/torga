@@ -1,37 +1,36 @@
 <div id="productosPrincipal">
     <h2 style="text-align:center" id="page-heading">
-        <span ><strong>MODULOS BAJOS</strong></span>
+        <span ><strong style="letter-spacing: 3px;">MODULOS BAJOS</strong></span>
 
     </h2>
-    
+ 
     <jhi-alert></jhi-alert>
     <br/>
     <div style="width:100%" id="producto">
     <h2 style="text-align:center;margin-bottom:4%">PASO 1: Escoge Modelo</h2>
-    <table style="margin-top: 2%;">
-    	<tbody>
-
+    <table style="margin-top: 2%;font-weight: 300;letter-spacing: 0.5px;border-collapse: separate;border-spacing: 5px;">
+    	<tbody> 
     		<tr>
-    			Ancho:
-    			<td style="border:1px solid black;width:95px;padding-left:10px" class="selectectAncho" (click)='filtroAncho(0,"ancho")' id="ancho0">Indiferente</td>
-				<td style="border:1px solid black" id="ancho1" (click)='filtroAncho(1,"ancho")'>75</td>
-				<td style="border:1px solid black" id="ancho2" (click)='filtroAncho(2,"ancho")'>100</td>
-				<td style="border:1px solid black" id="ancho3" (click)='filtroAncho(3,"ancho")'>125</td>
-				<td style="border:1px solid black" id="ancho4" (click)='filtroAncho(4,"ancho")'>150</td>
-				<td style="border:1px solid black" id="ancho5" (click)='filtroAncho(5,"ancho")'>175</td>
-				<td style="border:1px solid black" id="ancho6" (click)='filtroAncho(6,"ancho")'>200</td>
+    			Ancho&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    			<td style="border:1px solid #D9D9D9;width:95px;text-align: center;font-weight: 800;font-style: italic;" class="selectectAncho" (click)='filtroAncho(0,"ancho")' id="ancho0">Todos</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho1" (click)='filtroAncho(1,"ancho")'>75</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho2" (click)='filtroAncho(2,"ancho")'>100</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho3" (click)='filtroAncho(3,"ancho")'>125</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho4" (click)='filtroAncho(4,"ancho")'>150</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho5" (click)='filtroAncho(5,"ancho")'>175</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho6" (click)='filtroAncho(6,"ancho")'>200</td>
     		</tr>
     		<tr>
-    			Altura:
-    			<td style="border:1px solid black;width:95px;padding-left:10px" class="selectectAltura" (click)='filtroAncho(0,"altura")' id="altura0">Indiferente</td>
-    			<td style="border:1px solid black" id="altura1" (click)='filtroAncho(1,"altura")'>27.5</td>
-    			<td style="border:1px solid black" id="altura2" (click)='filtroAncho(2,"altura")'>50</td>
+    			Alto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    			<td style="border:1px solid #D9D9D9;width:95px;text-align: center;font-weight: 800;font-style: italic;" class="selectectAltura" (click)='filtroAncho(0,"altura")' id="altura0">Todos</td>
+    			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="altura1" (click)='filtroAncho(1,"altura")'>27.5</td>
+    			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="altura2" (click)='filtroAncho(2,"altura")'>50</td>
     		</tr>
     		<tr>
-    			Fondo:
-    			<td style="border:1px solid black;width:95px;padding-left:10px" id="fondo0" class="selectectFondo" (click)='filtroAncho(0,"fondo")'>Indiferente</td>
-    			<td style="border:1px solid black" id="fondo1" (click)='filtroAncho(1,"fondo")'>42</td>
-    			<td style="border:1px solid black" id="fondo2" (click)='filtroAncho(2,"fondo")'>47</td>
+    			Fondo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    			<td style="border:1px solid #D9D9D9;width:95px;text-align: center;font-weight: 800;font-style: italic;" id="fondo0" class="selectectFondo" (click)='filtroAncho(0,"fondo")'>Todos</td>
+    			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="fondo1" (click)='filtroAncho(1,"fondo")'>42</td>
+    			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="fondo2" (click)='filtroAncho(2,"fondo")'>47</td>
     		</tr>
     	</tbody>
     </table>
@@ -67,17 +66,18 @@
     	
         <div *ngFor="let productosDormitorio of productosDormitorios" [id]='productosDormitorio.id' class="productosColor{{productosDormitorio.id}}">
     	<div id="productosDormitorioCargados">
-	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
 	 		<img title="Foto de linea de codigo" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="290.5px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
     	</div>
+    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.nombre}}</p>
     	</div>	
     </div>
     <div *ngIf="productosDormitorios === undefined" id="ProductosCargados1" style="margin-top:4%">
         <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColor{{productosDormitorio.id}}">
     	<div id="productosDormitorioCargados">
-	    	<p  style="text-align:center">{{productosDormitorio.nombre}}</p><hr style="width:100%;color:black"></hr>
+	    	
 	 		<img title="Foto de linea de codigo" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="290.5px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/>
     	</div>
+    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.nombre}}</p>
     	</div>	
     </div>
 	<div id="dimensiones"style="width:100%;float:left;">

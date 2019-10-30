@@ -37,6 +37,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     swaggerEnabled: boolean;
     modalRef: NgbModalRef;
     id: any;
+    medidasModal: any;
+    productosArrayNombre: any;
     acaProdSer: any;
     numeroPedidos: any;
     numeroPresupuestos: any;
@@ -113,7 +115,262 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             $('#botonEsconder').attr('onclick', 'apareceMenu()');
         }
     }
+    public abrirCesta() {
+        var productosArrayNombres = this.productosArrayNombre;
+        $('#modalCesta .modal-body').empty();
+        var medidas = this.medidasModal;
+        var acabados = [];
+        $('#myModalComposicion .modal-body').empty();
+        var contAca = 1;
+        var nombreCarpeta;
+        for (let i = 1; i <= 100; i++) {
+            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+            console.log(sesion);
+            if (sesion != null) {
+                $('#modalCesta .modal-body').append(
+                    '<div style="float: left;width: 500px;text-align: center;" id="cuerpo' + i + '"></div>'
+                );
+                $('#cuerpo' + i).append(
+                    '<img style="max-width:400px" src="data:image/png;base64,' + sesion[1]['productosDormitorio']['imagen'] + '">'
+                );
+                var nombre = productosArrayNombres[sesion[1]['productosDormitorio']['id']];
+                console.log(nombre);
+                for (let j = 1; j < 15; j++) {
+                    if (sesion[1]['acabado' + j] != undefined) {
+                        acabados[contAca] = sesion[1]['acabado' + j]['nombre'];
+                        contAca++;
+                    }
+                }
 
+                if (
+                    nombre == 'mb6' ||
+                    nombre == 'mb9' ||
+                    nombre == 'mb7' ||
+                    nombre == 'mb8' ||
+                    nombre == 'mb10' ||
+                    nombre == 'mb11' ||
+                    nombre == 'mb12' ||
+                    nombre == 'mb13' ||
+                    nombre == 'mb14'
+                ) {
+                    nombreCarpeta = 'mb5';
+                } else {
+                    nombreCarpeta = nombre;
+                }
+
+                contAca = 1;
+                for (let k = 1; k < acabados.length; k++) {
+                    if (k == 1) {
+                        if (i == 1) {
+                            var prodMed = this.medidasModal[nombre];
+                            var height = prodMed.split(';')[3];
+                            var width = prodMed.split(';')[2];
+                            $('#cuerpo' + i).append(
+                                '<img style="z-index:100;margin-left:-400px;top:10px;max-width:400px;max-height:400px;' +
+                                    height +
+                                    ';' +
+                                    width +
+                                    ';max-width:400px;max-height:250px;" id="' +
+                                    nombre +
+                                    '" class="' +
+                                    acabados[k].toLowerCase() +
+                                    'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                    nombreCarpeta +
+                                    '/' +
+                                    k +
+                                    '/' +
+                                    nombreCarpeta +
+                                    '_' +
+                                    k +
+                                    '_' +
+                                    acabados[k].toLowerCase() +
+                                    '_optimized.png">'
+                            );
+                        } else {
+                            var prodMed = this.medidasModal[nombre];
+                            var left = prodMed.split(';')[0];
+                            var bottom = prodMed.split(';')[1];
+                            var height = prodMed.split(';')[3];
+                            var width = prodMed.split(';')[2];
+                            $('#cuerpo' + i).append(
+                                '<img style="z-index:' +
+                                    (100 - i) +
+                                    ';margin-left:-400px;top:10px;max-width:400px;max-height:400px;' +
+                                    left +
+                                    ';' +
+                                    bottom +
+                                    ';' +
+                                    height +
+                                    ';' +
+                                    width +
+                                    ';max-width:400px;max-height:250px;"  class="' +
+                                    acabados[k].toLowerCase() +
+                                    'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                    nombreCarpeta +
+                                    '/' +
+                                    k +
+                                    '/' +
+                                    nombreCarpeta +
+                                    '_' +
+                                    k +
+                                    '_' +
+                                    acabados[k].toLowerCase() +
+                                    '_optimized.png">'
+                            );
+                        }
+                    } else {
+                        if (k == 2) {
+                            if (i == 1) {
+                                var prodMed = this.medidasModal[nombre];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
+                                $('#cuerpo' + i).append(
+                                    '<img style="margin-top:-19px;z-index:100;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
+                                        height +
+                                        ';' +
+                                        width +
+                                        ';max-width:400px;max-height:250px;" id="' +
+                                        nombre +
+                                        '" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                        nombreCarpeta +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombreCarpeta +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png">'
+                                );
+                            } else {
+                                var prodMed = this.medidasModal[nombre];
+                                var left = prodMed.split(';')[0];
+                                var bottom = prodMed.split(';')[1];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
+                                $('#cuerpo' + i).append(
+                                    '<img style="z-index:' +
+                                        (100 - i) +
+                                        ';margin-top:-19px;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
+                                        left +
+                                        ';' +
+                                        bottom +
+                                        ';' +
+                                        height +
+                                        ';' +
+                                        width +
+                                        ';max-width:400px;max-height:250px;" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                        nombreCarpeta +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombreCarpeta +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png">'
+                                );
+                            }
+                        } else {
+                            if (i == 1) {
+                                var prodMed = this.medidasModal[nombre];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
+                                $('#cuerpo' + i).append(
+                                    '<img style="margin-top:-19px;z-index:100;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
+                                        height +
+                                        ';' +
+                                        width +
+                                        ';max-width:400px;max-height:250px;" id="' +
+                                        nombre +
+                                        '" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                        nombre +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png">'
+                                );
+                            } else {
+                                var prodMed = this.medidasModal[nombre];
+                                var left = prodMed.split(';')[0];
+                                var bottom = prodMed.split(';')[1];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
+                                $('#cuerpo' + i).append(
+                                    '<img style="z-index:' +
+                                        (100 - i) +
+                                        ';margin-top:-19px;margin-left:-400px;top:30px;' +
+                                        left +
+                                        ';' +
+                                        bottom +
+                                        ';' +
+                                        height +
+                                        ';' +
+                                        width +
+                                        ';max-width:400px;max-height:250px;" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                        nombre +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png">'
+                                );
+                            }
+                        }
+                    }
+                }
+                $('#modalCesta .modal-body').append('<div style="float: left;width: 55%;" id="textoCesta' + i + '"></div>');
+                $('#textoCesta' + i).append(
+                    '<p style="letter-spacing: 1px;font-weight: 300;">' +
+                        sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
+                        '<i style="float:right">&euro; ' +
+                        sesion[1]['precio'] +
+                        '</i></p>'
+                );
+                $('#textoCesta' + i).append(
+                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Ancho: ' + sesion[1]['ancho'] + '</p>'
+                );
+                $('#textoCesta' + i).append(
+                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Alto: ' + sesion[1]['alto'] + '</p>'
+                );
+                $('#textoCesta' + i).append(
+                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Fondo: ' + sesion[1]['fondo'] + '</p>'
+                );
+                for (let l = 1; l < acabados.length; l++) {
+                    $('#textoCesta' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Acabado ' + l + ': ' + acabados[l] + '</p>'
+                    );
+                }
+                $('#textoCesta' + i).append(
+                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Apoyo: ' +
+                        sesion[1]['apoyo']['productoApoyo']['nombre'] +
+                        '<i style="float:right;font-size:15px">+ &euro; ' +
+                        sesion[1]['apoyo']['precio'] +
+                        '</i></p>'
+                );
+                acabados = [];
+            }
+        }
+    }
     open1(ruta, bool, content, id) {
         var prod = $('#nombreMesita').text();
         if (prod != '') {
@@ -153,6 +410,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             return 'by clicking on a backdrop';
         } else {
             return `with: ${reason}`;
+        }
+    }
+
+    public funcionQuitarRaya(id) {
+        var mas = $('#mas' + id).text();
+        if (mas == '+') {
+            $('#mas' + id).text('x');
+            $('#liTitulo' + id).css({ 'border-bottom': '0' });
+        } else {
+            $('#mas' + id).text('+');
+            $('#liTitulo' + id).css({ 'border-bottom': '1px solid #D9D9D9' });
         }
     }
     public presupuestosCargar() {
@@ -210,6 +478,41 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.languageHelper.getAll().then(languages => {
             this.languages = languages;
         });
+
+        var medidasModal = [];
+        medidasModal['mb4'] = 'margin-left:-140px;bottom:125px;max-width:500px;max-height:300px;';
+        medidasModal['mb1'] = 'margin-left:-60px;bottom:105px;max-width:500px;max-height:300px;';
+        medidasModal['mb6'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb7'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb8'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb9'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb10'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb11'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb12'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb13'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb14'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg1'] = 'margin-left:-130px;bottom:113px;max-width:300px;max-height:535.65px;';
+
+        this.medidasModal = medidasModal;
+
+        var productosArrayNombres = [];
+        productosArrayNombres[107] = 'mb1';
+        productosArrayNombres[72] = 'sg1';
+        productosArrayNombres[73] = 'sg1';
+        productosArrayNombres[108] = 'mb';
+        productosArrayNombres[109] = 'mb4';
+        productosArrayNombres[110] = 'mb6';
+        productosArrayNombres[111] = 'mb5';
+        productosArrayNombres[112] = 'mb8';
+        productosArrayNombres[113] = 'mb7';
+        productosArrayNombres[114] = 'mb9';
+        productosArrayNombres[115] = 'mb11';
+        productosArrayNombres[116] = 'mb10';
+        productosArrayNombres[117] = 'mb13';
+        productosArrayNombres[118] = 'mb12';
+        productosArrayNombres[119] = 'mb14';
+        this.productosArrayNombre = productosArrayNombres;
+
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
             if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
