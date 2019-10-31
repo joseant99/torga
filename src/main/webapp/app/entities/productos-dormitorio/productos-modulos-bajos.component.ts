@@ -177,6 +177,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     }
 
     public open(producto, productoNombre) {
+        $('#botonEliminar').removeAttr('class');
         for (let i = 1; i <= 14; i++) {
             for (let u = 0; u < 14; u++) {
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
@@ -465,6 +466,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     }
 
     public open1(producto1) {
+        $('#botonEliminar').removeAttr('class');
         for (let i = 1; i <= 14; i++) {
             for (let u = 0; u < 14; u++) {
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
@@ -1762,10 +1764,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             if (datos[h]['id'] == idDimenTipo) {
                 if (datos[h]['mensaje'] != 'Medidas Especiales') {
                     var text = $('#nombreMesita').text();
-                    $('#datos1').append('<p>Ancho</p>');
-                    $('#datos1').append('<p>Alto</p>');
-                    $('#datos1').append('<p>Fondo</p>');
-
                     var total = $('#total').text();
                     var totalfloat = parseFloat(total);
                     var precio = parseFloat(datos[h]['precio']);
@@ -1774,13 +1772,16 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     totalfloat = totalfloat + precio;
                     $('#total').text(totalfloat);
                     $('#precioDimension').text(totalfloat);
-                    $('#precios1').append('<p class="' + datos[h]['id'] + '" id="ancho1">' + datos[h]['ancho'] + '</p>');
                     $('#idioma').attr('value', datos[h]['id']);
-                    $('#precios1').append('<p>' + datos[h]['alto'] + '</p>');
-                    $('#precios1').append('<p>' + datos[h]['fondo'] + '</p>');
-                    $('#precioCalculado1').append('<p>-</p>');
-                    $('#precioCalculado1').append('<p>-</p>');
-                    $('#precioCalculado1').append('<p>-</p>');
+                    $('#datos1').append(
+                        '<p style="width:100%"><span>Ancho : </span><span class="' +
+                            datos[h]['id'] +
+                            '" id="ancho1">' +
+                            datos[h]['ancho'] +
+                            '</span></p>'
+                    );
+                    $('#datos1').append('<p style="width:100%"><span>Alto : </span><span>' + datos[h]['alto'] + '</span></p>');
+                    $('#datos1').append('<p style="width:100%"><span>Fondo : </span><span>' + datos[h]['fondo'] + '</span></p>');
                     acaSi = 0;
                 } else {
                     $('#especiales').css({ display: 'block' });
@@ -2698,9 +2699,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $('#val' + id1).remove();
                 $('#val' + id1 + 'Dato').remove();
                 $('#valor' + id1).remove();
-                $('#datos1').append('<p id="val' + id1 + '">Acabado ' + id1 + '</p>');
-                $('#precios1').append('<p id="val' + id1 + 'Dato" class="' + value['id'] + '">' + value['nombre'] + '</p>');
-                $('#precioCalculado1').append('<p id="valor' + id1 + '">' + value['precio'] + '</p>');
+                $('#datos1').append(
+                    '<p style="width:100%"> <span id="val' +
+                        id1 +
+                        '">Acabado ' +
+                        id1 +
+                        ' : </span><span id="val' +
+                        id1 +
+                        'Dato" class="' +
+                        value['id'] +
+                        '">' +
+                        value['nombre'] +
+                        '</span></p>'
+                );
                 k++;
             }
         });
@@ -2977,7 +2988,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('.apoyoCogido' + id).css({ 'background-color': '#DFDDDC' });
         var idApoyo = $('.apoyoCogido' + id + ' #imagenApoyo').attr('class');
         var idProd = $('#nombreMesita').attr('class');
-        const h = $('#productoCalculadora1  #precios1 #ancho1').text();
+        const h = $('#productoCalculadora1  #datos1 #ancho1').text();
         var dimension = [];
         var datos = [];
         var datosApoyo;
@@ -2994,9 +3005,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         var precio = parseFloat(value['precio']);
                         precio = precio * precioTienda;
                         precio = Math.round(precio * 100) / 100;
-                        $('#datos1').append('<p id="nombreApoyo">' + value['productoApoyo']['nombre'] + '</p>');
-                        $('#precios1').append('<p id="apoyoRaya">-</p>');
-                        $('#precioCalculado1').append('<p id="apoyo1" class="' + value['id'] + '">' + precio + '&euro;</p>');
+                        $('#datos1').append(
+                            '<p style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                value['productoApoyo']['nombre'] +
+                                '</span><span style="float:right" id="apoyo1" class="' +
+                                value['id'] +
+                                '">+' +
+                                precio +
+                                '&euro;</span></p>'
+                        );
                         var total = $('#total').text();
                         var totalfloat = parseFloat(total);
                         totalfloat = totalfloat + precio;
@@ -3024,8 +3041,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('#textoFinal').attr('style');
             $('#textoFinal').css({ width: '100%' });
             $('#textoFinal').css({ float: 'left' });
+            $('#botonCalculadora').removeAttr('class');
         }
-        $('#botonCalculadora').removeAttr('disabled');
         $('#terminarConfiguracion').removeAttr('style');
         $('#terminarConfiguracion').attr('style');
         $('#terminarConfiguracion').css({ float: 'left' });
@@ -3056,11 +3073,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     $('#total').text(totalfloat);
                 }
             }
+            $('#botonCalculadora').removeAttr('class');
         } else {
             $('#textoFinal').removeAttr('style');
             $('#textoFinal').attr('style');
             $('#textoFinal').css({ width: '100%' });
             $('#textoFinal').css({ float: 'left' });
+            $('#botonCalculadora').removeAttr('class');
         }
     }
 
@@ -3097,13 +3116,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var contAca = 0;
         for (let i = 1; i <= 3; i++) {
             const idProd = $('#nombreProd' + i).attr('class');
-            const dimen = $('#productoCalculadora1 #precios1 #ancho' + i).attr('class');
-            const idApoyo = $('#productoCalculadora1 #precioCalculado1 #apoyo' + i).attr('class');
-            const idIluminacion = $('#productoCalculadora1 #precioCalculado1 #iluminacion' + i).attr('class');
-            const ancho = $('#productoCalculadora1 #precios1 #ancho' + i).text();
-            const alto = $('#productoCalculadora1 #precios1 #alto' + i).text();
-            const fondo = $('#productoCalculadora1 #precios1 #fondo' + i).text();
-            const precio = $('#productoCalculadora1 #precios1 #alto' + i).attr('class');
+            const dimen = $('#productoCalculadora1 #datos1 #ancho' + i).attr('class');
+            const idApoyo = $('#productoCalculadora1 #datos1 #apoyo' + i).attr('class');
+            const idIluminacion = $('#productoCalculadora1 #datos1 #iluminacion' + i).attr('class');
+            const ancho = $('#productoCalculadora1 #datos1 #ancho' + i).text();
+            const alto = $('#productoCalculadora1 #datos1 #alto' + i).text();
+            const fondo = $('#productoCalculadora1 #datos1 #fondo' + i).text();
+            const precio = $('#productoCalculadora1 #datos1 #alto' + i).attr('class');
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
             console.log(sessionStorage);
             const prod = [];
@@ -3125,7 +3144,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             const aca = [];
             var acabadoCogido;
             for (let j = 1; j <= 100; j++) {
-                acabadoCogido = $('#productoCalculadora1 #precios1 #val' + j + 'Dato').attr('class');
+                acabadoCogido = $('#productoCalculadora1 #datos1 #val' + j + 'Dato').attr('class');
                 if (acabadoCogido != undefined) {
                     var id1 = parseFloat(acabadoCogido);
                     for (let k = 0; k < 16; k++) {
