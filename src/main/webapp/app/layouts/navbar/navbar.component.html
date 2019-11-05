@@ -13,12 +13,10 @@
 	                <span class="logo-img"></span>
 </a>
 	
-	<a id="cestaImagen" data-toggle="modal" data-target="#modalCesta"  (click)="abrirCesta()"><img id="imagenCesta" src="../../../content/images/CESTA-min.jpg"></a>
+	<a id="cestaImagen" data-toggle="modal" data-target="#modalCesta"  (click)="abrirCesta()"><img id="imagenCesta" src="../../../content/images/CESTA-min.jpg"><i style="position: absolute;right: 15px;top: 12px;">{{productosDormitorioService.numeroCesta}}</i></a>
 </div>
 <nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal" style="display:none">
-<div style="float:left;width:100%;top:50px;margin-top: 52px;">
-			  
-					
+<div style="float:left;width:100%;top:50px;margin-top: 52px;">				
 	<div id="menuUnico">				
 					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
 	       		 		<li style="margin-top: -20px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -352,12 +350,20 @@
 					</a>
 			</li>
 		</ul> 
-						<a  *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']" (click)="open('contacto-sugerencias',false,myModel)">
-                            <span style="font-weight: 400;">SUGERENCIAS</span>
-                        </a><br>
-                        <a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
-                            <span style="font-weight: 400;">CERRAR SESION</span>
-                        </a>
+					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
+						<li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;">
+							<a  *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']" (click)="open('contacto-sugerencias',false,myModel)">
+                            	<span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">SUGERENCIAS</span>
+                        	</a>
+						 </li>
+						 <li style="border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;">
+							 <a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
+	                            <span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">CERRAR SESION</span>
+	                        </a>
+						 </li>
+					</ul>
+						
+                       
     </div>
      
     
@@ -744,7 +750,7 @@
 		        </div>
 		       <div class="modal-footer">
 			       <p style="width:100%"><button style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;margin-left: 75px;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>
-			        <button style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;margin-right: 75px;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary ">GENERAR PRESUPUESTO</button></p>
+			        <button style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;margin-right: 75px;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary " (click)="generarPresupuesto()">GENERAR PRESUPUESTO</button></p>
 		        </div>
 		      </div>
 		      

@@ -234,9 +234,9 @@ Generic styles
 
 .imagenAcabadoPrincipalImg {
     opacity: 0.7;
-    margin-left: 150px;
-    max-height: 333px;
-    max-width: 500px;
+    margin-left: 25%;
+    max-height: 433px;
+    max-width: 600px;
 }
 
 .imagenAcabadoPrincipalImgSin {
@@ -390,128 +390,112 @@ Generic styles
 }
 .pietra {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(125%);
 }
 .norway {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(140%);
 }
 .bronce {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
 }
 .transparente {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
 }
 .noce {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(140%);
 }
 .nature {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(150%);
 }
 .tabak {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(150%);
 }
 .kobe {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(150%);
 }
 .blanco {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(140%);
 }
 .beige {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(140%);
 }
 .latte {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(190%);
 }
 .grafeno {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(150%);
 }
 .lago {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(130%);
 }
 .mare {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(130%);
 }
 .marmolblanco {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(190%);
 }
 .marmolnegro {
     position: absolute;
-    max-width: 500px;
-    max-height: 333px;
-    margin-top: -333px;
-    margin-left: 150px;
+    max-width: 600px;
+    max-height: 433px;
+    margin-left: -600px;
     filter: brightness(190%);
 }
 
@@ -663,8 +647,9 @@ Generic styles
 }
 
 #acabadosPartesDivs {
-    float: right;
+    float: left;
     width: 35%;
+    margin-left: 15%;
 }
 
 .acabadosModal {
@@ -924,7 +909,7 @@ Generic styles
 }
 #imagenAcabadoPrincipal {
     float: left;
-    width: 500px;
+    width: 100%;
 }
 
 #apoyoStyle {
@@ -1315,6 +1300,9 @@ Generic styles
     #ProductosCargados1 {
         margin-left: 3%;
     }
+    #ProductosCargados {
+        margin-left: 3%;
+    }
     .producto {
         max-height: 130px;
         max-width: 255px;
@@ -1326,10 +1314,16 @@ Generic styles
     #ProductosCargados1 {
         margin-left: 9%;
     }
+    #ProductosCargados {
+        margin-left: 9%;
+    }
 }
 
 @media screen and (max-width: 400px) {
     #ProductosCargados1 {
+        margin-left: 12.5%;
+    }
+    #ProductosCargados {
         margin-left: 12.5%;
     }
     .producto {

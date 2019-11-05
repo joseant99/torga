@@ -6,7 +6,7 @@ import { SessionStorageService } from 'ngx-webstorage';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { VERSION } from 'app/app.constants';
-import { JhiLanguageHelper, Account, AccountService, LoginModalService, LoginService } from 'app/core';
+import { JhiLanguageHelper, Account, AccountService, LoginModalService, LoginService, UserService, User } from 'app/core';
 import { ProfileService } from '../profiles/profile.service';
 import { DatosUsuarioService } from '../../entities/datos-usuario/datos-usuario.service';
 import * as $ from 'jquery';
@@ -16,14 +16,23 @@ import { DimensionesProductoTipoService } from '../../entities/dimensiones-produ
 import { InterioresService } from '../../entities/interiores/interiores.service';
 import { MedidasEspecialesService } from '../../entities/medidas-especiales/medidas-especiales.service';
 import { ProductosDormitorioService } from '../../entities/productos-dormitorio/productos-dormitorio.service';
-import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
 import { PresupuestoPedidoService } from '../../entities/presupuesto-pedido/presupuesto-pedido.service';
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { RepresentanteTiendaService } from '../../entities/representante-tienda/representante-tienda.service';
 import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
+import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
+import { AcabadosProductosPresupuestoPedidoService } from '../../entities/acabados-productos-presupuesto-pedido/acabados-productos-presupuesto-pedido.service';
+import { ProductosPresupuestoPedidosService } from '../../entities/productos-presupuesto-pedidos/productos-presupuesto-pedidos.service';
+import { MedEspProductoPedidoPresuService } from '../../entities/med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.service';
+import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
+import { IProductosPresupuestoPedidos } from 'app/shared/model/productos-presupuesto-pedidos.model';
 import { RepresenTorgaService } from '../../entities/represen-torga/represen-torga.service';
 import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
+import { IluminacionProdPrePedService } from '../../entities/iluminacion-prod-pre-ped/iluminacion-prod-pre-ped.service';
+import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
+import { Observable } from 'rxjs';
+
 @Component({
     selector: 'jhi-navbar',
     templateUrl: './navbar.component.html',
@@ -33,6 +42,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     inProduction: boolean;
     isNavbarCollapsed: boolean;
     languages: any[];
+    isSaving: boolean;
     ruta: any;
     swaggerEnabled: boolean;
     modalRef: NgbModalRef;
@@ -40,8 +50,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     medidasModal: any;
     productosArrayNombre: any;
     acaProdSer: any;
+    presupuestoPedido: IPresupuestoPedido;
+    presupuesto: any;
+    productosPresupuestoPedidos: IProductosPresupuestoPedidos;
     numeroPedidos: any;
+    user: any;
+    todasDimensiones: any;
     numeroPresupuestos: any;
+    acaProdPed: any;
     version: string;
     closeResult: string;
     account: Account;
@@ -56,9 +72,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         private sessionStorage: SessionStorageService,
         protected datosUsuarioService: DatosUsuarioService,
         private accountService: AccountService,
-        protected representanteTiendaService: RepresentanteTiendaService,
+        protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
+        protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
+        protected iluminacionProdPrePedService: IluminacionProdPrePedService,
+        protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
+        protected representanteTiendaService: RepresentanteTiendaService,
         protected acaProdService: AcaProdService,
+        protected userService: UserService,
         protected represenTorgaService: RepresenTorgaService,
         private loginModalService: LoginModalService,
         private profileService: ProfileService,
@@ -67,7 +88,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         protected jhiAlertService: JhiAlertService,
         private router: Router,
         private modalService: NgbModal,
-        protected productosDormitorioService: ProductosDormitorioService,
+        public productosDormitorioService: ProductosDormitorioService,
         private eventManager: JhiEventManager
     ) {
         this.version = VERSION ? 'v' + VERSION : '';
@@ -115,6 +136,231 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             $('#botonEsconder').attr('onclick', 'apareceMenu()');
         }
     }
+
+    public generarPresupuesto() {
+        this.todasDimensiones = this.dimensionesProductoTipoService.todos;
+
+        var numeroProductos = [];
+        this.productosPresupuestoPedidosService
+            .query({
+                size: 100000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    numeroProductos[i] = data.body[i];
+                }
+                this.acaProdPed = numeroProductos;
+                if (numeroProductos.length != 0) {
+                    var prodCarr = [];
+                    var todoCarr;
+                    var contProd = 0;
+                    for (let i = 1; i < 100; i++) {
+                        todoCarr = JSON.parse(sessionStorage.getItem('prod' + i));
+                        if (todoCarr != undefined) {
+                            prodCarr[contProd] = todoCarr;
+                            contProd++;
+                        }
+                    }
+                    var numeroAcaProd = [];
+                    var aux = [];
+                    var acab = [];
+                    var prodAca = [];
+                    var prodIlu = [];
+                    var dimensionEspecialBien = [];
+                    var contAcab = 0;
+                    for (let j = 0; j < prodCarr.length; j++) {
+                        for (let i = 0; i < 15; i++) {
+                            if (prodCarr[j][1]['acabado' + (i + 1)] != undefined) {
+                                acab[contAcab] = prodCarr[j][1]['acabado' + (i + 1)];
+                                contAcab++;
+                            }
+                        }
+                        contAcab = 1;
+                        numeroAcaProd[j] = acab;
+                    }
+                    var account = this.accountService.userIdentity;
+                    if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                        var idTienda = $('#selectTienda').val();
+                        var todosTiendas = this.representanteTiendaService.todos;
+                        for (let w = 0; w < todosTiendas['length']; w++) {
+                            if (todosTiendas[w]['id'] == idTienda) {
+                                var usuario = todosTiendas[w]['datosUsuario']['user'];
+                            }
+                        }
+                        var usuarios = this.user;
+                        var usuarioCreado;
+                        var idUsu = this.account['id'];
+                        for (let i = 0; i < usuarios.length; i++) {
+                            if (usuarios[i]['id'] == idUsu) {
+                                usuarioCreado = usuarios[i];
+                            }
+                        }
+                    } else {
+                        if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                            var idTienda = $('#selectTienda').val();
+                            var tiendaUsuarioAdmin = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+                            var usuario = tiendaUsuarioAdmin['user'];
+                            var usuarios = this.user;
+                            var usuarioCreado;
+                            var idUsu = this.account['id'];
+                            for (let i = 0; i < usuarios.length; i++) {
+                                if (usuarios[i]['id'] == idUsu) {
+                                    usuarioCreado = usuarios[i];
+                                }
+                            }
+                        } else {
+                            this.isSaving = true;
+                            var usuarios = this.user;
+                            var usuario;
+                            var idUsu = this.account['id'];
+                            for (let i = 0; i < usuarios.length; i++) {
+                                if (usuarios[i]['id'] == idUsu) {
+                                    usuario = usuarios[i];
+                                }
+                            }
+                        }
+                    }
+                    var d = new Date();
+
+                    var month = d.getMonth() + 1;
+                    var day = d.getDate();
+                    var prueba;
+                    var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
+                    if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                        prueba = {
+                            codigo: 'PR-' + usuario['id'],
+                            pedido: 0,
+                            user: usuario,
+                            fecha_presupuesto: output,
+                            usuarioCreadoPre: usuarioCreado
+                        };
+                    } else {
+                        if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                            prueba = {
+                                codigo: 'PR-' + usuario['id'],
+                                pedido: 0,
+                                user: usuario,
+                                fecha_presupuesto: output,
+                                usuarioCreadoPre: usuarioCreado
+                            };
+                        } else {
+                            prueba = {
+                                codigo: 'PR-' + usuario['id'],
+                                pedido: 0,
+                                user: usuario,
+                                fecha_presupuesto: output
+                            };
+                        }
+                    }
+                    this.presupuestoPedido = prueba;
+                    this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
+                    var presupuesto = this.presupuesto;
+                    var id = localStorage.getItem('ultimoPresupuesto');
+                    var id1 = parseFloat(id);
+                    id1 = id1 + 1;
+                    localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
+                    var idDefinitiva;
+                    this.presupuestoPedidoService
+                        .query({
+                            size: 100000
+                        })
+                        .subscribe(
+                            (res: HttpResponse<IPresupuestoPedido[]>) => {
+                                var aux = [];
+                                for (let w = 0; w < res.body.length; w++) {
+                                    if (aux.length == 0 || aux[0]['id'] < res.body[w]['id']) {
+                                        aux[0] = res.body[w];
+                                    }
+                                }
+                                idDefinitiva = aux[0]['id'] + 1;
+                                const prueba1 = {
+                                    id: idDefinitiva,
+                                    codigo: 'PR-' + usuario['id'],
+                                    pedido: 0,
+                                    user: usuario,
+                                    fecha_presupuesto: output
+                                };
+                                var prodPrePed;
+                                for (let m = 0; m < prodCarr.length; m++) {
+                                    const dimen = {
+                                        id: prodCarr[m][1]['id'],
+                                        nombre: prodCarr[m][1]['nombre'],
+                                        anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
+                                        fondo: prodCarr[m][1]['fondo'],
+                                        alto: prodCarr[m][1]['alto'],
+                                        ancho: prodCarr[m][1]['ancho'],
+                                        imagen: prodCarr[m][1]['imagen'],
+                                        imagenContentType: prodCarr[m][1]['imagenContentType'],
+                                        mensaje: prodCarr[m][1]['mensaje'],
+                                        precio: prodCarr[m][1]['precio'],
+                                        productosDormitorio: prodCarr[m][1]['productosDormitorio']
+                                    };
+                                    var dimensionesFinal = dimen;
+                                    if (prodCarr[m][1]['apoyo'] == undefined) {
+                                        prodPrePed = {
+                                            productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                            presupuestoPedido: prueba1,
+                                            dimensionesProductoTipo: dimen
+                                        };
+                                    } else {
+                                        prodPrePed = {
+                                            productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                            presupuestoPedido: prueba1,
+                                            dimensionesProductoTipo: dimen,
+                                            tiposApoyo: prodCarr[m][1]['apoyo']
+                                        };
+                                    }
+                                    numeroAcaProd[m]['prod'] = prodPrePed;
+                                    prodAca[m] = prodPrePed;
+                                    prodIlu[m] = prodPrePed;
+                                    dimensionEspecialBien[m] = prodPrePed;
+                                    this.productosPresupuestoPedidos = prodPrePed;
+                                    this.subscribeToSaveResponse1(
+                                        this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                    );
+                                    if (dimensionesFinal['mensaje'] == 'Medidas Especiales') {
+                                        var acaPedProd = this.acaProdPed.length;
+                                        acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                        dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
+                                        const medEsp = {
+                                            productosPresupuestoPedidos: dimensionEspecialBien[m],
+                                            ancho: dimensionesFinal[m]['ancho'],
+                                            fondo: dimensionesFinal[m]['fondo'],
+                                            alto: dimensionesFinal[m]['alto'],
+                                            precio: dimensionesFinal[m]['precio']
+                                        };
+                                        this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
+                                    }
+                                    if (prodCarr[m][1]['iluminacion'] != undefined && prodCarr[m][1]['iluminacion'] != '') {
+                                        var acaPedProd = this.acaProdPed.length;
+                                        acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                        prodIlu[m]['id'] = acaPedProd['id'] + m + 1;
+                                        const iluProd = {
+                                            iluminacion: prodCarr[m][1]['iluminacion'],
+                                            productosPresupuestoPedidos: prodIlu[m]
+                                        };
+                                        this.subscribeToSaveResponse(this.iluminacionProdPrePedService.create(iluProd));
+                                    }
+                                }
+                                let b = 0;
+
+                                for (let w = 0; w < numeroAcaProd.length; w++) {
+                                    for (let b = 0; b < numeroAcaProd[w].length; b++) {
+                                        const acabados1 = {
+                                            acabados: numeroAcaProd[w][b],
+                                            productosPresupuestoPedidos: prodAca[w]
+                                        };
+                                        this.subscribeToSaveResponse(this.acabadosProductosPresupuestoPedidoService.create(acabados1));
+                                    }
+                                }
+                            },
+                            (res: HttpErrorResponse) => this.onError(res.message)
+                        );
+                }
+            });
+        this.productosDormitorioService.numeroCesta = 0;
+    }
+
     public abrirCesta() {
         var productosArrayNombres = this.productosArrayNombre;
         $('#modalCesta .modal-body').empty();
@@ -479,6 +725,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             this.languages = languages;
         });
 
+        var contCesta = 0;
+        for (let i = 1; i < 20; i++) {
+            if (JSON.parse(sessionStorage.getItem('prod' + i)) != null) {
+                contCesta++;
+            }
+        }
+        this.productosDormitorioService.numeroCesta = contCesta;
+
         var medidasModal = [];
         medidasModal['mb4'] = 'margin-left:-140px;bottom:125px;max-width:500px;max-height:300px;';
         medidasModal['mb1'] = 'margin-left:-60px;bottom:105px;max-width:500px;max-height:300px;';
@@ -532,6 +786,19 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.accountService.identity().then(account => {
             this.account = account;
         });
+
+        var usuarios = [];
+        this.userService
+            .query({
+                size: 100000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    usuarios[i] = data.body[i];
+                }
+            });
+        this.user = usuarios;
+
         this.registerAuthenticationSuccess();
         var cont = 0;
         this.contador = 0;
@@ -563,6 +830,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             this.accountService.identity().then(account => {
                 this.account = account;
             });
+            var usuarios = [];
+            this.userService
+                .query({
+                    size: 1000000
+                })
+                .subscribe(data => {
+                    for (let i = 0; i < data.body.length; i++) {
+                        usuarios[i] = data.body[i];
+                    }
+                });
+            this.user = usuarios;
             setTimeout(function() {
                 var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
                 if (prueba['logo'] != undefined) {
@@ -655,6 +933,47 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.collapseNavbar();
         this.loginService.logout();
         this.router.navigate(['']);
+    }
+
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<ICategoriasDormi>>) {
+        result.subscribe((res: HttpResponse<ICategoriasDormi>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+    protected onSaveError() {
+        this.isSaving = false;
+    }
+
+    protected subscribeToSaveResponse1(result: Observable<HttpResponse<IProductosPresupuestoPedidos>>) {
+        result.subscribe(
+            (res: HttpResponse<IProductosPresupuestoPedidos>) => this.onSaveSuccess(),
+            (res: HttpErrorResponse) => this.onSaveError()
+        );
+    }
+
+    protected onSaveSuccess() {
+        this.isSaving = false;
+        this.previousState();
+    }
+
+    previousState() {
+        this.presupuestoPedido;
+        $('#modalPresupuesto .modal-body').empty();
+        $('#modalPresupuesto .modal-title').text('Presupuesto Generado');
+        $('#modalPresupuesto .modal-body').append('<p style="text-align:center">Codigo</p>');
+        $('#modalPresupuesto .modal-body').append('<p style="text-align:center">' + this.presupuestoPedido['codigo'] + '</p>');
+        $('#modalPresupuesto #verPresupuesto').removeAttr('style');
+        $('#modalPresupuesto #verPresupuesto').attr('style');
+        $('#modalPresupuesto #verPresupuesto').css({ 'text-align': 'center' });
+        for (let i = 1; i <= 10; i++) {
+            if (sessionStorage.getItem('prod' + i) != 'undefinded') {
+                sessionStorage.removeItem('prod' + i);
+            }
+        }
+    }
+    protected subscribeToSaveResponse2(result: Observable<HttpResponse<IAcabadosProductosPresupuestoPedido>>) {
+        result.subscribe(
+            (res: HttpResponse<IAcabadosProductosPresupuestoPedido>) => this.onSaveSuccess(),
+            (res: HttpErrorResponse) => this.onSaveError()
+        );
     }
 
     toggleNavbar() {

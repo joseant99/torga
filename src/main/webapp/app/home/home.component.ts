@@ -95,7 +95,12 @@ export class HomeComponent implements OnInit {
                 $('#botonEsconder').attr('style');
                 $('#botonEsconder').css({ 'max-width': '100%' });
                 $('#menuFijoArriba').removeAttr('style');
-
+                var cont = 0;
+                for (let i = 1; i < 20; i++) {
+                    if (JSON.parse(sessionStorage.getItem('prod' + i)) != null) {
+                        cont++;
+                    }
+                }
                 if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
