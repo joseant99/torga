@@ -1,0 +1,25 @@
+{
+    "torgaPedidosApp": {
+        "puertasPrecios": {
+            "home": {
+                "title": "Puertas Precios",
+                "createLabel": "Crear nuevo Puertas Precios",
+                "createOrEditLabel": "Crear o editar Puertas Precios"
+            },
+            "created": "Un nuevo Puertas Precios ha sido creado con el identificador {{ param }}",
+            "updated": "Un Puertas Precios ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Puertas Precios ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Puertas Precios {{ id }}?"
+            },
+            "detail": {
+                "title": "Puertas Precios"
+            },
+            "ancho": "Ancho",
+            "alto": "Alto",
+            "precio": "Precio",
+            "tipo": "Tipo",
+            "productosDormitorio": "Productos Dormitorio"
+        }
+    }
+}

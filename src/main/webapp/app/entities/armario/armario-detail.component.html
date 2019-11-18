@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="armario">
+            <h2><span jhiTranslate="torgaPedidosApp.armario.detail.title">Armario</span> {{armario.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.armario.mensaje">Mensaje</span></dt>
+                <dd>
+                    <span>{{armario.mensaje}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.armario.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="armario.imagen">
+                        <a (click)="openFile(armario.imagenContentType, armario.imagen)">
+                            <img [src]="'data:' + armario.imagenContentType + ';base64,' + armario.imagen" style="max-width: 100%;" alt="armario image"/>
+                        </a>
+                        {{armario.imagenContentType}}, {{byteSize(armario.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.armario.numeroPuertas">Numero Puertas</span></dt>
+                <dd>
+                    <span>{{armario.numeroPuertas}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.armario.anchoMin">Ancho Min</span></dt>
+                <dd>
+                    <span>{{armario.anchoMin}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.armario.anchoMax">Ancho Max</span></dt>
+                <dd>
+                    <span>{{armario.anchoMax}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.armario.numCostado">Num Costado</span></dt>
+                <dd>
+                    <span>{{armario.numCostado}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.armario.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="armario.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', armario.productosDormitorio?.id, 'view']">{{armario.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/armario', armario.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

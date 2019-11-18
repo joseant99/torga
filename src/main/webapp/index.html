@@ -153,6 +153,8 @@
 	}
 	function mostrarCalculadora(){
 		$("#calculadoraCarrito").css({"display":"block"});
+		$("#armarios #botonEsconderCalcu").removeAttr("onclick");
+		$("#armarios #botonEsconderCalcu").attr("onclick","esconderCalcu()");
 		$("#botonEsconderCalcu").removeAttr("onclick");
 		$("#botonEsconderCalcu").attr("onclick","esconderCalcu()");
 		$("#calculadoraCarrito #calculadora").attr("class","container tab-pane fade active show")
@@ -160,6 +162,8 @@
 	}
 	function esconderCalcu(){
 		$("#calculadoraCarrito").css({"display":"none"});
+		$("#armarios #botonEsconderCalcu").removeAttr("onclick");
+		$("#armarios #botonEsconderCalcu").attr("onclick","mostrarCalculadora()");
 		$("#botonEsconderCalcu").removeAttr("onclick");
 		$("#botonEsconderCalcu").attr("onclick","mostrarCalculadora()");
 		$("#calculadoraCarrito #calculadora").attr("class","container tab-pane fade")

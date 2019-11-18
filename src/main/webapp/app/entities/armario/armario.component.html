@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.armario.home.title">Armarios</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-armario" [routerLink]="['/armario/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.armario.home.createLabel">
+            Create new Armario
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="armarios">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mensaje"><span jhiTranslate="torgaPedidosApp.armario.mensaje">Mensaje</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imagen"><span jhiTranslate="torgaPedidosApp.armario.imagen">Imagen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="numeroPuertas"><span jhiTranslate="torgaPedidosApp.armario.numeroPuertas">Numero Puertas</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="anchoMin"><span jhiTranslate="torgaPedidosApp.armario.anchoMin">Ancho Min</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="anchoMax"><span jhiTranslate="torgaPedidosApp.armario.anchoMax">Ancho Max</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="numCostado"><span jhiTranslate="torgaPedidosApp.armario.numCostado">Num Costado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productosDormitorio.id"><span jhiTranslate="torgaPedidosApp.armario.productosDormitorio">Productos Dormitorio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let armario of armarios ;trackBy: trackId">
+                <td><a [routerLink]="['/armario', armario.id, 'view' ]">{{armario.id}}</a></td>
+                <td>{{armario.mensaje}}</td>
+                <td>
+                    <a *ngIf="armario.imagen" (click)="openFile(armario.imagenContentType, armario.imagen)">
+                        <img [src]="'data:' + armario.imagenContentType + ';base64,' + armario.imagen" style="max-height: 30px;" alt="armario image"/>
+                    </a>
+                    <span *ngIf="armario.imagen">{{armario.imagenContentType}}, {{byteSize(armario.imagen)}}</span>
+                </td>
+                <td>{{armario.numeroPuertas}}</td>
+                <td>{{armario.anchoMin}}</td>
+                <td>{{armario.anchoMax}}</td>
+                <td>{{armario.numCostado}}</td>
+                <td>
+                    <div *ngIf="armario.productosDormitorio">
+                        <a [routerLink]="['../productos-dormitorio', armario.productosDormitorio?.id, 'view' ]" >{{armario.productosDormitorio?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/armario', armario.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/armario', armario.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'armario/'+ armario.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="armarios && armarios.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

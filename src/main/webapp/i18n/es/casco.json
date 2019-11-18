@@ -1,0 +1,24 @@
+{
+    "torgaPedidosApp": {
+        "casco": {
+            "home": {
+                "title": "Cascos",
+                "createLabel": "Crear nuevo Casco",
+                "createOrEditLabel": "Crear o editar Casco"
+            },
+            "created": "Un nuevo Casco ha sido creado con el identificador {{ param }}",
+            "updated": "Un Casco ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Casco ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Casco {{ id }}?"
+            },
+            "detail": {
+                "title": "Casco"
+            },
+            "ancho": "Ancho",
+            "alto": "Alto",
+            "precio": "Precio",
+            "precioCostado": "Precio Costado"
+        }
+    }
+}

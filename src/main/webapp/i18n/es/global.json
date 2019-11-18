@@ -56,6 +56,10 @@
                 "puertas": "Puertas",
                 "precioTienda": "Precio Tienda",
                 "precioTiendaProductos": "Precio Tienda Productos",
+                "armario": "Armario",
+                "casco": "Casco",
+                "interioresArmarioNuevos": "Interiores Armario Nuevos",
+                "puertasPrecios": "Puertas Precios",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

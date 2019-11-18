@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="puertasPrecios">
+            <h2><span jhiTranslate="torgaPedidosApp.puertasPrecios.detail.title">Puertas Precios</span> {{puertasPrecios.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.ancho">Ancho</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.ancho}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.alto">Alto</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.alto}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.precio">Precio</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.precio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.tipo">Tipo</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="puertasPrecios.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', puertasPrecios.productosDormitorio?.id, 'view']">{{puertasPrecios.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/puertas-precios', puertasPrecios.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

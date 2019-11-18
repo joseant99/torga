@@ -1,0 +1,25 @@
+{
+    "torgaPedidosApp": {
+        "interioresArmarioNuevos": {
+            "home": {
+                "title": "Interiores Armario Nuevos",
+                "createLabel": "Crear nuevo Interiores Armario Nuevos",
+                "createOrEditLabel": "Crear o editar Interiores Armario Nuevos"
+            },
+            "created": "Un nuevo Interiores Armario Nuevos ha sido creado con el identificador {{ param }}",
+            "updated": "Un Interiores Armario Nuevos ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Interiores Armario Nuevos ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Interiores Armario Nuevos {{ id }}?"
+            },
+            "detail": {
+                "title": "Interiores Armario Nuevos"
+            },
+            "nombre": "Nombre",
+            "ancho": "Ancho",
+            "precio": "Precio",
+            "luz": "Luz",
+            "productosDormitorio": "Productos Dormitorio"
+        }
+    }
+}

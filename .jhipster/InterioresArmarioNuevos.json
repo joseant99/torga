@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productosDormitorio",
+            "otherEntityName": "productosDormitorio",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ancho",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "precio",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "luz",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20191107153915",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "interiores_armario_nuevos",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

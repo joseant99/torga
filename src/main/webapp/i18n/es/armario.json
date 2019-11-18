@@ -1,0 +1,27 @@
+{
+    "torgaPedidosApp": {
+        "armario": {
+            "home": {
+                "title": "Armarios",
+                "createLabel": "Crear nuevo Armario",
+                "createOrEditLabel": "Crear o editar Armario"
+            },
+            "created": "Un nuevo Armario ha sido creado con el identificador {{ param }}",
+            "updated": "Un Armario ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Armario ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Armario {{ id }}?"
+            },
+            "detail": {
+                "title": "Armario"
+            },
+            "mensaje": "Mensaje",
+            "imagen": "Imagen",
+            "numeroPuertas": "Numero Puertas",
+            "anchoMin": "Ancho Min",
+            "anchoMax": "Ancho Max",
+            "numCostado": "Num Costado",
+            "productosDormitorio": "Productos Dormitorio"
+        }
+    }
+}

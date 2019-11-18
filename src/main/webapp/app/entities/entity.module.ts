@@ -39,6 +39,10 @@ import { TorgaPedidosContactoFabricaModule } from './contacto-fabrica/contacto-f
 import { TorgaPedidosImagenesContactoFabricaModule } from './imagenes-contacto-fabrica/imagenes-contacto-fabrica.module';
 import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos-torga-tiendas.module';
 import { TorgaPedidosPuertasModule } from './puertas/puertas.module';
+import { TorgaPedidosArmarioModule } from './armario/armario.module';
+import { TorgaPedidosCascoModule } from './casco/casco.module';
+import { TorgaPedidosPuertasPreciosModule } from './puertas-precios/puertas-precios.module';
+import { TorgaPedidosInterioresArmarioNuevosModule } from './interiores-armario-nuevos/interiores-armario-nuevos.module';
 import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dentro/interior-armario-dentro.module';
 
 @NgModule({
@@ -60,6 +64,9 @@ import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dent
         TorgaPedidosImagenesContactoFabricaModule,
         TorgaPedidosRepresentanteModule,
         TorgaPedidosMedEspProductoPedidoPresuModule,
+        TorgaPedidosCascoModule,
+        TorgaPedidosPuertasPreciosModule,
+        TorgaPedidosInterioresArmarioNuevosModule,
         TorgaPedidosLogisticaModule,
         TorgaPedidosPedidosModule,
         TorgaPedidosTiradoresArmarioModule,
@@ -69,6 +76,7 @@ import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dent
         TorgaPedidosMensajesModule,
         TorgaPedidosInteriorArmarioDentroModule,
         TorgaPedidosVistaAdminModule,
+        TorgaPedidosArmarioModule,
         TorgaPedidosTransportistasModule,
         TorgaPedidosEstadosModule,
         TorgaPedidosCategorias_DormitorioModule,

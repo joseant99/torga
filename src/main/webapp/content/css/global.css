@@ -948,7 +948,7 @@ Generic styles
 }
 #menuFijoArriba {
     position: fixed;
-    z-index: 9;
+    z-index: 10000;
     width: 100%;
     top: 0;
     height: 70px;

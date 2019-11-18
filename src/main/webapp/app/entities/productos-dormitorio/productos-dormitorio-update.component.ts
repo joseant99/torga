@@ -47,12 +47,15 @@ export class ProductosDormitorioUpdateComponent implements OnInit, AfterViewInit
         this.activatedRoute.data.subscribe(({ productosDormitorio }) => {
             this.productosDormitorio = productosDormitorio;
         });
-        this.categoriasDormiService.query().subscribe(
-            (res: HttpResponse<ICategoriasDormi[]>) => {
-                this.categoriasdormis = res.body;
-            },
-            (res: HttpErrorResponse) => this.onError(res.message)
-        );
+        this.categoriasDormiService
+            .query({
+                size: 100000
+            })
+            .subscribe(
+                (res: HttpResponse<ICategoriasDormi[]>) => (this.categoriasdormis = res.body),
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+
         this.puertasService.query().subscribe(
             (res: HttpResponse<IPuertas[]>) => {
                 this.puertas = res.body;

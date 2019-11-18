@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productosDormitorio",
+            "otherEntityName": "productosDormitorio",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "mensaje",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imagen",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "numeroPuertas",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "anchoMin",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "anchoMax",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "numCostado",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20191105114218",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "armario",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

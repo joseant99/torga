@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-armario-heading" jhiTranslate="torgaPedidosApp.armario.home.createOrEditLabel">Create or edit a Armario</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!armario.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="armario.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.armario.mensaje" for="field_mensaje">Mensaje</label>
+                    <input type="text" class="form-control" name="mensaje" id="field_mensaje"
+                        [(ngModel)]="armario.mensaje" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.armario.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + armario.imagenContentType + ';base64,' + armario.imagen" style="max-height: 100px;" *ngIf="armario.imagen" alt="armario image"/>
+                        <div *ngIf="armario.imagen" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{armario.imagenContentType}}, {{byteSize(armario.imagen)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, armario, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                        [(ngModel)]="armario.imagen" />
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                        [(ngModel)]="armario.imagenContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.armario.numeroPuertas" for="field_numeroPuertas">Numero Puertas</label>
+                    <input type="number" class="form-control" name="numeroPuertas" id="field_numeroPuertas"
+                        [(ngModel)]="armario.numeroPuertas" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.armario.anchoMin" for="field_anchoMin">Ancho Min</label>
+                    <input type="number" class="form-control" name="anchoMin" id="field_anchoMin"
+                        [(ngModel)]="armario.anchoMin" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.armario.anchoMax" for="field_anchoMax">Ancho Max</label>
+                    <input type="number" class="form-control" name="anchoMax" id="field_anchoMax"
+                        [(ngModel)]="armario.anchoMax" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.armario.numCostado" for="field_numCostado">Num Costado</label>
+                    <input type="number" class="form-control" name="numCostado" id="field_numCostado"
+                        [(ngModel)]="armario.numCostado" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.armario.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="armario.productosDormitorio" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productosDormitorioOption.id === armario.productosDormitorio?.id ? armario.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

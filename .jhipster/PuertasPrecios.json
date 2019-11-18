@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productosDormitorio",
+            "otherEntityName": "productosDormitorio",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ancho",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "alto",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "precio",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20191107154229",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "puertas_precios",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}
