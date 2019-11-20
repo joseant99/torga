@@ -131,6 +131,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     acabadosPuerta8: any;
     textoArmario: any;
     saberPuerta: any;
+    armarioCogido: any;
+    interioresParaArray: any;
+    puertasParaArray: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -219,22 +222,34 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     }
 
     public enviarCarrito() {
-        for (let j = 1; j <= 10; j++) {
-            $('#productoCarrito' + j + ' #datos' + j).empty();
-            $('#productoCarrito' + j + ' #precios' + j).empty();
-            $('#productoCarrito' + j + ' #precioCalculado' + j).empty();
-        }
+        var precioCasco = $('#calculadoraCarrito #productoCalculadora1 #datos1 #cascoCalculadora #precio').text();
         var contador = 1;
-        var acabados = this.acabados;
-        var todosAcabados = this.todosAcabados;
-        var iluminacion = this.iluminacion;
-        $('#textoFinal').removeAttr('style');
-        $('#textoFinal').attr('style');
-        $('#textoFinal').css({ display: 'none' });
-        $('#iluminacion').removeAttr('style');
-        $('#iluminacion').attr('style');
-        $('#iluminacion').css({ display: 'none' });
         var conta = 0;
+        var todo = [];
+        todo[1] = this.armarioCogido;
+
+        for (let i = 1; i <= todo[1]['interiores'].length; i++) {
+            var precio = $('#calculadoraCarrito #productoCalculadora1 #datos1 #interiorHueco' + i + ' #precio').text();
+            todo[1]['interiores']['precio'] = precio;
+        }
+
+        for (let i = 1; i <= todo[1]['puertas'].length; i++) {
+            var precio = $('#calculadoraCarrito #productoCalculadora1 #datos1 #puertaHueco' + i + ' #precio').text();
+            todo[1]['puertas']['precio'] = precio;
+        }
+        console.log(todo[1]);
+        $('#productoCalculadora1 #datos1').empty();
+        this.armarioService.todo = undefined;
+        $('#imagenesArmario1').empty();
+        $('#imagenesArmario2').empty();
+        $('#acabadosTodo').attr('class', 'displayBoton');
+        this.arraySaberHuecos = [];
+        this.arraySaberPuertas = [];
+        $('#anchosSelect').val('');
+        $('#alturaSelect').val('');
+        $('#textoTituloInterior').text('');
+
+        todo[1]['precioCasco'] = precioCasco;
         for (let k = 1; k < sessionStorage.length; k++) {
             if (sessionStorage['prod' + k] != null) {
                 contador++;
@@ -242,167 +257,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         }
         var contadorProd = contador;
         var contadorDimen = contador;
+        sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(todo));
         var contAca = 0;
-        for (let i = 1; i <= 3; i++) {
-            const idProd = $('#nombreProd' + i).attr('class');
-            const dimen = $('#productoCalculadora1 #precios1 #ancho' + i).attr('class');
-            const idApoyo = $('#productoCalculadora1 #precioCalculado1 #apoyo' + i).attr('class');
-            const idIluminacion = $('#productoCalculadora1 #precioCalculado1 #iluminacion' + i).attr('class');
-            const ancho = $('#productoCalculadora1 #precios1 #ancho' + i).text();
-            const alto = $('#productoCalculadora1 #precios1 #alto' + i).text();
-            const fondo = $('#productoCalculadora1 #precios1 #fondo' + i).text();
-            const precio = $('#productoCalculadora1 #precios1 #alto' + i).attr('class');
-            const todasDimensiones = this.todasDimensiones;
-            console.log(sessionStorage);
-            const prod = [];
-            const prods = this.apoyo;
-            const apoyoBueno = [];
-            const iluBuena = [];
-            const sistemasApoyo = this.sistemasApoyo;
-            for (let k = 0; k < sistemasApoyo.length; k++) {
-                if (sistemasApoyo[k]['id'] == idApoyo) {
-                    apoyoBueno[1] = sistemasApoyo[k];
-                }
-            }
-
-            for (let k = 0; k < iluminacion.length; k++) {
-                if (iluminacion[k]['id'] == idIluminacion) {
-                    iluBuena[1] = iluminacion[k];
-                }
-            }
-            const aca = [];
-            var acabadoCogido;
-            for (let j = 1; j <= 100; j++) {
-                acabadoCogido = $('#productoCalculadora1 #precios1 #val' + j + 'Dato').attr('class');
-                if (acabadoCogido != undefined) {
-                    var id1 = parseFloat(acabadoCogido);
-                    for (let k = 0; k < 16; k++) {
-                        if (acabados[k]['id'] == id1) {
-                            aca[j] = acabados[k];
-                        }
-                    }
-                }
-            }
-
-            $.each(todasDimensiones, function(index, value) {
-                if (value['id'] == dimen) {
-                    for (let w = 1; w < aca.length; w++) {
-                        value['acabado' + w] = aca[w];
-                    }
-                    if (value['mensaje'] == 'Medidas Especiales') {
-                        value['ancho'] = ancho;
-                        value['alto'] = alto;
-                        value['fondo'] = fondo;
-                        value['precio'] = precio;
-                    }
-                    value['apoyo'] = apoyoBueno[1];
-                    value['iluminacion'] = iluBuena[1];
-                    prod[1] = value;
-                    sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
-                    contadorDimen++;
-                }
-            });
-        }
-
-        for (let i = 1; i <= 100; i++) {
-            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
-            if (sesion != null) {
-                console.log(sessionStorage);
-                $('#productoCarrito' + i).removeAttr('style');
-                $('#productoCarrito' + i).attr('style');
-                $('#productoCarrito' + i).css({ float: 'left' });
-                $('#productoCarrito' + i).attr('class', 'prod' + i);
-                $('#productoCarrito' + i + ' #datos' + i).append(
-                    '<strong id="nombreProd' + i + '"><font>' + sesion[1]['productosDormitorio']['nombre'] + '</font></strong>'
-                );
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<font>Ancho</font>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<font id="ancho' + i + '">' + sesion[1]['ancho'] + '</font>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<font>Alto</font>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<font id="alto' + i + '">' + sesion[1]['alto'] + '</font>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<font>Fondo</font>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<font id="fondo' + i + '">' + sesion[1]['fondo'] + '</font>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                for (let j = 1; j < 100; j++) {
-                    if (sesion[1]['acabado' + j] != undefined) {
-                        $('#productoCarrito' + i + ' #datos' + i).append('<font>Acabado ' + j + '</font>');
-                        $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                        $('#productoCarrito' + i + ' #precios' + i).append(
-                            '<font id="acabado' + i + '' + j + '">' + sesion[1]['acabado' + j]['nombre'] + '</font>'
-                        );
-                        $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                    }
-                }
-                if (sesion[1]['apoyo'] != undefined) {
-                    $('#productoCarrito' + i + ' #datos' + i).append('<font>' + sesion[1]['apoyo']['productoApoyo']['nombre'] + '</font>');
-                    $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precios' + i).append(
-                        '<font id="sistemaApoyo' + i + '" class="' + sesion[1]['apoyo']['id'] + '">-</font>'
-                    );
-                    $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>' + sesion[1]['apoyo']['precio'] + '&euro;</font>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                }
-                if (sesion[1]['iluminacion'] != undefined) {
-                    $('#productoCarrito' + i + ' #datos' + i).append('<font>Iluminacion</font>');
-                    $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precios' + i).append(
-                        '<font id="iluminacionCarr' + i + '" class="' + sesion[1]['iluminacion']['id'] + '">-</font>'
-                    );
-                    $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append(
-                        '<font>' + sesion[1]['iluminacion']['precio'] + '&euro;</font>'
-                    );
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                }
-            }
-        }
-        $('#productoCalculadora1 #precios1').empty();
-        $('#productoCalculadora1 #precioCalculado1').empty();
-        $('#productoCalculadora1 #datos1').empty();
-        $('#nombreMesita').empty();
-        $('#precioDimension').empty();
-        $('#total').empty();
-        $('.dimensionesColor1').empty();
-        $('.dimensionesColor2').empty();
-        $('.dimensionesColor3').empty();
-        $('.dimensionesColor4').empty();
-        $('.dimensionesColor5').empty();
-        $('.dimensionesColor6').empty();
-        $('.dimensionesColor1').css({ 'background-color': 'white' });
-        $('.dimensionesColor2').css({ 'background-color': 'white' });
-        $('.dimensionesColor3').css({ 'background-color': 'white' });
-        $('.dimensionesColor4').css({ 'background-color': 'white' });
-        $('.dimensionesColor5').css({ 'background-color': 'white' });
-        $('.dimensionesColor6').css({ 'background-color': 'white' });
-        $('#imagenAcabado').remove();
-        $('#medidas').css({ display: 'none' });
-        $('#acabado').css({ display: 'none' });
-        $('.productosColor').css({ 'background-color': 'white' });
-        $('#nombreApoyoTitulo').css({ display: 'none' });
-        for (let i = 1; i <= 5; i++) {
-            $('.apoyoCogido' + i).empty();
-        }
-        for (let i = 1; i <= 15; i++) {
-            $('#aca1' + i).empty();
-        }
     }
 
     public generarPresupuesto() {
@@ -645,6 +501,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
         this.saberPuerta = 0;
+        this.interioresParaArray = [];
+        this.puertasParaArray = [];
         var dimens = [];
         dimens['4 puertas'] = 'margin-left:32%;';
         dimens['5 puertas'] = 'margin-left:30%;';
@@ -671,18 +529,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     public carcarCascosInterioresPuertas(id) {
         var ancho = $('#anchosSelect').val();
         var alto = $('#alturaSelect').val();
-
-        this.interioresArmarioNuevosService.findBus(450, 123).subscribe(data => {
-            alert(data.body[0].precio);
-        });
+        var armariosTodos = this.armarioService.todo;
+        var classe = $('#armariosCogidos' + id).attr('class');
+        for (let j = 0; j < armariosTodos.length; j++) {
+            if (armariosTodos[j]['id'] == classe) {
+                console.log(armariosTodos[j]);
+                armariosTodos[j]['ancho'] = ancho;
+                armariosTodos[j]['alto'] = alto;
+                armariosTodos[j]['fondo'] = 600;
+                this.armarioCogido = armariosTodos[j];
+            }
+        }
         this.cascoService.findBus(ancho, alto).subscribe(data => {
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Ancho: ' + ancho + '<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Altura: ' + alto + '<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Fondo: 600<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                '<p style="width:100%">Casco: <span id="acabadoCasco"></span><span style="float:right">+ ' +
+                '<p id="cascoCalculadora" style="width:100%">Casco: <span id="acabadoCasco"></span><span style="float:right">+ <span  id="precio">' +
                     data.body[0].precio +
-                    '€</span><p/>'
+                    '</span>€</span><p/>'
             );
         });
         var mai = [
@@ -2076,7 +1941,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                for (let j = 0; j < puertas - 3; j++) {
+                for (let j = 0; j < puertas - 4; j++) {
                     array[j] = j;
                 }
                 for (let k = 0; k < puertas; k++) {
@@ -2752,6 +2617,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     public cambiarAcabadoCasco(nombre) {
         var hueco = this.numeroDeHuecos;
         var acabados = this.acabados;
+        var array = this.armarioCogido;
         $('#inputAcabadoCasco').empty();
         for (let w = 0; w < acabados.length; w++) {
             if (acabados[w]['nombre'] == nombre) {
@@ -2762,6 +2628,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         acabados[w]['imagenFondo'] +
                         '" style="max-width:100%;max-height:100%">'
                 );
+                array['acabadoCasco'] = acabados[w];
+                this.armarioCogido = array;
             }
         }
         for (let i = 0; i < hueco; i++) {
@@ -2790,22 +2658,78 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     }
 
     public pintarInteriores(nombre) {
+        var idProdInt = [];
+        idProdInt[1] = 123;
+        idProdInt[2] = 124;
+        idProdInt[3] = 135;
+        idProdInt[4] = 136;
+        idProdInt[5] = 137;
+        idProdInt[6] = 138;
+        idProdInt[7] = 139;
+        idProdInt[8] = 140;
+        idProdInt[9] = 141;
+        idProdInt[10] = 142;
+        idProdInt[11] = 143;
+        idProdInt[12] = 144;
+        idProdInt[13] = 145;
+        idProdInt[14] = 146;
+        idProdInt[15] = 147;
+        idProdInt[16] = 148;
+        idProdInt[17] = 149;
+        idProdInt[18] = 150;
+        idProdInt[19] = 151;
+        idProdInt[20] = 152;
+        idProdInt[21] = 153;
+        idProdInt[22] = 154;
+        idProdInt[23] = 155;
+        idProdInt[24] = 156;
+        idProdInt[25] = 157;
+
         var texto = this.textoArmario;
         var puertas = 0;
         var dimens = this.dimenArmarios;
+        var alto;
+        var ancho;
+        ancho = $('#anchosSelect').val();
+        alto = $('#alturaSelect').val();
+        var cuenta = 0;
+
         puertas = parseFloat(texto.split(' ')[0]);
         var dimensiones = dimens[puertas + ' puertas'];
         var interior = $('#inputAcabadoInterior').val();
         var interior1 = interior.toString();
         var hueco = this.huecoPinta;
+        var letras = this.arrayLetras;
+
         $('#interiorDentroArmario' + hueco).remove();
         $('#inputInterior' + (hueco - 1)).empty();
         $('#inputInterior' + (hueco - 1)).val('interior ' + nombre);
         $('#inputInterior' + (hueco - 1)).append('interior ' + nombre);
         var grandes = dimens['grandes'];
+
         if (texto == '1 PUERTA') {
             for (let i = 1; i <= 2; i++) {
                 if (hueco == 1) {
+                    cuenta = ancho / puertas;
+                    cuenta = cuenta * 1;
+                    if (i == 1) {
+                        this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                '<p id="interiorHueco' +
+                                    hueco +
+                                    '" style="width:100%">Hueco ' +
+                                    letras[hueco - 1] +
+                                    ': <span id="acabadoHueco' +
+                                    hueco +
+                                    '">Interior ' +
+                                    nombre +
+                                    '</span><span style="float:right">+ <span id="precio">' +
+                                    data.body[0].precio +
+                                    '</span>€</span><p/>'
+                            );
+                        });
+                    }
+
                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                         '<img id="interiorDentroArmario' +
                             hueco +
@@ -2819,6 +2743,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     );
                     $('#textoLetraHueco' + (hueco - 1)).remove();
                 } else {
+                    cuenta = ancho / puertas;
+                    cuenta = cuenta * 2;
+                    if (i == 1) {
+                        this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                '<p style="width:100%">Hueco ' +
+                                    letras[hueco - 1] +
+                                    ': <span id="acabadoHueco' +
+                                    hueco +
+                                    '">Interior ' +
+                                    nombre +
+                                    '</span><span style="float:right">+ ' +
+                                    data.body[0].precio +
+                                    '€</span><p/>'
+                            );
+                        });
+                    }
                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                         '<img id="interiorDentroArmario' +
                             hueco +
@@ -2839,6 +2780,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (texto == '3 PUERTAS IZQUIERDA') {
                 for (let i = 1; i <= 2; i++) {
                     if (hueco == 1) {
+                        cuenta = ancho / puertas;
+                        cuenta = cuenta * 1;
+                        if (i == 1) {
+                            this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                    '<p style="width:100%">Hueco ' +
+                                        letras[hueco - 1] +
+                                        ': <span id="acabadoHueco' +
+                                        hueco +
+                                        '">Interior ' +
+                                        nombre +
+                                        '</span><span style="float:right">+ ' +
+                                        data.body[0].precio +
+                                        '€</span><p/>'
+                                );
+                            });
+                        }
                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                             '<img id="interiorDentroArmario' +
                                 hueco +
@@ -2852,6 +2810,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         );
                         $('#textoLetraHueco' + (hueco - 1)).remove();
                     } else {
+                        cuenta = ancho / puertas;
+                        cuenta = cuenta * 2;
+                        if (i == 1) {
+                            this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                    '<p style="width:100%">Hueco ' +
+                                        letras[hueco - 1] +
+                                        ': <span id="acabadoHueco' +
+                                        hueco +
+                                        '">Interior ' +
+                                        nombre +
+                                        '</span><span style="float:right">+ ' +
+                                        data.body[0].precio +
+                                        '€</span><p/>'
+                                );
+                            });
+                        }
                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                             '<img id="interiorDentroArmario' +
                                 hueco +
@@ -2870,6 +2845,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (texto == '3 PUERTAS DERECHA') {
                     for (let i = 1; i <= 2; i++) {
                         if (hueco == 1) {
+                            cuenta = ancho / puertas;
+                            cuenta = cuenta * 2;
+                            if (i == 1) {
+                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                        '<p style="width:100%">Hueco ' +
+                                            letras[hueco - 1] +
+                                            ': <span id="acabadoHueco' +
+                                            hueco +
+                                            '">Interior ' +
+                                            nombre +
+                                            '</span><span style="float:right">+ ' +
+                                            data.body[0].precio +
+                                            '€</span><p/>'
+                                    );
+                                });
+                            }
                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                 '<img id="interiorDentroArmario' +
                                     hueco +
@@ -2895,6 +2887,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             );
                             $('#textoLetraHueco' + (hueco - 1)).remove();
                         } else {
+                            cuenta = ancho / puertas;
+                            cuenta = cuenta * 1;
+                            if (i == 1) {
+                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                        '<p style="width:100%">Hueco ' +
+                                            letras[hueco - 1] +
+                                            ': <span id="acabadoHueco' +
+                                            hueco +
+                                            '">Interior ' +
+                                            nombre +
+                                            '</span><span style="float:right">+ ' +
+                                            data.body[0].precio +
+                                            '€</span><p/>'
+                                    );
+                                });
+                            }
                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                 '<img id="interiorDentroArmario' +
                                     hueco +
@@ -2913,6 +2922,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     if (texto == '4 PUERTAS ASIMETRICAS') {
                         for (let i = 1; i <= 2; i++) {
                             if (hueco == 1) {
+                                cuenta = ancho / puertas;
+                                cuenta = cuenta * 1;
+                                if (i == 1) {
+                                    this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                            '<p style="width:100%">Hueco ' +
+                                                letras[hueco - 1] +
+                                                ': <span id="acabadoHueco' +
+                                                hueco +
+                                                '">Interior ' +
+                                                nombre +
+                                                '</span><span style="float:right">+ ' +
+                                                data.body[0].precio +
+                                                '€</span><p/>'
+                                        );
+                                    });
+                                }
                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                     '<img id="interiorDentroArmario' +
                                         hueco +
@@ -2927,6 +2953,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                             }
                             if (hueco == 2) {
+                                cuenta = ancho / puertas;
+                                cuenta = cuenta * 2;
+                                if (i == 1) {
+                                    this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                            '<p style="width:100%">Hueco ' +
+                                                letras[hueco - 1] +
+                                                ': <span id="acabadoHueco' +
+                                                hueco +
+                                                '">Interior ' +
+                                                nombre +
+                                                '</span><span style="float:right">+ ' +
+                                                data.body[0].precio +
+                                                '€</span><p/>'
+                                        );
+                                    });
+                                }
                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                     '<img id="interiorDentroArmario' +
                                         hueco +
@@ -2941,6 +2984,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                             }
                             if (hueco == 3) {
+                                cuenta = ancho / puertas;
+                                cuenta = cuenta * 1;
+                                if (i == 1) {
+                                    this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                            '<p style="width:100%">Hueco ' +
+                                                letras[hueco - 1] +
+                                                ': <span id="acabadoHueco' +
+                                                hueco +
+                                                '">Interior ' +
+                                                nombre +
+                                                '</span><span style="float:right">+ ' +
+                                                data.body[0].precio +
+                                                '€</span><p/>'
+                                        );
+                                    });
+                                }
                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                     '<img id="interiorDentroArmario' +
                                         hueco +
@@ -2959,6 +3019,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         if (texto == '5 PUERTAS CENTRAL') {
                             for (let i = 1; i <= 2; i++) {
                                 if (hueco == 1) {
+                                    cuenta = ancho / puertas;
+                                    cuenta = cuenta * 2;
+                                    if (i == 1) {
+                                        this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                '<p style="width:100%">Hueco ' +
+                                                    letras[hueco - 1] +
+                                                    ': <span id="acabadoHueco' +
+                                                    hueco +
+                                                    '">Interior ' +
+                                                    nombre +
+                                                    '</span><span style="float:right">+ ' +
+                                                    data.body[0].precio +
+                                                    '€</span><p/>'
+                                            );
+                                        });
+                                    }
                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                         '<img id="interiorDentroArmario' +
                                             hueco +
@@ -2973,6 +3050,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                 }
                                 if (hueco == 2) {
+                                    cuenta = ancho / puertas;
+                                    cuenta = cuenta * 1;
+                                    if (i == 1) {
+                                        this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                '<p style="width:100%">Hueco ' +
+                                                    letras[hueco - 1] +
+                                                    ': <span id="acabadoHueco' +
+                                                    hueco +
+                                                    '">Interior ' +
+                                                    nombre +
+                                                    '</span><span style="float:right">+ ' +
+                                                    data.body[0].precio +
+                                                    '€</span><p/>'
+                                            );
+                                        });
+                                    }
                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                         '<img id="interiorDentroArmario' +
                                             hueco +
@@ -2987,6 +3081,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                 }
                                 if (hueco == 3) {
+                                    cuenta = ancho / puertas;
+                                    cuenta = cuenta * 2;
+                                    if (i == 1) {
+                                        this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                '<p style="width:100%">Hueco ' +
+                                                    letras[hueco - 1] +
+                                                    ': <span id="acabadoHueco' +
+                                                    hueco +
+                                                    '">Interior ' +
+                                                    nombre +
+                                                    '</span><span style="float:right">+ ' +
+                                                    data.body[0].precio +
+                                                    '€</span><p/>'
+                                            );
+                                        });
+                                    }
                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                         '<img id="interiorDentroArmario' +
                                             hueco +
@@ -3005,6 +3116,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             if (texto == '5 PUERTAS IZQUIERDA') {
                                 for (let i = 1; i <= 2; i++) {
                                     if (hueco == 1) {
+                                        cuenta = ancho / puertas;
+                                        cuenta = cuenta * 1;
+                                        if (i == 1) {
+                                            this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                    '<p style="width:100%">Hueco ' +
+                                                        letras[hueco - 1] +
+                                                        ': <span id="acabadoHueco' +
+                                                        hueco +
+                                                        '">Interior ' +
+                                                        nombre +
+                                                        '</span><span style="float:right">+ ' +
+                                                        data.body[0].precio +
+                                                        '€</span><p/>'
+                                                );
+                                            });
+                                        }
                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                             '<img id="interiorDentroArmario' +
                                                 hueco +
@@ -3019,6 +3147,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                     }
                                     if (hueco == 2) {
+                                        cuenta = ancho / puertas;
+                                        cuenta = cuenta * 2;
+                                        if (i == 1) {
+                                            this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                    '<p style="width:100%">Hueco ' +
+                                                        letras[hueco - 1] +
+                                                        ': <span id="acabadoHueco' +
+                                                        hueco +
+                                                        '">Interior ' +
+                                                        nombre +
+                                                        '</span><span style="float:right">+ ' +
+                                                        data.body[0].precio +
+                                                        '€</span><p/>'
+                                                );
+                                            });
+                                        }
                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                             '<img id="interiorDentroArmario' +
                                                 hueco +
@@ -3033,6 +3178,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                     }
                                     if (hueco == 3) {
+                                        cuenta = ancho / puertas;
+                                        cuenta = cuenta * 2;
+                                        if (i == 1) {
+                                            this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                    '<p style="width:100%">Hueco ' +
+                                                        letras[hueco - 1] +
+                                                        ': <span id="acabadoHueco' +
+                                                        hueco +
+                                                        '">Interior ' +
+                                                        nombre +
+                                                        '</span><span style="float:right">+ ' +
+                                                        data.body[0].precio +
+                                                        '€</span><p/>'
+                                                );
+                                            });
+                                        }
                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                             '<img id="interiorDentroArmario' +
                                                 hueco +
@@ -3051,6 +3213,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (texto == '6 PUERTAS ASIMETRICAS') {
                                     for (let i = 1; i <= 2; i++) {
                                         if (hueco == 1) {
+                                            cuenta = ancho / puertas;
+                                            cuenta = cuenta * 1;
+                                            if (i == 1) {
+                                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                        '<p style="width:100%">Hueco ' +
+                                                            letras[hueco - 1] +
+                                                            ': <span id="acabadoHueco' +
+                                                            hueco +
+                                                            '">Interior ' +
+                                                            nombre +
+                                                            '</span><span style="float:right">+ ' +
+                                                            data.body[0].precio +
+                                                            '€</span><p/>'
+                                                    );
+                                                });
+                                            }
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                 '<img id="interiorDentroArmario' +
                                                     hueco +
@@ -3065,6 +3244,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                         }
                                         if (hueco == 2) {
+                                            cuenta = ancho / puertas;
+                                            cuenta = cuenta * 2;
+                                            if (i == 1) {
+                                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                        '<p style="width:100%">Hueco ' +
+                                                            letras[hueco - 1] +
+                                                            ': <span id="acabadoHueco' +
+                                                            hueco +
+                                                            '">Interior ' +
+                                                            nombre +
+                                                            '</span><span style="float:right">+ ' +
+                                                            data.body[0].precio +
+                                                            '€</span><p/>'
+                                                    );
+                                                });
+                                            }
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                 '<img id="interiorDentroArmario' +
                                                     hueco +
@@ -3079,6 +3275,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                         }
                                         if (hueco == 3) {
+                                            cuenta = ancho / puertas;
+                                            cuenta = cuenta * 2;
+                                            if (i == 1) {
+                                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                        '<p style="width:100%">Hueco ' +
+                                                            letras[hueco - 1] +
+                                                            ': <span id="acabadoHueco' +
+                                                            hueco +
+                                                            '">Interior ' +
+                                                            nombre +
+                                                            '</span><span style="float:right">+ ' +
+                                                            data.body[0].precio +
+                                                            '€</span><p/>'
+                                                    );
+                                                });
+                                            }
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                 '<img id="interiorDentroArmario' +
                                                     hueco +
@@ -3093,6 +3306,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                         }
                                         if (hueco == 4) {
+                                            cuenta = ancho / puertas;
+                                            cuenta = cuenta * 1;
+                                            if (i == 1) {
+                                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                        '<p style="width:100%">Hueco ' +
+                                                            letras[hueco - 1] +
+                                                            ': <span id="acabadoHueco' +
+                                                            hueco +
+                                                            '">Interior ' +
+                                                            nombre +
+                                                            '</span><span style="float:right">+ ' +
+                                                            data.body[0].precio +
+                                                            '€</span><p/>'
+                                                    );
+                                                });
+                                            }
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                 '<img id="interiorDentroArmario' +
                                                     hueco +
@@ -3112,6 +3342,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     if (texto == '7 PUERTAS IZQUIERDA') {
                                         for (let i = 1; i <= 2; i++) {
                                             if (hueco == 1) {
+                                                cuenta = ancho / puertas;
+                                                cuenta = cuenta * 1;
+                                                if (i == 1) {
+                                                    this.interioresArmarioNuevosService
+                                                        .findBus(cuenta, idProdInt[nombre])
+                                                        .subscribe(data => {
+                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                '<p style="width:100%">Hueco ' +
+                                                                    letras[hueco - 1] +
+                                                                    ': <span id="acabadoHueco' +
+                                                                    hueco +
+                                                                    '">Interior ' +
+                                                                    nombre +
+                                                                    '</span><span style="float:right">+ ' +
+                                                                    data.body[0].precio +
+                                                                    '€</span><p/>'
+                                                            );
+                                                        });
+                                                }
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
@@ -3126,6 +3375,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                             }
                                             if (hueco == 2) {
+                                                cuenta = ancho / puertas;
+                                                cuenta = cuenta * 2;
+                                                if (i == 1) {
+                                                    this.interioresArmarioNuevosService
+                                                        .findBus(cuenta, idProdInt[nombre])
+                                                        .subscribe(data => {
+                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                '<p style="width:100%">Hueco ' +
+                                                                    letras[hueco - 1] +
+                                                                    ': <span id="acabadoHueco' +
+                                                                    hueco +
+                                                                    '">Interior ' +
+                                                                    nombre +
+                                                                    '</span><span style="float:right">+ ' +
+                                                                    data.body[0].precio +
+                                                                    '€</span><p/>'
+                                                            );
+                                                        });
+                                                }
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
@@ -3140,6 +3408,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                             }
                                             if (hueco == 3) {
+                                                cuenta = ancho / puertas;
+                                                cuenta = cuenta * 2;
+                                                if (i == 1) {
+                                                    this.interioresArmarioNuevosService
+                                                        .findBus(cuenta, idProdInt[nombre])
+                                                        .subscribe(data => {
+                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                '<p style="width:100%">Hueco ' +
+                                                                    letras[hueco - 1] +
+                                                                    ': <span id="acabadoHueco' +
+                                                                    hueco +
+                                                                    '">Interior ' +
+                                                                    nombre +
+                                                                    '</span><span style="float:right">+ ' +
+                                                                    data.body[0].precio +
+                                                                    '€</span><p/>'
+                                                            );
+                                                        });
+                                                }
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
@@ -3154,6 +3441,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                             }
                                             if (hueco == 4) {
+                                                cuenta = ancho / puertas;
+                                                cuenta = cuenta * 2;
+                                                if (i == 1) {
+                                                    this.interioresArmarioNuevosService
+                                                        .findBus(cuenta, idProdInt[nombre])
+                                                        .subscribe(data => {
+                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                '<p style="width:100%">Hueco ' +
+                                                                    letras[hueco - 1] +
+                                                                    ': <span id="acabadoHueco' +
+                                                                    hueco +
+                                                                    '">Interior ' +
+                                                                    nombre +
+                                                                    '</span><span style="float:right">+ ' +
+                                                                    data.body[0].precio +
+                                                                    '€</span><p/>'
+                                                            );
+                                                        });
+                                                }
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
@@ -3172,6 +3478,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         if (texto == '7 PUERTAS DERECHA') {
                                             for (let i = 1; i <= 2; i++) {
                                                 if (hueco == 4) {
+                                                    cuenta = ancho / puertas;
+                                                    cuenta = cuenta * 1;
+                                                    if (i == 1) {
+                                                        this.interioresArmarioNuevosService
+                                                            .findBus(cuenta, idProdInt[nombre])
+                                                            .subscribe(data => {
+                                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                    '<p style="width:100%">Hueco ' +
+                                                                        letras[hueco - 1] +
+                                                                        ': <span id="acabadoHueco' +
+                                                                        hueco +
+                                                                        '">Interior ' +
+                                                                        nombre +
+                                                                        '</span><span style="float:right">+ ' +
+                                                                        data.body[0].precio +
+                                                                        '€</span><p/>'
+                                                                );
+                                                            });
+                                                    }
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
@@ -3186,6 +3511,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                 }
                                                 if (hueco == 2) {
+                                                    cuenta = ancho / puertas;
+                                                    cuenta = cuenta * 2;
+                                                    if (i == 1) {
+                                                        this.interioresArmarioNuevosService
+                                                            .findBus(cuenta, idProdInt[nombre])
+                                                            .subscribe(data => {
+                                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                    '<p style="width:100%">Hueco ' +
+                                                                        letras[hueco - 1] +
+                                                                        ': <span id="acabadoHueco' +
+                                                                        hueco +
+                                                                        '">Interior ' +
+                                                                        nombre +
+                                                                        '</span><span style="float:right">+ ' +
+                                                                        data.body[0].precio +
+                                                                        '€</span><p/>'
+                                                                );
+                                                            });
+                                                    }
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
@@ -3200,6 +3544,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                 }
                                                 if (hueco == 3) {
+                                                    cuenta = ancho / puertas;
+                                                    cuenta = cuenta * 2;
+                                                    if (i == 1) {
+                                                        this.interioresArmarioNuevosService
+                                                            .findBus(cuenta, idProdInt[nombre])
+                                                            .subscribe(data => {
+                                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                    '<p style="width:100%">Hueco ' +
+                                                                        letras[hueco - 1] +
+                                                                        ': <span id="acabadoHueco' +
+                                                                        hueco +
+                                                                        '">Interior ' +
+                                                                        nombre +
+                                                                        '</span><span style="float:right">+ ' +
+                                                                        data.body[0].precio +
+                                                                        '€</span><p/>'
+                                                                );
+                                                            });
+                                                    }
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
@@ -3214,6 +3577,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                 }
                                                 if (hueco == 1) {
+                                                    cuenta = ancho / puertas;
+                                                    cuenta = cuenta * 2;
+                                                    if (i == 1) {
+                                                        this.interioresArmarioNuevosService
+                                                            .findBus(cuenta, idProdInt[nombre])
+                                                            .subscribe(data => {
+                                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                    '<p style="width:100%">Hueco ' +
+                                                                        letras[hueco - 1] +
+                                                                        ': <span id="acabadoHueco' +
+                                                                        hueco +
+                                                                        '">Interior ' +
+                                                                        nombre +
+                                                                        '</span><span style="float:right">+ ' +
+                                                                        data.body[0].precio +
+                                                                        '€</span><p/>'
+                                                                );
+                                                            });
+                                                    }
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
@@ -3232,6 +3614,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             if (texto == '8 PUERTAS ASIMETRICAS') {
                                                 for (let i = 1; i <= 2; i++) {
                                                     if (hueco == 1) {
+                                                        cuenta = ancho / puertas;
+                                                        cuenta = cuenta * 1;
+                                                        if (i == 1) {
+                                                            this.interioresArmarioNuevosService
+                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                .subscribe(data => {
+                                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                        '<p style="width:100%">Hueco ' +
+                                                                            letras[hueco - 1] +
+                                                                            ': <span id="acabadoHueco' +
+                                                                            hueco +
+                                                                            '">Interior ' +
+                                                                            nombre +
+                                                                            '</span><span style="float:right">+ ' +
+                                                                            data.body[0].precio +
+                                                                            '€</span><p/>'
+                                                                    );
+                                                                });
+                                                        }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
@@ -3246,6 +3647,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
                                                     if (hueco == 2) {
+                                                        cuenta = ancho / puertas;
+                                                        cuenta = cuenta * 2;
+                                                        if (i == 1) {
+                                                            this.interioresArmarioNuevosService
+                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                .subscribe(data => {
+                                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                        '<p style="width:100%">Hueco ' +
+                                                                            letras[hueco - 1] +
+                                                                            ': <span id="acabadoHueco' +
+                                                                            hueco +
+                                                                            '">Interior ' +
+                                                                            nombre +
+                                                                            '</span><span style="float:right">+ ' +
+                                                                            data.body[0].precio +
+                                                                            '€</span><p/>'
+                                                                    );
+                                                                });
+                                                        }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
@@ -3260,6 +3680,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
                                                     if (hueco == 3) {
+                                                        cuenta = ancho / puertas;
+                                                        cuenta = cuenta * 2;
+                                                        if (i == 1) {
+                                                            this.interioresArmarioNuevosService
+                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                .subscribe(data => {
+                                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                        '<p style="width:100%">Hueco ' +
+                                                                            letras[hueco - 1] +
+                                                                            ': <span id="acabadoHueco' +
+                                                                            hueco +
+                                                                            '">Interior ' +
+                                                                            nombre +
+                                                                            '</span><span style="float:right">+ ' +
+                                                                            data.body[0].precio +
+                                                                            '€</span><p/>'
+                                                                    );
+                                                                });
+                                                        }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
@@ -3274,6 +3713,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
                                                     if (hueco == 4) {
+                                                        cuenta = ancho / puertas;
+                                                        cuenta = cuenta * 2;
+                                                        if (i == 1) {
+                                                            this.interioresArmarioNuevosService
+                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                .subscribe(data => {
+                                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                        '<p style="width:100%">Hueco ' +
+                                                                            letras[hueco - 1] +
+                                                                            ': <span id="acabadoHueco' +
+                                                                            hueco +
+                                                                            '">Interior ' +
+                                                                            nombre +
+                                                                            '</span><span style="float:right">+ ' +
+                                                                            data.body[0].precio +
+                                                                            '€</span><p/>'
+                                                                    );
+                                                                });
+                                                        }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
@@ -3288,6 +3746,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
                                                     if (hueco == 5) {
+                                                        cuenta = ancho / puertas;
+                                                        cuenta = cuenta * 1;
+                                                        if (i == 1) {
+                                                            this.interioresArmarioNuevosService
+                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                .subscribe(data => {
+                                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                        '<p style="width:100%">Hueco ' +
+                                                                            letras[hueco - 1] +
+                                                                            ': <span id="acabadoHueco' +
+                                                                            hueco +
+                                                                            '">Interior ' +
+                                                                            nombre +
+                                                                            '</span><span style="float:right">+ ' +
+                                                                            data.body[0].precio +
+                                                                            '€</span><p/>'
+                                                                    );
+                                                                });
+                                                        }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
@@ -3307,6 +3784,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 if (texto == '9 PUERTAS CENTRAL') {
                                                     for (let i = 1; i <= 2; i++) {
                                                         if (hueco == 3) {
+                                                            cuenta = ancho / puertas;
+                                                            cuenta = cuenta * 1;
+                                                            if (i == 1) {
+                                                                this.interioresArmarioNuevosService
+                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                    .subscribe(data => {
+                                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                            '<p style="width:100%">Hueco ' +
+                                                                                letras[hueco - 1] +
+                                                                                ': <span id="acabadoHueco' +
+                                                                                hueco +
+                                                                                '">Interior ' +
+                                                                                nombre +
+                                                                                '</span><span style="float:right">+ ' +
+                                                                                data.body[0].precio +
+                                                                                '€</span><p/>'
+                                                                        );
+                                                                    });
+                                                            }
                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                 '<img id="interiorDentroArmario' +
                                                                     hueco +
@@ -3321,6 +3817,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                         }
                                                         if (hueco == 1) {
+                                                            cuenta = ancho / puertas;
+                                                            cuenta = cuenta * 2;
+                                                            if (i == 1) {
+                                                                this.interioresArmarioNuevosService
+                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                    .subscribe(data => {
+                                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                            '<p style="width:100%">Hueco ' +
+                                                                                letras[hueco - 1] +
+                                                                                ': <span id="acabadoHueco' +
+                                                                                hueco +
+                                                                                '">Interior ' +
+                                                                                nombre +
+                                                                                '</span><span style="float:right">+ ' +
+                                                                                data.body[0].precio +
+                                                                                '€</span><p/>'
+                                                                        );
+                                                                    });
+                                                            }
                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                 '<img id="interiorDentroArmario' +
                                                                     hueco +
@@ -3335,6 +3850,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                         }
                                                         if (hueco == 2) {
+                                                            cuenta = ancho / puertas;
+                                                            cuenta = cuenta * 2;
+                                                            if (i == 1) {
+                                                                this.interioresArmarioNuevosService
+                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                    .subscribe(data => {
+                                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                            '<p style="width:100%">Hueco ' +
+                                                                                letras[hueco - 1] +
+                                                                                ': <span id="acabadoHueco' +
+                                                                                hueco +
+                                                                                '">Interior ' +
+                                                                                nombre +
+                                                                                '</span><span style="float:right">+ ' +
+                                                                                data.body[0].precio +
+                                                                                '€</span><p/>'
+                                                                        );
+                                                                    });
+                                                            }
                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                 '<img id="interiorDentroArmario' +
                                                                     hueco +
@@ -3349,6 +3883,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                         }
                                                         if (hueco == 4) {
+                                                            cuenta = ancho / puertas;
+                                                            cuenta = cuenta * 2;
+                                                            if (i == 1) {
+                                                                this.interioresArmarioNuevosService
+                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                    .subscribe(data => {
+                                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                            '<p style="width:100%">Hueco ' +
+                                                                                letras[hueco - 1] +
+                                                                                ': <span id="acabadoHueco' +
+                                                                                hueco +
+                                                                                '">Interior ' +
+                                                                                nombre +
+                                                                                '</span><span style="float:right">+ ' +
+                                                                                data.body[0].precio +
+                                                                                '€</span><p/>'
+                                                                        );
+                                                                    });
+                                                            }
                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                 '<img id="interiorDentroArmario' +
                                                                     hueco +
@@ -3363,6 +3916,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                         }
                                                         if (hueco == 5) {
+                                                            cuenta = ancho / puertas;
+                                                            cuenta = cuenta * 2;
+                                                            if (i == 1) {
+                                                                this.interioresArmarioNuevosService
+                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                    .subscribe(data => {
+                                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                            '<p style="width:100%">Hueco ' +
+                                                                                letras[hueco - 1] +
+                                                                                ': <span id="acabadoHueco' +
+                                                                                hueco +
+                                                                                '">Interior ' +
+                                                                                nombre +
+                                                                                '</span><span style="float:right">+ ' +
+                                                                                data.body[0].precio +
+                                                                                '€</span><p/>'
+                                                                        );
+                                                                    });
+                                                            }
                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                 '<img id="interiorDentroArmario' +
                                                                     hueco +
@@ -3382,6 +3954,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     if (texto == '9 PUERTAS IZQUIERDA') {
                                                         for (let i = 1; i <= 2; i++) {
                                                             if (hueco == 1) {
+                                                                cuenta = ancho / puertas;
+                                                                cuenta = cuenta * 1;
+                                                                if (i == 1) {
+                                                                    this.interioresArmarioNuevosService
+                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                        .subscribe(data => {
+                                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                                '<p style="width:100%">Hueco ' +
+                                                                                    letras[hueco - 1] +
+                                                                                    ': <span id="acabadoHueco' +
+                                                                                    hueco +
+                                                                                    '">Interior ' +
+                                                                                    nombre +
+                                                                                    '</span><span style="float:right">+ ' +
+                                                                                    data.body[0].precio +
+                                                                                    '€</span><p/>'
+                                                                            );
+                                                                        });
+                                                                }
                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                     '<img id="interiorDentroArmario' +
                                                                         hueco +
@@ -3396,6 +3987,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                                             }
                                                             if (hueco == 2) {
+                                                                cuenta = ancho / puertas;
+                                                                cuenta = cuenta * 2;
+                                                                if (i == 1) {
+                                                                    this.interioresArmarioNuevosService
+                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                        .subscribe(data => {
+                                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                                '<p style="width:100%">Hueco ' +
+                                                                                    letras[hueco - 1] +
+                                                                                    ': <span id="acabadoHueco' +
+                                                                                    hueco +
+                                                                                    '">Interior ' +
+                                                                                    nombre +
+                                                                                    '</span><span style="float:right">+ ' +
+                                                                                    data.body[0].precio +
+                                                                                    '€</span><p/>'
+                                                                            );
+                                                                        });
+                                                                }
                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                     '<img id="interiorDentroArmario' +
                                                                         hueco +
@@ -3410,6 +4020,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                                             }
                                                             if (hueco == 3) {
+                                                                cuenta = ancho / puertas;
+                                                                cuenta = cuenta * 2;
+                                                                if (i == 1) {
+                                                                    this.interioresArmarioNuevosService
+                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                        .subscribe(data => {
+                                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                                '<p style="width:100%">Hueco ' +
+                                                                                    letras[hueco - 1] +
+                                                                                    ': <span id="acabadoHueco' +
+                                                                                    hueco +
+                                                                                    '">Interior ' +
+                                                                                    nombre +
+                                                                                    '</span><span style="float:right">+ ' +
+                                                                                    data.body[0].precio +
+                                                                                    '€</span><p/>'
+                                                                            );
+                                                                        });
+                                                                }
                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                     '<img id="interiorDentroArmario' +
                                                                         hueco +
@@ -3424,6 +4053,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                                             }
                                                             if (hueco == 4) {
+                                                                cuenta = ancho / puertas;
+                                                                cuenta = cuenta * 2;
+                                                                if (i == 1) {
+                                                                    this.interioresArmarioNuevosService
+                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                        .subscribe(data => {
+                                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                                '<p style="width:100%">Hueco ' +
+                                                                                    letras[hueco - 1] +
+                                                                                    ': <span id="acabadoHueco' +
+                                                                                    hueco +
+                                                                                    '">Interior ' +
+                                                                                    nombre +
+                                                                                    '</span><span style="float:right">+ ' +
+                                                                                    data.body[0].precio +
+                                                                                    '€</span><p/>'
+                                                                            );
+                                                                        });
+                                                                }
                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                     '<img id="interiorDentroArmario' +
                                                                         hueco +
@@ -3438,6 +4086,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                                             }
                                                             if (hueco == 5) {
+                                                                cuenta = ancho / puertas;
+                                                                cuenta = cuenta * 2;
+                                                                if (i == 1) {
+                                                                    this.interioresArmarioNuevosService
+                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                        .subscribe(data => {
+                                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                                '<p style="width:100%">Hueco ' +
+                                                                                    letras[hueco - 1] +
+                                                                                    ': <span id="acabadoHueco' +
+                                                                                    hueco +
+                                                                                    '">Interior ' +
+                                                                                    nombre +
+                                                                                    '</span><span style="float:right">+ ' +
+                                                                                    data.body[0].precio +
+                                                                                    '€</span><p/>'
+                                                                            );
+                                                                        });
+                                                                }
                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                     '<img id="interiorDentroArmario' +
                                                                         hueco +
@@ -3457,6 +4124,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         if (texto == '10 PUERTAS ASIMETRICAS') {
                                                             for (let i = 1; i <= 2; i++) {
                                                                 if (hueco == 1) {
+                                                                    cuenta = ancho / puertas;
+                                                                    cuenta = cuenta * 1;
+                                                                    if (i == 1) {
+                                                                        this.interioresArmarioNuevosService
+                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .subscribe(data => {
+                                                                                $(
+                                                                                    '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                ).append(
+                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                        letras[hueco - 1] +
+                                                                                        ': <span id="acabadoHueco' +
+                                                                                        hueco +
+                                                                                        '">Interior ' +
+                                                                                        nombre +
+                                                                                        '</span><span style="float:right">+ ' +
+                                                                                        data.body[0].precio +
+                                                                                        '€</span><p/>'
+                                                                                );
+                                                                            });
+                                                                    }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
@@ -3471,6 +4159,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 }
                                                                 if (hueco == 2) {
+                                                                    cuenta = ancho / puertas;
+                                                                    cuenta = cuenta * 2;
+                                                                    if (i == 1) {
+                                                                        this.interioresArmarioNuevosService
+                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .subscribe(data => {
+                                                                                $(
+                                                                                    '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                ).append(
+                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                        letras[hueco - 1] +
+                                                                                        ': <span id="acabadoHueco' +
+                                                                                        hueco +
+                                                                                        '">Interior ' +
+                                                                                        nombre +
+                                                                                        '</span><span style="float:right">+ ' +
+                                                                                        data.body[0].precio +
+                                                                                        '€</span><p/>'
+                                                                                );
+                                                                            });
+                                                                    }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
@@ -3485,6 +4194,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 }
                                                                 if (hueco == 3) {
+                                                                    cuenta = ancho / puertas;
+                                                                    cuenta = cuenta * 2;
+                                                                    if (i == 1) {
+                                                                        this.interioresArmarioNuevosService
+                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .subscribe(data => {
+                                                                                $(
+                                                                                    '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                ).append(
+                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                        letras[hueco - 1] +
+                                                                                        ': <span id="acabadoHueco' +
+                                                                                        hueco +
+                                                                                        '">Interior ' +
+                                                                                        nombre +
+                                                                                        '</span><span style="float:right">+ ' +
+                                                                                        data.body[0].precio +
+                                                                                        '€</span><p/>'
+                                                                                );
+                                                                            });
+                                                                    }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
@@ -3499,6 +4229,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 }
                                                                 if (hueco == 4) {
+                                                                    cuenta = ancho / puertas;
+                                                                    cuenta = cuenta * 2;
+                                                                    if (i == 1) {
+                                                                        this.interioresArmarioNuevosService
+                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .subscribe(data => {
+                                                                                $(
+                                                                                    '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                ).append(
+                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                        letras[hueco - 1] +
+                                                                                        ': <span id="acabadoHueco' +
+                                                                                        hueco +
+                                                                                        '">Interior ' +
+                                                                                        nombre +
+                                                                                        '</span><span style="float:right">+ ' +
+                                                                                        data.body[0].precio +
+                                                                                        '€</span><p/>'
+                                                                                );
+                                                                            });
+                                                                    }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
@@ -3513,6 +4264,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 }
                                                                 if (hueco == 5) {
+                                                                    cuenta = ancho / puertas;
+                                                                    cuenta = cuenta * 2;
+                                                                    if (i == 1) {
+                                                                        this.interioresArmarioNuevosService
+                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .subscribe(data => {
+                                                                                $(
+                                                                                    '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                ).append(
+                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                        letras[hueco - 1] +
+                                                                                        ': <span id="acabadoHueco' +
+                                                                                        hueco +
+                                                                                        '">Interior ' +
+                                                                                        nombre +
+                                                                                        '</span><span style="float:right">+ ' +
+                                                                                        data.body[0].precio +
+                                                                                        '€</span><p/>'
+                                                                                );
+                                                                            });
+                                                                    }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
@@ -3527,6 +4299,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 }
                                                                 if (hueco == 6) {
+                                                                    cuenta = ancho / puertas;
+                                                                    cuenta = cuenta * 1;
+                                                                    if (i == 1) {
+                                                                        this.interioresArmarioNuevosService
+                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .subscribe(data => {
+                                                                                $(
+                                                                                    '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                ).append(
+                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                        letras[hueco - 1] +
+                                                                                        ': <span id="acabadoHueco' +
+                                                                                        hueco +
+                                                                                        '">Interior ' +
+                                                                                        nombre +
+                                                                                        '</span><span style="float:right">+ ' +
+                                                                                        data.body[0].precio +
+                                                                                        '€</span><p/>'
+                                                                                );
+                                                                            });
+                                                                    }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
@@ -3546,6 +4339,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             if (texto == '11 PUERTAS IZQUIERDA') {
                                                                 for (let i = 1; i <= 2; i++) {
                                                                     if (hueco == 1) {
+                                                                        cuenta = ancho / puertas;
+                                                                        cuenta = cuenta * 1;
+                                                                        if (i == 1) {
+                                                                            this.interioresArmarioNuevosService
+                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .subscribe(data => {
+                                                                                    $(
+                                                                                        '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                    ).append(
+                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                            letras[hueco - 1] +
+                                                                                            ': <span id="acabadoHueco' +
+                                                                                            hueco +
+                                                                                            '">Interior ' +
+                                                                                            nombre +
+                                                                                            '</span><span style="float:right">+ ' +
+                                                                                            data.body[0].precio +
+                                                                                            '€</span><p/>'
+                                                                                    );
+                                                                                });
+                                                                        }
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
@@ -3560,6 +4374,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     }
                                                                     if (hueco == 2) {
+                                                                        cuenta = ancho / puertas;
+                                                                        cuenta = cuenta * 2;
+                                                                        if (i == 1) {
+                                                                            this.interioresArmarioNuevosService
+                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .subscribe(data => {
+                                                                                    $(
+                                                                                        '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                    ).append(
+                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                            letras[hueco - 1] +
+                                                                                            ': <span id="acabadoHueco' +
+                                                                                            hueco +
+                                                                                            '">Interior ' +
+                                                                                            nombre +
+                                                                                            '</span><span style="float:right">+ ' +
+                                                                                            data.body[0].precio +
+                                                                                            '€</span><p/>'
+                                                                                    );
+                                                                                });
+                                                                        }
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
@@ -3574,6 +4409,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     }
                                                                     if (hueco == 3) {
+                                                                        cuenta = ancho / puertas;
+                                                                        cuenta = cuenta * 2;
+                                                                        if (i == 1) {
+                                                                            this.interioresArmarioNuevosService
+                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .subscribe(data => {
+                                                                                    $(
+                                                                                        '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                    ).append(
+                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                            letras[hueco - 1] +
+                                                                                            ': <span id="acabadoHueco' +
+                                                                                            hueco +
+                                                                                            '">Interior ' +
+                                                                                            nombre +
+                                                                                            '</span><span style="float:right">+ ' +
+                                                                                            data.body[0].precio +
+                                                                                            '€</span><p/>'
+                                                                                    );
+                                                                                });
+                                                                        }
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
@@ -3588,6 +4444,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     }
                                                                     if (hueco == 4) {
+                                                                        cuenta = ancho / puertas;
+                                                                        cuenta = cuenta * 2;
+                                                                        if (i == 1) {
+                                                                            this.interioresArmarioNuevosService
+                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .subscribe(data => {
+                                                                                    $(
+                                                                                        '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                    ).append(
+                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                            letras[hueco - 1] +
+                                                                                            ': <span id="acabadoHueco' +
+                                                                                            hueco +
+                                                                                            '">Interior ' +
+                                                                                            nombre +
+                                                                                            '</span><span style="float:right">+ ' +
+                                                                                            data.body[0].precio +
+                                                                                            '€</span><p/>'
+                                                                                    );
+                                                                                });
+                                                                        }
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
@@ -3602,6 +4479,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     }
                                                                     if (hueco == 5) {
+                                                                        cuenta = ancho / puertas;
+                                                                        cuenta = cuenta * 2;
+                                                                        if (i == 1) {
+                                                                            this.interioresArmarioNuevosService
+                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .subscribe(data => {
+                                                                                    $(
+                                                                                        '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                    ).append(
+                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                            letras[hueco - 1] +
+                                                                                            ': <span id="acabadoHueco' +
+                                                                                            hueco +
+                                                                                            '">Interior ' +
+                                                                                            nombre +
+                                                                                            '</span><span style="float:right">+ ' +
+                                                                                            data.body[0].precio +
+                                                                                            '€</span><p/>'
+                                                                                    );
+                                                                                });
+                                                                        }
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
@@ -3616,6 +4514,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     }
                                                                     if (hueco == 6) {
+                                                                        cuenta = ancho / puertas;
+                                                                        cuenta = cuenta * 2;
+                                                                        if (i == 1) {
+                                                                            this.interioresArmarioNuevosService
+                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .subscribe(data => {
+                                                                                    $(
+                                                                                        '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                    ).append(
+                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                            letras[hueco - 1] +
+                                                                                            ': <span id="acabadoHueco' +
+                                                                                            hueco +
+                                                                                            '">Interior ' +
+                                                                                            nombre +
+                                                                                            '</span><span style="float:right">+ ' +
+                                                                                            data.body[0].precio +
+                                                                                            '€</span><p/>'
+                                                                                    );
+                                                                                });
+                                                                        }
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
@@ -3634,6 +4553,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 if (texto == '12 PUERTAS ASIMETRICAS') {
                                                                     for (let i = 1; i <= 2; i++) {
                                                                         if (hueco == 1) {
+                                                                            cuenta = ancho / puertas;
+                                                                            cuenta = cuenta * 1;
+                                                                            if (i == 1) {
+                                                                                this.interioresArmarioNuevosService
+                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .subscribe(data => {
+                                                                                        $(
+                                                                                            '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                        ).append(
+                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                                letras[hueco - 1] +
+                                                                                                ': <span id="acabadoHueco' +
+                                                                                                hueco +
+                                                                                                '">Interior ' +
+                                                                                                nombre +
+                                                                                                '</span><span style="float:right">+ ' +
+                                                                                                data.body[0].precio +
+                                                                                                '€</span><p/>'
+                                                                                        );
+                                                                                    });
+                                                                            }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
@@ -3648,6 +4588,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
                                                                         if (hueco == 2) {
+                                                                            cuenta = ancho / puertas;
+                                                                            cuenta = cuenta * 2;
+                                                                            if (i == 1) {
+                                                                                this.interioresArmarioNuevosService
+                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .subscribe(data => {
+                                                                                        $(
+                                                                                            '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                        ).append(
+                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                                letras[hueco - 1] +
+                                                                                                ': <span id="acabadoHueco' +
+                                                                                                hueco +
+                                                                                                '">Interior ' +
+                                                                                                nombre +
+                                                                                                '</span><span style="float:right">+ ' +
+                                                                                                data.body[0].precio +
+                                                                                                '€</span><p/>'
+                                                                                        );
+                                                                                    });
+                                                                            }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
@@ -3662,6 +4623,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
                                                                         if (hueco == 3) {
+                                                                            cuenta = ancho / puertas;
+                                                                            cuenta = cuenta * 2;
+                                                                            if (i == 1) {
+                                                                                this.interioresArmarioNuevosService
+                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .subscribe(data => {
+                                                                                        $(
+                                                                                            '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                        ).append(
+                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                                letras[hueco - 1] +
+                                                                                                ': <span id="acabadoHueco' +
+                                                                                                hueco +
+                                                                                                '">Interior ' +
+                                                                                                nombre +
+                                                                                                '</span><span style="float:right">+ ' +
+                                                                                                data.body[0].precio +
+                                                                                                '€</span><p/>'
+                                                                                        );
+                                                                                    });
+                                                                            }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
@@ -3676,6 +4658,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
                                                                         if (hueco == 4) {
+                                                                            cuenta = ancho / puertas;
+                                                                            cuenta = cuenta * 2;
+                                                                            if (i == 1) {
+                                                                                this.interioresArmarioNuevosService
+                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .subscribe(data => {
+                                                                                        $(
+                                                                                            '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                        ).append(
+                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                                letras[hueco - 1] +
+                                                                                                ': <span id="acabadoHueco' +
+                                                                                                hueco +
+                                                                                                '">Interior ' +
+                                                                                                nombre +
+                                                                                                '</span><span style="float:right">+ ' +
+                                                                                                data.body[0].precio +
+                                                                                                '€</span><p/>'
+                                                                                        );
+                                                                                    });
+                                                                            }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
@@ -3690,6 +4693,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
                                                                         if (hueco == 5) {
+                                                                            cuenta = ancho / puertas;
+                                                                            cuenta = cuenta * 2;
+                                                                            if (i == 1) {
+                                                                                this.interioresArmarioNuevosService
+                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .subscribe(data => {
+                                                                                        $(
+                                                                                            '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                        ).append(
+                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                                letras[hueco - 1] +
+                                                                                                ': <span id="acabadoHueco' +
+                                                                                                hueco +
+                                                                                                '">Interior ' +
+                                                                                                nombre +
+                                                                                                '</span><span style="float:right">+ ' +
+                                                                                                data.body[0].precio +
+                                                                                                '€</span><p/>'
+                                                                                        );
+                                                                                    });
+                                                                            }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
@@ -3704,6 +4728,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
                                                                         if (hueco == 6) {
+                                                                            cuenta = ancho / puertas;
+                                                                            cuenta = cuenta * 2;
+                                                                            if (i == 1) {
+                                                                                this.interioresArmarioNuevosService
+                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .subscribe(data => {
+                                                                                        $(
+                                                                                            '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                        ).append(
+                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                                letras[hueco - 1] +
+                                                                                                ': <span id="acabadoHueco' +
+                                                                                                hueco +
+                                                                                                '">Interior ' +
+                                                                                                nombre +
+                                                                                                '</span><span style="float:right">+ ' +
+                                                                                                data.body[0].precio +
+                                                                                                '€</span><p/>'
+                                                                                        );
+                                                                                    });
+                                                                            }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
@@ -3718,6 +4763,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
                                                                         if (hueco == 7) {
+                                                                            cuenta = ancho / puertas;
+                                                                            cuenta = cuenta * 1;
+                                                                            if (i == 1) {
+                                                                                this.interioresArmarioNuevosService
+                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .subscribe(data => {
+                                                                                        $(
+                                                                                            '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                        ).append(
+                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                                letras[hueco - 1] +
+                                                                                                ': <span id="acabadoHueco' +
+                                                                                                hueco +
+                                                                                                '">Interior ' +
+                                                                                                nombre +
+                                                                                                '</span><span style="float:right">+ ' +
+                                                                                                data.body[0].precio +
+                                                                                                '€</span><p/>'
+                                                                                        );
+                                                                                    });
+                                                                            }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
@@ -3780,6 +4846,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
         }
+
+        var interior10 = $('#calculadoraCarrito #productoCalculadora1 #datos1 #interiorHueco' + hueco + ' #precio').text();
+        var interTodos = this.productosDormitorioModal;
+        var arrayParaVer = this.interioresParaArray;
+        for (let j = 0; j < interTodos.length; j++) {
+            if (interTodos[j]['nombre'] == nombre) {
+                interTodos[j]['precio'] = interior10;
+                if (arrayParaVer.length == 0) {
+                    arrayParaVer[0] = interTodos[j];
+                } else {
+                    arrayParaVer[arrayParaVer.length] = interTodos[j];
+                }
+            }
+        }
+
+        var array = this.armarioCogido;
+        array['interiores'] = arrayParaVer;
+        this.armarioCogido = array;
     }
 
     public cambiarAcabadoInterior(nombre) {
@@ -3787,6 +4871,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var acabados = this.acabados;
         var dimens = this.dimenArmarios;
         var grandes = dimens['grandes'];
+        var array = this.armarioCogido;
         $('#inputAcabadoInterior').empty();
         for (let w = 0; w < acabados.length; w++) {
             if (acabados[w]['nombre'] == nombre) {
@@ -3795,6 +4880,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     '<img width="100%" height="100%" src="data:image/gif;base64,' +
                         acabados[w]['imagenFondo'] +
                         '" style="max-width:100%;max-height:100%">'
+                );
+                array['acabadoInterior'] = acabados[w];
+                this.armarioCogido = array;
+                console.log(this.armarioCogido);
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p style="width:100%">Interior: <span id="acabadoInterior">' +
+                        nombre +
+                        '</span><span style="float:right">+ 0€</span><p/>'
                 );
                 for (let j = 1; j <= 12; j++) {
                     var src = $('#interiorDentroArmario' + j).attr('src');
@@ -4700,9 +5793,35 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         ancho = $('#anchosSelect').val();
         alto = $('#alturaSelect').val();
         var cuenta = 0;
+        if (nombre == 'Puerta Madera') {
+            var idPuerta = 47;
+        }
+        if (nombre == 'Puerta Aluminio') {
+            var idPuerta = 48;
+        }
+
+        var interTodos = this.puertasModal;
+        var arrayParaVer = this.puertasParaArray;
+        for (let j = 0; j < interTodos.length; j++) {
+            if (interTodos[j]['nombre'] == nombre) {
+                arrayParaVer[id] = interTodos[j];
+            }
+        }
+        this.puertasParaArray = arrayParaVer;
+        console.log(arrayParaVer);
         cuenta = ancho / puertas;
-        this.puertasPreciosService.findBus(cuenta, alto, 47).subscribe(data => {
-            alert(data.body[0].precio);
+        this.puertasPreciosService.findBus(cuenta, alto, idPuerta).subscribe(data => {
+            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                '<p id="puertaHueco' +
+                    (id + 1) +
+                    '" style="width:100%">Puerta ' +
+                    (id + 1) +
+                    ': <span id="PuertaAcabado' +
+                    id +
+                    '"></span><span style="float:right">+ <span id="precio">' +
+                    data.body[0].precio +
+                    '</span>€</span><p/>'
+            );
         });
         $('#inputPuertas' + id).val(nombre);
         if (nombre == 'Puerta Madera') {
@@ -4733,9 +5852,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         acabados[w]['imagenFondo'] +
                         '" style="max-width:100%;max-height:100%">'
                 );
+                $('#PuertaAcabado' + id).text(nombre);
+                var arrayParaVer = this.puertasParaArray;
+                arrayParaVer[id]['acabado'] = acabados[w];
+                this.puertasParaArray = arrayParaVer;
+                console.log(this.puertasParaArray);
             }
         }
-
+        var array = this.armarioCogido;
+        array['puertas'] = this.puertasParaArray;
+        this.armarioCogido = array;
+        console.log(this.armarioCogido);
         if (nombre != 'Cristal Bronce' && nombre != 'Cristal Transparente') {
             this.saberPuerta = 1;
             if (texto == '3 PUERTAS DERECHA' && id == 2) {
@@ -8102,6 +9229,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
         }
+
+        var arrayPuertas = this.arraySaberPuertas;
+        var arrayHuecos = this.arraySaberHuecos;
+        var mejorArmario = this.armarioCogido;
+        if (mejorArmario['puertas'].length == arrayPuertas.length && mejorArmario['interiores'].length == arrayHuecos.length) {
+            $('#botonCalculadora').removeAttr('class');
+        }
     }
     public guardarIdPuerta(id) {
         this.idPuertaInput = id;
@@ -8109,6 +9243,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     public cambiarAcabadoTrasera(nombre) {
         var hueco = this.numeroDeHuecos;
         var acabados = this.acabados;
+        var array = this.armarioCogido;
         $('#inputAcabadoTrasera').empty();
         for (let w = 0; w < acabados.length; w++) {
             if (acabados[w]['nombre'] == nombre) {
@@ -8117,6 +9252,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     '<img width="100%" height="100%" src="data:image/gif;base64,' +
                         acabados[w]['imagenFondo'] +
                         '" style="max-width:100%;max-height:100%">'
+                );
+                array['acabadoTrasera'] = acabados[w];
+                this.armarioCogido = array;
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p style="width:100%">Trasera: <span id="acabadoTrasera">' +
+                        nombre +
+                        '</span><span style="float:right">+ 0€</span><p/>'
                 );
             }
         }
@@ -8255,7 +9397,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         if (ancho != '' && alto != '') {
             this.armarioService.findBus(ancho, ancho).subscribe(data => {
                 this.armarioService.todo = data.body;
-                console.log(data.body);
                 $('#textoTituloInterior').text('OPCIONES DISPONIBLES');
             });
         }

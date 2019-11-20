@@ -15,7 +15,7 @@
 		<div *ngIf="armarioService.todo != undefined">
 	    	<div *ngFor="let tabla of armarioService.todo;let u=index" style="float:left;width:100%;">
 	    		<div>
-		    		<p style="width:100%;text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  style="max-height: 100%;max-width: 50%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></p>
+		    		<p style="width:100%;text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  style="max-height: 100%;max-width: 50%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></p>
 		    		<p style="width:100%;text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.productosDormitorio.imagenContentType + ';base64,' + tabla.productosDormitorio.imagen"  style="max-height: 100%;max-width: 50%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></p>
 		    		<p id="textoMensajeArmario{{u}}" style="width:100%;text-align:center">{{tabla.mensaje}}</p>
 	    		</div>
@@ -322,7 +322,7 @@
 	  
 	  
 </div>
-<div id="calculadoraCarrito" style="display:none">
+<div id="calculadoraCarrito" style="display:none;z-index:1000">
 
   <div style="width:86%;height: 85%;margin-left:25px;margin-top:10px">
 

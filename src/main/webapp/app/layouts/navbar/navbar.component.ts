@@ -369,251 +369,2408 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('#myModalComposicion .modal-body').empty();
         var contAca = 1;
         var nombreCarpeta;
+        var mai = [
+            'A',
+            'B',
+            'C',
+            'D',
+            'E',
+            'F',
+            'G',
+            'H',
+            'I',
+            'J',
+            'K',
+            'L',
+            'M',
+            'N',
+            'O',
+            'P',
+            'Q',
+            'R',
+            'S',
+            'U',
+            'V',
+            'W',
+            'X',
+            'Y',
+            'Z'
+        ];
         for (let i = 1; i <= 100; i++) {
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
             console.log(sesion);
+
             if (sesion != null) {
-                $('#modalCesta .modal-body').append(
-                    '<div style="float: left;width: 500px;text-align: center;" id="cuerpo' + i + '"></div>'
-                );
-                $('#cuerpo' + i).append(
-                    '<img style="max-width:400px" src="data:image/png;base64,' + sesion[1]['productosDormitorio']['imagen'] + '">'
-                );
                 var nombre = productosArrayNombres[sesion[1]['productosDormitorio']['id']];
                 console.log(nombre);
-                for (let j = 1; j < 15; j++) {
-                    if (sesion[1]['acabado' + j] != undefined) {
-                        acabados[contAca] = sesion[1]['acabado' + j]['nombre'];
-                        contAca++;
+                if (sesion[1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                    $('#modalCesta .modal-body').append(
+                        '<div style="float: left;width: 100%;text-align: center;height:250px" id="cuerpo' + i + '"></div>'
+                    );
+
+                    var nombreArmario = sesion[1]['mensaje'];
+                    var casco = sesion[1]['acabadoCasco']['nombre'];
+                    var trasera = sesion[1]['acabadoTrasera']['nombre'];
+                    var interiores = sesion[1]['acabadoInterior']['nombre'];
+
+                    $('#cuerpo' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;font-size:30px;position:absolute;width:97%;text-align:center">' +
+                            sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
+                            '</p>'
+                    );
+
+                    if (nombreArmario == '1 PUERTA') {
+                        $('#cuerpo' + i).append(
+                            '<img style="width:100px;position:absolute;z-index:2" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i).append(
+                            '<img style="width:100px;position:absolute;z-index:2" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i).append(
+                            '<img style="width:100px;position:absolute;z-index:2" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
                     }
-                }
+                    if (nombreArmario == '3 PUERTAS IZQUIERDA') {
+                        var interior1 = sesion[1]['interiores'][0];
+                        var interior2 = sesion[1]['interiores'][1];
+                        var puerta1 = sesion[1]['puertas'][0];
+                        var puerta2 = sesion[1]['puertas'][1];
+                        var puerta3 = sesion[1]['puertas'][2];
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 555px;margin-top: 110px;float: left;"></div>');
+                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
 
-                if (
-                    nombre == 'mb6' ||
-                    nombre == 'mb9' ||
-                    nombre == 'mb7' ||
-                    nombre == 'mb8' ||
-                    nombre == 'mb10' ||
-                    nombre == 'mb11' ||
-                    nombre == 'mb12' ||
-                    nombre == 'mb13' ||
-                    nombre == 'mb14'
-                ) {
-                    nombreCarpeta = 'mb5';
-                } else {
-                    nombreCarpeta = nombre;
-                }
-
-                contAca = 1;
-                for (let k = 1; k < acabados.length; k++) {
-                    if (k == 1) {
-                        if (i == 1) {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            $('#cuerpo' + i).append(
-                                '<img style="z-index:100;margin-left:-400px;top:10px;max-width:400px;max-height:400px;' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;" id="' +
-                                    nombre +
-                                    '" class="' +
-                                    acabados[k].toLowerCase() +
-                                    'Modal" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/' +
-                                    k +
-                                    '/' +
-                                    nombreCarpeta +
-                                    '_' +
-                                    k +
-                                    '_' +
-                                    acabados[k].toLowerCase() +
-                                    '_optimized.png">'
+                        if (puerta1['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;" src="' +
+                                    src +
+                                    '">'
                             );
                         } else {
-                            var prodMed = this.medidasModal[nombre];
-                            var left = prodMed.split(';')[0];
-                            var bottom = prodMed.split(';')[1];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            $('#cuerpo' + i).append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';margin-left:-400px;top:10px;max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    bottom +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;"  class="' +
-                                    acabados[k].toLowerCase() +
-                                    'Modal" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/' +
-                                    k +
-                                    '/' +
-                                    nombreCarpeta +
-                                    '_' +
-                                    k +
-                                    '_' +
-                                    acabados[k].toLowerCase() +
-                                    '_optimized.png">'
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        if (puerta2['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append('<img style="width:200px;position:absolute;" src="' + src1 + '">');
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta3['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append('<img style="width:200px;position:absolute;" src="' + src2 + '">');
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior2['nombre'] +
+                                '/grande_interior_' +
+                                interior2['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+                    }
+
+                    if (nombreArmario == '3 PUERTAS DERECHA') {
+                        var interior1 = sesion[1]['interiores'][0];
+                        var interior2 = sesion[1]['interiores'][1];
+                        var puerta1 = sesion[1]['puertas'][0];
+                        var puerta2 = sesion[1]['puertas'][1];
+                        var puerta3 = sesion[1]['puertas'][2];
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 590px;margin-top: 110px;float: left;"></div>');
+                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:1" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:1" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+
+                        if (puerta1['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:199px;position:absolute;z-index:1" src="' + src + '">'
                             );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:1;opacity:0.6" src="' + src + '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:1;opacity:0.5" src="' + src + '">'
+                                );
+                            }
+                        }
+
+                        if (puerta2['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="' +
+                                    src1 +
+                                    '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta3['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior2['nombre'] +
+                                '/grande_interior_' +
+                                interior2['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+                    }
+
+                    if (nombreArmario == '4 PUERTAS ASIMETRICAS') {
+                        var interior1 = sesion[1]['interiores'][0];
+                        var interior2 = sesion[1]['interiores'][1];
+                        var interior3 = sesion[1]['interiores'][2];
+                        var puerta1 = sesion[1]['puertas'][0];
+                        var puerta2 = sesion[1]['puertas'][1];
+                        var puerta3 = sesion[1]['puertas'][2];
+                        var puerta4 = sesion[1]['puertas'][3];
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 515px;margin-top: 110px;float: left;"></div>');
+                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+
+                        if (puerta1['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;" src="' +
+                                    src +
+                                    '">'
+                            );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        if (puerta2['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:3" src="' + src1 + '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta3['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:3" src="' + src2 + '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta4['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta4['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;" src="' +
+                                    src +
+                                    '">'
+                            );
+                        } else {
+                            if (puerta4['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:3" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:3" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:3" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                interior1['nombre'] +
+                                '/peque_interior_' +
+                                interior1['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 2;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 2;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 2;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior2['nombre'] +
+                                '/grande_interior_' +
+                                interior2['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;margin-left: 240px;z-index: 1;margin-top: -50px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;margin-left: 240px;z-index: 1;margin-top: -50px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;margin-left: 240px;z-index: 1;margin-top: -50px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                interior3['nombre'] +
+                                '/peque_interior_' +
+                                interior3['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+                    }
+
+                    if (nombreArmario == '5 PUERTAS CENTRAL') {
+                        var interior1 = sesion[1]['interiores'][0];
+                        var interior2 = sesion[1]['interiores'][1];
+                        var interior3 = sesion[1]['interiores'][2];
+                        var puerta1 = sesion[1]['puertas'][0];
+                        var puerta2 = sesion[1]['puertas'][1];
+                        var puerta3 = sesion[1]['puertas'][2];
+                        var puerta4 = sesion[1]['puertas'][3];
+                        var puerta5 = sesion[1]['puertas'][4];
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 530px;margin-top: 110px;float: left;"></div>');
+                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png" title="' +
+                                casco +
+                                '">'
+                        );
+
+                        if (puerta1['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:199px;position:absolute;z-index:3" src="' + src + '">'
+                            );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;opacity:0.6" src="' + src + '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;opacity:0.5" src="' + src + '">'
+                                );
+                            }
+                        }
+
+                        if (puerta2['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="' +
+                                    src1 +
+                                    '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta3['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta4['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta4['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -26px;" src="' +
+                                    src1 +
+                                    '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta5['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta5['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -26px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;margin-top: -24px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;margin-top: -24px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;margin-top: -24px;" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior2['nombre'] +
+                                '/grande_interior_' +
+                                interior2['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 240px;margin-top: -50px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 240px;margin-top: -50px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 240px;margin-top: -50px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior3['nombre'] +
+                                '/grande_interior_' +
+                                interior3['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+                    }
+
+                    if (nombreArmario == '5 PUERTAS IZQUIERDA') {
+                        var interior1 = sesion[1]['interiores'][0];
+                        var interior2 = sesion[1]['interiores'][1];
+                        var interior3 = sesion[1]['interiores'][2];
+                        var puerta1 = sesion[1]['puertas'][0];
+                        var puerta2 = sesion[1]['puertas'][1];
+                        var puerta3 = sesion[1]['puertas'][2];
+                        var puerta4 = sesion[1]['puertas'][3];
+                        var puerta5 = sesion[1]['puertas'][4];
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 490px;margin-top: 110px;float: left;"></div>');
+                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 1;margin-top: -33px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png" title="' +
+                                casco.toLowerCase() +
+                                '">'
+                        );
+
+                        if (puerta1['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="' +
+                                    src +
+                                    '">'
+                            );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        if (puerta2['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index: 3;" src="' + src1 + '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta3['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index: 3;" src="' + src2 + '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta4['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta4['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
+                                    src1 +
+                                    '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta5['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta5['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:3;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:3;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:3;" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior2['nombre'] +
+                                '/grande_interior_' +
+                                interior2['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior3['nombre'] +
+                                '/grande_interior_' +
+                                interior3['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+                    }
+
+                    if (nombreArmario == '6 PUERTAS ASIMETRICAS') {
+                        var interior1 = sesion[1]['interiores'][0];
+                        var interior2 = sesion[1]['interiores'][1];
+                        var interior3 = sesion[1]['interiores'][2];
+                        var interior4 = sesion[1]['interiores'][3];
+                        var puerta1 = sesion[1]['puertas'][0];
+                        var puerta2 = sesion[1]['puertas'][1];
+                        var puerta3 = sesion[1]['puertas'][2];
+                        var puerta4 = sesion[1]['puertas'][3];
+                        var puerta5 = sesion[1]['puertas'][4];
+                        var puerta6 = sesion[1]['puertas'][5];
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 445px;margin-top: 130px;float: left;"></div>');
+                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:3;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 2;margin-top: -33px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: 280px;z-index: 1;margin-top: -57px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+
+                        if (puerta1['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="' +
+                                    src +
+                                    '">'
+                            );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        if (puerta2['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index: 3;" src="' + src1 + '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta3['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index: 3;" src="' + src2 + '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta4['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta4['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
+                                    src1 +
+                                    '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta5['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta5['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta6['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta6['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;" src="' +
+                                    src +
+                                    '">'
+                            );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                interior1['nombre'] +
+                                '/peque_interior_' +
+                                interior1['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior2['nombre'] +
+                                '/grande_interior_' +
+                                interior2['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior3['nombre'] +
+                                '/grande_interior_' +
+                                interior3['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 400px;margin-top: -83px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 400px;margin-top: -83px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 400px;margin-top: -83px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                interior4['nombre'] +
+                                '/peque_interior_' +
+                                interior4['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+                    }
+
+                    if (nombreArmario == '7 PUERTAS IZQUIERDA') {
+                        var interior1 = sesion[1]['interiores'][0];
+                        var interior2 = sesion[1]['interiores'][1];
+                        var interior3 = sesion[1]['interiores'][2];
+                        var interior4 = sesion[1]['interiores'][3];
+                        var puerta1 = sesion[1]['puertas'][0];
+                        var puerta2 = sesion[1]['puertas'][1];
+                        var puerta3 = sesion[1]['puertas'][2];
+                        var puerta4 = sesion[1]['puertas'][3];
+                        var puerta5 = sesion[1]['puertas'][4];
+                        var puerta6 = sesion[1]['puertas'][5];
+                        var puerta7 = sesion[1]['puertas'][6];
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 400px;margin-top: 130px;float: left;"></div>');
+                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:3;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;margin-top: -33px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 1;margin-top: -66px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+
+                        if (puerta1['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 5;margin-top: 26px;" src="' +
+                                    src +
+                                    '">'
+                            );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 5;margin-top: 26px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 5;margin-top: 26px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        if (puerta2['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index: 3;" src="' + src1 + '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta3['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index: 3;" src="' + src2 + '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta4['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta4['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
+                                    src1 +
+                                    '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta5['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta5['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta6['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta6['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;margin-left: 320px;z-index: 3;margin-top: -66px;" src="' +
+                                    src1 +
+                                    '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta7['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta7['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 3;margin-top: -66px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior2['nombre'] +
+                                '/grande_interior_' +
+                                interior2['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior3['nombre'] +
+                                '/grande_interior_' +
+                                interior3['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 440px;margin-top: -91px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 440px;margin-top: -91px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 440px;margin-top: -91px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior4['nombre'] +
+                                '/grande_interior_' +
+                                interior4['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+                    }
+
+                    if (nombreArmario == '8 PUERTAS ASIMETRICAS') {
+                        var interior1 = sesion[1]['interiores'][0];
+                        var interior2 = sesion[1]['interiores'][1];
+                        var interior3 = sesion[1]['interiores'][2];
+                        var interior4 = sesion[1]['interiores'][3];
+                        var interior5 = sesion[1]['interiores'][4];
+                        var puerta1 = sesion[1]['puertas'][0];
+                        var puerta2 = sesion[1]['puertas'][1];
+                        var puerta3 = sesion[1]['puertas'][2];
+                        var puerta4 = sesion[1]['puertas'][3];
+                        var puerta5 = sesion[1]['puertas'][4];
+                        var puerta6 = sesion[1]['puertas'][5];
+                        var puerta7 = sesion[1]['puertas'][6];
+                        var puerta8 = sesion[1]['puertas'][7];
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 360px;margin-top: 150px;float: left;"></div>');
+                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:535px;"></div>');
+                        $('#cuerpo' + i).css({ 'margin-bottom': '1%' });
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:5;margin-left: -120px;z-index: 5;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:5;margin-left: -120px;z-index: 5;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:4;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -34px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 2;margin-top: -68px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: 440px;z-index: 1;margin-top: -94px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+
+                        if (puerta1['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;" src="' +
+                                    src +
+                                    '">'
+                            );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        if (puerta2['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index: 10;" src="' + src1 + '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta3['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index: 10;" src="' + src2 + '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta4['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta4['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;margin-left: 160px;z-index: 10;margin-top: -34px;" src="' +
+                                    src1 +
+                                    '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta5['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta5['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 10;margin-top: -34px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta6['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta6['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 10;margin-top: -68px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+                        if (puerta7['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta7['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 10;margin-top: -68px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta8['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta6['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:199px;position:absolute;z-index:3;margin-left: 440px;z-index: 10;margin-top: -94px;" src="' +
+                                    src +
+                                    '">'
+                            );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: 440px;z-index: 10;margin-top: -94px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: 440px;z-index: 10;margin-top: -94px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:5;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:5;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:5;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                interior1['nombre'] +
+                                '/peque_interior_' +
+                                interior1['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 4;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 4;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 4;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior2['nombre'] +
+                                '/grande_interior_' +
+                                interior2['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 280px;margin-top: -60px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 280px;margin-top: -60px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 280px;margin-top: -60px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior3['nombre'] +
+                                '/grande_interior_' +
+                                interior3['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 440px;margin-top: -94px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 440px;margin-top: -94px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 440px;margin-top: -94px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior4['nombre'] +
+                                '/grande_interior_' +
+                                interior4['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 560px;margin-top: -120px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 560px;margin-top: -120px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 560px;margin-top: -120px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                interior5['nombre'] +
+                                '/peque_interior_' +
+                                interior5['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+                    }
+
+                    if (nombreArmario == '12 PUERTAS ASIMETRICAS') {
+                        var interior1 = sesion[1]['interiores'][0];
+                        var interior2 = sesion[1]['interiores'][1];
+                        var interior3 = sesion[1]['interiores'][2];
+                        var interior4 = sesion[1]['interiores'][3];
+                        var interior5 = sesion[1]['interiores'][4];
+                        var interior6 = sesion[1]['interiores'][5];
+                        var interior7 = sesion[1]['interiores'][6];
+                        var puerta1 = sesion[1]['puertas'][0];
+                        var puerta2 = sesion[1]['puertas'][1];
+                        var puerta3 = sesion[1]['puertas'][2];
+                        var puerta4 = sesion[1]['puertas'][3];
+                        var puerta5 = sesion[1]['puertas'][4];
+                        var puerta6 = sesion[1]['puertas'][5];
+                        var puerta7 = sesion[1]['puertas'][6];
+                        var puerta8 = sesion[1]['puertas'][7];
+                        var puerta9 = sesion[1]['puertas'][8];
+                        var puerta10 = sesion[1]['puertas'][9];
+                        var puerta11 = sesion[1]['puertas'][10];
+
+                        var puerta12 = sesion[1]['puertas'][11];
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 210px;margin-top: 200px;float: left;"></div>');
+                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:585px;"></div>');
+                        $('#cuerpo' + i).css({ 'margin-bottom': '5%' });
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:5;margin-left: -120px;z-index: 7;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:5;margin-left: -120px;z-index: 7;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:6;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 5;margin-top: -33px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 4;margin-top: -66px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 480px;z-index: 3;margin-top: -99px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 640px;z-index: 2;margin-top: -132px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #derecha').append(
+                            '<img style="width:199px;position:absolute;z-index:3;margin-left: 760px;z-index: 1;margin-top: -156px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+
+                        if (puerta1['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;" src="' +
+                                    src +
+                                    '">'
+                            );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:200px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:200px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        if (puerta2['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index: 10;" src="' + src1 + '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta3['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta1['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index: 10;" src="' + src2 + '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta4['nombre'] == 'Puerta Madera') {
+                            var src1 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta4['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;margin-left: 160px;z-index: 10;margin-top: -33px;" src="' +
+                                    src1 +
+                                    '">'
+                            );
+                        } else {
+                            var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta5['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta5['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 10;margin-top: -33px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta6['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta6['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 10;margin-top: -66px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+                        if (puerta7['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta7['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 10;margin-top: -66px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta8['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta8['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 480px;z-index: 10;margin-top: -99px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+                        if (puerta9['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta9['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:20;margin-left: 480px;z-index: 100;margin-top: -99px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta10['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                puerta10['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:20;margin-left: 640px;z-index: 100;margin-top: -132px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+                        if (puerta11['nombre'] == 'Puerta Madera') {
+                            var src2 =
+                                '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                puerta11['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:20;margin-left: 640px;z-index: 100;margin-top: -132px;" src="' +
+                                    src2 +
+                                    '">'
+                            );
+                        } else {
+                            var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                        }
+
+                        if (puerta12['nombre'] == 'Puerta Madera') {
+                            var src =
+                                '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                puerta12['acabado']['nombre'].toLowerCase() +
+                                '_optimized.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img style="width:200px;position:absolute;z-index:30;margin-left: 760px;z-index: 100;margin-top: -156px;" src="' +
+                                    src +
+                                    '">'
+                            );
+                        } else {
+                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                                var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:200px;position:absolute;z-index:30;margin-left: 760px;z-index: 10;margin-top: -156px;opacity:0.6" src="' +
+                                        src +
+                                        '">'
+                                );
+                            } else {
+                                var src =
+                                    '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img style="width:200px;position:absolute;z-index:30;margin-left: 760px;z-index: 10;margin-top: -156px;opacity:0.5" src="' +
+                                        src +
+                                        '">'
+                                );
+                            }
+                        }
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:7;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:7;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:7;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                interior1['nombre'] +
+                                '/peque_interior_' +
+                                interior1['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 6;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 6;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 6;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior2['nombre'] +
+                                '/grande_interior_' +
+                                interior2['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 5;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 5;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 5;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior3['nombre'] +
+                                '/grande_interior_' +
+                                interior3['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 4;margin-left: 440px;margin-top: -92px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 4;margin-left: 440px;margin-top: -92px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 4;margin-left: 440px;margin-top: -92px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior4['nombre'] +
+                                '/grande_interior_' +
+                                interior4['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 600px;margin-top: -125px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 600px;margin-top: -125px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 600px;margin-top: -125px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior5['nombre'] +
+                                '/grande_interior_' +
+                                interior5['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 760px;margin-top: -158px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 760px;margin-top: -158px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 760px;margin-top: -158px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                interior6['nombre'] +
+                                '/grande_interior_' +
+                                interior6['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '_optimized.png">'
+                        );
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 880px;margin-top: -182px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                casco.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 880px;margin-top: -182px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                trasera.toLowerCase() +
+                                '.png">'
+                        );
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 880px;margin-top: -182px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                interior7['nombre'] +
+                                '/peque_interior_' +
+                                interior7['nombre'] +
+                                '_' +
+                                interiores.toLowerCase() +
+                                '.png">'
+                        );
+                    }
+
+                    $('#modalCesta .modal-body').append(
+                        '<div style="float: left;width: 100%;margin-top:50%" id="textoCesta' + i + '"></div>'
+                    );
+                    $('#textoCesta' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;">' +
+                            sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
+                            '<i style="float:right">&euro; ' +
+                            sesion[1]['precioCasco'] +
+                            '</i></p>'
+                    );
+
+                    $('#textoCesta' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Ancho: ' + sesion[1]['ancho'] + '</p>'
+                    );
+                    $('#textoCesta' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Alto: ' + sesion[1]['alto'] + '</p>'
+                    );
+                    $('#textoCesta' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Fondo: ' + sesion[1]['fondo'] + '</p>'
+                    );
+                    $('#textoCesta' + i).append('<hr style="100%"></hr>');
+                } else {
+                    $('#modalCesta .modal-body').append(
+                        '<div style="float: left;width: 500px;text-align: center;" id="cuerpo' + i + '"></div>'
+                    );
+
+                    for (let j = 1; j < 15; j++) {
+                        if (sesion[1]['acabado' + j] != undefined) {
+                            acabados[contAca] = sesion[1]['acabado' + j]['nombre'];
+                            contAca++;
+                        }
+                    }
+
+                    if (
+                        nombre == 'mb6' ||
+                        nombre == 'mb9' ||
+                        nombre == 'mb7' ||
+                        nombre == 'mb8' ||
+                        nombre == 'mb10' ||
+                        nombre == 'mb11' ||
+                        nombre == 'mb12' ||
+                        nombre == 'mb13' ||
+                        nombre == 'mb14'
+                    ) {
+                        nombreCarpeta = 'mb5';
+                    } else {
+                        nombreCarpeta = nombre;
+                    }
+                    if (nombre == 'mb1') {
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 610px;float: left;margin-top:20px"></div>');
+                        $('#cuerpo' + i).append(
+                            '<p style="letter-spacing: 1px;font-weight: 300;position: absolute;width: 98%;font-size: 30px;">' +
+                                sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
+                                '</p>'
+                        );
+                        for (let k = 1; k < acabados.length; k++) {
+                            if (k == 1) {
+                                if (i == 1) {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:100;margin-left:-400px;top:10px;max-width:400px;max-height:400px;' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:400px;max-height:250px;position:relative" id="' +
+                                            nombre +
+                                            '" class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                            nombreCarpeta +
+                                            '/' +
+                                            k +
+                                            '/' +
+                                            nombreCarpeta +
+                                            '_' +
+                                            k +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png" title="' +
+                                            acabados[k] +
+                                            '">'
+                                    );
+                                } else {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var left = prodMed.split(';')[0];
+                                    var bottom = prodMed.split(';')[1];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:' +
+                                            (100 - i) +
+                                            ';margin-left:-400px;top:10px;max-width:400px;max-height:400px;' +
+                                            left +
+                                            ';' +
+                                            bottom +
+                                            ';' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:400px;max-height:250px;position:relative"  class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                            nombreCarpeta +
+                                            '/' +
+                                            k +
+                                            '/' +
+                                            nombreCarpeta +
+                                            '_' +
+                                            k +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png">'
+                                    );
+                                }
+                            } else {
+                                if (k == 2) {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="margin-top:-19px;z-index:100;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;position:relative;margin-top:-318px" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombreCarpeta +
+                                                '/' +
+                                                k +
+                                                '/' +
+                                                nombreCarpeta +
+                                                '_' +
+                                                k +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-top:-19px;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;position:relative;margin-top:-318px" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombreCarpeta +
+                                                '/' +
+                                                k +
+                                                '/' +
+                                                nombreCarpeta +
+                                                '_' +
+                                                k +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                } else {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="margin-top:-19px;z-index:100;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;position:relative;margin-top:-366px" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                k +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                k +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-top:-19px;margin-left:-400px;top:30px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;position:relative;margin-top:-366px" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                k +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                k +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                }
+                            }
                         }
                     } else {
-                        if (k == 2) {
-                            if (i == 1) {
-                                var prodMed = this.medidasModal[nombre];
-                                var height = prodMed.split(';')[3];
-                                var width = prodMed.split(';')[2];
-                                $('#cuerpo' + i).append(
-                                    '<img style="margin-top:-19px;z-index:100;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
-                                        height +
-                                        ';' +
-                                        width +
-                                        ';max-width:400px;max-height:250px;" id="' +
-                                        nombre +
-                                        '" class="' +
-                                        acabados[k].toLowerCase() +
-                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
-                                        nombreCarpeta +
-                                        '/' +
-                                        k +
-                                        '/' +
-                                        nombreCarpeta +
-                                        '_' +
-                                        k +
-                                        '_' +
-                                        acabados[k].toLowerCase() +
-                                        '_optimized.png">'
-                                );
+                        contAca = 1;
+                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 610px;float: left;margin-top:20px"></div>');
+                        $('#cuerpo' + i).append(
+                            '<p style="letter-spacing: 1px;font-weight: 300;position: absolute;width: 98%;font-size: 30px;">' +
+                                sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
+                                '</p>'
+                        );
+                        for (let k = 1; k < acabados.length; k++) {
+                            if (k == 1) {
+                                if (i == 1) {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:100;margin-left:-400px;top:10px;max-width:400px;max-height:400px;' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:400px;max-height:250px;" id="' +
+                                            nombre +
+                                            '" class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                            nombreCarpeta +
+                                            '/' +
+                                            k +
+                                            '/' +
+                                            nombreCarpeta +
+                                            '_' +
+                                            k +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png" title="' +
+                                            acabados[k] +
+                                            '">'
+                                    );
+                                } else {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var left = prodMed.split(';')[0];
+                                    var bottom = prodMed.split(';')[1];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:' +
+                                            (100 - i) +
+                                            ';margin-left:-400px;top:10px;max-width:400px;max-height:400px;' +
+                                            left +
+                                            ';' +
+                                            bottom +
+                                            ';' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:400px;max-height:250px;"  class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                            nombreCarpeta +
+                                            '/' +
+                                            k +
+                                            '/' +
+                                            nombreCarpeta +
+                                            '_' +
+                                            k +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png">'
+                                    );
+                                }
                             } else {
-                                var prodMed = this.medidasModal[nombre];
-                                var left = prodMed.split(';')[0];
-                                var bottom = prodMed.split(';')[1];
-                                var height = prodMed.split(';')[3];
-                                var width = prodMed.split(';')[2];
-                                $('#cuerpo' + i).append(
-                                    '<img style="z-index:' +
-                                        (100 - i) +
-                                        ';margin-top:-19px;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
-                                        left +
-                                        ';' +
-                                        bottom +
-                                        ';' +
-                                        height +
-                                        ';' +
-                                        width +
-                                        ';max-width:400px;max-height:250px;" class="' +
-                                        acabados[k].toLowerCase() +
-                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
-                                        nombreCarpeta +
-                                        '/' +
-                                        k +
-                                        '/' +
-                                        nombreCarpeta +
-                                        '_' +
-                                        k +
-                                        '_' +
-                                        acabados[k].toLowerCase() +
-                                        '_optimized.png">'
-                                );
-                            }
-                        } else {
-                            if (i == 1) {
-                                var prodMed = this.medidasModal[nombre];
-                                var height = prodMed.split(';')[3];
-                                var width = prodMed.split(';')[2];
-                                $('#cuerpo' + i).append(
-                                    '<img style="margin-top:-19px;z-index:100;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
-                                        height +
-                                        ';' +
-                                        width +
-                                        ';max-width:400px;max-height:250px;" id="' +
-                                        nombre +
-                                        '" class="' +
-                                        acabados[k].toLowerCase() +
-                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
-                                        nombre +
-                                        '/' +
-                                        k +
-                                        '/' +
-                                        nombre +
-                                        '_' +
-                                        k +
-                                        '_' +
-                                        acabados[k].toLowerCase() +
-                                        '_optimized.png">'
-                                );
-                            } else {
-                                var prodMed = this.medidasModal[nombre];
-                                var left = prodMed.split(';')[0];
-                                var bottom = prodMed.split(';')[1];
-                                var height = prodMed.split(';')[3];
-                                var width = prodMed.split(';')[2];
-                                $('#cuerpo' + i).append(
-                                    '<img style="z-index:' +
-                                        (100 - i) +
-                                        ';margin-top:-19px;margin-left:-400px;top:30px;' +
-                                        left +
-                                        ';' +
-                                        bottom +
-                                        ';' +
-                                        height +
-                                        ';' +
-                                        width +
-                                        ';max-width:400px;max-height:250px;" class="' +
-                                        acabados[k].toLowerCase() +
-                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
-                                        nombre +
-                                        '/' +
-                                        k +
-                                        '/' +
-                                        nombre +
-                                        '_' +
-                                        k +
-                                        '_' +
-                                        acabados[k].toLowerCase() +
-                                        '_optimized.png">'
-                                );
+                                if (k == 2) {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="margin-top:-19px;z-index:100;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombreCarpeta +
+                                                '/' +
+                                                k +
+                                                '/' +
+                                                nombreCarpeta +
+                                                '_' +
+                                                k +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-top:-19px;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombreCarpeta +
+                                                '/' +
+                                                k +
+                                                '/' +
+                                                nombreCarpeta +
+                                                '_' +
+                                                k +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                } else {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="margin-top:-19px;z-index:100;margin-left:-400px;top:30px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                k +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                k +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-top:-19px;margin-left:-400px;top:30px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                k +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                k +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                }
                             }
                         }
                     }
-                }
-                $('#modalCesta .modal-body').append('<div style="float: left;width: 55%;" id="textoCesta' + i + '"></div>');
-                $('#textoCesta' + i).append(
-                    '<p style="letter-spacing: 1px;font-weight: 300;">' +
-                        sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                        '<i style="float:right">&euro; ' +
-                        sesion[1]['precio'] +
-                        '</i></p>'
-                );
-                $('#textoCesta' + i).append(
-                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Ancho: ' + sesion[1]['ancho'] + '</p>'
-                );
-                $('#textoCesta' + i).append(
-                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Alto: ' + sesion[1]['alto'] + '</p>'
-                );
-                $('#textoCesta' + i).append(
-                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Fondo: ' + sesion[1]['fondo'] + '</p>'
-                );
-                for (let l = 1; l < acabados.length; l++) {
+                    $('#modalCesta .modal-body').append('<div style="float: left;width: 100%;" id="textoCesta' + i + '"></div>');
                     $('#textoCesta' + i).append(
-                        '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Acabado ' + l + ': ' + acabados[l] + '</p>'
+                        '<p style="letter-spacing: 1px;font-weight: 300;">' +
+                            sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
+                            '<i style="float:right">&euro; ' +
+                            sesion[1]['precio'] +
+                            '</i></p>'
                     );
+                    $('#textoCesta' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Ancho: ' + sesion[1]['ancho'] + '</p>'
+                    );
+                    $('#textoCesta' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Alto: ' + sesion[1]['alto'] + '</p>'
+                    );
+                    $('#textoCesta' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Fondo: ' + sesion[1]['fondo'] + '</p>'
+                    );
+                    $('#textoCesta' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Apoyo: ' +
+                            sesion[1]['apoyo']['productoApoyo']['nombre'] +
+                            '<i style="float:right;font-size:15px">+ &euro; ' +
+                            sesion[1]['apoyo']['precio'] +
+                            '</i></p>'
+                    );
+                    $('#textoCesta' + i).append('<hr style="100%"></hr>');
+                    acabados = [];
                 }
-                $('#textoCesta' + i).append(
-                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Apoyo: ' +
-                        sesion[1]['apoyo']['productoApoyo']['nombre'] +
-                        '<i style="float:right;font-size:15px">+ &euro; ' +
-                        sesion[1]['apoyo']['precio'] +
-                        '</i></p>'
-                );
-                acabados = [];
             }
         }
     }
