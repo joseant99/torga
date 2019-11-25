@@ -33,6 +33,12 @@ import { IluminacionProdPrePedService } from '../../entities/iluminacion-prod-pr
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { Observable } from 'rxjs';
 
+import { IPresupuestoArmario } from 'app/shared/model/presupuesto-armario.model';
+import { PresupuestoArmarioService } from '../../entities/presupuesto-armario/presupuesto-armario.service';
+import { IPresupuestoArmarioInteriores } from 'app/shared/model/presupuesto-armario-interiores.model';
+import { PresupuestoArmarioInterioresService } from '../../entities/presupuesto-armario-interiores/presupuesto-armario-interiores.service';
+import { IPresupuestoArmarioPuertas } from 'app/shared/model/presupuesto-armario-puertas.model';
+import { PresupuestoArmarioPuertasService } from '../../entities/presupuesto-armario-puertas/presupuesto-armario-puertas.service';
 @Component({
     selector: 'jhi-navbar',
     templateUrl: './navbar.component.html',
@@ -65,6 +71,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     settingsAccount: any;
     contador: any;
     constructor(
+        protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         private loginService: LoginService,
         private languageService: JhiLanguageService,
         private languageHelper: JhiLanguageHelper,
@@ -81,11 +88,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         protected acaProdService: AcaProdService,
         protected userService: UserService,
         protected represenTorgaService: RepresenTorgaService,
+        protected presupuestoArmarioInterioresService: PresupuestoArmarioInterioresService,
         private loginModalService: LoginModalService,
         private profileService: ProfileService,
         protected interioresService: InterioresService,
         protected medidasEspecialesService: MedidasEspecialesService,
         protected jhiAlertService: JhiAlertService,
+        protected presupuestoArmarioService: PresupuestoArmarioService,
         private router: Router,
         private modalService: NgbModal,
         public productosDormitorioService: ProductosDormitorioService,
@@ -189,7 +198,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                         var usuarios = this.user;
                         var usuarioCreado;
-                        var idUsu = this.account['id'];
+                        var idUsu = account['id'];
                         for (let i = 0; i < usuarios.length; i++) {
                             if (usuarios[i]['id'] == idUsu) {
                                 usuarioCreado = usuarios[i];
@@ -202,7 +211,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             var usuario = tiendaUsuarioAdmin['user'];
                             var usuarios = this.user;
                             var usuarioCreado;
-                            var idUsu = this.account['id'];
+                            var idUsu = account['id'];
                             for (let i = 0; i < usuarios.length; i++) {
                                 if (usuarios[i]['id'] == idUsu) {
                                     usuarioCreado = usuarios[i];
@@ -212,7 +221,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             this.isSaving = true;
                             var usuarios = this.user;
                             var usuario;
-                            var idUsu = this.account['id'];
+                            var idUsu = account['id'];
                             for (let i = 0; i < usuarios.length; i++) {
                                 if (usuarios[i]['id'] == idUsu) {
                                     usuario = usuarios[i];
@@ -272,7 +281,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         aux[0] = res.body[w];
                                     }
                                 }
-                                idDefinitiva = aux[0]['id'] + 1;
+                                idDefinitiva = aux[0]['id'];
                                 const prueba1 = {
                                     id: idDefinitiva,
                                     codigo: 'PR-' + usuario['id'],
@@ -281,68 +290,151 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     fecha_presupuesto: output
                                 };
                                 var prodPrePed;
+                                var idProdCar = 0;
                                 for (let m = 0; m < prodCarr.length; m++) {
-                                    const dimen = {
-                                        id: prodCarr[m][1]['id'],
-                                        nombre: prodCarr[m][1]['nombre'],
-                                        anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
-                                        fondo: prodCarr[m][1]['fondo'],
-                                        alto: prodCarr[m][1]['alto'],
-                                        ancho: prodCarr[m][1]['ancho'],
-                                        imagen: prodCarr[m][1]['imagen'],
-                                        imagenContentType: prodCarr[m][1]['imagenContentType'],
-                                        mensaje: prodCarr[m][1]['mensaje'],
-                                        precio: prodCarr[m][1]['precio'],
-                                        productosDormitorio: prodCarr[m][1]['productosDormitorio']
-                                    };
-                                    var dimensionesFinal = dimen;
-                                    if (prodCarr[m][1]['apoyo'] == undefined) {
+                                    if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                                        for (let k = 0; k < numeroProductos.length; k++) {
+                                            if (idProdCar < numeroProductos[k]['id']) {
+                                                idProdCar = numeroProductos[k]['id'];
+                                            }
+                                        }
+                                        idProdCar;
                                         prodPrePed = {
                                             productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                            presupuestoPedido: prueba1,
-                                            dimensionesProductoTipo: dimen
+                                            presupuestoPedido: prueba1
                                         };
+
+                                        this.productosPresupuestoPedidos = prodPrePed;
+                                        this.subscribeToSaveResponse1(
+                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                        );
+                                        prodPrePed['id'] = idProdCar + 1;
+                                        var armario;
+                                        armario = {
+                                            id: prodCarr[m][1]['id'],
+                                            anchoMax: prodCarr[m][1]['anchoMax'],
+                                            anchoMin: prodCarr[m][1]['anchoMin'],
+                                            imagen: prodCarr[m][1]['imagen'],
+                                            imagenContentType: prodCarr[m][1]['imagenContentType'],
+                                            mensaje: prodCarr[m][1]['mensaje'],
+                                            numCostado: prodCarr[m][1]['numCostado'],
+                                            numeroPuertas: prodCarr[m][1]['numeroPuertas'],
+                                            productosDormitorio: prodCarr[m][1]['productosDormitorio']
+                                        };
+                                        var presupuestoArmario;
+                                        presupuestoArmario = {
+                                            productosPresupuestoPedidos: prodPrePed,
+                                            acabadosInterior: prodCarr[m][1]['acabadoInterior'],
+                                            acabados: prodCarr[m][1]['acabadoTrasera'],
+                                            acabadosCasco: prodCarr[m][1]['acabadoCasco'],
+                                            armario: armario,
+                                            cascoPrecio: prodCarr[m][1]['precioCasco'],
+                                            fondo: prodCarr[m][1]['fondo'],
+                                            alto: prodCarr[m][1]['alto'],
+                                            ancho: prodCarr[m][1]['ancho']
+                                        };
+                                        this.subscribeToSaveResponse1(this.presupuestoArmarioService.create(presupuestoArmario));
+
+                                        this.presupuestoArmarioService
+                                            .query({
+                                                size: 10000000
+                                            })
+                                            .subscribe(data => {
+                                                var idArmario = 0;
+                                                for (let v = 0; v < data.body.length; v++) {
+                                                    if (data.body[v]['id'] > idArmario) {
+                                                        idArmario = data.body[v]['id'] + 1;
+                                                    }
+                                                }
+                                                presupuestoArmario['id'] = idArmario;
+
+                                                for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
+                                                    var interiores;
+                                                    interiores = {
+                                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                                        presupuestoArmario: presupuestoArmario,
+                                                        productosDormitorio: prodCarr[m][1]['interiores'][x]
+                                                    };
+
+                                                    this.subscribeToSaveResponse1(
+                                                        this.presupuestoArmarioInterioresService.create(interiores)
+                                                    );
+                                                }
+
+                                                for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
+                                                    var puertas;
+                                                    puertas = {
+                                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                        presupuestoArmario: presupuestoArmario,
+                                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado']
+                                                    };
+
+                                                    this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                                }
+                                            });
                                     } else {
-                                        prodPrePed = {
-                                            productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                            presupuestoPedido: prueba1,
-                                            dimensionesProductoTipo: dimen,
-                                            tiposApoyo: prodCarr[m][1]['apoyo']
+                                        const dimen = {
+                                            id: prodCarr[m][1]['id'],
+                                            nombre: prodCarr[m][1]['nombre'],
+                                            anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
+                                            fondo: prodCarr[m][1]['fondo'],
+                                            alto: prodCarr[m][1]['alto'],
+                                            ancho: prodCarr[m][1]['ancho'],
+                                            imagen: prodCarr[m][1]['imagen'],
+                                            imagenContentType: prodCarr[m][1]['imagenContentType'],
+                                            mensaje: prodCarr[m][1]['mensaje'],
+                                            precio: prodCarr[m][1]['precio'],
+                                            productosDormitorio: prodCarr[m][1]['productosDormitorio']
                                         };
-                                    }
-                                    numeroAcaProd[m]['prod'] = prodPrePed;
-                                    prodAca[m] = prodPrePed;
-                                    prodIlu[m] = prodPrePed;
-                                    dimensionEspecialBien[m] = prodPrePed;
-                                    this.productosPresupuestoPedidos = prodPrePed;
-                                    this.subscribeToSaveResponse1(
-                                        this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                    );
-                                    if (dimensionesFinal['mensaje'] == 'Medidas Especiales') {
-                                        var acaPedProd = this.acaProdPed.length;
-                                        acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                        dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
-                                        const medEsp = {
-                                            productosPresupuestoPedidos: dimensionEspecialBien[m],
-                                            ancho: dimensionesFinal[m]['ancho'],
-                                            fondo: dimensionesFinal[m]['fondo'],
-                                            alto: dimensionesFinal[m]['alto'],
-                                            precio: dimensionesFinal[m]['precio']
-                                        };
-                                        this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
-                                    }
-                                    if (prodCarr[m][1]['iluminacion'] != undefined && prodCarr[m][1]['iluminacion'] != '') {
-                                        var acaPedProd = this.acaProdPed.length;
-                                        acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                        prodIlu[m]['id'] = acaPedProd['id'] + m + 1;
-                                        const iluProd = {
-                                            iluminacion: prodCarr[m][1]['iluminacion'],
-                                            productosPresupuestoPedidos: prodIlu[m]
-                                        };
-                                        this.subscribeToSaveResponse(this.iluminacionProdPrePedService.create(iluProd));
+                                        var dimensionesFinal = dimen;
+                                        if (prodCarr[m][1]['apoyo'] == undefined) {
+                                            prodPrePed = {
+                                                productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                                presupuestoPedido: prueba1,
+                                                dimensionesProductoTipo: dimen
+                                            };
+                                        } else {
+                                            prodPrePed = {
+                                                productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                                presupuestoPedido: prueba1,
+                                                dimensionesProductoTipo: dimen,
+                                                tiposApoyo: prodCarr[m][1]['apoyo']
+                                            };
+                                        }
+                                        numeroAcaProd[m]['prod'] = prodPrePed;
+                                        prodAca[m] = prodPrePed;
+                                        prodIlu[m] = prodPrePed;
+                                        dimensionEspecialBien[m] = prodPrePed;
+                                        this.productosPresupuestoPedidos = prodPrePed;
+                                        this.subscribeToSaveResponse1(
+                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                        );
+                                        if (dimensionesFinal['mensaje'] == 'Medidas Especiales') {
+                                            var acaPedProd = this.acaProdPed.length;
+                                            acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                            dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
+                                            const medEsp = {
+                                                productosPresupuestoPedidos: dimensionEspecialBien[m],
+                                                ancho: dimensionesFinal[m]['ancho'],
+                                                fondo: dimensionesFinal[m]['fondo'],
+                                                alto: dimensionesFinal[m]['alto'],
+                                                precio: dimensionesFinal[m]['precio']
+                                            };
+                                            this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
+                                        }
+                                        if (prodCarr[m][1]['iluminacion'] != undefined && prodCarr[m][1]['iluminacion'] != '') {
+                                            var acaPedProd = this.acaProdPed.length;
+                                            acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                            prodIlu[m]['id'] = acaPedProd['id'] + m + 1;
+                                            const iluProd = {
+                                                iluminacion: prodCarr[m][1]['iluminacion'],
+                                                productosPresupuestoPedidos: prodIlu[m]
+                                            };
+                                            this.subscribeToSaveResponse(this.iluminacionProdPrePedService.create(iluProd));
+                                        }
                                     }
                                 }
-                                let b = 0;
 
                                 for (let w = 0; w < numeroAcaProd.length; w++) {
                                     for (let b = 0; b < numeroAcaProd[w].length; b++) {
@@ -522,7 +614,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('#cuerpo' + i + ' #izquierda').append(
                             '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
                                 interiores.toLowerCase() +
-                                '.png">'
+                                '_optimized.png">'
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(

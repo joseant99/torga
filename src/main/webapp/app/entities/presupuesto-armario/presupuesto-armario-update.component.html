@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-presupuesto-armario-heading" jhiTranslate="torgaPedidosApp.presupuestoArmario.home.createOrEditLabel">Create or edit a Presupuesto Armario</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!presupuestoArmario.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="presupuestoArmario.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmario.ancho" for="field_ancho">Ancho</label>
+                    <input type="number" class="form-control" name="ancho" id="field_ancho"
+                        [(ngModel)]="presupuestoArmario.ancho" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmario.alto" for="field_alto">Alto</label>
+                    <input type="number" class="form-control" name="alto" id="field_alto"
+                        [(ngModel)]="presupuestoArmario.alto" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmario.fondo" for="field_fondo">Fondo</label>
+                    <input type="number" class="form-control" name="fondo" id="field_fondo"
+                        [(ngModel)]="presupuestoArmario.fondo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmario.cascoPrecio" for="field_cascoPrecio">Casco Precio</label>
+                    <input type="number" class="form-control" name="cascoPrecio" id="field_cascoPrecio"
+                        [(ngModel)]="presupuestoArmario.cascoPrecio" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmario.armario" for="field_armario">Armario</label>
+                    <select class="form-control" id="field_armario" name="armario" [(ngModel)]="presupuestoArmario.armario" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="armarioOption.id === presupuestoArmario.armario?.id ? presupuestoArmario.armario : armarioOption" *ngFor="let armarioOption of armarios; trackBy: trackArmarioById">{{armarioOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmario.acabadosCasco" for="field_acabadosCasco">Acabados Casco</label>
+                    <select class="form-control" id="field_acabadosCasco" name="acabadosCasco" [(ngModel)]="presupuestoArmario.acabadosCasco" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="acabadosOption.id === presupuestoArmario.acabadosCasco?.id ? presupuestoArmario.acabadosCasco : acabadosOption" *ngFor="let acabadosOption of acabados; trackBy: trackAcabadosById">{{acabadosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmario.acabados" for="field_acabados">Acabados</label>
+                    <select class="form-control" id="field_acabados" name="acabados" [(ngModel)]="presupuestoArmario.acabados" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="acabadosOption.id === presupuestoArmario.acabados?.id ? presupuestoArmario.acabados : acabadosOption" *ngFor="let acabadosOption of acabados; trackBy: trackAcabadosById">{{acabadosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmario.acabadosInterior" for="field_acabadosInterior">Acabados Interior</label>
+                    <select class="form-control" id="field_acabadosInterior" name="acabadosInterior" [(ngModel)]="presupuestoArmario.acabadosInterior" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="acabadosOption.id === presupuestoArmario.acabadosInterior?.id ? presupuestoArmario.acabadosInterior : acabadosOption" *ngFor="let acabadosOption of acabados; trackBy: trackAcabadosById">{{acabadosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmario.productosPresupuestoPedidos" for="field_productosPresupuestoPedidos">Productos Presupuesto Pedidos</label>
+                    <select class="form-control" id="field_productosPresupuestoPedidos" name="productosPresupuestoPedidos" [(ngModel)]="presupuestoArmario.productosPresupuestoPedidos" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productosPresupuestoPedidosOption.id === presupuestoArmario.productosPresupuestoPedidos?.id ? presupuestoArmario.productosPresupuestoPedidos : productosPresupuestoPedidosOption" *ngFor="let productosPresupuestoPedidosOption of productospresupuestopedidos; trackBy: trackProductosPresupuestoPedidosById">{{productosPresupuestoPedidosOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

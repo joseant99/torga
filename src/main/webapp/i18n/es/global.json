@@ -60,6 +60,9 @@
                 "casco": "Casco",
                 "interioresArmarioNuevos": "Interiores Armario Nuevos",
                 "puertasPrecios": "Puertas Precios",
+                "presupuestoArmario": "Presupuesto Armario",
+                "presupuestoArmarioInteriores": "Presupuesto Armario Interiores",
+                "presupuestoArmarioPuertas": "Presupuesto Armario Puertas",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

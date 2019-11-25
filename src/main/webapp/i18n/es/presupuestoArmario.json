@@ -1,0 +1,29 @@
+{
+    "torgaPedidosApp": {
+        "presupuestoArmario": {
+            "home": {
+                "title": "Presupuesto Armarios",
+                "createLabel": "Crear nuevo Presupuesto Armario",
+                "createOrEditLabel": "Crear o editar Presupuesto Armario"
+            },
+            "created": "Un nuevo Presupuesto Armario ha sido creado con el identificador {{ param }}",
+            "updated": "Un Presupuesto Armario ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Presupuesto Armario ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Presupuesto Armario {{ id }}?"
+            },
+            "detail": {
+                "title": "Presupuesto Armario"
+            },
+            "ancho": "Ancho",
+            "alto": "Alto",
+            "fondo": "Fondo",
+            "cascoPrecio": "Casco Precio",
+            "armario": "Armario",
+            "acabadosCasco": "Acabados Casco",
+            "acabados": "Acabados",
+            "acabadosInterior": "Acabados Interior",
+            "productosPresupuestoPedidos": "Productos Presupuesto Pedidos"
+        }
+    }
+}

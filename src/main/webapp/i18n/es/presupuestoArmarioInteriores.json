@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "presupuestoArmarioInteriores": {
+            "home": {
+                "title": "Presupuesto Armario Interiores",
+                "createLabel": "Crear nuevo Presupuesto Armario Interiores",
+                "createOrEditLabel": "Crear o editar Presupuesto Armario Interiores"
+            },
+            "created": "Un nuevo Presupuesto Armario Interiores ha sido creado con el identificador {{ param }}",
+            "updated": "Un Presupuesto Armario Interiores ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Presupuesto Armario Interiores ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Presupuesto Armario Interiores {{ id }}?"
+            },
+            "detail": {
+                "title": "Presupuesto Armario Interiores"
+            },
+            "precio": "Precio",
+            "productosDormitorio": "Productos Dormitorio",
+            "presupuestoArmario": "Presupuesto Armario"
+        }
+    }
+}

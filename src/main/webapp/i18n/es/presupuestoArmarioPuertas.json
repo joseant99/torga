@@ -1,0 +1,24 @@
+{
+    "torgaPedidosApp": {
+        "presupuestoArmarioPuertas": {
+            "home": {
+                "title": "Presupuesto Armario Puertas",
+                "createLabel": "Crear nuevo Presupuesto Armario Puertas",
+                "createOrEditLabel": "Crear o editar Presupuesto Armario Puertas"
+            },
+            "created": "Un nuevo Presupuesto Armario Puertas ha sido creado con el identificador {{ param }}",
+            "updated": "Un Presupuesto Armario Puertas ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Presupuesto Armario Puertas ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Presupuesto Armario Puertas {{ id }}?"
+            },
+            "detail": {
+                "title": "Presupuesto Armario Puertas"
+            },
+            "precio": "Precio",
+            "acabados": "Acabados",
+            "productosDormitorio": "Productos Dormitorio",
+            "presupuestoArmario": "Presupuesto Armario"
+        }
+    }
+}

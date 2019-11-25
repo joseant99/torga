@@ -1,0 +1,61 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "armario",
+            "otherEntityName": "armario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "acabadosCasco",
+            "otherEntityName": "acabados",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "acabados",
+            "otherEntityName": "acabados",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "acabadosInterior",
+            "otherEntityName": "acabados",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "productosPresupuestoPedidos",
+            "otherEntityName": "productosPresupuestoPedidos",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ancho",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "alto",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fondo",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "cascoPrecio",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20191121110021",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "presupuesto_armario",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

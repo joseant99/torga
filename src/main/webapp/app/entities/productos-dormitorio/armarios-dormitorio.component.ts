@@ -5823,21 +5823,673 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     '</span>€</span><p/>'
             );
         });
-        $('#inputPuertas' + id).val(nombre);
-        if (nombre == 'Puerta Madera') {
-            this.acaProdService.findAca(47).subscribe(data => {
-                $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
-                this.acabadosPuerta1 = data.body[0]['acabados'];
-            });
-        } else {
-            this.acaProdService.findAca(48).subscribe(data => {
-                $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
-                this.acabadosPuerta2 = data.body[0]['acabados'];
-            });
+        var texto = this.textoArmario;
+        if (texto == '3 PUERTAS IZQUIERDA') {
+            if (id == 0) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '4 PUERTAS ASIMETRICAS') {
+            if (id == 0) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 3) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+        }
+        if (texto == '5 PUERTAS CENTRAL') {
+            if (id == 2) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 0) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 4) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+        if (texto == '5 PUERTAS IZQUIERDA') {
+            if (id == 0) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 4) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '6 PUERTAS ASIMETRICAS') {
+            if (id == 0) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 5) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 4) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '7 PUERTAS IZQUIERDAS') {
+            if (id == 0) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 4) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+
+            if (id == 5) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 6) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '3 PUERTAS DERECHA') {
+            if (id == 0) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+                if (nombre == 'Puerta Madera') {
+                    if (nombre == 'Puerta Madera') {
+                        this.acaProdService.findAca(47).subscribe(data => {
+                            $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                            this.acabadosPuerta1 = data.body[0]['acabados'];
+                        });
+                    } else {
+                        this.acaProdService.findAca(48).subscribe(data => {
+                            $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                }
+            }
+
+            $('#inputPuertas' + id).val(nombre);
+            if (nombre == 'Puerta Madera') {
+                this.acaProdService.findAca(47).subscribe(data => {
+                    $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                    this.acabadosPuerta1 = data.body[0]['acabados'];
+                });
+            } else {
+                this.acaProdService.findAca(48).subscribe(data => {
+                    $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                    this.acabadosPuerta2 = data.body[0]['acabados'];
+                });
+            }
         }
     }
-
-    public cambioAcabadoImagenPuertas(nombre) {
+    public cambioAcabadoImagenPue(nombre) {
         var id = this.idPuertaInput;
         var texto = this.textoArmario;
         var prueba = 0;
@@ -5859,9 +6511,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 console.log(this.puertasParaArray);
             }
         }
-        var array = this.armarioCogido;
-        array['puertas'] = this.puertasParaArray;
-        this.armarioCogido = array;
+        var array1 = this.armarioCogido;
+        array1['puertas'] = this.puertasParaArray;
+        this.armarioCogido = array1;
         console.log(this.armarioCogido);
         if (nombre != 'Cristal Bronce' && nombre != 'Cristal Transparente') {
             this.saberPuerta = 1;
@@ -6041,7 +6693,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     var parte3 = src.split('_')[2];
                     $('#nombrePuerta' + (id + 1)).remove();
                     console.log(parte1);
-                    $('#puertaColor' + id).attr('src', parte1 + '_' + parte2 + '_' + parte3 + '_' + nombre.toLowerCase() + '.png');
+                    $('#puertaColor' + id).attr(
+                        'src',
+                        parte1 + '_' + parte2 + '_' + parte3 + '_' + nombre.toLowerCase() + '_optimized.png'
+                    );
                 }
             } else {
                 var src = $('#puertaColor' + id).attr('src');
@@ -6049,7 +6704,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var parte2 = src.split('_')[1];
                 $('#nombrePuerta' + (id + 1)).remove();
                 console.log(parte1);
-                $('#puertaColor' + id).attr('src', parte1 + '_' + parte2 + '_' + nombre.toLowerCase() + '.png');
+                $('#puertaColor' + id).attr('src', parte1 + '_' + parte2 + '_' + nombre.toLowerCase() + '_optimized.png');
             }
         } else {
             this.saberPuerta = 1;
@@ -9537,6 +10192,714 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 k++;
             }
         });
+    }
+
+    public tiradoresMostrar(texto1) {
+        var texto = this.textoArmario;
+        var tirador = $('#inputTiradorCogido').text();
+        $('#' + texto1 + 'Tirador').css({ 'background-color': 'gray' });
+        if (texto1 == 'izquierda') {
+            $('#derechaTirador').css({ 'background-color': 'white' });
+        } else {
+            $('#izquierdaTirador').css({ 'background-color': 'white' });
+        }
+        $('#imagenesArmario2 #imagenesArmario #puertaTiradorImagen').remove();
+        var precio = [];
+        precio['testa'] = 15;
+        precio['corto'] = 30;
+        precio['largo'] = 60;
+
+        $('#calculadoraCarrito #productoCalculadora1 #datos1 #nombreTiradorCalculadora').text(tirador);
+        $('#calculadoraCarrito #productoCalculadora1 #datos1 #precioTiradorCalculadora').text(precio[tirador]);
+        if (texto == '3 PUERTAS IZQUIERDA') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            if (input1 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+            if (input2 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+        }
+
+        if (texto == '3 PUERTAS DERECHA') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas2').val();
+            if (input1 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101"  src="../../../content/images/tiradores/HUECO GRANDE/' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+            if (input2 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+        }
+
+        if (texto == '4 PUERTAS ASIMETRICAS') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            var input3 = $('#inputPuertas3').val();
+            if (input1 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+            if (input2 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+            if (input3 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424px;margin-top: -78px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424px;margin-top: -78px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+        }
+
+        if (texto == '5 PUERTAS IZQUIERDA') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            var input3 = $('#inputPuertas3').val();
+            if (input1 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+            if (input2 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+            if (input3 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+        }
+
+        if (texto == '6 PUERTAS ASIMETRICAS') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            var input3 = $('#inputPuertas3').val();
+            var input4 = $('#inputPuertas5').val();
+            if (texto1 == 'izquierda') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    } else {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    } else {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+
+            if (texto1 == 'derecha') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    } else {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    } else {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+            }
+        }
+
+        if (texto == '7 PUERTAS IZQUIERDA') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            var input3 = $('#inputPuertas3').val();
+            var input4 = $('#inputPuertas5').val();
+            if (input1 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+            if (input2 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+            if (input3 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+
+            if (input4 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+        }
+
+        if (texto == '5 PUERTAS CENTRAL') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas2').val();
+            var input3 = $('#inputPuertas3').val();
+            if (input1 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;"  src="../../../content/images/tiradores/HUECO GRANDE/' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+            if (input2 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+            if (input3 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424px;margin-top: -78px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424px;margin-top: -78px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/grande_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+        }
+    }
+
+    public cogidoTirador(tirador) {
+        $('#inputTiradorCogido').text(tirador);
+        $('#imagenesArmario2 #imagenesArmario #puertaTiradorImagen').remove();
+        $('#calculadoraCarrito #productoCalculadora1 #datos1 #pCalculadoraTirador').remove();
+        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+            '<p style="width:100%" id="pCalculadoraTirador">Tirador: <span id="nombreTiradorCalculadora"></span><span style="float:right" id="precioTiradorCalculadora"> <span>€</span></span><p/>'
+        );
     }
 
     public cargarPuertas(id) {

@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="presupuestoArmarioInteriores">
+            <h2><span jhiTranslate="torgaPedidosApp.presupuestoArmarioInteriores.detail.title">Presupuesto Armario Interiores</span> {{presupuestoArmarioInteriores.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoArmarioInteriores.precio">Precio</span></dt>
+                <dd>
+                    <span>{{presupuestoArmarioInteriores.precio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoArmarioInteriores.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="presupuestoArmarioInteriores.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', presupuestoArmarioInteriores.productosDormitorio?.id, 'view']">{{presupuestoArmarioInteriores.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoArmarioInteriores.presupuestoArmario">Presupuesto Armario</span></dt>
+                <dd>
+                    <div *ngIf="presupuestoArmarioInteriores.presupuestoArmario">
+                        <a [routerLink]="['/presupuesto-armario', presupuestoArmarioInteriores.presupuestoArmario?.id, 'view']">{{presupuestoArmarioInteriores.presupuestoArmario?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/presupuesto-armario-interiores', presupuestoArmarioInteriores.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

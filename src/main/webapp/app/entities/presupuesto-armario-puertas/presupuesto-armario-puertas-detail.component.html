@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="presupuestoArmarioPuertas">
+            <h2><span jhiTranslate="torgaPedidosApp.presupuestoArmarioPuertas.detail.title">Presupuesto Armario Puertas</span> {{presupuestoArmarioPuertas.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoArmarioPuertas.precio">Precio</span></dt>
+                <dd>
+                    <span>{{presupuestoArmarioPuertas.precio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoArmarioPuertas.acabados">Acabados</span></dt>
+                <dd>
+                    <div *ngIf="presupuestoArmarioPuertas.acabados">
+                        <a [routerLink]="['/acabados', presupuestoArmarioPuertas.acabados?.id, 'view']">{{presupuestoArmarioPuertas.acabados?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoArmarioPuertas.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="presupuestoArmarioPuertas.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', presupuestoArmarioPuertas.productosDormitorio?.id, 'view']">{{presupuestoArmarioPuertas.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.presupuestoArmarioPuertas.presupuestoArmario">Presupuesto Armario</span></dt>
+                <dd>
+                    <div *ngIf="presupuestoArmarioPuertas.presupuestoArmario">
+                        <a [routerLink]="['/presupuesto-armario', presupuestoArmarioPuertas.presupuestoArmario?.id, 'view']">{{presupuestoArmarioPuertas.presupuestoArmario?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/presupuesto-armario-puertas', presupuestoArmarioPuertas.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

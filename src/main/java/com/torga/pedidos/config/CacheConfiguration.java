@@ -103,7 +103,9 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.Casco.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.InterioresArmarioNuevos.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.PuertasPrecios.class.getName() , jcacheConfiguration);
-           
+            cm.createCache(com.torga.pedidos.domain.PresupuestoArmario.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.PresupuestoArmarioInteriores.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.PresupuestoArmarioPuertas.class.getName() , jcacheConfiguration);
         };
-    }
+    } 
 }

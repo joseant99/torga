@@ -1,0 +1,98 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.presupuestoArmario.home.title">Presupuesto Armarios</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-presupuesto-armario" [routerLink]="['/presupuesto-armario/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.presupuestoArmario.home.createLabel">
+            Create new Presupuesto Armario
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="presupuestoArmarios">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ancho"><span jhiTranslate="torgaPedidosApp.presupuestoArmario.ancho">Ancho</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="alto"><span jhiTranslate="torgaPedidosApp.presupuestoArmario.alto">Alto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fondo"><span jhiTranslate="torgaPedidosApp.presupuestoArmario.fondo">Fondo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cascoPrecio"><span jhiTranslate="torgaPedidosApp.presupuestoArmario.cascoPrecio">Casco Precio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="armario.id"><span jhiTranslate="torgaPedidosApp.presupuestoArmario.armario">Armario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="acabadosCasco.id"><span jhiTranslate="torgaPedidosApp.presupuestoArmario.acabadosCasco">Acabados Casco</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="acabados.id"><span jhiTranslate="torgaPedidosApp.presupuestoArmario.acabados">Acabados</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="acabadosInterior.id"><span jhiTranslate="torgaPedidosApp.presupuestoArmario.acabadosInterior">Acabados Interior</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productosPresupuestoPedidos.id"><span jhiTranslate="torgaPedidosApp.presupuestoArmario.productosPresupuestoPedidos">Productos Presupuesto Pedidos</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let presupuestoArmario of presupuestoArmarios ;trackBy: trackId">
+                <td><a [routerLink]="['/presupuesto-armario', presupuestoArmario.id, 'view' ]">{{presupuestoArmario.id}}</a></td>
+                <td>{{presupuestoArmario.ancho}}</td>
+                <td>{{presupuestoArmario.alto}}</td>
+                <td>{{presupuestoArmario.fondo}}</td>
+                <td>{{presupuestoArmario.cascoPrecio}}</td>
+                <td>
+                    <div *ngIf="presupuestoArmario.armario">
+                        <a [routerLink]="['../armario', presupuestoArmario.armario?.id, 'view' ]" >{{presupuestoArmario.armario?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="presupuestoArmario.acabadosCasco">
+                        <a [routerLink]="['../acabados', presupuestoArmario.acabadosCasco?.id, 'view' ]" >{{presupuestoArmario.acabadosCasco?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="presupuestoArmario.acabados">
+                        <a [routerLink]="['../acabados', presupuestoArmario.acabados?.id, 'view' ]" >{{presupuestoArmario.acabados?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="presupuestoArmario.acabadosInterior">
+                        <a [routerLink]="['../acabados', presupuestoArmario.acabadosInterior?.id, 'view' ]" >{{presupuestoArmario.acabadosInterior?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="presupuestoArmario.productosPresupuestoPedidos">
+                        <a [routerLink]="['../productos-presupuesto-pedidos', presupuestoArmario.productosPresupuestoPedidos?.id, 'view' ]" >{{presupuestoArmario.productosPresupuestoPedidos?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/presupuesto-armario', presupuestoArmario.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/presupuesto-armario', presupuestoArmario.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'presupuesto-armario/'+ presupuestoArmario.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="presupuestoArmarios && presupuestoArmarios.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

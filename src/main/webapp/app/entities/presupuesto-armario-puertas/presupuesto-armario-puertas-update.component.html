@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-presupuesto-armario-puertas-heading" jhiTranslate="torgaPedidosApp.presupuestoArmarioPuertas.home.createOrEditLabel">Create or edit a Presupuesto Armario Puertas</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!presupuestoArmarioPuertas.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="presupuestoArmarioPuertas.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmarioPuertas.precio" for="field_precio">Precio</label>
+                    <input type="number" class="form-control" name="precio" id="field_precio"
+                        [(ngModel)]="presupuestoArmarioPuertas.precio" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmarioPuertas.acabados" for="field_acabados">Acabados</label>
+                    <select class="form-control" id="field_acabados" name="acabados" [(ngModel)]="presupuestoArmarioPuertas.acabados" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="acabadosOption.id === presupuestoArmarioPuertas.acabados?.id ? presupuestoArmarioPuertas.acabados : acabadosOption" *ngFor="let acabadosOption of acabados; trackBy: trackAcabadosById">{{acabadosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmarioPuertas.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
+                    <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="presupuestoArmarioPuertas.productosDormitorio" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productosDormitorioOption.id === presupuestoArmarioPuertas.productosDormitorio?.id ? presupuestoArmarioPuertas.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.presupuestoArmarioPuertas.presupuestoArmario" for="field_presupuestoArmario">Presupuesto Armario</label>
+                    <select class="form-control" id="field_presupuestoArmario" name="presupuestoArmario" [(ngModel)]="presupuestoArmarioPuertas.presupuestoArmario" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="presupuestoArmarioOption.id === presupuestoArmarioPuertas.presupuestoArmario?.id ? presupuestoArmarioPuertas.presupuestoArmario : presupuestoArmarioOption" *ngFor="let presupuestoArmarioOption of presupuestoarmarios; trackBy: trackPresupuestoArmarioById">{{presupuestoArmarioOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
