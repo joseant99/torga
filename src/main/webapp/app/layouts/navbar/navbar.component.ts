@@ -2939,6 +2939,19 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     public funcionQuitarRaya(id) {
+        var divs = [];
+        divs[1] = 'torgaTarifaComedores';
+        divs[2] = 'torgaTarifaDormitorios';
+        divs[3] = 'menuComercial';
+        divs[4] = 'menuContacto';
+        divs[5] = 'menuFabricantesTorgaDentro';
+        divs[6] = 'menuTienda';
+        divs[7] = 'menuGestionUsuario';
+        for (let g = 1; g <= 7; g++) {
+            if (divs[g] != divs[id]) {
+                $('#' + divs[g]).attr('class', 'collapse');
+            }
+        }
         var mas = $('#mas' + id).text();
         if (mas == '+') {
             $('#mas' + id).text('x');
