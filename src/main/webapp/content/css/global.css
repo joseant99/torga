@@ -69,7 +69,7 @@ Generic styles
 #menuPrincipal {
     width: 20%;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     bottom: 0;
     top: 0;
     background-color: #f5f5f5 !important;
@@ -156,7 +156,7 @@ Generic styles
 }
 #productosDormitorioCargados {
     margin-left: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 18px;
     margin-right: 50px;
     margin-top: 50px;
     font-weight: 300;
@@ -1450,6 +1450,12 @@ Generic styles
 }
 .displayBoton {
     display: none;
+}
+.d-block {
+    display: block !important;
+    margin-top: 320px;
+    letter-spacing: 1px;
+    font-weight: 300;
 }
 @media screen and (max-width: 1450px) {
     #formInicioSesion {

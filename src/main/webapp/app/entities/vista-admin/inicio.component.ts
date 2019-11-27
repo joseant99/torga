@@ -160,6 +160,13 @@ export class inicioComponent implements OnInit, AfterViewInit {
                                                 if (res.body[k]['user']['id'] == usuarioBuscado['id']) {
                                                     tiendaUsuario = res.body[k];
                                                     sessionStorage.setItem('tiendaUsuario', JSON.stringify(tiendaUsuario));
+                                                    var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+                                                    if (prueba['logo'] != undefined) {
+                                                        $('#logoImagen').remove();
+                                                        $('.logo-img').append(
+                                                            '<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>'
+                                                        );
+                                                    }
                                                 }
                                             }
                                         }
@@ -190,6 +197,15 @@ export class inicioComponent implements OnInit, AfterViewInit {
                                                         if (cliente['id'] == vendedores[d]['user']['id']) {
                                                             tiendaUsuario = vendedores[d]['datosUsuario'];
                                                             sessionStorage.setItem('tiendaUsuario', JSON.stringify(tiendaUsuario));
+                                                            var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+                                                            if (prueba['logo'] != undefined) {
+                                                                $('#logoImagen').remove();
+                                                                $('.logo-img').append(
+                                                                    '<img id="logoImagen"  src="data:image/gif;base64,' +
+                                                                        prueba['logo'] +
+                                                                        '"/>'
+                                                                );
+                                                            }
                                                         }
                                                     }
                                                 }

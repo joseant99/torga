@@ -6295,7 +6295,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             }
         }
 
-        if (texto == '7 PUERTAS IZQUIERDAS') {
+        if (texto == '7 PUERTAS IZQUIERDA') {
             if (id == 0) {
                 $('#inputPuertas' + id).val(nombre);
                 if (nombre == 'Puerta Madera') {
@@ -6426,6 +6426,1439 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#inputPuertas' + (id + 1)).attr('readonly');
             }
             if (id == 6) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '7 PUERTAS DERECHA') {
+            if (id == 6) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+
+            if (id == 0) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+
+            if (id == 4) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 5) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '8 PUERTAS ASIMETRICAS') {
+            if (id == 0) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 7) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 4) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 5) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 6) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '9 PUERTAS CENTRAL') {
+            if (id == 4) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+
+            if (id == 0) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 5) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 6) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+
+            if (id == 7) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 8) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '9 PUERTAS IZQUIERDA') {
+            if (id == 0) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 4) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 5) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 6) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+
+            if (id == 7) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 8) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '10 PUERTAS ASIMETRICAS') {
+            if (id == 0) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 9) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 4) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 5) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 6) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+
+            if (id == 7) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 8) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '11 PUERTAS IZQUIERDA') {
+            if (id == 0) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 4) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 5) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 6) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+
+            if (id == 7) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 8) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+
+            if (id == 9) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 10) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '12 PUERTAS ASIMETRICAS') {
+            if (id == 0) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 11) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 4) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 5) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 6) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+
+            if (id == 7) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 8) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+
+            if (id == 9) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 10) {
                 for (let j = 0; j < interTodos.length; j++) {
                     if (interTodos[j]['nombre'] == nombre) {
                         arrayParaVer[id - 1] = interTodos[j];
@@ -10472,15 +11905,47 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (input1 == 'Puerta Madera') {
                     if (tirador == 'testa') {
                         $('#imagenesArmario2 #imagenesArmario').append(
-                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
                                 tirador.toUpperCase() +
                                 '/peque_tirador_' +
                                 tirador +
                                 '_izquierda.png">'
                         );
-                    } else {
                         $('#imagenesArmario2 #imagenesArmario').append(
-                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
                                 tirador.toUpperCase() +
                                 '/peque_tirador_' +
                                 tirador +
@@ -10499,6 +11964,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 texto1 +
                                 '.png">'
                         );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
                     }
 
                     if (tirador == 'Largo') {
@@ -10511,6 +11992,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 texto1 +
                                 '.png">'
                         );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
                     }
                     if (tirador == 'Corto') {
                         $('#imagenesArmario2 #imagenesArmario').append(
@@ -10522,6 +12019,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         );
                         $('#imagenesArmario2 #imagenesArmario').append(
                             '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
                                 tirador.toUpperCase() +
                                 '/grande_tirador_' +
                                 tirador +
@@ -10540,6 +12052,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 texto1 +
                                 '.png">'
                         );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
                     }
                     if (tirador == 'Largo') {
                         $('#imagenesArmario2 #imagenesArmario').append(
@@ -10550,6 +12078,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 '_' +
                                 texto1 +
                                 '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
                         );
                     }
 
@@ -10568,6 +12112,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 tirador +
                                 '_derecha.png">'
                         );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
                     }
                 }
 
@@ -10580,9 +12139,40 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 tirador +
                                 '_derecha.png">'
                         );
-                    } else {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
                         $('#imagenesArmario2 #imagenesArmario').append(
                             '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
                                 tirador.toUpperCase() +
                                 '/peque_tirador_' +
                                 tirador +
@@ -10596,15 +12186,47 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (input1 == 'Puerta Madera') {
                     if (tirador == 'testa') {
                         $('#imagenesArmario2 #imagenesArmario').append(
-                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
                                 tirador.toUpperCase() +
                                 '/peque_tirador_' +
                                 tirador +
                                 '_derecha.png">'
                         );
-                    } else {
                         $('#imagenesArmario2 #imagenesArmario').append(
-                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
                                 tirador.toUpperCase() +
                                 '/peque_tirador_' +
                                 tirador +
@@ -10623,6 +12245,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 texto1 +
                                 '.png">'
                         );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
                     }
 
                     if (tirador == 'Largo') {
@@ -10635,6 +12273,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 texto1 +
                                 '.png">'
                         );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
                     }
                     if (tirador == 'Corto') {
                         $('#imagenesArmario2 #imagenesArmario').append(
@@ -10646,6 +12300,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         );
                         $('#imagenesArmario2 #imagenesArmario').append(
                             '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
                                 tirador.toUpperCase() +
                                 '/grande_tirador_' +
                                 tirador +
@@ -10664,6 +12333,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 texto1 +
                                 '.png">'
                         );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
                     }
                     if (tirador == 'Largo') {
                         $('#imagenesArmario2 #imagenesArmario').append(
@@ -10674,6 +12359,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 '_' +
                                 texto1 +
                                 '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
                         );
                     }
 
@@ -10692,6 +12393,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 tirador +
                                 '_derecha.png">'
                         );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
                     }
                 }
 
@@ -10704,13 +12420,3835 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 tirador +
                                 '_izquierda.png">'
                         );
-                    } else {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
                         $('#imagenesArmario2 #imagenesArmario').append(
                             '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
                                 tirador.toUpperCase() +
                                 '/peque_tirador_' +
                                 tirador +
                                 '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+            }
+        }
+
+        if (texto == '8 PUERTAS ASIMETRICAS') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            var input3 = $('#inputPuertas3').val();
+            var input4 = $('#inputPuertas5').val();
+            var input5 = $('#inputPuertas7').val();
+            if (texto1 == 'izquierda') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input5 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+
+            if (texto1 == 'derecha') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input5 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 985px;margin-top: -182px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+            }
+        }
+
+        if (texto == '10 PUERTAS ASIMETRICAS') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            var input3 = $('#inputPuertas3').val();
+            var input4 = $('#inputPuertas5').val();
+            var input5 = $('#inputPuertas7').val();
+            var input6 = $('#inputPuertas9').val();
+            if (texto1 == 'izquierda') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+
+                if (input6 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input5 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+
+            if (texto1 == 'derecha') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input6 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1266px;margin-top: -233px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input5 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+        }
+
+        if (texto == '11 PUERTAS IZQUIERDA') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            var input3 = $('#inputPuertas3').val();
+            var input4 = $('#inputPuertas5').val();
+            var input5 = $('#inputPuertas7').val();
+            var input6 = $('#inputPuertas9').val();
+
+            if (texto1 == 'izquierda') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+
+                if (input6 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input5 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+
+            if (texto1 == 'derecha') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input6 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input5 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+        }
+
+        if (texto == '12 PUERTAS ASIMETRICAS') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            var input3 = $('#inputPuertas3').val();
+            var input4 = $('#inputPuertas5').val();
+            var input5 = $('#inputPuertas7').val();
+            var input6 = $('#inputPuertas9').val();
+            var input7 = $('#inputPuertas11').val();
+            if (texto1 == 'izquierda') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+
+                if (input7 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input6 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input5 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+
+            if (texto1 == 'derecha') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input7 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1545px;margin-top: -286px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+
+                if (input6 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1337px;margin-top: -246px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 775px;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input5 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1056px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
                         );
                     }
                 }
@@ -10722,97 +16260,2107 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var input2 = $('#inputPuertas1').val();
             var input3 = $('#inputPuertas3').val();
             var input4 = $('#inputPuertas5').val();
-            if (input1 == 'Puerta Madera') {
-                if (tirador == 'testa') {
-                    $('#imagenesArmario2 #imagenesArmario').append(
-                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/' +
-                            tirador.toUpperCase() +
-                            '/peque_tirador_' +
-                            tirador +
-                            '_' +
-                            texto1 +
-                            '.png">'
-                    );
-                } else {
-                    $('#imagenesArmario2 #imagenesArmario').append(
-                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
-                            tirador.toUpperCase() +
-                            '/peque_tirador_' +
-                            tirador +
-                            '_' +
-                            texto1 +
-                            '.png">'
-                    );
+            if (texto1 == 'izquierda') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
                 }
-            }
-            if (input2 == 'Puerta Madera') {
-                if (tirador == 'testa') {
-                    $('#imagenesArmario2 #imagenesArmario').append(
-                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
-                            tirador.toUpperCase() +
-                            '/grande_tirador_' +
-                            tirador +
-                            '_' +
-                            texto1 +
-                            '.png">'
-                    );
-                } else {
-                    $('#imagenesArmario2 #imagenesArmario').append(
-                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
-                            tirador.toUpperCase() +
-                            '/grande_tirador_' +
-                            tirador +
-                            '_' +
-                            texto1 +
-                            '.png">'
-                    );
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
                 }
-            }
-            if (input3 == 'Puerta Madera') {
-                if (tirador == 'testa') {
-                    $('#imagenesArmario2 #imagenesArmario').append(
-                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
-                            tirador.toUpperCase() +
-                            '/grande_tirador_' +
-                            tirador +
-                            '_' +
-                            texto1 +
-                            '.png">'
-                    );
-                } else {
-                    $('#imagenesArmario2 #imagenesArmario').append(
-                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
-                            tirador.toUpperCase() +
-                            '/grande_tirador_' +
-                            tirador +
-                            '_' +
-                            texto1 +
-                            '.png">'
-                    );
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
                 }
             }
 
-            if (input4 == 'Puerta Madera') {
-                if (tirador == 'testa') {
-                    $('#imagenesArmario2 #imagenesArmario').append(
-                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
-                            tirador.toUpperCase() +
-                            '/grande_tirador_' +
-                            tirador +
-                            '_' +
-                            texto1 +
-                            '.png">'
-                    );
-                } else {
-                    $('#imagenesArmario2 #imagenesArmario').append(
-                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
-                            tirador.toUpperCase() +
-                            '/grande_tirador_' +
-                            tirador +
-                            '_' +
-                            texto1 +
-                            '.png">'
-                    );
+            if (texto1 == 'derecha') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+        }
+
+        if (texto == '9 PUERTAS IZQUIERDA') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            var input3 = $('#inputPuertas3').val();
+            var input4 = $('#inputPuertas5').val();
+            var input5 = $('#inputPuertas7').val();
+            if (texto1 == 'izquierda') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input5 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+
+            if (texto1 == 'derecha') {
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input5 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="poposition:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 1057px;margin-top: -194px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+        }
+
+        if (texto == '7 PUERTAS DERECHA') {
+            var input1 = $('#inputPuertas0').val();
+            var input2 = $('#inputPuertas1').val();
+            var input3 = $('#inputPuertas3').val();
+            var input4 = $('#inputPuertas5').val();
+            if (texto1 == 'izquierda') {
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                }
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+            }
+
+            if (texto1 == 'derecha') {
+                if (input4 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO PEQUE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/peque_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input1 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+                if (input2 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
+                }
+
+                if (input3 == 'Puerta Madera') {
+                    if (tirador == 'testa') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/tiradores/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+                    if (tirador == 'Largo') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_' +
+                                texto1 +
+                                '.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                    }
+
+                    if (tirador == 'Corto') {
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_izquierda.png">'
+                        );
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;opacity:0.35" src="../../../content/images/TIRADORES FLECHAS/HUECO GRANDE/TIRADOR ' +
+                                tirador.toUpperCase() +
+                                '/grande_tirador_' +
+                                tirador +
+                                '_derecha.png">'
+                        );
+                    }
                 }
             }
         }

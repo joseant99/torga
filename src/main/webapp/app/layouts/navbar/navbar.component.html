@@ -19,24 +19,13 @@
 <div style="float:left;width:100%;top:50px;margin-top: 52px;">				
 	<div id="menuUnico">				
 					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
-	       		 		<li style="margin-top: -20px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-	                    <a  id="noticias" data-toggle="collapse" data-target="#menuNoticias">
+	       		 		<li style="margin-top: -20px;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	                    <a  id="noticias" (click)="open('inicio',false,myModel)">
 	                        <span>
 	                            <span style="color:black;font-size:18px;margin-top: 18px;font-weight: 400;">NOTICIAS</span>
 	                        </span>
 						</a>
 						</li>
-						<div id="menuNoticias" class="collapse">
-						   <ul aria-labelledby="#menuNoticias">
-						     	<li style="list-style: none;">
-		                               
-					                        <span>
-					                            <span style="font-size:16px;">TORGA</span>
-					                        </span>
-										
-								</li>
-							</ul>
-					</div>
 					</ul> 
 
 	   <ul style="list-style:none;margin-left:-40px;margin-top:30px">
@@ -50,78 +39,78 @@
 													</li>
 													<div id="torgaTarifaComedores" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">
                   												<li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,8)" routerLinkActive="active" >
-										                                <span style="font-weight: 400;">Módulos Bajos</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,8,'modulosBajos')" routerLinkActive="active" >
+										                                <span style="font-weight: 400;" id="modulosBajos">M&oacute;dulos Bajos</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-aparadores',false,myModel1,11)" routerLinkActive="active" >
-										                                <span style="font-weight: 400;">Aparadores</span>
+										                            <a (click)="open1('productos-aparadores',false,myModel1,11,'aparadoresSpan')" routerLinkActive="active" >
+										                                <span style="font-weight: 400;" id="aparadoresSpan">Aparadores</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,12)">
-										                                <span style="font-weight: 400;">Vitrinas</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,12,'vitrinasSpan')">
+										                                <span style="font-weight: 400;" id="vitrinasSpan">Vitrinas</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-singulares',false,myModel1,13)">
-										                                <span style="font-weight: 400;">Singulares</span>
+										                            <a (click)="open1('productos-singulares',false,myModel1,13,'singularesSpan')">
+										                                <span style="font-weight: 400;" id="singularesSpan">Singulares</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,14)">
-										                                <span style="font-weight: 400;">Escritorios</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,14,'escritoriosSpan')">
+										                                <span style="font-weight: 400;" id="escritoriosSpan">Escritorios</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,2)" >
-										                                <span style="font-weight: 400;">Sistemas de Apoyo</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,2,'apoyoSistemaSpan1')" >
+										                                <span style="font-weight: 400;" id="apoyoSistemaSpan1">Sistemas de Apoyo</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,15)">
-										                                <span style="font-weight: 400;">Estanterias colgantes y estantes</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,15,'estantColgantesSpan')">
+										                                <span style="font-weight: 400;" id="estantColgantesSpan">Estanter&iacute;as colgantes y estantes</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,16)" >
-										                                <span style="font-weight: 400;">Colgantes Verticales</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,16,'colVerticalesSpan')" >
+										                                <span style="font-weight: 400;" id="colVerticalesSpan">Colgantes Verticales</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,17)">
-										                                <span style="font-weight: 400;">Colgantes Verticales Estantería</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,17,'colVertEstant')">
+										                                <span style="font-weight: 400;" id="colVertEstant">Colgantes Verticales Estanter&iacute;a</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,18)">
-										                                <span style="font-weight: 400;">Colgantes Horizontales</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,18,'colHorizontales')">
+										                                <span style="font-weight: 400;" id="colHorizontales">Colgantes Horizontales</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,19)">
-										                                <span style="font-weight: 400;">Estanterías</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,19,'estanteriasSpan')">
+										                                <span style="font-weight: 400;" id="estanteriasSpan">Estanter&iacute;as</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,20)">
-										                                <span style="font-weight: 400;">Suplementos TV</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,20,'suplementosTv')">
+										                                <span style="font-weight: 400;" id="suplementosTv">Suplementos TV</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,21)">
-										                                <span style="font-weight: 400;">Paneles</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,21,'panelesSpan')">
+										                                <span style="font-weight: 400;" id="panelesSpan">Paneles</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,22)">
-										                                <span style="font-weight: 400;">Mesas</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,22,'mesasSpan')">
+										                                <span style="font-weight: 400;" id="mesasSpan">Mesas</span>
 										                            </a>
 											                    </li>
 											                    <li style="margin-top:10px;padding-bottom: 10px;">
-										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,12)">
-										                                <span style="font-weight: 400;">Composiciones</span>
+										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,12,'composicionesSpan1')">
+										                                <span style="font-weight: 400;" id="composicionesSpan1">Composiciones</span>
 										                            </a>
 											                    </li>
 												 	</div>
@@ -139,41 +128,41 @@
 													
 														<div id="torgaTarifaDormitorios" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">
 														     	<li style="margin-top:10px;margin-bottom:10px">
-										                            <a (click)="open1('productos-dormitorio/cabeceros',false,myModel1,4)">
-										                                <span style="font-weight: 400;">Cabeceros</span>
+										                            <a (click)="open1('productos-dormitorio/cabeceros',false,myModel1,4,'cabecerosSpan')">
+										                                <span style="font-weight: 400;" id="cabecerosSpan">Cabeceros</span>
 										                            </a>
 											                        </li>
 											                        
 											                        <li style="margin-top:10px;margin-bottom:10px">
-											                            <a (click)="open1('productos-dormitorio/categoria/1',false,myModel1,1)">
-											                                <span style="font-weight: 400;">Mesitas</span>
+											                            <a (click)="open1('productos-dormitorio/categoria/1',false,myModel1,1,'mesitasSpan')">
+											                                <span style="font-weight: 400;" id="mesitasSpan">Mesitas</span>
 											                            </a>
 											                        </li>
 											                        
 											                    
 											                        <li style="margin-top:10px;margin-bottom:10px">
-											                            <a (click)="open1('productos-dormitorio/chinfonier',false,myModel1,3)">
-											                                <span style="font-weight: 400;">Chifonieres</span>
+											                            <a (click)="open1('productos-dormitorio/chinfonier',false,myModel1,3,'chifonieresSpan')">
+											                                <span style="font-weight: 400;" id="chifonieresSpan">Chifonieres</span>
 											                            </a>
 											                        </li>
 											                        <li style="margin-top:10px;margin-bottom:10px">
-											                            <a (click)="open1('productos-dormitorio/apoyo',false,myModel1,2)" >
-											                                <span style="font-weight: 400;">Sistemas de apoyo</span>
+											                            <a (click)="open1('productos-dormitorio/apoyo',false,myModel1,2,'apoyoSistema2')" >
+											                                <span style="font-weight: 400;" id="apoyoSistema2">Sistemas de apoyo</span>
 											                            </a>
 											                        </li>
 											                         <li style="margin-top:10px;margin-bottom:10px">
-											                            <a (click)="open1('productos-dormitorio/canape',false,myModel1,5)">
-											                                <span style="font-weight: 400;">Ba&ntilde;eras y canapes</span>
+											                            <a (click)="open1('productos-dormitorio/canape',false,myModel1,5,'banerascanapes')">
+											                                <span style="font-weight: 400;" id="banerascanapes">Ba&ntilde;eras y canapes</span>
 											                            </a>
 											                        </li>
 											                        <li style="margin-top:10px;margin-bottom:10px">
-											                            <a routerLink="composicion-ver"  routerLinkActive="active" >
-											                                <span style="font-weight: 400;">Composiciones</span>
+											                            <a (click)="open('composicion-ver',false,myModel)">
+											                                <span style="font-weight: 400;" id="composicionesDormitorio2">Composiciones</span>
 											                            </a>
 											                        </li>
 											                        <li style="margin-top:10px;padding-bottom: 10px;">
-											                            <a (click)="open1('armarios-dormitorio',false,myModel1,9)">
-											                                <span style="font-weight: 400;">Armarios</span>
+											                            <a (click)="open1('armarios-dormitorio',false,myModel1,9,'armariosSpan')">
+											                                <span style="font-weight: 400;" id="armariosSpan">Armarios</span>
 											                            </a>
 											                        </li>
 									         
@@ -726,7 +715,7 @@
     </div>
 </nav>
 
-<ng-template #myModel let-modal>
+<ng-template #myModel let-modal class="modalInicio">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">&#191;Desea abandonar la pagina?</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -740,7 +729,7 @@
   </div>
 </ng-template>
 
-<ng-template #myModel1 let-modal>
+<ng-template #myModel1 let-modal style="margin-top: 320px;">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">&#191;Desea abandonar la pagina?</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">

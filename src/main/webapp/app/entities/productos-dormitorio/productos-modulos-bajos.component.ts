@@ -174,10 +174,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
+        $('#botonEliminar').attr('class', 'displayBoton');
     }
 
     public open(producto, productoNombre) {
         $('#botonEliminar').removeAttr('class');
+        $('#botonApoyoNuevo').empty();
         for (let i = 1; i <= 14; i++) {
             for (let u = 0; u < 14; u++) {
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
@@ -277,9 +279,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor1').append(
                             '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
@@ -287,10 +287,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 '" id="imagenDimensiones" class="' +
                                 datos[i]['id'] +
                                 '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
-                        );
-
-                        $('.dimensionesColor1').append(
-                            '<div id="interiorMuebles" onclick="interior(1)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                         );
                     }
                     if (cont == 1) {
@@ -306,9 +302,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor2').append(
                             '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
@@ -316,9 +310,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
                                 '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
-                        );
-                        $('.dimensionesColor2').append(
-                            '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                         );
                     }
                     if (cont == 2) {
@@ -334,9 +325,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor3').append(
                             '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
@@ -344,9 +333,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
                                 '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
-                        );
-                        $('.dimensionesColor3').append(
-                            '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                         );
                     }
                     if (cont == 3) {
@@ -362,9 +348,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor4').append(
                             '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
@@ -372,9 +356,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
                                 '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
-                        );
-                        $('.dimensionesColor4').append(
-                            '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                         );
                     }
                     if (cont == 4) {
@@ -390,9 +371,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor5').append(
                             '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
@@ -400,9 +379,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
                                 '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
-                        );
-                        $('.dimensionesColor5').append(
-                            '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                         );
                     }
                     if (cont == 5) {
@@ -418,9 +394,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor6').append(
                             '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
@@ -428,9 +402,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
                                 '"width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
-                        );
-                        $('.dimensionesColor6').append(
-                            '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                         );
                     }
                     cont++;
@@ -467,6 +438,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
     public open1(producto1) {
         $('#botonEliminar').removeAttr('class');
+        $('#botonApoyoNuevo').empty();
         for (let i = 1; i <= 14; i++) {
             for (let u = 0; u < 14; u++) {
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
@@ -564,9 +536,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor1').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -574,10 +544,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
                                     '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
-                            );
-
-                            $('.dimensionesColor1').append(
-                                '<div id="interiorMuebles" onclick="interior(1)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 1) {
@@ -588,15 +554,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
-
                             $('.dimensionesColor2').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor2').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -604,9 +567,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
-                            );
-                            $('.dimensionesColor2').append(
-                                '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 2) {
@@ -622,9 +582,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor3').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -632,9 +590,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
-                            );
-                            $('.dimensionesColor3').append(
-                                '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 3) {
@@ -650,9 +605,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor4').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -660,9 +613,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
-                            );
-                            $('.dimensionesColor4').append(
-                                '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 4) {
@@ -678,9 +628,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor5').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -688,9 +636,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
-                            );
-                            $('.dimensionesColor5').append(
-                                '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 5) {
@@ -706,9 +651,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor6').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -716,9 +659,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '"width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
-                            );
-                            $('.dimensionesColor6').append(
-                                '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         cont++;
@@ -752,9 +692,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor1').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -762,10 +700,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
                                     '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
-                            );
-
-                            $('.dimensionesColor1').append(
-                                '<div id="interiorMuebles" onclick="interior(1)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 1) {
@@ -776,15 +710,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
-
                             $('.dimensionesColor2').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor2').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -792,9 +723,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
-                            );
-                            $('.dimensionesColor2').append(
-                                '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 2) {
@@ -810,9 +738,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor3').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -820,9 +746,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
-                            );
-                            $('.dimensionesColor3').append(
-                                '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 3) {
@@ -838,9 +761,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor4').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -848,9 +769,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="333px" style=" opacity: 0.7;"></a>'
-                            );
-                            $('.dimensionesColor4').append(
-                                '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 4) {
@@ -866,9 +784,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor5').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -876,9 +792,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
-                            );
-                            $('.dimensionesColor5').append(
-                                '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         if (cont == 5) {
@@ -894,9 +807,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor6').append(
                                 '<a href="#acabados"><img  src="data:image/gif;base64,' +
@@ -904,9 +815,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '"width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
-                            );
-                            $('.dimensionesColor6').append(
-                                '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
                             );
                         }
                         cont++;
@@ -1037,6 +945,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
                                 var imagen = value[4]['imagen'];
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1048,14 +962,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[4]['nombre'] +
                                         '-' +
                                         value[0] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
-                                );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '</p>'
                                 );
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
@@ -1088,6 +995,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#ProductosCargados1').css({ display: 'none' });
                             var imagen = value[4]['imagen'];
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
+                            $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                            $('.prodDiv' + contador).append(
+                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                    imagen +
+                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                            );
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
                                     contador +
@@ -1097,14 +1010,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     value[5] +
                                     '" style="text-align:center">' +
                                     value[4]['nombre'] +
-                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                    value[3] +
-                                    '</strong>&euro;</p>'
-                            );
-                            $('.prodDiv' + contador).append(
-                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                    imagen +
-                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                    '</p>'
                             );
                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                             contador++;
@@ -1134,6 +1040,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1143,14 +1055,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
-                                );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '</p>'
                                 );
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
@@ -1210,6 +1115,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
                                 var imagen = value[4]['imagen'];
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1221,14 +1132,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[4]['nombre'] +
                                         '-' +
                                         value[0] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
-                                );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '</p>'
                                 );
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
@@ -1258,6 +1162,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#ProductosCargados1').css({ display: 'none' });
                             var imagen = value[4]['imagen'];
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
+                            $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                            $('.prodDiv' + contador).append(
+                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                    imagen +
+                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                            );
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
                                     contador +
@@ -1267,14 +1177,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     value[5] +
                                     '" style="text-align:center">' +
                                     value[4]['nombre'] +
-                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                    value[3] +
-                                    '</strong>&euro;</p>'
-                            );
-                            $('.prodDiv' + contador).append(
-                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                    imagen +
-                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                    '</p>'
                             );
                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                             contador++;
@@ -1296,6 +1199,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $.each(data['body'], function(index, value) {
                             var imagen = value[4]['imagen'];
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
+                            $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                            $('.prodDiv' + contador).append(
+                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                    imagen +
+                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                            );
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
                                     contador +
@@ -1305,14 +1214,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     value[5] +
                                     '" style="text-align:center">' +
                                     value[4]['nombre'] +
-                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                    value[3] +
-                                    '</strong>&euro;</p>'
-                            );
-                            $('.prodDiv' + contador).append(
-                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                    imagen +
-                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                    '</p>'
                             );
                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                             contador++;
@@ -1371,6 +1273,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
                                 var imagen = value[4]['imagen'];
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1380,14 +1288,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
-                                );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '</p>'
                                 );
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
@@ -1418,6 +1319,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1427,14 +1334,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
-                                );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '</p>'
                                 );
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
@@ -1477,6 +1377,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                         );
                                         var imagen = value[4]['imagen'];
+                                        $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                        $('.prodDiv' + contador).append(
+                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                                imagen +
+                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        );
                                         $('.prodDiv' + contador).append(
                                             '<p id="nombreMesita' +
                                                 contador +
@@ -1488,14 +1394,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                                 value[4]['nombre'] +
                                                 '-' +
                                                 value[0] +
-                                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                                value[3] +
-                                                '</strong>&euro;</p>'
-                                        );
-                                        $('.prodDiv' + contador).append(
-                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                                imagen +
-                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                                '</p>'
                                         );
                                         $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                         contador++;
@@ -1520,9 +1419,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         var imagen = value[4]['imagen'];
                                         $('#ProductosCargados').css({ display: 'none' });
                                         $('#ProductosCargados1').css({ display: 'none' });
-
+                                        $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
                                         $('#prod' + contador).append(
                                             '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
+                                        );
+
+                                        $('.prodDiv' + contador).append(
+                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                                imagen +
+                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
                                         );
                                         $('.prodDiv' + contador).append(
                                             '<p id="nombreMesita' +
@@ -1533,14 +1438,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                                 value[5] +
                                                 '" style="text-align:center">' +
                                                 value[4]['nombre'] +
-                                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                                value[3] +
-                                                '</strong>&euro;</p>'
-                                        );
-                                        $('.prodDiv' + contador).append(
-                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                                imagen +
-                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                                '</p>'
                                         );
                                         $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                         contador++;
@@ -1569,6 +1467,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1578,15 +1482,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
+                                        '</p>'
                                 );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                );
+
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                             });
@@ -1625,11 +1523,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         idAux[idAux.length] = value[4]['id'];
                                         $('#ProductosCargados').css({ display: 'none' });
                                         $('#ProductosCargados1').css({ display: 'none' });
-
+                                        $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
                                         $('#prod' + contador).append(
                                             '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                         );
                                         var imagen = value[4]['imagen'];
+
+                                        $('.prodDiv' + contador).append(
+                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                                imagen +
+                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        );
                                         $('.prodDiv' + contador).append(
                                             '<p id="nombreMesita' +
                                                 contador +
@@ -1639,14 +1543,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                                 value[5] +
                                                 '" style="text-align:center">' +
                                                 value[4]['nombre'] +
-                                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                                value[3] +
-                                                '</strong>&euro;</p>'
-                                        );
-                                        $('.prodDiv' + contador).append(
-                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                                imagen +
-                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                                '</p>'
                                         );
                                         $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                         contador++;
@@ -1679,6 +1576,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             $('#prod' + contador).append(
                                                 '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                             );
+
+                                            $('.prodDiv' + contador).append(
+                                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                                    imagen +
+                                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                            );
+                                            $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
                                             $('.prodDiv' + contador).append(
                                                 '<p id="nombreMesita' +
                                                     contador +
@@ -1688,14 +1592,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                                     value[5] +
                                                     '" style="text-align:center">' +
                                                     value[4]['nombre'] +
-                                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                                    value[3] +
-                                                    '</strong>&euro;</p>'
-                                            );
-                                            $('.prodDiv' + contador).append(
-                                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                                    imagen +
-                                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                                    '</p>'
                                             );
                                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                             contador++;
@@ -1883,6 +1780,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
             this.productosDormitorioService.categoria(2).subscribe(data => {
                 for (let w = 0; w < data.body['length']; w++) {
+                    $('#modalApoyo #apoyoModal' + w).empty();
                     $('#modalApoyo #apoyoModal' + w).append(
                         '<img  src="data:image/gif;base64,' +
                             data.body[w]['imagen'] +
@@ -1899,6 +1797,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     );
                 }
             });
+            for (let i = 1; i <= 14; i++) {
+                for (let k = 0; k < 14; k++) {
+                    $('#myModalColores' + i + ' #acabadoImagen' + k).empty();
+                }
+            }
+
+            $('#botonApoyoNuevo').empty();
             $('#botonApoyoNuevo').append(
                 '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
             );
@@ -2223,7 +2128,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     $('#acabados #imagenAcabadoPrincipal').append(
                                         '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                             imagen +
-                                            '" id="imagenDimensiones" width="500px" height="333px" style=" opacity: 0.7;margin-left:150px;max-height: 333px;max-width: 500px;">'
+                                            '" id="imagenDimensiones" class="imagenAcabadoPrincipalImg" width="600px" height="433px" style=" opacity: 0.7;max-height: 433px;max-width: 600px;">'
                                     );
                                 }
 
@@ -2346,7 +2251,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     $('#acabados #imagenAcabadoPrincipal').append(
                                         '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                             imagen +
-                                            '" id="imagenDimensiones" style=" opacity: 0.7;margin-left:150px;max-height: 400px;max-width: 400px;">'
+                                            '" id="imagenDimensiones" style=" opacity: 0.7;max-height: 433px;max-width: 600px;">'
                                     );
                                 }
 
@@ -2360,7 +2265,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             i +
                                             '" class="' +
                                             value['acabados'][m]['id'] +
-                                            '" height="160px" width="280px" style=" opacity: 0.7;">'
+                                            '" height="160px" class="imagenAcabadoPrincipalImg" width="280px" style=" opacity: 0.7;">'
                                     );
                                     $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
                                         '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
@@ -2467,9 +2372,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 if (contador == 1) {
                                     $('#acabados').append('<div style="height: 400px;" id="imagenAcabadoPrincipal"></div>');
                                     $('#acabados #imagenAcabadoPrincipal').append(
-                                        '<img id="imagenAcabado" height="333px" width="500px" src="data:image/gif;base64,' +
+                                        '<img id="imagenAcabado" height="433px" width="600px" src="data:image/gif;base64,' +
                                             imagen +
-                                            '" id="imagenDimensiones" style=" opacity: 0.7;margin-left:150px;max-height: 333px;max-width: 500px;">'
+                                            '" id="imagenDimensiones" class="imagenAcabadoPrincipalImg" style=" opacity: 0.7;max-height: 433px;max-width: 600px;">'
                                     );
                                 }
 
@@ -3957,6 +3862,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 }
             });
         this.sistemasApoyo = sistemasApoyo;
+
+        this.medidasEspecialesService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    especiales[i] = data.body[i];
+                }
+            });
+        this.especiales = especiales;
 
         for (let i = 1; i <= 100; i++) {
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));

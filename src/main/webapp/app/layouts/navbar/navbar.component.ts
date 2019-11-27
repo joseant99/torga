@@ -2866,8 +2866,38 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             }
         }
     }
-    open1(ruta, bool, content, id) {
+    open1(ruta, bool, content, id, nombreId) {
         var prod = $('#nombreMesita').text();
+        $('#' + nombreId).css({ 'font-weight': 'bold' });
+        var idsArray = [];
+        idsArray[0] = 'composicionesSpan1';
+        idsArray[1] = 'mesasSpan';
+        idsArray[2] = 'panelesSpan';
+        idsArray[3] = 'suplementosTv';
+        idsArray[4] = 'estanteriasSpan';
+        idsArray[5] = 'colHorizontales';
+        idsArray[6] = 'colVertEstant';
+        idsArray[7] = 'colVerticalesSpan';
+        idsArray[8] = 'estantColgantesSpan';
+        idsArray[9] = 'apoyoSistemaSpan1';
+        idsArray[10] = 'escritoriosSpan';
+        idsArray[11] = 'singularesSpan';
+        idsArray[12] = 'vitrinasSpan';
+        idsArray[13] = 'aparadoresSpan';
+        idsArray[14] = 'modulosBajos';
+        idsArray[15] = 'armariosSpan';
+        idsArray[16] = 'banerascanapes';
+        idsArray[17] = 'apoyoSistema2';
+        idsArray[18] = 'chifonieresSpan';
+        idsArray[19] = 'mesitasSpan';
+        idsArray[20] = 'cabecerosSpan';
+
+        for (let x = 0; x < 21; x++) {
+            if (idsArray[x] != nombreId) {
+                $('#' + idsArray[x]).css({ 'font-weight': 'normal' });
+            }
+        }
+
         if (prod != '') {
             if (bool == false) {
                 this.ruta = ruta;
@@ -3179,6 +3209,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     logout() {
+        $('#menuPrincipal').css({ display: 'none' });
+        $('#botonEsconder').removeAttr('onclick');
+        $('#botonEsconder').attr('onclick', 'apareceMenu()');
         this.collapseNavbar();
         this.loginService.logout();
         this.router.navigate(['']);
