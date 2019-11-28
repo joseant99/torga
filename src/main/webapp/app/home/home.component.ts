@@ -20,6 +20,8 @@ import { RepresenTorgaService } from '../entities/represen-torga/represen-torga.
 import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
 import { RepresentanteTiendaService } from '../entities/representante-tienda/representante-tienda.service';
 import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
+import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
+import { PrecioTiendaService } from '../entities/precio-tienda/precio-tienda.service';
 
 @Component({
     selector: 'jhi-home',
@@ -44,6 +46,7 @@ export class HomeComponent implements OnInit {
         protected datosUsuarioService: DatosUsuarioService,
         protected provinciasService: ProvinciasService,
         protected municipiosService: MunicipiosService,
+        protected precioTiendaService: PrecioTiendaService,
         protected representanteTiendaService: RepresentanteTiendaService,
         protected represenTorgaService: RepresenTorgaService,
         private eventManager: JhiEventManager,
@@ -102,6 +105,7 @@ export class HomeComponent implements OnInit {
                         cont++;
                     }
                 }
+
                 if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {

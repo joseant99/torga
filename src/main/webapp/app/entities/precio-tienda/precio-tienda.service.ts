@@ -35,4 +35,7 @@ export class PrecioTiendaService {
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
+    findBus(id: number): Observable<EntityArrayResponseType> {
+        return this.http.get<IPrecioTienda[]>(`${this.resourceUrl}-buscado/${id}`, { observe: 'response' });
+    }
 }

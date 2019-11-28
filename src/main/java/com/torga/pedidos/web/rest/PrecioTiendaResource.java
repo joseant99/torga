@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -95,6 +95,22 @@ public class PrecioTiendaResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/precio-tiendas");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
+    
+    
+    /**
+     * GET  /precio-tiendas : get all the precioTiendas.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of precioTiendas in body
+     */
+    @GetMapping("/precio-tiendas-buscado/{id}")
+    @Timed
+    public ResponseEntity<Collection<PrecioTienda>> getAllPrecioTiendasBus(@PathVariable Long id) {
+        log.debug("REST request to get a page of PrecioTiendas");
+        Collection<PrecioTienda> page = precioTiendaRepository.findProducto(id);
+        return ResponseEntity.ok().body(page);
+    }
+    
 
     /**
      * GET  /precio-tiendas/:id : get the "id" precioTienda.

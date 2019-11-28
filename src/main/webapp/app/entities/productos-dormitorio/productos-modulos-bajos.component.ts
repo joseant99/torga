@@ -56,6 +56,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     medidasModal: any;
     acaProd: IAcaProd;
     iluminacion: any;
+    precioPunto: any;
     acabados: any;
     todosAcabados: any;
     acaProdsCar: any;
@@ -870,6 +871,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('#productoCalculadora1 #datos1').empty();
         $('#nombreMesita').empty();
         $('#precioDimension').empty();
+        var precioPunto = this.precioPunto[0];
         $('#imagenAcabadoPrincipal').empty();
         $('#total').empty();
         $('.dimensionesColor1').empty();
@@ -970,7 +972,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('.prodDiv' + contador).append(
                                     '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                 );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
@@ -988,8 +990,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 var precio1 = value[3];
                                 for (let r = 0; r < precio['length']; r++) {
                                     if (precio[r][2] == value[4]['id']) {
-                                        var cuenta = precio[r][2] / 100;
+                                        var cuenta = precio[r][1] / 100;
                                         cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
                                         precio1 = precio1 * cuenta;
                                         $('.prodDiv' + contador).append(
                                             '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1032,7 +1035,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('.prodDiv' + contador).append(
                                 '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                     imagen +
-                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                    '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                             );
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
@@ -1048,8 +1051,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             var precio1 = value[3];
                             for (let r = 0; r < precio['length']; r++) {
                                 if (precio[r][2] == value[4]['id']) {
-                                    var cuenta = precio[r][2] / 100;
+                                    var cuenta = precio[r][1] / 100;
                                     cuenta = cuenta + 1;
+                                    precio1 = precio1 * precioPunto;
                                     precio1 = precio1 * cuenta;
                                     $('.prodDiv' + contador).append(
                                         '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1088,7 +1092,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('.prodDiv' + contador).append(
                                     '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                 );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
@@ -1104,8 +1108,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 var precio1 = value[3];
                                 for (let r = 0; r < precio['length']; r++) {
                                     if (precio[r][2] == value[4]['id']) {
-                                        var cuenta = precio[r][2] / 100;
+                                        var cuenta = precio[r][1] / 100;
                                         cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
                                         precio1 = precio1 * cuenta;
                                         $('.prodDiv' + contador).append(
                                             '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1180,7 +1185,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('.prodDiv' + contador).append(
                                     '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                 );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
@@ -1198,8 +1203,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 var precio1 = value[3];
                                 for (let r = 0; r < precio['length']; r++) {
                                     if (precio[r][2] == value[4]['id']) {
-                                        var cuenta = precio[r][2] / 100;
+                                        var cuenta = precio[r][1] / 100;
                                         cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
                                         precio1 = precio1 * cuenta;
                                         $('.prodDiv' + contador).append(
                                             '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1238,7 +1244,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('.prodDiv' + contador).append(
                                 '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                     imagen +
-                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                    '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                             );
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
@@ -1254,8 +1260,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             var precio1 = value[3];
                             for (let r = 0; r < precio['length']; r++) {
                                 if (precio[r][2] == value[4]['id']) {
-                                    var cuenta = precio[r][2] / 100;
+                                    var cuenta = precio[r][1] / 100;
                                     cuenta = cuenta + 1;
+                                    precio1 = precio1 * precioPunto;
                                     precio1 = precio1 * cuenta;
                                     $('.prodDiv' + contador).append(
                                         '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1286,7 +1293,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('.prodDiv' + contador).append(
                                 '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                     imagen +
-                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                    '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                             );
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
@@ -1302,8 +1309,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             var precio1 = value[3];
                             for (let r = 0; r < precio['length']; r++) {
                                 if (precio[r][2] == value[4]['id']) {
-                                    var cuenta = precio[r][2] / 100;
+                                    var cuenta = precio[r][1] / 100;
                                     cuenta = cuenta + 1;
+                                    precio1 = precio1 * precioPunto;
                                     precio1 = precio1 * cuenta;
                                     $('.prodDiv' + contador).append(
                                         '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1374,7 +1382,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('.prodDiv' + contador).append(
                                     '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                 );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
@@ -1390,8 +1398,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 var precio1 = value[3];
                                 for (let r = 0; r < precio['length']; r++) {
                                     if (precio[r][2] == value[4]['id']) {
-                                        var cuenta = precio[r][2] / 100;
+                                        var cuenta = precio[r][1] / 100;
                                         cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
                                         precio1 = precio1 * cuenta;
                                         $('.prodDiv' + contador).append(
                                             '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1431,7 +1440,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('.prodDiv' + contador).append(
                                     '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                 );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
@@ -1447,8 +1456,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 var precio1 = value[3];
                                 for (let r = 0; r < precio['length']; r++) {
                                     if (precio[r][2] == value[4]['id']) {
-                                        var cuenta = precio[r][2] / 100;
+                                        var cuenta = precio[1][2] / 100;
                                         cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
                                         precio1 = precio1 * cuenta;
                                         $('.prodDiv' + contador).append(
                                             '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1500,7 +1510,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         $('.prodDiv' + contador).append(
                                             '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                                 imagen +
-                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                                '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                         );
                                         $('.prodDiv' + contador).append(
                                             '<p id="nombreMesita' +
@@ -1518,8 +1528,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         var precio1 = value[3];
                                         for (let r = 0; r < precio['length']; r++) {
                                             if (precio[r][2] == value[4]['id']) {
-                                                var cuenta = precio[r][2] / 100;
+                                                var cuenta = precio[r][1] / 100;
                                                 cuenta = cuenta + 1;
+                                                precio1 = precio1 * precioPunto;
                                                 precio1 = precio1 * cuenta;
                                                 $('.prodDiv' + contador).append(
                                                     '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1557,7 +1568,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         $('.prodDiv' + contador).append(
                                             '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                                 imagen +
-                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                                '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                         );
                                         $('.prodDiv' + contador).append(
                                             '<p id="nombreMesita' +
@@ -1573,8 +1584,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         var precio1 = value[3];
                                         for (let r = 0; r < precio['length']; r++) {
                                             if (precio[r][2] == value[4]['id']) {
-                                                var cuenta = precio[r][2] / 100;
+                                                var cuenta = precio[r][1] / 100;
                                                 cuenta = cuenta + 1;
+                                                precio1 = precio1 * precioPunto;
                                                 precio1 = precio1 * cuenta;
                                                 $('.prodDiv' + contador).append(
                                                     '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1612,7 +1624,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('.prodDiv' + contador).append(
                                     '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                 );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
@@ -1628,8 +1640,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 var precio1 = value[3];
                                 for (let r = 0; r < precio['length']; r++) {
                                     if (precio[r][2] == value[4]['id']) {
-                                        var cuenta = precio[r][2] / 100;
+                                        var cuenta = precio[r][1] / 100;
                                         cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
                                         precio1 = precio1 * cuenta;
                                         $('.prodDiv' + contador).append(
                                             '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1683,7 +1696,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         $('.prodDiv' + contador).append(
                                             '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                                 imagen +
-                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                                '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                         );
                                         $('.prodDiv' + contador).append(
                                             '<p id="nombreMesita' +
@@ -1699,8 +1712,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         var precio1 = value[3];
                                         for (let r = 0; r < precio['length']; r++) {
                                             if (precio[r][2] == value[4]['id']) {
-                                                var cuenta = precio[r][2] / 100;
+                                                var cuenta = precio[r][1] / 100;
                                                 cuenta = cuenta + 1;
+                                                precio1 = precio1 * precioPunto;
                                                 precio1 = precio1 * cuenta;
                                                 $('.prodDiv' + contador).append(
                                                     '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -1742,7 +1756,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             $('.prodDiv' + contador).append(
                                                 '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                                     imagen +
-                                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                                    '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                             );
                                             $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
                                             $('.prodDiv' + contador).append(
@@ -1759,8 +1773,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             var precio1 = value[3];
                                             for (let r = 0; r < precio['length']; r++) {
                                                 if (precio[r][2] == value[4]['id']) {
-                                                    var cuenta = precio[r][2] / 100;
+                                                    var cuenta = precio[r][1] / 100;
                                                     cuenta = cuenta + 1;
+                                                    precio1 = precio1 * precioPunto;
                                                     precio1 = precio1 * cuenta;
                                                     $('.prodDiv' + contador).append(
                                                         '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
@@ -3810,7 +3825,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var productos = [];
         var apoyos = [];
         var cont = 0;
-
+        var precioPunto = this.precioPunto[0];
         var precio = this.precioTiendaProductosService.todos;
         console.log(precio);
         var todos = this.productosDormitorioService.todos;
@@ -3837,6 +3852,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         var cuenta = precio[q][1] / 100;
                                         var cuenta = cuenta + 1;
                                         var precio1 = prod[q]['precio'];
+                                        precio1 = precio1 * precioPunto;
                                         precio1 = precio1 * cuenta;
                                         prod[q]['precio'] = precio1.toFixed(2);
                                     }
@@ -3869,6 +3885,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             var cuenta = precio[q][1] / 100;
                                             var cuenta = cuenta + 1;
                                             var precio1 = prod[q]['precio'];
+                                            precio1 = precio1 * precioPunto;
                                             precio1 = precio1 * cuenta;
                                             prod[q]['precio'] = precio1.toFixed(2);
                                         }
@@ -3925,7 +3942,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             this.currentAccount = account;
         });
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-
+        this.precioTiendaService.findBus(tienda.id).subscribe(data => {
+            this.precioPunto = data.body;
+        });
         this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
             this.precioTiendaProductosService.todos = data.body;
             this.loadAll();
