@@ -153,6 +153,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('.dimensionesColor1').empty();
         $('.dimensionesColor2').empty();
         $('.dimensionesColor3').empty();
+        $('#botonCalculadora').attr('class', 'displayBoton');
         $('.dimensionesColor4').empty();
         $('.dimensionesColor5').empty();
         $('.dimensionesColor6').empty();
@@ -3196,6 +3197,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 contador++;
             }
         }
+
         var contadorProd = contador;
         var contadorDimen = contador;
         var contAca = 0;
@@ -3330,50 +3332,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 }
             }
         }
-        $('#productoCalculadora1 #precios1').empty();
-        $('#productoCalculadora1 #precioCalculado1').empty();
-        $('#productoCalculadora1 #datos1').empty();
-        $('#nombreMesita').empty();
-        $('#precioDimension').empty();
-        $('#imagenAcabadoPrincipal').empty();
-        $('#total').empty();
-        $('.dimensionesColor1').empty();
-        $('.dimensionesColor2').empty();
-        $('.dimensionesColor3').empty();
-        $('.dimensionesColor4').empty();
-        $('.dimensionesColor5').empty();
-        $('.dimensionesColor6').empty();
-        $('.dimensionesColor1').css({ 'background-color': 'white' });
-        $('.dimensionesColor2').css({ 'background-color': 'white' });
-        $('.dimensionesColor3').css({ 'background-color': 'white' });
-        $('.dimensionesColor4').css({ 'background-color': 'white' });
-        $('.dimensionesColor5').css({ 'background-color': 'white' });
-        $('.dimensionesColor6').css({ 'background-color': 'white' });
-
-        $('.productosColor107').css({ 'background-color': 'white' });
-        $('.productosColor108').css({ 'background-color': 'white' });
-        $('.productosColor109').css({ 'background-color': 'white' });
-        $('.productosColor110').css({ 'background-color': 'white' });
-        $('.productosColor111').css({ 'background-color': 'white' });
-        $('.productosColor112').css({ 'background-color': 'white' });
-        $('.productosColor113').css({ 'background-color': 'white' });
-        $('.productosColor114').css({ 'background-color': 'white' });
-        $('.productosColor115').css({ 'background-color': 'white' });
-        $('.productosColor116').css({ 'background-color': 'white' });
-        $('.productosColor117').css({ 'background-color': 'white' });
-        $('.productosColor118').css({ 'background-color': 'white' });
-        $('.productosColor119').css({ 'background-color': 'white' });
-        $('#imagenAcabado').remove();
-        $('#medidas').css({ display: 'none' });
-        $('#acabado').css({ display: 'none' });
-        $('.productosColor').css({ 'background-color': 'white' });
-        $('#nombreApoyoTitulo').css({ display: 'none' });
-        for (let i = 1; i <= 5; i++) {
-            $('.apoyoCogido' + i).empty();
-        }
-        for (let i = 1; i <= 15; i++) {
-            $('#aca1' + i).empty();
-        }
+        this.borrarProdCalculadora();
     }
 
     public cargarComposicion() {
