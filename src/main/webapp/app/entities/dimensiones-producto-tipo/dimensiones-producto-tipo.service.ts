@@ -81,4 +81,8 @@ export class DimensionesProductoTipoService {
     findDimensionNombre(id: any): Observable<EntityResponseType> {
         return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-buscado-nombre/${id}`, { observe: 'response' });
     }
+
+    findPrecio(): Observable<EntityResponseType> {
+        return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-filtrado-precio`, { observe: 'response' });
+    }
 }

@@ -126,9 +126,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
     public borrarProdCalculadora() {
         $('#productoCalculadora1 #precios1').empty();
+        $('#euroCalculadora').attr('style');
+        $('#euroCalculadora').css({ display: 'none' });
         $('#productoCalculadora1 #precioCalculado1').empty();
         $('#productoCalculadora1 #datos1').empty();
         $('#nombreMesita').empty();
+        $('#acabados').css({ display: 'none' });
+        $('#dimensiones').css({ display: 'none' });
         $('#precioDimension').empty();
         $('.productosColor107').css({ 'background-color': 'white' });
         $('.productosColor108').css({ 'background-color': 'white' });
@@ -163,6 +167,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
+        $('.dimensionesColor4').css({ border: '0px' });
+        $('.dimensionesColor5').css({ border: '0px' });
+        $('.dimensionesColor6').css({ border: '0px' });
+        $('.dimensionesColor1').css({ border: '0px' });
+        $('.dimensionesColor2').css({ border: '0px' });
+        $('.dimensionesColor3').css({ border: '0px' });
+
         $('#imagenAcabado').remove();
         $('#medidas').css({ display: 'none' });
         $('#acabado').css({ display: 'none' });
@@ -179,6 +190,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
     public open(producto, productoNombre) {
         $('#botonEliminar').removeAttr('class');
+        $('#dimensiones').css({ display: 'block' });
         $('#botonApoyoNuevo').empty();
         for (let i = 1; i <= 14; i++) {
             for (let u = 0; u < 14; u++) {
@@ -438,6 +450,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
     public open1(producto1) {
         $('#botonEliminar').removeAttr('class');
+        $('#dimensiones').css({ display: 'block' });
         $('#botonApoyoNuevo').empty();
         for (let i = 1; i <= 14; i++) {
             for (let u = 0; u < 14; u++) {
@@ -539,7 +552,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor1').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
@@ -562,7 +575,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor2').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
@@ -585,7 +598,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor3').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
@@ -608,7 +621,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor4').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
@@ -631,7 +644,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor5').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
@@ -654,7 +667,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor6').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
@@ -695,7 +708,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor1').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
@@ -718,7 +731,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor2').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
@@ -741,7 +754,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor3').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
@@ -764,7 +777,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor4').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
@@ -787,7 +800,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor5').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
@@ -810,7 +823,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor6').append(
-                                '<a href="#acabados"><img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
@@ -888,6 +901,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
+        var precio = this.precioTiendaProductosService.todos;
+
         if (filtro == 'ancho') {
             var altura = $('.selectectAltura').text();
 
@@ -904,6 +919,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $('#ancho4').removeAttr('class');
                 $('#ancho5').removeAttr('class');
                 $('#ancho6').removeAttr('class');
+                for (let v = 1; v <= 24; v++) {
+                    $('#prod' + v).empty();
+                    $('#prod' + v).removeAttr('style');
+                    $('#prod' + v).css({ float: 'left' });
+                    $('#prod' + v).removeAttr('class');
+                }
             } else {
                 if (altura != 'Todos' && id == 0) {
                     for (let i = 1; i <= 24; i++) {
@@ -964,6 +985,18 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[0] +
                                         '</p>'
                                 );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][2] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
+
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                                 saberNumero = 1;
@@ -1012,6 +1045,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     value[4]['nombre'] +
                                     '</p>'
                             );
+                            var precio1 = value[3];
+                            for (let r = 0; r < precio['length']; r++) {
+                                if (precio[r][2] == value[4]['id']) {
+                                    var cuenta = precio[r][2] / 100;
+                                    cuenta = cuenta + 1;
+                                    precio1 = precio1 * cuenta;
+                                    $('.prodDiv' + contador).append(
+                                        '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                    );
+                                }
+                            }
                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                             contador++;
                         });
@@ -1057,6 +1101,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[4]['nombre'] +
                                         '</p>'
                                 );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][2] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                             });
@@ -1074,12 +1129,18 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 if (id == 0) {
                     for (let i = 1; i <= 24; i++) {
                         $('#prod' + i).empty();
+                        $('#prod' + i).removeAttr('style');
+                        $('#prod' + i).removeAttr('class');
+                        $('#prod' + i).css({ float: 'left' });
                     }
                     $('#ProductosCargados').css({ display: 'block' });
                     $('#ProductosCargados1').css({ display: 'block' });
                     $('#altura0').attr('class', 'selectectAltura');
                     $('#altura1').removeAttr('class');
                     $('#altura2').removeAttr('class');
+                    for (let v = 1; v <= 24; v++) {
+                        $('#prod' + v).empty();
+                    }
                 } else {
                     $('#altura1').removeAttr('class');
                     $('#altura2').removeAttr('class');
@@ -1134,6 +1195,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[0] +
                                         '</p>'
                                 );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][2] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                                 saberNumero = 1;
@@ -1179,6 +1251,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     value[4]['nombre'] +
                                     '</p>'
                             );
+                            var precio1 = value[3];
+                            for (let r = 0; r < precio['length']; r++) {
+                                if (precio[r][2] == value[4]['id']) {
+                                    var cuenta = precio[r][2] / 100;
+                                    cuenta = cuenta + 1;
+                                    precio1 = precio1 * cuenta;
+                                    $('.prodDiv' + contador).append(
+                                        '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                    );
+                                }
+                            }
                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                             contador++;
                         });
@@ -1216,6 +1299,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     value[4]['nombre'] +
                                     '</p>'
                             );
+                            var precio1 = value[3];
+                            for (let r = 0; r < precio['length']; r++) {
+                                if (precio[r][2] == value[4]['id']) {
+                                    var cuenta = precio[r][2] / 100;
+                                    cuenta = cuenta + 1;
+                                    precio1 = precio1 * cuenta;
+                                    $('.prodDiv' + contador).append(
+                                        '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                    );
+                                }
+                            }
                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                             contador++;
                         });
@@ -1230,6 +1324,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 if (id == 0) {
                     for (let i = 1; i <= 24; i++) {
                         $('#prod' + i).empty();
+                        $('#prod' + i).removeAttr('style');
+                        $('#prod' + i).removeAttr('class');
+                        $('#prod' + i).css({ float: 'left' });
                     }
                     $('#ProductosCargados').css({ display: 'block' });
                     $('#ProductosCargados1').css({ display: 'none' });
@@ -1290,6 +1387,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[4]['nombre'] +
                                         '</p>'
                                 );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][2] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                                 saberNumero = 1;
@@ -1336,6 +1444,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[4]['nombre'] +
                                         '</p>'
                                 );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][2] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                             });
@@ -1396,6 +1515,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                                 value[0] +
                                                 '</p>'
                                         );
+                                        var precio1 = value[3];
+                                        for (let r = 0; r < precio['length']; r++) {
+                                            if (precio[r][2] == value[4]['id']) {
+                                                var cuenta = precio[r][2] / 100;
+                                                cuenta = cuenta + 1;
+                                                precio1 = precio1 * cuenta;
+                                                $('.prodDiv' + contador).append(
+                                                    '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                                );
+                                            }
+                                        }
                                         $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                         contador++;
                                         saberNumero = 1;
@@ -1440,6 +1570,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                                 value[4]['nombre'] +
                                                 '</p>'
                                         );
+                                        var precio1 = value[3];
+                                        for (let r = 0; r < precio['length']; r++) {
+                                            if (precio[r][2] == value[4]['id']) {
+                                                var cuenta = precio[r][2] / 100;
+                                                cuenta = cuenta + 1;
+                                                precio1 = precio1 * cuenta;
+                                                $('.prodDiv' + contador).append(
+                                                    '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                                );
+                                            }
+                                        }
                                         $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                         contador++;
                                     });
@@ -1484,7 +1625,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value[4]['nombre'] +
                                         '</p>'
                                 );
-
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][2] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                             });
@@ -1545,6 +1696,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                                 value[4]['nombre'] +
                                                 '</p>'
                                         );
+                                        var precio1 = value[3];
+                                        for (let r = 0; r < precio['length']; r++) {
+                                            if (precio[r][2] == value[4]['id']) {
+                                                var cuenta = precio[r][2] / 100;
+                                                cuenta = cuenta + 1;
+                                                precio1 = precio1 * cuenta;
+                                                $('.prodDiv' + contador).append(
+                                                    '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                                );
+                                            }
+                                        }
                                         $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                         contador++;
                                         saberNumero = 1;
@@ -1594,6 +1756,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                                     value[4]['nombre'] +
                                                     '</p>'
                                             );
+                                            var precio1 = value[3];
+                                            for (let r = 0; r < precio['length']; r++) {
+                                                if (precio[r][2] == value[4]['id']) {
+                                                    var cuenta = precio[r][2] / 100;
+                                                    cuenta = cuenta + 1;
+                                                    precio1 = precio1 * cuenta;
+                                                    $('.prodDiv' + contador).append(
+                                                        '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                                    );
+                                                }
+                                            }
                                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                             contador++;
                                         });
@@ -1607,6 +1780,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     }
     public dimensionesCogidas(id) {
         $('#imagenProdEspeciales').empty();
+        $('#acabados').css({ display: 'block' });
+        $('#euroCalculadora').removeAttr('style');
+        $('#medidasEspecialesTexto').css({ display: 'none' });
         $('#medidasAncho').css({ display: 'none' });
         $('#medidasFondo').css({ display: 'none' });
         $('#medidasAlto').css({ display: 'none' });
@@ -1746,10 +1922,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     i +
                                     '" class="' +
                                     value['acabados'][m]['id'] +
-                                    '" height="160px" width="280px" style=" opacity: 0.7;">'
+                                    '" height="250px" width="130px" style=" opacity: 0.7;">'
                             );
                             $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
+                                '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
                                     value['acabados'][m]['nombre'] +
                                     '</strong></p>'
                             );
@@ -2028,10 +2204,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#inputAltoAncho').val(dimensionProxima['alto']);
                             $('#inputFondoAncho').val(dimensionProxima['fondo']);
 
-                            $('#datos1').append('<p>Ancho</p>');
-                            $('#datos1').append('<p>Alto</p>');
-                            $('#datos1').append('<p>Fondo</p>');
-                            $('#datos1').append('<p>Medida Especial</p>');
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
@@ -2042,16 +2214,27 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             precioAum = precio + precioAum;
                             $('#total').text(precioAum);
                             $('#precioDimension').text(precioAum);
-                            $('#precios1').append('<p class="' + idDimenTipo + '" id="ancho1">' + valor + '</p>');
                             $('#idioma').attr('value', dimensiones[k]['id']);
-                            $('#precios1').append('<p id="alto1" class="' + precioAum + '">' + dimensiones[k]['alto'] + '</p>');
-                            $('#precios1').append('<p id="fondo1">' + dimensiones[k]['fondo'] + '</p>');
-                            $('#precios1').append('<p>Incremento</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>30%</p>');
-                            console.log(dimensionProxima);
+                            $('#datos1').append(
+                                '<p style="width:100%">Ancho <span style="float:right" class="' +
+                                    idDimenTipo +
+                                    '" id="ancho1">' +
+                                    valor +
+                                    '</span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p style="width:100%">Alto <span style="float:right" id="alto1" class="' +
+                                    precioAum +
+                                    '">' +
+                                    dimensiones[k]['alto'] +
+                                    '</span></p> '
+                            );
+                            $('#datos1').append(
+                                '<p style="width:100%">Fondo <span style="float:right" id="fondo1">' +
+                                    dimensiones[k]['fondo'] +
+                                    '</span></p> '
+                            );
+                            $('#datos1').append('<p style="width:100%">Medida Especial<span style="float:right">Incremento 30%</span></p>');
                             cont++;
                         } else {
                             if (cont == 0) {
@@ -3627,13 +3810,76 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var productos = [];
         var apoyos = [];
         var cont = 0;
+
+        var precio = this.precioTiendaProductosService.todos;
+        console.log(precio);
         var todos = this.productosDormitorioService.todos;
 
         if (todos != undefined) {
+            var prod = todos;
+            for (let q = 0; q < prod.length; q++) {
+                prod[q]['precio'] = 0;
+            }
+            this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
+                console.log(data.body);
+                var datos = data.body;
+                var prod = this.productosDormitorioService.todos;
+                for (let q = 0; q < prod.length; q++) {
+                    prod[q]['precio'] = 0;
+                }
+                for (let n = 0; n < datos['length']; n++) {
+                    for (let q = 0; q < prod.length; q++) {
+                        if (prod[q]['id'] == datos[n][0]) {
+                            if (prod[q]['precio'] == 0) {
+                                if (datos[n][1] != 0) {
+                                    prod[q]['precio'] = datos[n][1];
+                                    if (precio[q][2] == prod[q]['id']) {
+                                        var cuenta = precio[q][1] / 100;
+                                        var cuenta = cuenta + 1;
+                                        var precio1 = prod[q]['precio'];
+                                        precio1 = precio1 * cuenta;
+                                        prod[q]['precio'] = precio1.toFixed(2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                this.productosDormitorioService.todos = prod;
+            });
             this.productosDormitorios = todos;
         } else {
             this.productosDormitorioService.categoria(8).subscribe(data => {
                 this.productosDormitorioService.todos = data.body;
+                this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
+                    console.log(data.body);
+                    var datos = data.body;
+                    var prod = this.productosDormitorioService.todos;
+                    for (let q = 0; q < prod.length; q++) {
+                        prod[q]['precio'] = 0;
+                    }
+                    for (let n = 0; n < datos['length']; n++) {
+                        for (let q = 0; q < prod.length; q++) {
+                            if (prod[q]['id'] == datos[n][0]) {
+                                if (prod[q]['precio'] == 0) {
+                                    if (datos[n][1] != 0) {
+                                        prod[q]['precio'] = datos[n][1];
+                                        if (precio[q][2] == prod[q]['id']) {
+                                            var cuenta = precio[q][1] / 100;
+                                            var cuenta = cuenta + 1;
+                                            var precio1 = prod[q]['precio'];
+                                            precio1 = precio1 * cuenta;
+                                            prod[q]['precio'] = precio1.toFixed(2);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    this.productosDormitorioService.todos = prod;
+                });
             });
             this.productosDormitorios = this.productosDormitorioService.todos;
         }
@@ -3672,7 +3918,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     ngOnInit() {
         var todasDimensiones = [];
         var contDimenTipo = 0;
-        this.loadAll();
+
         this.pruebaCargar();
 
         this.accountService.identity().then(account => {
@@ -3682,6 +3928,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
         this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
             this.precioTiendaProductosService.todos = data.body;
+            this.loadAll();
         });
         this.precioTienda = sessionStorage.getItem('precioTienda');
     }

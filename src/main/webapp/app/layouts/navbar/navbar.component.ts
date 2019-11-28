@@ -117,6 +117,33 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
     open(ruta, bool, content) {
         var prod = $('#calculadoraCarrito #nombreMesita').text();
+        var idsArray = [];
+        idsArray[0] = 'composicionesSpan1';
+        idsArray[1] = 'mesasSpan';
+        idsArray[2] = 'panelesSpan';
+        idsArray[3] = 'suplementosTv';
+        idsArray[4] = 'estanteriasSpan';
+        idsArray[5] = 'colHorizontales';
+        idsArray[6] = 'colVertEstant';
+        idsArray[7] = 'colVerticalesSpan';
+        idsArray[8] = 'estantColgantesSpan';
+        idsArray[9] = 'apoyoSistemaSpan1';
+        idsArray[10] = 'escritoriosSpan';
+        idsArray[11] = 'singularesSpan';
+        idsArray[12] = 'vitrinasSpan';
+        idsArray[13] = 'aparadoresSpan';
+        idsArray[14] = 'modulosBajos';
+        idsArray[15] = 'armariosSpan';
+        idsArray[16] = 'banerascanapes';
+        idsArray[17] = 'apoyoSistema2';
+        idsArray[18] = 'chifonieresSpan';
+        idsArray[19] = 'mesitasSpan';
+        idsArray[20] = 'cabecerosSpan';
+
+        for (let x = 0; x < 21; x++) {
+            $('#' + idsArray[x]).css({ 'font-weight': 'normal' });
+        }
+
         if (prod != '') {
             if (bool == false) {
                 this.ruta = ruta;

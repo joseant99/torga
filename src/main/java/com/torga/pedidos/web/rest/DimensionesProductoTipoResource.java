@@ -139,6 +139,15 @@ public class DimensionesProductoTipoResource {
     }
     
     
+    @GetMapping("/dimensiones-producto-tipos-filtrado-precio")
+    @Timed
+    public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltradoPrecio() {
+        log.debug("REST request to get a page of DimensionesProductoTipos");
+        Collection<DimensionesProductoTipo> page = dimensionesProductoTipoRepository.findCogerPrecio();
+        return ResponseEntity.ok().body(page);
+    }
+    
+    
     @GetMapping("/dimensiones-producto-tipos-filtrado-fondo-ancho/{id}/{fondo}/{ancho}")
     @Timed
     public ResponseEntity<Collection<DimensionesProductoTipo>> getDimensionProductoFiltradoFondoAncho(@PathVariable("id") Long id , @PathVariable("fondo") Float fondo , @PathVariable("ancho") Float ancho ) {
