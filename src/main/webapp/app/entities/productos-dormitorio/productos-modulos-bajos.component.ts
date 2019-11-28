@@ -2865,7 +2865,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         }
         var apoyoBueno = $('#datos1 #nombreApoyo').text();
         var idProd = $('#nombreMesita').attr('class');
-        if (contadorApoyo == cont - 1 && apoyoBueno != undefined) {
+        if (contadorApoyo == cont - 1 && apoyoBueno != '') {
             var iluminacion = this.iluminacion;
             var texto = 0;
             for (let k = 0; k < iluminacion.length; k++) {
