@@ -32,7 +32,7 @@
     		</tr>
     	</tbody>
     </table>
-	    <div id="productosFiltrados" style="margin-top:4%">
+	    <div id="productosFiltrados" style="margin-top:4%;width: 86%">
 		    <a href="#dimensiones"><div (click)='open1(1)' id="prod1" class="productoColor" style="float:left"></div></a>
 		    <a href="#dimensiones"><div (click)='open1(2)' id="prod2" class="productoColor" style="float:left"></div></a>
 		    <a href="#dimensiones"><div (click)='open1(3)' id="prod3" class="productoColor" style="float:left"></div></a>
@@ -154,9 +154,7 @@
 		<div id="ilu2"><img id="imagenIlu" src="../../../content/images/no.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(2)'>
 		</div>	
 	</div>
-	<div id="textoFinal" style="display:none">
-		<h2 id="textoFinal" style="margin-left:35%; margin-bottom:100px;">HAS FINALIZADO CON &#201;XITO</h2>
-	</div>
+	
 	<div style="float:left;height:100px;width:100%"></div>
 	
 	<div class="modal fade" id="modalPresupuesto" role="dialog">
@@ -199,7 +197,24 @@
 	      
 	    </div>
 	  </div>
-	  
+	  <div class="modal fade" id="modalEnviadoCarrito" role="dialog" style="margin-top:200px">
+	    <div class="modal-dialog modal-sm">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title"></h4>
+	        </div>
+	        <div class="modal-body">
+	          <p>Su articulo se ha mandado al carro de compra</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
 	  
 	  <div class="modal fade" id="modalApoyo" role="dialog">
 		    <div class="modal-dialog modal-lg">
@@ -764,7 +779,7 @@
 					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 520px;display: none;">				
 						<p>Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
-				<button id="botonCalculadora" class="displayBoton" style="width: 86%;height: 7%; bottom: 120px;position: absolute;font-size:16px;background-color:white;left:35px;color:black" (click)="enviarCarrito()">Mandar articulo/s al carro de la compra</button>
+				<button id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" style="width: 86%;height: 7%; bottom: 120px;position: absolute;font-size:16px;background-color:white;left:35px;color:black" (click)="enviarCarrito()">Mandar articulo/s al carro de la compra</button>
 					
 			</div>
 			

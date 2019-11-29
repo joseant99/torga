@@ -1,5 +1,5 @@
 <div id="menuFijoArriba">
-	<a id="botonEsconder" onclick="apareceMenu()"><img style="max-width:60%;" src="../../../content/images/LINEAS-min.jpg"></a>
+	<a id="botonEsconder" onclick="apareceMenu()"><img style="max-width:55%;" id="rayasNavegador" src="../../../content/images/LINEAS-min.jpg"></a>
 <a  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'" class="navbar-brand logo" (click)="open('inicio',false,myModel)"(click)="collapseNavbar()" id="imagenLogoCuenta">
 	                <span class="logo-img"></span>
 </a>
@@ -108,7 +108,7 @@
 										                                <span style="font-weight: 400;" id="mesasSpan">Mesas</span>
 										                            </a>
 											                    </li>
-											                    <li style="margin-top:10px;padding-bottom: 10px;">
+											                    <li style="margin-top:10px;padding-bottom: 25px;">
 										                            <a (click)="open1('productos-modulos-bajos',false,myModel1,12,'composicionesSpan1')">
 										                                <span style="font-weight: 400;" id="composicionesSpan1">Composiciones</span>
 										                            </a>
@@ -160,7 +160,7 @@
 											                                <span style="font-weight: 400;" id="composicionesDormitorio2">Composiciones</span>
 											                            </a>
 											                        </li>
-											                        <li style="margin-top:10px;padding-bottom: 10px;">
+											                        <li style="margin-top:10px;padding-bottom: 25px;">
 											                            <a (click)="open1('armarios-dormitorio',false,myModel1,9,'armariosSpan')">
 											                                <span style="font-weight: 400;" id="armariosSpan">Armarios</span>
 											                            </a>
@@ -197,7 +197,7 @@
 		                            </a>
 		                        </li>
 		                        
-		                        <li style="margin-top:10px;padding-bottom: 10px;">
+		                        <li style="margin-top:10px;padding-bottom: 25px;">
 		                            <a (click)="open('pedidos-usuario',false,myModel)">
 		                                <span style="font-weight: 400;">Pedidos <i *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_REPRESENTATE']">{{numeroPedidos}}</i></span>
 		                            </a>
@@ -230,7 +230,7 @@
 				                                <span style="font-weight: 400;">Presupuestos</span>
 				                            </a>
 				                        </li>
-				                        <li style="margin-top:10px;padding-bottom: 10px;">
+				                        <li style="margin-top:10px;padding-bottom: 25px;">
 				                            <a (click)="open('contacto-pedidos',false,myModel)">
 				                                <span style="font-weight: 400;">Pedidos</span>
 				                            </a>
@@ -265,7 +265,7 @@
 				                                <span style="font-weight: 400;">Gestion Del Pago</span>
 				                            </a>
 				                        </li>
-				                        <li style="margin-top:10px;padding-bottom: 10px;">
+				                        <li style="margin-top:10px;padding-bottom: 25px;">
 				                            <a (click)="open('productos-precio',false,myModel)">
 				                                <span style="font-weight: 400;">Gestion Productos</span>
 				                            </a>
@@ -288,7 +288,7 @@
 						
 					
 						<div id="menuTienda" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">		  
-							     	<li style="margin-top:10px;padding-bottom: 10px;">
+							     	<li style="margin-top:10px;padding-bottom: 25px;">
 			                            <a (click)="open('datos-generales',false,myModel)">
 			                                <span style="font-weight: 400;">Datos Tienda</span>
 			                            </a>
@@ -318,7 +318,7 @@
 					</li>
 					<div id="menuGestionUsuario" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">
 						
-							<li style="margin-top:10px;padding-bottom: 10px;">
+							<li style="margin-top:10px;padding-bottom: 25px;">
 							 <a (click)="open('vendedores-usuario',false,myModel)" id="gestionUsuario" data-toggle="collapse">
 		                        <span>
 		                            <span style="font-weight: 400;">Usuarios Tienda</span>

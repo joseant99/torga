@@ -904,6 +904,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
+        this.borrarProdCalculadora();
         var precio = this.precioTiendaProductosService.todos;
 
         if (filtro == 'ancho') {
@@ -2882,10 +2883,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 }
             }
             if (texto == 1) {
-                $('#textoFinal').removeAttr('style');
-                $('#textoFinal').attr('style');
-                $('#textoFinal').css({ width: '100%' });
-                $('#textoFinal').css({ float: 'left' });
                 $('#botonCalculadora').removeAttr('class');
             }
             $('#terminarConfiguracion').removeAttr('style');

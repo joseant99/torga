@@ -974,8 +974,8 @@ Generic styles
 }
 #botonEsconder {
     max-width: 100%;
-    margin-left: 50px;
-    margin-top: 5px;
+    margin-left: 28px;
+    margin-top: 14px;
 }
 
 @media screen and (max-width: 1400px) {

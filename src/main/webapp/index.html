@@ -144,11 +144,13 @@
 	function esconderMenu(){
 		$("#menuPrincipal").css({"display":"none"});
 		$("#botonEsconder").removeAttr("onclick");
+		$("#rayasNavegador").attr("src","../../../content/images/LINEAS-min.jpg");
 		$("#botonEsconder").attr("onclick","apareceMenu()");
 	}
 	function apareceMenu(){
 		$("#menuPrincipal").css({"display":"block"});
 		$("#botonEsconder").removeAttr("onclick");
+		$("#rayasNavegador").attr("src","../../../content/images/cerrarMenu.jpg");
 		$("#botonEsconder").attr("onclick","esconderMenu()");
 	}
 	function mostrarCalculadora(){
