@@ -2027,6 +2027,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('#especiales').css({ width: '100%' });
         $('#especiales').css({ float: 'left' });
         $('#cambioAncho').empty();
+        $('#medidasEspeciales').css({ display: 'block' });
         $('#inputFondoAncho').remove();
         $('#inputAltoAncho').remove();
         $('#textoAncho').remove();
