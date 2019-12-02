@@ -126,6 +126,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     }
 
     public borrarProdCalculadora() {
+        $('#medidasEspecialesTexto').css({ display: 'none' });
+        $('#medidasEspeciales').css({ display: 'none' });
+        $('#medidasAncho').css({ display: 'none' });
+        $('#medidasFondo').css({ display: 'none' });
+        $('#medidasAlto').css({ display: 'none' });
+        $('#especiales').css({ display: 'none' });
         $('#productoCalculadora1 #precios1').empty();
         $('#euroCalculadora').attr('style');
         $('#euroCalculadora').css({ display: 'none' });
@@ -213,6 +219,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('#imagenAcabadoPrincipal').empty();
         $('#calculadora').attr('class', 'container tab-pane fade active show');
         $('#dimensiones #medidas').removeAttr('style');
+        $('#medidasEspecialesTexto').css({ display: 'none' });
+        $('#medidasEspeciales').css({ display: 'none' });
+        $('#medidasAncho').css({ display: 'none' });
+        $('#medidasFondo').css({ display: 'none' });
+        $('#medidasAlto').css({ display: 'none' });
+        $('#especiales').css({ display: 'none' });
         $('#dimensiones #medidas').attr('style');
         $('#dimensiones #medidas').css({ 'text-align': 'center' });
         $('#dimensiones #medidas').css({ 'margin-top': '5%' });
@@ -1795,6 +1807,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             }
         }
     }
+
     public dimensionesCogidas(id) {
         $('#imagenProdEspeciales').empty();
         $('#acabados').css({ display: 'block' });
