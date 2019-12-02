@@ -70,6 +70,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     link: string;
     settingsAccount: any;
     contador: any;
+    bottomModulos: any;
     constructor(
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         private loginService: LoginService,
@@ -2487,6 +2488,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     } else {
                         nombreCarpeta = nombre;
                     }
+                    var bottomModulos = this.bottomModulos;
                     if (nombre == 'mb1') {
                         $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 610px;float: left;margin-top:20px"></div>');
                         $('#cuerpo' + i).append(
@@ -2541,7 +2543,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             height +
                                             ';' +
                                             width +
-                                            ';max-width:400px;max-height:250px;position:absolute;bottom:-186px"  class="' +
+                                            ';max-width:400px;max-height:250px;position:absolute;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
                                             acabados[k].toLowerCase() +
                                             'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                             nombreCarpeta +
@@ -2603,7 +2607,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;position:absolute;bottom:-186px" class="' +
+                                                ';max-width:400px;max-height:250px;position:absolute;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                                 nombreCarpeta +
@@ -2664,7 +2670,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;position:absolute;bottom:-186px;" class="' +
+                                                ';max-width:400px;max-height:250px;position:absolute;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                                 nombre +
@@ -2737,7 +2745,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;"  class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '"  class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                                 nombreCarpeta +
@@ -2796,7 +2806,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                     height +
                                                     ';' +
                                                     width +
-                                                    ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                    ';max-width:400px;max-height:250px;' +
+                                                    bottomModulos[i] +
+                                                    '" class="' +
                                                     acabados[k].toLowerCase() +
                                                     'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                                     nombreCarpeta +
@@ -2854,7 +2866,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                     height +
                                                     ';' +
                                                     width +
-                                                    ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                    ';max-width:400px;max-height:250px;' +
+                                                    bottomModulos[i] +
+                                                    '" class="' +
                                                     acabados[k].toLowerCase() +
                                                     'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                                     nombre +
@@ -2922,7 +2936,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             height +
                                             ';' +
                                             width +
-                                            ';max-width:400px;max-height:250px;bottom: -200px;"  class="' +
+                                            ';max-width:400px;max-height:250px;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
                                             acabados[k].toLowerCase() +
                                             'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                             nombreCarpeta +
@@ -2981,7 +2997,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                                 nombreCarpeta +
@@ -3039,7 +3057,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                                 nombre +
@@ -3102,7 +3122,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             height +
                                             ';' +
                                             width +
-                                            ';max-width:400px;max-height:250px;bottom: -200px;"  class="' +
+                                            ';max-width:400px;max-height:250px;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
                                             acabados[k].toLowerCase() +
                                             'Modal" width="1000px" height="1000px" src="../../../content/images/mb5/' +
                                             (k + 1) +
@@ -3153,7 +3175,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/mb5/' +
                                                 (k + 1) +
@@ -3203,7 +3227,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/mb14/' +
                                                 (k + 1) +
@@ -3262,7 +3288,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             height +
                                             ';' +
                                             width +
-                                            ';max-width:400px;max-height:250px;bottom: -200px;"  class="' +
+                                            ';max-width:400px;max-height:250px;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
                                             acabados[k].toLowerCase() +
                                             'Modal" width="1000px" height="1000px" src="../../../content/images/mb5/' +
                                             (k + 1) +
@@ -3313,7 +3341,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/mb5/' +
                                                 (k + 1) +
@@ -3363,7 +3393,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/mb5/' +
                                                 (k + 1) +
@@ -3422,7 +3454,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             height +
                                             ';' +
                                             width +
-                                            ';max-width:400px;max-height:250px;bottom: -200px;"  class="' +
+                                            ';max-width:400px;max-height:250px;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
                                             acabados[k].toLowerCase() +
                                             'Modal" width="1000px" height="1000px" src="../../../content/images/mb4/' +
                                             (k + 1) +
@@ -3473,7 +3507,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/mb4/' +
                                                 (k + 1) +
@@ -3523,7 +3559,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/mb4/' +
                                                 (k + 1) +
@@ -3582,7 +3620,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             height +
                                             ';' +
                                             width +
-                                            ';max-width:400px;max-height:250px;bottom: -200px;"  class="' +
+                                            ';max-width:400px;max-height:250px;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
                                             acabados[k].toLowerCase() +
                                             'Modal" width="1000px" height="1000px" src="../../../content/images/mb5/' +
                                             (k + 1) +
@@ -3633,7 +3673,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/mb5/' +
                                                 (k + 1) +
@@ -3694,7 +3736,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                     height +
                                                     ';' +
                                                     width +
-                                                    ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                    ';max-width:400px;max-height:250px;' +
+                                                    bottomModulos[i] +
+                                                    '" class="' +
                                                     acabados[k].toLowerCase() +
                                                     'Modal" width="1000px" height="1000px" src="../../../content/images/mb8/' +
                                                     (k + 1) +
@@ -3750,7 +3794,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                     height +
                                                     ';' +
                                                     width +
-                                                    ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                    ';max-width:400px;max-height:250px;' +
+                                                    bottomModulos[i] +
+                                                    '" class="' +
                                                     acabados[k].toLowerCase() +
                                                     'Modal" width="1000px" height="1000px" src="../../../content/images/mb8/' +
                                                     (k + 1) +
@@ -3810,7 +3856,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             height +
                                             ';' +
                                             width +
-                                            ';max-width:400px;max-height:250px;bottom: -200px;"  class="' +
+                                            ';max-width:400px;max-height:250px;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
                                             acabados[k].toLowerCase() +
                                             'Modal" width="1000px" height="1000px" src="../../../content/images/mb5/' +
                                             (k + 1) +
@@ -3861,7 +3909,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/mb5/' +
                                                 (k + 1) +
@@ -3922,7 +3972,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                     height +
                                                     ';' +
                                                     width +
-                                                    ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                    ';max-width:400px;max-height:250px;' +
+                                                    bottomModulos[i] +
+                                                    '" class="' +
                                                     acabados[k].toLowerCase() +
                                                     'Modal" width="1000px" height="1000px" src="../../../content/images/mb7/' +
                                                     (k + 1) +
@@ -3978,7 +4030,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                     height +
                                                     ';' +
                                                     width +
-                                                    ';max-width:400px;max-height:250px;bottom: -200px;" class="' +
+                                                    ';max-width:400px;max-height:250px;' +
+                                                    bottomModulos[i] +
+                                                    '" class="' +
                                                     acabados[k].toLowerCase() +
                                                     'Modal" width="1000px" height="1000px" src="../../../content/images/mb7/' +
                                                     (k + 1) +
@@ -4188,7 +4242,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             }
         }
         this.productosDormitorioService.numeroCesta = contCesta;
-
+        var bottomModulos = [];
+        bottomModulos[2] = 'bottom:-186px;';
+        bottomModulos[3] = 'bottom:-665px;';
+        bottomModulos[4] = 'bottom:-1150px;';
+        this.bottomModulos = bottomModulos;
         var medidasModal = [];
         medidasModal['mb4'] = 'margin-left:-140px;bottom:125px;max-width:500px;max-height:300px;';
         medidasModal['mb1'] = 'margin-left:-60px;bottom:105px;max-width:500px;max-height:300px;';
