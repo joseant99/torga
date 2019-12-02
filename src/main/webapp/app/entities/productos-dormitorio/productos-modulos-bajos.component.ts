@@ -3247,6 +3247,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
     public apoyoCogido(id) {
         $('#iluminacion').removeAttr('style');
+        $('#apoyoDatosTexto').remove();
         var precioTienda = this.precioTienda;
         $('#iluminacion').attr('style');
         $('#iluminacion').css({ display: 'none' });
@@ -3295,7 +3296,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         precio = precio * precioTienda;
                         precio = Math.round(precio * 100) / 100;
                         $('#datos1').append(
-                            '<p style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                            '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
                                 value['productoApoyo']['nombre'] +
                                 '</span><span style="float:right" id="apoyo1" class="' +
                                 value['id'] +
