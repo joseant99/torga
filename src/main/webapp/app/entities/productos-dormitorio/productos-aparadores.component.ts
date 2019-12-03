@@ -33,6 +33,10 @@ import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-p
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
 import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
+import { RepresentanteTiendaService } from '../representante-tienda/representante-tienda.service';
+import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
+import { RepresenTorgaService } from '../represen-torga/represen-torga.service';
+import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
 
 @Component({
     selector: 'jhi-productos-dormitorio',
@@ -45,16 +49,19 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
     productosDormitorioPrueba: IProductosDormitorio;
     error: any;
     success: any;
+    productosArrayNombre: any;
     apoyo: any;
     isSaving: boolean;
     especiales: any;
+    medidasModal: any;
     acaProd: IAcaProd;
     iluminacion: any;
+    precioPunto: any;
     acabados: any;
     todosAcabados: any;
     acaProdsCar: any;
     ruta: any;
-
+    tiendasRepresentante: any;
     acaProdPed: any;
     precioTienda: any;
     presupuestoPedido: IPresupuestoPedido;
@@ -78,7 +85,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
     previousPage: any;
     reverse: any;
     eventSubscriber: any;
-
+    precioDimension: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -98,6 +105,8 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         protected dimensionesProductoService: DimensionesProductoService,
         public productosDormitorioService: ProductosDormitorioService,
         protected parseLinks: JhiParseLinks,
+        protected represenTorgaService: RepresenTorgaService,
+        protected representanteTiendaService: RepresentanteTiendaService,
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
@@ -117,16 +126,40 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
     }
 
     public borrarProdCalculadora() {
+        $('#medidasEspecialesTexto').css({ display: 'none' });
+        $('#medidasEspeciales').css({ display: 'none' });
+        $('#medidasAncho').css({ display: 'none' });
+        $('#medidasFondo').css({ display: 'none' });
+        $('#medidasAlto').css({ display: 'none' });
+        $('#especiales').css({ display: 'none' });
         $('#productoCalculadora1 #precios1').empty();
+        $('#euroCalculadora').attr('style');
+        $('#euroCalculadora').css({ display: 'none' });
         $('#productoCalculadora1 #precioCalculado1').empty();
         $('#productoCalculadora1 #datos1').empty();
         $('#nombreMesita').empty();
+        $('#acabados').css({ display: 'none' });
+        $('#dimensiones').css({ display: 'none' });
         $('#precioDimension').empty();
+        $('.productosColor107').css({ 'background-color': 'white' });
+        $('.productosColor108').css({ 'background-color': 'white' });
+        $('.productosColor109').css({ 'background-color': 'white' });
+        $('.productosColor110').css({ 'background-color': 'white' });
+        $('.productosColor111').css({ 'background-color': 'white' });
+        $('.productosColor112').css({ 'background-color': 'white' });
+        $('.productosColor113').css({ 'background-color': 'white' });
+        $('.productosColor114').css({ 'background-color': 'white' });
+        $('.productosColor115').css({ 'background-color': 'white' });
+        $('.productosColor116').css({ 'background-color': 'white' });
+        $('.productosColor117').css({ 'background-color': 'white' });
+        $('.productosColor118').css({ 'background-color': 'white' });
+        $('.productosColor119').css({ 'background-color': 'white' });
         $('#imagenAcabadoPrincipal').empty();
         $('#total').empty();
         $('.dimensionesColor1').empty();
         $('.dimensionesColor2').empty();
         $('.dimensionesColor3').empty();
+        $('#botonCalculadora').attr('class', 'displayBoton');
         $('.dimensionesColor4').empty();
         $('.dimensionesColor5').empty();
         $('.dimensionesColor6').empty();
@@ -142,19 +175,17 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
+        $('.dimensionesColor4').css({ border: '0px' });
+        $('.dimensionesColor5').css({ border: '0px' });
+        $('.dimensionesColor6').css({ border: '0px' });
+        $('.dimensionesColor1').css({ border: '0px' });
+        $('.dimensionesColor2').css({ border: '0px' });
+        $('.dimensionesColor3').css({ border: '0px' });
+
         $('#imagenAcabado').remove();
         $('#medidas').css({ display: 'none' });
         $('#acabado').css({ display: 'none' });
-        $('.productosColor53').css({ 'background-color': 'white' });
-        $('.productosColor69').css({ 'background-color': 'white' });
-        $('.productosColor68').css({ 'background-color': 'white' });
-        $('.productosColor67').css({ 'background-color': 'white' });
-        $('.productosColor66').css({ 'background-color': 'white' });
-        $('.productosColor65').css({ 'background-color': 'white' });
-        $('.productosColor64').css({ 'background-color': 'white' });
-        $('.productosColor63').css({ 'background-color': 'white' });
-        $('.productosColor62').css({ 'background-color': 'white' });
-        $('.productosColor14').css({ 'background-color': 'white' });
+        $('.productosColor').css({ 'background-color': 'white' });
         $('#nombreApoyoTitulo').css({ display: 'none' });
         for (let i = 1; i <= 5; i++) {
             $('.apoyoCogido' + i).empty();
@@ -162,9 +193,13 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
+        $('#botonEliminar').attr('class', 'displayBoton');
     }
 
     public open(producto, productoNombre) {
+        $('#botonEliminar').removeAttr('class');
+        $('#dimensiones').css({ display: 'block' });
+        $('#botonApoyoNuevo').empty();
         for (let i = 1; i <= 14; i++) {
             for (let u = 0; u < 14; u++) {
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
@@ -184,6 +219,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         $('#imagenAcabadoPrincipal').empty();
         $('#calculadora').attr('class', 'container tab-pane fade active show');
         $('#dimensiones #medidas').removeAttr('style');
+        $('#medidasEspecialesTexto').css({ display: 'none' });
+        $('#medidasEspeciales').css({ display: 'none' });
+        $('#medidasAncho').css({ display: 'none' });
+        $('#medidasFondo').css({ display: 'none' });
+        $('#medidasAlto').css({ display: 'none' });
+        $('#especiales').css({ display: 'none' });
         $('#dimensiones #medidas').attr('style');
         $('#dimensiones #medidas').css({ 'text-align': 'center' });
         $('#dimensiones #medidas').css({ 'margin-top': '5%' });
@@ -209,20 +250,24 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
+
+        $('.productosColor107').css({ 'background-color': 'white' });
+        $('.productosColor108').css({ 'background-color': 'white' });
+        $('.productosColor109').css({ 'background-color': 'white' });
+        $('.productosColor110').css({ 'background-color': 'white' });
+        $('.productosColor111').css({ 'background-color': 'white' });
+        $('.productosColor112').css({ 'background-color': 'white' });
+        $('.productosColor113').css({ 'background-color': 'white' });
+        $('.productosColor114').css({ 'background-color': 'white' });
+        $('.productosColor115').css({ 'background-color': 'white' });
+        $('.productosColor116').css({ 'background-color': 'white' });
+        $('.productosColor117').css({ 'background-color': 'white' });
+        $('.productosColor118').css({ 'background-color': 'white' });
+        $('.productosColor119').css({ 'background-color': 'white' });
+
         $('#imagenAcabado').remove();
         $('#acabado').css({ display: 'none' });
-
-        $('.productosColor53').css({ 'background-color': 'white' });
-        $('.productosColor69').css({ 'background-color': 'white' });
-        $('.productosColor68').css({ 'background-color': 'white' });
-        $('.productosColor67').css({ 'background-color': 'white' });
-        $('.productosColor66').css({ 'background-color': 'white' });
-        $('.productosColor65').css({ 'background-color': 'white' });
-        $('.productosColor64').css({ 'background-color': 'white' });
-        $('.productosColor63').css({ 'background-color': 'white' });
-        $('.productosColor62').css({ 'background-color': 'white' });
-        $('.productosColor14').css({ 'background-color': 'white' });
-
+        $('.productosColor').css({ 'background-color': 'white' });
         $('#nombreApoyoTitulo').css({ display: 'none' });
         for (let i = 1; i <= 5; i++) {
             $('.apoyoCogido' + i).empty();
@@ -237,6 +282,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
 
         this.dimensionesProductoTipoService.findProducto(producto).subscribe(data => {
             this.dimensionesProductoTipoService.todos = data.body;
+            this.todasDimensiones = data.body;
             var cont = 0;
             var dimensionesPrueba;
             dimensionesPrueba = data.body;
@@ -245,6 +291,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
             for (let i = 0; i < datos.length; i++) {
                 if (producto == datos[i]['productosDormitorio']['id']) {
                     $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #dfdddc' });
+
                     if (cont == 0) {
                         var image = document.createElement('img');
                         var precio = parseFloat(datos[i]['precio']);
@@ -252,27 +299,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         precio = precio * precioTienda;
                         precio = Math.round(precio * 100) / 100;
                         image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
-                        image.id = 'imagenDimensionesApa';
+                        image.id = 'imagenDimensiones';
                         $('.dimensionesColor1').append(
                             '<p class="dimensionesId' +
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
-
                         $('.dimensionesColor1').append(
-                            '<img  src="data:image/gif;base64,' +
+                            '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                 datos[i]['imagen'] +
-                                '" id="imagenDimensionesApa" class="' +
+                                '" id="imagenDimensiones" class="' +
                                 datos[i]['id'] +
-                                '" width="500px" height="368.98px" style=" opacity: 0.7;">'
-                        );
-
-                        $('.dimensionesColor1').append(
-                            '<div id="interiorMuebles" onclick="interior(1)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
                         );
                     }
                     if (cont == 1) {
@@ -288,19 +328,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor2').append(
-                            '<img  src="data:image/gif;base64,' +
+                            '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                 datos[i]['imagen'] +
-                                '" id="imagenDimensionesApa" class="' +
+                                '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="368.98px"  style=" opacity: 0.7;">'
-                        );
-                        $('.dimensionesColor2').append(
-                            '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
                         );
                     }
                     if (cont == 2) {
@@ -316,19 +351,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor3').append(
-                            '<img  src="data:image/gif;base64,' +
+                            '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                 datos[i]['imagen'] +
-                                '" id="imagenDimensionesApa" class="' +
+                                '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="368.98px" style=" opacity: 0.7;">'
-                        );
-                        $('.dimensionesColor3').append(
-                            '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
                         );
                     }
                     if (cont == 3) {
@@ -344,19 +374,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor4').append(
-                            '<img  src="data:image/gif;base64,' +
+                            '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                 datos[i]['imagen'] +
-                                '" id="imagenDimensionesApa" class="' +
+                                '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="368.98px" style=" opacity: 0.7;">'
-                        );
-                        $('.dimensionesColor4').append(
-                            '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
                         );
                     }
                     if (cont == 4) {
@@ -372,19 +397,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor5').append(
-                            '<img  src="data:image/gif;base64,' +
+                            '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                 datos[i]['imagen'] +
-                                '" id="imagenDimensionesApa" class="' +
+                                '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="368.98px"  style=" opacity: 0.7;">'
-                        );
-                        $('.dimensionesColor5').append(
-                            '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
                         );
                     }
                     if (cont == 5) {
@@ -400,19 +420,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                 (cont + 1) +
                                 '" id="' +
                                 datos[i]['id'] +
-                                '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                precio +
-                                '&euro;</strong></p>'
+                                '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor6').append(
-                            '<img  src="data:image/gif;base64,' +
+                            '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                 datos[i]['imagen'] +
-                                '" id="imagenDimensionesApa" class="' +
+                                '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '"width="500px" height="368.98px"  style=" opacity: 0.7;">'
-                        );
-                        $('.dimensionesColor6').append(
-                            '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                '"width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
                         );
                     }
                     cont++;
@@ -448,6 +463,9 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
     }
 
     public open1(producto1) {
+        $('#botonEliminar').removeAttr('class');
+        $('#dimensiones').css({ display: 'block' });
+        $('#botonApoyoNuevo').empty();
         for (let i = 1; i <= 14; i++) {
             for (let u = 0; u < 14; u++) {
                 $('#myModalColores' + i + ' #acabadoImagen' + u).empty();
@@ -486,18 +504,24 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
+
+        $('.productosColor107').css({ 'background-color': 'white' });
+        $('.productosColor108').css({ 'background-color': 'white' });
+        $('.productosColor109').css({ 'background-color': 'white' });
+        $('.productosColor110').css({ 'background-color': 'white' });
+        $('.productosColor111').css({ 'background-color': 'white' });
+        $('.productosColor112').css({ 'background-color': 'white' });
+        $('.productosColor113').css({ 'background-color': 'white' });
+        $('.productosColor114').css({ 'background-color': 'white' });
+        $('.productosColor115').css({ 'background-color': 'white' });
+        $('.productosColor116').css({ 'background-color': 'white' });
+        $('.productosColor117').css({ 'background-color': 'white' });
+        $('.productosColor118').css({ 'background-color': 'white' });
+        $('.productosColor119').css({ 'background-color': 'white' });
+
         $('#imagenAcabado').remove();
         $('#acabado').css({ display: 'none' });
-        $('.productosColor53').css({ 'background-color': 'white' });
-        $('.productosColor69').css({ 'background-color': 'white' });
-        $('.productosColor68').css({ 'background-color': 'white' });
-        $('.productosColor67').css({ 'background-color': 'white' });
-        $('.productosColor66').css({ 'background-color': 'white' });
-        $('.productosColor65').css({ 'background-color': 'white' });
-        $('.productosColor64').css({ 'background-color': 'white' });
-        $('.productosColor63').css({ 'background-color': 'white' });
-        $('.productosColor62').css({ 'background-color': 'white' });
-        $('.productosColor14').css({ 'background-color': 'white' });
+        $('.productosColor').css({ 'background-color': 'white' });
         $('#nombreApoyoTitulo').css({ display: 'none' });
         for (let i = 1; i <= 5; i++) {
             $('.apoyoCogido' + i).empty();
@@ -524,6 +548,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 for (let i = 0; i < datos.length; i++) {
                     if (producto == datos[i]['productosDormitorio']['id']) {
                         $('#nombreMesita').text(datos[i]['productosDormitorio']['nombre']);
+                        $('#nombreMesita').attr('class', datos[i]['productosDormitorio']['id']);
                         $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #dfdddc' });
 
                         if (cont == 0) {
@@ -539,20 +564,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor1').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
-                                    '" width="500px" height="368.98px" style=" opacity: 0.7;">'
-                            );
-
-                            $('.dimensionesColor1').append(
-                                '<div id="interiorMuebles" onclick="interior(1)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
                             );
                         }
                         if (cont == 1) {
@@ -563,25 +582,19 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
-
                             $('.dimensionesColor2').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor2').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="368.98px"  style=" opacity: 0.7;">'
-                            );
-                            $('.dimensionesColor2').append(
-                                '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
                             );
                         }
                         if (cont == 2) {
@@ -597,19 +610,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor3').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="368.98px" style=" opacity: 0.7;">'
-                            );
-                            $('.dimensionesColor3').append(
-                                '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
                             );
                         }
                         if (cont == 3) {
@@ -625,19 +633,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor4').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="368.98px" style=" opacity: 0.7;">'
-                            );
-                            $('.dimensionesColor4').append(
-                                '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
                             );
                         }
                         if (cont == 4) {
@@ -653,19 +656,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor5').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="368.98px"  style=" opacity: 0.7;">'
-                            );
-                            $('.dimensionesColor5').append(
-                                '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
                             );
                         }
                         if (cont == 5) {
@@ -681,19 +679,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor6').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '"width="500px" height="368.98px"  style=" opacity: 0.7;">'
-                            );
-                            $('.dimensionesColor6').append(
-                                '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '"width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
                             );
                         }
                         cont++;
@@ -713,6 +706,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                     if (producto == datos[i]['productosDormitorio']['id']) {
                         productoNombre = datos[i]['productosDormitorio']['nombre'];
                         $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #dfdddc' });
+
                         if (cont == 0) {
                             var image = document.createElement('img');
                             var precio = parseFloat(datos[i]['precio']);
@@ -726,20 +720,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor1').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
-                                    '" width="500px" height="368.98px" style=" opacity: 0.7;">'
-                            );
-
-                            $('.dimensionesColor1').append(
-                                '<div id="interiorMuebles" onclick="interior(1)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
                             );
                         }
                         if (cont == 1) {
@@ -750,25 +738,19 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
-
                             $('.dimensionesColor2').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor2').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="368.98px"  style=" opacity: 0.7;">'
-                            );
-                            $('.dimensionesColor2').append(
-                                '<div id="interiorMuebles" onclick="interior(2)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
                             );
                         }
                         if (cont == 2) {
@@ -784,19 +766,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor3').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="368.98px" style=" opacity: 0.7;">'
-                            );
-                            $('.dimensionesColor3').append(
-                                '<div id="interiorMuebles" onclick="interior(3)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
                             );
                         }
                         if (cont == 3) {
@@ -812,19 +789,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor4').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="368.98px" style=" opacity: 0.7;">'
-                            );
-                            $('.dimensionesColor4').append(
-                                '<div id="interiorMuebles" onclick="interior(4)"  ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '" width="500px" height="333px" style=" opacity: 0.7;"></a>'
                             );
                         }
                         if (cont == 4) {
@@ -840,19 +812,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor5').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="368.98px"  style=" opacity: 0.7;">'
-                            );
-                            $('.dimensionesColor5').append(
-                                '<div id="interiorMuebles" onclick="interior(5)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
                             );
                         }
                         if (cont == 5) {
@@ -868,19 +835,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
-                                    '" style="position:absolute;z-index:1"><strong>Desde ' +
-                                    precio +
-                                    '&euro;</strong></p>'
+                                    '" style="position:absolute;z-index:1"></p>'
                             );
                             $('.dimensionesColor6').append(
-                                '<img  src="data:image/gif;base64,' +
+                                '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
-                                    '" id="imagenDimensionesApa" class="' +
+                                    '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '"width="500px" height="368.98px"  style=" opacity: 0.7;">'
-                            );
-                            $('.dimensionesColor6').append(
-                                '<div id="interiorMuebles" onclick="interior(6)" ><img width="16px" height="16px" src="../../../content/images/informacion.png"></div>'
+                                    '"width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
                             );
                         }
                         cont++;
@@ -890,7 +852,8 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         }
         $('.productoColor').css({ 'background-color': 'white' });
         $('#prod' + producto1).css({ 'background-color': '#DFDDDC' });
-        $('#nombreMesita').text(productoNombre);
+        var nombreProductoEditado = productoNombre.split(' ')[0];
+        $('#nombreMesita').text(nombreProductoEditado);
         $('#nombreMesita').attr('class', producto);
         $('#terminarConfiguracion').css({ display: 'none' });
         $('#nombreApoyo').css({ display: 'none' });
@@ -922,6 +885,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         $('#productoCalculadora1 #datos1').empty();
         $('#nombreMesita').empty();
         $('#precioDimension').empty();
+        var precioPunto = this.precioPunto[0];
         $('#imagenAcabadoPrincipal').empty();
         $('#total').empty();
         $('.dimensionesColor1').empty();
@@ -953,10 +917,13 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
+        this.borrarProdCalculadora();
+        var precio = this.precioTiendaProductosService.todos;
+
         if (filtro == 'ancho') {
             var altura = $('.selectectAltura').text();
 
-            if (id == 0 && altura == 'Indiferente') {
+            if (id == 0 && altura == 'Todos') {
                 for (let i = 1; i <= 24; i++) {
                     $('#prod' + i).empty();
                 }
@@ -969,8 +936,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 $('#ancho4').removeAttr('class');
                 $('#ancho5').removeAttr('class');
                 $('#ancho6').removeAttr('class');
+                for (let v = 1; v <= 24; v++) {
+                    $('#prod' + v).empty();
+                    $('#prod' + v).removeAttr('style');
+                    $('#prod' + v).css({ float: 'left' });
+                    $('#prod' + v).removeAttr('class');
+                }
             } else {
-                if (altura != 'Indiferente' && id == 0) {
+                if (altura != 'Todos' && id == 0) {
                     for (let i = 1; i <= 24; i++) {
                         $('#prod' + i).empty();
                     }
@@ -1010,6 +983,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
                                 var imagen = value[4]['imagen'];
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1021,15 +1000,21 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                         value[4]['nombre'] +
                                         '-' +
                                         value[0] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
+                                        '</p>'
                                 );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][1] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
+
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                                 saberNumero = 1;
@@ -1041,7 +1026,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 }
             }
             if (id != 0) {
-                if (altura == 'Indiferente') {
+                if (altura == 'Todos') {
                     $('#ancho0').removeAttr('class');
                     $('#ancho1').removeAttr('class');
                     $('#ancho2').removeAttr('class');
@@ -1061,6 +1046,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             $('#ProductosCargados1').css({ display: 'none' });
                             var imagen = value[4]['imagen'];
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
+                            $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                            $('.prodDiv' + contador).append(
+                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                    imagen +
+                                    '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                            );
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
                                     contador +
@@ -1070,21 +1061,26 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     value[5] +
                                     '" style="text-align:center">' +
                                     value[4]['nombre'] +
-                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                    value[3] +
-                                    '</strong>&euro;</p>'
+                                    '</p>'
                             );
-                            $('.prodDiv' + contador).append(
-                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                    imagen +
-                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                            );
+                            var precio1 = value[3];
+                            for (let r = 0; r < precio['length']; r++) {
+                                if (precio[r][2] == value[4]['id']) {
+                                    var cuenta = precio[r][1] / 100;
+                                    cuenta = cuenta + 1;
+                                    precio1 = precio1 * precioPunto;
+                                    precio1 = precio1 * cuenta;
+                                    $('.prodDiv' + contador).append(
+                                        '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                    );
+                                }
+                            }
                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                             contador++;
                         });
                     });
                 } else {
-                    if (altura != 'Indiferente') {
+                    if (altura != 'Todos') {
                         $('#ancho0').removeAttr('class');
                         $('#ancho1').removeAttr('class');
                         $('#ancho2').removeAttr('class');
@@ -1107,6 +1103,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1116,15 +1118,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                         value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
+                                        '</p>'
                                 );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][1] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                             });
@@ -1138,16 +1145,22 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 $('#prod' + i).empty();
             }
             var anchoFiltrado = $('.selectectAncho').text();
-            if (anchoFiltrado == 'Indiferente') {
+            if (anchoFiltrado == 'Todos') {
                 if (id == 0) {
                     for (let i = 1; i <= 24; i++) {
                         $('#prod' + i).empty();
+                        $('#prod' + i).removeAttr('style');
+                        $('#prod' + i).removeAttr('class');
+                        $('#prod' + i).css({ float: 'left' });
                     }
                     $('#ProductosCargados').css({ display: 'block' });
                     $('#ProductosCargados1').css({ display: 'block' });
                     $('#altura0').attr('class', 'selectectAltura');
                     $('#altura1').removeAttr('class');
                     $('#altura2').removeAttr('class');
+                    for (let v = 1; v <= 24; v++) {
+                        $('#prod' + v).empty();
+                    }
                 } else {
                     $('#altura1').removeAttr('class');
                     $('#altura2').removeAttr('class');
@@ -1183,6 +1196,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
                                 var imagen = value[4]['imagen'];
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1194,15 +1213,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                         value[4]['nombre'] +
                                         '-' +
                                         value[0] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
+                                        '</p>'
                                 );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][1] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                                 saberNumero = 1;
@@ -1231,6 +1255,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             $('#ProductosCargados1').css({ display: 'none' });
                             var imagen = value[4]['imagen'];
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
+                            $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                            $('.prodDiv' + contador).append(
+                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                    imagen +
+                                    '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                            );
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
                                     contador +
@@ -1240,15 +1270,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     value[5] +
                                     '" style="text-align:center">' +
                                     value[4]['nombre'] +
-                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                    value[3] +
-                                    '</strong>&euro;</p>'
+                                    '</p>'
                             );
-                            $('.prodDiv' + contador).append(
-                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                    imagen +
-                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                            );
+                            var precio1 = value[3];
+                            for (let r = 0; r < precio['length']; r++) {
+                                if (precio[r][2] == value[4]['id']) {
+                                    var cuenta = precio[r][1] / 100;
+                                    cuenta = cuenta + 1;
+                                    precio1 = precio1 * precioPunto;
+                                    precio1 = precio1 * cuenta;
+                                    $('.prodDiv' + contador).append(
+                                        '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                    );
+                                }
+                            }
                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                             contador++;
                         });
@@ -1269,6 +1304,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         $.each(data['body'], function(index, value) {
                             var imagen = value[4]['imagen'];
                             $('#prod' + contador).append('<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>');
+                            $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                            $('.prodDiv' + contador).append(
+                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                    imagen +
+                                    '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                            );
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
                                     contador +
@@ -1278,15 +1319,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     value[5] +
                                     '" style="text-align:center">' +
                                     value[4]['nombre'] +
-                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                    value[3] +
-                                    '</strong>&euro;</p>'
+                                    '</p>'
                             );
-                            $('.prodDiv' + contador).append(
-                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                    imagen +
-                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                            );
+                            var precio1 = value[3];
+                            for (let r = 0; r < precio['length']; r++) {
+                                if (precio[r][2] == value[4]['id']) {
+                                    var cuenta = precio[r][1] / 100;
+                                    cuenta = cuenta + 1;
+                                    precio1 = precio1 * precioPunto;
+                                    precio1 = precio1 * cuenta;
+                                    $('.prodDiv' + contador).append(
+                                        '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                    );
+                                }
+                            }
                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                             contador++;
                         });
@@ -1297,10 +1343,13 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         if (filtro == 'fondo') {
             var altura = $('.selectectAltura').text();
             var anchoFiltrado = $('.selectectAncho').text();
-            if (anchoFiltrado == 'Indiferente' && altura == 'Indiferente') {
+            if (anchoFiltrado == 'Todos' && altura == 'Todos') {
                 if (id == 0) {
                     for (let i = 1; i <= 24; i++) {
                         $('#prod' + i).empty();
+                        $('#prod' + i).removeAttr('style');
+                        $('#prod' + i).removeAttr('class');
+                        $('#prod' + i).css({ float: 'left' });
                     }
                     $('#ProductosCargados').css({ display: 'block' });
                     $('#ProductosCargados1').css({ display: 'none' });
@@ -1344,6 +1393,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
                                 var imagen = value[4]['imagen'];
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1353,15 +1408,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                         value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
+                                        '</p>'
                                 );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][1] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                                 saberNumero = 1;
@@ -1373,7 +1433,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 }
             } else {
                 if (id == 0) {
-                    if (anchoFiltrado != 'Indiferente' && altura == 'Indiferente') {
+                    if (anchoFiltrado != 'Todos' && altura == 'Todos') {
                         $('#fondo0').removeAttr('class');
                         $('#fondo1').removeAttr('class');
                         $('#fondo2').removeAttr('class');
@@ -1391,6 +1451,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1400,21 +1466,26 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                         value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
+                                        '</p>'
                                 );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[1][2] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                             });
                         });
                     } else {
-                        if (anchoFiltrado == 'Indiferente' && altura != 'Indiferente') {
+                        if (anchoFiltrado == 'Todos' && altura != 'Todos') {
                             $('#fondo0').removeAttr('class');
                             $('#fondo1').removeAttr('class');
                             $('#fondo2').removeAttr('class');
@@ -1450,6 +1521,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                             '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                         );
                                         var imagen = value[4]['imagen'];
+                                        $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                        $('.prodDiv' + contador).append(
+                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                                imagen +
+                                                '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                        );
                                         $('.prodDiv' + contador).append(
                                             '<p id="nombreMesita' +
                                                 contador +
@@ -1461,15 +1538,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                                 value[4]['nombre'] +
                                                 '-' +
                                                 value[0] +
-                                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                                value[3] +
-                                                '</strong>&euro;</p>'
+                                                '</p>'
                                         );
-                                        $('.prodDiv' + contador).append(
-                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                                imagen +
-                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                        );
+                                        var precio1 = value[3];
+                                        for (let r = 0; r < precio['length']; r++) {
+                                            if (precio[r][2] == value[4]['id']) {
+                                                var cuenta = precio[r][1] / 100;
+                                                cuenta = cuenta + 1;
+                                                precio1 = precio1 * precioPunto;
+                                                precio1 = precio1 * cuenta;
+                                                $('.prodDiv' + contador).append(
+                                                    '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                                );
+                                            }
+                                        }
                                         $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                         contador++;
                                         saberNumero = 1;
@@ -1479,7 +1561,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                 });
                             });
                         } else {
-                            if (anchoFiltrado != 'Indiferente' && altura != 'Indiferente') {
+                            if (anchoFiltrado != 'Todos' && altura != 'Todos') {
                                 $('#fondo0').removeAttr('class');
                                 $('#fondo1').removeAttr('class');
                                 $('#fondo2').removeAttr('class');
@@ -1493,9 +1575,15 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                         var imagen = value[4]['imagen'];
                                         $('#ProductosCargados').css({ display: 'none' });
                                         $('#ProductosCargados1').css({ display: 'none' });
-
+                                        $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
                                         $('#prod' + contador).append(
                                             '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
+                                        );
+
+                                        $('.prodDiv' + contador).append(
+                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                                imagen +
+                                                '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
                                         );
                                         $('.prodDiv' + contador).append(
                                             '<p id="nombreMesita' +
@@ -1506,15 +1594,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                                 value[5] +
                                                 '" style="text-align:center">' +
                                                 value[4]['nombre'] +
-                                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                                value[3] +
-                                                '</strong>&euro;</p>'
+                                                '</p>'
                                         );
-                                        $('.prodDiv' + contador).append(
-                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                                imagen +
-                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                        );
+                                        var precio1 = value[3];
+                                        for (let r = 0; r < precio['length']; r++) {
+                                            if (precio[r][2] == value[4]['id']) {
+                                                var cuenta = precio[r][1] / 100;
+                                                cuenta = cuenta + 1;
+                                                precio1 = precio1 * precioPunto;
+                                                precio1 = precio1 * cuenta;
+                                                $('.prodDiv' + contador).append(
+                                                    '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                                );
+                                            }
+                                        }
                                         $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                         contador++;
                                     });
@@ -1523,7 +1616,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         }
                     }
                 } else {
-                    if (anchoFiltrado != 'Indiferente' && altura == 'Indiferente') {
+                    if (anchoFiltrado != 'Todos' && altura == 'Todos') {
                         $('#fondo0').removeAttr('class');
                         $('#fondo1').removeAttr('class');
                         $('#fondo2').removeAttr('class');
@@ -1542,6 +1635,12 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                 $('#prod' + contador).append(
                                     '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                 );
+                                $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
+                                $('.prodDiv' + contador).append(
+                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
                                         contador +
@@ -1551,21 +1650,26 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                         value[5] +
                                         '" style="text-align:center">' +
                                         value[4]['nombre'] +
-                                        '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                        value[3] +
-                                        '</strong>&euro;</p>'
+                                        '</p>'
                                 );
-                                $('.prodDiv' + contador).append(
-                                    '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                        imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                );
+                                var precio1 = value[3];
+                                for (let r = 0; r < precio['length']; r++) {
+                                    if (precio[r][2] == value[4]['id']) {
+                                        var cuenta = precio[r][1] / 100;
+                                        cuenta = cuenta + 1;
+                                        precio1 = precio1 * precioPunto;
+                                        precio1 = precio1 * cuenta;
+                                        $('.prodDiv' + contador).append(
+                                            '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                        );
+                                    }
+                                }
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
                             });
                         });
                     } else {
-                        if (anchoFiltrado == 'Indiferente' && altura != 'Indiferente') {
+                        if (anchoFiltrado == 'Todos' && altura != 'Todos') {
                             $('#fondo0').removeAttr('class');
                             $('#fondo1').removeAttr('class');
                             $('#fondo2').removeAttr('class');
@@ -1598,11 +1702,17 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                         idAux[idAux.length] = value[4]['id'];
                                         $('#ProductosCargados').css({ display: 'none' });
                                         $('#ProductosCargados1').css({ display: 'none' });
-
+                                        $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
                                         $('#prod' + contador).append(
                                             '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                         );
                                         var imagen = value[4]['imagen'];
+
+                                        $('.prodDiv' + contador).append(
+                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                                imagen +
+                                                '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                        );
                                         $('.prodDiv' + contador).append(
                                             '<p id="nombreMesita' +
                                                 contador +
@@ -1612,15 +1722,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                                 value[5] +
                                                 '" style="text-align:center">' +
                                                 value[4]['nombre'] +
-                                                '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                                value[3] +
-                                                '</strong>&euro;</p>'
+                                                '</p>'
                                         );
-                                        $('.prodDiv' + contador).append(
-                                            '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                                imagen +
-                                                '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                        );
+                                        var precio1 = value[3];
+                                        for (let r = 0; r < precio['length']; r++) {
+                                            if (precio[r][2] == value[4]['id']) {
+                                                var cuenta = precio[r][1] / 100;
+                                                cuenta = cuenta + 1;
+                                                precio1 = precio1 * precioPunto;
+                                                precio1 = precio1 * cuenta;
+                                                $('.prodDiv' + contador).append(
+                                                    '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                                );
+                                            }
+                                        }
                                         $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                         contador++;
                                         saberNumero = 1;
@@ -1630,7 +1745,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                 });
                             });
                         } else {
-                            if (anchoFiltrado != 'Indiferente' && altura != 'Indiferente') {
+                            if (anchoFiltrado != 'Todos' && altura != 'Todos') {
                                 $('#fondo0').removeAttr('class');
                                 $('#fondo1').removeAttr('class');
                                 $('#fondo2').removeAttr('class');
@@ -1652,6 +1767,13 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                             $('#prod' + contador).append(
                                                 '<div id="productosDormitorioCargados" class="prodDiv' + contador + '"></div>'
                                             );
+
+                                            $('.prodDiv' + contador).append(
+                                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
+                                                    imagen +
+                                                    '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                            );
+                                            $('#prod' + contador).attr('class', 'productosColor' + value[4]['id']);
                                             $('.prodDiv' + contador).append(
                                                 '<p id="nombreMesita' +
                                                     contador +
@@ -1661,15 +1783,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                                     value[5] +
                                                     '" style="text-align:center">' +
                                                     value[4]['nombre'] +
-                                                    '</p><hr style="width:100%;color:black"></hr><p style="position:absolute"><strong>Desde ' +
-                                                    value[3] +
-                                                    '</strong>&euro;</p>'
+                                                    '</p>'
                                             );
-                                            $('.prodDiv' + contador).append(
-                                                '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
-                                                    imagen +
-                                                    '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
-                                            );
+                                            var precio1 = value[3];
+                                            for (let r = 0; r < precio['length']; r++) {
+                                                if (precio[r][2] == value[4]['id']) {
+                                                    var cuenta = precio[r][1] / 100;
+                                                    cuenta = cuenta + 1;
+                                                    precio1 = precio1 * precioPunto;
+                                                    precio1 = precio1 * cuenta;
+                                                    $('.prodDiv' + contador).append(
+                                                        '<p style="text-align:center">Desde ' + precio1.toFixed(2) + ' &euro;</p>'
+                                                    );
+                                                }
+                                            }
                                             $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                             contador++;
                                         });
@@ -1681,11 +1808,15 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
             }
         }
     }
+
     public dimensionesCogidas(id) {
         $('#imagenProdEspeciales').empty();
-        $('#medidasAncho').empty();
-        $('#medidasFondo').empty();
-        $('#medidasAlto').empty();
+        $('#acabados').css({ display: 'block' });
+        $('#euroCalculadora').removeAttr('style');
+        $('#medidasEspecialesTexto').css({ display: 'none' });
+        $('#medidasAncho').css({ display: 'none' });
+        $('#medidasFondo').css({ display: 'none' });
+        $('#medidasAlto').css({ display: 'none' });
         $('#imagenAcabadoPrincipal').empty();
         var precioTienda = this.precioTienda;
         this.interiores = JSON.parse(sessionStorage.getItem('interiores'));
@@ -1723,7 +1854,16 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor' + id).css({ 'background-color': '#DFDDDC' });
         $('#imagenAcabado').remove();
+        var idProd;
         idProd = $('#nombreMesita').attr('class');
+        var precioPunto = this.precioPunto[0];
+        var todosLosPrecios = this.precioTiendaProductosService.todos;
+
+        for (let y = 0; y < todosLosPrecios.length; y++) {
+            if (idProd == todosLosPrecios[y][2]) {
+                var precioProducto = todosLosPrecios[y][1];
+            }
+        }
         var idDimenTipo = $('.dimensionesId' + id).attr('id');
         $('#total').text('0');
         var hola = $('.dimensionesColor' + id + ' #imagenDimensiones').attr('class');
@@ -1731,41 +1871,45 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         var acaSi = 0;
         var acabados = [];
         var imagen;
-        var idProd;
         datos = dimensiones;
         for (let h = 0; h < datos.length; h++) {
             if (datos[h]['id'] == idDimenTipo) {
                 if (datos[h]['mensaje'] != 'Medidas Especiales') {
-                    $('#datos1').append('<p>Ancho</p>');
-                    $('#datos1').append('<p>Alto</p>');
-                    $('#datos1').append('<p>Fondo</p>');
-
+                    var text = $('#nombreMesita').text();
                     var total = $('#total').text();
                     var totalfloat = parseFloat(total);
                     var precio = parseFloat(datos[h]['precio']);
-                    precio = precio * precioTienda;
+                    precio = precio * precioPunto;
+                    precioProducto = precioProducto / 100;
+                    var cuenta = precio * precioProducto;
+                    precio = precio + cuenta;
                     precio = Math.round(precio * 100) / 100;
                     totalfloat = totalfloat + precio;
+                    this.precioDimension = totalfloat;
                     $('#total').text(totalfloat);
                     $('#precioDimension').text(totalfloat);
-                    $('#precios1').append('<p class="' + datos[h]['id'] + '" id="ancho1">' + datos[h]['ancho'] + '</p>');
                     $('#idioma').attr('value', datos[h]['id']);
-                    $('#precios1').append('<p>' + datos[h]['alto'] + '</p>');
-                    $('#precios1').append('<p>' + datos[h]['fondo'] + '</p>');
-                    $('#precioCalculado1').append('<p>-</p>');
-                    $('#precioCalculado1').append('<p>-</p>');
-                    $('#precioCalculado1').append('<p>-</p>');
+                    $('#datos1').append(
+                        '<p style="width:100%"><span>Ancho : </span><span class="' +
+                            datos[h]['id'] +
+                            '" id="ancho1">' +
+                            datos[h]['ancho'] +
+                            '</span></p>'
+                    );
+                    $('#datos1').append('<p style="width:100%"><span>Alto : </span><span>' + datos[h]['alto'] + '</span></p>');
+                    $('#datos1').append('<p style="width:100%"><span>Fondo : </span><span>' + datos[h]['fondo'] + '</span></p>');
                     acaSi = 0;
                 } else {
                     $('#especiales').css({ display: 'block' });
 
                     $('#especialesTexto').removeAttr('style');
                     $('#especialesTexto').attr('style');
-                    $('#especialesTexto').css({ 'margin-left': '40%' });
-                    $('#especialesTexto').css({ 'margin-bottom': '3%' });
+                    $('#especialesTexto').css({ 'text-align': 'center' });
+                    $('#especialesTexto').css({ 'margin-bottom': '5%' });
+                    $('#especialesTexto').css({ 'margin-top': '5%' });
                     $('#especialesAncho').css({ float: 'left' });
                     $('#especialesAncho').css({ width: '20%' });
-                    $('#especialesAncho').css({ 'margin-left': '13%' });
+                    $('#especialesAncho').css({ 'margin-left': '1%' });
                     $('#especialesAncho').css({ border: '1px gray solid' });
                     $('#especialesAncho').css({ 'text-align': 'center' });
                     $('#especialesFondo').css({ float: 'left' });
@@ -1808,7 +1952,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             $('#acabados #imagenAcabadoPrincipal').append(
                                 '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                     imagen +
-                                    '" class="imagenAcabadoPrincipalImg"  width="500px" height="333px">'
+                                    '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
                             );
                         }
 
@@ -1822,10 +1966,10 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     i +
                                     '" class="' +
                                     value['acabados'][m]['id'] +
-                                    '" height="160px" width="280px" style=" opacity: 0.7;">'
+                                    '" height="250px" width="130px" style=" opacity: 0.7;">'
                             );
                             $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
+                                '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
                                     value['acabados'][m]['nombre'] +
                                     '</strong></p>'
                             );
@@ -1838,7 +1982,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         }
 
                         $('#aca1' + u).append(
-                            '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
+                            '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
                                 u +
                                 '">Acabado ' +
                                 u +
@@ -1853,6 +1997,39 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                     }
                 });
             });
+
+            this.productosDormitorioService.categoria(2).subscribe(data => {
+                for (let w = 0; w < data.body['length']; w++) {
+                    $('#modalApoyo #apoyoModal' + w).empty();
+                    $('#modalApoyo #apoyoModal' + w).append(
+                        '<img  src="data:image/gif;base64,' +
+                            data.body[w]['imagen'] +
+                            '" id="imagenApoyo' +
+                            w +
+                            '" class="' +
+                            data.body[w]['id'] +
+                            '" height="160px" width="280px" style=" opacity: 0.7;">'
+                    );
+                    $('#modalApoyo #apoyoModal' + w).append(
+                        '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
+                            data.body[w]['nombre'] +
+                            '</strong></p>'
+                    );
+                }
+            });
+            for (let i = 1; i <= 14; i++) {
+                for (let k = 0; k < 14; k++) {
+                    $('#myModalColores' + i + ' #acabadoImagen' + k).empty();
+                }
+            }
+
+            $('#botonApoyoNuevo').empty();
+            $('#botonApoyoNuevo').append(
+                '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
+            );
+            $('#botonApoyoNuevo').append(
+                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+            );
         }
     }
 
@@ -1862,6 +2039,16 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         $('#especiales').attr('style');
         $('#especiales').css({ width: '100%' });
         $('#especiales').css({ float: 'left' });
+        $('#cambioAncho').empty();
+        $('#medidasEspeciales').css({ display: 'block' });
+        $('#inputFondoAncho').remove();
+        $('#inputAltoAncho').remove();
+        $('#textoAncho').remove();
+        $('#anchoForm').remove();
+        $('#cambioFondo').empty();
+        $('#textoFondo').remove();
+        $('#inputfondoAlto').remove();
+        $('#altoTexto').remove();
         var idProd = $('#nombreMesita').attr('class');
         var dimensiones = this.dimensionesProductoTipoService.todos;
         var dimen = [];
@@ -1872,13 +2059,21 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 cont++;
             }
         }
+
+        $('#imagenAcabado').remove();
+        $('#acabados').css({ display: 'none' });
+        for (let i = 1; i <= 5; i++) {
+            $('.apoyoCogido' + i).empty();
+        }
+        for (let i = 1; i <= 15; i++) {
+            $('#aca1' + i).empty();
+        }
+        $('#productoCalculadora1 #datos1').empty();
+
         this.medidasEspecialesService.findProd(idProd).subscribe(data => {
             medidasEspeciales = data['body'];
             if (id == 1) {
                 $('#imagenProdEspeciales').empty();
-                $('#medidasAncho').empty();
-                $('#medidasFondo').empty();
-                $('#medidasAlto').empty();
                 $('#especialesFondo').css({ 'background-color': 'white' });
                 $('#especialesAlto').css({ 'background-color': 'white' });
                 $('#especialesAncho').css({ 'background-color': '#DFDDDC' });
@@ -1901,7 +2096,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     '" id="imagenMedidasEspeciales" style="max-width:100%;max-height:400px">'
                             );
                             $('#medidasAncho').append(
-                                '<p style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
+                                '<p id="textoAncho" style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
                                     medidasEspeciales[i]['min'] +
                                     ' y ' +
                                     medidasEspeciales[i]['max'] +
@@ -1932,16 +2127,15 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
 
             if (id == 2) {
                 $('#imagenProdEspeciales').empty();
-                $('#medidasAncho').empty();
-                $('#medidasFondo').empty();
-                $('#medidasAlto').empty();
+
                 $('#especialesFondo').css({ 'background-color': '#DFDDDC' });
                 $('#especialesAlto').css({ 'background-color': 'white' });
                 $('#especialesAncho').css({ 'background-color': 'white' });
                 $('#medidasEspecialesTexto').removeAttr('style');
                 $('#medidasEspecialesTexto').attr('style');
                 $('#medidasEspecialesTexto').css({ 'margin-left': '40%' });
-                $('#medidasEspecialesTexto').css({ 'margin-bottom': '3%' });
+                $('#medidasEspecialesTexto').css({ 'margin-top': '5%' });
+                $('#medidasEspecialesTexto').css({ 'margin-bottom': '5%' });
                 for (let i = 0; i < medidasEspeciales.length; i++) {
                     if (medidasEspeciales[i]['productosDormitorio']['id'] == idProd) {
                         if (medidasEspeciales[i]['fondo'] == 1) {
@@ -1956,14 +2150,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     '" id="imagenMedidasEspeciales" style="max-width:100%;max-height:400px">'
                             );
                             $('#medidasAncho').append(
-                                '<form><select id="anchosSelect" style="margin-left: 2%;width: 30%;text-align:center"><option></option></select></form'
+                                '<form id="anchoForm"><select id="anchosSelect" style="margin-left: 2%;width: 30%;text-align:center"><option></option></select></form'
                             );
                             for (let j = 0; j < dimen.length; j++) {
                                 $('#anchosSelect').append('<option value="' + dimen[j]['id'] + '">' + dimen[j]['ancho'] + '</option>');
                             }
 
                             $('#medidasFondo').append(
-                                '<p style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
+                                '<p id="textoFondo" style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
                                     medidasEspeciales[i]['min'] +
                                     ' y ' +
                                     medidasEspeciales[i]['max'] +
@@ -1993,16 +2187,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
 
             if (id == 3) {
                 $('#imagenProdEspeciales').empty();
-                $('#medidasAncho').empty();
-                $('#medidasFondo').empty();
-                $('#medidasAlto').empty();
                 $('#especialesFondo').css({ 'background-color': 'white' });
                 $('#especialesAlto').css({ 'background-color': '#DFDDDC' });
                 $('#especialesAncho').css({ 'background-color': 'white' });
                 $('#medidasEspecialesTexto').removeAttr('style');
                 $('#medidasEspecialesTexto').attr('style');
                 $('#medidasEspecialesTexto').css({ 'margin-left': '40%' });
-                $('#medidasEspecialesTexto').css({ 'margin-bottom': '3%' });
+                $('#medidasEspecialesTexto').css({ 'margin-top': '5%' });
+                $('#medidasEspecialesTexto').css({ 'margin-bottom': '5%' });
                 for (let i = 0; i < medidasEspeciales.length; i++) {
                     if (medidasEspeciales[i]['productosDormitorio']['id'] == idProd) {
                         if (medidasEspeciales[i]['alto'] == 1) {
@@ -2017,14 +2209,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     '" id="imagenMedidasEspeciales" style="max-width:100%;max-height:400px">'
                             );
                             $('#medidasAncho').append(
-                                '<form><select id="anchosSelect" style="margin-left: 2%;width: 30%;text-align:center"><option></option></select></form'
+                                '<form id="anchoForm"><select id="anchosSelect" style="margin-left: 2%;width: 30%;text-align:center"><option></option></select></form'
                             );
                             for (let j = 0; j < dimen.length; j++) {
                                 $('#anchosSelect').append('<option value="' + dimen[j]['id'] + '">' + dimen[j]['ancho'] + '</option>');
                             }
 
                             $('#medidasAlto').append(
-                                '<p style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
+                                '<p id="altoTexto" style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
                                     medidasEspeciales[i]['min'] +
                                     ' y ' +
                                     medidasEspeciales[i]['max'] +
@@ -2062,7 +2254,20 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         var acabados = [];
         var dimensiones = this.todasDimensiones;
         var dimensionProxima;
-        var idProd = $('#nombreMesita').attr('class');
+        var idProd;
+        $('#imagenAcabado').remove();
+        $('#acabados').css({ display: 'none' });
+        $('#nombreApoyoTitulo').css({ display: 'none' });
+        for (let i = 1; i <= 5; i++) {
+            $('.apoyoCogido' + i).empty();
+        }
+        for (let i = 1; i <= 15; i++) {
+            $('#aca1' + i).empty();
+        }
+        $('#productoCalculadora1 #datos1').empty();
+        $('#imagenAcabadoPrincipal').empty();
+        $('#imagenAcabado').remove();
+        idProd = $('#nombreMesita').attr('class');
         var idDimenTipo = $('#dimensionEspecial').attr('class');
         if (id == 1) {
             $('#anchoInputEspeciales').css({ border: 'gray 1px solid' });
@@ -2079,10 +2284,6 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             $('#inputAltoAncho').val(dimensionProxima['alto']);
                             $('#inputFondoAncho').val(dimensionProxima['fondo']);
 
-                            $('#datos1').append('<p>Ancho</p>');
-                            $('#datos1').append('<p>Alto</p>');
-                            $('#datos1').append('<p>Fondo</p>');
-                            $('#datos1').append('<p>Medida Especial</p>');
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
@@ -2093,16 +2294,39 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             precioAum = precio + precioAum;
                             $('#total').text(precioAum);
                             $('#precioDimension').text(precioAum);
-                            $('#precios1').append('<p class="' + idDimenTipo + '" id="ancho1">' + valor + '</p>');
                             $('#idioma').attr('value', dimensiones[k]['id']);
-                            $('#precios1').append('<p id="alto1" class="' + precioAum + '">' + dimensiones[k]['alto'] + '</p>');
-                            $('#precios1').append('<p id="fondo1">' + dimensiones[k]['fondo'] + '</p>');
-                            $('#precios1').append('<p>Incremento</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>30%</p>');
-                            console.log(dimensionProxima);
+                            $('#datos1').append(
+                                '<p class="' +
+                                    idDimenTipo +
+                                    '" id="ancho1" style="width:100%">Ancho<span style="float:right" id="valorAnchoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p id="alto1" class="' +
+                                    precioAum +
+                                    '" style="width:100%">Alto<span style="float:right" id="valorAltoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p id="fondo1" style="width:100%">Fondo<span style="float:right" id="valorFondoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p style="width:100%">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
+                            );
+                            var total = $('#total').text();
+                            var totalfloat = parseFloat(total);
+                            var precio = parseFloat(dimensiones[k]['precio']);
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            totalfloat = totalfloat + precio;
+                            var precioAum = precio * 0.3;
+                            var precioAumGuardado = precioAum;
+                            precioAum = precio + precioAum;
+                            $('#total').text(precioAum);
+                            $('#precioDimension').text(precioAum);
+                            $('#valorAnchoESPECIAL').text(valor);
+                            $('#idioma').attr('value', dimensiones[k]['id']);
+                            $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
+                            $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
+                            $('#precioAum').text(precioAumGuardado);
                             cont++;
                         } else {
                             if (cont == 0) {
@@ -2117,10 +2341,22 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     $('#datos1').empty();
                                     $('#precios1').empty();
                                     $('#precioCalculado1').empty();
-                                    $('#datos1').append('<p>Ancho</p>');
-                                    $('#datos1').append('<p>Alto</p>');
-                                    $('#datos1').append('<p>Fondo</p>');
-                                    $('#datos1').append('<p>Medida Especial</p>');
+                                    $('#datos1').append(
+                                        '<p class="' +
+                                            idDimenTipo +
+                                            '" id="ancho1" style="width:100%">Ancho<span style="float:right" id="valorAnchoESPECIAL"></span></p>'
+                                    );
+                                    $('#datos1').append(
+                                        '<p id="alto1" class="' +
+                                            precioAum +
+                                            '" style="width:100%">Alto<span style="float:right" id="valorAltoESPECIAL"></span></p>'
+                                    );
+                                    $('#datos1').append(
+                                        '<p id="fondo1" style="width:100%">Fondo<span style="float:right" id="valorFondoESPECIAL"></span></p>'
+                                    );
+                                    $('#datos1').append(
+                                        '<p style="width:100%">Incremento 30%<span id="precioAum" style="float:right"></span></p>'
+                                    );
                                     var total = $('#total').text();
                                     var totalfloat = parseFloat(total);
                                     var precio = parseFloat(dimensiones[k]['precio']);
@@ -2131,99 +2367,113 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     precioAum = precio + precioAum;
                                     $('#total').text(precioAum);
                                     $('#precioDimension').text(precioAum);
-                                    $('#precios1').append('<p class="' + idDimenTipo + '" id="ancho1">' + valor + '</p>');
+                                    $('#valorAnchoESPECIAL').text(valor);
                                     $('#idioma').attr('value', dimensiones[k]['id']);
-                                    $('#precios1').append('<p id="alto1" class="' + precioAum + '">' + dimensiones[k]['alto'] + '</p>');
-                                    $('#precios1').append('<p id="fondo1">' + dimensiones[k]['fondo'] + '</p>');
-                                    $('#precios1').append('<p>Incremento</p>');
-                                    $('#precioCalculado1').append('<p>-</p>');
-                                    $('#precioCalculado1').append('<p>-</p>');
-                                    $('#precioCalculado1').append('<p>-</p>');
-                                    $('#precioCalculado1').append('<p>30%</p>');
+                                    $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
+                                    $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
+                                    $('#precioAum').text(precioAum);
                                 }
                             }
                         }
                     }
                 }
-
-                for (let i = 1; i <= 15; i++) {
-                    $('#aca1' + i).empty();
-                }
-                $('#imagenAcabado').remove();
+                $('#acabados').css({ display: 'block' });
                 $('#acabado').removeAttr('style');
                 $('#acabado').attr('style');
-                $('#acabado').css({ 'margin-left': '40%' });
-                this.acabadosService.query().subscribe((res: HttpResponse<IAcabados[]>) => {
-                    $.each(res['body'], function(index, value) {
-                        acabados[index] = value;
+                $('#acabado').css({ 'text-align': 'center' });
+                $('#acabado').css({ 'margin-top': '5%' });
+                $('#acabado').css({ 'margin-bottom': '5%' });
+                var contador = 1;
+                var contnuevo = 1;
+                var u = 1;
+                var i = 0;
+                this.acaProdService.findAca(idProd).subscribe(data => {
+                    this.acaProdService.todos = data.body;
+                    $.each(this.acaProdService.todos, function(index, value) {
+                        if (value['productosDormitorio']['id'] == idProd) {
+                            imagen = value['imagen'];
+                            if (contador == 1) {
+                                $('#acabados #imagenAcabadoPrincipal').append(
+                                    '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                );
+                            }
+
+                            contador++;
+                            var idAca = value['id'];
+                            for (let m = 0; m < value['acabados'].length; m++) {
+                                $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
+                                    '<img  src="data:image/gif;base64,' +
+                                        value['acabados'][m]['imagenFondo'] +
+                                        '" id="imagenAcabado' +
+                                        i +
+                                        '" class="' +
+                                        value['acabados'][m]['id'] +
+                                        '" height="250px" width="130px" style=" opacity: 0.7;">'
+                                );
+                                $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
+                                    '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
+                                        value['acabados'][m]['nombre'] +
+                                        '</strong></p>'
+                                );
+
+                                i++;
+                                $('.cambiarAca' + u).attr('style');
+                                $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
+                                $('.cambiarAca' + u).css({ 'margin-top': '15px' });
+                                $('.cambiarAca' + u).text('Cambiar Acabado');
+                            }
+
+                            $('#aca1' + u).append(
+                                '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
+                                    u +
+                                    '">Acabado ' +
+                                    u +
+                                    '</button>'
+                            );
+                            $('#aca1' + u).append(
+                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                            );
+                            u++;
+                            i = 0;
+                            contnuevo++;
+                        }
                     });
                 });
-                this.acaProdService
-                    .query({
-                        page: this.page - 1,
-                        size: this.itemsPerPage,
-                        sort: this.sort()
-                    })
-                    .subscribe(data => {
-                        datos = data['body'];
 
-                        var contador = 1;
-                        var contnuevo = 1;
-                        var u = 1;
-                        var i = 0;
-                        $.each(datos, function(index, value) {
-                            if (value['productosDormitorio']['id'] == idProd) {
-                                imagen = value['productosDormitorio']['imagen'];
-                                if (contador == 1) {
-                                    $('#acabados').append('<div style="height: 400px;" id="imagenAcabadoPrincipal"></div>');
-                                    $('#acabados #imagenAcabadoPrincipal').append(
-                                        '<img id="imagenAcabado" src="data:image/gif;base64,' +
-                                            imagen +
-                                            '" id="imagenDimensiones" width="500px" height="333px" style=" opacity: 0.7;margin-left:150px;max-height: 333px;max-width: 500px;">'
-                                    );
-                                }
+                this.productosDormitorioService.categoria(2).subscribe(data => {
+                    for (let w = 0; w < data.body['length']; w++) {
+                        $('#modalApoyo #apoyoModal' + w).empty();
+                        $('#modalApoyo #apoyoModal' + w).append(
+                            '<img  src="data:image/gif;base64,' +
+                                data.body[w]['imagen'] +
+                                '" id="imagenApoyo' +
+                                w +
+                                '" class="' +
+                                data.body[w]['id'] +
+                                '" height="160px" width="280px" style=" opacity: 0.7;">'
+                        );
+                        $('#modalApoyo #apoyoModal' + w).append(
+                            '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
+                                data.body[w]['nombre'] +
+                                '</strong></p>'
+                        );
+                    }
+                });
+                for (let i = 1; i <= 14; i++) {
+                    for (let k = 0; k < 14; k++) {
+                        $('#myModalColores' + i + ' #acabadoImagen' + k).empty();
+                    }
+                }
 
-                                contador++;
-                                var idAca = value['id'];
-                                for (let m = 0; m < value['acabados'].length; m++) {
-                                    $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                        '<img  src="data:image/gif;base64,' +
-                                            value['acabados'][m]['imagenFondo'] +
-                                            '" id="imagenAcabado' +
-                                            i +
-                                            '" class="' +
-                                            value['acabados'][m]['id'] +
-                                            '" height="160px" width="280px" style=" opacity: 0.7;">'
-                                    );
-                                    $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                        '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                                            value['acabados'][m]['nombre'] +
-                                            '</strong></p>'
-                                    );
-
-                                    i++;
-                                    $('.cambiarAca' + u).attr('style');
-                                    $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
-                                    $('.cambiarAca' + u).css({ 'margin-top': '15px' });
-                                    $('.cambiarAca' + u).text('Cambiar Acabado');
-                                }
-
-                                $('#aca1' + u).append(
-                                    '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '">Acabado ' +
-                                        u +
-                                        '</button>'
-                                );
-                                $('#aca1' + u).append(
-                                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
-                                );
-                                u++;
-                                i = 0;
-                                contnuevo++;
-                            }
-                        });
-                    });
+                $('#botonApoyoNuevo').empty();
+                $('#botonApoyoNuevo').append(
+                    '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
+                );
+                $('#botonApoyoNuevo').append(
+                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                );
             } else {
                 $('#anchoInputEspeciales').css({ border: 'red 1px solid' });
             }
@@ -2241,11 +2491,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                     if (dimensiones[k]['productosDormitorio']['id'] == idProd) {
                         if (dimensiones[k]['id'] == ancho) {
                             dimensionProxima = dimensiones[k];
-                            $('#inputAltoAncho').val(dimensionProxima['alto']);
-                            $('#datos1').append('<p>Ancho</p>');
-                            $('#datos1').append('<p>Alto</p>');
-                            $('#datos1').append('<p>Fondo</p>');
-                            $('#datos1').append('<p>Medida Especial</p>');
+
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
@@ -2253,100 +2499,145 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             totalfloat = totalfloat + precio;
                             var precioAum = precio * 0.3;
+                            var precioAumGuardado = precioAum;
+                            precioAum = precio + precioAum;
+
+                            $('#total').text(precioAum);
+                            $('#precioDimension').text(precioAum);
+
+                            $('#idioma').attr('value', dimensiones[k]['id']);
+                            $('#datos1').append(
+                                '<p class="' +
+                                    idDimenTipo +
+                                    '" id="ancho1" style="width:100%">Ancho<span style="float:right" id="valorAnchoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p id="alto1" class="' +
+                                    precioAum +
+                                    '" style="width:100%">Alto<span style="float:right" id="valorAltoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p id="fondo1" style="width:100%">Fondo<span style="float:right" id="valorFondoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p style="width:100%">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
+                            );
+                            var total = $('#total').text();
+                            var totalfloat = parseFloat(total);
+                            var precio = parseFloat(dimensiones[k]['precio']);
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            totalfloat = totalfloat + precio;
+                            var precioAum = precio * 0.3;
+                            var precioAumGuardado = precioAum;
                             precioAum = precio + precioAum;
                             $('#total').text(precioAum);
                             $('#precioDimension').text(precioAum);
-                            $('#precios1').append('<p class="' + idDimenTipo + '" id="ancho1">' + dimensiones[k]['ancho'] + '</p>');
+                            $('#valorAnchoESPECIAL').text(valor);
                             $('#idioma').attr('value', dimensiones[k]['id']);
-                            $('#precios1').append('<p>' + dimensiones[k]['alto'] + '</p>');
-                            $('#precios1').append('<p>' + valor + '</p>');
-                            $('#precios1').append('<p>Incremento</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>30%</p>');
+                            $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
+                            $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
+                            $('#precioAum').text(precioAumGuardado);
                         }
                     }
                 }
-
-                for (let i = 1; i <= 15; i++) {
-                    $('#aca1' + i).empty();
-                }
-                $('#imagenAcabado').remove();
+                $('#acabados').css({ display: 'block' });
                 $('#acabado').removeAttr('style');
                 $('#acabado').attr('style');
-                $('#acabado').css({ 'margin-left': '40%' });
-                this.acabadosService.query().subscribe((res: HttpResponse<IAcabados[]>) => {
-                    $.each(res['body'], function(index, value) {
-                        acabados[index] = value;
+                $('#acabado').css({ 'text-align': 'center' });
+                $('#acabado').css({ 'margin-top': '5%' });
+                $('#acabado').css({ 'margin-bottom': '5%' });
+                var contador = 1;
+                var contnuevo = 1;
+                var u = 1;
+                var i = 0;
+                this.acaProdService.findAca(idProd).subscribe(data => {
+                    this.acaProdService.todos = data.body;
+                    $.each(this.acaProdService.todos, function(index, value) {
+                        if (value['productosDormitorio']['id'] == idProd) {
+                            imagen = value['imagen'];
+                            if (contador == 1) {
+                                $('#acabados #imagenAcabadoPrincipal').append(
+                                    '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                );
+                            }
+
+                            contador++;
+                            var idAca = value['id'];
+                            for (let m = 0; m < value['acabados'].length; m++) {
+                                $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
+                                    '<img  src="data:image/gif;base64,' +
+                                        value['acabados'][m]['imagenFondo'] +
+                                        '" id="imagenAcabado' +
+                                        i +
+                                        '" class="' +
+                                        value['acabados'][m]['id'] +
+                                        '" height="250px" width="130px" style=" opacity: 0.7;">'
+                                );
+                                $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
+                                    '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
+                                        value['acabados'][m]['nombre'] +
+                                        '</strong></p>'
+                                );
+
+                                i++;
+                                $('.cambiarAca' + u).attr('style');
+                                $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
+                                $('.cambiarAca' + u).css({ 'margin-top': '15px' });
+                                $('.cambiarAca' + u).text('Cambiar Acabado');
+                            }
+
+                            $('#aca1' + u).append(
+                                '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
+                                    u +
+                                    '">Acabado ' +
+                                    u +
+                                    '</button>'
+                            );
+                            $('#aca1' + u).append(
+                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                            );
+                            u++;
+                            i = 0;
+                            contnuevo++;
+                        }
                     });
                 });
-                this.acaProdService
-                    .query({
-                        page: this.page - 1,
-                        size: this.itemsPerPage,
-                        sort: this.sort()
-                    })
-                    .subscribe(data => {
-                        datos = data['body'];
 
-                        var contador = 1;
-                        var contnuevo = 1;
-                        var u = 1;
-                        var i = 0;
-                        $.each(datos, function(index, value) {
-                            if (value['productosDormitorio']['id'] == idProd) {
-                                imagen = value['productosDormitorio']['imagen'];
-                                if (contador == 1) {
-                                    $('#acabados').append('<div style="height: 400px;" id="imagenAcabadoPrincipal"></div>');
-                                    $('#acabados #imagenAcabadoPrincipal').append(
-                                        '<img id="imagenAcabado" src="data:image/gif;base64,' +
-                                            imagen +
-                                            '" id="imagenDimensiones" style=" opacity: 0.7;margin-left:150px;max-height: 400px;max-width: 400px;">'
-                                    );
-                                }
+                this.productosDormitorioService.categoria(2).subscribe(data => {
+                    for (let w = 0; w < data.body['length']; w++) {
+                        $('#modalApoyo #apoyoModal' + w).empty();
+                        $('#modalApoyo #apoyoModal' + w).append(
+                            '<img  src="data:image/gif;base64,' +
+                                data.body[w]['imagen'] +
+                                '" id="imagenApoyo' +
+                                w +
+                                '" class="' +
+                                data.body[w]['id'] +
+                                '" height="160px" width="280px" style=" opacity: 0.7;">'
+                        );
+                        $('#modalApoyo #apoyoModal' + w).append(
+                            '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
+                                data.body[w]['nombre'] +
+                                '</strong></p>'
+                        );
+                    }
+                });
+                for (let i = 1; i <= 14; i++) {
+                    for (let k = 0; k < 14; k++) {
+                        $('#myModalColores' + i + ' #acabadoImagen' + k).empty();
+                    }
+                }
 
-                                contador++;
-                                var idAca = value['id'];
-                                for (let m = 0; m < value['acabados'].length; m++) {
-                                    $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                        '<img  src="data:image/gif;base64,' +
-                                            value['acabados'][m]['imagenFondo'] +
-                                            '" id="imagenAcabado' +
-                                            i +
-                                            '" class="' +
-                                            value['acabados'][m]['id'] +
-                                            '" height="160px" width="280px" style=" opacity: 0.7;">'
-                                    );
-                                    $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                        '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                                            value['acabados'][m]['nombre'] +
-                                            '</strong></p>'
-                                    );
-
-                                    i++;
-                                    $('.cambiarAca' + u).attr('style');
-                                    $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
-                                    $('.cambiarAca' + u).css({ 'margin-top': '15px' });
-                                    $('.cambiarAca' + u).text('Cambiar Acabado');
-                                }
-
-                                $('#aca1' + u).append(
-                                    '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '">Acabado ' +
-                                        u +
-                                        '</button>'
-                                );
-                                $('#aca1' + u).append(
-                                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
-                                );
-                                u++;
-                                i = 0;
-                                contnuevo++;
-                            }
-                        });
-                    });
+                $('#botonApoyoNuevo').empty();
+                $('#botonApoyoNuevo').append(
+                    '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
+                );
+                $('#botonApoyoNuevo').append(
+                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                );
             } else {
                 $('#anchoInputEspeciales').css({ border: 'red 1px solid' });
             }
@@ -2365,10 +2656,6 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         if (dimensiones[k]['id'] == ancho) {
                             dimensionProxima = dimensiones[k];
                             $('#inputfondoAlto').val(dimensionProxima['alto']);
-                            $('#datos1').append('<p>Ancho</p>');
-                            $('#datos1').append('<p>Alto</p>');
-                            $('#datos1').append('<p>Fondo</p>');
-                            $('#datos1').append('<p>Medida Especial</p>');
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
@@ -2379,97 +2666,139 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             precioAum = precio + precioAum;
                             $('#total').text(precioAum);
                             $('#precioDimension').text(precioAum);
-                            $('#precios1').append('<p class="' + idDimenTipo + '" id="ancho1">' + dimensiones[k]['ancho'] + '</p>');
                             $('#idioma').attr('value', dimensiones[k]['id']);
-                            $('#precios1').append('<p>' + valor + '</p>');
-                            $('#precios1').append('<p>' + dimensiones[k]['fondo'] + '</p>');
-                            $('#precios1').append('<p>Incremento</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>-</p>');
-                            $('#precioCalculado1').append('<p>30%</p>');
+                            $('#datos1').append(
+                                '<p class="' +
+                                    idDimenTipo +
+                                    '" id="ancho1" style="width:100%">Ancho<span style="float:right" id="valorAnchoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p id="alto1" class="' +
+                                    precioAum +
+                                    '" style="width:100%">Alto<span style="float:right" id="valorAltoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p id="fondo1" style="width:100%">Fondo<span style="float:right" id="valorFondoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p style="width:100%">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
+                            );
+                            var total = $('#total').text();
+                            var totalfloat = parseFloat(total);
+                            var precio = parseFloat(dimensiones[k]['precio']);
+                            precio = precio * precioTienda;
+                            precio = Math.round(precio * 100) / 100;
+                            totalfloat = totalfloat + precio;
+                            var precioAum = precio * 0.3;
+                            var precioAumGuardado = precioAum;
+                            precioAum = precio + precioAum;
+                            $('#total').text(precioAum);
+                            $('#precioDimension').text(precioAum);
+                            $('#valorAnchoESPECIAL').text(valor);
+                            $('#idioma').attr('value', dimensiones[k]['id']);
+                            $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
+                            $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
+                            $('#precioAum').text(precioAumGuardado);
                         }
                     }
                 }
-
-                for (let i = 1; i <= 15; i++) {
-                    $('#aca1' + i).empty();
-                }
-                $('#imagenAcabado').remove();
+                $('#acabados').css({ display: 'block' });
                 $('#acabado').removeAttr('style');
                 $('#acabado').attr('style');
-                $('#acabado').css({ 'margin-left': '40%' });
-                this.acabadosService.query().subscribe((res: HttpResponse<IAcabados[]>) => {
-                    $.each(res['body'], function(index, value) {
-                        acabados[index] = value;
+                $('#acabado').css({ 'text-align': 'center' });
+                $('#acabado').css({ 'margin-top': '5%' });
+                $('#acabado').css({ 'margin-bottom': '5%' });
+                var contador = 1;
+                var contnuevo = 1;
+                var u = 1;
+                var i = 0;
+                this.acaProdService.findAca(idProd).subscribe(data => {
+                    this.acaProdService.todos = data.body;
+                    $.each(this.acaProdService.todos, function(index, value) {
+                        if (value['productosDormitorio']['id'] == idProd) {
+                            imagen = value['imagen'];
+                            if (contador == 1) {
+                                $('#acabados #imagenAcabadoPrincipal').append(
+                                    '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                );
+                            }
+
+                            contador++;
+                            var idAca = value['id'];
+                            for (let m = 0; m < value['acabados'].length; m++) {
+                                $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
+                                    '<img  src="data:image/gif;base64,' +
+                                        value['acabados'][m]['imagenFondo'] +
+                                        '" id="imagenAcabado' +
+                                        i +
+                                        '" class="' +
+                                        value['acabados'][m]['id'] +
+                                        '" height="250px" width="130px" style=" opacity: 0.7;">'
+                                );
+                                $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
+                                    '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
+                                        value['acabados'][m]['nombre'] +
+                                        '</strong></p>'
+                                );
+
+                                i++;
+                                $('.cambiarAca' + u).attr('style');
+                                $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
+                                $('.cambiarAca' + u).css({ 'margin-top': '15px' });
+                                $('.cambiarAca' + u).text('Cambiar Acabado');
+                            }
+
+                            $('#aca1' + u).append(
+                                '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
+                                    u +
+                                    '">Acabado ' +
+                                    u +
+                                    '</button>'
+                            );
+                            $('#aca1' + u).append(
+                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                            );
+                            u++;
+                            i = 0;
+                            contnuevo++;
+                        }
                     });
                 });
-                this.acaProdService
-                    .query({
-                        page: this.page - 1,
-                        size: this.itemsPerPage,
-                        sort: this.sort()
-                    })
-                    .subscribe(data => {
-                        datos = data['body'];
 
-                        var contador = 1;
-                        var contnuevo = 1;
-                        var u = 1;
-                        var i = 0;
-                        $.each(datos, function(index, value) {
-                            if (value['productosDormitorio']['id'] == idProd) {
-                                imagen = value['productosDormitorio']['imagen'];
-                                if (contador == 1) {
-                                    $('#acabados').append('<div style="height: 400px;" id="imagenAcabadoPrincipal"></div>');
-                                    $('#acabados #imagenAcabadoPrincipal').append(
-                                        '<img id="imagenAcabado" height="333px" width="500px" src="data:image/gif;base64,' +
-                                            imagen +
-                                            '" id="imagenDimensiones" style=" opacity: 0.7;margin-left:150px;max-height: 333px;max-width: 500px;">'
-                                    );
-                                }
+                this.productosDormitorioService.categoria(2).subscribe(data => {
+                    for (let w = 0; w < data.body['length']; w++) {
+                        $('#modalApoyo #apoyoModal' + w).empty();
+                        $('#modalApoyo #apoyoModal' + w).append(
+                            '<img  src="data:image/gif;base64,' +
+                                data.body[w]['imagen'] +
+                                '" id="imagenApoyo' +
+                                w +
+                                '" class="' +
+                                data.body[w]['id'] +
+                                '" height="160px" width="280px" style=" opacity: 0.7;">'
+                        );
+                        $('#modalApoyo #apoyoModal' + w).append(
+                            '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
+                                data.body[w]['nombre'] +
+                                '</strong></p>'
+                        );
+                    }
+                });
+                for (let i = 1; i <= 14; i++) {
+                    for (let k = 0; k < 14; k++) {
+                        $('#myModalColores' + i + ' #acabadoImagen' + k).empty();
+                    }
+                }
 
-                                contador++;
-                                var idAca = value['id'];
-                                for (let m = 0; m < value['acabados'].length; m++) {
-                                    $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                        '<img  src="data:image/gif;base64,' +
-                                            value['acabados'][m]['imagenFondo'] +
-                                            '" id="imagenAcabado' +
-                                            i +
-                                            '" class="' +
-                                            value['acabados'][m]['id'] +
-                                            '" height="160px" width="280px" style=" opacity: 0.7;">'
-                                    );
-                                    $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                        '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                                            value['acabados'][m]['nombre'] +
-                                            '</strong></p>'
-                                    );
-
-                                    i++;
-                                    $('.cambiarAca' + u).attr('style');
-                                    $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
-                                    $('.cambiarAca' + u).css({ 'margin-top': '15px' });
-                                    $('.cambiarAca' + u).text('Cambiar Acabado');
-                                }
-
-                                $('#aca1' + u).append(
-                                    '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '">Acabado ' +
-                                        u +
-                                        '</button>'
-                                );
-                                $('#aca1' + u).append(
-                                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
-                                );
-                                u++;
-                                i = 0;
-                                contnuevo++;
-                            }
-                        });
-                    });
+                $('#botonApoyoNuevo').empty();
+                $('#botonApoyoNuevo').append(
+                    '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
+                );
+                $('#botonApoyoNuevo').append(
+                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                );
             } else {
                 $('#anchoInputEspeciales').css({ border: 'red 1px solid' });
             }
@@ -2484,37 +2813,35 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         $('#textoFinal').css({ display: 'none' });
         var k = 1;
         var nombreAcabado;
-        var nombre = $('#nombreMesita')
-            .text()
-            .toLowerCase();
-        if (nombre == 'aparador 1') {
+        var nombre = $('#nombreMesita').text();
+        if (nombre == 'Aparador 1') {
             nombre = 'ap1';
         }
-        if (nombre == 'aparador 2') {
+        if (nombre == 'Aparador 2') {
             nombre = 'ap2';
         }
-        if (nombre == 'aparador 3') {
+        if (nombre == 'Aparador 3') {
             nombre = 'ap3';
         }
-        if (nombre == 'aparador 4') {
+        if (nombre == 'Aparador 4') {
             nombre = 'ap4';
         }
-        if (nombre == 'aparador 5') {
+        if (nombre == 'Aparador 5') {
             nombre = 'ap5';
         }
-        if (nombre == 'aparador 6') {
+        if (nombre == 'Aparador 6') {
             nombre = 'ap6';
         }
-        if (nombre == 'aparador 7') {
+        if (nombre == 'Aparador 7') {
             nombre = 'ap7';
         }
-        if (nombre == 'aparador 8') {
+        if (nombre == 'Aparador 8') {
             nombre = 'ap8';
         }
-        if (nombre == 'aparador 9') {
+        if (nombre == 'Aparador 9') {
             nombre = 'ap9';
         }
-        if (nombre == 'aparador 10') {
+        if (nombre == 'Aparador 10') {
             nombre = 'ap10';
         }
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
@@ -2565,7 +2892,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px" src="../../../content/images/ap2/1/ap2_1_' +
+                                '" width="600px" height="433px" src="../../../content/images/ap2/1/ap2_1_' +
                                 nombreAcabado +
                                 '_optimized.png">'
                         );
@@ -2573,7 +2900,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px" src="../../../content/images/' +
+                                '" width="600px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/1/' +
                                 nombre +
@@ -2589,7 +2916,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="cajon" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px"  src="../../../content/images/ap2/2/ap2_2_' +
+                                '" width="600px" height="433px"  src="../../../content/images/ap2/2/ap2_2_' +
                                 nombreAcabado +
                                 '_optimized.png">'
                         );
@@ -2598,7 +2925,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             $('#acabados #imagenAcabadoPrincipal').append(
                                 '<img id="cajon" class="' +
                                     nombreAcabado +
-                                    '" width="500px" height="333px"  src="../../../content/images/ap6/2/ap6_2_' +
+                                    '" width="600px" height="433px"  src="../../../content/images/ap6/2/ap6_2_' +
                                     nombreAcabado +
                                     '_optimized.png">'
                             );
@@ -2606,7 +2933,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             $('#acabados #imagenAcabadoPrincipal').append(
                                 '<img id="tapa" class="' +
                                     nombreAcabado +
-                                    '" width="500px" height="333px" src="../../../content/images/' +
+                                    '" width="600px" height="433px" src="../../../content/images/' +
                                     nombre +
                                     '/2/' +
                                     nombre +
@@ -2625,7 +2952,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="casco" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px" src="../../../content/images/' +
+                                '" width="600px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
@@ -2645,7 +2972,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="casco" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px" src="../../../content/images/' +
+                                '" width="600px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
@@ -2662,9 +2989,19 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 $('#val' + id1).remove();
                 $('#val' + id1 + 'Dato').remove();
                 $('#valor' + id1).remove();
-                $('#datos1').append('<p id="val' + id1 + '">Acabado ' + id1 + '</p>');
-                $('#precios1').append('<p id="val' + id1 + 'Dato" class="' + value['id'] + '">' + value['nombre'] + '</p>');
-                $('#precioCalculado1').append('<p id="valor' + id1 + '">' + value['precio'] + '</p>');
+                $('#datos1').append(
+                    '<p style="width:100%"> <span id="val' +
+                        id1 +
+                        '">Acabado ' +
+                        id1 +
+                        ' : </span><span id="val' +
+                        id1 +
+                        'Dato" class="' +
+                        value['id'] +
+                        '">' +
+                        value['nombre'] +
+                        '</span></p>'
+                );
                 k++;
             }
         });
@@ -2684,104 +3021,34 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
             }
         }
         var datos = [];
-        $('.apoyoCogido1').empty();
-        $('.apoyoCogido2').empty();
-        $('.apoyoCogido3').empty();
-        $('.apoyoCogido4').empty();
-        $('.apoyoCogido5').empty();
-        $('#apoyoRaya').remove();
-        $('#apoyo1').remove();
-        $('#nombreApoyo').remove();
+
         for (let j = 1; j <= 5; j++) {
             $('.apoyoCogido' + j).css({ 'background-color': 'white' });
         }
-
-        if (contadorApoyo == cont - 1) {
-            $('#nombreApoyoTitulo').removeAttr('style');
-            $('#nombreApoyoTitulo').attr('style');
-            $('#nombreApoyoTitulo').css({ 'margin-left': '40%' });
-            this.productosDormitorioService
-                .query({
-                    page: this.page - 1,
-                    size: this.itemsPerPage,
-                    sort: this.sort()
-                })
-                .subscribe(data => {
-                    datos = data['body'];
-                    var contador = 1;
-                    $.each(datos, function(index, value) {
-                        if (value['categoriasDormiId'] == 2) {
-                            if (contador == 1) {
-                                $('.imagenAcabadoPrincipalImg').attr('style');
-                                $('.imagenAcabadoPrincipalImg').css({ filter: 'brightness(-100%)' });
-                                var image = document.createElement('img');
-                                image.src = 'data:image/gif;base64,' + value['imagen'];
-                                image.id = 'imagenApoyo';
-                                $('.apoyoCogido1').append('<p>' + value['nombre'] + '</p><hr style="width:100%;color:black"></hr>');
-                                $('.apoyoCogido1').append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        value['imagen'] +
-                                        '" id="imagenApoyo" class="' +
-                                        value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
-                                );
-                            }
-                            if (contador == 2) {
-                                var image = document.createElement('img');
-                                image.src = 'data:image/gif;base64,' + value['imagen'];
-                                image.id = 'imagenApoyo';
-                                $('.apoyoCogido2').append('<p>' + value['nombre'] + '</p><hr style="width:100%;color:black"></hr>');
-                                $('.apoyoCogido2').append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        value['imagen'] +
-                                        '" id="imagenApoyo" class="' +
-                                        value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
-                                );
-                            }
-                            if (contador == 3) {
-                                var image = document.createElement('img');
-                                image.src = 'data:image/gif;base64,' + value['imagen'];
-                                image.id = 'imagenApoyo';
-                                $('.apoyoCogido3').append('<p>' + value['nombre'] + '</p><hr style="width:100%;color:black"></hr>');
-                                $('.apoyoCogido3').append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        value['imagen'] +
-                                        '" id="imagenApoyo" class="' +
-                                        value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
-                                );
-                            }
-                            if (contador == 4) {
-                                var image = document.createElement('img');
-                                image.src = 'data:image/gif;base64,' + value['imagen'];
-                                image.id = 'imagenApoyo';
-                                $('.apoyoCogido4').append('<p>' + value['nombre'] + '</p><hr style="width:100%;color:black"></hr>');
-                                $('.apoyoCogido4').append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        value['imagen'] +
-                                        '" id="imagenApoyo" class="' +
-                                        value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
-                                );
-                            }
-                            if (contador == 5) {
-                                var image = document.createElement('img');
-                                image.src = 'data:image/gif;base64,' + value['imagen'];
-                                image.id = 'imagenApoyo';
-                                $('.apoyoCogido5').append('<p>' + value['nombre'] + '</p><hr style="width:100%;color:black"></hr>');
-                                $('.apoyoCogido5').append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        value['imagen'] +
-                                        '" id="imagenApoyo" class="' +
-                                        value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
-                                );
-                            }
-                            contador++;
-                        }
-                    });
-                });
+        var apoyoBueno = $('#datos1 #nombreApoyo').text();
+        var idProd = $('#nombreMesita').attr('class');
+        if (contadorApoyo == cont - 1 && apoyoBueno != '') {
+            var iluminacion = this.iluminacion;
+            var texto = 0;
+            for (let k = 0; k < iluminacion.length; k++) {
+                if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
+                    $('#iluminacion').removeAttr('style');
+                    $('#iluminacion').attr('style');
+                    $('#iluminacion').css({ width: '100%' });
+                    $('#iluminacion').css({ float: 'left' });
+                    $('#ilu1').attr('class', iluminacion[k]['id']);
+                    texto = 0;
+                } else {
+                    texto = 1;
+                }
+            }
+            if (texto == 1) {
+                $('#botonCalculadora').removeAttr('class');
+            }
+            $('#terminarConfiguracion').removeAttr('style');
+            $('#terminarConfiguracion').attr('style');
+            $('#terminarConfiguracion').css({ float: 'left' });
+            $('#terminarConfiguracion').css({ width: '100%' });
         }
     }
 
@@ -2927,6 +3194,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
 
     public apoyoCogido(id) {
         $('#iluminacion').removeAttr('style');
+        $('#apoyoDatosTexto').remove();
         var precioTienda = this.precioTienda;
         $('#iluminacion').attr('style');
         $('#iluminacion').css({ display: 'none' });
@@ -2939,12 +3207,31 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         $('.apoyoCogido3').css({ 'background-color': 'white' });
         $('.apoyoCogido4').css({ 'background-color': 'white' });
         $('.apoyoCogido' + id).css({ 'background-color': '#DFDDDC' });
-        var idApoyo = $('.apoyoCogido' + id + ' #imagenApoyo').attr('class');
+        var idApoyo = $('#apoyoModal' + id + ' #imagenApoyo' + id).attr('class');
         var idProd = $('#nombreMesita').attr('class');
-        const h = $('#productoCalculadora1  #precios1 #ancho1').text();
+        const h = $('#productoCalculadora1  #datos1 #ancho1').text();
+        var precioPunto = this.precioPunto[0];
+        var todosLosPrecios = this.precioTiendaProductosService.apoyo;
+        var precioDimension = this.precioDimension;
         var dimension = [];
         var datos = [];
         var datosApoyo;
+        var valoresAca = [];
+        var cont = 1;
+        var contadorApoyo = 0;
+        for (let i = 1; i <= 14; i++) {
+            var valNuevo = $('#val' + i + 'Dato').attr('class');
+            if (valNuevo != '' && valNuevo != undefined) {
+                valoresAca[cont] = valNuevo;
+                cont++;
+            }
+        }
+        for (let m = 1; m <= 14; m++) {
+            if ($('#aca1' + m).html()) {
+                contadorApoyo++;
+            }
+        }
+
         this.tiposApoyoService
             .query({
                 page: this.page - 1,
@@ -2956,11 +3243,35 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 $.each(datos, function(index, value) {
                     if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
                         var precio = parseFloat(value['precio']);
-                        precio = precio * precioTienda;
+                        for (let f = 0; f < todosLosPrecios.length; f++) {
+                            if (idApoyo == todosLosPrecios[f][2]) {
+                                var precioProducto = todosLosPrecios[f][1];
+                            }
+                        }
+                        precioProducto = precioProducto / 100;
+                        precio = precio * precioPunto;
+                        var cuenta = precio * precioProducto;
+                        cuenta = precio + cuenta;
+                        precio = cuenta;
                         precio = Math.round(precio * 100) / 100;
-                        $('#datos1').append('<p id="nombreApoyo">' + value['productoApoyo']['nombre'] + '</p>');
-                        $('#precios1').append('<p id="apoyoRaya">-</p>');
-                        $('#precioCalculado1').append('<p id="apoyo1" class="' + value['id'] + '">' + precio + '&euro;</p>');
+                        var totalfloat = parseFloat(precioDimension);
+                        totalfloat = totalfloat + precio;
+                        $('#precioDimension').text(totalfloat);
+                        $('#datos1').append(
+                            '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                value['productoApoyo']['nombre'] +
+                                '</span><span style="float:right" id="apoyo1" class="' +
+                                value['id'] +
+                                '">+' +
+                                precio +
+                                '&euro;</span></p>'
+                        );
+                        $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                        $('#botonApoyoNuevo').append(
+                            '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                value['productoApoyo']['nombre'] +
+                                '</p>'
+                        );
                         var total = $('#total').text();
                         var totalfloat = parseFloat(total);
                         totalfloat = totalfloat + precio;
@@ -2968,32 +3279,33 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                     }
                 });
             });
-
-        var iluminacion = this.iluminacion;
-        var texto = 0;
-        for (let k = 0; k < iluminacion.length; k++) {
-            if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
-                $('#iluminacion').removeAttr('style');
-                $('#iluminacion').attr('style');
-                $('#iluminacion').css({ width: '100%' });
-                $('#iluminacion').css({ float: 'left' });
-                $('#ilu1').attr('class', iluminacion[k]['id']);
-                texto = 0;
-            } else {
-                texto = 1;
+        if (contadorApoyo == cont - 1) {
+            var iluminacion = this.iluminacion;
+            var texto = 0;
+            for (let k = 0; k < iluminacion.length; k++) {
+                if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
+                    $('#iluminacion').removeAttr('style');
+                    $('#iluminacion').attr('style');
+                    $('#iluminacion').css({ width: '100%' });
+                    $('#iluminacion').css({ float: 'left' });
+                    $('#ilu1').attr('class', iluminacion[k]['id']);
+                    texto = 0;
+                } else {
+                    texto = 1;
+                }
             }
+            if (texto == 1) {
+                $('#textoFinal').removeAttr('style');
+                $('#textoFinal').attr('style');
+                $('#textoFinal').css({ width: '100%' });
+                $('#textoFinal').css({ float: 'left' });
+                $('#botonCalculadora').removeAttr('class');
+            }
+            $('#terminarConfiguracion').removeAttr('style');
+            $('#terminarConfiguracion').attr('style');
+            $('#terminarConfiguracion').css({ float: 'left' });
+            $('#terminarConfiguracion').css({ width: '100%' });
         }
-        if (texto == 1) {
-            $('#textoFinal').removeAttr('style');
-            $('#textoFinal').attr('style');
-            $('#textoFinal').css({ width: '100%' });
-            $('#textoFinal').css({ float: 'left' });
-        }
-        $('#botonCalculadora').removeAttr('disabled');
-        $('#terminarConfiguracion').removeAttr('style');
-        $('#terminarConfiguracion').attr('style');
-        $('#terminarConfiguracion').css({ float: 'left' });
-        $('#terminarConfiguracion').css({ width: '100%' });
     }
 
     public ilumina(id) {
@@ -3020,11 +3332,13 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                     $('#total').text(totalfloat);
                 }
             }
+            $('#botonCalculadora').removeAttr('class');
         } else {
             $('#textoFinal').removeAttr('style');
             $('#textoFinal').attr('style');
             $('#textoFinal').css({ width: '100%' });
             $('#textoFinal').css({ float: 'left' });
+            $('#botonCalculadora').removeAttr('class');
         }
     }
 
@@ -3056,18 +3370,19 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 contador++;
             }
         }
+
         var contadorProd = contador;
         var contadorDimen = contador;
         var contAca = 0;
         for (let i = 1; i <= 3; i++) {
             const idProd = $('#nombreProd' + i).attr('class');
-            const dimen = $('#productoCalculadora1 #precios1 #ancho' + i).attr('class');
-            const idApoyo = $('#productoCalculadora1 #precioCalculado1 #apoyo' + i).attr('class');
-            const idIluminacion = $('#productoCalculadora1 #precioCalculado1 #iluminacion' + i).attr('class');
-            const ancho = $('#productoCalculadora1 #precios1 #ancho' + i).text();
-            const alto = $('#productoCalculadora1 #precios1 #alto' + i).text();
-            const fondo = $('#productoCalculadora1 #precios1 #fondo' + i).text();
-            const precio = $('#productoCalculadora1 #precios1 #alto' + i).attr('class');
+            const dimen = $('#productoCalculadora1 #datos1 #ancho' + i).attr('class');
+            const idApoyo = $('#productoCalculadora1 #datos1 #apoyo' + i).attr('class');
+            const idIluminacion = $('#productoCalculadora1 #datos1 #iluminacion' + i).attr('class');
+            const ancho = $('#productoCalculadora1 #datos1 #ancho' + i).text();
+            const alto = $('#productoCalculadora1 #datos1 #alto' + i).text();
+            const fondo = $('#productoCalculadora1 #datos1 #fondo' + i).text();
+            const precio = $('#productoCalculadora1 #datos1 #alto' + i).attr('class');
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
             console.log(sessionStorage);
             const prod = [];
@@ -3089,7 +3404,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
             const aca = [];
             var acabadoCogido;
             for (let j = 1; j <= 100; j++) {
-                acabadoCogido = $('#productoCalculadora1 #precios1 #val' + j + 'Dato').attr('class');
+                acabadoCogido = $('#productoCalculadora1 #datos1 #val' + j + 'Dato').attr('class');
                 if (acabadoCogido != undefined) {
                     var id1 = parseFloat(acabadoCogido);
                     for (let k = 0; k < 16; k++) {
@@ -3103,6 +3418,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
             $.each(todasDimensiones, function(index, value) {
                 if (value['id'] == dimen) {
                     for (let w = 1; w < aca.length; w++) {
+                        aca[w]['imagenFondo'] = '';
                         value['acabado' + w] = aca[w];
                     }
                     if (value['mensaje'] == 'Medidas Especiales') {
@@ -3114,6 +3430,10 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                     value['apoyo'] = apoyoBueno[1];
                     value['iluminacion'] = iluBuena[1];
                     prod[1] = value;
+                    prod[1]['imagen'] = '';
+                    prod[1]['productosDormitorio']['imagen'] = '';
+                    prod[1]['apoyo']['imagen'] = '';
+                    console.log(prod);
                     sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
                     contadorDimen++;
                 }
@@ -3190,50 +3510,231 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 }
             }
         }
-        $('#productoCalculadora1 #precios1').empty();
-        $('#productoCalculadora1 #precioCalculado1').empty();
-        $('#productoCalculadora1 #datos1').empty();
-        $('#nombreMesita').empty();
-        $('#precioDimension').empty();
-        $('#imagenAcabadoPrincipal').empty();
-        $('#total').empty();
-        $('.dimensionesColor1').empty();
-        $('.dimensionesColor2').empty();
-        $('.dimensionesColor3').empty();
-        $('.dimensionesColor4').empty();
-        $('.dimensionesColor5').empty();
-        $('.dimensionesColor6').empty();
-        $('.dimensionesColor1').css({ 'background-color': 'white' });
-        $('.dimensionesColor2').css({ 'background-color': 'white' });
-        $('.dimensionesColor3').css({ 'background-color': 'white' });
-        $('.dimensionesColor4').css({ 'background-color': 'white' });
-        $('.dimensionesColor5').css({ 'background-color': 'white' });
-        $('.dimensionesColor6').css({ 'background-color': 'white' });
-
-        $('.productosColor53').css({ 'background-color': 'white' });
-        $('.productosColor69').css({ 'background-color': 'white' });
-        $('.productosColor68').css({ 'background-color': 'white' });
-        $('.productosColor67').css({ 'background-color': 'white' });
-        $('.productosColor66').css({ 'background-color': 'white' });
-        $('.productosColor65').css({ 'background-color': 'white' });
-        $('.productosColor64').css({ 'background-color': 'white' });
-        $('.productosColor63').css({ 'background-color': 'white' });
-        $('.productosColor62').css({ 'background-color': 'white' });
-        $('.productosColor14').css({ 'background-color': 'white' });
-
-        $('#imagenAcabado').remove();
-        $('#medidas').css({ display: 'none' });
-        $('#acabado').css({ display: 'none' });
-        $('.productosColor').css({ 'background-color': 'white' });
-        $('#nombreApoyoTitulo').css({ display: 'none' });
-        for (let i = 1; i <= 5; i++) {
-            $('.apoyoCogido' + i).empty();
-        }
-        for (let i = 1; i <= 15; i++) {
-            $('#aca1' + i).empty();
-        }
+        this.borrarProdCalculadora();
     }
 
+    public cargarComposicion() {
+        var productosArrayNombres = this.productosArrayNombre;
+        var medidas = this.medidasModal;
+        var acabados = [];
+        $('#myModalComposicion .modal-body').empty();
+        var contAca = 1;
+        var nombreCarpeta;
+        for (let i = 1; i <= 100; i++) {
+            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+            if (sesion != null) {
+                $('#myModalComposicion .modal-body').append(
+                    '<div style="float: left;width: 500px;text-align: center;" id="cuerpo' + i + '"></div>'
+                );
+                var nombre = productosArrayNombres[sesion[1]['productosDormitorio']['id']];
+                console.log(nombre);
+                for (let j = 1; j < 15; j++) {
+                    if (sesion[1]['acabado' + j] != undefined) {
+                        acabados[contAca] = sesion[1]['acabado' + j]['nombre'];
+                        contAca++;
+                    }
+                }
+
+                if (
+                    nombre == 'mb6' ||
+                    nombre == 'mb9' ||
+                    nombre == 'mb7' ||
+                    nombre == 'mb8' ||
+                    nombre == 'mb10' ||
+                    nombre == 'mb11' ||
+                    nombre == 'mb12' ||
+                    nombre == 'mb13' ||
+                    nombre == 'mb14'
+                ) {
+                    nombreCarpeta = 'mb5';
+                } else {
+                    nombreCarpeta = nombre;
+                }
+
+                contAca = 1;
+                for (let k = 1; k < acabados.length; k++) {
+                    if (k == 1) {
+                        if (i == 1) {
+                            var prodMed = this.medidasModal[nombre];
+                            var height = prodMed.split(';')[3];
+                            var width = prodMed.split(';')[2];
+                            $('#cuerpo' + i).append(
+                                '<img style="z-index:100;' +
+                                    height +
+                                    ';' +
+                                    width +
+                                    '" id="' +
+                                    nombre +
+                                    '" class="' +
+                                    acabados[k].toLowerCase() +
+                                    'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                    nombreCarpeta +
+                                    '/' +
+                                    k +
+                                    '/' +
+                                    nombreCarpeta +
+                                    '_' +
+                                    k +
+                                    '_' +
+                                    acabados[k].toLowerCase() +
+                                    '_optimized.png"><p> </p>'
+                            );
+                        } else {
+                            var prodMed = this.medidasModal[nombre];
+                            var left = prodMed.split(';')[0];
+                            var bottom = prodMed.split(';')[1];
+                            var height = prodMed.split(';')[3];
+                            var width = prodMed.split(';')[2];
+                            $('#cuerpo' + i).append(
+                                '<img style="z-index:' +
+                                    (100 - i) +
+                                    ';' +
+                                    left +
+                                    ';' +
+                                    bottom +
+                                    ';' +
+                                    height +
+                                    ';' +
+                                    width +
+                                    '"  class="' +
+                                    acabados[k].toLowerCase() +
+                                    'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                    nombreCarpeta +
+                                    '/' +
+                                    k +
+                                    '/' +
+                                    nombreCarpeta +
+                                    '_' +
+                                    k +
+                                    '_' +
+                                    acabados[k].toLowerCase() +
+                                    '_optimized.png"><p> </p>'
+                            );
+                        }
+                    } else {
+                        if (k == 2) {
+                            if (i == 1) {
+                                var prodMed = this.medidasModal[nombre];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
+                                $('#cuerpo' + i).append(
+                                    '<img style="margin-top:-15px;z-index:100;' +
+                                        height +
+                                        ';' +
+                                        width +
+                                        '" id="' +
+                                        nombre +
+                                        '" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                        nombreCarpeta +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombreCarpeta +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png"><p> </p>'
+                                );
+                            } else {
+                                var prodMed = this.medidasModal[nombre];
+                                var left = prodMed.split(';')[0];
+                                var bottom = prodMed.split(';')[1];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
+                                $('#cuerpo' + i).append(
+                                    '<img style="z-index:' +
+                                        (100 - i) +
+                                        ';margin-top:-15px;' +
+                                        left +
+                                        ';' +
+                                        bottom +
+                                        ';' +
+                                        height +
+                                        ';' +
+                                        width +
+                                        '" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                        nombreCarpeta +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombreCarpeta +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png"><p> </p>'
+                                );
+                            }
+                        } else {
+                            if (i == 1) {
+                                var prodMed = this.medidasModal[nombre];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
+                                $('#cuerpo' + i).append(
+                                    '<img style="margin-top:-15px;z-index:100;' +
+                                        height +
+                                        ';' +
+                                        width +
+                                        '" id="' +
+                                        nombre +
+                                        '" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                        nombre +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png"><p> </p>'
+                                );
+                            } else {
+                                var prodMed = this.medidasModal[nombre];
+                                var left = prodMed.split(';')[0];
+                                var bottom = prodMed.split(';')[1];
+                                var height = prodMed.split(';')[3];
+                                var width = prodMed.split(';')[2];
+                                $('#cuerpo' + i).append(
+                                    '<img style="z-index:' +
+                                        (100 - i) +
+                                        ';margin-top:-15px;' +
+                                        left +
+                                        ';' +
+                                        bottom +
+                                        ';' +
+                                        height +
+                                        ';' +
+                                        width +
+                                        '" class="' +
+                                        acabados[k].toLowerCase() +
+                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                        nombre +
+                                        '/' +
+                                        k +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        k +
+                                        '_' +
+                                        acabados[k].toLowerCase() +
+                                        '_optimized.png"><p> </p>'
+                                );
+                            }
+                        }
+                    }
+                }
+                acabados = [];
+            }
+        }
+    }
     public generarPresupuesto() {
         this.todasDimensiones = this.dimensionesProductoTipoService.todos;
 
@@ -3248,148 +3749,107 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 }
                 this.acaProdPed = numeroProductos;
                 if (numeroProductos.length != 0) {
-                    var nombreTexto = [];
-                    var prodAca = [];
-                    var ancho = [];
-                    var alto = [];
-                    var fondo = [];
-                    var nombre;
-                    var idApoyo;
-                    var ancho = [];
-                    var alto = [];
-                    var fondo = [];
-                    var productosFinal = [];
-                    var dimensionesFinal = [];
-                    var nombreAcabado = [];
-                    var numeroAcaProd = [];
-                    var apoyosFinal = [];
-                    var dimensionEspecialBien = [];
-                    var anchoTexto;
-                    var altoTexto;
-                    var fondoTexto;
-                    var contadorProd = 0;
-                    var contadorAcabados = 0;
-                    var contadorAlto = 0;
-                    var contadorFondo = 0;
-                    var contadorAncho = 0;
-                    var contadorApoyo = 0;
-                    var contadorDimension = 0;
-                    var contadorProductos = 0;
-                    var idDimenEsp;
-                    var precioTexto;
-                    var todasDimensiones = this.todasDimensiones;
-                    var contadorIlu = 0;
-                    var acabados = this.acabados;
-                    var productos = this.apoyo;
-                    var apoyos = this.sistemasApoyo;
-                    var idIlu;
-                    var prodIlu = [];
-                    var iluFinal = [];
-                    var iluminacion = this.iluminacion;
-                    var nombreAcabado1;
-                    for (let j = 1; j <= 10; j++) {
-                        for (let k = 1; k < 100; k++) {
-                            nombreAcabado1 = $('#acabado' + j + '' + k).text();
-                            if (nombreAcabado1 != '') {
-                                nombreAcabado[contadorAcabados] = nombreAcabado1;
-                                numeroAcaProd[j] = contadorAcabados;
-                                contadorAcabados++;
-                            }
-                        }
-                        idIlu = $('#productoCarrito' + j + '  #precios' + j + ' #iluminacionCarr' + j + '').attr('class');
-                        for (let i = 0; i < iluminacion.length; i++) {
-                            if (idIlu != '' && idIlu != undefined) {
-                                if (iluminacion[i]['id'] == idIlu) {
-                                    iluFinal[contadorIlu] = iluminacion[i];
-                                    contadorIlu++;
-                                }
-                            }
-                        }
-
-                        idApoyo = $('#sistemaApoyo' + j).attr('class');
-                        for (let o = 0; o < apoyos.length; o++) {
-                            if (apoyos[o]['id'] == idApoyo) {
-                                apoyosFinal[contadorApoyo] = apoyos[o];
-                                contadorApoyo++;
-                            }
-                        }
-
-                        nombre = $('#nombreProd' + j).text();
-                        anchoTexto = $('#productoCarrito' + j + ' #ancho' + j).text();
-                        idDimenEsp = $('#productoCarrito' + j + ' #ancho' + j).attr('class');
-                        precioTexto = $('#productoCarrito' + j + ' #alto' + j).attr('class');
-                        altoTexto = $('#productoCarrito' + j + ' #alto' + j).text();
-                        fondoTexto = $('#productoCarrito' + j + ' #fondo' + j).text();
-
-                        if (nombre != '') {
-                            nombreTexto[contadorProd] = nombre;
-                            contadorProd++;
-                        }
-                        if (anchoTexto != '') {
-                            ancho[contadorAncho] = anchoTexto;
-                            contadorAncho++;
-                        }
-                        if (altoTexto != '') {
-                            alto[contadorAlto] = altoTexto;
-                            contadorAlto++;
-                        }
-                        if (fondoTexto != '') {
-                            fondo[contadorFondo] = fondoTexto;
-                            contadorFondo++;
-                        }
-
-                        if (nombre != '' && anchoTexto != '' && altoTexto != '' && fondoTexto != '') {
-                            for (let k = 0; k < productos.length; k++) {
-                                if (productos[k]['nombre'] == nombre) {
-                                    productosFinal[contadorProductos] = productos[k];
-                                    contadorProductos++;
-                                }
-                            }
-                            for (let h = 0; h < todasDimensiones.length; h++) {
-                                if (
-                                    todasDimensiones[h]['ancho'] == anchoTexto &&
-                                    todasDimensiones[h]['alto'] == altoTexto &&
-                                    todasDimensiones[h]['fondo'] == fondoTexto &&
-                                    nombre == todasDimensiones[h]['productosDormitorio']['nombre']
-                                ) {
-                                    dimensionesFinal[contadorDimension] = todasDimensiones[h];
-                                    contadorDimension++;
-                                } else {
-                                    if (todasDimensiones[h]['id'] == idDimenEsp && todasDimensiones[h]['mensaje'] == 'Medidas Especiales') {
-                                        todasDimensiones[h]['precio'] = precioTexto;
-                                        todasDimensiones[h]['alto'] = altoTexto;
-                                        todasDimensiones[h]['ancho'] = anchoTexto;
-                                        todasDimensiones[h]['fondo'] = fondoTexto;
-                                        dimensionesFinal[contadorDimension] = todasDimensiones[h];
-                                        contadorDimension++;
-                                    }
-                                }
-                            }
+                    var prodCarr = [];
+                    var todoCarr;
+                    var contProd = 0;
+                    for (let i = 1; i < 100; i++) {
+                        todoCarr = JSON.parse(sessionStorage.getItem('prod' + i));
+                        if (todoCarr != undefined) {
+                            prodCarr[contProd] = todoCarr;
+                            contProd++;
                         }
                     }
-
-                    this.isSaving = true;
-                    var usuarios = this.user;
-                    var usuario;
-                    var idUsu = this.currentAccount['id'];
-                    for (let i = 0; i < usuarios.length; i++) {
-                        if (usuarios[i]['id'] == idUsu) {
-                            usuario = usuarios[i];
+                    var numeroAcaProd = [];
+                    var aux = [];
+                    var acab = [];
+                    var prodAca = [];
+                    var prodIlu = [];
+                    var dimensionEspecialBien = [];
+                    var contAcab = 0;
+                    for (let j = 0; j < prodCarr.length; j++) {
+                        for (let i = 0; i < 15; i++) {
+                            if (prodCarr[j][1]['acabado' + (i + 1)] != undefined) {
+                                acab[contAcab] = prodCarr[j][1]['acabado' + (i + 1)];
+                                contAcab++;
+                            }
+                        }
+                        contAcab = 1;
+                        numeroAcaProd[j] = acab;
+                    }
+                    var account = this.accountService.userIdentity;
+                    if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                        var idTienda = $('#selectTienda').val();
+                        var todosTiendas = this.representanteTiendaService.todos;
+                        for (let w = 0; w < todosTiendas['length']; w++) {
+                            if (todosTiendas[w]['id'] == idTienda) {
+                                var usuario = todosTiendas[w]['datosUsuario']['user'];
+                            }
+                        }
+                        var usuarios = this.user;
+                        var usuarioCreado;
+                        var idUsu = this.currentAccount['id'];
+                        for (let i = 0; i < usuarios.length; i++) {
+                            if (usuarios[i]['id'] == idUsu) {
+                                usuarioCreado = usuarios[i];
+                            }
+                        }
+                    } else {
+                        if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                            var idTienda = $('#selectTienda').val();
+                            var tiendaUsuarioAdmin = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+                            var usuario = tiendaUsuarioAdmin['user'];
+                            var usuarios = this.user;
+                            var usuarioCreado;
+                            var idUsu = this.currentAccount['id'];
+                            for (let i = 0; i < usuarios.length; i++) {
+                                if (usuarios[i]['id'] == idUsu) {
+                                    usuarioCreado = usuarios[i];
+                                }
+                            }
+                        } else {
+                            this.isSaving = true;
+                            var usuarios = this.user;
+                            var usuario;
+                            var idUsu = this.currentAccount['id'];
+                            for (let i = 0; i < usuarios.length; i++) {
+                                if (usuarios[i]['id'] == idUsu) {
+                                    usuario = usuarios[i];
+                                }
+                            }
                         }
                     }
                     var d = new Date();
 
                     var month = d.getMonth() + 1;
                     var day = d.getDate();
-
+                    var prueba;
                     var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
-
-                    const prueba = {
-                        codigo: 'PR-' + usuario['id'],
-                        pedido: 0,
-                        user: usuario,
-                        fecha_presupuesto: output
-                    };
+                    if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                        prueba = {
+                            codigo: 'PR-' + usuario['id'],
+                            pedido: 0,
+                            user: usuario,
+                            fecha_presupuesto: output,
+                            usuarioCreadoPre: usuarioCreado
+                        };
+                    } else {
+                        if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                            prueba = {
+                                codigo: 'PR-' + usuario['id'],
+                                pedido: 0,
+                                user: usuario,
+                                fecha_presupuesto: output,
+                                usuarioCreadoPre: usuarioCreado
+                            };
+                        } else {
+                            prueba = {
+                                codigo: 'PR-' + usuario['id'],
+                                pedido: 0,
+                                user: usuario,
+                                fecha_presupuesto: output
+                            };
+                        }
+                    }
                     this.presupuestoPedido = prueba;
                     this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
                     var presupuesto = this.presupuesto;
@@ -3419,22 +3879,36 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     fecha_presupuesto: output
                                 };
                                 var prodPrePed;
-                                for (let m = 0; m < productosFinal.length; m++) {
-                                    if (apoyosFinal[m] == undefined) {
+                                for (let m = 0; m < prodCarr.length; m++) {
+                                    const dimen = {
+                                        id: prodCarr[m][1]['id'],
+                                        nombre: prodCarr[m][1]['nombre'],
+                                        anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
+                                        fondo: prodCarr[m][1]['fondo'],
+                                        alto: prodCarr[m][1]['alto'],
+                                        ancho: prodCarr[m][1]['ancho'],
+                                        imagen: prodCarr[m][1]['imagen'],
+                                        imagenContentType: prodCarr[m][1]['imagenContentType'],
+                                        mensaje: prodCarr[m][1]['mensaje'],
+                                        precio: prodCarr[m][1]['precio'],
+                                        productosDormitorio: prodCarr[m][1]['productosDormitorio']
+                                    };
+                                    var dimensionesFinal = dimen;
+                                    if (prodCarr[m][1]['apoyo'] == undefined) {
                                         prodPrePed = {
-                                            productosDormitorio: productosFinal[m],
+                                            productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                             presupuestoPedido: prueba1,
-                                            dimensionesProductoTipo: dimensionesFinal[m]
+                                            dimensionesProductoTipo: dimen
                                         };
                                     } else {
                                         prodPrePed = {
-                                            productosDormitorio: productosFinal[m],
+                                            productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                             presupuestoPedido: prueba1,
-                                            dimensionesProductoTipo: dimensionesFinal[m],
-                                            tiposApoyo: apoyosFinal[m]
+                                            dimensionesProductoTipo: dimen,
+                                            tiposApoyo: prodCarr[m][1]['apoyo']
                                         };
                                     }
-
+                                    numeroAcaProd[m]['prod'] = prodPrePed;
                                     prodAca[m] = prodPrePed;
                                     prodIlu[m] = prodPrePed;
                                     dimensionEspecialBien[m] = prodPrePed;
@@ -3442,7 +3916,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     this.subscribeToSaveResponse1(
                                         this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
                                     );
-                                    if (dimensionesFinal[m]['mensaje'] == 'Medidas Especiales') {
+                                    if (dimensionesFinal['mensaje'] == 'Medidas Especiales') {
                                         var acaPedProd = this.acaProdPed.length;
                                         acaPedProd = this.acaProdPed[acaPedProd - 1];
                                         dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
@@ -3455,39 +3929,26 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                         };
                                         this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
                                     }
-                                    if (iluFinal[m] != undefined && iluFinal[m] != '') {
+                                    if (prodCarr[m][1]['iluminacion'] != undefined && prodCarr[m][1]['iluminacion'] != '') {
                                         var acaPedProd = this.acaProdPed.length;
                                         acaPedProd = this.acaProdPed[acaPedProd - 1];
                                         prodIlu[m]['id'] = acaPedProd['id'] + m + 1;
                                         const iluProd = {
-                                            iluminacion: iluFinal[m],
+                                            iluminacion: prodCarr[m][1]['iluminacion'],
                                             productosPresupuestoPedidos: prodIlu[m]
                                         };
                                         this.subscribeToSaveResponse(this.iluminacionProdPrePedService.create(iluProd));
                                     }
                                 }
                                 let b = 0;
-                                for (let w = 1; w < numeroAcaProd.length; w++) {
-                                    if (b != 0) {
-                                        b = numeroAcaProd[w];
-                                    }
-                                    for (b; b < nombreAcabado.length; b++) {
-                                        if (b <= numeroAcaProd[w]) {
-                                            for (let g = 0; g < acabados.length; g++) {
-                                                if (acabados[g]['nombre'] == nombreAcabado[b]) {
-                                                    var acaPedProd = this.acaProdPed.length;
-                                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                                    prodAca[w - 1]['id'] = acaPedProd['id'] + w;
-                                                    const acabados1 = {
-                                                        acabados: acabados[g],
-                                                        productosPresupuestoPedidos: prodAca[w - 1]
-                                                    };
-                                                    this.subscribeToSaveResponse(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                    );
-                                                }
-                                            }
-                                        }
+
+                                for (let w = 0; w < numeroAcaProd.length; w++) {
+                                    for (let b = 0; b < numeroAcaProd[w].length; b++) {
+                                        const acabados1 = {
+                                            acabados: numeroAcaProd[w][b],
+                                            productosPresupuestoPedidos: prodAca[w]
+                                        };
+                                        this.subscribeToSaveResponse(this.acabadosProductosPresupuestoPedidoService.create(acabados1));
                                     }
                                 }
                             },
@@ -3501,13 +3962,78 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         var productos = [];
         var apoyos = [];
         var cont = 0;
+        var precioPunto = this.precioPunto[0];
+        var precio = this.precioTiendaProductosService.todos;
+        console.log(precio);
         var todos = this.productosDormitorioService.todos;
 
         if (todos != undefined) {
+            var prod = todos;
+            for (let q = 0; q < prod.length; q++) {
+                prod[q]['precio'] = 0;
+            }
+            this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
+                console.log(data.body);
+                var datos = data.body;
+                var prod = this.productosDormitorioService.todos;
+                for (let q = 0; q < prod.length; q++) {
+                    prod[q]['precio'] = 0;
+                }
+                for (let n = 0; n < datos['length']; n++) {
+                    for (let q = 0; q < prod.length; q++) {
+                        if (prod[q]['id'] == datos[n][0]) {
+                            if (prod[q]['precio'] == 0) {
+                                if (datos[n][1] != 0) {
+                                    prod[q]['precio'] = datos[n][1];
+                                    if (precio[q][2] == prod[q]['id']) {
+                                        var cuenta = precio[q][1] / 100;
+                                        var cuenta = cuenta + 1;
+                                        var precio1 = prod[q]['precio'];
+                                        precio1 = precio1 * precioPunto;
+                                        precio1 = precio1 * cuenta;
+                                        prod[q]['precio'] = precio1.toFixed(2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                this.productosDormitorioService.todos = prod;
+            });
             this.productosDormitorios = todos;
         } else {
             this.productosDormitorioService.categoria(11).subscribe(data => {
                 this.productosDormitorioService.todos = data.body;
+                this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
+                    console.log(data.body);
+                    var datos = data.body;
+                    var prod = this.productosDormitorioService.todos;
+                    for (let q = 0; q < prod.length; q++) {
+                        prod[q]['precio'] = 0;
+                    }
+                    for (let n = 0; n < datos['length']; n++) {
+                        for (let q = 0; q < prod.length; q++) {
+                            if (prod[q]['id'] == datos[n][0]) {
+                                if (prod[q]['precio'] == 0) {
+                                    if (datos[n][1] != 0) {
+                                        prod[q]['precio'] = datos[n][1];
+                                        if (precio[q][2] == prod[q]['id']) {
+                                            var cuenta = precio[q][1] / 100;
+                                            var cuenta = cuenta + 1;
+                                            var precio1 = prod[q]['precio'];
+                                            precio1 = precio1 * precioPunto;
+                                            precio1 = precio1 * cuenta;
+                                            prod[q]['precio'] = precio1.toFixed(2);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    this.productosDormitorioService.todos = prod;
+                });
             });
             this.productosDormitorios = this.productosDormitorioService.todos;
         }
@@ -3546,17 +4072,26 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
     ngOnInit() {
         var todasDimensiones = [];
         var contDimenTipo = 0;
-        this.loadAll();
+
         this.pruebaCargar();
 
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-
-        this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
-            this.precioTiendaProductosService.todos = data.body;
+        this.precioTiendaService.findBus(tienda.id).subscribe(data => {
+            this.precioPunto = data.body;
         });
+        this.precioTiendaProductosService.findProdId(11, tienda.id).subscribe(data => {
+            this.precioTiendaProductosService.todos = data.body;
+            this.loadAll();
+        });
+
+        this.precioTiendaProductosService.findProdId(2, tienda.id).subscribe(data => {
+            this.precioTiendaProductosService.apoyo = data.body;
+            this.loadAll();
+        });
+
         this.precioTienda = sessionStorage.getItem('precioTienda');
     }
 
@@ -3646,6 +4181,39 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         var especiales = [];
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
 
+        var medidasModal = [];
+        medidasModal['mb4'] = 'margin-left:-140px;bottom:125px;max-width:500px;max-height:300px;';
+        medidasModal['mb1'] = 'margin-left:-60px;bottom:105px;max-width:500px;max-height:300px;';
+        medidasModal['mb6'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb7'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb8'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb9'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb10'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb11'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb12'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb13'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb14'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg1'] = 'margin-left:-130px;bottom:113px;max-width:300px;max-height:535.65px;';
+
+        this.medidasModal = medidasModal;
+
+        var productosArrayNombres = [];
+        productosArrayNombres[107] = 'mb1';
+        productosArrayNombres[72] = 'sg1';
+        productosArrayNombres[73] = 'sg1';
+        productosArrayNombres[108] = 'mb';
+        productosArrayNombres[109] = 'mb4';
+        productosArrayNombres[110] = 'mb6';
+        productosArrayNombres[111] = 'mb5';
+        productosArrayNombres[112] = 'mb8';
+        productosArrayNombres[113] = 'mb7';
+        productosArrayNombres[114] = 'mb9';
+        productosArrayNombres[115] = 'mb11';
+        productosArrayNombres[116] = 'mb10';
+        productosArrayNombres[117] = 'mb13';
+        productosArrayNombres[118] = 'mb12';
+        productosArrayNombres[119] = 'mb14';
+        this.productosArrayNombre = productosArrayNombres;
         this.iluminacionService
             .query({
                 size: 100000
@@ -3656,7 +4224,16 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 }
             });
         this.iluminacion = ilu;
-
+        var account = this.accountService.userIdentity;
+        if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+            this.represenTorgaService.findUsu(account.id).subscribe(data => {
+                this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
+                    this.representanteTiendaService.todos = data.body;
+                    this.representanteTiendaService.representante = data.body[0]['represenTorga'];
+                    this.tiendasRepresentante = data.body;
+                });
+            });
+        }
         this.acabadosService
             .query({
                 page: this.page - 1,
@@ -3694,6 +4271,19 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 }
             });
         this.sistemasApoyo = sistemasApoyo;
+
+        this.medidasEspecialesService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    especiales[i] = data.body[i];
+                }
+            });
+        this.especiales = especiales;
 
         for (let i = 1; i <= 100; i++) {
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
