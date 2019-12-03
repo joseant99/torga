@@ -85,7 +85,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     previousPage: any;
     reverse: any;
     eventSubscriber: any;
-
+    precioDimension: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -548,6 +548,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 for (let i = 0; i < datos.length; i++) {
                     if (producto == datos[i]['productosDormitorio']['id']) {
                         $('#nombreMesita').text(datos[i]['productosDormitorio']['nombre']);
+                        $('#nombreMesita').attr('class', datos[i]['productosDormitorio']['id']);
                         $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #dfdddc' });
 
                         if (cont == 0) {
@@ -1853,7 +1854,16 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor' + id).css({ 'background-color': '#DFDDDC' });
         $('#imagenAcabado').remove();
+        var idProd;
         idProd = $('#nombreMesita').attr('class');
+        var precioPunto = this.precioPunto[0];
+        var todosLosPrecios = this.precioTiendaProductosService.todos;
+
+        for (let y = 0; y < todosLosPrecios.length; y++) {
+            if (idProd == todosLosPrecios[y][2]) {
+                var precioProducto = todosLosPrecios[y][1];
+            }
+        }
         var idDimenTipo = $('.dimensionesId' + id).attr('id');
         $('#total').text('0');
         var hola = $('.dimensionesColor' + id + ' #imagenDimensiones').attr('class');
@@ -1861,7 +1871,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var acaSi = 0;
         var acabados = [];
         var imagen;
-        var idProd;
         datos = dimensiones;
         for (let h = 0; h < datos.length; h++) {
             if (datos[h]['id'] == idDimenTipo) {
@@ -1870,9 +1879,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     var total = $('#total').text();
                     var totalfloat = parseFloat(total);
                     var precio = parseFloat(datos[h]['precio']);
-                    precio = precio * precioTienda;
+                    precio = precio * precioPunto;
+                    precioProducto = precioProducto / 100;
+                    var cuenta = precio * precioProducto;
+                    precio = precio + cuenta;
                     precio = Math.round(precio * 100) / 100;
                     totalfloat = totalfloat + precio;
+                    this.precioDimension = totalfloat;
                     $('#total').text(totalfloat);
                     $('#precioDimension').text(totalfloat);
                     $('#idioma').attr('value', datos[h]['id']);
@@ -3277,6 +3290,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var idApoyo = $('#apoyoModal' + id + ' #imagenApoyo' + id).attr('class');
         var idProd = $('#nombreMesita').attr('class');
         const h = $('#productoCalculadora1  #datos1 #ancho1').text();
+        var precioPunto = this.precioPunto[0];
+        var todosLosPrecios = this.precioTiendaProductosService.apoyo;
+        var precioDimension = this.precioDimension;
         var dimension = [];
         var datos = [];
         var datosApoyo;
@@ -3307,8 +3323,20 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $.each(datos, function(index, value) {
                     if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
                         var precio = parseFloat(value['precio']);
-                        precio = precio * precioTienda;
+                        for (let f = 0; f < todosLosPrecios.length; f++) {
+                            if (idApoyo == todosLosPrecios[f][2]) {
+                                var precioProducto = todosLosPrecios[f][1];
+                            }
+                        }
+                        precioProducto = precioProducto / 100;
+                        precio = precio * precioPunto;
+                        var cuenta = precio * precioProducto;
+                        cuenta = precio + cuenta;
+                        precio = cuenta;
                         precio = Math.round(precio * 100) / 100;
+                        var totalfloat = parseFloat(precioDimension);
+                        totalfloat = totalfloat + precio;
+                        $('#precioDimension').text(totalfloat);
                         $('#datos1').append(
                             '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
                                 value['productoApoyo']['nombre'] +
@@ -4138,6 +4166,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             this.precioTiendaProductosService.todos = data.body;
             this.loadAll();
         });
+
+        this.precioTiendaProductosService.findProdId(2, tienda.id).subscribe(data => {
+            this.precioTiendaProductosService.apoyo = data.body;
+            this.loadAll();
+        });
+
         this.precioTienda = sessionStorage.getItem('precioTienda');
     }
 

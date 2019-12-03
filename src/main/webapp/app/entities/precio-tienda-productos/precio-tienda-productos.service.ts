@@ -13,6 +13,7 @@ type EntityArrayResponseType = HttpResponse<IPrecioTiendaProductos[]>;
 export class PrecioTiendaProductosService {
     public resourceUrl = SERVER_API_URL + 'api/precio-tienda-productos';
     public todos;
+    public apoyo;
     constructor(protected http: HttpClient) {}
 
     create(precioTiendaProductos: IPrecioTiendaProductos): Observable<EntityResponseType> {

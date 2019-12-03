@@ -278,7 +278,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 );
                                                 var prodNombre =
                                                     acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
-                                                prodNombre = prodNombre.split(' ')[0];
+                                                if (prodNombre == 'Modulo Bajo 1') {
+                                                    prodNombre = 'mb1';
+                                                }
                                                 var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
                                                 if (nombreAcabado == 'marmol blanco') {
                                                     nombreAcabado = 'marmolblanco';
@@ -289,7 +291,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 $('#imagen' + i).append(
                                                     '<img id="tapa" class="' +
                                                         nombreAcabado +
-                                                        '" width="500px" height="333px" style="position: absolute;left: 30px;margin-top: 5px;" src="../../../content/images/' +
+                                                        '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
                                                         prodNombre +
                                                         '/' +
                                                         contador +

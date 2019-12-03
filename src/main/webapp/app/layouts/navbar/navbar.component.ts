@@ -467,6 +467,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 for (let w = 0; w < numeroAcaProd.length; w++) {
+                                    var acaPedProd = this.acaProdPed.length;
+                                    acaPedProd = this.acaProdPed[0];
+                                    prodAca[w]['id'] = acaPedProd['id'] + w + 1;
                                     for (let b = 0; b < numeroAcaProd[w].length; b++) {
                                         const acabados1 = {
                                             acabados: numeroAcaProd[w][b],
