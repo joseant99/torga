@@ -112,7 +112,7 @@ server:
     use-forward-headers: true
     port: 443
     ssl:
-        key-store: classpath:config/tls/pedidostorga.p12
+        key-store: classpath:config/tls/SSL5290713.p12
         key-store-password: Pedidos2019
         key-store-type: PKCS12
         key-alias: pedidostorga
