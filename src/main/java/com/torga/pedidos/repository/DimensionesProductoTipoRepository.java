@@ -25,6 +25,9 @@ public interface DimensionesProductoTipoRepository extends JpaRepository<Dimensi
 	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.ancho = ?2 order by u.productosDormitorio.nombre")
 	Collection<DimensionesProductoTipo> findFiltro(Long id, Float ancho);
 	
+	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.id = ?1 and u.fondo = ?2 order by u.ancho")
+	Collection<DimensionesProductoTipo> findFiltroProd(Long id, Float ancho);
+	
 	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.alto = ?2 order by u.productosDormitorio.nombre")
 	Collection<DimensionesProductoTipo> findFiltroAltura(Long id, Float altura);
 	
@@ -36,6 +39,9 @@ public interface DimensionesProductoTipoRepository extends JpaRepository<Dimensi
 	
 	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.fondo = ?2 and u.ancho =?3 order by u.productosDormitorio.nombre")
 	Collection<DimensionesProductoTipo> findFiltroFondoAncho(Long id, Float fondo, Float ancho);
+	
+	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.id = ?1 and u.fondo = ?2 and u.ancho =?3 order by u.productosDormitorio.nombre")
+	Collection<DimensionesProductoTipo> findFiltroFondoAnchoProd(Long id, Float fondo, Float ancho);
 	
 	@Query("SELECT u.alto, u.ancho, u.fondo, u.precio, u.productosDormitorio, u.id FROM DimensionesProductoTipo u WHERE u.productosDormitorio.categoriasDormi.id = ?1 and u.fondo = ?2 and u.alto =?3 order by u.productosDormitorio.nombre")
 	Collection<DimensionesProductoTipo> findFiltroFondoAlto(Long id, Float fondo, Float alto);

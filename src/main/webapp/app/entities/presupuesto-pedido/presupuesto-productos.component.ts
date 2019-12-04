@@ -85,10 +85,15 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
     public imprimir() {
         var divToPrint = document.getElementById('imprimir');
-        var newWin = window.open('');
-        newWin.document.write(divToPrint.outerHTML);
-        newWin.print();
-        newWin.close();
+        var ventana = window.open('');
+        ventana.document.write('<html><head><title>' + document.title + '</title>');
+        ventana.document.write('</head><body >');
+        ventana.document.write(divToPrint.innerHTML);
+        ventana.document.write('</body></html>');
+        ventana.document.close();
+        ventana.focus();
+        ventana.print();
+        return true;
     }
 
     public eliminar() {
@@ -280,6 +285,18 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
                                                 if (prodNombre == 'Modulo Bajo 1') {
                                                     prodNombre = 'mb1';
+                                                }
+
+                                                if (prodNombre == 'Modulo Bajo 4 Apertura Izquierda') {
+                                                    prodNombre = 'mb6';
+                                                }
+
+                                                if (prodNombre == 'Aparador 2') {
+                                                    prodNombre = 'ap2';
+                                                }
+
+                                                if (prodNombre == 'Aparador 3') {
+                                                    prodNombre = 'ap3';
                                                 }
                                                 var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
                                                 if (nombreAcabado == 'marmol blanco') {

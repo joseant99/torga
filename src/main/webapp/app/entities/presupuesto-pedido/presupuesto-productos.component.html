@@ -8,7 +8,7 @@
 	    		<p style="text-align:center;font-size:30px">FECHA:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_presupuesto}}</p>
 	    		<a style="float:right;margin-right:20%;margin-bottom:50px;" (click)="mostrarPrecioFabrica()"><img style="max-width:50px;" src="../../../content/images/fabrica.png"/></a>
 	    	</div>
-	    	<div style="float:left;width:40%;margin-left:100px;height:333px" id="imagen{{i}}">
+	    	<div style="float:left;width:40%;margin-left:100px;height:333px;margin-top:4%;" id="imagen{{i}}">
 	    	</div>
 	    	<div class="{{productosPresupuestoPedidos.id}}Datos" style="float:right;width:40%;">
 	    		<p style="font-size:30px"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</i>&euro;</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
@@ -73,7 +73,7 @@
 		<div style="float:left;width:100%">
 			<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalPasarPedido">Generar Pedido</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>
-	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="imprimir()">Imprimir</button></p>
+	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="imprimir()" value='Print'>Imprimir</button></p>
 	  		<p id="contacto1" style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>
 	  		<p id="contacto2" style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modal1">Contacto con Fabrica</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" [routerLink]="['/presupuesto-edicion']">Editar Presupuesto</button></p>
