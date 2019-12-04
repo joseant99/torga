@@ -2497,7 +2497,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('#cuerpo' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;position: absolute;width: 98%;font-size: 30px;">' +
                                 sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                '</p>'
+                                '<span onclick="borrarProdCesta(' +
+                                i +
+                                ')" style="margin-left:25px">X</span></p>'
                         );
                         for (let k = 0; k < acabados.length; k++) {
                             if (k == 0) {
@@ -2699,7 +2701,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('#cuerpo' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;position: absolute;width: 98%;font-size: 30px;">' +
                                 sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                '</p>'
+                                '<span onclick="borrarProdCesta(' +
+                                i +
+                                ')" style="margin-left:25px">X</span></p>'
                         );
                         if (nombre == 'mb6') {
                             for (let k = 0; k < acabados.length; k++) {

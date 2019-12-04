@@ -147,6 +147,18 @@
 		$("#rayasNavegador").attr("src","../../../content/images/LINEAS-min.jpg");
 		$("#botonEsconder").attr("onclick","apareceMenu()");
 	}
+	function borrarProdCesta(id){
+		sessionStorage.removeItem("prod"+id);
+		$("#modalCesta .modal-body #cuerpo"+id).remove();
+		$("#modalCesta .modal-body #textoCesta"+id).remove();
+			for(let i = id;i<15;i++){
+				var prod = sessionStorage.getItem("prod"+(i+1));
+				if(prod != undefined){
+					sessionStorage.removeItem("prod"+(i+1));
+					sessionStorage.setItem("prod"+(i), prod);
+				}	
+			}	
+	}
 	function apareceMenu(){
 		$("#menuPrincipal").css({"display":"block"});
 		$("#botonEsconder").removeAttr("onclick");
