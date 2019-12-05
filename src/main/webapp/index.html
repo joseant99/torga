@@ -159,6 +159,9 @@
 				}	
 			}	
 	}
+	function guardarIdEditar(id){
+		sessionStorage.setItem("idEditarProd",id);
+	}
 	function apareceMenu(){
 		$("#menuPrincipal").css({"display":"block"});
 		$("#botonEsconder").removeAttr("onclick");

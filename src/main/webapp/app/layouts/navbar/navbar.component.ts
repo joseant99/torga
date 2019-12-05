@@ -2499,7 +2499,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
                                 '<span onclick="borrarProdCesta(' +
                                 i +
-                                ')" style="margin-left:25px">X</span></p>'
+                                ')" style="margin-left:25px">X</span> <span data-toggle="modal" href="#modalConfirmarEditar" onclick="guardarIdEditar(' +
+                                i +
+                                ')" style="margin-left:25px">EDITAR</span></p>'
                         );
                         for (let k = 0; k < acabados.length; k++) {
                             if (k == 0) {
@@ -5544,7 +5546,15 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.sessionStorage.store('locale', languageKey);
         this.languageService.changeLanguage(languageKey);
     }
-
+    public cargarEditarLink() {
+        $('#modalCesta').attr('class', 'modal fade');
+        $('#modalCesta').css({ display: 'none' });
+        $('#modalConfirmarEditar').attr('class', 'modal fade');
+        $('#modalConfirmarEditar').css({ display: 'none' });
+        $('.modal-backdrop').remove();
+        $('body').removeAttr('class');
+        this.router.navigate(['/productos-editar']);
+    }
     public tarifa() {
         $('#menuComercialTorga').attr('class', 'collapse');
         $('#menuTienda').attr('class', 'collapse');

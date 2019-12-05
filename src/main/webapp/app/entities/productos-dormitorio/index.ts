@@ -8,6 +8,7 @@ export * from './armarios-dormitorio.component';
 export * from './productos-dormitorio-categoria.component';
 export * from './productos-dormitorio-chinfonier.component';
 export * from './productos-dormitorio-cabeceros.component';
+export * from './productos-editar.component';
 export * from './productos-dormitorio-apoyo.component';
 export * from './productos-dormitorio-canape.component';
 export * from './productos-modulos-bajos.component';

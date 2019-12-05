@@ -11,6 +11,7 @@ type EntityArrayResponseType = HttpResponse<ITiposApoyo[]>;
 
 @Injectable({ providedIn: 'root' })
 export class TiposApoyoService {
+    public todos;
     public resourceUrl = SERVER_API_URL + 'api/tipos-apoyos';
 
     constructor(protected http: HttpClient) {}

@@ -19,6 +19,7 @@ import { ProductosModulosBajosComponent } from './productos-modulos-bajos.compon
 import { ProductosAparadoresComponent } from './productos-aparadores.component';
 import { ProductosSingularesComponent } from './productos-singulares.component';
 import { ProductosBuscadorComponent } from './productos-buscador.component';
+import { ProductosEditarComponent } from './productos-editar.component';
 import { ProductosDormitorioUpdateComponent } from './productos-dormitorio-update.component';
 import { ProductosDormitorioDeletePopupComponent } from './productos-dormitorio-delete-dialog.component';
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
@@ -69,6 +70,19 @@ export const productosDormitorioRoute: Routes = [
     {
         path: 'productos-modulos-bajos',
         component: ProductosModulosBajosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-editar',
+        component: ProductosEditarComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

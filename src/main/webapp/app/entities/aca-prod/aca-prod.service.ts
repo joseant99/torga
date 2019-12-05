@@ -13,6 +13,7 @@ type EntityArrayResponseType = HttpResponse<IAcaProd[]>;
 export class AcaProdService {
     public resourceUrl = SERVER_API_URL + 'api/aca-prods';
     public todos;
+    public parte;
     constructor(protected http: HttpClient) {}
 
     create(acaProd: IAcaProd): Observable<EntityResponseType> {

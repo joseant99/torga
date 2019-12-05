@@ -19,7 +19,8 @@ import {
     ProductosSingularesComponent,
     ProductosDormitorioDeleteDialogComponent,
     productosDormitorioRoute,
-    productosDormitorioPopupRoute
+    productosDormitorioPopupRoute,
+    ProductosEditarComponent
 } from './';
 
 const ENTITY_STATES = [...productosDormitorioRoute, ...productosDormitorioPopupRoute];
@@ -41,7 +42,8 @@ const ENTITY_STATES = [...productosDormitorioRoute, ...productosDormitorioPopupR
         ProductosDormitorioCategoriaComponent,
         ProductosDormitorioUpdateComponent,
         ProductosDormitorioDeleteDialogComponent,
-        ProductosDormitorioDeletePopupComponent
+        ProductosDormitorioDeletePopupComponent,
+        ProductosEditarComponent
     ],
     entryComponents: [
         ProductosDormitorioComponent,
@@ -57,7 +59,8 @@ const ENTITY_STATES = [...productosDormitorioRoute, ...productosDormitorioPopupR
         ProductosSingularesComponent,
         ProductosModulosBajosComponent,
         ProductosDormitorioDeleteDialogComponent,
-        ProductosDormitorioDeletePopupComponent
+        ProductosDormitorioDeletePopupComponent,
+        ProductosEditarComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
