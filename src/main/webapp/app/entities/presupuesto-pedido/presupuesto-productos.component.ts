@@ -594,7 +594,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             this.currentAccount = account;
         });
         this.registerChangeInProductosPresupuestoPedidos();
-        var idPresu = sessionStorage.getItem('presupuesto');
+        var idPresu;
+        idPresu = sessionStorage.getItem('presupuesto');
         this.idPresu = idPresu;
         this.contactoFabricaService
             .query({
