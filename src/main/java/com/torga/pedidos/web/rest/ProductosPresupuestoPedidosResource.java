@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -94,6 +94,20 @@ public class ProductosPresupuestoPedidosResource {
         Page<ProductosPresupuestoPedidos> page = productosPresupuestoPedidosRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/productos-presupuesto-pedidos");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+    
+    /**
+     * GET  /productos-presupuesto-pedidos : get all the productosPresupuestoPedidos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of productosPresupuestoPedidos in body
+     */
+    @GetMapping("/productos-presupuesto-pedidos-id/{id}")
+    @Timed
+    public ResponseEntity<Collection<ProductosPresupuestoPedidos>> getAllProductosPresupuestoPedidosId(@PathVariable Long id) {
+        log.debug("REST request to get a page of ProductosPresupuestoPedidos");
+        Collection<ProductosPresupuestoPedidos> page = productosPresupuestoPedidosRepository.findByProd(id);
+        return ResponseEntity.ok().body(page);
     }
 
     /**

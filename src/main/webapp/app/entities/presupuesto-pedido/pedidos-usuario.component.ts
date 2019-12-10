@@ -58,7 +58,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         this.presupuestoPedidoService
             .query({
                 page: this.page - 1,
-                size: this.itemsPerPage,
+                size: 1000000,
                 sort: this.sort()
             })
             .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {

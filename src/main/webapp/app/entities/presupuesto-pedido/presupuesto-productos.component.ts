@@ -125,16 +125,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     }
 
     public pedido() {
-        console.log(this.presupuestos);
         var actualizar;
-        var todosPresupuestos = this.presupuestos;
-        for (let i = 0; i < todosPresupuestos.length; i++) {
-            if (todosPresupuestos[i]['presupuestoPedido'] != null) {
-                if (todosPresupuestos[i]['presupuestoPedido']['id'] == sessionStorage.getItem('presupuesto')) {
-                    actualizar = todosPresupuestos[i];
-                }
-            }
-        }
+        var todosPresupuestos = this.productosPresupuestoPedidosService.todos;
+        var actualizar = todosPresupuestos[0];
         var d = new Date();
 
         var month = d.getMonth() + 1;
@@ -149,7 +142,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         console.log(presupuestoActualizado);
 
         this.subscribeToSaveResponse(this.presupuestoPedidoService.update(presupuestoActualizado));
-        this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.update(actualizar));
     }
     protected subscribeToSaveResponse(result: Observable<HttpResponse<IPresupuestoPedido>>) {
         result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
@@ -653,17 +645,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             });
         this.provincias = provincias;
 
-        this.productosPresupuestoPedidosService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    presupuestos[index] = value;
-                });
-            });
+        this.productosPresupuestoPedidosService.query1(idPresu).subscribe(data => {
+            this.productosPresupuestoPedidosService.todos = data.body;
+        });
 
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
         this.pagosTiendaService

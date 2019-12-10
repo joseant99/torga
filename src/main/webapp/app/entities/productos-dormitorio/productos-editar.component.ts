@@ -2275,7 +2275,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 $('#acabados #imagenAcabadoPrincipal').append(
                                     '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                        '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
                                 );
                             }
 
@@ -2439,7 +2439,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 $('#acabados #imagenAcabadoPrincipal').append(
                                     '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                        '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
                                 );
                             }
 
@@ -2600,7 +2600,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 $('#acabados #imagenAcabadoPrincipal').append(
                                     '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                        '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
                                 );
                             }
 
@@ -2793,7 +2793,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px" src="../../../content/images/mb5/1/mb5_1_' +
+                                '" width="650px" height="433px" src="../../../content/images/mb5/1/mb5_1_' +
                                 nombreAcabado +
                                 '_optimized.png">'
                         );
@@ -2857,7 +2857,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px" src="../../../content/images/' +
+                                '" width="650px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/1/' +
                                 nombre +
@@ -2883,7 +2883,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="cajon" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px"  src="../../../content/images/mb5/2/mb5_2_' +
+                                '" width="650px" height="433px"  src="../../../content/images/mb5/2/mb5_2_' +
                                 nombreAcabado +
                                 '_optimized.png">'
                         );
@@ -2891,7 +2891,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="cajon" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px" src="../../../content/images/' +
+                                '" width="650px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/2/' +
                                 nombre +
@@ -2911,7 +2911,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 id1 +
                                 '" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px" src="../../../content/images/' +
+                                '" width="650px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
@@ -2933,7 +2933,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 id1 +
                                 '" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px" src="../../../content/images/' +
+                                '" width="650px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
@@ -4299,7 +4299,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i]['id'] +
-                                '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                '" width="500px" height="283.73px" style=""></a>'
                         );
                     }
                     if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales') {
@@ -4322,7 +4322,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                '" width="500px" height="283.73px"  style=""></a>'
                         );
                     }
                     if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales') {
@@ -4345,7 +4345,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                '" width="500px" height="283.73px" style=""></a>'
                         );
                     }
                     if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales') {
@@ -4368,7 +4368,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                '" width="500px" height="283.73px" style=""></a>'
                         );
                     }
                     if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales') {
@@ -4391,7 +4391,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                '" width="500px" height="283.73px"  style=""></a>'
                         );
                     }
                     if (cont == 5 && datos[i]['mensaje'] != 'Medidas Especiales') {
@@ -4414,7 +4414,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '"width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                '"width="500px" height="283.73px"  style=""></a>'
                         );
                     }
                     cont++;
@@ -4432,7 +4432,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                 imagen +
-                                '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
                         );
                     }
                     acabadosTodos = value['acabados'];
@@ -4498,7 +4498,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                 $('#acabados #imagenAcabadoPrincipal').append(
                     '<img id="tapa" class="' +
                         acabadosProd[j]['nombre'].toLowerCase() +
-                        '" width="600px" height="433px" src="../../../content/images/' +
+                        '" width="650px" height="433px" src="../../../content/images/' +
                         nombre +
                         '/' +
                         j +

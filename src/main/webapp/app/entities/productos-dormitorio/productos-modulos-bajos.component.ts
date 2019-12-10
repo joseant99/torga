@@ -1954,7 +1954,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#acabados #imagenAcabadoPrincipal').append(
                                 '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                     imagen +
-                                    '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                    '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
                             );
                         }
 
@@ -2404,7 +2404,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('#acabados #imagenAcabadoPrincipal').append(
                                     '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                        '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
                                 );
                             }
 
@@ -2568,7 +2568,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('#acabados #imagenAcabadoPrincipal').append(
                                     '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                        '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
                                 );
                             }
 
@@ -2729,7 +2729,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('#acabados #imagenAcabadoPrincipal').append(
                                     '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
+                                        '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
                                 );
                             }
 
@@ -2920,7 +2920,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px" src="../../../content/images/mb5/1/mb5_1_' +
+                                '" width="650px" height="433px" src="../../../content/images/mb5/1/mb5_1_' +
                                 nombreAcabado +
                                 '_optimized.png">'
                         );
@@ -2984,7 +2984,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px" src="../../../content/images/' +
+                                '" width="650px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/1/' +
                                 nombre +
@@ -3010,7 +3010,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="cajon" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px"  src="../../../content/images/mb5/2/mb5_2_' +
+                                '" width="650px" height="433px"  src="../../../content/images/mb5/2/mb5_2_' +
                                 nombreAcabado +
                                 '_optimized.png">'
                         );
@@ -3018,7 +3018,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="cajon" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px" src="../../../content/images/' +
+                                '" width="650px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/2/' +
                                 nombre +
@@ -3038,7 +3038,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 id1 +
                                 '" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px" src="../../../content/images/' +
+                                '" width="650px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
@@ -3060,7 +3060,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 id1 +
                                 '" class="' +
                                 nombreAcabado +
-                                '" width="600px" height="433px" src="../../../content/images/' +
+                                '" width="650px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
@@ -3103,10 +3103,16 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 cont++;
             }
         }
+
         for (let m = 1; m <= 14; m++) {
             if ($('#aca1' + m).html()) {
                 contadorApoyo++;
             }
+        }
+
+        if (contadorApoyo == cont - 1) {
+            $('.imagenAcabadoPrincipalImg').attr('style');
+            $('.imagenAcabadoPrincipalImg').css({ opacity: 0 });
         }
         var datos = [];
 
