@@ -312,7 +312,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i]['id'] +
-                                '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                '" width="500px" height="283.73px" style=""></a>'
                         );
                     }
                     if (cont == 1) {
@@ -335,7 +335,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                '" width="500px" height="283.73px"  style=""></a>'
                         );
                     }
                     if (cont == 2) {
@@ -358,7 +358,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                '" width="500px" height="283.73px" style=""></a>'
                         );
                     }
                     if (cont == 3) {
@@ -381,7 +381,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                '" width="500px" height="283.73px" style=""></a>'
                         );
                     }
                     if (cont == 4) {
@@ -404,7 +404,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                '" width="500px" height="283.73px"  style=""></a>'
                         );
                     }
                     if (cont == 5) {
@@ -427,7 +427,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
-                                '"width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                '"width="500px" height="283.73px"  style=""></a>'
                         );
                     }
                     cont++;
@@ -571,7 +571,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
-                                    '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                    '" width="500px" height="283.73px" style=""></a>'
                             );
                         }
                         if (cont == 1) {
@@ -594,7 +594,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                    '" width="500px" height="283.73px"  style=""></a>'
                             );
                         }
                         if (cont == 2) {
@@ -617,7 +617,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                    '" width="500px" height="283.73px" style=""></a>'
                             );
                         }
                         if (cont == 3) {
@@ -640,7 +640,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                    '" width="500px" height="283.73px" style=""></a>'
                             );
                         }
                         if (cont == 4) {
@@ -663,7 +663,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                    '" width="500px" height="283.73px"  style=""></a>'
                             );
                         }
                         if (cont == 5) {
@@ -686,7 +686,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '"width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                    '"width="500px" height="283.73px"  style=""></a>'
                             );
                         }
                         cont++;
@@ -727,7 +727,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
-                                    '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                    '" width="500px" height="283.73px" style=""></a>'
                             );
                         }
                         if (cont == 1) {
@@ -750,7 +750,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                    '" width="500px" height="283.73px"  style=""></a>'
                             );
                         }
                         if (cont == 2) {
@@ -773,7 +773,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px" style=" opacity: 0.7;"></a>'
+                                    '" width="500px" height="283.73px" style=""></a>'
                             );
                         }
                         if (cont == 3) {
@@ -796,7 +796,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="333px" style=" opacity: 0.7;"></a>'
+                                    '" width="500px" height="333px" style=""></a>'
                             );
                         }
                         if (cont == 4) {
@@ -819,7 +819,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '" width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                    '" width="500px" height="283.73px"  style=""></a>'
                             );
                         }
                         if (cont == 5) {
@@ -842,7 +842,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
-                                    '"width="500px" height="283.73px"  style=" opacity: 0.7;"></a>'
+                                    '"width="500px" height="283.73px"  style=""></a>'
                             );
                         }
                         cont++;
@@ -987,7 +987,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 $('.prodDiv' + contador).append(
                                     '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                        '" id="imagenProd" width="500px" height="290.5px"  style="">'
                                 );
                                 $('.prodDiv' + contador).append(
                                     '<p id="nombreMesita' +
@@ -1050,7 +1050,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('.prodDiv' + contador).append(
                                 '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                     imagen +
-                                    '" id="imagenProd" width="500px" height="290.5px"  style=" opacity: 0.7">'
+                                    '" id="imagenProd" width="500px" height="290.5px"  style="">'
                             );
                             $('.prodDiv' + contador).append(
                                 '<p id="nombreMesita' +
@@ -2010,7 +2010,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             w +
                             '" class="' +
                             data.body[w]['id'] +
-                            '" height="160px" width="280px" style=" opacity: 0.7;">'
+                            '" height="160px" width="280px" style=" ">'
                     );
                     $('#modalApoyo #apoyoModal' + w).append(
                         '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
@@ -2030,7 +2030,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
             );
             $('#botonApoyoNuevo').append(
-                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
             );
         }
     }
@@ -2266,10 +2266,18 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
+        var precioPunto = this.precioPunto[0];
+        var todosLosPrecios = this.precioTiendaProductosService.todos;
+
         $('#productoCalculadora1 #datos1').empty();
         $('#imagenAcabadoPrincipal').empty();
         $('#imagenAcabado').remove();
         idProd = $('#nombreMesita').attr('class');
+        for (let y = 0; y < todosLosPrecios.length; y++) {
+            if (parseFloat(idProd) == todosLosPrecios[y][2]) {
+                var precioProducto = todosLosPrecios[y][1];
+            }
+        }
         var idDimenTipo = $('#dimensionEspecial').attr('class');
         if (id == 1) {
             $('#anchoInputEspeciales').css({ border: 'gray 1px solid' });
@@ -2286,17 +2294,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#inputAltoAncho').val(dimensionProxima['alto']);
                             $('#inputFondoAncho').val(dimensionProxima['fondo']);
 
-                            var total = $('#total').text();
-                            var totalfloat = parseFloat(total);
-                            var precio = parseFloat(dimensiones[k]['precio']);
-                            precio = precio * precioTienda;
-                            precio = Math.round(precio * 100) / 100;
-                            totalfloat = totalfloat + precio;
-                            var precioAum = precio * 0.3;
-                            precioAum = precio + precioAum;
-                            $('#total').text(precioAum);
-                            $('#precioDimension').text(precioAum);
-                            $('#idioma').attr('value', dimensiones[k]['id']);
                             $('#datos1').append(
                                 '<p class="' +
                                     idDimenTipo +
@@ -2316,19 +2313,21 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
-                            precio = precio * precioTienda;
+                            precio = precio * precioPunto;
+                            var cuenta = precio * (precioProducto / 100);
+                            precio = precio + cuenta;
                             precio = Math.round(precio * 100) / 100;
                             totalfloat = totalfloat + precio;
                             var precioAum = precio * 0.3;
                             var precioAumGuardado = precioAum;
                             precioAum = precio + precioAum;
-                            $('#total').text(precioAum);
-                            $('#precioDimension').text(precioAum);
+                            $('#total').text(precioAum.toFixed(2));
+                            $('#precioDimension').text(precioAum.toFixed(2));
                             $('#valorAnchoESPECIAL').text(valor);
                             $('#idioma').attr('value', dimensiones[k]['id']);
                             $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
                             $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
-                            $('#precioAum').text(precioAumGuardado);
+                            $('#precioAum').text(precioAumGuardado.toFixed(2));
                             cont++;
                         } else {
                             if (cont == 0) {
@@ -2362,18 +2361,21 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     var total = $('#total').text();
                                     var totalfloat = parseFloat(total);
                                     var precio = parseFloat(dimensiones[k]['precio']);
-                                    precio = precio * precioTienda;
+                                    precio = precio * precioPunto;
+                                    var cuenta = precio * (precioProducto / 100);
+                                    precio = precio + cuenta;
                                     precio = Math.round(precio * 100) / 100;
                                     totalfloat = totalfloat + precio;
                                     var precioAum = precio * 0.3;
+                                    var precioAumGuardado = precioAum;
                                     precioAum = precio + precioAum;
-                                    $('#total').text(precioAum);
-                                    $('#precioDimension').text(precioAum);
+                                    $('#total').text(precioAum.toFixed(2));
+                                    $('#precioDimension').text(precioAum.toFixed(2));
                                     $('#valorAnchoESPECIAL').text(valor);
                                     $('#idioma').attr('value', dimensiones[k]['id']);
                                     $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
                                     $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
-                                    $('#precioAum').text(precioAum);
+                                    $('#precioAum').text(precioAumGuardado.toFixed(2));
                                 }
                             }
                         }
@@ -2389,6 +2391,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 var contnuevo = 1;
                 var u = 1;
                 var i = 0;
+                $('#imagenAcabadoPrincipal').empty();
+                for (let h = 1; h <= 14; h++) {
+                    $('#aca1' + h).empty();
+                }
                 this.acaProdService.findAca(idProd).subscribe(data => {
                     this.acaProdService.todos = data.body;
                     $.each(this.acaProdService.todos, function(index, value) {
@@ -2412,7 +2418,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         i +
                                         '" class="' +
                                         value['acabados'][m]['id'] +
-                                        '" height="250px" width="130px" style=" opacity: 0.7;">'
+                                        '" height="250px" width="130px" style="">'
                                 );
                                 $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
                                     '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
@@ -2435,7 +2441,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '</button>'
                             );
                             $('#aca1' + u).append(
-                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
                             );
                             u++;
                             i = 0;
@@ -2454,7 +2460,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 w +
                                 '" class="' +
                                 data.body[w]['id'] +
-                                '" height="160px" width="280px" style=" opacity: 0.7;">'
+                                '" height="160px" width="280px" style="">'
                         );
                         $('#modalApoyo #apoyoModal' + w).append(
                             '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
@@ -2474,7 +2480,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
                 );
                 $('#botonApoyoNuevo').append(
-                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" margin-left:20px;"/>'
                 );
             } else {
                 $('#anchoInputEspeciales').css({ border: 'red 1px solid' });
@@ -2576,7 +2582,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         i +
                                         '" class="' +
                                         value['acabados'][m]['id'] +
-                                        '" height="250px" width="130px" style=" opacity: 0.7;">'
+                                        '" height="250px" width="130px" style="">'
                                 );
                                 $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
                                     '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
@@ -2599,7 +2605,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '</button>'
                             );
                             $('#aca1' + u).append(
-                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
                             );
                             u++;
                             i = 0;
@@ -2618,7 +2624,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 w +
                                 '" class="' +
                                 data.body[w]['id'] +
-                                '" height="160px" width="280px" style=" opacity: 0.7;">'
+                                '" height="160px" width="280px" style="">'
                         );
                         $('#modalApoyo #apoyoModal' + w).append(
                             '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
@@ -2638,7 +2644,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
                 );
                 $('#botonApoyoNuevo').append(
-                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
                 );
             } else {
                 $('#anchoInputEspeciales').css({ border: 'red 1px solid' });
@@ -2737,7 +2743,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         i +
                                         '" class="' +
                                         value['acabados'][m]['id'] +
-                                        '" height="250px" width="130px" style=" opacity: 0.7;">'
+                                        '" height="250px" width="130px" style=" ">'
                                 );
                                 $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
                                     '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
@@ -2760,7 +2766,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '</button>'
                             );
                             $('#aca1' + u).append(
-                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
                             );
                             u++;
                             i = 0;
@@ -2779,7 +2785,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 w +
                                 '" class="' +
                                 data.body[w]['id'] +
-                                '" height="160px" width="280px" style=" opacity: 0.7;">'
+                                '" height="160px" width="280px" style="">'
                         );
                         $('#modalApoyo #apoyoModal' + w).append(
                             '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
@@ -2799,7 +2805,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
                 );
                 $('#botonApoyoNuevo').append(
-                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
                 );
             } else {
                 $('#anchoInputEspeciales').css({ border: 'red 1px solid' });
@@ -2890,7 +2896,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         k +
                         '" class="' +
                         value['id'] +
-                        '" height="60px" width="200px" style=" opacity: 0.7;margin-left:20px">'
+                        '" height="60px" width="200px" style="margin-left:20px">'
                 );
                 $('#aca' + id + '' + id1 + ' #acabadoNombrePrincipal').remove();
                 $('#aca' + id + '' + id1).append(
@@ -3212,7 +3218,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value['imagen'] +
                                         '" id="imagenApoyo" class="' +
                                         value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
+                                        '" width="350px"  style="">'
                                 );
                             }
                             if (contador == 2) {
@@ -3225,7 +3231,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value['imagen'] +
                                         '" id="imagenApoyo" class="' +
                                         value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
+                                        '" width="350px"  style=" ">'
                                 );
                             }
                             if (contador == 3) {
@@ -3238,7 +3244,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value['imagen'] +
                                         '" id="imagenApoyo" class="' +
                                         value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
+                                        '" width="350px"  style="">'
                                 );
                             }
                             if (contador == 4) {
@@ -3251,7 +3257,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value['imagen'] +
                                         '" id="imagenApoyo" class="' +
                                         value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
+                                        '" width="350px"  style="">'
                                 );
                             }
                             if (contador == 5) {
@@ -3264,7 +3270,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         value['imagen'] +
                                         '" id="imagenApoyo" class="' +
                                         value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
+                                        '" width="350px"  style="">'
                                 );
                             }
                             contador++;

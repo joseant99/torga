@@ -1,3 +1,4 @@
+<div style="top:0" id="divarribatodo"></div>
 <div id="productosPrincipal">
     <h2 style="text-align:center" id="page-heading">
         <span ><strong>BUSCADOR</strong></span>
@@ -67,7 +68,9 @@
 				<div id="aca113" style="float:left"></div>
 				<div id="aca114" style="float:left"></div>
 			</div>
-			
+			<div style="float:left;" id="botonApoyoNuevo">
+				
+			</div>	
 			
 
 	</div>  
@@ -104,10 +107,6 @@
 		<div id="ilu2"><img id="imagenIlu" src="../../../content/images/no.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(2)'>
 		</div>	
 	</div>
-	<div id="textoFinal" style="display:none">
-		<h2 id="textoFinal" style="margin-left:35%; margin-top:100px;">HAS FINALIZADO CON &#201;XITO</h2>
-	</div>
-	
 	<div class="modal fade" id="modalPresupuesto" role="dialog">
 	    <div class="modal-dialog">
 	    
@@ -140,6 +139,58 @@
 	        </div>
 	        <div class="modal-footer">
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalApoyo" role="dialog">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un sistema de apoyo</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div class="apoyoModal" id="apoyoModal0"  style="float:left" (click)="apoyoCogido(0)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal1" style="float:left" (click)="apoyoCogido(1)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal2" style="float:left" (click)="apoyoCogido(2)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal3" style="float:left" (click)="apoyoCogido(3)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal4" style="float:left" (click)="apoyoCogido(4)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal5" style="float:left" (click)="apoyoCogido(5)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal6" style="float:left" (click)="apoyoCogido(6)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal7"  style="float:left" (click)="apoyoCogido(7)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal8" style="float:left" (click)="apoyoCogido(8)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal9" style="float:left" (click)="apoyoCogido(9)" data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal10" style="float:left" (click)="apoyoCogido(10)" data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal11" style="float:left" (click)="apoyoCogido(11)" data-dismiss="modal"></div> 
+		          <div class="apoyoModal" id="apoyoModal12" style="float:left" (click)="apoyoCogido(12)" data-dismiss="modal"></div>          
+		          <div class="apoyoModal" id="apoyoModal13" style="float:left" (click)="apoyoCogido(13)" data-dismiss="modal"></div>          
+		                   
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalEnviadoCarrito" role="dialog" style="margin-top:200px">
+	    <div class="modal-dialog modal-sm">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title"></h4>
+	        </div>
+	        <div class="modal-body">
+	          <p>Su articulo se ha mandado al carro de compra</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 	        </div>
 	      </div>
 	      
@@ -655,7 +706,7 @@
 					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 520px;display: none;">				
 						<p>Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
-				<button id="botonCalculadora" class="displayBoton" style="width: 86%;height: 7%; bottom: 120px;position: absolute;font-size:16px;background-color:white;left:35px;color:black" (click)="enviarCarrito()">Mandar articulo/s al carro de la compra</button>
+				<button  id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" style="width: 86%;height: 7%; bottom: 120px;position: absolute;font-size:16px;background-color:white;left:35px;color:black" (click)="enviarCarrito()"><a href="#divarribatodo">Mandar articulo/s al carro de la compra</a></button>
 					
 			</div>
 			

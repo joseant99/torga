@@ -170,42 +170,35 @@ Generic styles
 .producto {
     max-height: 333px;
     max-width: 500px;
-    opacity: 0.7;
 }
 .productoSin {
     max-height: 892.75px;
     max-width: 500px;
-    opacity: 0.7;
 }
 .productoApa {
     max-height: 337.4px;
     max-width: 500px;
-    opacity: 0.7;
 }
 
 @media screen and (max-width: 1800px) {
     .producto {
         max-height: 283px;
         max-width: 450px;
-        opacity: 0.7;
     }
 }
 @media screen and (max-width: 1650px) {
     .producto {
         max-height: 233px;
         max-width: 400px;
-        opacity: 0.7;
     }
 }
 #imagenDimensiones {
-    opacity: 0.7;
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 50px;
 }
 
 #imagenDimensionesApa {
-    opacity: 0.7;
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -234,14 +227,12 @@ Generic styles
 }
 
 .imagenAcabadoPrincipalImg {
-    opacity: 0.7;
     margin-left: 25%;
     max-height: 433px;
     max-width: 600px;
 }
 
 .imagenAcabadoPrincipalImgSin {
-    opacity: 0.7;
     margin-left: 150px;
     max-height: 592.75px;
     max-width: 500px;
@@ -1056,18 +1047,15 @@ Generic styles
     .producto {
         max-height: 200px;
         max-width: 325px;
-        opacity: 0.7;
     }
     .productoSin {
         max-height: 292.75px;
         max-width: 150px;
-        opacity: 0.7;
     }
 
     #imagenDimensiones {
         max-height: 150px;
         max-width: 250px;
-        opacity: 0.7;
         margin-left: 7px;
         margin-right: 8px;
         margin-bottom: 50px;
@@ -1075,7 +1063,6 @@ Generic styles
     #imagenDimensionesApa {
         max-height: 160px;
         max-width: 320px;
-        opacity: 0.7;
         margin-left: 7px;
         margin-right: 8px;
         margin-bottom: 50px;

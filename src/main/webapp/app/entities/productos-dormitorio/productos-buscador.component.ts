@@ -78,7 +78,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     previousPage: any;
     reverse: any;
     eventSubscriber: any;
-
+    precioPunto: any;
+    precioDimension: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -142,10 +143,17 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('.dimensionesColor1').empty();
         this.dimensionesProductoTipoService.findDimensionNombre(nombre.toUpperCase()).subscribe(data => {
             var datos = data.body[0];
+            var todosLosDatos = data.body;
+
             this.dimensionesProductoTipoService.findProducto(datos['productosDormitorio']['id']).subscribe(data => {
-                for (let u = 0; u < data.body['length'] - 1; u++) {
+                var length = data.body['length'];
+                if (length != 1) {
+                    length = length - 1;
+                }
+                for (let u = 0; u < length; u++) {
                     this.todasDimensiones = data.body;
                     var datos = data.body[u];
+                    var todosLosDatos = data.body;
                     if (datos['mensaje'] == nombre.toUpperCase()) {
                         $('.dimensionesColor' + (u + 1)).css({ border: '1px solid black' });
                     } else {
@@ -157,43 +165,65 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     precio = precio * precioTienda1;
                     precio = precio * precioTienda;
                     precio = Math.round(precio * 100) / 100;
-                    $('.dimensionesColor' + (u + 1)).append(
-                        '<p style="text-align:center" id="' +
-                            datos['id'] +
-                            '" class="dimensionesId1">' +
-                            datos['mensaje'] +
-                            '</p><hr style="color:black;margin-left:50px;width:80%"></hr><p style="position:absolute;z-index:1"><strong>Desde ' +
-                            precio +
-                            '&euro;</strong></p>'
-                    );
+
                     $('.dimensionesColor' + (u + 1)).append(
                         '<img  src="data:image/gif;base64,' +
                             datos['imagen'] +
                             '" id="imagenDimensiones" class="' +
                             datos['id'] +
-                            '" width="500px" height="283.73px" style=" opacity: 0.7;">'
+                            '" width="500px" height="283.73px" style="">'
+                    );
+
+                    $('.dimensionesColor' + (u + 1)).append(
+                        '<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">' + datos['mensaje'] + '</p>'
+                    );
+                    $('.dimensionesColor' + (u + 1)).append(
+                        '<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde ' + datos['precio'] + ' &euro;</p>'
                     );
                 }
 
-                var nombreProductoEditado = productoNombre.split(' ')[0];
-                $('#nombreMesita').text(nombreProductoEditado);
                 $('#nombreMesita').attr('class', datos.productosDormitorio.id);
                 $('#calculadora').attr('class', 'container tab-pane fade active show');
-                this.dimensionesProductoTipoService.todos = datos;
+                this.dimensionesProductoTipoService.todos = todosLosDatos;
             });
         });
     }
     public borrarProdCalculadora() {
+        $('#medidasEspecialesTexto').css({ display: 'none' });
+        $('#medidasEspeciales').css({ display: 'none' });
+        $('#anchosSelect').val(' ');
+        $('#medidasAncho').css({ display: 'none' });
+        $('#medidasFondo').css({ display: 'none' });
+        $('#medidasAlto').css({ display: 'none' });
+        $('#especiales').css({ display: 'none' });
         $('#productoCalculadora1 #precios1').empty();
+        $('#euroCalculadora').attr('style');
+        $('#euroCalculadora').css({ display: 'none' });
         $('#productoCalculadora1 #precioCalculado1').empty();
         $('#productoCalculadora1 #datos1').empty();
         $('#nombreMesita').empty();
+        $('#acabados').css({ display: 'none' });
+        $('#dimensiones').css({ display: 'none' });
         $('#precioDimension').empty();
+        $('.productosColor107').css({ 'background-color': 'white' });
+        $('.productosColor108').css({ 'background-color': 'white' });
+        $('.productosColor109').css({ 'background-color': 'white' });
+        $('.productosColor110').css({ 'background-color': 'white' });
+        $('.productosColor111').css({ 'background-color': 'white' });
+        $('.productosColor112').css({ 'background-color': 'white' });
+        $('.productosColor113').css({ 'background-color': 'white' });
+        $('.productosColor114').css({ 'background-color': 'white' });
+        $('.productosColor115').css({ 'background-color': 'white' });
+        $('.productosColor116').css({ 'background-color': 'white' });
+        $('.productosColor117').css({ 'background-color': 'white' });
+        $('.productosColor118').css({ 'background-color': 'white' });
+        $('.productosColor119').css({ 'background-color': 'white' });
         $('#imagenAcabadoPrincipal').empty();
         $('#total').empty();
         $('.dimensionesColor1').empty();
         $('.dimensionesColor2').empty();
         $('.dimensionesColor3').empty();
+        $('#botonCalculadora').attr('class', 'displayBoton');
         $('.dimensionesColor4').empty();
         $('.dimensionesColor5').empty();
         $('.dimensionesColor6').empty();
@@ -209,6 +239,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor5').css({ 'background-color': 'white' });
         $('.dimensionesColor6').css({ 'background-color': 'white' });
+        $('.dimensionesColor4').css({ border: '0px' });
+        $('.dimensionesColor5').css({ border: '0px' });
+        $('.dimensionesColor6').css({ border: '0px' });
+        $('.dimensionesColor1').css({ border: '0px' });
+        $('.dimensionesColor2').css({ border: '0px' });
+        $('.dimensionesColor3').css({ border: '0px' });
+
         $('#imagenAcabado').remove();
         $('#medidas').css({ display: 'none' });
         $('#acabado').css({ display: 'none' });
@@ -220,6 +257,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
+        $('#botonEliminar').attr('class', 'displayBoton');
     }
 
     public open(producto, productoNombre) {
@@ -1769,36 +1807,41 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var idDimenTipo = $('.dimensionesId' + id).attr('id');
         $('#total').text('0');
         var hola = $('.dimensionesColor' + id + ' #imagenDimensiones').attr('class');
+        console.log(hola);
         var datos = [];
+        console.log(dimensiones);
         var acaSi = 0;
         var acabados = [];
         var imagen;
         var idProd;
         datos = dimensiones;
+        for (let i = 0; i < datos.length - 1; i++) {
+            if (datos[i]['id'] == hola) {
+                var text = $('#nombreMesita').text();
+                $('#nombreMesita').text(datos[i]['productosDormitorio']['nombre']);
 
-        var text = $('#nombreMesita').text();
-        $('#nombreMesita').text(text + ' ' + datos['mensaje']);
-        $('#datos1').append('<p>Ancho</p>');
-        $('#datos1').append('<p>Alto</p>');
-        $('#datos1').append('<p>Fondo</p>');
-
-        var total = $('#total').text();
-        var totalfloat = parseFloat(total);
-        var precio = parseFloat(datos['precio']);
-        precio = precio * precioTienda;
-        precio = Math.round(precio * 100) / 100;
-        totalfloat = totalfloat + precio;
-        $('#total').text(totalfloat);
-        $('#precioDimension').text(totalfloat);
-        $('#precios1').append('<p class="' + datos['id'] + '" id="ancho1">' + datos['ancho'] + '</p>');
-        $('#idioma').attr('value', datos['id']);
-        $('#precios1').append('<p>' + datos['alto'] + '</p>');
-        $('#precios1').append('<p>' + datos['fondo'] + '</p>');
-        $('#precioCalculado1').append('<p>-</p>');
-        $('#precioCalculado1').append('<p>-</p>');
-        $('#precioCalculado1').append('<p>-</p>');
-        acaSi = 0;
-
+                var total = $('#total').text();
+                var totalfloat = parseFloat(total);
+                var precio = parseFloat(datos[i]['precio']);
+                precio = precio * precioTienda;
+                precio = Math.round(precio * 100) / 100;
+                totalfloat = totalfloat + precio;
+                $('#total').text(totalfloat);
+                $('#precioDimension').text(totalfloat);
+                $('#datos1').append(
+                    '<p style="width:100%"><span>Ancho : </span><span class="' +
+                        datos[i]['id'] +
+                        '" id="ancho1">' +
+                        datos[i]['ancho'] +
+                        '</span></p>'
+                );
+                $('#datos1').append('<p style="width:100%"><span>Alto : </span><span>' + datos[i]['alto'] + '</span></p>');
+                $('#datos1').append(
+                    '<p style="width:100%"><span>Fondo : </span><span id="fondoDatosDimen">' + datos[i]['fondo'] + '</span></p>'
+                );
+                acaSi = 0;
+            }
+        }
         if (acaSi == 0) {
             $('#acabado').removeAttr('style');
             $('#acabado').attr('style');
@@ -1818,7 +1861,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             $('#acabados #imagenAcabadoPrincipal').append(
                                 '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                     imagen +
-                                    '" class="imagenAcabadoPrincipalImg"  width="500px" height="333px">'
+                                    '" class="imagenAcabadoPrincipalImg"  width="600px" height="433px">'
                             );
                         }
 
@@ -1832,10 +1875,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                     i +
                                     '" class="' +
                                     value['acabados'][m]['id'] +
-                                    '" height="160px" width="280px" style=" opacity: 0.7;">'
+                                    '" height="250px" width="130px" style=" opacity: 0.7;">'
                             );
                             $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
+                                '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
                                     value['acabados'][m]['nombre'] +
                                     '</strong></p>'
                             );
@@ -1848,7 +1891,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         }
 
                         $('#aca1' + u).append(
-                            '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
+                            '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
                                 u +
                                 '">Acabado ' +
                                 u +
@@ -1863,6 +1906,39 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     }
                 });
             });
+
+            this.productosDormitorioService.categoria(2).subscribe(data => {
+                for (let w = 0; w < data.body['length']; w++) {
+                    $('#modalApoyo #apoyoModal' + w).empty();
+                    $('#modalApoyo #apoyoModal' + w).append(
+                        '<img  src="data:image/gif;base64,' +
+                            data.body[w]['imagen'] +
+                            '" id="imagenApoyo' +
+                            w +
+                            '" class="' +
+                            data.body[w]['id'] +
+                            '" height="160px" width="280px" style=" ">'
+                    );
+                    $('#modalApoyo #apoyoModal' + w).append(
+                        '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
+                            data.body[w]['nombre'] +
+                            '</strong></p>'
+                    );
+                }
+            });
+            for (let i = 1; i <= 14; i++) {
+                for (let k = 0; k < 14; k++) {
+                    $('#myModalColores' + i + ' #acabadoImagen' + k).empty();
+                }
+            }
+
+            $('#botonApoyoNuevo').empty();
+            $('#botonApoyoNuevo').append(
+                '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
+            );
+            $('#botonApoyoNuevo').append(
+                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
+            );
         }
     }
 
@@ -2486,10 +2562,48 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#textoFinal').css({ display: 'none' });
         var k = 1;
         var nombreAcabado;
-        var nombre = $('#nombreMesita')
-            .text()
-            .toLowerCase();
-        var res = nombre.split(' ')[0];
+        var nombre = $('#nombreMesita').text();
+        if (nombre == 'Modulo Bajo 1') {
+            nombre = 'mb1';
+        }
+        if (nombre == 'Modulo Bajo 2') {
+            nombre = 'mb2';
+        }
+        if (nombre == 'Modulo Bajo 3') {
+            nombre = 'mb4';
+        }
+        if (nombre == 'Modulo Bajo 4 Apertura Izquierda') {
+            nombre = 'mb6';
+        }
+        if (nombre == 'Modulo Bajo 4 Apertura Derecha') {
+            nombre = 'mb5';
+        }
+        if (nombre == 'Modulo Bajo 5 Apertura Izquierda') {
+            nombre = 'mb8';
+        }
+        if (nombre == 'Modulo Bajo 5 Apertura Derecha') {
+            nombre = 'mb7';
+        }
+        if (nombre == 'Modulo Bajo 6') {
+            nombre = 'mb9';
+        }
+        if (nombre == 'Modulo Bajo 7 Apertura Izquierda') {
+            nombre = 'mb11';
+        }
+        if (nombre == 'Modulo Bajo 7 Apertura Derecha') {
+            nombre = 'mb10';
+        }
+        if (nombre == 'Modulo Bajo 8 Apertura Izquierda') {
+            nombre = 'mb13';
+        }
+        if (nombre == 'Modulo Bajo 8 Apertura Derecha') {
+            nombre = 'mb12';
+        }
+        if (nombre == 'Modulo Bajo 9') {
+            nombre = 'mb14';
+        }
+
+        var res = nombre;
 
         if (nombre == '1 cajon') {
             nombre = '1cajon';
@@ -2523,7 +2637,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         k +
                         '" class="' +
                         value['id'] +
-                        '" height="60px" width="200px" style=" opacity: 0.7;margin-left:20px">'
+                        '" height="60px" width="200px" style="margin-left:20px">'
                 );
                 $('#aca' + id + '' + id1 + ' #acabadoNombrePrincipal').remove();
                 $('#aca' + id + '' + id1).append(
@@ -2547,15 +2661,71 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px" src="../../../content/images/mb5/1/mb5_1_' +
+                                '" width="600px" height="433px" src="../../../content/images/mb5/1/mb5_1_' +
                                 nombreAcabado +
                                 '_optimized.png">'
                         );
+
+                        if (nombre == 'mb8') {
+                            var claseId = $('#casco3').attr('class');
+                            if (claseId != undefined) {
+                                var src = $('#casco3').attr('src');
+                                var partes = [];
+                                partes[0] = src.split('_')[0];
+                                partes[1] = src.split('_')[1];
+                                partes[2] = src.split('_')[3];
+                                partes[3] = src.split('_')[4];
+                                src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
+                                $('#casco3').attr('src', src);
+                            }
+                        }
+
+                        if (nombre == 'mb7') {
+                            var claseId = $('#casco4').attr('class');
+                            if (claseId != undefined) {
+                                var src = $('#casco4').attr('src');
+                                var partes = [];
+                                partes[0] = src.split('_')[0];
+                                partes[1] = src.split('_')[1];
+                                partes[2] = src.split('_')[3];
+                                partes[3] = src.split('_')[4];
+                                src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
+                                $('#casco4').attr('src', src);
+                            }
+                        }
+
+                        if (nombre == 'mb13') {
+                            var claseId = $('#casco3').attr('class');
+                            if (claseId != undefined) {
+                                var src = $('#casco3').attr('src');
+                                var partes = [];
+                                partes[0] = src.split('_')[0];
+                                partes[1] = src.split('_')[1];
+                                partes[2] = src.split('_')[3];
+                                partes[3] = src.split('_')[4];
+                                src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
+                                $('#casco3').attr('src', src);
+                            }
+                        }
+
+                        if (nombre == 'mb12') {
+                            var claseId = $('#casco5').attr('class');
+                            if (claseId != undefined) {
+                                var src = $('#casco5').attr('src');
+                                var partes = [];
+                                partes[0] = src.split('_')[0];
+                                partes[1] = src.split('_')[1];
+                                partes[2] = src.split('_')[3];
+                                partes[3] = src.split('_')[4];
+                                src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
+                                $('#casco5').attr('src', src);
+                            }
+                        }
                     } else {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px" src="../../../content/images/' +
+                                '" width="600px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/1/' +
                                 nombre +
@@ -2581,7 +2751,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="cajon" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px"  src="../../../content/images/mb5/2/mb5_2_' +
+                                '" width="600px" height="433px"  src="../../../content/images/mb5/2/mb5_2_' +
                                 nombreAcabado +
                                 '_optimized.png">'
                         );
@@ -2589,7 +2759,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="cajon" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px" src="../../../content/images/' +
+                                '" width="600px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/2/' +
                                 nombre +
@@ -2605,9 +2775,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         var color = $('#val1Dato').text();
                         color = color.toLowerCase();
                         $('#acabados #imagenAcabadoPrincipal').append(
-                            '<img id="casco" class="' +
+                            '<img id="casco' +
+                                id1 +
+                                '" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px" src="../../../content/images/' +
+                                '" width="600px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
@@ -2625,9 +2797,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         );
                     } else {
                         $('#acabados #imagenAcabadoPrincipal').append(
-                            '<img id="casco" class="' +
+                            '<img id="casco' +
+                                id1 +
+                                '" class="' +
                                 nombreAcabado +
-                                '" width="500px" height="333px" src="../../../content/images/' +
+                                '" width="600px" height="433px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
@@ -2644,9 +2818,19 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 $('#val' + id1).remove();
                 $('#val' + id1 + 'Dato').remove();
                 $('#valor' + id1).remove();
-                $('#datos1').append('<p id="val' + id1 + '">Acabado ' + id1 + '</p>');
-                $('#precios1').append('<p id="val' + id1 + 'Dato" class="' + value['id'] + '">' + value['nombre'] + '</p>');
-                $('#precioCalculado1').append('<p id="valor' + id1 + '">' + value['precio'] + '</p>');
+                $('#datos1').append(
+                    '<p style="width:100%"> <span id="val' +
+                        id1 +
+                        '">Acabado ' +
+                        id1 +
+                        ' : </span><span id="val' +
+                        id1 +
+                        'Dato" class="' +
+                        value['id'] +
+                        '">' +
+                        value['nombre'] +
+                        '</span></p>'
+                );
                 k++;
             }
         });
@@ -2666,104 +2850,34 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             }
         }
         var datos = [];
-        $('.apoyoCogido1').empty();
-        $('.apoyoCogido2').empty();
-        $('.apoyoCogido3').empty();
-        $('.apoyoCogido4').empty();
-        $('.apoyoCogido5').empty();
-        $('#apoyoRaya').remove();
-        $('#apoyo1').remove();
-        $('#nombreApoyo').remove();
+
         for (let j = 1; j <= 5; j++) {
             $('.apoyoCogido' + j).css({ 'background-color': 'white' });
         }
-
-        if (contadorApoyo == cont - 1) {
-            $('#nombreApoyoTitulo').removeAttr('style');
-            $('#nombreApoyoTitulo').attr('style');
-            $('#nombreApoyoTitulo').css({ 'margin-left': '40%' });
-            this.productosDormitorioService
-                .query({
-                    page: this.page - 1,
-                    size: this.itemsPerPage,
-                    sort: this.sort()
-                })
-                .subscribe(data => {
-                    datos = data['body'];
-                    var contador = 1;
-                    $.each(datos, function(index, value) {
-                        if (value['categoriasDormiId'] == 2) {
-                            if (contador == 1) {
-                                $('.imagenAcabadoPrincipalImg').attr('style');
-                                $('.imagenAcabadoPrincipalImg').css({ filter: 'brightness(-100%)' });
-                                var image = document.createElement('img');
-                                image.src = 'data:image/gif;base64,' + value['imagen'];
-                                image.id = 'imagenApoyo';
-                                $('.apoyoCogido1').append('<p>' + value['nombre'] + '</p><hr style="width:100%;color:black"></hr>');
-                                $('.apoyoCogido1').append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        value['imagen'] +
-                                        '" id="imagenApoyo" class="' +
-                                        value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
-                                );
-                            }
-                            if (contador == 2) {
-                                var image = document.createElement('img');
-                                image.src = 'data:image/gif;base64,' + value['imagen'];
-                                image.id = 'imagenApoyo';
-                                $('.apoyoCogido2').append('<p>' + value['nombre'] + '</p><hr style="width:100%;color:black"></hr>');
-                                $('.apoyoCogido2').append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        value['imagen'] +
-                                        '" id="imagenApoyo" class="' +
-                                        value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
-                                );
-                            }
-                            if (contador == 3) {
-                                var image = document.createElement('img');
-                                image.src = 'data:image/gif;base64,' + value['imagen'];
-                                image.id = 'imagenApoyo';
-                                $('.apoyoCogido3').append('<p>' + value['nombre'] + '</p><hr style="width:100%;color:black"></hr>');
-                                $('.apoyoCogido3').append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        value['imagen'] +
-                                        '" id="imagenApoyo" class="' +
-                                        value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
-                                );
-                            }
-                            if (contador == 4) {
-                                var image = document.createElement('img');
-                                image.src = 'data:image/gif;base64,' + value['imagen'];
-                                image.id = 'imagenApoyo';
-                                $('.apoyoCogido4').append('<p>' + value['nombre'] + '</p><hr style="width:100%;color:black"></hr>');
-                                $('.apoyoCogido4').append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        value['imagen'] +
-                                        '" id="imagenApoyo" class="' +
-                                        value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
-                                );
-                            }
-                            if (contador == 5) {
-                                var image = document.createElement('img');
-                                image.src = 'data:image/gif;base64,' + value['imagen'];
-                                image.id = 'imagenApoyo';
-                                $('.apoyoCogido5').append('<p>' + value['nombre'] + '</p><hr style="width:100%;color:black"></hr>');
-                                $('.apoyoCogido5').append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        value['imagen'] +
-                                        '" id="imagenApoyo" class="' +
-                                        value['id'] +
-                                        '" width="350px"  style=" opacity: 0.7;">'
-                                );
-                            }
-                            contador++;
-                        }
-                    });
-                });
+        var apoyoBueno = $('#datos1 #nombreApoyo').text();
+        var idProd = $('#nombreMesita').attr('class');
+        if (contadorApoyo == cont - 1 && apoyoBueno != '') {
+            var iluminacion = this.iluminacion;
+            var texto = 0;
+            for (let k = 0; k < iluminacion.length; k++) {
+                if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
+                    $('#iluminacion').removeAttr('style');
+                    $('#iluminacion').attr('style');
+                    $('#iluminacion').css({ width: '100%' });
+                    $('#iluminacion').css({ float: 'left' });
+                    $('#ilu1').attr('class', iluminacion[k]['id']);
+                    texto = 0;
+                } else {
+                    texto = 1;
+                }
+            }
+            if (texto == 1) {
+                $('#botonCalculadora').removeAttr('class');
+            }
+            $('#terminarConfiguracion').removeAttr('style');
+            $('#terminarConfiguracion').attr('style');
+            $('#terminarConfiguracion').css({ float: 'left' });
+            $('#terminarConfiguracion').css({ width: '100%' });
         }
     }
 
@@ -2909,6 +3023,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
     public apoyoCogido(id) {
         $('#iluminacion').removeAttr('style');
+        $('#apoyoDatosTexto').remove();
         var precioTienda = this.precioTienda;
         $('#iluminacion').attr('style');
         $('#iluminacion').css({ display: 'none' });
@@ -2921,12 +3036,46 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('.apoyoCogido3').css({ 'background-color': 'white' });
         $('.apoyoCogido4').css({ 'background-color': 'white' });
         $('.apoyoCogido' + id).css({ 'background-color': '#DFDDDC' });
-        var idApoyo = $('.apoyoCogido' + id + ' #imagenApoyo').attr('class');
+        var idApoyo;
+        idApoyo = $('#apoyoModal' + id + ' #imagenApoyo' + id).attr('class');
         var idProd = $('#nombreMesita').attr('class');
-        const h = $('#productoCalculadora1  #precios1 #ancho1').text();
+        var h;
+        h = $('#productoCalculadora1  #datos1 #ancho1').text();
+        var precioPunto = this.precioPunto[0];
+        var todosLosPrecios = this.precioTiendaProductosService.apoyo;
+        var precioDimension = this.precioDimension;
         var dimension = [];
         var datos = [];
         var datosApoyo;
+        var valoresAca = [];
+        var cont = 1;
+        var contadorApoyo = 0;
+        var fondo;
+        fondo = $('#fondoDatosDimen').text();
+        if (fondo == 42) {
+            fondo = 38.5;
+        }
+        if (fondo == 47) {
+            fondo = 43.5;
+        }
+        for (let i = 1; i <= 14; i++) {
+            var valNuevo = $('#val' + i + 'Dato').attr('class');
+            if (valNuevo != '' && valNuevo != undefined) {
+                valoresAca[cont] = valNuevo;
+                cont++;
+            }
+        }
+        for (let m = 1; m <= 14; m++) {
+            if ($('#aca1' + m).html()) {
+                contadorApoyo++;
+            }
+        }
+        if (idApoyo == 18) {
+            var hbueno = parseFloat(h) - 5;
+        }
+        if (idApoyo == 17) {
+            var hbueno = parseFloat(h) - 12.5;
+        }
         this.tiposApoyoService
             .query({
                 page: this.page - 1,
@@ -2936,46 +3085,274 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             .subscribe(data => {
                 datos = data['body'];
                 $.each(datos, function(index, value) {
-                    if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
-                        var precio = parseFloat(value['precio']);
-                        precio = precio * precioTienda;
-                        precio = Math.round(precio * 100) / 100;
-                        $('#datos1').append('<p id="nombreApoyo">' + value['productoApoyo']['nombre'] + '</p>');
-                        $('#precios1').append('<p id="apoyoRaya">-</p>');
-                        $('#precioCalculado1').append('<p id="apoyo1" class="' + value['id'] + '">' + precio + '&euro;</p>');
-                        var total = $('#total').text();
-                        var totalfloat = parseFloat(total);
-                        totalfloat = totalfloat + precio;
-                        $('#total').text(totalfloat);
+                    if (idApoyo == 15 || idApoyo == 16) {
+                        if (idApoyo == 16) {
+                            if (h < 175) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 175 && value['fondo'] == fondo - 1) {
+                                    var precio = parseFloat(value['precio']);
+                                    for (let f = 0; f < todosLosPrecios.length; f++) {
+                                        if (idApoyo == todosLosPrecios[f][2]) {
+                                            var precioProducto = todosLosPrecios[f][1];
+                                        }
+                                    }
+                                    precioProducto = precioProducto / 100;
+                                    precio = precio * precioPunto;
+                                    var cuenta = precio * precioProducto;
+                                    cuenta = precio + cuenta;
+                                    precio = cuenta;
+                                    precio = Math.round(precio * 100) / 100;
+                                    var totalfloat = parseFloat(precioDimension);
+                                    totalfloat = totalfloat + precio;
+                                    $('#precioDimension').text(totalfloat.toFixed(2));
+                                    $('#datos1').append(
+                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</span><span style="float:right" id="apoyo1" class="' +
+                                            value['id'] +
+                                            '">+' +
+                                            precio +
+                                            '&euro;</span></p>'
+                                    );
+                                    $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#botonApoyoNuevo').append(
+                                        '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</p>'
+                                    );
+                                    var total = $('#total').text();
+                                    var totalfloat = parseFloat(total);
+                                    totalfloat = totalfloat + precio;
+                                    $('#total').text(totalfloat);
+                                }
+                            }
+
+                            if (h >= 175) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] >= 175 && value['fondo'] == fondo - 1) {
+                                    var precio = parseFloat(value['precio']);
+                                    for (let f = 0; f < todosLosPrecios.length; f++) {
+                                        if (idApoyo == todosLosPrecios[f][2]) {
+                                            var precioProducto = todosLosPrecios[f][1];
+                                        }
+                                    }
+                                    precioProducto = precioProducto / 100;
+                                    precio = precio * precioPunto;
+                                    var cuenta = precio * precioProducto;
+                                    cuenta = precio + cuenta;
+                                    precio = cuenta;
+                                    precio = Math.round(precio * 100) / 100;
+                                    var totalfloat = parseFloat(precioDimension);
+                                    totalfloat = totalfloat + precio;
+                                    $('#precioDimension').text(totalfloat.toFixed(2));
+                                    $('#datos1').append(
+                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</span><span style="float:right" id="apoyo1" class="' +
+                                            value['id'] +
+                                            '">+' +
+                                            precio +
+                                            '&euro;</span></p>'
+                                    );
+                                    $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#botonApoyoNuevo').append(
+                                        '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</p>'
+                                    );
+                                    var total = $('#total').text();
+                                    var totalfloat = parseFloat(total);
+                                    totalfloat = totalfloat + precio;
+                                    $('#total').text(totalfloat);
+                                }
+                            }
+                        }
+
+                        if (idApoyo == 15) {
+                            if (h < 150) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 150) {
+                                    var precio = parseFloat(value['precio']);
+                                    for (let f = 0; f < todosLosPrecios.length; f++) {
+                                        if (idApoyo == todosLosPrecios[f][2]) {
+                                            var precioProducto = todosLosPrecios[f][1];
+                                        }
+                                    }
+                                    precioProducto = precioProducto / 100;
+                                    precio = precio * precioPunto;
+                                    var cuenta = precio * precioProducto;
+                                    cuenta = precio + cuenta;
+                                    precio = cuenta;
+                                    precio = Math.round(precio * 100) / 100;
+                                    var totalfloat = parseFloat(precioDimension);
+                                    totalfloat = totalfloat + precio;
+                                    $('#precioDimension').text(totalfloat.toFixed(2));
+                                    $('#datos1').append(
+                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</span><span style="float:right" id="apoyo1" class="' +
+                                            value['id'] +
+                                            '">+' +
+                                            precio +
+                                            '&euro;</span></p>'
+                                    );
+                                    $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#botonApoyoNuevo').append(
+                                        '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</p>'
+                                    );
+                                    var total = $('#total').text();
+                                    var totalfloat = parseFloat(total);
+                                    totalfloat = totalfloat + precio;
+                                    $('#total').text(totalfloat);
+                                }
+                            }
+
+                            if (h >= 150) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] >= 150) {
+                                    var precio = parseFloat(value['precio']);
+                                    for (let f = 0; f < todosLosPrecios.length; f++) {
+                                        if (idApoyo == todosLosPrecios[f][2]) {
+                                            var precioProducto = todosLosPrecios[f][1];
+                                        }
+                                    }
+                                    precioProducto = precioProducto / 100;
+                                    precio = precio * precioPunto;
+                                    var cuenta = precio * precioProducto;
+                                    cuenta = precio + cuenta;
+                                    precio = cuenta;
+                                    precio = Math.round(precio * 100) / 100;
+                                    var totalfloat = parseFloat(precioDimension);
+                                    totalfloat = totalfloat + precio;
+                                    $('#precioDimension').text(totalfloat.toFixed(2));
+                                    $('#datos1').append(
+                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</span><span style="float:right" id="apoyo1" class="' +
+                                            value['id'] +
+                                            '">+' +
+                                            precio +
+                                            '&euro;</span></p>'
+                                    );
+                                    $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#botonApoyoNuevo').append(
+                                        '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</p>'
+                                    );
+                                    var total = $('#total').text();
+                                    var totalfloat = parseFloat(total);
+                                    totalfloat = totalfloat + precio;
+                                    $('#total').text(totalfloat);
+                                }
+                            }
+                        }
+                    } else {
+                        if (idApoyo == 18) {
+                            if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == hbueno && value['fondo'] == fondo) {
+                                var precio = parseFloat(value['precio']);
+                                for (let f = 0; f < todosLosPrecios.length; f++) {
+                                    if (idApoyo == todosLosPrecios[f][2]) {
+                                        var precioProducto = todosLosPrecios[f][1];
+                                    }
+                                }
+                                precioProducto = precioProducto / 100;
+                                precio = precio * precioPunto;
+                                var cuenta = precio * precioProducto;
+                                cuenta = precio + cuenta;
+                                precio = cuenta;
+                                precio = Math.round(precio * 100) / 100;
+                                var totalfloat = parseFloat(precioDimension);
+                                totalfloat = totalfloat + precio;
+                                $('#precioDimension').text(totalfloat.toFixed(2));
+                                $('#datos1').append(
+                                    '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</span><span style="float:right" id="apoyo1" class="' +
+                                        value['id'] +
+                                        '">+' +
+                                        precio +
+                                        '&euro;</span></p>'
+                                );
+                                $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                $('#botonApoyoNuevo').append(
+                                    '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</p>'
+                                );
+                                var total = $('#total').text();
+                                var totalfloat = parseFloat(total);
+                                totalfloat = totalfloat + precio;
+                                $('#total').text(totalfloat);
+                            }
+                        }
+
+                        if (idApoyo == 17) {
+                            if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == hbueno) {
+                                var precio = parseFloat(value['precio']);
+                                for (let f = 0; f < todosLosPrecios.length; f++) {
+                                    if (idApoyo == todosLosPrecios[f][2]) {
+                                        var precioProducto = todosLosPrecios[f][1];
+                                    }
+                                }
+                                precioProducto = precioProducto / 100;
+                                precio = precio * precioPunto;
+                                var cuenta = precio * precioProducto;
+                                cuenta = precio + cuenta;
+                                precio = cuenta;
+                                precio = Math.round(precio * 100) / 100;
+                                var totalfloat = parseFloat(precioDimension);
+                                totalfloat = totalfloat + precio;
+                                $('#precioDimension').text(totalfloat.toFixed(2));
+                                $('#datos1').append(
+                                    '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</span><span style="float:right" id="apoyo1" class="' +
+                                        value['id'] +
+                                        '">+' +
+                                        precio +
+                                        '&euro;</span></p>'
+                                );
+                                $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                $('#botonApoyoNuevo').append(
+                                    '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</p>'
+                                );
+                                var total = $('#total').text();
+                                var totalfloat = parseFloat(total);
+                                totalfloat = totalfloat + precio;
+                                $('#total').text(totalfloat);
+                            }
+                        }
                     }
                 });
             });
-
-        var iluminacion = this.iluminacion;
-        var texto = 0;
-        for (let k = 0; k < iluminacion.length; k++) {
-            if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
-                $('#iluminacion').removeAttr('style');
-                $('#iluminacion').attr('style');
-                $('#iluminacion').css({ width: '100%' });
-                $('#iluminacion').css({ float: 'left' });
-                $('#ilu1').attr('class', iluminacion[k]['id']);
-                texto = 0;
-            } else {
-                texto = 1;
+        if (contadorApoyo == cont - 1) {
+            var iluminacion = this.iluminacion;
+            var texto = 0;
+            for (let k = 0; k < iluminacion.length; k++) {
+                if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
+                    $('#iluminacion').removeAttr('style');
+                    $('#iluminacion').attr('style');
+                    $('#iluminacion').css({ width: '100%' });
+                    $('#iluminacion').css({ float: 'left' });
+                    $('#ilu1').attr('class', iluminacion[k]['id']);
+                    texto = 0;
+                } else {
+                    texto = 1;
+                }
             }
+            if (texto == 1) {
+                $('#textoFinal').removeAttr('style');
+                $('#textoFinal').attr('style');
+                $('#textoFinal').css({ width: '100%' });
+                $('#textoFinal').css({ float: 'left' });
+                $('#botonCalculadora').removeAttr('class');
+            }
+            $('#terminarConfiguracion').removeAttr('style');
+            $('#terminarConfiguracion').attr('style');
+            $('#terminarConfiguracion').css({ float: 'left' });
+            $('#terminarConfiguracion').css({ width: '100%' });
         }
-        if (texto == 1) {
-            $('#textoFinal').removeAttr('style');
-            $('#textoFinal').attr('style');
-            $('#textoFinal').css({ width: '100%' });
-            $('#textoFinal').css({ float: 'left' });
-        }
-        $('#botonCalculadora').removeAttr('disabled');
-        $('#terminarConfiguracion').removeAttr('style');
-        $('#terminarConfiguracion').attr('style');
-        $('#terminarConfiguracion').css({ float: 'left' });
-        $('#terminarConfiguracion').css({ width: '100%' });
     }
 
     public ilumina(id) {
@@ -3038,18 +3415,19 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 contador++;
             }
         }
+
         var contadorProd = contador;
         var contadorDimen = contador;
         var contAca = 0;
         for (let i = 1; i <= 3; i++) {
             const idProd = $('#nombreProd' + i).attr('class');
-            const dimen = $('#productoCalculadora1 #precios1 #ancho' + i).attr('class');
-            const idApoyo = $('#productoCalculadora1 #precioCalculado1 #apoyo' + i).attr('class');
-            const idIluminacion = $('#productoCalculadora1 #precioCalculado1 #iluminacion' + i).attr('class');
-            const ancho = $('#productoCalculadora1 #precios1 #ancho' + i).text();
-            const alto = $('#productoCalculadora1 #precios1 #alto' + i).text();
-            const fondo = $('#productoCalculadora1 #precios1 #fondo' + i).text();
-            const precio = $('#productoCalculadora1 #precios1 #alto' + i).attr('class');
+            const dimen = $('#productoCalculadora1 #datos1 #ancho' + i).attr('class');
+            const idApoyo = $('#productoCalculadora1 #datos1 #apoyo' + i).attr('class');
+            const idIluminacion = $('#productoCalculadora1 #datos1 #iluminacion' + i).attr('class');
+            const ancho = $('#productoCalculadora1 #datos1 #ancho' + i).text();
+            const alto = $('#productoCalculadora1 #datos1 #alto' + i).text();
+            const fondo = $('#productoCalculadora1 #datos1 #fondo' + i).text();
+            const precio = $('#productoCalculadora1 #datos1 #alto' + i).attr('class');
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
             console.log(sessionStorage);
             const prod = [];
@@ -3071,7 +3449,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             const aca = [];
             var acabadoCogido;
             for (let j = 1; j <= 100; j++) {
-                acabadoCogido = $('#productoCalculadora1 #precios1 #val' + j + 'Dato').attr('class');
+                acabadoCogido = $('#productoCalculadora1 #datos1 #val' + j + 'Dato').attr('class');
                 if (acabadoCogido != undefined) {
                     var id1 = parseFloat(acabadoCogido);
                     for (let k = 0; k < 16; k++) {
@@ -3082,17 +3460,29 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 }
             }
 
-            if (todasDimensiones['id'] == dimen) {
-                for (let w = 1; w < aca.length; w++) {
-                    todasDimensiones['acabado' + w] = aca[w];
+            $.each(todasDimensiones, function(index, value) {
+                if (value['id'] == dimen) {
+                    for (let w = 1; w < aca.length; w++) {
+                        aca[w]['imagenFondo'] = '';
+                        value['acabado' + w] = aca[w];
+                    }
+                    if (value['mensaje'] == 'Medidas Especiales') {
+                        value['ancho'] = ancho;
+                        value['alto'] = alto;
+                        value['fondo'] = fondo;
+                        value['precio'] = precio;
+                    }
+                    value['apoyo'] = apoyoBueno[1];
+                    value['iluminacion'] = iluBuena[1];
+                    prod[1] = value;
+                    prod[1]['imagen'] = '';
+                    prod[1]['productosDormitorio']['imagen'] = '';
+                    prod[1]['apoyo']['imagen'] = '';
+                    console.log(prod);
+                    sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
+                    contadorDimen++;
                 }
-
-                todasDimensiones['apoyo'] = apoyoBueno[1];
-                todasDimensiones['iluminacion'] = iluBuena[1];
-                prod[1] = todasDimensiones;
-                sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
-                contadorDimen++;
-            }
+            });
         }
 
         for (let i = 1; i <= 100; i++) {
@@ -3165,36 +3555,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 }
             }
         }
-        $('#productoCalculadora1 #precios1').empty();
-        $('#productoCalculadora1 #precioCalculado1').empty();
-        $('#productoCalculadora1 #datos1').empty();
-        $('#nombreMesita').empty();
-        $('#precioDimension').empty();
-        $('#imagenAcabadoPrincipal').empty();
-        $('#total').empty();
-        $('.dimensionesColor1').empty();
-        $('.dimensionesColor2').empty();
-        $('.dimensionesColor3').empty();
-        $('.dimensionesColor4').empty();
-        $('.dimensionesColor5').empty();
-        $('.dimensionesColor6').empty();
-        $('.dimensionesColor1').css({ 'background-color': 'white' });
-        $('.dimensionesColor2').css({ 'background-color': 'white' });
-        $('.dimensionesColor3').css({ 'background-color': 'white' });
-        $('.dimensionesColor4').css({ 'background-color': 'white' });
-        $('.dimensionesColor5').css({ 'background-color': 'white' });
-        $('.dimensionesColor6').css({ 'background-color': 'white' });
-        $('#imagenAcabado').remove();
-        $('#medidas').css({ display: 'none' });
-        $('#acabado').css({ display: 'none' });
-        $('.productosColor').css({ 'background-color': 'white' });
-        $('#nombreApoyoTitulo').css({ display: 'none' });
-        for (let i = 1; i <= 5; i++) {
-            $('.apoyoCogido' + i).empty();
-        }
-        for (let i = 1; i <= 15; i++) {
-            $('#aca1' + i).empty();
-        }
+        this.borrarProdCalculadora();
     }
 
     public generarPresupuesto() {
@@ -3427,10 +3788,18 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             this.currentAccount = account;
         });
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-
+        this.precioTiendaService.findBus(tienda.id).subscribe(data => {
+            this.precioPunto = data.body;
+        });
         this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
             this.precioTiendaProductosService.todos = data.body;
+            this.loadAll();
         });
+        this.precioTiendaProductosService.findProdId(2, tienda.id).subscribe(data => {
+            this.precioTiendaProductosService.apoyo = data.body;
+            this.loadAll();
+        });
+
         this.precioTienda = sessionStorage.getItem('precioTienda');
     }
 

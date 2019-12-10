@@ -318,34 +318,32 @@
 					</li>
 					<div id="menuGestionUsuario" class="collapse" style="font-size: 16px;color: rgb(36, 36, 36);margin-left: 50px;letter-spacing: 2px;">
 						
-							<li style="margin-top:10px;padding-bottom: 25px;">
+							<li style="margin-top:10px;padding-bottom: 10px;">
 							 <a (click)="open('vendedores-usuario',false,myModel)" id="gestionUsuario" data-toggle="collapse">
 		                        <span>
 		                            <span style="font-weight: 400;">Usuarios Tienda</span>
 		                        </span>
 							</a>
 							</li>
+							
+							<li style="margin-top:10px;padding-bottom: 25px;" *jhiHasAnyAuthority="['ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				                    <a  id="comercial" data-toggle="collapse" data-target="#menuComercial" (click)="open('datos-usuario',false,myModel)">
+				                        <span>
+				                           <span id="contadorDatos" style="color:black;font-size:20px;">{{contador}}</span>
+				                        </span>
+									</a>
+							</li>
 					
 					</div>
 			</ul>
 			
-			
-      	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -31px;" *jhiHasAnyAuthority="['ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a  id="comercial" data-toggle="collapse" data-target="#menuComercial" (click)="open('datos-usuario',false,myModel)">
-                        <span>
-                           <p style="text-align:center"> <span id="contadorDatos" style="color:black;font-size:20px;">{{contador}}</span></p>
-                        </span>
-					</a>
-			</li>
-		</ul> 
 					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
 						<li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;">
 							<a  *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']" (click)="open('contacto-sugerencias',false,myModel)">
                             	<span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">SUGERENCIAS</span>
                         	</a>
 						 </li>
-						 <li style="border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;">
+						 <li style="border-top: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 65px;">
 							 <a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
 	                            <span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">CERRAR SESION</span>
 	                        </a>
