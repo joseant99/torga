@@ -189,17 +189,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var cont = 0;
         var presu;
         presu = sessionStorage.getItem('presupuesto');
-
-        this.acabadosProductosPresupuestoPedidoService
-            .query({
-                size: 1000000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data['body'].length; i++) {
-                    acabados1[i] = data['body'][i];
-                }
-            });
-        this.acabados = acabados1;
         var ilu = [];
 
         this.iluminacionProdPrePedService
@@ -278,11 +267,42 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 if (prodNombre == 'Modulo Bajo 1') {
                                                     prodNombre = 'mb1';
                                                 }
-
+                                                if (prodNombre == 'Modulo Bajo 2') {
+                                                    prodNombre = 'mb2';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 3') {
+                                                    prodNombre = 'mb4';
+                                                }
                                                 if (prodNombre == 'Modulo Bajo 4 Apertura Izquierda') {
                                                     prodNombre = 'mb6';
                                                 }
-
+                                                if (prodNombre == 'Modulo Bajo 4 Apertura Derecha') {
+                                                    prodNombre = 'mb5';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 5 Apertura Izquierda') {
+                                                    prodNombre = 'mb8';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 5 Apertura Derecha') {
+                                                    prodNombre = 'mb7';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 6') {
+                                                    prodNombre = 'mb9';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 7 Apertura Izquierda') {
+                                                    prodNombre = 'mb11';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 7 Apertura Derecha') {
+                                                    prodNombre = 'mb10';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 8 Apertura Izquierda') {
+                                                    prodNombre = 'mb13';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 8 Apertura Derecha') {
+                                                    prodNombre = 'mb12';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 9') {
+                                                    prodNombre = 'mb14';
+                                                }
                                                 if (prodNombre == 'Aparador 2') {
                                                     prodNombre = 'ap2';
                                                 }

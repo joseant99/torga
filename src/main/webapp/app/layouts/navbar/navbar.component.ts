@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationCancel } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiLanguageService } from 'ng-jhipster';
 import { SessionStorageService } from 'ngx-webstorage';
@@ -71,6 +71,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     settingsAccount: any;
     contador: any;
     bottomModulos: any;
+    predicate: any;
+    reverse: any;
+    routeData: any;
     constructor(
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         private loginService: LoginService,
@@ -99,10 +102,15 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         private router: Router,
         private modalService: NgbModal,
         public productosDormitorioService: ProductosDormitorioService,
-        private eventManager: JhiEventManager
+        private eventManager: JhiEventManager,
+        protected activatedRoute: ActivatedRoute
     ) {
         this.version = VERSION ? 'v' + VERSION : '';
         this.isNavbarCollapsed = true;
+        this.routeData = this.activatedRoute.data.subscribe(data => {
+            this.reverse = data.pagingParams.ascending;
+            this.predicate = data.pagingParams.predicate;
+        });
     }
 
     ngAfterViewInit() {
@@ -182,7 +190,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         var numeroProductos = [];
         this.productosPresupuestoPedidosService
             .query({
-                size: 100000
+                size: 100000,
+                sort: this.sort()
             })
             .subscribe(data => {
                 for (let i = 0; i < data.body.length; i++) {
@@ -214,8 +223,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 contAcab++;
                             }
                         }
-                        contAcab = 1;
+                        contAcab = 0;
                         numeroAcaProd[j] = acab;
+                        acab = [];
                     }
                     var account = this.accountService.userIdentity;
                     if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
@@ -468,14 +478,20 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                                 for (let w = 0; w < numeroAcaProd.length; w++) {
                                     var acaPedProd = this.acaProdPed.length;
-                                    acaPedProd = this.acaProdPed[0];
+                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
                                     prodAca[w]['id'] = acaPedProd['id'] + w + 1;
                                     for (let b = 0; b < numeroAcaProd[w].length; b++) {
                                         const acabados1 = {
                                             acabados: numeroAcaProd[w][b],
                                             productosPresupuestoPedidos: prodAca[w]
                                         };
-                                        this.subscribeToSaveResponse(this.acabadosProductosPresupuestoPedidoService.create(acabados1));
+                                        for (let r = 0; r < 1000; r++) {
+                                            if (r == 999) {
+                                                this.subscribeToSaveResponse(
+                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                );
+                                            }
+                                        }
                                     }
                                 }
                             },
@@ -485,7 +501,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             });
         this.productosDormitorioService.numeroCesta = 0;
     }
-
+    sort() {
+        const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
+        if (this.predicate !== 'id') {
+            result.push('id');
+        }
+        return result;
+    }
     public abrirCesta() {
         var productosArrayNombres = this.productosArrayNombre;
         $('#modalCesta .modal-body').empty();
@@ -5394,6 +5416,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             });
     }
     ngOnInit() {
+        this.predicate = 'id';
+
+        this.reverse = true;
         this.languageHelper.getAll().then(languages => {
             this.languages = languages;
         });
