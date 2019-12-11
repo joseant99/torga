@@ -401,7 +401,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     subTotal = precioFloat;
                                                 }
 
-                                                $('#precioSubtotal').text(precioFloat);
+                                                $('#precioSubtotal').text(precioFloat.toFixed(2));
                                                 var iva = precioFloat * 0.21;
                                                 $('#ivaPrecioQuitar').remove();
                                                 $('#ivaQuitar').append(
@@ -413,9 +413,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
                                                 );
                                                 $('#totalDescuentoTexto').text(precioFloat);
-                                                $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat);
-                                                $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(fabrica);
-                                                $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(ganancias);
+                                                $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
+                                                $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(fabrica.toFixed(2));
+                                                $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(ganancias.toFixed(2));
                                             }
                                         }
                                     }
