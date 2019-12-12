@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -94,6 +94,20 @@ public class AcabadosProductosPresupuestoPedidoResource {
         Page<AcabadosProductosPresupuestoPedido> page = acabadosProductosPresupuestoPedidoRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/acabados-productos-presupuesto-pedidos");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+    
+    /**
+     * GET  /acabados-productos-presupuesto-pedidos : get all the acabadosProductosPresupuestoPedidos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of acabadosProductosPresupuestoPedidos in body
+     */
+    @GetMapping("/acabados-productos-presupuesto-pedidos-bus/{id}")
+    @Timed
+    public ResponseEntity<Collection<AcabadosProductosPresupuestoPedido>> getAllAcabadosProductosPresupuestoPedidosBus(@PathVariable Long id) {
+        log.debug("REST request to get a page of AcabadosProductosPresupuestoPedidos");
+        Collection<AcabadosProductosPresupuestoPedido> page = acabadosProductosPresupuestoPedidoRepository.findByHola(id);
+        return ResponseEntity.ok().body(page);
     }
 
     /**

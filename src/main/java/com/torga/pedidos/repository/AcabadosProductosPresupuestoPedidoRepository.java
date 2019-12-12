@@ -1,6 +1,10 @@
 package com.torga.pedidos.repository;
 
 import com.torga.pedidos.domain.AcabadosProductosPresupuestoPedido;
+import com.torga.pedidos.domain.ProductosDormitorio;
+
+import java.util.Collection;
+
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -12,4 +16,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AcabadosProductosPresupuestoPedidoRepository extends JpaRepository<AcabadosProductosPresupuestoPedido, Long> {
 
+	@Query("Select u from AcabadosProductosPresupuestoPedido u where u.productosPresupuestoPedidos.id = ?1 order by u.id")
+	Collection<AcabadosProductosPresupuestoPedido> findByHola(Long id);
 }

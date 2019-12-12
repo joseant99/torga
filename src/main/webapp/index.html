@@ -141,6 +141,10 @@
 		    
 
 	}
+	function guardarIdProd(id,id1){
+		sessionStorage.setItem("idProdAca", id);
+		sessionStorage.setItem("idTodo", id1);
+	}
 	function esconderMenu(){
 		$("#menuPrincipal").css({"display":"none"});
 		$("#botonEsconder").removeAttr("onclick");
