@@ -1309,15 +1309,114 @@ Generic styles
         margin-top: 70px;
     }
     #ProductosCargados1 {
-        margin-left: 3%;
+        margin-left: 18%;
     }
     #ProductosCargados {
-        margin-left: 3%;
+        margin-left: 18%;
     }
     .producto {
-        max-height: 130px;
-        max-width: 255px;
-        opacity: 0.7;
+        max-height: 70px;
+        max-width: 145px;
+    }
+    #productosDormitorioCargados {
+        margin-left: 35px;
+        margin-bottom: 18px;
+        margin-right: 35px;
+        margin-top: 50px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        font-size: 12px;
+    }
+
+    .productosColor33 {
+        font-size: 12px;
+    }
+    .productosColor14 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor62 {
+        font-size: 12px;
+    }
+    .productosColor63 {
+        font-size: 12px;
+    }
+    .productosColor64 {
+        font-size: 12px;
+    }
+    .productosColor65 {
+        font-size: 12px;
+    }
+    .productosColor66 {
+        font-size: 12px;
+    }
+    .productosColor67 {
+        font-size: 12px;
+    }
+    .productosColor68 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor53 {
+        font-size: 12px;
+    }
+    .productosColor107 {
+        font-size: 12px;
+    }
+    .productosColor108 {
+        font-size: 12px;
+    }
+    .productosColor109 {
+        font-size: 12px;
+    }
+    .productosColor119 {
+        font-size: 12px;
+    }
+    .productosColor114 {
+        font-size: 12px;
+    }
+    .productosColor110 {
+        font-size: 12px;
+    }
+    .productosColor111 {
+        font-size: 12px;
+    }
+    .productosColor112 {
+        font-size: 12px;
+    }
+    .productosColor113 {
+        font-size: 12px;
+    }
+    .productosColor115 {
+        font-size: 12px;
+    }
+    .productosColor116 {
+        font-size: 12px;
+    }
+    .productosColor117 {
+        font-size: 12px;
+    }
+    .productosColor118 {
+        font-size: 12px;
+    }
+    .productosColor15 {
+        font-size: 12px;
+    }
+
+    .productosColor16 {
+        font-size: 12px;
+    }
+
+    .productosColor17 {
+        font-size: 12px;
+    }
+
+    .productosColor18 {
+        font-size: 12px;
     }
 }
 
@@ -1364,15 +1463,14 @@ Generic styles
         right: 5px;
     }
     #calculadoraCarrito {
-        width: 100%;
+        width: 25%;
         background-color: #f5f5f5;
-        margin-left: 57%;
         height: 91%;
         position: fixed;
         top: 70px;
         right: 0;
         bottom: 0;
-        display: none;
+        display: block;
         z-index: 1;
     }
 }
