@@ -1288,7 +1288,7 @@ Generic styles
         top: 70px;
         right: 0;
         bottom: 0;
-        display: none;
+        display: block;
         z-index: 1;
     }
     #tablaElegirCalcu {
