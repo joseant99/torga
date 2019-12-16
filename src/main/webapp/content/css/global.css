@@ -189,8 +189,8 @@ Generic styles
 }
 @media screen and (max-width: 1650px) {
     .producto {
-        max-height: 233px;
-        max-width: 400px;
+        max-height: 133px;
+        max-width: 170px;
     }
 }
 #imagenDimensiones {
@@ -1281,9 +1281,8 @@ Generic styles
         right: 5px;
     }
     #calculadoraCarrito {
-        width: 100%;
+        width: 25%;
         background-color: #f5f5f5;
-        margin-left: 57%;
         height: 91%;
         position: fixed;
         top: 70px;
@@ -1738,7 +1737,7 @@ ui bootstrap tweaks
 #divBodyPrincipal {
     display: none;
 }
-@media only screen and (max-width: 728px) {
+@media only screen and (max-width: 550px) {
     #divBodyPrincipal {
         display: block;
         position: fixed;
