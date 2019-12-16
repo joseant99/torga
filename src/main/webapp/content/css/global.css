@@ -164,8 +164,9 @@ Generic styles
 }
 #productosPrincipal {
     width: 75%;
-    margin-left: 69px;
+    padding-left: 70px;
     margin-top: 70px;
+    float: right;
 }
 .producto {
     max-height: 333px;
@@ -937,13 +938,12 @@ Generic styles
     margin-left: 200px;
 }
 #calculadoraCarrito {
-    width: 25%;
+    width: 20%;
     background-color: #f5f5f5;
-    margin-left: 57%;
     height: 100%;
     position: fixed;
     top: 70px;
-    right: 0;
+    left: 0;
     bottom: 0;
 }
 
@@ -963,7 +963,7 @@ Generic styles
     width: 100%;
     top: 0;
     height: 70px;
-    background-color: white;
+    background-color: black;
 }
 
 #cestaImagen {
@@ -1735,5 +1735,16 @@ ui bootstrap tweaks
 .ui-autocomplete-input {
     width: 100%;
 }
-
+#divBodyPrincipal {
+    display: none;
+}
+@media only screen and (max-width: 728px) {
+    #divBodyPrincipal {
+        display: block;
+        position: fixed;
+        z-index: 1000000000;
+        background: white;
+        top: 0;
+    }
+}
 /* jhipster-needle-css-add-main JHipster will add new css style */

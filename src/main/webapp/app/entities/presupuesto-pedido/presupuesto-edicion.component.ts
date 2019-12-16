@@ -596,12 +596,18 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                         }
                     }
                 }
+                this.salirSinGuardar();
             }
         }
     }
-
+    public salirSinGuardar() {
+        window.history.back();
+    }
     protected subscribeToSaveResponse(result: Observable<HttpResponse<ICategoriasDormi>>) {
         result.subscribe((res: HttpResponse<ICategoriasDormi>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+    protected subscribeToSaveResponse1(result: Observable<HttpResponse<ICategoriasDormi>>) {
+        result.subscribe((res: HttpResponse<ICategoriasDormi>) => this.onSaveSuccess1(), (res: HttpErrorResponse) => this.onSaveError());
     }
     protected onSaveError() {
         this.isSaving = false;
@@ -610,9 +616,13 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
     protected onSaveSuccess() {
         this.isSaving = false;
     }
+    protected onSaveSuccess1() {
+        this.isSaving = false;
+        window.history.back();
+    }
     public dimensionesCogidas(id, id1) {
         $('#imagenProdEspeciales').empty();
-
+        $('#botonCalculadoraGuardar').removeAttr('class');
         $('#euroCalculadora').removeAttr('style');
         $('#medidasEspecialesTexto').css({ display: 'none' });
         $('#medidasAncho').css({ display: 'none' });
@@ -698,6 +708,7 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
 
     public cambiarAcabado(idImagen, id, id1) {
         $('#iluminacion').removeAttr('style');
+        $('#botonCalculadoraGuardar').removeAttr('class');
         $('#iluminacion').attr('style');
         $('#iluminacion').css({ display: 'none' });
         $('#textoFinal').removeAttr('style');

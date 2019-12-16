@@ -40,7 +40,8 @@
 						<p>Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
 				<button  id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" style="width: 86%;height: 7%; bottom: 120px;position: absolute;font-size:16px;background-color:white;left:35px;color:black"><a href="#divarribatodo">Mandar articulo/s al carro de la compra</a></button>
-					
+				<button  style="width: 86%;height: 7%; bottom: 215px;position: absolute;font-size:16px;background-color:white;left:35px;color:black"><a (click)="salirSinGuardar()">Salir sin guardar</a></button>
+				<button id="botonCalculadoraGuardar" class="displayBoton" style="width: 86%;height: 7%; bottom: 120px;position: absolute;font-size:16px;background-color:white;left:35px;color:black"><a (click)="guardarCambios1()">Salir y guardar</a></button>
 			</div>
 			
 			<div id="carrito" class="container tab-pane fade" style="height:600px;overflow:scroll;display:none">
@@ -181,7 +182,6 @@
 	    		 		<img width="500px" height="290.5px" title="Foto de linea de codigo" class="producto" [src]="'data:' + productosPresupuestoPedidos.productosDormitorio.imagenContentType + ';base64,' + productosPresupuestoPedidos.productosDormitorio.imagen" style="max-height: 290.5px;max-width: 500px;margin-left: 70px;margin-top: 35px;margin-bottom:35px;"  alt="productosDormitorio image"/>
 	    				<p style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosPresupuestoPedidos.productosDormitorio.nombre}}</p>
 	    	</div>
-	    	<a (click)="guardarCambios1()">Guardar Cambios</a>
 	    	<div id="botones1">
 		    	<div id="eliminarA1" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:80px;text-align:center;padding-top: 20px;" data-toggle="modal" data-target="#myModal">Eliminar Articulo<p></div>
 		    	<div id="eliminarB1" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:120px;text-align:center;padding-top: 15px; " (click)="mostrarDatos(i)">Mostrar la configuracion del articulo</p></div>

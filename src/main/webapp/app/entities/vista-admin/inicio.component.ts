@@ -166,6 +166,7 @@ export class inicioComponent implements OnInit, AfterViewInit {
                                                         $('.logo-img').append(
                                                             '<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>'
                                                         );
+                                                        $('.logo-img').css({ background: 'none' });
                                                     }
                                                 }
                                             }

@@ -1889,6 +1889,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     $('#total').text(totalfloat);
                     $('#precioDimension').text(totalfloat);
                     $('#idioma').attr('value', datos[h]['id']);
+                    $('#datos1').append('<p style="width:100%"><strong>MEDIDAS</strong></p>');
                     $('#datos1').append(
                         '<p style="width:100%"><span>Ancho : </span><span class="' +
                             datos[h]['id'] +
@@ -1990,6 +1991,20 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 u +
                                 '</button>'
                         );
+                        if (u == 1) {
+                            $('#datos1').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
+                        }
+                        $('#datos1').append(
+                            '<p style="width:100%" id="acabado' +
+                                u +
+                                '"><span>' +
+                                u +
+                                '</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                u +
+                                '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=" opacity: 0.7;margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                u +
+                                '" style="margin-left:10px">BLANCO</span></p>'
+                        );
                         $('#aca1' + u).append(
                             '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
                         );
@@ -1998,6 +2013,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         contnuevo++;
                     }
                 });
+                $('#datos1').append(
+                    '<p style="width:100%"><strong>APOYO </strong><span id="precioApoyo" style="float:right"></span><span style="float:right">&euro;</span></p>'
+                );
+                $('#datos1').append(
+                    '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                );
             });
 
             this.productosDormitorioService.categoria(2).subscribe(data => {
@@ -2904,6 +2925,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         value['nombre'] +
                         '</p>'
                 );
+                $('#datos1 #nombreAcaCalcu' + id1).text(value['nombre']);
+
+                var src = 'data:image/gif;base64,' + value['imagenFondo'];
+                $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('src', src);
+                $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('class', value['id']);
+
                 if (id1 == 1) {
                     $('#tapa').remove();
                     if (
@@ -3078,11 +3105,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $('#val' + id1 + 'Dato').remove();
                 $('#valor' + id1).remove();
                 $('#datos1').append(
-                    '<p style="width:100%"> <span id="val' +
+                    '<p style="width:100%;display:none"> <span id="val' +
                         id1 +
                         '">Acabado ' +
                         id1 +
-                        ' : </span><span id="val' +
+                        ' : </span><span style="display:none" id="val' +
                         id1 +
                         'Dato" class="' +
                         value['id'] +
@@ -3370,7 +3397,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
                                     $('#datos1').append(
-                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                             value['productoApoyo']['nombre'] +
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
@@ -3378,6 +3405,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             precio +
                                             '&euro;</span></p>'
                                     );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text(precio);
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3409,7 +3438,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
                                     $('#datos1').append(
-                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                             value['productoApoyo']['nombre'] +
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
@@ -3417,6 +3446,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             precio +
                                             '&euro;</span></p>'
                                     );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text(precio);
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3450,7 +3481,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
                                     $('#datos1').append(
-                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                             value['productoApoyo']['nombre'] +
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
@@ -3458,6 +3489,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             precio +
                                             '&euro;</span></p>'
                                     );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text(precio);
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3489,7 +3522,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
                                     $('#datos1').append(
-                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                             value['productoApoyo']['nombre'] +
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
@@ -3497,6 +3530,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             precio +
                                             '&euro;</span></p>'
                                     );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text(precio);
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3529,7 +3564,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 totalfloat = totalfloat + precio;
                                 $('#precioDimension').text(totalfloat.toFixed(2));
                                 $('#datos1').append(
-                                    '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                         value['productoApoyo']['nombre'] +
                                         '</span><span style="float:right" id="apoyo1" class="' +
                                         value['id'] +
@@ -3537,6 +3572,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         precio +
                                         '&euro;</span></p>'
                                 );
+                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #precioApoyo').text(precio);
                                 $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                 $('#botonApoyoNuevo').append(
                                     '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3568,7 +3605,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 totalfloat = totalfloat + precio;
                                 $('#precioDimension').text(totalfloat.toFixed(2));
                                 $('#datos1').append(
-                                    '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                         value['productoApoyo']['nombre'] +
                                         '</span><span style="float:right" id="apoyo1" class="' +
                                         value['id'] +
@@ -3576,7 +3613,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         precio +
                                         '&euro;</span></p>'
                                 );
-                                $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #precioApoyo').text(precio);
                                 $('#botonApoyoNuevo').append(
                                     '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
                                         value['productoApoyo']['nombre'] +
