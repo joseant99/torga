@@ -1418,6 +1418,141 @@ Generic styles
     .productosColor18 {
         font-size: 12px;
     }
+
+    .imagenAcabadoPrincipalImg {
+        margin-left: 25%;
+        max-height: 233px;
+        max-width: 340px;
+    }
+    .acabadoPartes {
+        position: absolute;
+        max-width: 300px;
+        max-height: 183px;
+        margin-left: 20px;
+        margin-top: -183px;
+    }
+    .pietra {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(125%);
+    }
+    .norway {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(140%);
+    }
+    .bronce {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+    }
+    .transparente {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+    }
+    .noce {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(140%);
+    }
+    .nature {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(150%);
+    }
+    .tabak {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(150%);
+    }
+    .kobe {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(150%);
+    }
+    .blanco {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(140%);
+    }
+    .beige {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(140%);
+    }
+    .latte {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(190%);
+    }
+    .grafeno {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(150%);
+    }
+    .lago {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(130%);
+    }
+    .mare {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(130%);
+    }
+    .marmolblanco {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(190%);
+    }
+    .marmolnegro {
+        position: absolute;
+        max-width: 340px;
+        max-height: 233px;
+        margin-left: -340px;
+        filter: brightness(190%);
+    }
+    #imagenDimensiones {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        max-width: 400px;
+        max-height: 233px;
+    }
+    #dimensionesColorStyle {
+        float: left;
+        margin-left: 20%;
+        height: 236px;
+    }
 }
 
 @media screen and (max-width: 450px) {
