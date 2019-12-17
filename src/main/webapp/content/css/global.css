@@ -2183,86 +2183,14 @@ ui bootstrap tweaks
     #imagenAcabadoPrincipal1 {
         max-width: 60px;
     }
-    #imagenAcabado0 {
-        max-width: 60px;
-        max-height: 100px;
+    .acabadosModal {
+        float: left;
+        width: 85px;
+        height: 100px;
+        margin-left: 15px;
+        margin-top: 23px;
     }
-    #imagenAcabado1 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado2 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado3 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado4 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado5 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado6 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado7 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado8 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado9 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado10 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado11 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado12 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado13 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado14 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado15 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado16 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado17 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado18 {
-        max-width: 60px;
-        max-height: 100px;
-    }
-    #imagenAcabado19 {
-        max-width: 60px;
-        max-height: 100px;
-    }
+
     #botonEsconder {
         max-width: 6%;
         margin-left: 5px;
