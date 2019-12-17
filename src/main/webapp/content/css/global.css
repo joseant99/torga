@@ -650,7 +650,7 @@ Generic styles
     width: 150px;
     height: 280px;
     margin-left: 80px;
-    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .productosColor {
     float: left;
@@ -2185,10 +2185,10 @@ ui bootstrap tweaks
     }
     .acabadosModal {
         float: left;
-        width: 85px;
-        height: 100px;
-        margin-left: 15px;
-        margin-top: 23px;
+        width: 75px;
+        height: 85px;
+        margin-left: 23px;
+        margin-bottom: 23px;
     }
 
     #botonEsconder {
