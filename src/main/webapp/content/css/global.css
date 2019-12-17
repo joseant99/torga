@@ -1301,22 +1301,46 @@ Generic styles
         position: absolute;
     }
 }
-
-@media screen and (max-width: 800px) {
+#tablaFiltro {
+    margin-top: 2%;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+#dimensiones {
+    width: 100%;
+    float: left;
+    display: none;
+}
+@media screen and (max-width: 900px) {
     #productosPrincipal {
         width: 100%;
         margin-left: 0px;
         margin-top: 70px;
     }
     #ProductosCargados1 {
-        margin-left: 18%;
+        margin-left: 25%;
     }
     #ProductosCargados {
-        margin-left: 18%;
+        margin-left: 25%;
     }
     .producto {
-        max-height: 70px;
-        max-width: 145px;
+        max-height: 100px;
+        max-width: 180px;
+    }
+    #dimensiones {
+        width: 70%;
+        float: left;
+        margin-left: 185px;
+    }
+    #tablaFiltro {
+        margin-top: 2%;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        border-collapse: separate;
+        border-spacing: 5px;
+        margin-left: 20%;
     }
     #productosDormitorioCargados {
         margin-left: 35px;
@@ -1420,138 +1444,138 @@ Generic styles
     }
 
     .imagenAcabadoPrincipalImg {
-        margin-left: 25%;
-        max-height: 233px;
-        max-width: 340px;
+        margin-left: 28%;
+        max-height: 290px;
+        max-width: 450px;
     }
     .acabadoPartes {
         position: absolute;
-        max-width: 300px;
-        max-height: 183px;
-        margin-left: 20px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         margin-top: -183px;
     }
     .pietra {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(125%);
     }
     .norway {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(140%);
     }
     .bronce {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
     }
     .transparente {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
     }
     .noce {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(140%);
     }
     .nature {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(150%);
     }
     .tabak {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(150%);
     }
     .kobe {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(150%);
     }
     .blanco {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(140%);
     }
     .beige {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(140%);
     }
     .latte {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(190%);
     }
     .grafeno {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(150%);
     }
     .lago {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(130%);
     }
     .mare {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(130%);
     }
     .marmolblanco {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(190%);
     }
     .marmolnegro {
         position: absolute;
-        max-width: 340px;
-        max-height: 233px;
-        margin-left: -340px;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
         filter: brightness(190%);
     }
     #imagenDimensiones {
         margin-left: 0px;
         margin-right: 0px;
         margin-top: 0px;
-        max-width: 400px;
-        max-height: 233px;
+        max-width: 250px;
+        max-height: 169px;
     }
     #dimensionesColorStyle {
         float: left;
-        margin-left: 20%;
         height: 236px;
+        height: 190px;
     }
 }
 
