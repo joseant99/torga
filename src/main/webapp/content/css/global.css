@@ -967,8 +967,9 @@ Generic styles
 }
 
 #cestaImagen {
-    right: 50px;
+    right: 20px;
     position: fixed;
+    top: 10px;
 }
 #imagenCesta {
     float: right;
@@ -1313,7 +1314,45 @@ Generic styles
     float: left;
     display: none;
 }
+#posicion0 {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    color: white;
+}
 @media screen and (max-width: 900px) {
+    #menuFijoArriba {
+        position: fixed;
+        z-index: 10000;
+        width: 100%;
+        top: 0;
+        height: 40px;
+        background-color: black;
+    }
+    #botonEsconder {
+        max-width: 6%;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+    #posicion0 {
+        position: absolute;
+        right: 8px;
+        top: 6px;
+        color: white;
+    }
+    #imagenLogoCuenta {
+        margin-left: 5%;
+    }
+    #logoImagen {
+        position: absolute;
+        width: 120px;
+        height: 25px;
+    }
+    #cestaImagen {
+        right: 10px;
+        position: fixed;
+        margin-top: 5px;
+    }
     #productosPrincipal {
         width: 100%;
         margin-left: 0px;
@@ -1576,6 +1615,17 @@ Generic styles
         float: left;
         height: 236px;
         height: 190px;
+    }
+    #calculadoraCarrito {
+        width: 30%;
+        background-color: #f5f5f5;
+        height: 91%;
+        position: fixed;
+        top: 40px;
+        right: 0;
+        bottom: 0;
+        display: block;
+        z-index: 1;
     }
 }
 
@@ -2001,6 +2051,326 @@ ui bootstrap tweaks
         z-index: 1000000000;
         background: white;
         top: 0;
+    }
+}
+#imagenAcabadoPrincipal1 {
+    max-width: 100%;
+}
+@media screen and (max-width: 900px) {
+    #menuFijoArriba {
+        position: fixed;
+        z-index: 10000;
+        width: 100%;
+        top: 0;
+        height: 40px;
+        background-color: black;
+    }
+    #imagenAcabadoPrincipal1 {
+        max-width: 60px;
+    }
+    #botonEsconder {
+        max-width: 6%;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+    #posicion0 {
+        position: absolute;
+        right: 8px;
+        top: 6px;
+        color: white;
+    }
+    #imagenLogoCuenta {
+        margin-left: 5%;
+    }
+    #logoImagen {
+        position: absolute;
+        width: 120px;
+        height: 25px;
+    }
+    #cestaImagen {
+        right: 10px;
+        position: fixed;
+        margin-top: -5px;
+    }
+    #productosPrincipal {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 70px;
+    }
+    #ProductosCargados1 {
+        margin-left: 27%;
+    }
+    #ProductosCargados {
+        margin-left: 27%;
+    }
+    .producto {
+        max-height: 100px;
+        max-width: 180px;
+    }
+    #dimensiones {
+        width: 70%;
+        float: left;
+        margin-left: 205px;
+    }
+    #tablaFiltro {
+        margin-top: 2%;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        border-collapse: separate;
+        border-spacing: 5px;
+        margin-left: 24%;
+    }
+    #productosDormitorioCargados {
+        margin-left: 35px;
+        margin-bottom: 18px;
+        margin-right: 35px;
+        margin-top: 50px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        font-size: 12px;
+    }
+    #imagenCesta {
+        float: right;
+        top: 0;
+        width: 10%;
+        right: 11px;
+    }
+
+    .productosColor33 {
+        font-size: 12px;
+    }
+    .productosColor14 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor62 {
+        font-size: 12px;
+    }
+    .productosColor63 {
+        font-size: 12px;
+    }
+    .productosColor64 {
+        font-size: 12px;
+    }
+    .productosColor65 {
+        font-size: 12px;
+    }
+    .productosColor66 {
+        font-size: 12px;
+    }
+    .productosColor67 {
+        font-size: 12px;
+    }
+    .productosColor68 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor53 {
+        font-size: 12px;
+    }
+    .productosColor107 {
+        font-size: 12px;
+    }
+    .productosColor108 {
+        font-size: 12px;
+    }
+    .productosColor109 {
+        font-size: 12px;
+    }
+    .productosColor119 {
+        font-size: 12px;
+    }
+    .productosColor114 {
+        font-size: 12px;
+    }
+    .productosColor110 {
+        font-size: 12px;
+    }
+    .productosColor111 {
+        font-size: 12px;
+    }
+    .productosColor112 {
+        font-size: 12px;
+    }
+    .productosColor113 {
+        font-size: 12px;
+    }
+    .productosColor115 {
+        font-size: 12px;
+    }
+    .productosColor116 {
+        font-size: 12px;
+    }
+    .productosColor117 {
+        font-size: 12px;
+    }
+    .productosColor118 {
+        font-size: 12px;
+    }
+    .productosColor15 {
+        font-size: 12px;
+    }
+
+    .productosColor16 {
+        font-size: 12px;
+    }
+
+    .productosColor17 {
+        font-size: 12px;
+    }
+
+    .productosColor18 {
+        font-size: 12px;
+    }
+
+    .imagenAcabadoPrincipalImg {
+        margin-left: 28%;
+        max-height: 290px;
+        max-width: 450px;
+    }
+    .acabadoPartes {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        margin-top: -183px;
+    }
+    .pietra {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(125%);
+    }
+    .norway {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(140%);
+    }
+    .bronce {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+    }
+    .transparente {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+    }
+    .noce {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(140%);
+    }
+    .nature {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(150%);
+    }
+    .tabak {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(150%);
+    }
+    .kobe {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(150%);
+    }
+    .blanco {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(140%);
+    }
+    .beige {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(140%);
+    }
+    .latte {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(190%);
+    }
+    .grafeno {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(150%);
+    }
+    .lago {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(130%);
+    }
+    .mare {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(130%);
+    }
+    .marmolblanco {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(190%);
+    }
+    .marmolnegro {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(190%);
+    }
+    #imagenDimensiones {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        max-width: 250px;
+        max-height: 169px;
+    }
+    #dimensionesColorStyle {
+        float: left;
+        height: 236px;
+        height: 190px;
+    }
+    #calculadoraCarrito {
+        width: 30%;
+        background-color: #f5f5f5;
+        height: 91%;
+        position: fixed;
+        top: 40px;
+        right: 0;
+        bottom: 0;
+        display: block;
+        z-index: 1;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */
