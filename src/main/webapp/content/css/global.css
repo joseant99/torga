@@ -2056,6 +2056,103 @@ ui bootstrap tweaks
 #imagenAcabadoPrincipal1 {
     max-width: 100%;
 }
+#imagenAcabado0 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado1 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado2 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado3 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado4 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado5 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado6 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado7 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado8 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado9 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado10 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado11 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado12 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado13 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado14 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado15 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado16 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado17 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado18 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#imagenAcabado19 {
+    max-width: 100%;
+    max-height: 100%;
+}
+#botonCalculadora {
+    width: 86%;
+    height: 7%;
+    bottom: 120px;
+    position: absolute;
+    font-size: 16px;
+    background-color: black;
+    left: 35px;
+    color: black;
+}
+#divDentroCalcu {
+    width: 86%;
+    height: 85%;
+    margin-left: 25px;
+    margin-top: 10px;
+    overflow-y: auto;
+}
 @media screen and (max-width: 900px) {
     #menuFijoArriba {
         position: fixed;
@@ -2065,8 +2162,106 @@ ui bootstrap tweaks
         height: 40px;
         background-color: black;
     }
+    #divDentroCalcu {
+        width: 95%;
+        height: 76%;
+        margin-left: 10px;
+        margin-top: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #botonCalculadora {
+        width: 86%;
+        height: 15%;
+        bottom: 13px;
+        position: absolute;
+        font-size: 16px;
+        background-color: black;
+        left: 15px;
+        color: black;
+    }
     #imagenAcabadoPrincipal1 {
         max-width: 60px;
+    }
+    #imagenAcabado0 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado1 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado2 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado3 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado4 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado5 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado6 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado7 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado8 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado9 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado10 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado11 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado12 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado13 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado14 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado15 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado16 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado17 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado18 {
+        max-width: 60px;
+        max-height: 100px;
+    }
+    #imagenAcabado19 {
+        max-width: 60px;
+        max-height: 100px;
     }
     #botonEsconder {
         max-width: 6%;
