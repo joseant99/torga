@@ -2033,11 +2033,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             data.body[w]['id'] +
                             '" height="160px" width="280px" style=" ">'
                     );
-                    $('#modalApoyo #apoyoModal' + w).append(
-                        '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                            data.body[w]['nombre'] +
-                            '</strong></p>'
-                    );
+                    $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
                 }
             });
             for (let i = 1; i <= 14; i++) {

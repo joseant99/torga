@@ -2190,6 +2190,38 @@ ui bootstrap tweaks
         margin-left: 23px;
         margin-bottom: 23px;
     }
+    #imagenApoyo0 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo1 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo2 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo3 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo4 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo5 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo6 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo7 {
+        max-height: 80px;
+        max-width: 140px;
+    }
 
     #botonEsconder {
         max-width: 6%;
