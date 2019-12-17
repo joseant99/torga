@@ -2153,6 +2153,12 @@ ui bootstrap tweaks
     margin-top: 10px;
     overflow-y: auto;
 }
+
+#productosFiltrados {
+    margin-top: 4%;
+    width: 100%;
+    overflow-x: hidden;
+}
 @media screen and (max-width: 900px) {
     #menuFijoArriba {
         position: fixed;
@@ -2161,6 +2167,12 @@ ui bootstrap tweaks
         top: 0;
         height: 40px;
         background-color: black;
+    }
+    #productosFiltrados {
+        margin-top: 4%;
+        width: 100%;
+        overflow-x: hidden;
+        padding-left: 26%;
     }
     #divDentroCalcu {
         width: 95%;
@@ -2282,7 +2294,7 @@ ui bootstrap tweaks
         margin-top: 50px;
         font-weight: 300;
         letter-spacing: 0.5px;
-        font-size: 12px;
+        font-size: 11px;
     }
     #imagenCesta {
         float: right;
