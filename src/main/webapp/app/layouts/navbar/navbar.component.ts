@@ -172,7 +172,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 $('#menuPrincipal').css({ display: 'none' });
                 $('#botonEsconder').removeAttr('onclick');
                 $('#botonEsconder').attr('onclick', 'apareceMenu()');
-                $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.jpg');
+                $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
             }
         } else {
             this.router.navigate(['/' + ruta]);
@@ -180,7 +180,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             $('#menuPrincipal').css({ display: 'none' });
             $('#botonEsconder').removeAttr('onclick');
             $('#botonEsconder').attr('onclick', 'apareceMenu()');
-            $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.jpg');
+            $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
         }
     }
 
@@ -2515,7 +2515,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     }
                     var bottomModulos = this.bottomModulos;
                     if (nombre == 'mb1') {
-                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 610px;float: left;margin-top:20px"></div>');
+                        $('#cuerpo' + i).append('<div id="izquierda" class="marginIzquierda" style="float: left;margin-top:20px"></div>');
                         $('#cuerpo' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;position: absolute;width: 98%;font-size: 30px;">' +
                                 sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
@@ -2721,7 +2721,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                     } else {
                         contAca = 1;
-                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 610px;float: left;margin-top:20px"></div>');
+                        $('#cuerpo' + i).append('<div id="izquierda" class="marginIzquierda" style="float: left;margin-top:20px"></div>');
                         $('#cuerpo' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;position: absolute;width: 98%;font-size: 30px;">' +
                                 sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
@@ -5318,7 +5318,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 $('#menuPrincipal').css({ display: 'none' });
                 $('#botonEsconder').removeAttr('onclick');
                 $('#botonEsconder').attr('onclick', 'apareceMenu()');
-                $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.jpg');
+                $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
             }
         } else {
             this.productosDormitorioService.todos = undefined;
@@ -5326,7 +5326,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             $('#menuPrincipal').css({ display: 'none' });
             $('#botonEsconder').removeAttr('onclick');
             $('#botonEsconder').attr('onclick', 'apareceMenu()');
-            $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.jpg');
+            $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
         }
     }
 

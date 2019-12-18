@@ -2159,6 +2159,14 @@ ui bootstrap tweaks
     width: 100%;
     overflow-x: hidden;
 }
+
+.marginIzquierda {
+    margin-left: 610px;
+}
+#modalCesta {
+    margin-top: 70px;
+    display: block;
+}
 @media screen and (max-width: 900px) {
     #menuFijoArriba {
         position: fixed;
@@ -2537,7 +2545,22 @@ ui bootstrap tweaks
         right: 0;
         bottom: 0;
         display: block;
-        z-index: 1;
+        z-index: 0;
+    }
+    #imagenFOndoMueble {
+        height: 115%;
+        position: fixed;
+        width: 100%;
+        top: -10px;
+        left: 0;
+    }
+    .marginIzquierda {
+        margin-left: 165px;
+    }
+    #modalCesta {
+        margin-top: -15px;
+        display: block;
+        z-index: 100000;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */
