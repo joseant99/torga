@@ -2165,7 +2165,6 @@ ui bootstrap tweaks
 }
 #modalCesta {
     margin-top: 70px;
-    display: block;
 }
 @media screen and (max-width: 900px) {
     #menuFijoArriba {
@@ -2559,7 +2558,6 @@ ui bootstrap tweaks
     }
     #modalCesta {
         margin-top: -15px;
-        display: block;
         z-index: 100000;
     }
 }
