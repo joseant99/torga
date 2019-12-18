@@ -338,7 +338,7 @@
 			</ul>
 			
 					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
-						<li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;">
+						<li style="margin-top: -31px;border-top: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;">
 							<a  *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']" (click)="open('contacto-sugerencias',false,myModel)">
                             	<span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">SUGERENCIAS</span>
                         	</a>
@@ -713,7 +713,7 @@
     </div>
 </nav>
 
-<ng-template #myModel let-modal class="modalInicio">
+<ng-template #myModel let-modal class="modalInicio" id="modalSalidaPagina">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">&#191;Desea abandonar la pagina?</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -727,7 +727,7 @@
   </div>
 </ng-template>
 
-<ng-template #myModel1 let-modal style="margin-top: 320px;">
+<ng-template #myModel1 let-modal id="modalSalidaPagina">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">&#191;Desea abandonar la pagina?</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -754,8 +754,8 @@
 			        
 		        </div>
 		       <div class="modal-footer">
-			       <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>
-			        <button id="botonDerechaPresupuesto" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary " (click)="generarPresupuesto()">GENERAR PRESUPUESTO</button></p>
+			       <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>
+			        <button id="botonDerechaPresupuesto" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;" type="submit" class="btn btn-primary " (click)="generarPresupuesto()">GENERAR PRESUPUESTO</button></p>
 		        </div>
 		      </div>
 		      

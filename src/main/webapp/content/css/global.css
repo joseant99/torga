@@ -2174,12 +2174,63 @@ ui bootstrap tweaks
 }
 #botonIzquierdaComposicion {
     margin-left: 75px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #botonDerechaPresupuesto {
     margin-right: 75px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#especialesAncho {
+    margin-left: 1%;
+}
+#especialesFondo {
+    margin-left: 13%;
+}
+#especialesAlto {
+    margin-left: 13%;
+}
+#medidasEspecialesTexto {
+    margin-left: 40%;
+}
+#medidasAncho {
+    width: 58%;
+}
+#medidasFondo {
+    width: 58%;
+}
+#medidasAlto {
+    width: 58%;
 }
 @media screen and (max-width: 900px) {
+    #medidasEspecialesTexto {
+        margin-left: 33%;
+    }
+    .d-block {
+        margin-top: 40px;
+    }
+    #negritaNombre {
+        width: 100%;
+        margin-bottom: -20px;
+    }
+    #medidasAncho {
+        width: 70%;
+    }
+    #medidasFondo {
+        width: 70%;
+    }
+    #medidasAlto {
+        width: 70%;
+    }
+    #especialesTexto {
+        font-size: 25px;
+        margin-left: 23%;
+    }
+    #imagenProdEspeciales {
+        display: none;
+    }
     #menuFijoArriba {
         position: fixed;
         z-index: 10000;
@@ -2193,10 +2244,14 @@ ui bootstrap tweaks
     }
     #botonIzquierdaComposicion {
         margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: -15px;
     }
 
     #botonDerechaPresupuesto {
         margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: -15px;
     }
     #contenidoDivPrincipal {
         margin-top: 15px;
@@ -2303,7 +2358,7 @@ ui bootstrap tweaks
     #productosPrincipal {
         width: 100%;
         margin-left: 0px;
-        margin-top: 70px;
+        margin-top: 25px;
     }
     #ProductosCargados1 {
         margin-left: 27%;
@@ -2600,6 +2655,15 @@ ui bootstrap tweaks
     #acabado {
         margin-left: 20%;
     }
+    #especialesAncho {
+        margin-left: 30%;
+    }
+    #especialesFondo {
+        margin-left: 2%;
+    }
+    #especialesAlto {
+        margin-left: 2%;
+    }
 }
 @media screen and (max-width: 800px) {
     #page-heading {
@@ -2710,7 +2774,7 @@ ui bootstrap tweaks
     #productosPrincipal {
         width: 100%;
         margin-left: 0px;
-        margin-top: 70px;
+        margin-top: 25px;
     }
     #ProductosCargados1 {
         margin-left: 27%;

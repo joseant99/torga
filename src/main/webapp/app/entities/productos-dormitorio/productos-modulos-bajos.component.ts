@@ -1912,17 +1912,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     $('#especialesTexto').css({ 'margin-top': '5%' });
                     $('#especialesAncho').css({ float: 'left' });
                     $('#especialesAncho').css({ width: '20%' });
-                    $('#especialesAncho').css({ 'margin-left': '1%' });
                     $('#especialesAncho').css({ border: '1px gray solid' });
                     $('#especialesAncho').css({ 'text-align': 'center' });
                     $('#especialesFondo').css({ float: 'left' });
                     $('#especialesFondo').css({ width: '20%' });
-                    $('#especialesFondo').css({ 'margin-left': '13%' });
                     $('#especialesFondo').css({ border: '1px gray solid' });
                     $('#especialesFondo').css({ 'text-align': 'center' });
                     $('#especialesAlto').css({ float: 'left' });
                     $('#especialesAlto').css({ width: '20%' });
-                    $('#especialesAlto').css({ 'margin-left': '13%' });
                     $('#especialesAlto').css({ border: '1px gray solid' });
                     $('#especialesAlto').css({ 'text-align': 'center' });
                     $('#especialesAncho').empty();
@@ -2003,7 +2000,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 u +
                                 '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=" opacity: 0.7;margin-left:20px;"/><span id="nombreAcaCalcu' +
                                 u +
-                                '" style="margin-left:10px">BLANCO</span></p>'
+                                '" style="margin-left:10px"></span></p>'
                         );
                         $('#aca1' + u).append(
                             '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
@@ -2106,7 +2103,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         if (medidasEspeciales[i]['ancho'] == 1) {
                             $('#medidasAncho').removeAttr('style');
                             $('#medidasAncho').attr('style');
-                            $('#medidasAncho').css({ width: '58%' });
                             $('#medidasAncho').css({ float: 'right' });
                             $('#medidasAncho').css({ 'margin-bottom': '10%' });
                             $('#imagenProdEspeciales').append(
@@ -2131,12 +2127,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#medidasFondo').append('<input style="float:left;margin-left:2%" id="inputFondoAncho" value="" disabled />');
                             $('#medidasFondo').removeAttr('style');
                             $('#medidasFondo').attr('style');
-                            $('#medidasFondo').css({ width: '58%' });
                             $('#medidasFondo').css({ float: 'right' });
                             $('#medidasFondo').css({ 'margin-bottom': '10%' });
                             $('#medidasAlto').removeAttr('style');
                             $('#medidasAlto').attr('style');
-                            $('#medidasAlto').css({ width: '58%' });
                             $('#medidasAlto').css({ float: 'right' });
                             $('#medidasAlto').append('<input style="float:left;margin-left:2%" id="inputAltoAncho" value="" disabled />');
                         }
@@ -2160,7 +2154,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         if (medidasEspeciales[i]['fondo'] == 1) {
                             $('#medidasAncho').removeAttr('style');
                             $('#medidasAncho').attr('style');
-                            $('#medidasAncho').css({ width: '58%' });
                             $('#medidasAncho').css({ float: 'right' });
                             $('#medidasAncho').css({ 'margin-bottom': '10%' });
                             $('#imagenProdEspeciales').append(
@@ -2191,12 +2184,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             );
                             $('#medidasFondo').removeAttr('style');
                             $('#medidasFondo').attr('style');
-                            $('#medidasFondo').css({ width: '58%' });
                             $('#medidasFondo').css({ float: 'right' });
                             $('#medidasFondo').css({ 'margin-bottom': '10%' });
                             $('#medidasAlto').removeAttr('style');
                             $('#medidasAlto').attr('style');
-                            $('#medidasAlto').css({ width: '58%' });
                             $('#medidasAlto').css({ float: 'right' });
                             $('#medidasAlto').append('<input style="float:left;margin-left:2%" id="inputAltoAncho" value="" disabled />');
                         }
@@ -2219,7 +2210,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         if (medidasEspeciales[i]['alto'] == 1) {
                             $('#medidasAncho').removeAttr('style');
                             $('#medidasAncho').attr('style');
-                            $('#medidasAncho').css({ width: '58%' });
                             $('#medidasAncho').css({ float: 'right' });
                             $('#medidasAncho').css({ 'margin-bottom': '10%' });
                             $('#imagenProdEspeciales').append(
@@ -2250,12 +2240,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             );
                             $('#medidasFondo').removeAttr('style');
                             $('#medidasFondo').attr('style');
-                            $('#medidasFondo').css({ width: '58%' });
                             $('#medidasFondo').css({ float: 'right' });
                             $('#medidasFondo').css({ 'margin-bottom': '10%' });
                             $('#medidasAlto').removeAttr('style');
                             $('#medidasAlto').attr('style');
-                            $('#medidasAlto').css({ width: '58%' });
                             $('#medidasAlto').css({ float: 'right' });
                             $('#medidasFondo').append('<input style="float:left;margin-left:2%" id="inputfondoAlto" value="" disabled />');
                         }
@@ -2275,7 +2263,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var dimensionProxima;
         var idProd;
         $('#imagenAcabado').remove();
-        $('#acabados').css({ display: 'none' });
+        $('#acabados').css({ display: 'block' });
         $('#nombreApoyoTitulo').css({ display: 'none' });
         for (let i = 1; i <= 5; i++) {
             $('.apoyoCogido' + i).empty();
@@ -2310,23 +2298,24 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             dimensionProxima = dimensiones[k];
                             $('#inputAltoAncho').val(dimensionProxima['alto']);
                             $('#inputFondoAncho').val(dimensionProxima['fondo']);
-
+                            $('#datos1').append('<p style="width:100%"><strong>MEDIDAS</strong></p>');
                             $('#datos1').append(
                                 '<p class="' +
                                     idDimenTipo +
-                                    '" id="ancho1" style="width:100%">Ancho<span style="float:right" id="valorAnchoESPECIAL"></span></p>'
+                                    '" id="ancho1" style="width:95%">Ancho Especial: <span style="" id="valorAnchoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p style="width:95%">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
                             );
                             $('#datos1').append(
                                 '<p id="alto1" class="' +
                                     precioAum +
-                                    '" style="width:100%">Alto<span style="float:right" id="valorAltoESPECIAL"></span></p>'
+                                    '" style="width:95%">Alto: <span style="" id="valorAltoESPECIAL"></span></p>'
                             );
                             $('#datos1').append(
-                                '<p id="fondo1" style="width:100%">Fondo<span style="float:right" id="valorFondoESPECIAL"></span></p>'
+                                '<p id="fondo1" style="width:95%">Fondo: <span style="" id="valorFondoESPECIAL"></span></p>'
                             );
-                            $('#datos1').append(
-                                '<p style="width:100%">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
-                            );
+
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
@@ -2359,22 +2348,24 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     $('#datos1').empty();
                                     $('#precios1').empty();
                                     $('#precioCalculado1').empty();
+                                    $('#datos1').append('<p style="width:100%"><strong>MEDIDAS</strong></p>');
                                     $('#datos1').append(
                                         '<p class="' +
                                             idDimenTipo +
-                                            '" id="ancho1" style="width:100%">Ancho<span style="float:right" id="valorAnchoESPECIAL"></span></p>'
-                                    );
-                                    $('#datos1').append(
-                                        '<p id="alto1" class="' +
-                                            precioAum +
-                                            '" style="width:100%">Alto<span style="float:right" id="valorAltoESPECIAL"></span></p>'
-                                    );
-                                    $('#datos1').append(
-                                        '<p id="fondo1" style="width:100%">Fondo<span style="float:right" id="valorFondoESPECIAL"></span></p>'
+                                            '" id="ancho1" style="width:100%">Ancho especial: <span style="" id="valorAnchoESPECIAL"></span></p>'
                                     );
                                     $('#datos1').append(
                                         '<p style="width:100%">Incremento 30%<span id="precioAum" style="float:right"></span></p>'
                                     );
+                                    $('#datos1').append(
+                                        '<p id="alto1" class="' +
+                                            precioAum +
+                                            '" style="width:100%">Alto: <span style="" id="valorAltoESPECIAL"></span></p>'
+                                    );
+                                    $('#datos1').append(
+                                        '<p id="fondo1" style="width:100%">Fondo: <span style="" id="valorFondoESPECIAL"></span></p>'
+                                    );
+
                                     var total = $('#total').text();
                                     var totalfloat = parseFloat(total);
                                     var precio = parseFloat(dimensiones[k]['precio']);
@@ -2398,7 +2389,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         }
                     }
                 }
-                $('#acabados').css({ display: 'block' });
                 $('#acabado').removeAttr('style');
                 $('#acabado').attr('style');
                 $('#acabado').css({ 'text-align': 'center' });
@@ -2408,10 +2398,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 var contnuevo = 1;
                 var u = 1;
                 var i = 0;
-                $('#imagenAcabadoPrincipal').empty();
-                for (let h = 1; h <= 14; h++) {
-                    $('#aca1' + h).empty();
-                }
                 this.acaProdService.findAca(idProd).subscribe(data => {
                     this.acaProdService.todos = data.body;
                     $.each(this.acaProdService.todos, function(index, value) {
@@ -2435,7 +2421,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         i +
                                         '" class="' +
                                         value['acabados'][m]['id'] +
-                                        '" height="250px" width="130px" style="">'
+                                        '" height="250px" width="130px" style=" opacity: 0.7;">'
                                 );
                                 $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
                                     '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
@@ -2457,14 +2443,34 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     u +
                                     '</button>'
                             );
+                            if (u == 1) {
+                                $('#datos1').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
+                            }
+                            $('#datos1').append(
+                                '<p style="width:100%" id="acabado' +
+                                    u +
+                                    '"><span>' +
+                                    u +
+                                    '</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                    u +
+                                    '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=" opacity: 0.7;margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                    u +
+                                    '" style="margin-left:10px"></span></p>'
+                            );
                             $('#aca1' + u).append(
-                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
+                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
                             );
                             u++;
                             i = 0;
                             contnuevo++;
                         }
                     });
+                    $('#datos1').append(
+                        '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
+                    );
+                    $('#datos1').append(
+                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                    );
                 });
 
                 this.productosDormitorioService.categoria(2).subscribe(data => {
@@ -2477,13 +2483,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 w +
                                 '" class="' +
                                 data.body[w]['id'] +
-                                '" height="160px" width="280px" style="">'
+                                '" height="160px" width="280px" style=" ">'
                         );
-                        $('#modalApoyo #apoyoModal' + w).append(
-                            '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                                data.body[w]['nombre'] +
-                                '</strong></p>'
-                        );
+                        $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
                     }
                 });
                 for (let i = 1; i <= 14; i++) {
@@ -2494,10 +2496,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
                 $('#botonApoyoNuevo').empty();
                 $('#botonApoyoNuevo').append(
-                    '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
+                    '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
                 );
                 $('#botonApoyoNuevo').append(
-                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" margin-left:20px;"/>'
+                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
                 );
             } else {
                 $('#anchoInputEspeciales').css({ border: 'red 1px solid' });
@@ -2531,22 +2533,24 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#precioDimension').text(precioAum);
 
                             $('#idioma').attr('value', dimensiones[k]['id']);
+                            $('#datos1').append('<p style="width:100%"><strong>MEDIDAS</strong></p>');
                             $('#datos1').append(
                                 '<p class="' +
                                     idDimenTipo +
-                                    '" id="ancho1" style="width:100%">Ancho<span style="float:right" id="valorAnchoESPECIAL"></span></p>'
+                                    '" id="ancho1" style="width:95%">Ancho: <span style="" id="valorAnchoESPECIAL"></span></p>'
                             );
                             $('#datos1').append(
                                 '<p id="alto1" class="' +
                                     precioAum +
-                                    '" style="width:100%">Alto<span style="float:right" id="valorAltoESPECIAL"></span></p>'
+                                    '" style="width:95%">Alto Especial: <span style="" id="valorAltoESPECIAL"></span></p>'
                             );
                             $('#datos1').append(
-                                '<p id="fondo1" style="width:100%">Fondo<span style="float:right" id="valorFondoESPECIAL"></span></p>'
+                                '<p style="width:95%">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
                             );
                             $('#datos1').append(
-                                '<p style="width:100%">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
+                                '<p id="fondo1" style="width:95%;">Fondo: <span style="" id="valorFondoESPECIAL"></span></p>'
                             );
+
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
@@ -2558,15 +2562,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             precioAum = precio + precioAum;
                             $('#total').text(precioAum);
                             $('#precioDimension').text(precioAum);
-                            $('#valorAnchoESPECIAL').text(valor);
+                            $('#valorAnchoESPECIAL').text(dimensiones[k]['ancho']);
                             $('#idioma').attr('value', dimensiones[k]['id']);
                             $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
-                            $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
+                            $('#valorFondoESPECIAL').text(valor);
                             $('#precioAum').text(precioAumGuardado);
                         }
                     }
                 }
-                $('#acabados').css({ display: 'block' });
                 $('#acabado').removeAttr('style');
                 $('#acabado').attr('style');
                 $('#acabado').css({ 'text-align': 'center' });
@@ -2599,7 +2602,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         i +
                                         '" class="' +
                                         value['acabados'][m]['id'] +
-                                        '" height="250px" width="130px" style="">'
+                                        '" height="250px" width="130px" style=" opacity: 0.7;">'
                                 );
                                 $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
                                     '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
@@ -2621,14 +2624,34 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     u +
                                     '</button>'
                             );
+                            if (u == 1) {
+                                $('#datos1').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
+                            }
+                            $('#datos1').append(
+                                '<p style="width:100%" id="acabado' +
+                                    u +
+                                    '"><span>' +
+                                    u +
+                                    '</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                    u +
+                                    '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=" opacity: 0.7;margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                    u +
+                                    '" style="margin-left:10px"></span></p>'
+                            );
                             $('#aca1' + u).append(
-                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
+                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
                             );
                             u++;
                             i = 0;
                             contnuevo++;
                         }
                     });
+                    $('#datos1').append(
+                        '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
+                    );
+                    $('#datos1').append(
+                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                    );
                 });
 
                 this.productosDormitorioService.categoria(2).subscribe(data => {
@@ -2641,13 +2664,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 w +
                                 '" class="' +
                                 data.body[w]['id'] +
-                                '" height="160px" width="280px" style="">'
+                                '" height="160px" width="280px" style=" ">'
                         );
-                        $('#modalApoyo #apoyoModal' + w).append(
-                            '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                                data.body[w]['nombre'] +
-                                '</strong></p>'
-                        );
+                        $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
                     }
                 });
                 for (let i = 1; i <= 14; i++) {
@@ -2658,7 +2677,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
                 $('#botonApoyoNuevo').empty();
                 $('#botonApoyoNuevo').append(
-                    '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
+                    '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
                 );
                 $('#botonApoyoNuevo').append(
                     '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
@@ -2727,7 +2746,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         }
                     }
                 }
-                $('#acabados').css({ display: 'block' });
                 $('#acabado').removeAttr('style');
                 $('#acabado').attr('style');
                 $('#acabado').css({ 'text-align': 'center' });
@@ -2760,7 +2778,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         i +
                                         '" class="' +
                                         value['acabados'][m]['id'] +
-                                        '" height="250px" width="130px" style=" ">'
+                                        '" height="250px" width="130px" style=" opacity: 0.7;">'
                                 );
                                 $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
                                     '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
@@ -2782,14 +2800,34 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     u +
                                     '</button>'
                             );
+                            if (u == 1) {
+                                $('#datos1').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
+                            }
+                            $('#datos1').append(
+                                '<p style="width:100%" id="acabado' +
+                                    u +
+                                    '"><span>' +
+                                    u +
+                                    '</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                    u +
+                                    '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=" opacity: 0.7;margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                    u +
+                                    '" style="margin-left:10px"></span></p>'
+                            );
                             $('#aca1' + u).append(
-                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
+                                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
                             );
                             u++;
                             i = 0;
                             contnuevo++;
                         }
                     });
+                    $('#datos1').append(
+                        '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
+                    );
+                    $('#datos1').append(
+                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                    );
                 });
 
                 this.productosDormitorioService.categoria(2).subscribe(data => {
@@ -2802,13 +2840,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 w +
                                 '" class="' +
                                 data.body[w]['id'] +
-                                '" height="160px" width="280px" style="">'
+                                '" height="160px" width="280px" style=" ">'
                         );
-                        $('#modalApoyo #apoyoModal' + w).append(
-                            '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                                data.body[w]['nombre'] +
-                                '</strong></p>'
-                        );
+                        $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
                     }
                 });
                 for (let i = 1; i <= 14; i++) {
@@ -2819,7 +2853,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
                 $('#botonApoyoNuevo').empty();
                 $('#botonApoyoNuevo').append(
-                    '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
+                    '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
                 );
                 $('#botonApoyoNuevo').append(
                     '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
