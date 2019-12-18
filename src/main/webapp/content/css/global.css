@@ -2166,6 +2166,19 @@ ui bootstrap tweaks
 #modalCesta {
     margin-top: 70px;
 }
+#modalEnviadoCarrito {
+    margin-top: 200px;
+}
+#contenidoDivPrincipal {
+    margin-top: 52px;
+}
+#botonIzquierdaComposicion {
+    margin-left: 75px;
+}
+
+#botonDerechaPresupuesto {
+    margin-right: 75px;
+}
 @media screen and (max-width: 900px) {
     #menuFijoArriba {
         position: fixed;
@@ -2174,6 +2187,24 @@ ui bootstrap tweaks
         top: 0;
         height: 40px;
         background-color: black;
+    }
+    #botonIzquierdaComposicion {
+        margin-left: 0px;
+    }
+
+    #botonDerechaPresupuesto {
+        margin-right: 0px;
+    }
+    #contenidoDivPrincipal {
+        margin-top: 15px;
+    }
+    #modalEnviadoCarrito {
+        margin-top: 50px;
+    }
+    #imagenAcabadoPrincipal {
+        float: left;
+        width: 100%;
+        height: 130px;
     }
     #productosFiltrados {
         margin-top: 4%;
@@ -2402,125 +2433,125 @@ ui bootstrap tweaks
     }
 
     .imagenAcabadoPrincipalImg {
-        margin-left: 28%;
-        max-height: 290px;
-        max-width: 450px;
+        margin-left: 34%;
+        max-height: 240px;
+        max-width: 400px;
     }
     .acabadoPartes {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         margin-top: -183px;
     }
     .pietra {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(125%);
     }
     .norway {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(140%);
     }
     .bronce {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
     }
     .transparente {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
     }
     .noce {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(140%);
     }
     .nature {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(150%);
     }
     .tabak {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(150%);
     }
     .kobe {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(150%);
     }
     .blanco {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(140%);
     }
     .beige {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(140%);
     }
     .latte {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(190%);
     }
     .grafeno {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(150%);
     }
     .lago {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(130%);
     }
     .mare {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(130%);
     }
     .marmolblanco {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(190%);
     }
     .marmolnegro {
         position: absolute;
-        max-width: 450px;
-        max-height: 290px;
-        margin-left: -450px;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
         filter: brightness(190%);
     }
     #imagenDimensiones {
@@ -2560,8 +2591,20 @@ ui bootstrap tweaks
         margin-top: -15px;
         z-index: 100000;
     }
+    #page-heading {
+        margin-left: 20%;
+    }
+    #acabado {
+        margin-left: 20%;
+    }
 }
 @media screen and (max-width: 800px) {
+    #page-heading {
+        margin-left: 20%;
+    }
+    #acabado {
+        margin-left: 20%;
+    }
     #menuFijoArriba {
         position: fixed;
         z-index: 10000;
@@ -2679,7 +2722,7 @@ ui bootstrap tweaks
     #dimensiones {
         width: 70%;
         float: left;
-        margin-left: 205px;
+        margin-left: 180px;
     }
     #tablaFiltro {
         margin-top: 2%;

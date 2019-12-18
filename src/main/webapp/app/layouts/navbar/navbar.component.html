@@ -16,7 +16,7 @@
 	<a id="cestaImagen" data-toggle="modal" data-target="#modalCesta"  (click)="abrirCesta()"><img id="imagenCesta" src="../../../content/images/CESTA-min.png"><i id="posicion0">{{productosDormitorioService.numeroCesta}}</i></a>
 </div>
 <nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal" style="display:none">
-<div style="float:left;width:100%;top:50px;margin-top: 52px;">				
+<div style="float:left;width:100%;top:50px;" id="contenidoDivPrincipal">				
 	<div id="menuUnico">				
 					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
 	       		 		<li style="margin-top: -20px;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -754,8 +754,8 @@
 			        
 		        </div>
 		       <div class="modal-footer">
-			       <p style="width:100%"><button style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;margin-left: 75px;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>
-			        <button style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;margin-right: 75px;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary " (click)="generarPresupuesto()">GENERAR PRESUPUESTO</button></p>
+			       <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>
+			        <button id="botonDerechaPresupuesto" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;margin-top: 30px;margin-bottom: 30px;" type="submit" class="btn btn-primary " (click)="generarPresupuesto()">GENERAR PRESUPUESTO</button></p>
 		        </div>
 		      </div>
 		      

@@ -2014,7 +2014,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     }
                 });
                 $('#datos1').append(
-                    '<p style="width:100%"><strong>APOYO </strong><span id="precioApoyo" style="float:right"></span><span style="float:right">&euro;</span></p>'
+                    '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
                 );
                 $('#datos1').append(
                     '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
@@ -2044,7 +2044,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
             $('#botonApoyoNuevo').empty();
             $('#botonApoyoNuevo').append(
-                '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
+                '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
             );
             $('#botonApoyoNuevo').append(
                 '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
@@ -3402,7 +3402,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             '&euro;</span></p>'
                                     );
                                     $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
-                                    $('#datos1 #precioApoyo').text(precio);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3443,7 +3443,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             '&euro;</span></p>'
                                     );
                                     $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
-                                    $('#datos1 #precioApoyo').text(precio);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3486,7 +3486,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             '&euro;</span></p>'
                                     );
                                     $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
-                                    $('#datos1 #precioApoyo').text(precio);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3527,7 +3527,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             '&euro;</span></p>'
                                     );
                                     $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
-                                    $('#datos1 #precioApoyo').text(precio);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3569,7 +3569,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         '&euro;</span></p>'
                                 );
                                 $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
-                                $('#datos1 #precioApoyo').text(precio);
+                                $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                 $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                 $('#botonApoyoNuevo').append(
                                     '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3610,7 +3610,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         '&euro;</span></p>'
                                 );
                                 $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
-                                $('#datos1 #precioApoyo').text(precio);
+                                $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                 $('#botonApoyoNuevo').append(
                                     '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
                                         value['productoApoyo']['nombre'] +
@@ -3789,6 +3789,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 100; i++) {
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
             if (sesion != null) {
+                this.productosDormitorioService.numeroCesta = i;
                 console.log(sessionStorage);
                 $('#productoCarrito' + i).removeAttr('style');
                 $('#productoCarrito' + i).attr('style');
