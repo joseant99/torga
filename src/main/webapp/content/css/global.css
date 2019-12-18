@@ -2188,6 +2188,9 @@ ui bootstrap tweaks
         height: 40px;
         background-color: black;
     }
+    #modalApoyo {
+        margin-top: -10px;
+    }
     #botonIzquierdaComposicion {
         margin-left: 0px;
     }
