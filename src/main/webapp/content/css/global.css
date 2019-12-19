@@ -2152,6 +2152,7 @@ ui bootstrap tweaks
     margin-left: 25px;
     margin-top: 10px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #productosFiltrados {
@@ -2206,6 +2207,1446 @@ ui bootstrap tweaks
 }
 #medidasEspeciales {
     margin-top: 70px;
+}
+#acabado {
+    margin-top: 14%;
+    margin-bottom: 5%;
+}
+#medidas {
+    margin-top: 14%;
+}
+
+@media screen and (max-width: 1050px) {
+    #medidasEspecialesTexto {
+        margin-left: 33%;
+    }
+    #medidasEspeciales {
+        margin-top: 50px;
+    }
+    .d-block {
+        margin-top: 40px;
+    }
+    #negritaNombre {
+        width: 100%;
+        margin-bottom: -20px;
+    }
+    #medidasAncho {
+        width: 85%;
+    }
+    #medidasFondo {
+        width: 85%;
+    }
+    #medidasAlto {
+        width: 85%;
+    }
+    #especialesTexto {
+        font-size: 25px;
+        margin-left: 0%;
+    }
+    #imagenProdEspeciales {
+        display: none;
+    }
+    #menuFijoArriba {
+        position: fixed;
+        z-index: 10000;
+        width: 100%;
+        top: 0;
+        height: 50px;
+        background-color: black;
+    }
+    #modalApoyo {
+        margin-top: -10px;
+    }
+    #botonIzquierdaComposicion {
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: -15px;
+    }
+
+    #botonDerechaPresupuesto {
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: -15px;
+    }
+    #contenidoDivPrincipal {
+        margin-top: 15px;
+    }
+    #modalEnviadoCarrito {
+        margin-top: 50px;
+    }
+    #imagenAcabadoPrincipal {
+        float: left;
+        width: 100%;
+        height: 130px;
+        margin-bottom: 350px;
+    }
+    #productosFiltrados {
+        margin-top: 4%;
+        width: 100%;
+        overflow-x: hidden;
+        padding-left: 26%;
+    }
+    #divDentroCalcu {
+        width: 95%;
+        height: 95%;
+        margin-left: 10px;
+        margin-top: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #botonCalculadora {
+        width: 86%;
+        height: 10%;
+        bottom: 60px;
+        position: absolute;
+        font-size: 16px;
+        background-color: black;
+        left: 15px;
+        color: black;
+    }
+    #imagenAcabadoPrincipal1 {
+        max-width: 60px;
+    }
+    .acabadosModal {
+        float: left;
+        width: 100px;
+        height: 170px;
+        margin-left: 23px;
+        margin-bottom: 40px;
+    }
+    #imagenApoyo0 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo1 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo2 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo3 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo4 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo5 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo6 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo7 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+
+    #botonEsconder {
+        max-width: 6%;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+    #posicion0 {
+        position: absolute;
+        right: 8px;
+        top: 6px;
+        color: white;
+    }
+    #imagenLogoCuenta {
+        margin-left: 5%;
+    }
+    #logoImagen {
+        position: absolute;
+        width: 120px;
+        height: 25px;
+    }
+    #cestaImagen {
+        right: 10px;
+        position: fixed;
+        margin-top: -5px;
+    }
+    #productosPrincipal {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 25px;
+    }
+    #ProductosCargados1 {
+        margin-left: 0%;
+    }
+    #ProductosCargados {
+        margin-left: 0%;
+    }
+    .producto {
+        max-height: 163px;
+        max-width: 270px;
+    }
+    #dimensiones {
+        width: 100%;
+        float: left;
+        margin-left: 0px;
+    }
+    #tablaFiltro {
+        margin-top: 2%;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        border-collapse: separate;
+        border-spacing: 5px;
+        margin-left: 10%;
+    }
+    #productosDormitorioCargados {
+        margin-left: 35px;
+        margin-bottom: 18px;
+        margin-right: 35px;
+        margin-top: 50px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        font-size: 11px;
+    }
+    #imagenCesta {
+        float: right;
+        top: 0;
+        width: 10%;
+        right: 11px;
+    }
+
+    .productosColor33 {
+        font-size: 12px;
+    }
+    .productosColor14 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor62 {
+        font-size: 12px;
+    }
+    .productosColor63 {
+        font-size: 12px;
+    }
+    .productosColor64 {
+        font-size: 12px;
+    }
+    .productosColor65 {
+        font-size: 12px;
+    }
+    .productosColor66 {
+        font-size: 12px;
+    }
+    .productosColor67 {
+        font-size: 12px;
+    }
+    .productosColor68 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor53 {
+        font-size: 12px;
+    }
+    .productosColor107 {
+        font-size: 12px;
+    }
+    .productosColor108 {
+        font-size: 12px;
+    }
+    .productosColor109 {
+        font-size: 12px;
+    }
+    .productosColor119 {
+        font-size: 12px;
+    }
+    .productosColor114 {
+        font-size: 12px;
+    }
+    .productosColor110 {
+        font-size: 12px;
+    }
+    .productosColor111 {
+        font-size: 12px;
+    }
+    .productosColor112 {
+        font-size: 12px;
+    }
+    .productosColor113 {
+        font-size: 12px;
+    }
+    .productosColor115 {
+        font-size: 12px;
+    }
+    .productosColor116 {
+        font-size: 12px;
+    }
+    .productosColor117 {
+        font-size: 12px;
+    }
+    .productosColor118 {
+        font-size: 12px;
+    }
+    .productosColor15 {
+        font-size: 12px;
+    }
+
+    .productosColor16 {
+        font-size: 12px;
+    }
+
+    .productosColor17 {
+        font-size: 12px;
+    }
+
+    .productosColor18 {
+        font-size: 12px;
+    }
+
+    .imagenAcabadoPrincipalImg {
+        margin-left: 13%;
+        max-height: 333px;
+        max-width: 500px;
+    }
+    .acabadoPartes {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        margin-top: -183px;
+    }
+    .pietra {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(125%);
+    }
+    .norway {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(140%);
+    }
+    .bronce {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+    }
+    .transparente {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+    }
+    .noce {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(140%);
+    }
+    .nature {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(150%);
+    }
+    .tabak {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(150%);
+    }
+    .kobe {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(150%);
+    }
+    .blanco {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(140%);
+    }
+    .beige {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(140%);
+    }
+    .latte {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(190%);
+    }
+    .grafeno {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(150%);
+    }
+    .lago {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(130%);
+    }
+    .mare {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(130%);
+    }
+    .marmolblanco {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(190%);
+    }
+    .marmolnegro {
+        position: absolute;
+        max-height: 333px;
+        max-width: 500px;
+        margin-left: -500px;
+        filter: brightness(190%);
+    }
+    #imagenDimensiones {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        max-width: 340px;
+        max-height: 230px;
+    }
+    #dimensionesColorStyle {
+        float: left;
+        height: 230px;
+    }
+    #calculadoraCarrito {
+        width: 26%;
+        background-color: #f5f5f5;
+        height: 100%;
+        position: fixed;
+        top: 40px;
+        right: 0;
+        bottom: 0;
+        display: block;
+        z-index: 0;
+    }
+    #imagenFOndoMueble {
+        height: 115%;
+        position: fixed;
+        width: 125%;
+        top: -10px;
+        left: -150px;
+    }
+    .marginIzquierda {
+        margin-left: 260px;
+    }
+    #modalCesta {
+        margin-top: -15px;
+        z-index: 100000;
+    }
+    #page-heading {
+        margin-left: 0%;
+        font-size: 26px;
+    }
+    #acabado {
+        margin-left: -5%;
+        font-size: 26px;
+        margin-top: 7%;
+        margin-bottom: 22%;
+    }
+    #botonEliminar {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    #medidas {
+        font-size: 26px;
+    }
+    #especialesAncho {
+        margin-left: 8%;
+    }
+    #especialesFondo {
+        margin-left: 10%;
+    }
+    #especialesAlto {
+        margin-left: 10%;
+    }
+    #productosPrincipal {
+        width: 75%;
+        padding-left: 40px;
+        margin-top: 70px;
+        float: right;
+        right: 0;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #medidasEspecialesTexto {
+        margin-left: 33%;
+    }
+    #medidasEspeciales {
+        margin-top: 50px;
+    }
+    .d-block {
+        margin-top: 40px;
+    }
+    #negritaNombre {
+        width: 100%;
+        margin-bottom: -20px;
+    }
+    #medidasAncho {
+        width: 70%;
+    }
+    #medidasFondo {
+        width: 70%;
+    }
+    #medidasAlto {
+        width: 70%;
+    }
+    #especialesTexto {
+        font-size: 25px;
+        margin-left: 23%;
+    }
+    #imagenProdEspeciales {
+        display: none;
+    }
+    #menuFijoArriba {
+        position: fixed;
+        z-index: 10000;
+        width: 100%;
+        top: 0;
+        height: 40px;
+        background-color: black;
+    }
+    #modalApoyo {
+        margin-top: -10px;
+    }
+    #botonIzquierdaComposicion {
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: -15px;
+    }
+
+    #botonDerechaPresupuesto {
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: -15px;
+    }
+    #contenidoDivPrincipal {
+        margin-top: 15px;
+    }
+    #modalEnviadoCarrito {
+        margin-top: 50px;
+    }
+    #imagenAcabadoPrincipal {
+        float: left;
+        width: 100%;
+        height: 130px;
+        margin-bottom: 350px;
+    }
+    #productosFiltrados {
+        margin-top: 4%;
+        width: 100%;
+        overflow-x: hidden;
+        padding-left: 26%;
+    }
+    #divDentroCalcu {
+        width: 95%;
+        height: 95%;
+        margin-left: 10px;
+        margin-top: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #botonCalculadora {
+        width: 86%;
+        height: 15%;
+        bottom: 13px;
+        position: absolute;
+        font-size: 16px;
+        background-color: black;
+        left: 15px;
+        color: black;
+    }
+    #imagenAcabadoPrincipal1 {
+        max-width: 60px;
+    }
+    .acabadosModal {
+        float: left;
+        width: 75px;
+        height: 85px;
+        margin-left: 23px;
+        margin-bottom: 23px;
+    }
+    #imagenApoyo0 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo1 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo2 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo3 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo4 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo5 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo6 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo7 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+
+    #botonEsconder {
+        max-width: 6%;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+    #posicion0 {
+        position: absolute;
+        right: 8px;
+        top: 6px;
+        color: white;
+    }
+    #imagenLogoCuenta {
+        margin-left: 5%;
+    }
+    #logoImagen {
+        position: absolute;
+        width: 120px;
+        height: 25px;
+    }
+    #cestaImagen {
+        right: 10px;
+        position: fixed;
+        margin-top: -5px;
+    }
+    #productosPrincipal {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 25px;
+    }
+    #ProductosCargados1 {
+        margin-left: 27%;
+    }
+    #ProductosCargados {
+        margin-left: 27%;
+    }
+    .producto {
+        max-height: 143px;
+        max-width: 240px;
+    }
+    #dimensiones {
+        width: 70%;
+        float: left;
+        margin-left: 205px;
+    }
+    #tablaFiltro {
+        margin-top: 2%;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        border-collapse: separate;
+        border-spacing: 5px;
+        margin-left: 24%;
+    }
+    #productosDormitorioCargados {
+        margin-left: 35px;
+        margin-bottom: 18px;
+        margin-right: 35px;
+        margin-top: 50px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        font-size: 11px;
+    }
+    #imagenCesta {
+        float: right;
+        top: 0;
+        width: 10%;
+        right: 11px;
+    }
+
+    .productosColor33 {
+        font-size: 12px;
+    }
+    .productosColor14 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor62 {
+        font-size: 12px;
+    }
+    .productosColor63 {
+        font-size: 12px;
+    }
+    .productosColor64 {
+        font-size: 12px;
+    }
+    .productosColor65 {
+        font-size: 12px;
+    }
+    .productosColor66 {
+        font-size: 12px;
+    }
+    .productosColor67 {
+        font-size: 12px;
+    }
+    .productosColor68 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor53 {
+        font-size: 12px;
+    }
+    .productosColor107 {
+        font-size: 12px;
+    }
+    .productosColor108 {
+        font-size: 12px;
+    }
+    .productosColor109 {
+        font-size: 12px;
+    }
+    .productosColor119 {
+        font-size: 12px;
+    }
+    .productosColor114 {
+        font-size: 12px;
+    }
+    .productosColor110 {
+        font-size: 12px;
+    }
+    .productosColor111 {
+        font-size: 12px;
+    }
+    .productosColor112 {
+        font-size: 12px;
+    }
+    .productosColor113 {
+        font-size: 12px;
+    }
+    .productosColor115 {
+        font-size: 12px;
+    }
+    .productosColor116 {
+        font-size: 12px;
+    }
+    .productosColor117 {
+        font-size: 12px;
+    }
+    .productosColor118 {
+        font-size: 12px;
+    }
+    .productosColor15 {
+        font-size: 12px;
+    }
+
+    .productosColor16 {
+        font-size: 12px;
+    }
+
+    .productosColor17 {
+        font-size: 12px;
+    }
+
+    .productosColor18 {
+        font-size: 12px;
+    }
+
+    .imagenAcabadoPrincipalImg {
+        margin-left: 34%;
+        max-height: 240px;
+        max-width: 400px;
+    }
+    .acabadoPartes {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        margin-top: -183px;
+    }
+    .pietra {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(125%);
+    }
+    .norway {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(140%);
+    }
+    .bronce {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+    }
+    .transparente {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+    }
+    .noce {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(140%);
+    }
+    .nature {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(150%);
+    }
+    .tabak {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(150%);
+    }
+    .kobe {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(150%);
+    }
+    .blanco {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(140%);
+    }
+    .beige {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(140%);
+    }
+    .latte {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(190%);
+    }
+    .grafeno {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(150%);
+    }
+    .lago {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(130%);
+    }
+    .mare {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(130%);
+    }
+    .marmolblanco {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(190%);
+    }
+    .marmolnegro {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(190%);
+    }
+    #imagenDimensiones {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        max-width: 250px;
+        max-height: 169px;
+    }
+    #dimensionesColorStyle {
+        float: left;
+        height: 236px;
+        height: 190px;
+    }
+    #calculadoraCarrito {
+        width: 30%;
+        background-color: #f5f5f5;
+        height: 91%;
+        position: fixed;
+        top: 40px;
+        right: 0;
+        bottom: 0;
+        display: block;
+        z-index: 0;
+    }
+    #imagenFOndoMueble {
+        height: 115%;
+        position: fixed;
+        width: 100%;
+        top: -10px;
+        left: 0;
+    }
+    .marginIzquierda {
+        margin-left: 165px;
+    }
+    #modalCesta {
+        margin-top: -15px;
+        z-index: 100000;
+    }
+    #page-heading {
+        margin-left: 20%;
+        font-size: 22px;
+    }
+    #acabado {
+        margin-left: 20%;
+        font-size: 22px;
+        margin-top: 7%;
+    }
+    #botonEliminar {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    #medidas {
+        font-size: 22px;
+    }
+    #especialesAncho {
+        margin-left: 30%;
+    }
+    #especialesFondo {
+        margin-left: 2%;
+    }
+    #especialesAlto {
+        margin-left: 2%;
+    }
+}
+@media screen and (max-width: 950px) {
+    #medidasEspecialesTexto {
+        margin-left: 33%;
+    }
+    #medidasEspeciales {
+        margin-top: 50px;
+    }
+    .d-block {
+        margin-top: 40px;
+    }
+    #negritaNombre {
+        width: 100%;
+        margin-bottom: -20px;
+    }
+    #medidasAncho {
+        width: 70%;
+    }
+    #medidasFondo {
+        width: 70%;
+    }
+    #medidasAlto {
+        width: 70%;
+    }
+    #especialesTexto {
+        font-size: 25px;
+        margin-left: 23%;
+    }
+    #imagenProdEspeciales {
+        display: none;
+    }
+    #menuFijoArriba {
+        position: fixed;
+        z-index: 10000;
+        width: 100%;
+        top: 0;
+        height: 40px;
+        background-color: black;
+    }
+    #modalApoyo {
+        margin-top: -10px;
+    }
+    #botonIzquierdaComposicion {
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: -15px;
+    }
+
+    #botonDerechaPresupuesto {
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: -15px;
+    }
+    #contenidoDivPrincipal {
+        margin-top: 15px;
+    }
+    #modalEnviadoCarrito {
+        margin-top: 50px;
+    }
+    #imagenAcabadoPrincipal {
+        float: left;
+        width: 100%;
+        height: 130px;
+        margin-bottom: 100px;
+    }
+    #productosFiltrados {
+        margin-top: 4%;
+        width: 100%;
+        overflow-x: hidden;
+        padding-left: 26%;
+    }
+    #divDentroCalcu {
+        width: 95%;
+        height: 95%;
+        margin-left: 10px;
+        margin-top: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #botonCalculadora {
+        width: 86%;
+        height: 15%;
+        bottom: 13px;
+        position: absolute;
+        font-size: 16px;
+        background-color: black;
+        left: 15px;
+        color: black;
+    }
+    #imagenAcabadoPrincipal1 {
+        max-width: 60px;
+    }
+    .acabadosModal {
+        float: left;
+        width: 75px;
+        height: 85px;
+        margin-left: 23px;
+        margin-bottom: 23px;
+    }
+    #imagenApoyo0 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo1 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo2 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo3 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo4 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo5 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo6 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo7 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+
+    #botonEsconder {
+        max-width: 6%;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+    #posicion0 {
+        position: absolute;
+        right: 8px;
+        top: 6px;
+        color: white;
+    }
+    #imagenLogoCuenta {
+        margin-left: 5%;
+    }
+    #logoImagen {
+        position: absolute;
+        width: 120px;
+        height: 25px;
+    }
+    #cestaImagen {
+        right: 10px;
+        position: fixed;
+        margin-top: -5px;
+    }
+    #productosPrincipal {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 25px;
+    }
+    #ProductosCargados1 {
+        margin-left: 27%;
+    }
+    #ProductosCargados {
+        margin-left: 27%;
+    }
+    .producto {
+        max-height: 133px;
+        max-width: 225px;
+    }
+    #dimensiones {
+        width: 70%;
+        float: left;
+        margin-left: 205px;
+    }
+    #tablaFiltro {
+        margin-top: 2%;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        border-collapse: separate;
+        border-spacing: 5px;
+        margin-left: 24%;
+    }
+    #productosDormitorioCargados {
+        margin-left: 35px;
+        margin-bottom: 18px;
+        margin-right: 35px;
+        margin-top: 50px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        font-size: 11px;
+    }
+    #imagenCesta {
+        float: right;
+        top: 0;
+        width: 10%;
+        right: 11px;
+    }
+
+    .productosColor33 {
+        font-size: 12px;
+    }
+    .productosColor14 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor62 {
+        font-size: 12px;
+    }
+    .productosColor63 {
+        font-size: 12px;
+    }
+    .productosColor64 {
+        font-size: 12px;
+    }
+    .productosColor65 {
+        font-size: 12px;
+    }
+    .productosColor66 {
+        font-size: 12px;
+    }
+    .productosColor67 {
+        font-size: 12px;
+    }
+    .productosColor68 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor53 {
+        font-size: 12px;
+    }
+    .productosColor107 {
+        font-size: 12px;
+    }
+    .productosColor108 {
+        font-size: 12px;
+    }
+    .productosColor109 {
+        font-size: 12px;
+    }
+    .productosColor119 {
+        font-size: 12px;
+    }
+    .productosColor114 {
+        font-size: 12px;
+    }
+    .productosColor110 {
+        font-size: 12px;
+    }
+    .productosColor111 {
+        font-size: 12px;
+    }
+    .productosColor112 {
+        font-size: 12px;
+    }
+    .productosColor113 {
+        font-size: 12px;
+    }
+    .productosColor115 {
+        font-size: 12px;
+    }
+    .productosColor116 {
+        font-size: 12px;
+    }
+    .productosColor117 {
+        font-size: 12px;
+    }
+    .productosColor118 {
+        font-size: 12px;
+    }
+    .productosColor15 {
+        font-size: 12px;
+    }
+
+    .productosColor16 {
+        font-size: 12px;
+    }
+
+    .productosColor17 {
+        font-size: 12px;
+    }
+
+    .productosColor18 {
+        font-size: 12px;
+    }
+
+    .imagenAcabadoPrincipalImg {
+        margin-left: 34%;
+        max-height: 240px;
+        max-width: 400px;
+    }
+    .acabadoPartes {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        margin-top: -183px;
+    }
+    .pietra {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(125%);
+    }
+    .norway {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(140%);
+    }
+    .bronce {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+    }
+    .transparente {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+    }
+    .noce {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(140%);
+    }
+    .nature {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(150%);
+    }
+    .tabak {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(150%);
+    }
+    .kobe {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(150%);
+    }
+    .blanco {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(140%);
+    }
+    .beige {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(140%);
+    }
+    .latte {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(190%);
+    }
+    .grafeno {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(150%);
+    }
+    .lago {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(130%);
+    }
+    .mare {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(130%);
+    }
+    .marmolblanco {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(190%);
+    }
+    .marmolnegro {
+        position: absolute;
+        max-height: 240px;
+        max-width: 400px;
+        margin-left: -400px;
+        filter: brightness(190%);
+    }
+    #imagenDimensiones {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        max-width: 250px;
+        max-height: 169px;
+    }
+    #dimensionesColorStyle {
+        float: left;
+        height: 236px;
+        height: 190px;
+    }
+    #calculadoraCarrito {
+        width: 30%;
+        background-color: #f5f5f5;
+        height: 91%;
+        position: fixed;
+        top: 40px;
+        right: 0;
+        bottom: 0;
+        display: block;
+        z-index: 0;
+    }
+    #imagenFOndoMueble {
+        height: 115%;
+        position: fixed;
+        width: 100%;
+        top: -10px;
+        left: 0;
+    }
+    .marginIzquierda {
+        margin-left: 165px;
+    }
+    #modalCesta {
+        margin-top: -15px;
+        z-index: 100000;
+    }
+    #page-heading {
+        margin-left: 20%;
+        font-size: 22px;
+    }
+    #acabado {
+        margin-left: 20%;
+        font-size: 22px;
+        margin-top: 7%;
+    }
+    #botonEliminar {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    #medidas {
+        font-size: 22px;
+    }
+    #especialesAncho {
+        margin-left: 30%;
+    }
+    #especialesFondo {
+        margin-left: 2%;
+    }
+    #especialesAlto {
+        margin-left: 2%;
+    }
 }
 @media screen and (max-width: 900px) {
     #medidasEspecialesTexto {
@@ -2269,7 +3710,7 @@ ui bootstrap tweaks
         float: left;
         width: 100%;
         height: 130px;
-        margin-bottom: 120px;
+        margin-bottom: 100px;
     }
     #productosFiltrados {
         margin-top: 4%;
@@ -2658,9 +4099,19 @@ ui bootstrap tweaks
     }
     #page-heading {
         margin-left: 20%;
+        font-size: 22px;
     }
     #acabado {
         margin-left: 20%;
+        font-size: 22px;
+        margin-top: 7%;
+    }
+    #botonEliminar {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    #medidas {
+        font-size: 22px;
     }
     #especialesAncho {
         margin-left: 30%;
@@ -2672,6 +4123,7 @@ ui bootstrap tweaks
         margin-left: 2%;
     }
 }
+
 @media screen and (max-width: 800px) {
     #page-heading {
         margin-left: 20%;

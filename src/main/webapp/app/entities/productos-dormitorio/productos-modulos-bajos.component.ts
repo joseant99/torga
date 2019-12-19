@@ -227,7 +227,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('#especiales').css({ display: 'none' });
         $('#dimensiones #medidas').attr('style');
         $('#dimensiones #medidas').css({ 'text-align': 'center' });
-        $('#dimensiones #medidas').css({ 'margin-top': '5%' });
         $('#dimensiones #medidas').css({ 'margin-bottom': '5%' });
         $('#productoCalculadora1 #precios1').empty();
         $('#productoCalculadora1 #precioCalculado1').empty();
@@ -400,7 +399,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 '" style="position:absolute;z-index:1"></p>'
                         );
                         $('.dimensionesColor5').append(
-                            '<a href="#imagenAcabadoPrincipal"><img  src="data:image/gif;base64,' +
+                            '<a href="#especiales"><img  src="data:image/gif;base64,' +
                                 datos[i]['imagen'] +
                                 '" id="imagenDimensiones" class="' +
                                 datos[i] +
@@ -481,7 +480,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         $('#dimensiones #medidas').removeAttr('style');
         $('#dimensiones #medidas').attr('style');
         $('#dimensiones #medidas').css({ 'text-align': 'center' });
-        $('#dimensiones #medidas').css({ 'margin-top': '5%' });
         $('#dimensiones #medidas').css({ 'margin-bottom': '5%' });
         $('#productoCalculadora1 #precios1').empty();
         $('#productoCalculadora1 #precioCalculado1').empty();
@@ -1937,8 +1935,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('#acabado').removeAttr('style');
             $('#acabado').attr('style');
             $('#acabado').css({ 'text-align': 'center' });
-            $('#acabado').css({ 'margin-top': '5%' });
-            $('#acabado').css({ 'margin-bottom': '5%' });
             var contador = 1;
             var contnuevo = 1;
             var u = 1;
@@ -1966,7 +1962,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     i +
                                     '" class="' +
                                     value['acabados'][m]['id'] +
-                                    '" height="250px" width="130px" style=" opacity: 0.7;">'
+                                    '" height="250px" width="130px" style="">'
                             );
                             $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
                                 '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
@@ -1998,7 +1994,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 u +
                                 '</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                 u +
-                                '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=" opacity: 0.7;margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                 u +
                                 '" style="margin-left:10px"></span></p>'
                         );
@@ -2342,6 +2338,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
                             $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
                             $('#precioAum').text(precioAumGuardado.toFixed(2));
+                            this.precioDimension = precioAum.toFixed(2);
                             cont++;
                         } else {
                             if (cont == 0) {
@@ -2392,6 +2389,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
                                     $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
                                     $('#precioAum').text(precioAumGuardado.toFixed(2));
+                                    this.precioDimension = precioAum.toFixed(2);
                                 }
                             }
                         }
@@ -2576,6 +2574,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#inputAltoAncho').val(dimensiones[k]['alto']);
                             $('#valorFondoESPECIAL').text(valor);
                             $('#precioAum').text(precioAumGuardado);
+                            this.precioDimension = precioAum.toFixed(2);
                         }
                     }
                 }
@@ -2758,6 +2757,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
                             $('#inputfondoAlto').val(dimensiones[k]['fondo']);
                             $('#precioAum').text(precioAumGuardado);
+                            this.precioDimension = precioAum.toFixed(2);
                         }
                     }
                 }
@@ -3384,21 +3384,26 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             console.log(h);
             if (h >= 75 && h < 100) {
                 h = 100;
-            }
-            if (h >= 100 && h < 125) {
-                h = 125;
-            }
-            if (h >= 125 && h < 150) {
-                h = 150;
-            }
-            if (h >= 150 && h < 175) {
-                h = 175;
-            }
-            if (h >= 175 && h < 200) {
-                h = 200;
-            }
-            if (h >= 200 && h < 245) {
-                h = 245;
+            } else {
+                if (h >= 100 && h < 125) {
+                    h = 125;
+                } else {
+                    if (h >= 125 && h < 150) {
+                        h = 150;
+                    } else {
+                        if (h >= 150 && h < 175) {
+                            h = 175;
+                        } else {
+                            if (h >= 175 && h < 200) {
+                                h = 200;
+                            } else {
+                                if (h >= 200 && h < 245) {
+                                    h = 245;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         var precioPunto = this.precioPunto[0];

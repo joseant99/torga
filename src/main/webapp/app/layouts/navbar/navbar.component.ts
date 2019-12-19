@@ -117,9 +117,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         setTimeout(function() {
             var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
             if (prueba['logo'] != undefined) {
-                this.logo = prueba;
                 $('#logoImagen').remove();
                 $('.logo-img').append('<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>');
+                $('.logo-img').css({ background: 'none' });
             }
         }, 10);
     }
@@ -5256,9 +5256,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     $('#textoCesta' + i).append(
                         '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;font-size: 16px;"><span onclick="borrarProdCesta(' +
                             i +
-                            ')" style="">ELIMINAR</span> <span data-toggle="modal" href="#modalConfirmarEditar" onclick="guardarIdEditar(' +
+                            ')" style=""><a><u>ELIMINAR</u></a></span> <span data-toggle="modal" href="#modalConfirmarEditar" onclick="guardarIdEditar(' +
                             i +
-                            ')" style="float:right;margin-right:40%;">EDITAR</span></p>'
+                            ')" style="float:right;margin-right:40%;"><a><u>EDITAR</u></a></span></p>'
                     );
                     $('#textoCesta' + i).append('<hr style="100%"></hr>');
                     acabados = [];
