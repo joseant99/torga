@@ -2118,13 +2118,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '</p>'
                             );
                             $('#cambioAncho').append(
-                                '<input style="float:left;text-align: center;" value="" min="' +
+                                '<input style="float:left;text-align: center;width:100px;" value="" min="' +
                                     medidasEspeciales[i]['min'] +
                                     '" max="' +
                                     medidasEspeciales[i]['max'] +
                                     '"  type="number" id="anchoInputEspeciales"/>'
                             );
-                            $('#medidasFondo').append('<input style="float:left;margin-left:2%" id="inputFondoAncho" value="" disabled />');
+                            $('#medidasFondo').append(
+                                '<input style="float:left;margin-left:2%;width:100px;" id="inputFondoAncho" value="" disabled />'
+                            );
                             $('#medidasFondo').removeAttr('style');
                             $('#medidasFondo').attr('style');
                             $('#medidasFondo').css({ float: 'right' });
@@ -2132,7 +2134,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#medidasAlto').removeAttr('style');
                             $('#medidasAlto').attr('style');
                             $('#medidasAlto').css({ float: 'right' });
-                            $('#medidasAlto').append('<input style="float:left;margin-left:2%" id="inputAltoAncho" value="" disabled />');
+                            $('#medidasAlto').append(
+                                '<input style="float:left;margin-left:2%;width:100px;" id="inputAltoAncho" value="" disabled />'
+                            );
                         }
                     }
                 }
@@ -2176,7 +2180,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '</p>'
                             );
                             $('#cambioFondo').append(
-                                '<input type="number" style="float:left;margin-left:2%" id="inputFondoAncho" max="' +
+                                '<input type="number" style="float:left;margin-left:2%;width:100px;" id="inputFondoAncho" max="' +
                                     medidasEspeciales[i]['max'] +
                                     '" min="' +
                                     medidasEspeciales[i]['min'] +
@@ -2189,7 +2193,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#medidasAlto').removeAttr('style');
                             $('#medidasAlto').attr('style');
                             $('#medidasAlto').css({ float: 'right' });
-                            $('#medidasAlto').append('<input style="float:left;margin-left:2%" id="inputAltoAncho" value="" disabled />');
+                            $('#medidasAlto').append(
+                                '<input style="float:left;margin-left:2%;width:100px;" id="inputAltoAncho" value="" disabled />'
+                            );
                         }
                     }
                 }
@@ -2232,7 +2238,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '</p>'
                             );
                             $('#cambioAlto').append(
-                                '<input type="number" style="float:left;margin-left:2%" id="inputAltoAncho" max="' +
+                                '<input type="number" style="float:left;margin-left:2%;width:100px;" id="inputAltoAncho" max="' +
                                     medidasEspeciales[i]['max'] +
                                     '" min="' +
                                     medidasEspeciales[i]['min'] +
@@ -2245,7 +2251,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#medidasAlto').removeAttr('style');
                             $('#medidasAlto').attr('style');
                             $('#medidasAlto').css({ float: 'right' });
-                            $('#medidasFondo').append('<input style="float:left;margin-left:2%" id="inputfondoAlto" value="" disabled />');
+                            $('#medidasFondo').append(
+                                '<input style="float:left;margin-left:2%;width:100px;" id="inputfondoAlto" value="" disabled />'
+                            );
                         }
                     }
                 }
@@ -2305,7 +2313,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="ancho1" style="width:95%">Ancho Especial: <span style="" id="valorAnchoESPECIAL"></span></p>'
                             );
                             $('#datos1').append(
-                                '<p style="width:95%">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
+                                '<p style="width:95%;font-style: italic;">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
                             );
                             $('#datos1').append(
                                 '<p id="alto1" class="' +
@@ -2355,7 +2363,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             '" id="ancho1" style="width:100%">Ancho especial: <span style="" id="valorAnchoESPECIAL"></span></p>'
                                     );
                                     $('#datos1').append(
-                                        '<p style="width:100%">Incremento 30%<span id="precioAum" style="float:right"></span></p>'
+                                        '<p style="width:100%;font-style: italic;">Incremento 30%<span id="precioAum" style="float:right"></span></p>'
                                     );
                                     $('#datos1').append(
                                         '<p id="alto1" class="' +
@@ -2542,15 +2550,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#datos1').append(
                                 '<p id="alto1" class="' +
                                     precioAum +
-                                    '" style="width:95%">Alto Especial: <span style="" id="valorAltoESPECIAL"></span></p>'
-                            );
-                            $('#datos1').append(
-                                '<p style="width:95%">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
-                            );
-                            $('#datos1').append(
-                                '<p id="fondo1" style="width:95%;">Fondo: <span style="" id="valorFondoESPECIAL"></span></p>'
+                                    '" style="width:95%">Alto: <span style="" id="valorAltoESPECIAL"></span></p>'
                             );
 
+                            $('#datos1').append(
+                                '<p id="fondo1" style="width:95%;">Fondo Especial: <span style="" id="valorFondoESPECIAL"></span></p>'
+                            );
+                            $('#datos1').append(
+                                '<p style="width:95%;font-style: italic;">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
+                            );
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
@@ -2565,6 +2573,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#valorAnchoESPECIAL').text(dimensiones[k]['ancho']);
                             $('#idioma').attr('value', dimensiones[k]['id']);
                             $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
+                            $('#inputAltoAncho').val(dimensiones[k]['alto']);
                             $('#valorFondoESPECIAL').text(valor);
                             $('#precioAum').text(precioAumGuardado);
                         }
@@ -2699,7 +2708,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     if (dimensiones[k]['productosDormitorio']['id'] == idProd) {
                         if (dimensiones[k]['id'] == ancho) {
                             dimensionProxima = dimensiones[k];
-                            $('#inputfondoAlto').val(dimensionProxima['alto']);
+
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
@@ -2707,26 +2716,31 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             totalfloat = totalfloat + precio;
                             var precioAum = precio * 0.3;
+                            var precioAumGuardado = precioAum;
                             precioAum = precio + precioAum;
+
                             $('#total').text(precioAum);
                             $('#precioDimension').text(precioAum);
+
                             $('#idioma').attr('value', dimensiones[k]['id']);
+                            $('#datos1').append('<p style="width:100%"><strong>MEDIDAS</strong></p>');
                             $('#datos1').append(
                                 '<p class="' +
                                     idDimenTipo +
-                                    '" id="ancho1" style="width:100%">Ancho<span style="float:right" id="valorAnchoESPECIAL"></span></p>'
+                                    '" id="ancho1" style="width:95%">Ancho: <span style="" id="valorAnchoESPECIAL"></span></p>'
                             );
                             $('#datos1').append(
                                 '<p id="alto1" class="' +
                                     precioAum +
-                                    '" style="width:100%">Alto<span style="float:right" id="valorAltoESPECIAL"></span></p>'
+                                    '" style="width:95%">Alto Especial: <span style="" id="valorAltoESPECIAL"></span></p>'
                             );
                             $('#datos1').append(
-                                '<p id="fondo1" style="width:100%">Fondo<span style="float:right" id="valorFondoESPECIAL"></span></p>'
+                                '<p style="width:95%;font-style: italic;">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
                             );
                             $('#datos1').append(
-                                '<p style="width:100%">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
+                                '<p id="fondo1" style="width:95%;">Fondo: <span style="" id="valorFondoESPECIAL"></span></p>'
                             );
+
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
@@ -2738,10 +2752,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             precioAum = precio + precioAum;
                             $('#total').text(precioAum);
                             $('#precioDimension').text(precioAum);
-                            $('#valorAnchoESPECIAL').text(valor);
+                            $('#valorAnchoESPECIAL').text(dimensiones[k]['ancho']);
                             $('#idioma').attr('value', dimensiones[k]['id']);
-                            $('#valorAltoESPECIAL').text(dimensiones[k]['alto']);
+                            $('#valorAltoESPECIAL').text(valor);
                             $('#valorFondoESPECIAL').text(dimensiones[k]['fondo']);
+                            $('#inputfondoAlto').val(dimensiones[k]['fondo']);
                             $('#precioAum').text(precioAumGuardado);
                         }
                     }
@@ -3180,6 +3195,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var idProd = $('#nombreMesita').attr('class');
         if (contadorApoyo == cont - 1 && apoyoBueno != '') {
             var iluminacion = this.iluminacion;
+            $('#divDentroCalcu').css({ height: '76%' });
             var texto = 0;
             for (let k = 0; k < iluminacion.length; k++) {
                 if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
@@ -3363,6 +3379,28 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var idProd = $('#nombreMesita').attr('class');
         var h;
         h = $('#productoCalculadora1  #datos1 #ancho1').text();
+        if (isNaN(parseFloat(h))) {
+            h = $('#productoCalculadora1  #datos1 #ancho1 #valorAnchoESPECIAL').text();
+            console.log(h);
+            if (h >= 75 && h < 100) {
+                h = 100;
+            }
+            if (h >= 100 && h < 125) {
+                h = 125;
+            }
+            if (h >= 125 && h < 150) {
+                h = 150;
+            }
+            if (h >= 150 && h < 175) {
+                h = 175;
+            }
+            if (h >= 175 && h < 200) {
+                h = 200;
+            }
+            if (h >= 200 && h < 245) {
+                h = 245;
+            }
+        }
         var precioPunto = this.precioPunto[0];
         var todosLosPrecios = this.precioTiendaProductosService.apoyo;
         var precioDimension = this.precioDimension;
@@ -3660,6 +3698,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 });
             });
         if (contadorApoyo == cont - 1) {
+            $('#divDentroCalcu').css({ height: '76%' });
             var iluminacion = this.iluminacion;
             var texto = 0;
             for (let k = 0; k < iluminacion.length; k++) {

@@ -2488,7 +2488,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     $('#textoCesta' + i).append('<hr style="100%"></hr>');
                 } else {
                     $('#modalCesta .modal-body').append(
-                        '<div style="float: left;width: 500px;text-align: center;height:310px" id="cuerpo' + i + '"></div>'
+                        '<div style="float: left;width: 500px;text-align: center;height:250px" id="cuerpo' + i + '"></div>'
                     );
                     contAca = 0;
                     for (let j = 1; j < 15; j++) {
@@ -2516,15 +2516,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     var bottomModulos = this.bottomModulos;
                     if (nombre == 'mb1') {
                         $('#cuerpo' + i).append('<div id="izquierda" class="marginIzquierda" style="float: left;margin-top:20px"></div>');
-                        $('#cuerpo' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;position: absolute;width: 98%;font-size: 30px;">' +
-                                sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                '<span onclick="borrarProdCesta(' +
-                                i +
-                                ')" style="margin-left:25px">X</span> <span data-toggle="modal" href="#modalConfirmarEditar" onclick="guardarIdEditar(' +
-                                i +
-                                ')" style="margin-left:25px">EDITAR</span></p>'
-                        );
+
                         for (let k = 0; k < acabados.length; k++) {
                             if (k == 0) {
                                 if (i == 1) {
@@ -2541,7 +2533,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             height +
                                             ';' +
                                             width +
-                                            ';max-width:400px;max-height:250px;position:absolute;top:50px"  class="' +
+                                            ';max-width:400px;max-height:250px;position:absolute;top:0px"  class="' +
                                             acabados[k].toLowerCase() +
                                             'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                             nombreCarpeta +
@@ -2605,7 +2597,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;position:absolute;top:50px" class="' +
+                                                ';max-width:400px;max-height:250px;position:absolute;top:0px" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                                 nombreCarpeta +
@@ -2668,7 +2660,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 height +
                                                 ';' +
                                                 width +
-                                                ';max-width:400px;max-height:250px;position:absolute;top:50px;" class="' +
+                                                ';max-width:400px;max-height:250px;position:absolute;top:0px;" class="' +
                                                 acabados[k].toLowerCase() +
                                                 'Modal" width="1000px" height="1000px" src="../../../content/images/' +
                                                 nombre +
@@ -2737,7 +2729,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -2800,7 +2792,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -2860,7 +2852,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -2928,7 +2920,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -2991,7 +2983,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3051,7 +3043,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3118,7 +3110,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -3181,7 +3173,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3241,7 +3233,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3307,7 +3299,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -3370,7 +3362,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3430,7 +3422,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3496,7 +3488,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -3559,7 +3551,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3619,7 +3611,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3686,7 +3678,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -3741,7 +3733,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3793,7 +3785,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3852,7 +3844,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -3907,7 +3899,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -3959,7 +3951,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -4018,7 +4010,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -4073,7 +4065,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -4125,7 +4117,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -4184,7 +4176,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -4239,7 +4231,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -4298,7 +4290,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -4360,7 +4352,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -4420,7 +4412,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -4475,7 +4467,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -4534,7 +4526,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -4596,7 +4588,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -4650,7 +4642,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -4710,7 +4702,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -4765,7 +4757,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -4824,7 +4816,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -4886,7 +4878,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -4940,7 +4932,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -5000,7 +4992,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var height = prodMed.split(';')[3];
                                     var width = prodMed.split(';')[2];
                                     $('#cuerpo' + i + ' #izquierda').append(
-                                        '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                             height +
                                             ';' +
                                             width +
@@ -5055,7 +5047,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
@@ -5114,7 +5106,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -5176,7 +5168,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var height = prodMed.split(';')[3];
                                             var width = prodMed.split(';')[2];
                                             $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:-60px;top:70px;max-width:400px;max-height:400px;' +
+                                                '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
                                                     height +
                                                     ';' +
                                                     width +
@@ -5243,6 +5235,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             sesion[1]['ancho'] +
                             '</p>'
                     );
+
                     $('#textoCesta' + i).append(
                         '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Alto: ' +
                             sesion[1]['alto'] +
@@ -5259,6 +5252,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             '<i style="float:right;font-size:15px;margin-right:40%">+ &euro; ' +
                             sesion[1]['apoyo']['precio'] +
                             '</i></p>'
+                    );
+                    $('#textoCesta' + i).append(
+                        '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;font-size: 16px;"><span onclick="borrarProdCesta(' +
+                            i +
+                            ')" style="">ELIMINAR</span> <span data-toggle="modal" href="#modalConfirmarEditar" onclick="guardarIdEditar(' +
+                            i +
+                            ')" style="float:right;margin-right:40%;">EDITAR</span></p>'
                     );
                     $('#textoCesta' + i).append('<hr style="100%"></hr>');
                     acabados = [];
@@ -5431,12 +5431,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         }
         this.productosDormitorioService.numeroCesta = contCesta;
         var bottomModulos = [];
-        bottomModulos[2] = 'bottom:-216px;';
-        bottomModulos[3] = 'bottom:-695px;';
-        bottomModulos[4] = 'bottom:-1180px;';
-        bottomModulos[5] = 'bottom:-1680px;';
-        bottomModulos[6] = 'bottom:-2155px;';
-        bottomModulos[7] = 'bottom:-2645px;';
+        bottomModulos[2] = 'bottom:-126px;';
+        bottomModulos[3] = 'bottom:-605px;';
+        bottomModulos[4] = 'bottom:-1090px;';
+        bottomModulos[5] = 'bottom:-1590px;';
+        bottomModulos[6] = 'bottom:-2045px;';
+        bottomModulos[7] = 'bottom:-2555px;';
         this.bottomModulos = bottomModulos;
         var medidasModal = [];
         medidasModal['mb4'] = 'margin-left:-140px;bottom:125px;max-width:500px;max-height:300px;';

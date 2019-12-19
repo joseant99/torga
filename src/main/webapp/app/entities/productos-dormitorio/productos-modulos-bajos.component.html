@@ -113,12 +113,10 @@
 			<div id="especialesAlto" style="" (click)="especiales1(3)"></div>
 	</div>
 	<div id="medidasEspeciales"style="width:100%;float:left">
-		
-			<h2 id="medidasEspecialesTexto" style='float:left;display:none'>Selecciona medidas especiales</h2>
 			<div id="imagenProdEspeciales" style="width:42%;float:left"></div>
 			<div style="display:none" id="medidasAncho"><p style="float:left;margin-left:2%;font-size:20px">Ancho</p><div style="float:left;margin-left:2%" id="cambioAncho" (change)="cambioMedidas(1)"></div></div>
 			<div id="medidasFondo" style="display:none"><p style="float:left;margin-left:2%;font-size:20px">Fondo</p><div style="float:left;margin-left:2%" id="cambioFondo" (change)="cambioMedidas(2)"></div></div>
-			<div id="medidasAlto" style="display:none"><p style="float:left;margin-left:2%;font-size:20px">Alto</p><div style="float:left;margin-left:2%" id="cambioAlto" (change)="cambioMedidas(3)"></div></div>
+			<div id="medidasAlto" style="display:none"><p style="float:left;margin-left:2%;font-size:20px;width:56px;">Alto</p><div style="float:left;margin-left:2%" id="cambioAlto" (change)="cambioMedidas(3)"></div></div>
 	</div>
 	<div id="acabados"style="width:100%;float:left;display:none">
 
@@ -696,8 +694,7 @@
 </div>
 <div id="calculadoraCarrito">
 
-  <div id="divDentroCalcu">
-
+			<div id="divDentroCalcu">
 				<div style="width:100%;height:7%;color:black;top:0;letter-spacing:2px;font-family:'Lato';font-weight:300">		
 					<strong style="float:left;" id="negritaNombre"><p id="nombreMesita"></p></strong><p  style="float:right;"><strong id="precioDimension"></strong><span style="display:none" id="euroCalculadora">&euro;</span></p >
 				</div>
@@ -741,7 +738,6 @@
 						<p>Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
 				<button  id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarrito()"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar articulo/s al carro de la compra</a></button>
-					
 			</div>
 			
 			<div id="carrito" class="container tab-pane fade" style="height:600px;overflow:scroll;display:none">

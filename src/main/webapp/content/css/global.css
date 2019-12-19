@@ -2204,9 +2204,15 @@ ui bootstrap tweaks
 #medidasAlto {
     width: 58%;
 }
+#medidasEspeciales {
+    margin-top: 70px;
+}
 @media screen and (max-width: 900px) {
     #medidasEspecialesTexto {
         margin-left: 33%;
+    }
+    #medidasEspeciales {
+        margin-top: 50px;
     }
     .d-block {
         margin-top: 40px;
@@ -2263,6 +2269,7 @@ ui bootstrap tweaks
         float: left;
         width: 100%;
         height: 130px;
+        margin-bottom: 120px;
     }
     #productosFiltrados {
         margin-top: 4%;
@@ -2272,7 +2279,7 @@ ui bootstrap tweaks
     }
     #divDentroCalcu {
         width: 95%;
-        height: 76%;
+        height: 95%;
         margin-left: 10px;
         margin-top: 10px;
         overflow-y: auto;
