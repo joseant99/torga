@@ -3139,9 +3139,9 @@ ui bootstrap tweaks
     #imagenFOndoMueble {
         height: 115%;
         position: fixed;
-        width: 125%;
+        width: 140%;
         top: -10px;
-        left: -150px;
+        left: -400px;
     }
     .marginIzquierda {
         margin-left: 375px;
@@ -4601,11 +4601,11 @@ ui bootstrap tweaks
         z-index: 0;
     }
     #imagenFOndoMueble {
-        height: 115%;
+        height: 116%;
         position: fixed;
-        width: 125%;
+        width: 200%;
         top: -10px;
-        left: -150px;
+        left: -650px;
     }
     .marginIzquierda {
         margin-left: 260px;
