@@ -5426,8 +5426,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.productosDormitorioService.numeroCesta = contCesta;
         var bottomModulos = [];
         bottomModulos[2] = 'bottom:0px;';
-        bottomModulos[3] = 'bottom:0px;';
-        bottomModulos[4] = 'bottom:0px;';
+        bottomModulos[3] = 'bottom:-460px;';
+        bottomModulos[4] = 'bottom:-950px;';
         bottomModulos[5] = 'bottom:0px;';
         bottomModulos[6] = 'bottom:0px;';
         bottomModulos[7] = 'bottom:0px;';
