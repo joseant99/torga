@@ -5425,12 +5425,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         }
         this.productosDormitorioService.numeroCesta = contCesta;
         var bottomModulos = [];
-        bottomModulos[2] = 'bottom:-126px;';
-        bottomModulos[3] = 'bottom:-605px;';
-        bottomModulos[4] = 'bottom:-1090px;';
-        bottomModulos[5] = 'bottom:-1590px;';
-        bottomModulos[6] = 'bottom:-2045px;';
-        bottomModulos[7] = 'bottom:-2555px;';
+        bottomModulos[2] = 'bottom:0px;';
+        bottomModulos[3] = 'bottom:0px;';
+        bottomModulos[4] = 'bottom:0px;';
+        bottomModulos[5] = 'bottom:0px;';
+        bottomModulos[6] = 'bottom:0px;';
+        bottomModulos[7] = 'bottom:0px;';
         this.bottomModulos = bottomModulos;
         var medidasModal = [];
         medidasModal['mb4'] = 'margin-left:-140px;bottom:125px;max-width:500px;max-height:300px;';
