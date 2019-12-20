@@ -2488,7 +2488,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     $('#textoCesta' + i).append('<hr style="100%"></hr>');
                 } else {
                     $('#modalCesta .modal-body').append(
-                        '<div style="float: left;width: 500px;text-align: center;height:250px" id="cuerpo' + i + '"></div>'
+                        '<div style="float: left;width: 500px;text-align: center;height:300px" id="cuerpo' + i + '"></div>'
                     );
                     contAca = 0;
                     for (let j = 1; j < 15; j++) {
@@ -2714,13 +2714,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     } else {
                         contAca = 1;
                         $('#cuerpo' + i).append('<div id="izquierda" class="marginIzquierda" style="float: left;margin-top:20px"></div>');
-                        $('#cuerpo' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;position: absolute;width: 98%;font-size: 30px;">' +
-                                sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                '<span onclick="borrarProdCesta(' +
-                                i +
-                                ')" style="margin-left:25px">X</span></p>'
-                        );
+
                         if (nombre == 'mb6') {
                             for (let k = 0; k < acabados.length; k++) {
                                 if (k == 0) {
