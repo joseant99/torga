@@ -75,6 +75,10 @@ Generic styles
     max-height: 592.75px;
     max-width: 400px;
 }
+.armariosDivTodo {
+    width: 85%;
+    margin-left: 15%;
+}
 #menuPrincipal {
     width: 20%;
     position: fixed;
