@@ -552,7 +552,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 console.log(nombre);
                 if (sesion[1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
                     $('#modalCesta .modal-body').append(
-                        '<div style="float: left;width: 100%;text-align: center;height:250px" id="cuerpo' + i + '"></div>'
+                        '<div style="float: left;width: 100%;text-align: center;height:250px;position:relative" id="cuerpo' + i + '"></div>'
                     );
 
                     var nombreArmario = sesion[1]['mensaje'];
@@ -2488,7 +2488,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     $('#textoCesta' + i).append('<hr style="100%"></hr>');
                 } else {
                     $('#modalCesta .modal-body').append(
-                        '<div style="float: left;width: 500px;text-align: center;height:300px" id="cuerpo' + i + '"></div>'
+                        '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative" id="cuerpo' +
+                            i +
+                            '"></div>'
                     );
                     contAca = 0;
                     for (let j = 1; j < 15; j++) {
@@ -5426,8 +5428,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.productosDormitorioService.numeroCesta = contCesta;
         var bottomModulos = [];
         bottomModulos[2] = 'bottom:0px;';
-        bottomModulos[3] = 'bottom:-460px;';
-        bottomModulos[4] = 'bottom:-950px;';
+        bottomModulos[3] = 'bottom:0px;';
+        bottomModulos[4] = 'bottom:0px;';
         bottomModulos[5] = 'bottom:0px;';
         bottomModulos[6] = 'bottom:0px;';
         bottomModulos[7] = 'bottom:0px;';
