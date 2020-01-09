@@ -5262,7 +5262,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
     open1(ruta, bool, content, id, nombreId) {
         var prod = $('#nombreMesita').text();
-        $('#' + nombreId).css({ 'font-weight': 'bold' });
+        //$('#' + nombreId).css({ 'font-weight': 'bold' });
         var idsArray = [];
         idsArray[0] = 'composicionesSpan1';
         idsArray[1] = 'mesasSpan';

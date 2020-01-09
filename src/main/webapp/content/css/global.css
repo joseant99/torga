@@ -203,12 +203,7 @@ Generic styles
         max-width: 450px;
     }
 }
-@media screen and (max-width: 1650px) {
-    .producto {
-        max-height: 133px;
-        max-width: 170px;
-    }
-}
+
 #imagenDimensiones {
     margin-left: 50px;
     margin-right: 50px;
@@ -2194,7 +2189,34 @@ ui bootstrap tweaks
 #medidas {
     margin-top: 14%;
 }
-
+@media screen and (max-width: 1650px) {
+    #inputAcabadoCasco {
+        margin-left: 30% !important;
+    }
+    #inputAcabadoTrasera {
+        margin-left: 15% !important;
+    }
+    #inputAcabadoInterior {
+        margin-left: 10% !important;
+    }
+    #productosPrincipal {
+        width: 75%;
+        padding-left: 0px;
+        margin-top: 70px;
+        float: right;
+    }
+    #imagenDimensiones {
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 50px;
+    }
+    .productoSin {
+        max-height: 892.75px;
+        max-width: 500px;
+        margin-left: 75px;
+        margin-right: 75px;
+    }
+}
 @media screen and (max-width: 1500px) {
     #medidasEspecialesTexto {
         margin-left: 33%;
@@ -6436,6 +6458,187 @@ ui bootstrap tweaks
         margin-left: 0%;
         height: 350px;
         width: 48%;
+    }
+    #interiorDentroArmario1 {
+        max-width: 150px;
+        max-height: 400px;
+    }
+    #interiorDentroArmario2 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 90px !important;
+        margin-top: -24px !important;
+    }
+    #interiorDentroArmario3 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 211px !important;
+        margin-top: -56px !important;
+    }
+    #interiorDentroArmario4 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 301px !important;
+        margin-top: -80px !important;
+    }
+    #puertaColor0 {
+        max-width: 150px;
+        max-height: 400px;
+    }
+    #puertaColor1 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 90px !important;
+        margin-top: -24px !important;
+    }
+    #puertaColor2 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 90px !important;
+        margin-top: -24px !important;
+    }
+    #puertaColor3 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 211px !important;
+        margin-top: -56px !important;
+    }
+    #puertaColor4 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 211px !important;
+        margin-top: -56px !important;
+    }
+    #puertaColor5 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 301px !important;
+        margin-top: -80px !important;
+    }
+    #nombrePuerta1 {
+        margin-left: 63px !important;
+        margin-top: 205px !important;
+        font-size: 14px !important;
+    }
+    #nombrePuerta3 {
+        margin-left: 183px !important;
+        margin-top: 175px !important;
+        font-size: 14px !important;
+    }
+    #nombrePuerta4 {
+        margin-left: 243px !important;
+        margin-top: 165px !important;
+        font-size: 14px !important;
+    }
+    #nombrePuerta5 {
+        margin-left: 303px !important;
+        margin-top: 155px !important;
+        font-size: 14px !important;
+    }
+    #nombrePuerta2 {
+        margin-left: 122px !important;
+        margin-top: 190px !important;
+        font-size: 14px !important;
+    }
+    #nombrePuerta6 {
+        margin-left: 364px !important;
+        margin-top: 140px !important;
+        font-size: 14px !important;
+    }
+    .inputPuertaOle {
+        margin-right: 7% !important;
+    }
+
+    #textoLetraHueco0 {
+        margin-left: 62px !important;
+        margin-top: 175px !important;
+        font-size: 40px !important;
+    }
+    #textoLetraHueco1 {
+        margin-left: 155px !important;
+        margin-top: 150px !important;
+        font-size: 40px !important;
+    }
+    #textoLetraHueco2 {
+        margin-left: 275px !important;
+        margin-top: 125px !important;
+        font-size: 40px !important;
+    }
+    #textoLetraHueco3 {
+        margin-left: 365px !important;
+        margin-top: 100px !important;
+        font-size: 40px !important;
+    }
+    #imagenesArmario2 {
+        margin-top: 350px !important;
+    }
+    #fondoCalcu {
+        height: 74% !important;
+        font-size: 13px;
+    }
+    #inputAcabadoCasco {
+        width: 110px !important;
+        margin-left: 20% !important;
+    }
+    #inputAcabadoTrasera {
+        width: 110px !important;
+        margin-left: 0% !important;
+    }
+    #inputAcabadoInterior {
+        width: 110px !important;
+        margin-left: -4% !important;
+    }
+    #casco0 {
+        max-width: 150px;
+        max-height: 400px;
+    }
+    #trasera0 {
+        max-width: 150px;
+        max-height: 400px;
+    }
+    #casco1 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 90px !important;
+        margin-top: -24px !important;
+    }
+    #trasera1 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 90px !important;
+        margin-top: -24px !important;
+    }
+    #casco2 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 211px !important;
+        margin-top: -56px !important;
+    }
+    #trasera2 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 211px !important;
+        margin-top: -56px !important;
+    }
+    #casco3 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 301px !important;
+        margin-top: -80px !important;
+    }
+    #trasera3 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 301px !important;
+        margin-top: -80px !important;
+    }
+    .armariosDivTodo {
+        width: 100%;
+        margin-left: 15%;
+        font-size: 14px;
+    }
+    .soloArmarios {
+        margin-left: 30% !important;
     }
     .imagenAcabadoPrincipalImgSin {
         margin-left: 48%;

@@ -877,6 +877,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         if (width >= 1500 && width < 2200) {
                             var dimensiones = dimens[puertas + ' puertas'];
                         }
+                        if (width < 1650 && width >= 1500) {
+                            var dimensiones;
+                            dimensiones = 'margin-left: 30%;';
+                        }
                         if (width < 1500 && width >= 1300) {
                             var dimensiones = segunWIDTH[puertas + ' puertas'];
                         }
@@ -1063,6 +1067,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         if (width >= 1500 && width < 2200) {
                             var dimensiones = dimens[puertas + ' puertas'];
                         }
+                        if (width < 1650 && width >= 1500) {
+                            var dimensiones;
+                            dimensiones = 'margin-left: 25%;';
+                        }
                         if (width < 1500 && width >= 1300) {
                             var dimensiones = segunWIDTH[puertas + ' puertas'];
                         }
@@ -1170,6 +1178,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     for (let i = 0; i < puertas; i++) {
                         if (width >= 1500 && width < 2200) {
                             var dimensiones = dimens[puertas + ' puertas'];
+                        }
+                        if (width < 1650 && width >= 1500) {
+                            var dimensiones;
+                            dimensiones = 'margin-left: 25%;';
                         }
                         if (width < 1500 && width >= 1300) {
                             var dimensiones = segunWIDTH[puertas + ' puertas'];
@@ -1284,6 +1296,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         if (width >= 1500 && width < 2200) {
                             var dimensiones = dimens[puertas + ' puertas'];
                         }
+                        if (width < 1650 && width >= 1500) {
+                            var dimensiones;
+                            dimensiones = 'margin-left: 20%;';
+                        }
                         if (width < 1500 && width >= 1300) {
                             var dimensiones = segunWIDTH[puertas + ' puertas'];
                         }
@@ -1397,12 +1413,20 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         if (width >= 1500 && width < 2200) {
                             var dimensiones = dimens[puertas + ' puertas'];
                         }
+                        if (width < 1650 && width >= 1500) {
+                            var dimensiones;
+                            dimensiones = 'margin-left: 16%;';
+                        }
                         if (width < 1500 && width >= 1300) {
                             var dimensiones = segunWIDTH[puertas + ' puertas'];
                         }
                         if (width <= 1100) {
                             var dimensiones;
                             dimensiones = 'margin-left: 18%;';
+                        }
+                        if (width <= 900) {
+                            var dimensiones;
+                            dimensiones = 'margin-left: 22%;';
                         }
 
                         this.numeroDeHuecos = puertas;
