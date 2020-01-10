@@ -24,7 +24,9 @@ import { DatosClienteService } from '../datos-cliente/datos-cliente.service';
 import { IDatosCliente } from 'app/shared/model/datos-cliente.model';
 import { ContactoFabricaService } from '../contacto-fabrica/contacto-fabrica.service';
 import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
-
+import { PresupuestoArmarioService } from '../presupuesto-armario/presupuesto-armario.service';
+import { PresupuestoArmarioInterioresService } from '../presupuesto-armario-interiores/presupuesto-armario-interiores.service';
+import { PresupuestoArmarioPuertasService } from '../presupuesto-armario-puertas/presupuesto-armario-puertas.service';
 @Component({
     selector: 'jhi-presupuesto-productos',
     templateUrl: './presupuesto-productos.component.html'
@@ -55,9 +57,12 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     predicate: any;
     previousPage: any;
     reverse: any;
+    interioresArmario: any;
 
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
+        protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
+        protected presupuestoArmarioInterioresService: PresupuestoArmarioInterioresService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected contactoFabricaService: ContactoFabricaService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
@@ -67,6 +72,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         protected municipiosService: MunicipiosService,
         protected datosClienteService: DatosClienteService,
         protected pagosTiendaService: PagosTiendaService,
+        protected presupuestoArmarioService: PresupuestoArmarioService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected accountService: AccountService,
         protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
@@ -202,6 +208,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             });
         this.iluminacion = ilu;
         var acabados = [];
+        var todosInteriores;
         var iluminacion = this.iluminacion;
         this.productosPresupuestoPedidosService
             .query({
@@ -212,32 +219,70 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     for (let i = 0; i < res.body.length; i++) {
                         if (res.body[i]['presupuestoPedido'] != null) {
                             if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
-                                if (res.body[i]['dimensionesProductoTipo']['mensaje'] == 'Medidas Especiales') {
-                                    for (let k = 0; k < medidasEspeciales.length; k++) {
-                                        if (medidasEspeciales[k]['productosPresupuestoPedidos']['id'] == res.body[i]['id']) {
-                                            res.body[i]['dimensionesProductoTipo']['ancho'] = medidasEspeciales[k]['ancho'];
-                                            res.body[i]['dimensionesProductoTipo']['alto'] = medidasEspeciales[k]['alto'];
-                                            res.body[i]['dimensionesProductoTipo']['fondo'] = medidasEspeciales[k]['fondo'];
-                                            res.body[i]['dimensionesProductoTipo']['precio'] = medidasEspeciales[k]['precio'];
-                                            var precioEspecial = parseFloat(medidasEspeciales[k]['precio']);
-                                            var menosPrecio = precioEspecial * 0.3;
-                                            menosPrecio = precioEspecial - menosPrecio;
-                                            var incremento = menosPrecio * 0.3;
-                                            res.body[i]['dimensionesProductoTipo']['incremento'] = incremento.toFixed(2);
-                                            productosPresupuesto[cont] = res.body[i];
-                                            cont++;
-                                        }
-                                    }
+                                if (res.body[i]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                                    this.presupuestoArmarioService.findBus(presu).subscribe(data => {
+                                        var uno = {
+                                            nombre: data.body[0]['armario']['mensaje']
+                                        };
+                                        var codigo = {
+                                            codigo: data.body[0]['productosPresupuestoPedidos']['presupuestoPedido']['codigo'],
+                                            fecha_presupuesto:
+                                                data.body[0]['productosPresupuestoPedidos']['presupuestoPedido']['fecha_presupuesto']
+                                        };
+                                        var dimen = {
+                                            incremento: undefined,
+                                            ancho: data.body[0]['ancho'],
+                                            alto: data.body[0]['alto'],
+                                            fondo: data.body[0]['fondo']
+                                        };
+                                        var todo = {
+                                            productosDormitorio: uno,
+                                            presupuestoPedido: codigo,
+                                            dimensionesProductoTipo: dimen
+                                        };
+
+                                        productosPresupuesto[cont] = todo;
+                                        cont++;
+
+                                        this.presupuestoArmarioInterioresService.busqueda(data.body[0]['id']).subscribe(data => {
+                                            this.presupuestoArmarioInterioresService.todos = data.body;
+                                            console.log(data.body);
+                                        });
+                                        this.presupuestoArmarioPuertasService.busqueda(data.body[0]['id']).subscribe(data => {
+                                            this.presupuestoArmarioPuertasService.todos = data.body;
+                                            console.log(data.body);
+                                        });
+                                    });
                                 } else {
-                                    productosPresupuesto[cont] = res.body[i];
-                                    cont++;
+                                    if (res.body[i]['dimensionesProductoTipo']['mensaje'] == 'Medidas Especiales') {
+                                        for (let k = 0; k < medidasEspeciales.length; k++) {
+                                            if (medidasEspeciales[k]['productosPresupuestoPedidos']['id'] == res.body[i]['id']) {
+                                                res.body[i]['dimensionesProductoTipo']['ancho'] = medidasEspeciales[k]['ancho'];
+                                                res.body[i]['dimensionesProductoTipo']['alto'] = medidasEspeciales[k]['alto'];
+                                                res.body[i]['dimensionesProductoTipo']['fondo'] = medidasEspeciales[k]['fondo'];
+                                                res.body[i]['dimensionesProductoTipo']['precio'] = medidasEspeciales[k]['precio'];
+                                                var precioEspecial = parseFloat(medidasEspeciales[k]['precio']);
+                                                var menosPrecio = precioEspecial * 0.3;
+                                                menosPrecio = precioEspecial - menosPrecio;
+                                                var incremento = menosPrecio * 0.3;
+                                                res.body[i]['dimensionesProductoTipo']['incremento'] = incremento.toFixed(2);
+                                                productosPresupuesto[cont] = res.body[i];
+                                                cont++;
+                                            }
+                                        }
+                                    } else {
+                                        productosPresupuesto[cont] = res.body[i];
+                                        cont++;
+                                    }
                                 }
                             }
                         }
                     }
                     this.paginateProductosPresupuestoPedidos(productosPresupuesto, res.headers);
                     this.productos = productosPresupuesto;
-
+                    this.interioresArmario = todosInteriores;
+                    console.log(this.interioresArmario);
+                    console.log(this.productos);
                     var productos = this.productos;
                     this.acabadosProductosPresupuestoPedidoService
                         .query({
@@ -604,6 +649,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     }
 
     ngOnInit() {
+        this.presupuestoArmarioInterioresService.todos = undefined;
         this.precioTienda = sessionStorage.getItem('precioTienda');
         $('body').removeAttr('class');
         var presupuestos = [];

@@ -12,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<IPresupuestoArmarioInteriores[]>;
 @Injectable({ providedIn: 'root' })
 export class PresupuestoArmarioInterioresService {
     public resourceUrl = SERVER_API_URL + 'api/presupuesto-armario-interiores';
-
+    public todos;
     constructor(protected http: HttpClient) {}
 
     create(presupuestoArmarioInteriores: IPresupuestoArmarioInteriores): Observable<EntityResponseType> {
@@ -34,5 +34,9 @@ export class PresupuestoArmarioInterioresService {
 
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
+    }
+
+    busqueda(id: number): Observable<EntityArrayResponseType> {
+        return this.http.get<IPresupuestoArmarioInteriores[]>(`${this.resourceUrl}-busqueda/${id}`, { observe: 'response' });
     }
 }

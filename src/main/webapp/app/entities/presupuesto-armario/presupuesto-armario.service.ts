@@ -35,4 +35,8 @@ export class PresupuestoArmarioService {
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
+
+    findBus(id: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IPresupuestoArmario[]>(`${this.resourceUrl}-busqueda/${id}`, { observe: 'response' });
+    }
 }

@@ -6102,11 +6102,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
 
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
@@ -6123,11 +6125,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
@@ -6164,12 +6168,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
 
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6186,11 +6192,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6240,11 +6248,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6261,11 +6271,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6285,11 +6297,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6306,11 +6320,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6346,11 +6362,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6367,11 +6385,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6391,11 +6411,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6412,11 +6434,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6467,11 +6491,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6488,11 +6514,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6512,11 +6540,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }
@@ -6533,11 +6563,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (nombre == 'Puerta Madera') {
                     this.acaProdService.findAca(47).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                         this.acabadosPuerta1 = data.body[0]['acabados'];
                     });
                 } else {
                     this.acaProdService.findAca(48).subscribe(data => {
                         $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                         this.acabadosPuerta2 = data.body[0]['acabados'];
                     });
                 }

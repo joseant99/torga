@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -95,6 +95,24 @@ public class PresupuestoArmarioResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/presupuesto-armarios");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
+    
+    
+    
+    /**
+     * GET  /presupuesto-armarios : get all the presupuestoArmarios.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of presupuestoArmarios in body
+     */
+    @GetMapping("/presupuesto-armarios-busqueda/{id}")
+    @Timed
+    public ResponseEntity<Collection<PresupuestoArmario>> getAllPresupuestoArmariosBus(@PathVariable Long id) {
+        log.debug("REST request to get a page of PresupuestoArmarios");
+        Collection<PresupuestoArmario> page = presupuestoArmarioRepository.findByPresupuestoArmario(id);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    
 
     /**
      * GET  /presupuesto-armarios/:id : get the "id" presupuestoArmario.
