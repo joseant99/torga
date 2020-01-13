@@ -307,10 +307,9 @@ Generic styles
 }
 .blancosin {
     position: absolute;
-    max-width: 500px;
+    max-width: 400px;
     max-height: 592.75px;
-    margin-top: -592.75px;
-    margin-left: 150px;
+    margin-left: -400px;
     filter: brightness(140%);
 }
 .beigesin {

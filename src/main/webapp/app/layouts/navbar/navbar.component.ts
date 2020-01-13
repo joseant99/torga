@@ -3098,6 +3098,750 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                     }
 
+                    if (nombre == 'sg1') {
+                        $('#cuerpo' + i).css({ height: '400px' });
+                        for (let k = 0; k < acabados.length; k++) {
+                            if (k == 0) {
+                                if (i == 1) {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:100;margin-left:0px;top:20px;max-width:400px;max-height:400px;' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:200px;max-height:350px;" id="' +
+                                            nombre +
+                                            '" class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                            nombre +
+                                            ' apertura izquierda/' +
+                                            (k + 1) +
+                                            '/' +
+                                            nombre +
+                                            '_' +
+                                            (k + 1) +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png" title="' +
+                                            acabados[k] +
+                                            '">'
+                                    );
+                                } else {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var left = prodMed.split(';')[0];
+                                    var bottom = prodMed.split(';')[1];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:' +
+                                            (100 - i) +
+                                            ';margin-left:0px;max-width:400px;max-height:400px;' +
+                                            left +
+                                            ';' +
+                                            bottom +
+                                            ';' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:200px;max-height:350px;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                            nombre +
+                                            ' apertura izquierda/' +
+                                            (k + 1) +
+                                            '/' +
+                                            nombre +
+                                            '_' +
+                                            (k + 1) +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png">'
+                                    );
+                                }
+                            } else {
+                                if (k == 1) {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:100;margin-left:0px;top:20px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:200px;max-height:350px;" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                ' apertura izquierda/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-left:0px;max-width:400px;max-height:400px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:200px;max-height:350px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                ' apertura izquierda/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                } else {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:100;margin-left:0px;top:20px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:200px;max-height:350px;" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                ' apertura izquierda/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-left:0px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:200px;max-height:350px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                ' apertura izquierda/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (nombre == 'sg2') {
+                        $('#cuerpo' + i).css({ height: '400px' });
+                        for (let k = 0; k < acabados.length; k++) {
+                            if (k == 0) {
+                                if (i == 1) {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:100;margin-left:0px;top:20px;max-width:400px;max-height:400px;' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:200px;max-height:350px;" id="' +
+                                            nombre +
+                                            '" class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                            nombre +
+                                            ' apertura izquierda/' +
+                                            (k + 1) +
+                                            '/' +
+                                            nombre +
+                                            '_' +
+                                            (k + 1) +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png" title="' +
+                                            acabados[k] +
+                                            '">'
+                                    );
+                                } else {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var left = prodMed.split(';')[0];
+                                    var bottom = prodMed.split(';')[1];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:' +
+                                            (100 - i) +
+                                            ';margin-left:0px;max-width:400px;max-height:400px;' +
+                                            left +
+                                            ';' +
+                                            bottom +
+                                            ';' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:200px;max-height:350px;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                            nombre +
+                                            ' apertura izquierda/' +
+                                            (k + 1) +
+                                            '/' +
+                                            nombre +
+                                            '_' +
+                                            (k + 1) +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png">'
+                                    );
+                                }
+                            } else {
+                                if (k == 1) {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:100;margin-left:0px;top:20px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:200px;max-height:350px;" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                ' apertura izquierda/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-left:0px;max-width:400px;max-height:400px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:200px;max-height:350px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                ' apertura izquierda/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                } else {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:100;margin-left:0px;top:20px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:200px;max-height:350px;" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                ' apertura izquierda/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-left:0px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:200px;max-height:350px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                ' apertura izquierda/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (nombre == 'ap4') {
+                        for (let k = 0; k < acabados.length; k++) {
+                            if (k == 0) {
+                                if (i == 1) {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:400px;max-height:250px;" id="' +
+                                            nombre +
+                                            '" class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/ap2/' +
+                                            (k + 1) +
+                                            '/ap2_' +
+                                            (k + 1) +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png" title="' +
+                                            acabados[k] +
+                                            '">'
+                                    );
+                                } else {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var left = prodMed.split(';')[0];
+                                    var bottom = prodMed.split(';')[1];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:' +
+                                            (100 - i) +
+                                            ';margin-left:-60px;max-width:400px;max-height:400px;' +
+                                            left +
+                                            ';' +
+                                            bottom +
+                                            ';' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:400px;max-height:250px;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/ap2/' +
+                                            (k + 1) +
+                                            '/ap2_' +
+                                            (k + 1) +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png">'
+                                    );
+                                }
+                            } else {
+                                if (k == 1) {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/ap2/' +
+                                                (k + 1) +
+                                                '/ap2_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-left:-60px;max-width:400px;max-height:400px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/ap2/' +
+                                                (k + 1) +
+                                                '/ap2_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                } else {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-left:-60px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (nombre == 'ap3') {
+                        for (let k = 0; k < acabados.length; k++) {
+                            if (k == 0) {
+                                if (i == 1) {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:400px;max-height:250px;" id="' +
+                                            nombre +
+                                            '" class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                            nombre +
+                                            '/' +
+                                            (k + 1) +
+                                            '/' +
+                                            nombre +
+                                            '_' +
+                                            (k + 1) +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png" title="' +
+                                            acabados[k] +
+                                            '">'
+                                    );
+                                } else {
+                                    var prodMed = this.medidasModal[nombre];
+                                    var left = prodMed.split(';')[0];
+                                    var bottom = prodMed.split(';')[1];
+                                    var height = prodMed.split(';')[3];
+                                    var width = prodMed.split(';')[2];
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img style="z-index:' +
+                                            (100 - i) +
+                                            ';margin-left:-60px;max-width:400px;max-height:400px;' +
+                                            left +
+                                            ';' +
+                                            bottom +
+                                            ';' +
+                                            height +
+                                            ';' +
+                                            width +
+                                            ';max-width:400px;max-height:250px;' +
+                                            bottomModulos[i] +
+                                            '"  class="' +
+                                            acabados[k].toLowerCase() +
+                                            'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                            nombre +
+                                            '/' +
+                                            (k + 1) +
+                                            '/' +
+                                            nombre +
+                                            '_' +
+                                            (k + 1) +
+                                            '_' +
+                                            acabados[k].toLowerCase() +
+                                            '_optimized.png">'
+                                    );
+                                }
+                            } else {
+                                if (k == 1) {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-left:-60px;max-width:400px;max-height:400px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                } else {
+                                    if (i == 1) {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;" id="' +
+                                                nombre +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        var prodMed = this.medidasModal[nombre];
+                                        var left = prodMed.split(';')[0];
+                                        var bottom = prodMed.split(';')[1];
+                                        var height = prodMed.split(';')[3];
+                                        var width = prodMed.split(';')[2];
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';margin-left:-60px;' +
+                                                left +
+                                                ';' +
+                                                bottom +
+                                                ';' +
+                                                height +
+                                                ';' +
+                                                width +
+                                                ';max-width:400px;max-height:250px;' +
+                                                bottomModulos[i] +
+                                                '" class="' +
+                                                acabados[k].toLowerCase() +
+                                                'Modal" width="1000px" height="1000px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (k + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (k + 1) +
+                                                '_' +
+                                                acabados[k].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     if (nombre == 'mb9') {
                         for (let k = 0; k < acabados.length; k++) {
                             if (k == 0) {
@@ -5447,8 +6191,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         medidasModal['mb12'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
         medidasModal['mb13'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
         medidasModal['mb14'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg1'] = 'margin-left:-130px;bottom:113px;max-width:300px;max-height:535.65px;';
         medidasModal['ap2'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap3'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap4'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg1'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg2'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
 
         this.medidasModal = medidasModal;
 
@@ -5456,6 +6203,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         productosArrayNombres[107] = 'mb1';
         productosArrayNombres[72] = 'sg1';
         productosArrayNombres[73] = 'sg1';
+        productosArrayNombres[74] = 'sg2';
+        productosArrayNombres[75] = 'sg2';
         productosArrayNombres[108] = 'mb';
         productosArrayNombres[109] = 'mb4';
         productosArrayNombres[110] = 'mb6';
@@ -5469,6 +6218,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         productosArrayNombres[118] = 'mb12';
         productosArrayNombres[119] = 'mb14';
         productosArrayNombres[53] = 'ap2';
+        productosArrayNombres[62] = 'ap3';
+        productosArrayNombres[63] = 'ap4';
         this.productosArrayNombre = productosArrayNombres;
 
         if (this.representanteTiendaService.todos == undefined) {

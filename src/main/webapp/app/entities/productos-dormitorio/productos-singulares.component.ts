@@ -2899,34 +2899,34 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         var k = 1;
         var nombreAcabado;
         var nombre = $('#nombreMesita').text();
-        if (nombre == 'singular 1 apertura izquierda ') {
+        if (nombre == 'singular 1 apertura izquierda') {
             nombre = 'sg1';
         }
-        if (nombre == 'singular 1 apertura derecha ') {
+        if (nombre == 'singular 1 apertura derecha') {
             nombre = 'sg1';
         }
-        if (nombre == 'singular 2 apertura izquierda ') {
+        if (nombre == 'singular 2 apertura izquierda') {
             nombre = 'sg2';
         }
-        if (nombre == 'singular 2 apertura derecha ') {
+        if (nombre == 'singular 2 apertura derecha') {
             nombre = 'sg2';
         }
-        if (nombre == 'singular 3 apertura izquierda ') {
+        if (nombre == 'singular 3 apertura izquierda') {
             nombre = 'sg3';
         }
-        if (nombre == 'singular 3 apertura derecha ') {
+        if (nombre == 'singular 3 apertura derecha') {
             nombre = 'sg3';
         }
-        if (nombre == 'singular 12 apertura izquierda ') {
+        if (nombre == 'singular 12 apertura izquierda') {
             nombre = 'sg12';
         }
-        if (nombre == 'singular 12 apertura derecha ') {
+        if (nombre == 'singular 12 apertura derecha') {
             nombre = 'sg12';
         }
-        if (nombre == 'singular 13 apertura izquierda ') {
+        if (nombre == 'singular 13 apertura izquierda') {
             nombre = 'sg13';
         }
-        if (nombre == 'singular 13 apertura derecha ') {
+        if (nombre == 'singular 13 apertura derecha') {
             nombre = 'sg13';
         }
 
@@ -3067,17 +3067,28 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         var nombreMayus = nombreAcabado.toUpperCase();
                         var color = $('#val1Dato').text();
                         color = color.toLowerCase();
+                        if (nombre == 'sg3') {
+                            nombre = 'sg3 apertura izquierda';
+                            var nombre1 = 'sg3';
+                        } else {
+                            if (nombre == 'sg2') {
+                                nombre = 'sg2 apertura izquierda';
+                                var nombre1 = 'sg2';
+                            } else {
+                                var nombre1 = nombre;
+                            }
+                        }
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="casco" class="' +
                                 nombreAcabado +
-                                '" width="400px" height="592.75px" src="../../../content/images/' +
+                                'sin" width="400px" height="592.75px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
                                 ' ' +
                                 nombreMayus +
                                 '/' +
-                                nombre +
+                                nombre1 +
                                 '_' +
                                 id1 +
                                 '_' +
@@ -3087,15 +3098,26 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                                 '_optimized.png">'
                         );
                     } else {
+                        if (nombre == 'sg3') {
+                            nombre = 'sg3 apertura izquierda';
+                            var nombre1 = 'sg3';
+                        } else {
+                            if (nombre == 'sg2') {
+                                nombre = 'sg2 apertura izquierda';
+                                var nombre1 = 'sg2';
+                            } else {
+                                var nombre1 = nombre;
+                            }
+                        }
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="casco" class="' +
                                 nombreAcabado +
-                                '" width="400px" height="592.75px" src="../../../content/images/' +
+                                'sin" width="400px" height="592.75px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
                                 '/' +
-                                nombre +
+                                nombre1 +
                                 '_' +
                                 id1 +
                                 '_' +
