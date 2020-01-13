@@ -246,11 +246,134 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                         this.presupuestoArmarioInterioresService.busqueda(data.body[0]['id']).subscribe(data => {
                                             this.presupuestoArmarioInterioresService.todos = data.body;
+                                            var datosInteriores = data.body;
                                             console.log(data.body);
+                                            var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
+                                            var casco = data.body[0]['presupuestoArmario']['acabadosCasco']['nombre'].toLowerCase();
+                                            var trasera = data.body[0]['presupuestoArmario']['acabados']['nombre'].toLowerCase();
+                                            var interiorAca = data.body[0]['presupuestoArmario']['acabadosInterior'][
+                                                'nombre'
+                                            ].toLowerCase();
+
+                                            if ('3 PUERTAS IZQUIERDA' == nombre) {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                                        casco +
+                                                        '.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                        casco +
+                                                        '.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                                        casco +
+                                                        '.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                        casco +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                                        trasera +
+                                                        '.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                        trasera +
+                                                        '.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                                        trasera +
+                                                        '.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                        trasera +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                        nombreInt +
+                                                        '/peque_interior_' +
+                                                        nombreInt +
+                                                        '_' +
+                                                        interiorAca +
+                                                        '_optimized.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                        nombreInt +
+                                                        '/peque_interior_' +
+                                                        nombreInt +
+                                                        '_' +
+                                                        interiorAca +
+                                                        '_optimized.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:-19px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                        nombreInt +
+                                                        '/grande_interior_' +
+                                                        nombreInt +
+                                                        '_' +
+                                                        interiorAca +
+                                                        '_optimized.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:296px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                        nombreInt +
+                                                        '/grande_interior_' +
+                                                        nombreInt +
+                                                        '_' +
+                                                        interiorAca +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+                                            $('#imagen' + (cont - 1)).css({ height: '650px' });
                                         });
                                         this.presupuestoArmarioPuertasService.busqueda(data.body[0]['id']).subscribe(data => {
                                             this.presupuestoArmarioPuertasService.todos = data.body;
                                             console.log(data.body);
+                                            var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
+                                            if ('3 PUERTAS IZQUIERDA' == nombre) {
+                                                var tipo = data.body[0]['productosDormitorio']['nombre'];
+                                                var acabado = data.body[0]['acabados']['nombre'].toLowerCase();
+                                                if (tipo == 'Puerta Madera') {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top:315px" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                                            acabado +
+                                                            '_optimized.png">'
+                                                    );
+                                                }
+
+                                                var tipo = data.body[1]['productosDormitorio']['nombre'];
+                                                var acabado = data.body[1]['acabados']['nombre'].toLowerCase();
+                                                if (tipo == 'Puerta Madera') {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                                            acabado +
+                                                            '_optimized.png">'
+                                                    );
+                                                }
+                                                var tipo = data.body[1]['productosDormitorio']['nombre'];
+                                                var acabado = data.body[1]['acabados']['nombre'].toLowerCase();
+                                                if (tipo == 'Puerta Madera') {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                                            acabado +
+                                                            '_optimized.png">'
+                                                    );
+                                                }
+                                            }
                                         });
                                     });
                                 } else {
@@ -284,6 +407,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     console.log(this.interioresArmario);
                     console.log(this.productos);
                     var productos = this.productos;
+
                     this.acabadosProductosPresupuestoPedidoService
                         .query({
                             size: 1000000
