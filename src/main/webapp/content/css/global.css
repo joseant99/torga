@@ -6453,6 +6453,13 @@ ui bootstrap tweaks
     #medidasEspecialesTexto {
         margin-left: 33%;
     }
+    .Datos {
+        width: 100% !important;
+        padding-left: 26%;
+    }
+    #imagen0 {
+        margin-left: 23% !important;
+    }
     #dimensionesColorStyleSin {
         float: left;
         margin-left: 0%;

@@ -1,11 +1,11 @@
 <div>
     <br/>
     <div id="imprimir">
-	    <div style="margin-top:50px;float:left;width:97%;margin-bottom:40px;margin-left:50px" *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let i=index;">
+	    <div style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let i=index;">
 	    	<div style="width:100%;margin-bottom:70px" *ngIf="i===0">
 	    		<p style="text-align:center;font-size:30px">PRESUPUESTO: {{productosPresupuestoPedidos.presupuestoPedido?.codigo}}</p>
 	    		<p style="text-align:center;font-size:30px">FECHA:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_presupuesto}}</p>
-	    		<a style="float:right;margin-right:20%;margin-bottom:50px;" (click)="mostrarPrecioFabrica()"><img style="max-width:50px;" src="../../../content/images/fabrica.png"/></a>
+	    		<!--  <a style="float:right;margin-right:20%;margin-bottom:50px;" (click)="mostrarPrecioFabrica()"><img style="max-width:50px;" src="../../../content/images/fabrica.png"/></a>-->
 	    	</div>
 	    	<div style="float:left;width:40%;margin-left:100px;height:333px;margin-top:4%;" id="imagen{{i}}">
 	    	</div>
@@ -20,7 +20,7 @@
 	    		
 	    	</div>
 	    	<div class="{{productosPresupuestoPedidos.id}}Datos" style="float:right;width:40%;" *ngIf="presupuestoArmarioInterioresService.todos !== undefined">
-	    	
+	    			    		<p *ngFor="let interior of presupuestoArmarioInterioresService.todos ; let u=index;" style=""><strong *ngIf="u === 0">Casco <span *ngIf="u === 0">+ {{interior.presupuestoArmario.cascoPrecio}} &euro;</span></strong></p>
 	    		<p *ngFor="let interior of presupuestoArmarioInterioresService.todos ;" style=""><strong>Interior {{interior.productosDormitorio.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><i id="precioFabrica{{i}}" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+{{interior.productosDormitorio?.precio}} <strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
 	    	</div>
 	    	<div class="{{productosPresupuestoPedidos.id}}Datos" style="float:right;width:40%;" *ngIf="presupuestoArmarioPuertasService.todos !== undefined">
