@@ -3239,7 +3239,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
                                     $('#datos1').append(
-                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none;"><span id="nombreApoyo">Apoyo : ' +
                                             value['productoApoyo']['nombre'] +
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
@@ -3247,6 +3247,8 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                             precio +
                                             '&euro;</span></p>'
                                     );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3278,7 +3280,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
                                     $('#datos1').append(
-                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                             value['productoApoyo']['nombre'] +
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
@@ -3286,6 +3288,8 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                             precio +
                                             '&euro;</span></p>'
                                     );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3319,7 +3323,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
                                     $('#datos1').append(
-                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                             value['productoApoyo']['nombre'] +
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
@@ -3327,6 +3331,8 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                             precio +
                                             '&euro;</span></p>'
                                     );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -3358,7 +3364,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
                                     $('#datos1').append(
-                                        '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                             value['productoApoyo']['nombre'] +
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
@@ -3367,6 +3373,8 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                             '&euro;</span></p>'
                                     );
                                     $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                     $('#botonApoyoNuevo').append(
                                         '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
                                             value['productoApoyo']['nombre'] +
@@ -3398,7 +3406,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 totalfloat = totalfloat + precio;
                                 $('#precioDimension').text(totalfloat.toFixed(2));
                                 $('#datos1').append(
-                                    '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                         value['productoApoyo']['nombre'] +
                                         '</span><span style="float:right" id="apoyo1" class="' +
                                         value['id'] +
@@ -3407,6 +3415,8 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                         '&euro;</span></p>'
                                 );
                                 $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                 $('#botonApoyoNuevo').append(
                                     '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
                                         value['productoApoyo']['nombre'] +
@@ -3437,7 +3447,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 totalfloat = totalfloat + precio;
                                 $('#precioDimension').text(totalfloat.toFixed(2));
                                 $('#datos1').append(
-                                    '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                                         value['productoApoyo']['nombre'] +
                                         '</span><span style="float:right" id="apoyo1" class="' +
                                         value['id'] +
@@ -3445,6 +3455,8 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                         precio +
                                         '&euro;</span></p>'
                                 );
+                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
                                 $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                 $('#botonApoyoNuevo').append(
                                     '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -4462,37 +4474,54 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                         $('.cambiarAca' + u).text('Cambiar Acabado');
                     }
 
-                    $('#aca1' + u).append(
-                        '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
+                    if (u == 1) {
+                        $('#datos1').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
+                    }
+                    $('#datos1').append(
+                        '<p style="width:100%" id="acabado' +
                             u +
-                            '">Acabado ' +
+                            '"><span>' +
                             u +
-                            '</button>'
+                            '</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                            u +
+                            '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                            u +
+                            '" style="margin-left:10px"></span></p>'
                     );
-                    $('#aca1' + u).append(
-                        '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
-                    );
+
                     u++;
                     i = 0;
                     contnuevo++;
                 }
             });
+            $('#datos1').append(
+                '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
+            );
+            $('#datos1').append(
+                '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+            );
+            this.productosDormitorioService.categoria(2).subscribe(data => {
+                for (let w = 0; w < data.body['length']; w++) {
+                    $('#modalApoyo #apoyoModal' + w).empty();
+                    $('#modalApoyo #apoyoModal' + w).append(
+                        '<img  src="data:image/gif;base64,' +
+                            data.body[w]['imagen'] +
+                            '" id="imagenApoyo' +
+                            w +
+                            '" class="' +
+                            data.body[w]['id'] +
+                            '" height="160px" width="280px" style=" ">'
+                    );
+                    $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
+                }
+            });
             for (let j = 1; j < acabadosProd.length; j++) {
                 for (let w = 0; w < acabadosTodos.length; w++) {
                     if (acabadosTodos[w]['nombre'] == acabadosProd[j]['nombre']) {
-                        $('#aca1' + j + ' #imagenAcabadoPrincipal1').remove();
-                        $('#aca1' + j).append(
-                            '<img  src="data:image/gif;base64,' +
-                                acabadosTodos[w]['imagenFondo'] +
-                                '" id="imagenAcabadoPrincipal1" class="' +
-                                acabadosTodos[w]['id'] +
-                                '" height="60px" width="200px" style=" opacity: 0.7;margin-left:20px">'
-                        );
-                        $('#aca1' + j).append(
-                            '<p id="acabadoNombrePrincipal" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
-                                acabadosTodos[w]['nombre'] +
-                                '</p>'
-                        );
+                        var src = 'data:image/gif;base64,' + acabadosTodos[w]['imagenFondo'];
+                        $('#datos1 #acabado' + j + ' #imagenAcabadoPrincipal1').attr('src', src);
+                        $('#datos1 #acabado' + j + ' #imagenAcabadoPrincipal1').attr('class', acabadosTodos[w]['id']);
+                        $('#datos1 #nombreAcaCalcu' + j).text(acabadosTodos[w]['nombre']);
                     }
                 }
                 $('#acabados #imagenAcabadoPrincipal').append(
@@ -4515,7 +4544,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                 $('#val' + j + 'Dato').remove();
                 $('#valor' + j).remove();
                 $('#datos1').append(
-                    '<p style="width:100%"> <span id="val' +
+                    '<p style="width:100%;display:none"> <span id="val' +
                         j +
                         '">Acabado ' +
                         j +
@@ -4569,42 +4598,14 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
             nombre = 'mb14';
         }
 
-        this.productosDormitorioService.categoria(2).subscribe(data => {
-            for (let w = 0; w < data.body['length']; w++) {
-                $('#modalApoyo #apoyoModal' + w).empty();
-                $('#modalApoyo #apoyoModal' + w).append(
-                    '<img  src="data:image/gif;base64,' +
-                        data.body[w]['imagen'] +
-                        '" id="imagenApoyo' +
-                        w +
-                        '" class="' +
-                        data.body[w]['id'] +
-                        '" height="160px" width="280px" style=" opacity: 0.7;">'
-                );
-                $('#modalApoyo #apoyoModal' + w).append(
-                    '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                        data.body[w]['nombre'] +
-                        '</strong></p>'
-                );
-            }
-        });
-
-        $('#botonApoyoNuevo').empty();
         $('#botonApoyoNuevo').append(
-            '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
-        );
-        $('#botonApoyoNuevo').append(
-            '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
-        );
-
-        $('#botonApoyoNuevo').append(
-            '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+            '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute;display:none" >' +
                 datos['apoyo']['nombre'].split(' ')[0] +
                 '</p>'
         );
         this.cambiarApoyo = 0;
         $('#datos1').append(
-            '<p id="apoyoDatosTexto" style="width:100%"><span id="nombreApoyo">Apoyo : ' +
+            '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
                 datos['apoyo']['nombre'].split(' ')[0] +
                 '</span><span style="float:right" id="apoyo1" class="' +
                 datos['apoyo']['id'] +
