@@ -5961,7 +5961,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     }
 
                     $('#modalCesta .modal-body').append(
-                        '<div style="float: left;width: 100%;height:180px" id="textoCesta' + i + '"></div>'
+                        '<div style="float: left;width: 100%;height:180px:margin-bottom:50px;" id="textoCesta' + i + '"></div>'
                     );
                     $('#textoCesta' + i).append(
                         '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
