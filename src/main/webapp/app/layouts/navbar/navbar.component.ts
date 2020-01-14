@@ -552,7 +552,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 console.log(nombre);
                 if (sesion[1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
                     $('#modalCesta .modal-body').append(
-                        '<div style="float: left;width: 100%;text-align: center;height:250px;position:relative" id="cuerpo' + i + '"></div>'
+                        '<div style="float: left;width: 100%;text-align: center;height:250px;position:relative" class="cuerpoArmario" id="cuerpo' +
+                            i +
+                            '"></div>'
                     );
 
                     var nombreArmario = sesion[1]['mensaje'];
@@ -568,17 +570,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                     if (nombreArmario == '1 PUERTA') {
                         $('#cuerpo' + i).append(
-                            '<img style="width:100px;position:absolute;z-index:2" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="armarioCalculadora" style="width:100px;position:absolute;z-index:2" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i).append(
-                            '<img style="width:100px;position:absolute;z-index:2" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="armarioCalculadora" style="width:100px;position:absolute;z-index:2" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i).append(
-                            '<img style="width:100px;position:absolute;z-index:2" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                            '<img class="armarioCalculadora" style="width:100px;position:absolute;z-index:2" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
                                 interiores.toLowerCase() +
                                 '_optimized.png">'
                         );
@@ -589,20 +591,24 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         var puerta1 = sesion[1]['puertas'][0];
                         var puerta2 = sesion[1]['puertas'][1];
                         var puerta3 = sesion[1]['puertas'][2];
-                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 555px;margin-top: 110px;float: left;"></div>');
-                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i).append(
+                            '<div id="izquierda" class="armarioIzquierda" style="margin-left: 555px;margin-top: 110px;float: left;"></div>'
+                        );
+                        $('#cuerpo' + i).append(
+                            '<div id="derecha" class="armarioDerecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>'
+                        );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:200px;position:absolute" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertasIzquierda3" style="width:200px;position:absolute" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
@@ -613,7 +619,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;" src="' +
+                                '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;" src="' +
                                     src +
                                     '">'
                             );
@@ -621,7 +627,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;opacity:0.6" src="' +
+                                    '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;opacity:0.6" src="' +
                                         src +
                                         '">'
                                 );
@@ -629,7 +635,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 var src =
                                     '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;opacity:0.5" src="' +
+                                    '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;opacity:0.5" src="' +
                                         src +
                                         '">'
                                 );
@@ -641,7 +647,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
-                            $('#cuerpo' + i + ' #derecha').append('<img style="width:200px;position:absolute;" src="' + src1 + '">');
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertasIzquierda3"  style="width:200px;position:absolute;" src="' + src1 + '">'
+                            );
                         } else {
                             var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                         }
@@ -651,39 +659,41 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
-                            $('#cuerpo' + i + ' #derecha').append('<img style="width:200px;position:absolute;" src="' + src2 + '">');
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertasIzquierda3"  style="width:200px;position:absolute;" src="' + src2 + '">'
+                            );
                         } else {
                             var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                         }
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
                                 interiores.toLowerCase() +
                                 '_optimized.png">'
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
                                 interior2['nombre'] +
                                 '/grande_interior_' +
                                 interior2['nombre'] +
@@ -699,20 +709,24 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         var puerta1 = sesion[1]['puertas'][0];
                         var puerta2 = sesion[1]['puertas'][1];
                         var puerta3 = sesion[1]['puertas'][2];
-                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 590px;margin-top: 110px;float: left;"></div>');
-                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i).append(
+                            '<div id="izquierda" class="armarioIzquierda1" style="margin-left: 590px;margin-top: 110px;float: left;"></div>'
+                        );
+                        $('#cuerpo' + i).append(
+                            '<div id="derecha" class="armarioDerecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>'
+                        );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:1" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:1"  src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:1" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:1" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
@@ -723,19 +737,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:1" src="' + src + '">'
+                                '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:1" src="' + src + '">'
                             );
                         } else {
                             if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:1;opacity:0.6" src="' + src + '">'
+                                    '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:1;opacity:0.6" src="' +
+                                        src +
+                                        '">'
                                 );
                             } else {
                                 var src =
                                     '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:1;opacity:0.5" src="' + src + '">'
+                                    '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:1;opacity:0.5" src="' +
+                                        src +
+                                        '">'
                                 );
                             }
                         }
@@ -746,7 +764,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="' +
+                                '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="' +
                                     src1 +
                                     '">'
                             );
@@ -760,7 +778,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="' +
+                                '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="' +
                                     src2 +
                                     '">'
                             );
@@ -769,33 +787,33 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="puertas3Derecha" style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="puertas3Derecha" style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
+                            '<img class="puertas3Derecha" style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
                                 interiores.toLowerCase() +
-                                '.png">'
+                                '_optimized.png">'
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                            '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/3. INTERIORES/' +
                                 interior2['nombre'] +
                                 '/grande_interior_' +
                                 interior2['nombre'] +
@@ -813,30 +831,34 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         var puerta2 = sesion[1]['puertas'][1];
                         var puerta3 = sesion[1]['puertas'][2];
                         var puerta4 = sesion[1]['puertas'][3];
-                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 515px;margin-top: 110px;float: left;"></div>');
-                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i).append(
+                            '<div id="izquierda" class="armarioIzquierda2" style="margin-left: 515px;margin-top: 110px;float: left;"></div>'
+                        );
+                        $('#cuerpo' + i).append(
+                            '<div id="derecha" class="armarioDerecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>'
+                        );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:200px;position:absolute;z-index:2" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index:2" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:3;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="puertasAsi4" style="width:199px;position:absolute;z-index:3;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:3;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="puertasAsi4" style="width:199px;position:absolute;z-index:3;margin-left: 120px;z-index: 1;margin-top: -24px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
@@ -847,7 +869,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;" src="' +
+                                '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;" src="' +
                                     src +
                                     '">'
                             );
@@ -855,7 +877,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
+                                    '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
                                         src +
                                         '">'
                                 );
@@ -863,7 +885,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 var src =
                                     '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.5" src="' +
+                                    '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.5" src="' +
                                         src +
                                         '">'
                                 );
@@ -876,7 +898,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:3" src="' + src1 + '">'
+                                '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index:3" src="' + src1 + '">'
                             );
                         } else {
                             var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
@@ -888,7 +910,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:3" src="' + src2 + '">'
+                                '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index:3" src="' + src2 + '">'
                             );
                         } else {
                             var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
@@ -900,7 +922,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta4['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;" src="' +
+                                '<img class="puertasAsi4" style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;" src="' +
                                     src +
                                     '">'
                             );
@@ -908,7 +930,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (puerta4['acabado']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;opacity:0.6" src="' +
+                                    '<img class="puertasAsi4" style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;opacity:0.6" src="' +
                                         src +
                                         '">'
                                 );
@@ -916,7 +938,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 var src =
                                     '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;opacity:0.5" src="' +
+                                    '<img class="puertasAsi4" style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;opacity:0.5" src="' +
                                         src +
                                         '">'
                                 );
@@ -924,37 +946,37 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:3" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:3" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:3" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3" src="../../../content/images/ar/peque/3. INTERIORES/' +
                                 interior1['nombre'] +
                                 '/peque_interior_' +
                                 interior1['nombre'] +
                                 '_' +
                                 interiores.toLowerCase() +
-                                '.png">'
+                                '_optimized.png">'
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 2;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;margin-left: 120px;z-index: 2;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 2;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;margin-left: 120px;z-index: 2;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;margin-left: 120px;z-index: 2;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;margin-left: 120px;z-index: 2;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
                                 interior2['nombre'] +
                                 '/grande_interior_' +
                                 interior2['nombre'] +
@@ -963,24 +985,24 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 '_optimized.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;margin-left: 240px;z-index: 1;margin-top: -50px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="puertas4Asi" style="width:200px;position:absolute;margin-left: 240px;z-index: 1;margin-top: -50px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;margin-left: 240px;z-index: 1;margin-top: -50px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="puertas4Asi" style="width:200px;position:absolute;margin-left: 240px;z-index: 1;margin-top: -50px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;margin-left: 240px;z-index: 1;margin-top: -50px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                            '<img class="puertas4Asi" style="width:200px;position:absolute;margin-left: 240px;z-index: 1;margin-top: -50px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
                                 interior3['nombre'] +
                                 '/peque_interior_' +
                                 interior3['nombre'] +
                                 '_' +
                                 interiores.toLowerCase() +
-                                '.png">'
+                                '_optimized.png">'
                         );
                     }
 
@@ -993,25 +1015,29 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         var puerta3 = sesion[1]['puertas'][2];
                         var puerta4 = sesion[1]['puertas'][3];
                         var puerta5 = sesion[1]['puertas'][4];
-                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 530px;margin-top: 110px;float: left;"></div>');
-                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i).append(
+                            '<div id="izquierda" class="armarioIzquierda2" style="margin-left: 530px;margin-top: 110px;float: left;"></div>'
+                        );
+                        $('#cuerpo' + i).append(
+                            '<div id="derecha" class="armarioDerecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>'
+                        );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:2" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puestasCentral5" style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 1;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png" title="' +
                                 casco +
@@ -1024,19 +1050,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:3" src="' + src + '">'
+                                '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:3" src="' + src + '">'
                             );
                         } else {
                             if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:3;opacity:0.6" src="' + src + '">'
+                                    '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:3;opacity:0.6" src="' +
+                                        src +
+                                        '">'
                                 );
                             } else {
                                 var src =
                                     '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:3;opacity:0.5" src="' + src + '">'
+                                    '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:3;opacity:0.5" src="' +
+                                        src +
+                                        '">'
                                 );
                             }
                         }
@@ -1047,7 +1077,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="' +
+                                '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="' +
                                     src1 +
                                     '">'
                             );
@@ -1061,7 +1091,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="' +
+                                '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="' +
                                     src2 +
                                     '">'
                             );
@@ -1075,7 +1105,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta4['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -26px;" src="' +
+                                '<img class="puestasCentral5" style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -26px;" src="' +
                                     src1 +
                                     '">'
                             );
@@ -1089,7 +1119,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta5['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -26px;" src="' +
+                                '<img class="puestasCentral5" style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -26px;" src="' +
                                     src2 +
                                     '">'
                             );
@@ -1098,33 +1128,33 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;margin-top: -24px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="puertas3Derecha" style="width:199px;position:absolute;z-index:2;margin-left: 120px;margin-top: -24px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;margin-top: -24px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="puertas3Derecha" style="width:199px;position:absolute;z-index:2;margin-left: 120px;margin-top: -24px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:2;margin-left: 120px;margin-top: -24px;" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
+                            '<img class="puertas3Derecha" style="width:199px;position:absolute;z-index:2;margin-left: 120px;margin-top: -24px;" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
                                 interiores.toLowerCase() +
-                                '.png">'
+                                '_optimized.png">'
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                            '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index: 3;" src="../../../content/images/ar/grande/3. INTERIORES/' +
                                 interior2['nombre'] +
                                 '/grande_interior_' +
                                 interior2['nombre'] +
@@ -1134,17 +1164,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 240px;margin-top: -50px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puestas5Central" style="width:200px;position:absolute;z-index: 1;margin-left: 240px;margin-top: -50px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 240px;margin-top: -50px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                            '<img class="puestas5Central" style="width:200px;position:absolute;z-index: 1;margin-left: 240px;margin-top: -50px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 240px;margin-top: -50px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            '<img class="puestas5Central" style="width:200px;position:absolute;z-index: 1;margin-left: 240px;margin-top: -50px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
                                 interior3['nombre'] +
                                 '/grande_interior_' +
                                 interior3['nombre'] +
@@ -1163,25 +1193,29 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         var puerta3 = sesion[1]['puertas'][2];
                         var puerta4 = sesion[1]['puertas'][3];
                         var puerta5 = sesion[1]['puertas'][4];
-                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 490px;margin-top: 110px;float: left;"></div>');
-                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i).append(
+                            '<div id="izquierda" class="armarioIzquierda3" style="margin-left: 490px;margin-top: 110px;float: left;"></div>'
+                        );
+                        $('#cuerpo' + i).append(
+                            '<div id="derecha" class="armarioDerecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>'
+                        );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:200px;position:absolute;z-index:2;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index:2;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 1;margin-top: -33px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertasIzquierda5" style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 1;margin-top: -33px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png" title="' +
                                 casco.toLowerCase() +
@@ -1194,7 +1228,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="' +
+                                '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="' +
                                     src +
                                     '">'
                             );
@@ -1202,7 +1236,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
+                                    '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
                                         src +
                                         '">'
                                 );
@@ -1210,7 +1244,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 var src =
                                     '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.5" src="' +
+                                    '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.5" src="' +
                                         src +
                                         '">'
                                 );
@@ -1223,7 +1257,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index: 3;" src="' + src1 + '">'
+                                '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index: 3;" src="' + src1 + '">'
                             );
                         } else {
                             var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
@@ -1235,7 +1269,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index: 3;" src="' + src2 + '">'
+                                '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index: 3;" src="' + src2 + '">'
                             );
                         } else {
                             var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
@@ -1247,7 +1281,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta4['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
+                                '<img class="puertasIzquierda5" style="width:200px;position:absolute;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
                                     src1 +
                                     '">'
                             );
@@ -1261,7 +1295,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta5['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
+                                '<img class="puertasIzquierda5" style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
                                     src2 +
                                     '">'
                             );
@@ -1270,33 +1304,33 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:3;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:3;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:3;" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;" src="../../../content/images/ar/peque/3. INTERIORES/6/peque_interior_6_' +
                                 interiores.toLowerCase() +
-                                '.png">'
+                                '_optimized.png">'
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;z-index: 2;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;z-index: 2;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;z-index: 2;margin-left: 120px;margin-top: -25px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
                                 interior2['nombre'] +
                                 '/grande_interior_' +
                                 interior2['nombre'] +
@@ -1306,17 +1340,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertas5Izquierda" style="width:200px;position:absolute;z-index: 1;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                            '<img class="puertas5Izquierda" style="width:200px;position:absolute;z-index: 1;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 1;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            '<img class="puertas5Izquierda" style="width:200px;position:absolute;z-index: 1;margin-left: 280px;margin-top: -58px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
                                 interior3['nombre'] +
                                 '/grande_interior_' +
                                 interior3['nombre'] +
@@ -1337,30 +1371,34 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         var puerta4 = sesion[1]['puertas'][3];
                         var puerta5 = sesion[1]['puertas'][4];
                         var puerta6 = sesion[1]['puertas'][5];
-                        $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 445px;margin-top: 130px;float: left;"></div>');
-                        $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>');
+                        $('#cuerpo' + i).append(
+                            '<div id="izquierda" class="armarioIzquierda4" style="margin-left: 445px;margin-top: 130px;float: left;"></div>'
+                        );
+                        $('#cuerpo' + i).append(
+                            '<div id="derecha" class="armarioDerecha" style="float:left;margin-left: 125px;margin-top:515px;"></div>'
+                        );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:200px;position:absolute;z-index:3;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index:3;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 2;margin-top: -33px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertasIzquierda5" style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 2;margin-top: -33px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #derecha').append(
-                            '<img style="width:199px;position:absolute;z-index:3;margin-left: 280px;z-index: 1;margin-top: -57px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="puestasAsi6" style="width:199px;position:absolute;z-index:3;margin-left: 280px;z-index: 1;margin-top: -57px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
@@ -1371,7 +1409,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="' +
+                                '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="' +
                                     src +
                                     '">'
                             );
@@ -1379,7 +1417,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
+                                    '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
                                         src +
                                         '">'
                                 );
@@ -1387,7 +1425,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 var src =
                                     '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.5" src="' +
+                                    '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.5" src="' +
                                         src +
                                         '">'
                                 );
@@ -1400,7 +1438,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index: 3;" src="' + src1 + '">'
+                                '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index: 3;" src="' + src1 + '">'
                             );
                         } else {
                             var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
@@ -1412,7 +1450,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta1['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index: 3;" src="' + src2 + '">'
+                                '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index: 3;" src="' + src2 + '">'
                             );
                         } else {
                             var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
@@ -1424,7 +1462,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta4['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
+                                '<img class="puertasIzquierda5" style="width:200px;position:absolute;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
                                     src1 +
                                     '">'
                             );
@@ -1438,7 +1476,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta5['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
+                                '<img class="puertasIzquierda5" style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
                                     src2 +
                                     '">'
                             );
@@ -1452,7 +1490,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 puerta6['acabado']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;" src="' +
+                                '<img class="puestasAsi6" style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;" src="' +
                                     src +
                                     '">'
                             );
@@ -1460,7 +1498,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;opacity:0.6" src="' +
+                                    '<img class="puestasAsi6" style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;opacity:0.6" src="' +
                                         src +
                                         '">'
                                 );
@@ -1468,7 +1506,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 var src =
                                     '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
                                 $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;opacity:0.5" src="' +
+                                    '<img class="puestasAsi6" style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;opacity:0.5" src="' +
                                         src +
                                         '">'
                                 );
@@ -1476,37 +1514,37 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                            '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:4;" src="../../../content/images/ar/peque/3. INTERIORES/' +
                                 interior1['nombre'] +
                                 '/peque_interior_' +
                                 interior1['nombre'] +
                                 '_' +
                                 interiores.toLowerCase() +
-                                '.png">'
+                                '_optimized.png">'
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            '<img class="puertas3Izquierda" style="width:200px;position:absolute;z-index: 3;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
                                 interior2['nombre'] +
                                 '/grande_interior_' +
                                 interior2['nombre'] +
@@ -1516,17 +1554,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                            '<img class="puertas5Izquierda" style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                            '<img class="puertas5Izquierda" style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            '<img class="puertas5Izquierda" style="width:200px;position:absolute;z-index: 2;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
                                 interior3['nombre'] +
                                 '/grande_interior_' +
                                 interior3['nombre'] +
@@ -1536,23 +1574,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         );
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 400px;margin-top: -83px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                            '<img class="puestas6Asi" style="width:199px;position:absolute;z-index:1;margin-left: 400px;margin-top: -83px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
                                 casco.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 400px;margin-top: -83px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                            '<img class="puestas6Asi" style="width:199px;position:absolute;z-index:1;margin-left: 400px;margin-top: -83px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
                                 trasera.toLowerCase() +
                                 '.png">'
                         );
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="width:199px;position:absolute;z-index:1;margin-left: 400px;margin-top: -83px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                            '<img class="puestas6Asi" style="width:199px;position:absolute;z-index:1;margin-left: 400px;margin-top: -83px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
                                 interior4['nombre'] +
                                 '/peque_interior_' +
                                 interior4['nombre'] +
                                 '_' +
                                 interiores.toLowerCase() +
-                                '.png">'
+                                '_optimized.png">'
                         );
                     }
 

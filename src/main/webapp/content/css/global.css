@@ -6452,6 +6452,97 @@ ui bootstrap tweaks
     #medidasEspecialesTexto {
         margin-left: 33%;
     }
+    .armarioCalculadora {
+        width: 130px !important;
+    }
+    .armarioIzquierda {
+        margin-left: 190px !important;
+        margin-top: 80px !important;
+    }
+    .armarioIzquierda2 {
+        margin-left: 170px !important;
+        margin-top: 80px !important;
+    }
+    .armarioIzquierda3 {
+        margin-left: 140px !important;
+        margin-top: 95px !important;
+    }
+    .armarioIzquierda4 {
+        margin-left: 115px !important;
+        margin-top: 95px !important;
+    }
+    .puestas5Central {
+        margin-left: 156px !important;
+        margin-top: -33px !important;
+        width: 130px !important;
+    }
+    .puestas6Asi {
+        margin-left: 263px !important;
+        margin-top: -54px !important;
+        width: 130px !important;
+    }
+    .puestasAsi6 {
+        margin-left: 146px !important;
+        margin-top: -29px !important;
+        width: 130px !important;
+    }
+    .puestasCentral5 {
+        margin-left: 39px !important;
+        margin-top: -9px !important;
+        width: 130px !important;
+    }
+    .puertas5Izquierda {
+        margin-left: 184px !important;
+        margin-top: -38px !important;
+        width: 130px !important;
+    }
+    .puertasIzquierda5 {
+        margin-left: 66px !important;
+        margin-top: -13px !important;
+        width: 130px !important;
+    }
+
+    .armarioIzquierda1 {
+        margin-left: 210px !important;
+        margin-top: 80px !important;
+    }
+    .armarioDerecha {
+        margin-left: 120px !important;
+        margin-top: 330px !important;
+    }
+    .puertas3Izquierda {
+        margin-left: 80px !important;
+        margin-top: -17px !important;
+        width: 130px !important;
+    }
+    .puertas4Asi {
+        margin-left: 159px !important;
+        margin-top: -33px !important;
+        width: 130px !important;
+    }
+    .puertasAsi4 {
+        margin-left: 40px !important;
+        margin-top: -7px !important;
+        width: 130px !important;
+    }
+    .puertas3Derecha {
+        margin-left: 78px !important;
+        margin-top: -16px !important;
+        width: 130px !important;
+    }
+    .puertasDerecha3 {
+        width: 130px !important;
+        margin-left: -40px !important;
+        margin-top: 8px !important;
+    }
+    .puertasIzquierda3 {
+        margin-left: -40px !important;
+        margin-top: 9px !important;
+        width: 130px !important;
+    }
+    .cuerpoArmario {
+        height: 325px !important;
+    }
     .Datos {
         width: 100% !important;
         padding-left: 26%;
