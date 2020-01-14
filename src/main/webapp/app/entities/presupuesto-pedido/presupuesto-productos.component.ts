@@ -61,8 +61,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
-        protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
-        protected presupuestoArmarioInterioresService: PresupuestoArmarioInterioresService,
+        public presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
+        public presupuestoArmarioInterioresService: PresupuestoArmarioInterioresService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected contactoFabricaService: ContactoFabricaService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
