@@ -6449,6 +6449,9 @@ ui bootstrap tweaks
     }
 }
 @media screen and (max-width: 900px) {
+    #noticiasClass {
+        margin-top: 20px !important;
+    }
     #medidasEspecialesTexto {
         margin-left: 33%;
     }

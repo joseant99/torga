@@ -58,7 +58,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     previousPage: any;
     reverse: any;
     interioresArmario: any;
-
+    armario: any;
+    idArmario: any;
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         public presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
@@ -220,9 +221,16 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                         if (res.body[i]['presupuestoPedido'] != null) {
                             if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
                                 if (res.body[i]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                                    console.log(cont);
                                     this.presupuestoArmarioService.findBus(presu).subscribe(data => {
+                                        var idCat = 9;
+                                        var cat = {
+                                            id: idCat
+                                        };
+
                                         var uno = {
-                                            nombre: data.body[0]['armario']['mensaje']
+                                            nombre: data.body[0]['armario']['mensaje'],
+                                            categoriasDormi: cat
                                         };
                                         var codigo = {
                                             codigo: data.body[0]['productosPresupuestoPedidos']['presupuestoPedido']['codigo'],
@@ -249,6 +257,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             var datosInteriores = data.body;
                                             console.log(data.body);
                                             var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
+                                            for (let p = 0; p < datosInteriores.length; p++) {
+                                                $('#datosMeter' + (cont - 1)).append(
+                                                    '<p>Interior ' + datosInteriores[p]['productosDormitorio']['nombre'] + '</p>'
+                                                );
+                                            }
                                             var casco = data.body[0]['presupuestoArmario']['acabadosCasco']['nombre'].toLowerCase();
                                             var trasera = data.body[0]['presupuestoArmario']['acabados']['nombre'].toLowerCase();
                                             var interiorAca = data.body[0]['presupuestoArmario']['acabadosInterior'][
@@ -626,8 +639,18 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                         });
                                         this.presupuestoArmarioPuertasService.busqueda(data.body[0]['id']).subscribe(data => {
                                             this.presupuestoArmarioPuertasService.todos = data.body;
+                                            var datosInteriores = data.body;
                                             console.log(data.body);
                                             var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
+                                            for (let p = 0; p < datosInteriores.length; p++) {
+                                                $('#datosMeter' + (cont - 1)).append(
+                                                    '<p>Puerta ' +
+                                                        (p + 1) +
+                                                        ' ' +
+                                                        datosInteriores[p]['productosDormitorio']['nombre'] +
+                                                        '</p>'
+                                                );
+                                            }
                                             if ('3 PUERTAS IZQUIERDA' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
                                                 var acabado = data.body[0]['acabados']['nombre'].toLowerCase();
@@ -799,7 +822,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     console.log(this.interioresArmario);
                     console.log(this.productos);
                     var productos = this.productos;
-
                     this.acabadosProductosPresupuestoPedidoService
                         .query({
                             size: 1000000
