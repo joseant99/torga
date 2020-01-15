@@ -19,14 +19,6 @@
 	    		</div>
 	    		
 	    	</div>
-	    	<!--<div class="{{productosPresupuestoPedidos.id}}Datos" style="float:right;width:40%;" *ngIf="presupuestoArmarioInterioresService.todos !== undefined">
-	    			    		<p *ngFor="let interior of presupuestoArmarioInterioresService.todos ; let u=index;" style=""><strong *ngIf="u === 0">Casco <span *ngIf="u === 0">+ {{interior.presupuestoArmario.cascoPrecio}} &euro;</span></strong></p>
-	    		<p *ngFor="let interior of presupuestoArmarioInterioresService.todos ;" style=""><strong>Interior {{interior.productosDormitorio.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><i id="precioFabrica{{i}}" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+{{interior.productosDormitorio?.precio}} <strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
-	    	</div>
-	    	<div class="{{productosPresupuestoPedidos.id}}Datos" style="float:right;width:40%;" *ngIf="presupuestoArmarioPuertasService.todos !== undefined">
-	    	
-	    		<p *ngFor="let puerta of presupuestoArmarioPuertasService.todos ; let u=index;" style=""><strong>Puerta {{(u+1)}} {{puerta.productosDormitorio.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><i id="precioFabrica{{i}}" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+{{puerta.productosDormitorio?.precio}} <strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
-	    	</div>-->
 	    </div>
     </div>
     <hr style="width:100%;background-color:black;float:left;height:0px"></hr>
@@ -75,8 +67,6 @@
 			</div>
 			<div style="float:right;margin-right:25%" id="precioCalculadoIva"></div>
 		</div>
-		
-		
 		<div style="float:left;width:100%">
 			<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalPasarPedido">Generar Pedido</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>
@@ -87,7 +77,6 @@
 	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="eliminar()" [routerLink]="['/presupuesto-usuario']">Elimiar Presupuesto</button></p>
 	  		<p style="text-align:center"><button style="width:200px;background-color:#A4D9F4"[routerLink]="['/presupuesto-usuario']">Salir</button></p>
 		</div>
-  		
   	</div>
 <div class="modal fade" id="modalPasarPedido" role="dialog">
 	    <div class="modal-dialog">
