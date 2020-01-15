@@ -258,8 +258,19 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             console.log(data.body);
                                             var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
                                             for (let p = 0; p < datosInteriores.length; p++) {
+                                                if (p == 0) {
+                                                    $('#datosMeter' + (cont - 1)).append(
+                                                        '<p><strong>Casco &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
+                                                            datosInteriores[p]['presupuestoArmario']['cascoPrecio'] +
+                                                            ' €</span></p>'
+                                                    );
+                                                }
                                                 $('#datosMeter' + (cont - 1)).append(
-                                                    '<p>Interior ' + datosInteriores[p]['productosDormitorio']['nombre'] + '</p>'
+                                                    '<p><strong>Interior ' +
+                                                        datosInteriores[p]['productosDormitorio']['nombre'] +
+                                                        '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
+                                                        datosInteriores[p]['precio'] +
+                                                        ' €</span></p>'
                                                 );
                                             }
                                             var casco = data.body[0]['presupuestoArmario']['acabadosCasco']['nombre'].toLowerCase();
@@ -644,11 +655,13 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
                                             for (let p = 0; p < datosInteriores.length; p++) {
                                                 $('#datosMeter' + (cont - 1)).append(
-                                                    '<p>Puerta ' +
+                                                    '<p><strong>Puerta ' +
                                                         (p + 1) +
                                                         ' ' +
                                                         datosInteriores[p]['productosDormitorio']['nombre'] +
-                                                        '</p>'
+                                                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
+                                                        datosInteriores[p]['precio'] +
+                                                        ' €</span></p>'
                                                 );
                                             }
                                             if ('3 PUERTAS IZQUIERDA' == nombre) {

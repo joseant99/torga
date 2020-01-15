@@ -407,7 +407,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         precio: prodCarr[m][1]['puertas'][x]['precio'],
                                                         presupuestoArmario: presupuestoArmario,
                                                         productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado']
+                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado' + x]
                                                     };
 
                                                     this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
@@ -477,19 +477,21 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 for (let w = 0; w < numeroAcaProd.length; w++) {
-                                    var acaPedProd = this.acaProdPed.length;
-                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                    prodAca[w]['id'] = acaPedProd['id'] + w + 1;
-                                    for (let b = 0; b < numeroAcaProd[w].length; b++) {
-                                        const acabados1 = {
-                                            acabados: numeroAcaProd[w][b],
-                                            productosPresupuestoPedidos: prodAca[w]
-                                        };
-                                        for (let r = 0; r < 1000; r++) {
-                                            if (r == 999) {
-                                                this.subscribeToSaveResponse(
-                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                );
+                                    if (numeroAcaProd[w].length != 0) {
+                                        var acaPedProd = this.acaProdPed.length;
+                                        acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                        prodAca[w]['id'] = acaPedProd['id'] + w + 1;
+                                        for (let b = 0; b < numeroAcaProd[w].length; b++) {
+                                            const acabados1 = {
+                                                acabados: numeroAcaProd[w][b],
+                                                productosPresupuestoPedidos: prodAca[w]
+                                            };
+                                            for (let r = 0; r < 1000; r++) {
+                                                if (r == 999) {
+                                                    this.subscribeToSaveResponse(
+                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                    );
+                                                }
                                             }
                                         }
                                     }
@@ -616,7 +618,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta1['nombre'] == 'Puerta Madera') {
                             var src =
                                 '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta1['acabado0']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;" src="' +
@@ -624,7 +626,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '">'
                             );
                         } else {
-                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                            if (puerta1['acabado0']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
                                     '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 26px;opacity:0.6" src="' +
@@ -645,7 +647,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta2['nombre'] == 'Puerta Madera') {
                             var src1 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta1['acabado1']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda3"  style="width:200px;position:absolute;" src="' + src1 + '">'
@@ -657,7 +659,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta3['nombre'] == 'Puerta Madera') {
                             var src2 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta1['acabado2']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda3"  style="width:200px;position:absolute;" src="' + src2 + '">'
@@ -731,16 +733,16 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 '.png">'
                         );
 
-                        if (puerta1['nombre'] == 'Puerta Madera') {
+                        if (puerta3['nombre'] == 'Puerta Madera') {
                             var src =
                                 '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta3['acabado2']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:1" src="' + src + '">'
                             );
                         } else {
-                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                            if (puerta3['acabado2']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
                                     '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:1;opacity:0.6" src="' +
@@ -758,10 +760,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                         }
 
-                        if (puerta2['nombre'] == 'Puerta Madera') {
+                        if (puerta1['nombre'] == 'Puerta Madera') {
                             var src1 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta1['acabado0']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="' +
@@ -772,10 +774,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                         }
 
-                        if (puerta3['nombre'] == 'Puerta Madera') {
+                        if (puerta2['nombre'] == 'Puerta Madera') {
                             var src2 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta2['acabado1']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 1;margin-top: 24px;" src="' +
@@ -866,7 +868,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta1['nombre'] == 'Puerta Madera') {
                             var src =
                                 '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta1['acabado0']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;" src="' +
@@ -874,7 +876,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '">'
                             );
                         } else {
-                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                            if (puerta1['acabado0']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
                                     '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
@@ -895,7 +897,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta2['nombre'] == 'Puerta Madera') {
                             var src1 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta2['acabado1']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index:3" src="' + src1 + '">'
@@ -907,7 +909,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta3['nombre'] == 'Puerta Madera') {
                             var src2 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta3['acabado2']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index:3" src="' + src2 + '">'
@@ -919,7 +921,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta4['nombre'] == 'Puerta Madera') {
                             var src =
                                 '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                puerta4['acabado']['nombre'].toLowerCase() +
+                                puerta4['acabado3']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasAsi4" style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;" src="' +
@@ -927,7 +929,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '">'
                             );
                         } else {
-                            if (puerta4['acabado']['nombre'] == 'Cristal Bronce') {
+                            if (puerta4['acabado3']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
                                     '<img class="puertasAsi4" style="width:199px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -24px;opacity:0.6" src="' +
@@ -1044,16 +1046,16 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 '">'
                         );
 
-                        if (puerta1['nombre'] == 'Puerta Madera') {
+                        if (puerta3['nombre'] == 'Puerta Madera') {
                             var src =
                                 '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta3['acabado2']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:3" src="' + src + '">'
                             );
                         } else {
-                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                            if (puerta3['acabado2']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
                                     '<img class="puertasDerecha3" style="width:199px;position:absolute;z-index:3;opacity:0.6" src="' +
@@ -1071,10 +1073,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                         }
 
-                        if (puerta2['nombre'] == 'Puerta Madera') {
+                        if (puerta1['nombre'] == 'Puerta Madera') {
                             var src1 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta1['acabado0']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="' +
@@ -1085,10 +1087,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                         }
 
-                        if (puerta3['nombre'] == 'Puerta Madera') {
+                        if (puerta2['nombre'] == 'Puerta Madera') {
                             var src2 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta2['acabado1']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="armarioCalculadora" style="width:200px;position:absolute;z-index:2;margin-left: -120px;z-index: 3;margin-top: 24px;" src="' +
@@ -1102,7 +1104,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta4['nombre'] == 'Puerta Madera') {
                             var src1 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                puerta4['acabado']['nombre'].toLowerCase() +
+                                puerta4['acabado3']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puestasCentral5" style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -26px;" src="' +
@@ -1116,7 +1118,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta5['nombre'] == 'Puerta Madera') {
                             var src2 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                puerta5['acabado']['nombre'].toLowerCase() +
+                                puerta5['acabado4']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puestasCentral5" style="width:200px;position:absolute;z-index:2;margin-left: 120px;z-index: 3;margin-top: -26px;" src="' +
@@ -1225,7 +1227,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta1['nombre'] == 'Puerta Madera') {
                             var src =
                                 '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta1['acabado0']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;" src="' +
@@ -1233,7 +1235,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '">'
                             );
                         } else {
-                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                            if (puerta1['acabado0']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
                                     '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
@@ -1254,7 +1256,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta2['nombre'] == 'Puerta Madera') {
                             var src1 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta2['acabado1']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index: 3;" src="' + src1 + '">'
@@ -1266,7 +1268,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta3['nombre'] == 'Puerta Madera') {
                             var src2 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta3['acabado2']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index: 3;" src="' + src2 + '">'
@@ -1278,7 +1280,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta4['nombre'] == 'Puerta Madera') {
                             var src1 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                puerta4['acabado']['nombre'].toLowerCase() +
+                                puerta4['acabado3']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda5" style="width:200px;position:absolute;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
@@ -1292,7 +1294,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta5['nombre'] == 'Puerta Madera') {
                             var src2 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                puerta5['acabado']['nombre'].toLowerCase() +
+                                puerta5['acabado4']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda5" style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
@@ -1406,7 +1408,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta1['nombre'] == 'Puerta Madera') {
                             var src =
                                 '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta1['acabado0']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 4;margin-top: 26px;" src="' +
@@ -1414,7 +1416,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '">'
                             );
                         } else {
-                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                            if (puerta1['acabado0']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
                                     '<img class="armarioCalculadora" style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 3;margin-top: 26px;opacity:0.6" src="' +
@@ -1435,7 +1437,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta2['nombre'] == 'Puerta Madera') {
                             var src1 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta2['acabado1']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index: 3;" src="' + src1 + '">'
@@ -1447,7 +1449,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta3['nombre'] == 'Puerta Madera') {
                             var src2 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                puerta1['acabado']['nombre'].toLowerCase() +
+                                puerta3['acabado2']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda3" style="width:200px;position:absolute;z-index: 3;" src="' + src2 + '">'
@@ -1459,7 +1461,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta4['nombre'] == 'Puerta Madera') {
                             var src1 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                puerta4['acabado']['nombre'].toLowerCase() +
+                                puerta4['acabado3']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda5" style="width:200px;position:absolute;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
@@ -1473,7 +1475,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta5['nombre'] == 'Puerta Madera') {
                             var src2 =
                                 '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                puerta5['acabado']['nombre'].toLowerCase() +
+                                puerta5['acabado4']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertasIzquierda5" style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -33px;" src="' +
@@ -1487,7 +1489,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (puerta6['nombre'] == 'Puerta Madera') {
                             var src =
                                 '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                puerta6['acabado']['nombre'].toLowerCase() +
+                                puerta6['acabado5']['nombre'].toLowerCase() +
                                 '_optimized.png';
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puestasAsi6" style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;" src="' +
@@ -1495,7 +1497,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '">'
                             );
                         } else {
-                            if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
+                            if (puerta6['acabado5']['nombre'] == 'Cristal Bronce') {
                                 var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
                                 $('#cuerpo' + i + ' #derecha').append(
                                     '<img class="puestasAsi6" style="width:200px;position:absolute;z-index:3;margin-left: 280px;z-index: 3;margin-top: -57px;opacity:0.6" src="' +
