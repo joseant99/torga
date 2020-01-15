@@ -1890,7 +1890,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     if (iva == 1) {
                         var todasCuenta = totalfloat * 1.21;
                     }
-                    totalfloat = todasCuenta.toFixed(2);
+                    var totalfloat = 0;
+                    totalfloat = parseFloat(todasCuenta.toFixed(2));
                     this.precioDimension = totalfloat;
                     $('#total').text(totalfloat);
                     $('#precioDimension').text(totalfloat);
