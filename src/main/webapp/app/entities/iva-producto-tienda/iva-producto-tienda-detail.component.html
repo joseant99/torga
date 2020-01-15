@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ivaProductoTienda">
+            <h2><span jhiTranslate="torgaPedidosApp.ivaProductoTienda.detail.title">Iva Producto Tienda</span> {{ivaProductoTienda.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.ivaProductoTienda.iva">Iva</span></dt>
+                <dd>
+                    <span>{{ivaProductoTienda.iva}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.ivaProductoTienda.datosUsuario">Datos Usuario</span></dt>
+                <dd>
+                    <div *ngIf="ivaProductoTienda.datosUsuario">
+                        <a [routerLink]="['/datos-usuario', ivaProductoTienda.datosUsuario?.id, 'view']">{{ivaProductoTienda.datosUsuario?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/iva-producto-tienda', ivaProductoTienda.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

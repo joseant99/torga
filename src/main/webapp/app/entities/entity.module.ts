@@ -41,6 +41,7 @@ import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos
 import { TorgaPedidosPuertasModule } from './puertas/puertas.module';
 import { TorgaPedidosArmarioModule } from './armario/armario.module';
 import { TorgaPedidosCascoModule } from './casco/casco.module';
+import { TorgaPedidosIvaProductoTiendaModule } from './iva-producto-tienda/iva-producto-tienda.module';
 import { TorgaPedidosPuertasPreciosModule } from './puertas-precios/puertas-precios.module';
 import { TorgaPedidosInterioresArmarioNuevosModule } from './interiores-armario-nuevos/interiores-armario-nuevos.module';
 import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dentro/interior-armario-dentro.module';
@@ -91,6 +92,7 @@ import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dent
         TorgaPedidosTiposApoyoModule,
         TorgaPedidosTipoProductoModule,
         TorgaPedidosDimensionesProductoTipoModule,
+        TorgaPedidosIvaProductoTiendaModule,
         TorgaPedidosDatosUsuarioModule
     ],
     declarations: [],

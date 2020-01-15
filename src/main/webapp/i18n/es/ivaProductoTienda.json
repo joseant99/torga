@@ -1,0 +1,22 @@
+{
+    "torgaPedidosApp": {
+        "ivaProductoTienda": {
+            "home": {
+                "title": "Iva Producto Tiendas",
+                "createLabel": "Crear nuevo Iva Producto Tienda",
+                "createOrEditLabel": "Crear o editar Iva Producto Tienda"
+            },
+            "created": "Un nuevo Iva Producto Tienda ha sido creado con el identificador {{ param }}",
+            "updated": "Un Iva Producto Tienda ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Iva Producto Tienda ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Iva Producto Tienda {{ id }}?"
+            },
+            "detail": {
+                "title": "Iva Producto Tienda"
+            },
+            "iva": "Iva",
+            "datosUsuario": "Datos Usuario"
+        }
+    }
+}

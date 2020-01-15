@@ -22,6 +22,9 @@
     				<li *ngFor="let comedor of dormitorio" (click)="productosCategoria(comedor.id)" style="margin-left:25%;font-size:20px">{{comedor.nombre}}</li>
     			</ol>			
     		</div>
+    		<a data-toggle="collapse">
+    			<li style="font-size:25px" (click)="mostrarIva()">IVA</li>
+    		</a>
         
     </div>
     
@@ -31,6 +34,12 @@
     	<p *ngFor="let producto of productosDormitorioService.todos;let u=index;"><i style="width: 200px;float: left;margin-top: 20px;text-align: left;">{{producto.nombre}}</i><img title="Foto de linea de codigo" class="producto" [src]="'data:' + producto.imagenContentType + ';base64,' + producto.imagen" height="63px" width="130px" alt="productosDormitorio image"/><input style="margin-left:100px;text-align:center" id="porcentaje{{u}}" class="{{producto.porcentaje}}" type="number" value="{{producto.porcentaje}}"></p>
     	<p style="text-align:center"><button (click)="guardar()">Guardar</button></p>
     
+    </div>
+    
+    <div id="ivaDiv" style="text-align:center;float:left;position:absolute;margin-left:41%" class="displayBoton">
+    	<p style="font-size:22px;">MOSTRAR LOS PRECIOS CON EL IVA</p>
+    	<div id="ivaSi" style="float:left;border:1px solid black;width: 130px;height: 60px;"><span style="font-size: 35px;" (click)="guardarIva('Si')">SI</span></div>
+    	<div id="ivaNo" style="float:right;border:1px solid black;width: 130px;height: 60px;"><span style="font-size: 35px;" (click)="guardarIva('No')">NO</span></div>
     </div>
     
 </div>

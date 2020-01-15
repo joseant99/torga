@@ -14,6 +14,7 @@ import { ITEMS_PER_PAGE } from 'app/shared';
 import { CategoriasDormiService } from './categorias-dormi.service';
 import { ProductosDormitorioService } from '../productos-dormitorio/productos-dormitorio.service';
 import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
+import { IvaProductoTiendaService } from '../iva-producto-tienda/iva-producto-tienda.service';
 
 @Component({
     selector: 'jhi-categorias-dormi',
@@ -38,9 +39,11 @@ export class ProductosPrecioComponent implements OnInit, OnDestroy {
     predicate: any;
     previousPage: any;
     reverse: any;
+    iva: any;
 
     constructor(
         protected categoriasDormiService: CategoriasDormiService,
+        protected ivaProductoTiendaService: IvaProductoTiendaService,
         protected parseLinks: JhiParseLinks,
         protected precioTiendaProductosService: PrecioTiendaProductosService,
         protected jhiAlertService: JhiAlertService,
@@ -85,6 +88,7 @@ export class ProductosPrecioComponent implements OnInit, OnDestroy {
                 this.dormitorio = dormitorio;
                 (res: HttpErrorResponse) => this.onError(res.message);
             });
+        this.iva = 'no';
     }
 
     public productosCategoria(id) {
@@ -106,7 +110,20 @@ export class ProductosPrecioComponent implements OnInit, OnDestroy {
             });
         });
     }
-
+    public mostrarIva() {
+        $('#ivaDiv').removeAttr('class');
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        this.ivaProductoTiendaService.bus(tienda['id']).subscribe(data => {
+            console.log(data.body);
+            if (data.body[0] != null) {
+                if (data.body[0]['iva'] == 1) {
+                    $('#ivaSi').css({ 'background-color': 'gray' });
+                } else {
+                    $('#ivaNo').css({ 'background-color': 'gray' });
+                }
+            }
+        });
+    }
     public todasCategorias() {
         var porcen = $('#porcentajeTotal').val();
         var productos = this.productosDormitorioService.todos;
@@ -116,6 +133,42 @@ export class ProductosPrecioComponent implements OnInit, OnDestroy {
             if (precioProd == '') {
                 $('#porcentaje' + i).val(porcen);
             }
+        }
+    }
+    public guardarIva(id) {
+        $('#iva' + id).css({ 'background-color': 'gray' });
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        if (id == 'Si') {
+            $('#ivaNo').css({ 'background-color': 'white' });
+            this.ivaProductoTiendaService.bus(tienda['id']).subscribe(data => {
+                if (data.body[0] != null) {
+                    if (data.body[0]['iva'] == 0) {
+                        data.body[0]['iva'] = null;
+                        data.body[0]['iva'] = 1;
+                        this.subscribeToSaveResponse(this.ivaProductoTiendaService.update(data.body[0]));
+                    }
+                } else {
+                    var ivaProductoTienda = {
+                        datosUsuario: tienda,
+                        iva: 1
+                    };
+                    this.subscribeToSaveResponse(this.ivaProductoTiendaService.create(ivaProductoTienda));
+                }
+            });
+        } else {
+            $('#ivaSi').css({ 'background-color': 'white' });
+            this.ivaProductoTiendaService.bus(tienda['id']).subscribe(data => {
+                if (data.body[0] != null) {
+                    if (data.body[0]['iva'] == 1) {
+                        var dato = {
+                            id: data.body[0]['id'],
+                            datosUsuario: data.body[0]['datosUsuario'],
+                            iva: 0
+                        };
+                        this.subscribeToSaveResponse(this.ivaProductoTiendaService.update(dato));
+                    }
+                }
+            });
         }
     }
 

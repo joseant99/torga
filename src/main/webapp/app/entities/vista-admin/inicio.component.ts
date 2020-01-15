@@ -21,6 +21,7 @@ import { MensajesService } from '../mensajes/mensajes.service';
 import { IMensajes } from 'app/shared/model/mensajes.model';
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
+import { IvaProductoTiendaService } from '../iva-producto-tienda/iva-producto-tienda.service';
 
 @Component({
     selector: 'jhi-inicio',
@@ -45,6 +46,7 @@ export class inicioComponent implements OnInit, AfterViewInit {
 
     constructor(
         private accountService: AccountService,
+        protected ivaProductoTiendaService: IvaProductoTiendaService,
         protected vendedoresService: VendedoresService,
         private loginModalService: LoginModalService,
         protected contactoFabricaService: ContactoFabricaService,

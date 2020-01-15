@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "datosUsuario",
+            "otherEntityName": "datosUsuario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "iva",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20200115144703",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "iva_producto_tienda",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

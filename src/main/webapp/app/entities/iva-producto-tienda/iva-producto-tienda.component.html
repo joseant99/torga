@@ -1,0 +1,68 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.ivaProductoTienda.home.title">Iva Producto Tiendas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-iva-producto-tienda" [routerLink]="['/iva-producto-tienda/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.ivaProductoTienda.home.createLabel">
+            Create new Iva Producto Tienda
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="ivaProductoTiendas">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iva"><span jhiTranslate="torgaPedidosApp.ivaProductoTienda.iva">Iva</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="datosUsuario.id"><span jhiTranslate="torgaPedidosApp.ivaProductoTienda.datosUsuario">Datos Usuario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let ivaProductoTienda of ivaProductoTiendas ;trackBy: trackId">
+                <td><a [routerLink]="['/iva-producto-tienda', ivaProductoTienda.id, 'view' ]">{{ivaProductoTienda.id}}</a></td>
+                <td>{{ivaProductoTienda.iva}}</td>
+                <td>
+                    <div *ngIf="ivaProductoTienda.datosUsuario">
+                        <a [routerLink]="['../datos-usuario', ivaProductoTienda.datosUsuario?.id, 'view' ]" >{{ivaProductoTienda.datosUsuario?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/iva-producto-tienda', ivaProductoTienda.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/iva-producto-tienda', ivaProductoTienda.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'iva-producto-tienda/'+ ivaProductoTienda.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="ivaProductoTiendas && ivaProductoTiendas.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

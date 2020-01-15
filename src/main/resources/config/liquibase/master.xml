@@ -94,4 +94,6 @@
     <include file="config/liquibase/changelog/20191121122756_added_entity_constraints_PresupuestoArmarioInteriores.xml" relativeToChangelogFile="false"/>  
     <include file="config/liquibase/changelog/20191121125129_added_entity_PresupuestoArmarioPuertas.xml" relativeToChangelogFile="false"/>    
     <include file="config/liquibase/changelog/20191121125129_added_entity_constraints_PresupuestoArmarioPuertas.xml" relativeToChangelogFile="false"/>   
+    <include file="config/liquibase/changelog/20200115144703_added_entity_IvaProductoTienda.xml" relativeToChangelogFile="false"/>    
+    <include file="config/liquibase/changelog/20200115144703_added_entity_constraints_IvaProductoTienda.xml" relativeToChangelogFile="false"/>    
 </databaseChangeLog>

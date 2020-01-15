@@ -37,6 +37,7 @@ import { RepresentanteTiendaService } from '../representante-tienda/representant
 import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
 import { RepresenTorgaService } from '../represen-torga/represen-torga.service';
 import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
+import { IvaProductoTiendaService } from '../iva-producto-tienda/iva-producto-tienda.service';
 
 @Component({
     selector: 'jhi-productos-dormitorio',
@@ -86,6 +87,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     reverse: any;
     eventSubscriber: any;
     precioDimension: any;
+    iva: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -94,6 +96,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         protected precioTiendaService: PrecioTiendaService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected iluminacionService: IluminacionService,
+        protected ivaProductoTiendaService: IvaProductoTiendaService,
         protected precioTiendaProductosService: PrecioTiendaProductosService,
         protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
         protected interioresService: InterioresService,
@@ -1822,6 +1825,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
+        var iva = this.iva;
         $('#terminarConfiguracion').css({ display: 'none' });
         $('#acabado').css({ display: 'none' });
         $('#nombreApoyo').css({ display: 'none' });
@@ -1883,6 +1887,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     precio = precio + cuenta;
                     precio = Math.round(precio * 100) / 100;
                     totalfloat = totalfloat + precio;
+                    if (iva == 1) {
+                        var todasCuenta = totalfloat * 1.21;
+                    }
+                    totalfloat = todasCuenta.toFixed(2);
                     this.precioDimension = totalfloat;
                     $('#total').text(totalfloat);
                     $('#precioDimension').text(totalfloat);
@@ -4391,7 +4399,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var precio = this.precioTiendaProductosService.todos;
         console.log(precio);
         var todos = this.productosDormitorioService.todos;
-
+        var iva = this.iva;
         if (todos != undefined) {
             var prod = todos;
             for (let q = 0; q < prod.length; q++) {
@@ -4416,7 +4424,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         var precio1 = prod[q]['precio'];
                                         precio1 = precio1 * precioPunto;
                                         precio1 = precio1 * cuenta;
-                                        prod[q]['precio'] = precio1.toFixed(2);
+                                        if (iva == 1) {
+                                            var todasCuenta = precio1 * 1.21;
+                                        }
+                                        prod[q]['precio'] = todasCuenta.toFixed(2);
                                     }
                                 }
                             }
@@ -4449,7 +4460,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             var precio1 = prod[q]['precio'];
                                             precio1 = precio1 * precioPunto;
                                             precio1 = precio1 * cuenta;
-                                            prod[q]['precio'] = precio1.toFixed(2);
+                                            if (iva == 1) {
+                                                var todasCuenta = precio1 * 1.21;
+                                            }
+                                            prod[q]['precio'] = todasCuenta.toFixed(2);
                                         }
                                     }
                                 }
@@ -4516,7 +4530,18 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             this.precioTiendaProductosService.apoyo = data.body;
             this.loadAll();
         });
-
+        this.ivaProductoTiendaService.bus(tienda['id']).subscribe(data => {
+            if (data.body[0] != null) {
+                if (data.body[0]['iva'] == 1) {
+                    this.iva = 1;
+                } else {
+                    this.iva = 0;
+                }
+            } else {
+                this.iva = 0;
+            }
+            this.loadAll();
+        });
         this.precioTienda = sessionStorage.getItem('precioTienda');
     }
 
