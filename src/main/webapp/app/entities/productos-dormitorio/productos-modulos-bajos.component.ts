@@ -1911,7 +1911,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     acaSi = 0;
                 } else {
                     $('#especiales').css({ display: 'block' });
-
                     $('#especialesTexto').removeAttr('style');
                     $('#especialesTexto').attr('style');
                     $('#especialesTexto').css({ 'text-align': 'center' });

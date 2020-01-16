@@ -504,16 +504,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     }
 
     loadAll() {
-        this.productosDormitorioService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(
-                (res: HttpResponse<IProductosDormitorio[]>) => this.paginateProductosDormitorios(res.body, res.headers),
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
         this.saberPuerta = 0;
         this.interioresParaArray = [];
         this.puertasParaArray = [];
@@ -19302,53 +19292,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             $('#listaAltura').append('<option style="color:red" value="' + i + '">' + i + '</option>');
         }
         var interiores = [];
-        this.interioresArmariosService
-            .query({
-                size: 100000
-            })
-            .subscribe(
-                (res: HttpResponse<IInterioresArmarios[]>) => {
-                    for (let k = 0; k < res.body.length; k++) {
-                        interiores[k] = res.body[k];
-                    }
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
-        this.interioresArmarios = interiores;
-        this.productosPresupuestoPedidosService
-            .query({
-                size: 1000
-            })
-            .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    numeroProductos[index] = value;
-                });
-            });
-        this.acaProdPed = numeroProductos;
-        this.tiposApoyoService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    sistemasApoyo[index] = value;
-                });
-            });
-        this.sistemasApoyo = sistemasApoyo;
-        this.acabadosService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    acabados[index] = value;
-                });
-            });
-        this.acabados = acabados;
+
         this.userService
             .query({
                 page: this.page - 1,
@@ -19361,7 +19305,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 });
             });
         this.user = usuarios;
-        this.dimensionesProductoTipoService
+        this.acabadosService
             .query({
                 page: this.page - 1,
                 size: this.itemsPerPage,
@@ -19369,222 +19313,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             })
             .subscribe(data => {
                 $.each(data['body'], function(index, value) {
-                    todasDimensiones[index] = value;
+                    acabados[index] = value;
                 });
             });
-        this.todasDimensiones = todasDimensiones;
-
-        var tiradores = [];
-        this.tiradoresArmarioService
-            .query({
-                size: 100000
-            })
-            .subscribe(
-                (res: HttpResponse<ITiradoresArmario[]>) => {
-                    for (let i = 0; i < res.body.length; i++) {
-                        tiradores[i] = res.body[i];
-                    }
-                    this.tiradores = tiradores;
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
-
-        this.productosDormitorioService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    apoyo[index] = value;
-                });
-            });
-        this.apoyo = apoyo;
-
-        for (let i = 1; i <= 100; i++) {
-            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
-            if (sesion != null) {
-                console.log(sessionStorage);
-                $('#productoCarrito' + i).removeAttr('style');
-                $('#productoCarrito' + i).attr('style');
-                $('#productoCarrito' + i).css({ float: 'left' });
-                $('#productoCarrito' + i).attr('class', 'prod' + i);
-                $('#productoCarrito' + i + ' #datos' + i).append(
-                    '<strong id="nombreProd' + i + '"><font>' + sesion[1]['productosDormitorio']['nombre'] + '</font></strong>'
-                );
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<font>Ancho</font>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append(
-                    '<font id="ancho' + i + '" class="' + sesion[1]['id'] + '">' + sesion[1]['ancho'] + '</font>'
-                );
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<font>Alto</font>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append(
-                    '<font id="alto' + i + '" class="' + sesion[1]['precio'] + '">' + sesion[1]['alto'] + '</font>'
-                );
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<font>Fondo</font>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<font id="fondo' + i + '">' + sesion[1]['fondo'] + '</font>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                for (let j = 1; j < 100; j++) {
-                    if (sesion[1]['acabado' + j] != undefined) {
-                        $('#productoCarrito' + i + ' #datos' + i).append('<font>Acabado ' + j + '</font>');
-                        $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                        $('#productoCarrito' + i + ' #precios' + i).append(
-                            '<font id="acabado' + i + '' + j + '">' + sesion[1]['acabado' + j]['nombre'] + '</font>'
-                        );
-                        $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                    }
-                }
-                if (sesion[1]['apoyo'] != undefined) {
-                    $('#productoCarrito' + i + ' #datos' + i).append('<font>' + sesion[1]['apoyo']['productoApoyo']['nombre'] + '</font>');
-                    $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precios' + i).append(
-                        '<font id="sistemaApoyo' + i + '" class="' + sesion[1]['apoyo']['id'] + '">-</font>'
-                    );
-                    $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>' + sesion[1]['apoyo']['precio'] + '&euro;</font>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                }
-                if (sesion[1]['iluminacion'] != undefined) {
-                    $('#productoCarrito' + i + ' #datos' + i).append('<font>Iluminacion</font>');
-                    $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precios' + i).append(
-                        '<font id="iluminacionCarr' + i + '" class="' + sesion[1]['iluminacion']['id'] + '">-</font>'
-                    );
-                    $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append(
-                        '<font>' + sesion[1]['iluminacion']['precio'] + '&euro;</font>'
-                    );
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                }
-            }
-        }
-        this.acabadosPuertasTodos = [];
-        this.medidasEspecialesService
-            .query({
-                size: 1000000
-            })
-            .subscribe(data => {
-                $.each(data['body'], function(index, value) {
-                    especiales[index] = value;
-                });
-            });
-        this.especiales = especiales;
-        var datos;
-        this.acaProdService
-            .query({
-                size: 1000000,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                datos = data['body'];
-                this.acabadosProductos = datos;
-                var contador = 1;
-                var contnuevo = 1;
-                var u = 1;
-                var i = 0;
-                $.each(datos, function(index, value) {
-                    if (value['productosDormitorio']['id'] == 42) {
-                        var idAca = value['id'];
-                        for (let m = 0; m < value['acabados'].length; m++) {
-                            $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                '<img  src="data:image/gif;base64,' +
-                                    value['acabados'][m]['imagenFondo'] +
-                                    '" id="imagenAcabado' +
-                                    i +
-                                    '" class="' +
-                                    value['acabados'][m]['id'] +
-                                    '" height="160px" width="280px" style=" opacity: 0.7;">'
-                            );
-                            $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                                    value['acabados'][m]['nombre'] +
-                                    '</strong></p>'
-                            );
-
-                            i++;
-                            $('.cambiarAca' + u).attr('style');
-                            $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
-                            $('.cambiarAca' + u).css({ 'margin-top': '15px' });
-                            $('.cambiarAca' + u).text('Cambiar Acabado');
-                        }
-
-                        $('#acabado1').append(
-                            '<p style="margin-left:145px;font-size:25px">Acabado</p><strong class="cambiarAcabado" style="margin-bottom:35px;margin-top:15px" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
-                                u +
-                                '">CASCO</strong>'
-                        );
-                        $('#acabado1').append(
-                            '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;" data-toggle="modal" data-target="#myModalColores' +
-                                u +
-                                '" />'
-                        );
-                        u++;
-                        i = 0;
-                        contnuevo++;
-                    }
-                });
-            });
-        this.valores = [];
-        this.tipoPuerta1 = [];
-        this.dimensionesProductoTipoService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                var contador = 1;
-                var cont = 1;
-                var cont1 = 1;
-                var anchos = [];
-                var altura = [];
-                var fondo = [];
-                altura[1] = '';
-                fondo[1] = '';
-                var precioInicial = 0;
-                var anchosRepetidos = [];
-                var ListadoPrecios = [];
-                anchos[1] = '';
-                $.each(data['body'], function(index, value) {
-                    if (value['productosDormitorio']['categoriasDormi']['id'] == 8) {
-                        if (jQuery.inArray(value['ancho'], anchos) == -1) {
-                            anchos[contador] = value['ancho'];
-                            $('#ancho' + contador).text(anchos[contador]);
-                            $('#ancho' + contador).css({ border: '1px solid black' });
-                            contador++;
-                        }
-                        if (jQuery.inArray(value['alto'], altura) == -1) {
-                            altura[cont] = value['alto'];
-                            $('#altura' + cont).text(altura[cont]);
-                            $('#altura' + cont).css({ border: '1px solid black' });
-                            cont++;
-                        }
-                        if (jQuery.inArray(value['fondo'], fondo) == -1) {
-                            fondo[cont1] = value['fondo'];
-                            $('#fondo' + cont1).text(fondo[cont1]);
-                            $('#fondo' + cont1).css({ border: '1px solid black' });
-                            cont1++;
-                        }
-                    }
-                });
-            });
+        this.acabados = acabados;
     }
 }

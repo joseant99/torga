@@ -33,7 +33,7 @@ import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-p
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
 import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
-
+import { IvaProductoTiendaService } from '../iva-producto-tienda/iva-producto-tienda.service';
 @Component({
     selector: 'jhi-productos-dormitorio',
     templateUrl: './productos-buscador.component.html'
@@ -54,7 +54,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     todosAcabados: any;
     acaProdsCar: any;
     ruta: any;
-
+    iva: any;
     acaProdPed: any;
     precioTienda: any;
     presupuestoPedido: IPresupuestoPedido;
@@ -83,6 +83,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
+        protected ivaProductoTiendaService: IvaProductoTiendaService,
         protected dimensionesProductoTipoService: DimensionesProductoTipoService,
         protected acabadosService: AcabadosService,
         protected precioTiendaService: PrecioTiendaService,
@@ -1786,10 +1787,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#acaba4').empty();
         $('#acaba3').empty();
         $('#especiales').css({ display: 'none' });
-
+        var precioPunto = this.precioPunto[0];
         $('#acaba1').empty();
         $('#acaba2').empty();
         $('#datos1').empty();
+        var iva = this.iva;
         $('#precios1').empty();
         $('#iluminacion').removeAttr('style');
         $('#iluminacion').attr('style');
@@ -1823,9 +1825,16 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 var total = $('#total').text();
                 var totalfloat = parseFloat(total);
                 var precio = parseFloat(datos[i]['precio']);
+                precio = precio * precioPunto;
                 precio = precio * precioTienda;
                 precio = Math.round(precio * 100) / 100;
                 totalfloat = totalfloat + precio;
+                if (iva == 1) {
+                    var todasCuenta = totalfloat * 1.21;
+                }
+                var totalfloat = 0;
+                totalfloat = parseFloat(todasCuenta.toFixed(2));
+
                 $('#total').text(totalfloat);
                 $('#precioDimension').text(totalfloat);
                 $('#datos1').append(
@@ -3834,6 +3843,19 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         });
         this.precioTiendaProductosService.findProdId(2, tienda.id).subscribe(data => {
             this.precioTiendaProductosService.apoyo = data.body;
+            this.loadAll();
+        });
+
+        this.ivaProductoTiendaService.bus(tienda['id']).subscribe(data => {
+            if (data.body[0] != null) {
+                if (data.body[0]['iva'] == 1) {
+                    this.iva = 1;
+                } else {
+                    this.iva = 0;
+                }
+            } else {
+                this.iva = 0;
+            }
             this.loadAll();
         });
 
