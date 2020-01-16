@@ -8,7 +8,6 @@
             </span>
         </button>
     </h2>
-    <jhi-alert></jhi-alert>
     <br/>
     <div class="table-responsive" *ngIf="vendedores">
         <table class="table table-striped">
@@ -104,7 +103,7 @@
             <h1 jhiTranslate="register.title">Registration</h1>
 
             <div class="alert alert-success" *ngIf="success" >
-                <strong>Registro Realizado.</strong> ACTUALIZA LA PAGINA PARA QUE APARAZCAAN LOS NUEVOS USUARIOS<br><a data-dismiss="modal">Cerrar</a>
+                <strong>Registro Realizado.</strong><a data-dismiss="modal">Cerrar</a>
             </div>
 
             <div class="alert alert-danger" *ngIf="error" jhiTranslate="register.messages.error.fail">

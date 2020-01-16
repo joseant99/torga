@@ -215,7 +215,9 @@ export class VendedoresUsuarioComponent implements OnInit, OnDestroy {
         return item.id;
     }
 
-    protected subscribeToSaveResponse(result) {}
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<IVendedores>>) {
+        result.subscribe((res: HttpResponse<IVendedores>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    }
 
     registerChangeInVendedores() {
         this.eventSubscriber = this.eventManager.subscribe('vendedoresListModification', response => this.loadAll());
@@ -249,8 +251,54 @@ export class VendedoresUsuarioComponent implements OnInit, OnDestroy {
     protected onError(errorMessage: string) {
         this.jhiAlertService.error(errorMessage, null, null);
     }
-    private onSaveSuccess(result) {
+    private onSaveSuccess() {
         this.isSaving = false;
+
+        var vendedoresCuenta = [];
+        var tiendaBuena = [];
+        var contador = 0;
+        this.datosUsuarioService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<IDatosUsuario[]>) => {
+                    var idCuenta = this.currentAccount['id'];
+
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (res.body[i]['user'] != null) {
+                            if (res.body[i]['user']['id'] == idCuenta) {
+                                tiendaBuena[0] = res.body[i];
+                            }
+                        }
+                    }
+                    this.tiendas = tiendaBuena[0];
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+
+        this.vendedoresService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(
+                (res: HttpResponse<IVendedores[]>) => {
+                    for (let i = 0; i < res.body.length; i++) {
+                        if (res.body[i]['user'] != null) {
+                            if (res.body[i]['datosUsuario']['id'] == tiendaBuena[0]['id']) {
+                                vendedoresCuenta[contador] = res.body[i];
+                                contador++;
+                            }
+                        }
+                    }
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+        this.vendedores = vendedoresCuenta;
     }
 
     private onSaveError() {
