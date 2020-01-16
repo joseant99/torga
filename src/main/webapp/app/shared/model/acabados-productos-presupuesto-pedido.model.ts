@@ -3,10 +3,16 @@ import { IProductosPresupuestoPedidos } from 'app/shared/model//productos-presup
 
 export interface IAcabadosProductosPresupuestoPedido {
     id?: number;
+    orden?: number;
     acabados?: IAcabados;
     productosPresupuestoPedidos?: IProductosPresupuestoPedidos;
 }
 
 export class AcabadosProductosPresupuestoPedido implements IAcabadosProductosPresupuestoPedido {
-    constructor(public id?: number, public acabados?: IAcabados, public productosPresupuestoPedidos?: IProductosPresupuestoPedidos) {}
+    constructor(
+        public id?: number,
+        public orden?: number,
+        public acabados?: IAcabados,
+        public productosPresupuestoPedidos?: IProductosPresupuestoPedidos
+    ) {}
 }

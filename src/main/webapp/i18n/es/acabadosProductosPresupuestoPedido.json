@@ -15,6 +15,7 @@
             "detail": {
                 "title": "Acabados Productos Presupuesto Pedido"
             },
+            "orden": "Orden",
             "acabados": "Acabados",
             "productosPresupuestoPedidos": "Productos Presupuesto Pedidos"
         }

@@ -23,6 +23,9 @@ public class AcabadosProductosPresupuestoPedido implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "orden")
+    private Float orden;
+
     @ManyToOne
     @JsonIgnoreProperties("")
     private Acabados acabados;
@@ -40,8 +43,21 @@ public class AcabadosProductosPresupuestoPedido implements Serializable {
         this.id = id;
     }
 
+    public Float getOrden() {
+        return orden;
+    }
+
+    public AcabadosProductosPresupuestoPedido orden(Float orden) {
+        this.orden = orden;
+        return this;
+    }
+
+    public void setOrden(Float orden) {
+        this.orden = orden;
+    }
+
     public Acabados getAcabados() {
-        return acabados; 
+        return acabados;
     }
 
     public AcabadosProductosPresupuestoPedido acabados(Acabados acabados) {
@@ -91,6 +107,7 @@ public class AcabadosProductosPresupuestoPedido implements Serializable {
     public String toString() {
         return "AcabadosProductosPresupuestoPedido{" +
             "id=" + getId() +
+            ", orden=" + getOrden() +
             "}";
     }
 }

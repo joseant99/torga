@@ -15,7 +15,6 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface AcabadosProductosPresupuestoPedidoRepository extends JpaRepository<AcabadosProductosPresupuestoPedido, Long> {
-
-	@Query("Select u from AcabadosProductosPresupuestoPedido u where u.productosPresupuestoPedidos.id = ?1 order by u.id")
-	Collection<AcabadosProductosPresupuestoPedido> findByHola(Long id);
+	@Query("Select u from AcabadosProductosPresupuestoPedido u where u.productosPresupuestoPedidos.id = ?1 order by u.orden")
+	Collection<AcabadosProductosPresupuestoPedido> findByCategoriaDormi(Long id);
 }

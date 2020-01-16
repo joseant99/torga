@@ -15,6 +15,7 @@
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="orden"><span jhiTranslate="torgaPedidosApp.acabadosProductosPresupuestoPedido.orden">Orden</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="acabados.id"><span jhiTranslate="torgaPedidosApp.acabadosProductosPresupuestoPedido.acabados">Acabados</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="productosPresupuestoPedidos.id"><span jhiTranslate="torgaPedidosApp.acabadosProductosPresupuestoPedido.productosPresupuestoPedidos">Productos Presupuesto Pedidos</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
@@ -23,6 +24,7 @@
             <tbody>
             <tr *ngFor="let acabadosProductosPresupuestoPedido of acabadosProductosPresupuestoPedidos ;trackBy: trackId">
                 <td><a [routerLink]="['/acabados-productos-presupuesto-pedido', acabadosProductosPresupuestoPedido.id, 'view' ]">{{acabadosProductosPresupuestoPedido.id}}</a></td>
+                <td>{{acabadosProductosPresupuestoPedido.orden}}</td>
                 <td>
                     <div *ngIf="acabadosProductosPresupuestoPedido.acabados">
                         <a [routerLink]="['../acabados', acabadosProductosPresupuestoPedido.acabados?.id, 'view' ]" >{{acabadosProductosPresupuestoPedido.acabados?.id}}</a>

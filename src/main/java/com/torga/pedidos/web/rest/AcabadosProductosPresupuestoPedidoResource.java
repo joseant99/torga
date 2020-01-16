@@ -102,14 +102,15 @@ public class AcabadosProductosPresupuestoPedidoResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of acabadosProductosPresupuestoPedidos in body
      */
-    @GetMapping("/acabados-productos-presupuesto-pedidos-bus/{id}")
+    @GetMapping("/acabados-productos-presupuesto-pedidos-busqueda/{id}")
     @Timed
     public ResponseEntity<Collection<AcabadosProductosPresupuestoPedido>> getAllAcabadosProductosPresupuestoPedidosBus(@PathVariable Long id) {
         log.debug("REST request to get a page of AcabadosProductosPresupuestoPedidos");
-        Collection<AcabadosProductosPresupuestoPedido> page = acabadosProductosPresupuestoPedidoRepository.findByHola(id);
+        Collection<AcabadosProductosPresupuestoPedido> page = acabadosProductosPresupuestoPedidoRepository.findByCategoriaDormi(id);
         return ResponseEntity.ok().body(page);
     }
-
+    
+    
     /**
      * GET  /acabados-productos-presupuesto-pedidos/:id : get the "id" acabadosProductosPresupuestoPedido.
      *

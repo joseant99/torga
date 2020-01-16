@@ -9,6 +9,11 @@
                     <input type="text" class="form-control" id="id" name="id"
                         [(ngModel)]="acabadosProductosPresupuestoPedido.id" readonly />
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.acabadosProductosPresupuestoPedido.orden" for="field_orden">Orden</label>
+                    <input type="number" class="form-control" name="orden" id="field_orden"
+                        [(ngModel)]="acabadosProductosPresupuestoPedido.orden" />
+                </div>
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="torgaPedidosApp.acabadosProductosPresupuestoPedido.acabados" for="field_acabados">Acabados</label>

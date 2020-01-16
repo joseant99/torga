@@ -40,6 +40,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = TorgaPedidosApp.class)
 public class AcabadosProductosPresupuestoPedidoResourceIntTest {
 
+    private static final Float DEFAULT_ORDEN = 1F;
+    private static final Float UPDATED_ORDEN = 2F;
+
     @Autowired
     private AcabadosProductosPresupuestoPedidoRepository acabadosProductosPresupuestoPedidoRepository;
 
@@ -81,7 +84,8 @@ public class AcabadosProductosPresupuestoPedidoResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static AcabadosProductosPresupuestoPedido createEntity(EntityManager em) {
-        AcabadosProductosPresupuestoPedido acabadosProductosPresupuestoPedido = new AcabadosProductosPresupuestoPedido();
+        AcabadosProductosPresupuestoPedido acabadosProductosPresupuestoPedido = new AcabadosProductosPresupuestoPedido()
+            .orden(DEFAULT_ORDEN);
         return acabadosProductosPresupuestoPedido;
     }
 
@@ -105,6 +109,7 @@ public class AcabadosProductosPresupuestoPedidoResourceIntTest {
         List<AcabadosProductosPresupuestoPedido> acabadosProductosPresupuestoPedidoList = acabadosProductosPresupuestoPedidoRepository.findAll();
         assertThat(acabadosProductosPresupuestoPedidoList).hasSize(databaseSizeBeforeCreate + 1);
         AcabadosProductosPresupuestoPedido testAcabadosProductosPresupuestoPedido = acabadosProductosPresupuestoPedidoList.get(acabadosProductosPresupuestoPedidoList.size() - 1);
+        assertThat(testAcabadosProductosPresupuestoPedido.getOrden()).isEqualTo(DEFAULT_ORDEN);
     }
 
     @Test
@@ -136,7 +141,8 @@ public class AcabadosProductosPresupuestoPedidoResourceIntTest {
         restAcabadosProductosPresupuestoPedidoMockMvc.perform(get("/api/acabados-productos-presupuesto-pedidos?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(acabadosProductosPresupuestoPedido.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(acabadosProductosPresupuestoPedido.getId().intValue())))
+            .andExpect(jsonPath("$.[*].orden").value(hasItem(DEFAULT_ORDEN.doubleValue())));
     }
     
     @Test
@@ -149,7 +155,8 @@ public class AcabadosProductosPresupuestoPedidoResourceIntTest {
         restAcabadosProductosPresupuestoPedidoMockMvc.perform(get("/api/acabados-productos-presupuesto-pedidos/{id}", acabadosProductosPresupuestoPedido.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(acabadosProductosPresupuestoPedido.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(acabadosProductosPresupuestoPedido.getId().intValue()))
+            .andExpect(jsonPath("$.orden").value(DEFAULT_ORDEN.doubleValue()));
     }
 
     @Test
@@ -172,6 +179,8 @@ public class AcabadosProductosPresupuestoPedidoResourceIntTest {
         AcabadosProductosPresupuestoPedido updatedAcabadosProductosPresupuestoPedido = acabadosProductosPresupuestoPedidoRepository.findById(acabadosProductosPresupuestoPedido.getId()).get();
         // Disconnect from session so that the updates on updatedAcabadosProductosPresupuestoPedido are not directly saved in db
         em.detach(updatedAcabadosProductosPresupuestoPedido);
+        updatedAcabadosProductosPresupuestoPedido
+            .orden(UPDATED_ORDEN);
 
         restAcabadosProductosPresupuestoPedidoMockMvc.perform(put("/api/acabados-productos-presupuesto-pedidos")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -182,6 +191,7 @@ public class AcabadosProductosPresupuestoPedidoResourceIntTest {
         List<AcabadosProductosPresupuestoPedido> acabadosProductosPresupuestoPedidoList = acabadosProductosPresupuestoPedidoRepository.findAll();
         assertThat(acabadosProductosPresupuestoPedidoList).hasSize(databaseSizeBeforeUpdate);
         AcabadosProductosPresupuestoPedido testAcabadosProductosPresupuestoPedido = acabadosProductosPresupuestoPedidoList.get(acabadosProductosPresupuestoPedidoList.size() - 1);
+        assertThat(testAcabadosProductosPresupuestoPedido.getOrden()).isEqualTo(UPDATED_ORDEN);
     }
 
     @Test

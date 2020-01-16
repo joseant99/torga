@@ -835,191 +835,197 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     console.log(this.interioresArmario);
                     console.log(this.productos);
                     var productos = this.productos;
-                    this.acabadosProductosPresupuestoPedidoService
-                        .query({
-                            size: 1000000
-                        })
-                        .subscribe((res: HttpResponse<IAcabadosProductosPresupuestoPedido[]>) => {
-                            for (let i = 0; i < res.body.length; i++) {
-                                acabados[i] = res.body[i];
-                            }
-                            var apoyo;
-                            setTimeout(function() {
-                                if (productos != undefined) {
-                                    for (let i = 0; i < productos.length; i++) {
-                                        var contador = 1;
-                                        apoyo = undefined;
-                                        for (let k = 0; k < acabados.length; k++) {
-                                            if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
-                                                $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p>Acabado ' +
-                                                        contador +
-                                                        '&nbsp;&nbsp;&nbsp; ' +
-                                                        acabados[k]['acabados']['nombre'] +
-                                                        '</p>'
-                                                );
-                                                var prodNombre =
-                                                    acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
-                                                if (prodNombre == 'Modulo Bajo 1') {
-                                                    prodNombre = 'mb1';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 2') {
-                                                    prodNombre = 'mb2';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 3') {
-                                                    prodNombre = 'mb4';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 4 Apertura Izquierda') {
-                                                    prodNombre = 'mb6';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 4 Apertura Derecha') {
-                                                    prodNombre = 'mb5';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 5 Apertura Izquierda') {
-                                                    prodNombre = 'mb8';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 5 Apertura Derecha') {
-                                                    prodNombre = 'mb7';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 6') {
-                                                    prodNombre = 'mb9';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 7 Apertura Izquierda') {
-                                                    prodNombre = 'mb11';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 7 Apertura Derecha') {
-                                                    prodNombre = 'mb10';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 8 Apertura Izquierda') {
-                                                    prodNombre = 'mb13';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 8 Apertura Derecha') {
-                                                    prodNombre = 'mb12';
-                                                }
-                                                if (prodNombre == 'Modulo Bajo 9') {
-                                                    prodNombre = 'mb14';
-                                                }
-                                                if (prodNombre == 'Aparador 2') {
-                                                    prodNombre = 'ap2';
-                                                }
-
-                                                if (prodNombre == 'Aparador 3') {
-                                                    prodNombre = 'ap3';
-                                                }
-                                                var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
-                                                if (nombreAcabado == 'marmol blanco') {
-                                                    nombreAcabado = 'marmolblanco';
-                                                }
-                                                if (nombreAcabado == 'marmol negro') {
-                                                    nombreAcabado = 'marmolnegro';
-                                                }
-                                                $('#imagen' + i).append(
-                                                    '<img id="tapa" class="' +
-                                                        nombreAcabado +
-                                                        '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
-                                                        prodNombre +
-                                                        '/' +
-                                                        contador +
-                                                        '/' +
-                                                        prodNombre +
-                                                        '_' +
-                                                        contador +
-                                                        '_' +
-                                                        nombreAcabado +
-                                                        '_optimized.png">'
-                                                );
-
-                                                if (
-                                                    contador == 1 &&
-                                                    acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined
-                                                ) {
-                                                    apoyo = acabados[k];
-                                                }
-
-                                                contador++;
-                                            }
-                                        }
-                                        if (apoyo != undefined) {
-                                            $('.' + productos[i]['id'] + 'Datos').append(
-                                                '<p>' +
-                                                    apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
-                                                    '&nbsp;&nbsp;&nbsp; ' +
-                                                    apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
-                                                    '&euro;</p>'
-                                            );
-                                            var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
-                                            if (precioTotal != '') {
-                                                var precioFloat = parseFloat(precioTotal);
-                                            }
-                                            precioFloat = precioFloat + apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
-                                            var subTotal = parseFloat($('#precioSubtotal').text());
-                                            subTotal = subTotal + precioFloat;
-                                            $('#precioSubtotal').text(subTotal);
-                                            $('#totalDescuentoTexto').text(subTotal);
-                                            var iva = subTotal * 0.21;
-                                            $('#ivaPrecioQuitar').remove();
-                                            $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + '</p>');
-                                            iva = subTotal + iva;
-                                            $('#precioIvaSumado').remove();
-                                            $('#precioCalculadoIva').append(
-                                                '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
-                                            );
-                                            var total;
-                                            total = precioFloat * precioTienda;
-                                            console.log(total);
-                                            total = total - precioFloat;
-                                            $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(
-                                                (precioFloat * precioTienda).toFixed(2)
-                                            );
-                                            $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
-                                            $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
-                                        }
-
-                                        for (let j = 0; j < iluminacion.length; j++) {
-                                            if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
-                                                $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p>Iluminacion&nbsp;&nbsp;&nbsp;' +
-                                                        iluminacion[j]['iluminacion']['precio'] +
-                                                        '&euro;</p>'
-                                                );
-                                                var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
-                                                var fabrica;
-                                                fabrica = $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text();
-                                                var ganancias;
-                                                ganancias = $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text();
-                                                var precioFloat = 0;
-                                                precioFloat = parseFloat(precioTotal);
-                                                fabrica = parseFloat(fabrica);
-                                                ganancias = parseFloat(fabrica);
-                                                precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
-                                                fabrica = fabrica + iluminacion[j]['iluminacion']['precio'] / 2;
-                                                ganancias = ganancias + iluminacion[j]['iluminacion']['precio'] / 2;
-                                                var subTotal = parseFloat($('#precioSubtotal').text());
-                                                if (subTotal == 0) {
-                                                    subTotal = precioFloat;
-                                                }
-
-                                                $('#precioSubtotal').text(precioFloat.toFixed(2));
-                                                var iva = precioFloat * 0.21;
-                                                $('#ivaPrecioQuitar').remove();
-                                                $('#ivaQuitar').append(
-                                                    '<p id="ivaPrecioQuitar" style="font-size:25px">' + iva.toFixed(2) + '</p>'
-                                                );
-                                                iva = precioFloat + iva;
-                                                $('#precioIvaSumado').remove();
-                                                $('#precioCalculadoIva').append(
-                                                    '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
-                                                );
-                                                $('#totalDescuentoTexto').text(precioFloat);
-                                                $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
-                                                $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(fabrica.toFixed(2));
-                                                $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(ganancias.toFixed(2));
-                                            }
-                                        }
+                    for (let w = 0; w < productos.length; w++) {
+                        if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
+                            this.acabadosProductosPresupuestoPedidoService
+                                .query1(productos[w]['id'])
+                                .subscribe((res: HttpResponse<IAcabadosProductosPresupuestoPedido[]>) => {
+                                    for (let i = 0; i < res.body.length; i++) {
+                                        acabados[i] = res.body[i];
                                     }
-                                }
-                            }, 0);
-                        });
+                                    console.log(res.body);
+                                    var apoyo;
+                                    setTimeout(function() {
+                                        if (productos != undefined) {
+                                            for (let i = 0; i < productos.length; i++) {
+                                                var contador = 1;
+                                                apoyo = undefined;
+                                                for (let k = 0; k < acabados.length; k++) {
+                                                    if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
+                                                        $('.' + productos[i]['id'] + 'Datos').append(
+                                                            '<p>Acabado ' +
+                                                                contador +
+                                                                '&nbsp;&nbsp;&nbsp; ' +
+                                                                acabados[k]['acabados']['nombre'] +
+                                                                '</p>'
+                                                        );
+                                                        var prodNombre =
+                                                            acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
+                                                        if (prodNombre == 'Modulo Bajo 1') {
+                                                            prodNombre = 'mb1';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 2') {
+                                                            prodNombre = 'mb2';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 3') {
+                                                            prodNombre = 'mb4';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 4 Apertura Izquierda') {
+                                                            prodNombre = 'mb6';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 4 Apertura Derecha') {
+                                                            prodNombre = 'mb5';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 5 Apertura Izquierda') {
+                                                            prodNombre = 'mb8';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 5 Apertura Derecha') {
+                                                            prodNombre = 'mb7';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 6') {
+                                                            prodNombre = 'mb9';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 7 Apertura Izquierda') {
+                                                            prodNombre = 'mb11';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 7 Apertura Derecha') {
+                                                            prodNombre = 'mb10';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 8 Apertura Izquierda') {
+                                                            prodNombre = 'mb13';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 8 Apertura Derecha') {
+                                                            prodNombre = 'mb12';
+                                                        }
+                                                        if (prodNombre == 'Modulo Bajo 9') {
+                                                            prodNombre = 'mb14';
+                                                        }
+                                                        if (prodNombre == 'Aparador 2') {
+                                                            prodNombre = 'ap2';
+                                                        }
+
+                                                        if (prodNombre == 'Aparador 3') {
+                                                            prodNombre = 'ap3';
+                                                        }
+                                                        var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
+                                                        if (nombreAcabado == 'marmol blanco') {
+                                                            nombreAcabado = 'marmolblanco';
+                                                        }
+                                                        if (nombreAcabado == 'marmol negro') {
+                                                            nombreAcabado = 'marmolnegro';
+                                                        }
+                                                        $('#imagen' + i).append(
+                                                            '<img id="tapa" class="' +
+                                                                nombreAcabado +
+                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                                prodNombre +
+                                                                '/' +
+                                                                contador +
+                                                                '/' +
+                                                                prodNombre +
+                                                                '_' +
+                                                                contador +
+                                                                '_' +
+                                                                nombreAcabado +
+                                                                '_optimized.png">'
+                                                        );
+
+                                                        if (
+                                                            contador == 1 &&
+                                                            acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined
+                                                        ) {
+                                                            apoyo = acabados[k];
+                                                        }
+
+                                                        contador++;
+                                                    }
+                                                }
+                                                if (apoyo != undefined) {
+                                                    $('.' + productos[i]['id'] + 'Datos').append(
+                                                        '<p>' +
+                                                            apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
+                                                            '&nbsp;&nbsp;&nbsp; ' +
+                                                            apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
+                                                            '&euro;</p>'
+                                                    );
+                                                    var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                                    if (precioTotal != '') {
+                                                        var precioFloat = parseFloat(precioTotal);
+                                                    }
+                                                    precioFloat =
+                                                        precioFloat + apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
+                                                    var subTotal = parseFloat($('#precioSubtotal').text());
+                                                    subTotal = subTotal + precioFloat;
+                                                    $('#precioSubtotal').text(subTotal);
+                                                    $('#totalDescuentoTexto').text(subTotal);
+                                                    var iva = subTotal * 0.21;
+                                                    $('#ivaPrecioQuitar').remove();
+                                                    $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + '</p>');
+                                                    iva = subTotal + iva;
+                                                    $('#precioIvaSumado').remove();
+                                                    $('#precioCalculadoIva').append(
+                                                        '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
+                                                    );
+                                                    var total;
+                                                    total = precioFloat * precioTienda;
+                                                    console.log(total);
+                                                    total = total - precioFloat;
+                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(
+                                                        (precioFloat * precioTienda).toFixed(2)
+                                                    );
+                                                    $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
+                                                    $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
+                                                }
+
+                                                for (let j = 0; j < iluminacion.length; j++) {
+                                                    if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
+                                                        $('.' + productos[i]['id'] + 'Datos').append(
+                                                            '<p>Iluminacion&nbsp;&nbsp;&nbsp;' +
+                                                                iluminacion[j]['iluminacion']['precio'] +
+                                                                '&euro;</p>'
+                                                        );
+                                                        var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                                        var fabrica;
+                                                        fabrica = $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text();
+                                                        var ganancias;
+                                                        ganancias = $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text();
+                                                        var precioFloat = 0;
+                                                        precioFloat = parseFloat(precioTotal);
+                                                        fabrica = parseFloat(fabrica);
+                                                        ganancias = parseFloat(fabrica);
+                                                        precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
+                                                        fabrica = fabrica + iluminacion[j]['iluminacion']['precio'] / 2;
+                                                        ganancias = ganancias + iluminacion[j]['iluminacion']['precio'] / 2;
+                                                        var subTotal = parseFloat($('#precioSubtotal').text());
+                                                        if (subTotal == 0) {
+                                                            subTotal = precioFloat;
+                                                        }
+
+                                                        $('#precioSubtotal').text(precioFloat.toFixed(2));
+                                                        var iva = precioFloat * 0.21;
+                                                        $('#ivaPrecioQuitar').remove();
+                                                        $('#ivaQuitar').append(
+                                                            '<p id="ivaPrecioQuitar" style="font-size:25px">' + iva.toFixed(2) + '</p>'
+                                                        );
+                                                        iva = precioFloat + iva;
+                                                        $('#precioIvaSumado').remove();
+                                                        $('#precioCalculadoIva').append(
+                                                            '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
+                                                        );
+                                                        $('#totalDescuentoTexto').text(precioFloat);
+                                                        $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
+                                                        $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(fabrica.toFixed(2));
+                                                        $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(
+                                                            ganancias.toFixed(2)
+                                                        );
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }, 0);
+                                });
+                        }
+                    }
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );

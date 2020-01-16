@@ -15,7 +15,12 @@
             "otherEntityField": "id"
         }
     ],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "orden",
+            "fieldType": "Float"
+        }
+    ],
     "changelogDate": "20190826075309",
     "dto": "no",
     "searchEngine": false,

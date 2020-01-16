@@ -36,7 +36,7 @@ export class AcabadosProductosPresupuestoPedidoService {
         return this.http.get<IAcabadosProductosPresupuestoPedido[]>(this.resourceUrl, { params: options, observe: 'response' });
     }
     query1(id: number): Observable<EntityArrayResponseType> {
-        return this.http.get<IAcabadosProductosPresupuestoPedido[]>(`${this.resourceUrl}-bus/${id}`, { observe: 'response' });
+        return this.http.get<IAcabadosProductosPresupuestoPedido[]>(`${this.resourceUrl}-busqueda/${id}`, { observe: 'response' });
     }
 
     delete(id: number): Observable<HttpResponse<any>> {
