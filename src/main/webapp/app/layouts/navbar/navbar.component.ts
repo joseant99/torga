@@ -482,14 +482,16 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         acaPedProd = this.acaProdPed[acaPedProd - 1];
                                         prodAca[w]['id'] = acaPedProd['id'] + w + 1;
                                         for (let b = 0; b < numeroAcaProd[w].length; b++) {
-                                            const acabados1 = {
+                                            var acabados1 = {
                                                 acabados: numeroAcaProd[w][b],
                                                 productosPresupuestoPedidos: prodAca[w]
                                             };
+                                            var arrayAcaPrueba = [];
+                                            arrayAcaPrueba[b] = acabados1;
                                             for (let r = 0; r < 1000; r++) {
                                                 if (r == 999) {
                                                     this.subscribeToSaveResponse(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                        this.acabadosProductosPresupuestoPedidoService.create(arrayAcaPrueba[b])
                                                     );
                                                 }
                                             }

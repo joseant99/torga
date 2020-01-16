@@ -968,7 +968,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             total = precioFloat * precioTienda;
                                             console.log(total);
                                             total = total - precioFloat;
-                                            $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat * precioTienda);
+                                            $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(
+                                                (precioFloat * precioTienda).toFixed(2)
+                                            );
                                             $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
                                             $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
                                         }
