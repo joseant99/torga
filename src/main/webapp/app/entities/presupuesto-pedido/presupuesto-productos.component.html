@@ -25,57 +25,70 @@
   	 
 </div>
 <div style="float:left;width:100%">
-		<div style="float:left;width:100%;margin-bottom:15px">
+		<div style="float:left;width:100%;margin-bottom:15px;display:none">
 			<div style="float:left;margin-left:25%;font-size:25px"><p>FORMA DE PAGO</p>
 			
 			</div>
 			<div style="float:right;margin-right:25%" id="pago" (change)="pago()"></div>
 		</div>
-		<div style="float:left;width:100%;margin-bottom:15px">
+		<div style="float:left;width:100%;margin-bottom:15px;display:none">
 			<div style="float:left;margin-left:25%;font-size:25px"><p>SUBTOTAL</p>
 			
 			</div>
-			<div style="float:right;margin-right:25%" id="subtotalPago"><p style="font-size:25px" id="precioSubtotal">0</p></div>
+			<div style="float:right;margin-right:25%;display:none" id="subtotalPago"><p style="font-size:25px" id="precioSubtotal">0</p></div>
 		</div>
 		<div style="float:left;width:100%;margin-bottom:15px">
-			<div style="float:left;margin-left:25%;font-size:25px"><p>DESCUENTO(%)</p>
+			<div style="float:left;margin-left:25%;font-size:25px"><p style="letter-spacing: 2px;">PRECIO TOTAL SIN IVA</p>
+			
+			</div>
+			<div style="float:right;margin-right:25%" id="totalDescuento"><span id="totalDescuentoTexto" style="font-size:25px"></span><span style="font-size:25px"> &euro;</span></div>
+		</div>
+		<div style="float:left;width:100%;margin-bottom:15px">
+			<div style="float:left;margin-left:25%;font-size:25px;width:70%"><span style="float:left" (click)="aparaceDes()" id="+Descuento">+</span>
+			<div style="font-size:25px;float:left;display:none;margin-left: 5%;" id="descuentoTextoDiv"><p style="letter-spacing: 2px;">DESCUENTO(%)</p>
+			
+			</div>
+			<div style="float:right;margin-right:28%;display:none" id="cuentatextodiv"><input type="number" min="0" (change)="descuento()" name="descuento" id="descuentoPago"/></div>
+			</div>
+			
+		</div>
+		<div style="float:left;width:100%;margin-bottom:15px;display:none" id="descuentoQuitar">
+			<div style="font-size:25px"><p style="letter-spacing: 2px;">DESCUENTO(%)</p>
 			
 			</div>
 			<div style="float:right;margin-right:25%"><input type="number" min="0" (change)="descuento()" name="descuento" id="descuentoPago"/></div>
 		</div>
 		
-		<div style="float:left;width:100%;margin-bottom:15px">
+		<div style="float:left;width:100%;margin-bottom:15px;display:none">
 			<div style="float:left;margin-left:25%;font-size:25px"><p>TOTAL DESCUENTO</p>
 			
 			</div>
 			<div style="float:right;margin-right:25%" id="descuentoCalculado"></div>
 		</div>
+		
 		<div style="float:left;width:100%;margin-bottom:15px">
-			<div style="float:left;margin-left:25%;font-size:25px"><strong><p>PRECIO SIN IVA</p></strong>
-			
-			</div>
-			<div style="float:right;margin-right:25%" id="totalDescuento"><p id="totalDescuentoTexto" style="font-size:25px"></p></div>
-		</div>
-		<div style="float:left;width:100%;margin-bottom:15px">
-			<div style="float:left;margin-left:25%;font-size:25px"><p>IVA</p>
+			<div style="float:left;margin-left:25%;font-size:25px"><p style="letter-spacing: 2px;">IVA (21%)</p>
 			</div>
 			<div style="float:right;margin-right:25%" id="ivaQuitar"></div>
 		</div>
 		<div style="float:left;width:100%;margin-bottom:15px">
-			<div style="float:left;margin-left:25%;font-size:25px"><strong><p>PRECIO CON IVA</p></strong>
+			<div style="float:left;margin-left:25%;font-size:25px"><strong><p style="letter-spacing: 2px;">PRECIO TOTAL CON IVA</p></strong>
 			
 			</div>
 			<div style="float:right;margin-right:25%" id="precioCalculadoIva"></div>
 		</div>
+		<hr style="width:100%;background-color:black;float:left;height:0px"></hr>
 		<div style="float:left;width:100%">
-			<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalPasarPedido">Generar Pedido</button></p>
-	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>
-	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="imprimir()" value='Print'>Imprimir</button></p>
-	  		<p id="contacto1" style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>
-	  		<p id="contacto2" style="text-align:center"><button style="width:200px;background-color:#98F6B7" data-toggle="modal" data-target="#modal1">Contacto con Fabrica</button></p>
-	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" [routerLink]="['/presupuesto-edicion']">Editar Presupuesto</button></p>
-	  		<p style="text-align:center"><button style="width:200px;background-color:#98F6B7" (click)="eliminar()" [routerLink]="['/presupuesto-usuario']">Elimiar Presupuesto</button></p>
-	  		<p style="text-align:center"><button style="width:200px;background-color:#A4D9F4"[routerLink]="['/presupuesto-usuario']">Salir</button></p>
+		
+		
+			<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalPasarPedido">GENERAR PEDIDO</button></p>
+	  		<!--<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>-->
+	  		<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="imprimir()" value='Print'>IMPRIMIR</button></p>
+	  		<!--  <p id="contacto1" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>
+	  		<p id="contacto2" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal1">Contacto con Fabrica</button></p>-->
+	  		<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" [routerLink]="['/presupuesto-edicion']">EDITAR PRESUPUESTO</button></p>
+	  		<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="eliminar()" [routerLink]="['/presupuesto-usuario']">ELIMINAR PRESUPUESTO</button></p>
+	  		<p style="text-align:center"><button style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;"[routerLink]="['/presupuesto-usuario']">SALIR</button></p>
 		</div>
   	</div>
 <div class="modal fade" id="modalPasarPedido" role="dialog">

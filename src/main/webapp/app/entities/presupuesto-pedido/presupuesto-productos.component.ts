@@ -27,6 +27,8 @@ import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-p
 import { PresupuestoArmarioService } from '../presupuesto-armario/presupuesto-armario.service';
 import { PresupuestoArmarioInterioresService } from '../presupuesto-armario-interiores/presupuesto-armario-interiores.service';
 import { PresupuestoArmarioPuertasService } from '../presupuesto-armario-puertas/presupuesto-armario-puertas.service';
+import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
+import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 @Component({
     selector: 'jhi-presupuesto-productos',
     templateUrl: './presupuesto-productos.component.html'
@@ -60,6 +62,10 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     interioresArmario: any;
     armario: any;
     idArmario: any;
+    modulosBajos: any;
+    precioPunto: any;
+    aparadores: any;
+    apoyoPrecios: any;
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         public presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
@@ -68,6 +74,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         protected contactoFabricaService: ContactoFabricaService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected parseLinks: JhiParseLinks,
+        protected precioTiendaService: PrecioTiendaService,
+        protected precioTiendaProductosService: PrecioTiendaProductosService,
         protected jhiAlertService: JhiAlertService,
         protected provinciasService: ProvinciasService,
         protected municipiosService: MunicipiosService,
@@ -834,7 +842,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     this.interioresArmario = todosInteriores;
                     console.log(this.interioresArmario);
                     console.log(this.productos);
+                    var precioModulosBajos = this.modulosBajos;
                     var productos = this.productos;
+                    var precioPunto = this.precioPunto;
+                    var apoyoPrecios = this.apoyoPrecios;
+                    var precioAparadores = this.aparadores;
                     for (let w = 0; w < productos.length; w++) {
                         if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
                             this.acabadosProductosPresupuestoPedidoService
@@ -952,27 +964,54 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     if (precioTotal != '') {
                                                         var precioFloat = parseFloat(precioTotal);
                                                     }
-                                                    precioFloat =
-                                                        precioFloat + apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
+                                                    if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 8) {
+                                                        for (let s = 0; s < precioModulosBajos.length; s++) {
+                                                            if (precioModulosBajos[s][2] == productos[i]['productosDormitorio']['id']) {
+                                                                var precioProd = precioModulosBajos[s][1];
+                                                                precioProd = precioProd / 100 + 1;
+                                                            }
+                                                        }
+                                                    }
+                                                    if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 11) {
+                                                        for (let s = 0; s < precioAparadores.length; s++) {
+                                                            if (precioAparadores[s][2] == productos[i]['productosDormitorio']['id']) {
+                                                                var precioProd = precioAparadores[s][1];
+                                                                precioProd = precioProd / 100 + 1;
+                                                            }
+                                                        }
+                                                    }
+
+                                                    precioFloat = precioFloat * precioPunto;
+                                                    precioFloat = precioFloat * precioProd;
+                                                    var todoApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo'];
+                                                    for (let s = 0; s < apoyoPrecios.length; s++) {
+                                                        if (apoyoPrecios[s][2] == todoApoyo['id']) {
+                                                            var precioApo = precioModulosBajos[s][1];
+                                                            precioApo = precioApo / 100 + 1;
+                                                        }
+                                                    }
+                                                    var precioApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
+                                                    precioApoyo = precioApoyo * precioPunto;
+                                                    precioApoyo = precioApoyo * precioApo;
+                                                    precioFloat = precioFloat + precioApoyo;
                                                     var subTotal = parseFloat($('#precioSubtotal').text());
                                                     subTotal = subTotal + precioFloat;
-                                                    $('#precioSubtotal').text(subTotal);
-                                                    $('#totalDescuentoTexto').text(subTotal);
+                                                    $('#precioSubtotal').text(subTotal.toFixed(2));
+                                                    $('#totalDescuentoTexto').text(subTotal.toFixed(2));
+
                                                     var iva = subTotal * 0.21;
                                                     $('#ivaPrecioQuitar').remove();
-                                                    $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + '</p>');
+                                                    $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + ' €</p>');
                                                     iva = subTotal + iva;
                                                     $('#precioIvaSumado').remove();
                                                     $('#precioCalculadoIva').append(
-                                                        '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
+                                                        '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + ' €</p>'
                                                     );
                                                     var total;
                                                     total = precioFloat * precioTienda;
                                                     console.log(total);
                                                     total = total - precioFloat;
-                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(
-                                                        (precioFloat * precioTienda).toFixed(2)
-                                                    );
+                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
                                                     $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
                                                     $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
                                                 }
@@ -1071,7 +1110,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             this.transition();
         }
     }
-
+    public aparaceDes() {
+        $('#descuentoTextoDiv').css({ display: 'block' });
+        $('#cuentatextodiv').css({ display: 'block' });
+        $('#+Descuento').text('X');
+    }
     transition() {
         this.router.navigate(['/productos-presupuesto-pedidos'], {
             queryParams: {
@@ -1208,6 +1251,19 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     }
 
     ngOnInit() {
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
+            this.modulosBajos = data.body;
+        });
+        this.precioTiendaService.findBus(tienda.id).subscribe(data => {
+            this.precioPunto = data.body;
+        });
+        this.precioTiendaProductosService.findProdId(11, tienda.id).subscribe(data => {
+            this.aparadores = data.body;
+        });
+        this.precioTiendaProductosService.findProdId(2, tienda.id).subscribe(data => {
+            this.apoyoPrecios = data.body;
+        });
         this.presupuestoArmarioInterioresService.todos = undefined;
         this.precioTienda = sessionStorage.getItem('precioTienda');
         $('body').removeAttr('class');
