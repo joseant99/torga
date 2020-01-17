@@ -6551,7 +6551,113 @@ ui bootstrap tweaks
         padding-left: 26%;
     }
     #imagen0 {
-        margin-left: 23% !important;
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen1 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen2 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen3 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen4 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen5 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen6 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen7 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen8 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen9 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen10 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #imagen11 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    .primerDivPresu {
+        margin-bottom: 15px !important;
+        margin-top: 0px !important;
+    }
+    #bajarFontSize {
+        font-size: 18px !important;
+    }
+    #euro {
+        font-size: 18px !important;
+    }
+    #botonTodosTama�o {
+        width: 200px !important;
+        height: 50px !important;
+        font-size: 15px !important;
+    }
+    #totalDescuentoTexto {
+        font-size: 18px !important;
+    }
+    #meterQuitadoDescuento {
+        font-size: 18px !important;
+    }
+    #precioIvaSumado {
+        font-size: 18px !important;
+    }
+
+    #datosMeter0 {
+        width: 70% !important;
+    }
+    #datosMeter1 {
+        width: 70% !important;
+    }
+    #datosMeter2 {
+        width: 70% !important;
+    }
+    #datosMeter3 {
+        width: 70% !important;
+    }
+    #datosMeter4 {
+        width: 70% !important;
+    }
+    #datosMeter5 {
+        width: 70% !important;
+    }
+    #datosMeter6 {
+        width: 70% !important;
+    }
+    #datosMeter7 {
+        width: 70% !important;
     }
     #dimensionesColorStyleSin {
         float: left;
