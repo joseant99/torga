@@ -167,6 +167,20 @@
 	function guardarIdEditar(id){
 		sessionStorage.setItem("idEditarProd",id);
 	}
+	function descuentomasDiv(){
+		$('#descuentoTextoDiv').css({ display: 'block' });
+        $('#cuentatextodiv').css({ display: 'block' });
+        $('#masDescuento').text('X');
+        $("#masDescuento").removeAttr("onclick");
+        $("#masDescuento").attr("onclick","descuentoxDiv()");
+	}
+	function descuentoxDiv(){
+		$('#descuentoTextoDiv').css({ display: 'none' });
+        $('#cuentatextodiv').css({ display: 'none' });
+        $('#masDescuento').text('+');
+        $("#masDescuento").removeAttr("onclick");
+        $("#masDescuento").attr("onclick","descuentomasDiv()");
+	}
 	function apareceMenu(){
 		$("#menuPrincipal").css({"display":"block"});
 		$("#botonEsconder").removeAttr("onclick");

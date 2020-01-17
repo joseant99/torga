@@ -66,6 +66,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     precioPunto: any;
     aparadores: any;
     apoyoPrecios: any;
+    productosPresupuestoPedidos: any;
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         public presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
@@ -219,855 +220,848 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var acabados = [];
         var todosInteriores;
         var iluminacion = this.iluminacion;
-        this.productosPresupuestoPedidosService
-            .query({
-                size: 1000000
-            })
-            .subscribe(
-                (res: HttpResponse<IProductosPresupuestoPedidos[]>) => {
-                    for (let i = 0; i < res.body.length; i++) {
-                        if (res.body[i]['presupuestoPedido'] != null) {
-                            if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
-                                if (res.body[i]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                                    console.log(cont);
-                                    this.presupuestoArmarioService.findBus(presu).subscribe(data => {
-                                        var idCat = 9;
-                                        var cat = {
-                                            id: idCat
-                                        };
+        this.productosPresupuestoPedidosService.query1(parseFloat(presu)).subscribe(
+            (res: HttpResponse<IProductosPresupuestoPedidos[]>) => {
+                for (let i = 0; i < res.body.length; i++) {
+                    if (res.body[i]['presupuestoPedido'] != null) {
+                        if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
+                            if (res.body[i]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                                console.log(cont);
+                                this.presupuestoArmarioService.findBus(presu).subscribe(data => {
+                                    var idCat = 9;
+                                    var cat = {
+                                        id: idCat
+                                    };
 
-                                        var uno = {
-                                            nombre: data.body[0]['armario']['mensaje'],
-                                            categoriasDormi: cat
-                                        };
-                                        var codigo = {
-                                            codigo: data.body[0]['productosPresupuestoPedidos']['presupuestoPedido']['codigo'],
-                                            fecha_presupuesto:
-                                                data.body[0]['productosPresupuestoPedidos']['presupuestoPedido']['fecha_presupuesto']
-                                        };
-                                        var dimen = {
-                                            incremento: undefined,
-                                            ancho: data.body[0]['ancho'],
-                                            alto: data.body[0]['alto'],
-                                            fondo: data.body[0]['fondo']
-                                        };
-                                        var todo = {
-                                            productosDormitorio: uno,
-                                            presupuestoPedido: codigo,
-                                            dimensionesProductoTipo: dimen
-                                        };
+                                    var uno = {
+                                        nombre: data.body[0]['armario']['mensaje'],
+                                        categoriasDormi: cat
+                                    };
+                                    var codigo = {
+                                        codigo: data.body[0]['productosPresupuestoPedidos']['presupuestoPedido']['codigo'],
+                                        fecha_presupuesto:
+                                            data.body[0]['productosPresupuestoPedidos']['presupuestoPedido']['fecha_presupuesto']
+                                    };
+                                    var dimen = {
+                                        incremento: undefined,
+                                        ancho: data.body[0]['ancho'],
+                                        alto: data.body[0]['alto'],
+                                        fondo: data.body[0]['fondo']
+                                    };
+                                    var todo = {
+                                        productosDormitorio: uno,
+                                        presupuestoPedido: codigo,
+                                        dimensionesProductoTipo: dimen
+                                    };
 
-                                        productosPresupuesto[cont] = todo;
-                                        cont++;
+                                    productosPresupuesto[cont] = todo;
+                                    cont++;
 
-                                        this.presupuestoArmarioInterioresService.busqueda(data.body[0]['id']).subscribe(data => {
-                                            this.presupuestoArmarioInterioresService.todos = data.body;
-                                            var datosInteriores = data.body;
-                                            console.log(data.body);
-                                            var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
-                                            for (let p = 0; p < datosInteriores.length; p++) {
-                                                if (p == 0) {
-                                                    $('#datosMeter' + (cont - 1)).append(
-                                                        '<p><strong>Casco &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
-                                                            datosInteriores[p]['presupuestoArmario']['cascoPrecio'] +
-                                                            ' €</span></p>'
-                                                    );
-                                                }
+                                    this.presupuestoArmarioInterioresService.busqueda(data.body[0]['id']).subscribe(data => {
+                                        this.presupuestoArmarioInterioresService.todos = data.body;
+                                        var datosInteriores = data.body;
+                                        console.log(data.body);
+                                        var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
+                                        for (let p = 0; p < datosInteriores.length; p++) {
+                                            if (p == 0) {
                                                 $('#datosMeter' + (cont - 1)).append(
-                                                    '<p><strong>Interior ' +
-                                                        datosInteriores[p]['productosDormitorio']['nombre'] +
-                                                        '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
-                                                        datosInteriores[p]['precio'] +
+                                                    '<p><strong>Casco &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
+                                                        datosInteriores[p]['presupuestoArmario']['cascoPrecio'] +
                                                         ' €</span></p>'
                                                 );
                                             }
-                                            var casco = data.body[0]['presupuestoArmario']['acabadosCasco']['nombre'].toLowerCase();
-                                            var trasera = data.body[0]['presupuestoArmario']['acabados']['nombre'].toLowerCase();
-                                            var interiorAca = data.body[0]['presupuestoArmario']['acabadosInterior'][
-                                                'nombre'
-                                            ].toLowerCase();
-                                            if ('3 PUERTAS IZQUIERDA' == nombre) {
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
+                                            $('#datosMeter' + (cont - 1)).append(
+                                                '<p><strong>Interior ' +
+                                                    datosInteriores[p]['productosDormitorio']['nombre'] +
+                                                    '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
+                                                    datosInteriores[p]['precio'] +
+                                                    ' €</span></p>'
+                                            );
+                                        }
+                                        var casco = data.body[0]['presupuestoArmario']['acabadosCasco']['nombre'].toLowerCase();
+                                        var trasera = data.body[0]['presupuestoArmario']['acabados']['nombre'].toLowerCase();
+                                        var interiorAca = data.body[0]['presupuestoArmario']['acabadosInterior']['nombre'].toLowerCase();
+                                        if ('3 PUERTAS IZQUIERDA' == nombre) {
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
 
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
 
-                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/peque_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/peque_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/peque_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/peque_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
 
-                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:-19px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/grande_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:296px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/grande_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                            }
-                                            if ('5 PUERTAS IZQUIERDA' == nombre) {
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top:-44px;z-index:98" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top: 271px;z-index:98" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:-19px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/grande_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:296px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/grande_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                        }
+                                        if ('5 PUERTAS IZQUIERDA' == nombre) {
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top:-44px;z-index:98" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top: 271px;z-index:98" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
 
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top:-44px;z-index:98" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top: 271px;z-index:98" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top:-44px;z-index:98" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top: 271px;z-index:98" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
 
-                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/peque_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/peque_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/peque_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/peque_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
 
-                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:-19px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/grande_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:296px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/grande_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:-19px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/grande_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:296px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/grande_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
 
-                                                var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:212px;margin-top:-44px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/grande_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:212px;margin-top:271px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/grande_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                            }
-                                            if ('6 PUERTAS ASIMETRICAS' == nombre) {
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top:-44px;z-index:98" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top: 271px;z-index:98" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:212px;margin-top:-44px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/grande_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:212px;margin-top:271px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/grande_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                        }
+                                        if ('6 PUERTAS ASIMETRICAS' == nombre) {
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top:-44px;z-index:98" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top: 271px;z-index:98" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
 
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top:-44px;z-index:98" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top: 271px;z-index:98" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:97;margin-left: 302px;margin-top: -63px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:97;margin-left: 302px;margin-top: -63px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:97;margin-left: 302px;margin-top: 253px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                                        casco +
-                                                        '.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:97;margin-left: 302px;margin-top: 253px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                                        trasera +
-                                                        '.png">'
-                                                );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top:-44px;z-index:98" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;margin-left:212px;margin-top: 271px;z-index:98" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:97;margin-left: 302px;margin-top: -63px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:97;margin-left: 302px;margin-top: -63px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:97;margin-left: 302px;margin-top: 253px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
+                                                    casco +
+                                                    '.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:97;margin-left: 302px;margin-top: 253px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
+                                                    trasera +
+                                                    '.png">'
+                                            );
 
-                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/peque_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/peque_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/peque_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/peque_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
 
-                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:-19px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/grande_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:296px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/grande_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:-19px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/grande_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:296px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/grande_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
 
-                                                var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:212px;margin-top:-44px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/grande_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:212px;margin-top:271px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/grande_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                                var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:302px;margin-top:-63px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/peque_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:302px;margin-top:253px" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                        nombreInt +
-                                                        '/peque_interior_' +
-                                                        nombreInt +
-                                                        '_' +
-                                                        interiorAca +
-                                                        '_optimized.png">'
-                                                );
-                                            }
-                                            $('#imagen' + (cont - 1)).css({ height: '650px' });
-                                        });
-                                        this.presupuestoArmarioPuertasService.busqueda(data.body[0]['id']).subscribe(data => {
-                                            this.presupuestoArmarioPuertasService.todos = data.body;
-                                            var datosInteriores = data.body;
-                                            console.log(data.body);
-                                            var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
-                                            for (let p = 0; p < datosInteriores.length; p++) {
-                                                $('#datosMeter' + (cont - 1)).append(
-                                                    '<p><strong>Puerta ' +
-                                                        (p + 1) +
-                                                        ' ' +
-                                                        datosInteriores[p]['productosDormitorio']['nombre'] +
-                                                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
-                                                        datosInteriores[p]['precio'] +
-                                                        ' €</span></p>'
-                                                );
-                                            }
-                                            if ('3 PUERTAS IZQUIERDA' == nombre) {
-                                                var tipo = data.body[0]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[0]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top:315px" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-
-                                                var tipo = data.body[1]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[1]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-                                                var tipo = data.body[1]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[1]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-                                            }
-                                            if ('5 PUERTAS IZQUIERDA' == nombre) {
-                                                var tipo = data.body[0]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[0]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top:315px" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-
-                                                var tipo = data.body[1]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[1]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-                                                var tipo = data.body[2]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[2]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-
-                                                var tipo = data.body[3]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[3]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 272px;margin-left: 213px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-                                                var tipo = data.body[4]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[4]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 272px;margin-left: 213px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-                                            }
-
-                                            if ('6 PUERTAS ASIMETRICAS' == nombre) {
-                                                var tipo = data.body[0]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[0]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top:315px" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-
-                                                var tipo = data.body[1]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[1]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-                                                var tipo = data.body[2]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[2]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-
-                                                var tipo = data.body[3]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[3]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 272px;margin-left: 213px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-                                                var tipo = data.body[4]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[4]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 272px;margin-left: 213px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-                                                var tipo = data.body[5]['productosDormitorio']['nombre'];
-                                                var acabado = data.body[3]['acabados']['nombre'].toLowerCase();
-                                                if (tipo == 'Puerta Madera') {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 247px;margin-left: 333px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                                            acabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-                                            }
-                                        });
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:212px;margin-top:-44px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/grande_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:212px;margin-top:271px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/grande_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                            var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:302px;margin-top:-63px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/peque_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:302px;margin-top:253px" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                    nombreInt +
+                                                    '/peque_interior_' +
+                                                    nombreInt +
+                                                    '_' +
+                                                    interiorAca +
+                                                    '_optimized.png">'
+                                            );
+                                        }
+                                        $('#imagen' + (cont - 1)).css({ height: '650px' });
                                     });
-                                } else {
-                                    if (res.body[i]['dimensionesProductoTipo']['mensaje'] == 'Medidas Especiales') {
-                                        for (let k = 0; k < medidasEspeciales.length; k++) {
-                                            if (medidasEspeciales[k]['productosPresupuestoPedidos']['id'] == res.body[i]['id']) {
-                                                res.body[i]['dimensionesProductoTipo']['ancho'] = medidasEspeciales[k]['ancho'];
-                                                res.body[i]['dimensionesProductoTipo']['alto'] = medidasEspeciales[k]['alto'];
-                                                res.body[i]['dimensionesProductoTipo']['fondo'] = medidasEspeciales[k]['fondo'];
-                                                res.body[i]['dimensionesProductoTipo']['precio'] = medidasEspeciales[k]['precio'];
-                                                var precioEspecial = parseFloat(medidasEspeciales[k]['precio']);
-                                                var menosPrecio = precioEspecial * 0.3;
-                                                menosPrecio = precioEspecial - menosPrecio;
-                                                var incremento = menosPrecio * 0.3;
-                                                res.body[i]['dimensionesProductoTipo']['incremento'] = incremento.toFixed(2);
-                                                productosPresupuesto[cont] = res.body[i];
-                                                cont++;
+                                    this.presupuestoArmarioPuertasService.busqueda(data.body[0]['id']).subscribe(data => {
+                                        this.presupuestoArmarioPuertasService.todos = data.body;
+                                        var datosInteriores = data.body;
+                                        console.log(data.body);
+                                        var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
+                                        for (let p = 0; p < datosInteriores.length; p++) {
+                                            $('#datosMeter' + (cont - 1)).append(
+                                                '<p><strong>Puerta ' +
+                                                    (p + 1) +
+                                                    ' ' +
+                                                    datosInteriores[p]['productosDormitorio']['nombre'] +
+                                                    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
+                                                    datosInteriores[p]['precio'] +
+                                                    ' €</span></p>'
+                                            );
+                                        }
+                                        if ('3 PUERTAS IZQUIERDA' == nombre) {
+                                            var tipo = data.body[0]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[0]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top:315px" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+
+                                            var tipo = data.body[1]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[1]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+                                            var tipo = data.body[1]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[1]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
                                             }
                                         }
-                                    } else {
-                                        productosPresupuesto[cont] = res.body[i];
-                                        cont++;
+                                        if ('5 PUERTAS IZQUIERDA' == nombre) {
+                                            var tipo = data.body[0]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[0]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top:315px" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+
+                                            var tipo = data.body[1]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[1]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+                                            var tipo = data.body[2]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[2]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+
+                                            var tipo = data.body[3]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[3]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 272px;margin-left: 213px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+                                            var tipo = data.body[4]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[4]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 272px;margin-left: 213px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+                                        }
+
+                                        if ('6 PUERTAS ASIMETRICAS' == nombre) {
+                                            var tipo = data.body[0]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[0]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top:315px" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+
+                                            var tipo = data.body[1]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[1]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+                                            var tipo = data.body[2]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[2]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 297px;margin-left: 92px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+
+                                            var tipo = data.body[3]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[3]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 272px;margin-left: 213px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+                                            var tipo = data.body[4]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[4]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 272px;margin-left: 213px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+                                            var tipo = data.body[5]['productosDormitorio']['nombre'];
+                                            var acabado = data.body[3]['acabados']['nombre'].toLowerCase();
+                                            if (tipo == 'Puerta Madera') {
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 150px;position: absolute;z-index:101;margin-top: 247px;margin-left: 333px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
+                                                        acabado +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+                                        }
+                                    });
+                                });
+                            } else {
+                                if (res.body[i]['dimensionesProductoTipo']['mensaje'] == 'Medidas Especiales') {
+                                    for (let k = 0; k < medidasEspeciales.length; k++) {
+                                        if (medidasEspeciales[k]['productosPresupuestoPedidos']['id'] == res.body[i]['id']) {
+                                            res.body[i]['dimensionesProductoTipo']['ancho'] = medidasEspeciales[k]['ancho'];
+                                            res.body[i]['dimensionesProductoTipo']['alto'] = medidasEspeciales[k]['alto'];
+                                            res.body[i]['dimensionesProductoTipo']['fondo'] = medidasEspeciales[k]['fondo'];
+                                            res.body[i]['dimensionesProductoTipo']['precio'] = medidasEspeciales[k]['precio'];
+                                            var precioEspecial = parseFloat(medidasEspeciales[k]['precio']);
+                                            var menosPrecio = precioEspecial * 0.3;
+                                            menosPrecio = precioEspecial - menosPrecio;
+                                            var incremento = menosPrecio * 0.3;
+                                            res.body[i]['dimensionesProductoTipo']['incremento'] = incremento.toFixed(2);
+                                            productosPresupuesto[cont] = res.body[i];
+                                            cont++;
+                                        }
                                     }
+                                } else {
+                                    productosPresupuesto[cont] = res.body[i];
+                                    cont++;
                                 }
                             }
                         }
                     }
-                    this.paginateProductosPresupuestoPedidos(productosPresupuesto, res.headers);
-                    this.productos = productosPresupuesto;
-                    this.interioresArmario = todosInteriores;
-                    console.log(this.interioresArmario);
-                    console.log(this.productos);
-                    var precioModulosBajos = this.modulosBajos;
-                    var productos = this.productos;
-                    var precioPunto = this.precioPunto;
-                    var apoyoPrecios = this.apoyoPrecios;
-                    var precioAparadores = this.aparadores;
-                    for (let w = 0; w < productos.length; w++) {
-                        if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
-                            this.acabadosProductosPresupuestoPedidoService
-                                .query1(productos[w]['id'])
-                                .subscribe((res: HttpResponse<IAcabadosProductosPresupuestoPedido[]>) => {
-                                    for (let i = 0; i < res.body.length; i++) {
-                                        acabados[i] = res.body[i];
-                                    }
-                                    console.log(res.body);
-                                    var apoyo;
-                                    setTimeout(function() {
-                                        if (productos != undefined) {
-                                            for (let i = 0; i < productos.length; i++) {
-                                                var contador = 1;
-                                                apoyo = undefined;
-                                                for (let k = 0; k < acabados.length; k++) {
-                                                    if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
-                                                        $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p>Acabado ' +
-                                                                contador +
-                                                                '&nbsp;&nbsp;&nbsp; ' +
-                                                                acabados[k]['acabados']['nombre'] +
-                                                                '</p>'
-                                                        );
-                                                        var prodNombre =
-                                                            acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
-                                                        if (prodNombre == 'Modulo Bajo 1') {
-                                                            prodNombre = 'mb1';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 2') {
-                                                            prodNombre = 'mb2';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 3') {
-                                                            prodNombre = 'mb4';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 4 Apertura Izquierda') {
-                                                            prodNombre = 'mb6';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 4 Apertura Derecha') {
-                                                            prodNombre = 'mb5';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 5 Apertura Izquierda') {
-                                                            prodNombre = 'mb8';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 5 Apertura Derecha') {
-                                                            prodNombre = 'mb7';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 6') {
-                                                            prodNombre = 'mb9';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 7 Apertura Izquierda') {
-                                                            prodNombre = 'mb11';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 7 Apertura Derecha') {
-                                                            prodNombre = 'mb10';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 8 Apertura Izquierda') {
-                                                            prodNombre = 'mb13';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 8 Apertura Derecha') {
-                                                            prodNombre = 'mb12';
-                                                        }
-                                                        if (prodNombre == 'Modulo Bajo 9') {
-                                                            prodNombre = 'mb14';
-                                                        }
-                                                        if (prodNombre == 'Aparador 2') {
-                                                            prodNombre = 'ap2';
-                                                        }
+                }
+                this.productosPresupuestoPedidos = productosPresupuesto;
 
-                                                        if (prodNombre == 'Aparador 3') {
-                                                            prodNombre = 'ap3';
-                                                        }
-                                                        var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
-                                                        if (nombreAcabado == 'marmol blanco') {
-                                                            nombreAcabado = 'marmolblanco';
-                                                        }
-                                                        if (nombreAcabado == 'marmol negro') {
-                                                            nombreAcabado = 'marmolnegro';
-                                                        }
-                                                        $('#imagen' + i).append(
-                                                            '<img id="tapa" class="' +
-                                                                nombreAcabado +
-                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
-                                                                prodNombre +
-                                                                '/' +
-                                                                contador +
-                                                                '/' +
-                                                                prodNombre +
-                                                                '_' +
-                                                                contador +
-                                                                '_' +
-                                                                nombreAcabado +
-                                                                '_optimized.png">'
-                                                        );
+                this.productos = productosPresupuesto;
+                this.interioresArmario = todosInteriores;
+                console.log(this.interioresArmario);
+                console.log(this.productos);
+                var precioModulosBajos = this.modulosBajos;
+                var productos = this.productos;
+                var precioPunto = this.precioPunto;
+                var apoyoPrecios = this.apoyoPrecios;
+                var precioAparadores = this.aparadores;
+                for (let w = 0; w < productos.length; w++) {
+                    if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
+                        this.acabadosProductosPresupuestoPedidoService
+                            .query1(productos[w]['id'])
+                            .subscribe((res: HttpResponse<IAcabadosProductosPresupuestoPedido[]>) => {
+                                for (let i = 0; i < res.body.length; i++) {
+                                    acabados[i] = res.body[i];
+                                }
+                                console.log(res.body);
+                                var apoyo;
+                                setTimeout(function() {
+                                    if (productos != undefined) {
+                                        for (let i = 0; i < productos.length; i++) {
+                                            var contador = 1;
+                                            apoyo = undefined;
+                                            for (let k = 0; k < acabados.length; k++) {
+                                                if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
+                                                    $('.' + productos[i]['id'] + 'Datos').append(
+                                                        '<p>Acabado ' +
+                                                            contador +
+                                                            '&nbsp;&nbsp;&nbsp; ' +
+                                                            acabados[k]['acabados']['nombre'] +
+                                                            '</p>'
+                                                    );
+                                                    var prodNombre =
+                                                        acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
+                                                    if (prodNombre == 'Modulo Bajo 1') {
+                                                        prodNombre = 'mb1';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 2') {
+                                                        prodNombre = 'mb2';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 3') {
+                                                        prodNombre = 'mb4';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 4 Apertura Izquierda') {
+                                                        prodNombre = 'mb6';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 4 Apertura Derecha') {
+                                                        prodNombre = 'mb5';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 5 Apertura Izquierda') {
+                                                        prodNombre = 'mb8';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 5 Apertura Derecha') {
+                                                        prodNombre = 'mb7';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 6') {
+                                                        prodNombre = 'mb9';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 7 Apertura Izquierda') {
+                                                        prodNombre = 'mb11';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 7 Apertura Derecha') {
+                                                        prodNombre = 'mb10';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 8 Apertura Izquierda') {
+                                                        prodNombre = 'mb13';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 8 Apertura Derecha') {
+                                                        prodNombre = 'mb12';
+                                                    }
+                                                    if (prodNombre == 'Modulo Bajo 9') {
+                                                        prodNombre = 'mb14';
+                                                    }
+                                                    if (prodNombre == 'Aparador 2') {
+                                                        prodNombre = 'ap2';
+                                                    }
 
-                                                        if (
-                                                            contador == 1 &&
-                                                            acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined
-                                                        ) {
-                                                            apoyo = acabados[k];
-                                                        }
+                                                    if (prodNombre == 'Aparador 3') {
+                                                        prodNombre = 'ap3';
+                                                    }
+                                                    var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
+                                                    if (nombreAcabado == 'marmol blanco') {
+                                                        nombreAcabado = 'marmolblanco';
+                                                    }
+                                                    if (nombreAcabado == 'marmol negro') {
+                                                        nombreAcabado = 'marmolnegro';
+                                                    }
+                                                    $('#imagen' + i).append(
+                                                        '<img id="tapa" class="' +
+                                                            nombreAcabado +
+                                                            '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                            prodNombre +
+                                                            '/' +
+                                                            contador +
+                                                            '/' +
+                                                            prodNombre +
+                                                            '_' +
+                                                            contador +
+                                                            '_' +
+                                                            nombreAcabado +
+                                                            '_optimized.png">'
+                                                    );
 
-                                                        contador++;
+                                                    if (
+                                                        contador == 1 &&
+                                                        acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined
+                                                    ) {
+                                                        apoyo = acabados[k];
+                                                    }
+
+                                                    contador++;
+                                                }
+                                            }
+                                            if (apoyo != undefined) {
+                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                    '<p>' +
+                                                        apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
+                                                        '&nbsp;&nbsp;&nbsp; ' +
+                                                        apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
+                                                        '&euro;</p>'
+                                                );
+                                                var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                                if (precioTotal != '') {
+                                                    var precioFloat = parseFloat(precioTotal);
+                                                }
+                                                if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 8) {
+                                                    for (let s = 0; s < precioModulosBajos.length; s++) {
+                                                        if (precioModulosBajos[s][2] == productos[i]['productosDormitorio']['id']) {
+                                                            var precioProd = precioModulosBajos[s][1];
+                                                            precioProd = precioProd / 100 + 1;
+                                                        }
                                                     }
                                                 }
-                                                if (apoyo != undefined) {
+                                                if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 11) {
+                                                    for (let s = 0; s < precioAparadores.length; s++) {
+                                                        if (precioAparadores[s][2] == productos[i]['productosDormitorio']['id']) {
+                                                            var precioProd = precioAparadores[s][1];
+                                                            precioProd = precioProd / 100 + 1;
+                                                        }
+                                                    }
+                                                }
+
+                                                precioFloat = precioFloat * precioPunto;
+                                                precioFloat = precioFloat * precioProd;
+                                                var todoApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo'];
+                                                for (let s = 0; s < apoyoPrecios.length; s++) {
+                                                    if (apoyoPrecios[s][2] == todoApoyo['id']) {
+                                                        var precioApo = precioModulosBajos[s][1];
+                                                        precioApo = precioApo / 100 + 1;
+                                                    }
+                                                }
+                                                var precioApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
+                                                precioApoyo = precioApoyo * precioPunto;
+                                                precioApoyo = precioApoyo * precioApo;
+                                                precioFloat = precioFloat + precioApoyo;
+                                                var subTotal = parseFloat($('#precioSubtotal').text());
+                                                subTotal = subTotal + precioFloat;
+                                                $('#precioSubtotal').text(subTotal.toFixed(2));
+                                                $('#totalDescuentoTexto').text(subTotal.toFixed(2));
+
+                                                var iva = subTotal * 0.21;
+                                                $('#ivaPrecioQuitar').remove();
+                                                $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + ' €</p>');
+                                                iva = subTotal + iva;
+                                                $('#precioIvaSumado').remove();
+                                                $('#precioCalculadoIva').append(
+                                                    '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + ' €</p>'
+                                                );
+                                                var total;
+                                                total = precioFloat * precioTienda;
+                                                console.log(total);
+                                                total = total - precioFloat;
+                                                $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
+                                                $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
+                                                $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
+                                            }
+
+                                            for (let j = 0; j < iluminacion.length; j++) {
+                                                if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
-                                                        '<p>' +
-                                                            apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
-                                                            '&nbsp;&nbsp;&nbsp; ' +
-                                                            apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
+                                                        '<p>Iluminacion&nbsp;&nbsp;&nbsp;' +
+                                                            iluminacion[j]['iluminacion']['precio'] +
                                                             '&euro;</p>'
                                                     );
                                                     var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
-                                                    if (precioTotal != '') {
-                                                        var precioFloat = parseFloat(precioTotal);
-                                                    }
-                                                    if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 8) {
-                                                        for (let s = 0; s < precioModulosBajos.length; s++) {
-                                                            if (precioModulosBajos[s][2] == productos[i]['productosDormitorio']['id']) {
-                                                                var precioProd = precioModulosBajos[s][1];
-                                                                precioProd = precioProd / 100 + 1;
-                                                            }
-                                                        }
-                                                    }
-                                                    if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 11) {
-                                                        for (let s = 0; s < precioAparadores.length; s++) {
-                                                            if (precioAparadores[s][2] == productos[i]['productosDormitorio']['id']) {
-                                                                var precioProd = precioAparadores[s][1];
-                                                                precioProd = precioProd / 100 + 1;
-                                                            }
-                                                        }
-                                                    }
-
-                                                    precioFloat = precioFloat * precioPunto;
-                                                    precioFloat = precioFloat * precioProd;
-                                                    var todoApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo'];
-                                                    for (let s = 0; s < apoyoPrecios.length; s++) {
-                                                        if (apoyoPrecios[s][2] == todoApoyo['id']) {
-                                                            var precioApo = precioModulosBajos[s][1];
-                                                            precioApo = precioApo / 100 + 1;
-                                                        }
-                                                    }
-                                                    var precioApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
-                                                    precioApoyo = precioApoyo * precioPunto;
-                                                    precioApoyo = precioApoyo * precioApo;
-                                                    precioFloat = precioFloat + precioApoyo;
+                                                    var fabrica;
+                                                    fabrica = $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text();
+                                                    var ganancias;
+                                                    ganancias = $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text();
+                                                    var precioFloat = 0;
+                                                    precioFloat = parseFloat(precioTotal);
+                                                    fabrica = parseFloat(fabrica);
+                                                    ganancias = parseFloat(fabrica);
+                                                    precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
+                                                    fabrica = fabrica + iluminacion[j]['iluminacion']['precio'] / 2;
+                                                    ganancias = ganancias + iluminacion[j]['iluminacion']['precio'] / 2;
                                                     var subTotal = parseFloat($('#precioSubtotal').text());
-                                                    subTotal = subTotal + precioFloat;
-                                                    $('#precioSubtotal').text(subTotal.toFixed(2));
-                                                    $('#totalDescuentoTexto').text(subTotal.toFixed(2));
+                                                    if (subTotal == 0) {
+                                                        subTotal = precioFloat;
+                                                    }
 
-                                                    var iva = subTotal * 0.21;
+                                                    $('#precioSubtotal').text(precioFloat.toFixed(2));
+                                                    var iva = precioFloat * 0.21;
                                                     $('#ivaPrecioQuitar').remove();
-                                                    $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + ' €</p>');
-                                                    iva = subTotal + iva;
+                                                    $('#ivaQuitar').append(
+                                                        '<p id="ivaPrecioQuitar" style="font-size:25px">' + iva.toFixed(2) + '</p>'
+                                                    );
+                                                    iva = precioFloat + iva;
                                                     $('#precioIvaSumado').remove();
                                                     $('#precioCalculadoIva').append(
-                                                        '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + ' €</p>'
+                                                        '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
                                                     );
-                                                    var total;
-                                                    total = precioFloat * precioTienda;
-                                                    console.log(total);
-                                                    total = total - precioFloat;
+                                                    $('#totalDescuentoTexto').text(precioFloat);
                                                     $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
-                                                    $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
-                                                    $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
-                                                }
-
-                                                for (let j = 0; j < iluminacion.length; j++) {
-                                                    if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
-                                                        $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p>Iluminacion&nbsp;&nbsp;&nbsp;' +
-                                                                iluminacion[j]['iluminacion']['precio'] +
-                                                                '&euro;</p>'
-                                                        );
-                                                        var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
-                                                        var fabrica;
-                                                        fabrica = $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text();
-                                                        var ganancias;
-                                                        ganancias = $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text();
-                                                        var precioFloat = 0;
-                                                        precioFloat = parseFloat(precioTotal);
-                                                        fabrica = parseFloat(fabrica);
-                                                        ganancias = parseFloat(fabrica);
-                                                        precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
-                                                        fabrica = fabrica + iluminacion[j]['iluminacion']['precio'] / 2;
-                                                        ganancias = ganancias + iluminacion[j]['iluminacion']['precio'] / 2;
-                                                        var subTotal = parseFloat($('#precioSubtotal').text());
-                                                        if (subTotal == 0) {
-                                                            subTotal = precioFloat;
-                                                        }
-
-                                                        $('#precioSubtotal').text(precioFloat.toFixed(2));
-                                                        var iva = precioFloat * 0.21;
-                                                        $('#ivaPrecioQuitar').remove();
-                                                        $('#ivaQuitar').append(
-                                                            '<p id="ivaPrecioQuitar" style="font-size:25px">' + iva.toFixed(2) + '</p>'
-                                                        );
-                                                        iva = precioFloat + iva;
-                                                        $('#precioIvaSumado').remove();
-                                                        $('#precioCalculadoIva').append(
-                                                            '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
-                                                        );
-                                                        $('#totalDescuentoTexto').text(precioFloat);
-                                                        $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
-                                                        $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(fabrica.toFixed(2));
-                                                        $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(
-                                                            ganancias.toFixed(2)
-                                                        );
-                                                    }
+                                                    $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(fabrica.toFixed(2));
+                                                    $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(ganancias.toFixed(2));
                                                 }
                                             }
                                         }
-                                    }, 0);
-                                });
-                        }
+                                    }
+                                }, 0);
+                            });
                     }
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
+                }
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
 
         this.datosClienteService
             .query({
@@ -1110,11 +1104,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             this.transition();
         }
     }
-    public aparaceDes() {
-        $('#descuentoTextoDiv').css({ display: 'block' });
-        $('#cuentatextodiv').css({ display: 'block' });
-        $('#+Descuento').text('X');
-    }
+
     transition() {
         this.router.navigate(['/productos-presupuesto-pedidos'], {
             queryParams: {
@@ -1377,28 +1367,18 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     }
     public descuento() {
         var valor;
-        var maximo = parseFloat($('#descuentoPago').attr('max'));
         var precioNormal = parseFloat($('#precioSubtotal').text());
         valor = $('#descuentoPago').val();
         valor = parseFloat(valor);
-        if (valor <= maximo) {
-            $('#descuentoPago').css({ border: '0' });
-            var precioDescuento = precioNormal * (valor / 100);
-            $('#precioConDescuento').remove();
-            $('#descuentoCalculado').append(
-                '<p id="precioConDescuento" style="font-size:25px">-' + precioDescuento.toFixed(2) + '&euro;</p>'
-            );
-            precioDescuento = precioNormal - precioDescuento;
-            $('#totalDescuentoTexto').text(precioDescuento.toFixed(2));
-            var iva = precioDescuento * 0.21;
-            $('#ivaPrecioQuitar').remove();
-            $('#ivaQuitar').append('<p id="ivaPrecioQuitar" style="font-size:25px">' + iva.toFixed(2) + '</p>');
-            iva = precioDescuento + iva;
-            $('#precioIvaSumado').remove();
-            $('#precioCalculadoIva').append('<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>');
-        } else {
-            $('#descuentoPago').css({ border: 'red 1px solid' });
-        }
+        valor = valor / 100;
+        var cuenta = precioNormal * valor;
+        $('#cuentatextodivDescuento').css({ display: 'block' });
+        $('#meterQuitadoDescuento').text(cuenta.toFixed(2));
+        cuenta = precioNormal - cuenta;
+        var iva = cuenta * 0.21;
+        $('#ivaPrecioQuitar').text(iva.toFixed(2) + ' €');
+        var todo = iva + cuenta;
+        $('#precioIvaSumado').text(todo.toFixed(2) + ' €');
     }
 
     public pago() {

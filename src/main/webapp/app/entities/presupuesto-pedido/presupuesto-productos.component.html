@@ -44,11 +44,12 @@
 			<div style="float:right;margin-right:25%" id="totalDescuento"><span id="totalDescuentoTexto" style="font-size:25px"></span><span style="font-size:25px"> &euro;</span></div>
 		</div>
 		<div style="float:left;width:100%;margin-bottom:15px">
-			<div style="float:left;margin-left:25%;font-size:25px;width:70%"><span style="float:left" (click)="aparaceDes()" id="+Descuento">+</span>
+			<div style="float:left;margin-left:25%;font-size:25px;width:70%"><span style="float:left" onclick="descuentomasDiv()" id="masDescuento">+</span>
 			<div style="font-size:25px;float:left;display:none;margin-left: 5%;" id="descuentoTextoDiv"><p style="letter-spacing: 2px;">DESCUENTO(%)</p>
 			
 			</div>
-			<div style="float:right;margin-right:28%;display:none" id="cuentatextodiv"><input type="number" min="0" (change)="descuento()" name="descuento" id="descuentoPago"/></div>
+			<div style="float:left;margin-left:4%;display:none;" id="cuentatextodiv"><input type="number" min="0" style="width:75px" (change)="descuento()" name="descuento" id="descuentoPago"/></div>
+			<div style="float:right;margin-right:28%;display:none;color:red" id="cuentatextodivDescuento">- <span style="font-size:25px;color:red" id="meterQuitadoDescuento"></span> &euro;</div>
 			</div>
 			
 		</div>
