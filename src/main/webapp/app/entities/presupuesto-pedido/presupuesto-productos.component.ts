@@ -35,7 +35,6 @@ import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 })
 export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterViewInit {
     currentAccount: any;
-    productosPresupuestoPedidos: any;
     error: any;
     isSaving: boolean;
     success: any;
