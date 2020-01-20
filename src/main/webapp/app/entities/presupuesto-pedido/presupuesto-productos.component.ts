@@ -860,11 +860,13 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             for (let k = 0; k < acabados.length; k++) {
                                                 if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
-                                                        '<p>Acabado ' +
+                                                        '<p >Acabado ' +
                                                             contador +
-                                                            '&nbsp;&nbsp;&nbsp; ' +
+                                                            '&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                            contador +
+                                                            '">' +
                                                             acabados[k]['acabados']['nombre'] +
-                                                            '</p>'
+                                                            '</span></p>'
                                                     );
                                                     var prodNombre =
                                                         acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
@@ -884,10 +886,10 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                         prodNombre = 'mb5';
                                                     }
                                                     if (prodNombre == 'Modulo Bajo 5 Apertura Izquierda') {
-                                                        prodNombre = 'mb8';
+                                                        prodNombre = 'mb7';
                                                     }
                                                     if (prodNombre == 'Modulo Bajo 5 Apertura Derecha') {
-                                                        prodNombre = 'mb7';
+                                                        prodNombre = 'mb8';
                                                     }
                                                     if (prodNombre == 'Modulo Bajo 6') {
                                                         prodNombre = 'mb9';
@@ -914,6 +916,27 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     if (prodNombre == 'Aparador 3') {
                                                         prodNombre = 'ap3';
                                                     }
+                                                    if (prodNombre == 'Aparador 4') {
+                                                        prodNombre = 'ap4';
+                                                    }
+                                                    if (prodNombre == 'Aparador 5') {
+                                                        prodNombre = 'ap5';
+                                                    }
+                                                    if (prodNombre == 'Aparador 6') {
+                                                        prodNombre = 'ap6';
+                                                    }
+                                                    if (prodNombre == 'Aparador 7') {
+                                                        prodNombre = 'ap7';
+                                                    }
+                                                    if (prodNombre == 'Aparador 8') {
+                                                        prodNombre = 'ap8';
+                                                    }
+                                                    if (prodNombre == 'Aparador 9') {
+                                                        prodNombre = 'ap9';
+                                                    }
+                                                    if (prodNombre == 'Aparador 10') {
+                                                        prodNombre = 'ap10';
+                                                    }
                                                     var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
                                                     if (nombreAcabado == 'marmol blanco') {
                                                         nombreAcabado = 'marmolblanco';
@@ -921,21 +944,64 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     if (nombreAcabado == 'marmol negro') {
                                                         nombreAcabado = 'marmolnegro';
                                                     }
-                                                    $('#imagen' + i).append(
-                                                        '<img id="tapa" class="' +
-                                                            nombreAcabado +
-                                                            '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
-                                                            prodNombre +
-                                                            '/' +
-                                                            contador +
-                                                            '/' +
-                                                            prodNombre +
-                                                            '_' +
-                                                            contador +
-                                                            '_' +
-                                                            nombreAcabado +
-                                                            '_optimized.png">'
-                                                    );
+
+                                                    if (nombreAcabado == 'cristal bronce') {
+                                                        var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
+                                                            .text()
+                                                            .toLowerCase();
+                                                        $('#imagen' + i).append(
+                                                            '<img id="tapa" class="' +
+                                                                nombreAcabado +
+                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                                prodNombre +
+                                                                '/' +
+                                                                contador +
+                                                                ' BRONCE/' +
+                                                                prodNombre +
+                                                                '_' +
+                                                                contador +
+                                                                '_' +
+                                                                aca1Nombre +
+                                                                '_bronce_optimized.png">'
+                                                        );
+                                                    }
+                                                    if (nombreAcabado == 'cristal transparente') {
+                                                        var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
+                                                            .text()
+                                                            .toLowerCase();
+                                                        $('#imagen' + i).append(
+                                                            '<img id="tapa" class="' +
+                                                                nombreAcabado +
+                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                                prodNombre +
+                                                                '/' +
+                                                                contador +
+                                                                ' TRANSPARENTE/' +
+                                                                prodNombre +
+                                                                '_' +
+                                                                contador +
+                                                                '_' +
+                                                                aca1Nombre +
+                                                                '_transparente_optimized.png">'
+                                                        );
+                                                    }
+                                                    if (nombreAcabado != 'cristal transparente' && nombreAcabado != 'cristal bronce') {
+                                                        $('#imagen' + i).append(
+                                                            '<img id="tapa" class="' +
+                                                                nombreAcabado +
+                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                                prodNombre +
+                                                                '/' +
+                                                                contador +
+                                                                '/' +
+                                                                prodNombre +
+                                                                '_' +
+                                                                contador +
+                                                                '_' +
+                                                                nombreAcabado +
+                                                                '_optimized.png">'
+                                                        );
+                                                    }
 
                                                     if (
                                                         contador == 1 &&
