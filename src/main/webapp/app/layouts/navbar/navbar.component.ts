@@ -321,7 +321,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         aux[0] = res.body[w];
                                     }
                                 }
-                                idDefinitiva = aux[0]['id'] + 1;
+                                idDefinitiva = aux[0]['id'];
                                 const prueba1 = {
                                     id: idDefinitiva,
                                     codigo: 'PR-' + usuario['id'],
@@ -383,7 +383,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 var idArmario = 0;
                                                 for (let v = 0; v < data.body.length; v++) {
                                                     if (data.body[v]['id'] > idArmario) {
-                                                        idArmario = data.body[v]['id'] + 1;
+                                                        idArmario = data.body[v]['id'];
                                                     }
                                                 }
                                                 presupuestoArmario['id'] = idArmario;
@@ -499,6 +499,28 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         }
                                     }
                                 }
+
+                                this.presupuestoPedidoService
+                                    .query({
+                                        size: 100000
+                                    })
+                                    .subscribe(data => {
+                                        for (let h = 0; h < data.body.length; h++) {
+                                            if (h == 0) {
+                                                var prod = data.body[h];
+                                            }
+
+                                            if (prod['id'] <= data.body[h]['id']) {
+                                                prod = data.body[h];
+                                            }
+                                        }
+                                        var id = prod['id'];
+                                        sessionStorage.setItem('presupuesto', '' + id);
+                                        $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
+                                        $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
+                                        $('#todometerFondo').css({ display: 'none' });
+                                        this.router.navigate(['/presupuesto-producto']);
+                                    });
                             },
                             (res: HttpErrorResponse) => this.onError(res.message)
                         );

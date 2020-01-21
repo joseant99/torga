@@ -1398,6 +1398,129 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
 
+            if (texto == '5 PUERTAS DERECHA') {
+                var dimens = this.dimenArmarios;
+                var grandes = dimens['grandes'];
+                var array = [];
+                var arrayPuertas = [];
+                for (let j = 0; j < puertas - 2; j++) {
+                    array[j] = j;
+                }
+                for (let k = 0; k < puertas; k++) {
+                    arrayPuertas[k] = k + 1;
+                }
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+                if (puertas == 5) {
+                    for (let i = 0; i < puertas; i++) {
+                        if (width >= 1500 && width < 2200) {
+                            var dimensiones = dimens[puertas + ' puertas'];
+                        }
+                        if (width < 1650 && width >= 1500) {
+                            var dimensiones;
+                            dimensiones = 'margin-left: 20%;';
+                        }
+                        if (width < 1500 && width >= 1300) {
+                            var dimensiones = segunWIDTH[puertas + ' puertas'];
+                        }
+                        this.numeroDeHuecos = puertas;
+
+                        if (i == 0) {
+                            $('#imagenesArmario1').append(
+                                '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                            );
+                            $('#imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('#imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                        if (i == 1) {
+                            $('#imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left:281px;margin-top:-51px" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('#imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left:281px;margin-top:-51px" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                        if (i == 2) {
+                            $('#imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left:491px;margin-top:-90px" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
+                            );
+                            $('#imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left:491px;margin-top:-90px" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
+                            );
+                        }
+                    }
+
+                    var html = $('#imagenesArmario1').html();
+                    $('#imagenesArmario2').css({ 'margin-top': '600px' });
+                    $('#imagenesArmario2').append(html);
+                    for (let i = 0; i < puertas; i++) {
+                        if (width >= 1500 && width < 2200) {
+                            var dimensiones = dimens[puertas + ' puertas'];
+                        }
+                        if (width < 1650 && width >= 1500) {
+                            var dimensiones;
+                            dimensiones = 'margin-left: 20%;';
+                        }
+                        if (width < 1500 && width >= 1300) {
+                            var dimensiones = segunWIDTH[puertas + ' puertas'];
+                        }
+                        this.numeroDeHuecos = puertas;
+
+                        if (i == 0) {
+                            $('#imagenesArmario').append(
+                                '<p id="textoLetraHueco' +
+                                    i +
+                                    '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 300px;font-size: 50px;">' +
+                                    mai[i] +
+                                    '</p>'
+                            );
+                        }
+                        if (i == 1) {
+                            $('#imagenesArmario').append(
+                                '<p id="textoLetraHueco' +
+                                    i +
+                                    '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 245px;font-size: 50px;">' +
+                                    mai[i] +
+                                    '</p>'
+                            );
+                        }
+                        if (i == 2) {
+                            $('#imagenesArmario').append(
+                                '<p id="textoLetraHueco' +
+                                    i +
+                                    '" style="position:absolute;z-index:10000;margin-left: 650px;margin-top: 210px;font-size: 50px;">' +
+                                    mai[i] +
+                                    '</p>'
+                            );
+                        }
+                    }
+                    $('#acabadosTodo').removeAttr('class');
+                    this.acaProdService.findAca(42).subscribe(data => {
+                        this.todos = data.body[0]['acabados'];
+                        this.acabadosTrasera = data.body[0]['acabados'];
+                    });
+                    this.acaProdService.findAca(122).subscribe(data => {
+                        this.acabadosInteriores = data.body[0]['acabados'];
+                    });
+                }
+            }
+
             if (texto == '6 PUERTAS ASIMETRICAS') {
                 var dimens = this.dimenArmarios;
                 var grandes = dimens['grandes'];
@@ -2885,7 +3008,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     data.body[0].precio +
                                     '</span>€</span><p/>'
                             );
-                            $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' &euro;');
+                            $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
                             var precioTodo;
                             precioTodo = $('#precioDimension').text();
                             var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
@@ -2921,7 +3044,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     data.body[0].precio +
                                     '€</span><p/>'
                             );
-                            $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' &euro;');
+                            $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
                             var precioTodo;
                             precioTodo = $('#precioDimension').text();
                             var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
@@ -5084,6 +5207,144 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
                                                                     }
+                                                                    if (texto == '5 PUERTAS DERECHA') {
+                                                                        for (let i = 1; i <= 2; i++) {
+                                                                            if (hueco == 3) {
+                                                                                cuenta = ancho / puertas;
+                                                                                cuenta = cuenta * 1;
+                                                                                if (i == 1) {
+                                                                                    this.interioresArmarioNuevosService
+                                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                                        .subscribe(data => {
+                                                                                            $(
+                                                                                                '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                            ).append(
+                                                                                                '<p style="width:100%">Hueco ' +
+                                                                                                    letras[hueco - 1] +
+                                                                                                    ': <span id="acabadoHueco' +
+                                                                                                    hueco +
+                                                                                                    '">Interior ' +
+                                                                                                    nombre +
+                                                                                                    '</span><span style="float:right">+ ' +
+                                                                                                    data.body[0].precio +
+                                                                                                    '€</span><p/>'
+                                                                                            );
+                                                                                            $('#precioInt' + (hueco - 1)).text(
+                                                                                                data.body[0].precio + ' €'
+                                                                                            );
+                                                                                            var precioTodo;
+                                                                                            precioTodo = $('#precioDimension').text();
+                                                                                            var precioTodoFloat =
+                                                                                                data.body[0].precio +
+                                                                                                parseFloat(precioTodo);
+                                                                                            $('#precioDimension').text(precioTodoFloat);
+                                                                                        });
+                                                                                }
+
+                                                                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                                                                    '<img id="interiorDentroArmario' +
+                                                                                        hueco +
+                                                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left: 491px;margin-top: -90px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                                                        nombre +
+                                                                                        '/peque_interior_' +
+                                                                                        nombre +
+                                                                                        '_' +
+                                                                                        interior1.toLowerCase() +
+                                                                                        '_optimized.png">'
+                                                                                );
+                                                                                $('#textoLetraHueco' + (hueco - 1)).remove();
+                                                                            }
+                                                                            if (hueco == 2) {
+                                                                                cuenta = ancho / puertas;
+                                                                                cuenta = cuenta * 2;
+                                                                                if (i == 1) {
+                                                                                    this.interioresArmarioNuevosService
+                                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                                        .subscribe(data => {
+                                                                                            $(
+                                                                                                '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                            ).append(
+                                                                                                '<p style="width:100%">Hueco ' +
+                                                                                                    letras[hueco - 1] +
+                                                                                                    ': <span id="acabadoHueco' +
+                                                                                                    hueco +
+                                                                                                    '">Interior ' +
+                                                                                                    nombre +
+                                                                                                    '</span><span style="float:right">+ ' +
+                                                                                                    data.body[0].precio +
+                                                                                                    '€</span><p/>'
+                                                                                            );
+                                                                                            $('#precioInt' + (hueco - 1)).text(
+                                                                                                data.body[0].precio + ' €'
+                                                                                            );
+                                                                                            var precioTodo;
+                                                                                            precioTodo = $('#precioDimension').text();
+                                                                                            var precioTodoFloat =
+                                                                                                data.body[0].precio +
+                                                                                                parseFloat(precioTodo);
+                                                                                            $('#precioDimension').text(precioTodoFloat);
+                                                                                        });
+                                                                                }
+                                                                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                                                                    '<img id="interiorDentroArmario' +
+                                                                                        hueco +
+                                                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:281px;margin-top:-52px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                                        nombre +
+                                                                                        '/grande_interior_' +
+                                                                                        nombre +
+                                                                                        '_' +
+                                                                                        interior1.toLowerCase() +
+                                                                                        '_optimized.png">'
+                                                                                );
+                                                                                $('#textoLetraHueco' + (hueco - 1)).remove();
+                                                                            }
+
+                                                                            if (hueco == 1) {
+                                                                                cuenta = ancho / puertas;
+                                                                                cuenta = cuenta * 2;
+                                                                                if (i == 1) {
+                                                                                    this.interioresArmarioNuevosService
+                                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                                        .subscribe(data => {
+                                                                                            $(
+                                                                                                '#calculadoraCarrito #productoCalculadora1 #datos1'
+                                                                                            ).append(
+                                                                                                '<p style="width:100%">Hueco ' +
+                                                                                                    letras[hueco - 1] +
+                                                                                                    ': <span id="acabadoHueco' +
+                                                                                                    hueco +
+                                                                                                    '">Interior ' +
+                                                                                                    nombre +
+                                                                                                    '</span><span style="float:right">+ ' +
+                                                                                                    data.body[0].precio +
+                                                                                                    '€</span><p/>'
+                                                                                            );
+                                                                                            $('#precioInt' + (hueco - 1)).text(
+                                                                                                data.body[0].precio + ' €'
+                                                                                            );
+                                                                                            var precioTodo;
+                                                                                            precioTodo = $('#precioDimension').text();
+                                                                                            var precioTodoFloat =
+                                                                                                data.body[0].precio +
+                                                                                                parseFloat(precioTodo);
+                                                                                            $('#precioDimension').text(precioTodoFloat);
+                                                                                        });
+                                                                                }
+                                                                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                                                                    '<img id="interiorDentroArmario' +
+                                                                                        hueco +
+                                                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                                        nombre +
+                                                                                        '/grande_interior_' +
+                                                                                        nombre +
+                                                                                        '_' +
+                                                                                        interior1.toLowerCase() +
+                                                                                        '_optimized.png">'
+                                                                                );
+                                                                                $('#textoLetraHueco' + (hueco - 1)).remove();
+                                                                            }
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -5098,27 +5359,26 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     }
                 }
             }
-        }
 
-        var interior10 = $('#calculadoraCarrito #productoCalculadora1 #datos1 #interiorHueco' + hueco + ' #precio').text();
-        var interTodos = this.productosDormitorioModal;
-        var arrayParaVer = this.interioresParaArray;
-        for (let j = 0; j < interTodos.length; j++) {
-            if (interTodos[j]['nombre'] == nombre) {
-                interTodos[j]['precio'] = interior10;
-                if (arrayParaVer.length == 0) {
-                    arrayParaVer[0] = interTodos[j];
-                } else {
-                    arrayParaVer[arrayParaVer.length] = interTodos[j];
+            var interior10 = $('#calculadoraCarrito #productoCalculadora1 #datos1 #interiorHueco' + hueco + ' #precio').text();
+            var interTodos = this.productosDormitorioModal;
+            var arrayParaVer = this.interioresParaArray;
+            for (let j = 0; j < interTodos.length; j++) {
+                if (interTodos[j]['nombre'] == nombre) {
+                    interTodos[j]['precio'] = interior10;
+                    if (arrayParaVer.length == 0) {
+                        arrayParaVer[0] = interTodos[j];
+                    } else {
+                        arrayParaVer[arrayParaVer.length] = interTodos[j];
+                    }
                 }
             }
+
+            var array = this.armarioCogido;
+            array['interiores'] = arrayParaVer;
+            this.armarioCogido = array;
         }
-
-        var array = this.armarioCogido;
-        array['interiores'] = arrayParaVer;
-        this.armarioCogido = array;
     }
-
     public cambiarAcabadoInterior(nombre) {
         var hueco = this.numeroDeHuecos;
         var acabados = this.acabados;
@@ -5371,7 +5631,52 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             );
                         }
                     }
+                    if (texto == '5 PUERTAS DERECHA') {
+                        var cuenta = puertas;
+                        if (cuenta % 1 == 0) {
+                            for (let i = 1; i <= puertas; i++) {
+                                if (i == 1) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                    );
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                    );
+                                }
+                                if (i == 2) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                    );
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                    );
+                                }
 
+                                if (i == 3) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 492px;margin-top: -91px;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                    );
+                                }
+                            }
+                        }
+                        for (let i = 1; i <= puertas; i++) {
+                            dimens['dimenPuerta1'] = 'margin-left:85px;margin-top:320px;z-index:100000;font-size:30px';
+                            dimens['dimenPuerta2'] = 'margin-left:230px;margin-top:300px;z-index:100000;font-size:30px';
+                            dimens['dimenPuerta3'] = 'margin-left:370px;margin-top:280px;z-index:100000;font-size:30px';
+                            dimens['dimenPuerta4'] = 'margin-left:510px;margin-top:260px;z-index:100000;font-size:30px';
+                            dimens['dimenPuerta5'] = 'margin-left:640px;margin-top:240px;z-index:100000;font-size:30px';
+
+                            $('#imagenesArmario2 #imagenesArmario').append(
+                                '<p id="nombrePuerta' +
+                                    i +
+                                    '" style="position:absolute;' +
+                                    dimens['dimenPuerta' + i] +
+                                    '"> Puerta ' +
+                                    i +
+                                    '</p>'
+                            );
+                        }
+                    }
                     if (texto == '5 PUERTAS CENTRAL') {
                         var cuenta = puertas;
                         if (cuenta % 1 == 0) {
@@ -6088,6 +6393,172 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
         });
+        if (texto == '1 PUERTA') {
+            $('#inputPuertas' + id).val(nombre);
+            if (nombre == 'Puerta Madera') {
+                this.acaProdService.findAca(47).subscribe(data => {
+                    $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                    this.acabadosPuerta1 = data.body[0]['acabados'];
+                });
+            } else {
+                this.acaProdService.findAca(48).subscribe(data => {
+                    $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                    this.acabadosPuerta2 = data.body[0]['acabados'];
+                });
+            }
+        }
+        if (texto == '2 PUERTAS') {
+            if (id == 0) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
+        if (texto == '4 PUERTAS - 2 HUECOS GRANDES') {
+            if (id == 0) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
 
         if (texto == '3 PUERTAS IZQUIERDA') {
             if (id == 0) {
@@ -6348,6 +6819,121 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#inputPuertas' + (id - 1)).attr('readonly');
             }
         }
+        if (texto == '5 PUERTAS DERECHA') {
+            if (id == 4) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+            }
+            if (id == 0) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+            if (id == 2) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 3) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    this.acaProdService.findAca(48).subscribe(data => {
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas2');
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                        this.acabadosPuerta2 = data.body[0]['acabados'];
+                    });
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+
         if (texto == '5 PUERTAS IZQUIERDA') {
             if (id == 0) {
                 $('#inputPuertas' + id).val(nombre);
@@ -11945,6 +12531,34 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
 
         $('#calculadoraCarrito #productoCalculadora1 #datos1 #nombreTiradorCalculadora').text(tirador);
         $('#calculadoraCarrito #productoCalculadora1 #datos1 #precioTiradorCalculadora').text(precio[tirador]);
+
+        if (texto == '1 PUERTA') {
+            var input1 = $('#inputPuertas0').val();
+            if (input1 == 'Puerta Madera') {
+                if (tirador == 'testa') {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                } else {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaTiradorImagen" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/tiradores/HUECO PEQUE/TIRADOR ' +
+                            tirador.toUpperCase() +
+                            '/peque_tirador_' +
+                            tirador +
+                            '_' +
+                            texto1 +
+                            '.png">'
+                    );
+                }
+            }
+        }
+
         if (texto == '3 PUERTAS IZQUIERDA') {
             var input1 = $('#inputPuertas0').val();
             var input2 = $('#inputPuertas1').val();

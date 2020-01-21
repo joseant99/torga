@@ -81,7 +81,7 @@ export const presupuestoPedidoRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER', 'ROLE_REPRESENTATE'],
+            authorities: ['ROLE_USER', 'ROLE_REPRESENTATE', 'ROLE_CLIENTE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.presupuestoPedido.home.title'
         },

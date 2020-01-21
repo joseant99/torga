@@ -152,6 +152,10 @@
 		$("#rayasNavegador").attr("src","../../../content/images/LINEAS-min.png");
 		$("#botonEsconder").attr("onclick","apareceMenu()");
 	}
+	function cerrarModal(){
+		$("#modalCesta").modal('hide');//ocultamos el modal
+		$("#todometerFondo").css({"display":"block"});
+	}
 	function borrarProdCesta(id){
 		sessionStorage.removeItem("prod"+id);
 		$("#modalCesta .modal-body #cuerpo"+id).remove();
