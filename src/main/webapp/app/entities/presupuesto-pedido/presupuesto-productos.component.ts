@@ -153,10 +153,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         actualizar['presupuestoPedido']['pedido'] = 1;
         actualizar['presupuestoPedido']['fecha_pedido'] = output;
         var presupuestoActualizado = actualizar['presupuestoPedido'];
-        console.log(actualizar);
-        console.log(presupuestoActualizado);
 
         this.subscribeToSaveResponse(this.presupuestoPedidoService.update(presupuestoActualizado));
+        this.router.navigate(['/pedidos-producto']);
     }
     protected subscribeToSaveResponse(result: Observable<HttpResponse<IPresupuestoPedido>>) {
         result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
