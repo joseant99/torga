@@ -155,7 +155,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var presupuestoActualizado = actualizar['presupuestoPedido'];
 
         this.subscribeToSaveResponse(this.presupuestoPedidoService.update(presupuestoActualizado));
-        this.router.navigate(['/pedidos-producto']);
     }
     protected subscribeToSaveResponse(result: Observable<HttpResponse<IPresupuestoPedido>>) {
         result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
@@ -170,7 +169,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     ngAfterViewInit() {}
     protected onSaveSuccess() {
         this.isSaving = false;
-        this.previousState();
+        this.router.navigate(['/pedidos-producto']);
     }
     previousState() {
         window.history.back();
