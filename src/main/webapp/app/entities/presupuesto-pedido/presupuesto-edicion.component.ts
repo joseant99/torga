@@ -58,7 +58,9 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
     precioTienda: any;
     cambioDimension: any;
     cambiadoAcabado: any;
+    idSaber: any;
     iluminacion: any;
+    datosYaCargados: any;
     constructor(
         protected acabadosService: AcabadosService,
         protected interioresService: InterioresService,
@@ -94,26 +96,27 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
         var contMax = 0;
         presu = sessionStorage.getItem('presupuesto');
         this.productosPresupuestoPedidosService.query1(presu).subscribe((res: HttpResponse<IProductosPresupuestoPedidos[]>) => {
+            this.productosPresupuestoPedidosService.todos = res.body;
             for (let i = 0; i < res.body.length; i++) {
                 if (res.body[i]['presupuestoPedido'] != null) {
                     if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
                         productosPresupuesto[cont] = res.body[i];
                         var datos = res.body[i]['dimensionesProductoTipo'];
-
-                        $('#datos1').append(
+                        $('#productoCalculadora' + (i + 1)).css({ display: 'block' });
+                        $('#productoCalculadora' + (i + 1) + ' #nombreProducto').append(
                             '<p style="width:100%;"><span id="nombreMesitaNombre' +
                                 (cont + 1) +
                                 '">' +
                                 datos['productosDormitorio']['nombre'] +
-                                '</span><span style="float:right" class="' +
+                                '</span><span style="float:right;margin-right:10%" class="' +
                                 datos['productosDormitorio']['id'] +
                                 '" id="nombreMesita' +
                                 cont +
                                 '">' +
                                 datos['precio'] +
-                                ' &euro;</span></p>'
+                                ' &euro;</span></p></div>'
                         );
-                        $('#datos1').append(
+                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
                             '<p style="width:100%"><span>Ancho : </span><span class="' +
                                 datos['id'] +
                                 '" id="ancho' +
@@ -122,21 +125,25 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                                 datos['ancho'] +
                                 '</span></p>'
                         );
-                        $('#datos1').append(
+                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
                             '<p style="width:100%"><span>Alto : </span><span id="alto' + cont + '">' + datos['alto'] + '</span></p>'
                         );
-                        $('#datos1').append(
+                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
                             '<p style="width:100%;"><span>Fondo : </span><span id="fondoDatosDimen' +
                                 cont +
                                 '">' +
                                 datos['fondo'] +
                                 '</span></p>'
                         );
-                        $('#datos1').append('<div id="div' + datos['productosDormitorio']['id'] + '"></div>');
-                        $('#datos1').append(
+
+                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                            '<div id="div' + datos['productosDormitorio']['id'] + '"></div>'
+                        );
+                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
                             '<p style="width:100%;margin-bottom:50px">' + productosPresupuesto[cont]['tiposApoyo']['nombre'] + '</p>'
                         );
                         cont++;
+                        contGuardar++;
                         this.acabadosProductosPresupuestoPedidoService.query1(res.body[i]['id']).subscribe(data => {
                             console.log(data.body);
                             var array = this.acabadosProductosPresupuestoPedidoService.todos;
@@ -144,28 +151,133 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                                 array = [];
                             }
                             array[contGuardar] = data.body;
-                            contGuardar++;
+                            contGuardar--;
                             this.acabadosProductosPresupuestoPedidoService.todos = array;
                             for (let h = 0; h < data.body['length']; h++) {
                                 var aca = data.body[h]['acabados'];
-                                $('#datos1 #div' + data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']).append(
-                                    '<p style="width:100%"><span>Acabado ' +
+                                console.log(data.body[h]);
+                                var nombre = data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
+                                $(
+                                    '#productoCalculadora' +
+                                        (i + 1) +
+                                        ' #datos1 #div' +
+                                        data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']
+                                ).append(
+                                    '<p style="width:100%" id="acabado' +
                                         (h + 1) +
-                                        ' </span><span id="acabaNombre' +
+                                        '"><span>Acabado ' +
+                                        (h + 1) +
+                                        ' </span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        (h + 1) +
+                                        '"  src="data:image/gif;base64,' +
+                                        aca['imagenFondo'] +
+                                        '" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        h +
+                                        '" style="margin-left:10px"><span id="acabaNombre' +
                                         h +
                                         '">' +
                                         aca['nombre'] +
                                         '</span></p>'
+                                );
+                                if (nombre == 'Modulo Bajo 1') {
+                                    nombre = 'mb1';
+                                }
+                                if (nombre == 'Modulo Bajo 2') {
+                                    nombre = 'mb2';
+                                }
+                                if (nombre == 'Modulo Bajo 3') {
+                                    nombre = 'mb4';
+                                }
+                                if (nombre == 'Modulo Bajo 4 Apertura Izquierda') {
+                                    nombre = 'mb6';
+                                }
+                                if (nombre == 'Modulo Bajo 4 Apertura Derecha') {
+                                    nombre = 'mb5';
+                                }
+                                if (nombre == 'Modulo Bajo 5 Apertura Izquierda') {
+                                    nombre = 'mb8';
+                                }
+                                if (nombre == 'Modulo Bajo 5 Apertura Derecha') {
+                                    nombre = 'mb7';
+                                }
+                                if (nombre == 'Modulo Bajo 6') {
+                                    nombre = 'mb9';
+                                }
+                                if (nombre == 'Modulo Bajo 7 Apertura Izquierda') {
+                                    nombre = 'mb11';
+                                }
+                                if (nombre == 'Modulo Bajo 7 Apertura Derecha') {
+                                    nombre = 'mb10';
+                                }
+                                if (nombre == 'Modulo Bajo 8 Apertura Izquierda') {
+                                    nombre = 'mb13';
+                                }
+                                if (nombre == 'Modulo Bajo 8 Apertura Derecha') {
+                                    nombre = 'mb12';
+                                }
+                                if (nombre == 'Modulo Bajo 9') {
+                                    nombre = 'mb14';
+                                }
+                                if (nombre == 'Aparador 1') {
+                                    nombre = 'ap1';
+                                }
+                                if (nombre == 'Aparador 2') {
+                                    nombre = 'ap2';
+                                }
+                                if (nombre == 'Aparador 3') {
+                                    nombre = 'ap3';
+                                }
+                                if (nombre == 'Aparador 4') {
+                                    nombre = 'ap4';
+                                }
+                                if (nombre == 'Aparador 5') {
+                                    nombre = 'ap5';
+                                }
+                                if (nombre == 'Aparador 6') {
+                                    nombre = 'ap6';
+                                }
+                                if (nombre == 'Aparador 7') {
+                                    nombre = 'ap7';
+                                }
+                                if (nombre == 'Aparador 8') {
+                                    nombre = 'ap8';
+                                }
+                                if (nombre == 'Aparador 9') {
+                                    nombre = 'ap9';
+                                }
+                                if (nombre == 'Aparador 10') {
+                                    nombre = 'ap10';
+                                }
+
+                                $('#imagenesAcabados' + i).attr('style');
+                                $('#imagenesAcabados' + i).css({ 'margin-left': '65px' });
+                                $('#imagenesAcabados' + i).append(
+                                    '<img id="tapa" class="' +
+                                        aca['nombre'].toLowerCase() +
+                                        '" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
+                                        nombre +
+                                        '/' +
+                                        (h + 1) +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        (h + 1) +
+                                        '_' +
+                                        aca['nombre'].toLowerCase() +
+                                        '_optimized.png">'
+                                );
+
+                                sessionStorage.setItem(
+                                    'idProdAca',
+                                    data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']
                                 );
                             }
                         });
                     }
                 }
             }
-
-            this.ProductosPresupuestos = productosPresupuesto;
+            this.productosPresupuestoPedidos = productosPresupuesto;
         });
-
         var todasDimensiones = [];
         var todosAcabados = [];
         var acaProd = [];
@@ -216,7 +328,38 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
             }
         });
     }
+    public guardarCambios1(id) {
+        var cambios = this.guardarCambios;
+        var prodsBuenos = [];
+        var acabados = this.acabadosProductosPresupuestoPedidoService.todos;
+        var dimen = this.dimensionesProductoTipoService.todos;
+        if (cambios[id] != undefined) {
+            for (let j = 1; j <= 100; j++) {
+                if (acabados[id][j] != undefined) {
+                    prodsBuenos[id] = acabados[id][j]['productosPresupuestoPedidos'];
+                }
 
+                if (cambios[id]['acabado' + j] != undefined) {
+                    acabados[id][j - 1]['acabados'] = cambios[id]['acabado' + j];
+                    console.log(acabados[id]);
+                    this.subscribeToSaveResponse(this.acabadosProductosPresupuestoPedidoService.update(acabados[id][j - 1]));
+                }
+            }
+            if (cambios[id]['dimensiones'] != undefined) {
+                var id1 = $('#ancho' + (id - 1)).attr('class');
+                for (let u = 0; u < dimen[id].length; u++) {
+                    if (dimen[id][u]['id'] == id1) {
+                        prodsBuenos[id]['dimensionesProductoTipo'] = dimen[id][u];
+                        this.subscribeToSaveResponse(this.productosPresupuestoPedidosService.update(prodsBuenos[id]));
+                    }
+                }
+            }
+            this.salirSinGuardar();
+        }
+    }
+    public salirSinGuardar() {
+        window.history.back();
+    }
     public eliminar(id) {
         $('#prod' + id).remove();
         $('#productoCalculadora' + id).remove();
@@ -224,40 +367,81 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
 
     public ocultar1(id) {
         $('.' + id).css({ display: 'none' });
+
+        var idBuena = this.idSaber;
+        $('#productoCalculadora' + idBuena + ' #datos1').css({ display: 'none' });
+        $('#productoCalculadora' + idBuena + ' #botonCalculadoraGuardar' + idBuena).attr('class', 'displayBoton');
     }
 
     public mostrarDatos(id) {
-        console.log(this.acabadosProductosPresupuestoPedidoService.todos);
+        id = id + 1;
+        this.idSaber = id;
+        var datosCargados = this.datosYaCargados;
+        var acabados = [];
+        acabados = this.acabadosProductosPresupuestoPedidoService.todos;
+        var productos = this.productosPresupuestoPedidosService.todos;
         var array = this.ocultar;
         var consultar = array[id];
-        if (consultar != undefined) {
-            $('.' + id).css({ display: 'block' });
-        } else {
-            array[id] = '1';
-            this.ocultar = array;
-            var idBuena;
-            idBuena = $('#nombreMesita' + id).attr('class');
-            var textoNombre = $('#nombreMesitaNombre' + (id + 1)).text();
-            this.nombreAcabado = textoNombre;
-            var idDimen = $('#ancho' + id).attr('class');
+        $('#productoCalculadora0 #datos1').css({ display: 'none' });
+        $('#productoCalculadora1 #datos1').css({ display: 'none' });
+        $('#productoCalculadora2 #datos1').css({ display: 'none' });
+        $('#productoCalculadora3 #datos1').css({ display: 'none' });
+        $('#productoCalculadora4 #datos1').css({ display: 'none' });
+        $('#productoCalculadora5 #datos1').css({ display: 'none' });
+        $('#productoCalculadora6 #datos1').css({ display: 'none' });
+        $('#productoCalculadora7 #datos1').css({ display: 'none' });
+        $('#productoCalculadora1 #botonCalculadoraGuardar1').attr('class', 'displayBoton');
+        $('#productoCalculadora2 #botonCalculadoraGuardar2').attr('class', 'displayBoton');
+        $('#productoCalculadora3 #botonCalculadoraGuardar3').attr('class', 'displayBoton');
+        $('#productoCalculadora4 #botonCalculadoraGuardar4').attr('class', 'displayBoton');
+        $('#productoCalculadora5 #botonCalculadoraGuardar5').attr('class', 'displayBoton');
+        $('#productoCalculadora6 #botonCalculadoraGuardar6').attr('class', 'displayBoton');
+        $('#productoCalculadora' + id + ' #datos1').css({ display: 'block' });
+        this.productosPresupuestoPedidos = productos;
+        array[id] = '1';
+        this.ocultar = array;
+        var idBuena;
+        idBuena = $('#productoCalculadora' + id + ' #nombreMesita' + (id - 1)).attr('class');
+        var textoNombre = $('#nombreMesitaNombre' + id).text();
+        this.nombreAcabado = textoNombre;
+        var idDimen = $('#productoCalculadora' + id + ' #ancho' + (id - 1)).attr('class');
+        if (datosCargados == 0) {
+            this.datosYaCargados = 0;
+            $('.1').css({ display: 'none' });
+            $('.0').css({ display: 'none' });
+            $('.2').css({ display: 'none' });
+            $('.3').css({ display: 'none' });
+            $('.4').css({ display: 'none' });
+            $('.5').css({ display: 'none' });
+            $('.6').css({ display: 'none' });
+            $('.7').css({ display: 'none' });
             this.dimensionesProductoTipoService.findProducto(idBuena).subscribe(data => {
                 var dimenArray = this.dimensionesProductoTipoService.todos;
                 dimenArray[id] = data.body;
                 this.dimensionesProductoTipoService.todos = dimenArray;
                 console.log(this.dimensionesProductoTipoService.todos);
                 var cont = 0;
-                $('.' + id).css({ display: 'block' });
-                $('.' + id).css({ 'margin-left': '60px' });
+                $('.' + (id - 1)).css({ display: 'block' });
+                $('.' + (id - 1)).css({ 'margin-left': '60px' });
                 var dimensionesPrueba;
                 dimensionesPrueba = data.body;
                 var datos = dimensionesPrueba;
                 var precioTienda1 = 0;
                 var precioTienda = 0;
+                $('.dimensionesColor1').empty();
+                $('.dimensionesColor2').empty();
+                $('.dimensionesColor3').empty();
+                $('.dimensionesColor4').empty();
+                $('.dimensionesColor5').empty();
+                $('.dimensionesColor6').empty();
+                $('.dimensionesColor7').empty();
+
                 $('#dimensiones').css({ display: 'block' });
                 for (let i = 0; i < datos.length; i++) {
                     if (idBuena == datos[i]['productosDormitorio']['id']) {
                         if (idDimen == datos[i]['id']) {
                             $('.dimensionesColor' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
+                            $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #DFDDDC' });
                         }
                         $('.' + id + ' .dimensionesColor' + (cont + 1)).css({ border: '1px solid #dfdddc' });
                         if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales') {
@@ -268,20 +452,21 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
-                            $('.' + id + ' .dimensionesColor1').append(
+                            $('.' + (id - 1) + ' .dimensionesColor1').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
                                     '" style="position:absolute;z-index:1"></p>'
                             );
-                            $('.' + id + ' .dimensionesColor1').append(
+                            $('.' + (id - 1) + ' .dimensionesColor1').append(
                                 '<a><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i]['id'] +
                                     '" width="500px" height="283.73px" style=""></a>'
                             );
+                            $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #DFDDDC' });
                         }
                         if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales') {
                             var image = document.createElement('img');
@@ -291,20 +476,21 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
-                            $('.' + id + ' .dimensionesColor2').append(
+                            $('.' + (id - 1) + ' .dimensionesColor2').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
                                     '" style="position:absolute;z-index:1"></p>'
                             );
-                            $('.' + id + ' .dimensionesColor2').append(
+                            $('.' + (id - 1) + ' .dimensionesColor2').append(
                                 '<a><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px"  style=""></a>'
                             );
+                            $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #DFDDDC' });
                         }
                         if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales') {
                             var image = document.createElement('img');
@@ -314,20 +500,21 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
-                            $('.' + id + ' .dimensionesColor3').append(
+                            $('.' + (id - 1) + ' .dimensionesColor3').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
                                     '" style="position:absolute;z-index:1"></p>'
                             );
-                            $('.' + id + ' .dimensionesColor3').append(
+                            $('.' + (id - 1) + ' .dimensionesColor3').append(
                                 '<a ><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px" style=""></a>'
                             );
+                            $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #DFDDDC' });
                         }
                         if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales') {
                             var image = document.createElement('img');
@@ -337,20 +524,21 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
-                            $('.' + id + ' .dimensionesColor4').append(
+                            $('.' + (id - 1) + ' .dimensionesColor4').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
                                     '" style="position:absolute;z-index:1"></p>'
                             );
-                            $('.' + id + ' .dimensionesColor4').append(
+                            $('.' + (id - 1) + ' .dimensionesColor4').append(
                                 '<a><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px" style=""></a>'
                             );
+                            $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #DFDDDC' });
                         }
                         if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales') {
                             var image = document.createElement('img');
@@ -360,20 +548,21 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
-                            $('.' + id + ' .dimensionesColor5').append(
+                            $('.' + (id - 1) + ' .dimensionesColor5').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
                                     '" style="position:absolute;z-index:1"></p>'
                             );
-                            $('.' + id + ' .dimensionesColor5').append(
+                            $('.' + (id - 1) + ' .dimensionesColor5').append(
                                 '<a><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '" width="500px" height="283.73px"  style=""></a>'
                             );
+                            $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #DFDDDC' });
                         }
                         if (cont == 5 && datos[i]['mensaje'] != 'Medidas Especiales') {
                             var image = document.createElement('img');
@@ -383,20 +572,21 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                             precio = Math.round(precio * 100) / 100;
                             image.src = 'data:image/gif;base64,' + datos[i]['imagen'];
                             image.id = 'imagenDimensiones';
-                            $('.' + id + ' .dimensionesColor6').append(
+                            $('.' + (id - 1) + ' .dimensionesColor6').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
                                     datos[i]['id'] +
                                     '" style="position:absolute;z-index:1"></p>'
                             );
-                            $('.' + id + ' .dimensionesColor6').append(
+                            $('.' + (id - 1) + ' .dimensionesColor6').append(
                                 '<a ><img  src="data:image/gif;base64,' +
                                     datos[i]['imagen'] +
                                     '" id="imagenDimensiones" class="' +
                                     datos[i] +
                                     '"width="500px" height="283.73px"  style=""></a>'
                             );
+                            $('.dimensionesColor' + (cont + 1)).css({ border: '1px solid #DFDDDC' });
                         }
                         cont++;
                     }
@@ -415,7 +605,7 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                     contAca++;
                 }
             }
-            var nombre = $('#datos1 #nombreMesitaNombre' + (id + 1)).text();
+            var nombre = $('#productoCalculadora' + id + ' #nombreMesitaNombre' + id).text();
 
             if (nombre == 'Modulo Bajo 1') {
                 nombre = 'mb1';
@@ -456,6 +646,38 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
             if (nombre == 'Modulo Bajo 9') {
                 nombre = 'mb14';
             }
+            if (nombre == 'Aparador 1') {
+                nombre = 'ap1';
+            }
+            if (nombre == 'Aparador 2') {
+                nombre = 'ap2';
+            }
+            if (nombre == 'Aparador 3') {
+                nombre = 'ap3';
+            }
+            if (nombre == 'Aparador 4') {
+                nombre = 'ap4';
+            }
+            if (nombre == 'Aparador 5') {
+                nombre = 'ap5';
+            }
+            if (nombre == 'Aparador 6') {
+                nombre = 'ap6';
+            }
+            if (nombre == 'Aparador 7') {
+                nombre = 'ap7';
+            }
+            if (nombre == 'Aparador 8') {
+                nombre = 'ap8';
+            }
+            if (nombre == 'Aparador 9') {
+                nombre = 'ap9';
+            }
+            if (nombre == 'Aparador 10') {
+                nombre = 'ap10';
+            }
+            $('.' + (id - 1) + ' .acabados .imagenAcabadoPrincipal').empty();
+
             this.acaProdService.findAca(idBuena).subscribe(data => {
                 var imagen;
                 var acabadosTodos;
@@ -463,35 +685,34 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                 this.acaProdService.todos = data.body;
                 this.acaProdService.parte = data.body[1]['acabados'];
                 console.log(id);
-                $('.' + id + ' #acabados').css({ display: 'block' });
-                $('.' + id + ' .acabados').css({ display: 'block' });
-                $('.' + id + ' .acabados .imagenAcabadoPrincipal').empty();
+                $('.' + (id - 1) + ' #acabados').css({ display: 'block' });
+                $('.' + (id - 1) + ' .acabados').css({ display: 'block' });
                 $.each(this.acaProdService.todos, function(index, value) {
                     if (value['productosDormitorio']['id'] == idBuena) {
                         imagen = value['imagen'];
                         if (contador == 1) {
-                            $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
+                            $('.' + (id - 1) + ' .acabados .imagenAcabadoPrincipal').append(
                                 '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                     imagen +
                                     '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
                             );
-                            for (let n = 0; n < aca.length; n++) {
-                                $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
-                                    '<img id="tapa" class="' +
-                                        aca[n].toLowerCase() +
-                                        '" width="650px" height="433px" src="../../../content/images/' +
-                                        nombre +
-                                        '/' +
-                                        (n + 1) +
-                                        '/' +
-                                        nombre +
-                                        '_' +
-                                        (n + 1) +
-                                        '_' +
-                                        aca[n].toLowerCase() +
-                                        '_optimized.png">'
-                                );
-                            }
+                        }
+                        for (let n = 0; n < aca.length; n++) {
+                            $('.' + (id - 1) + ' .acabados .imagenAcabadoPrincipal').append(
+                                '<img id="tapa" class="' +
+                                    aca[n].toLowerCase() +
+                                    '" width="650px" height="433px" src="../../../content/images/' +
+                                    nombre +
+                                    '/' +
+                                    (n + 1) +
+                                    '/' +
+                                    nombre +
+                                    '_' +
+                                    (n + 1) +
+                                    '_' +
+                                    aca[n].toLowerCase() +
+                                    '_optimized.png">'
+                            );
                         }
                         acabadosTodos = value['acabados'];
 
@@ -540,69 +761,11 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                     }
                 });
             });
-
-            this.productosDormitorioService.categoria(2).subscribe(data => {
-                for (let w = 0; w < data.body['length']; w++) {
-                    $('#modalApoyo #apoyoModal' + w).empty();
-                    $('#modalApoyo #apoyoModal' + w).append(
-                        '<img  src="data:image/gif;base64,' +
-                            data.body[w]['imagen'] +
-                            '" id="imagenApoyo' +
-                            w +
-                            '" class="' +
-                            data.body[w]['id'] +
-                            '" height="160px" width="280px" style=" opacity: 0.7;">'
-                    );
-                    $('#modalApoyo #apoyoModal' + w).append(
-                        '<strong><p style="color:black;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
-                            data.body[w]['nombre'] +
-                            '</strong></p>'
-                    );
-                }
-            });
-            $('.' + id + ' .botonApoyoNuevo').empty();
-            $('.' + id + ' .botonApoyoNuevo').append(
-                '<button style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarApoyo" id="color" data-toggle="modal" data-target="#modalApoyo">Apoyo</button>'
-            );
-            $('.' + id + ' .botonApoyoNuevo').append(
-                '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
-            );
+        } else {
+            $('.' + (id - 1)).css({ display: 'block' });
         }
     }
-    public guardarCambios1() {
-        var cambios = this.guardarCambios;
-        var prodsBuenos = [];
-        var acabados = this.acabadosProductosPresupuestoPedidoService.todos;
-        var dimen = this.dimensionesProductoTipoService.todos;
-        for (let i = 0; i < cambios.length; i++) {
-            if (cambios[i] != undefined) {
-                for (let j = 1; j <= 100; j++) {
-                    if (acabados[i][j] != undefined) {
-                        prodsBuenos[i] = acabados[i][j]['productosPresupuestoPedidos'];
-                    }
 
-                    if (cambios[i]['acabado' + j] != undefined) {
-                        acabados[i][j - 1]['acabados'] = cambios[i]['acabado' + j];
-                        console.log(acabados[i]);
-                        this.subscribeToSaveResponse(this.acabadosProductosPresupuestoPedidoService.update(acabados[i][j - 1]));
-                    }
-                }
-                if (cambios[i]['dimensiones'] != undefined) {
-                    var id = $('#ancho' + i).attr('class');
-                    for (let u = 0; u < dimen[i].length; u++) {
-                        if (dimen[i][u]['id'] == id) {
-                            prodsBuenos[i]['dimensionesProductoTipo'] = dimen[i][u];
-                            this.subscribeToSaveResponse(this.productosPresupuestoPedidosService.update(prodsBuenos[i]));
-                        }
-                    }
-                }
-                this.salirSinGuardar();
-            }
-        }
-    }
-    public salirSinGuardar() {
-        window.history.back();
-    }
     protected subscribeToSaveResponse(result: Observable<HttpResponse<ICategoriasDormi>>) {
         result.subscribe((res: HttpResponse<ICategoriasDormi>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
@@ -621,8 +784,9 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
         window.history.back();
     }
     public dimensionesCogidas(id, id1) {
+        var idCalculadora = this.idSaber;
         $('#imagenProdEspeciales').empty();
-        $('#botonCalculadoraGuardar').removeAttr('class');
+        $('#botonCalculadoraGuardar' + idCalculadora).removeAttr('class');
         $('#euroCalculadora').removeAttr('style');
         $('#medidasEspecialesTexto').css({ display: 'none' });
         $('#medidasAncho').css({ display: 'none' });
@@ -630,11 +794,14 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
         $('#medidasAlto').css({ display: 'none' });
         var precioTienda = this.precioTienda;
         this.interiores = JSON.parse(sessionStorage.getItem('interiores'));
-        var dimensiones = this.dimensionesProductoTipoService.todos[id1];
+        var dimensiones = this.dimensionesProductoTipoService.todos[id1 + 1];
         var arrayCambiar = this.guardarCambios;
-        var arrayDimen = [];
+        var arrayDimen = arrayCambiar[idCalculadora];
+        if (arrayDimen == undefined) {
+            arrayDimen = [];
+        }
         arrayDimen['dimensiones'] = 'si';
-        arrayCambiar[id1] = arrayDimen;
+        arrayCambiar[idCalculadora] = arrayDimen;
         this.guardarCambios = arrayCambiar;
         console.log(this.guardarCambios);
         $('#precios1').empty();
@@ -648,7 +815,7 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
         $('.dimensionesColor4').css({ 'background-color': 'white' });
         $('.dimensionesColor' + id).css({ 'background-color': '#DFDDDC' });
         var idProd;
-        idProd = $('#nombreMesita' + id1).attr('class');
+        idProd = $('#nombreMesita' + idCalculadora).attr('class');
         var precioPunto = 1;
         var precioProducto = 1;
 
@@ -666,10 +833,10 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
             if (datos[h]['id'] == idDimenTipo) {
                 if (datos[h]['mensaje'] != 'Medidas Especiales') {
                     $('#idioma').attr('value', datos[h]['id']);
-                    $('#datos1 #ancho' + id1).text(datos[h]['ancho']);
-                    $('#datos1 #ancho' + id1).attr('class', datos[h]['id']);
-                    $('#datos1 #alto' + id1).text(datos[h]['alto']);
-                    $('#datos1 #fondoDatosDimen' + id1).text(datos[h]['fondo']);
+                    $('#productoCalculadora' + idCalculadora + ' #datos1 #ancho' + id1).text(datos[h]['ancho']);
+                    $('#productoCalculadora' + idCalculadora + ' #datos1 #ancho' + id1).attr('class', datos[h]['id']);
+                    $('#productoCalculadora' + idCalculadora + ' #datos1 #alto' + id1).text(datos[h]['alto']);
+                    $('#productoCalculadora' + idCalculadora + ' #datos1 #fondoDatosDimen' + id1).text(datos[h]['fondo']);
                     acaSi = 0;
                 } else {
                     $('#especiales').css({ display: 'block' });
@@ -708,7 +875,7 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
 
     public cambiarAcabado(idImagen, id, id1) {
         $('#iluminacion').removeAttr('style');
-        $('#botonCalculadoraGuardar').removeAttr('class');
+
         $('#iluminacion').attr('style');
         $('#iluminacion').css({ display: 'none' });
         $('#textoFinal').removeAttr('style');
@@ -716,9 +883,9 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
         $('#textoFinal').css({ display: 'none' });
         $('#botonCalculadoraMod').removeAttr('class');
         var idProd = sessionStorage.getItem('idProdAca');
-        var idTodo = sessionStorage.getItem('idTodo');
         var k = 1;
-
+        var idCalculadora = this.idSaber;
+        $('#botonCalculadoraGuardar' + idCalculadora).removeAttr('class');
         var nombreAcabado;
         var nombre = this.nombreAcabado;
         if (nombre == 'Modulo Bajo 1') {
@@ -760,6 +927,36 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
         if (nombre == 'Modulo Bajo 9') {
             nombre = 'mb14';
         }
+        if (nombre == 'Aparador 1') {
+            nombre = 'ap1';
+        }
+        if (nombre == 'Aparador 2') {
+            nombre = 'ap2';
+        }
+        if (nombre == 'Aparador 3') {
+            nombre = 'ap3';
+        }
+        if (nombre == 'Aparador 4') {
+            nombre = 'ap4';
+        }
+        if (nombre == 'Aparador 5') {
+            nombre = 'ap5';
+        }
+        if (nombre == 'Aparador 6') {
+            nombre = 'ap6';
+        }
+        if (nombre == 'Aparador 7') {
+            nombre = 'ap7';
+        }
+        if (nombre == 'Aparador 8') {
+            nombre = 'ap8';
+        }
+        if (nombre == 'Aparador 9') {
+            nombre = 'ap9';
+        }
+        if (nombre == 'Aparador 10') {
+            nombre = 'ap10';
+        }
 
         var res = nombre;
 
@@ -776,7 +973,6 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
         var arrayCambiar = this.guardarCambios;
         $.each(todosAcabados, function(index, value) {
             if (value['id'] == idAca) {
-                $('.aca1' + id1 + ' #imagenAcabadoPrincipal' + k).remove();
                 nombreAcabado = value['nombre'].toLowerCase();
                 if (nombreAcabado == 'marmol blanco') {
                     nombreAcabado = 'marmolblanco';
@@ -791,12 +987,12 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                     nombreAcabado = 'transparente';
                 }
 
-                var arrayDimen = arrayCambiar[idTodo];
+                var arrayDimen = arrayCambiar[idCalculadora];
                 if (arrayDimen == undefined) {
                     arrayDimen = [];
                 }
                 arrayDimen['acabado' + id1] = value;
-                arrayCambiar[idTodo] = arrayDimen;
+                arrayCambiar[idCalculadora] = arrayDimen;
                 this.guardarCambios = arrayCambiar;
                 console.log(this.guardarCambios);
                 $('.aca1' + id1).append(
@@ -808,7 +1004,6 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                         value['id'] +
                         '" height="60px" width="200px" style=" opacity: 0.7;margin-left:20px">'
                 );
-                $('#aca' + id + '' + id1 + ' #acabadoNombrePrincipal').remove();
                 $('#aca' + id + '' + id1).append(
                     '<p id="acabadoNombrePrincipal" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
                         value['nombre'] +
@@ -984,7 +1179,29 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                         );
                     }
                 }
-                $('#datos1 #div' + idProd + ' #acabaNombre' + (id1 - 1)).text(value['nombre']);
+
+                $('#imagenesAcabados' + (idCalculadora - 1)).append(
+                    '<img id="tapa" class="' +
+                        value['nombre'].toLowerCase() +
+                        '" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
+                        nombre +
+                        '/' +
+                        id1 +
+                        '/' +
+                        nombre +
+                        '_' +
+                        id1 +
+                        '_' +
+                        value['nombre'].toLowerCase() +
+                        '_optimized.png">'
+                );
+                $('#productoCalculadora' + idCalculadora + ' #datos1 #acabado' + id1 + ' #acabaNombre' + (id1 - 1)).text(value['nombre']);
+                var src = 'data:image/gif;base64,' + value['imagenFondo'];
+                $('#productoCalculadora' + idCalculadora + ' #datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('src', src);
+                $('#productoCalculadora' + idCalculadora + ' #datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr(
+                    'class',
+                    value['id']
+                );
                 k++;
             }
         });
@@ -1039,27 +1256,6 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
         var productosPresupuesto = [];
         var cont = 0;
         var presu = sessionStorage.getItem('presupuesto');
-        this.productosPresupuestoPedidosService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(
-                (res: HttpResponse<IProductosPresupuestoPedidos[]>) => {
-                    for (let i = 0; i < res.body.length; i++) {
-                        if (res.body[i]['presupuestoPedido'] != null) {
-                            if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
-                                productosPresupuesto[cont] = res.body[i];
-                                cont++;
-                            }
-                        }
-                    }
-                    this.ProductosPresupuestos = productosPresupuesto;
-                    this.paginateProductosPresupuestoPedidos(productosPresupuesto, res.headers);
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
     }
 
     loadPage(page: number) {
@@ -1103,7 +1299,7 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
             this.currentAccount = account;
         });
         this.registerChangeInProductosPresupuestoPedidos();
-
+        this.datosYaCargados = 0;
         this.productosPresupuestoPedidosService
             .query({
                 page: this.page - 1,

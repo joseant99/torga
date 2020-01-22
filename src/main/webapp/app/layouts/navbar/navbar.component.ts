@@ -321,7 +321,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         aux[0] = res.body[w];
                                     }
                                 }
-                                idDefinitiva = aux[0]['id'];
+                                var idAux = parseFloat(aux[0]['id']);
+                                idDefinitiva = idAux + 1;
                                 const prueba1 = {
                                     id: idDefinitiva,
                                     codigo: 'PR-' + usuario['id'],

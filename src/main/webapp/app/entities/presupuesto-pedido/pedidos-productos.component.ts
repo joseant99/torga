@@ -886,10 +886,10 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         prodNombre = 'mb5';
                                                     }
                                                     if (prodNombre == 'Modulo Bajo 5 Apertura Izquierda') {
-                                                        prodNombre = 'mb7';
+                                                        prodNombre = 'mb8';
                                                     }
                                                     if (prodNombre == 'Modulo Bajo 5 Apertura Derecha') {
-                                                        prodNombre = 'mb8';
+                                                        prodNombre = 'mb7';
                                                     }
                                                     if (prodNombre == 'Modulo Bajo 6') {
                                                         prodNombre = 'mb9';

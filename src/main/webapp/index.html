@@ -146,6 +146,16 @@
 		sessionStorage.setItem("idProdAca", id);
 		sessionStorage.setItem("idTodo", id1);
 	}
+	function abrirDatosBuenos(id){
+		$("#productoCalculadora"+id+" #datos1").css({"display":"block"});
+		$("#masDatos1").text("X");
+		$("#masDatos1").attr("onclick","cerrarDatos("+id+")");
+	}
+	function cerrarDatos(id){
+		$("#productoCalculadora"+id+" #datos1").css({"display":"none"});
+		$("#masDatos1").text("+");
+		$("#masDatos1").attr("onclick","abrirDatosBuenos("+id+")");
+	}
 	function esconderMenu(){
 		$("#menuPrincipal").css({"display":"none"});
 		$("#botonEsconder").removeAttr("onclick");
