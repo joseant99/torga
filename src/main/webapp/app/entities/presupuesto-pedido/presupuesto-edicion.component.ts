@@ -61,6 +61,7 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
     idSaber: any;
     iluminacion: any;
     datosYaCargados: any;
+    idEliminar: any;
     constructor(
         protected acabadosService: AcabadosService,
         protected interioresService: InterioresService,
@@ -360,11 +361,23 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
     public salirSinGuardar() {
         window.history.back();
     }
-    public eliminar(id) {
-        $('#prod' + id).remove();
-        $('#productoCalculadora' + id).remove();
+    public eliminar() {
+        var id = this.idEliminar;
+        $('#prod' + (id + 1)).remove();
+        $('#productoCalculadora' + (id + 1)).remove();
+        var acabados = this.acabadosProductosPresupuestoPedidoService.todos;
+        var prod = acabados[id + 1][0]['productosPresupuestoPedidos'];
+        prod['productosDormitorio'] = null;
+        prod['dimensionesProductoTipo'] = null;
+        prod['presupuestoPedido'] = null;
+        prod['tipoProducto'] = null;
+        prod['tiposApoyo'] = null;
+        this.subscribeToSaveResponse(this.productosPresupuestoPedidosService.update(prod));
+        this.salirSinGuardar();
     }
-
+    public cogerEli(id) {
+        this.idEliminar = id;
+    }
     public ocultar1(id) {
         $('.' + id).css({ display: 'none' });
 
