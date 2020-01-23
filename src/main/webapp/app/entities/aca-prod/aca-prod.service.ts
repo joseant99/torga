@@ -41,7 +41,7 @@ export class AcaProdService {
         return (this.todos = req.acaProdSer);
     }
 
-    findAca(id: number): Observable<EntityResponseType> {
+    findAca(id: any): Observable<EntityResponseType> {
         return this.http.get<IAcaProd>(`${this.resourceUrl}-id/${id}`, { observe: 'response' });
     }
 }

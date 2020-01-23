@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -96,6 +96,22 @@ public class AcabadosComposicionResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/acabados-composicions");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
+    
+    /**
+     * GET  /acabados-composicions : get all the acabadosComposicions.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of acabadosComposicions in body
+     */
+    @GetMapping("/acabados-composicions-bus/{id}")
+    @Timed
+    public ResponseEntity<Collection<AcabadosComposicion>> getAllAcabadosComposicionsBus(@PathVariable Long id) {
+        log.debug("REST request to get a page of AcabadosComposicions");
+        Collection<AcabadosComposicion> page = acabadosComposicionRepository.findByCategoriaDormi(id);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    
 
     /**
      * GET  /acabados-composicions/:id : get the "id" acabadosComposicion.

@@ -536,6 +536,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         }
         return result;
     }
+
+    public cargarComposicionNT(id) {
+        sessionStorage.setItem('composicion', '' + id);
+        this.router.navigate(['/composicion-ver']);
+    }
+
     public abrirCesta() {
         var productosArrayNombres = this.productosArrayNombre;
         $('#modalCesta .modal-body').empty();

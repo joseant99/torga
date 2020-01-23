@@ -270,7 +270,7 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
 
                                 sessionStorage.setItem(
                                     'idProdAca',
-                                    data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']
+                                    '' + data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']
                                 );
                             }
                         });

@@ -51,31 +51,31 @@ export class ProductosComposicionUpdateComponent implements OnInit {
         this.activatedRoute.data.subscribe(({ productosComposicion }) => {
             this.productosComposicion = productosComposicion;
         });
-        this.productosDormitorioService.query().subscribe(
+        this.productosDormitorioService.query({ size: 1000000 }).subscribe(
             (res: HttpResponse<IProductosDormitorio[]>) => {
                 this.productosdormitorios = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
-        this.dimensionesProductoTipoService.query().subscribe(
+        this.dimensionesProductoTipoService.query({ size: 1000000 }).subscribe(
             (res: HttpResponse<IDimensionesProductoTipo[]>) => {
                 this.dimensionesproductotipos = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
-        this.composicionService.query().subscribe(
+        this.composicionService.query({ size: 1000000 }).subscribe(
             (res: HttpResponse<IComposicion[]>) => {
                 this.composicions = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
-        this.tipoProductoService.query().subscribe(
+        this.tipoProductoService.query({ size: 1000000 }).subscribe(
             (res: HttpResponse<ITipoProducto[]>) => {
                 this.tipoproductos = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
-        this.tiposApoyoService.query().subscribe(
+        this.tiposApoyoService.query({ size: 1000000 }).subscribe(
             (res: HttpResponse<ITiposApoyo[]>) => {
                 this.tiposapoyos = res.body;
             },

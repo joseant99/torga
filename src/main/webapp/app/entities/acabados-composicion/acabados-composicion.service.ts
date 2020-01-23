@@ -35,4 +35,8 @@ export class AcabadosComposicionService {
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
+
+    query1(id: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IAcabadosComposicion[]>(`${this.resourceUrl}-bus/${id}`, { observe: 'response' });
+    }
 }

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -96,6 +96,22 @@ public class ProductosComposicionResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/productos-composicions");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
+    
+    
+    /**
+     * GET  /productos-composicions : get all the productosComposicions.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of productosComposicions in body
+     */
+    @GetMapping("/productos-composicions-bus/{id}")
+    @Timed
+    public ResponseEntity<Collection<ProductosComposicion>> getAllProductosComposicionsBy(@PathVariable Long id) {
+        log.debug("REST request to get a page of ProductosComposicions");
+        Collection<ProductosComposicion> page = productosComposicionRepository.findByCom(id);
+        return ResponseEntity.ok().body(page);
+    }
+    
 
     /**
      * GET  /productos-composicions/:id : get the "id" productosComposicion.

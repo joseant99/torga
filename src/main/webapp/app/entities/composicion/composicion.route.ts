@@ -63,7 +63,7 @@ export const composicionRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.composicion.home.title'
         },
