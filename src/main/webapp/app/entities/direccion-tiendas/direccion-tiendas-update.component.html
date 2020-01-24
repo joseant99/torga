@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-direccion-tiendas-heading" jhiTranslate="torgaPedidosApp.direccionTiendas.home.createOrEditLabel">Create or edit a Direccion Tiendas</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!direccionTiendas.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="direccionTiendas.id" readonly />
+                </div>
+                 <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.direccionTiendas.direccion" for="field_direccion">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="field_direccion"
+                        [(ngModel)]="direccionTiendas.direccion" />
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.direccionTiendas.numero" for="field_numero">Numero</label>
+                    <input type="number" class="form-control" name="numero" id="field_numero"
+                        [(ngModel)]="direccionTiendas.numero" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.direccionTiendas.codPostal" for="field_codPostal">Cod Postal</label>
+                    <input type="number" class="form-control" name="codPostal" id="field_codPostal"
+                        [(ngModel)]="direccionTiendas.codPostal" />
+                </div>
+               
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.direccionTiendas.provincias" for="field_provincias">Provincias</label>
+                    <select (change)="cargarMunicipios()" class="form-control" id="provincia" >
+                        <option [ngValue]="null"></option>
+                        <option value="{{provinciasOption.id}}" *ngFor="let provinciasOption of provincias; trackBy: trackProvinciasById">{{provinciasOption.nombre}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.direccionTiendas.municipios" for="field_municipios">Municipios</label>
+                    <select id="municipios" class="form-control">
+                   </select>
+                </div>
+                
+                
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

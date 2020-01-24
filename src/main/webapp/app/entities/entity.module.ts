@@ -40,12 +40,13 @@ import { TorgaPedidosImagenesContactoFabricaModule } from './imagenes-contacto-f
 import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos-torga-tiendas.module';
 import { TorgaPedidosPuertasModule } from './puertas/puertas.module';
 import { TorgaPedidosArmarioModule } from './armario/armario.module';
+import { TorgaPedidosPrecioFinalPresuModule } from './precio-final-presu/precio-final-presu.module';
 import { TorgaPedidosCascoModule } from './casco/casco.module';
 import { TorgaPedidosIvaProductoTiendaModule } from './iva-producto-tienda/iva-producto-tienda.module';
 import { TorgaPedidosPuertasPreciosModule } from './puertas-precios/puertas-precios.module';
 import { TorgaPedidosInterioresArmarioNuevosModule } from './interiores-armario-nuevos/interiores-armario-nuevos.module';
 import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dentro/interior-armario-dentro.module';
-
+import { TorgaPedidosDireccionTiendasModule } from './direccion-tiendas/direccion-tiendas.module';
 @NgModule({
     // prettier-ignore
     imports: [
@@ -73,6 +74,7 @@ import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dent
         TorgaPedidosTiradoresArmarioModule,
         TorgaPedidosContactoFabricaModule,
         TorgaPedidosVistaClienteModule,
+        TorgaPedidosPrecioFinalPresuModule,
         TorgaPedidosVistaRepresentanteModule,
         TorgaPedidosMensajesModule,
         TorgaPedidosInteriorArmarioDentroModule,
@@ -82,6 +84,7 @@ import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dent
         TorgaPedidosEstadosModule,
         TorgaPedidosCategorias_DormitorioModule,
         TorgaPedidosCategoriasDormiModule,
+        TorgaPedidosDireccionTiendasModule,
         TorgaPedidosMedidasEspecialesModule,
         TorgaPedidosProductosDormitorioModule,
         TorgaPedidosDimensionesProductoModule, 

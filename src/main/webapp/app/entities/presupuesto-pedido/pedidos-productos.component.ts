@@ -29,6 +29,8 @@ import { PresupuestoArmarioInterioresService } from '../presupuesto-armario-inte
 import { PresupuestoArmarioPuertasService } from '../presupuesto-armario-puertas/presupuesto-armario-puertas.service';
 import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
+import { PrecioFinalPresuService } from '../precio-final-presu/precio-final-presu.service';
+
 @Component({
     selector: 'jhi-pedidos-productos',
     templateUrl: './pedidos-productos.component.html'
@@ -75,6 +77,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected parseLinks: JhiParseLinks,
         protected precioTiendaService: PrecioTiendaService,
+        protected precioFinalPresuService: PrecioFinalPresuService,
         protected precioTiendaProductosService: PrecioTiendaProductosService,
         protected jhiAlertService: JhiAlertService,
         protected provinciasService: ProvinciasService,
@@ -204,6 +207,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         var cont = 0;
         var presu;
         presu = sessionStorage.getItem('presupuesto');
+
         var ilu = [];
 
         this.iluminacionProdPrePedService
@@ -844,6 +848,10 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                 var precioAparadores = this.aparadores;
                 for (let w = 0; w < productos.length; w++) {
                     if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
+                        var datosPrecioFinal;
+                        this.precioFinalPresuService.query12(presu).subscribe(data => {
+                            datosPrecioFinal = data.body;
+                        });
                         this.acabadosProductosPresupuestoPedidoService
                             .query1(productos[w]['id'])
                             .subscribe((res: HttpResponse<IAcabadosProductosPresupuestoPedido[]>) => {
@@ -1017,66 +1025,34 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 $('.' + productos[i]['id'] + 'Datos').append(
                                                     '<p>' +
                                                         apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
-                                                        '&nbsp;&nbsp;&nbsp; ' +
-                                                        apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
-                                                        '&euro;</p>'
+                                                        '&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                        i +
+                                                        '"></span>&euro;</p>'
                                                 );
-                                                var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
-                                                if (precioTotal != '') {
-                                                    var precioFloat = parseFloat(precioTotal);
+                                            }
+                                            var precios = datosPrecioFinal[0]['precioProds'];
+                                            var precioTodo = precios.split(',');
+                                            for (let i = 0; i < precioTodo.length; i++) {
+                                                if (precioTodo[i] != '') {
+                                                    var precio1 = precioTodo[i].split('-')[0];
+                                                    var precio2 = precioTodo[i].split('-')[1];
+                                                    precio1 = precio1.split(':')[1];
+                                                    $('#precioTotal' + i).text(precio1);
+                                                    $('#precioApoyo' + i).text(precio2);
                                                 }
-                                                if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 8) {
-                                                    for (let s = 0; s < precioModulosBajos.length; s++) {
-                                                        if (precioModulosBajos[s][2] == productos[i]['productosDormitorio']['id']) {
-                                                            var precioProd = precioModulosBajos[s][1];
-                                                            precioProd = precioProd / 100 + 1;
-                                                        }
-                                                    }
-                                                }
-                                                if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 11) {
-                                                    for (let s = 0; s < precioAparadores.length; s++) {
-                                                        if (precioAparadores[s][2] == productos[i]['productosDormitorio']['id']) {
-                                                            var precioProd = precioAparadores[s][1];
-                                                            precioProd = precioProd / 100 + 1;
-                                                        }
-                                                    }
-                                                }
-
-                                                precioFloat = precioFloat * precioPunto;
-                                                precioFloat = precioFloat * precioProd;
-                                                var todoApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo'];
-                                                for (let s = 0; s < apoyoPrecios.length; s++) {
-                                                    if (apoyoPrecios[s][2] == todoApoyo['id']) {
-                                                        var precioApo = precioModulosBajos[s][1];
-                                                        precioApo = precioApo / 100 + 1;
-                                                    }
-                                                }
-                                                var precioApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
-                                                precioApoyo = precioApoyo * precioPunto;
-                                                precioApoyo = precioApoyo * precioApo;
-                                                precioFloat = precioFloat + precioApoyo;
-                                                var subTotal = parseFloat($('#precioSubtotal').text());
-                                                subTotal = subTotal + precioFloat;
-                                                $('#precioSubtotal').text(subTotal.toFixed(2));
-                                                $('#totalDescuentoTexto').text(subTotal.toFixed(2));
-
-                                                var iva = subTotal * 0.21;
-                                                $('#ivaPrecioQuitar').remove();
-                                                $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + ' €</p>');
-                                                iva = subTotal + iva;
-                                                $('#precioIvaSumado').remove();
-                                                $('#precioCalculadoIva').append(
-                                                    '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + ' €</p>'
-                                                );
-                                                var total;
-                                                total = precioFloat * precioTienda;
-                                                console.log(total);
-                                                total = total - precioFloat;
-                                                $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
-                                                $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
-                                                $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
                                             }
 
+                                            $('#totalDescuentoTexto').text(datosPrecioFinal[0]['totalSinIva']);
+                                            $('#ivaQuitar').text(datosPrecioFinal[0]['iva'] + ' €');
+                                            $('#precioCalculadoIva').append(
+                                                '<p style="font-size:25px">' + datosPrecioFinal[0]['totalConIva'] + ' €</p>'
+                                            );
+                                            var descuento = datosPrecioFinal[0]['descuentoPorcentaje'];
+                                            if (descuento != null) {
+                                                $('#todoDivDescuento').css({ display: 'block' });
+                                                $('#totalDescuentoTexto').text(descuento + ' %');
+                                                $('#meterQuitadoDescuento').text(datosPrecioFinal[0]['precioDescuento'] + ' €');
+                                            }
                                             for (let j = 0; j < iluminacion.length; j++) {
                                                 if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(

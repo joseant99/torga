@@ -82,7 +82,7 @@
 		<div style="float:left;width:100%">
 		
 		
-			<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalPasarPedido">GENERAR PEDIDO</button></p>
+			<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalPasarPedido" (click)="cargarDireccion()">GENERAR PEDIDO</button></p>
 	  		<!--<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>-->
 	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="imprimir()" value='Print'>IMPRIMIR</button></p>
 	  		<!--  <p id="contacto1" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>
@@ -92,7 +92,7 @@
 	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;"[routerLink]="['/presupuesto-usuario']">SALIR</button></p>
 		</div>
   	</div>
-<div class="modal fade" id="modalPasarPedido" role="dialog">
+<div class="modal fade" id="modalPasarPedido" role="dialog" style="margin-top: 100px;">
 	    <div class="modal-dialog">
 	    
 	      <!-- Modal content-->
@@ -101,7 +101,10 @@
 	          <h4 class="modal-title">GENERAR PEDIDO</h4>
 	        </div>
 	        <div class="modal-body">
+	        	<p style="text-align:center">&#191;Escoge una direccion de envio</p>
+	        	<p style="text-align:center"><select id="direccion"></select></p>
 	          <p style="text-align:center">&#191;Est&#225;s Seguro?</p>
+	          
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="pedido()" data-dismiss="modal" >Si</button></p>
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">No</button></p>
 	        </div>

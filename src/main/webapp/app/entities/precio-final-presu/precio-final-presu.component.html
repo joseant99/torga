@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.precioFinalPresu.home.title">Precio Final Presus</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-precio-final-presu" [routerLink]="['/precio-final-presu/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.precioFinalPresu.home.createLabel">
+            Create new Precio Final Presu
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="precioFinalPresus">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="precioProds"><span jhiTranslate="torgaPedidosApp.precioFinalPresu.precioProds">Precio Prods</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="totalSinIva"><span jhiTranslate="torgaPedidosApp.precioFinalPresu.totalSinIva">Total Sin Iva</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iva"><span jhiTranslate="torgaPedidosApp.precioFinalPresu.iva">Iva</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="totalConIva"><span jhiTranslate="torgaPedidosApp.precioFinalPresu.totalConIva">Total Con Iva</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="descuentoPorcentaje"><span jhiTranslate="torgaPedidosApp.precioFinalPresu.descuentoPorcentaje">Descuento Porcentaje</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="precioDescuento"><span jhiTranslate="torgaPedidosApp.precioFinalPresu.precioDescuento">Precio Descuento</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="presupuestoPedido.id"><span jhiTranslate="torgaPedidosApp.precioFinalPresu.presupuestoPedido">Presupuesto Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="direccionTiendas.id"><span jhiTranslate="torgaPedidosApp.precioFinalPresu.direccionTiendas">Direccion Tiendas</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let precioFinalPresu of precioFinalPresus ;trackBy: trackId">
+                <td><a [routerLink]="['/precio-final-presu', precioFinalPresu.id, 'view' ]">{{precioFinalPresu.id}}</a></td>
+                <td>{{precioFinalPresu.precioProds}}</td>
+                <td>{{precioFinalPresu.totalSinIva}}</td>
+                <td>{{precioFinalPresu.iva}}</td>
+                <td>{{precioFinalPresu.totalConIva}}</td>
+                <td>{{precioFinalPresu.descuentoPorcentaje}}</td>
+                <td>{{precioFinalPresu.precioDescuento}}</td>
+                <td>
+                    <div *ngIf="precioFinalPresu.presupuestoPedido">
+                        <a [routerLink]="['../presupuesto-pedido', precioFinalPresu.presupuestoPedido?.id, 'view' ]" >{{precioFinalPresu.presupuestoPedido?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="precioFinalPresu.direccionTiendas">
+                        <a [routerLink]="['../direccion-tiendas', precioFinalPresu.direccionTiendas?.id, 'view' ]" >{{precioFinalPresu.direccionTiendas?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/precio-final-presu', precioFinalPresu.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/precio-final-presu', precioFinalPresu.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'precio-final-presu/'+ precioFinalPresu.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="precioFinalPresus && precioFinalPresus.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="precioFinalPresu">
+            <h2><span jhiTranslate="torgaPedidosApp.precioFinalPresu.detail.title">Precio Final Presu</span> {{precioFinalPresu.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.precioFinalPresu.precioProds">Precio Prods</span></dt>
+                <dd>
+                    <span>{{precioFinalPresu.precioProds}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.precioFinalPresu.totalSinIva">Total Sin Iva</span></dt>
+                <dd>
+                    <span>{{precioFinalPresu.totalSinIva}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.precioFinalPresu.iva">Iva</span></dt>
+                <dd>
+                    <span>{{precioFinalPresu.iva}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.precioFinalPresu.totalConIva">Total Con Iva</span></dt>
+                <dd>
+                    <span>{{precioFinalPresu.totalConIva}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.precioFinalPresu.descuentoPorcentaje">Descuento Porcentaje</span></dt>
+                <dd>
+                    <span>{{precioFinalPresu.descuentoPorcentaje}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.precioFinalPresu.precioDescuento">Precio Descuento</span></dt>
+                <dd>
+                    <span>{{precioFinalPresu.precioDescuento}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.precioFinalPresu.presupuestoPedido">Presupuesto Pedido</span></dt>
+                <dd>
+                    <div *ngIf="precioFinalPresu.presupuestoPedido">
+                        <a [routerLink]="['/presupuesto-pedido', precioFinalPresu.presupuestoPedido?.id, 'view']">{{precioFinalPresu.presupuestoPedido?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.precioFinalPresu.direccionTiendas">Direccion Tiendas</span></dt>
+                <dd>
+                    <div *ngIf="precioFinalPresu.direccionTiendas">
+                        <a [routerLink]="['/direccion-tiendas', precioFinalPresu.direccionTiendas?.id, 'view']">{{precioFinalPresu.direccionTiendas?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/precio-final-presu', precioFinalPresu.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

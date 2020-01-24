@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "presupuestoPedido",
+            "otherEntityName": "presupuestoPedido",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "direccionTiendas",
+            "otherEntityName": "direccionTiendas",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "precioProds",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalSinIva",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "iva",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "totalConIva",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "descuentoPorcentaje",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "precioDescuento",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20200124085640",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "precio_final_presu",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

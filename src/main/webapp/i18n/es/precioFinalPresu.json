@@ -1,0 +1,28 @@
+{
+    "torgaPedidosApp": {
+        "precioFinalPresu": {
+            "home": {
+                "title": "Precio Final Presus",
+                "createLabel": "Crear nuevo Precio Final Presu",
+                "createOrEditLabel": "Crear o editar Precio Final Presu"
+            },
+            "created": "Un nuevo Precio Final Presu ha sido creado con el identificador {{ param }}",
+            "updated": "Un Precio Final Presu ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Precio Final Presu ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Precio Final Presu {{ id }}?"
+            },
+            "detail": {
+                "title": "Precio Final Presu"
+            },
+            "precioProds": "Precio Prods",
+            "totalSinIva": "Total Sin Iva",
+            "iva": "Iva",
+            "totalConIva": "Total Con Iva",
+            "descuentoPorcentaje": "Descuento Porcentaje",
+            "precioDescuento": "Precio Descuento",
+            "presupuestoPedido": "Presupuesto Pedido",
+            "direccionTiendas": "Direccion Tiendas"
+        }
+    }
+}

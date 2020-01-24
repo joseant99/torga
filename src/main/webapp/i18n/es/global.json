@@ -64,6 +64,8 @@
                 "presupuestoArmarioInteriores": "Presupuesto Armario Interiores",
                 "presupuestoArmarioPuertas": "Presupuesto Armario Puertas",
                 "ivaProductoTienda": "Iva Producto Tienda",
+                "direccionTiendas": "Direccion Tiendas",
+                "precioFinalPresu": "Precio Final Presu",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

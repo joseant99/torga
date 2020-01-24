@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="direccionTiendas">
+            <h2><span jhiTranslate="torgaPedidosApp.direccionTiendas.detail.title">Direccion Tiendas</span> {{direccionTiendas.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.direccionTiendas.numero">Numero</span></dt>
+                <dd>
+                    <span>{{direccionTiendas.numero}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.direccionTiendas.codPostal">Cod Postal</span></dt>
+                <dd>
+                    <span>{{direccionTiendas.codPostal}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.direccionTiendas.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{direccionTiendas.direccion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.direccionTiendas.provincias">Provincias</span></dt>
+                <dd>
+                    <div *ngIf="direccionTiendas.provincias">
+                        <a [routerLink]="['/provincias', direccionTiendas.provincias?.id, 'view']">{{direccionTiendas.provincias?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.direccionTiendas.municipios">Municipios</span></dt>
+                <dd>
+                    <div *ngIf="direccionTiendas.municipios">
+                        <a [routerLink]="['/municipios', direccionTiendas.municipios?.id, 'view']">{{direccionTiendas.municipios?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.direccionTiendas.datosUsuario">Datos Usuario</span></dt>
+                <dd>
+                    <div *ngIf="direccionTiendas.datosUsuario">
+                        <a [routerLink]="['/datos-usuario', direccionTiendas.datosUsuario?.id, 'view']">{{direccionTiendas.datosUsuario?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/direccion-tiendas', direccionTiendas.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

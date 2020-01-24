@@ -29,6 +29,9 @@ import { PresupuestoArmarioInterioresService } from '../presupuesto-armario-inte
 import { PresupuestoArmarioPuertasService } from '../presupuesto-armario-puertas/presupuesto-armario-puertas.service';
 import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
+import { DireccionTiendasService } from '../direccion-tiendas/direccion-tiendas.service';
+import { PrecioFinalPresuService } from '../precio-final-presu/precio-final-presu.service';
+
 @Component({
     selector: 'jhi-presupuesto-productos',
     templateUrl: './presupuesto-productos.component.html'
@@ -72,9 +75,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         public presupuestoArmarioInterioresService: PresupuestoArmarioInterioresService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected contactoFabricaService: ContactoFabricaService,
+        protected precioFinalPresuService: PrecioFinalPresuService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected parseLinks: JhiParseLinks,
         protected precioTiendaService: PrecioTiendaService,
+        protected direccionTiendasService: DireccionTiendasService,
         protected precioTiendaProductosService: PrecioTiendaProductosService,
         protected jhiAlertService: JhiAlertService,
         protected provinciasService: ProvinciasService,
@@ -138,23 +143,70 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).css({ 'margin-right': '20%' });
         }
     }
-
+    public cargarDireccion() {
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        this.direccionTiendasService.query1(tienda.id).subscribe(data => {
+            console.log(data.body);
+            var datos = data.body;
+            this.direccionTiendasService.todos = data.body;
+            $('#direccion').append('<option></option>');
+            for (let u = 0; u < data.body.length; u++) {
+                $('#direccion').append(
+                    '<option id="idDirec' +
+                        data.body[u]['id'] +
+                        '" value="' +
+                        data.body[u]['id'] +
+                        '">' +
+                        data.body[u]['direccion'] +
+                        '</option>'
+                );
+            }
+        });
+    }
     public pedido() {
         var actualizar;
+        var todasDirecciones = this.direccionTiendasService.todos;
         var todosPresupuestos = this.productosPresupuestoPedidosService.todos;
         var actualizar = todosPresupuestos[0];
         var d = new Date();
-
+        var totalSinIva = $('#totalDescuentoTexto').text();
+        var descuento;
+        descuento = $('#descuentoPago').val();
+        var meterQuitadoDescuento = $('#meterQuitadoDescuento').text();
+        var ivaPrecioQuitar = $('#ivaPrecioQuitar').text();
+        var precioIvaSumado = $('#precioIvaSumado').text();
         var month = d.getMonth() + 1;
         var day = d.getDate();
+        var cogerPrecioProds = '';
+        for (let i = 0; i < todosPresupuestos.length; i++) {
+            var precioProd = $('#precioTotal' + i).text();
+            var precioApo = $('#precioApoyo' + i).text();
 
+            cogerPrecioProds = cogerPrecioProds + '' + i + ':' + precioProd + '-' + precioApo + ',';
+        }
+        console.log(cogerPrecioProds);
         var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
-
+        var idDireccion = $('#direccion').val();
+        for (let m = 0; m < todasDirecciones.length; m++) {
+            if (todasDirecciones[m]['id'] == idDireccion) {
+                var direccion = todasDirecciones[m];
+            }
+        }
         actualizar['presupuestoPedido']['pedido'] = 1;
         actualizar['presupuestoPedido']['fecha_pedido'] = output;
         var presupuestoActualizado = actualizar['presupuestoPedido'];
-
+        var precioPresu = {
+            presupuestoPedido: presupuestoActualizado,
+            precioProds: cogerPrecioProds,
+            totalSinIva: parseFloat(totalSinIva),
+            iva: parseFloat(ivaPrecioQuitar),
+            totalConIva: parseFloat(precioIvaSumado),
+            descuentoPorcentaje: descuento,
+            precioDescuento: parseFloat(meterQuitadoDescuento),
+            direccionTiendas: direccion
+        };
         this.subscribeToSaveResponse(this.presupuestoPedidoService.update(presupuestoActualizado));
+        this.subscribeToSaveResponse(this.precioFinalPresuService.create(precioPresu));
     }
     protected subscribeToSaveResponse(result: Observable<HttpResponse<IPresupuestoPedido>>) {
         result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
@@ -1015,9 +1067,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 $('.' + productos[i]['id'] + 'Datos').append(
                                                     '<p>' +
                                                         apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
-                                                        '&nbsp;&nbsp;&nbsp; ' +
+                                                        '&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                        i +
+                                                        '">' +
                                                         apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
-                                                        '&euro;</p>'
+                                                        '</span>&euro;</p>'
                                                 );
                                                 var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
                                                 if (precioTotal != '') {

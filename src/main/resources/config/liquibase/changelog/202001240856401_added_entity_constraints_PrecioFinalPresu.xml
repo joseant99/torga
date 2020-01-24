@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity PrecioFinalPresu.
+    -->
+    <changeSet id="20200124085640-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="presupuesto_pedido_id"
+                                 baseTableName="precio_final_presu"
+                                 constraintName="fk_precio_final_presu_presupuesto_pedido_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="presupuesto_pedido"/>
+
+        <addForeignKeyConstraint baseColumnNames="direccion_tiendas_id"
+                                 baseTableName="precio_final_presu"
+                                 constraintName="fk_precio_final_presu_direccion_tiendas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="direccion_tiendas"/>
+
+    </changeSet>
+</databaseChangeLog>

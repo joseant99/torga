@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "provincias",
+            "otherEntityName": "provincias",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "municipios",
+            "otherEntityName": "municipios",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "datosUsuario",
+            "otherEntityName": "datosUsuario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "numero",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "codPostal",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20200123144207",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "direccion_tiendas",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

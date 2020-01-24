@@ -1,0 +1,26 @@
+{
+    "torgaPedidosApp": {
+        "direccionTiendas": {
+            "home": {
+                "title": "Direccion Tiendas",
+                "createLabel": "Crear nuevo Direccion Tiendas",
+                "createOrEditLabel": "Crear o editar Direccion Tiendas"
+            },
+            "created": "Un nuevo Direccion Tiendas ha sido creado con el identificador {{ param }}",
+            "updated": "Un Direccion Tiendas ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Direccion Tiendas ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Direccion Tiendas {{ id }}?"
+            },
+            "detail": {
+                "title": "Direccion Tiendas"
+            },
+            "numero": "Numero",
+            "codPostal": "Cod Postal",
+            "direccion": "Direccion",
+            "provincias": "Provincias",
+            "municipios": "Municipios",
+            "datosUsuario": "Datos Usuario"
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-precio-final-presu-heading" jhiTranslate="torgaPedidosApp.precioFinalPresu.home.createOrEditLabel">Create or edit a Precio Final Presu</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!precioFinalPresu.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="precioFinalPresu.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.precioFinalPresu.precioProds" for="field_precioProds">Precio Prods</label>
+                    <input type="text" class="form-control" name="precioProds" id="field_precioProds"
+                        [(ngModel)]="precioFinalPresu.precioProds" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.precioFinalPresu.totalSinIva" for="field_totalSinIva">Total Sin Iva</label>
+                    <input type="number" class="form-control" name="totalSinIva" id="field_totalSinIva"
+                        [(ngModel)]="precioFinalPresu.totalSinIva" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.precioFinalPresu.iva" for="field_iva">Iva</label>
+                    <input type="number" class="form-control" name="iva" id="field_iva"
+                        [(ngModel)]="precioFinalPresu.iva" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.precioFinalPresu.totalConIva" for="field_totalConIva">Total Con Iva</label>
+                    <input type="number" class="form-control" name="totalConIva" id="field_totalConIva"
+                        [(ngModel)]="precioFinalPresu.totalConIva" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.precioFinalPresu.descuentoPorcentaje" for="field_descuentoPorcentaje">Descuento Porcentaje</label>
+                    <input type="number" class="form-control" name="descuentoPorcentaje" id="field_descuentoPorcentaje"
+                        [(ngModel)]="precioFinalPresu.descuentoPorcentaje" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.precioFinalPresu.precioDescuento" for="field_precioDescuento">Precio Descuento</label>
+                    <input type="number" class="form-control" name="precioDescuento" id="field_precioDescuento"
+                        [(ngModel)]="precioFinalPresu.precioDescuento" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.precioFinalPresu.presupuestoPedido" for="field_presupuestoPedido">Presupuesto Pedido</label>
+                    <select class="form-control" id="field_presupuestoPedido" name="presupuestoPedido" [(ngModel)]="precioFinalPresu.presupuestoPedido" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="presupuestoPedidoOption.id === precioFinalPresu.presupuestoPedido?.id ? precioFinalPresu.presupuestoPedido : presupuestoPedidoOption" *ngFor="let presupuestoPedidoOption of presupuestopedidos; trackBy: trackPresupuestoPedidoById">{{presupuestoPedidoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.precioFinalPresu.direccionTiendas" for="field_direccionTiendas">Direccion Tiendas</label>
+                    <select class="form-control" id="field_direccionTiendas" name="direccionTiendas" [(ngModel)]="precioFinalPresu.direccionTiendas" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="direccionTiendasOption.id === precioFinalPresu.direccionTiendas?.id ? precioFinalPresu.direccionTiendas : direccionTiendasOption" *ngFor="let direccionTiendasOption of direcciontiendas; trackBy: trackDireccionTiendasById">{{direccionTiendasOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
