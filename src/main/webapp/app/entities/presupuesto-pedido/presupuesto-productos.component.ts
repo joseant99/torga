@@ -69,6 +69,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     aparadores: any;
     apoyoPrecios: any;
     productosPresupuestoPedidos: any;
+    tiendaNombre: any;
+    numero: any;
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         public presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
@@ -106,10 +108,15 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     public imprimir() {
         var divToPrint = document.getElementById('imprimir');
         var ventana = window.open('');
-        ventana.document.write('<html><head><title>' + document.title + '</title>');
-        ventana.document.write('</head><body >');
+        ventana.document.write(
+            '<html><head><style type="text/css">#tapa {max-width:250px;max-height:183px} #datosMeter0 {width:50% !important;font-size:12px} #pNombreProd{font-size:18px !important;} #datosMeter1 {width:50% !important;font-size:12px} #datosMeter2 {width:50% !important;font-size:12px} #datosMeter3 {width:50% !important;font-size:12px} .primerDivPresu{margin-top:0px !important; margin-bottom:0px !important;} #imagen0{ width:20% !important; height:183px !important;} #imagen1{ width:20% !important; height:183px !important;} #imagen2{ width:20% !important; height:183px !important;} #imagen3{ width:20% !important; height:183px !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{float:right !important; width:45% !important; margin-right:50px !important; } #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; margin-right:-100px !important; right:0; text-align:right; width:80% !important;} .pietrasin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(125%);} .norwaysin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .broncesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .transparentesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .nocesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .naturesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .tabaksin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .kobesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .blancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .beigesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .lattesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .grafenosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .lagosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .maresin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .marmolblancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .marmolnegrosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .norway {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .bronce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .transparente {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .noce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .nature {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .tabak {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .kobe {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .blanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .beige {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .latte {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .grafeno {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .lago {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .mare {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .marmolblanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .marmolnegro {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);}</style><title>' +
+                document.title +
+                '</title>'
+        );
+        ventana.document.write('</head><body style="font-family: Lato , sans-serif;font-weight: 400;">');
         ventana.document.write(divToPrint.innerHTML);
         ventana.document.write('</body></html>');
+
         ventana.document.close();
         ventana.focus();
         ventana.print();
@@ -255,7 +262,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var presu;
         presu = sessionStorage.getItem('presupuesto');
         var ilu = [];
-
+        var todaTienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        this.tiendaNombre = todaTienda['nombreComercial'];
+        this.numero = todaTienda['telefono'];
         this.iluminacionProdPrePedService
             .query({
                 size: 1000000

@@ -1,30 +1,35 @@
-<div>
-    <br/>
-    <div id="imprimir">
-	    <div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let i=index;">
-	    	<div style="width:100%;margin-bottom:70px" *ngIf="i===0">
-	    		<p style="text-align:center;font-size:30px">PRESUPUESTO: {{productosPresupuestoPedidos.presupuestoPedido?.codigo}}</p>
-	    		<p style="text-align:center;font-size:30px">FECHA:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_presupuesto}}</p>
-	    		<!--  <a style="float:right;margin-right:20%;margin-bottom:50px;" (click)="mostrarPrecioFabrica()"><img style="max-width:50px;" src="../../../content/images/fabrica.png"/></a>-->
-	    	</div>
-	    	<div style="float:left;width:40%;margin-left:100px;height:333px;margin-top:4%;" id="imagen{{i}}">
-	    	</div>
-	    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:40%;">
-	    		<p style="font-size:30px"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</i>&euro;</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
-	    		<p>Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
-	    		<p>Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
-	    		<p>Fondo &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.fondo}}</p>
-	    		<div *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo.incremento !== undefined">
-	    			<p>Incremento del 30% &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.incremento}} &euro;</p>
-	    		</div>
-	    		
-	    	</div>
+<div id="imprimir">
+	<div>
+	    <br/>
+			    <div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let i=index;">
+		    	<div style="width:100%;" *ngIf="i===0">
+		    		<p style="text-align:center;font-size:30px">PRESUPUESTO: {{productosPresupuestoPedidos.presupuestoPedido?.codigo}}</p>
+		    		<p style="text-align:center;font-size:30px">FECHA:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_presupuesto}}</p>
+		    		<div style="margin-top:40px" id="clienteDiv">
+		    			<p style="text-align:center;font-size:23px">CLIENTE</p>
+		    			<p style="text-align:center;font-size:18px">{{tiendaNombre}}</p>
+		    			<p style="text-align:center;font-size:18px">{{numero}}</p>
+		    		</div>
+		    		<!--  <a style="float:right;margin-right:20%;margin-bottom:50px;" (click)="mostrarPrecioFabrica()"><img style="max-width:50px;" src="../../../content/images/fabrica.png"/></a>-->
+		    	</div>
+		    	<div style="float:left;width:40%;margin-left:100px;height:333px;margin-top:4%;" id="imagen{{i}}">
+		    	</div>
+		    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;text-align:center">
+		    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</i>&euro;</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+		    		<p>Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
+		    		<p>Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
+		    		<p>Fondo &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.fondo}}</p>
+		    		<div *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo.incremento !== undefined">
+		    			<p>Incremento del 30% &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.incremento}} &euro;</p>
+		    		</div>
+		    		
+		    	</div>
+		    </div>
 	    </div>
-    </div>
-    <hr style="width:100%;background-color:black;float:left;height:0px"></hr>
-  	 
-</div>
-<div style="float:left;width:100%">
+    <hr id="idLineaDiv" style="width:100%;background-color:black;float:left;height:0px"></hr>
+  	 <div style="float:left;width:100%"></div>
+
+<div style="float:left;width:100%" id="rightImprimir">
 		<div style="float:left;width:100%;margin-bottom:15px;display:none">
 			<div style="float:left;margin-left:25%;font-size:25px"><p>FORMA DE PAGO</p>
 			
@@ -78,7 +83,9 @@
 			</div>
 			<div style="float:right;margin-right:25%" id="precioCalculadoIva"></div>
 		</div>
-		<hr style="width:100%;background-color:black;float:left;height:0px"></hr>
+		<hr style="width:100%;background-color:black;float:left;height:0px" id="hrUltimo"></hr>
+</div>
+</div>
 		<div style="float:left;width:100%">
 		
 		
