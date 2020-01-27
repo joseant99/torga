@@ -12,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<IPrecioFinalPresu[]>;
 @Injectable({ providedIn: 'root' })
 export class PrecioFinalPresuService {
     public resourceUrl = SERVER_API_URL + 'api/precio-final-presus';
-
+    public todos;
     constructor(protected http: HttpClient) {}
 
     create(precioFinalPresu: IPrecioFinalPresu): Observable<EntityResponseType> {

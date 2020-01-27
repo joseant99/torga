@@ -6,6 +6,7 @@ export * from './presupuesto-pedido.component';
 export * from './presupuesto-edicion.component';
 export * from './presupuesto-usuario.component';
 export * from './pedidos-usuario.component';
+export * from './pedidos-fabrica.component';
 export * from './pedidos-productos.component';
 export * from './presupuesto-pedido.route';
 export * from './presupuesto-productos.component';

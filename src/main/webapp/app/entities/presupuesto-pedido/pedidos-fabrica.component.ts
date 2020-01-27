@@ -30,12 +30,12 @@ import { PresupuestoArmarioPuertasService } from '../presupuesto-armario-puertas
 import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { PrecioFinalPresuService } from '../precio-final-presu/precio-final-presu.service';
-
+import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 @Component({
     selector: 'jhi-pedidos-productos',
-    templateUrl: './pedidos-productos.component.html'
+    templateUrl: './pedidos-fabrica.component.html'
 })
-export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewInit {
+export class PedidosFabricaComponent implements OnInit, OnDestroy, AfterViewInit {
     currentAccount: any;
     error: any;
     isSaving: boolean;
@@ -74,12 +74,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         public presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         public presupuestoArmarioInterioresService: PresupuestoArmarioInterioresService,
+        public datosUsuarioService: DatosUsuarioService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected contactoFabricaService: ContactoFabricaService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected parseLinks: JhiParseLinks,
         protected precioTiendaService: PrecioTiendaService,
-        protected precioFinalPresuService: PrecioFinalPresuService,
+        public precioFinalPresuService: PrecioFinalPresuService,
         protected precioTiendaProductosService: PrecioTiendaProductosService,
         protected jhiAlertService: JhiAlertService,
         protected provinciasService: ProvinciasService,
@@ -229,6 +230,26 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     ilu[i] = data['body'][i];
                 }
             });
+        var precioPunto;
+        this.presupuestoPedidoService.find(parseFloat(presu)).subscribe(data => {
+            var idUsuarioData = data.body['user']['id'];
+
+            this.datosUsuarioService
+                .query({
+                    size: 1000000
+                })
+                .subscribe(data => {
+                    var datos = data.body;
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idUsuarioData == datos[i]['user']['id']) {
+                            this.datosUsuarioService.uno = datos[i];
+                            this.precioTiendaService.findBus(datos[i]['id']).subscribe(data => {
+                                console.log(data.body[0]);
+                            });
+                        }
+                    }
+                });
+        });
         this.iluminacion = ilu;
         var acabados = [];
         var todosInteriores;
@@ -859,9 +880,12 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                 for (let w = 0; w < productos.length; w++) {
                     if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
                         var datosPrecioFinal;
+
                         this.precioFinalPresuService.query12(presu).subscribe(data => {
                             datosPrecioFinal = data.body;
+                            this.precioFinalPresuService.todos = data.body[0]['direccionTiendas'];
                         });
+
                         this.acabadosProductosPresupuestoPedidoService
                             .query1(productos[w]['id'])
                             .subscribe((res: HttpResponse<IAcabadosProductosPresupuestoPedido[]>) => {
@@ -1039,30 +1063,29 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         i +
                                                         '"></span>&euro;</p>'
                                                 );
-                                            }
-                                            var precios = datosPrecioFinal[0]['precioProds'];
-                                            var precioTodo = precios.split(',');
-                                            for (let i = 0; i < precioTodo.length; i++) {
-                                                if (precioTodo[i] != '') {
-                                                    var precio1 = precioTodo[i].split('-')[0];
-                                                    var precio2 = precioTodo[i].split('-')[1];
-                                                    precio1 = precio1.split(':')[1];
-                                                    $('#precioTotal' + i).text(precio1);
-                                                    $('#precioApoyo' + i).text(precio2);
+                                                var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                                if (precioTotal != '') {
+                                                    var precioFloat = parseFloat(precioTotal);
                                                 }
                                             }
+                                            precioFloat = precioFloat * precioPunto;
 
-                                            $('#totalDescuentoTexto').text(datosPrecioFinal[0]['totalSinIva']);
-                                            $('#ivaQuitar').text(datosPrecioFinal[0]['iva'] + ' €');
-                                            $('#precioCalculadoIva').append(
-                                                '<p style="font-size:25px">' + datosPrecioFinal[0]['totalConIva'] + ' €</p>'
-                                            );
-                                            var descuento = datosPrecioFinal[0]['descuentoPorcentaje'];
-                                            if (descuento != null) {
-                                                $('#todoDivDescuento').css({ display: 'block' });
-                                                $('#totalDescuentoTexto').text(descuento + ' %');
-                                                $('#meterQuitadoDescuento').text(datosPrecioFinal[0]['precioDescuento'] + ' €');
+                                            var precioApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
+                                            precioApoyo = precioApoyo * precioPunto;
+
+                                            precioFloat = precioFloat + precioApoyo;
+                                            var todo = $('#PrecioBasePrecio #precioCalculao').text();
+                                            if (todo == '') {
+                                                $('#PrecioBasePrecio #precioCalculao').text(precioFloat);
+                                                $('#PrecioBasePrecio #euroPrecio').text(' €');
+                                            } else {
+                                                todo = todo + precioFloat;
+                                                $('#PrecioBasePrecio #precioCalculao').text(todo);
+                                                $('#PrecioBasePrecio #euroPrecio').text(' €');
                                             }
+                                            $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
+                                            $('.' + productos[i]['id'] + 'Datos #precioApoyo' + i).text(precioApoyo.toFixed(2));
+
                                             for (let j = 0; j < iluminacion.length; j++) {
                                                 if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
@@ -1373,23 +1396,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         });
 
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        this.pagosTiendaService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(
-                (res: HttpResponse<IPagosTienda[]>) => {
-                    $('#pago').html('<form><select style="width:150px;height:50px" class="tipoPago"><option></option></select></form>');
-                    for (let i = 0; i < res.body.length; i++) {
-                        if (res.body[i]['datosUsuario']['id'] == tienda['id']) {
-                            $('.tipoPago').append('<option value="' + res.body[i]['id'] + '">' + res.body[i]['pago'] + '</option>');
-                        }
-                    }
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
     }
 
     public cargarMunicipios() {

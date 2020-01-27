@@ -12,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<IDatosUsuario[]>;
 @Injectable({ providedIn: 'root' })
 export class DatosUsuarioService {
     public resourceUrl = SERVER_API_URL + 'api/datos-usuarios';
-
+    public uno;
     constructor(protected http: HttpClient) {}
 
     create(datosUsuario: IDatosUsuario): Observable<EntityResponseType> {
