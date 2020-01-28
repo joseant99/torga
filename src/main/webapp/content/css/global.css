@@ -2386,6 +2386,10 @@ ui bootstrap tweaks
         max-height: 243px;
         max-width: 410px;
     }
+    .productoApa {
+        max-height: 293px;
+        max-width: 410px;
+    }
     #dimensiones {
         width: 100%;
         float: left;
@@ -2899,6 +2903,11 @@ ui bootstrap tweaks
         max-height: 233px;
         max-width: 390px;
     }
+    .productoApa {
+        max-height: 233px;
+        max-width: 390px;
+    }
+
     #dimensiones {
         width: 100%;
         float: left;
@@ -4138,6 +4147,10 @@ ui bootstrap tweaks
         max-height: 213px;
         max-width: 360px;
     }
+    .productoApa {
+        max-height: 213px;
+        max-width: 360px;
+    }
     #dimensiones {
         width: 100%;
         float: left;
@@ -4782,6 +4795,10 @@ ui bootstrap tweaks
         max-height: 163px;
         max-width: 270px;
     }
+    .productoApa {
+        max-height: 163px;
+        max-width: 270px;
+    }
     #dimensiones {
         width: 100%;
         float: left;
@@ -5395,6 +5412,10 @@ ui bootstrap tweaks
         margin-left: 30%;
     }
     .producto {
+        max-height: 143px;
+        max-width: 240px;
+    }
+    .productoApa {
         max-height: 143px;
         max-width: 240px;
     }
@@ -7142,6 +7163,10 @@ ui bootstrap tweaks
         max-height: 100px;
         max-width: 180px;
     }
+    .productoApa {
+        max-height: 100px;
+        max-width: 180px;
+    }
     #dimensiones {
         width: 70%;
         float: left;
@@ -7567,6 +7592,10 @@ ui bootstrap tweaks
         margin-left: 27%;
     }
     .producto {
+        max-height: 100px;
+        max-width: 180px;
+    }
+    .productoApa {
         max-height: 100px;
         max-width: 180px;
     }
