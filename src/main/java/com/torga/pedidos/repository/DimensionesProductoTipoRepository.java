@@ -52,7 +52,7 @@ public interface DimensionesProductoTipoRepository extends JpaRepository<Dimensi
 	@Query("SELECT u FROM DimensionesProductoTipo u WHERE u.mensaje = ?1")
 	Collection<DimensionesProductoTipo> findProductoNombre(String id);
 	
-	@Query("SELECT distinct u.productosDormitorio.id, u.precio FROM DimensionesProductoTipo u order by u.precio")
+	@Query("SELECT distinct u.productosDormitorio.id, u.precio ,u.productosDormitorio.nombre, u.ancho, u.fondo, u.alto FROM DimensionesProductoTipo u order by u.precio")
 	Collection<DimensionesProductoTipo> findCogerPrecio();
 }
  

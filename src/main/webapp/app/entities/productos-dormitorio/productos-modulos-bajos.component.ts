@@ -2320,7 +2320,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     '" id="ancho1" style="width:95%">Ancho Especial: <span style="" id="valorAnchoESPECIAL"></span></p>'
                             );
                             $('#datos1').append(
-                                '<p style="width:95%;font-style: italic;">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
+                                '<p style="width:95%;font-style: italic;" id="pIncremento">Incremento 30%<span style="float:right">+ <span id="precioAum" ></span> &euro;</span></p>'
                             );
                             $('#datos1').append(
                                 '<p id="alto1" class="' +
@@ -2334,11 +2334,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
+                            $('#pIncremento').attr('class', precio);
                             precio = precio * precioPunto;
                             var cuenta = precio * (precioProducto / 100);
                             precio = precio + cuenta;
                             precio = Math.round(precio * 100) / 100;
                             totalfloat = totalfloat + precio;
+
                             var precioAum = precio * 0.3;
                             var precioAumGuardado = precioAum;
                             precioAum = precio + precioAum;
@@ -3817,7 +3819,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             const ancho = $('#productoCalculadora1 #datos1 #ancho' + i).text();
             const alto = $('#productoCalculadora1 #datos1 #alto' + i).text();
             const fondo = $('#productoCalculadora1 #datos1 #fondo' + i).text();
-            const precio = $('#productoCalculadora1 #datos1 #alto' + i).attr('class');
+            const precio = $('#productoCalculadora1 #datos1 #pIncremento').attr('class');
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
             console.log(sessionStorage);
             const prod = [];

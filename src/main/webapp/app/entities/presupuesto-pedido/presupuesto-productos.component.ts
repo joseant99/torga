@@ -31,7 +31,7 @@ import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { DireccionTiendasService } from '../direccion-tiendas/direccion-tiendas.service';
 import { PrecioFinalPresuService } from '../precio-final-presu/precio-final-presu.service';
-
+import { DimensionesProductoTipoService } from '../dimensiones-producto-tipo/dimensiones-producto-tipo.service';
 @Component({
     selector: 'jhi-presupuesto-productos',
     templateUrl: './presupuesto-productos.component.html'
@@ -76,6 +76,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         public presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         public presupuestoArmarioInterioresService: PresupuestoArmarioInterioresService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
+        protected dimensionesProductoTipoService: DimensionesProductoTipoService,
         protected contactoFabricaService: ContactoFabricaService,
         protected precioFinalPresuService: PrecioFinalPresuService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
@@ -244,15 +245,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     }
 
     loadAll() {
-        var medidasEspeciales = [];
+        var medidasEspeciales;
         this.medEspProductoPedidoPresuService
             .query({
                 size: 10000000
             })
             .subscribe(data => {
-                for (let i = 0; i < data['body'].length; i++) {
-                    medidasEspeciales[i] = data['body'][i];
-                }
+                medidasEspeciales = data['body'];
+                this.medEspProductoPedidoPresuService.todo = medidasEspeciales;
             });
 
         var productosPresupuesto = [];
@@ -281,6 +281,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         this.productosPresupuestoPedidosService.query1(parseFloat(presu)).subscribe(
             (res: HttpResponse<IProductosPresupuestoPedidos[]>) => {
                 for (let i = 0; i < res.body.length; i++) {
+                    var precioPunto = this.precioPunto;
                     if (res.body[i]['presupuestoPedido'] != null) {
                         if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
                             if (res.body[i]['productosDormitorio']['categoriasDormi']['id'] == 9) {
@@ -867,6 +868,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                 });
                             } else {
                                 if (res.body[i]['dimensionesProductoTipo']['mensaje'] == 'Medidas Especiales') {
+                                    var medidasEspeciales = this.medEspProductoPedidoPresuService.todo;
                                     for (let k = 0; k < medidasEspeciales.length; k++) {
                                         if (medidasEspeciales[k]['productosPresupuestoPedidos']['id'] == res.body[i]['id']) {
                                             res.body[i]['dimensionesProductoTipo']['ancho'] = medidasEspeciales[k]['ancho'];
@@ -874,10 +876,13 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             res.body[i]['dimensionesProductoTipo']['fondo'] = medidasEspeciales[k]['fondo'];
                                             res.body[i]['dimensionesProductoTipo']['precio'] = medidasEspeciales[k]['precio'];
                                             var precioEspecial = parseFloat(medidasEspeciales[k]['precio']);
+                                            precioEspecial = precioEspecial * precioPunto;
                                             var menosPrecio = precioEspecial * 0.3;
-                                            menosPrecio = precioEspecial - menosPrecio;
-                                            var incremento = menosPrecio * 0.3;
-                                            res.body[i]['dimensionesProductoTipo']['incremento'] = incremento.toFixed(2);
+                                            res.body[i]['dimensionesProductoTipo']['incremento'] = menosPrecio.toFixed(2);
+                                            menosPrecio = precioEspecial + menosPrecio;
+                                            var incremento = menosPrecio;
+                                            var mejorIncremento = incremento * precioPunto;
+                                            mejorIncremento = incremento + mejorIncremento;
                                             productosPresupuesto[cont] = res.body[i];
                                             cont++;
                                         }
@@ -1086,6 +1091,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 if (precioTotal != '') {
                                                     var precioFloat = parseFloat(precioTotal);
                                                 }
+
                                                 if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 8) {
                                                     for (let s = 0; s < precioModulosBajos.length; s++) {
                                                         if (precioModulosBajos[s][2] == productos[i]['productosDormitorio']['id']) {
@@ -1368,6 +1374,15 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
     ngOnInit() {
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        var medidasEspeciales;
+        this.medEspProductoPedidoPresuService
+            .query({
+                size: 10000000
+            })
+            .subscribe(data => {
+                medidasEspeciales = data['body'];
+                this.medEspProductoPedidoPresuService.todo = medidasEspeciales;
+            });
         this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
             this.modulosBajos = data.body;
         });

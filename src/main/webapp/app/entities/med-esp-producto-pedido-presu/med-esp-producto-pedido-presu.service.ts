@@ -12,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<IMedEspProductoPedidoPresu[]>;
 @Injectable({ providedIn: 'root' })
 export class MedEspProductoPedidoPresuService {
     public resourceUrl = SERVER_API_URL + 'api/med-esp-producto-pedido-presus';
-
+    public todo;
     constructor(protected http: HttpClient) {}
 
     create(medEspProductoPedidoPresu: IMedEspProductoPedidoPresu): Observable<EntityResponseType> {

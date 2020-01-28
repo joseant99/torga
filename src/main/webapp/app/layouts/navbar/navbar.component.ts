@@ -415,7 +415,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 }
                                             });
                                     } else {
-                                        const dimen = {
+                                        var dimen = {
                                             id: prodCarr[m][1]['id'],
                                             nombre: prodCarr[m][1]['nombre'],
                                             anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
@@ -429,6 +429,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             productosDormitorio: prodCarr[m][1]['productosDormitorio']
                                         };
                                         var dimensionesFinal = dimen;
+                                        if (dimen['mensaje'] == 'Medidas Especiales') {
+                                            var anchoEspecial = dimensionesFinal['ancho'].split(':')[1];
+                                            anchoEspecial = anchoEspecial.split(' ')[1];
+                                            var altoEspecial = dimensionesFinal['alto'].split(':')[1];
+                                            altoEspecial = altoEspecial.split(' ')[1];
+                                            var fondoEspecial = dimensionesFinal['fondo'].split(':')[1];
+                                            fondoEspecial = fondoEspecial.split(' ')[1];
+                                            dimen['ancho'] = parseFloat(anchoEspecial);
+                                            dimen['alto'] = parseFloat(altoEspecial);
+                                            dimen['fondo'] = parseFloat(fondoEspecial);
+                                        }
                                         if (prodCarr[m][1]['apoyo'] == undefined) {
                                             prodPrePed = {
                                                 productosDormitorio: prodCarr[m][1]['productosDormitorio'],
@@ -455,12 +466,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             var acaPedProd = this.acaProdPed.length;
                                             acaPedProd = this.acaProdPed[acaPedProd - 1];
                                             dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
+
                                             const medEsp = {
                                                 productosPresupuestoPedidos: dimensionEspecialBien[m],
-                                                ancho: dimensionesFinal[m]['ancho'],
-                                                fondo: dimensionesFinal[m]['fondo'],
-                                                alto: dimensionesFinal[m]['alto'],
-                                                precio: dimensionesFinal[m]['precio']
+                                                ancho: anchoEspecial,
+                                                fondo: fondoEspecial,
+                                                alto: altoEspecial,
+                                                precio: dimensionesFinal['precio']
                                             };
                                             this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
                                         }
