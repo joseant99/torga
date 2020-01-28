@@ -1374,6 +1374,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
     ngOnInit() {
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        var buenaPrueba = sessionStorage.getItem('vengoDe');
+        if (buenaPrueba == 'pruebaaaaaa') {
+            sessionStorage.removeItem('vengoDe');
+            location.reload();
+        }
         var medidasEspeciales;
         this.medEspProductoPedidoPresuService
             .query({

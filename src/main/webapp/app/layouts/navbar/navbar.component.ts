@@ -462,6 +462,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         this.subscribeToSaveResponse1(
                                             this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
                                         );
+
+                                        if (numeroAcaProd[m].length != 0) {
+                                            var acaPedProd = this.acaProdPed.length;
+                                            acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                            prodAca[m]['id'] = acaPedProd['id'] + m + 1;
+                                            for (let b = 0; b < numeroAcaProd[m].length; b++) {
+                                                const acabados1 = {
+                                                    acabados: numeroAcaProd[m][b],
+                                                    productosPresupuestoPedidos: prodAca[m],
+                                                    orden: b + 1
+                                                };
+                                                this.subscribeToSaveResponse(
+                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                );
+                                            }
+                                        }
+
                                         if (dimensionesFinal['mensaje'] == 'Medidas Especiales') {
                                             var acaPedProd = this.acaProdPed.length;
                                             acaPedProd = this.acaProdPed[acaPedProd - 1];
@@ -489,30 +506,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     }
                                 }
 
-                                for (let w = 0; w < numeroAcaProd.length; w++) {
-                                    if (numeroAcaProd[w].length != 0) {
-                                        var acaPedProd = this.acaProdPed.length;
-                                        acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                        prodAca[w]['id'] = acaPedProd['id'] + w + 1;
-                                        for (let b = 0; b < numeroAcaProd[w].length; b++) {
-                                            var acabados1 = {
-                                                acabados: numeroAcaProd[w][b],
-                                                productosPresupuestoPedidos: prodAca[w],
-                                                orden: b + 1
-                                            };
-                                            var arrayAcaPrueba = [];
-                                            arrayAcaPrueba[b] = acabados1;
-                                            for (let r = 0; r < 1000; r++) {
-                                                if (r == 999) {
-                                                    this.subscribeToSaveResponse(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(arrayAcaPrueba[b])
-                                                    );
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
                                 this.presupuestoPedidoService
                                     .query({
                                         size: 100000
@@ -529,6 +522,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         }
                                         var id = prod['id'];
                                         sessionStorage.setItem('presupuesto', '' + id);
+                                        sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
                                         $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
                                         $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
                                         $('#todometerFondo').css({ display: 'none' });
