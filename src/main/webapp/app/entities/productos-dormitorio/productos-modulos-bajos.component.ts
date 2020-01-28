@@ -3855,8 +3855,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $.each(todasDimensiones, function(index, value) {
                 if (value['id'] == dimen) {
                     for (let w = 1; w < aca.length; w++) {
-                        aca[w]['imagenFondo'] = '';
                         value['acabado' + w] = aca[w];
+                        value['acabado' + w]['imagenFondo'] = '';
+                        console.log(value['acabado' + w]);
                     }
                     if (value['mensaje'] == 'Medidas Especiales') {
                         value['ancho'] = ancho;

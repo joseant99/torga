@@ -468,14 +468,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             acaPedProd = this.acaProdPed[acaPedProd - 1];
                                             prodAca[m]['id'] = acaPedProd['id'] + m + 1;
                                             for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                                const acabados1 = {
-                                                    acabados: numeroAcaProd[m][b],
-                                                    productosPresupuestoPedidos: prodAca[m],
-                                                    orden: b + 1
-                                                };
-                                                this.subscribeToSaveResponse(
-                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                );
+                                                for (let ve = 0; ve <= 1000000000; ve++) {
+                                                    if (ve == 1000000000) {
+                                                        const acabados1 = {
+                                                            acabados: numeroAcaProd[m][b],
+                                                            productosPresupuestoPedidos: prodAca[m],
+                                                            orden: b + 1
+                                                        };
+                                                        this.subscribeToSaveResponse(
+                                                            this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                        );
+                                                    }
+                                                }
                                             }
                                         }
 
@@ -2598,6 +2602,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('#cuerpo' + i).append('<div id="izquierda" class="marginIzquierda" style="float: left;margin-top:20px"></div>');
 
                         for (let k = 0; k < acabados.length; k++) {
+                            if (acabados[k].toLowerCase() == 'marmol blanco') {
+                                acabados[k] = 'marmolblanco';
+                            }
+                            if (acabados[k].toLowerCase() == 'marmol negro') {
+                                acabados[k] = 'marmolnegro';
+                            }
                             if (k == 0) {
                                 if (i == 1) {
                                     var prodMed = this.medidasModal[nombre];
