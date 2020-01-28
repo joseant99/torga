@@ -11,7 +11,7 @@
 		    			<p style="text-align:center;font-size:16px">{{datosUsuarioService.uno.nombreComercial}}</p>
 		    			<p style="text-align:center;font-size:16px">{{datosUsuarioService.uno.telefono}}</p>
 		    	</div>
-		    	<div style="margin-top:40px" id="clienteDiv">
+		    	<div style="margin-top:40px" id="clienteDiv" *ngIf="this.precioFinalPresuService.todos !== 0">
 		    			<p style="text-align:center;font-size:23px">ENTREGAR PEDIDO EN</p>
 		    			<p style="text-align:center;font-size:16px">{{precioFinalPresuService.todos.direccion}}</p>
 		    			<p style="text-align:center;font-size:16px">{{precioFinalPresuService.todos.municipios.nombre}}, {{precioFinalPresuService.todos.provincias.nombre}}</p>

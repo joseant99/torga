@@ -1890,7 +1890,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     if (iva == 1) {
                         var todasCuenta = totalfloat * 1.21;
                     } else {
-                        var todasCuenta = totalfloat;
+                        var todasCuenta = 0;
+                        todasCuenta = totalfloat;
                     }
                     var totalfloat = 0;
                     totalfloat = parseFloat(todasCuenta.toFixed(2));
@@ -4429,7 +4430,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                         if (iva == 1) {
                                             var todasCuenta = precio1 * 1.21;
                                         } else {
-                                            var todasCuenta = precio1;
+                                            var todasCuenta = 0;
+                                            todasCuenta = precio1;
                                         }
                                         prod[q]['precio'] = todasCuenta.toFixed(2);
                                     }
@@ -4467,7 +4469,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                             if (iva == 1) {
                                                 var todasCuenta = precio1 * 1.21;
                                             } else {
-                                                var todasCuenta = precio1;
+                                                var todasCuenta = 0;
+                                                todasCuenta = precio1;
                                             }
                                             prod[q]['precio'] = todasCuenta.toFixed(2);
                                         }

@@ -883,7 +883,11 @@ export class PedidosFabricaComponent implements OnInit, OnDestroy, AfterViewInit
 
                         this.precioFinalPresuService.query12(presu).subscribe(data => {
                             datosPrecioFinal = data.body;
-                            this.precioFinalPresuService.todos = data.body[0]['direccionTiendas'];
+                            if (data.body[0]['direccionTiendas'] != undefined) {
+                                this.precioFinalPresuService.todos = data.body[0]['direccionTiendas'];
+                            } else {
+                                this.precioFinalPresuService.todos = 0;
+                            }
                         });
 
                         this.acabadosProductosPresupuestoPedidoService
