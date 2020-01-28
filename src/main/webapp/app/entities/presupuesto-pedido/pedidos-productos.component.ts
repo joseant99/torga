@@ -1060,9 +1060,10 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             var descuento = datosPrecioFinal[0]['descuentoPorcentaje'];
                                             if (descuento != null) {
                                                 $('#todoDivDescuento').css({ display: 'block' });
-                                                $('#totalDescuentoTexto').text(descuento + ' %');
+                                                $('#descuentoTextoDiv #bajarFontSize').text('Descuento de ' + descuento + ' %');
                                                 $('#meterQuitadoDescuento').text(datosPrecioFinal[0]['precioDescuento'] + ' €');
                                             }
+
                                             for (let j = 0; j < iluminacion.length; j++) {
                                                 if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
