@@ -59,6 +59,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     iluminacion: any;
     precioPunto: any;
     acabados: any;
+    acabados1: any;
     todosAcabados: any;
     acaProdsCar: any;
     ruta: any;
@@ -88,6 +89,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     eventSubscriber: any;
     precioDimension: any;
     iva: any;
+    acabados1234: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -200,6 +202,21 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     }
 
     public open(producto, productoNombre) {
+        var acabados = [];
+        this.acabadosService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    acabados[i] = data.body[i];
+                }
+            });
+        this.acabados = acabados;
+        this.acabados1 = acabados;
+        this.acabados1234 = acabados;
         $('#botonEliminar').removeAttr('class');
         $('#dimensiones').css({ display: 'block' });
         $('#botonApoyoNuevo').empty();
@@ -1825,6 +1842,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 15; i++) {
             $('#aca1' + i).empty();
         }
+
         var iva = this.iva;
         $('#terminarConfiguracion').css({ display: 'none' });
         $('#acabado').css({ display: 'none' });
@@ -2951,7 +2969,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         }
         nombre = res;
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
-        var todosAcabados = this.acabados;
+        var todosAcabados = this.acabados1234;
         $.each(todosAcabados, function(index, value) {
             if (value['id'] == idAca) {
                 $('#aca1' + id1 + ' #imagenAcabadoPrincipal' + k).remove();
@@ -3792,8 +3810,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('#productoCarrito' + j + ' #precioCalculado' + j).empty();
         }
         var contador = 1;
-        var acabados = this.acabados;
-        var todosAcabados = this.todosAcabados;
+        var acabados1 = this.acabados1;
+        var acabados = acabados1;
         var iluminacion = this.iluminacion;
         $('#textoFinal').removeAttr('style');
         $('#textoFinal').attr('style');
@@ -4696,6 +4714,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 });
             });
         }
+
         this.acabadosService
             .query({
                 page: this.page - 1,
@@ -4708,6 +4727,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 }
             });
         this.acabados = acabados;
+        this.acabados1 = acabados;
+        this.acabados1234 = acabados;
         this.userService
             .query({
                 page: this.page - 1,
