@@ -7908,7 +7908,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             sesion[1]['ancho'] +
                             '</p>'
                     );
-                    var precioTotalCesta = $('#cestaTotal').text();
+                    var precioTotalCesta;
+                    precioTotalCesta = $('#cestaTotal').text();
                     if (precioTotalCesta != '') {
                         var cogerPrecio = parseFloat(sesion[1]['todoSumadoPrecio']);
                         precioTotalCesta = parseFloat(precioTotalCesta);
