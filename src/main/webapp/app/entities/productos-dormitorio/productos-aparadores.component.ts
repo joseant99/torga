@@ -1891,7 +1891,9 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                             '</span></p>'
                     );
                     $('#datos1').append('<p style="width:100%"><span>Alto : </span><span>' + datos[h]['alto'] + '</span></p>');
-                    $('#datos1').append('<p style="width:100%"><span>Fondo : </span><span>' + datos[h]['fondo'] + '</span></p>');
+                    $('#datos1').append(
+                        '<p style="width:100%"><span>Fondo : </span><span id="fondoDatosDimen">' + datos[h]['fondo'] + '</span></p>'
+                    );
                     acaSi = 0;
                 } else {
                     $('#especiales').css({ display: 'block' });
