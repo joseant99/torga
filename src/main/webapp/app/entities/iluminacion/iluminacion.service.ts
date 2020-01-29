@@ -12,7 +12,8 @@ type EntityArrayResponseType = HttpResponse<IIluminacion[]>;
 @Injectable({ providedIn: 'root' })
 export class IluminacionService {
     public resourceUrl = SERVER_API_URL + 'api/iluminacions';
-
+    public todos;
+    public metidos;
     constructor(protected http: HttpClient) {}
 
     create(iluminacion: IIluminacion): Observable<EntityResponseType> {
@@ -34,5 +35,8 @@ export class IluminacionService {
 
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
+    }
+    findProd(id: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IIluminacion[]>(`${this.resourceUrl}-findProd/${id}`, { observe: 'response' });
     }
 }

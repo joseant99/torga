@@ -261,23 +261,12 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var cont = 0;
         var presu;
         presu = sessionStorage.getItem('presupuesto');
-        var ilu = [];
         var todaTienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
         this.tiendaNombre = todaTienda['nombreComercial'];
         this.numero = todaTienda['telefono'];
-        this.iluminacionProdPrePedService
-            .query({
-                size: 1000000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data['body'].length; i++) {
-                    ilu[i] = data['body'][i];
-                }
-            });
-        this.iluminacion = ilu;
         var acabados = [];
         var todosInteriores;
-        var iluminacion = this.iluminacion;
+        var iluminacion = this.iluminacionProdPrePedService.metidos;
         this.productosPresupuestoPedidosService.query1(parseFloat(presu)).subscribe(
             (res: HttpResponse<IProductosPresupuestoPedidos[]>) => {
                 for (let i = 0; i < res.body.length; i++) {
@@ -903,8 +892,20 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 console.log(this.productos);
                 var precioModulosBajos = this.modulosBajos;
                 var productos = this.productos;
+                var ilu = [];
+                this.iluminacionProdPrePedService
+                    .query({
+                        size: 1000000
+                    })
+                    .subscribe(data => {
+                        for (let i = 0; i < data['body'].length; i++) {
+                            ilu[i] = data['body'][i];
+                        }
+                        this.iluminacionProdPrePedService.metidos = ilu;
+                    });
                 var precioPunto = this.precioPunto;
                 var apoyoPrecios = this.apoyoPrecios;
+
                 var precioAparadores = this.aparadores;
                 for (let w = 0; w < productos.length; w++) {
                     if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
@@ -914,277 +915,244 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                 for (let i = 0; i < res.body.length; i++) {
                                     acabados[i] = res.body[i];
                                 }
+                                var iluminacion = this.iluminacionProdPrePedService.metidos;
                                 console.log(res.body);
                                 var apoyo;
                                 setTimeout(function() {
                                     if (productos != undefined) {
-                                        for (let i = 0; i < productos.length; i++) {
-                                            var contador = 1;
-                                            apoyo = undefined;
-                                            for (let k = 0; k < acabados.length; k++) {
-                                                if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
-                                                    $('.' + productos[i]['id'] + 'Datos').append(
-                                                        '<p >Acabado ' +
-                                                            contador +
-                                                            '&nbsp;&nbsp;&nbsp; <span class="acabado' +
-                                                            contador +
-                                                            '">' +
-                                                            acabados[k]['acabados']['nombre'] +
-                                                            '</span></p>'
-                                                    );
-                                                    var prodNombre =
-                                                        acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
-                                                    if (prodNombre == 'Modulo Bajo 1') {
-                                                        prodNombre = 'mb1';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 2') {
-                                                        prodNombre = 'mb2';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 3') {
-                                                        prodNombre = 'mb4';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 4 Apertura Izquierda') {
-                                                        prodNombre = 'mb6';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 4 Apertura Derecha') {
-                                                        prodNombre = 'mb5';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 5 Apertura Izquierda') {
-                                                        prodNombre = 'mb8';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 5 Apertura Derecha') {
-                                                        prodNombre = 'mb7';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 6') {
-                                                        prodNombre = 'mb9';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 7 Apertura Izquierda') {
-                                                        prodNombre = 'mb11';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 7 Apertura Derecha') {
-                                                        prodNombre = 'mb10';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 8 Apertura Izquierda') {
-                                                        prodNombre = 'mb13';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 8 Apertura Derecha') {
-                                                        prodNombre = 'mb12';
-                                                    }
-                                                    if (prodNombre == 'Modulo Bajo 9') {
-                                                        prodNombre = 'mb14';
-                                                    }
-                                                    if (prodNombre == 'Aparador 2') {
-                                                        prodNombre = 'ap2';
-                                                    }
-
-                                                    if (prodNombre == 'Aparador 3') {
-                                                        prodNombre = 'ap3';
-                                                    }
-                                                    if (prodNombre == 'Aparador 4') {
-                                                        prodNombre = 'ap4';
-                                                    }
-                                                    if (prodNombre == 'Aparador 5') {
-                                                        prodNombre = 'ap5';
-                                                    }
-                                                    if (prodNombre == 'Aparador 6') {
-                                                        prodNombre = 'ap6';
-                                                    }
-                                                    if (prodNombre == 'Aparador 7') {
-                                                        prodNombre = 'ap7';
-                                                    }
-                                                    if (prodNombre == 'Aparador 8') {
-                                                        prodNombre = 'ap8';
-                                                    }
-                                                    if (prodNombre == 'Aparador 9') {
-                                                        prodNombre = 'ap9';
-                                                    }
-                                                    if (prodNombre == 'Aparador 10') {
-                                                        prodNombre = 'ap10';
-                                                    }
-                                                    var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
-                                                    if (nombreAcabado == 'marmol blanco') {
-                                                        nombreAcabado = 'marmolblanco';
-                                                    }
-                                                    if (nombreAcabado == 'marmol negro') {
-                                                        nombreAcabado = 'marmolnegro';
-                                                    }
-
-                                                    if (nombreAcabado == 'cristal bronce') {
-                                                        var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
-                                                            .text()
-                                                            .toLowerCase();
-                                                        $('#imagen' + i).append(
-                                                            '<img id="tapa" class="' +
-                                                                nombreAcabado +
-                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
-                                                                prodNombre +
-                                                                '/' +
-                                                                contador +
-                                                                ' BRONCE/' +
-                                                                prodNombre +
-                                                                '_' +
-                                                                contador +
-                                                                '_' +
-                                                                aca1Nombre +
-                                                                '_bronce_optimized.png">'
-                                                        );
-                                                    }
-                                                    if (nombreAcabado == 'cristal transparente') {
-                                                        var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
-                                                            .text()
-                                                            .toLowerCase();
-                                                        $('#imagen' + i).append(
-                                                            '<img id="tapa" class="' +
-                                                                nombreAcabado +
-                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
-                                                                prodNombre +
-                                                                '/' +
-                                                                contador +
-                                                                ' TRANSPARENTE/' +
-                                                                prodNombre +
-                                                                '_' +
-                                                                contador +
-                                                                '_' +
-                                                                aca1Nombre +
-                                                                '_transparente_optimized.png">'
-                                                        );
-                                                    }
-                                                    if (nombreAcabado != 'cristal transparente' && nombreAcabado != 'cristal bronce') {
-                                                        $('#imagen' + i).append(
-                                                            '<img id="tapa" class="' +
-                                                                nombreAcabado +
-                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
-                                                                prodNombre +
-                                                                '/' +
-                                                                contador +
-                                                                '/' +
-                                                                prodNombre +
-                                                                '_' +
-                                                                contador +
-                                                                '_' +
-                                                                nombreAcabado +
-                                                                '_optimized.png">'
-                                                        );
-                                                    }
-
-                                                    if (
-                                                        contador == 1 &&
-                                                        acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined
-                                                    ) {
-                                                        apoyo = acabados[k];
-                                                    }
-
-                                                    contador++;
-                                                }
-                                            }
-                                            if (apoyo != undefined) {
+                                        var i = w;
+                                        for (let j = 0; j < iluminacion.length; j++) {
+                                            if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p>' +
-                                                        apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
-                                                        '&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                        i +
+                                                    '<p>Iluminacion&nbsp;&nbsp;&nbsp;' +
+                                                        iluminacion[j]['iluminacion']['precio'] +
+                                                        '&euro;</p>'
+                                                );
+                                            }
+                                        }
+                                        var contador = 1;
+                                        apoyo = undefined;
+                                        for (let k = 0; k < acabados.length; k++) {
+                                            if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
+                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                    '<p >Acabado ' +
+                                                        contador +
+                                                        '&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                        contador +
                                                         '">' +
-                                                        apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
-                                                        '</span>&euro;</p>'
+                                                        acabados[k]['acabados']['nombre'] +
+                                                        '</span></p>'
                                                 );
-                                                var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
-                                                if (precioTotal != '') {
-                                                    var precioFloat = parseFloat(precioTotal);
+                                                var prodNombre =
+                                                    acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
+                                                if (prodNombre == 'Modulo Bajo 1') {
+                                                    prodNombre = 'mb1';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 2') {
+                                                    prodNombre = 'mb2';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 3') {
+                                                    prodNombre = 'mb4';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 4 Apertura Izquierda') {
+                                                    prodNombre = 'mb6';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 4 Apertura Derecha') {
+                                                    prodNombre = 'mb5';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 5 Apertura Izquierda') {
+                                                    prodNombre = 'mb8';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 5 Apertura Derecha') {
+                                                    prodNombre = 'mb7';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 6') {
+                                                    prodNombre = 'mb9';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 7 Apertura Izquierda') {
+                                                    prodNombre = 'mb11';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 7 Apertura Derecha') {
+                                                    prodNombre = 'mb10';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 8 Apertura Izquierda') {
+                                                    prodNombre = 'mb13';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 8 Apertura Derecha') {
+                                                    prodNombre = 'mb12';
+                                                }
+                                                if (prodNombre == 'Modulo Bajo 9') {
+                                                    prodNombre = 'mb14';
+                                                }
+                                                if (prodNombre == 'Aparador 2') {
+                                                    prodNombre = 'ap2';
                                                 }
 
-                                                if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 8) {
-                                                    for (let s = 0; s < precioModulosBajos.length; s++) {
-                                                        if (precioModulosBajos[s][2] == productos[i]['productosDormitorio']['id']) {
-                                                            var precioProd = precioModulosBajos[s][1];
-                                                            precioProd = precioProd / 100 + 1;
-                                                        }
-                                                    }
+                                                if (prodNombre == 'Aparador 3') {
+                                                    prodNombre = 'ap3';
                                                 }
-                                                if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 11) {
-                                                    for (let s = 0; s < precioAparadores.length; s++) {
-                                                        if (precioAparadores[s][2] == productos[i]['productosDormitorio']['id']) {
-                                                            var precioProd = precioAparadores[s][1];
-                                                            precioProd = precioProd / 100 + 1;
-                                                        }
-                                                    }
+                                                if (prodNombre == 'Aparador 4') {
+                                                    prodNombre = 'ap4';
+                                                }
+                                                if (prodNombre == 'Aparador 5') {
+                                                    prodNombre = 'ap5';
+                                                }
+                                                if (prodNombre == 'Aparador 6') {
+                                                    prodNombre = 'ap6';
+                                                }
+                                                if (prodNombre == 'Aparador 7') {
+                                                    prodNombre = 'ap7';
+                                                }
+                                                if (prodNombre == 'Aparador 8') {
+                                                    prodNombre = 'ap8';
+                                                }
+                                                if (prodNombre == 'Aparador 9') {
+                                                    prodNombre = 'ap9';
+                                                }
+                                                if (prodNombre == 'Aparador 10') {
+                                                    prodNombre = 'ap10';
+                                                }
+                                                var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
+                                                if (nombreAcabado == 'marmol blanco') {
+                                                    nombreAcabado = 'marmolblanco';
+                                                }
+                                                if (nombreAcabado == 'marmol negro') {
+                                                    nombreAcabado = 'marmolnegro';
                                                 }
 
-                                                precioFloat = precioFloat * precioPunto;
-                                                precioFloat = precioFloat * precioProd;
-                                                var todoApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo'];
-                                                for (let s = 0; s < apoyoPrecios.length; s++) {
-                                                    if (apoyoPrecios[s][2] == todoApoyo['id']) {
-                                                        var precioApo = precioModulosBajos[s][1];
-                                                        precioApo = precioApo / 100 + 1;
-                                                    }
+                                                if (nombreAcabado == 'cristal bronce') {
+                                                    var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
+                                                        .text()
+                                                        .toLowerCase();
+                                                    $('#imagen' + i).append(
+                                                        '<img id="tapa" class="' +
+                                                            nombreAcabado +
+                                                            '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                            prodNombre +
+                                                            '/' +
+                                                            contador +
+                                                            ' BRONCE/' +
+                                                            prodNombre +
+                                                            '_' +
+                                                            contador +
+                                                            '_' +
+                                                            aca1Nombre +
+                                                            '_bronce_optimized.png">'
+                                                    );
                                                 }
-                                                var precioApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
-                                                precioApoyo = precioApoyo * precioPunto;
-                                                precioApoyo = precioApoyo * precioApo;
-                                                precioFloat = precioFloat + precioApoyo;
-                                                var subTotal = parseFloat($('#precioSubtotal').text());
-                                                subTotal = subTotal + precioFloat;
-                                                $('#precioSubtotal').text(subTotal.toFixed(2));
-                                                $('#totalDescuentoTexto').text(subTotal.toFixed(2));
+                                                if (nombreAcabado == 'cristal transparente') {
+                                                    var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
+                                                        .text()
+                                                        .toLowerCase();
+                                                    $('#imagen' + i).append(
+                                                        '<img id="tapa" class="' +
+                                                            nombreAcabado +
+                                                            '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                            prodNombre +
+                                                            '/' +
+                                                            contador +
+                                                            ' TRANSPARENTE/' +
+                                                            prodNombre +
+                                                            '_' +
+                                                            contador +
+                                                            '_' +
+                                                            aca1Nombre +
+                                                            '_transparente_optimized.png">'
+                                                    );
+                                                }
+                                                if (nombreAcabado != 'cristal transparente' && nombreAcabado != 'cristal bronce') {
+                                                    $('#imagen' + i).append(
+                                                        '<img id="tapa" class="' +
+                                                            nombreAcabado +
+                                                            '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                            prodNombre +
+                                                            '/' +
+                                                            contador +
+                                                            '/' +
+                                                            prodNombre +
+                                                            '_' +
+                                                            contador +
+                                                            '_' +
+                                                            nombreAcabado +
+                                                            '_optimized.png">'
+                                                    );
+                                                }
 
-                                                var iva = subTotal * 0.21;
-                                                $('#ivaPrecioQuitar').remove();
-                                                $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + ' €</p>');
-                                                iva = subTotal + iva;
-                                                $('#precioIvaSumado').remove();
-                                                $('#precioCalculadoIva').append(
-                                                    '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + ' €</p>'
-                                                );
-                                                var total;
-                                                total = precioFloat * precioTienda;
-                                                console.log(total);
-                                                total = total - precioFloat;
-                                                $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
-                                                $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
-                                                $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
+                                                if (
+                                                    contador == 1 &&
+                                                    acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined
+                                                ) {
+                                                    apoyo = acabados[k];
+                                                }
+
+                                                contador++;
+                                            }
+                                        }
+                                        if (apoyo != undefined) {
+                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                '<p>' +
+                                                    apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
+                                                    '&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                    i +
+                                                    '">' +
+                                                    apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
+                                                    '</span>&euro;</p>'
+                                            );
+                                            var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                            if (precioTotal != '') {
+                                                var precioFloat = parseFloat(precioTotal);
                                             }
 
-                                            for (let j = 0; j < iluminacion.length; j++) {
-                                                if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
-                                                    $('.' + productos[i]['id'] + 'Datos').append(
-                                                        '<p>Iluminacion&nbsp;&nbsp;&nbsp;' +
-                                                            iluminacion[j]['iluminacion']['precio'] +
-                                                            '&euro;</p>'
-                                                    );
-                                                    var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
-                                                    var fabrica;
-                                                    fabrica = $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text();
-                                                    var ganancias;
-                                                    ganancias = $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text();
-                                                    var precioFloat = 0;
-                                                    precioFloat = parseFloat(precioTotal);
-                                                    fabrica = parseFloat(fabrica);
-                                                    ganancias = parseFloat(fabrica);
-                                                    precioFloat = precioFloat + iluminacion[j]['iluminacion']['precio'];
-                                                    fabrica = fabrica + iluminacion[j]['iluminacion']['precio'] / 2;
-                                                    ganancias = ganancias + iluminacion[j]['iluminacion']['precio'] / 2;
-                                                    var subTotal = parseFloat($('#precioSubtotal').text());
-                                                    if (subTotal == 0) {
-                                                        subTotal = precioFloat;
+                                            if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 8) {
+                                                for (let s = 0; s < precioModulosBajos.length; s++) {
+                                                    if (precioModulosBajos[s][2] == productos[i]['productosDormitorio']['id']) {
+                                                        var precioProd = precioModulosBajos[s][1];
+                                                        precioProd = precioProd / 100 + 1;
                                                     }
-
-                                                    $('#precioSubtotal').text(precioFloat.toFixed(2));
-                                                    var iva = precioFloat * 0.21;
-                                                    $('#ivaPrecioQuitar').remove();
-                                                    $('#ivaQuitar').append(
-                                                        '<p id="ivaPrecioQuitar" style="font-size:25px">' + iva.toFixed(2) + '</p>'
-                                                    );
-                                                    iva = precioFloat + iva;
-                                                    $('#precioIvaSumado').remove();
-                                                    $('#precioCalculadoIva').append(
-                                                        '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + '</p>'
-                                                    );
-                                                    $('#totalDescuentoTexto').text(precioFloat);
-                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
-                                                    $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(fabrica.toFixed(2));
-                                                    $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(ganancias.toFixed(2));
                                                 }
                                             }
+                                            if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 11) {
+                                                for (let s = 0; s < precioAparadores.length; s++) {
+                                                    if (precioAparadores[s][2] == productos[i]['productosDormitorio']['id']) {
+                                                        var precioProd = precioAparadores[s][1];
+                                                        precioProd = precioProd / 100 + 1;
+                                                    }
+                                                }
+                                            }
+
+                                            precioFloat = precioFloat * precioPunto;
+                                            precioFloat = precioFloat * precioProd;
+                                            var todoApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo'];
+                                            for (let s = 0; s < apoyoPrecios.length; s++) {
+                                                if (apoyoPrecios[s][2] == todoApoyo['id']) {
+                                                    var precioApo = precioModulosBajos[s][1];
+                                                    precioApo = precioApo / 100 + 1;
+                                                }
+                                            }
+                                            var precioApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
+                                            precioApoyo = precioApoyo * precioPunto;
+                                            precioApoyo = precioApoyo * precioApo;
+                                            precioFloat = precioFloat + precioApoyo;
+                                            var subTotal = parseFloat($('#precioSubtotal').text());
+                                            subTotal = subTotal + precioFloat;
+                                            $('#precioSubtotal').text(subTotal.toFixed(2));
+                                            $('#totalDescuentoTexto').text(subTotal.toFixed(2));
+
+                                            var iva = subTotal * 0.21;
+                                            $('#ivaPrecioQuitar').remove();
+                                            $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + ' €</p>');
+                                            iva = subTotal + iva;
+                                            $('#precioIvaSumado').remove();
+                                            $('#precioCalculadoIva').append(
+                                                '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + ' €</p>'
+                                            );
+                                            var total;
+                                            total = precioFloat * precioTienda;
+                                            console.log(total);
+                                            total = total - precioFloat;
+                                            $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
+                                            $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
+                                            $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
                                         }
                                     }
                                 }, 0);
@@ -1374,6 +1342,17 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
     ngOnInit() {
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        var ilu = [];
+        this.iluminacionProdPrePedService
+            .query({
+                size: 1000000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data['body'].length; i++) {
+                    ilu[i] = data['body'][i];
+                }
+                this.iluminacionProdPrePedService.metidos = ilu;
+            });
         var buenaPrueba = sessionStorage.getItem('vengoDe');
         if (buenaPrueba == 'pruebaaaaaa') {
             sessionStorage.removeItem('vengoDe');

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -95,6 +95,23 @@ public class IluminacionResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/iluminacions");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
+    
+    
+    /**
+     * GET  /iluminacions : get all the iluminacions.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of iluminacions in body
+     */
+    @GetMapping("/iluminacions-findProd/{id}")
+    @Timed
+    public ResponseEntity<Collection<Iluminacion>> getAllIluminacionsfind(@PathVariable Long id) {
+        log.debug("REST request to get a page of Iluminacions");
+        Collection<Iluminacion> page = iluminacionRepository.findByCategoriaDormi(id);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    
 
     /**
      * GET  /iluminacions/:id : get the "id" iluminacion.
