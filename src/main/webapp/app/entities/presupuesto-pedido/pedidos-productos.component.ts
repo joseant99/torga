@@ -1051,12 +1051,11 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     $('#precioApoyo' + i).text(precio2);
                                                 }
                                             }
-
-                                            $('#totalDescuentoTexto').text(datosPrecioFinal[0]['totalSinIva']);
-                                            $('#ivaQuitar').text(datosPrecioFinal[0]['iva'] + ' €');
-                                            $('#precioCalculadoIva').append(
-                                                '<p style="font-size:25px">' + datosPrecioFinal[0]['totalConIva'] + ' €</p>'
-                                            );
+                                            if (i == 0) {
+                                                $('#totalDescuentoTexto').text(datosPrecioFinal[0]['totalSinIva']);
+                                                $('#ivaQuitar').text(datosPrecioFinal[0]['iva'] + ' €');
+                                                $('#precioCalculadoIva').text(datosPrecioFinal[0]['totalConIva']);
+                                            }
                                             var descuento = datosPrecioFinal[0]['descuentoPorcentaje'];
                                             if (descuento != null) {
                                                 $('#todoDivDescuento').css({ display: 'block' });
