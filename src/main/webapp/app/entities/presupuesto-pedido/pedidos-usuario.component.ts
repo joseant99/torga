@@ -51,7 +51,6 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     }
 
     loadAll() {
-        console.log(sessionStorage);
         var idUsu = this.accountService['userIdentity']['id'];
         var cogidos = [];
         var contador = 0;
