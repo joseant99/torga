@@ -195,6 +195,19 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
 
     public open(producto, productoNombre) {
         $('#botonEliminar').removeAttr('class');
+        var acabados = [];
+        this.acabadosService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    acabados[i] = data.body[i];
+                }
+            });
+        this.acabados = acabados;
         $('#dimensiones').css({ display: 'block' });
         $('#botonApoyoNuevo').empty();
         for (let i = 1; i <= 14; i++) {
@@ -4501,6 +4514,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 });
             });
         }
+
         this.acabadosService
             .query({
                 page: this.page - 1,
