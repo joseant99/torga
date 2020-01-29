@@ -62,7 +62,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
             })
             .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
                 $.each(res['body'], function(index, value) {
-                    if (value['user']['id'] == parseFloat(idUsu) && value['pedido'] == 1) {
+                    if (value['pedido'] == 1) {
                         cogidos[index] = value;
                         contador++;
                     }
