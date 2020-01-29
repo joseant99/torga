@@ -3820,6 +3820,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             const alto = $('#productoCalculadora1 #datos1 #alto' + i).text();
             const fondo = $('#productoCalculadora1 #datos1 #fondo' + i).text();
             const precio = $('#productoCalculadora1 #datos1 #pIncremento').attr('class');
+            const todoSumadoPrecio = $('#precioDimension').text();
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
             console.log(sessionStorage);
             const prod = [];
@@ -3869,6 +3870,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     value['iluminacion'] = iluBuena[1];
                     prod[1] = value;
                     prod[1]['imagen'] = '';
+                    prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
                     prod[1]['productosDormitorio']['imagen'] = '';
                     prod[1]['apoyo']['imagen'] = '';
                     console.log(prod);

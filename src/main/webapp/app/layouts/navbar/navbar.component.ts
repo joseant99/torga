@@ -557,6 +557,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('#modalCesta .modal-body').empty();
         var medidas = this.medidasModal;
         var acabados = [];
+        $('#cestaTotal').text('');
         $('#myModalComposicion .modal-body').empty();
         var contAca = 1;
         var nombreCarpeta;
@@ -7896,16 +7897,27 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     $('#textoCesta' + i).append(
                         '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
                             sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                            '<i style="float:right;margin-right:40%">&euro; ' +
-                            sesion[1]['precio'] +
-                            '</i></p>'
+                            '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                            i +
+                            '">' +
+                            sesion[1]['todoSumadoPrecio'] +
+                            '</span> &euro; </i></p>'
                     );
                     $('#textoCesta' + i).append(
                         '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Ancho: ' +
                             sesion[1]['ancho'] +
                             '</p>'
                     );
-
+                    var precioTotalCesta = $('#cestaTotal').text();
+                    if (precioTotalCesta != '') {
+                        var cogerPrecio = parseFloat(sesion[1]['todoSumadoPrecio']);
+                        precioTotalCesta = parseFloat(precioTotalCesta);
+                        precioTotalCesta = cogerPrecio + precioTotalCesta;
+                        $('#cestaTotal').text(precioTotalCesta);
+                    } else {
+                        var cogerPrecio = parseFloat(sesion[1]['todoSumadoPrecio']);
+                        $('#cestaTotal').text(cogerPrecio);
+                    }
                     $('#textoCesta' + i).append(
                         '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Alto: ' +
                             sesion[1]['alto'] +
@@ -7916,12 +7928,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             sesion[1]['fondo'] +
                             '</p>'
                     );
+
                     $('#textoCesta' + i).append(
                         '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
                             sesion[1]['apoyo']['productoApoyo']['nombre'] +
-                            '<i style="float:right;font-size:15px;margin-right:40%">+ &euro; ' +
+                            '<i style="float:right;font-size:15px;margin-right:40%">+ ' +
                             sesion[1]['apoyo']['precio'] +
-                            '</i></p>'
+                            ' &euro;</i></p>'
                     );
                     $('#textoCesta' + i).append(
                         '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;font-size: 16px;"><span onclick="borrarProdCesta(' +
