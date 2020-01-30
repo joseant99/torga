@@ -71,6 +71,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     productosPresupuestoPedidos: any;
     tiendaNombre: any;
     numero: any;
+    singulares: any;
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         public presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
@@ -907,6 +908,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 var apoyoPrecios = this.apoyoPrecios;
 
                 var precioAparadores = this.aparadores;
+                var precioSingulares = this.singulares;
                 for (let w = 0; w < productos.length; w++) {
                     if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
                         this.acabadosProductosPresupuestoPedidoService
@@ -923,11 +925,17 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                         var i = w;
                                         for (let j = 0; j < iluminacion.length; j++) {
                                             if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
-                                                $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p>Iluminacion&nbsp;&nbsp;&nbsp;' +
-                                                        iluminacion[j]['iluminacion']['precio'] +
-                                                        '&euro;</p>'
+                                                $('.' + productos[i]['id'] + 'DatosIluminacion').append(
+                                                    '<p>Luz&nbsp;&nbsp;&nbsp;' + iluminacion[j]['iluminacion']['precio'] + '&euro;</p>'
                                                 );
+                                                var precioLuz = iluminacion[j]['iluminacion']['precio'];
+                                                var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                                if (precioTotal != '') {
+                                                    var precioFloat = parseFloat(precioTotal);
+                                                }
+                                                precioFloat = precioFloat + precioLuz;
+                                                $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat);
+                                                $('.' + productos[i]['id'] + 'DatosIluminacion').css({ display: 'block' });
                                             }
                                         }
                                         var contador = 1;
@@ -991,6 +999,79 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 if (prodNombre == 'Aparador 3') {
                                                     prodNombre = 'ap3';
                                                 }
+
+                                                if (prodNombre == 'singular 1 apertura derecha') {
+                                                    prodNombre = 'sg1';
+                                                }
+
+                                                if (prodNombre == 'singular 1 apertura izquierda') {
+                                                    prodNombre = 'sg1';
+                                                }
+
+                                                if (prodNombre == 'singular 2 apertura derecha') {
+                                                    prodNombre = 'sg2';
+                                                }
+
+                                                if (prodNombre == 'singular 2 apertura izquierda') {
+                                                    prodNombre = 'sg2';
+                                                }
+
+                                                if (prodNombre == 'singular 3 apertura derecha') {
+                                                    prodNombre = 'sg3';
+                                                }
+
+                                                if (prodNombre == 'singular 3 apertura izquierda') {
+                                                    prodNombre = 'sg3';
+                                                }
+                                                if (prodNombre == 'singular 4') {
+                                                    prodNombre = 'sg4';
+                                                }
+                                                if (prodNombre == 'singular 5') {
+                                                    prodNombre = 'sg5';
+                                                }
+
+                                                if (prodNombre == 'singular 6') {
+                                                    prodNombre = 'sg6';
+                                                }
+                                                if (prodNombre == 'singular 7') {
+                                                    prodNombre = 'sg7';
+                                                }
+
+                                                if (prodNombre == 'singular 8') {
+                                                    prodNombre = 'sg8';
+                                                }
+
+                                                if (prodNombre == 'singular 9') {
+                                                    prodNombre = 'sg9';
+                                                }
+                                                if (prodNombre == 'singular 10') {
+                                                    prodNombre = 'sg10';
+                                                }
+                                                if (prodNombre == 'singular 11') {
+                                                    prodNombre = 'sg11';
+                                                }
+                                                if (prodNombre == 'singular 12 apertura izquierda') {
+                                                    prodNombre = 'sg12';
+                                                }
+                                                if (prodNombre == 'singular 12 apertura derecha') {
+                                                    prodNombre = 'sg12';
+                                                }
+                                                if (prodNombre == 'singular 13 apertura izquierda') {
+                                                    prodNombre = 'sg13';
+                                                }
+                                                if (prodNombre == 'singular 13 apertura derecha') {
+                                                    prodNombre = 'sg13';
+                                                }
+                                                if (prodNombre == 'singular 14') {
+                                                    prodNombre = 'sg14';
+                                                }
+                                                if (prodNombre == 'singular 15') {
+                                                    prodNombre = 'sg15';
+                                                }
+                                                if (prodNombre == 'singular 16') {
+                                                    prodNombre = 'sg16';
+                                                }
+
                                                 if (prodNombre == 'Aparador 4') {
                                                     prodNombre = 'ap4';
                                                 }
@@ -1019,65 +1100,140 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 if (nombreAcabado == 'marmol negro') {
                                                     nombreAcabado = 'marmolnegro';
                                                 }
-
-                                                if (nombreAcabado == 'cristal bronce') {
-                                                    var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
-                                                        .text()
-                                                        .toLowerCase();
-                                                    $('#imagen' + i).append(
-                                                        '<img id="tapa" class="' +
-                                                            nombreAcabado +
-                                                            '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
-                                                            prodNombre +
-                                                            '/' +
-                                                            contador +
-                                                            ' BRONCE/' +
-                                                            prodNombre +
-                                                            '_' +
-                                                            contador +
-                                                            '_' +
-                                                            aca1Nombre +
-                                                            '_bronce_optimized.png">'
-                                                    );
+                                                if (
+                                                    prodNombre != 'sg1' &&
+                                                    prodNombre != 'sg2' &&
+                                                    prodNombre != 'sg3' &&
+                                                    prodNombre != 'sg4' &&
+                                                    prodNombre != 'sg5' &&
+                                                    prodNombre != 'sg6' &&
+                                                    prodNombre != 'sg7' &&
+                                                    prodNombre != 'sg8' &&
+                                                    prodNombre != 'sg9' &&
+                                                    prodNombre != 'sg10' &&
+                                                    prodNombre != 'sg11' &&
+                                                    prodNombre != 'sg12' &&
+                                                    prodNombre != 'sg13' &&
+                                                    prodNombre != 'sg14' &&
+                                                    prodNombre != 'sg15' &&
+                                                    prodNombre != 'sg16'
+                                                ) {
+                                                    if (nombreAcabado == 'cristal bronce') {
+                                                        var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
+                                                            .text()
+                                                            .toLowerCase();
+                                                        $('#imagen' + i).append(
+                                                            '<img id="tapa" class="' +
+                                                                nombreAcabado +
+                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                                prodNombre +
+                                                                '/' +
+                                                                contador +
+                                                                ' BRONCE/' +
+                                                                prodNombre +
+                                                                '_' +
+                                                                contador +
+                                                                '_' +
+                                                                aca1Nombre +
+                                                                '_bronce_optimized.png">'
+                                                        );
+                                                    }
+                                                    if (nombreAcabado == 'cristal transparente') {
+                                                        var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
+                                                            .text()
+                                                            .toLowerCase();
+                                                        $('#imagen' + i).append(
+                                                            '<img id="tapa" class="' +
+                                                                nombreAcabado +
+                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                                prodNombre +
+                                                                '/' +
+                                                                contador +
+                                                                ' TRANSPARENTE/' +
+                                                                prodNombre +
+                                                                '_' +
+                                                                contador +
+                                                                '_' +
+                                                                aca1Nombre +
+                                                                '_transparente_optimized.png">'
+                                                        );
+                                                    }
+                                                    if (nombreAcabado != 'cristal transparente' && nombreAcabado != 'cristal bronce') {
+                                                        $('#imagen' + i).append(
+                                                            '<img id="tapa" class="' +
+                                                                nombreAcabado +
+                                                                '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                                prodNombre +
+                                                                '/' +
+                                                                contador +
+                                                                '/' +
+                                                                prodNombre +
+                                                                '_' +
+                                                                contador +
+                                                                '_' +
+                                                                nombreAcabado +
+                                                                '_optimized.png">'
+                                                        );
+                                                    }
+                                                } else {
+                                                    if (nombreAcabado == 'cristal bronce') {
+                                                        var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
+                                                            .text()
+                                                            .toLowerCase();
+                                                        $('#imagen' + i).append(
+                                                            '<img id="tapa" class="' +
+                                                                nombreAcabado +
+                                                                '" width="250px" height="383px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                                prodNombre +
+                                                                '/' +
+                                                                contador +
+                                                                ' BRONCE/' +
+                                                                prodNombre +
+                                                                '_' +
+                                                                contador +
+                                                                '_' +
+                                                                aca1Nombre +
+                                                                '_bronce_optimized.png">'
+                                                        );
+                                                    }
+                                                    if (nombreAcabado == 'cristal transparente') {
+                                                        var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
+                                                            .text()
+                                                            .toLowerCase();
+                                                        $('#imagen' + i).append(
+                                                            '<img id="tapa" class="' +
+                                                                nombreAcabado +
+                                                                '" width="250px" height="383px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                                prodNombre +
+                                                                '/' +
+                                                                contador +
+                                                                ' TRANSPARENTE/' +
+                                                                prodNombre +
+                                                                '_' +
+                                                                contador +
+                                                                '_' +
+                                                                aca1Nombre +
+                                                                '_transparente_optimized.png">'
+                                                        );
+                                                    }
+                                                    if (nombreAcabado != 'cristal transparente' && nombreAcabado != 'cristal bronce') {
+                                                        $('#imagen' + i).append(
+                                                            '<img id="tapa" class="' +
+                                                                nombreAcabado +
+                                                                '" width="250px" height="383px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                                prodNombre +
+                                                                '/' +
+                                                                contador +
+                                                                '/' +
+                                                                prodNombre +
+                                                                '_' +
+                                                                contador +
+                                                                '_' +
+                                                                nombreAcabado +
+                                                                '_optimized.png">'
+                                                        );
+                                                    }
                                                 }
-                                                if (nombreAcabado == 'cristal transparente') {
-                                                    var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
-                                                        .text()
-                                                        .toLowerCase();
-                                                    $('#imagen' + i).append(
-                                                        '<img id="tapa" class="' +
-                                                            nombreAcabado +
-                                                            '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
-                                                            prodNombre +
-                                                            '/' +
-                                                            contador +
-                                                            ' TRANSPARENTE/' +
-                                                            prodNombre +
-                                                            '_' +
-                                                            contador +
-                                                            '_' +
-                                                            aca1Nombre +
-                                                            '_transparente_optimized.png">'
-                                                    );
-                                                }
-                                                if (nombreAcabado != 'cristal transparente' && nombreAcabado != 'cristal bronce') {
-                                                    $('#imagen' + i).append(
-                                                        '<img id="tapa" class="' +
-                                                            nombreAcabado +
-                                                            '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
-                                                            prodNombre +
-                                                            '/' +
-                                                            contador +
-                                                            '/' +
-                                                            prodNombre +
-                                                            '_' +
-                                                            contador +
-                                                            '_' +
-                                                            nombreAcabado +
-                                                            '_optimized.png">'
-                                                    );
-                                                }
-
                                                 if (
                                                     contador == 1 &&
                                                     acabados[k]['productosPresupuestoPedidos']['tiposApoyo'] != undefined
@@ -1115,6 +1271,15 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 for (let s = 0; s < precioAparadores.length; s++) {
                                                     if (precioAparadores[s][2] == productos[i]['productosDormitorio']['id']) {
                                                         var precioProd = precioAparadores[s][1];
+                                                        precioProd = precioProd / 100 + 1;
+                                                    }
+                                                }
+                                            }
+
+                                            if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 13) {
+                                                for (let s = 0; s < precioSingulares.length; s++) {
+                                                    if (precioSingulares[s][2] == productos[i]['productosDormitorio']['id']) {
+                                                        var precioProd = precioSingulares[s][1];
                                                         precioProd = precioProd / 100 + 1;
                                                     }
                                                 }
@@ -1375,6 +1540,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         });
         this.precioTiendaProductosService.findProdId(11, tienda.id).subscribe(data => {
             this.aparadores = data.body;
+        });
+        this.precioTiendaProductosService.findProdId(13, tienda.id).subscribe(data => {
+            this.singulares = data.body;
         });
         this.precioTiendaProductosService.findProdId(2, tienda.id).subscribe(data => {
             this.apoyoPrecios = data.body;

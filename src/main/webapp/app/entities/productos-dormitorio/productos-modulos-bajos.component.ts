@@ -2100,11 +2100,56 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             this.precioDimension = totalFloat;
             $('#precioDimension').text(totalFloat);
             $('#precioIluminacion').text(ilu['precio'] + ' €');
+            $('#precioIluminacion').attr('class', 'si');
         } else {
             $('#siMeterIluminacion').css({ 'background-color': 'white' });
             $('#precioIluminacion').text(' ');
             this.precioDimension = this.precioDimension1;
             $('#precioDimension').text(this.precioDimension1);
+            $('#precioIluminacion').attr('class', 'no');
+        }
+
+        var valoresAca = [];
+        var cont = 1;
+        var contadorApoyo = 0;
+        for (let i = 1; i <= 14; i++) {
+            var valNuevo = $('#val' + i + 'Dato').attr('class');
+            if (valNuevo != '' && valNuevo != undefined) {
+                valoresAca[cont] = valNuevo;
+                cont++;
+            }
+        }
+        for (let m = 1; m <= 14; m++) {
+            if ($('#aca1' + m).html()) {
+                contadorApoyo++;
+            }
+        }
+
+        var apoyoBueno = $('#datos1 #nombreApoyo').text();
+        var idProd = $('#nombreMesita').attr('class');
+        if (contadorApoyo == cont - 1 && apoyoBueno != '') {
+            $('#divDentroCalcu').css({ height: '76%' });
+            if (this.iluminacionService.todos != undefined) {
+                var precioIlu = $('#precioIluminacion').attr('class');
+                if (precioIlu != ' ' && precioIlu != '' && precioIlu != undefined && precioIlu != null) {
+                    $('#textoFinal').removeAttr('style');
+                    $('#textoFinal').attr('style');
+                    $('#textoFinal').css({ width: '100%' });
+                    $('#textoFinal').css({ float: 'left' });
+                    $('#botonCalculadora').removeAttr('class');
+                }
+            } else {
+                $('#textoFinal').removeAttr('style');
+                $('#textoFinal').attr('style');
+                $('#textoFinal').css({ width: '100%' });
+                $('#textoFinal').css({ float: 'left' });
+                $('#botonCalculadora').removeAttr('class');
+            }
+
+            $('#terminarConfiguracion').removeAttr('style');
+            $('#terminarConfiguracion').attr('style');
+            $('#terminarConfiguracion').css({ float: 'left' });
+            $('#terminarConfiguracion').css({ width: '100%' });
         }
     }
 
@@ -3259,24 +3304,24 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var apoyoBueno = $('#datos1 #nombreApoyo').text();
         var idProd = $('#nombreMesita').attr('class');
         if (contadorApoyo == cont - 1 && apoyoBueno != '') {
-            var iluminacion = this.iluminacion;
             $('#divDentroCalcu').css({ height: '76%' });
-            var texto = 0;
-            for (let k = 0; k < iluminacion.length; k++) {
-                if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
-                    $('#iluminacion').removeAttr('style');
-                    $('#iluminacion').attr('style');
-                    $('#iluminacion').css({ width: '100%' });
-                    $('#iluminacion').css({ float: 'left' });
-                    $('#ilu1').attr('class', iluminacion[k]['id']);
-                    texto = 0;
-                } else {
-                    texto = 1;
+            if (this.iluminacionService.todos != undefined) {
+                var precioIlu = $('#precioIluminacion').attr('class');
+                if (precioIlu != ' ' && precioIlu != '' && precioIlu != undefined && precioIlu != null) {
+                    $('#textoFinal').removeAttr('style');
+                    $('#textoFinal').attr('style');
+                    $('#textoFinal').css({ width: '100%' });
+                    $('#textoFinal').css({ float: 'left' });
+                    $('#botonCalculadora').removeAttr('class');
                 }
-            }
-            if (texto == 1) {
+            } else {
+                $('#textoFinal').removeAttr('style');
+                $('#textoFinal').attr('style');
+                $('#textoFinal').css({ width: '100%' });
+                $('#textoFinal').css({ float: 'left' });
                 $('#botonCalculadora').removeAttr('class');
             }
+
             $('#terminarConfiguracion').removeAttr('style');
             $('#terminarConfiguracion').attr('style');
             $('#terminarConfiguracion').css({ float: 'left' });
@@ -3775,12 +3820,22 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             });
         if (contadorApoyo == cont - 1) {
             $('#divDentroCalcu').css({ height: '76%' });
-
-            $('#textoFinal').removeAttr('style');
-            $('#textoFinal').attr('style');
-            $('#textoFinal').css({ width: '100%' });
-            $('#textoFinal').css({ float: 'left' });
-            $('#botonCalculadora').removeAttr('class');
+            if (this.iluminacionService.todos != undefined) {
+                var precioIlu = $('#precioIluminacion').attr('class');
+                if (precioIlu != ' ' && precioIlu != '' && precioIlu != undefined && precioIlu != null) {
+                    $('#textoFinal').removeAttr('style');
+                    $('#textoFinal').attr('style');
+                    $('#textoFinal').css({ width: '100%' });
+                    $('#textoFinal').css({ float: 'left' });
+                    $('#botonCalculadora').removeAttr('class');
+                }
+            } else {
+                $('#textoFinal').removeAttr('style');
+                $('#textoFinal').attr('style');
+                $('#textoFinal').css({ width: '100%' });
+                $('#textoFinal').css({ float: 'left' });
+                $('#botonCalculadora').removeAttr('class');
+            }
 
             $('#terminarConfiguracion').removeAttr('style');
             $('#terminarConfiguracion').attr('style');

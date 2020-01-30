@@ -2961,7 +2961,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             nombre = 'sg15';
         }
         if (nombre == 'singular 16') {
-            nombre = 'sg116';
+            nombre = 'sg16';
         }
 
         var res = nombre;
@@ -3012,7 +3012,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                'sin" width="400px" height="592.75px" src="../../../content/images/' +
+                                'sin" width="400px" height="692.75px" src="../../../content/images/' +
                                 nombre +
                                 ' apertura izquierda/1/' +
                                 nombre +
@@ -3024,7 +3024,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                'sin" width="400px" height="592.75px" src="../../../content/images/' +
+                                'sin" width="400px" height="692.75px" src="../../../content/images/' +
                                 nombre +
                                 '/1/' +
                                 nombre +
@@ -3040,7 +3040,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="tapa" class="' +
                                 nombreAcabado +
-                                'sin" width="400px" height="592.75px" src="../../../content/images/' +
+                                'sin" width="400px" height="692.75px" src="../../../content/images/' +
                                 nombre +
                                 ' apertura izquierda/2/' +
                                 nombre +
@@ -3049,17 +3049,68 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                                 '_optimized.png">'
                         );
                     } else {
-                        $('#acabados #imagenAcabadoPrincipal').append(
-                            '<img id="cajon" class="' +
-                                nombreAcabado +
-                                'sin" width="400px" height="592.75px" src="../../../content/images/' +
-                                nombre +
-                                '/2/' +
-                                nombre +
-                                '_2_' +
-                                nombreAcabado +
-                                '_optimized.png">'
-                        );
+                        if (nombreAcabado == 'bronce' || nombreAcabado == 'transparente') {
+                            var nombreMayus = nombreAcabado.toUpperCase();
+                            var color = $('#val1Dato').text();
+                            color = color.toLowerCase();
+                            if (nombre == 'sg3') {
+                                nombre = 'sg3 apertura izquierda';
+                                var nombre1 = 'sg3';
+                            } else {
+                                if (nombre == 'sg2') {
+                                    nombre = 'sg2 apertura izquierda';
+                                    var nombre1 = 'sg2';
+                                } else {
+                                    var nombre1 = nombre;
+                                }
+                            }
+                            $('#acabados #imagenAcabadoPrincipal').append(
+                                '<img id="casco" class="' +
+                                    nombreAcabado +
+                                    'sin" width="400px" height="692.75px" src="../../../content/images/' +
+                                    nombre +
+                                    '/' +
+                                    id1 +
+                                    ' ' +
+                                    nombreMayus +
+                                    '/' +
+                                    nombre1 +
+                                    '_' +
+                                    id1 +
+                                    '_' +
+                                    color +
+                                    '_' +
+                                    nombreAcabado +
+                                    '_optimized.png">'
+                            );
+                        } else {
+                            if (nombre == 'sg3') {
+                                nombre = 'sg3 apertura izquierda';
+                                var nombre1 = 'sg3';
+                            } else {
+                                if (nombre == 'sg2') {
+                                    nombre = 'sg2 apertura izquierda';
+                                    var nombre1 = 'sg2';
+                                } else {
+                                    var nombre1 = nombre;
+                                }
+                            }
+                            $('#acabados #imagenAcabadoPrincipal').append(
+                                '<img id="casco" class="' +
+                                    nombreAcabado +
+                                    'sin" width="400px" height="692.75px" src="../../../content/images/' +
+                                    nombre +
+                                    '/' +
+                                    id1 +
+                                    '/' +
+                                    nombre1 +
+                                    '_' +
+                                    id1 +
+                                    '_' +
+                                    nombreAcabado +
+                                    '_optimized.png">'
+                            );
+                        }
                     }
                 }
                 if (id1 != 2 && id1 != 1) {
@@ -3081,7 +3132,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="casco" class="' +
                                 nombreAcabado +
-                                'sin" width="400px" height="592.75px" src="../../../content/images/' +
+                                'sin" width="400px" height="692.75px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
@@ -3112,7 +3163,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         $('#acabados #imagenAcabadoPrincipal').append(
                             '<img id="casco" class="' +
                                 nombreAcabado +
-                                'sin" width="400px" height="592.75px" src="../../../content/images/' +
+                                'sin" width="400px" height="692.75px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
@@ -3786,13 +3837,15 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             const ancho = $('#productoCalculadora1 #datos1 #ancho' + i).text();
             const alto = $('#productoCalculadora1 #datos1 #alto' + i).text();
             const fondo = $('#productoCalculadora1 #datos1 #fondo' + i).text();
-            const precio = $('#productoCalculadora1 #datos1 #alto' + i).attr('class');
+            const precio = $('#productoCalculadora1 #datos1 #pIncremento').attr('class');
+            const todoSumadoPrecio = $('#precioDimension').text();
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
             console.log(sessionStorage);
             const prod = [];
             const prods = this.apoyo;
             const apoyoBueno = [];
             const iluBuena = [];
+            const iluminacionBuenaSiONo = $('#precioIluminacion').text();
             const sistemasApoyo = this.sistemasApoyo;
             for (let k = 0; k < sistemasApoyo.length; k++) {
                 if (sistemasApoyo[k]['id'] == idApoyo) {
@@ -3800,10 +3853,8 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                 }
             }
 
-            for (let k = 0; k < iluminacion.length; k++) {
-                if (iluminacion[k]['id'] == idIluminacion) {
-                    iluBuena[1] = iluminacion[k];
-                }
+            if (iluminacionBuenaSiONo != ' ') {
+                iluBuena[1] = iluminacion;
             }
             const aca = [];
             var acabadoCogido;
@@ -3822,8 +3873,9 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             $.each(todasDimensiones, function(index, value) {
                 if (value['id'] == dimen) {
                     for (let w = 1; w < aca.length; w++) {
-                        aca[w]['imagenFondo'] = '';
                         value['acabado' + w] = aca[w];
+                        value['acabado' + w]['imagenFondo'] = '';
+                        console.log(value['acabado' + w]);
                     }
                     if (value['mensaje'] == 'Medidas Especiales') {
                         value['ancho'] = ancho;
@@ -3832,9 +3884,10 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         value['precio'] = precio;
                     }
                     value['apoyo'] = apoyoBueno[1];
-                    value['iluminacion'] = iluBuena[1];
+                    //value['iluminacion'] = iluBuena[1];
                     prod[1] = value;
                     prod[1]['imagen'] = '';
+                    prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
                     prod[1]['productosDormitorio']['imagen'] = '';
                     prod[1]['apoyo']['imagen'] = '';
                     console.log(prod);
