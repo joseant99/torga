@@ -143,15 +143,6 @@
 
 	</div>  
 	
-	
-	<div id="iluminacion"style="display:none">
-		<h2 id="iluminacionTexto" style="margin-left:40%">Paso 5: Iluminacion</h2>
-		<div id="ilu1"><img id="imagenIlu" src="../../../content/images/si.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(1)'>
-		</div>	
-		<div id="ilu2"><img id="imagenIlu" src="../../../content/images/no.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(2)'>
-		</div>	
-	</div>
-	
 	<div style="float:left;height:100px;width:100%"></div>
 	
 	<div class="modal fade" id="modalPresupuesto" role="dialog">
@@ -741,6 +732,10 @@
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%">
 						<div id="datos1" style="float:left;margin-left:5px;width:100%;font-size: 14px;">
 								
+						</div>
+						<div id="datos12" style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
+							<p style="width:100%"><strong>LUZ </strong><span style="float:right;margin-right: 20px;" id="precioIluminacion"></span></p>
+							<p style="width:100%"><input style="width: 60px;height: 50px;float:left;text-align:center" value="SI" (click)="escogidaLuz('si')" id="siMeterIluminacion" readonly="readonly"> <input id="noMeterIluminacion" style="width: 60px;height: 50px;float:left;text-align:center;margin-left:50px;" (click)="escogidaLuz('no')" value="NO" readonly="readonly"></p>
 						</div>
 						<div style="float:left;margin-left:50px;"id="precios1">
 						

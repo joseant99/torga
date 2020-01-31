@@ -177,6 +177,70 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                 aca['nombre'] +
                                 '</span></p>'
                         );
+                        if (nombre == 'singular 1 apertura izquierda') {
+                            nombre = 'sg1';
+                        }
+                        if (nombre == 'singular 1 apertura derecha') {
+                            nombre = 'sg1';
+                        }
+                        if (nombre == 'singular 2 apertura izquierda') {
+                            nombre = 'sg2';
+                        }
+                        if (nombre == 'singular 2 apertura derecha') {
+                            nombre = 'sg2';
+                        }
+                        if (nombre == 'singular 3 apertura izquierda') {
+                            nombre = 'sg3';
+                        }
+                        if (nombre == 'singular 3 apertura derecha') {
+                            nombre = 'sg3';
+                        }
+                        if (nombre == 'singular 12 apertura izquierda') {
+                            nombre = 'sg12';
+                        }
+                        if (nombre == 'singular 12 apertura derecha') {
+                            nombre = 'sg12';
+                        }
+                        if (nombre == 'singular 13 apertura izquierda') {
+                            nombre = 'sg13';
+                        }
+                        if (nombre == 'singular 13 apertura derecha') {
+                            nombre = 'sg13';
+                        }
+
+                        if (nombre == 'singular 4') {
+                            nombre = 'sg4';
+                        }
+                        if (nombre == 'singular 5') {
+                            nombre = 'sg5';
+                        }
+                        if (nombre == 'singular 6') {
+                            nombre = 'sg6';
+                        }
+                        if (nombre == 'singular 7') {
+                            nombre = 'sg7';
+                        }
+                        if (nombre == 'singular 8') {
+                            nombre = 'sg8';
+                        }
+                        if (nombre == 'singular 9') {
+                            nombre = 'sg9';
+                        }
+                        if (nombre == 'singular 10') {
+                            nombre = 'sg10';
+                        }
+                        if (nombre == 'singular 11') {
+                            nombre = 'sg11';
+                        }
+                        if (nombre == 'singular 14') {
+                            nombre = 'sg14';
+                        }
+                        if (nombre == 'singular 15') {
+                            nombre = 'sg15';
+                        }
+                        if (nombre == 'singular 16') {
+                            nombre = 'sg16';
+                        }
                         if (nombre == 'Modulo Bajo 1') {
                             nombre = 'mb1';
                         }
@@ -249,21 +313,90 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
 
                         $('#imagenesAcabados' + i).attr('style');
                         $('#imagenesAcabados' + i).css({ 'margin-left': '65px' });
-                        $('#imagenesAcabados' + i).append(
-                            '<img id="tapa" class="' +
-                                aca['nombre'].toLowerCase() +
-                                '" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
-                                nombre +
-                                '/' +
-                                (h + 1) +
-                                '/' +
-                                nombre +
-                                '_' +
-                                (h + 1) +
-                                '_' +
-                                aca['nombre'].toLowerCase() +
-                                '_optimized.png">'
-                        );
+
+                        if (
+                            nombre != 'sg16' &&
+                            nombre != 'sg15' &&
+                            nombre != 'sg14' &&
+                            nombre != 'sg13' &&
+                            nombre != 'sg12' &&
+                            nombre != 'sg11' &&
+                            nombre != 'sg10' &&
+                            nombre != 'sg9' &&
+                            nombre != 'sg8' &&
+                            nombre != 'sg7' &&
+                            nombre != 'sg6' &&
+                            nombre != 'sg5' &&
+                            nombre != 'sg4' &&
+                            nombre != 'sg3' &&
+                            nombre != 'sg2' &&
+                            nombre != 'sg1'
+                        ) {
+                            $('#imagenesAcabados' + i).append(
+                                '<img id="tapa" class="' +
+                                    aca['nombre'].toLowerCase() +
+                                    '" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
+                                    nombre +
+                                    '/' +
+                                    (h + 1) +
+                                    '/' +
+                                    nombre +
+                                    '_' +
+                                    (h + 1) +
+                                    '_' +
+                                    aca['nombre'].toLowerCase() +
+                                    '_optimized.png">'
+                            );
+                        } else {
+                            $('#imagenesAcabados' + i).css({ 'margin-left': '145px' });
+                            $('#imagenesAcabados' + i).css({ 'margin-top': '20px' });
+                            $('#imagenesAcabados' + i).css({ 'padding-bottom': '80px' });
+                            var acabadoPrimeroCristal = $('#productoCalculadora' + (i + 1) + ' #acabaNombre0').text();
+                            acabadoPrimeroCristal = acabadoPrimeroCristal.toLowerCase();
+                            if (aca['nombre'].toLowerCase() != 'cristal bronce' && aca['nombre'].toLowerCase() != 'cristal transparente') {
+                                $('#imagenesAcabados' + i).append(
+                                    '<img id="tapa" class="' +
+                                        aca['nombre'].toLowerCase() +
+                                        '" width="300px" style="margin-left:0px;" height="483px" src="../../../content/images/' +
+                                        nombre +
+                                        '/' +
+                                        (h + 1) +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        (h + 1) +
+                                        '_' +
+                                        aca['nombre'].toLowerCase() +
+                                        '_optimized.png">'
+                                );
+                            } else {
+                                var acaNombreBien = aca['nombre'].toLowerCase();
+                                if (acaNombreBien == 'cristal bronce') {
+                                    acaNombreBien = 'bronce';
+                                } else {
+                                    acaNombreBien = 'transparente';
+                                }
+                                $('#imagenesAcabados' + i).append(
+                                    '<img id="tapa" class="' +
+                                        acaNombreBien +
+                                        '" width="300px" style="margin-left:0px;" height="483px" src="../../../content/images/' +
+                                        nombre +
+                                        '/' +
+                                        (h + 1) +
+                                        ' ' +
+                                        acaNombreBien.toUpperCase() +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        (h + 1) +
+                                        '_' +
+                                        acabadoPrimeroCristal +
+                                        '_' +
+                                        acaNombreBien +
+                                        '_optimized.png">'
+                                );
+                            }
+                        }
                     }
                 });
             }

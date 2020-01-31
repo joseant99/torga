@@ -1,0 +1,7 @@
+<h2 style="text-align:center;">TODAS LAS COMPOSICIONES</h2>
+<div style="margin-top:5%;">
+	<div *ngFor="let composicion of composicions ;let i=index" style="float:left;margin-left:50px;margin-right:50px;margin-top:50px;margin-bottom:50px;" (click)="cargarComposicionNT(i+1)">
+		<p style="text-align:center">{{composicion.nombre}}</p>
+		<img [src]="'data:' + composicion.imagenContentType + ';base64,' + composicion.imagen" style="max-height: 300px;max-width:375px" alt="composicion image"/>
+	</div>
+</div>

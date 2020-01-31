@@ -86,6 +86,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
     reverse: any;
     eventSubscriber: any;
     precioDimension: any;
+    precioDimension1: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -2023,6 +2024,12 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                 $('#datos1').append(
                     '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
                 );
+                this.iluminacionService.findProd(idProd).subscribe(data => {
+                    if (data.body.length != 0) {
+                        $('#datos12').css({ display: 'block' });
+                        this.iluminacionService.todos = data.body[0];
+                    }
+                });
             });
 
             this.productosDormitorioService.categoria(2).subscribe(data => {
@@ -2053,6 +2060,75 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             $('#botonApoyoNuevo').append(
                 '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
             );
+        }
+    }
+
+    public escogidaLuz(id) {
+        var precioPunto = this.precioPunto[0];
+        $('#' + id + 'MeterIluminacion').css({ 'background-color': '#CDCDCD' });
+        if (id == 'si') {
+            var todoFloat = $('#precioDimension').text();
+            var totalFloat = parseFloat(todoFloat);
+
+            $('#noMeterIluminacion').css({ 'background-color': 'white' });
+            var ilu = this.iluminacionService.todos;
+            var precio = ilu['precio'];
+            precio = precio * precioPunto;
+            totalFloat = totalFloat + precio;
+
+            this.precioDimension = totalFloat;
+            $('#precioDimension').text(totalFloat);
+            $('#precioIluminacion').text(ilu['precio'] + ' €');
+            $('#precioIluminacion').attr('class', 'si');
+        } else {
+            $('#siMeterIluminacion').css({ 'background-color': 'white' });
+            $('#precioIluminacion').text(' ');
+            this.precioDimension = this.precioDimension1;
+            $('#precioDimension').text(this.precioDimension1);
+            $('#precioIluminacion').attr('class', 'no');
+        }
+
+        var valoresAca = [];
+        var cont = 1;
+        var contadorApoyo = 0;
+        for (let i = 1; i <= 14; i++) {
+            var valNuevo = $('#val' + i + 'Dato').attr('class');
+            if (valNuevo != '' && valNuevo != undefined) {
+                valoresAca[cont] = valNuevo;
+                cont++;
+            }
+        }
+        for (let m = 1; m <= 14; m++) {
+            if ($('#aca1' + m).html()) {
+                contadorApoyo++;
+            }
+        }
+
+        var apoyoBueno = $('#datos1 #nombreApoyo').text();
+        var idProd = $('#nombreMesita').attr('class');
+        if (contadorApoyo == cont - 1 && apoyoBueno != '') {
+            $('#divDentroCalcu').css({ height: '76%' });
+            if (this.iluminacionService.todos != undefined) {
+                var precioIlu = $('#precioIluminacion').attr('class');
+                if (precioIlu != ' ' && precioIlu != '' && precioIlu != undefined && precioIlu != null) {
+                    $('#textoFinal').removeAttr('style');
+                    $('#textoFinal').attr('style');
+                    $('#textoFinal').css({ width: '100%' });
+                    $('#textoFinal').css({ float: 'left' });
+                    $('#botonCalculadora').removeAttr('class');
+                }
+            } else {
+                $('#textoFinal').removeAttr('style');
+                $('#textoFinal').attr('style');
+                $('#textoFinal').css({ width: '100%' });
+                $('#textoFinal').css({ float: 'left' });
+                $('#botonCalculadora').removeAttr('class');
+            }
+
+            $('#terminarConfiguracion').removeAttr('style');
+            $('#terminarConfiguracion').attr('style');
+            $('#terminarConfiguracion').css({ float: 'left' });
+            $('#terminarConfiguracion').css({ width: '100%' });
         }
     }
 
@@ -3225,24 +3301,24 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         var apoyoBueno = $('#datos1 #nombreApoyo').text();
         var idProd = $('#nombreMesita').attr('class');
         if (contadorApoyo == cont - 1 && apoyoBueno != '') {
-            var iluminacion = this.iluminacion;
             $('#divDentroCalcu').css({ height: '76%' });
-            var texto = 0;
-            for (let k = 0; k < iluminacion.length; k++) {
-                if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
-                    $('#iluminacion').removeAttr('style');
-                    $('#iluminacion').attr('style');
-                    $('#iluminacion').css({ width: '100%' });
-                    $('#iluminacion').css({ float: 'left' });
-                    $('#ilu1').attr('class', iluminacion[k]['id']);
-                    texto = 0;
-                } else {
-                    texto = 1;
+            if (this.iluminacionService.todos != undefined) {
+                var precioIlu = $('#precioIluminacion').attr('class');
+                if (precioIlu != ' ' && precioIlu != '' && precioIlu != undefined && precioIlu != null) {
+                    $('#textoFinal').removeAttr('style');
+                    $('#textoFinal').attr('style');
+                    $('#textoFinal').css({ width: '100%' });
+                    $('#textoFinal').css({ float: 'left' });
+                    $('#botonCalculadora').removeAttr('class');
                 }
-            }
-            if (texto == 1) {
+            } else {
+                $('#textoFinal').removeAttr('style');
+                $('#textoFinal').attr('style');
+                $('#textoFinal').css({ width: '100%' });
+                $('#textoFinal').css({ float: 'left' });
                 $('#botonCalculadora').removeAttr('class');
             }
+
             $('#terminarConfiguracion').removeAttr('style');
             $('#terminarConfiguracion').attr('style');
             $('#terminarConfiguracion').css({ float: 'left' });
@@ -3735,27 +3811,23 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             });
         if (contadorApoyo == cont - 1) {
             $('#divDentroCalcu').css({ height: '76%' });
-            var iluminacion = this.iluminacion;
-            var texto = 0;
-            for (let k = 0; k < iluminacion.length; k++) {
-                if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
-                    $('#iluminacion').removeAttr('style');
-                    $('#iluminacion').attr('style');
-                    $('#iluminacion').css({ width: '100%' });
-                    $('#iluminacion').css({ float: 'left' });
-                    $('#ilu1').attr('class', iluminacion[k]['id']);
-                    texto = 0;
-                } else {
-                    texto = 1;
+            if (this.iluminacionService.todos != undefined) {
+                var precioIlu = $('#precioIluminacion').attr('class');
+                if (precioIlu != ' ' && precioIlu != '' && precioIlu != undefined && precioIlu != null) {
+                    $('#textoFinal').removeAttr('style');
+                    $('#textoFinal').attr('style');
+                    $('#textoFinal').css({ width: '100%' });
+                    $('#textoFinal').css({ float: 'left' });
+                    $('#botonCalculadora').removeAttr('class');
                 }
-            }
-            if (texto == 1) {
+            } else {
                 $('#textoFinal').removeAttr('style');
                 $('#textoFinal').attr('style');
                 $('#textoFinal').css({ width: '100%' });
                 $('#textoFinal').css({ float: 'left' });
                 $('#botonCalculadora').removeAttr('class');
             }
+
             $('#terminarConfiguracion').removeAttr('style');
             $('#terminarConfiguracion').attr('style');
             $('#terminarConfiguracion').css({ float: 'left' });
@@ -3812,7 +3884,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         var contador = 1;
         var acabados = this.acabados;
         var todosAcabados = this.todosAcabados;
-        var iluminacion = this.iluminacion;
+        var iluminacion = this.iluminacionService.todos;
         $('#textoFinal').removeAttr('style');
         $('#textoFinal').attr('style');
         $('#textoFinal').css({ display: 'none' });
@@ -3884,7 +3956,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         value['precio'] = precio;
                     }
                     value['apoyo'] = apoyoBueno[1];
-                    //value['iluminacion'] = iluBuena[1];
+                    value['iluminacion'] = iluBuena[1];
                     prod[1] = value;
                     prod[1]['imagen'] = '';
                     prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
@@ -4672,16 +4744,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         productosArrayNombres[118] = 'mb12';
         productosArrayNombres[119] = 'mb14';
         this.productosArrayNombre = productosArrayNombres;
-        this.iluminacionService
-            .query({
-                size: 100000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data['body'].length; i++) {
-                    ilu[i] = data['body'][i];
-                }
-            });
-        this.iluminacion = ilu;
+
         var account = this.accountService.userIdentity;
         if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
             this.represenTorgaService.findUsu(account.id).subscribe(data => {

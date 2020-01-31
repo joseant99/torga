@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { TorgaPedidosSharedModule } from 'app/shared';
 import {
     ComposicionComponent,
+    ComposicionNtTodasComponent,
     ComposicionDetailComponent,
     ComposicionUpdateComponent,
     ComposicionVerComponent,
@@ -20,6 +21,7 @@ const ENTITY_STATES = [...composicionRoute, ...composicionPopupRoute];
     declarations: [
         ComposicionComponent,
         ComposicionVerComponent,
+        ComposicionNtTodasComponent,
         ComposicionDetailComponent,
         ComposicionUpdateComponent,
         ComposicionDeleteDialogComponent,

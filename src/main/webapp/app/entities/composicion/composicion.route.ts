@@ -8,6 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { Composicion } from 'app/shared/model/composicion.model';
 import { ComposicionService } from './composicion.service';
 import { ComposicionComponent } from './composicion.component';
+import { ComposicionNtTodasComponent } from './composicion-nt-todas.component';
 import { ComposicionDetailComponent } from './composicion-detail.component';
 import { ComposicionUpdateComponent } from './composicion-update.component';
 import { ComposicionDeletePopupComponent } from './composicion-delete-dialog.component';
@@ -39,6 +40,19 @@ export const composicionRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.composicion.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'ComposicionNtTodasComponent',
+        component: ComposicionNtTodasComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTANTE'],
             defaultSort: 'id,asc',
             pageTitle: 'torgaPedidosApp.composicion.home.title'
         },
