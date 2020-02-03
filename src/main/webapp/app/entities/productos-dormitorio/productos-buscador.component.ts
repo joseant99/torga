@@ -1831,8 +1831,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 totalfloat = totalfloat + precio;
                 if (iva == 1) {
                     var todasCuenta = totalfloat * 1.21;
+                } else {
+                    var todasCuenta = totalfloat;
                 }
                 var totalfloat = 0;
+                this.precioDimension = todasCuenta;
                 totalfloat = parseFloat(todasCuenta.toFixed(2));
 
                 $('#total').text(totalfloat);
@@ -3399,6 +3402,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('#terminarConfiguracion').css({ float: 'left' });
             $('#terminarConfiguracion').css({ width: '100%' });
         }
+        $('#botonCalculadora').removeAttr('class');
     }
 
     public ilumina(id) {
@@ -3475,6 +3479,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             const fondo = $('#productoCalculadora1 #datos1 #fondo' + i).text();
             const precio = $('#productoCalculadora1 #datos1 #alto' + i).attr('class');
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
+            const todoSumadoPrecio = $('#precioDimension').text();
             console.log(sessionStorage);
             const prod = [];
             const prods = this.apoyo;
@@ -3521,6 +3526,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     value['apoyo'] = apoyoBueno[1];
                     value['iluminacion'] = iluBuena[1];
                     prod[1] = value;
+                    prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
                     prod[1]['imagen'] = '';
                     prod[1]['productosDormitorio']['imagen'] = '';
                     prod[1]['apoyo']['imagen'] = '';
