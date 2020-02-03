@@ -8,6 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { ProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
 import { ProductosDormitorioService } from './productos-dormitorio.service';
 import { ProductosDormitorioComponent } from './productos-dormitorio.component';
+import { ProductosColgantesComponent } from './productos-colgantes.component';
 import { ArmariosDormitorioComponent } from './armarios-dormitorio.component';
 import { ProductosDormitorioDetailComponent } from './productos-dormitorio-detail.component';
 import { ProductosDormitorioCategoriaComponent } from './productos-dormitorio-categoria.component';
@@ -70,6 +71,19 @@ export const productosDormitorioRoute: Routes = [
     {
         path: 'productos-modulos-bajos',
         component: ProductosModulosBajosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-colgadores',
+        component: ProductosColgantesComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

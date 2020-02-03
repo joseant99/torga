@@ -3,6 +3,7 @@ export * from './productos-dormitorio-update.component';
 export * from './productos-dormitorio-delete-dialog.component';
 export * from './productos-dormitorio-detail.component';
 export * from './productos-dormitorio.component';
+export * from './productos-colgantes.component';
 export * from './productos-dormitorio.route';
 export * from './armarios-dormitorio.component';
 export * from './productos-dormitorio-categoria.component';
