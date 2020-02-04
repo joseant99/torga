@@ -140,15 +140,12 @@
 	    
 	      <!-- Modal content-->
 	      <div class="modal-content">
-	        <div class="modal-header">
-	          <h4 class="modal-title">Interior</h4>
-	        </div>
+
 	        <div class="modal-body">
-	          <div id="arriba" style="float:left;width:100%"></div>
-	          <div id="imagenInterior" style="float:left"></div>
+				<h1>Producto editado con exito.</h1>
 	        </div>
 	        <div class="modal-footer">
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 	        </div>
 	      </div>
 	      
@@ -737,7 +734,7 @@
 						<p>Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
 				<button id="botonCalculadora"  style="width: 86%;height: 7%; bottom: 120px;position: absolute;font-size:16px;background-color:white;left:35px;color:black" routerLink="/inicio" routerLinkActive="active">Salir sin guardar</button>
-				<button id="botonCalculadoraMod" class="displayBoton" style="width: 86%;height: 7%; bottom: 215px;position: absolute;font-size:16px;background-color:white;left:35px;color:black" (click)="modificarCarrito()">Guardar Cambios</button>
+				<button id="botonCalculadoraMod" data-target="#modalInformacion" class="displayBoton" style="width: 86%;height: 7%; bottom: 215px;position: absolute;font-size:16px;background-color:white;left:35px;color:black" (click)="modificarCarrito()">Guardar Cambios</button>
 			</div>
 			
 			<div id="carrito" class="container tab-pane fade" style="height:600px;overflow:scroll;display:none">

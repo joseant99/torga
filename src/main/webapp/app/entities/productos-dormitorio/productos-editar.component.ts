@@ -2762,21 +2762,13 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                 if (nombreAcabado == 'cristal transparente') {
                     nombreAcabado = 'transparente';
                 }
-                $('#aca1' + id1).append(
-                    '<img  src="data:image/gif;base64,' +
-                        value['imagenFondo'] +
-                        '" id="imagenAcabadoPrincipal' +
-                        k +
-                        '" class="' +
-                        value['id'] +
-                        '" height="60px" width="200px" style=" opacity: 0.7;margin-left:20px">'
-                );
-                $('#aca' + id + '' + id1 + ' #acabadoNombrePrincipal').remove();
-                $('#aca' + id + '' + id1).append(
-                    '<p id="acabadoNombrePrincipal" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
-                        value['nombre'] +
-                        '</p>'
-                );
+
+                $('#datos1 #nombreAcaCalcu' + id1).text(value['nombre']);
+
+                var src = 'data:image/gif;base64,' + value['imagenFondo'];
+                $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('src', src);
+                $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('class', value['id']);
+
                 if (id1 == 1) {
                     $('#tapa').remove();
                     if (
@@ -2951,7 +2943,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                 $('#val' + id1 + 'Dato').remove();
                 $('#valor' + id1).remove();
                 $('#datos1').append(
-                    '<p style="width:100%"> <span id="val' +
+                    '<p style="width:100%;display:none"> <span id="val' +
                         id1 +
                         '">Acabado ' +
                         id1 +
@@ -4203,7 +4195,9 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                 }
             }
         }
+
         sessionStorage.setItem('prod' + idProd, JSON.stringify(prod));
+        this.router.navigate(['/inicio']);
     }
     loadAll() {
         var productos = [];
@@ -4237,7 +4231,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
         var todosLosPrecios = this.precioTiendaProductosService.todos;
 
         for (let y = 0; y < todosLosPrecios.length; y++) {
-            if (idProd == todosLosPrecios[y][2]) {
+            if (productoDormitorio['id'] == todosLosPrecios[y][2]) {
                 var precioProducto = todosLosPrecios[y][1];
             }
         }
@@ -4255,7 +4249,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
         precio = Math.round(precio * 100) / 100;
         totalfloat = totalfloat + precio;
         this.precioDimension = totalfloat;
-        $('#total').text(totalfloat);
+        $('#total').text(prod[1]['todoSumadoPrecio'] + ' €');
         $('#precioDimension').text(totalfloat);
         $('#idioma').attr('value', datos['id']);
         $('#datos1').append(
