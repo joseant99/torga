@@ -6623,7 +6623,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         var height = prodMed.split(';')[3];
                                         var width = prodMed.split(';')[2];
                                         $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:100;top:0px;max-width:400px;max-height:400px;' +
+                                            '<img style="z-index:100;top:20px;max-width:400px;max-height:400px;' +
                                                 height +
                                                 ';' +
                                                 width +
