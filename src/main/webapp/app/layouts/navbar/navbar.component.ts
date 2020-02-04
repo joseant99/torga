@@ -302,19 +302,21 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                     }
                     this.presupuestoPedido = prueba;
-                    this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
-                    var presupuesto = this.presupuesto;
-                    var id = localStorage.getItem('ultimoPresupuesto');
-                    var id1 = parseFloat(id);
-                    id1 = id1 + 1;
-                    localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
-                    var idDefinitiva;
+
                     this.presupuestoPedidoService
                         .query({
                             size: 100000
                         })
                         .subscribe(
                             (res: HttpResponse<IPresupuestoPedido[]>) => {
+                                this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
+                                var presupuesto = this.presupuesto;
+                                var id = localStorage.getItem('ultimoPresupuesto');
+                                var id1 = parseFloat(id);
+                                id1 = id1 + 1;
+                                localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
+                                var idDefinitiva;
+
                                 var aux = [];
                                 for (let w = 0; w < res.body.length; w++) {
                                     if (aux.length == 0 || aux[0]['id'] < res.body[w]['id']) {
