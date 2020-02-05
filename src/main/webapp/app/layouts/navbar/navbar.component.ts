@@ -461,10 +461,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         prodIlu[m] = prodPrePed;
                                         dimensionEspecialBien[m] = prodPrePed;
                                         this.productosPresupuestoPedidos = prodPrePed;
-                                        this.subscribeToSaveResponse1(
-                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                        );
-                                        alert(this.productosPresupuestoPedidos['presupuestoPedido']['id']);
+                                        for (let ve = 0; ve <= 100000; ve++) {
+                                            if (ve == 100000) {
+                                                this.subscribeToSaveResponse1(
+                                                    this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                                );
+                                                alert(this.productosPresupuestoPedidos['presupuestoPedido']['id']);
+                                            }
+                                        }
 
                                         if (numeroAcaProd[m].length != 0) {
                                             var acaPedProd = this.acaProdPed.length;
