@@ -464,7 +464,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         this.subscribeToSaveResponse1(
                                             this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
                                         );
-                                        console.log(this.productosPresupuestoPedidos);
+                                        alert(this.productosPresupuestoPedidos['presupuestoPedido']['id']);
 
                                         if (numeroAcaProd[m].length != 0) {
                                             var acaPedProd = this.acaProdPed.length;
