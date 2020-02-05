@@ -533,7 +533,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
                                         $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
                                         $('#todometerFondo').css({ display: 'none' });
-                                        this.router.navigate(['/presupuesto-producto']);
+                                        //this.router.navigate(['/presupuesto-producto']);
                                     });
                             },
                             (res: HttpErrorResponse) => this.onError(res.message)
