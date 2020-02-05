@@ -461,8 +461,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         prodIlu[m] = prodPrePed;
                                         dimensionEspecialBien[m] = prodPrePed;
                                         this.productosPresupuestoPedidos = prodPrePed;
-                                        for (let ve = 0; ve <= 100000; ve++) {
-                                            if (ve == 100000) {
+                                        for (let ve = 0; ve <= 10000000; ve++) {
+                                            if (ve == 10000000) {
                                                 this.subscribeToSaveResponse1(
                                                     this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
                                                 );
