@@ -127,6 +127,8 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
     }
 
     public borrarProdCalculadora() {
+        $('#precioIluminacion').text(' ');
+        $('#datos12').css({ display: 'none' });
         $('#medidasEspecialesTexto').css({ display: 'none' });
         $('#medidasEspeciales').css({ display: 'none' });
         $('#medidasAncho').css({ display: 'none' });

@@ -4518,21 +4518,71 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                         $('#datos1 #nombreAcaCalcu' + j).text(acabadosTodos[w]['nombre']);
                     }
                 }
-                $('#acabados #imagenAcabadoPrincipal').append(
-                    '<img id="tapa" class="' +
-                        acabadosProd[j]['nombre'].toLowerCase() +
-                        '" width="650px" height="433px" src="../../../content/images/' +
-                        nombre +
-                        '/' +
-                        j +
-                        '/' +
-                        nombre +
-                        '_' +
-                        j +
-                        '_' +
-                        acabadosProd[j]['nombre'].toLowerCase() +
-                        '_optimized.png">'
-                );
+                var nombreAcabado = acabadosProd[j]['nombre'].toLowerCase();
+                if (nombreAcabado == 'marmol blanco') {
+                    nombreAcabado = 'marmolblanco';
+                }
+                if (nombreAcabado == 'marmol negro') {
+                    nombreAcabado = 'marmolnegro';
+                }
+
+                if (nombreAcabado == 'cristal bronce') {
+                    var aca1Nombre = $('#productoCalculadora1 #acabado1 #nombreAcaCalcu1')
+                        .text()
+                        .toLowerCase();
+                    $('#imagenAcabadoPrincipal').append(
+                        '<img id="tapa" class="' +
+                            nombreAcabado +
+                            '" width="650px" height="433px" style="position: absolute;" src="../../../content/images/' +
+                            nombre +
+                            '/' +
+                            j +
+                            ' BRONCE/' +
+                            nombre +
+                            '_' +
+                            j +
+                            '_' +
+                            aca1Nombre +
+                            '_bronce_optimized.png">'
+                    );
+                }
+                if (nombreAcabado == 'cristal transparente') {
+                    var aca1Nombre = $('#productoCalculadora1 #acabado1 #nombreAcaCalcu1')
+                        .text()
+                        .toLowerCase();
+                    $('#imagenAcabadoPrincipal').append(
+                        '<img id="tapa" class="' +
+                            nombreAcabado +
+                            '" width="650px" height="433px" style="position: absolute;" src="../../../content/images/' +
+                            nombre +
+                            '/' +
+                            j +
+                            ' TRANSPARENTE/' +
+                            nombre +
+                            '_' +
+                            j +
+                            '_' +
+                            aca1Nombre +
+                            '_transparente_optimized.png">'
+                    );
+                }
+                if (nombreAcabado != 'cristal transparente' && nombreAcabado != 'cristal bronce') {
+                    $('#imagenAcabadoPrincipal').append(
+                        '<img id="tapa" class="' +
+                            nombreAcabado +
+                            '" width="650px" height="433px" style="position: absolute;" src="../../../content/images/' +
+                            nombre +
+                            '/' +
+                            j +
+                            '/' +
+                            nombre +
+                            '_' +
+                            j +
+                            '_' +
+                            nombreAcabado +
+                            '_optimized.png">'
+                    );
+                }
 
                 $('#val' + j).remove();
                 $('#val' + j + 'Dato').remove();
@@ -4590,6 +4640,100 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
         }
         if (nombre == 'Modulo Bajo 9') {
             nombre = 'mb14';
+        }
+
+        if (nombre == 'singular 1 apertura derecha') {
+            nombre = 'sg1';
+        }
+
+        if (nombre == 'singular 1 apertura izquierda') {
+            nombre = 'sg1';
+        }
+
+        if (nombre == 'singular 2 apertura derecha') {
+            nombre = 'sg2';
+        }
+
+        if (nombre == 'singular 2 apertura izquierda') {
+            nombre = 'sg2';
+        }
+
+        if (nombre == 'singular 3 apertura derecha') {
+            nombre = 'sg3';
+        }
+
+        if (nombre == 'singular 3 apertura izquierda') {
+            nombre = 'sg3';
+        }
+        if (nombre == 'singular 4') {
+            nombre = 'sg4';
+        }
+        if (nombre == 'singular 5') {
+            nombre = 'sg5';
+        }
+
+        if (nombre == 'singular 6') {
+            nombre = 'sg6';
+        }
+        if (nombre == 'singular 7') {
+            nombre = 'sg7';
+        }
+
+        if (nombre == 'singular 8') {
+            nombre = 'sg8';
+        }
+
+        if (nombre == 'singular 9') {
+            nombre = 'sg9';
+        }
+        if (nombre == 'singular 10') {
+            nombre = 'sg10';
+        }
+        if (nombre == 'singular 11') {
+            nombre = 'sg11';
+        }
+        if (nombre == 'singular 12 apertura izquierda') {
+            nombre = 'sg12';
+        }
+        if (nombre == 'singular 12 apertura derecha') {
+            nombre = 'sg12';
+        }
+        if (nombre == 'singular 13 apertura izquierda') {
+            nombre = 'sg13';
+        }
+        if (nombre == 'singular 13 apertura derecha') {
+            nombre = 'sg13';
+        }
+        if (nombre == 'singular 14') {
+            nombre = 'sg14';
+        }
+        if (nombre == 'singular 15') {
+            nombre = 'sg15';
+        }
+        if (nombre == 'singular 16') {
+            nombre = 'sg16';
+        }
+
+        if (nombre == 'Aparador 4') {
+            nombre = 'ap4';
+        }
+        if (nombre == 'Aparador 5') {
+            nombre = 'ap5';
+        }
+        if (nombre == 'Aparador 6') {
+            nombre = 'ap6';
+        }
+        if (nombre == 'Aparador 7') {
+            nombre = 'ap7';
+        }
+        if (nombre == 'Aparador 8') {
+            nombre = 'ap8';
+        }
+        if (nombre == 'Aparador 9') {
+            nombre = 'ap9';
+        }
+        if (nombre == 'Aparador 10') {
+            nombre = 'ap10';
         }
 
         $('#botonApoyoNuevo').append(
