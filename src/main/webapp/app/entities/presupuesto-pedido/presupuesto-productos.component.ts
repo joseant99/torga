@@ -870,9 +870,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             var menosPrecio = precioEspecial * 0.3;
                                             res.body[i]['dimensionesProductoTipo']['incremento'] = menosPrecio.toFixed(2);
                                             menosPrecio = precioEspecial + menosPrecio;
+                                            res.body[i]['dimensionesProductoTipo']['precio'] = menosPrecio;
                                             var incremento = menosPrecio;
                                             var mejorIncremento = incremento * precioPunto;
                                             mejorIncremento = incremento + mejorIncremento;
+
                                             productosPresupuesto[cont] = res.body[i];
                                             cont++;
                                         }

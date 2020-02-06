@@ -2412,6 +2412,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                             var total = $('#total').text();
                             var totalfloat = parseFloat(total);
                             var precio = parseFloat(dimensiones[k]['precio']);
+                            $('#valorAnchoESPECIAL').attr('class', precio);
                             precio = precio * precioPunto;
                             var cuenta = precio * (precioProducto / 100);
                             precio = precio + cuenta;
@@ -3911,7 +3912,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             const ancho = $('#productoCalculadora1 #datos1 #ancho' + i).text();
             const alto = $('#productoCalculadora1 #datos1 #alto' + i).text();
             const fondo = $('#productoCalculadora1 #datos1 #fondo' + i).text();
-            const precio = $('#productoCalculadora1 #datos1 #pIncremento').attr('class');
+            const precio = $('#productoCalculadora1 #datos1 #valorAnchoESPECIAL').attr('class');
             const todoSumadoPrecio = $('#precioDimension').text();
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
             console.log(sessionStorage);
