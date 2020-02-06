@@ -32,7 +32,7 @@
     	<p style="text-align:right;margin-right: 80px;font-size: 30px;">%</p>
     	<p style="font-size:25px"><i>Todos los {{productosDormitorioService.todos[0].categoriasDormi.nombre}}</i><input style="float:right;width: 180px;height: 30px;text-align:center" (change)="todasCategorias()" id="porcentajeTotal" type="number"></p>
     	<p *ngFor="let producto of productosDormitorioService.todos;let u=index;"><i style="width: 200px;float: left;margin-top: 20px;text-align: left;">{{producto.nombre}}</i><img title="Foto de linea de codigo" class="producto" [src]="'data:' + producto.imagenContentType + ';base64,' + producto.imagen" height="63px" width="130px" alt="productosDormitorio image"/><input style="margin-left:100px;text-align:center" id="porcentaje{{u}}" class="{{producto.porcentaje}}" type="number" value="{{producto.porcentaje}}"></p>
-    	<p style="text-align:center"><button (click)="guardar()">Guardar</button></p>
+    	<p style="text-align:center"><button (click)="guardar()" data-toggle="modal" data-target="#modalAcabadosPuertas1">Guardar</button></p>
     
     </div>
     
@@ -41,5 +41,23 @@
     	<div id="ivaSi" style="float:left;border:1px solid black;width: 130px;height: 60px;"><span style="font-size: 35px;" (click)="guardarIva('Si')">SI</span></div>
     	<div id="ivaNo" style="float:right;border:1px solid black;width: 130px;height: 60px;"><span style="font-size: 35px;" (click)="guardarIva('No')">NO</span></div>
     </div>
-    
+    <div class="modal fade" id="modalAcabadosPuertas1" role="dialog"  style="z-index: 10000000;">
+		    <div class="modal-dialog ">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Precio Tienda Guardado</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	       
+		        	<h1>Guardado con exito el porcentaje de cada producto.</h1>   
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
 </div>
