@@ -2503,7 +2503,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                                 $('#acabados #imagenAcabadoPrincipal').append(
                                     '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
+                                        '" class="imagenAcabadoPrincipalImgSin"  width="650px">'
                                 );
                             }
 
