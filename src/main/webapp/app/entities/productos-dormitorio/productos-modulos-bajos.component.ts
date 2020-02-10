@@ -593,6 +593,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     }
 
     public especialDimensionesAncho(idProd) {
+        $('#productoCalculadora1 #precios1').empty();
+        $('#productoCalculadora1 #precioCalculado1').empty();
+        $('#productoCalculadora1 #datos1').empty();
+        $('#precioDimension').empty();
+        $('#total').empty();
+        $('#datos1').css({ display: 'none' });
+        $('#datos12').css({ display: 'none' });
+        $('#imagenAcabadoPrincipal').empty();
+
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
+
         this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
             console.log(data.body);
             var datos = data.body;
@@ -635,7 +648,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     '" id="ancho1" style="width:100%">Ancho especial: <span style="" id="valorAnchoESPECIAL"></span></p>'
             );
             $('#datos1').append(
-                '<p style="width:100%;font-style: italic;">Incremento 30%<span id="precioAum" style="float:right"></span></p>'
+                '<p style="width:90%;font-style: italic;">Incremento 30%<span id="precioAum" style="float:right"></span></p>'
             );
             $('#datos1').append(
                 '<p id="alto1" class="' + todo['precio'] + '" style="width:100%">Alto: <span style="" id="valorAltoESPECIAL"></span></p>'

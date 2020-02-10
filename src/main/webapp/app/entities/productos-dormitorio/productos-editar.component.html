@@ -7,41 +7,20 @@
     <br/>
     <div style="width:100%" id="producto">
    
-	    <div id="productosFiltrados" style="margin-top:4%;width: 86%">
-		    <a href="#dimensiones"><div (click)='open1(1)' id="prod1" class="productoColor" style="float:left"></div></a>
-		    <a href="#dimensiones"><div (click)='open1(2)' id="prod2" class="productoColor" style="float:left"></div></a>
-		    <a href="#dimensiones"><div (click)='open1(3)' id="prod3" class="productoColor" style="float:left"></div></a>
-		    <a href="#dimensiones"><div (click)='open1(4)' id="prod4" class="productoColor" style="float:left"></div></a>
-		    <a href="#dimensiones"><div (click)='open1(5)' id="prod5" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(6)' id="prod6" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(7)' id="prod7" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(8)' id="prod8" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(9)' id="prod9" class="productoColor" style="float:left"></div></a>
-	       <a href="#dimensiones"> <div (click)='open1(10)' id="prod10" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(11)' id="prod11" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(12)' id="prod12" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(13)' id="prod13" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(14)' id="prod14" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(15)' id="prod15" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(16)' id="prod16" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(17)' id="prod17" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(18)' id="prod18" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(19)' id="prod19" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(20)' id="prod20" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(21)' id="prod21" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(22)' id="prod22" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(23)' id="prod23" class="productoColor" style="float:left"></div></a>
-	        <a href="#dimensiones"><div (click)='open1(24)' id="prod24" class="productoColor" style="float:left"></div></a>
-	    
-    
-    </div>
-   
 	<div id="dimensiones"style="width:100%;float:left;display:none">
-
-		<h2 id="medidas" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">MEDIDAS</strong></h2>
 		
-		</br>		
-		
+		<p class="dimensionesColor1" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput1" style="text-align:center" (click)="dimensionesCogidas(1)" readonly="readonly"></a><span id="dimensionesText1" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor2" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput2" style="text-align:center" (click)="dimensionesCogidas(2)" readonly="readonly"></a><span id="dimensionesText2" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor3" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput3" style="text-align:center" (click)="dimensionesCogidas(3)" readonly="readonly"></a><span id="dimensionesText3" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor4" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput4" style="text-align:center" (click)="dimensionesCogidas(4)" readonly="readonly"></a><span id="dimensionesText4" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor5" style="display:none"><a><input value="Seleccionar" id="dimensionesInput5" style="text-align:center" (click)="dimensionesCogidas(5)" readonly="readonly"></a><span id="dimensionesText5" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor6" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput6" style="text-align:center" (click)="dimensionesCogidas(6)" readonly="readonly"></a><span id="dimensionesText6" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor7" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput7" style="text-align:center" (click)="dimensionesCogidas(7)" readonly="readonly"></a><span id="dimensionesText7" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor20" style="display:none"><a ><input id="dimensionesInput20"  style="text-align:center;border:0px;background-color:white" readonly="readonly" disabled></a><span style="margin-left: 30px;letter-spacing: 2px;"><strong>Ancho Especial </strong>| Ancho <input id="anchoEspecial" (change)="cambiarMedidasEspeciales()" style="width: 70px;" list="listaEspecialAncho"> - Alto <input id="altoAncho" style="width: 70px;" disabled> - Fondo <input id="fondoAncho" style="width: 70px;" disabled> | <span id="precioEspecialAncho"></span></span></p>
+		<p class="dimensionesColor21" style="display:none"><a ><input id="dimensionesInput21" value="Seleccionar" style="text-align:center" (click)="dimensionesCogidas(7)" readonly="readonly"></a><span id="dimensionesText21" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor22" style="display:none"><a ><input id="dimensionesInput22" value="Seleccionar" style="text-align:center" (click)="dimensionesCogidas(7)" readonly="readonly"></a><span id="dimensionesText22" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+			
+		<!-- 
 		<div id="dimensionesColorStyle" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
 		</div>
 		   
@@ -60,23 +39,8 @@
 		<div id="dimensionesColorStyle" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
 		</div>
 		<div id="dimensionesColorStyle" class="dimensionesColor7" (click)="dimensionesCogidas(7)"> 
-		</div>         
+		</div>     -->     
 	</div>  
-	<div id="especiales"style="width:100%;float:left">
-
-			<h2 id="especialesTexto" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">&#191;DE QUE LO QUIERES ESPECIAL?</strong></h2>
-			<div id="especialesAncho" style="" (click)="especiales1(1)"></div>
-			<div id="especialesFondo" style="" (click)="especiales1(2)"></div>
-			<div id="especialesAlto" style="" (click)="especiales1(3)"></div>
-	</div>
-	<div id="medidasEspeciales"style="width:100%;float:left">
-		
-			<h2 id="medidasEspecialesTexto" style='margin-left:40%;float:left;display:none'>Selecciona medidas especiales</h2>
-			<div id="imagenProdEspeciales" style="width:42%;float:left"></div>
-			<div style="display:none" id="medidasAncho"><p style="float:left;margin-left:2%;font-size:20px">Ancho</p><div style="float:left;margin-left:2%" id="cambioAncho" (change)="cambioMedidas(1)"></div></div>
-			<div id="medidasFondo" style="display:none"><p style="float:left;margin-left:2%;font-size:20px">Fondo</p><div style="float:left;margin-left:2%" id="cambioFondo" (change)="cambioMedidas(2)"></div></div>
-			<div id="medidasAlto" style="display:none"><p style="float:left;margin-left:2%;font-size:20px">Alto</p><div style="float:left;margin-left:2%" id="cambioAlto" (change)="cambioMedidas(3)"></div></div>
-	</div>
 	<div id="acabados"style="width:100%;float:left;display:none">
 
 			<h2 id="acabado" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">ACABADOS Y APOYO</strong></h2>
