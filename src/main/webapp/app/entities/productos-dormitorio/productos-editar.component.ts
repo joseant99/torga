@@ -4285,7 +4285,59 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                     if (prod[1]['id'] == datos[i]['id']) {
                         $('.dimensionesColor' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
                     }
-                    if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                    if (prod[1]['mensaje'] == 'Medidas Especiales') {
+                        alert('especiiaaal');
+                        $('#especialesTexto').css({ display: 'block' });
+                        var anchoEspecial = prod[1]['ancho'];
+                        var anchoEspecial1 = anchoEspecial.split(':')[0];
+                        var altoEspecial = prod[1]['alto'];
+                        var altoEspecial1 = altoEspecial.split(':')[0];
+                        var fondoEspecial = prod[1]['fondo'];
+                        var fondoEspecial1 = fondoEspecial.split(':')[0];
+
+                        /**if(anchoEspecial1 == "Ancho Especial"){
+                    		$('#medidasAncho').removeAttr('style');
+                            $('#medidasAncho').attr('style');
+                            $('#medidasAncho').css({ float: 'right' });
+                            $('#medidasAncho').css({ 'margin-bottom': '10%' });
+                            $('#imagenProdEspeciales').append(
+                                '<img  src="data:image/gif;base64,' +
+                                    prod[1]['productosDormitorio']['imagen'] +
+                                    '" id="imagenMedidasEspeciales" style="max-width:100%;max-height:400px">'
+                            );
+                            $('#medidasAncho').append(
+                                '<p id="textoAncho" style="float:left;margin-left: 2%;font-size: 20px;">Escribe un valor entre ' +
+                                    medidasEspeciales[i]['min'] +
+                                    ' y ' +
+                                    medidasEspeciales[i]['max'] +
+                                    '</p>'
+                            );
+                            $('#cambioAncho').append(
+                                '<input style="float:left;text-align: center;width:100px;" value="" min="' +
+                                    medidasEspeciales[i]['min'] +
+                                    '" max="' +
+                                    medidasEspeciales[i]['max'] +
+                                    '"  type="number" id="anchoInputEspeciales"/>'
+                            );
+                            $('#medidasFondo').append(
+                                '<input style="float:left;margin-left:2%;width:100px;" id="inputFondoAncho" value="" disabled />'
+                            );
+                            $('#medidasFondo').removeAttr('style');
+                            $('#medidasFondo').attr('style');
+                            $('#medidasFondo').css({ float: 'right' });
+                            $('#medidasFondo').css({ 'margin-bottom': '10%' });
+                            $('#medidasAlto').removeAttr('style');
+                            $('#medidasAlto').attr('style');
+                            $('#medidasAlto').css({ float: 'right' });
+                            $('#medidasAlto').append(
+                                '<input style="float:left;margin-left:2%;width:100px;" id="inputAltoAncho" value="" disabled />'
+                            );
+                    	
+                    	}
+                    	
+                    	**/
+                    }
+                    if (cont == 0) {
                         var image = document.createElement('img');
                         var precio = parseFloat(datos[i]['precio']);
                         precio = precio * precioTienda1;
@@ -4308,7 +4360,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 '" width="500px" height="283.73px" style=""></a>'
                         );
                     }
-                    if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                    if (cont == 1) {
                         var image = document.createElement('img');
                         var precio = parseFloat(datos[i]['precio']);
                         precio = precio * precioTienda1;
@@ -4331,7 +4383,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 '" width="500px" height="283.73px"  style=""></a>'
                         );
                     }
-                    if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                    if (cont == 2) {
                         var image = document.createElement('img');
                         var precio = parseFloat(datos[i]['precio']);
                         precio = precio * precioTienda1;
@@ -4354,7 +4406,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 '" width="500px" height="283.73px" style=""></a>'
                         );
                     }
-                    if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                    if (cont == 3) {
                         var image = document.createElement('img');
                         var precio = parseFloat(datos[i]['precio']);
                         precio = precio * precioTienda1;
@@ -4377,7 +4429,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 '" width="500px" height="283.73px" style=""></a>'
                         );
                     }
-                    if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                    if (cont == 4) {
                         var image = document.createElement('img');
                         var precio = parseFloat(datos[i]['precio']);
                         precio = precio * precioTienda1;
@@ -4400,7 +4452,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                                 '" width="500px" height="283.73px"  style=""></a>'
                         );
                     }
-                    if (cont == 5 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                    if (cont == 5) {
                         var image = document.createElement('img');
                         var precio = parseFloat(datos[i]['precio']);
                         precio = precio * precioTienda1;
