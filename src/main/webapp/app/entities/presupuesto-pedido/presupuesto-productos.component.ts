@@ -98,7 +98,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         protected router: Router,
         protected eventManager: JhiEventManager
     ) {
-        this.ngOnInit();
         this.itemsPerPage = ITEMS_PER_PAGE;
         this.routeData = this.activatedRoute.data.subscribe(data => {
             this.page = data.pagingParams.page;
@@ -232,6 +231,19 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     protected onSaveSuccess() {
         this.isSaving = false;
         this.router.navigate(['/pedidos-producto']);
+    }
+
+    public soloMedBuen() {
+        var medidasEspeciales;
+        this.medEspProductoPedidoPresuService
+            .query({
+                size: 10000000
+            })
+            .subscribe(data => {
+                medidasEspeciales = data['body'];
+                this.medEspProductoPedidoPresuService.todo = medidasEspeciales;
+                this.loadAll();
+            });
     }
     previousState() {
         window.history.back();
@@ -1527,15 +1539,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             sessionStorage.removeItem('vengoDe');
             location.reload();
         }
-        var medidasEspeciales;
-        this.medEspProductoPedidoPresuService
-            .query({
-                size: 10000000
-            })
-            .subscribe(data => {
-                medidasEspeciales = data['body'];
-                this.medEspProductoPedidoPresuService.todo = medidasEspeciales;
-            });
+
         this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
             this.modulosBajos = data.body;
         });
@@ -1557,7 +1561,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var presupuestos = [];
         var saber = 0;
         var acabados = [];
-        this.loadAll();
+        this.soloMedBuen();
+
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
@@ -1619,23 +1624,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         });
 
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        this.pagosTiendaService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(
-                (res: HttpResponse<IPagosTienda[]>) => {
-                    $('#pago').html('<form><select style="width:150px;height:50px" class="tipoPago"><option></option></select></form>');
-                    for (let i = 0; i < res.body.length; i++) {
-                        if (res.body[i]['datosUsuario']['id'] == tienda['id']) {
-                            $('.tipoPago').append('<option value="' + res.body[i]['id'] + '">' + res.body[i]['pago'] + '</option>');
-                        }
-                    }
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
     }
 
     public cargarMunicipios() {
