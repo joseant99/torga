@@ -19,6 +19,7 @@ import { AccountService, UserService, User } from 'app/core';
 import { AcabadosProductosPresupuestoPedidoService } from '../acabados-productos-presupuesto-pedido/acabados-productos-presupuesto-pedido.service';
 import { Observable } from 'rxjs';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
+import { MedEspProductoPedidoPresuService } from '../med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.service';
 
 @Component({
     selector: 'jhi-presupuesto-edicion',
@@ -76,6 +77,7 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
+        protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected eventManager: JhiEventManager
     ) {
@@ -103,278 +105,572 @@ export class PresupuestoEdicionComponent implements OnInit, OnDestroy {
                     if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
                         productosPresupuesto[cont] = res.body[i];
                         var datos = res.body[i]['dimensionesProductoTipo'];
+                        var prodEntero = res.body[i];
                         $('#productoCalculadora' + (i + 1)).css({ display: 'block' });
-                        $('#productoCalculadora' + (i + 1) + ' #nombreProducto').append(
-                            '<p style="width:100%;"><span id="nombreMesitaNombre' +
-                                (cont + 1) +
-                                '">' +
-                                datos['productosDormitorio']['nombre'] +
-                                '</span><span style="float:right;margin-right:10%" class="' +
-                                datos['productosDormitorio']['id'] +
-                                '" id="nombreMesita' +
-                                cont +
-                                '">' +
-                                datos['precio'] +
-                                ' &euro;</span></p></div>'
-                        );
-                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
-                            '<p style="width:100%"><span>Ancho : </span><span class="' +
-                                datos['id'] +
-                                '" id="ancho' +
-                                cont +
-                                '">' +
-                                datos['ancho'] +
-                                '</span></p>'
-                        );
-                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
-                            '<p style="width:100%"><span>Alto : </span><span id="alto' + cont + '">' + datos['alto'] + '</span></p>'
-                        );
-                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
-                            '<p style="width:100%;"><span>Fondo : </span><span id="fondoDatosDimen' +
-                                cont +
-                                '">' +
-                                datos['fondo'] +
-                                '</span></p>'
-                        );
+                        if (datos['mensaje'] != 'Medidas Especiales') {
+                            $('#productoCalculadora' + (i + 1) + ' #nombreProducto').append(
+                                '<p style="width:100%;"><span id="nombreMesitaNombre' +
+                                    (cont + 1) +
+                                    '">' +
+                                    datos['productosDormitorio']['nombre'] +
+                                    '</span><span style="float:right;margin-right:10%" class="' +
+                                    datos['productosDormitorio']['id'] +
+                                    '" id="nombreMesita' +
+                                    cont +
+                                    '">' +
+                                    datos['precio'] +
+                                    ' &euro;</span></p></div>'
+                            );
+                            $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                                '<p style="width:100%"><span>Ancho : </span><span class="' +
+                                    datos['id'] +
+                                    '" id="ancho' +
+                                    cont +
+                                    '">' +
+                                    datos['ancho'] +
+                                    '</span></p>'
+                            );
+                            $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                                '<p style="width:100%"><span>Alto : </span><span id="alto' + cont + '">' + datos['alto'] + '</span></p>'
+                            );
+                            $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                                '<p style="width:100%;"><span>Fondo : </span><span id="fondoDatosDimen' +
+                                    cont +
+                                    '">' +
+                                    datos['fondo'] +
+                                    '</span></p>'
+                            );
 
-                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
-                            '<div id="div' + datos['productosDormitorio']['id'] + '"></div>'
-                        );
-                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
-                            '<p style="width:100%;margin-bottom:50px">' + productosPresupuesto[cont]['tiposApoyo']['nombre'] + '</p>'
-                        );
-                        cont++;
-                        contGuardar++;
-                        this.acabadosProductosPresupuestoPedidoService.query1(res.body[i]['id']).subscribe(data => {
-                            console.log(data.body);
-                            var array = this.acabadosProductosPresupuestoPedidoService.todos;
-                            if (array == undefined) {
-                                array = [];
-                            }
-                            array[contGuardar] = data.body;
-                            contGuardar--;
-                            this.acabadosProductosPresupuestoPedidoService.todos = array;
-                            for (let h = 0; h < data.body['length']; h++) {
-                                var aca = data.body[h]['acabados'];
-                                console.log(data.body[h]);
-                                var nombre = data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
-                                $(
-                                    '#productoCalculadora' +
-                                        (i + 1) +
-                                        ' #datos1 #div' +
-                                        data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']
-                                ).append(
-                                    '<p style="width:100%" id="acabado' +
-                                        (h + 1) +
-                                        '"><span>Acabado ' +
-                                        (h + 1) +
-                                        ' </span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        (h + 1) +
-                                        '"  src="data:image/gif;base64,' +
-                                        aca['imagenFondo'] +
-                                        '" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        h +
-                                        '" style="margin-left:10px"><span id="acabaNombre' +
-                                        h +
-                                        '">' +
-                                        aca['nombre'] +
-                                        '</span></p>'
-                                );
-                                if (nombre == 'Modulo Bajo 1') {
-                                    nombre = 'mb1';
-                                }
-                                if (nombre == 'Modulo Bajo 2') {
-                                    nombre = 'mb2';
-                                }
-                                if (nombre == 'Modulo Bajo 3') {
-                                    nombre = 'mb4';
-                                }
-                                if (nombre == 'Modulo Bajo 4 Apertura Izquierda') {
-                                    nombre = 'mb6';
-                                }
-                                if (nombre == 'Modulo Bajo 4 Apertura Derecha') {
-                                    nombre = 'mb5';
-                                }
-                                if (nombre == 'Modulo Bajo 5 Apertura Izquierda') {
-                                    nombre = 'mb8';
-                                }
-                                if (nombre == 'Modulo Bajo 5 Apertura Derecha') {
-                                    nombre = 'mb7';
-                                }
-                                if (nombre == 'Modulo Bajo 6') {
-                                    nombre = 'mb9';
-                                }
-                                if (nombre == 'Modulo Bajo 7 Apertura Izquierda') {
-                                    nombre = 'mb11';
-                                }
-                                if (nombre == 'Modulo Bajo 7 Apertura Derecha') {
-                                    nombre = 'mb10';
-                                }
-                                if (nombre == 'Modulo Bajo 8 Apertura Izquierda') {
-                                    nombre = 'mb13';
-                                }
-                                if (nombre == 'Modulo Bajo 8 Apertura Derecha') {
-                                    nombre = 'mb12';
-                                }
-                                if (nombre == 'Modulo Bajo 9') {
-                                    nombre = 'mb14';
-                                }
-                                if (nombre == 'Aparador 1') {
-                                    nombre = 'ap1';
-                                }
-                                if (nombre == 'Aparador 2') {
-                                    nombre = 'ap2';
-                                }
-                                if (nombre == 'Aparador 3') {
-                                    nombre = 'ap3';
-                                }
-                                if (nombre == 'Aparador 4') {
-                                    nombre = 'ap4';
-                                }
-                                if (nombre == 'Aparador 5') {
-                                    nombre = 'ap5';
-                                }
-                                if (nombre == 'Aparador 6') {
-                                    nombre = 'ap6';
-                                }
-                                if (nombre == 'Aparador 7') {
-                                    nombre = 'ap7';
-                                }
-                                if (nombre == 'Aparador 8') {
-                                    nombre = 'ap8';
-                                }
-                                if (nombre == 'Aparador 9') {
-                                    nombre = 'ap9';
-                                }
-                                if (nombre == 'Aparador 10') {
-                                    nombre = 'ap10';
-                                }
-                                if (nombre == 'singular 1 apertura izquierda') {
-                                    nombre = 'sg1';
-                                }
-                                if (nombre == 'singular 1 apertura derecha') {
-                                    nombre = 'sg1';
-                                }
-                                if (nombre == 'singular 2 apertura izquierda') {
-                                    nombre = 'sg2';
-                                }
-                                if (nombre == 'singular 2 apertura derecha') {
-                                    nombre = 'sg2';
-                                }
-                                if (nombre == 'singular 3 apertura izquierda') {
-                                    nombre = 'sg3';
-                                }
-                                if (nombre == 'singular 3 apertura derecha') {
-                                    nombre = 'sg3';
-                                }
-                                if (nombre == 'singular 12 apertura izquierda') {
-                                    nombre = 'sg12';
-                                }
-                                if (nombre == 'singular 12 apertura derecha') {
-                                    nombre = 'sg12';
-                                }
-                                if (nombre == 'singular 13 apertura izquierda') {
-                                    nombre = 'sg13';
-                                }
-                                if (nombre == 'singular 13 apertura derecha') {
-                                    nombre = 'sg13';
-                                }
+                            $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                                '<div id="div' + datos['productosDormitorio']['id'] + '"></div>'
+                            );
+                            $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                                '<p style="width:100%;margin-bottom:50px">' + productosPresupuesto[cont]['tiposApoyo']['nombre'] + '</p>'
+                            );
+                            cont++;
+                            contGuardar++;
 
-                                if (nombre == 'singular 4') {
-                                    nombre = 'sg4';
+                            this.acabadosProductosPresupuestoPedidoService.query1(prodEntero['id']).subscribe(data => {
+                                console.log(data.body);
+                                var array = this.acabadosProductosPresupuestoPedidoService.todos;
+                                if (array == undefined) {
+                                    array = [];
                                 }
-                                if (nombre == 'singular 5') {
-                                    nombre = 'sg5';
-                                }
-                                if (nombre == 'singular 6') {
-                                    nombre = 'sg6';
-                                }
-                                if (nombre == 'singular 7') {
-                                    nombre = 'sg7';
-                                }
-                                if (nombre == 'singular 8') {
-                                    nombre = 'sg8';
-                                }
-                                if (nombre == 'singular 9') {
-                                    nombre = 'sg9';
-                                }
-                                if (nombre == 'singular 10') {
-                                    nombre = 'sg10';
-                                }
-                                if (nombre == 'singular 11') {
-                                    nombre = 'sg11';
-                                }
-                                if (nombre == 'singular 14') {
-                                    nombre = 'sg14';
-                                }
-                                if (nombre == 'singular 15') {
-                                    nombre = 'sg15';
-                                }
-                                if (nombre == 'singular 16') {
-                                    nombre = 'sg16';
-                                }
-
-                                $('#imagenesAcabados' + i).attr('style');
-                                $('#imagenesAcabados' + i).css({ 'margin-left': '65px' });
-                                if (
-                                    nombre != 'sg16' &&
-                                    nombre != 'sg15' &&
-                                    nombre != 'sg14' &&
-                                    nombre != 'sg13' &&
-                                    nombre != 'sg12' &&
-                                    nombre != 'sg11' &&
-                                    nombre != 'sg10' &&
-                                    nombre != 'sg9' &&
-                                    nombre != 'sg8' &&
-                                    nombre != 'sg7' &&
-                                    nombre != 'sg6' &&
-                                    nombre != 'sg5' &&
-                                    nombre != 'sg4' &&
-                                    nombre != 'sg3' &&
-                                    nombre != 'sg2' &&
-                                    nombre != 'sg1'
-                                ) {
-                                    $('#imagenesAcabados' + i).append(
-                                        '<img id="tapa" class="' +
-                                            aca['nombre'].toLowerCase() +
-                                            '" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
-                                            nombre +
-                                            '/' +
+                                array[contGuardar] = data.body;
+                                contGuardar--;
+                                this.acabadosProductosPresupuestoPedidoService.todos = array;
+                                for (let h = 0; h < data.body['length']; h++) {
+                                    var aca = data.body[h]['acabados'];
+                                    console.log(data.body[h]);
+                                    var nombre = data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
+                                    $(
+                                        '#productoCalculadora' +
+                                            (i + 1) +
+                                            ' #datos1 #div' +
+                                            data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']
+                                    ).append(
+                                        '<p style="width:100%" id="acabado' +
                                             (h + 1) +
-                                            '/' +
-                                            nombre +
-                                            '_' +
+                                            '"><span>Acabado ' +
                                             (h + 1) +
-                                            '_' +
-                                            aca['nombre'].toLowerCase() +
-                                            '_optimized.png">'
+                                            ' </span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                            (h + 1) +
+                                            '"  src="data:image/gif;base64,' +
+                                            aca['imagenFondo'] +
+                                            '" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                            h +
+                                            '" style="margin-left:10px"><span id="acabaNombre' +
+                                            h +
+                                            '">' +
+                                            aca['nombre'] +
+                                            '</span></p>'
                                     );
-                                } else {
-                                    $('#imagenesAcabados' + i).css({ 'margin-left': '145px' });
-                                    $('#imagenesAcabados' + i).css({ 'margin-top': '-30px' });
-                                    $('#imagenesAcabados' + i).css({ 'padding-bottom': '20px' });
-                                    $('#imagenesAcabados' + i).append(
-                                        '<img id="tapa" class="' +
-                                            aca['nombre'].toLowerCase() +
-                                            '" width="300px" style="margin-left:0px;" height="483px" src="../../../content/images/' +
-                                            nombre +
-                                            '/' +
-                                            (h + 1) +
-                                            '/' +
-                                            nombre +
-                                            '_' +
-                                            (h + 1) +
-                                            '_' +
-                                            aca['nombre'].toLowerCase() +
-                                            '_optimized.png">'
+                                    if (nombre == 'Modulo Bajo 1') {
+                                        nombre = 'mb1';
+                                    }
+                                    if (nombre == 'Modulo Bajo 2') {
+                                        nombre = 'mb2';
+                                    }
+                                    if (nombre == 'Modulo Bajo 3') {
+                                        nombre = 'mb4';
+                                    }
+                                    if (nombre == 'Modulo Bajo 4 Apertura Izquierda') {
+                                        nombre = 'mb6';
+                                    }
+                                    if (nombre == 'Modulo Bajo 4 Apertura Derecha') {
+                                        nombre = 'mb5';
+                                    }
+                                    if (nombre == 'Modulo Bajo 5 Apertura Izquierda') {
+                                        nombre = 'mb8';
+                                    }
+                                    if (nombre == 'Modulo Bajo 5 Apertura Derecha') {
+                                        nombre = 'mb7';
+                                    }
+                                    if (nombre == 'Modulo Bajo 6') {
+                                        nombre = 'mb9';
+                                    }
+                                    if (nombre == 'Modulo Bajo 7 Apertura Izquierda') {
+                                        nombre = 'mb11';
+                                    }
+                                    if (nombre == 'Modulo Bajo 7 Apertura Derecha') {
+                                        nombre = 'mb10';
+                                    }
+                                    if (nombre == 'Modulo Bajo 8 Apertura Izquierda') {
+                                        nombre = 'mb13';
+                                    }
+                                    if (nombre == 'Modulo Bajo 8 Apertura Derecha') {
+                                        nombre = 'mb12';
+                                    }
+                                    if (nombre == 'Modulo Bajo 9') {
+                                        nombre = 'mb14';
+                                    }
+                                    if (nombre == 'Aparador 1') {
+                                        nombre = 'ap1';
+                                    }
+                                    if (nombre == 'Aparador 2') {
+                                        nombre = 'ap2';
+                                    }
+                                    if (nombre == 'Aparador 3') {
+                                        nombre = 'ap3';
+                                    }
+                                    if (nombre == 'Aparador 4') {
+                                        nombre = 'ap4';
+                                    }
+                                    if (nombre == 'Aparador 5') {
+                                        nombre = 'ap5';
+                                    }
+                                    if (nombre == 'Aparador 6') {
+                                        nombre = 'ap6';
+                                    }
+                                    if (nombre == 'Aparador 7') {
+                                        nombre = 'ap7';
+                                    }
+                                    if (nombre == 'Aparador 8') {
+                                        nombre = 'ap8';
+                                    }
+                                    if (nombre == 'Aparador 9') {
+                                        nombre = 'ap9';
+                                    }
+                                    if (nombre == 'Aparador 10') {
+                                        nombre = 'ap10';
+                                    }
+                                    if (nombre == 'singular 1 apertura izquierda') {
+                                        nombre = 'sg1';
+                                    }
+                                    if (nombre == 'singular 1 apertura derecha') {
+                                        nombre = 'sg1';
+                                    }
+                                    if (nombre == 'singular 2 apertura izquierda') {
+                                        nombre = 'sg2';
+                                    }
+                                    if (nombre == 'singular 2 apertura derecha') {
+                                        nombre = 'sg2';
+                                    }
+                                    if (nombre == 'singular 3 apertura izquierda') {
+                                        nombre = 'sg3';
+                                    }
+                                    if (nombre == 'singular 3 apertura derecha') {
+                                        nombre = 'sg3';
+                                    }
+                                    if (nombre == 'singular 12 apertura izquierda') {
+                                        nombre = 'sg12';
+                                    }
+                                    if (nombre == 'singular 12 apertura derecha') {
+                                        nombre = 'sg12';
+                                    }
+                                    if (nombre == 'singular 13 apertura izquierda') {
+                                        nombre = 'sg13';
+                                    }
+                                    if (nombre == 'singular 13 apertura derecha') {
+                                        nombre = 'sg13';
+                                    }
+
+                                    if (nombre == 'singular 4') {
+                                        nombre = 'sg4';
+                                    }
+                                    if (nombre == 'singular 5') {
+                                        nombre = 'sg5';
+                                    }
+                                    if (nombre == 'singular 6') {
+                                        nombre = 'sg6';
+                                    }
+                                    if (nombre == 'singular 7') {
+                                        nombre = 'sg7';
+                                    }
+                                    if (nombre == 'singular 8') {
+                                        nombre = 'sg8';
+                                    }
+                                    if (nombre == 'singular 9') {
+                                        nombre = 'sg9';
+                                    }
+                                    if (nombre == 'singular 10') {
+                                        nombre = 'sg10';
+                                    }
+                                    if (nombre == 'singular 11') {
+                                        nombre = 'sg11';
+                                    }
+                                    if (nombre == 'singular 14') {
+                                        nombre = 'sg14';
+                                    }
+                                    if (nombre == 'singular 15') {
+                                        nombre = 'sg15';
+                                    }
+                                    if (nombre == 'singular 16') {
+                                        nombre = 'sg16';
+                                    }
+
+                                    $('#imagenesAcabados' + i).attr('style');
+                                    $('#imagenesAcabados' + i).css({ 'margin-left': '65px' });
+                                    if (
+                                        nombre != 'sg16' &&
+                                        nombre != 'sg15' &&
+                                        nombre != 'sg14' &&
+                                        nombre != 'sg13' &&
+                                        nombre != 'sg12' &&
+                                        nombre != 'sg11' &&
+                                        nombre != 'sg10' &&
+                                        nombre != 'sg9' &&
+                                        nombre != 'sg8' &&
+                                        nombre != 'sg7' &&
+                                        nombre != 'sg6' &&
+                                        nombre != 'sg5' &&
+                                        nombre != 'sg4' &&
+                                        nombre != 'sg3' &&
+                                        nombre != 'sg2' &&
+                                        nombre != 'sg1'
+                                    ) {
+                                        $('#imagenesAcabados' + i).append(
+                                            '<img id="tapa" class="' +
+                                                aca['nombre'].toLowerCase() +
+                                                '" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (h + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (h + 1) +
+                                                '_' +
+                                                aca['nombre'].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        $('#imagenesAcabados' + i).css({ 'margin-left': '145px' });
+                                        $('#imagenesAcabados' + i).css({ 'margin-top': '-30px' });
+                                        $('#imagenesAcabados' + i).css({ 'padding-bottom': '20px' });
+                                        $('#imagenesAcabados' + i).append(
+                                            '<img id="tapa" class="' +
+                                                aca['nombre'].toLowerCase() +
+                                                '" width="300px" style="margin-left:0px;" height="483px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (h + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (h + 1) +
+                                                '_' +
+                                                aca['nombre'].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
+                                    sessionStorage.setItem(
+                                        'idProdAca',
+                                        '' + data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']
                                     );
                                 }
-                                sessionStorage.setItem(
-                                    'idProdAca',
-                                    '' + data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']
-                                );
-                            }
-                        });
+                            });
+                        } else {
+                            this.medEspProductoPedidoPresuService
+                                .query({
+                                    size: 100000
+                                })
+                                .subscribe(data => {
+                                    for (let o = 0; o < data.body['length']; o++) {
+                                        if (data.body[o]['productosPresupuestoPedidos']['id'] == prodEntero['id']) {
+                                            alert('soy especial crack');
+
+                                            $('#productoCalculadora' + (i + 1) + ' #nombreProducto').append(
+                                                '<p style="width:100%;"><span id="nombreMesitaNombre' +
+                                                    (i + 1) +
+                                                    '">' +
+                                                    prodEntero['productosDormitorio']['nombre'] +
+                                                    '</span><span style="float:right;margin-right:10%" class="' +
+                                                    prodEntero['productosDormitorio']['id'] +
+                                                    '" id="nombreMesita' +
+                                                    i +
+                                                    '">' +
+                                                    data.body[o]['precio'] +
+                                                    ' &euro;</span></p></div>'
+                                            );
+                                            $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                                                '<p style="width:100%"><span>Ancho : </span><span class="' +
+                                                    prodEntero['id'] +
+                                                    '" id="ancho' +
+                                                    cont +
+                                                    '">' +
+                                                    data.body[o]['ancho'] +
+                                                    '</span></p>'
+                                            );
+                                            $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                                                '<p style="width:100%"><span>Alto : </span><span id="alto' +
+                                                    cont +
+                                                    '">' +
+                                                    data.body[o]['alto'] +
+                                                    '</span></p>'
+                                            );
+                                            $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                                                '<p style="width:100%;"><span>Fondo : </span><span id="fondoDatosDimen' +
+                                                    cont +
+                                                    '">' +
+                                                    data.body[o]['fondo'] +
+                                                    '</span></p>'
+                                            );
+
+                                            $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                                                '<div id="div' + prodEntero['productosDormitorio']['id'] + '"></div>'
+                                            );
+                                            $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                                                '<p style="width:100%;margin-bottom:50px">' + prodEntero['tiposApoyo']['nombre'] + '</p>'
+                                            );
+                                        }
+                                    }
+
+                                    this.acabadosProductosPresupuestoPedidoService.query1(prodEntero['id']).subscribe(data => {
+                                        console.log(data.body);
+                                        var array = this.acabadosProductosPresupuestoPedidoService.todos;
+                                        if (array == undefined) {
+                                            array = [];
+                                        }
+                                        array[contGuardar] = data.body;
+                                        contGuardar--;
+                                        this.acabadosProductosPresupuestoPedidoService.todos = array;
+                                        for (let h = 0; h < data.body['length']; h++) {
+                                            var aca = data.body[h]['acabados'];
+                                            console.log(data.body[h]);
+                                            var nombre = data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
+                                            $(
+                                                '#productoCalculadora' +
+                                                    (i + 1) +
+                                                    ' #datos1 #div' +
+                                                    data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']
+                                            ).append(
+                                                '<p style="width:100%" id="acabado' +
+                                                    (h + 1) +
+                                                    '"><span>Acabado ' +
+                                                    (h + 1) +
+                                                    ' </span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                                    (h + 1) +
+                                                    '"  src="data:image/gif;base64,' +
+                                                    aca['imagenFondo'] +
+                                                    '" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                                    h +
+                                                    '" style="margin-left:10px"><span id="acabaNombre' +
+                                                    h +
+                                                    '">' +
+                                                    aca['nombre'] +
+                                                    '</span></p>'
+                                            );
+                                            if (nombre == 'Modulo Bajo 1') {
+                                                nombre = 'mb1';
+                                            }
+                                            if (nombre == 'Modulo Bajo 2') {
+                                                nombre = 'mb2';
+                                            }
+                                            if (nombre == 'Modulo Bajo 3') {
+                                                nombre = 'mb4';
+                                            }
+                                            if (nombre == 'Modulo Bajo 4 Apertura Izquierda') {
+                                                nombre = 'mb6';
+                                            }
+                                            if (nombre == 'Modulo Bajo 4 Apertura Derecha') {
+                                                nombre = 'mb5';
+                                            }
+                                            if (nombre == 'Modulo Bajo 5 Apertura Izquierda') {
+                                                nombre = 'mb8';
+                                            }
+                                            if (nombre == 'Modulo Bajo 5 Apertura Derecha') {
+                                                nombre = 'mb7';
+                                            }
+                                            if (nombre == 'Modulo Bajo 6') {
+                                                nombre = 'mb9';
+                                            }
+                                            if (nombre == 'Modulo Bajo 7 Apertura Izquierda') {
+                                                nombre = 'mb11';
+                                            }
+                                            if (nombre == 'Modulo Bajo 7 Apertura Derecha') {
+                                                nombre = 'mb10';
+                                            }
+                                            if (nombre == 'Modulo Bajo 8 Apertura Izquierda') {
+                                                nombre = 'mb13';
+                                            }
+                                            if (nombre == 'Modulo Bajo 8 Apertura Derecha') {
+                                                nombre = 'mb12';
+                                            }
+                                            if (nombre == 'Modulo Bajo 9') {
+                                                nombre = 'mb14';
+                                            }
+                                            if (nombre == 'Aparador 1') {
+                                                nombre = 'ap1';
+                                            }
+                                            if (nombre == 'Aparador 2') {
+                                                nombre = 'ap2';
+                                            }
+                                            if (nombre == 'Aparador 3') {
+                                                nombre = 'ap3';
+                                            }
+                                            if (nombre == 'Aparador 4') {
+                                                nombre = 'ap4';
+                                            }
+                                            if (nombre == 'Aparador 5') {
+                                                nombre = 'ap5';
+                                            }
+                                            if (nombre == 'Aparador 6') {
+                                                nombre = 'ap6';
+                                            }
+                                            if (nombre == 'Aparador 7') {
+                                                nombre = 'ap7';
+                                            }
+                                            if (nombre == 'Aparador 8') {
+                                                nombre = 'ap8';
+                                            }
+                                            if (nombre == 'Aparador 9') {
+                                                nombre = 'ap9';
+                                            }
+                                            if (nombre == 'Aparador 10') {
+                                                nombre = 'ap10';
+                                            }
+                                            if (nombre == 'singular 1 apertura izquierda') {
+                                                nombre = 'sg1';
+                                            }
+                                            if (nombre == 'singular 1 apertura derecha') {
+                                                nombre = 'sg1';
+                                            }
+                                            if (nombre == 'singular 2 apertura izquierda') {
+                                                nombre = 'sg2';
+                                            }
+                                            if (nombre == 'singular 2 apertura derecha') {
+                                                nombre = 'sg2';
+                                            }
+                                            if (nombre == 'singular 3 apertura izquierda') {
+                                                nombre = 'sg3';
+                                            }
+                                            if (nombre == 'singular 3 apertura derecha') {
+                                                nombre = 'sg3';
+                                            }
+                                            if (nombre == 'singular 12 apertura izquierda') {
+                                                nombre = 'sg12';
+                                            }
+                                            if (nombre == 'singular 12 apertura derecha') {
+                                                nombre = 'sg12';
+                                            }
+                                            if (nombre == 'singular 13 apertura izquierda') {
+                                                nombre = 'sg13';
+                                            }
+                                            if (nombre == 'singular 13 apertura derecha') {
+                                                nombre = 'sg13';
+                                            }
+
+                                            if (nombre == 'singular 4') {
+                                                nombre = 'sg4';
+                                            }
+                                            if (nombre == 'singular 5') {
+                                                nombre = 'sg5';
+                                            }
+                                            if (nombre == 'singular 6') {
+                                                nombre = 'sg6';
+                                            }
+                                            if (nombre == 'singular 7') {
+                                                nombre = 'sg7';
+                                            }
+                                            if (nombre == 'singular 8') {
+                                                nombre = 'sg8';
+                                            }
+                                            if (nombre == 'singular 9') {
+                                                nombre = 'sg9';
+                                            }
+                                            if (nombre == 'singular 10') {
+                                                nombre = 'sg10';
+                                            }
+                                            if (nombre == 'singular 11') {
+                                                nombre = 'sg11';
+                                            }
+                                            if (nombre == 'singular 14') {
+                                                nombre = 'sg14';
+                                            }
+                                            if (nombre == 'singular 15') {
+                                                nombre = 'sg15';
+                                            }
+                                            if (nombre == 'singular 16') {
+                                                nombre = 'sg16';
+                                            }
+
+                                            $('#imagenesAcabados' + i).attr('style');
+                                            $('#imagenesAcabados' + i).css({ 'margin-left': '65px' });
+                                            if (
+                                                nombre != 'sg16' &&
+                                                nombre != 'sg15' &&
+                                                nombre != 'sg14' &&
+                                                nombre != 'sg13' &&
+                                                nombre != 'sg12' &&
+                                                nombre != 'sg11' &&
+                                                nombre != 'sg10' &&
+                                                nombre != 'sg9' &&
+                                                nombre != 'sg8' &&
+                                                nombre != 'sg7' &&
+                                                nombre != 'sg6' &&
+                                                nombre != 'sg5' &&
+                                                nombre != 'sg4' &&
+                                                nombre != 'sg3' &&
+                                                nombre != 'sg2' &&
+                                                nombre != 'sg1'
+                                            ) {
+                                                $('#imagenesAcabados' + i).append(
+                                                    '<img id="tapa" class="' +
+                                                        aca['nombre'].toLowerCase() +
+                                                        '" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
+                                                        nombre +
+                                                        '/' +
+                                                        (h + 1) +
+                                                        '/' +
+                                                        nombre +
+                                                        '_' +
+                                                        (h + 1) +
+                                                        '_' +
+                                                        aca['nombre'].toLowerCase() +
+                                                        '_optimized.png">'
+                                                );
+                                            } else {
+                                                $('#imagenesAcabados' + i).css({ 'margin-left': '145px' });
+                                                $('#imagenesAcabados' + i).css({ 'margin-top': '-30px' });
+                                                $('#imagenesAcabados' + i).css({ 'padding-bottom': '20px' });
+                                                $('#imagenesAcabados' + i).append(
+                                                    '<img id="tapa" class="' +
+                                                        aca['nombre'].toLowerCase() +
+                                                        '" width="300px" style="margin-left:0px;" height="483px" src="../../../content/images/' +
+                                                        nombre +
+                                                        '/' +
+                                                        (h + 1) +
+                                                        '/' +
+                                                        nombre +
+                                                        '_' +
+                                                        (h + 1) +
+                                                        '_' +
+                                                        aca['nombre'].toLowerCase() +
+                                                        '_optimized.png">'
+                                                );
+                                            }
+                                            sessionStorage.setItem(
+                                                'idProdAca',
+                                                '' + data.body[h]['productosPresupuestoPedidos']['productosDormitorio']['id']
+                                            );
+                                        }
+                                    });
+                                });
+
+                            cont++;
+                            contGuardar++;
+                        }
                     }
                 }
             }

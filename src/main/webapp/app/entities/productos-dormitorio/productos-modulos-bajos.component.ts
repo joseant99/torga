@@ -391,6 +391,9 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor118').css({ 'background-color': 'white' });
             $('.productosColor119').css({ 'background-color': 'white' });
             $('.productosColor107 #dimensiones').css({ display: 'none' });
+            $('.productosColor' + producto).css({ 'overflow-x': 'hidden' });
+            $('.productosColor' + producto).css({ border: '1px solid white' });
+            $('.productosColor' + producto + ' #medidas').css({ display: 'block' });
             $('#imagenAcabado').remove();
             $('#acabado').css({ display: 'none' });
             $('.productosColor').css({ 'background-color': 'white' });
@@ -440,9 +443,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
                             $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
                             $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
-                            $('.productosColor' + producto).css({ 'overflow-x': 'hidden' });
-                            $('.productosColor' + producto).css({ border: '1px solid white' });
-                            $('.productosColor' + producto + ' #medidas').css({ display: 'block' });
+
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor1').append(
                                 '<p class="dimensionesId' +
@@ -630,6 +631,21 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 });
             });
 
+            $('.productosColor' + producto + ' #acabados').removeAttr('style');
+            $('.productosColor' + producto + ' #acabados').attr('style');
+            $('.productosColor' + producto + ' #acabados').css({ 'text-align': 'center' });
+            $('.productosColor' + producto + ' #acabados').css({ float: 'left' });
+            $('.productosColor' + producto + ' #acabados').css({ width: '90%' });
+            $('.productosColor' + producto + ' #acabados').css({ border: '1px solid #7AC8FE' });
+            $('.productosColor' + producto + ' #acabado').css({ display: 'block' });
+            $('.productosColor' + producto).css({ 'overflow-y': 'hidden' });
+            $('.productosColor' + producto).css({ 'padding-bottom': '15%' });
+            var contador = 1;
+            var contnuevo = 1;
+            var u = 1;
+            var i = 0;
+            var imagen123123;
+
             $('.productosColor').css({ 'background-color': 'white' });
             $('.productosColorSolo' + producto).css({ 'background-color': '#DFDDDC' });
             $('.productosColorSolo' + producto).css({ width: '45%' });
@@ -645,7 +661,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.apoyoCogido4').empty();
             $('#acaba4').empty();
             $('#acaba3').empty();
-            $('#acabado').css({ display: 'none' });
             $('#acaba1').empty();
             $('#acaba2').empty();
             $('#imagenAcabado').remove();
@@ -658,6 +673,23 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('#iluminacion').css({ display: 'none' });
             var acaprodCont = 0;
             var acaProdSer = [];
+            $('.productosColor' + producto + ' #acabados #imagenAcabadoPrincipal').empty();
+            this.acaProdService.findAca(producto).subscribe(data => {
+                this.acaProdService.todos = data.body;
+                $.each(this.acaProdService.todos, function(index, value) {
+                    if (value['productosDormitorio']['id'] == producto) {
+                        imagen123123 = value['imagen'];
+                        if (contador == 1) {
+                            $('.productosColor' + producto + ' #acabados #imagenAcabadoPrincipal').append(
+                                '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                                    imagen123123 +
+                                    '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
+                            );
+                        }
+                        contador++;
+                    }
+                });
+            });
         } else {
             arrayComprobar[producto] = undefined;
             this.arrayMostrar = arrayComprobar;
@@ -2859,13 +2891,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $.each(this.acaProdService.todos, function(index, value) {
                     if (value['productosDormitorio']['id'] == idProd) {
                         imagen = value['imagen'];
-                        if (contador == 1) {
-                            $('.productosColor' + idProd1 + ' #acabados #imagenAcabadoPrincipal').append(
-                                '<img id="imagenAcabado" src="data:image/gif;base64,' +
-                                    imagen +
-                                    '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
-                            );
-                        }
 
                         contador++;
                         var idAca = value['id'];
