@@ -942,7 +942,7 @@ Generic styles
 #imagenAcabadoPrincipal {
     float: left;
     width: 85%;
-    height: 300px;
+    height: 400px;
 }
 
 #apoyoStyle {
@@ -7224,7 +7224,7 @@ ui bootstrap tweaks
     #dimensiones {
         width: 70%;
         float: left;
-        margin-left: 205px;
+        margin-left: 15px !important;
     }
     #tablaFiltro {
         margin-top: 2%;
@@ -7342,7 +7342,7 @@ ui bootstrap tweaks
     }
 
     .imagenAcabadoPrincipalImg {
-        margin-left: 34%;
+        margin-left: 0%;
         max-height: 240px;
         max-width: 400px;
     }
@@ -7493,6 +7493,46 @@ ui bootstrap tweaks
         top: -10px;
         left: 0;
     }
+    .dimensionesColor1 {
+        margin-left: 8% !important;
+        font-size: 10px !important;
+    }
+    .dimensionesColor2 {
+        margin-left: 8% !important;
+        font-size: 10px !important;
+    }
+    .dimensionesColor3 {
+        margin-left: 8% !important;
+        font-size: 10px !important;
+    }
+    .dimensionesColor4 {
+        margin-left: 8% !important;
+        font-size: 10px !important;
+    }
+    .dimensionesColor5 {
+        margin-left: 8% !important;
+        font-size: 10px !important;
+    }
+    .dimensionesColor6 {
+        margin-left: 8% !important;
+        font-size: 10px !important;
+    }
+    .dimensionesColor7 {
+        margin-left: 8% !important;
+        font-size: 10px !important;
+    }
+    .dimensionesColor20 {
+        margin-left: 8% !important;
+        font-size: 10px !important;
+    }
+    .dimensionesColor21 {
+        margin-left: 8% !important;
+        font-size: 10px !important;
+    }
+    .dimensionesColor22 {
+        margin-left: 8% !important;
+        font-size: 10px !important;
+    }
     .marginIzquierda {
         margin-left: 165px;
     }
@@ -7505,10 +7545,13 @@ ui bootstrap tweaks
         font-size: 22px;
     }
     #acabado {
-        margin-left: 20%;
+        margin-left: 25% !important;
         font-size: 22px;
         margin-top: 7%;
         margin-bottom: 6%;
+    }
+    #acabados {
+        margin-left: 15px !important;
     }
     #botonEliminar {
         margin-top: 30px;
