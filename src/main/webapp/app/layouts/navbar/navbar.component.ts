@@ -530,15 +530,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 prod = data.body[h];
                                             }
                                         }
-                                        var medidasEspeciales;
-                                        this.medEspProductoPedidoPresuService
-                                            .query({
-                                                size: 10000000
-                                            })
-                                            .subscribe(data => {
-                                                medidasEspeciales = data['body'];
-                                                this.medEspProductoPedidoPresuService.todo = medidasEspeciales;
-                                            });
+
                                         var id = prod['id'];
                                         sessionStorage.setItem('presupuesto', '' + id);
                                         sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
