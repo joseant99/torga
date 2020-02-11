@@ -98,6 +98,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         protected router: Router,
         protected eventManager: JhiEventManager
     ) {
+        this.ngOnInit();
         this.itemsPerPage = ITEMS_PER_PAGE;
         this.routeData = this.activatedRoute.data.subscribe(data => {
             this.page = data.pagingParams.page;
@@ -859,6 +860,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                             } else {
                                 if (res.body[i]['dimensionesProductoTipo']['mensaje'] == 'Medidas Especiales') {
                                     var medidasEspeciales = this.medEspProductoPedidoPresuService.todo;
+
                                     for (let k = 0; k < medidasEspeciales.length; k++) {
                                         if (medidasEspeciales[k]['productosPresupuestoPedidos']['id'] == res.body[i]['id']) {
                                             res.body[i]['dimensionesProductoTipo']['ancho'] = medidasEspeciales[k]['ancho'];
