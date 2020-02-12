@@ -274,6 +274,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor118 #acabados').css({ display: 'none' });
             $('.productosColor119 #acabados').css({ display: 'none' });
 
+            $('.productosColor' + producto + ' #dimensionesInput1').css({ 'background-color': 'white' });
+            $('.productosColor' + producto + ' #dimensionesInput2').css({ 'background-color': 'white' });
+            $('.productosColor' + producto + ' #dimensionesInput3').css({ 'background-color': 'white' });
+            $('.productosColor' + producto + ' #dimensionesInput4').css({ 'background-color': 'white' });
+            $('.productosColor' + producto + ' #dimensionesInput5').css({ 'background-color': 'white' });
+            $('.productosColor' + producto + ' #dimensionesInput6').css({ 'background-color': 'white' });
+            $('.productosColor' + producto + ' #dimensionesInput7').css({ 'background-color': 'white' });
+            $('.productosColor' + producto + ' #dimensionesInput20').css({ 'background-color': 'white' });
+            $('.productosColor' + producto + ' #dimensionesInput21').css({ 'background-color': 'white' });
+            $('.productosColor' + producto + ' #dimensionesInput22').css({ 'background-color': 'white' });
+
             $('.productosColor107 #dimensiones').css({ display: 'none' });
             $('.productosColor108 #dimensiones').css({ display: 'none' });
             $('.productosColor109 #dimensiones').css({ display: 'none' });
@@ -408,7 +419,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             var precioTienda1;
             precioTienda1 = localStorage.getItem('preciosTiendas');
             var precioTienda = this.precioTienda;
+            var precioPunto = this.precioPunto[0];
+            var todosLosPrecios = this.precioTiendaProductosService.todos;
 
+            for (let y = 0; y < todosLosPrecios.length; y++) {
+                if (producto == todosLosPrecios[y][2]) {
+                    var precioProducto = todosLosPrecios[y][1];
+                }
+            }
             this.dimensionesProductoTipoService.findProducto(producto).subscribe(data => {
                 this.dimensionesProductoTipoService.todos = data.body;
                 this.todasDimensiones = data.body;
@@ -420,6 +438,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 for (let i = 0; i < datos.length; i++) {
                     if (producto == datos[i]['productosDormitorio']['id']) {
                         if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
                             $('.productosColor' + producto + ' #dimensionesText1').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -427,7 +450,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     ' - Alto ' +
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
-                                    datos[i]['fondo']
+                                    datos[i]['fondo'] +
+                                    ' | ' +
+                                    precioDimen +
+                                    ' €'
                             );
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
 
@@ -439,9 +465,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#anchoEspecialFondo' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
-                            $('.productosColor' + producto + ' #dimensiones').css({ width: '90%' });
+                            $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
                             $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
                             $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                            $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                            $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
                             $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
 
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
@@ -454,6 +483,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             );
                         }
                         if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
                             $('.productosColor' + producto + ' #dimensionesText2').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -461,7 +495,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     ' - Alto ' +
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
-                                    datos[i]['fondo']
+                                    datos[i]['fondo'] +
+                                    ' | ' +
+                                    precioDimen +
+                                    ' €'
                             );
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
@@ -480,6 +517,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             );
                         }
                         if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
                             $('.productosColor' + producto + ' #dimensionesText3').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -487,7 +529,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     ' - Alto ' +
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
-                                    datos[i]['fondo']
+                                    datos[i]['fondo'] +
+                                    ' | ' +
+                                    precioDimen +
+                                    ' €'
                             );
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
@@ -506,6 +551,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             );
                         }
                         if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
                             $('.productosColor' + producto + ' #dimensionesText4').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -513,7 +563,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     ' - Alto ' +
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
-                                    datos[i]['fondo']
+                                    datos[i]['fondo'] +
+                                    ' | ' +
+                                    precioDimen +
+                                    ' €'
                             );
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
@@ -532,6 +585,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             );
                         }
                         if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
                             $('.productosColor' + producto + ' #dimensionesText5').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -539,7 +597,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     ' - Alto ' +
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
-                                    datos[i]['fondo']
+                                    datos[i]['fondo'] +
+                                    ' | ' +
+                                    precioDimen +
+                                    ' €'
                             );
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
@@ -558,6 +619,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             );
                         }
                         if (cont == 5 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
                             $('.productosColor' + producto + ' #dimensionesText6').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -565,7 +631,10 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     ' - Alto ' +
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
-                                    datos[i]['fondo']
+                                    datos[i]['fondo'] +
+                                    ' | ' +
+                                    precioDimen +
+                                    ' €'
                             );
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
@@ -587,7 +656,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         cont++;
                     }
                 }
-
+                /**
                 this.medidasEspecialesService.findProd(producto).subscribe(data => {
                     for (let j = 0; j < data.body['length']; j++) {
                         if (data.body[j] != undefined) {
@@ -629,17 +698,40 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         }
                     }
                 });
+                **/
             });
 
             $('.productosColor' + producto + ' #acabados').removeAttr('style');
             $('.productosColor' + producto + ' #acabados').attr('style');
             $('.productosColor' + producto + ' #acabados').css({ 'text-align': 'center' });
             $('.productosColor' + producto + ' #acabados').css({ float: 'left' });
-            $('.productosColor' + producto + ' #acabados').css({ width: '90%' });
+            $('.productosColor' + producto + ' #acabados').css({ width: '63.3%' });
+            $('.productosColor' + producto + ' #acabados').css({ 'margin-top': '550px' });
+            $('.productosColor' + producto + ' #acabados').css({ left: '28.5%' });
+            $('.productosColor' + producto + ' #acabados').css({ position: 'absolute' });
             $('.productosColor' + producto + ' #acabados').css({ border: '1px solid #7AC8FE' });
             $('.productosColor' + producto + ' #acabado').css({ display: 'block' });
             $('.productosColor' + producto).css({ 'overflow-y': 'hidden' });
-            $('.productosColor' + producto).css({ 'padding-bottom': '15%' });
+
+            if (producto == 110 || producto == 111) {
+                $('.productosColor110').css({ 'margin-bottom': '1350px' });
+                $('.productosColor111').css({ 'margin-bottom': '1350px' });
+            }
+            if (producto == 112 || producto == 113) {
+                $('.productosColor112').css({ 'margin-bottom': '1350px' });
+                $('.productosColor113').css({ 'margin-bottom': '1350px' });
+            }
+            if (producto == 115 || producto == 116) {
+                $('.productosColor115').css({ 'margin-bottom': '1350px' });
+                $('.productosColor116').css({ 'margin-bottom': '1350px' });
+            }
+            if (producto == 117 || producto == 118) {
+                $('.productosColor117').css({ 'margin-bottom': '1350px' });
+                $('.productosColor118').css({ 'margin-bottom': '1350px' });
+            }
+            if (producto == 107 || producto == 108 || producto == 109 || producto == 114 || producto == 119) {
+                $('.productosColor' + producto).css({ 'margin-bottom': '1350px' });
+            }
             var contador = 1;
             var contnuevo = 1;
             var u = 1;
@@ -647,10 +739,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             var imagen123123;
 
             $('.productosColor').css({ 'background-color': 'white' });
-            $('.productosColorSolo' + producto).css({ 'background-color': '#DFDDDC' });
-            $('.productosColorSolo' + producto).css({ width: '45%' });
+            $('.productosColor' + producto).css({ 'background-color': '#DFDDDC' });
             $('.productosColor' + producto).css({ 'margin-right': '0%' });
-            $('.productosColor' + producto).css({ width: '100%' });
             $('#nombreMesita').text(productoNombre);
             $('#nombreMesita').attr('class', producto);
             $('#terminarConfiguracion').css({ display: 'none' });
@@ -819,6 +909,16 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor117').css({ 'background-color': 'white' });
             $('.productosColor118').css({ 'background-color': 'white' });
             $('.productosColor119').css({ 'background-color': 'white' });
+
+            $('#productoCalculadora1 #precios1').empty();
+            $('#productoCalculadora1 #precioCalculado1').empty();
+            $('#productoCalculadora1 #datos1').empty();
+            $('#nombreMesita').empty();
+            $('#precioDimension').empty();
+            $('#total').empty();
+            $('#botonEliminar').attr('class', 'displayBoton');
+            $('#euroCalculadora').attr('style');
+            $('#euroCalculadora').css({ display: 'none' });
         }
     }
     public cambiarMedidasEspecialesAltura(idProd) {
@@ -2938,11 +3038,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor' + idProd1 + ' #acabados').attr('style');
             $('.productosColor' + idProd1 + ' #acabados').css({ 'text-align': 'center' });
             $('.productosColor' + idProd1 + ' #acabados').css({ float: 'left' });
-            $('.productosColor' + idProd1 + ' #acabados').css({ width: '90%' });
+            $('.productosColor' + idProd1 + ' #acabados').css({ position: 'absolute' });
+            $('.productosColor' + idProd1 + ' #acabados').css({ width: '63.3%' });
+            $('.productosColor' + idProd1 + ' #acabados').css({ left: '28.5%' });
+            $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '550px' });
             $('.productosColor' + idProd1 + ' #acabados').css({ border: '1px solid #7AC8FE' });
             $('.productosColor' + idProd1 + ' #acabado').css({ display: 'block' });
             $('.productosColor' + idProd1).css({ 'overflow-y': 'hidden' });
-            $('.productosColor' + idProd1).css({ 'padding-bottom': '15%' });
             var contador = 1;
             var contnuevo = 1;
             var u = 1;
