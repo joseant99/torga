@@ -3057,7 +3057,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 var precioProducto = todosLosPrecios[y][1];
             }
         }
-        var idDimenTipo = $('.dimensionesId' + id).attr('id');
+        var idDimenTipo = $('.productosColor' + idProd + ' .dimensionesId' + id).attr('id');
         $('#total').text('0');
         var hola = $('.dimensionesColor' + id + ' #imagenDimensiones').attr('class');
         var datos = [];
@@ -3156,6 +3156,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             if (idProd1 == 107 || idProd1 == 108 || idProd1 == 109 || idProd1 == 114 || idProd1 == 119) {
                 $('.productosColor' + idProd1).css({ 'margin-bottom': '1350px' });
             }
+            $('.productosColor107 #acabados').css({ display: 'none' });
+            $('.productosColor108 #acabados').css({ display: 'none' });
+            $('.productosColor109 #acabados').css({ display: 'none' });
+            $('.productosColor110 #acabados').css({ display: 'none' });
+            $('.productosColor111 #acabados').css({ display: 'none' });
+            $('.productosColor112 #acabados').css({ display: 'none' });
+            $('.productosColor113 #acabados').css({ display: 'none' });
+            $('.productosColor114 #acabados').css({ display: 'none' });
+            $('.productosColor115 #acabados').css({ display: 'none' });
+            $('.productosColor116 #acabados').css({ display: 'none' });
+            $('.productosColor117 #acabados').css({ display: 'none' });
+            $('.productosColor118 #acabados').css({ display: 'none' });
+            $('.productosColor119 #acabados').css({ display: 'none' });
             $('.productosColor' + idProd1 + ' #acabados').removeAttr('style');
             $('.productosColor' + idProd1 + ' #acabados').attr('style');
             $('.productosColor' + idProd1 + ' #acabados').css({ 'text-align': 'center' });
