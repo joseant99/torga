@@ -259,6 +259,189 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         var arrayComprobar = this.arrayMostrar;
         if (arrayComprobar[producto] == undefined) {
             arrayComprobar[producto] = 'hola';
+            if (producto == 107) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 108) {
+                arrayComprobar[107] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 109) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[107] = undefined;
+            }
+            if (producto == 110) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 111) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 112) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 113) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 114) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 115) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 116) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 117) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 118) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+            if (producto == 119) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[109] = undefined;
+            }
+
             this.arrayMostrar = arrayComprobar;
             $('.productosColor107 #acabados').css({ display: 'none' });
             $('.productosColor108 #acabados').css({ display: 'none' });
@@ -456,7 +639,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                     ' €'
                             );
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
-
+                            $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
                             $('#anchoEspecialAltura' + producto).append('<option> </option>');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
@@ -508,6 +691,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             );
                             $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                            $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
                             $('.productosColor' + producto + ' .dimensionesColor2').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
@@ -542,6 +727,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             );
                             $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                            $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
                             $('.productosColor' + producto + ' .dimensionesColor3').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
@@ -574,6 +761,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#anchoEspecialFondo' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
+                            $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
                             $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor4').append(
@@ -608,6 +797,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#anchoEspecialFondo' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
+                            $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
                             $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor5').append(
@@ -642,6 +833,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             $('#anchoEspecialFondo' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
+                            $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor6').css({ 'margin-bottom': '6%' });
                             $('.productosColor' + producto + ' .dimensionesColor6').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor6').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor6').append(
@@ -701,46 +894,28 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 **/
             });
 
-            $('.productosColor' + producto + ' #acabados').removeAttr('style');
-            $('.productosColor' + producto + ' #acabados').attr('style');
-            $('.productosColor' + producto + ' #acabados').css({ 'text-align': 'center' });
-            $('.productosColor' + producto + ' #acabados').css({ float: 'left' });
-            $('.productosColor' + producto + ' #acabados').css({ width: '63.3%' });
-            $('.productosColor' + producto + ' #acabados').css({ 'margin-top': '550px' });
-            $('.productosColor' + producto + ' #acabados').css({ left: '28.5%' });
-            $('.productosColor' + producto + ' #acabados').css({ position: 'absolute' });
-            $('.productosColor' + producto + ' #acabados').css({ border: '1px solid #7AC8FE' });
-            $('.productosColor' + producto + ' #acabado').css({ display: 'block' });
-            $('.productosColor' + producto).css({ 'overflow-y': 'hidden' });
-
             if (producto == 110 || producto == 111) {
-                $('.productosColor110').css({ 'margin-bottom': '1350px' });
-                $('.productosColor111').css({ 'margin-bottom': '1350px' });
+                $('.productosColor110').css({ 'margin-bottom': '650px' });
+                $('.productosColor111').css({ 'margin-bottom': '650px' });
             }
             if (producto == 112 || producto == 113) {
-                $('.productosColor112').css({ 'margin-bottom': '1350px' });
-                $('.productosColor113').css({ 'margin-bottom': '1350px' });
+                $('.productosColor112').css({ 'margin-bottom': '650px' });
+                $('.productosColor113').css({ 'margin-bottom': '650px' });
             }
             if (producto == 115 || producto == 116) {
-                $('.productosColor115').css({ 'margin-bottom': '1350px' });
-                $('.productosColor116').css({ 'margin-bottom': '1350px' });
+                $('.productosColor115').css({ 'margin-bottom': '650px' });
+                $('.productosColor116').css({ 'margin-bottom': '650px' });
             }
             if (producto == 117 || producto == 118) {
-                $('.productosColor117').css({ 'margin-bottom': '1350px' });
-                $('.productosColor118').css({ 'margin-bottom': '1350px' });
+                $('.productosColor117').css({ 'margin-bottom': '650px' });
+                $('.productosColor118').css({ 'margin-bottom': '650px' });
             }
             if (producto == 107 || producto == 108 || producto == 109 || producto == 114 || producto == 119) {
-                $('.productosColor' + producto).css({ 'margin-bottom': '1350px' });
+                $('.productosColor' + producto).css({ 'margin-bottom': '650px' });
             }
-            var contador = 1;
-            var contnuevo = 1;
-            var u = 1;
-            var i = 0;
-            var imagen123123;
 
             $('.productosColor').css({ 'background-color': 'white' });
             $('.productosColor' + producto).css({ 'background-color': '#DFDDDC' });
-            $('.productosColor' + producto).css({ 'margin-right': '0%' });
             $('#nombreMesita').text(productoNombre);
             $('#nombreMesita').attr('class', producto);
             $('#terminarConfiguracion').css({ display: 'none' });
@@ -761,78 +936,6 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('#iluminacion').removeAttr('style');
             $('#iluminacion').attr('style');
             $('#iluminacion').css({ display: 'none' });
-            var acaprodCont = 0;
-            var acaProdSer = [];
-            $('.productosColor' + producto + ' #acabados #imagenAcabadoPrincipal').empty();
-            this.acaProdService.findAca(producto).subscribe(data => {
-                this.acaProdService.todos = data.body;
-                $.each(this.acaProdService.todos, function(index, value) {
-                    if (value['productosDormitorio']['id'] == producto) {
-                        imagen123123 = value['imagen'];
-                        if (contador == 1) {
-                            $('.productosColor' + producto + ' #acabados #imagenAcabadoPrincipal').append(
-                                '<img id="imagenAcabado" src="data:image/gif;base64,' +
-                                    imagen123123 +
-                                    '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
-                            );
-                        }
-
-                        contador++;
-
-                        var idAca = value['id'];
-                        for (let m = 0; m < value['acabados'].length; m++) {
-                            $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                '<img  src="data:image/gif;base64,' +
-                                    value['acabados'][m]['imagenFondo'] +
-                                    '" id="imagenAcabado' +
-                                    i +
-                                    '" class="' +
-                                    value['acabados'][m]['id'] +
-                                    '" height="250px" width="130px" style="">'
-                            );
-                            $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
-                                '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
-                                    value['acabados'][m]['nombre'] +
-                                    '</strong></p>'
-                            );
-
-                            i++;
-                            $('.cambiarAca' + u).attr('style');
-                            $('.cambiarAca' + u).css({ 'margin-bottom': '35px' });
-                            $('.cambiarAca' + u).css({ 'margin-top': '15px' });
-                            $('.cambiarAca' + u).text('Cambiar Acabado');
-                        }
-
-                        $('#aca1' + u).append(
-                            '<button class="cambiarAcabado" style="float:left;margin-bottom:35px;margin-top:15px;background-color: white;border: 1px solid #d5d5d5;height: 40px; width: 100px;" class="cambiarAca1" id="color" data-toggle="modal" data-target="#myModalColores' +
-                                u +
-                                '">Acabado ' +
-                                u +
-                                '</button>'
-                        );
-                        if (u == 1) {
-                            $('#datos1').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
-                        }
-                        $('#datos1').append(
-                            '<p style="width:100%" id="acabado' +
-                                u +
-                                '"><span>' +
-                                u +
-                                '</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                u +
-                                '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                u +
-                                '" style="margin-left:10px"></span></p>'
-                        );
-                        $('#aca1' + u).append(
-                            '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
-                        );
-                        u++;
-                        i = 0;
-                        contnuevo++;
-                    }
-                });
-            });
         } else {
             arrayComprobar[producto] = undefined;
             this.arrayMostrar = arrayComprobar;
@@ -3034,6 +3137,25 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         if (acaSi == 0) {
             var idProd1;
             idProd1 = parseFloat(idProd);
+            if (idProd1 == 110 || idProd1 == 111) {
+                $('.productosColor110').css({ 'margin-bottom': '1350px' });
+                $('.productosColor111').css({ 'margin-bottom': '1350px' });
+            }
+            if (idProd1 == 112 || idProd1 == 113) {
+                $('.productosColor112').css({ 'margin-bottom': '1350px' });
+                $('.productosColor113').css({ 'margin-bottom': '1350px' });
+            }
+            if (idProd1 == 115 || idProd1 == 116) {
+                $('.productosColor115').css({ 'margin-bottom': '1350px' });
+                $('.productosColor116').css({ 'margin-bottom': '1350px' });
+            }
+            if (idProd1 == 117 || idProd1 == 118) {
+                $('.productosColor117').css({ 'margin-bottom': '1350px' });
+                $('.productosColor118').css({ 'margin-bottom': '1350px' });
+            }
+            if (idProd1 == 107 || idProd1 == 108 || idProd1 == 109 || idProd1 == 114 || idProd1 == 119) {
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1350px' });
+            }
             $('.productosColor' + idProd1 + ' #acabados').removeAttr('style');
             $('.productosColor' + idProd1 + ' #acabados').attr('style');
             $('.productosColor' + idProd1 + ' #acabados').css({ 'text-align': 'center' });
@@ -3054,7 +3176,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $.each(this.acaProdService.todos, function(index, value) {
                     if (value['productosDormitorio']['id'] == idProd) {
                         imagen = value['imagen'];
-
+                        if (contador == 1) {
+                            $('.productosColor' + idProd1 + ' #acabados #imagenAcabadoPrincipal').append(
+                                '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                                    imagen +
+                                    '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
+                            );
+                        }
                         contador++;
                         var idAca = value['id'];
                         for (let m = 0; m < value['acabados'].length; m++) {

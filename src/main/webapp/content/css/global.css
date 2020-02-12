@@ -943,6 +943,7 @@ Generic styles
     float: left;
     width: 85%;
     height: 400px;
+    margin-bottom: 6%;
 }
 
 #apoyoStyle {
@@ -2236,11 +2237,11 @@ ui bootstrap tweaks
     margin-top: 70px;
 }
 #acabado {
-    margin-top: 14%;
+    margin-top: 6%;
     margin-bottom: 5%;
 }
 #medidas {
-    margin-top: 14%;
+    margin-top: 6%;
 }
 @media screen and (max-width: 1650px) {
     #inputAcabadoCasco {
