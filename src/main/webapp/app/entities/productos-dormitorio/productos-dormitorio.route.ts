@@ -17,7 +17,11 @@ import { ProductosDormitorioCabecerosComponent } from './productos-dormitorio-ca
 import { ProductosDormitorioApoyoComponent } from './productos-dormitorio-apoyo.component';
 import { ProductosDormitorioCanapeComponent } from './productos-dormitorio-canape.component';
 import { ProductosModulosBajosComponent } from './productos-modulos-bajos.component';
+import { ProductosColgantesEstanteriaComponent } from './productos-colgantes-estanteria.component';
+import { ProductosEscritoriosComponent } from './productos-escritorios.component';
+import { ProductosVitrinasComponent } from './productos-vitrinas.component';
 import { ProductosAparadoresComponent } from './productos-aparadores.component';
+import { ProductosColgantesEstantesComponent } from './productos-colgantes-estantes.component';
 import { ProductosSingularesComponent } from './productos-singulares.component';
 import { ProductosBuscadorComponent } from './productos-buscador.component';
 import { ProductosEditarComponent } from './productos-editar.component';
@@ -71,6 +75,58 @@ export const productosDormitorioRoute: Routes = [
     {
         path: 'productos-modulos-bajos',
         component: ProductosModulosBajosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-colgantes-estanteria',
+        component: ProductosColgantesEstanteriaComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-colgantes-estantes',
+        component: ProductosColgantesEstantesComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-escritorios',
+        component: ProductosEscritoriosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-vitrinas',
+        component: ProductosVitrinasComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

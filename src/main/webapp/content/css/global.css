@@ -652,6 +652,19 @@ Generic styles
     float: left;
     border: 1px solid #dfdddc;
 }
+.productosColorSin171 {
+    float: left;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin172 {
+    float: left;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin173 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
 .productosColorSin73 {
     float: left;
     border: 1px solid #dfdddc;
@@ -743,6 +756,24 @@ Generic styles
     border: 1px solid #dfdddc;
     margin-right: 100%;
 }
+.productosColorSin180 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColorSin181 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColorSin182 {
+    float: left;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin183 {
+    float: left;
+    border: 1px solid #dfdddc;
+}
 .productosColorSin92 {
     float: left;
     border: 1px solid #dfdddc;
@@ -759,6 +790,36 @@ Generic styles
     margin-right: 100%;
 }
 .productosColor69 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor174 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor175 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor176 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor177 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor178 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor179 {
     float: left;
     border: 1px solid #dfdddc;
     margin-right: 100%;
@@ -2243,6 +2304,12 @@ ui bootstrap tweaks
 #medidas {
     margin-top: 6%;
 }
+#imagenAcabadoPrincipalSin {
+    float: left;
+    width: 85%;
+    height: 660px;
+    margin-bottom: 6%;
+}
 @media screen and (max-width: 1650px) {
     #inputAcabadoCasco {
         margin-left: 30% !important;
@@ -2259,6 +2326,11 @@ ui bootstrap tweaks
         margin-top: 70px;
         float: right;
     }
+    .imagenAcabadoPrincipalImg {
+        margin-left: 15% !important;
+        max-height: 433px !important;
+        max-width: 650px !important;
+    }
     #imagenDimensiones {
         margin-left: 25px;
         margin-right: 25px;
@@ -2269,6 +2341,15 @@ ui bootstrap tweaks
         max-width: 500px;
         margin-left: 75px;
         margin-right: 75px;
+    }
+    #dimensiones {
+        width: 72% !important;
+        left: 25% !important;
+    }
+    #acabados {
+        width: 72% !important;
+        left: 25% !important;
+        margin-top: 465px !important;
     }
 }
 @media screen and (max-width: 1500px) {

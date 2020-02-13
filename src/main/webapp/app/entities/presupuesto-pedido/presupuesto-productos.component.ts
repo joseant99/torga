@@ -72,6 +72,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     tiendaNombre: any;
     numero: any;
     singulares: any;
+    vitrinas: any;
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         public presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
@@ -924,6 +925,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 var apoyoPrecios = this.apoyoPrecios;
 
                 var precioAparadores = this.aparadores;
+                var precioVitrinas = this.vitrinas;
                 var precioSingulares = this.singulares;
                 for (let w = 0; w < productos.length; w++) {
                     if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
@@ -1301,6 +1303,15 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 }
                                             }
 
+                                            if (productos[i]['productosDormitorio']['categoriasDormi']['id'] == 12) {
+                                                for (let s = 0; s < precioVitrinas.length; s++) {
+                                                    if (precioVitrinas[s][2] == productos[i]['productosDormitorio']['id']) {
+                                                        var precioProd = precioVitrinas[s][1];
+                                                        precioProd = precioProd / 100 + 1;
+                                                    }
+                                                }
+                                            }
+
                                             precioFloat = precioFloat * precioPunto;
                                             precioFloat = precioFloat * precioProd;
                                             var todoApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo'];
@@ -1551,6 +1562,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         });
         this.precioTiendaProductosService.findProdId(13, tienda.id).subscribe(data => {
             this.singulares = data.body;
+        });
+        this.precioTiendaProductosService.findProdId(12, tienda.id).subscribe(data => {
+            this.vitrinas = data.body;
         });
         this.precioTiendaProductosService.findProdId(2, tienda.id).subscribe(data => {
             this.apoyoPrecios = data.body;

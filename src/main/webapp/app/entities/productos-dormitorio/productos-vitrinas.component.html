@@ -1,7 +1,7 @@
 <div style="top:0" id="divarribatodo"></div>
 <div id="productosPrincipal">
     <h2 style="text-align:center" id="page-heading">
-        <span ><strong style="letter-spacing: 3px;">M&Oacute;DULOS BAJOS</strong></span>
+        <span ><strong style="letter-spacing: 3px;">VITRINAS</strong></span>
 
     </h2>
     <br/>
@@ -63,15 +63,14 @@
     </div>
      -->
     <div id="ProductosCargados" style="margin-top:4%">
-    	 <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColor{{productosDormitorio.id}}">
+    	 <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColorSin{{productosDormitorio.id}}">
         	<div class="productosColorSolo{{productosDormitorio.id}}">
 	    	<div id="productosDormitorioCargados">
 		    	
-		 		<a href="#dimensiones"><img title="Foto de linea de codigo" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="290.5px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
+		 		<a><img title="Foto de linea de codigo" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="535.75px" width="300px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
 	    	</div>
 	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.nombre}}</p>
 	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{productosDormitorio.precio}} &euro;</p>
-	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.numeroDimen}} Medidas Disponibles</p>
     		</div>
 	    	<div id="dimensiones">
 				<div class="alert alert-danger" id="mensajeErrorAlert" style="display:none;width: 85%;margin-left: 7.5%;top: 100px;">
@@ -80,8 +79,8 @@
 				</div>
 				<h2 id="medidas" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">MEDIDAS</strong></h2>
 				</br>	
-				<p class="dimensionesColor1" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput1" style="text-align:center" (click)="dimensionesCogidas(1)" readonly="readonly"></a><span id="dimensionesText1" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
-				<p class="dimensionesColor2" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput2" style="text-align:center" (click)="dimensionesCogidas(2)" readonly="readonly"></a><span id="dimensionesText2" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor1" style="display:none"><input value="Seleccionar" id="dimensionesInput1" style="text-align:center" (click)="dimensionesCogidas(1)" readonly="readonly"><span id="dimensionesText1" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor2" style="display:none"><input value="Seleccionar" id="dimensionesInput2" style="text-align:center" (click)="dimensionesCogidas(2)" readonly="readonly"><span id="dimensionesText2" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
 				<p class="dimensionesColor3" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput3" style="text-align:center" (click)="dimensionesCogidas(3)" readonly="readonly"></a><span id="dimensionesText3" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
 				<p class="dimensionesColor4" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput4" style="text-align:center" (click)="dimensionesCogidas(4)" readonly="readonly"></a><span id="dimensionesText4" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
 				<p class="dimensionesColor5" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput5" style="text-align:center" (click)="dimensionesCogidas(5)" readonly="readonly"></a><span id="dimensionesText5" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
@@ -119,7 +118,7 @@
 				<div id="acabados"style="width:100%;float:left;display:none;margin-bottom:10%">
 	
 					<h2 id="acabado" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">ACABADOS Y APOYO</strong></h2>
-					<div id="productosAcabados{{productosDormitorio.id}}"><div id="imagenAcabadoPrincipal" ></div></div>
+					<div id="productosAcabados{{productosDormitorio.id}}"><div id="imagenAcabadoPrincipalSin" ></div></div>
 					<div id="acabadosPartesDivs" style="display:none">
 						<div id="aca11" style="float:left"></div>
 						<div id="aca12" style="float:left"></div>

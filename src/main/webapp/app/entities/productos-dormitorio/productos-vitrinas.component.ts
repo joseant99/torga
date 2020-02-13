@@ -41,9 +41,9 @@ import { IvaProductoTiendaService } from '../iva-producto-tienda/iva-producto-ti
 
 @Component({
     selector: 'jhi-productos-dormitorio',
-    templateUrl: './productos-singulares.component.html'
+    templateUrl: './productos-vitrinas.component.html'
 })
-export class ProductosSingularesComponent implements OnInit, OnDestroy {
+export class ProductosVitrinasComponent implements OnInit, OnDestroy {
     currentAccount: any;
     productosDormitorios: IProductosDormitorio[];
     dimensionesProductos: IDimensionesProducto[];
@@ -152,70 +152,17 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         $('#dimensiones').css({ display: 'none' });
         $('#precioDimension').empty();
 
-        $('.productosColorSin72').css({ 'background-color': 'white' });
-        $('.productosColorSin73').css({ 'background-color': 'white' });
-        $('.productosColorSin74').css({ 'background-color': 'white' });
-        $('.productosColorSin75').css({ 'background-color': 'white' });
-        $('.productosColorSin76').css({ 'background-color': 'white' });
-        $('.productosColorSin77').css({ 'background-color': 'white' });
-        $('.productosColorSin78').css({ 'background-color': 'white' });
-        $('.productosColorSin79').css({ 'background-color': 'white' });
-        $('.productosColorSin80').css({ 'background-color': 'white' });
-        $('.productosColorSin81').css({ 'background-color': 'white' });
-        $('.productosColorSin82').css({ 'background-color': 'white' });
-        $('.productosColorSin83').css({ 'background-color': 'white' });
-        $('.productosColorSin84').css({ 'background-color': 'white' });
-        $('.productosColorSin85').css({ 'background-color': 'white' });
-        $('.productosColorSin86').css({ 'background-color': 'white' });
-        $('.productosColorSin87').css({ 'background-color': 'white' });
-        $('.productosColorSin88').css({ 'background-color': 'white' });
-        $('.productosColorSin89').css({ 'background-color': 'white' });
-        $('.productosColorSin90').css({ 'background-color': 'white' });
-        $('.productosColorSin91').css({ 'background-color': 'white' });
-        $('.productosColorSin92').css({ 'background-color': 'white' });
-        $('.productosColorSin72 #acabados').css({ display: 'none' });
-        $('.productosColorSin73 #acabados').css({ display: 'none' });
-        $('.productosColorSin74 #acabados').css({ display: 'none' });
-        $('.productosColorSin75 #acabados').css({ display: 'none' });
-        $('.productosColorSin76 #acabados').css({ display: 'none' });
-        $('.productosColorSin77 #acabados').css({ display: 'none' });
-        $('.productosColorSin78 #acabados').css({ display: 'none' });
-        $('.productosColorSin79 #acabados').css({ display: 'none' });
-        $('.productosColorSin80 #acabados').css({ display: 'none' });
-        $('.productosColorSin81 #acabados').css({ display: 'none' });
-        $('.productosColorSin82 #acabados').css({ display: 'none' });
-        $('.productosColorSin83 #acabados').css({ display: 'none' });
-        $('.productosColorSin84 #acabados').css({ display: 'none' });
-        $('.productosColorSin85 #acabados').css({ display: 'none' });
-        $('.productosColorSin86 #acabados').css({ display: 'none' });
-        $('.productosColorSin87 #acabados').css({ display: 'none' });
-        $('.productosColorSin88 #acabados').css({ display: 'none' });
-        $('.productosColorSin89 #acabados').css({ display: 'none' });
-        $('.productosColorSin90 #acabados').css({ display: 'none' });
-        $('.productosColorSin91 #acabados').css({ display: 'none' });
-        $('.productosColorSin92 #acabados').css({ display: 'none' });
+        $('.productosColorSin172').css({ 'background-color': 'white' });
+        $('.productosColorSin173').css({ 'background-color': 'white' });
+        $('.productosColorSin171').css({ 'background-color': 'white' });
 
-        $('.productosColorSin77 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin78 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin79 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin72 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin73 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin74 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin75 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin76 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin80 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin81 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin82 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin83 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin84 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin85 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin86 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin87 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin88 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin89 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin90 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin91 #dimensiones').css({ display: 'none' });
-        $('.productosColorSin92 #dimensiones').css({ display: 'none' });
+        $('.productosColorSin172 #acabados').css({ display: 'none' });
+        $('.productosColorSin173 #acabados').css({ display: 'none' });
+        $('.productosColorSin171 #acabados').css({ display: 'none' });
+
+        $('.productosColorSin172 #dimensiones').css({ display: 'none' });
+        $('.productosColorSin173 #dimensiones').css({ display: 'none' });
+        $('.productosColorSin171 #dimensiones').css({ display: 'none' });
 
         $('#imagenAcabadoPrincipal').empty();
         $('#total').empty();
@@ -239,49 +186,14 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         $('.dimensionesColor1').css({ border: '0px' });
         $('.dimensionesColor2').css({ border: '0px' });
         $('.dimensionesColor3').css({ border: '0px' });
-        $('.productosColorSin72').removeAttr('style');
-        $('.productosColorSin73').removeAttr('style');
-        $('.productosColorSin74').removeAttr('style');
-        $('.productosColorSin75').removeAttr('style');
-        $('.productosColorSin76').removeAttr('style');
-        $('.productosColorSin77').removeAttr('style');
-        $('.productosColorSin78').removeAttr('style');
-        $('.productosColorSin79').removeAttr('style');
-        $('.productosColorSin80').removeAttr('style');
-        $('.productosColorSin81').removeAttr('style');
-        $('.productosColorSin82').removeAttr('style');
-        $('.productosColorSin83').removeAttr('style');
-        $('.productosColorSin84').removeAttr('style');
-        $('.productosColorSin85').removeAttr('style');
-        $('.productosColorSin86').removeAttr('style');
-        $('.productosColorSin87').removeAttr('style');
-        $('.productosColorSin88').removeAttr('style');
-        $('.productosColorSin89').removeAttr('style');
-        $('.productosColorSin90').removeAttr('style');
-        $('.productosColorSin91').removeAttr('style');
-        $('.productosColorSin92').removeAttr('style');
+        $('.productosColorSin172').removeAttr('style');
+        $('.productosColorSin173').removeAttr('style');
+        $('.productosColorSin171').removeAttr('style');
 
-        $('.productosColorSolo72').removeAttr('style');
-        $('.productosColorSolo73').removeAttr('style');
-        $('.productosColorSolo74').removeAttr('style');
-        $('.productosColorSolo75').removeAttr('style');
-        $('.productosColorSolo76').removeAttr('style');
-        $('.productosColorSolo77').removeAttr('style');
-        $('.productosColorSolo78').removeAttr('style');
-        $('.productosColorSolo79').removeAttr('style');
-        $('.productosColorSolo80').removeAttr('style');
-        $('.productosColorSolo81').removeAttr('style');
-        $('.productosColorSolo82').removeAttr('style');
-        $('.productosColorSolo83').removeAttr('style');
-        $('.productosColorSolo84').removeAttr('style');
-        $('.productosColorSolo85').removeAttr('style');
-        $('.productosColorSolo86').removeAttr('style');
-        $('.productosColorSolo87').removeAttr('style');
-        $('.productosColorSolo88').removeAttr('style');
-        $('.productosColorSolo89').removeAttr('style');
-        $('.productosColorSolo90').removeAttr('style');
-        $('.productosColorSolo91').removeAttr('style');
-        $('.productosColorSolo92').removeAttr('style');
+        $('.productosColorSolo172').removeAttr('style');
+        $('.productosColorSolo173').removeAttr('style');
+        $('.productosColorSolo171').removeAttr('style');
+
         $('#imagenAcabado').remove();
         $('#medidas').css({ display: 'none' });
         $('#acabado').css({ display: 'none' });
@@ -300,491 +212,23 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         var arrayComprobar = this.arrayMostrar;
         if (arrayComprobar[producto] == undefined) {
             arrayComprobar[producto] = 'hola';
-            if (producto == 72) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[91] = undefined;
+            if (producto == 171) {
+                arrayComprobar[173] = undefined;
+                arrayComprobar[172] = undefined;
             }
-            if (producto == 73) {
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
+            if (producto == 173) {
+                arrayComprobar[171] = undefined;
+                arrayComprobar[172] = undefined;
             }
-            if (producto == 74) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 75) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 76) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 77) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 78) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 79) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 80) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 81) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 82) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 83) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 84) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 85) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 86) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 87) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 88) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 89) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 90) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 91) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[92] = undefined;
-                arrayComprobar[72] = undefined;
-            }
-            if (producto == 92) {
-                arrayComprobar[73] = undefined;
-                arrayComprobar[74] = undefined;
-                arrayComprobar[75] = undefined;
-                arrayComprobar[76] = undefined;
-                arrayComprobar[77] = undefined;
-                arrayComprobar[78] = undefined;
-                arrayComprobar[79] = undefined;
-                arrayComprobar[80] = undefined;
-                arrayComprobar[81] = undefined;
-                arrayComprobar[82] = undefined;
-                arrayComprobar[83] = undefined;
-                arrayComprobar[84] = undefined;
-                arrayComprobar[85] = undefined;
-                arrayComprobar[86] = undefined;
-                arrayComprobar[87] = undefined;
-                arrayComprobar[88] = undefined;
-                arrayComprobar[89] = undefined;
-                arrayComprobar[90] = undefined;
-                arrayComprobar[91] = undefined;
-                arrayComprobar[72] = undefined;
+            if (producto == 172) {
+                arrayComprobar[173] = undefined;
+                arrayComprobar[171] = undefined;
             }
 
             this.arrayMostrar = arrayComprobar;
-            $('.productosColorSin72 #acabados').css({ display: 'none' });
-            $('.productosColorSin73 #acabados').css({ display: 'none' });
-            $('.productosColorSin74 #acabados').css({ display: 'none' });
-            $('.productosColorSin75 #acabados').css({ display: 'none' });
-            $('.productosColorSin76 #acabados').css({ display: 'none' });
-            $('.productosColorSin77 #acabados').css({ display: 'none' });
-            $('.productosColorSin78 #acabados').css({ display: 'none' });
-            $('.productosColorSin79 #acabados').css({ display: 'none' });
-            $('.productosColorSin80 #acabados').css({ display: 'none' });
-            $('.productosColorSin81 #acabados').css({ display: 'none' });
-            $('.productosColorSin82 #acabados').css({ display: 'none' });
-            $('.productosColorSin83 #acabados').css({ display: 'none' });
-            $('.productosColorSin84 #acabados').css({ display: 'none' });
-            $('.productosColorSin85 #acabados').css({ display: 'none' });
-            $('.productosColorSin86 #acabados').css({ display: 'none' });
-            $('.productosColorSin87 #acabados').css({ display: 'none' });
-            $('.productosColorSin88 #acabados').css({ display: 'none' });
-            $('.productosColorSin89 #acabados').css({ display: 'none' });
-            $('.productosColorSin90 #acabados').css({ display: 'none' });
-            $('.productosColorSin91 #acabados').css({ display: 'none' });
-            $('.productosColorSin92 #acabados').css({ display: 'none' });
+            $('.productosColorSin172 #acabados').css({ display: 'none' });
+            $('.productosColorSin173 #acabados').css({ display: 'none' });
+            $('.productosColorSin171 #acabados').css({ display: 'none' });
 
             $('.productosColorSin' + producto + ' #dimensionesInput1').css({ 'background-color': 'white' });
             $('.productosColorSin' + producto + ' #dimensionesInput2').css({ 'background-color': 'white' });
@@ -797,27 +241,9 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             $('.productosColorSin' + producto + ' #dimensionesInput21').css({ 'background-color': 'white' });
             $('.productosColorSin' + producto + ' #dimensionesInput22').css({ 'background-color': 'white' });
 
-            $('.productosColorSin77 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin78 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin79 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin72 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin73 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin74 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin75 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin76 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin80 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin81 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin82 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin83 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin84 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin85 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin86 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin87 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin88 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin89 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin90 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin91 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin92 #dimensiones').css({ display: 'none' });
+            $('.productosColorSin172 #dimensiones').css({ display: 'none' });
+            $('.productosColorSin173 #dimensiones').css({ display: 'none' });
+            $('.productosColorSin171 #dimensiones').css({ display: 'none' });
 
             var acabados = [];
             this.acabadosService
@@ -881,71 +307,17 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             $('.dimensionesColor4').css({ 'background-color': 'white' });
             $('.dimensionesColor5').css({ 'background-color': 'white' });
             $('.dimensionesColor6').css({ 'background-color': 'white' });
-            $('.productosColorSin72').removeAttr('style');
-            $('.productosColorSin73').removeAttr('style');
-            $('.productosColorSin74').removeAttr('style');
-            $('.productosColorSin75').removeAttr('style');
-            $('.productosColorSin76').removeAttr('style');
-            $('.productosColorSin77').removeAttr('style');
-            $('.productosColorSin78').removeAttr('style');
-            $('.productosColorSin79').removeAttr('style');
-            $('.productosColorSin80').removeAttr('style');
-            $('.productosColorSin81').removeAttr('style');
-            $('.productosColorSin82').removeAttr('style');
-            $('.productosColorSin83').removeAttr('style');
-            $('.productosColorSin84').removeAttr('style');
-            $('.productosColorSin85').removeAttr('style');
-            $('.productosColorSin86').removeAttr('style');
-            $('.productosColorSin87').removeAttr('style');
-            $('.productosColorSin88').removeAttr('style');
-            $('.productosColorSin89').removeAttr('style');
-            $('.productosColorSin90').removeAttr('style');
-            $('.productosColorSin91').removeAttr('style');
-            $('.productosColorSin92').removeAttr('style');
+            $('.productosColorSin172').removeAttr('style');
+            $('.productosColorSin173').removeAttr('style');
+            $('.productosColorSin171').removeAttr('style');
 
-            $('.productosColorSolo72').removeAttr('style');
-            $('.productosColorSolo73').removeAttr('style');
-            $('.productosColorSolo74').removeAttr('style');
-            $('.productosColorSolo75').removeAttr('style');
-            $('.productosColorSolo76').removeAttr('style');
-            $('.productosColorSolo77').removeAttr('style');
-            $('.productosColorSolo78').removeAttr('style');
-            $('.productosColorSolo79').removeAttr('style');
-            $('.productosColorSolo80').removeAttr('style');
-            $('.productosColorSolo81').removeAttr('style');
-            $('.productosColorSolo82').removeAttr('style');
-            $('.productosColorSolo83').removeAttr('style');
-            $('.productosColorSolo84').removeAttr('style');
-            $('.productosColorSolo85').removeAttr('style');
-            $('.productosColorSolo86').removeAttr('style');
-            $('.productosColorSolo87').removeAttr('style');
-            $('.productosColorSolo88').removeAttr('style');
-            $('.productosColorSolo89').removeAttr('style');
-            $('.productosColorSolo90').removeAttr('style');
-            $('.productosColorSolo91').removeAttr('style');
-            $('.productosColorSolo92').removeAttr('style');
+            $('.productosColorSolo172').removeAttr('style');
+            $('.productosColorSolo173').removeAttr('style');
+            $('.productosColorSolo171').removeAttr('style');
 
-            $('.productosColorSin72').css({ 'background-color': 'white' });
-            $('.productosColorSin73').css({ 'background-color': 'white' });
-            $('.productosColorSin74').css({ 'background-color': 'white' });
-            $('.productosColorSin75').css({ 'background-color': 'white' });
-            $('.productosColorSin76').css({ 'background-color': 'white' });
-            $('.productosColorSin77').css({ 'background-color': 'white' });
-            $('.productosColorSin78').css({ 'background-color': 'white' });
-            $('.productosColorSin79').css({ 'background-color': 'white' });
-            $('.productosColorSin80').css({ 'background-color': 'white' });
-            $('.productosColorSin81').css({ 'background-color': 'white' });
-            $('.productosColorSin82').css({ 'background-color': 'white' });
-            $('.productosColorSin83').css({ 'background-color': 'white' });
-            $('.productosColorSin84').css({ 'background-color': 'white' });
-            $('.productosColorSin85').css({ 'background-color': 'white' });
-            $('.productosColorSin86').css({ 'background-color': 'white' });
-            $('.productosColorSin87').css({ 'background-color': 'white' });
-            $('.productosColorSin88').css({ 'background-color': 'white' });
-            $('.productosColorSin89').css({ 'background-color': 'white' });
-            $('.productosColorSin90').css({ 'background-color': 'white' });
-            $('.productosColorSin91').css({ 'background-color': 'white' });
-            $('.productosColorSin92').css({ 'background-color': 'white' });
+            $('.productosColorSin172').css({ 'background-color': 'white' });
+            $('.productosColorSin173').css({ 'background-color': 'white' });
+            $('.productosColorSin171').css({ 'background-color': 'white' });
 
             $('.productosColorSin77 #dimensiones').css({ display: 'none' });
             $('.productosColorSin' + producto).css({ 'overflow-x': 'hidden' });
@@ -1257,40 +629,12 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                 **/
             });
 
-            if (producto == 72 || producto == 73) {
-                $('.productosColorSin72').css({ 'margin-bottom': '650px' });
-                $('.productosColorSin73').css({ 'margin-bottom': '650px' });
+            if (producto == 171 || producto == 172) {
+                $('.productosColorSin171').css({ 'margin-bottom': '650px' });
+                $('.productosColorSin172').css({ 'margin-bottom': '650px' });
             }
-            if (producto == 74 || producto == 75) {
-                $('.productosColorSin74').css({ 'margin-bottom': '650px' });
-                $('.productosColorSin75').css({ 'margin-bottom': '650px' });
-            }
-            if (producto == 76 || producto == 77) {
-                $('.productosColorSin76').css({ 'margin-bottom': '650px' });
-                $('.productosColorSin77').css({ 'margin-bottom': '650px' });
-            }
-            if (producto == 86 || producto == 87) {
-                $('.productosColorSin86').css({ 'margin-bottom': '650px' });
-                $('.productosColorSin87').css({ 'margin-bottom': '650px' });
-            }
-            if (producto == 88 || producto == 89) {
-                $('.productosColorSin88').css({ 'margin-bottom': '650px' });
-                $('.productosColorSin89').css({ 'margin-bottom': '650px' });
-            }
-            if (
-                producto == 78 ||
-                producto == 79 ||
-                producto == 80 ||
-                producto == 81 ||
-                producto == 82 ||
-                producto == 83 ||
-                producto == 84 ||
-                producto == 85 ||
-                producto == 90 ||
-                producto == 91 ||
-                producto == 92
-            ) {
-                $('.productosColorSin' + producto).css({ 'margin-bottom': '650px' });
+            if (producto == 173) {
+                $('.productosColorSin173').css({ 'margin-bottom': '650px' });
             }
 
             $('.productosColor').css({ 'background-color': 'white' });
@@ -1319,70 +663,17 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             arrayComprobar[producto] = undefined;
             this.arrayMostrar = arrayComprobar;
 
-            $('.productosColorSin72').css({ 'background-color': 'white' });
-            $('.productosColorSin73').css({ 'background-color': 'white' });
-            $('.productosColorSin74').css({ 'background-color': 'white' });
-            $('.productosColorSin75').css({ 'background-color': 'white' });
-            $('.productosColorSin76').css({ 'background-color': 'white' });
-            $('.productosColorSin77').css({ 'background-color': 'white' });
-            $('.productosColorSin78').css({ 'background-color': 'white' });
-            $('.productosColorSin79').css({ 'background-color': 'white' });
-            $('.productosColorSin80').css({ 'background-color': 'white' });
-            $('.productosColorSin81').css({ 'background-color': 'white' });
-            $('.productosColorSin82').css({ 'background-color': 'white' });
-            $('.productosColorSin83').css({ 'background-color': 'white' });
-            $('.productosColorSin84').css({ 'background-color': 'white' });
-            $('.productosColorSin85').css({ 'background-color': 'white' });
-            $('.productosColorSin86').css({ 'background-color': 'white' });
-            $('.productosColorSin87').css({ 'background-color': 'white' });
-            $('.productosColorSin88').css({ 'background-color': 'white' });
-            $('.productosColorSin89').css({ 'background-color': 'white' });
-            $('.productosColorSin90').css({ 'background-color': 'white' });
-            $('.productosColorSin91').css({ 'background-color': 'white' });
-            $('.productosColorSin92').css({ 'background-color': 'white' });
-            $('.productosColorSin72 #acabados').css({ display: 'none' });
-            $('.productosColorSin73 #acabados').css({ display: 'none' });
-            $('.productosColorSin74 #acabados').css({ display: 'none' });
-            $('.productosColorSin75 #acabados').css({ display: 'none' });
-            $('.productosColorSin76 #acabados').css({ display: 'none' });
-            $('.productosColorSin77 #acabados').css({ display: 'none' });
-            $('.productosColorSin78 #acabados').css({ display: 'none' });
-            $('.productosColorSin79 #acabados').css({ display: 'none' });
-            $('.productosColorSin80 #acabados').css({ display: 'none' });
-            $('.productosColorSin81 #acabados').css({ display: 'none' });
-            $('.productosColorSin82 #acabados').css({ display: 'none' });
-            $('.productosColorSin83 #acabados').css({ display: 'none' });
-            $('.productosColorSin84 #acabados').css({ display: 'none' });
-            $('.productosColorSin85 #acabados').css({ display: 'none' });
-            $('.productosColorSin86 #acabados').css({ display: 'none' });
-            $('.productosColorSin87 #acabados').css({ display: 'none' });
-            $('.productosColorSin88 #acabados').css({ display: 'none' });
-            $('.productosColorSin89 #acabados').css({ display: 'none' });
-            $('.productosColorSin90 #acabados').css({ display: 'none' });
-            $('.productosColorSin91 #acabados').css({ display: 'none' });
-            $('.productosColorSin92 #acabados').css({ display: 'none' });
+            $('.productosColorSin172').css({ 'background-color': 'white' });
+            $('.productosColorSin173').css({ 'background-color': 'white' });
+            $('.productosColorSin171').css({ 'background-color': 'white' });
 
-            $('.productosColorSin77 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin78 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin79 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin72 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin73 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin74 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin75 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin76 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin80 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin81 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin82 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin83 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin84 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin85 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin86 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin87 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin88 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin89 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin90 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin91 #dimensiones').css({ display: 'none' });
-            $('.productosColorSin92 #dimensiones').css({ display: 'none' });
+            $('.productosColorSin172 #acabados').css({ display: 'none' });
+            $('.productosColorSin173 #acabados').css({ display: 'none' });
+            $('.productosColorSin171 #acabados').css({ display: 'none' });
+
+            $('.productosColorSin172 #dimensiones').css({ display: 'none' });
+            $('.productosColorSin173 #dimensiones').css({ display: 'none' });
+            $('.productosColorSin171 #dimensiones').css({ display: 'none' });
 
             $('.dimensionesColor1').css({ 'background-color': 'white' });
             $('.dimensionesColor2').css({ 'background-color': 'white' });
@@ -1390,49 +681,13 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             $('.dimensionesColor4').css({ 'background-color': 'white' });
             $('.dimensionesColor5').css({ 'background-color': 'white' });
             $('.dimensionesColor6').css({ 'background-color': 'white' });
-            $('.productosColorSin72').removeAttr('style');
-            $('.productosColorSin73').removeAttr('style');
-            $('.productosColorSin74').removeAttr('style');
-            $('.productosColorSin75').removeAttr('style');
-            $('.productosColorSin76').removeAttr('style');
-            $('.productosColorSin77').removeAttr('style');
-            $('.productosColorSin78').removeAttr('style');
-            $('.productosColorSin79').removeAttr('style');
-            $('.productosColorSin80').removeAttr('style');
-            $('.productosColorSin81').removeAttr('style');
-            $('.productosColorSin82').removeAttr('style');
-            $('.productosColorSin83').removeAttr('style');
-            $('.productosColorSin84').removeAttr('style');
-            $('.productosColorSin85').removeAttr('style');
-            $('.productosColorSin86').removeAttr('style');
-            $('.productosColorSin87').removeAttr('style');
-            $('.productosColorSin88').removeAttr('style');
-            $('.productosColorSin89').removeAttr('style');
-            $('.productosColorSin90').removeAttr('style');
-            $('.productosColorSin91').removeAttr('style');
-            $('.productosColorSin92').removeAttr('style');
+            $('.productosColorSin172').removeAttr('style');
+            $('.productosColorSin173').removeAttr('style');
+            $('.productosColorSin171').removeAttr('style');
 
-            $('.productosColorSolo72').removeAttr('style');
-            $('.productosColorSolo73').removeAttr('style');
-            $('.productosColorSolo74').removeAttr('style');
-            $('.productosColorSolo75').removeAttr('style');
-            $('.productosColorSolo76').removeAttr('style');
-            $('.productosColorSolo77').removeAttr('style');
-            $('.productosColorSolo78').removeAttr('style');
-            $('.productosColorSolo79').removeAttr('style');
-            $('.productosColorSolo80').removeAttr('style');
-            $('.productosColorSolo81').removeAttr('style');
-            $('.productosColorSolo82').removeAttr('style');
-            $('.productosColorSolo83').removeAttr('style');
-            $('.productosColorSolo84').removeAttr('style');
-            $('.productosColorSolo85').removeAttr('style');
-            $('.productosColorSolo86').removeAttr('style');
-            $('.productosColorSolo87').removeAttr('style');
-            $('.productosColorSolo88').removeAttr('style');
-            $('.productosColorSolo89').removeAttr('style');
-            $('.productosColorSolo90').removeAttr('style');
-            $('.productosColorSolo91').removeAttr('style');
-            $('.productosColorSolo92').removeAttr('style');
+            $('.productosColorSolo172').removeAttr('style');
+            $('.productosColorSolo173').removeAttr('style');
+            $('.productosColorSolo171').removeAttr('style');
 
             $('#productoCalculadora1 #precios1').empty();
             $('#productoCalculadora1 #precioCalculado1').empty();
@@ -3558,54 +2813,18 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         if (acaSi == 0) {
             var idProd1;
             idProd1 = parseFloat(idProd);
-            if (idProd1 == 72 || idProd1 == 73) {
-                $('.productosColorSin72').css({ 'margin-bottom': '1550px' });
-                $('.productosColorSin73').css({ 'margin-bottom': '1550px' });
+
+            if (idProd1 == 171 || idProd1 == 172) {
+                $('.productosColorSin171').css({ 'margin-bottom': '1550px' });
+                $('.productosColorSin172').css({ 'margin-bottom': '1550px' });
             }
-            if (idProd1 == 74 || idProd1 == 75) {
-                $('.productosColorSin74').css({ 'margin-bottom': '1550px' });
-                $('.productosColorSin75').css({ 'margin-bottom': '1550px' });
+            if (idProd1 == 173) {
+                $('.productosColorSin173').css({ 'margin-bottom': '1550px' });
             }
-            if (idProd1 == 76 || idProd1 == 77) {
-                $('.productosColorSin76').css({ 'margin-bottom': '1550px' });
-                $('.productosColorSin77').css({ 'margin-bottom': '1550px' });
-            }
-            if (idProd1 == 86 || idProd1 == 87) {
-                $('.productosColorSin86').css({ 'margin-bottom': '1550px' });
-                $('.productosColorSin87').css({ 'margin-bottom': '1550px' });
-            }
-            if (idProd1 == 88 || idProd1 == 89) {
-                $('.productosColorSin88').css({ 'margin-bottom': '1550px' });
-                $('.productosColorSin89').css({ 'margin-bottom': '1550px' });
-            }
-            if (
-                idProd1 == 78 ||
-                idProd1 == 79 ||
-                idProd1 == 80 ||
-                idProd1 == 81 ||
-                idProd1 == 82 ||
-                idProd1 == 83 ||
-                idProd1 == 84 ||
-                idProd1 == 85 ||
-                idProd1 == 90 ||
-                idProd1 == 91 ||
-                idProd1 == 92
-            ) {
-                $('.productosColorSin' + idProd1).css({ 'margin-bottom': '1300px' });
-            }
-            $('.productosColor107 #acabados').css({ display: 'none' });
-            $('.productosColor108 #acabados').css({ display: 'none' });
-            $('.productosColor109 #acabados').css({ display: 'none' });
-            $('.productosColor110 #acabados').css({ display: 'none' });
-            $('.productosColor111 #acabados').css({ display: 'none' });
-            $('.productosColor112 #acabados').css({ display: 'none' });
-            $('.productosColor113 #acabados').css({ display: 'none' });
-            $('.productosColor114 #acabados').css({ display: 'none' });
-            $('.productosColor115 #acabados').css({ display: 'none' });
-            $('.productosColor116 #acabados').css({ display: 'none' });
-            $('.productosColor117 #acabados').css({ display: 'none' });
-            $('.productosColor118 #acabados').css({ display: 'none' });
-            $('.productosColor119 #acabados').css({ display: 'none' });
+            $('.productosColor171 #acabados').css({ display: 'none' });
+            $('.productosColor172 #acabados').css({ display: 'none' });
+            $('.productosColor173 #acabados').css({ display: 'none' });
+
             $('.productosColorSin' + idProd1 + ' #acabados').removeAttr('style');
             $('.productosColorSin' + idProd1 + ' #acabados').attr('style');
             $('.productosColorSin' + idProd1 + ' #acabados').css({ 'text-align': 'center' });
@@ -6225,7 +5444,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             });
             this.productosDormitorios = todos;
         } else {
-            this.productosDormitorioService.categoria(13).subscribe(data => {
+            this.productosDormitorioService.categoria(12).subscribe(data => {
                 this.productosDormitorioService.todos = data.body;
                 this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
                     console.log(data.body);
@@ -6309,7 +5528,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         this.precioTiendaService.findBus(tienda.id).subscribe(data => {
             this.precioPunto = data.body;
         });
-        this.precioTiendaProductosService.findProdId(13, tienda.id).subscribe(data => {
+        this.precioTiendaProductosService.findProdId(12, tienda.id).subscribe(data => {
             this.precioTiendaProductosService.todos = data.body;
             this.loadAll();
         });

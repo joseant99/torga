@@ -2992,6 +2992,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     }
 
     public dimensionesCogidas(id) {
+        $('#datos1').empty();
         $('#datos1').css({ display: 'block' });
         $('#acabados').css({ display: 'block' });
         $('#euroCalculadora').removeAttr('style');
@@ -3023,7 +3024,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
         $('#acaba1').empty();
         $('#acaba2').empty();
-        $('#datos1').empty();
+
         $('#precios1').empty();
         $('#iluminacion').removeAttr('style');
         $('#iluminacion').attr('style');
@@ -3038,6 +3039,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
 
         var idProd;
         idProd = $('#nombreMesita').attr('class');
+        $('.productosColor' + idProd + ' #imagenAcabadoPrincipal').empty();
         $('.productosColor' + idProd + ' #dimensionesInput1').css({ 'background-color': 'white' });
         $('.productosColor' + idProd + ' #dimensionesInput2').css({ 'background-color': 'white' });
         $('.productosColor' + idProd + ' #dimensionesInput3').css({ 'background-color': 'white' });
@@ -3138,23 +3140,23 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             var idProd1;
             idProd1 = parseFloat(idProd);
             if (idProd1 == 110 || idProd1 == 111) {
-                $('.productosColor110').css({ 'margin-bottom': '1350px' });
-                $('.productosColor111').css({ 'margin-bottom': '1350px' });
+                $('.productosColor110').css({ 'margin-bottom': '1130px' });
+                $('.productosColor111').css({ 'margin-bottom': '1130px' });
             }
             if (idProd1 == 112 || idProd1 == 113) {
-                $('.productosColor112').css({ 'margin-bottom': '1350px' });
-                $('.productosColor113').css({ 'margin-bottom': '1350px' });
+                $('.productosColor112').css({ 'margin-bottom': '1130px' });
+                $('.productosColor113').css({ 'margin-bottom': '1130px' });
             }
             if (idProd1 == 115 || idProd1 == 116) {
-                $('.productosColor115').css({ 'margin-bottom': '1350px' });
-                $('.productosColor116').css({ 'margin-bottom': '1350px' });
+                $('.productosColor115').css({ 'margin-bottom': '1130px' });
+                $('.productosColor116').css({ 'margin-bottom': '1130px' });
             }
             if (idProd1 == 117 || idProd1 == 118) {
-                $('.productosColor117').css({ 'margin-bottom': '1350px' });
-                $('.productosColor118').css({ 'margin-bottom': '1350px' });
+                $('.productosColor117').css({ 'margin-bottom': '1130px' });
+                $('.productosColor118').css({ 'margin-bottom': '1130px' });
             }
             if (idProd1 == 107 || idProd1 == 108 || idProd1 == 109 || idProd1 == 114 || idProd1 == 119) {
-                $('.productosColor' + idProd1).css({ 'margin-bottom': '1350px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1130px' });
             }
             $('.productosColor107 #acabados').css({ display: 'none' });
             $('.productosColor108 #acabados').css({ display: 'none' });
@@ -3176,7 +3178,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor' + idProd1 + ' #acabados').css({ position: 'absolute' });
             $('.productosColor' + idProd1 + ' #acabados').css({ width: '63.3%' });
             $('.productosColor' + idProd1 + ' #acabados').css({ left: '28.5%' });
-            $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '550px' });
+            $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '465px' });
             $('.productosColor' + idProd1 + ' #acabados').css({ border: '1px solid #7AC8FE' });
             $('.productosColor' + idProd1 + ' #acabado').css({ display: 'block' });
             $('.productosColor' + idProd1).css({ 'overflow-y': 'hidden' });
@@ -5713,7 +5715,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     loadAll() {
         var productos = [];
         var apoyos = [];
-        var cont = 0;
+
         var precioPunto = this.precioPunto[0];
         var precio = this.precioTiendaProductosService.todos;
         console.log(precio);
@@ -5732,8 +5734,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     prod[q]['precio'] = 0;
                 }
                 for (let n = 0; n < datos['length']; n++) {
+                    var cont = 0;
                     for (let q = 0; q < prod.length; q++) {
                         if (prod[q]['id'] == datos[n][0]) {
+                            cont++;
+                            prod[q]['numeroDimen'] = cont;
                             if (prod[q]['precio'] == 0) {
                                 if (datos[n][1] != 0) {
                                     prod[q]['precio'] = datos[n][1];
@@ -5770,9 +5775,13 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     for (let q = 0; q < prod.length; q++) {
                         prod[q]['precio'] = 0;
                     }
+                    var cont1 = 0;
                     for (let n = 0; n < datos['length']; n++) {
+                        var cont = 0;
                         for (let q = 0; q < prod.length; q++) {
                             if (prod[q]['id'] == datos[n][0]) {
+                                cont++;
+                                prod[q]['numeroDimen'] = cont;
                                 if (prod[q]['precio'] == 0) {
                                     if (datos[n][1] != 0) {
                                         prod[q]['precio'] = datos[n][1];

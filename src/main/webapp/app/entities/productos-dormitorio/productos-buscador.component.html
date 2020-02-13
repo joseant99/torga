@@ -7,31 +7,53 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div style="width:100%" id="producto">
+    <div style="margin-right:0%;margin-left:24%;" [id]='modulosBajos.productosDormitorio.id' class="productosColor{{modulosBajos.productosDormitorio.id}}" *ngIf="modulosBajos !== undefined">
+        	<div class="productosColorSolo{{modulosBajos.productosDormitorio.id}}">
+	    	<div id="productosDormitorioCargados">
+		    	
+		 		<a href="#dimensiones"><img title="Foto de linea de codigo" class="producto" [src]="'data:' + modulosBajos.productosDormitorio.imagenContentType + ';base64,' + modulosBajos.productosDormitorio.imagen" height="290.5px" width="500px" (click)="open(modulosBajos.productosDormitorio.id,modulosBajos.productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
+	    	</div>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{modulosBajos.productosDormitorio.nombre}}</p>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{modulosBajos.precio}} &euro;</p>
+    		</div>
+    </div>
     
-	<div id="dimensiones"style="width:100%;float:left;">
+    
+    <div style="margin-right:0%;margin-left:24%;" [id]='aparadores.productosDormitorio.id' class="productosColor{{aparadores.productosDormitorio.id}}" *ngIf="aparadores !== undefined">
+        	<div class="productosColorSolo{{aparadores.productosDormitorio.id}}">
+	    	<div id="productosDormitorioCargados">
+		    	
+		 		<a><img title="Foto de linea de codigo" class="productoApa" [src]="'data:' + aparadores.productosDormitorio.imagenContentType + ';base64,' + aparadores.productosDormitorio.imagen" height="337.4px" width="500px" (click)="open(aparadores.productosDormitorio.id,aparadores.productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
+	    	</div>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{aparadores.productosDormitorio.nombre}}</p>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{aparadores.precio}} &euro;</p>
+    		</div>
+    </div>
+    
+    <div style="margin-right:0%;margin-left:24%;" [id]='singulares.productosDormitorio.id' class="productosColorSin{{singulares.productosDormitorio.id}}" *ngIf="singulares !== undefined">
+        	<div class="productosColorSolo{{singulares.productosDormitorio.id}}">
+	    	<div id="productosDormitorioCargados">
+		    	
+		 		<a><img title="Foto de linea de codigo" class="productoSin" [src]="'data:' + singulares.productosDormitorio.imagenContentType + ';base64,' + singulares.productosDormitorio.imagen" height="535.75px" width="300px" (click)="open(singulares.productosDormitorio.id,singulares.productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
+	    	</div>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{singulares.productosDormitorio.nombre}}</p>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{singulares.precio}} &euro;</p>
+    		</div>
+    </div>
+    
+	<div id="dimensiones"style="width:90%;float:left;">
 
-		<h2 id="medidas" style='margin-left:40%;float:left;display:none'>Paso 2: Medidas</h2>
+		<h2 id="medidas" style='margin-left:40%;float:left;display:none;margin-bottom:5%;'>Paso 2: Medidas</h2>
 		</br>		
 		
-		<a href="#imagenAcabadoPrincipal"><div id="dimensionesColorStyle" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
-		</div></a>
-		   
-		<a href="#imagenAcabadoPrincipal"><div id="dimensionesColorStyle" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
-		</div></a>  
-		 
-		<a href="#imagenAcabadoPrincipal"><div  id="dimensionesColorStyle" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
-		</div> </a> 
-		 
-		<a href="#imagenAcabadoPrincipal"><div id="dimensionesColorStyle" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
-		</div></a>
-		
-		<a href="#imagenAcabadoPrincipal"><div id="dimensionesColorStyle" class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
-		</div></a> 
-		
-		<a href="#imagenAcabadoPrincipal"><div id="dimensionesColorStyle" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
-		</div></a>
-		<a href="#imagenAcabadoPrincipal"><div id="dimensionesColorStyle" class="dimensionesColor7" (click)="dimensionesCogidas(7)"> 
-		</div></a>      
+		<p class="dimensionesColor1" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput1" style="text-align:center" (click)="dimensionesCogidas(1)" readonly="readonly"></a><span id="dimensionesText1" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor2" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput2" style="text-align:center" (click)="dimensionesCogidas(2)" readonly="readonly"></a><span id="dimensionesText2" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor3" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput3" style="text-align:center" (click)="dimensionesCogidas(3)" readonly="readonly"></a><span id="dimensionesText3" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor4" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput4" style="text-align:center" (click)="dimensionesCogidas(4)" readonly="readonly"></a><span id="dimensionesText4" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor5" style="display:none"><a><input value="Seleccionar" id="dimensionesInput5" style="text-align:center" (click)="dimensionesCogidas(5)" readonly="readonly"></a><span id="dimensionesText5" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor6" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput6" style="text-align:center" (click)="dimensionesCogidas(6)" readonly="readonly"></a><span id="dimensionesText6" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+		<p class="dimensionesColor7" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput7" style="text-align:center" (click)="dimensionesCogidas(7)" readonly="readonly"></a><span id="dimensionesText7" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+
 	</div>  
 	<div id="especiales"style="width:100%;float:left">
 
@@ -48,10 +70,11 @@
 			<div id="medidasFondo" style="display:none"><p style="float:left;margin-left:2%;font-size:20px">Fondo</p><div style="float:left;margin-left:2%" id="cambioFondo" (change)="cambioMedidas(2)"></div></div>
 			<div id="medidasAlto" style="display:none"><p style="float:left;margin-left:2%;font-size:20px">Alto</p><div style="float:left;margin-left:2%" id="cambioAlto" (change)="cambioMedidas(3)"></div></div>
 	</div>
-	<div id="acabados"style="width:100%;float:left">
+	<div id="acabados"style="width:90;float:left;">
 
 			<h2 id="acabado" style='margin-left:40%;float:left;display:none'>Paso 3: Acabados</h2>
 			<div id="imagenAcabadoPrincipal"></div>
+			<div id="imagenAcabadoPrincipalSin"></div>
 
 	</div>  
 	<div id="apoyo"style="width:100%;float:left;margin-top:50px">
@@ -383,21 +406,21 @@
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
-		        <div class="modal-body">	          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen0" (click)="cambiarAcabado(0,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen1" (click)="cambiarAcabado(1,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen2" (click)="cambiarAcabado(2,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen3" (click)="cambiarAcabado(3,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen4" (click)="cambiarAcabado(4,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen5" (click)="cambiarAcabado(5,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen6" (click)="cambiarAcabado(6,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen7" (click)="cambiarAcabado(7,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen8" (click)="cambiarAcabado(8,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen9" (click)="cambiarAcabado(9,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen10" (click)="cambiarAcabado(10,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen11" (click)="cambiarAcabado(11,1,2)"></div> 
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen12" (click)="cambiarAcabado(12,1,2)"></div>          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
+		         <div class="modal-body">	          
+			          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen2" (click)="cambiarAcabado(2,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen3" (click)="cambiarAcabado(3,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen4" (click)="cambiarAcabado(4,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen5" (click)="cambiarAcabado(5,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen6" (click)="cambiarAcabado(6,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen7" (click)="cambiarAcabado(7,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen8" (click)="cambiarAcabado(8,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen9" (click)="cambiarAcabado(9,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,7)" data-dismiss="modal"></div> 
+			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,7)" data-dismiss="modal"></div>          
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,7)" data-dismiss="modal"></div>          
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -416,23 +439,26 @@
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
-		        <div class="modal-body">	          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen0" (click)="cambiarAcabado(0,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen1" (click)="cambiarAcabado(1,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen2" (click)="cambiarAcabado(2,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen3" (click)="cambiarAcabado(3,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen4" (click)="cambiarAcabado(4,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen5" (click)="cambiarAcabado(5,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen6" (click)="cambiarAcabado(6,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen7" (click)="cambiarAcabado(7,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen8" (click)="cambiarAcabado(8,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen9" (click)="cambiarAcabado(9,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen10" (click)="cambiarAcabado(10,1,2)"></div>
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen11" (click)="cambiarAcabado(11,1,2)"></div> 
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen12" (click)="cambiarAcabado(12,1,2)"></div>          
-		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
+		             
+		           <div class="modal-body">	          
+			          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen2" (click)="cambiarAcabado(2,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen3" (click)="cambiarAcabado(3,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen4" (click)="cambiarAcabado(4,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen5" (click)="cambiarAcabado(5,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen6" (click)="cambiarAcabado(6,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen7" (click)="cambiarAcabado(7,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen8" (click)="cambiarAcabado(8,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen9" (click)="cambiarAcabado(9,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,8)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,8)" data-dismiss="modal"></div> 
+			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,8)" data-dismiss="modal"></div>          
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,8)" data-dismiss="modal"></div>          
 		                   
-		        </div>
+		        </div>    
+		                   
+		      
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		        </div>
@@ -642,15 +668,18 @@
 </div>
 <div id="calculadoraCarrito">
 
-  <div style="width:86%;height: 85%;margin-left:25px;margin-top:10px">
-
+			<div id="divDentroCalcu">
 				<div style="width:100%;height:7%;color:black;top:0;letter-spacing:2px;font-family:'Lato';font-weight:300">		
-					<strong style="float:left;"><p id="nombreMesita"></p></strong><p  style="float:right;"><strong id="precioDimension"></strong></p >
+					<strong style="float:left;" id="negritaNombre"><p id="nombreMesita"></p></strong><p  style="float:right;"><strong id="precioDimension"></strong><span style="display:none" id="euroCalculadora">&euro;</span></p >
 				</div>
 			
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%">
-						<div id="datos1" style="float:left;margin-left:5px;width:100%;font-size: 14px;">
+						<div id="datos1" style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
 								
+						</div>
+						<div id="datos12" style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
+							<p style="width:100%"><strong>LUZ </strong><span style="float:right;margin-right: 20px;" id="precioIluminacion"></span></p>
+							<p style="width:100%"><input style="width: 60px;height: 50px;float:left;text-align:center" value="SI" (click)="escogidaLuz('si')" id="siMeterIluminacion" readonly="readonly"> <input id="noMeterIluminacion" style="width: 60px;height: 50px;float:left;text-align:center;margin-left:50px;" (click)="escogidaLuz('no')" value="NO" readonly="readonly"></p>
 						</div>
 						<div style="float:left;margin-left:50px;"id="precios1">
 						
@@ -658,7 +687,7 @@
 						<div style="float:left;margin-left:20px;"id="precioCalculado1">
 							
 						</div>
-						<div id="botonEliminar" class="displayBoton" style="float:left" (click)="borrarProdCalculadora()"><a href="#productosPrincipal"><u>Eliminar</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x</a></div>		
+						<div id="botonEliminar" class="displayBoton" style="float:left" (click)="borrarProdCalculadora()"><a href="#divarribatodo"><u>Eliminar</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x</a></div>		
 					</div>
 					<div id="productoCalculadora2" style="float:left">
 						<div id="datos2" style="float:left;margin-left:5px">
@@ -686,12 +715,11 @@
 					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 520px;display: none;">				
 						<p>Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
-				<button  id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" style="width: 86%;height: 7%; bottom: 120px;position: absolute;font-size:16px;background-color:white;left:35px;color:black" (click)="enviarCarrito()"><a href="#divarribatodo">Mandar articulo/s al carro de la compra</a></button>
-					
+				<button  id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarrito()"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar articulo/s al carro de la compra</a></button>
 			</div>
 			
 			<div id="carrito" class="container tab-pane fade" style="height:600px;overflow:scroll;display:none">
-			<button data-toggle="modal" data-target="#myModalComposicion">Composicion</button>
+			<button data-toggle="modal" data-target="#myModalComposicion" (click)="cargarComposicion()">Composicion</button>
 					<div id="productoCarrito1" style="display:none">
 					<div style="float:left" (click)="borrarCarritoProd(1)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
 						<div id="datos1" style="float:left;margin-left:5px">
@@ -817,7 +845,5 @@
 
 </div>
 </div>
-<a ><img id="botonEsconderCarr"  onclick="mostrarCarrito()" style="max-width:40%" src="../../../content/images/carr.png"></a>
-<a ><img id="botonEsconderCalcu" onclick="mostrarCalculadora()" style="max-width:40%" src="../../../content/images/calcu.png"></a>
 
 

@@ -6,27 +6,30 @@
     </h2>
     <br/>
     <div style="width:100%" id="producto">
+    <!-- 
     <table id="tablaFiltro">
-    	<tbody>
+    	<tbody> 
     		<tr>
-    			Ancho:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    			<td style="border:1px solid #D9D9D9;width:95px;text-align: center;font-style: italic;" class="selectectAncho" (click)='filtroAncho(0,"ancho")' id="ancho0">Indiferente</td>
-				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho1" (click)='filtroAncho(1,"ancho")'>37.5</td>
-				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho2" (click)='filtroAncho(2,"ancho")'>62.5</td>
-				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho3" (click)='filtroAncho(3,"ancho")'>87.5</td>
-				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho4" (click)='filtroAncho(4,"ancho")'>100</td>
+    			Ancho&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    			<td style="border:1px solid #D9D9D9;width:95px;text-align: center;font-style: italic;" class="selectectAncho" (click)='filtroAncho(0,"ancho")' id="ancho0">Todos</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho1" (click)='filtroAncho(1,"ancho")'>75</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho2" (click)='filtroAncho(2,"ancho")'>100</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho3" (click)='filtroAncho(3,"ancho")'>125</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho4" (click)='filtroAncho(4,"ancho")'>150</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho5" (click)='filtroAncho(5,"ancho")'>175</td>
+				<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="ancho6" (click)='filtroAncho(6,"ancho")'>200</td>
     		</tr>
     		<tr>
-    			Altura:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    			<td style="border:1px solid #D9D9D9;width:95px;text-align: center;font-style: italic;" class="selectectAltura" (click)='filtroAncho(0,"altura")' id="altura0">Indiferente</td>
-    			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="altura1" (click)='filtroAncho(1,"altura")'>125</td>
-    			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="altura2" (click)='filtroAncho(2,"altura")'>150</td>
-    			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="altura3" (click)='filtroAncho(3,"altura")'>175</td>
+    			Alto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    			<td style="border:1px solid #D9D9D9;width:95px;text-align: center;font-style: italic;" class="selectectAltura" (click)='filtroAncho(0,"altura")' id="altura0">Todos</td>
+    			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="altura1" (click)='filtroAncho(1,"altura")'>27.5</td>
+    			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="altura2" (click)='filtroAncho(2,"altura")'>50</td>
     		</tr>
     		<tr>
-    			Fondo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    			<td style="border:1px solid #D9D9D9;width:95px;text-align: center;font-style: italic;" id="fondo0" class="selectectFondo" (click)='filtroAncho(0,"fondo")'>Indiferente</td>
+    			Fondo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    			<td style="border:1px solid #D9D9D9;width:95px;text-align: center;font-style: italic;" id="fondo0" class="selectectFondo" (click)='filtroAncho(0,"fondo")'>Todos</td>
     			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="fondo1" (click)='filtroAncho(1,"fondo")'>42</td>
+    			<td style="border:1px solid #D9D9D9;text-align: center;width: 60px;" id="fondo2" (click)='filtroAncho(2,"fondo")'>47</td>
     		</tr>
     	</tbody>
     </table>
@@ -58,51 +61,169 @@
 	    
     
     </div>
+     -->
     <div id="ProductosCargados" style="margin-top:4%">
+    	 <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColorSin{{productosDormitorio.id}}">
+        	<div class="productosColorSolo{{productosDormitorio.id}}">
+	    	<div id="productosDormitorioCargados">
+		    	
+		 		<a><img title="Foto de linea de codigo" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="535.75px" width="300px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
+	    	</div>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.nombre}}</p>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{productosDormitorio.precio}} &euro;</p>
+    		</div>
+	    	<div id="dimensiones">
+				<div class="alert alert-danger" id="mensajeErrorAlert" style="display:none;width: 85%;margin-left: 7.5%;top: 100px;">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+ 					<strong>&#161;Cuidado!</strong> Medidas especial con ancho de medida predeterminada.
+				</div>
+				<h2 id="medidas" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">MEDIDAS</strong></h2>
+				</br>	
+				<p class="dimensionesColor1" style="display:none"><input value="Seleccionar" id="dimensionesInput1" style="text-align:center" (click)="dimensionesCogidas(1)" readonly="readonly"><span id="dimensionesText1" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor2" style="display:none"><input value="Seleccionar" id="dimensionesInput2" style="text-align:center" (click)="dimensionesCogidas(2)" readonly="readonly"><span id="dimensionesText2" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor3" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput3" style="text-align:center" (click)="dimensionesCogidas(3)" readonly="readonly"></a><span id="dimensionesText3" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor4" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput4" style="text-align:center" (click)="dimensionesCogidas(4)" readonly="readonly"></a><span id="dimensionesText4" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor5" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput5" style="text-align:center" (click)="dimensionesCogidas(5)" readonly="readonly"></a><span id="dimensionesText5" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor6" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput6" style="text-align:center" (click)="dimensionesCogidas(6)" readonly="readonly"></a><span id="dimensionesText6" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor7" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput7" style="text-align:center" (click)="dimensionesCogidas(7)" readonly="readonly"></a><span id="dimensionesText7" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<!-- <p class="dimensionesColor20" style="display:none"><a href="#productosAcabados{{productosDormitorio.id}}"><input id="dimensionesInput20" class="anchoEspecial{{productosDormitorio.id}}" style="text-align:center;border:0px;background-color:white" (click)="mostrarAcabadosEspeciales(productosDormitorio.id)" readonly="readonly" disabled></a><span style="margin-left: 30px;letter-spacing: 2px;"><strong>Ancho Especial </strong>| Ancho <input id="anchoEspecialDat{{productosDormitorio.id}}" (change)="especialDimensionesAncho(productosDormitorio.id)" style="width: 70px;" list="listaEspecialAncho"> - Alto <input id="altoAncho{{productosDormitorio.id}}" style="width: 70px;" disabled> - Fondo <input id="fondoAncho{{productosDormitorio.id}}" style="width: 70px;" disabled> | <span id="precioEspecialAncho{{productosDormitorio.id}}"></span></span></p>
+				<p class="dimensionesColor21" style="display:none"><a href="#productosAcabados{{productosDormitorio.id}}"><input id="dimensionesInput21" class="altoEspecial{{productosDormitorio.id}}" style="text-align:center;border:0px;background-color:white" (click)="especialAlturaAncho(productosDormitorio.id)" readonly="readonly"></a><span style="margin-left: 30px;letter-spacing: 2px;"><strong>Altura Especial </strong>| Ancho <select id="anchoEspecialAltura{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesAltura(productosDormitorio.id)" style="width: 70px;" ></select> - Alto <input id="altoAltoEspecial{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesAltura(productosDormitorio.id)" style="width: 70px;" list="listaEspecialAlto"> - Fondo <input id="fondoAncho" style="width: 70px;" disabled> | <span id="precioEspecialAltura{{productosDormitorio.id}}"></span></span></p>
+				<p class="dimensionesColor22" style="display:none"><a href="#productosAcabados{{productosDormitorio.id}}"><input id="dimensionesInput22" class="fondoEspecial{{productosDormitorio.id}}" style="text-align:center;border:0px;background-color:white" (click)="especialFondoAncho(productosDormitorio.id)" readonly="readonly"></a><span style="margin-left: 30px;letter-spacing: 2px;"><strong>Fondo Especial </strong>| Ancho <select id="anchoEspecialFondo{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesFondo(productosDormitorio.id)" style="width: 70px;" ></select> - Alto <input id="altoFondoEspecial{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesFondo(productosDormitorio.id)" style="width: 70px;" disabled> - Fondo <input id="fondoFondoEspecial{{productosDormitorio.id}}" list="listaEspecialFondo" (change)="cambiarMedidasEspecialesFondo(productosDormitorio.id)" style="width: 70px;"> | <span id="precioEspecialFondo{{productosDormitorio.id}}"></span></span></p>
+				 -->
+				
+				
+				
+					<!--<div id="dimensionesColorStyle" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
+					</div>
+					   
+					<div id="dimensionesColorStyle" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
+					</div>  
+					 
+					<div  id="dimensionesColorStyle" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
+					</div>  
+					 
+					<div id="dimensionesColorStyle" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
+					</div>
+					
+					<div id="dimensionesColorStyle" class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
+					</div> 
+					
+					<div id="dimensionesColorStyle" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
+					</div>
+					<div id="dimensionesColorStyle" class="dimensionesColor7" (click)="dimensionesCogidas(7)"> 
+					</div>    
+					-->     
+			</div>  
+			
+				<div id="acabados"style="width:100%;float:left;display:none;margin-bottom:10%">
+	
+					<h2 id="acabado" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">ACABADOS Y APOYO</strong></h2>
+					<div id="productosAcabados{{productosDormitorio.id}}"><div id="imagenAcabadoPrincipalSin" ></div></div>
+					<div id="acabadosPartesDivs" style="display:none">
+						<div id="aca11" style="float:left"></div>
+						<div id="aca12" style="float:left"></div>
+						<div id="aca13" style="float:left"></div>
+						<div id="aca14" style="float:left"></div>
+						<div id="aca15" style="float:left"></div>
+						<div id="aca16" style="float:left"></div>
+						<div id="aca17" style="float:left"></div>
+						<div id="aca18" style="float:left"></div>
+						<div id="aca19" style="float:left"></div>
+						<div id="aca110" style="float:left"></div>
+						<div id="aca111" style="float:left"></div>
+						<div id="aca112" style="float:left"></div>
+						<div id="aca113" style="float:left"></div>
+						<div id="aca114" style="float:left"></div>
+					</div>
+					<div style="float:left;display:none" id="botonApoyoNuevo">
+						
+					</div>		
+		
+			</div>
+		</div>	
+        	
     	
-        <div *ngFor="let productosDormitorio of productosDormitorios" [id]='productosDormitorio.id' class="productosColorSin{{productosDormitorio.id}}">
-    	<div id="productosDormitorioCargados">
-	 		<a href="#dimensiones"><img  title="Foto de linea de codigo" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="535.75px" width="300px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
-    	</div>
-    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.nombre}}</p>
-    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{productosDormitorio.precio}} &euro;</p>
-    	</div>	
     </div>
+    <!-- 
     <div *ngIf="productosDormitorios === undefined" id="ProductosCargados1" style="margin-top:4%">
-        <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColorSin{{productosDormitorio.id}}">
-    	<div id="productosDormitorioCargados">
-	    	
-	 		<a href="#dimensiones"><img  title="Foto de linea de codigo" class="productoSin" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="535.75px" width="300px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
-    	</div>
-    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.nombre}}</p>
-    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{productosDormitorio.precio}} &euro;</p>
-    	</div>	
+        <div *ngFor="let productosDormitorio of productosDormitorioService.todos" [id]='productosDormitorio.id' class="productosColor{{productosDormitorio.id}}">
+        	<div class="productosColorSolo{{productosDormitorio.id}}">
+	    	<div id="productosDormitorioCargados">
+		    	
+		 		<a href="#dimensiones"><img title="Foto de linea de codigo" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="290.5px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
+	    	</div>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.nombre}}</p>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{productosDormitorio.precio}} &euro;</p>
+    		</div>
+	    	<div id="dimensiones">
+				<div class="alert alert-danger" id="mensajeErrorAlert" style="display:none;width: 85%;margin-left: 7.5%;top: 100px;">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+ 					<strong>&#161;Cuidado!</strong> Medidas especial con ancho de medida predeterminada.
+				</div>
+				<h2 id="medidas" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">MEDIDAS</strong></h2>
+				</br>	
+				<p class="dimensionesColor1" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput1" style="text-align:center" (click)="dimensionesCogidas(1)" readonly="readonly"></a><span id="dimensionesText1" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor2" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput2" style="text-align:center" (click)="dimensionesCogidas(2)" readonly="readonly"></a><span id="dimensionesText2" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor3" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput3" style="text-align:center" (click)="dimensionesCogidas(3)" readonly="readonly"></a><span id="dimensionesText3" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor4" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput4" style="text-align:center" (click)="dimensionesCogidas(4)" readonly="readonly"></a><span id="dimensionesText4" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor5" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput5" style="text-align:center" (click)="dimensionesCogidas(5)" readonly="readonly"></a><span id="dimensionesText5" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor6" style="display:none"><a><input value="Seleccionar" id="dimensionesInput6" style="text-align:center" (click)="dimensionesCogidas(6)" readonly="readonly"></a><span id="dimensionesText6" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<p class="dimensionesColor7" style="display:none"><a><input value="Seleccionar" id="dimensionesInput7" style="text-align:center" (click)="dimensionesCogidas(7)" readonly="readonly"></a><span id="dimensionesText7" style="margin-left: 30px;letter-spacing: 2px;"></span></p>
+				<!-- <p class="dimensionesColor20" style="display:none"><a href="#productosAcabados{{productosDormitorio.id}}"><input id="dimensionesInput20" class="anchoEspecial{{productosDormitorio.id}}" style="text-align:center;border:0px;background-color:white" (click)="mostrarAcabadosEspeciales(productosDormitorio.id)" readonly="readonly" disabled></a><span style="margin-left: 30px;letter-spacing: 2px;"><strong>Ancho Especial </strong>| Ancho <input id="anchoEspecialDat{{productosDormitorio.id}}" (change)="especialDimensionesAncho(productosDormitorio.id)" style="width: 70px;" list="listaEspecialAncho"> - Alto <input id="altoAncho{{productosDormitorio.id}}" style="width: 70px;" disabled> - Fondo <input id="fondoAncho{{productosDormitorio.id}}" style="width: 70px;" disabled> |</span></p>
+				<p class="dimensionesColor21" style="display:none"><a href="#productosAcabados{{productosDormitorio.id}}"><input id="dimensionesInput21" class="altoEspecial{{productosDormitorio.id}}" style="text-align:center;border:0px;background-color:white" (click)="especialAlturaAncho(productosDormitorio.id)" readonly="readonly"></a><span style="margin-left: 30px;letter-spacing: 2px;"><strong>Altura Especial </strong>| Ancho <select id="anchoEspecialAltura{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesAltura(productosDormitorio.id)" style="width: 70px;" ></select> - Alto <input id="altoAltoEspecial{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesAltura(productosDormitorio.id)" style="width: 70px;" list="listaEspecialAlto"> - Fondo <input id="fondoAncho" style="width: 70px;" disabled> | <span id="precioEspecialAncho"></span></span></p>
+				<p class="dimensionesColor22" style="display:none"><a href="#productosAcabados{{productosDormitorio.id}}"><input id="dimensionesInput22" class="fondoEspecial{{productosDormitorio.id}}" style="text-align:center;border:0px;background-color:white" (click)="especialAlturaAncho(productosDormitorio.id)" readonly="readonly"></a><span style="margin-left: 30px;letter-spacing: 2px;"><strong>Fondo Especial </strong>| Ancho <select id="anchoEspecialFondo{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesFondo(productosDormitorio.id)" style="width: 70px;" ></select> - Alto <input id="altoFondoEspecial{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesFondo(productosDormitorio.id)" style="width: 70px;" disabled> - Fondo <input id="fondoFondoEspecial{{productosDormitorio.id}}" list="listaEspecialFondo" (change)="cambiarMedidasEspecialesFondo(productosDormitorio.id)" style="width: 70px;"> | <span id="precioEspecialAncho"></span></span></p>
+				 -->
+				
+					<!--<div id="dimensionesColorStyle" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
+					</div>
+					   
+					<div id="dimensionesColorStyle" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
+					</div>  
+					 
+					<div  id="dimensionesColorStyle" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
+					</div>  
+					 
+					<div id="dimensionesColorStyle" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
+					</div>
+					
+					<div id="dimensionesColorStyle" class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
+					</div> 
+					
+					<div id="dimensionesColorStyle" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
+					</div>
+					<div id="dimensionesColorStyle" class="dimensionesColor7" (click)="dimensionesCogidas(7)"> 
+					</div>    
+					-->     
+			<!-- </div>  
+			
+				<div id="acabados"style="width:100%;float:left;display:none;margin-bottom:10%">
+	
+					<h2 id="acabado" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">ACABADOS Y APOYO</strong></h2>
+					<div id="productosAcabados{{productosDormitorio.id}}"><div id="imagenAcabadoPrincipal" ></div></div>
+					<div id="acabadosPartesDivs" style="display:none">
+						<div id="aca11" style="float:left"></div>
+						<div id="aca12" style="float:left"></div>
+						<div id="aca13" style="float:left"></div>
+						<div id="aca14" style="float:left"></div>
+						<div id="aca15" style="float:left"></div>
+						<div id="aca16" style="float:left"></div>
+						<div id="aca17" style="float:left"></div>
+						<div id="aca18" style="float:left"></div>
+						<div id="aca19" style="float:left"></div>
+						<div id="aca110" style="float:left"></div>
+						<div id="aca111" style="float:left"></div>
+						<div id="aca112" style="float:left"></div>
+						<div id="aca113" style="float:left"></div>
+						<div id="aca114" style="float:left"></div>
+					</div>
+					<div style="float:left;display:none" id="botonApoyoNuevo">
+						
+					</div>		
+		
+			</div>
+		</div>	
     </div>
-	<div id="dimensiones">
-
-		<h2 id="medidas" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">MEDIDAS</strong></h2>
-		</br>		
-		
-		<div id="dimensionesColorStyle" class="dimensionesColor1" (click)="dimensionesCogidas(1)"> 
-		</div>
-		   
-		<div id="dimensionesColorStyle" class="dimensionesColor2" (click)="dimensionesCogidas(2)"> 
-		</div>  
-		 
-		<div  id="dimensionesColorStyle" class="dimensionesColor3" (click)="dimensionesCogidas(3)"> 
-		</div>  
-		 
-		<div id="dimensionesColorStyle" class="dimensionesColor4" (click)="dimensionesCogidas(4)"> 
-		</div>
-		
-		<div id="dimensionesColorStyle" class="dimensionesColor5" (click)="dimensionesCogidas(5)"> 
-		</div> 
-		
-		<div id="dimensionesColorStyle" class="dimensionesColor6" (click)="dimensionesCogidas(6)"> 
-		</div>
-		<div id="dimensionesColorStyle" class="dimensionesColor7" (click)="dimensionesCogidas(7)"> 
-		</div>         
-	</div>  
+	 -->
 	<div id="especiales"style="width:100%;float:left">
 
 			<h2 id="especialesTexto" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">&#191;DE QUE LO QUIERES ESPECIAL?</strong></h2>
@@ -116,31 +237,7 @@
 			<div id="medidasFondo" style="display:none"><p style="float:left;margin-left:2%;font-size:20px">Fondo</p><div style="float:left;margin-left:2%" id="cambioFondo" (change)="cambioMedidas(2)"></div></div>
 			<div id="medidasAlto" style="display:none"><p style="float:left;margin-left:2%;font-size:20px;width:56px;">Alto</p><div style="float:left;margin-left:2%" id="cambioAlto" (change)="cambioMedidas(3)"></div></div>
 	</div>
-	<div id="acabados"style="width:100%;float:left;display:none">
-
-			<h2 id="acabado" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">ACABADOS Y APOYO</strong></h2>
-			<div id="imagenAcabadoPrincipal"></div>
-			<div id="acabadosPartesDivs" style="display:none">
-				<div id="aca11" style="float:left"></div>
-				<div id="aca12" style="float:left"></div>
-				<div id="aca13" style="float:left"></div>
-				<div id="aca14" style="float:left"></div>
-				<div id="aca15" style="float:left"></div>
-				<div id="aca16" style="float:left"></div>
-				<div id="aca17" style="float:left"></div>
-				<div id="aca18" style="float:left"></div>
-				<div id="aca19" style="float:left"></div>
-				<div id="aca110" style="float:left"></div>
-				<div id="aca111" style="float:left"></div>
-				<div id="aca112" style="float:left"></div>
-				<div id="aca113" style="float:left"></div>
-				<div id="aca114" style="float:left"></div>
-			</div>
-			<div style="float:left;display:none" id="botonApoyoNuevo">
-				
-			</div>		
-
-	</div>  
+	  
 	
 	<div style="float:left;height:30px;width:100%"></div>
 	
@@ -689,7 +786,7 @@
 				</div>
 			
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%">
-						<div id="datos1" style="float:left;margin-left:5px;width:100%;font-size: 14px;">
+						<div id="datos1" style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
 								
 						</div>
 						<div id="datos12" style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
