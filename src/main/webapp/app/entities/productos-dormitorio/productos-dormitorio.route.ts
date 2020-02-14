@@ -20,8 +20,11 @@ import { ProductosModulosBajosComponent } from './productos-modulos-bajos.compon
 import { ProductosColgantesEstanteriaComponent } from './productos-colgantes-estanteria.component';
 import { ProductosEscritoriosComponent } from './productos-escritorios.component';
 import { ProductosVitrinasComponent } from './productos-vitrinas.component';
+import { ProductosPanelesComponent } from './productos-paneles.component';
+import { ProductosSuplementosTvComponent } from './productos-suplementos-tv.component';
 import { ProductosAparadoresComponent } from './productos-aparadores.component';
 import { ProductosColgantesEstantesComponent } from './productos-colgantes-estantes.component';
+import { ProductosColgantesHorizontalesComponent } from './productos-colgantes-horizontales.component';
 import { ProductosSingularesComponent } from './productos-singulares.component';
 import { ProductosBuscadorComponent } from './productos-buscador.component';
 import { ProductosEditarComponent } from './productos-editar.component';
@@ -75,6 +78,45 @@ export const productosDormitorioRoute: Routes = [
     {
         path: 'productos-modulos-bajos',
         component: ProductosModulosBajosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-paneles',
+        component: ProductosPanelesComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-suplementos-tv',
+        component: ProductosSuplementosTvComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'productos-colgantes-horizontales',
+        component: ProductosColgantesHorizontalesComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

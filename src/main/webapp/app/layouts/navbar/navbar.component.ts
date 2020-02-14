@@ -11878,14 +11878,15 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             sesion[1]['fondo'] +
                             '</p>'
                     );
-
-                    $('#textoCesta' + i).append(
-                        '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
-                            sesion[1]['apoyo']['productoApoyo']['nombre'] +
-                            '<i style="float:right;font-size:15px;margin-right:40%">+ ' +
-                            sesion[1]['apoyo']['precio'] +
-                            ' &euro;</i></p>'
-                    );
+                    if (sesion[1]['apoyo'] != undefined) {
+                        $('#textoCesta' + i).append(
+                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
+                                sesion[1]['apoyo']['productoApoyo']['nombre'] +
+                                '<i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                sesion[1]['apoyo']['precio'] +
+                                ' &euro;</i></p>'
+                        );
+                    }
                     if (sesion[1]['iluminacion'] != undefined) {
                         $('#textoCesta' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Iluminacion: <i style="float:right;font-size:15px;margin-right:40%">+ ' +
