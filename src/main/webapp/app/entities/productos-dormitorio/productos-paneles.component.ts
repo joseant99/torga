@@ -151,17 +151,23 @@ export class ProductosPanelesComponent implements OnInit, OnDestroy {
         $('#acabados').css({ display: 'none' });
         $('#dimensiones').css({ display: 'none' });
         $('#precioDimension').empty();
-        $('.productosColor204').css({ 'background-color': 'white' });
-        $('.productosColor205').css({ 'background-color': 'white' });
-        $('.productosColor206').css({ 'background-color': 'white' });
+        $('.productosColor207').css({ 'background-color': 'white' });
+        $('.productosColor208').css({ 'background-color': 'white' });
+        $('.productosColor209').css({ 'background-color': 'white' });
+        $('.productosColor210').css({ 'background-color': 'white' });
+        $('.productosColor211').css({ 'background-color': 'white' });
 
-        $('.productosColor204 #acabados').css({ display: 'none' });
-        $('.productosColor205 #acabados').css({ display: 'none' });
-        $('.productosColor206 #acabados').css({ display: 'none' });
+        $('.productosColor207 #acabados').css({ display: 'none' });
+        $('.productosColor208 #acabados').css({ display: 'none' });
+        $('.productosColor209 #acabados').css({ display: 'none' });
+        $('.productosColor210 #acabados').css({ display: 'none' });
+        $('.productosColor211 #acabados').css({ display: 'none' });
 
-        $('.productosColor204 #dimensiones').css({ display: 'none' });
-        $('.productosColor205 #dimensiones').css({ display: 'none' });
-        $('.productosColor206 #dimensiones').css({ display: 'none' });
+        $('.productosColor207 #dimensiones').css({ display: 'none' });
+        $('.productosColor208 #dimensiones').css({ display: 'none' });
+        $('.productosColor209 #dimensiones').css({ display: 'none' });
+        $('.productosColor210 #dimensiones').css({ display: 'none' });
+        $('.productosColor211 #dimensiones').css({ display: 'none' });
 
         $('#imagenAcabadoPrincipal').empty();
         $('#total').empty();
@@ -185,13 +191,17 @@ export class ProductosPanelesComponent implements OnInit, OnDestroy {
         $('.dimensionesColor1').css({ border: '0px' });
         $('.dimensionesColor2').css({ border: '0px' });
         $('.dimensionesColor3').css({ border: '0px' });
-        $('.productosColor204').removeAttr('style');
-        $('.productosColor205').removeAttr('style');
-        $('.productosColor206').removeAttr('style');
+        $('.productosColor207').removeAttr('style');
+        $('.productosColor208').removeAttr('style');
+        $('.productosColor209').removeAttr('style');
+        $('.productosColor210').removeAttr('style');
+        $('.productosColor211').removeAttr('style');
 
-        $('.productosColorSolo204').removeAttr('style');
-        $('.productosColorSolo205').removeAttr('style');
-        $('.productosColorSolo206').removeAttr('style');
+        $('.productosColorSolo207').removeAttr('style');
+        $('.productosColorSolo208').removeAttr('style');
+        $('.productosColorSolo209').removeAttr('style');
+        $('.productosColorSolo210').removeAttr('style');
+        $('.productosColorSolo211').removeAttr('style');
 
         $('#imagenAcabado').remove();
         $('#medidas').css({ display: 'none' });
