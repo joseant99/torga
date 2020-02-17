@@ -1429,7 +1429,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var contadorDimen = contador;
         for (let i = 0; i < productos.length; i++) {
             productos[i]['dimensionesProductoTipo']['productosDormitorio']['imagen'] = '';
-            productos[i]['tiposApoyo']['imagen'] = '';
+            if (productos[i]['tiposApoyo'] != undefined) {
+                productos[i]['tiposApoyo']['imagen'] = '';
+            }
             var arrayTodo = {
                 id: productos[i]['dimensionesProductoTipo']['id'],
                 ancho: productos[i]['dimensionesProductoTipo']['ancho'],
