@@ -9055,7 +9055,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         );
                                     }
                                 } else {
-                                    if (k != 2) {
+                                    if (k != 10) {
                                         if (i == 1) {
                                             var prodMed = this.medidasModal[nombre];
                                             var height = prodMed.split(';')[3];
