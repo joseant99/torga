@@ -736,6 +736,7 @@ export class ProductosColgantesHorizontalesComponent implements OnInit, OnDestro
                 arrayComprobar[201] = undefined;
                 arrayComprobar[202] = undefined;
             }
+            $('#botonCalculadora').attr('class', 'displayBoton');
 
             this.arrayMostrar = arrayComprobar;
             $('.productosColor184 #acabados').css({ display: 'none' });
@@ -3400,7 +3401,6 @@ export class ProductosColgantesHorizontalesComponent implements OnInit, OnDestro
     public dimensionesCogidas(id) {
         $('#datos1').empty();
         $('#datos1').css({ display: 'block' });
-        $('#acabados').css({ display: 'block' });
         $('#euroCalculadora').removeAttr('style');
         $('#medidasEspecialesTexto').css({ display: 'none' });
         $('#medidasAncho').css({ display: 'none' });
@@ -6149,16 +6149,22 @@ export class ProductosColgantesHorizontalesComponent implements OnInit, OnDestro
             this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
                 console.log(data.body);
                 var datos = data.body;
+                var tiene = 0;
                 var prod = this.productosDormitorioService.todos;
                 for (let q = 0; q < prod.length; q++) {
                     prod[q]['precio'] = 0;
+                    tiene = 0;
+                    for (let n = 0; n < datos['length']; n++) {
+                        if (datos[n][0] == prod[q]['id'] && datos[n][1] != 0) {
+                            tiene++;
+                        }
+                    }
+                    prod[q]['numeroDimen'] = tiene;
                 }
                 for (let n = 0; n < datos['length']; n++) {
                     var cont = 0;
                     for (let q = 0; q < prod.length; q++) {
                         if (prod[q]['id'] == datos[n][0]) {
-                            cont++;
-                            prod[q]['numeroDimen'] = cont;
                             if (prod[q]['precio'] == 0) {
                                 if (datos[n][1] != 0) {
                                     prod[q]['precio'] = datos[n][1];
@@ -6191,17 +6197,23 @@ export class ProductosColgantesHorizontalesComponent implements OnInit, OnDestro
                 this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
                     console.log(data.body);
                     var datos = data.body;
+                    var tiene = 0;
                     var prod = this.productosDormitorioService.todos;
                     for (let q = 0; q < prod.length; q++) {
                         prod[q]['precio'] = 0;
+                        tiene = 0;
+                        for (let n = 0; n < datos['length']; n++) {
+                            if (datos[n][0] == prod[q]['id'] && datos[n][1] != 0) {
+                                tiene++;
+                            }
+                        }
+                        prod[q]['numeroDimen'] = tiene;
                     }
                     var cont1 = 0;
                     for (let n = 0; n < datos['length']; n++) {
                         var cont = 0;
                         for (let q = 0; q < prod.length; q++) {
                             if (prod[q]['id'] == datos[n][0]) {
-                                cont++;
-                                prod[q]['numeroDimen'] = cont;
                                 if (prod[q]['precio'] == 0) {
                                     if (datos[n][1] != 0) {
                                         prod[q]['precio'] = datos[n][1];

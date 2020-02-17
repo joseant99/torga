@@ -140,13 +140,24 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         this.dimensionesProductoTipoService.findDimensionNombre(nombre.toUpperCase()).subscribe(data => {
             var datos = data.body[0];
             var todosLosDatos = data.body;
-            if (datos['productosDormitorio']['categoriasDormi']['id'] == 8) {
+            if (
+                datos['productosDormitorio']['categoriasDormi']['id'] == 8 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 14 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 15 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 18 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 20 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 21
+            ) {
                 this.modulosBajos = datos;
             }
             if (datos['productosDormitorio']['categoriasDormi']['id'] == 11) {
                 this.aparadores = datos;
             }
-            if (datos['productosDormitorio']['categoriasDormi']['id'] == 13) {
+            if (
+                datos['productosDormitorio']['categoriasDormi']['id'] == 13 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 12 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 17
+            ) {
                 this.singulares = datos;
             }
         });
@@ -1891,29 +1902,110 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         contnuevo++;
                     }
                 });
-                $('#datos1').append(
-                    '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
-                );
-                $('#datos1').append(
-                    '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
-                );
-            });
-
-            this.productosDormitorioService.categoria(2).subscribe(data => {
-                for (let w = 0; w < data.body['length']; w++) {
-                    $('#modalApoyo #apoyoModal' + w).empty();
-                    $('#modalApoyo #apoyoModal' + w).append(
-                        '<img  src="data:image/gif;base64,' +
-                            data.body[w]['imagen'] +
-                            '" id="imagenApoyo' +
-                            w +
-                            '" class="' +
-                            data.body[w]['id'] +
-                            '" height="160px" width="280px" style=" ">'
+                if (
+                    idProd != 175 &&
+                    idProd != 176 &&
+                    idProd != 177 &&
+                    idProd != 178 &&
+                    idProd != 179 &&
+                    idProd != 180 &&
+                    idProd != 181 &&
+                    idProd != 182 &&
+                    idProd != 183 &&
+                    idProd != 184 &&
+                    idProd != 185 &&
+                    idProd != 186 &&
+                    idProd != 187 &&
+                    idProd != 188 &&
+                    idProd != 189 &&
+                    idProd != 190 &&
+                    idProd != 191 &&
+                    idProd != 192 &&
+                    idProd != 193 &&
+                    idProd != 194 &&
+                    idProd != 195 &&
+                    idProd != 196 &&
+                    idProd != 197 &&
+                    idProd != 198 &&
+                    idProd != 199 &&
+                    idProd != 200 &&
+                    idProd != 201 &&
+                    idProd != 202 &&
+                    idProd != 203 &&
+                    idProd != 204 &&
+                    idProd != 205 &&
+                    idProd != 206 &&
+                    idProd != 207 &&
+                    idProd != 208 &&
+                    idProd != 209 &&
+                    idProd != 210 &&
+                    idProd != 211
+                ) {
+                    $('#datos1').append(
+                        '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
                     );
-                    $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
+                    $('#datos1').append(
+                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                    );
                 }
             });
+
+            if (
+                idProd != 175 &&
+                idProd != 176 &&
+                idProd != 177 &&
+                idProd != 178 &&
+                idProd != 179 &&
+                idProd != 180 &&
+                idProd != 181 &&
+                idProd != 182 &&
+                idProd != 183 &&
+                idProd != 184 &&
+                idProd != 185 &&
+                idProd != 186 &&
+                idProd != 187 &&
+                idProd != 188 &&
+                idProd != 189 &&
+                idProd != 190 &&
+                idProd != 191 &&
+                idProd != 192 &&
+                idProd != 193 &&
+                idProd != 194 &&
+                idProd != 195 &&
+                idProd != 196 &&
+                idProd != 197 &&
+                idProd != 198 &&
+                idProd != 199 &&
+                idProd != 200 &&
+                idProd != 201 &&
+                idProd != 202 &&
+                idProd != 203 &&
+                idProd != 204 &&
+                idProd != 205 &&
+                idProd != 206 &&
+                idProd != 207 &&
+                idProd != 208 &&
+                idProd != 209 &&
+                idProd != 210 &&
+                idProd != 211
+            ) {
+                this.productosDormitorioService.categoria(2).subscribe(data => {
+                    for (let w = 0; w < data.body['length']; w++) {
+                        $('#modalApoyo #apoyoModal' + w).empty();
+                        $('#modalApoyo #apoyoModal' + w).append(
+                            '<img  src="data:image/gif;base64,' +
+                                data.body[w]['imagen'] +
+                                '" id="imagenApoyo' +
+                                w +
+                                '" class="' +
+                                data.body[w]['id'] +
+                                '" height="160px" width="280px" style=" ">'
+                        );
+                        $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
+                    }
+                });
+            }
+
             for (let i = 1; i <= 14; i++) {
                 for (let k = 0; k < 14; k++) {
                     $('#myModalColores' + i + ' #acabadoImagen' + k).empty();
@@ -3144,29 +3236,95 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('.apoyoCogido' + j).css({ 'background-color': 'white' });
         }
         var apoyoBueno = $('#datos1 #nombreApoyo').text();
-        var idProd = $('#nombreMesita').attr('class');
-        if (contadorApoyo == cont - 1 && apoyoBueno != '') {
-            var iluminacion = this.iluminacion;
-            var texto = 0;
-            for (let k = 0; k < iluminacion.length; k++) {
-                if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
-                    $('#iluminacion').removeAttr('style');
-                    $('#iluminacion').attr('style');
-                    $('#iluminacion').css({ width: '100%' });
-                    $('#iluminacion').css({ float: 'left' });
-                    $('#ilu1').attr('class', iluminacion[k]['id']);
-                    texto = 0;
-                } else {
-                    texto = 1;
+        var idProd = '';
+        idProd = $('#nombreMesita').attr('class');
+
+        if (
+            idProd != '175' &&
+            idProd != '176' &&
+            idProd != '177' &&
+            idProd != '178' &&
+            idProd != '179' &&
+            idProd != '180' &&
+            idProd != '181' &&
+            idProd != '182' &&
+            idProd != '183' &&
+            idProd != '184' &&
+            idProd != '185' &&
+            idProd != '186' &&
+            idProd != '187' &&
+            idProd != '188' &&
+            idProd != '189' &&
+            idProd != '190' &&
+            idProd != '191' &&
+            idProd != '192' &&
+            idProd != '193' &&
+            idProd != '194' &&
+            idProd != '195' &&
+            idProd != '196' &&
+            idProd != '197' &&
+            idProd != '198' &&
+            idProd != '199' &&
+            idProd != '200' &&
+            idProd != '201' &&
+            idProd != '202' &&
+            idProd != '203' &&
+            idProd != '204' &&
+            idProd != '205' &&
+            idProd != '206' &&
+            idProd != '207' &&
+            idProd != '208' &&
+            idProd != '209' &&
+            idProd != '210' &&
+            idProd != '211'
+        ) {
+            if (contadorApoyo == cont - 1 && apoyoBueno != '') {
+                var iluminacion = this.iluminacion;
+                var texto = 0;
+                for (let k = 0; k < iluminacion.length; k++) {
+                    if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
+                        $('#iluminacion').removeAttr('style');
+                        $('#iluminacion').attr('style');
+                        $('#iluminacion').css({ width: '100%' });
+                        $('#iluminacion').css({ float: 'left' });
+                        $('#ilu1').attr('class', iluminacion[k]['id']);
+                        texto = 0;
+                    } else {
+                        texto = 1;
+                    }
                 }
+                if (texto == 1) {
+                    $('#botonCalculadora').removeAttr('class');
+                }
+                $('#terminarConfiguracion').removeAttr('style');
+                $('#terminarConfiguracion').attr('style');
+                $('#terminarConfiguracion').css({ float: 'left' });
+                $('#terminarConfiguracion').css({ width: '100%' });
             }
-            if (texto == 1) {
-                $('#botonCalculadora').removeAttr('class');
+        } else {
+            if (contadorApoyo == cont - 1) {
+                var iluminacion = this.iluminacion;
+                var texto = 0;
+                for (let k = 0; k < iluminacion.length; k++) {
+                    if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
+                        $('#iluminacion').removeAttr('style');
+                        $('#iluminacion').attr('style');
+                        $('#iluminacion').css({ width: '100%' });
+                        $('#iluminacion').css({ float: 'left' });
+                        $('#ilu1').attr('class', iluminacion[k]['id']);
+                        texto = 0;
+                    } else {
+                        texto = 1;
+                    }
+                }
+                if (texto == 1) {
+                    $('#botonCalculadora').removeAttr('class');
+                }
+                $('#terminarConfiguracion').removeAttr('style');
+                $('#terminarConfiguracion').attr('style');
+                $('#terminarConfiguracion').css({ float: 'left' });
+                $('#terminarConfiguracion').css({ width: '100%' });
             }
-            $('#terminarConfiguracion').removeAttr('style');
-            $('#terminarConfiguracion').attr('style');
-            $('#terminarConfiguracion').css({ float: 'left' });
-            $('#terminarConfiguracion').css({ width: '100%' });
         }
     }
 

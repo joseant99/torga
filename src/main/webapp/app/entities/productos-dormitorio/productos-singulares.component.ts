@@ -763,6 +763,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                 arrayComprobar[72] = undefined;
             }
 
+            $('#botonCalculadora').attr('class', 'displayBoton');
             this.arrayMostrar = arrayComprobar;
             $('.productosColorSin72 #acabados').css({ display: 'none' });
             $('.productosColorSin73 #acabados').css({ display: 'none' });
@@ -3414,7 +3415,6 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
 
     public dimensionesCogidas(id) {
         $('#datos1').css({ display: 'block' });
-        $('#acabados').css({ display: 'block' });
         $('#euroCalculadora').removeAttr('style');
         $('#medidasEspecialesTexto').css({ display: 'none' });
         $('#medidasAncho').css({ display: 'none' });
@@ -6191,9 +6191,17 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
                 console.log(data.body);
                 var datos = data.body;
+                var tiene = 0;
                 var prod = this.productosDormitorioService.todos;
                 for (let q = 0; q < prod.length; q++) {
                     prod[q]['precio'] = 0;
+                    tiene = 0;
+                    for (let n = 0; n < datos['length']; n++) {
+                        if (datos[n][0] == prod[q]['id'] && datos[n][1] != 0) {
+                            tiene++;
+                        }
+                    }
+                    prod[q]['numeroDimen'] = tiene;
                 }
                 for (let n = 0; n < datos['length']; n++) {
                     for (let q = 0; q < prod.length; q++) {
@@ -6230,9 +6238,17 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                 this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
                     console.log(data.body);
                     var datos = data.body;
+                    var tiene = 0;
                     var prod = this.productosDormitorioService.todos;
                     for (let q = 0; q < prod.length; q++) {
                         prod[q]['precio'] = 0;
+                        tiene = 0;
+                        for (let n = 0; n < datos['length']; n++) {
+                            if (datos[n][0] == prod[q]['id'] && datos[n][1] != 0) {
+                                tiene++;
+                            }
+                        }
+                        prod[q]['numeroDimen'] = tiene;
                     }
                     for (let n = 0; n < datos['length']; n++) {
                         for (let q = 0; q < prod.length; q++) {
