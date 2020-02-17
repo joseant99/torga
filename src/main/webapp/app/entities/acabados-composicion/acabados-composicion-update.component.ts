@@ -36,18 +36,26 @@ export class AcabadosComposicionUpdateComponent implements OnInit {
         this.activatedRoute.data.subscribe(({ acabadosComposicion }) => {
             this.acabadosComposicion = acabadosComposicion;
         });
-        this.productosComposicionService.query().subscribe(
-            (res: HttpResponse<IProductosComposicion[]>) => {
-                this.productoscomposicions = res.body;
-            },
-            (res: HttpErrorResponse) => this.onError(res.message)
-        );
-        this.acabadosService.query().subscribe(
-            (res: HttpResponse<IAcabados[]>) => {
-                this.acabados = res.body;
-            },
-            (res: HttpErrorResponse) => this.onError(res.message)
-        );
+        this.productosComposicionService
+            .query({
+                size: 1000000
+            })
+            .subscribe(
+                (res: HttpResponse<IProductosComposicion[]>) => {
+                    this.productoscomposicions = res.body;
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
+        this.acabadosService
+            .query({
+                size: 1000000
+            })
+            .subscribe(
+                (res: HttpResponse<IAcabados[]>) => {
+                    this.acabados = res.body;
+                },
+                (res: HttpErrorResponse) => this.onError(res.message)
+            );
     }
 
     previousState() {

@@ -153,6 +153,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                     arrayCompo[i] = data.body;
                     this.acabadosCompo = arrayCompo;
                     for (let h = 0; h < data.body['length']; h++) {
+                        if (h == 0) {
+                            var aca1Casco = data.body[h]['acabados'];
+                        }
                         var aca = data.body[h]['acabados'];
                         console.log(data.body[h]);
                         var nombre = data.body[h]['productosComposicion']['productosDormitorio']['nombre'];
@@ -333,21 +336,49 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                             nombre != 'sg2' &&
                             nombre != 'sg1'
                         ) {
-                            $('#imagenesAcabados' + i).append(
-                                '<img id="tapa" class="' +
-                                    aca['nombre'].toLowerCase() +
-                                    '" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
-                                    nombre +
-                                    '/' +
-                                    (h + 1) +
-                                    '/' +
-                                    nombre +
-                                    '_' +
-                                    (h + 1) +
-                                    '_' +
-                                    aca['nombre'].toLowerCase() +
-                                    '_optimized.png">'
-                            );
+                            if (aca['nombre'].toLowerCase() != 'cristal bronce' && aca['nombre'].toLowerCase() != 'cristal transparente') {
+                                $('#imagenesAcabados' + i).append(
+                                    '<img id="tapa" class="' +
+                                        aca['nombre'].toLowerCase() +
+                                        '" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
+                                        nombre +
+                                        '/' +
+                                        (h + 1) +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        (h + 1) +
+                                        '_' +
+                                        aca['nombre'].toLowerCase() +
+                                        '_optimized.png">'
+                                );
+                            } else {
+                                var acaNombreBien = aca['nombre'].toLowerCase();
+                                if (acaNombreBien == 'cristal bronce') {
+                                    acaNombreBien = 'bronce';
+                                } else {
+                                    acaNombreBien = 'transparente';
+                                }
+                                $('#imagenesAcabados' + i).append(
+                                    '<img id="tapa" class="' +
+                                        acaNombreBien +
+                                        '" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
+                                        nombre +
+                                        ' ' +
+                                        acaNombreBien.toUpperCase() +
+                                        '/' +
+                                        (h + 1) +
+                                        '/' +
+                                        nombre +
+                                        '_' +
+                                        (h + 1) +
+                                        '_' +
+                                        aca1Casco['nombre'].toLowerCase() +
+                                        '_' +
+                                        acaNombreBien +
+                                        '_optimized.png">'
+                                );
+                            }
                         } else {
                             $('#imagenesAcabados' + i).css({ 'margin-left': '145px' });
                             $('#imagenesAcabados' + i).css({ 'margin-top': '20px' });
