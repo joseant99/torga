@@ -108,7 +108,15 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
             this.productos = data.body;
             for (let i = 0; i < data.body.length; i++) {
                 var datos = data.body[i];
+                if (datos['tiposApoyo'] != undefined) {
+                    var precioApoyo = datos['tiposApoyo']['precio'];
+                }
                 $('#productoCalculadora' + (i + 1)).css({ display: 'block' });
+                if (precioApoyo != undefined) {
+                    var precioTodo = precioApoyo + datos['dimensionesProductoTipo']['precio'];
+                } else {
+                    var precioTodo = datos['dimensionesProductoTipo']['precio'];
+                }
                 $('#productoCalculadora' + (i + 1) + ' #nombreProducto').append(
                     '<p style="width:100%;"><span id="nombreMesitaNombre' +
                         (cont + 1) +
@@ -119,7 +127,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                         '" id="nombreMesita' +
                         cont +
                         '">' +
-                        datos['dimensionesProductoTipo']['precio'] +
+                        precioTodo +
                         ' €</span></p></div>'
                 );
                 cont++;

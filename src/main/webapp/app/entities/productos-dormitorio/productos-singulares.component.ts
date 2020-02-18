@@ -3591,7 +3591,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                 idProd1 == 91 ||
                 idProd1 == 92
             ) {
-                $('.productosColorSin' + idProd1).css({ 'margin-bottom': '1300px' });
+                $('.productosColorSin' + idProd1).css({ 'margin-bottom': '1550px' });
             }
             $('.productosColor107 #acabados').css({ display: 'none' });
             $('.productosColor108 #acabados').css({ display: 'none' });
