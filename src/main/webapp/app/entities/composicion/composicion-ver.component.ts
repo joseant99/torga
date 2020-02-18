@@ -111,11 +111,18 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                 if (datos['tiposApoyo'] != undefined) {
                     var precioApoyo = datos['tiposApoyo']['precio'];
                 }
+                if (datos['iluminacion'] != undefined) {
+                    var precioIluminacion = datos['iluminacion']['precio'];
+                }
                 $('#productoCalculadora' + (i + 1)).css({ display: 'block' });
                 if (precioApoyo != undefined) {
                     var precioTodo = precioApoyo + datos['dimensionesProductoTipo']['precio'];
                 } else {
                     var precioTodo = datos['dimensionesProductoTipo']['precio'];
+                }
+
+                if (precioIluminacion != undefined) {
+                    precioTodo = precioIluminacion + precioTodo;
                 }
                 $('#productoCalculadora' + (i + 1) + ' #nombreProducto').append(
                     '<p style="width:100%;"><span id="nombreMesitaNombre' +

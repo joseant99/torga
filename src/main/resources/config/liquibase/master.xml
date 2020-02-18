@@ -27,8 +27,8 @@
     <include file="config/liquibase/changelog/20190703074603_added_entity_TiposApoyo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190705085632_added_entity_DimensionesProductoTipo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190710071347_added_entity_Composicion.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190710100749_added_entity_ProductosComposicion.xml" relativeToChangelogFile="false"/> 
-    <include file="config/liquibase/changelog/20190710100749_added_entity_constraints_ProductosComposicion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201907101007491_added_entity_ProductosComposicion.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/201907101007491_added_entity_constraints_ProductosComposicion.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/201907101009391_added_entity_AcabadosComposicion.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/201907101009391_added_entity_constraints_AcabadosComposicion.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190715070115_added_entity_Interiores.xml" relativeToChangelogFile="false"/>

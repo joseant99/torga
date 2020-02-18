@@ -20,6 +20,7 @@
             <th jhiSortBy="composicion.id"><span jhiTranslate="torgaPedidosApp.productosComposicion.composicion">Composicion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="tipoProducto.id"><span jhiTranslate="torgaPedidosApp.productosComposicion.tipoProducto">Tipo Producto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="tiposApoyo.id"><span jhiTranslate="torgaPedidosApp.productosComposicion.tiposApoyo">Tipos Apoyo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iluminacion.id"><span jhiTranslate="torgaPedidosApp.productosComposicion.iluminacion">Iluminacion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -28,7 +29,7 @@
                 <td><a [routerLink]="['/productos-composicion', productosComposicion.id, 'view' ]">{{productosComposicion.id}}</a></td>
                 <td>
                     <div *ngIf="productosComposicion.productosDormitorio">
-                        <a [routerLink]="['../productos-dormitorio', productosComposicion.productosDormitorio?.id, 'view' ]" >{{productosComposicion.productosDormitorio?.id}}</a>
+                        <a [routerLink]="['../productos-dormitorio', productosComposicion.productosDormitorio?.id, 'view' ]" >{{productosComposicion.productosDormitorio?.nombre}}</a>
                     </div>
                 </td>
                 <td>
@@ -49,6 +50,11 @@
                 <td>
                     <div *ngIf="productosComposicion.tiposApoyo">
                         <a [routerLink]="['../tipos-apoyo', productosComposicion.tiposApoyo?.id, 'view' ]" >{{productosComposicion.tiposApoyo?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="productosComposicion.iluminacion">
+                        <a [routerLink]="['../iluminacion', productosComposicion.iluminacion?.id, 'view' ]" >{{productosComposicion.iluminacion?.productosDormitorio.nombre}}</a>
                     </div>
                 </td>
                 <td class="text-right">

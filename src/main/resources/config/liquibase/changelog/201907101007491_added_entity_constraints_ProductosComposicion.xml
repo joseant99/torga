@@ -38,5 +38,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="tipos_apoyo"/>
 
+        <addForeignKeyConstraint baseColumnNames="iluminacion_id"
+                                 baseTableName="productos_composicion"
+                                 constraintName="fk_productos_composicion_iluminacion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="iluminacion"/>
+
     </changeSet>
 </databaseChangeLog>

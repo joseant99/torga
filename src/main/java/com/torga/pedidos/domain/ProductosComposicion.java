@@ -53,6 +53,10 @@ public class ProductosComposicion implements Serializable {
     @JsonIgnoreProperties("")
     private TiposApoyo tiposApoyo;
 
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Iluminacion iluminacion;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -150,6 +154,19 @@ public class ProductosComposicion implements Serializable {
 
     public void setTiposApoyo(TiposApoyo tiposApoyo) {
         this.tiposApoyo = tiposApoyo;
+    }
+
+    public Iluminacion getIluminacion() {
+        return iluminacion;
+    }
+
+    public ProductosComposicion iluminacion(Iluminacion iluminacion) {
+        this.iluminacion = iluminacion;
+        return this;
+    }
+
+    public void setIluminacion(Iluminacion iluminacion) {
+        this.iluminacion = iluminacion;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

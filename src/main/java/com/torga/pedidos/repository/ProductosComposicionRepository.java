@@ -1,7 +1,6 @@
 package com.torga.pedidos.repository;
 
 import com.torga.pedidos.domain.ProductosComposicion;
-import com.torga.pedidos.domain.ProductosDormitorio;
 
 import java.util.Collection;
 

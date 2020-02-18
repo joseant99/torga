@@ -1,9 +1,10 @@
 import { IProductosDormitorio } from 'app/shared/model//productos-dormitorio.model';
 import { IDimensionesProductoTipo } from 'app/shared/model//dimensiones-producto-tipo.model';
-import { IAcabadosComposicion } from 'app/shared/model/acabados-composicion.model';
+import { IAcabadosComposicion } from 'app/shared/model//acabados-composicion.model';
 import { IComposicion } from 'app/shared/model//composicion.model';
 import { ITipoProducto } from 'app/shared/model//tipo-producto.model';
 import { ITiposApoyo } from 'app/shared/model//tipos-apoyo.model';
+import { IIluminacion } from 'app/shared/model//iluminacion.model';
 
 export interface IProductosComposicion {
     id?: number;
@@ -13,6 +14,7 @@ export interface IProductosComposicion {
     composicion?: IComposicion;
     tipoProducto?: ITipoProducto;
     tiposApoyo?: ITiposApoyo;
+    iluminacion?: IIluminacion;
 }
 
 export class ProductosComposicion implements IProductosComposicion {
@@ -23,6 +25,7 @@ export class ProductosComposicion implements IProductosComposicion {
         public acabadosComposicions?: IAcabadosComposicion[],
         public composicion?: IComposicion,
         public tipoProducto?: ITipoProducto,
-        public tiposApoyo?: ITiposApoyo
+        public tiposApoyo?: ITiposApoyo,
+        public iluminacion?: IIluminacion
     ) {}
 }

@@ -63,6 +63,13 @@
                         <option [ngValue]="tiposApoyoOption.id === productosComposicion.tiposApoyo?.id ? productosComposicion.tiposApoyo : tiposApoyoOption" *ngFor="let tiposApoyoOption of tiposapoyos; trackBy: trackTiposApoyoById">{{tiposApoyoOption.nombre}}</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.productosComposicion.iluminacion" for="field_iluminacion">Iluminacion</label>
+                    <select class="form-control" id="field_iluminacion" name="iluminacion" [(ngModel)]="productosComposicion.iluminacion" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="iluminacionOption.id === productosComposicion.iluminacion?.id ? productosComposicion.iluminacion : iluminacionOption" *ngFor="let iluminacionOption of iluminacions; trackBy: trackIluminacionById">{{iluminacionOption.productosDormitorio.nombre}}</option>
+                    </select>
+                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

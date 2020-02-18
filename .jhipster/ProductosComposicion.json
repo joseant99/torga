@@ -46,6 +46,12 @@
             "otherEntityName": "tiposApoyo",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "iluminacion",
+            "otherEntityName": "iluminacion",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [],

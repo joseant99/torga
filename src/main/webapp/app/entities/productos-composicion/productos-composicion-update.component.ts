@@ -16,6 +16,8 @@ import { ITipoProducto } from 'app/shared/model/tipo-producto.model';
 import { TipoProductoService } from 'app/entities/tipo-producto';
 import { ITiposApoyo } from 'app/shared/model/tipos-apoyo.model';
 import { TiposApoyoService } from 'app/entities/tipos-apoyo';
+import { IIluminacion } from 'app/shared/model/iluminacion.model';
+import { IluminacionService } from 'app/entities/iluminacion';
 
 @Component({
     selector: 'jhi-productos-composicion-update',
@@ -35,6 +37,8 @@ export class ProductosComposicionUpdateComponent implements OnInit {
 
     tiposapoyos: ITiposApoyo[];
 
+    iluminacions: IIluminacion[];
+
     constructor(
         protected jhiAlertService: JhiAlertService,
         protected productosComposicionService: ProductosComposicionService,
@@ -43,6 +47,7 @@ export class ProductosComposicionUpdateComponent implements OnInit {
         protected composicionService: ComposicionService,
         protected tipoProductoService: TipoProductoService,
         protected tiposApoyoService: TiposApoyoService,
+        protected iluminacionService: IluminacionService,
         protected activatedRoute: ActivatedRoute
     ) {}
 
@@ -78,6 +83,12 @@ export class ProductosComposicionUpdateComponent implements OnInit {
         this.tiposApoyoService.query({ size: 1000000 }).subscribe(
             (res: HttpResponse<ITiposApoyo[]>) => {
                 this.tiposapoyos = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.iluminacionService.query({ size: 1000000 }).subscribe(
+            (res: HttpResponse<IIluminacion[]>) => {
+                this.iluminacions = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -133,6 +144,10 @@ export class ProductosComposicionUpdateComponent implements OnInit {
     }
 
     trackTiposApoyoById(index: number, item: ITiposApoyo) {
+        return item.id;
+    }
+
+    trackIluminacionById(index: number, item: IIluminacion) {
         return item.id;
     }
 }

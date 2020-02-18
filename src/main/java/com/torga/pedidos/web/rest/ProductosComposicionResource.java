@@ -112,7 +112,8 @@ public class ProductosComposicionResource {
         return ResponseEntity.ok().body(page);
     }
     
-
+    
+    
     /**
      * GET  /productos-composicions/:id : get the "id" productosComposicion.
      *

@@ -35,6 +35,12 @@
                         <a [routerLink]="['/tipos-apoyo', productosComposicion.tiposApoyo?.id, 'view']">{{productosComposicion.tiposApoyo?.id}}</a>
                     </div>
                 </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.productosComposicion.iluminacion">Iluminacion</span></dt>
+                <dd>
+                    <div *ngIf="productosComposicion.iluminacion">
+                        <a [routerLink]="['/iluminacion', productosComposicion.iluminacion?.id, 'view']">{{productosComposicion.iluminacion?.id}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"
