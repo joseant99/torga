@@ -2939,17 +2939,19 @@ export class ProductosColgantesEstantesComponent implements OnInit, OnDestroy {
             if (idProd == 174) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     for (let w = 0; w < data.body['length']; w++) {
-                        $('#modalApoyo #apoyoModal' + w).empty();
-                        $('#modalApoyo #apoyoModal' + w).append(
-                            '<img  src="data:image/gif;base64,' +
-                                data.body[w]['imagen'] +
-                                '" id="imagenApoyo' +
-                                w +
-                                '" class="' +
-                                data.body[w]['id'] +
-                                '" height="160px" width="280px" style=" ">'
-                        );
-                        $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
+                        if (data.body[w]['id'] != 212) {
+                            $('#modalApoyo #apoyoModal' + w).empty();
+                            $('#modalApoyo #apoyoModal' + w).append(
+                                '<img  src="data:image/gif;base64,' +
+                                    data.body[w]['imagen'] +
+                                    '" id="imagenApoyo' +
+                                    w +
+                                    '" class="' +
+                                    data.body[w]['id'] +
+                                    '" height="160px" width="280px" style=" ">'
+                            );
+                            $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
+                        }
                     }
                 });
             }

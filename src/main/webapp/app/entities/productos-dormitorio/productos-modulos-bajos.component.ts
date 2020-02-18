@@ -4991,6 +4991,48 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             }
                         }
 
+                        if (idApoyo == 212) {
+                            if (idApoyo == value['productoApoyo']['id']) {
+                                var precio = parseFloat(value['precio']);
+                                for (let f = 0; f < todosLosPrecios.length; f++) {
+                                    if (idApoyo == todosLosPrecios[f][2]) {
+                                        var precioProducto = todosLosPrecios[f][1];
+                                    }
+                                }
+                                precioProducto = precioProducto / 100;
+                                precio = precio * precioPunto;
+                                var cuenta = precio * precioProducto;
+                                cuenta = precio + cuenta;
+                                precio = cuenta;
+                                precio = Math.round(precio * 100) / 100;
+                                var totalfloat = parseFloat(precioDimension);
+                                totalfloat = totalfloat + precio;
+                                this.precioDimension1 = totalfloat;
+                                $('#precioDimension').text(totalfloat.toFixed(2));
+                                $('#datos1').append(
+                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</span><span style="float:right" id="apoyo1" class="' +
+                                        value['id'] +
+                                        '">+' +
+                                        precio +
+                                        '&euro;</span></p>'
+                                );
+                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
+                                $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                $('#botonApoyoNuevo').append(
+                                    '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</p>'
+                                );
+                                var total = $('#total').text();
+                                var totalfloat = parseFloat(total);
+                                totalfloat = totalfloat + precio;
+                                $('#total').text(totalfloat);
+                            }
+                        }
+
                         if (idApoyo == 17) {
                             if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == hbueno) {
                                 var precio = parseFloat(value['precio']);
