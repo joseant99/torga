@@ -162,6 +162,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                         datos['dimensionesProductoTipo']['fondo'] +
                         '</span></p>'
                 );
+                if (precioIluminacion != undefined) {
+                    $('#productoCalculadora' + (i + 1) + ' #datos12 #precioIluminacion').text(precioIluminacion + ' €');
+                }
                 $('#productoCalculadora' + (i + 1) + ' #datos1').append('<div id="div' + datos['productosDormitorio']['id'] + '"></div>');
                 this.acabadosComposicionService.query1(data.body[i]['id']).subscribe(data => {
                     var arrayCompo = this.acabadosCompo;
@@ -486,6 +489,18 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                 $('#modalInformacion').modal('show');
             }
         });
+    }
+
+    public escogidaLuz(id) {
+        var hueco = this.saberIdHueco;
+        $('#productoCalculadora' + hueco + ' #' + id + 'MeterIluminacion').css({ 'background-color': '#CDCDCD' });
+        if (id == 'si') {
+        } else {
+            $('#productoCalculadora' + hueco + ' #siMeterIluminacion').css({ 'background-color': 'white' });
+            $('#productoCalculadora' + hueco + ' #precioIluminacion').text(' ');
+            var productos = this.productos;
+            productos[hueco - 1]['iluminacion'] = undefined;
+        }
     }
 
     public dimensionesCogidas(id, id1) {
@@ -953,6 +968,13 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         $('#productoCalculadora5 #datos1').css({ display: 'none' });
         $('#productoCalculadora6 #datos1').css({ display: 'none' });
         $('#productoCalculadora7 #datos1').css({ display: 'none' });
+        $('#productoCalculadora1 #datos12').css({ display: 'none' });
+        $('#productoCalculadora2 #datos12').css({ display: 'none' });
+        $('#productoCalculadora3 #datos12').css({ display: 'none' });
+        $('#productoCalculadora4 #datos12').css({ display: 'none' });
+        $('#productoCalculadora5 #datos12').css({ display: 'none' });
+        $('#productoCalculadora6 #datos12').css({ display: 'none' });
+        $('#productoCalculadora7 #datos12').css({ display: 'none' });
         for (let n = 0; n < 14; n++) {
             $('#myModalColores1 #acabadoImagen' + n).empty();
             $('#myModalColores2 #acabadoImagen' + n).empty();
@@ -980,6 +1002,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         $('.7').css({ display: 'none' });
         $('.8').css({ display: 'none' });
         $('#productoCalculadora' + (id + 1) + ' #datos1').css({ display: 'block' });
+        $('#productoCalculadora' + (id + 1) + ' #datos12').css({ display: 'block' });
+        $('#productoCalculadora' + (id + 1) + ' #siMeterIluminacion').css({ 'background-color': '#DFDDDC' });
+
         var idHueco = id + 1;
         this.saberIdHueco = idHueco;
         var idBuena = $('#productoCalculadora' + idHueco + ' #nombreProducto #nombreMesita' + id).attr('class');
@@ -1503,6 +1528,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
     }
     public enviarCarrito1() {
         var productos = this.productos;
+        console.log(productos);
         var acabados = this.acabadosCompo;
         var contador = 1;
         for (let k = 1; k < sessionStorage.length; k++) {
@@ -1538,6 +1564,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                 acabados[i][u]['acabados']['imagenFondo'] = '';
                 aca[u] = acabados[i][u]['acabados'];
                 arrayTodo['acabado' + (u + 1)] = aca[u];
+            }
+            if (productos[i]['iluminacion'] != undefined) {
+                arrayTodo['iluminacion'] = productos[i]['iluminacion'];
             }
 
             console.log(arrayTodo);
