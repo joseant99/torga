@@ -168,15 +168,22 @@
 	}
 	function borrarProdCesta(id){
 		sessionStorage.removeItem("prod"+id);
+		console.log(id);
+		var precioTodoProd = parseFloat($("#modalCesta .modal-body #precioTodoProd"+id).text());
+		var cestaTotal = parseFloat($("#cestaTotal").text());
+		cestaTotal = cestaTotal - precioTodoProd;
+		$("#cestaTotal").text(cestaTotal);
 		$("#modalCesta .modal-body #cuerpo"+id).remove();
 		$("#modalCesta .modal-body #textoCesta"+id).remove();
+		
 			for(let i = id;i<15;i++){
 				var prod = sessionStorage.getItem("prod"+(i+1));
 				if(prod != undefined){
 					sessionStorage.removeItem("prod"+(i+1));
 					sessionStorage.setItem("prod"+(i), prod);
 				}	
-			}	
+			}
+		
 	}
 	function guardarIdEditar(id){
 		sessionStorage.setItem("idEditarProd",id);

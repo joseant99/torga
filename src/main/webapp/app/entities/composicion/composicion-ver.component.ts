@@ -71,6 +71,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
     saberMostrar: any;
     precioPunto: any;
     idBorrar: any;
+    iluProds: any;
     constructor(
         protected composicionService: ComposicionService,
         protected tiposApoyoService: TiposApoyoService,
@@ -109,6 +110,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var id = sessionStorage.getItem('composicion');
         this.productosComposicionService.query1(id).subscribe(data => {
             this.productos = data.body;
+            this.iluProds = data.body;
             var precioPunto = this.precioPunto[0];
             for (let i = 0; i < data.body.length; i++) {
                 var datos = data.body[i];
@@ -509,11 +511,18 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var hueco = this.saberIdHueco;
         $('#productoCalculadora' + hueco + ' #' + id + 'MeterIluminacion').css({ 'background-color': '#CDCDCD' });
         if (id == 'si') {
+            var ilu = this.iluProds;
+            var productos = this.productos;
+            productos[hueco - 1] = ilu[hueco - 1];
+            this.productos = productos;
+            $('#productoCalculadora' + hueco + ' #noMeterIluminacion').css({ 'background-color': 'white' });
+            $('#productoCalculadora' + hueco + ' #precioIluminacion').text(ilu[hueco - 1]['precio']);
         } else {
             $('#productoCalculadora' + hueco + ' #siMeterIluminacion').css({ 'background-color': 'white' });
             $('#productoCalculadora' + hueco + ' #precioIluminacion').text(' ');
             var productos = this.productos;
             productos[hueco - 1]['iluminacion'] = undefined;
+            this.productos = productos;
         }
     }
 
@@ -539,28 +548,44 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         $('#estoEsTodo' + id1 + ' #dimensionesInput4').css({ 'background-color': 'white' });
         $('#estoEsTodo' + id1 + ' #dimensionesInput5').css({ 'background-color': 'white' });
         $('#estoEsTodo' + id1 + ' #dimensionesInput6').css({ 'background-color': 'white' });
+        $('#estoEsTodo' + id1 + ' #dimensionesInput7').css({ 'background-color': 'white' });
+        $('#estoEsTodo' + id1 + ' #dimensionesInput8').css({ 'background-color': 'white' });
+        $('#estoEsTodo' + id1 + ' #dimensionesInput9').css({ 'background-color': 'white' });
+        $('#estoEsTodo' + id1 + ' #dimensionesInput10').css({ 'background-color': 'white' });
+        $('#estoEsTodo' + id1 + ' #dimensionesInput11').css({ 'background-color': 'white' });
+        $('#estoEsTodo' + id1 + ' #dimensionesInput12').css({ 'background-color': 'white' });
         $('#estoEsTodo' + id1 + ' #dimensionesInput' + id).css({ 'background-color': '#DFDDDC' });
         var idProd;
-        idProd = $('#nombreMesita' + idCalculadora).attr('class');
+        idProd = $('#productoCalculadora' + idCalculadora + ' #nombreMesita1').attr('class');
+        var verAnchoYeah = $('#productoCalculadora' + idCalculadora + ' #ancho' + idCalculadora).attr('class');
+        var precioTodoCalcu = $('#productoCalculadora' + idCalculadora + ' #nombreMesita1').text();
+        var precioTodoCal = parseFloat(precioTodoCalcu.split(' ')[0]);
         var precioPunto = 1;
         var precioProducto = 1;
 
         $('#botonCalculadoraMod').removeAttr('class');
         this.cambioDimension = 1;
-        var idDimenTipo = $('.dimensionesId' + id).attr('id');
+        var idDimenTipo = $('#estoEsTodo' + id1 + ' .dimensionesId' + id).attr('id');
         $('#total').text('0');
-        var hola = $('.dimensionesColor' + id + ' #imagenDimensiones').attr('class');
+        var hola = $('#estoEsTodo' + id1 + '.dimensionesColor' + id + ' #imagenDimensiones').attr('class');
         var datos = [];
         var acaSi = 0;
         var acabados = [];
         var imagen;
         datos = dimensiones;
+        for (let w = 0; w < datos.length; w++) {
+            if (datos[w]['id'] == verAnchoYeah) {
+                precioTodoCal = precioTodoCal - datos[w]['precio'];
+            }
+        }
         for (let h = 0; h < datos.length; h++) {
             if (datos[h]['id'] == idDimenTipo) {
                 todosProductos[idCalculadora - 1]['dimensionesProductoTipo'] = datos[h];
                 this.productos = todosProductos;
                 if (datos[h]['mensaje'] != 'Medidas Especiales') {
                     $('#idioma').attr('value', datos[h]['id']);
+                    precioTodoCal = precioTodoCal + datos[h]['precio'];
+                    $('#productoCalculadora' + idCalculadora + ' #nombreMesita1').text(precioTodoCal + ' €');
                     $('#productoCalculadora' + idCalculadora + ' #datos1 #ancho' + idCalculadora).text(datos[h]['ancho']);
                     $('#productoCalculadora' + idCalculadora + ' #datos1 #ancho' + idCalculadora).attr('class', datos[h]['id']);
                     $('#productoCalculadora' + idCalculadora + ' #datos1 #alto' + idCalculadora).text(datos[h]['alto']);
@@ -1412,6 +1437,79 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
             if (nombre == 'Aparador 10') {
                 nombre = 'ap10';
             }
+
+            if (nombre == 'singular 1 apertura derecha') {
+                nombre = 'sg1';
+            }
+
+            if (nombre == 'singular 1 apertura izquierda') {
+                nombre = 'sg1';
+            }
+
+            if (nombre == 'singular 2 apertura derecha') {
+                nombre = 'sg2';
+            }
+
+            if (nombre == 'singular 2 apertura izquierda') {
+                nombre = 'sg2';
+            }
+
+            if (nombre == 'singular 3 apertura derecha') {
+                nombre = 'sg3';
+            }
+
+            if (nombre == 'singular 3 apertura izquierda') {
+                nombre = 'sg3';
+            }
+            if (nombre == 'singular 4') {
+                nombre = 'sg4';
+            }
+            if (nombre == 'singular 5') {
+                nombre = 'sg5';
+            }
+
+            if (nombre == 'singular 6') {
+                nombre = 'sg6';
+            }
+            if (nombre == 'singular 7') {
+                nombre = 'sg7';
+            }
+
+            if (nombre == 'singular 8') {
+                nombre = 'sg8';
+            }
+
+            if (nombre == 'singular 9') {
+                nombre = 'sg9';
+            }
+            if (nombre == 'singular 10') {
+                nombre = 'sg10';
+            }
+            if (nombre == 'singular 11') {
+                nombre = 'sg11';
+            }
+            if (nombre == 'singular 12 apertura izquierda') {
+                nombre = 'sg12';
+            }
+            if (nombre == 'singular 12 apertura derecha') {
+                nombre = 'sg12';
+            }
+            if (nombre == 'singular 13 apertura izquierda') {
+                nombre = 'sg13';
+            }
+            if (nombre == 'singular 13 apertura derecha') {
+                nombre = 'sg13';
+            }
+            if (nombre == 'singular 14') {
+                nombre = 'sg14';
+            }
+            if (nombre == 'singular 15') {
+                nombre = 'sg15';
+            }
+            if (nombre == 'singular 16') {
+                nombre = 'sg16';
+            }
+
             $('.' + id + ' .acabados .imagenAcabadoPrincipal').empty();
             this.nombreAcabado = nombre;
             this.acaProdService.findAca(idBuena).subscribe(data => {
@@ -1427,11 +1525,36 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                     if (value['productosDormitorio']['id'] == idBuena) {
                         imagen = value['imagen'];
                         if (contador == 1) {
-                            $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
-                                '<img id="imagenAcabado" src="data:image/gif;base64,' +
-                                    imagen +
-                                    '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
-                            );
+                            if (
+                                nombre != 'sg1' &&
+                                nombre != 'sg2' &&
+                                nombre != 'sg3' &&
+                                nombre != 'sg4' &&
+                                nombre != 'sg5' &&
+                                nombre != 'sg6' &&
+                                nombre != 'sg7' &&
+                                nombre != 'sg8' &&
+                                nombre != 'sg9' &&
+                                nombre != 'sg10' &&
+                                nombre != 'sg11' &&
+                                nombre != 'sg12' &&
+                                nombre != 'sg13' &&
+                                nombre != 'sg14' &&
+                                nombre != 'sg15' &&
+                                nombre != 'sg16'
+                            ) {
+                                $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
+                                    '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
+                                );
+                            } else {
+                                $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
+                                    '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                                        imagen +
+                                        '" class="imagenAcabadoPrincipalImgSin"  width="650px">'
+                                );
+                            }
                             $('#estoEsTodo' + id + ' .acabados').css({ width: '94%' });
                             $('#estoEsTodo' + id + ' .acabados').css({ 'margin-top': '2%' });
                             $('#estoEsTodo' + id + ' .acabados').css({ border: '1px solid #7AC8FE' });
@@ -1441,48 +1564,113 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                 if (n == 0) {
                                     var aca1Casco = aca[n].toLowerCase();
                                 }
-                                if (aca[n].toLowerCase() != 'cristal bronce' && aca[n].toLowerCase() != 'cristal transparente') {
-                                    $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
-                                        '<img id="tapa" class="' +
-                                            aca[n].toLowerCase() +
-                                            '" width="650px" height="433px" src="../../../content/images/' +
-                                            nombre +
-                                            '/' +
-                                            (n + 1) +
-                                            '/' +
-                                            nombre +
-                                            '_' +
-                                            (n + 1) +
-                                            '_' +
-                                            aca[n].toLowerCase() +
-                                            '_optimized.png">'
-                                    );
+                                if (
+                                    nombre != 'sg1' &&
+                                    nombre != 'sg2' &&
+                                    nombre != 'sg3' &&
+                                    nombre != 'sg4' &&
+                                    nombre != 'sg5' &&
+                                    nombre != 'sg6' &&
+                                    nombre != 'sg7' &&
+                                    nombre != 'sg8' &&
+                                    nombre != 'sg9' &&
+                                    nombre != 'sg10' &&
+                                    nombre != 'sg11' &&
+                                    nombre != 'sg12' &&
+                                    nombre != 'sg13' &&
+                                    nombre != 'sg14' &&
+                                    nombre != 'sg15' &&
+                                    nombre != 'sg16'
+                                ) {
+                                    if (aca[n].toLowerCase() != 'cristal bronce' && aca[n].toLowerCase() != 'cristal transparente') {
+                                        $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
+                                            '<img id="tapa" class="' +
+                                                aca[n].toLowerCase() +
+                                                '" width="650px" height="433px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (n + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (n + 1) +
+                                                '_' +
+                                                aca[n].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        if (aca[n].toLowerCase() == 'cristal bronce') {
+                                            aca[n] = 'bronce';
+                                        }
+                                        if (aca[n].toLowerCase() == 'cristal transparente') {
+                                            aca[n] = 'transparente';
+                                        }
+                                        $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
+                                            '<img id="tapa" class="' +
+                                                aca[n].toLowerCase() +
+                                                '" width="650px" height="433px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (n + 1) +
+                                                ' ' +
+                                                aca[n].toUpperCase() +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (n + 1) +
+                                                '_' +
+                                                aca1Casco +
+                                                '_' +
+                                                aca[n].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    }
                                 } else {
-                                    if (aca[n].toLowerCase() == 'cristal bronce') {
-                                        aca[n] = 'bronce';
+                                    if (aca[n].toLowerCase() != 'cristal bronce' && aca[n].toLowerCase() != 'cristal transparente') {
+                                        $('.' + id + ' .acabados .imagenAcabadoPrincipal').css({ height: '750px' });
+                                        $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
+                                            '<img id="tapa" class="' +
+                                                aca[n].toLowerCase() +
+                                                'sin"  width="400px" height="692.75px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (n + 1) +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (n + 1) +
+                                                '_' +
+                                                aca[n].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
+                                    } else {
+                                        if (aca[n].toLowerCase() == 'cristal bronce') {
+                                            aca[n] = 'bronce';
+                                        }
+                                        if (aca[n].toLowerCase() == 'cristal transparente') {
+                                            aca[n] = 'transparente';
+                                        }
+                                        $('.' + id + ' .acabados .imagenAcabadoPrincipal').css({ height: '750px' });
+                                        $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
+                                            '<img id="tapa" class="' +
+                                                aca[n].toLowerCase() +
+                                                'sin "width="400px" height="692.75px" src="../../../content/images/' +
+                                                nombre +
+                                                '/' +
+                                                (n + 1) +
+                                                ' ' +
+                                                aca[n].toUpperCase() +
+                                                '/' +
+                                                nombre +
+                                                '_' +
+                                                (n + 1) +
+                                                '_' +
+                                                aca1Casco +
+                                                '_' +
+                                                aca[n].toLowerCase() +
+                                                '_optimized.png">'
+                                        );
                                     }
-                                    if (aca[n].toLowerCase() == 'cristal transparente') {
-                                        aca[n] = 'transparente';
-                                    }
-                                    $('.' + id + ' .acabados .imagenAcabadoPrincipal').append(
-                                        '<img id="tapa" class="' +
-                                            aca[n].toLowerCase() +
-                                            '" width="650px" height="433px" src="../../../content/images/' +
-                                            nombre +
-                                            '/' +
-                                            (n + 1) +
-                                            ' ' +
-                                            aca[n].toUpperCase() +
-                                            '/' +
-                                            nombre +
-                                            '_' +
-                                            (n + 1) +
-                                            '_' +
-                                            aca1Casco +
-                                            '_' +
-                                            aca[n].toLowerCase() +
-                                            '_optimized.png">'
-                                    );
                                 }
                             }
                         }
@@ -1524,6 +1712,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         } else {
             saberSiMostrar[id] = undefined;
             $('#productoCalculadora' + (id + 1) + ' #datos1').css({ display: 'none' });
+            $('#productoCalculadora' + (id + 1) + ' #datos12').css({ display: 'none' });
             $('#mostrarYOcultar' + id).text('Mostrar configuracion de articulo');
         }
     }
