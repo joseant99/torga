@@ -26,6 +26,8 @@ import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { TiposApoyoService } from '../tipos-apoyo/tipos-apoyo.service';
 import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
 import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
+import { IluminacionService } from '../iluminacion/iluminacion.service';
+
 @Component({
     selector: 'jhi-composicion',
     templateUrl: './composicion-ver.component.html'
@@ -71,7 +73,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
     saberMostrar: any;
     precioPunto: any;
     idBorrar: any;
-    iluProds: any;
+    iluProds1: any;
     constructor(
         protected composicionService: ComposicionService,
         protected tiposApoyoService: TiposApoyoService,
@@ -81,6 +83,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         protected precioTiendaService: PrecioTiendaService,
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected userService: UserService,
+        protected iluminacionService: IluminacionService,
         protected productosDormitorioService: ProductosDormitorioService,
         protected acaProdService: AcaProdService,
         protected acabadosComposicionService: AcabadosComposicionService,
@@ -110,7 +113,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var id = sessionStorage.getItem('composicion');
         this.productosComposicionService.query1(id).subscribe(data => {
             this.productos = data.body;
-            this.iluProds = data.body;
+            this.iluProds1 = data.body;
             var precioPunto = this.precioPunto[0];
             for (let i = 0; i < data.body.length; i++) {
                 var datos = data.body[i];
@@ -511,17 +514,21 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var hueco = this.saberIdHueco;
         $('#productoCalculadora' + hueco + ' #' + id + 'MeterIluminacion').css({ 'background-color': '#CDCDCD' });
         if (id == 'si') {
-            var ilu = this.iluProds;
+            var ilu = this.iluProds1;
             var productos = this.productos;
-            productos[hueco - 1] = ilu[hueco - 1];
-            this.productos = productos;
-            $('#productoCalculadora' + hueco + ' #noMeterIluminacion').css({ 'background-color': 'white' });
-            $('#productoCalculadora' + hueco + ' #precioIluminacion').text(ilu[hueco - 1]['precio']);
+            var productosTodo = productos[hueco - 1];
+            this.iluminacionService.findProd(productosTodo['productosDormitorio']['id']).subscribe(data => {
+                productos[hueco - 1]['iluminacion'] = data.body[0];
+                this.productos = productos;
+                $('#productoCalculadora' + hueco + ' #noMeterIluminacion').css({ 'background-color': 'white' });
+                $('#productoCalculadora' + hueco + ' #precioIluminacion').text(data.body[0]['precio'] + ' €');
+            });
         } else {
             $('#productoCalculadora' + hueco + ' #siMeterIluminacion').css({ 'background-color': 'white' });
             $('#productoCalculadora' + hueco + ' #precioIluminacion').text(' ');
             var productos = this.productos;
             productos[hueco - 1]['iluminacion'] = undefined;
+
             this.productos = productos;
         }
     }
@@ -1706,7 +1713,48 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                         contnuevo++;
                     }
                 });
+
+                var productos = this.productos;
+                if (
+                    productos[id]['productosDormitorio']['categorias_dormi'] != 15 &&
+                    productos[id]['productosDormitorio']['categorias_dormi'] != 16 &&
+                    productos[id]['productosDormitorio']['categorias_dormi'] != 17 &&
+                    productos[id]['productosDormitorio']['categorias_dormi'] != 18 &&
+                    productos[id]['productosDormitorio']['categorias_dormi'] != 19 &&
+                    productos[id]['productosDormitorio']['categorias_dormi'] != 20 &&
+                    productos[id]['productosDormitorio']['categorias_dormi'] != 21
+                ) {
+                    $('#productoCalculadora' + (id + 1) + ' #datos1').append(
+                        '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right">' +
+                            productos[id]['tiposApoyo']['precio'] +
+                            '</span></p>'
+                    );
+
+                    $('#productoCalculadora' + (id + 1) + ' #datos1').append(
+                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" value="' +
+                            productos[id]['tiposApoyo']['productoApoyo']['nombre'] +
+                            '" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                    );
+                }
             });
+            this.productosDormitorioService.categoria(2).subscribe(data => {
+                for (let w = 0; w < data.body['length']; w++) {
+                    if (data.body[w]['id'] != 212) {
+                        $('#modalApoyo #apoyoModal' + w).empty();
+                        $('#modalApoyo #apoyoModal' + w).append(
+                            '<img  src="data:image/gif;base64,' +
+                                data.body[w]['imagen'] +
+                                '" id="imagenApoyo' +
+                                w +
+                                '" class="' +
+                                data.body[w]['id'] +
+                                '" height="160px" width="280px" style=" ">'
+                        );
+                        $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
+                    }
+                }
+            });
+
             saberSiMostrar[id] = 'no';
             $('#mostrarYOcultar' + id).text('Ocultar configuracion de articulo');
         } else {
@@ -1716,6 +1764,142 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
             $('#mostrarYOcultar' + id).text('Mostrar configuracion de articulo');
         }
     }
+
+    public apoyoCogido(id) {
+        var idApoyo;
+        idApoyo = $('#apoyoModal' + id + ' #imagenApoyo' + id).attr('class');
+        var idHueco = this.saberIdHueco;
+        var ancho;
+        ancho = $('#productoCalculadora' + idHueco + ' #datos1 #ancho' + idHueco).text();
+        var fondo;
+        fondo = $('#productoCalculadora' + idHueco + ' #datos1 #fondoDatosDimen' + idHueco).text();
+
+        var precioTodo = $('#productoCalculadora' + idHueco + ' #nombreMesita' + (idHueco - 1)).text();
+        var precioTodo1;
+        precioTodo1 = parseFloat(precioTodo.split(' ')[0]);
+        var presio = parseFloat($('#productoCalculadora' + idHueco + ' #datos1 #precioApoyo').text());
+        presio = precioTodo1 - presio;
+
+        var productos = this.productos;
+
+        if (idApoyo == 18) {
+            if (fondo == 47) {
+                fondo = 43.5;
+            }
+
+            if (fondo == 42) {
+                fondo = 38.5;
+            }
+
+            var hbueno = parseFloat(ancho) - 5;
+        }
+
+        if (idApoyo == 16) {
+            if (fondo == 47) {
+                fondo = 42.5;
+            }
+
+            if (fondo == 42) {
+                fondo = 37.5;
+            }
+        }
+
+        if (idApoyo == 17) {
+            var hbueno = parseFloat(ancho) - 12.5;
+        }
+
+        this.tiposApoyoService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(data => {
+                var datos = data['body'];
+                for (let m = 0; m < datos.length; m++) {
+                    if (idApoyo == 18) {
+                        if (idApoyo == datos[m]['productoApoyo']['id'] && datos[m]['ancho'] == hbueno && datos[m]['fondo'] == fondo) {
+                            $('#productoCalculadora' + idHueco + ' #datos1 #apoyoCalculadoraTexto').val(
+                                datos[m]['productoApoyo']['nombre']
+                            );
+                            $('#productoCalculadora' + idHueco + ' #datos1 #precioApoyo').text(datos[m]['precio']);
+                            presio = presio + datos[m]['precio'];
+                            $('#productoCalculadora' + idHueco + ' #nombreMesita' + (idHueco - 1)).text(presio);
+                            productos[idHueco - 1]['tiposApoyo'] = datos[m];
+                            this.productos = productos;
+                        }
+                    }
+
+                    if (idApoyo == 17) {
+                        if (idApoyo == datos[m]['productoApoyo']['id'] && datos[m]['ancho'] == hbueno) {
+                            $('#productoCalculadora' + idHueco + ' #datos1 #apoyoCalculadoraTexto').val(
+                                datos[m]['productoApoyo']['nombre']
+                            );
+                            $('#productoCalculadora' + idHueco + ' #datos1 #precioApoyo').text(datos[m]['precio']);
+                            presio = presio + datos[m]['precio'];
+                            $('#productoCalculadora' + idHueco + ' #nombreMesita' + (idHueco - 1)).text(presio);
+                            productos[idHueco - 1]['tiposApoyo'] = datos[m];
+                            this.productos = productos;
+                        }
+                    }
+
+                    if (idApoyo == 15) {
+                        if (ancho < 150) {
+                            if (idApoyo == datos[m]['productoApoyo']['id'] && datos[m]['ancho'] < 150) {
+                                $('#productoCalculadora' + idHueco + ' #datos1 #apoyoCalculadoraTexto').val(
+                                    datos[m]['productoApoyo']['nombre']
+                                );
+                                $('#productoCalculadora' + idHueco + ' #datos1 #precioApoyo').text(datos[m]['precio']);
+                                presio = presio + datos[m]['precio'];
+                                $('#productoCalculadora' + idHueco + ' #nombreMesita' + (idHueco - 1)).text(presio);
+                                productos[idHueco - 1]['tiposApoyo'] = datos[m];
+                                this.productos = productos;
+                            }
+                        }
+                        if (ancho >= 150) {
+                            if (idApoyo == datos[m]['productoApoyo']['id'] && datos[m]['ancho'] >= 150) {
+                                $('#productoCalculadora' + idHueco + ' #datos1 #apoyoCalculadoraTexto').val(
+                                    datos[m]['productoApoyo']['nombre']
+                                );
+                                $('#productoCalculadora' + idHueco + ' #datos1 #precioApoyo').text(datos[m]['precio']);
+                                presio = presio + datos[m]['precio'];
+                                $('#productoCalculadora' + idHueco + ' #nombreMesita' + (idHueco - 1)).text(presio);
+                                productos[idHueco - 1]['tiposApoyo'] = datos[m];
+                                this.productos = productos;
+                            }
+                        }
+                    }
+
+                    if (idApoyo == 16) {
+                        if (ancho < 175) {
+                            if (idApoyo == datos[m]['productoApoyo']['id'] && datos[m]['ancho'] < 175 && datos[m]['fondo'] == fondo) {
+                                $('#productoCalculadora' + idHueco + ' #datos1 #apoyoCalculadoraTexto').val(
+                                    datos[m]['productoApoyo']['nombre']
+                                );
+                                $('#productoCalculadora' + idHueco + ' #datos1 #precioApoyo').text(datos[m]['precio']);
+                                presio = presio + datos[m]['precio'];
+                                $('#productoCalculadora' + idHueco + ' #nombreMesita' + (idHueco - 1)).text(presio);
+                                productos[idHueco - 1]['tiposApoyo'] = datos[m];
+                                this.productos = productos;
+                            }
+                        }
+                        if (ancho >= 175) {
+                            if (idApoyo == datos[m]['productoApoyo']['id'] && datos[m]['ancho'] >= 175 && datos[m]['fondo'] == fondo) {
+                                $('#productoCalculadora' + idHueco + ' #datos1 #apoyoCalculadoraTexto').val(
+                                    datos[m]['productoApoyo']['nombre']
+                                );
+                                $('#productoCalculadora' + idHueco + ' #datos1 #precioApoyo').text(datos[m]['precio']);
+                                presio = presio + datos[m]['precio'];
+                                $('#productoCalculadora' + idHueco + ' #nombreMesita' + (idHueco - 1)).text(presio);
+                                productos[idHueco - 1]['tiposApoyo'] = datos[m];
+                                this.productos = productos;
+                            }
+                        }
+                    }
+                }
+            });
+    }
+
     public ocultar1(id) {
         $('#productoCalculadora' + (id + 1) + ' #datos1').css({ display: 'none' });
     }
