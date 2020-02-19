@@ -1222,7 +1222,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
             var contAca = 0;
             var aca = [];
             for (let n = 0; n < 15; n++) {
-                var prueba = $('#datos1 #div' + idBuena + ' #acabaNombre' + n).text();
+                var prueba = $('#productoCalculadora' + (id + 1) + ' #datos1 #div' + idBuena + ' #acabaNombre' + n).text();
                 if (prueba != '') {
                     aca[contAca] = prueba;
                     contAca++;
