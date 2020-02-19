@@ -560,7 +560,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('#botonEsconder').attr('onclick', 'apareceMenu()');
         $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
         sessionStorage.setItem('composicion', '' + id);
-        this.router.navigate(['/composicion-ver']);
+        if (this.router.url == '/composicion-ver') {
+            location.reload();
+        } else {
+            this.router.navigate(['/composicion-ver']);
+        }
     }
 
     public abrirCesta() {

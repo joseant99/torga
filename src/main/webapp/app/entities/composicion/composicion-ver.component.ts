@@ -1070,10 +1070,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precio +
-                                    ' €'
+                                    ' | '
                             );
+                            $('#estoEsTodo' + id + ' #precioDimenText1').text(precio + ' €');
 
                             $('.' + id + ' .dimensionesColor1').css({ display: 'block' });
                             $('.' + id + ' .dimensionesColor1').append(
@@ -1095,11 +1094,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precio +
-                                    ' €'
+                                    ' | '
                             );
-
+                            $('#estoEsTodo' + id + ' #precioDimenText2').text(precio + ' €');
                             $('#estoEsTodo' + id + ' .dimensionesColor2').css({ display: 'block' });
                             $('#estoEsTodo' + id + ' .dimensionesColor2').append(
                                 '<p class="dimensionesId' +
@@ -1120,10 +1117,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precio +
-                                    ' €'
+                                    ' | '
                             );
+                            $('#estoEsTodo' + id + ' #precioDimenText3').text(precio + ' €');
 
                             $('#estoEsTodo' + id + ' .dimensionesColor3').css({ display: 'block' });
                             $('#estoEsTodo' + id + ' .dimensionesColor3').append(
@@ -1145,10 +1141,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precio +
-                                    ' €'
+                                    ' | '
                             );
+                            $('#estoEsTodo' + id + ' #precioDimenText4').text(precio + ' €');
 
                             $('#estoEsTodo' + id + ' .dimensionesColor4').css({ display: 'block' });
                             $('#estoEsTodo' + id + ' .dimensionesColor4').append(
@@ -1170,10 +1165,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precio +
-                                    ' €'
+                                    ' | '
                             );
+                            $('#estoEsTodo' + id + ' #precioDimenText5').text(precio + ' €');
 
                             $('#estoEsTodo' + id + ' .dimensionesColor5').css({ display: 'block' });
                             $('#estoEsTodo' + id + ' .dimensionesColor5').append(
@@ -1195,13 +1189,132 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precio +
-                                    ' €'
+                                    ' | '
                             );
+                            $('#estoEsTodo' + id + ' #precioDimenText6').text(precio + ' €');
 
                             $('#estoEsTodo' + id + ' .dimensionesColor6').css({ display: 'block' });
                             $('#estoEsTodo' + id + ' .dimensionesColor6').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+                        if (cont == 6 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
+                            $('#estoEsTodo' + id + ' #dimensionesText7').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('#estoEsTodo' + id + ' #precioDimenText7').text(precio + ' €');
+
+                            $('#estoEsTodo' + id + ' .dimensionesColor7').css({ display: 'block' });
+                            $('#estoEsTodo' + id + ' .dimensionesColor7').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+                        if (cont == 7 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
+                            $('#estoEsTodo' + id + ' #dimensionesText8').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('#estoEsTodo' + id + ' #precioDimenText8').text(precio + ' €');
+
+                            $('#estoEsTodo' + id + ' .dimensionesColor8').css({ display: 'block' });
+                            $('#estoEsTodo' + id + ' .dimensionesColor8').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+                        if (cont == 8 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
+                            $('#estoEsTodo' + id + ' #dimensionesText9').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('#estoEsTodo' + id + ' #precioDimenText9').text(precio + ' €');
+
+                            $('#estoEsTodo' + id + ' .dimensionesColor9').css({ display: 'block' });
+                            $('#estoEsTodo' + id + ' .dimensionesColor9').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+                        if (cont == 9 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
+                            $('#estoEsTodo' + id + ' #dimensionesText10').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('#estoEsTodo' + id + ' #precioDimenText10').text(precio + ' €');
+
+                            $('#estoEsTodo' + id + ' .dimensionesColor10').css({ display: 'block' });
+                            $('#estoEsTodo' + id + ' .dimensionesColor10').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+                        if (cont == 10 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
+                            $('#estoEsTodo' + id + ' #dimensionesText11').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('#estoEsTodo' + id + ' #precioDimenText11').text(precio + ' €');
+
+                            $('#estoEsTodo' + id + ' .dimensionesColor11').css({ display: 'block' });
+                            $('#estoEsTodo' + id + ' .dimensionesColor11').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
