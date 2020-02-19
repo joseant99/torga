@@ -25,7 +25,7 @@ import { Observable } from 'rxjs';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { TiposApoyoService } from '../tipos-apoyo/tipos-apoyo.service';
 import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
-
+import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 @Component({
     selector: 'jhi-composicion',
     templateUrl: './composicion-ver.component.html'
@@ -69,12 +69,15 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
     cambiadoAcabado: any;
     guardarCambios: any;
     saberMostrar: any;
+    precioPunto: any;
+    idBorrar: any;
     constructor(
         protected composicionService: ComposicionService,
         protected tiposApoyoService: TiposApoyoService,
         protected acabadosService: AcabadosService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected interioresService: InterioresService,
+        protected precioTiendaService: PrecioTiendaService,
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected userService: UserService,
         protected productosDormitorioService: ProductosDormitorioService,
@@ -106,6 +109,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var id = sessionStorage.getItem('composicion');
         this.productosComposicionService.query1(id).subscribe(data => {
             this.productos = data.body;
+            var precioPunto = this.precioPunto[0];
             for (let i = 0; i < data.body.length; i++) {
                 var datos = data.body[i];
                 var precioApoyo = 0;
@@ -126,6 +130,14 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                 if (precioIluminacion != undefined) {
                     precioTodo = precioIluminacion + precioTodo;
                 }
+                $('#textoTotalComposicion').text('Total composicion:');
+                var totalComposicion = $('#totalComposicion').text();
+                if (totalComposicion != '') {
+                    var todoPrec = parseFloat(totalComposicion) + precioTodo;
+                } else {
+                    var todoPrec = precioTodo;
+                }
+                $('#totalComposicion').text(todoPrec);
                 $('#productoCalculadora' + (i + 1) + ' #nombreProducto').append(
                     '<p style="width:100%;"><span id="nombreMesitaNombre' +
                         (cont + 1) +
@@ -1004,8 +1016,12 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         $('.7').css({ display: 'none' });
         $('.8').css({ display: 'none' });
         $('#productoCalculadora' + (id + 1) + ' #datos1').css({ display: 'block' });
-        $('#productoCalculadora' + (id + 1) + ' #datos12').css({ display: 'block' });
-        $('#productoCalculadora' + (id + 1) + ' #siMeterIluminacion').css({ 'background-color': '#DFDDDC' });
+        var precioLuz = $('#productoCalculadora' + (id + 1) + ' #datos12 #precioIluminacion').text();
+
+        if (precioLuz != '0 €') {
+            $('#productoCalculadora' + (id + 1) + ' #datos12').css({ display: 'block' });
+            $('#productoCalculadora' + (id + 1) + ' #siMeterIluminacion').css({ 'background-color': '#DFDDDC' });
+        }
 
         var idHueco = id + 1;
         this.saberIdHueco = idHueco;
@@ -1030,6 +1046,8 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                 var precioTienda1 = 0;
                 var precioTienda = 0;
 
+                var precioPunto = this.precioPunto[0];
+
                 $('#dimensiones').css({ display: 'block' });
                 for (let i = 0; i < datos.length; i++) {
                     if (idBuena == datos[i]['productosDormitorio']['id']) {
@@ -1042,6 +1060,8 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                         }
 
                         if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
                             $('#estoEsTodo' + id + ' #dimensionesText1').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -1050,7 +1070,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | €'
+                                    ' | ' +
+                                    precio +
+                                    ' €'
                             );
 
                             $('.' + id + ' .dimensionesColor1').css({ display: 'block' });
@@ -1063,6 +1085,8 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                             );
                         }
                         if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
                             $('#estoEsTodo' + id + ' #dimensionesText2').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -1071,7 +1095,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | €'
+                                    ' | ' +
+                                    precio +
+                                    ' €'
                             );
 
                             $('#estoEsTodo' + id + ' .dimensionesColor2').css({ display: 'block' });
@@ -1084,6 +1110,8 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                             );
                         }
                         if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
                             $('#estoEsTodo' + id + ' #dimensionesText3').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -1092,7 +1120,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | €'
+                                    ' | ' +
+                                    precio +
+                                    ' €'
                             );
 
                             $('#estoEsTodo' + id + ' .dimensionesColor3').css({ display: 'block' });
@@ -1105,6 +1135,8 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                             );
                         }
                         if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
                             $('#estoEsTodo' + id + ' #dimensionesText4').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -1113,7 +1145,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | €'
+                                    ' | ' +
+                                    precio +
+                                    ' €'
                             );
 
                             $('#estoEsTodo' + id + ' .dimensionesColor4').css({ display: 'block' });
@@ -1126,6 +1160,8 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                             );
                         }
                         if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
                             $('#estoEsTodo' + id + ' #dimensionesText5').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -1134,7 +1170,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | €'
+                                    ' | ' +
+                                    precio +
+                                    ' €'
                             );
 
                             $('#estoEsTodo' + id + ' .dimensionesColor5').css({ display: 'block' });
@@ -1147,6 +1185,8 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                             );
                         }
                         if (cont == 5 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precio = datos[i]['precio'];
+                            precio = precio * precioPunto;
                             $('#estoEsTodo' + id + ' #dimensionesText6').text(
                                 datos[i]['mensaje'] +
                                     ' | Ancho ' +
@@ -1155,7 +1195,9 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | €'
+                                    ' | ' +
+                                    precio +
+                                    ' €'
                             );
 
                             $('#estoEsTodo' + id + ' .dimensionesColor6').css({ display: 'block' });
@@ -1518,9 +1560,22 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                 });
             });
     }
-    public eliminar(id) {
-        $('#prod' + id).remove();
-        $('#productoCalculadora' + id).remove();
+    public eliminar() {
+        var id = this.idBorrar;
+        $('#todoDivProductos' + id).remove();
+        var precio = $('#productoCalculadora' + (id + 1) + ' #nombreMesita' + id).text();
+        $('#productoCalculadora' + (id + 1)).remove();
+        var productos = this.productos;
+        productos[id] = undefined;
+        this.idBorrar = productos;
+        var precio1 = parseFloat(precio.split(' ')[0]);
+        var todo = 0;
+        todo = parseFloat($('#totalComposicion').text());
+        todo = todo - precio1;
+        $('#totalComposicion').text(todo);
+    }
+    public guardarIdBorrar(id) {
+        this.idBorrar = id;
     }
 
     public borrarCarritoProd(id) {
@@ -1541,41 +1596,43 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var contadorProd = contador;
         var contadorDimen = contador;
         for (let i = 0; i < productos.length; i++) {
-            productos[i]['dimensionesProductoTipo']['productosDormitorio']['imagen'] = '';
-            if (productos[i]['tiposApoyo'] != undefined) {
-                productos[i]['tiposApoyo']['imagen'] = '';
-            }
-            var arrayTodo = {
-                id: productos[i]['dimensionesProductoTipo']['id'],
-                ancho: productos[i]['dimensionesProductoTipo']['ancho'],
-                alto: productos[i]['dimensionesProductoTipo']['alto'],
-                fondo: productos[i]['dimensionesProductoTipo']['fondo'],
-                mensaje: productos[i]['dimensionesProductoTipo']['mensaje'],
-                imagen: '',
-                imagenContentType: '',
-                precio: productos[i]['dimensionesProductoTipo']['precio'],
-                anchoMesitaIdeal: productos[i]['dimensionesProductoTipo']['anchoMesitaIdeal'],
-                productosDormitorio: productos[i]['dimensionesProductoTipo']['productosDormitorio'],
-                tipoProducto: productos[i]['dimensionesProductoTipo']['tipoProducto'],
-                apoyo: productos[i]['tiposApoyo']
-            };
-            var precioTodo = $('#productoCalculadora' + (i + 1) + ' #nombreMesita' + i).text();
-            arrayTodo['todoSumadoPrecio'] = precioTodo.split(' ')[0];
-            for (let u = 0; u < acabados[i].length; u++) {
-                var aca = [];
-                acabados[i][u]['acabados']['imagenFondo'] = '';
-                aca[u] = acabados[i][u]['acabados'];
-                arrayTodo['acabado' + (u + 1)] = aca[u];
-            }
-            if (productos[i]['iluminacion'] != undefined) {
-                arrayTodo['iluminacion'] = productos[i]['iluminacion'];
-            }
+            if (productos[i] != undefined) {
+                productos[i]['dimensionesProductoTipo']['productosDormitorio']['imagen'] = '';
+                if (productos[i]['tiposApoyo'] != undefined) {
+                    productos[i]['tiposApoyo']['imagen'] = '';
+                }
+                var arrayTodo = {
+                    id: productos[i]['dimensionesProductoTipo']['id'],
+                    ancho: productos[i]['dimensionesProductoTipo']['ancho'],
+                    alto: productos[i]['dimensionesProductoTipo']['alto'],
+                    fondo: productos[i]['dimensionesProductoTipo']['fondo'],
+                    mensaje: productos[i]['dimensionesProductoTipo']['mensaje'],
+                    imagen: '',
+                    imagenContentType: '',
+                    precio: productos[i]['dimensionesProductoTipo']['precio'],
+                    anchoMesitaIdeal: productos[i]['dimensionesProductoTipo']['anchoMesitaIdeal'],
+                    productosDormitorio: productos[i]['dimensionesProductoTipo']['productosDormitorio'],
+                    tipoProducto: productos[i]['dimensionesProductoTipo']['tipoProducto'],
+                    apoyo: productos[i]['tiposApoyo']
+                };
+                var precioTodo = $('#productoCalculadora' + (i + 1) + ' #nombreMesita' + i).text();
+                arrayTodo['todoSumadoPrecio'] = precioTodo.split(' ')[0];
+                for (let u = 0; u < acabados[i].length; u++) {
+                    var aca = [];
+                    acabados[i][u]['acabados']['imagenFondo'] = '';
+                    aca[u] = acabados[i][u]['acabados'];
+                    arrayTodo['acabado' + (u + 1)] = aca[u];
+                }
+                if (productos[i]['iluminacion'] != undefined) {
+                    arrayTodo['iluminacion'] = productos[i]['iluminacion'];
+                }
 
-            console.log(arrayTodo);
-            const arrayEnviar = [];
-            arrayEnviar[1] = arrayTodo;
-            sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(arrayEnviar));
-            contadorDimen++;
+                console.log(arrayTodo);
+                const arrayEnviar = [];
+                arrayEnviar[1] = arrayTodo;
+                sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(arrayEnviar));
+                contadorDimen++;
+            }
         }
         this.productosDormitorioService.numeroCesta = contadorDimen - 1;
     }
@@ -2120,7 +2177,11 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
 
     ngOnInit() {
         this.saberMostrar = [];
-        this.loadAll();
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        this.precioTiendaService.findBus(tienda.id).subscribe(data => {
+            this.precioPunto = data.body;
+            this.loadAll();
+        });
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });

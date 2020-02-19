@@ -555,6 +555,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     public cargarComposicionNT(id) {
+        $('#menuPrincipal').css({ display: 'none' });
+        $('#botonEsconder').removeAttr('onclick');
+        $('#botonEsconder').attr('onclick', 'apareceMenu()');
+        $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
         sessionStorage.setItem('composicion', '' + id);
         this.router.navigate(['/composicion-ver']);
     }

@@ -1,6 +1,6 @@
 <div id="calculadoraCarrito">
   <div style="width:86%;height: 85%;margin-left:25px;margin-top:10px;overflow-y:scroll;overflow-x:hidden">
-			
+					<p style="width:90%;margin-bottom:15%;"><span style="float:left" id="textoTotalComposicion"></span><span style="float:right">&euro;</span><span style="float:right" id="totalComposicion"></span></p>
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%;display:none">
 						<div style="float:left;width:100%" id="nombreProducto"></div>
 						<div id="datos1" style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
@@ -244,7 +244,7 @@
 <div style="width:75%">
     <br/>
     <div id="imprimir">
-	    <div style="margin-top:50px;float:left;width:95%;margin-bottom:40px;margin-left:34%" *ngFor="let productos of productos ;trackBy: trackId; let i=index;">
+	    <div style="margin-top:50px;float:left;width:95%;margin-bottom:40px;margin-left:34%" *ngFor="let productos of productos ;trackBy: trackId; let i=index;" id="todoDivProductos{{i}}">
 	    	<div style="width:100%;margin-bottom:70px" *ngIf="i===0">
 	    		<p style="text-align:center;font-size:30px">COMPOSICION NT{{productos.composicion.id}}</p>
 	    	</div>
@@ -254,7 +254,7 @@
 	    				<p style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productos.productosDormitorio.nombre}}</p>
 	    	</div>
 	    	<div id="botones1">
-		    	<div id="eliminarA1" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:80px;text-align:center;padding-top: 20px;" data-toggle="modal" data-target="#myModal">Eliminar Articulo<p></div>
+		    	<div id="eliminarA1" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:15px"><p style="border:1px solid black;height:80px;text-align:center;padding-top: 20px;" data-toggle="modal" data-target="#myModal" (click)="guardarIdBorrar(i)">Eliminar Articulo<p></div>
 		    	<div id="eliminarB1" style="font-size:20px;width:20%;float: left;margin-left: 50px;margin-top:150px"><p id="mostrarYOcultar{{i}}" style="border:1px solid black;height:120px;text-align:center;padding-top: 15px; " (click)="mostrarDatos1(i)">Mostrar la configuracion del articulo</p></div>
 		    	<div id="eliminarBA1" style="display:none"><p id="textoMostrar1" ></p></div>
 	   		 </div>
@@ -295,7 +295,7 @@
 	          <p>Va a proceder a borrar un producto de la configuracion.¿Esta seguro?</p>
 	        </div>
 	        <div class="modal-footer">
-	          <button type="button" class="btn btn-default" data-dismiss="modal" >Borrar</button>
+	          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="eliminar()">Borrar</button>
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	      </div>
