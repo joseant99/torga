@@ -407,10 +407,9 @@ export class ProductosPanelesComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ float: 'left' });
@@ -453,10 +452,9 @@ export class ProductosPanelesComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -490,10 +488,9 @@ export class ProductosPanelesComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -528,10 +525,9 @@ export class ProductosPanelesComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -566,10 +562,9 @@ export class ProductosPanelesComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -604,10 +599,9 @@ export class ProductosPanelesComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText6').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -2881,19 +2875,19 @@ export class ProductosPanelesComponent implements OnInit, OnDestroy {
             idProd1 = parseFloat(idProd);
 
             if (idProd1 == 207) {
-                $('.productosColor207').css({ 'margin-bottom': '1130px' });
+                $('.productosColor207').css({ 'margin-bottom': '1200px' });
             }
             if (idProd1 == 208) {
-                $('.productosColor208').css({ 'margin-bottom': '1130px' });
+                $('.productosColor208').css({ 'margin-bottom': '1200px' });
             }
             if (idProd1 == 209) {
-                $('.productosColor209').css({ 'margin-bottom': '1130px' });
+                $('.productosColor209').css({ 'margin-bottom': '1200px' });
             }
             if (idProd1 == 210) {
-                $('.productosColor210').css({ 'margin-bottom': '1130px' });
+                $('.productosColor210').css({ 'margin-bottom': '1200px' });
             }
             if (idProd1 == 211) {
-                $('.productosColor211').css({ 'margin-bottom': '1130px' });
+                $('.productosColor211').css({ 'margin-bottom': '1200px' });
             }
 
             $('.productosColor207 #acabados').css({ display: 'none' });
@@ -2909,7 +2903,7 @@ export class ProductosPanelesComponent implements OnInit, OnDestroy {
             $('.productosColor' + idProd1 + ' #acabados').css({ position: 'absolute' });
             $('.productosColor' + idProd1 + ' #acabados').css({ width: '63.3%' });
             $('.productosColor' + idProd1 + ' #acabados').css({ left: '28.5%' });
-            $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '465px' });
+            $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '530px' });
             $('.productosColor' + idProd1 + ' #acabados').css({ border: '1px solid #7AC8FE' });
             $('.productosColor' + idProd1 + ' #acabado').css({ display: 'block' });
             $('.productosColor' + idProd1).css({ 'overflow-y': 'hidden' });

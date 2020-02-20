@@ -317,8 +317,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 ' - Alto ' +
                                 datos[i]['alto'] +
                                 ' - Fondo ' +
-                                datos[i]['fondo']
+                                datos[i]['fondo'] +
+                                ' | '
                         );
+                        $('#precioDimenText1').text(datos[i]['precio'] + ' €');
                         $('.dimensionesColor1').css({ 'margin-left': '20%' });
                         $('.dimensionesColor1').css({ 'margin-bottom': '6%' });
                         $('#dimensiones').css({ width: '90%' });
@@ -345,8 +347,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 ' - Alto ' +
                                 datos[i]['alto'] +
                                 ' - Fondo ' +
-                                datos[i]['fondo']
+                                datos[i]['fondo'] +
+                                ' | '
                         );
+                        $('#precioDimenText2').text(datos[i]['precio'] + ' €');
                         $('.dimensionesColor2').css({ display: 'block' });
                         $('.dimensionesColor2').css({ 'margin-left': '20%' });
                         $('.dimensionesColor1').css({ 'margin-bottom': '1%' });
@@ -374,8 +378,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 ' - Alto ' +
                                 datos[i]['alto'] +
                                 ' - Fondo ' +
-                                datos[i]['fondo']
+                                datos[i]['fondo'] +
+                                ' | '
                         );
+                        $('#precioDimenText3').text(datos[i]['precio'] + ' €');
                         $('.dimensionesColor3').css({ display: 'block' });
                         $('.dimensionesColor3').css({ 'margin-left': '20%' });
                         $('.dimensionesColor2').css({ 'margin-bottom': '1%' });
@@ -397,8 +403,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 ' - Alto ' +
                                 datos[i]['alto'] +
                                 ' - Fondo ' +
-                                datos[i]['fondo']
+                                datos[i]['fondo'] +
+                                ' | '
                         );
+                        $('#precioDimenText4').text(datos[i]['precio'] + ' €');
                         $('.dimensionesColor4').css({ display: 'block' });
                         $('.dimensionesColor4').css({ 'margin-left': '20%' });
                         $('.dimensionesColor3').css({ 'margin-bottom': '1%' });
@@ -420,8 +428,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 ' - Alto ' +
                                 datos[i]['alto'] +
                                 ' - Fondo ' +
-                                datos[i]['fondo']
+                                datos[i]['fondo'] +
+                                ' | '
                         );
+                        $('#precioDimenText5').text(datos[i]['precio'] + ' €');
                         $('.dimensionesColor5').css({ display: 'block' });
                         $('.dimensionesColor5').css({ 'margin-left': '20%' });
                         $('.dimensionesColor4').css({ 'margin-bottom': '1%' });
@@ -443,14 +453,142 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 ' - Alto ' +
                                 datos[i]['alto'] +
                                 ' - Fondo ' +
-                                datos[i]['fondo']
+                                datos[i]['fondo'] +
+                                ' | '
                         );
+                        $('#precioDimenText6').text(datos[i]['precio'] + ' €');
                         $('.dimensionesColor6').css({ display: 'block' });
                         $('.dimensionesColor5').css({ 'margin-bottom': '1%' });
+                        $('.dimensionesColor4').css({ 'margin-bottom': '1%' });
                         $('.dimensionesColor6').css({ 'margin-bottom': '6%' });
                         $('.dimensionesColor6').css({ 'margin-left': '20%' });
                         $('.dimensionesColor6').css({ float: 'left' });
                         $('.dimensionesColor6').append(
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1;display_none"></p>'
+                        );
+                    }
+                    if (cont == 6 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                        $('#dimensionesText7').text(
+                            datos[i]['mensaje'] +
+                                ' | Ancho ' +
+                                datos[i]['ancho'] +
+                                ' - Alto ' +
+                                datos[i]['alto'] +
+                                ' - Fondo ' +
+                                datos[i]['fondo'] +
+                                ' | '
+                        );
+                        $('#precioDimenText7').text(datos[i]['precio'] + ' €');
+                        $('.dimensionesColor7').css({ display: 'block' });
+                        $('.dimensionesColor7').css({ 'margin-left': '20%' });
+                        $('.dimensionesColor6').css({ 'margin-bottom': '1%' });
+                        $('.dimensionesColor7').css({ 'margin-bottom': '6%' });
+                        $('.dimensionesColor7').css({ float: 'left' });
+                        $('.dimensionesColor7').append(
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1;display_none"></p>'
+                        );
+                    }
+                    if (cont == 7 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                        $('#dimensionesText8').text(
+                            datos[i]['mensaje'] +
+                                ' | Ancho ' +
+                                datos[i]['ancho'] +
+                                ' - Alto ' +
+                                datos[i]['alto'] +
+                                ' - Fondo ' +
+                                datos[i]['fondo'] +
+                                ' | '
+                        );
+                        $('#precioDimenText8').text(datos[i]['precio'] + ' €');
+                        $('.dimensionesColor8').css({ display: 'block' });
+                        $('.dimensionesColor8').css({ 'margin-left': '20%' });
+                        $('.dimensionesColor7').css({ 'margin-bottom': '1%' });
+                        $('.dimensionesColor8').css({ 'margin-bottom': '6%' });
+                        $('.dimensionesColor8').css({ float: 'left' });
+                        $('.dimensionesColor8').append(
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1;display_none"></p>'
+                        );
+                    }
+                    if (cont == 8 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                        $('#dimensionesText9').text(
+                            datos[i]['mensaje'] +
+                                ' | Ancho ' +
+                                datos[i]['ancho'] +
+                                ' - Alto ' +
+                                datos[i]['alto'] +
+                                ' - Fondo ' +
+                                datos[i]['fondo'] +
+                                ' | '
+                        );
+                        $('#precioDimenText9').text(datos[i]['precio'] + ' €');
+                        $('.dimensionesColor9').css({ display: 'block' });
+                        $('.dimensionesColor9').css({ 'margin-left': '20%' });
+                        $('.dimensionesColor8').css({ 'margin-bottom': '1%' });
+                        $('.dimensionesColor9').css({ 'margin-bottom': '6%' });
+                        $('.dimensionesColor9').css({ float: 'left' });
+                        $('.dimensionesColor9').append(
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1;display_none"></p>'
+                        );
+                    }
+                    if (cont == 9 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                        $('#dimensionesText10').text(
+                            datos[i]['mensaje'] +
+                                ' | Ancho ' +
+                                datos[i]['ancho'] +
+                                ' - Alto ' +
+                                datos[i]['alto'] +
+                                ' - Fondo ' +
+                                datos[i]['fondo'] +
+                                ' | '
+                        );
+                        $('#precioDimenText10').text(datos[i]['precio'] + ' €');
+                        $('.dimensionesColor10').css({ display: 'block' });
+                        $('.dimensionesColor10').css({ 'margin-left': '20%' });
+                        $('.dimensionesColor9').css({ 'margin-bottom': '1%' });
+                        $('.dimensionesColor10').css({ 'margin-bottom': '6%' });
+                        $('.dimensionesColor10').css({ float: 'left' });
+                        $('.dimensionesColor10').append(
+                            '<p class="dimensionesId' +
+                                (cont + 1) +
+                                '" id="' +
+                                datos[i]['id'] +
+                                '" style="position:absolute;z-index:1;display_none"></p>'
+                        );
+                    }
+                    if (cont == 10 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                        $('#dimensionesText11').text(
+                            datos[i]['mensaje'] +
+                                ' | Ancho ' +
+                                datos[i]['ancho'] +
+                                ' - Alto ' +
+                                datos[i]['alto'] +
+                                ' - Fondo ' +
+                                datos[i]['fondo'] +
+                                ' | '
+                        );
+                        $('#precioDimenText11').text(datos[i]['precio'] + ' €');
+                        $('.dimensionesColor11').css({ display: 'block' });
+                        $('.dimensionesColor11').css({ 'margin-left': '20%' });
+                        $('.dimensionesColor10').css({ 'margin-bottom': '1%' });
+                        $('.dimensionesColor11').css({ 'margin-bottom': '6%' });
+                        $('.dimensionesColor11').css({ float: 'left' });
+                        $('.dimensionesColor11').append(
                             '<p class="dimensionesId' +
                                 (cont + 1) +
                                 '" id="' +

@@ -388,10 +388,9 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColorSin' + producto + ' #precioDimenText1').text(precioDimen + ' €');
                             $('.productosColorSin' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
                             $('.productosColorSin' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
                             $('#anchoEspecialAltura' + producto).append('<option> </option>');
@@ -433,9 +432,7 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
@@ -443,6 +440,7 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
                             $('#anchoEspecialFondo' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
+                            $('.productosColorSin' + producto + ' #precioDimenText2').text(precioDimen + ' €');
                             $('.productosColorSin' + producto + ' .dimensionesColor2').css({ display: 'block' });
                             $('.productosColorSin' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
                             $('.productosColorSin' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
@@ -469,10 +467,9 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColorSin' + producto + ' #precioDimenText3').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -505,10 +502,9 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColorSin' + producto + ' #precioDimenText4').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -541,10 +537,9 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColorSin' + producto + ' #precioDimenText5').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -577,10 +572,9 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColorSin' + producto + ' #precioDimenText6').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );

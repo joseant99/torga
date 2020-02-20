@@ -476,6 +476,28 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                         }
                     }
                 });
+                var productos = this.productos;
+                if (
+                    productos[i]['productosDormitorio']['categorias_dormi'] != 15 &&
+                    productos[i]['productosDormitorio']['categorias_dormi'] != 16 &&
+                    productos[i]['productosDormitorio']['categorias_dormi'] != 17 &&
+                    productos[i]['productosDormitorio']['categorias_dormi'] != 18 &&
+                    productos[i]['productosDormitorio']['categorias_dormi'] != 19 &&
+                    productos[i]['productosDormitorio']['categorias_dormi'] != 20 &&
+                    productos[i]['productosDormitorio']['categorias_dormi'] != 21
+                ) {
+                    $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                        '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right">' +
+                            productos[i]['tiposApoyo']['precio'] +
+                            '</span></p>'
+                    );
+
+                    $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" value="' +
+                            productos[i]['tiposApoyo']['productoApoyo']['nombre'] +
+                            '" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                    );
+                }
             }
         });
         var acabados = [];
@@ -565,7 +587,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var idProd;
         idProd = $('#productoCalculadora' + idCalculadora + ' #nombreMesita1').attr('class');
         var verAnchoYeah = $('#productoCalculadora' + idCalculadora + ' #ancho' + idCalculadora).attr('class');
-        var precioTodoCalcu = $('#productoCalculadora' + idCalculadora + ' #nombreMesita1').text();
+        var precioTodoCalcu = $('#productoCalculadora' + idCalculadora + ' #nombreMesita' + (idCalculadora - 1)).text();
         var precioTodoCal = parseFloat(precioTodoCalcu.split(' ')[0]);
         var precioPunto = 1;
         var precioProducto = 1;
@@ -580,19 +602,25 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var acabados = [];
         var imagen;
         datos = dimensiones;
+        var totalComposicion = parseFloat($('#totalComposicion').text());
+        totalComposicion = totalComposicion - precioTodoCal;
         for (let w = 0; w < datos.length; w++) {
             if (datos[w]['id'] == verAnchoYeah) {
                 precioTodoCal = precioTodoCal - datos[w]['precio'];
             }
         }
+
         for (let h = 0; h < datos.length; h++) {
             if (datos[h]['id'] == idDimenTipo) {
                 todosProductos[idCalculadora - 1]['dimensionesProductoTipo'] = datos[h];
                 this.productos = todosProductos;
                 if (datos[h]['mensaje'] != 'Medidas Especiales') {
                     $('#idioma').attr('value', datos[h]['id']);
+
                     precioTodoCal = precioTodoCal + datos[h]['precio'];
-                    $('#productoCalculadora' + idCalculadora + ' #nombreMesita1').text(precioTodoCal + ' €');
+                    totalComposicion = totalComposicion + precioTodoCal;
+                    $('#totalComposicion').text(totalComposicion);
+                    $('#productoCalculadora' + idCalculadora + ' #nombreMesita' + (idCalculadora - 1)).text(precioTodoCal + ' €');
                     $('#productoCalculadora' + idCalculadora + ' #datos1 #ancho' + idCalculadora).text(datos[h]['ancho']);
                     $('#productoCalculadora' + idCalculadora + ' #datos1 #ancho' + idCalculadora).attr('class', datos[h]['id']);
                     $('#productoCalculadora' + idCalculadora + ' #datos1 #alto' + idCalculadora).text(datos[h]['alto']);
@@ -716,6 +744,77 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         if (nombre == 'Aparador 10') {
             nombre = 'ap10';
         }
+        if (nombre == 'singular 1 apertura derecha') {
+            nombre = 'sg1';
+        }
+
+        if (nombre == 'singular 1 apertura izquierda') {
+            nombre = 'sg1';
+        }
+
+        if (nombre == 'singular 2 apertura derecha') {
+            nombre = 'sg2';
+        }
+
+        if (nombre == 'singular 2 apertura izquierda') {
+            nombre = 'sg2';
+        }
+
+        if (nombre == 'singular 3 apertura derecha') {
+            nombre = 'sg3';
+        }
+
+        if (nombre == 'singular 3 apertura izquierda') {
+            nombre = 'sg3';
+        }
+        if (nombre == 'singular 4') {
+            nombre = 'sg4';
+        }
+        if (nombre == 'singular 5') {
+            nombre = 'sg5';
+        }
+
+        if (nombre == 'singular 6') {
+            nombre = 'sg6';
+        }
+        if (nombre == 'singular 7') {
+            nombre = 'sg7';
+        }
+
+        if (nombre == 'singular 8') {
+            nombre = 'sg8';
+        }
+
+        if (nombre == 'singular 9') {
+            nombre = 'sg9';
+        }
+        if (nombre == 'singular 10') {
+            nombre = 'sg10';
+        }
+        if (nombre == 'singular 11') {
+            nombre = 'sg11';
+        }
+        if (nombre == 'singular 12 apertura izquierda') {
+            nombre = 'sg12';
+        }
+        if (nombre == 'singular 12 apertura derecha') {
+            nombre = 'sg12';
+        }
+        if (nombre == 'singular 13 apertura izquierda') {
+            nombre = 'sg13';
+        }
+        if (nombre == 'singular 13 apertura derecha') {
+            nombre = 'sg13';
+        }
+        if (nombre == 'singular 14') {
+            nombre = 'sg14';
+        }
+        if (nombre == 'singular 15') {
+            nombre = 'sg15';
+        }
+        if (nombre == 'singular 16') {
+            nombre = 'sg16';
+        }
 
         var res = nombre;
 
@@ -762,146 +861,232 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                         value['nombre'] +
                         '</p>'
                 );
-                if (id1 == 1) {
-                    $('#tapa').remove();
-                    if (
-                        nombre == 'mb6' ||
-                        nombre == 'mb9' ||
-                        nombre == 'mb7' ||
-                        nombre == 'mb8' ||
-                        nombre == 'mb10' ||
-                        nombre == 'mb11' ||
-                        nombre == 'mb12' ||
-                        nombre == 'mb13' ||
-                        nombre == 'mb14'
-                    ) {
-                        $('.acabados .imagenAcabadoPrincipal').append(
-                            '<img id="tapa" class="' +
-                                nombreAcabado +
-                                '" width="650px" height="433px" src="../../../content/images/mb5/1/mb5_1_' +
-                                nombreAcabado +
-                                '_optimized.png">'
-                        );
 
-                        if (nombre == 'mb8') {
-                            var claseId = $('#casco3').attr('class');
-                            if (claseId != undefined) {
-                                var src = $('#casco3').attr('src');
-                                var partes = [];
-                                partes[0] = src.split('_')[0];
-                                partes[1] = src.split('_')[1];
-                                partes[2] = src.split('_')[3];
-                                partes[3] = src.split('_')[4];
-                                src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
-                                $('#casco3').attr('src', src);
-                            }
-                        }
+                if (
+                    nombre != 'sg1' &&
+                    nombre != 'sg2' &&
+                    nombre != 'sg3' &&
+                    nombre != 'sg4' &&
+                    nombre != 'sg5' &&
+                    nombre != 'sg6' &&
+                    nombre != 'sg7' &&
+                    nombre != 'sg8' &&
+                    nombre != 'sg9' &&
+                    nombre != 'sg10' &&
+                    nombre != 'sg11' &&
+                    nombre != 'sg12' &&
+                    nombre != 'sg13' &&
+                    nombre != 'sg14' &&
+                    nombre != 'sg15' &&
+                    nombre != 'sg16'
+                ) {
+                    if (id1 == 1) {
+                        $('#tapa').remove();
+                        if (
+                            nombre == 'mb6' ||
+                            nombre == 'mb9' ||
+                            nombre == 'mb7' ||
+                            nombre == 'mb8' ||
+                            nombre == 'mb10' ||
+                            nombre == 'mb11' ||
+                            nombre == 'mb12' ||
+                            nombre == 'mb13' ||
+                            nombre == 'mb14'
+                        ) {
+                            $('.acabados .imagenAcabadoPrincipal').append(
+                                '<img id="tapa" class="' +
+                                    nombreAcabado +
+                                    '" width="650px" height="433px" src="../../../content/images/mb5/1/mb5_1_' +
+                                    nombreAcabado +
+                                    '_optimized.png">'
+                            );
 
-                        if (nombre == 'mb7') {
-                            var claseId = $('#casco4').attr('class');
-                            if (claseId != undefined) {
-                                var src = $('#casco4').attr('src');
-                                var partes = [];
-                                partes[0] = src.split('_')[0];
-                                partes[1] = src.split('_')[1];
-                                partes[2] = src.split('_')[3];
-                                partes[3] = src.split('_')[4];
-                                src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
-                                $('#casco4').attr('src', src);
+                            if (nombre == 'mb8') {
+                                var claseId = $('#casco3').attr('class');
+                                if (claseId != undefined) {
+                                    var src = $('#casco3').attr('src');
+                                    var partes = [];
+                                    partes[0] = src.split('_')[0];
+                                    partes[1] = src.split('_')[1];
+                                    partes[2] = src.split('_')[3];
+                                    partes[3] = src.split('_')[4];
+                                    src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
+                                    $('#casco3').attr('src', src);
+                                }
                             }
-                        }
 
-                        if (nombre == 'mb13') {
-                            var claseId = $('#casco3').attr('class');
-                            if (claseId != undefined) {
-                                var src = $('#casco3').attr('src');
-                                var partes = [];
-                                partes[0] = src.split('_')[0];
-                                partes[1] = src.split('_')[1];
-                                partes[2] = src.split('_')[3];
-                                partes[3] = src.split('_')[4];
-                                src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
-                                $('#casco3').attr('src', src);
+                            if (nombre == 'mb7') {
+                                var claseId = $('#casco4').attr('class');
+                                if (claseId != undefined) {
+                                    var src = $('#casco4').attr('src');
+                                    var partes = [];
+                                    partes[0] = src.split('_')[0];
+                                    partes[1] = src.split('_')[1];
+                                    partes[2] = src.split('_')[3];
+                                    partes[3] = src.split('_')[4];
+                                    src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
+                                    $('#casco4').attr('src', src);
+                                }
                             }
-                        }
 
-                        if (nombre == 'mb12') {
-                            var claseId = $('#casco5').attr('class');
-                            if (claseId != undefined) {
-                                var src = $('#casco5').attr('src');
-                                var partes = [];
-                                partes[0] = src.split('_')[0];
-                                partes[1] = src.split('_')[1];
-                                partes[2] = src.split('_')[3];
-                                partes[3] = src.split('_')[4];
-                                src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
-                                $('#casco5').attr('src', src);
+                            if (nombre == 'mb13') {
+                                var claseId = $('#casco3').attr('class');
+                                if (claseId != undefined) {
+                                    var src = $('#casco3').attr('src');
+                                    var partes = [];
+                                    partes[0] = src.split('_')[0];
+                                    partes[1] = src.split('_')[1];
+                                    partes[2] = src.split('_')[3];
+                                    partes[3] = src.split('_')[4];
+                                    src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
+                                    $('#casco3').attr('src', src);
+                                }
                             }
+
+                            if (nombre == 'mb12') {
+                                var claseId = $('#casco5').attr('class');
+                                if (claseId != undefined) {
+                                    var src = $('#casco5').attr('src');
+                                    var partes = [];
+                                    partes[0] = src.split('_')[0];
+                                    partes[1] = src.split('_')[1];
+                                    partes[2] = src.split('_')[3];
+                                    partes[3] = src.split('_')[4];
+                                    src = partes[0] + '_' + partes[1] + '_' + nombreAcabado + '_' + partes[2] + '_' + partes[3];
+                                    $('#casco5').attr('src', src);
+                                }
+                            }
+                        } else {
+                            $('.acabados .imagenAcabadoPrincipal').append(
+                                '<img id="tapa" class="' +
+                                    nombreAcabado +
+                                    '" width="650px" height="433px" src="../../../content/images/' +
+                                    nombre +
+                                    '/1/' +
+                                    nombre +
+                                    '_1_' +
+                                    nombreAcabado +
+                                    '_optimized.png">'
+                            );
                         }
-                    } else {
-                        $('.acabados .imagenAcabadoPrincipal').append(
-                            '<img id="tapa" class="' +
-                                nombreAcabado +
-                                '" width="650px" height="433px" src="../../../content/images/' +
-                                nombre +
-                                '/1/' +
-                                nombre +
-                                '_1_' +
-                                nombreAcabado +
-                                '_optimized.png">'
-                        );
                     }
-                }
-                if (id1 == 2) {
-                    $('#cajon').remove();
-                    if (
-                        nombre == 'mb6' ||
-                        nombre == 'mb9' ||
-                        nombre == 'mb7' ||
-                        nombre == 'mb8' ||
-                        nombre == 'mb10' ||
-                        nombre == 'mb11' ||
-                        nombre == 'mb12' ||
-                        nombre == 'mb13' ||
-                        nombre == 'mb14'
-                    ) {
-                        $('.acabados .imagenAcabadoPrincipal').append(
-                            '<img id="cajon" class="' +
-                                nombreAcabado +
-                                '" width="650px" height="433px"  src="../../../content/images/mb5/2/mb5_2_' +
-                                nombreAcabado +
-                                '_optimized.png">'
-                        );
-                    } else {
-                        $('.acabados .imagenAcabadoPrincipal').append(
-                            '<img id="cajon" class="' +
-                                nombreAcabado +
-                                '" width="650px" height="433px" src="../../../content/images/' +
-                                nombre +
-                                '/2/' +
-                                nombre +
-                                '_2_' +
-                                nombreAcabado +
-                                '_optimized.png">'
-                        );
+                    if (id1 == 2) {
+                        $('#cajon').remove();
+                        if (
+                            nombre == 'mb6' ||
+                            nombre == 'mb9' ||
+                            nombre == 'mb7' ||
+                            nombre == 'mb8' ||
+                            nombre == 'mb10' ||
+                            nombre == 'mb11' ||
+                            nombre == 'mb12' ||
+                            nombre == 'mb13' ||
+                            nombre == 'mb14'
+                        ) {
+                            $('.acabados .imagenAcabadoPrincipal').append(
+                                '<img id="cajon" class="' +
+                                    nombreAcabado +
+                                    '" width="650px" height="433px"  src="../../../content/images/mb5/2/mb5_2_' +
+                                    nombreAcabado +
+                                    '_optimized.png">'
+                            );
+                        } else {
+                            $('.acabados .imagenAcabadoPrincipal').append(
+                                '<img id="cajon" class="' +
+                                    nombreAcabado +
+                                    '" width="650px" height="433px" src="../../../content/images/' +
+                                    nombre +
+                                    '/2/' +
+                                    nombre +
+                                    '_2_' +
+                                    nombreAcabado +
+                                    '_optimized.png">'
+                            );
+                        }
                     }
-                }
-                if (id1 != 2 && id1 != 1) {
-                    if (nombreAcabado == 'bronce' || nombreAcabado == 'transparente') {
-                        var nombreMayus = nombreAcabado.toUpperCase();
-                        var color = $('#val1Dato').text();
-                        color = color.toLowerCase();
-                        $('.acabados .imagenAcabadoPrincipal').append(
-                            '<img id="casco' +
+                    if (id1 != 2 && id1 != 1) {
+                        if (nombreAcabado == 'bronce' || nombreAcabado == 'transparente') {
+                            var nombreMayus = nombreAcabado.toUpperCase();
+                            var color = $('#val1Dato').text();
+                            color = color.toLowerCase();
+                            $('.acabados .imagenAcabadoPrincipal').append(
+                                '<img id="casco' +
+                                    id1 +
+                                    '" class="' +
+                                    nombreAcabado +
+                                    '" width="650px" height="433px" src="../../../content/images/' +
+                                    nombre +
+                                    '/' +
+                                    id1 +
+                                    ' ' +
+                                    nombreMayus +
+                                    '/' +
+                                    nombre +
+                                    '_' +
+                                    id1 +
+                                    '_' +
+                                    color +
+                                    '_' +
+                                    nombreAcabado +
+                                    '_optimized.png">'
+                            );
+                        } else {
+                            $('.acabados .imagenAcabadoPrincipal').append(
+                                '<img id="casco' +
+                                    id1 +
+                                    '" class="' +
+                                    nombreAcabado +
+                                    '" width="650px" height="433px" src="../../../content/images/' +
+                                    nombre +
+                                    '/' +
+                                    id1 +
+                                    '/' +
+                                    nombre +
+                                    '_' +
+                                    id1 +
+                                    '_' +
+                                    nombreAcabado +
+                                    '_optimized.png">'
+                            );
+                        }
+                    }
+                } else {
+                    if (nombreAcabado.toLowerCase() != 'bronce' && nombreAcabado.toLowerCase() != 'transparente') {
+                        $('.' + (idCalculadora - 1) + ' .acabados .imagenAcabadoPrincipal').css({ height: '750px' });
+                        $('.' + (idCalculadora - 1) + ' .acabados .imagenAcabadoPrincipal').append(
+                            '<img id="tapa" class="' +
+                                nombreAcabado.toLowerCase() +
+                                'sin"  width="400px" height="692.75px" src="../../../content/images/' +
+                                nombre +
+                                '/' +
                                 id1 +
-                                '" class="' +
-                                nombreAcabado +
-                                '" width="650px" height="433px" src="../../../content/images/' +
+                                '/' +
+                                nombre +
+                                '_' +
+                                id1 +
+                                '_' +
+                                nombreAcabado.toLowerCase() +
+                                '_optimized.png">'
+                        );
+                    } else {
+                        if (nombreAcabado.toLowerCase() == 'bronce') {
+                            nombreAcabado = 'bronce';
+                        }
+                        if (nombreAcabado.toLowerCase() == 'transparente') {
+                            nombreAcabado = 'transparente';
+                        }
+                        var color = $('#productoCalculadora' + idCalculadora + ' #acabaNombre0').text();
+                        color = color.toLowerCase();
+                        $('.' + (idCalculadora - 1) + ' .acabados .imagenAcabadoPrincipal').css({ height: '750px' });
+                        $('.' + (idCalculadora - 1) + ' .acabados .imagenAcabadoPrincipal').append(
+                            '<img id="tapa" class="' +
+                                nombreAcabado.toLowerCase() +
+                                'sin "width="400px" height="692.75px" src="../../../content/images/' +
                                 nombre +
                                 '/' +
                                 id1 +
                                 ' ' +
-                                nombreMayus +
+                                nombreAcabado.toUpperCase() +
                                 '/' +
                                 nombre +
                                 '_' +
@@ -909,25 +1094,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                 '_' +
                                 color +
                                 '_' +
-                                nombreAcabado +
-                                '_optimized.png">'
-                        );
-                    } else {
-                        $('.acabados .imagenAcabadoPrincipal').append(
-                            '<img id="casco' +
-                                id1 +
-                                '" class="' +
-                                nombreAcabado +
-                                '" width="650px" height="433px" src="../../../content/images/' +
-                                nombre +
-                                '/' +
-                                id1 +
-                                '/' +
-                                nombre +
-                                '_' +
-                                id1 +
-                                '_' +
-                                nombreAcabado +
+                                nombreAcabado.toLowerCase() +
                                 '_optimized.png">'
                         );
                     }
@@ -1713,29 +1880,6 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                         contnuevo++;
                     }
                 });
-
-                var productos = this.productos;
-                if (
-                    productos[id]['productosDormitorio']['categorias_dormi'] != 15 &&
-                    productos[id]['productosDormitorio']['categorias_dormi'] != 16 &&
-                    productos[id]['productosDormitorio']['categorias_dormi'] != 17 &&
-                    productos[id]['productosDormitorio']['categorias_dormi'] != 18 &&
-                    productos[id]['productosDormitorio']['categorias_dormi'] != 19 &&
-                    productos[id]['productosDormitorio']['categorias_dormi'] != 20 &&
-                    productos[id]['productosDormitorio']['categorias_dormi'] != 21
-                ) {
-                    $('#productoCalculadora' + (id + 1) + ' #datos1').append(
-                        '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right">' +
-                            productos[id]['tiposApoyo']['precio'] +
-                            '</span></p>'
-                    );
-
-                    $('#productoCalculadora' + (id + 1) + ' #datos1').append(
-                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" value="' +
-                            productos[id]['tiposApoyo']['productoApoyo']['nombre'] +
-                            '" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
-                    );
-                }
             });
             this.productosDormitorioService.categoria(2).subscribe(data => {
                 for (let w = 0; w < data.body['length']; w++) {

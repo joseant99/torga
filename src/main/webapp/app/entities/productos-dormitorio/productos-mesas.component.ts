@@ -41,9 +41,9 @@ import { IvaProductoTiendaService } from '../iva-producto-tienda/iva-producto-ti
 
 @Component({
     selector: 'jhi-productos-dormitorio',
-    templateUrl: './productos-suplementos-tv.component.html'
+    templateUrl: './productos-mesas.component.html'
 })
-export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
+export class ProductosMesasComponent implements OnInit, OnDestroy {
     currentAccount: any;
     productosDormitorios: IProductosDormitorio[];
     dimensionesProductos: IDimensionesProducto[];
@@ -151,17 +151,96 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
         $('#acabados').css({ display: 'none' });
         $('#dimensiones').css({ display: 'none' });
         $('#precioDimension').empty();
-        $('.productosColor204').css({ 'background-color': 'white' });
-        $('.productosColor205').css({ 'background-color': 'white' });
-        $('.productosColor206').css({ 'background-color': 'white' });
+        $('.productosColor213 #acabados').css({ display: 'none' });
+        $('.productosColor214 #acabados').css({ display: 'none' });
+        $('.productosColor215 #acabados').css({ display: 'none' });
+        $('.productosColor216 #acabados').css({ display: 'none' });
+        $('.productosColor217 #acabados').css({ display: 'none' });
+        $('.productosColor218 #acabados').css({ display: 'none' });
+        $('.productosColor219 #acabados').css({ display: 'none' });
+        $('.productosColor220 #acabados').css({ display: 'none' });
+        $('.productosColor221 #acabados').css({ display: 'none' });
+        $('.productosColor222 #acabados').css({ display: 'none' });
+        $('.productosColor223 #acabados').css({ display: 'none' });
+        $('.productosColor224 #acabados').css({ display: 'none' });
+        $('.productosColor225 #acabados').css({ display: 'none' });
+        $('.productosColor226 #acabados').css({ display: 'none' });
+        $('.productosColor227 #acabados').css({ display: 'none' });
+        $('.productosColor228 #acabados').css({ display: 'none' });
 
-        $('.productosColor204 #acabados').css({ display: 'none' });
-        $('.productosColor205 #acabados').css({ display: 'none' });
-        $('.productosColor206 #acabados').css({ display: 'none' });
+        $('.productosColor213 #dimensiones').css({ display: 'none' });
+        $('.productosColor214 #dimensiones').css({ display: 'none' });
+        $('.productosColor215 #dimensiones').css({ display: 'none' });
+        $('.productosColor216 #dimensiones').css({ display: 'none' });
+        $('.productosColor217 #dimensiones').css({ display: 'none' });
+        $('.productosColor218 #dimensiones').css({ display: 'none' });
+        $('.productosColor219 #dimensiones').css({ display: 'none' });
+        $('.productosColor220 #dimensiones').css({ display: 'none' });
+        $('.productosColor221 #dimensiones').css({ display: 'none' });
+        $('.productosColor222 #dimensiones').css({ display: 'none' });
+        $('.productosColor223 #dimensiones').css({ display: 'none' });
+        $('.productosColor224 #dimensiones').css({ display: 'none' });
+        $('.productosColor225 #dimensiones').css({ display: 'none' });
+        $('.productosColor226 #dimensiones').css({ display: 'none' });
+        $('.productosColor227 #dimensiones').css({ display: 'none' });
+        $('.productosColor228 #dimensiones').css({ display: 'none' });
 
-        $('.productosColor204 #dimensiones').css({ display: 'none' });
-        $('.productosColor205 #dimensiones').css({ display: 'none' });
-        $('.productosColor206 #dimensiones').css({ display: 'none' });
+        $('.dimensionesColor1').css({ 'background-color': 'white' });
+        $('.dimensionesColor2').css({ 'background-color': 'white' });
+        $('.dimensionesColor3').css({ 'background-color': 'white' });
+        $('.dimensionesColor4').css({ 'background-color': 'white' });
+        $('.dimensionesColor5').css({ 'background-color': 'white' });
+        $('.dimensionesColor6').css({ 'background-color': 'white' });
+        $('.productosColor213').removeAttr('style');
+        $('.productosColor214').removeAttr('style');
+        $('.productosColor215').removeAttr('style');
+        $('.productosColor216').removeAttr('style');
+        $('.productosColor217').removeAttr('style');
+        $('.productosColor218').removeAttr('style');
+        $('.productosColor219').removeAttr('style');
+        $('.productosColor220').removeAttr('style');
+        $('.productosColor221').removeAttr('style');
+        $('.productosColor222').removeAttr('style');
+        $('.productosColor223').removeAttr('style');
+        $('.productosColor224').removeAttr('style');
+        $('.productosColor225').removeAttr('style');
+        $('.productosColor226').removeAttr('style');
+        $('.productosColor227').removeAttr('style');
+        $('.productosColor228').removeAttr('style');
+
+        $('.productosColorSolo213').removeAttr('style');
+        $('.productosColorSolo214').removeAttr('style');
+        $('.productosColorSolo215').removeAttr('style');
+        $('.productosColorSolo216').removeAttr('style');
+        $('.productosColorSolo217').removeAttr('style');
+        $('.productosColorSolo218').removeAttr('style');
+        $('.productosColorSolo219').removeAttr('style');
+        $('.productosColorSolo220').removeAttr('style');
+        $('.productosColorSolo221').removeAttr('style');
+        $('.productosColorSolo222').removeAttr('style');
+        $('.productosColorSolo223').removeAttr('style');
+        $('.productosColorSolo224').removeAttr('style');
+        $('.productosColorSolo225').removeAttr('style');
+        $('.productosColorSolo226').removeAttr('style');
+        $('.productosColorSolo227').removeAttr('style');
+        $('.productosColorSolo228').removeAttr('style');
+
+        $('.productosColor213').css({ 'background-color': 'white' });
+        $('.productosColor214').css({ 'background-color': 'white' });
+        $('.productosColor215').css({ 'background-color': 'white' });
+        $('.productosColor216').css({ 'background-color': 'white' });
+        $('.productosColor217').css({ 'background-color': 'white' });
+        $('.productosColor218').css({ 'background-color': 'white' });
+        $('.productosColor219').css({ 'background-color': 'white' });
+        $('.productosColor220').css({ 'background-color': 'white' });
+        $('.productosColor221').css({ 'background-color': 'white' });
+        $('.productosColor222').css({ 'background-color': 'white' });
+        $('.productosColor223').css({ 'background-color': 'white' });
+        $('.productosColor224').css({ 'background-color': 'white' });
+        $('.productosColor225').css({ 'background-color': 'white' });
+        $('.productosColor226').css({ 'background-color': 'white' });
+        $('.productosColor227').css({ 'background-color': 'white' });
+        $('.productosColor228').css({ 'background-color': 'white' });
 
         $('#imagenAcabadoPrincipal').empty();
         $('#total').empty();
@@ -185,14 +264,32 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
         $('.dimensionesColor1').css({ border: '0px' });
         $('.dimensionesColor2').css({ border: '0px' });
         $('.dimensionesColor3').css({ border: '0px' });
-        $('.productosColor204').removeAttr('style');
-        $('.productosColor205').removeAttr('style');
-        $('.productosColor206').removeAttr('style');
-
-        $('.productosColorSolo204').removeAttr('style');
-        $('.productosColorSolo205').removeAttr('style');
-        $('.productosColorSolo206').removeAttr('style');
-
+        $('.productosColor107').removeAttr('style');
+        $('.productosColor108').removeAttr('style');
+        $('.productosColor109').removeAttr('style');
+        $('.productosColor110').removeAttr('style');
+        $('.productosColor111').removeAttr('style');
+        $('.productosColor112').removeAttr('style');
+        $('.productosColor113').removeAttr('style');
+        $('.productosColor114').removeAttr('style');
+        $('.productosColor115').removeAttr('style');
+        $('.productosColor116').removeAttr('style');
+        $('.productosColor117').removeAttr('style');
+        $('.productosColor118').removeAttr('style');
+        $('.productosColor119').removeAttr('style');
+        $('.productosColorSolo107').removeAttr('style');
+        $('.productosColorSolo108').removeAttr('style');
+        $('.productosColorSolo109').removeAttr('style');
+        $('.productosColorSolo110').removeAttr('style');
+        $('.productosColorSolo111').removeAttr('style');
+        $('.productosColorSolo112').removeAttr('style');
+        $('.productosColorSolo113').removeAttr('style');
+        $('.productosColorSolo114').removeAttr('style');
+        $('.productosColorSolo115').removeAttr('style');
+        $('.productosColorSolo116').removeAttr('style');
+        $('.productosColorSolo117').removeAttr('style');
+        $('.productosColorSolo118').removeAttr('style');
+        $('.productosColorSolo119').removeAttr('style');
         $('#imagenAcabado').remove();
         $('#medidas').css({ display: 'none' });
         $('#acabado').css({ display: 'none' });
@@ -211,24 +308,301 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
         var arrayComprobar = this.arrayMostrar;
         if (arrayComprobar[producto] == undefined) {
             arrayComprobar[producto] = 'hola';
-            if (producto == 204) {
-                arrayComprobar[205] = undefined;
-                arrayComprobar[206] = undefined;
+
+            if (producto == 213) {
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
             }
-            if (producto == 205) {
-                arrayComprobar[204] = undefined;
-                arrayComprobar[206] = undefined;
+            if (producto == 214) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
             }
-            if (producto == 206) {
-                arrayComprobar[205] = undefined;
-                arrayComprobar[204] = undefined;
+            if (producto == 215) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 216) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 217) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 218) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 219) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 220) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 221) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 222) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 223) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
             }
 
-            this.arrayMostrar = arrayComprobar;
-            $('.productosColor204 #acabados').css({ display: 'none' });
-            $('.productosColor205 #acabados').css({ display: 'none' });
-            $('.productosColor206 #acabados').css({ display: 'none' });
+            if (producto == 224) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 225) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 226) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[227] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 227) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[228] = undefined;
+            }
+            if (producto == 228) {
+                arrayComprobar[213] = undefined;
+                arrayComprobar[214] = undefined;
+                arrayComprobar[215] = undefined;
+                arrayComprobar[216] = undefined;
+                arrayComprobar[217] = undefined;
+                arrayComprobar[218] = undefined;
+                arrayComprobar[219] = undefined;
+                arrayComprobar[220] = undefined;
+                arrayComprobar[221] = undefined;
+                arrayComprobar[222] = undefined;
+                arrayComprobar[223] = undefined;
+                arrayComprobar[224] = undefined;
+                arrayComprobar[225] = undefined;
+                arrayComprobar[226] = undefined;
+                arrayComprobar[227] = undefined;
+            }
+
             $('#botonCalculadora').attr('class', 'displayBoton');
+
+            this.arrayMostrar = arrayComprobar;
+            $('.productosColor213 #acabados').css({ display: 'none' });
+            $('.productosColor214 #acabados').css({ display: 'none' });
+            $('.productosColor215 #acabados').css({ display: 'none' });
+            $('.productosColor216 #acabados').css({ display: 'none' });
+            $('.productosColor217 #acabados').css({ display: 'none' });
+            $('.productosColor218 #acabados').css({ display: 'none' });
+            $('.productosColor219 #acabados').css({ display: 'none' });
+            $('.productosColor220 #acabados').css({ display: 'none' });
+            $('.productosColor221 #acabados').css({ display: 'none' });
+            $('.productosColor222 #acabados').css({ display: 'none' });
+            $('.productosColor223 #acabados').css({ display: 'none' });
+            $('.productosColor224 #acabados').css({ display: 'none' });
+            $('.productosColor225 #acabados').css({ display: 'none' });
+            $('.productosColor226 #acabados').css({ display: 'none' });
+            $('.productosColor227 #acabados').css({ display: 'none' });
+            $('.productosColor228 #acabados').css({ display: 'none' });
+
             $('.productosColor' + producto + ' #dimensionesInput1').css({ 'background-color': 'white' });
             $('.productosColor' + producto + ' #dimensionesInput2').css({ 'background-color': 'white' });
             $('.productosColor' + producto + ' #dimensionesInput3').css({ 'background-color': 'white' });
@@ -240,9 +614,22 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
             $('.productosColor' + producto + ' #dimensionesInput21').css({ 'background-color': 'white' });
             $('.productosColor' + producto + ' #dimensionesInput22').css({ 'background-color': 'white' });
 
-            $('.productosColor204 #dimensiones').css({ display: 'none' });
-            $('.productosColor205 #dimensiones').css({ display: 'none' });
-            $('.productosColor206 #dimensiones').css({ display: 'none' });
+            $('.productosColor213 #dimensiones').css({ display: 'none' });
+            $('.productosColor214 #dimensiones').css({ display: 'none' });
+            $('.productosColor215 #dimensiones').css({ display: 'none' });
+            $('.productosColor216 #dimensiones').css({ display: 'none' });
+            $('.productosColor217 #dimensiones').css({ display: 'none' });
+            $('.productosColor218 #dimensiones').css({ display: 'none' });
+            $('.productosColor219 #dimensiones').css({ display: 'none' });
+            $('.productosColor220 #dimensiones').css({ display: 'none' });
+            $('.productosColor221 #dimensiones').css({ display: 'none' });
+            $('.productosColor222 #dimensiones').css({ display: 'none' });
+            $('.productosColor223 #dimensiones').css({ display: 'none' });
+            $('.productosColor224 #dimensiones').css({ display: 'none' });
+            $('.productosColor225 #dimensiones').css({ display: 'none' });
+            $('.productosColor226 #dimensiones').css({ display: 'none' });
+            $('.productosColor227 #dimensiones').css({ display: 'none' });
+            $('.productosColor228 #dimensiones').css({ display: 'none' });
 
             var acabados = [];
             this.acabadosService
@@ -260,6 +647,7 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
             this.acabados1 = acabados;
             this.acabados1234 = acabados;
             $('#botonEliminar').removeAttr('class');
+            $('#dimensiones').css({ display: 'block' });
             $('#botonApoyoNuevo').empty();
             for (let i = 1; i <= 14; i++) {
                 for (let u = 0; u < 14; u++) {
@@ -279,6 +667,7 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
             this.especiales = this.medidasEspecialesService.todos;
             $('#imagenAcabadoPrincipal').empty();
             $('#calculadora').attr('class', 'container tab-pane fade active show');
+            $('#dimensiones #medidas').removeAttr('style');
             $('#medidasEspecialesTexto').css({ display: 'none' });
             $('#medidasEspeciales').css({ display: 'none' });
             $('#medidasAncho').css({ display: 'none' });
@@ -298,31 +687,69 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
             $('#textoFinal').removeAttr('style');
             $('#textoFinal').attr('style');
             $('#textoFinal').css({ display: 'none' });
-
+            $('#datos12').css({ display: 'none' });
             $('.dimensionesColor1').css({ 'background-color': 'white' });
             $('.dimensionesColor2').css({ 'background-color': 'white' });
             $('.dimensionesColor3').css({ 'background-color': 'white' });
             $('.dimensionesColor4').css({ 'background-color': 'white' });
             $('.dimensionesColor5').css({ 'background-color': 'white' });
             $('.dimensionesColor6').css({ 'background-color': 'white' });
-            $('.productosColor204').removeAttr('style');
-            $('.productosColor205').removeAttr('style');
-            $('.productosColor206').removeAttr('style');
+            $('.productosColor213').removeAttr('style');
+            $('.productosColor214').removeAttr('style');
+            $('.productosColor215').removeAttr('style');
+            $('.productosColor216').removeAttr('style');
+            $('.productosColor217').removeAttr('style');
+            $('.productosColor218').removeAttr('style');
+            $('.productosColor219').removeAttr('style');
+            $('.productosColor220').removeAttr('style');
+            $('.productosColor221').removeAttr('style');
+            $('.productosColor222').removeAttr('style');
+            $('.productosColor223').removeAttr('style');
+            $('.productosColor224').removeAttr('style');
+            $('.productosColor225').removeAttr('style');
+            $('.productosColor226').removeAttr('style');
+            $('.productosColor227').removeAttr('style');
+            $('.productosColor228').removeAttr('style');
 
-            $('.productosColorSolo204').removeAttr('style');
-            $('.productosColorSolo205').removeAttr('style');
-            $('.productosColorSolo206').removeAttr('style');
+            $('.productosColorSolo213').removeAttr('style');
+            $('.productosColorSolo214').removeAttr('style');
+            $('.productosColorSolo215').removeAttr('style');
+            $('.productosColorSolo216').removeAttr('style');
+            $('.productosColorSolo217').removeAttr('style');
+            $('.productosColorSolo218').removeAttr('style');
+            $('.productosColorSolo219').removeAttr('style');
+            $('.productosColorSolo220').removeAttr('style');
+            $('.productosColorSolo221').removeAttr('style');
+            $('.productosColorSolo222').removeAttr('style');
+            $('.productosColorSolo223').removeAttr('style');
+            $('.productosColorSolo224').removeAttr('style');
+            $('.productosColorSolo225').removeAttr('style');
+            $('.productosColorSolo226').removeAttr('style');
+            $('.productosColorSolo227').removeAttr('style');
+            $('.productosColorSolo228').removeAttr('style');
 
-            $('.productosColor204').css({ 'background-color': 'white' });
-            $('.productosColor205').css({ 'background-color': 'white' });
-            $('.productosColor206').css({ 'background-color': 'white' });
+            $('.productosColor213').css({ 'background-color': 'white' });
+            $('.productosColor214').css({ 'background-color': 'white' });
+            $('.productosColor215').css({ 'background-color': 'white' });
+            $('.productosColor216').css({ 'background-color': 'white' });
+            $('.productosColor217').css({ 'background-color': 'white' });
+            $('.productosColor218').css({ 'background-color': 'white' });
+            $('.productosColor219').css({ 'background-color': 'white' });
+            $('.productosColor220').css({ 'background-color': 'white' });
+            $('.productosColor221').css({ 'background-color': 'white' });
+            $('.productosColor222').css({ 'background-color': 'white' });
+            $('.productosColor223').css({ 'background-color': 'white' });
+            $('.productosColor224').css({ 'background-color': 'white' });
+            $('.productosColor225').css({ 'background-color': 'white' });
+            $('.productosColor226').css({ 'background-color': 'white' });
+            $('.productosColor227').css({ 'background-color': 'white' });
+            $('.productosColor228').css({ 'background-color': 'white' });
 
-            $('.productosColor107 #dimensiones').css({ display: 'none' });
             $('.productosColor' + producto).css({ 'overflow-x': 'hidden' });
             $('.productosColor' + producto).css({ border: '1px solid white' });
-            $('.productosColor' + producto + ' #medidas').css({ display: 'block' });
+            $('.productosColor213 #dimensiones').css({ display: 'none' });
+            $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
             $('#imagenAcabado').remove();
-            $('#acabado').css({ display: 'none' });
             $('.productosColor').css({ 'background-color': 'white' });
             $('#nombreApoyoTitulo').css({ display: 'none' });
             for (let i = 1; i <= 5; i++) {
@@ -369,10 +796,8 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                                     datos[i]['fondo'] +
                                     ' | '
                             );
-                            $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
-                            $('.productosColor' + producto + ' .dimensionesColor1').css({ float: 'left' });
                             $('#anchoEspecialAltura' + producto).append('<option> </option>');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
@@ -381,6 +806,8 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                             $('#anchoEspecialFondo' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
+
+                            $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
                             $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
                             $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
                             $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
@@ -414,17 +841,16 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                                     datos[i]['fondo'] +
                                     ' | '
                             );
-                            $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
                             $('#anchoEspecialFondo' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
+                            $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
                             $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
-                            $('.productosColor' + producto + ' .dimensionesColor2').css({ float: 'left' });
                             $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
                             $('.productosColor' + producto + ' .dimensionesColor2').append(
                                 '<p class="dimensionesId' +
@@ -460,8 +886,6 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                             $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
-                            $('.productosColor' + producto + ' .dimensionesColor3').css({ float: 'left' });
-
                             $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
                             $('.productosColor' + producto + ' .dimensionesColor3').append(
                                 '<p class="dimensionesId' +
@@ -496,8 +920,6 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                             );
                             $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
                             $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
-                            $('.productosColor' + producto + ' .dimensionesColor4').css({ float: 'left' });
-
                             $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor4').append(
@@ -533,8 +955,6 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                             );
                             $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
                             $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
-                            $('.productosColor' + producto + ' .dimensionesColor5').css({ float: 'left' });
-
                             $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor5').append(
@@ -570,11 +990,226 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                             );
                             $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '1%' });
                             $('.productosColor' + producto + ' .dimensionesColor6').css({ 'margin-bottom': '6%' });
-                            $('.productosColor' + producto + ' .dimensionesColor6').css({ float: 'left' });
-
                             $('.productosColor' + producto + ' .dimensionesColor6').css({ display: 'block' });
                             $('.productosColor' + producto + ' .dimensionesColor6').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor6').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+                        if (cont == 6 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
+                            $('.productosColor' + producto + ' #dimensionesText7').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('.productosColor' + producto + ' #precioDimenText7').text(precioDimen + ' €');
+                            $('#anchoEspecialAltura' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('#anchoEspecialFondo' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('.productosColor' + producto + ' .dimensionesColor6').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor7').css({ 'margin-bottom': '6%' });
+                            $('.productosColor' + producto + ' .dimensionesColor7').css({ display: 'block' });
+                            $('.productosColor' + producto + ' .dimensionesColor7').css({ 'margin-left': '20%' });
+                            $('.productosColor' + producto + ' .dimensionesColor7').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+
+                        if (cont == 7 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
+                            $('.productosColor' + producto + ' #dimensionesText8').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('.productosColor' + producto + ' #precioDimenText8').text(precioDimen + ' €');
+                            $('#anchoEspecialAltura' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('#anchoEspecialFondo' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('.productosColor' + producto + ' .dimensionesColor7').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor8').css({ 'margin-bottom': '6%' });
+                            $('.productosColor' + producto + ' .dimensionesColor8').css({ display: 'block' });
+                            $('.productosColor' + producto + ' .dimensionesColor8').css({ 'margin-left': '20%' });
+                            $('.productosColor' + producto + ' .dimensionesColor8').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+
+                        if (cont == 8 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
+                            $('.productosColor' + producto + ' #dimensionesText9').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('.productosColor' + producto + ' #precioDimenText9').text(precioDimen + ' €');
+                            $('#anchoEspecialAltura' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('#anchoEspecialFondo' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('.productosColor' + producto + ' .dimensionesColor8').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor9').css({ 'margin-bottom': '6%' });
+                            $('.productosColor' + producto + ' .dimensionesColor9').css({ display: 'block' });
+                            $('.productosColor' + producto + ' .dimensionesColor9').css({ 'margin-left': '20%' });
+                            $('.productosColor' + producto + ' .dimensionesColor9').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+
+                        if (cont == 9 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
+                            $('.productosColor' + producto + ' #dimensionesText10').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('.productosColor' + producto + ' #precioDimenText10').text(precioDimen + ' €');
+                            $('#anchoEspecialAltura' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('#anchoEspecialFondo' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('.productosColor' + producto + ' .dimensionesColor9').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor10').css({ 'margin-bottom': '6%' });
+                            $('.productosColor' + producto + ' .dimensionesColor10').css({ display: 'block' });
+                            $('.productosColor' + producto + ' .dimensionesColor10').css({ 'margin-left': '20%' });
+                            $('.productosColor' + producto + ' .dimensionesColor10').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+
+                        if (cont == 10 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
+                            $('.productosColor' + producto + ' #dimensionesText11').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('#anchoEspecialAltura' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('#anchoEspecialFondo' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('.productosColor' + producto + ' #precioDimenText11').text(precioDimen + ' €');
+                            $('.productosColor' + producto + ' .dimensionesColor10').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor11').css({ 'margin-bottom': '6%' });
+                            $('.productosColor' + producto + ' .dimensionesColor11').css({ display: 'block' });
+                            $('.productosColor' + producto + ' .dimensionesColor11').css({ 'margin-left': '20%' });
+                            $('.productosColor' + producto + ' .dimensionesColor11').append(
+                                '<p class="dimensionesId' +
+                                    (cont + 1) +
+                                    '" id="' +
+                                    datos[i]['id'] +
+                                    '" style="position:absolute;z-index:1;display_none"></p>'
+                            );
+                        }
+
+                        if (cont == 11 && datos[i]['mensaje'] != 'Medidas Especiales') {
+                            var precioDimen = datos[i]['precio'];
+                            var precioDimen1 = precioDimen * precioPunto;
+                            precioDimen = precioDimen1;
+                            var predAum = precioDimen * (precioProducto / 100);
+                            precioDimen = precioDimen + predAum;
+                            $('.productosColor' + producto + ' #dimensionesText12').text(
+                                datos[i]['mensaje'] +
+                                    ' | Ancho ' +
+                                    datos[i]['ancho'] +
+                                    ' - Alto ' +
+                                    datos[i]['alto'] +
+                                    ' - Fondo ' +
+                                    datos[i]['fondo'] +
+                                    ' | '
+                            );
+                            $('#anchoEspecialAltura' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('#anchoEspecialFondo' + producto).append(
+                                '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                            );
+                            $('.productosColor' + producto + ' #precioDimenText12').text(precioDimen + ' €');
+                            $('.productosColor' + producto + ' .dimensionesColor11').css({ 'margin-bottom': '1%' });
+                            $('.productosColor' + producto + ' .dimensionesColor12').css({ 'margin-bottom': '6%' });
+                            $('.productosColor' + producto + ' .dimensionesColor12').css({ display: 'block' });
+                            $('.productosColor' + producto + ' .dimensionesColor12').css({ 'margin-left': '20%' });
+                            $('.productosColor' + producto + ' .dimensionesColor12').append(
                                 '<p class="dimensionesId' +
                                     (cont + 1) +
                                     '" id="' +
@@ -631,18 +1266,29 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                 **/
             });
 
-            if (producto == 204) {
-                $('.productosColor204').css({ 'margin-bottom': '650px' });
-            }
-            if (producto == 205) {
-                $('.productosColor205').css({ 'margin-bottom': '650px' });
-            }
-            if (producto == 206) {
-                $('.productosColor206').css({ 'margin-bottom': '650px' });
+            if (
+                producto == 213 ||
+                producto == 213 ||
+                producto == 215 ||
+                producto == 216 ||
+                producto == 217 ||
+                producto == 218 ||
+                producto == 219 ||
+                producto == 220 ||
+                producto == 221 ||
+                producto == 222 ||
+                producto == 223 ||
+                producto == 224 ||
+                producto == 225 ||
+                producto == 226 ||
+                producto == 227 ||
+                producto == 228
+            ) {
+                $('.productosColor' + producto).css({ 'margin-bottom': '650px' });
             }
 
             $('.productosColor').css({ 'background-color': 'white' });
-            $('.productosColor' + producto).css({ 'background-color': '#DFDDDC' });
+            $('.productosColorSolo' + producto).css({ 'background-color': '#DFDDDC' });
             $('#nombreMesita').text(productoNombre);
             $('#nombreMesita').attr('class', producto);
             $('#terminarConfiguracion').css({ display: 'none' });
@@ -666,13 +1312,39 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
         } else {
             arrayComprobar[producto] = undefined;
             this.arrayMostrar = arrayComprobar;
-            $('.productosColor204 #acabados').css({ display: 'none' });
-            $('.productosColor205 #acabados').css({ display: 'none' });
-            $('.productosColor206 #acabados').css({ display: 'none' });
+            $('.productosColor213 #acabados').css({ display: 'none' });
+            $('.productosColor214 #acabados').css({ display: 'none' });
+            $('.productosColor215 #acabados').css({ display: 'none' });
+            $('.productosColor216 #acabados').css({ display: 'none' });
+            $('.productosColor217 #acabados').css({ display: 'none' });
+            $('.productosColor218 #acabados').css({ display: 'none' });
+            $('.productosColor219 #acabados').css({ display: 'none' });
+            $('.productosColor220 #acabados').css({ display: 'none' });
+            $('.productosColor221 #acabados').css({ display: 'none' });
+            $('.productosColor222 #acabados').css({ display: 'none' });
+            $('.productosColor223 #acabados').css({ display: 'none' });
+            $('.productosColor224 #acabados').css({ display: 'none' });
+            $('.productosColor225 #acabados').css({ display: 'none' });
+            $('.productosColor226 #acabados').css({ display: 'none' });
+            $('.productosColor227 #acabados').css({ display: 'none' });
+            $('.productosColor228 #acabados').css({ display: 'none' });
 
-            $('.productosColor204 #dimensiones').css({ display: 'none' });
-            $('.productosColor205 #dimensiones').css({ display: 'none' });
-            $('.productosColor206 #dimensiones').css({ display: 'none' });
+            $('.productosColor213 #dimensiones').css({ display: 'none' });
+            $('.productosColor214 #dimensiones').css({ display: 'none' });
+            $('.productosColor215 #dimensiones').css({ display: 'none' });
+            $('.productosColor216 #dimensiones').css({ display: 'none' });
+            $('.productosColor217 #dimensiones').css({ display: 'none' });
+            $('.productosColor218 #dimensiones').css({ display: 'none' });
+            $('.productosColor219 #dimensiones').css({ display: 'none' });
+            $('.productosColor220 #dimensiones').css({ display: 'none' });
+            $('.productosColor221 #dimensiones').css({ display: 'none' });
+            $('.productosColor222 #dimensiones').css({ display: 'none' });
+            $('.productosColor223 #dimensiones').css({ display: 'none' });
+            $('.productosColor224 #dimensiones').css({ display: 'none' });
+            $('.productosColor225 #dimensiones').css({ display: 'none' });
+            $('.productosColor226 #dimensiones').css({ display: 'none' });
+            $('.productosColor227 #dimensiones').css({ display: 'none' });
+            $('.productosColor228 #dimensiones').css({ display: 'none' });
 
             $('.dimensionesColor1').css({ 'background-color': 'white' });
             $('.dimensionesColor2').css({ 'background-color': 'white' });
@@ -680,17 +1352,56 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
             $('.dimensionesColor4').css({ 'background-color': 'white' });
             $('.dimensionesColor5').css({ 'background-color': 'white' });
             $('.dimensionesColor6').css({ 'background-color': 'white' });
-            $('.productosColor204').removeAttr('style');
-            $('.productosColor205').removeAttr('style');
-            $('.productosColor206').removeAttr('style');
+            $('.productosColor213').removeAttr('style');
+            $('.productosColor214').removeAttr('style');
+            $('.productosColor215').removeAttr('style');
+            $('.productosColor216').removeAttr('style');
+            $('.productosColor217').removeAttr('style');
+            $('.productosColor218').removeAttr('style');
+            $('.productosColor219').removeAttr('style');
+            $('.productosColor220').removeAttr('style');
+            $('.productosColor221').removeAttr('style');
+            $('.productosColor222').removeAttr('style');
+            $('.productosColor223').removeAttr('style');
+            $('.productosColor224').removeAttr('style');
+            $('.productosColor225').removeAttr('style');
+            $('.productosColor226').removeAttr('style');
+            $('.productosColor227').removeAttr('style');
+            $('.productosColor228').removeAttr('style');
 
-            $('.productosColorSolo204').removeAttr('style');
-            $('.productosColorSolo205').removeAttr('style');
-            $('.productosColorSolo206').removeAttr('style');
+            $('.productosColorSolo213').removeAttr('style');
+            $('.productosColorSolo214').removeAttr('style');
+            $('.productosColorSolo215').removeAttr('style');
+            $('.productosColorSolo216').removeAttr('style');
+            $('.productosColorSolo217').removeAttr('style');
+            $('.productosColorSolo218').removeAttr('style');
+            $('.productosColorSolo219').removeAttr('style');
+            $('.productosColorSolo220').removeAttr('style');
+            $('.productosColorSolo221').removeAttr('style');
+            $('.productosColorSolo222').removeAttr('style');
+            $('.productosColorSolo223').removeAttr('style');
+            $('.productosColorSolo224').removeAttr('style');
+            $('.productosColorSolo225').removeAttr('style');
+            $('.productosColorSolo226').removeAttr('style');
+            $('.productosColorSolo227').removeAttr('style');
+            $('.productosColorSolo228').removeAttr('style');
 
-            $('.productosColor204').css({ 'background-color': 'white' });
-            $('.productosColor205').css({ 'background-color': 'white' });
-            $('.productosColor206').css({ 'background-color': 'white' });
+            $('.productosColor213').css({ 'background-color': 'white' });
+            $('.productosColor214').css({ 'background-color': 'white' });
+            $('.productosColor215').css({ 'background-color': 'white' });
+            $('.productosColor216').css({ 'background-color': 'white' });
+            $('.productosColor217').css({ 'background-color': 'white' });
+            $('.productosColor218').css({ 'background-color': 'white' });
+            $('.productosColor219').css({ 'background-color': 'white' });
+            $('.productosColor220').css({ 'background-color': 'white' });
+            $('.productosColor221').css({ 'background-color': 'white' });
+            $('.productosColor222').css({ 'background-color': 'white' });
+            $('.productosColor223').css({ 'background-color': 'white' });
+            $('.productosColor224').css({ 'background-color': 'white' });
+            $('.productosColor225').css({ 'background-color': 'white' });
+            $('.productosColor226').css({ 'background-color': 'white' });
+            $('.productosColor227').css({ 'background-color': 'white' });
+            $('.productosColor228').css({ 'background-color': 'white' });
 
             $('#productoCalculadora1 #precios1').empty();
             $('#productoCalculadora1 #precioCalculado1').empty();
@@ -2817,20 +3528,43 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
         if (acaSi == 0) {
             var idProd1;
             idProd1 = parseFloat(idProd);
+            if (
+                idProd1 == 213 ||
+                idProd1 == 213 ||
+                idProd1 == 215 ||
+                idProd1 == 216 ||
+                idProd1 == 217 ||
+                idProd1 == 218 ||
+                idProd1 == 219 ||
+                idProd1 == 220 ||
+                idProd1 == 221 ||
+                idProd1 == 222 ||
+                idProd1 == 223 ||
+                idProd1 == 224 ||
+                idProd1 == 225 ||
+                idProd1 == 226 ||
+                idProd1 == 227 ||
+                idProd1 == 228
+            ) {
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1130px' });
+            }
 
-            if (idProd1 == 204) {
-                $('.productosColor204').css({ 'margin-bottom': '1130px' });
-            }
-            if (idProd1 == 205) {
-                $('.productosColor205').css({ 'margin-bottom': '1130px' });
-            }
-            if (idProd1 == 206) {
-                $('.productosColor206').css({ 'margin-bottom': '1130px' });
-            }
-
-            $('.productosColor204 #acabados').css({ display: 'none' });
-            $('.productosColor205 #acabados').css({ display: 'none' });
-            $('.productosColor206 #acabados').css({ display: 'none' });
+            $('.productosColor213 #acabados').css({ display: 'none' });
+            $('.productosColor214 #acabados').css({ display: 'none' });
+            $('.productosColor215 #acabados').css({ display: 'none' });
+            $('.productosColor216 #acabados').css({ display: 'none' });
+            $('.productosColor217 #acabados').css({ display: 'none' });
+            $('.productosColor218 #acabados').css({ display: 'none' });
+            $('.productosColor219 #acabados').css({ display: 'none' });
+            $('.productosColor220 #acabados').css({ display: 'none' });
+            $('.productosColor221 #acabados').css({ display: 'none' });
+            $('.productosColor222 #acabados').css({ display: 'none' });
+            $('.productosColor223 #acabados').css({ display: 'none' });
+            $('.productosColor224 #acabados').css({ display: 'none' });
+            $('.productosColor225 #acabados').css({ display: 'none' });
+            $('.productosColor226 #acabados').css({ display: 'none' });
+            $('.productosColor227 #acabados').css({ display: 'none' });
+            $('.productosColor228 #acabados').css({ display: 'none' });
 
             $('.productosColor' + idProd1 + ' #acabados').removeAttr('style');
             $('.productosColor' + idProd1 + ' #acabados').attr('style');
@@ -2839,7 +3573,18 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
             $('.productosColor' + idProd1 + ' #acabados').css({ position: 'absolute' });
             $('.productosColor' + idProd1 + ' #acabados').css({ width: '63.3%' });
             $('.productosColor' + idProd1 + ' #acabados').css({ left: '28.5%' });
-            $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '465px' });
+            if (idProd1 != 107) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '465px' });
+            }
+            if (idProd1 == 107) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '680px' });
+            }
+            if (idProd1 == 119) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '510px' });
+            }
+            if (idProd1 == 114) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '510px' });
+            }
             $('.productosColor' + idProd1 + ' #acabados').css({ border: '1px solid #7AC8FE' });
             $('.productosColor' + idProd1 + ' #acabado').css({ display: 'block' });
             $('.productosColor' + idProd1).css({ 'overflow-y': 'hidden' });
@@ -2913,6 +3658,12 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                         contnuevo++;
                     }
                 });
+                $('#datos1').append(
+                    '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
+                );
+                $('#datos1').append(
+                    '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                );
             });
             this.iluminacionService.findProd(idProd).subscribe(data => {
                 if (data.body.length != 0) {
@@ -2920,7 +3671,21 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                     this.iluminacionService.todos = data.body[0];
                 }
             });
-
+            this.productosDormitorioService.categoria(2).subscribe(data => {
+                for (let w = 0; w < data.body['length']; w++) {
+                    $('#modalApoyo #apoyoModal' + w).empty();
+                    $('#modalApoyo #apoyoModal' + w).append(
+                        '<img  src="data:image/gif;base64,' +
+                            data.body[w]['imagen'] +
+                            '" id="imagenApoyo' +
+                            w +
+                            '" class="' +
+                            data.body[w]['id'] +
+                            '" height="160px" width="280px" style=" ">'
+                    );
+                    $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
+                }
+            });
             for (let i = 1; i <= 14; i++) {
                 for (let k = 0; k < 14; k++) {
                     $('#myModalColores' + i + ' #acabadoImagen' + k).empty();
@@ -4159,7 +4924,7 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
         }
         var apoyoBueno = $('#datos1 #nombreApoyo').text();
         var idProd = $('#nombreMesita').attr('class');
-        if (contadorApoyo == cont - 1) {
+        if (contadorApoyo == cont - 1 && apoyoBueno != '') {
             $('#divDentroCalcu').css({ height: '76%' });
             if (this.iluminacionService.todos != undefined) {
                 var precioIlu = $('#precioIluminacion').attr('class');
@@ -4631,6 +5396,48 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                             }
                         }
 
+                        if (idApoyo == 212) {
+                            if (idApoyo == value['productoApoyo']['id']) {
+                                var precio = parseFloat(value['precio']);
+                                for (let f = 0; f < todosLosPrecios.length; f++) {
+                                    if (idApoyo == todosLosPrecios[f][2]) {
+                                        var precioProducto = todosLosPrecios[f][1];
+                                    }
+                                }
+                                precioProducto = precioProducto / 100;
+                                precio = precio * precioPunto;
+                                var cuenta = precio * precioProducto;
+                                cuenta = precio + cuenta;
+                                precio = cuenta;
+                                precio = Math.round(precio * 100) / 100;
+                                var totalfloat = parseFloat(precioDimension);
+                                totalfloat = totalfloat + precio;
+                                this.precioDimension1 = totalfloat;
+                                $('#precioDimension').text(totalfloat.toFixed(2));
+                                $('#datos1').append(
+                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</span><span style="float:right" id="apoyo1" class="' +
+                                        value['id'] +
+                                        '">+' +
+                                        precio +
+                                        '&euro;</span></p>'
+                                );
+                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
+                                $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                $('#botonApoyoNuevo').append(
+                                    '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</p>'
+                                );
+                                var total = $('#total').text();
+                                var totalfloat = parseFloat(total);
+                                totalfloat = totalfloat + precio;
+                                $('#total').text(totalfloat);
+                            }
+                        }
+
                         if (idApoyo == 17) {
                             if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == hbueno) {
                                 var precio = parseFloat(value['precio']);
@@ -4826,9 +5633,7 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                     prod[1]['imagen'] = '';
                     prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
                     prod[1]['productosDormitorio']['imagen'] = '';
-                    if (prod[1]['apoyo'] != undefined) {
-                        prod[1]['apoyo']['imagen'] = '';
-                    }
+                    prod[1]['apoyo']['imagen'] = '';
                     console.log(prod);
                     sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
                     contadorDimen++;
@@ -5415,7 +6220,7 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
             });
             this.productosDormitorios = todos;
         } else {
-            this.productosDormitorioService.categoria(20).subscribe(data => {
+            this.productosDormitorioService.categoria(22).subscribe(data => {
                 this.productosDormitorioService.todos = data.body;
                 this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
                     console.log(data.body);
@@ -5423,8 +6228,8 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
                     var tiene = 0;
                     var prod = this.productosDormitorioService.todos;
                     for (let q = 0; q < prod.length; q++) {
-                        prod[q]['precio'] = 0;
                         tiene = 0;
+                        prod[q]['precio'] = 0;
                         for (let n = 0; n < datos['length']; n++) {
                             if (datos[n][0] == prod[q]['id'] && datos[n][1] != 0) {
                                 tiene++;
@@ -5509,7 +6314,7 @@ export class ProductosSuplementosTvComponent implements OnInit, OnDestroy {
         this.precioTiendaService.findBus(tienda.id).subscribe(data => {
             this.precioPunto = data.body;
         });
-        this.precioTiendaProductosService.findProdId(20, tienda.id).subscribe(data => {
+        this.precioTiendaProductosService.findProdId(22, tienda.id).subscribe(data => {
             this.precioTiendaProductosService.todos = data.body;
             this.loadAll();
         });

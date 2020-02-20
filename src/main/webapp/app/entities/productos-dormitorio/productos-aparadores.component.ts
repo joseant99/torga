@@ -428,6 +428,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
             this.todasDimensiones = this.dimensionesProductoTipoService.todos;
             this.especiales = this.medidasEspecialesService.todos;
             $('#imagenAcabadoPrincipal').empty();
+            $('#datos12').css({ display: 'none' });
             $('#calculadora').attr('class', 'container tab-pane fade active show');
             $('#medidasEspecialesTexto').css({ display: 'none' });
             $('#medidasEspeciales').css({ display: 'none' });
@@ -537,10 +538,9 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ float: 'left' });
@@ -583,10 +583,9 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -620,10 +619,9 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -657,10 +655,9 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -694,10 +691,9 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -731,10 +727,9 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText6').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );

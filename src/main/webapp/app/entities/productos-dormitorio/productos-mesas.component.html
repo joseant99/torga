@@ -1,7 +1,7 @@
 <div style="top:0" id="divarribatodo"></div>
 <div id="productosPrincipal">
     <h2 style="text-align:center" id="page-heading">
-        <span ><strong style="letter-spacing: 3px;">APARADORES</strong></span>
+        <span ><strong style="letter-spacing: 3px;">MESAS</strong></span>
 
     </h2>
     <br/>
@@ -67,11 +67,11 @@
         	<div class="productosColorSolo{{productosDormitorio.id}}">
 	    	<div id="productosDormitorioCargados">
 		    	
-		 		<a><img title="Foto de linea de codigo" class="productoApa" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="337.4px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
+		 		<a><img title="Foto de linea de codigo" class="producto" [src]="'data:' + productosDormitorio.imagenContentType + ';base64,' + productosDormitorio.imagen" height="290.5px" width="500px" (click)="open(productosDormitorio.id,productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
 	    	</div>
 	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.nombre}}</p>
 	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{productosDormitorio.precio}} &euro;</p>
-    		<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.numeroDimen}} Medidas Disponibles</p>
+	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{productosDormitorio.numeroDimen}} Medidas Disponibles</p>
     		</div>
 	    	<div id="dimensiones">
 				<div class="alert alert-danger" id="mensajeErrorAlert" style="display:none;width: 85%;margin-left: 7.5%;top: 100px;">
@@ -87,6 +87,16 @@
 				<p class="dimensionesColor5" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput5" style="text-align:center" (click)="dimensionesCogidas(5)" readonly="readonly"></a><span id="dimensionesText5" style="margin-left: 30px;letter-spacing: 2px;"></span><span style="letter-spacing: 2px;font-weight: 600;" id="precioDimenText5"></span></p>
 				<p class="dimensionesColor6" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput6" style="text-align:center" (click)="dimensionesCogidas(6)" readonly="readonly"></a><span id="dimensionesText6" style="margin-left: 30px;letter-spacing: 2px;"></span><span style="letter-spacing: 2px;font-weight: 600;" id="precioDimenText6"></span></p>
 				<p class="dimensionesColor7" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput7" style="text-align:center" (click)="dimensionesCogidas(7)" readonly="readonly"></a><span id="dimensionesText7" style="margin-left: 30px;letter-spacing: 2px;"></span><span style="letter-spacing: 2px;font-weight: 600;" id="precioDimenText7"></span></p>
+				<p class="dimensionesColor8" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput8" style="text-align:center" (click)="dimensionesCogidas(8)" readonly="readonly"></a><span id="dimensionesText8" style="margin-left: 30px;letter-spacing: 2px;"></span><span style="letter-spacing: 2px;font-weight: 600;" id="precioDimenText8"></span></p>
+				<p class="dimensionesColor9" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput9" style="text-align:center" (click)="dimensionesCogidas(9)" readonly="readonly"></a><span id="dimensionesText9" style="margin-left: 30px;letter-spacing: 2px;"></span><span style="letter-spacing: 2px;font-weight: 600;" id="precioDimenText9"></span></p>
+				<p class="dimensionesColor10" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput10" style="text-align:center" (click)="dimensionesCogidas(10)" readonly="readonly"></a><span id="dimensionesText10" style="margin-left: 30px;letter-spacing: 2px;"></span><span style="letter-spacing: 2px;font-weight: 600;" id="precioDimenText10"></span></p>
+				<p class="dimensionesColor11" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput11" style="text-align:center" (click)="dimensionesCogidas(11)" readonly="readonly"></a><span id="dimensionesText11" style="margin-left: 30px;letter-spacing: 2px;"></span><span style="letter-spacing: 2px;font-weight: 600;" id="precioDimenText11"></span></p>
+				<p class="dimensionesColor12" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput12" style="text-align:center" (click)="dimensionesCogidas(12)" readonly="readonly"></a><span id="dimensionesText12" style="margin-left: 30px;letter-spacing: 2px;"></span><span style="letter-spacing: 2px;font-weight: 600;" id="precioDimenText12"></span></p>
+				<p class="dimensionesColor13" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput13" style="text-align:center" (click)="dimensionesCogidas(13)" readonly="readonly"></a><span id="dimensionesText13" style="margin-left: 30px;letter-spacing: 2px;"></span><span style="letter-spacing: 2px;font-weight: 600;" id="precioDimenText13"></span></p>
+				<p class="dimensionesColor14" style="display:none"><a ><input value="Seleccionar" id="dimensionesInput14" style="text-align:center" (click)="dimensionesCogidas(14)" readonly="readonly"></a><span id="dimensionesText14" style="margin-left: 30px;letter-spacing: 2px;"></span><span style="letter-spacing: 2px;font-weight: 600;" id="precioDimenText14"></span></p>
+				
+				
+				
 				<!-- <p class="dimensionesColor20" style="display:none"><a href="#productosAcabados{{productosDormitorio.id}}"><input id="dimensionesInput20" class="anchoEspecial{{productosDormitorio.id}}" style="text-align:center;border:0px;background-color:white" (click)="mostrarAcabadosEspeciales(productosDormitorio.id)" readonly="readonly" disabled></a><span style="margin-left: 30px;letter-spacing: 2px;"><strong>Ancho Especial </strong>| Ancho <input id="anchoEspecialDat{{productosDormitorio.id}}" (change)="especialDimensionesAncho(productosDormitorio.id)" style="width: 70px;" list="listaEspecialAncho"> - Alto <input id="altoAncho{{productosDormitorio.id}}" style="width: 70px;" disabled> - Fondo <input id="fondoAncho{{productosDormitorio.id}}" style="width: 70px;" disabled> | <span id="precioEspecialAncho{{productosDormitorio.id}}"></span></span></p>
 				<p class="dimensionesColor21" style="display:none"><a href="#productosAcabados{{productosDormitorio.id}}"><input id="dimensionesInput21" class="altoEspecial{{productosDormitorio.id}}" style="text-align:center;border:0px;background-color:white" (click)="especialAlturaAncho(productosDormitorio.id)" readonly="readonly"></a><span style="margin-left: 30px;letter-spacing: 2px;"><strong>Altura Especial </strong>| Ancho <select id="anchoEspecialAltura{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesAltura(productosDormitorio.id)" style="width: 70px;" ></select> - Alto <input id="altoAltoEspecial{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesAltura(productosDormitorio.id)" style="width: 70px;" list="listaEspecialAlto"> - Fondo <input id="fondoAncho" style="width: 70px;" disabled> | <span id="precioEspecialAltura{{productosDormitorio.id}}"></span></span></p>
 				<p class="dimensionesColor22" style="display:none"><a href="#productosAcabados{{productosDormitorio.id}}"><input id="dimensionesInput22" class="fondoEspecial{{productosDormitorio.id}}" style="text-align:center;border:0px;background-color:white" (click)="especialFondoAncho(productosDormitorio.id)" readonly="readonly"></a><span style="margin-left: 30px;letter-spacing: 2px;"><strong>Fondo Especial </strong>| Ancho <select id="anchoEspecialFondo{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesFondo(productosDormitorio.id)" style="width: 70px;" ></select> - Alto <input id="altoFondoEspecial{{productosDormitorio.id}}" (change)="cambiarMedidasEspecialesFondo(productosDormitorio.id)" style="width: 70px;" disabled> - Fondo <input id="fondoFondoEspecial{{productosDormitorio.id}}" list="listaEspecialFondo" (change)="cambiarMedidasEspecialesFondo(productosDormitorio.id)" style="width: 70px;"> | <span id="precioEspecialFondo{{productosDormitorio.id}}"></span></span></p>
@@ -334,15 +344,12 @@
 	  </div>
 	  
 	  
-	  <div class="modal fade" id="myModalColores1" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores1" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
-		        <div class="modal-header">
-		          <h4 class="modal-title">Escoge un acabado</h4>
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        </div>
+		        
 		        <div class="modal-body">	          
 		          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,1)"  data-dismiss="modal"></div>
 		          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,1)"  data-dismiss="modal"></div>
@@ -360,22 +367,17 @@
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,1)" data-dismiss="modal"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
-	  <div class="modal fade" id="myModalColores2" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores2" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
-		        <div class="modal-header">
-		          <h4 class="modal-title">Escoge un acabado</h4>
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        </div>
+		        
 		        <div class="modal-body">	          
 		          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,2)"  data-dismiss="modal"></div>
 		          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,2)"  data-dismiss="modal"></div>
@@ -393,22 +395,17 @@
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)" data-dismiss="modal"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
-	  <div class="modal fade" id="myModalColores3" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores3" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
-		        <div class="modal-header">
-		          <h4 class="modal-title">Escoge un acabado</h4>
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        </div>
+		        
 		        <div class="modal-body">	          
 		          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,3)" data-dismiss="modal"></div>
 		          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,3)" data-dismiss="modal"></div>
@@ -426,15 +423,13 @@
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,3)" data-dismiss="modal"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
-	  <div class="modal fade" id="myModalColores4" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores4" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
@@ -459,15 +454,13 @@
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,4)" data-dismiss="modal"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
-	  <div class="modal fade" id="myModalColores5" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores5" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
@@ -492,15 +485,13 @@
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,5)" data-dismiss="modal"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
-	  <div class="modal fade" id="myModalColores6" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores6" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
@@ -525,84 +516,13 @@
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,6)" data-dismiss="modal"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
-	  <div class="modal fade" id="myModalColores7" role="dialog">
-		    <div class="modal-dialog modal-lg">
-		    
-		      <!-- Modal content-->
-		      <div class="modal-content">
-		        <div class="modal-header">
-		          <h4 class="modal-title">Escoge un acabado</h4>
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        </div>
-		         <div class="modal-body">	          
-			          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen2" (click)="cambiarAcabado(2,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen3" (click)="cambiarAcabado(3,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen4" (click)="cambiarAcabado(4,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen5" (click)="cambiarAcabado(5,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen6" (click)="cambiarAcabado(6,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen7" (click)="cambiarAcabado(7,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen8" (click)="cambiarAcabado(8,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen9" (click)="cambiarAcabado(9,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,7)" data-dismiss="modal"></div> 
-			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,7)" data-dismiss="modal"></div>          
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,7)" data-dismiss="modal"></div>          
-		                   
-		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
-		      </div>
-		      
-		    </div>
-	  </div>
-	  <div class="modal fade" id="myModalColores8" role="dialog">
-		    <div class="modal-dialog modal-lg">
-		    
-		      <!-- Modal content-->
-		      <div class="modal-content">
-		        <div class="modal-header">
-		          <h4 class="modal-title">Escoge un acabado</h4>
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        </div>
-		             
-		           <div class="modal-body">	          
-			          <div class="acabadosModal" id="acabadoImagen0" (click)="cambiarAcabado(0,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen1" (click)="cambiarAcabado(1,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen2" (click)="cambiarAcabado(2,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen3" (click)="cambiarAcabado(3,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen4" (click)="cambiarAcabado(4,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen5" (click)="cambiarAcabado(5,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen6" (click)="cambiarAcabado(6,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen7" (click)="cambiarAcabado(7,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen8" (click)="cambiarAcabado(8,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen9" (click)="cambiarAcabado(9,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,8)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,8)" data-dismiss="modal"></div> 
-			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,8)" data-dismiss="modal"></div>          
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,8)" data-dismiss="modal"></div>          
-		                   
-		        </div>    
-		                   
-		      
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
-		      </div>
-		      
-		    </div>
-	  </div>
-	  <div class="modal fade" id="myModalColores9" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores7" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
@@ -627,15 +547,13 @@
 		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
-	  <div class="modal fade" id="myModalColores10" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores8" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
@@ -660,15 +578,13 @@
 		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
-	  <div class="modal fade" id="myModalColores11" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores9" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
@@ -693,15 +609,75 @@
 		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="myModalColores10" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un acabado</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
+		        <div class="modal-body">	          
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen0" (click)="cambiarAcabado(0,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen1" (click)="cambiarAcabado(1,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen2" (click)="cambiarAcabado(2,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen3" (click)="cambiarAcabado(3,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen4" (click)="cambiarAcabado(4,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen5" (click)="cambiarAcabado(5,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen6" (click)="cambiarAcabado(6,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen7" (click)="cambiarAcabado(7,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen8" (click)="cambiarAcabado(8,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen9" (click)="cambiarAcabado(9,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen10" (click)="cambiarAcabado(10,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen11" (click)="cambiarAcabado(11,1,2)"></div> 
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen12" (click)="cambiarAcabado(12,1,2)"></div>          
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
+		                   
+		        </div>
+		        
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="myModalColores11" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un acabado</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen0" (click)="cambiarAcabado(0,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen1" (click)="cambiarAcabado(1,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen2" (click)="cambiarAcabado(2,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen3" (click)="cambiarAcabado(3,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen4" (click)="cambiarAcabado(4,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen5" (click)="cambiarAcabado(5,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen6" (click)="cambiarAcabado(6,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen7" (click)="cambiarAcabado(7,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen8" (click)="cambiarAcabado(8,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen9" (click)="cambiarAcabado(9,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen10" (click)="cambiarAcabado(10,1,2)"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen11" (click)="cambiarAcabado(11,1,2)"></div> 
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen12" (click)="cambiarAcabado(12,1,2)"></div>          
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
+		                   
+		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
 	  <div class="modal fade" id="myModalColores12" role="dialog">
-		    <div class="modal-dialog modal-lg">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
@@ -726,15 +702,13 @@
 		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
-	  <div class="modal fade" id="myModalColores13" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores13" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
@@ -759,15 +733,13 @@
 		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>
 	  </div>
-	  <div class="modal fade" id="myModalColores14" role="dialog">
-		    <div class="modal-dialog modal-lg">
+	  <div class="modal fade" id="myModalColores14" style="z-index: 100000;" role="dialog">
+		    <div class="modal-dialog modal-lg" style="margin-top:8px">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
@@ -792,9 +764,7 @@
 		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)"></div>          
 		                   
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
+		        
 		      </div>
 		      
 		    </div>

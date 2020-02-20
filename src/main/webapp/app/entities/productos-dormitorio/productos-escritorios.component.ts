@@ -369,10 +369,10 @@ export class ProductosEscritoriosComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
                             $('.productosColor' + producto + ' .dimensionesColor1').css({ float: 'left' });
@@ -415,10 +415,9 @@ export class ProductosEscritoriosComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -452,10 +451,9 @@ export class ProductosEscritoriosComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -490,10 +488,9 @@ export class ProductosEscritoriosComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -528,10 +525,9 @@ export class ProductosEscritoriosComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );
@@ -566,10 +562,9 @@ export class ProductosEscritoriosComponent implements OnInit, OnDestroy {
                                     datos[i]['alto'] +
                                     ' - Fondo ' +
                                     datos[i]['fondo'] +
-                                    ' | ' +
-                                    precioDimen +
-                                    ' €'
+                                    ' | '
                             );
+                            $('.productosColor' + producto + ' #precioDimenText6').text(precioDimen + ' €');
                             $('#anchoEspecialAltura' + producto).append(
                                 '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
                             );

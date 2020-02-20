@@ -23,3 +23,4 @@ export * from './productos-vitrinas.component';
 export * from './productos-singulares.component';
 export * from './productos-aparadores.component';
 export * from './productos-buscador.component';
+export * from './productos-mesas.component';
