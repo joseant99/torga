@@ -666,6 +666,7 @@ export class ProductosColgantesComponent implements OnInit, OnDestroy {
 
                             $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
                             $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                            $('.productosColor158 #dimensiones').css({ display: 'none' });
                             $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
                             $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
                             $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
@@ -3508,12 +3509,6 @@ export class ProductosColgantesComponent implements OnInit, OnDestroy {
                         contnuevo++;
                     }
                 });
-                $('#datos1').append(
-                    '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
-                );
-                $('#datos1').append(
-                    '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
-                );
             });
             this.iluminacionService.findProd(idProd).subscribe(data => {
                 if (data.body.length != 0) {
@@ -3521,21 +3516,7 @@ export class ProductosColgantesComponent implements OnInit, OnDestroy {
                     this.iluminacionService.todos = data.body[0];
                 }
             });
-            this.productosDormitorioService.categoria(2).subscribe(data => {
-                for (let w = 0; w < data.body['length']; w++) {
-                    $('#modalApoyo #apoyoModal' + w).empty();
-                    $('#modalApoyo #apoyoModal' + w).append(
-                        '<img  src="data:image/gif;base64,' +
-                            data.body[w]['imagen'] +
-                            '" id="imagenApoyo' +
-                            w +
-                            '" class="' +
-                            data.body[w]['id'] +
-                            '" height="160px" width="280px" style=" ">'
-                    );
-                    $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
-                }
-            });
+
             for (let i = 1; i <= 14; i++) {
                 for (let k = 0; k < 14; k++) {
                     $('#myModalColores' + i + ' #acabadoImagen' + k).empty();
@@ -4467,41 +4448,41 @@ export class ProductosColgantesComponent implements OnInit, OnDestroy {
         var k = 1;
         var nombreAcabado;
         var nombre = $('#nombreMesita').text();
-        if (nombre == 'Modulo Bajo 1') {
-            nombre = 'mb1';
+        if (nombre == 'Colgante vertical 1 izquierdo') {
+            nombre = 'cv27';
         }
-        if (nombre == 'Modulo Bajo 2') {
-            nombre = 'mb2';
+        if (nombre == 'Colgante vertical 1 derecho') {
+            nombre = 'cv27';
         }
-        if (nombre == 'Modulo Bajo 3') {
-            nombre = 'mb4';
+        if (nombre == 'Colgante vertical 2 izquierdo') {
+            nombre = 'cv25';
         }
-        if (nombre == 'Modulo Bajo 4 Apertura Izquierda') {
-            nombre = 'mb6';
+        if (nombre == 'Colgante vertical 2 derecho') {
+            nombre = 'cv25';
         }
-        if (nombre == 'Modulo Bajo 4 Apertura Derecha') {
-            nombre = 'mb5';
+        if (nombre == 'Colgante vertical 3 izquierdo') {
+            nombre = 'cv6';
         }
-        if (nombre == 'Modulo Bajo 5 Apertura Izquierda') {
-            nombre = 'mb8';
+        if (nombre == 'Colgante vertical 3 derecho') {
+            nombre = 'cv6';
         }
-        if (nombre == 'Modulo Bajo 5 Apertura Derecha') {
-            nombre = 'mb7';
+        if (nombre == 'Colgante vertical 4 izquierdo') {
+            nombre = 'cv19';
         }
-        if (nombre == 'Modulo Bajo 6') {
-            nombre = 'mb9';
+        if (nombre == 'Colgante vertical 4 derecha') {
+            nombre = 'cv19';
         }
-        if (nombre == 'Modulo Bajo 7 Apertura Izquierda') {
-            nombre = 'mb11';
+        if (nombre == 'Colgante vertical 5 izquierdo') {
+            nombre = 'cv10';
         }
-        if (nombre == 'Modulo Bajo 7 Apertura Derecha') {
-            nombre = 'mb10';
+        if (nombre == 'Colgante vertical 5 derecho') {
+            nombre = 'cv10';
         }
-        if (nombre == 'Modulo Bajo 8 Apertura Izquierda') {
-            nombre = 'mb13';
+        if (nombre == 'Colgante vertical 6 izquierdo') {
+            nombre = 'cv12';
         }
-        if (nombre == 'Modulo Bajo 8 Apertura Derecha') {
-            nombre = 'mb12';
+        if (nombre == 'Colgante vertical 6 derecho') {
+            nombre = 'cv12';
         }
         if (nombre == 'Modulo Bajo 9') {
             nombre = 'mb14';
@@ -4774,7 +4755,7 @@ export class ProductosColgantesComponent implements OnInit, OnDestroy {
         }
         var apoyoBueno = $('#datos1 #nombreApoyo').text();
         var idProd = $('#nombreMesita').attr('class');
-        if (contadorApoyo == cont - 1 && apoyoBueno != '') {
+        if (contadorApoyo == cont - 1) {
             $('#divDentroCalcu').css({ height: '76%' });
             if (this.iluminacionService.todos != undefined) {
                 var precioIlu = $('#precioIluminacion').attr('class');
@@ -5483,7 +5464,9 @@ export class ProductosColgantesComponent implements OnInit, OnDestroy {
                     prod[1]['imagen'] = '';
                     prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
                     prod[1]['productosDormitorio']['imagen'] = '';
-                    prod[1]['apoyo']['imagen'] = '';
+                    if (prod[1]['apoyo'] != undefined) {
+                        prod[1]['apoyo']['imagen'] = '';
+                    }
                     console.log(prod);
                     sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
                     contadorDimen++;

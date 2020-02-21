@@ -1111,6 +1111,42 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 if (prodNombre == 'Aparador 10') {
                                                     prodNombre = 'ap10';
                                                 }
+                                                if (prodNombre == 'Colgante vertical 1 izquierdo') {
+                                                    prodNombre = 'cv27';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 1 derecho') {
+                                                    prodNombre = 'cv27';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 2 izquierdo') {
+                                                    prodNombre = 'cv25';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 2 derecho') {
+                                                    prodNombre = 'cv25';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 3 izquierdo') {
+                                                    prodNombre = 'cv6';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 3 derecho') {
+                                                    prodNombre = 'cv6';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 4 izquierdo') {
+                                                    prodNombre = 'cv19';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 4 derecha') {
+                                                    prodNombre = 'cv19';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 5 izquierdo') {
+                                                    prodNombre = 'cv10';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 5 derecho') {
+                                                    prodNombre = 'cv10';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 6 izquierdo') {
+                                                    prodNombre = 'cv12';
+                                                }
+                                                if (prodNombre == 'Colgante vertical 6 derecho') {
+                                                    prodNombre = 'cv12';
+                                                }
                                                 var nombreAcabado = acabados[k]['acabados']['nombre'].toLowerCase();
                                                 if (nombreAcabado == 'marmol blanco') {
                                                     nombreAcabado = 'marmolblanco';
