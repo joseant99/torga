@@ -111,6 +111,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
         var cont = 0;
         this.acabadosCompo = [];
         var id = sessionStorage.getItem('composicion');
+        $('#composicionNt' + id).css({ 'font-weight': '600' });
         this.productosComposicionService.query1(id).subscribe(data => {
             this.productos = data.body;
             this.iluProds1 = data.body;
