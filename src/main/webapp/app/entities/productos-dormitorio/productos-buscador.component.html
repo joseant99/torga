@@ -2,16 +2,16 @@
 <div id="productosPrincipal">
     <h2 style="text-align:center" id="page-heading">
         <span ><strong>BUSCADOR</strong></span>
-		<p style="text-align:center;margin-top: 5%;"><input style="text-align:center" list="listaAnchos" id="anchosSelect" name="anchos" type="text" (change)="cargarDimen()"/></p>
+		<p style="text-align:center;margin-top: 5%;"><input style="text-align:center" list="listaAnchos" id="anchosSelect" name="anchos" type="text" /><button style="width: 140px;margin-left: 20px;" (click)="cargarDimen()">Buscar</button></p>
     </h2>
     <jhi-alert></jhi-alert>
     <br/>
     <div style="width:100%" id="producto">
-    <div style="margin-right:0%;margin-left:24%;" [id]='modulosBajos.productosDormitorio.id' class="productosColor{{modulosBajos.productosDormitorio.id}}" *ngIf="modulosBajos !== undefined">
+    <div style="margin-right:0%;margin-left:24%;background-color:#dfdddc" [id]='modulosBajos.productosDormitorio.id' class="productosColor{{modulosBajos.productosDormitorio.id}}" *ngIf="modulosBajos !== undefined">
         	<div class="productosColorSolo{{modulosBajos.productosDormitorio.id}}">
 	    	<div id="productosDormitorioCargados">
 		    	
-		 		<a href="#dimensiones"><img title="Foto de linea de codigo" class="producto" [src]="'data:' + modulosBajos.productosDormitorio.imagenContentType + ';base64,' + modulosBajos.productosDormitorio.imagen" height="290.5px" width="500px" (click)="open(modulosBajos.productosDormitorio.id,modulosBajos.productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
+		 		<a href="#dimensiones"><img title="Foto de linea de codigo" class="producto" [src]="'data:' + modulosBajos.productosDormitorio.imagenContentType + ';base64,' + modulosBajos.productosDormitorio.imagen" height="290.5px" width="500px" alt="productosDormitorio image"/></a>
 	    	</div>
 	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{modulosBajos.productosDormitorio.nombre}}</p>
 	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{modulosBajos.precio}} &euro;</p>
@@ -19,22 +19,22 @@
     </div>
     
     
-    <div style="margin-right:0%;margin-left:24%;" [id]='aparadores.productosDormitorio.id' class="productosColor{{aparadores.productosDormitorio.id}}" *ngIf="aparadores !== undefined">
+    <div style="margin-right:0%;margin-left:24%;background-color:#dfdddc" [id]='aparadores.productosDormitorio.id' class="productosColor{{aparadores.productosDormitorio.id}}" *ngIf="aparadores !== undefined">
         	<div class="productosColorSolo{{aparadores.productosDormitorio.id}}">
 	    	<div id="productosDormitorioCargados">
 		    	
-		 		<a><img title="Foto de linea de codigo" class="productoApa" [src]="'data:' + aparadores.productosDormitorio.imagenContentType + ';base64,' + aparadores.productosDormitorio.imagen" height="337.4px" width="500px" (click)="open(aparadores.productosDormitorio.id,aparadores.productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
+		 		<a><img title="Foto de linea de codigo" class="productoApa" [src]="'data:' + aparadores.productosDormitorio.imagenContentType + ';base64,' + aparadores.productosDormitorio.imagen" height="337.4px" width="500px" alt="productosDormitorio image"/></a>
 	    	</div>
 	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{aparadores.productosDormitorio.nombre}}</p>
 	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{aparadores.precio}} &euro;</p>
     		</div>
     </div>
     
-    <div style="margin-right:0%;margin-left:24%;" [id]='singulares.productosDormitorio.id' class="productosColorSin{{singulares.productosDormitorio.id}}" *ngIf="singulares !== undefined">
+    <div style="margin-right:0%;margin-left:24%;background-color:#dfdddc" [id]='singulares.productosDormitorio.id' class="productosColorSin{{singulares.productosDormitorio.id}}" *ngIf="singulares !== undefined">
         	<div class="productosColorSolo{{singulares.productosDormitorio.id}}">
 	    	<div id="productosDormitorioCargados">
 		    	
-		 		<a><img title="Foto de linea de codigo" class="productoSin" [src]="'data:' + singulares.productosDormitorio.imagenContentType + ';base64,' + singulares.productosDormitorio.imagen" height="535.75px" width="300px" (click)="open(singulares.productosDormitorio.id,singulares.productosDormitorio.nombre)" alt="productosDormitorio image"/></a>
+		 		<a><img title="Foto de linea de codigo" class="productoSin" [src]="'data:' + singulares.productosDormitorio.imagenContentType + ';base64,' + singulares.productosDormitorio.imagen" height="535.75px" width="300px" alt="productosDormitorio image"/></a>
 	    	</div>
 	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{singulares.productosDormitorio.nombre}}</p>
 	    	<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">Desde {{singulares.precio}} &euro;</p>
@@ -79,7 +79,7 @@
 	</div>
 	<div id="acabados"style="width:90;float:left;">
 
-			<h2 id="acabado" style='margin-left:40%;float:left;display:none'>Paso 3: Acabados</h2>
+			<h2 id="acabado" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">ACABADOS Y APOYO</strong></h2>
 			<div id="imagenAcabadoPrincipal"></div>
 			<div id="imagenAcabadoPrincipalSin"></div>
 
