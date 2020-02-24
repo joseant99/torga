@@ -73,8 +73,32 @@
     		
     		<div id="dimensionesApoyo" style="display:none;position:absolute;left: 0;margin-left: 29%;">
     			<h2 id="medidas" style='margin-left:43%;margin-bottom:3%'><strong style="letter-spacing: 3px">MEDIDAS</strong></h2>
-    			<p style="margin-left: 21%;" *ngFor="let bancada of bancada42"><input id="seleccionar{{bancada.id}}" style="text-align:center" value="Seleccionar" (click)="cogerDimen(bancada.id)" readonly="readonly"><span style="letter-spacing: 2px;margin-left: 30px;">Bancada | Ancho {{bancada.ancho}} | Alto {{bancada.alto}} | Fondo {{bancada.fondo}} | <strong>{{bancada.precio}}</strong> &euro;</span></p>
+    			<p style="margin-left: 21%;" *ngFor="let bancada of bancada42"><input id="seleccionar{{bancada.id}}" style="text-align:center" value="Seleccionar" (click)="cogerDimen(bancada.id,42)" readonly="readonly"><span style="letter-spacing: 2px;margin-left: 30px;">Bancada | Ancho {{bancada.ancho}} | Alto {{bancada.alto}} | Fondo {{bancada.fondo}} | <strong>{{bancada.precio}}</strong> &euro;</span></p>
     		</div>
+    		<div id="acabados"style="display:none;position:absolute">
+	
+					<h2 id="acabado" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">ACABADOS Y APOYO</strong></h2>
+					<div id="productosAcabados"><div id="imagenAcabadoPrincipal"></div></div>
+					<div id="acabadosPartesDivs" style="display:none">
+						<div id="aca11" style="float:left"></div>
+						<div id="aca12" style="float:left"></div>
+						<div id="aca13" style="float:left"></div>
+						<div id="aca14" style="float:left"></div>
+						<div id="aca15" style="float:left"></div>
+						<div id="aca16" style="float:left"></div>
+						<div id="aca17" style="float:left"></div>
+						<div id="aca18" style="float:left"></div>
+						<div id="aca19" style="float:left"></div>
+						<div id="aca110" style="float:left"></div>
+						<div id="aca111" style="float:left"></div>
+						<div id="aca112" style="float:left"></div>
+						<div id="aca113" style="float:left"></div>
+						<div id="aca114" style="float:left"></div>
+					</div>
+					<div style="float:left;display:none" id="botonApoyoNuevo">
+						
+					</div>		
+			</div>
     	</div>
     	<div id="bancada47" class="productosColorBan47">
     		<div class="productosColorSoloBan47">
@@ -85,7 +109,7 @@
     		</div>
     		<div id="dimensionesApoyo" style="display:none;position:absolute;left: 0;margin-left: 29%;">
     			<h2 id="medidas" style='margin-left:43%;margin-bottom:3%'><strong style="letter-spacing: 3px">MEDIDAS</strong></h2>
-    			<p style="margin-left: 21%;" *ngFor="let bancada of bancada47"><input id="seleccionar{{bancada.id}}" style="text-align:center" value="Seleccionar" (click)="cogerDimen(bancada.id)" readonly="readonly"><span style="letter-spacing: 2px;margin-left: 30px;">Bancada | Ancho {{bancada.ancho}} | Alto {{bancada.alto}} | Fondo {{bancada.fondo}} | <strong>{{bancada.precio}}</strong> &euro;</span></p>
+    			<p style="margin-left: 21%;" *ngFor="let bancada of bancada47"><input id="seleccionar{{bancada.id}}" style="text-align:center" value="Seleccionar" (click)="cogerDimen(bancada.id,47)" readonly="readonly"><span style="letter-spacing: 2px;margin-left: 30px;">Bancada | Ancho {{bancada.ancho}} | Alto {{bancada.alto}} | Fondo {{bancada.fondo}} | <strong>{{bancada.precio}}</strong> &euro;</span></p>
     		</div>
     	</div>
     	<div id="zocalo" class="productosColorZo">

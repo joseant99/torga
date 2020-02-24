@@ -871,28 +871,33 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                     });
                                 });
                             } else {
-                                if (res.body[i]['dimensionesProductoTipo']['mensaje'] == 'Medidas Especiales') {
-                                    var medidasEspeciales = this.medEspProductoPedidoPresuService.todo;
+                                if (res.body[i]['dimensionesProductoTipo'] != undefined) {
+                                    if (res.body[i]['dimensionesProductoTipo']['mensaje'] == 'Medidas Especiales') {
+                                        var medidasEspeciales = this.medEspProductoPedidoPresuService.todo;
 
-                                    for (let k = 0; k < medidasEspeciales.length; k++) {
-                                        if (medidasEspeciales[k]['productosPresupuestoPedidos']['id'] == res.body[i]['id']) {
-                                            res.body[i]['dimensionesProductoTipo']['ancho'] = medidasEspeciales[k]['ancho'];
-                                            res.body[i]['dimensionesProductoTipo']['alto'] = medidasEspeciales[k]['alto'];
-                                            res.body[i]['dimensionesProductoTipo']['fondo'] = medidasEspeciales[k]['fondo'];
-                                            res.body[i]['dimensionesProductoTipo']['precio'] = medidasEspeciales[k]['precio'];
-                                            var precioEspecial = parseFloat(medidasEspeciales[k]['precio']);
-                                            precioEspecial = precioEspecial * precioPunto;
-                                            var menosPrecio = precioEspecial * 0.3;
-                                            res.body[i]['dimensionesProductoTipo']['incremento'] = menosPrecio.toFixed(2);
-                                            menosPrecio = precioEspecial + menosPrecio;
-                                            res.body[i]['dimensionesProductoTipo']['precio'] = menosPrecio;
-                                            var incremento = menosPrecio;
-                                            var mejorIncremento = incremento * precioPunto;
-                                            mejorIncremento = incremento + mejorIncremento;
+                                        for (let k = 0; k < medidasEspeciales.length; k++) {
+                                            if (medidasEspeciales[k]['productosPresupuestoPedidos']['id'] == res.body[i]['id']) {
+                                                res.body[i]['dimensionesProductoTipo']['ancho'] = medidasEspeciales[k]['ancho'];
+                                                res.body[i]['dimensionesProductoTipo']['alto'] = medidasEspeciales[k]['alto'];
+                                                res.body[i]['dimensionesProductoTipo']['fondo'] = medidasEspeciales[k]['fondo'];
+                                                res.body[i]['dimensionesProductoTipo']['precio'] = medidasEspeciales[k]['precio'];
+                                                var precioEspecial = parseFloat(medidasEspeciales[k]['precio']);
+                                                precioEspecial = precioEspecial * precioPunto;
+                                                var menosPrecio = precioEspecial * 0.3;
+                                                res.body[i]['dimensionesProductoTipo']['incremento'] = menosPrecio.toFixed(2);
+                                                menosPrecio = precioEspecial + menosPrecio;
+                                                res.body[i]['dimensionesProductoTipo']['precio'] = menosPrecio;
+                                                var incremento = menosPrecio;
+                                                var mejorIncremento = incremento * precioPunto;
+                                                mejorIncremento = incremento + mejorIncremento;
 
-                                            productosPresupuesto[cont] = res.body[i];
-                                            cont++;
+                                                productosPresupuesto[cont] = res.body[i];
+                                                cont++;
+                                            }
                                         }
+                                    } else {
+                                        productosPresupuesto[cont] = res.body[i];
+                                        cont++;
                                     }
                                 } else {
                                     productosPresupuesto[cont] = res.body[i];
