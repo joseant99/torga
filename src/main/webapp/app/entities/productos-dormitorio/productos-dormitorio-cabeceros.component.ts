@@ -378,7 +378,17 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                 var dimensionesPrueba;
                 dimensionesPrueba = data.body;
                 var datos = dimensionesPrueba;
-                if (productoNombre != 'Cali 1' && productoNombre != 'Aria 1') {
+                if (
+                    productoNombre != 'Cali 1' &&
+                    productoNombre != 'Aria 1' &&
+                    productoNombre != 'Aria 2' &&
+                    productoNombre != 'Sansa' &&
+                    productoNombre != 'Margot 1' &&
+                    productoNombre != 'Margot 2' &&
+                    productoNombre != 'Zenda' &&
+                    productoNombre != 'Noa' &&
+                    productoNombre != 'Adda'
+                ) {
                     for (let i = 0; i < datos.length; i++) {
                         if (producto == datos[i]['productosDormitorio']['id']) {
                             if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales') {
@@ -842,7 +852,127 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                         );
                     }
 
+                    if (productoNombre == 'Adda') {
+                        $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ 'margin-left': '35%' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').append(
+                            '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                        );
+                    }
+
                     if (productoNombre == 'Aria 1') {
+                        this.tipoProductoService.query1(producto).subscribe(data => {
+                            this.tipoProductoService.todos = data.body;
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ width: '63.3%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ border: '1px solid #7AC8FE' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'margin-top': '20px' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'text-align': 'center' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-bottom': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-top': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ left: '28.5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ position: 'absolute' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'background-color': 'white' });
+                        });
+                    }
+
+                    if (productoNombre == 'Aria 2') {
+                        this.tipoProductoService.query1(producto).subscribe(data => {
+                            this.tipoProductoService.todos = data.body;
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ width: '63.3%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ border: '1px solid #7AC8FE' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'margin-top': '20px' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'text-align': 'center' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-bottom': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-top': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ left: '28.5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ position: 'absolute' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'background-color': 'white' });
+                        });
+                    }
+
+                    if (productoNombre == 'Margot 1') {
+                        this.tipoProductoService.query1(producto).subscribe(data => {
+                            this.tipoProductoService.todos = data.body;
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ width: '63.3%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ border: '1px solid #7AC8FE' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'margin-top': '20px' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'text-align': 'center' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-bottom': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-top': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ left: '28.5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ position: 'absolute' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'background-color': 'white' });
+                        });
+                    }
+                    if (productoNombre == 'Margot 2') {
+                        this.tipoProductoService.query1(producto).subscribe(data => {
+                            this.tipoProductoService.todos = data.body;
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ width: '63.3%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ border: '1px solid #7AC8FE' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'margin-top': '20px' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'text-align': 'center' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-bottom': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-top': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ left: '28.5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ position: 'absolute' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'background-color': 'white' });
+                        });
+                    }
+
+                    if (productoNombre == 'Zenda') {
+                        this.tipoProductoService.query1(producto).subscribe(data => {
+                            this.tipoProductoService.todos = data.body;
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ width: '63.3%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ border: '1px solid #7AC8FE' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'margin-top': '20px' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'text-align': 'center' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-bottom': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-top': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ left: '28.5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ position: 'absolute' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'background-color': 'white' });
+                        });
+                    }
+
+                    if (productoNombre == 'Noa') {
+                        this.tipoProductoService.query1(producto).subscribe(data => {
+                            this.tipoProductoService.todos = data.body;
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ width: '63.3%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ border: '1px solid #7AC8FE' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'margin-top': '20px' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ display: 'block' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'text-align': 'center' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-bottom': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero #opcionesCabeceroH2').css({ 'margin-top': '5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ left: '28.5%' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ position: 'absolute' });
+                            $('.productosColor' + producto + ' #opcionesCabecero').css({ 'background-color': 'white' });
+                        });
+                    }
+
+                    if (productoNombre == 'Sansa') {
                         this.tipoProductoService.query1(producto).subscribe(data => {
                             this.tipoProductoService.todos = data.body;
                             $('.productosColor' + producto + ' #opcionesCabecero').css({ width: '63.3%' });
@@ -1060,6 +1190,521 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                 this.cargarDespuesOpciones(idProd);
             }
         }
+
+        if (idProd == 251) {
+            if (id == 5) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 6) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option id="opcion1" class="248" value="1">Para colchon de 135</option><option class="248" id="opcion2" value="2">Para colchon de 150</option><option class="248" id="opcion3" value="3">Para colchon de 160</option><option class="248" id="opcion4" value="4">Para colchon de 180</option>'
+                );
+            }
+
+            if (id == 7) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 8) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+        }
+
+        if (idProd == 255) {
+            if (id == 9) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 10) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option id="opcion1" class="248" value="1">Para colchon de 135</option><option class="248" id="opcion2" value="2">Para colchon de 150</option><option class="248" id="opcion3" value="3">Para colchon de 160</option><option class="248" id="opcion4" value="4">Para colchon de 180</option>'
+                );
+            }
+
+            if (id == 11) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 12) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+        }
+
+        if (idProd == 259) {
+            if (id == 13) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 14) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option id="opcion1" class="248" value="1">Para colchon de 135</option><option class="248" id="opcion2" value="2">Para colchon de 150</option><option class="248" id="opcion3" value="3">Para colchon de 160</option><option class="248" id="opcion4" value="4">Para colchon de 180</option>'
+                );
+            }
+
+            if (id == 15) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 16) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+        }
+
+        if (idProd == 263) {
+            if (id == 17) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 18) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option id="opcion1" class="248" value="1">Para colchon de 135</option><option class="248" id="opcion2" value="2">Para colchon de 150</option><option class="248" id="opcion3" value="3">Para colchon de 160</option><option class="248" id="opcion4" value="4">Para colchon de 180</option>'
+                );
+            }
+
+            if (id == 19) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 20) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+        }
+        if (idProd == 267) {
+            if (id == 21) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 22) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option id="opcion1" class="248" value="1">Para colchon de 135</option><option class="248" id="opcion2" value="2">Para colchon de 150</option><option class="248" id="opcion3" value="3">Para colchon de 160</option><option class="248" id="opcion4" value="4">Para colchon de 180</option>'
+                );
+            }
+
+            if (id == 23) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 24) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+        }
+        if (idProd == 271) {
+            if (id == 25) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 26) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option id="opcion1" class="248" value="1">Para colchon de 135</option><option class="248" id="opcion2" value="2">Para colchon de 150</option><option class="248" id="opcion3" value="3">Para colchon de 160</option><option class="248" id="opcion4" value="4">Para colchon de 180</option>'
+                );
+            }
+
+            if (id == 27) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+            if (id == 28) {
+                $('.productosColor' + idProd).css({ 'margin-bottom': '1200px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ width: '63.3%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'margin-top': '420px' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ left: '28.5%' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ position: 'absolute' });
+                $('.productosColor' + idProd + ' #dimensiones').css({ 'background-color': 'white' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ display: 'block' });
+                $('.productosColor' + idProd + ' #selectSaberId').css({ 'margin-left': '35%' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                $('.productosColor' + idProd + ' #selectSaberId #selectCabecero').append(
+                    '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                );
+                this.idParaSubirPartes = id;
+                this.cargarDespuesOpciones(idProd);
+            }
+        }
+
         $('.productosColor' + idProd + ' #opcionesCabecero #inputSel1').css({ 'background-color': 'white' });
         $('.productosColor' + idProd + ' #opcionesCabecero #inputSel2').css({ 'background-color': 'white' });
         $('.productosColor' + idProd + ' #opcionesCabecero #inputSel3').css({ 'background-color': 'white' });
@@ -1467,6 +2112,4835 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                 });
             }
         }
+
+        if (idProd == 275) {
+            $('.productosColor' + producto).css({ 'margin-bottom': '1000px' });
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT001') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT002') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+            if (idParaSaber == 3) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT003') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+            if (idParaSaber == 4) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT004') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 276) {
+            $('.productosColor' + producto).css({ 'margin-bottom': '1000px' });
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT005') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT006') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 277) {
+            $('.productosColor' + producto).css({ 'margin-bottom': '1000px' });
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT007') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT008') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT009') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT010') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT011') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT012') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT013') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT014') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 3) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT015') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT016') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT017') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT018') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 4) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT019') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT020') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT021') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT022') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 278) {
+            $('.productosColor' + producto).css({ 'margin-bottom': '1000px' });
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT023') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT024') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT025') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT026') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT027') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT028') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT029') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT030') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 3) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT031') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT032') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT033') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT034') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 4) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT035') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT036') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT037') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT038') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 279) {
+            $('.productosColor' + producto).css({ 'margin-bottom': '1000px' });
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT039') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT040') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT041') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT042') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT043') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT044') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT045') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT046') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 3) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT047') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT048') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT049') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT050') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 4) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT051') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT052') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT053') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT054') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 280) {
+            $('.productosColor' + producto).css({ 'margin-bottom': '1000px' });
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT055') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT056') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT057') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT058') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT059') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT060') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT061') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT062') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 3) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT063') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT064') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT065') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT066') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 4) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT067') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT068') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT069') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT070') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 281) {
+            $('.productosColor' + producto).css({ 'margin-bottom': '1000px' });
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT071') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT072') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT073') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT074') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT075') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT076') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT077') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT078') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 282) {
+            $('.productosColor' + producto).css({ 'margin-bottom': '1000px' });
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT095') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT096') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT097') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT098') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT099') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT100') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT101') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT102') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 3) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT103') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT104') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT105') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT106') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 4) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT107') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT108') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT109') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT110') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
         if (idProd == 247) {
             if (parseFloat(saberAla) == 248) {
                 idProd = 248;
@@ -1878,6 +7352,4293 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                 }
             }
         }
+
+        if (idProd == 251) {
+            if (parseFloat(saberAla) == 248) {
+                idProd = 252;
+            } else {
+                if (idParaSubirPartes == 7) {
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(253).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.alaizquierda = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT144') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT145') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 5) {
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT144') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT145') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 8) {
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(254).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.aladerecha = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT144') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT145') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+
+        if (idProd == 259) {
+            if (parseFloat(saberAla) == 248) {
+                idProd = 260;
+            } else {
+                if (idParaSubirPartes == 15) {
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(261).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.alaizquierda = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT210') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT211') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 13) {
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT210') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT211') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 16) {
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(262).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.aladerecha = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT210') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT211') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+
+        if (idProd == 263) {
+            if (parseFloat(saberAla) == 248) {
+                idProd = 264;
+            } else {
+                if (idParaSubirPartes == 19) {
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(265).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.alaizquierda = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT228') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT229') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 17) {
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT228') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT229') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 20) {
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(266).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.aladerecha = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT228') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT229') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+
+        if (idProd == 267) {
+            if (parseFloat(saberAla) == 248) {
+                idProd = 268;
+            } else {
+                if (idParaSubirPartes == 23) {
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(269).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.alaizquierda = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT279') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT280') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 21) {
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT279') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT280') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 24) {
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(270).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.aladerecha = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT279') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT280') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT146') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT147') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT148') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+
+        if (idProd == 271) {
+            if (parseFloat(saberAla) == 248) {
+                idProd = 272;
+            } else {
+                if (idParaSubirPartes == 27) {
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(273).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.alaizquierda = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT246') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT247') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT248') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT249') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT250') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 21) {
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT246') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT247') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT248') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT249') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT250') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 24) {
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(274).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.aladerecha = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT246') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT247') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT248') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT249') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT250') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+
+        if (idProd == 255) {
+            if (parseFloat(saberAla) == 248) {
+                idProd = 256;
+            } else {
+                if (idParaSubirPartes == 9) {
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT177') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT178') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT179') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT180') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT181') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 11) {
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo #opcionesIzquierdoH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesIzquierdo').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(257).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.alaizquierda = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT177') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT178') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT179') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT180') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT181') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                if (idParaSubirPartes == 12) {
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ width: '63.3%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ border: '1px solid #7AC8FE' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'margin-top': '1460px' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ display: 'block' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'text-align': 'center' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-bottom': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha #opcionesDerechaH2').css({ 'margin-top': '5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ left: '28.5%' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ position: 'absolute' });
+                    $('.productosColor' + idProd + ' #opcionesDerecha').css({ 'background-color': 'white' });
+                    $('.productosColor' + idProd).css({ 'margin-bottom': '2025px' });
+                    this.dimensionesProductoTipoService.findProducto(258).subscribe(data => {
+                        var array = [];
+                        for (let u = 0; u < 4; u++) {
+                            array[u] = data.body[u];
+                        }
+                        this.aladerecha = array;
+                        this.todasAlas = data.body;
+                    });
+                    this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                        this.dimensionesProductoTipoService.todos = data.body;
+                        this.todasDimensiones = data.body;
+                        var cont = 0;
+                        var dimensionesPrueba;
+                        dimensionesPrueba = data.body;
+                        var datos = dimensionesPrueba;
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                        $('.productosColor' + producto + ' #dimensiones #selectSaberId').css({ display: 'none' });
+                        $('.productosColor' + producto + ' #dimensiones #textoMedidasCambiar').text('PARTE CENTRAL');
+                        for (let i = 0; i < datos.length; i++) {
+                            if (idProd == datos[i]['productosDormitorio']['id']) {
+                                if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT177') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText1').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO PARA COLCHON DE 135');
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                    $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+
+                                    $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                    $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT178') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText2').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal2').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO PARA COLCHON DE 150');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT179') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText3').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal3').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO PARA COLCHON DE 160');
+                                    $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                                if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT180') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText4').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal4').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+
+                                if (cont == 4 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT181') {
+                                    var precioDimen = datos[i]['precio'];
+                                    var precioDimen1 = precioDimen * precioPunto;
+                                    precioDimen = precioDimen1;
+                                    var predAum = precioDimen * (precioProducto / 100);
+                                    precioDimen = precioDimen + predAum;
+                                    $('.productosColor' + producto + ' #dimensionesText5').text(
+                                        datos[i]['mensaje'] +
+                                            ' | Ancho ' +
+                                            datos[i]['ancho'] +
+                                            ' - Alto ' +
+                                            datos[i]['alto'] +
+                                            ' - Fondo ' +
+                                            datos[i]['fondo'] +
+                                            ' | '
+                                    );
+                                    $('.productosColor' + producto + ' #mesitaIdeal5').text('MESITA IDEAL: CUALQUIERA');
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-top': '2%' });
+                                    $('.productosColor' + producto + ' #tipoColchon5').text('CABECERO PARA COLCHON DE 180');
+                                    $('.productosColor' + producto + ' #precioDimenText5').text(precioDimen + ' €');
+                                    $('#anchoEspecialAltura' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('#anchoEspecialFondo' + producto).append(
+                                        '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                    );
+                                    $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '1%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-bottom': '6%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ display: 'block' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').css({ 'margin-left': '20%' });
+                                    $('.productosColor' + producto + ' .dimensionesColor5').append(
+                                        '<p class="dimensionesId' +
+                                            (cont + 1) +
+                                            '" id="' +
+                                            datos[i]['id'] +
+                                            '" style="position:absolute;z-index:1;display_none"></p>'
+                                    );
+                                    cont++;
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+
         if (idProd == 248) {
             if (idParaSaber == 1) {
                 this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
@@ -2023,6 +11784,1451 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                                 cont++;
                             }
                             if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT131') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT083') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT084') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT085') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT086') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 272) {
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+                    $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT259') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT260') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT261') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT262') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT083') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT084') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT085') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT086') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 260) {
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+                    $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT220') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT221') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT222') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT223') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT083') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT084') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT085') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT086') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 256) {
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+                    $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT190') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT191') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT192') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT193') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal4').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon4').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (idParaSaber == 2) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT083') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT084') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT085') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT086') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText4').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText4').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor4').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        if (idProd == 252) {
+            if (idParaSaber == 1) {
+                this.dimensionesProductoTipoService.findProducto(idProd).subscribe(data => {
+                    this.dimensionesProductoTipoService.todos = data.body;
+                    this.todasDimensiones = data.body;
+                    var cont = 0;
+                    var dimensionesPrueba;
+                    dimensionesPrueba = data.body;
+                    var datos = dimensionesPrueba;
+                    $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '415px' });
+                    for (let i = 0; i < datos.length; i++) {
+                        if (idProd == datos[i]['productosDormitorio']['id']) {
+                            if (cont == 0 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT161') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText1').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
+                                $('#anchoEspecialAltura' + producto).append('<option> </option>');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append('<option> </option>');
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+
+                                $('.productosColor' + producto + ' #precioDimenText1').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'margin-bottom': '3%' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                                $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 1 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT162') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal2').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' #tipoColchon2').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-top': '2%' });
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' #precioDimenText2').text(precioDimen + ' €');
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 2 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT163') {
+                                var precioDimen = datos[i]['precio'];
+                                var precioDimen1 = precioDimen * precioPunto;
+                                precioDimen = precioDimen1;
+                                var predAum = precioDimen * (precioProducto / 100);
+                                precioDimen = precioDimen + predAum;
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
+                                    datos[i]['mensaje'] +
+                                        ' | Ancho ' +
+                                        datos[i]['ancho'] +
+                                        ' - Alto ' +
+                                        datos[i]['alto'] +
+                                        ' - Fondo ' +
+                                        datos[i]['fondo'] +
+                                        ' | '
+                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal3').text(
+                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-top': '2%' });
+                                $('.productosColor' + producto + ' #tipoColchon3').text('CABECERO ' + textoDimenColchon.toUpperCase());
+                                $('.productosColor' + producto + ' #precioDimenText3').text(precioDimen + ' €');
+                                $('#anchoEspecialAltura' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('#anchoEspecialFondo' + producto).append(
+                                    '<option value="' + datos[i]['id'] + '">' + datos[i]['ancho'] + '</option>'
+                                );
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ display: 'block' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-left': '20%' });
+                                $('.productosColor' + producto + ' .dimensionesColor2').css({ 'margin-bottom': '1%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').css({ 'margin-bottom': '6%' });
+                                $('.productosColor' + producto + ' .dimensionesColor3').append(
+                                    '<p class="dimensionesId' +
+                                        (cont + 1) +
+                                        '" id="' +
+                                        datos[i]['id'] +
+                                        '" style="position:absolute;z-index:1;display_none"></p>'
+                                );
+                                cont++;
+                            }
+                            if (cont == 3 && datos[i]['mensaje'] != 'Medidas Especiales' && datos[i]['mensaje'] == 'NT164') {
                                 var precioDimen = datos[i]['precio'];
                                 var precioDimen1 = precioDimen * precioPunto;
                                 precioDimen = precioDimen1;
@@ -4288,7 +15494,28 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                         parseFloat(idDimenTipo) == 402 ||
                         parseFloat(idDimenTipo) == 403 ||
                         parseFloat(idDimenTipo) == 404 ||
-                        parseFloat(idDimenTipo) == 405
+                        parseFloat(idDimenTipo) == 405 ||
+                        parseFloat(idDimenTipo) == 416 ||
+                        parseFloat(idDimenTipo) == 417 ||
+                        parseFloat(idDimenTipo) == 418 ||
+                        parseFloat(idDimenTipo) == 419 ||
+                        parseFloat(idDimenTipo) == 420 ||
+                        parseFloat(idDimenTipo) == 433 ||
+                        parseFloat(idDimenTipo) == 434 ||
+                        parseFloat(idDimenTipo) == 435 ||
+                        parseFloat(idDimenTipo) == 436 ||
+                        parseFloat(idDimenTipo) == 437 ||
+                        parseFloat(idDimenTipo) == 450 ||
+                        parseFloat(idDimenTipo) == 451 ||
+                        parseFloat(idDimenTipo) == 464 ||
+                        parseFloat(idDimenTipo) == 465 ||
+                        parseFloat(idDimenTipo) == 474 ||
+                        parseFloat(idDimenTipo) == 475 ||
+                        parseFloat(idDimenTipo) == 476 ||
+                        parseFloat(idDimenTipo) == 477 ||
+                        parseFloat(idDimenTipo) == 478 ||
+                        parseFloat(idDimenTipo) == 479 ||
+                        parseFloat(idDimenTipo) == 480
                     ) {
                         var text = $('#nombreMesita').text();
                         var total = $('#total').text();
@@ -4359,7 +15586,28 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                         parseFloat(idDimenTipo) == 402 ||
                         parseFloat(idDimenTipo) == 403 ||
                         parseFloat(idDimenTipo) == 404 ||
-                        parseFloat(idDimenTipo) == 405
+                        parseFloat(idDimenTipo) == 405 ||
+                        parseFloat(idDimenTipo) == 416 ||
+                        parseFloat(idDimenTipo) == 417 ||
+                        parseFloat(idDimenTipo) == 418 ||
+                        parseFloat(idDimenTipo) == 419 ||
+                        parseFloat(idDimenTipo) == 420 ||
+                        parseFloat(idDimenTipo) == 433 ||
+                        parseFloat(idDimenTipo) == 434 ||
+                        parseFloat(idDimenTipo) == 435 ||
+                        parseFloat(idDimenTipo) == 436 ||
+                        parseFloat(idDimenTipo) == 437 ||
+                        parseFloat(idDimenTipo) == 450 ||
+                        parseFloat(idDimenTipo) == 451 ||
+                        parseFloat(idDimenTipo) == 464 ||
+                        parseFloat(idDimenTipo) == 465 ||
+                        parseFloat(idDimenTipo) == 474 ||
+                        parseFloat(idDimenTipo) == 475 ||
+                        parseFloat(idDimenTipo) == 476 ||
+                        parseFloat(idDimenTipo) == 477 ||
+                        parseFloat(idDimenTipo) == 478 ||
+                        parseFloat(idDimenTipo) == 479 ||
+                        parseFloat(idDimenTipo) == 480
                     ) {
                         $('#datos1').append(
                             '<p style="width:90%"><strong>MEDIDAS PARTE CENTRAL</strong><span style="float:right">' +
@@ -4444,6 +15692,121 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                     $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2010px' });
                     $('.productosColor' + idProd1).css({ 'margin-bottom': '2665px' });
                 }
+            }
+
+            if (idProd1 == 251) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1400px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '2100px' });
+                if (idParaSubirPartes == 7) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+                if (idParaSubirPartes == 8) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+            }
+            if (idProd1 == 255) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1400px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '2100px' });
+                if (idParaSubirPartes == 11) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+                if (idParaSubirPartes == 12) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+            }
+
+            if (idProd1 == 259) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1400px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '2100px' });
+                if (idParaSubirPartes == 15) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+                if (idParaSubirPartes == 16) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+            }
+
+            if (idProd1 == 263) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1400px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '2100px' });
+                if (idParaSubirPartes == 19) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+                if (idParaSubirPartes == 20) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+            }
+            if (idProd1 == 267) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1400px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '2100px' });
+                if (idParaSubirPartes == 23) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+                if (idParaSubirPartes == 24) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+            }
+            if (idProd1 == 271) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1400px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '2100px' });
+                if (idParaSubirPartes == 27) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+                if (idParaSubirPartes == 28) {
+                    $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '2140px' });
+                    $('.productosColor' + idProd1).css({ 'margin-bottom': '2785px' });
+                }
+            }
+            if (idProd1 == 275) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
+            }
+            if (idProd1 == 276) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
+            }
+            if (idProd1 == 277) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
+            }
+            if (idProd1 == 278) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
+            }
+            if (idProd1 == 279) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
+            }
+            if (idProd1 == 280) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
+            }
+            if (idProd1 == 281) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
+            }
+            if (idProd1 == 282) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
+            }
+            if (idProd1 == 283) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
+            }
+            if (idProd1 == 284) {
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
             }
 
             $('.productosColor' + idProd1 + ' #acabados').css({ border: '1px solid #7AC8FE' });
