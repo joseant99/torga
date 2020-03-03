@@ -286,12 +286,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     } else {
                         if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
                             prueba = {
-                                codigo: 'PR-' + usuario['id'],
+                                codigo: 'PR-' + usuarioCreado['id'],
                                 pedido: 0,
                                 user: usuario,
                                 fecha_presupuesto: output,
                                 usuarioCreadoPre: usuarioCreado
                             };
+                            usuario = usuarioCreado;
                         } else {
                             prueba = {
                                 codigo: 'PR-' + usuario['id'],
