@@ -160,7 +160,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 datos['productosDormitorio']['categoriasDormi']['id'] == 15 ||
                 datos['productosDormitorio']['categoriasDormi']['id'] == 18 ||
                 datos['productosDormitorio']['categoriasDormi']['id'] == 20 ||
-                datos['productosDormitorio']['categoriasDormi']['id'] == 21
+                datos['productosDormitorio']['categoriasDormi']['id'] == 21 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 22 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 25 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 26 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 27 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 2 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 1
             ) {
                 this.modulosBajos = datos;
             }
@@ -170,7 +176,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             if (
                 datos['productosDormitorio']['categoriasDormi']['id'] == 13 ||
                 datos['productosDormitorio']['categoriasDormi']['id'] == 12 ||
-                datos['productosDormitorio']['categoriasDormi']['id'] == 17
+                datos['productosDormitorio']['categoriasDormi']['id'] == 17 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 4
             ) {
                 this.singulares = datos;
             }
@@ -4694,6 +4701,29 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             }
             if (i >= 100) {
                 $('#listaAnchos').append('<option value="NA' + i + '">NA' + i + '</option>');
+            }
+        }
+
+        for (let i = 1; i < 200; i++) {
+            if (i >= 1 && i <= 9) {
+                $('#listaAnchos').append('<option value="NT00' + i + '">NT00' + i + '</option>');
+            }
+            if (i >= 10 && i <= 99) {
+                $('#listaAnchos').append('<option value="NT0' + i + '">NT0' + i + '</option>');
+            }
+            if (i >= 100) {
+                $('#listaAnchos').append('<option value="NT' + i + '">NT' + i + '</option>');
+            }
+        }
+        for (let i = 1; i < 200; i++) {
+            if (i >= 1 && i <= 9) {
+                $('#listaAnchos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+            }
+            if (i >= 10 && i <= 99) {
+                $('#listaAnchos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+            }
+            if (i >= 100) {
+                $('#listaAnchos').append('<option value="NX' + i + '">NX' + i + '</option>');
             }
         }
     }
