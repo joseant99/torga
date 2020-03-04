@@ -359,6 +359,278 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
         if (arrayComprobar[producto] == undefined) {
             arrayComprobar[producto] = 'hola';
 
+            if (producto == 246) {
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 247) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 251) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 255) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 259) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 263) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 267) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 271) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 275) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 276) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 277) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 278) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 279) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 280) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[281] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 281) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[282] = undefined;
+            }
+            if (producto == 282) {
+                arrayComprobar[246] = undefined;
+                arrayComprobar[247] = undefined;
+                arrayComprobar[251] = undefined;
+                arrayComprobar[255] = undefined;
+                arrayComprobar[259] = undefined;
+                arrayComprobar[263] = undefined;
+                arrayComprobar[267] = undefined;
+                arrayComprobar[271] = undefined;
+                arrayComprobar[275] = undefined;
+                arrayComprobar[276] = undefined;
+                arrayComprobar[277] = undefined;
+                arrayComprobar[278] = undefined;
+                arrayComprobar[279] = undefined;
+                arrayComprobar[280] = undefined;
+                arrayComprobar[281] = undefined;
+            }
             $('#botonCalculadora').attr('class', 'displayBoton');
 
             this.arrayMostrar = arrayComprobar;
