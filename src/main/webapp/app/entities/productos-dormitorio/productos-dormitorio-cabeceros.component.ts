@@ -358,12 +358,6 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
         var arrayComprobar = this.arrayMostrar;
         if (arrayComprobar[producto] == undefined) {
             arrayComprobar[producto] = 'hola';
-            if (producto == 246) {
-                arrayComprobar[247] = undefined;
-            }
-            if (producto == 247) {
-                arrayComprobar[246] = undefined;
-            }
 
             $('#botonCalculadora').attr('class', 'displayBoton');
 

@@ -358,11 +358,17 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
         var arrayComprobar = this.arrayMostrar;
         if (arrayComprobar[producto] == undefined) {
             arrayComprobar[producto] = 'hola';
-            if (producto == 246) {
-                arrayComprobar[247] = undefined;
+            if (producto == 283) {
+                arrayComprobar[284] = undefined;
+                arrayComprobar[285] = undefined;
             }
-            if (producto == 247) {
-                arrayComprobar[246] = undefined;
+            if (producto == 284) {
+                arrayComprobar[283] = undefined;
+                arrayComprobar[285] = undefined;
+            }
+            if (producto == 285) {
+                arrayComprobar[284] = undefined;
+                arrayComprobar[283] = undefined;
             }
 
             $('#botonCalculadora').attr('class', 'displayBoton');
@@ -1432,9 +1438,9 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
             $('.productosColor277 #dimensiones').css({ display: 'none' });
             $('.productosColor278 #dimensiones').css({ display: 'none' });
             $('.productosColor279 #dimensiones').css({ display: 'none' });
-            $('.productosColor280 #dimensiones').css({ display: 'none' });
-            $('.productosColor281 #dimensiones').css({ display: 'none' });
-            $('.productosColor282 #dimensiones').css({ display: 'none' });
+            $('.productosColor283 #dimensiones').css({ display: 'none' });
+            $('.productosColor284 #dimensiones').css({ display: 'none' });
+            $('.productosColor285 #dimensiones').css({ display: 'none' });
 
             $('.productosColor246 #acabados').css({ display: 'none' });
             $('.productosColor247 #acabados').css({ display: 'none' });
@@ -1449,9 +1455,9 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
             $('.productosColor277 #acabados').css({ display: 'none' });
             $('.productosColor278 #acabados').css({ display: 'none' });
             $('.productosColor279 #acabados').css({ display: 'none' });
-            $('.productosColor280 #acabados').css({ display: 'none' });
-            $('.productosColor281 #acabados').css({ display: 'none' });
-            $('.productosColor282 #acabados').css({ display: 'none' });
+            $('.productosColor283 #acabados').css({ display: 'none' });
+            $('.productosColor284 #acabados').css({ display: 'none' });
+            $('.productosColor285 #acabados').css({ display: 'none' });
 
             $('.productosColor246 #opcionesCabecero').css({ display: 'none' });
             $('.productosColor247 #opcionesCabecero').css({ display: 'none' });
@@ -1466,9 +1472,9 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
             $('.productosColor277 #opcionesCabecero').css({ display: 'none' });
             $('.productosColor278 #opcionesCabecero').css({ display: 'none' });
             $('.productosColor279 #opcionesCabecero').css({ display: 'none' });
-            $('.productosColor280 #opcionesCabecero').css({ display: 'none' });
-            $('.productosColor281 #opcionesCabecero').css({ display: 'none' });
-            $('.productosColor282 #opcionesCabecero').css({ display: 'none' });
+            $('.productosColor283 #opcionesCabecero').css({ display: 'none' });
+            $('.productosColor284 #opcionesCabecero').css({ display: 'none' });
+            $('.productosColor285 #opcionesCabecero').css({ display: 'none' });
 
             $('.productosColor246 #opcionesIzquierdo').css({ display: 'none' });
             $('.productosColor247 #opcionesIzquierdo').css({ display: 'none' });
@@ -1483,9 +1489,9 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
             $('.productosColor277 #opcionesIzquierdo').css({ display: 'none' });
             $('.productosColor278 #opcionesIzquierdo').css({ display: 'none' });
             $('.productosColor279 #opcionesIzquierdo').css({ display: 'none' });
-            $('.productosColor280 #opcionesIzquierdo').css({ display: 'none' });
-            $('.productosColor281 #opcionesIzquierdo').css({ display: 'none' });
-            $('.productosColor282 #opcionesIzquierdo').css({ display: 'none' });
+            $('.productosColor283 #opcionesIzquierdo').css({ display: 'none' });
+            $('.productosColor284 #opcionesIzquierdo').css({ display: 'none' });
+            $('.productosColor285 #opcionesIzquierdo').css({ display: 'none' });
 
             $('.productosColor246 #opcionesDerecha').css({ display: 'none' });
             $('.productosColor247 #opcionesDerecha').css({ display: 'none' });
@@ -1500,9 +1506,9 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
             $('.productosColor277 #opcionesDerecha').css({ display: 'none' });
             $('.productosColor278 #opcionesDerecha').css({ display: 'none' });
             $('.productosColor279 #opcionesDerecha').css({ display: 'none' });
-            $('.productosColor280 #opcionesDerecha').css({ display: 'none' });
-            $('.productosColor281 #opcionesDerecha').css({ display: 'none' });
-            $('.productosColor282 #opcionesDerecha').css({ display: 'none' });
+            $('.productosColor283 #opcionesDerecha').css({ display: 'none' });
+            $('.productosColor284 #opcionesDerecha').css({ display: 'none' });
+            $('.productosColor285 #opcionesDerecha').css({ display: 'none' });
 
             $('.productosColor246').css({ 'background-color': 'white' });
             $('.productosColor247').css({ 'background-color': 'white' });
@@ -1517,9 +1523,9 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
             $('.productosColor277').css({ 'background-color': 'white' });
             $('.productosColor278').css({ 'background-color': 'white' });
             $('.productosColor279').css({ 'background-color': 'white' });
-            $('.productosColor280').css({ 'background-color': 'white' });
-            $('.productosColor281').css({ 'background-color': 'white' });
-            $('.productosColor282').css({ 'background-color': 'white' });
+            $('.productosColor283').css({ 'background-color': 'white' });
+            $('.productosColor284').css({ 'background-color': 'white' });
+            $('.productosColor285').css({ 'background-color': 'white' });
 
             $('.productosColor246').removeAttr('style');
             $('.productosColor247').removeAttr('style');
@@ -1534,9 +1540,9 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
             $('.productosColor277').removeAttr('style');
             $('.productosColor278').removeAttr('style');
             $('.productosColor279').removeAttr('style');
-            $('.productosColor280').removeAttr('style');
-            $('.productosColor281').removeAttr('style');
-            $('.productosColor282').removeAttr('style');
+            $('.productosColor283').removeAttr('style');
+            $('.productosColor284').removeAttr('style');
+            $('.productosColor285').removeAttr('style');
 
             $('.productosColorSolo246').removeAttr('style');
             $('.productosColorSolo247').removeAttr('style');
@@ -1551,9 +1557,9 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
             $('.productosColorSolo277').removeAttr('style');
             $('.productosColorSolo278').removeAttr('style');
             $('.productosColorSolo279').removeAttr('style');
-            $('.productosColorSolo280').removeAttr('style');
-            $('.productosColorSolo281').removeAttr('style');
-            $('.productosColorSolo282').removeAttr('style');
+            $('.productosColorSolo283').removeAttr('style');
+            $('.productosColorSolo284').removeAttr('style');
+            $('.productosColorSolo285').removeAttr('style');
         }
     }
 
