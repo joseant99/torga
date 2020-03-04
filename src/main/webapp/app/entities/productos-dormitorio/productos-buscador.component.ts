@@ -166,7 +166,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 datos['productosDormitorio']['categoriasDormi']['id'] == 26 ||
                 datos['productosDormitorio']['categoriasDormi']['id'] == 27 ||
                 datos['productosDormitorio']['categoriasDormi']['id'] == 2 ||
-                datos['productosDormitorio']['categoriasDormi']['id'] == 1
+                datos['productosDormitorio']['categoriasDormi']['id'] == 1 ||
+                datos['productosDormitorio']['categoriasDormi']['id'] == 5
             ) {
                 this.modulosBajos = datos;
             }
