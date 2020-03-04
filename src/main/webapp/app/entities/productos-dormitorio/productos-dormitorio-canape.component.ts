@@ -541,7 +541,6 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
             this.acabados1 = acabados;
             this.acabados1234 = acabados;
             $('#botonEliminar').removeAttr('class');
-            $('#dimensiones').css({ display: 'block' });
             $('#botonApoyoNuevo').empty();
             for (let i = 1; i <= 14; i++) {
                 for (let u = 0; u < 14; u++) {
@@ -6770,7 +6769,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -6926,7 +6925,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -7082,7 +7081,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -7238,7 +7237,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -7394,7 +7393,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -7550,7 +7549,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -7709,7 +7708,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -7865,7 +7864,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -8021,7 +8020,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -8177,7 +8176,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -8333,7 +8332,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -8489,7 +8488,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -8648,7 +8647,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -8804,7 +8803,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -8960,7 +8959,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -9116,7 +9115,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -9272,7 +9271,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
@@ -9428,7 +9427,7 @@ export class ProductosDormitorioCanapeComponent implements OnInit, OnDestroy {
                                 precioDimen = precioDimen1;
                                 var predAum = precioDimen * (precioProducto / 100);
                                 precioDimen = precioDimen + predAum;
-                                $('.productosColor' + producto + ' #dimensionesText2').text(
+                                $('.productosColor' + producto + ' #dimensionesText3').text(
                                     datos[i]['mensaje'] +
                                         ' | Ancho ' +
                                         datos[i]['ancho'] +
