@@ -1549,6 +1549,7 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
         $('.productosColor280 #acabados').css({ display: 'none' });
         $('.productosColor281 #acabados').css({ display: 'none' });
         $('.productosColor282 #acabados').css({ display: 'none' });
+
         $('#datos1').empty();
         for (let u = 0; u <= 40; u++) {
             $('#inputSel' + u).css({ 'background-color': 'white' });
