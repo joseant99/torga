@@ -2608,21 +2608,27 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             '<div style="float: left;width: 100%;margin-top:50%" id="textoCesta' + i + '"></div>'
                         );
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;">' +
+                            '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;">' +
                                 sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                '<i style="float:right">&euro; ' +
+                                '<i style="float:right;margin-right:40%">&euro; ' +
                                 sesion[1]['precioCasco'] +
                                 '</i></p>'
                         );
 
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Ancho: ' + sesion[1]['ancho'] + '</p>'
+                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Ancho: ' +
+                                sesion[1]['ancho'] +
+                                '</p>'
                         );
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Alto: ' + sesion[1]['alto'] + '</p>'
+                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Alto: ' +
+                                sesion[1]['alto'] +
+                                '</p>'
                         );
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;">Fondo: ' + sesion[1]['fondo'] + '</p>'
+                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Fondo: ' +
+                                sesion[1]['fondo'] +
+                                '</p>'
                         );
                         $('#textoCesta' + i).append('<hr style="100%"></hr>');
                     } else {

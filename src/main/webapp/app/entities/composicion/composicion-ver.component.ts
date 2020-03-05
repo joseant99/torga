@@ -487,17 +487,19 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                     productos[i]['productosDormitorio']['categorias_dormi'] != 20 &&
                     productos[i]['productosDormitorio']['categorias_dormi'] != 21
                 ) {
-                    $('#productoCalculadora' + (i + 1) + ' #datos1').append(
-                        '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right">' +
-                            productos[i]['tiposApoyo']['precio'] +
-                            '</span></p>'
-                    );
+                    if (productos[i]['productosDormitorio']['tipoApoyo'] != undefined) {
+                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                            '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right">' +
+                                productos[i]['tiposApoyo']['precio'] +
+                                '</span></p>'
+                        );
 
-                    $('#productoCalculadora' + (i + 1) + ' #datos1').append(
-                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" value="' +
-                            productos[i]['tiposApoyo']['productoApoyo']['nombre'] +
-                            '" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
-                    );
+                        $('#productoCalculadora' + (i + 1) + ' #datos1').append(
+                            '<p style="width:100%"><input id="apoyoCalculadoraTexto" value="' +
+                                productos[i]['tiposApoyo']['productoApoyo']['nombre'] +
+                                '" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                        );
+                    }
                 }
             }
         });
