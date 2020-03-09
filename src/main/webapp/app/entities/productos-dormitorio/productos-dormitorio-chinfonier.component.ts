@@ -4198,10 +4198,6 @@ export class ProductosDormitorioChinfonierComponent implements OnInit, OnDestroy
             }
         }
 
-        if (contadorApoyo == cont - 1) {
-            $('.imagenAcabadoPrincipalImg').attr('style');
-            $('.imagenAcabadoPrincipalImg').css({ opacity: 0 });
-        }
         var datos = [];
 
         for (let j = 1; j <= 5; j++) {
