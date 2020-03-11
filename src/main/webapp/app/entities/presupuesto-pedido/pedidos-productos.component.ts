@@ -1181,6 +1181,24 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     contador++;
                                                 }
                                             }
+
+                                            if (
+                                                productos[i]['productosDormitorio']['categoriasDormi']['id'] != 8 &&
+                                                productos[i]['productosDormitorio']['categoriasDormi']['id'] != 9 &&
+                                                productos[i]['productosDormitorio']['categoriasDormi']['id'] != 11 &&
+                                                productos[i]['productosDormitorio']['categoriasDormi']['id'] != 12 &&
+                                                productos[i]['productosDormitorio']['categoriasDormi']['id'] != 13 &&
+                                                productos[i]['productosDormitorio']['categoriasDormi']['id'] != 16
+                                            ) {
+                                                $('#imagen' + i).append(
+                                                    '<img style="z-index:' +
+                                                        (100 - i) +
+                                                        ';max-width:400px;max-height:400px;;max-width:400px;max-height:250px;position:absolute;" width="1000px" height="1000px" src="../../../content/images/numeros' +
+                                                        productos[i]['productosDormitorio']['id'] +
+                                                        '.png">'
+                                                );
+                                            }
+
                                             if (apoyo != undefined) {
                                                 $('.' + productos[i]['id'] + 'Datos').append(
                                                     '<p>' +
