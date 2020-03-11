@@ -2665,6 +2665,19 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             $('#cuerpo' + i).append(
                                 '<div id="izquierda" class="marginIzquierda" style="float: left;margin-top:20px"></div>'
                             );
+                            if (i == 1) {
+                                this.acaProdService.findAca(sesion[1]['productosDormitorio']['id']).subscribe(data => {
+                                    if (data.body[0]['imagen'] != null) {
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img style="z-index:' +
+                                                (100 - i) +
+                                                ';max-width:400px;max-height:400px;;max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="data:image/gif;base64,' +
+                                                data.body[0]['imagen'] +
+                                                '>'
+                                        );
+                                    }
+                                });
+                            }
 
                             for (let k = 0; k < acabados.length; k++) {
                                 if (acabados[k].toLowerCase() == 'marmol blanco') {
@@ -12239,6 +12252,22 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 sesion[1]['ancho'] +
                                 '</p>'
                         );
+                        if (
+                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 8 &&
+                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 9 &&
+                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 11 &&
+                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 12 &&
+                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 13 &&
+                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 16
+                        ) {
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img style="z-index:' +
+                                    (100 - i) +
+                                    ';max-width:400px;max-height:400px;;max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/numeros' +
+                                    sesion[1]['productosDormitorio']['id'] +
+                                    '.png">'
+                            );
+                        }
                         var precioTotalCesta;
                         precioTotalCesta = $('#cestaTotal').text();
                         if (precioTotalCesta != '') {
@@ -12260,6 +12289,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 sesion[1]['fondo'] +
                                 '</p>'
                         );
+
+                        for (let o = 0; o < acabados.length; o++) {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Acabado ' +
+                                    (o + 1) +
+                                    ': ' +
+                                    acabados[o] +
+                                    '</p>'
+                            );
+                        }
+
                         if (sesion[1]['apoyo'] != undefined) {
                             $('#textoCesta' + i).append(
                                 '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
@@ -12276,6 +12316,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     ' &euro;</i></p>'
                             );
                         }
+
                         $('#textoCesta' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;font-size: 16px;"><span onclick="borrarProdCesta(' +
                                 i +
@@ -12287,6 +12328,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         acabados = [];
                     }
                 } else {
+                    console.log(acabados);
                     $('#modalCesta .modal-body').append(
                         '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative" id="cuerpo' +
                             i +
