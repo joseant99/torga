@@ -4924,7 +4924,7 @@ export class ProductosMesasComponent implements OnInit, OnDestroy {
         }
         var apoyoBueno = $('#datos1 #nombreApoyo').text();
         var idProd = $('#nombreMesita').attr('class');
-        if (contadorApoyo == cont - 1 && apoyoBueno != '') {
+        if (contadorApoyo == cont - 1) {
             $('#divDentroCalcu').css({ height: '76%' });
             if (this.iluminacionService.todos != undefined) {
                 var precioIlu = $('#precioIluminacion').attr('class');
@@ -5576,7 +5576,6 @@ export class ProductosMesasComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 3; i++) {
             const idProd = $('#nombreProd' + i).attr('class');
             const dimen = $('#productoCalculadora1 #datos1 #ancho' + i).attr('class');
-            const idApoyo = $('#productoCalculadora1 #datos1 #apoyo' + i).attr('class');
             const idIluminacion = $('#productoCalculadora1 #datos1 #iluminacion' + i).attr('class');
             const ancho = $('#productoCalculadora1 #datos1 #ancho' + i).text();
             const alto = $('#productoCalculadora1 #datos1 #alto' + i).text();
@@ -5586,16 +5585,9 @@ export class ProductosMesasComponent implements OnInit, OnDestroy {
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
             console.log(sessionStorage);
             const prod = [];
-            const prods = this.apoyo;
-            const apoyoBueno = [];
+
             const iluBuena = [];
             const iluminacionBuenaSiONo = $('#precioIluminacion').text();
-            const sistemasApoyo = this.sistemasApoyo;
-            for (let k = 0; k < sistemasApoyo.length; k++) {
-                if (sistemasApoyo[k]['id'] == idApoyo) {
-                    apoyoBueno[1] = sistemasApoyo[k];
-                }
-            }
 
             if (iluminacionBuenaSiONo != ' ') {
                 iluBuena[1] = iluminacion;
@@ -5627,13 +5619,11 @@ export class ProductosMesasComponent implements OnInit, OnDestroy {
                         value['fondo'] = fondo;
                         value['precio'] = precio;
                     }
-                    value['apoyo'] = apoyoBueno[1];
                     value['iluminacion'] = iluBuena[1];
                     prod[1] = value;
                     prod[1]['imagen'] = '';
                     prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
                     prod[1]['productosDormitorio']['imagen'] = '';
-                    prod[1]['apoyo']['imagen'] = '';
                     console.log(prod);
                     sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
                     contadorDimen++;
