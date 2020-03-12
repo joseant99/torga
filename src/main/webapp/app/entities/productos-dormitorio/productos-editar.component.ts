@@ -4522,7 +4522,7 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
         var acabadosTodos;
         this.acaProdService.findAca(productoDormitorio['id']).subscribe(data => {
             this.acaProdService.todos = data.body;
-            this.acaProdService.parte = data.body[1]['acabados'];
+            this.acaProdService.parte = data.body[0]['acabados'];
             $.each(this.acaProdService.todos, function(index, value) {
                 if (value['productosDormitorio']['id'] == productoDormitorio['id']) {
                     imagen = value['imagen'];
@@ -4580,12 +4580,15 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
                     contnuevo++;
                 }
             });
-            $('#datos1').append(
-                '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
-            );
-            $('#datos1').append(
-                '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
-            );
+            if (datos['apoyo'] != undefined) {
+                $('#datos1').append(
+                    '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
+                );
+                $('#datos1').append(
+                    '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                );
+            }
+
             this.productosDormitorioService.categoria(2).subscribe(data => {
                 for (let w = 0; w < data.body['length']; w++) {
                     $('#modalApoyo #apoyoModal' + w).empty();
@@ -4827,22 +4830,23 @@ export class ProductosEditarComponent implements OnInit, OnDestroy {
         if (nombre == 'Aparador 10') {
             nombre = 'ap10';
         }
-
-        $('#botonApoyoNuevo').append(
-            '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute;display:none" >' +
-                datos['apoyo']['nombre'].split(' ')[0] +
-                '</p>'
-        );
-        this.cambiarApoyo = 0;
-        $('#datos1').append(
-            '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
-                datos['apoyo']['nombre'].split(' ')[0] +
-                '</span><span style="float:right" id="apoyo1" class="' +
-                datos['apoyo']['id'] +
-                '">+' +
-                datos['apoyo']['precio'] +
-                '&euro;</span></p>'
-        );
+        if (datos['apoyo'] != undefined) {
+            $('#botonApoyoNuevo').append(
+                '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute;display:none" >' +
+                    datos['apoyo']['nombre'].split(' ')[0] +
+                    '</p>'
+            );
+            this.cambiarApoyo = 0;
+            $('#datos1').append(
+                '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                    datos['apoyo']['nombre'].split(' ')[0] +
+                    '</span><span style="float:right" id="apoyo1" class="' +
+                    datos['apoyo']['id'] +
+                    '">+' +
+                    datos['apoyo']['precio'] +
+                    '&euro;</span></p>'
+            );
+        }
     }
 
     loadPage(page: number) {
