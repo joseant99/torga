@@ -29,6 +29,7 @@ export class AcaProdComponent implements OnInit, OnDestroy {
     predicate: any;
     previousPage: any;
     reverse: any;
+    productoDormi: any;
 
     constructor(
         protected acaProdService: AcaProdService,
