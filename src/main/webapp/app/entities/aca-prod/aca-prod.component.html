@@ -10,6 +10,7 @@
     </h2>
     <jhi-alert></jhi-alert>
     <br/>
+    <div style="margin-left:34%;margin-bottom:2%;"> <select id="selectProd" style="font-size: 20px;height: 50px;margin-right: 50px;"><option></option><option *ngFor="let prod of productoDormi" value="{{prod.id}}">{{prod.nombre}}</option></select><button (click)="cargarAcabados()" style="font-size:22px">Buscar</button></div>
     <div class="table-responsive" *ngIf="acaProds">
         <table class="table table-striped">
             <thead>

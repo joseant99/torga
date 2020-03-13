@@ -9,14 +9,14 @@ import { AccountService } from 'app/core';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { AcaProdService } from './aca-prod.service';
-
+import { ProductosDormitorioService } from '../productos-dormitorio/productos-dormitorio.service';
 @Component({
     selector: 'jhi-aca-prod',
     templateUrl: './aca-prod.component.html'
 })
 export class AcaProdComponent implements OnInit, OnDestroy {
     currentAccount: any;
-    acaProds: IAcaProd[];
+    acaProds: any;
     error: any;
     success: any;
     eventSubscriber: Subscription;
@@ -36,6 +36,7 @@ export class AcaProdComponent implements OnInit, OnDestroy {
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
+        public productosDormitorioService: ProductosDormitorioService,
         protected dataUtils: JhiDataUtils,
         protected router: Router,
         protected eventManager: JhiEventManager
@@ -50,16 +51,21 @@ export class AcaProdComponent implements OnInit, OnDestroy {
     }
 
     loadAll() {
-        this.acaProdService
+        this.productosDormitorioService
             .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
+                size: 100000000,
                 sort: this.sort()
             })
-            .subscribe(
-                (res: HttpResponse<IAcaProd[]>) => this.paginateAcaProds(res.body, res.headers),
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
+            .subscribe(data => {
+                this.productoDormi = data.body;
+            });
+    }
+
+    public cargarAcabados() {
+        var hola = $('#selectProd').val();
+        this.acaProdService.findAca(hola).subscribe(data => {
+            this.acaProds = data.body;
+        });
     }
 
     loadPage(page: number) {
