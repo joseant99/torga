@@ -4828,7 +4828,7 @@ export class ProductosEscritoriosComponent implements OnInit, OnDestroy {
                 acabadoCogido = $('#productoCalculadora1 #datos1 #val' + j + 'Dato').attr('class');
                 if (acabadoCogido != undefined) {
                     var id1 = parseFloat(acabadoCogido);
-                    for (let k = 0; k < 16; k++) {
+                    for (let k = 0; k < 17; k++) {
                         if (acabados[k]['id'] == id1) {
                             aca[j] = acabados[k];
                         }

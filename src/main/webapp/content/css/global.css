@@ -423,6 +423,12 @@ Generic styles
     margin-left: -650px;
     filter: brightness(150%);
 }
+.kala {
+    position: absolute;
+    max-width: 650px;
+    max-height: 433px;
+    margin-left: -650px;
+}
 .blanco {
     position: absolute;
     max-width: 650px;

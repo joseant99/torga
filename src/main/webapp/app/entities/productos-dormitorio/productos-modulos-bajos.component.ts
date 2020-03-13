@@ -4533,7 +4533,22 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 var src = 'data:image/gif;base64,' + value['imagenFondo'];
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('src', src);
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('class', value['id']);
-
+                $('#val' + id1).remove();
+                $('#val' + id1 + 'Dato').remove();
+                $('#valor' + id1).remove();
+                $('#datos1').append(
+                    '<p style="width:100%;display:none"> <span id="val' +
+                        id1 +
+                        '">Acabado ' +
+                        id1 +
+                        ' : </span><span style="display:none" id="val' +
+                        id1 +
+                        'Dato" class="' +
+                        value['id'] +
+                        '">' +
+                        value['nombre'] +
+                        '</span></p>'
+                );
                 if (id1 == 1) {
                     $('#tapa').remove();
                     if (
@@ -4704,22 +4719,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         );
                     }
                 }
-                $('#val' + id1).remove();
-                $('#val' + id1 + 'Dato').remove();
-                $('#valor' + id1).remove();
-                $('#datos1').append(
-                    '<p style="width:100%;display:none"> <span id="val' +
-                        id1 +
-                        '">Acabado ' +
-                        id1 +
-                        ' : </span><span style="display:none" id="val' +
-                        id1 +
-                        'Dato" class="' +
-                        value['id'] +
-                        '">' +
-                        value['nombre'] +
-                        '</span></p>'
-                );
+
                 k++;
             }
         });
@@ -5433,7 +5433,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 acabadoCogido = $('#productoCalculadora1 #datos1 #val' + j + 'Dato').attr('class');
                 if (acabadoCogido != undefined) {
                     var id1 = parseFloat(acabadoCogido);
-                    for (let k = 0; k < 16; k++) {
+                    for (let k = 0; k < 17; k++) {
                         if (acabados[k]['id'] == id1) {
                             aca[j] = acabados[k];
                         }
