@@ -9,9 +9,10 @@
     <br/>
     <div id="producto" class="armariosDivTodo">
     	<p style="text-align:center;"><img onclick="prueba1()" style="width:25%" src="../../../content/images/armario.png"></p>
-    	<p style="text-align:center"><label>Longitud A (Ancho)&nbsp;</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect" name="anchos" type="number" (change)="cargarInterioresArmarios()"/></p>
-		<p style="text-align:center"><label>Longitud B (Altura)&nbsp;</label><input style="text-align:center" list="listaAltura" id="alturaSelect" name="anchos" type="number" (change)="cargarInterioresArmarios()"/></p>
-		<p style="text-align:center"><label>Longitud C (Fondo)&nbsp;</label><input style="text-align:center" value="600" type="number" disabled/></p>
+    	<p style="text-align:center"><label>Longitud A (Ancho)&nbsp;</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect" name="anchos" type="number"/></p>
+		<p style="text-align:center"><label>Longitud B (Altura)&nbsp;</label><input style="text-align:center" list="listaAltura" id="alturaSelect" name="anchos" type="number"/></p>
+		<p style="text-align:center"><label>Longitud C (Fondo)&nbsp;</label><input style="text-align:center" value="60" type="number" disabled/></p>
+		<p style="text-align:center"><button style="width: 140px;height: 55px;font-size: 24px;" (click)="cargarInterioresArmarios()">Buscar</button></p>
 		
 		<h2 style="text-align:center" id="textoTituloInterior"></h2>
 		<div *ngIf="armarioService.todo != undefined">

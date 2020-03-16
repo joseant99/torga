@@ -3,12 +3,14 @@ import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/ht
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
+import { Observable } from 'rxjs';
 
 import { IInterioresArmarioNuevos } from 'app/shared/model/interiores-armario-nuevos.model';
 import { AccountService } from 'app/core';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { InterioresArmarioNuevosService } from './interiores-armario-nuevos.service';
+import { ProductosDormitorioService } from '../productos-dormitorio/productos-dormitorio.service';
 
 @Component({
     selector: 'jhi-interiores-armario-nuevos',
@@ -29,12 +31,13 @@ export class InterioresArmarioNuevosComponent implements OnInit, OnDestroy {
     predicate: any;
     previousPage: any;
     reverse: any;
-
+    isSaving: any;
     constructor(
         protected interioresArmarioNuevosService: InterioresArmarioNuevosService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
+        protected productosDormitorioService: ProductosDormitorioService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
         protected eventManager: JhiEventManager
@@ -59,6 +62,21 @@ export class InterioresArmarioNuevosComponent implements OnInit, OnDestroy {
                 (res: HttpResponse<IInterioresArmarioNuevos[]>) => this.paginateInterioresArmarioNuevos(res.body, res.headers),
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
+    }
+
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<IInterioresArmarioNuevos>>) {
+        result.subscribe(
+            (res: HttpResponse<IInterioresArmarioNuevos>) => this.onSaveSuccess(),
+            (res: HttpErrorResponse) => this.onSaveError()
+        );
+    }
+
+    protected onSaveSuccess() {
+        this.isSaving = false;
+    }
+
+    protected onSaveError() {
+        this.isSaving = false;
     }
 
     loadPage(page: number) {

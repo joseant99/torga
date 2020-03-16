@@ -3074,6 +3074,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         cuenta = ancho / puertas;
                         cuenta = cuenta * 1;
                         if (i == 1) {
+                            if (ancho >= 100 && ancho < 110) {
+                                cuenta = 338;
+                            }
+                            if (ancho >= 110 && ancho < 120) {
+                                cuenta = 374;
+                            }
+                            if (ancho >= 120 && ancho < 130) {
+                                cuenta = 410;
+                            }
+                            if (ancho >= 130 && ancho < 140) {
+                                cuenta = 443;
+                            }
+                            if (ancho >= 140 && ancho < 150) {
+                                cuenta = 478;
+                            }
                             this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                     '<p style="width:100%;display:none">Hueco ' +
@@ -3109,6 +3124,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         cuenta = ancho / puertas;
                         cuenta = cuenta * 2;
                         if (i == 1) {
+                            if (ancho >= 100 && ancho < 110) {
+                                cuenta = 695;
+                            }
+                            if (ancho >= 110 && ancho < 120) {
+                                cuenta = 767;
+                            }
+                            if (ancho >= 120 && ancho < 130) {
+                                cuenta = 838;
+                            }
+                            if (ancho >= 130 && ancho < 140) {
+                                cuenta = 905;
+                            }
+                            if (ancho >= 140 && ancho < 150) {
+                                cuenta = 975;
+                            }
                             this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                     '<p style="width:100%;display:none">Hueco ' +
@@ -3149,6 +3179,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             cuenta = ancho / puertas;
                             cuenta = cuenta * 2;
                             if (i == 1) {
+                                if (ancho >= 100 && ancho < 110) {
+                                    cuenta = 338;
+                                }
+                                if (ancho >= 110 && ancho < 120) {
+                                    cuenta = 374;
+                                }
+                                if (ancho >= 120 && ancho < 130) {
+                                    cuenta = 410;
+                                }
+                                if (ancho >= 130 && ancho < 140) {
+                                    cuenta = 443;
+                                }
+                                if (ancho >= 140 && ancho < 150) {
+                                    cuenta = 478;
+                                }
                                 this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                         '<p style="width:100%;display:none">Hueco ' +
@@ -3196,6 +3241,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             cuenta = ancho / puertas;
                             cuenta = cuenta * 1;
                             if (i == 1) {
+                                if (ancho >= 100 && ancho < 110) {
+                                    cuenta = 695;
+                                }
+                                if (ancho >= 110 && ancho < 120) {
+                                    cuenta = 767;
+                                }
+                                if (ancho >= 120 && ancho < 130) {
+                                    cuenta = 838;
+                                }
+                                if (ancho >= 130 && ancho < 140) {
+                                    cuenta = 905;
+                                }
+                                if (ancho >= 140 && ancho < 150) {
+                                    cuenta = 975;
+                                }
                                 this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                         '<p style="width:100%;display:none">Hueco ' +
@@ -3236,6 +3296,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 cuenta = ancho / puertas;
                                 cuenta = cuenta * 1;
                                 if (i == 1) {
+                                    if (ancho >= 190 && ancho < 200) {
+                                        cuenta = 478;
+                                    }
+                                    if (ancho >= 150 && ancho < 160) {
+                                        cuenta = 374;
+                                    }
+                                    if (ancho >= 160 && ancho < 170) {
+                                        cuenta = 410;
+                                    }
+                                    if (ancho >= 170 && ancho < 180) {
+                                        cuenta = 426;
+                                    }
+                                    if (ancho >= 180 && ancho < 190) {
+                                        cuenta = 462;
+                                    }
                                     this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                             '<p style="width:100%;display:none">Hueco ' +
@@ -3272,6 +3347,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 cuenta = ancho / puertas;
                                 cuenta = cuenta * 2;
                                 if (i == 1) {
+                                    if (ancho >= 190 && ancho < 200) {
+                                        cuenta = 975;
+                                    }
+                                    if (ancho >= 150 && ancho < 160) {
+                                        cuenta = 767;
+                                    }
+                                    if (ancho >= 160 && ancho < 170) {
+                                        cuenta = 817;
+                                    }
+                                    if (ancho >= 170 && ancho < 180) {
+                                        cuenta = 871;
+                                    }
+                                    if (ancho >= 180 && ancho < 190) {
+                                        cuenta = 938;
+                                    }
                                     this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                             '<p style="width:100%;display:none">Hueco ' +
@@ -3308,6 +3398,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 cuenta = ancho / puertas;
                                 cuenta = cuenta * 1;
                                 if (i == 1) {
+                                    if (ancho >= 190 && ancho < 200) {
+                                        cuenta = 478;
+                                    }
+                                    if (ancho >= 150 && ancho < 160) {
+                                        cuenta = 374;
+                                    }
+                                    if (ancho >= 160 && ancho < 170) {
+                                        cuenta = 410;
+                                    }
+                                    if (ancho >= 170 && ancho < 180) {
+                                        cuenta = 426;
+                                    }
+                                    if (ancho >= 180 && ancho < 190) {
+                                        cuenta = 462;
+                                    }
                                     this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                             '<p style="width:100%;display:none">Hueco ' +
@@ -3348,6 +3453,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     cuenta = ancho / puertas;
                                     cuenta = cuenta * 2;
                                     if (i == 1) {
+                                        if (ancho >= 200 && ancho < 210) {
+                                            cuenta = 817;
+                                        }
+                                        if (ancho >= 210 && ancho < 220) {
+                                            cuenta = 852;
+                                        }
+                                        if (ancho >= 220 && ancho < 230) {
+                                            cuenta = 905;
+                                        }
+                                        if (ancho >= 230 && ancho < 240) {
+                                            cuenta = 938;
+                                        }
+                                        if (ancho >= 240 && ancho < 250) {
+                                            cuenta = 975;
+                                        }
                                         this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                 '<p style="width:100%;display:none">Hueco ' +
@@ -3384,6 +3504,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     cuenta = ancho / puertas;
                                     cuenta = cuenta * 1;
                                     if (i == 1) {
+                                        if (ancho >= 200 && ancho < 210) {
+                                            cuenta = 410;
+                                        }
+                                        if (ancho >= 210 && ancho < 220) {
+                                            cuenta = 426;
+                                        }
+                                        if (ancho >= 220 && ancho < 230) {
+                                            cuenta = 443;
+                                        }
+                                        if (ancho >= 230 && ancho < 240) {
+                                            cuenta = 462;
+                                        }
+                                        if (ancho >= 240 && ancho < 250) {
+                                            cuenta = 478;
+                                        }
                                         this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                 '<p style="width:100%;display:none">Hueco ' +
@@ -3420,6 +3555,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     cuenta = ancho / puertas;
                                     cuenta = cuenta * 2;
                                     if (i == 1) {
+                                        if (ancho >= 200 && ancho < 210) {
+                                            cuenta = 817;
+                                        }
+                                        if (ancho >= 210 && ancho < 220) {
+                                            cuenta = 852;
+                                        }
+                                        if (ancho >= 220 && ancho < 230) {
+                                            cuenta = 905;
+                                        }
+                                        if (ancho >= 230 && ancho < 240) {
+                                            cuenta = 938;
+                                        }
+                                        if (ancho >= 240 && ancho < 250) {
+                                            cuenta = 975;
+                                        }
                                         this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                 '<p style="width:100%;display:none">Hueco ' +
@@ -3460,6 +3610,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         cuenta = ancho / puertas;
                                         cuenta = cuenta * 1;
                                         if (i == 1) {
+                                            if (ancho >= 200 && ancho < 210) {
+                                                cuenta = 410;
+                                            }
+                                            if (ancho >= 210 && ancho < 220) {
+                                                cuenta = 426;
+                                            }
+                                            if (ancho >= 220 && ancho < 230) {
+                                                cuenta = 443;
+                                            }
+                                            if (ancho >= 230 && ancho < 240) {
+                                                cuenta = 462;
+                                            }
+                                            if (ancho >= 240 && ancho < 250) {
+                                                cuenta = 478;
+                                            }
                                             this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                     '<p style="width:100%;display:none">Hueco ' +
@@ -3496,6 +3661,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         cuenta = ancho / puertas;
                                         cuenta = cuenta * 2;
                                         if (i == 1) {
+                                            if (ancho >= 200 && ancho < 210) {
+                                                cuenta = 817;
+                                            }
+                                            if (ancho >= 210 && ancho < 220) {
+                                                cuenta = 852;
+                                            }
+                                            if (ancho >= 220 && ancho < 230) {
+                                                cuenta = 905;
+                                            }
+                                            if (ancho >= 230 && ancho < 240) {
+                                                cuenta = 938;
+                                            }
+                                            if (ancho >= 240 && ancho < 250) {
+                                                cuenta = 975;
+                                            }
                                             this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                     '<p style="width:100%;display:none;">Hueco ' +
@@ -3532,6 +3712,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         cuenta = ancho / puertas;
                                         cuenta = cuenta * 2;
                                         if (i == 1) {
+                                            if (ancho >= 200 && ancho < 210) {
+                                                cuenta = 817;
+                                            }
+                                            if (ancho >= 210 && ancho < 220) {
+                                                cuenta = 852;
+                                            }
+                                            if (ancho >= 220 && ancho < 230) {
+                                                cuenta = 905;
+                                            }
+                                            if (ancho >= 230 && ancho < 240) {
+                                                cuenta = 938;
+                                            }
+                                            if (ancho >= 240 && ancho < 250) {
+                                                cuenta = 975;
+                                            }
                                             this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                     '<p style="width:100%;display:none">Hueco ' +
@@ -3572,6 +3767,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 1;
                                             if (i == 1) {
+                                                if (ancho >= 250 && ancho < 260) {
+                                                    cuenta = 410;
+                                                }
+                                                if (ancho >= 260 && ancho < 270) {
+                                                    cuenta = 426;
+                                                }
+                                                if (ancho >= 270 && ancho < 280) {
+                                                    cuenta = 443;
+                                                }
+                                                if (ancho >= 280 && ancho < 290) {
+                                                    cuenta = 462;
+                                                }
+                                                if (ancho >= 290 && ancho < 300) {
+                                                    cuenta = 478;
+                                                }
                                                 this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                         '<p style="width:100%;display:none">Hueco ' +
@@ -3608,6 +3818,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 2;
                                             if (i == 1) {
+                                                if (ancho >= 250 && ancho < 260) {
+                                                    cuenta = 838;
+                                                }
+                                                if (ancho >= 260 && ancho < 270) {
+                                                    cuenta = 871;
+                                                }
+                                                if (ancho >= 270 && ancho < 280) {
+                                                    cuenta = 905;
+                                                }
+                                                if (ancho >= 280 && ancho < 290) {
+                                                    cuenta = 938;
+                                                }
+                                                if (ancho >= 290 && ancho < 300) {
+                                                    cuenta = 975;
+                                                }
                                                 this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                         '<p style="width:100%;display:none">Hueco ' +
@@ -3644,6 +3869,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 2;
                                             if (i == 1) {
+                                                if (ancho >= 250 && ancho < 260) {
+                                                    cuenta = 838;
+                                                }
+                                                if (ancho >= 260 && ancho < 270) {
+                                                    cuenta = 871;
+                                                }
+                                                if (ancho >= 270 && ancho < 280) {
+                                                    cuenta = 905;
+                                                }
+                                                if (ancho >= 280 && ancho < 290) {
+                                                    cuenta = 938;
+                                                }
+                                                if (ancho >= 290 && ancho < 300) {
+                                                    cuenta = 975;
+                                                }
                                                 this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                         '<p style="width:100%;display:none">Hueco ' +
@@ -3680,6 +3920,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 1;
                                             if (i == 1) {
+                                                if (ancho >= 250 && ancho < 260) {
+                                                    cuenta = 410;
+                                                }
+                                                if (ancho >= 260 && ancho < 270) {
+                                                    cuenta = 426;
+                                                }
+                                                if (ancho >= 270 && ancho < 280) {
+                                                    cuenta = 443;
+                                                }
+                                                if (ancho >= 280 && ancho < 290) {
+                                                    cuenta = 462;
+                                                }
+                                                if (ancho >= 290 && ancho < 300) {
+                                                    cuenta = 478;
+                                                }
                                                 this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                         '<p style="width:100%;display:none">Hueco ' +
@@ -3721,6 +3976,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 1;
                                                 if (i == 1) {
+                                                    if (ancho >= 300 && ancho < 310) {
+                                                        cuenta = 426;
+                                                    }
+                                                    if (ancho >= 310 && ancho < 320) {
+                                                        cuenta = 443;
+                                                    }
+                                                    if (ancho >= 320 && ancho < 330) {
+                                                        cuenta = 462;
+                                                    }
+                                                    if (ancho >= 330 && ancho < 340) {
+                                                        cuenta = 462;
+                                                    }
+                                                    if (ancho >= 340 && ancho < 350) {
+                                                        cuenta = 478;
+                                                    }
                                                     this.interioresArmarioNuevosService
                                                         .findBus(cuenta, idProdInt[nombre])
                                                         .subscribe(data => {
@@ -3751,6 +4021,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                             }
                                             if (hueco == 2) {
+                                                if (ancho >= 300 && ancho < 310) {
+                                                    cuenta = 871;
+                                                }
+                                                if (ancho >= 310 && ancho < 320) {
+                                                    cuenta = 905;
+                                                }
+                                                if (ancho >= 320 && ancho < 330) {
+                                                    cuenta = 938;
+                                                }
+                                                if (ancho >= 330 && ancho < 340) {
+                                                    cuenta = 975;
+                                                }
+                                                if (ancho >= 340 && ancho < 350) {
+                                                    cuenta = 975;
+                                                }
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 2;
                                                 if (i == 1) {
@@ -3787,6 +4072,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 2;
                                                 if (i == 1) {
+                                                    if (ancho >= 300 && ancho < 310) {
+                                                        cuenta = 871;
+                                                    }
+                                                    if (ancho >= 310 && ancho < 320) {
+                                                        cuenta = 905;
+                                                    }
+                                                    if (ancho >= 320 && ancho < 330) {
+                                                        cuenta = 938;
+                                                    }
+                                                    if (ancho >= 330 && ancho < 340) {
+                                                        cuenta = 975;
+                                                    }
+                                                    if (ancho >= 340 && ancho < 350) {
+                                                        cuenta = 975;
+                                                    }
                                                     this.interioresArmarioNuevosService
                                                         .findBus(cuenta, idProdInt[nombre])
                                                         .subscribe(data => {
@@ -3820,6 +4120,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 2;
                                                 if (i == 1) {
+                                                    if (ancho >= 300 && ancho < 310) {
+                                                        cuenta = 871;
+                                                    }
+                                                    if (ancho >= 310 && ancho < 320) {
+                                                        cuenta = 905;
+                                                    }
+                                                    if (ancho >= 320 && ancho < 330) {
+                                                        cuenta = 938;
+                                                    }
+                                                    if (ancho >= 330 && ancho < 340) {
+                                                        cuenta = 975;
+                                                    }
+                                                    if (ancho >= 340 && ancho < 350) {
+                                                        cuenta = 975;
+                                                    }
                                                     this.interioresArmarioNuevosService
                                                         .findBus(cuenta, idProdInt[nombre])
                                                         .subscribe(data => {
@@ -3857,6 +4172,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 1;
                                                     if (i == 1) {
+                                                        if (ancho >= 300 && ancho < 310) {
+                                                            cuenta = 426;
+                                                        }
+                                                        if (ancho >= 310 && ancho < 320) {
+                                                            cuenta = 443;
+                                                        }
+                                                        if (ancho >= 320 && ancho < 330) {
+                                                            cuenta = 462;
+                                                        }
+                                                        if (ancho >= 330 && ancho < 340) {
+                                                            cuenta = 462;
+                                                        }
+                                                        if (ancho >= 340 && ancho < 350) {
+                                                            cuenta = 478;
+                                                        }
                                                         this.interioresArmarioNuevosService
                                                             .findBus(cuenta, idProdInt[nombre])
                                                             .subscribe(data => {
@@ -3890,6 +4220,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 2;
                                                     if (i == 1) {
+                                                        if (ancho >= 300 && ancho < 310) {
+                                                            cuenta = 871;
+                                                        }
+                                                        if (ancho >= 310 && ancho < 320) {
+                                                            cuenta = 905;
+                                                        }
+                                                        if (ancho >= 320 && ancho < 330) {
+                                                            cuenta = 938;
+                                                        }
+                                                        if (ancho >= 330 && ancho < 340) {
+                                                            cuenta = 975;
+                                                        }
+                                                        if (ancho >= 340 && ancho < 350) {
+                                                            cuenta = 975;
+                                                        }
                                                         this.interioresArmarioNuevosService
                                                             .findBus(cuenta, idProdInt[nombre])
                                                             .subscribe(data => {
@@ -3920,6 +4265,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                 }
                                                 if (hueco == 3) {
+                                                    if (ancho >= 300 && ancho < 310) {
+                                                        cuenta = 871;
+                                                    }
+                                                    if (ancho >= 310 && ancho < 320) {
+                                                        cuenta = 905;
+                                                    }
+                                                    if (ancho >= 320 && ancho < 330) {
+                                                        cuenta = 938;
+                                                    }
+                                                    if (ancho >= 330 && ancho < 340) {
+                                                        cuenta = 975;
+                                                    }
+                                                    if (ancho >= 340 && ancho < 350) {
+                                                        cuenta = 975;
+                                                    }
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 2;
                                                     if (i == 1) {
@@ -3956,6 +4316,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 2;
                                                     if (i == 1) {
+                                                        if (ancho >= 300 && ancho < 310) {
+                                                            cuenta = 871;
+                                                        }
+                                                        if (ancho >= 310 && ancho < 320) {
+                                                            cuenta = 905;
+                                                        }
+                                                        if (ancho >= 320 && ancho < 330) {
+                                                            cuenta = 938;
+                                                        }
+                                                        if (ancho >= 330 && ancho < 340) {
+                                                            cuenta = 975;
+                                                        }
+                                                        if (ancho >= 340 && ancho < 350) {
+                                                            cuenta = 975;
+                                                        }
                                                         this.interioresArmarioNuevosService
                                                             .findBus(cuenta, idProdInt[nombre])
                                                             .subscribe(data => {
@@ -3993,6 +4368,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         cuenta = ancho / puertas;
                                                         cuenta = cuenta * 1;
                                                         if (i == 1) {
+                                                            if (ancho >= 350 && ancho < 360) {
+                                                                cuenta = 426;
+                                                            }
+                                                            if (ancho >= 360 && ancho < 370) {
+                                                                cuenta = 443;
+                                                            }
+                                                            if (ancho >= 370 && ancho < 380) {
+                                                                cuenta = 462;
+                                                            }
+                                                            if (ancho >= 380 && ancho < 390) {
+                                                                cuenta = 462;
+                                                            }
+                                                            if (ancho >= 390 && ancho < 400) {
+                                                                cuenta = 478;
+                                                            }
                                                             this.interioresArmarioNuevosService
                                                                 .findBus(cuenta, idProdInt[nombre])
                                                                 .subscribe(data => {
@@ -19897,12 +20287,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var especiales = [];
         $('#producto').append('<datalist id="listaAnchos"></datalist>');
         $('#producto').append('<datalist id="listaAltura"></datalist>');
-        for (let i = 375; i < 6050; i + 25) {
-            i = i + 25;
+        for (let i = 40; i < 401; i++) {
             $('#listaAnchos').append('<option value="' + i + '">' + i + '</option>');
         }
-        for (let i = 2190; i < 2600; i + 10) {
-            i = i + 10;
+        for (let i = 220; i < 261; i++) {
             $('#listaAltura').append('<option style="color:red" value="' + i + '">' + i + '</option>');
         }
         var interiores = [];
