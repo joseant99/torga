@@ -16629,8 +16629,8 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                 $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
             }
             if (idProd1 == 276) {
-                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
-                $('.productosColor' + idProd1).css({ 'margin-bottom': '1700px' });
+                $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '550px' });
+                $('.productosColor' + idProd1).css({ 'margin-bottom': '1240px' });
             }
             if (idProd1 == 277) {
                 $('.productosColor' + idProd1 + ' #acabados').css({ 'margin-top': '1000px' });
