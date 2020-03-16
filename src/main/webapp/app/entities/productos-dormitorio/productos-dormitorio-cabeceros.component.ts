@@ -911,7 +911,14 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                     productoNombre != 'Margot 2' &&
                     productoNombre != 'Zenda' &&
                     productoNombre != 'Noa' &&
-                    productoNombre != 'Adda'
+                    productoNombre != 'Adda' &&
+                    productoNombre != 'Olivia' &&
+                    productoNombre != 'Verona 1' &&
+                    productoNombre != 'Verona 2' &&
+                    productoNombre != 'Padova' &&
+                    productoNombre != 'Ivy' &&
+                    productoNombre != 'Cali tapizada' &&
+                    productoNombre != 'Cali 2'
                 ) {
                     for (let i = 0; i < datos.length; i++) {
                         if (producto == datos[i]['productosDormitorio']['id']) {
@@ -1372,7 +1379,7 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                         $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
                         $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
                         $('.productosColor' + producto + ' #selectSaberId #selectCabecero').append(
-                            '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                            '<option value="1" id="opcion1">Para colchon de 135</option><option value="2" id="opcion2">Para colchon de 150</option><option value="3" id="opcion3">Para colchon de 160</option><option value="4" id="opcion4">Para colchon de 180</option>'
                         );
                     }
 
@@ -1391,7 +1398,137 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                         $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
                         $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
                         $('.productosColor' + producto + ' #selectSaberId #selectCabecero').append(
-                            '<option value="1">Para colchon de 135</option><option value="2">Para colchon de 150</option><option value="3">Para colchon de 160</option><option value="4">Para colchon de 180</option>'
+                            '<option value="1" id="opcion1">Para colchon de 135</option><option value="2" id="opcion2">Para colchon de 150</option><option value="3" id="opcion3">Para colchon de 160</option><option value="4" id="opcion4">Para colchon de 180</option>'
+                        );
+                    }
+                    if (productoNombre == 'Olivia') {
+                        $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ 'margin-left': '35%' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').append(
+                            '<option value="1" id="opcion1">Para colchon de 135</option><option value="2" id="opcion2">Para colchon de 150</option>'
+                        );
+                    }
+
+                    if (productoNombre == 'Verona 1') {
+                        $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ 'margin-left': '35%' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').append(
+                            '<option value="1" id="opcion1">Para colchon de 135</option><option value="2" id="opcion2">Para colchon de 150</option><option value="3" id="opcion3">Para colchon de 160</option><option value="4" id="opcion4">Para colchon de 180</option>'
+                        );
+                    }
+                    if (productoNombre == 'Verona 2') {
+                        $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ 'margin-left': '35%' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').append(
+                            '<option value="1" id="opcion1">Para colchon de 135</option><option value="2" id="opcion2">Para colchon de 150</option><option value="3" id="opcion3">Para colchon de 160</option><option value="4" id="opcion4">Para colchon de 180</option>'
+                        );
+                    }
+                    if (productoNombre == 'Padova') {
+                        $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ 'margin-left': '35%' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').append(
+                            '<option value="1" id="opcion1">Para colchon de 135</option><option value="2" id="opcion2">Para colchon de 150</option><option value="3" id="opcion3">Para colchon de 160</option><option value="4" id="opcion4">Para colchon de 180</option>'
+                        );
+                    }
+
+                    if (productoNombre == 'Ivy') {
+                        $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ 'margin-left': '35%' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').append(
+                            '<option value="1" id="opcion1">Para colchon de 135</option><option value="2" id="opcion2">Para colchon de 150</option><option value="3" id="opcion3">Para colchon de 160</option><option value="4" id="opcion4">Para colchon de 180</option>'
+                        );
+                    }
+
+                    if (productoNombre == 'Cali tapizada') {
+                        $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ 'margin-left': '35%' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').append(
+                            '<option value="1" id="opcion1">Para colchon de 135</option><option value="2" id="opcion2">Para colchon de 150</option>'
+                        );
+                    }
+
+                    if (productoNombre == 'Cali 2') {
+                        $('.productosColor' + producto + ' #dimensiones').css({ width: '63.3%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ border: '1px solid #7AC8FE' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'margin-top': '20px' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ left: '28.5%' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ position: 'absolute' });
+                        $('.productosColor' + producto + ' #dimensiones').css({ 'background-color': 'white' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ display: 'block' });
+                        $('.productosColor' + producto + ' #selectSaberId').css({ 'margin-left': '35%' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ width: '260px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'text-align': 'center' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'font-size': '23px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').css({ 'padding-left': '15px' });
+                        $('.productosColor' + producto + ' #selectSaberId #selectCabecero').append(
+                            '<option value="1" id="opcion1">Para colchon de 135</option><option value="2" id="opcion2">Para colchon de 150</option><option value="3" id="opcion3">Para colchon de 160</option><option value="4" id="opcion4">Para colchon de 180</option>'
                         );
                     }
 
@@ -3139,9 +3276,7 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                                 );
                                 $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
                                 $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-bottom': '6%' });
-                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
-                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
-                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
                                 $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
                                 $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
                                 $('#anchoEspecialAltura' + producto).append('<option> </option>');
@@ -3204,9 +3339,7 @@ export class ProductosDormitorioCabecerosComponent implements OnInit, OnDestroy 
                                         datos[i]['fondo'] +
                                         ' | '
                                 );
-                                $('.productosColor' + producto + ' #mesitaIdeal1').text(
-                                    'MESITA IDEAL:  ' + datos[i]['anchoMesitaIdeal'] + ' CM'
-                                );
+                                $('.productosColor' + producto + ' #mesitaIdeal1').text('MESITA IDEAL: CUALQUIERA');
                                 $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-top': '2%' });
                                 $('.productosColor' + producto + ' #tipoColchon1').text('CABECERO ' + textoDimenColchon.toUpperCase());
                                 $('.productosColor' + producto + ' .dimensionesColor1').css({ 'margin-left': '20%' });
