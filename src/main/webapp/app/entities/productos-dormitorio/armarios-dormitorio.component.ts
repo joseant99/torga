@@ -6947,6 +6947,146 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
         }
+
+        if (texto == '3 PUERTAS DERECHA') {
+            if (id == 2) {
+                if (ancho >= 100 && ancho < 120) {
+                    if (alto >= 220 && alto < 240) {
+                        var cuenta = '391';
+                        alto = 220;
+                    }
+                    if (alto >= 240 && alto <= 260) {
+                        var cuenta = '391';
+                        alto = 240;
+                    }
+                }
+                if (ancho >= 120 && ancho < 130) {
+                    if (alto >= 220 && alto < 240) {
+                        var cuenta = '427';
+                        alto = 220;
+                    }
+                    if (alto >= 240 && alto <= 260) {
+                        var cuenta = '427';
+                        alto = 240;
+                    }
+                }
+                if (ancho >= 130 && ancho < 140) {
+                    if (alto >= 220 && alto < 240) {
+                        var cuenta = '460';
+                        alto = 220;
+                    }
+                    if (alto >= 240 && alto <= 260) {
+                        var cuenta = '460';
+                        alto = 240;
+                    }
+                }
+                if (ancho >= 140 && ancho < 150) {
+                    if (alto >= 220 && alto < 240) {
+                        var cuenta = '495';
+                        alto = 220;
+                    }
+                    if (alto >= 240 && alto <= 260) {
+                        var cuenta = '495';
+                        alto = 240;
+                    }
+                }
+            }
+            if (id == 0) {
+                if (idPuerta != 290 && idPuerta != 291 && idPuerta != 292 && idPuerta != 293 && idPuerta != 294) {
+                    if (ancho >= 100 && ancho < 120) {
+                        if (alto >= 220 && alto < 240) {
+                            var cuenta = '391';
+                            alto = 220;
+                        }
+                        if (alto >= 240 && alto <= 260) {
+                            var cuenta = '391';
+                            alto = 240;
+                        }
+                    }
+                    if (ancho >= 120 && ancho < 130) {
+                        if (alto >= 220 && alto < 240) {
+                            var cuenta = '427';
+                            alto = 220;
+                        }
+                        if (alto >= 240 && alto <= 260) {
+                            var cuenta = '427';
+                            alto = 240;
+                        }
+                    }
+                    if (ancho >= 130 && ancho < 140) {
+                        if (alto >= 220 && alto < 240) {
+                            var cuenta = '460';
+                            alto = 220;
+                        }
+                        if (alto >= 240 && alto <= 260) {
+                            var cuenta = '460';
+                            alto = 240;
+                        }
+                    }
+                    if (ancho >= 140 && ancho < 150) {
+                        if (alto >= 220 && alto < 240) {
+                            var cuenta = '495';
+                            alto = 220;
+                        }
+                        if (alto >= 240 && alto <= 260) {
+                            var cuenta = '495';
+                            alto = 240;
+                        }
+                    }
+                } else {
+                    if (ancho >= 100 && ancho < 110) {
+                        if (alto >= 220 && alto < 240) {
+                            var cuenta = '695';
+                            alto = 220;
+                        }
+                        if (alto >= 240 && alto <= 260) {
+                            var cuenta = '695';
+                            alto = 240;
+                        }
+                    }
+                    if (ancho >= 110 && ancho < 120) {
+                        if (alto >= 220 && alto < 240) {
+                            var cuenta = '767';
+                            alto = 220;
+                        }
+                        if (alto >= 240 && alto <= 260) {
+                            var cuenta = '767';
+                            alto = 240;
+                        }
+                    }
+                    if (ancho >= 120 && ancho < 130) {
+                        if (alto >= 220 && alto < 240) {
+                            var cuenta = '838';
+                            alto = 220;
+                        }
+                        if (alto >= 240 && alto <= 260) {
+                            var cuenta = '838';
+                            alto = 240;
+                        }
+                    }
+                    if (ancho >= 130 && ancho < 140) {
+                        if (alto >= 220 && alto < 240) {
+                            var cuenta = '905';
+                            alto = 220;
+                        }
+                        if (alto >= 240 && alto <= 260) {
+                            var cuenta = '905';
+                            alto = 240;
+                        }
+                    }
+                    if (ancho >= 140 && ancho < 150) {
+                        if (alto >= 220 && alto < 240) {
+                            var cuenta = '975';
+                            alto = 220;
+                        }
+                        if (alto >= 240 && alto <= 260) {
+                            var cuenta = '975';
+                            alto = 240;
+                        }
+                    }
+                }
+            }
+        }
         this.puertasPreciosService.findBus(cuenta, alto, idPuerta).subscribe(data => {
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                 '<p id="puertaHueco' +
@@ -6980,6 +7120,29 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     } else {
                         $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 3');
                         $('#divPuerta1').css({ display: 'block' });
+                    }
+                }
+            }
+
+            if (texto == '3 PUERTAS DERECHA') {
+                if (id == 0) {
+                    $('#calculadoraCarrito #precioPuerta2').text(data.body[0].precio + ' €');
+                    if (idPuerta == 290 || idPuerta == 291 || idPuerta == 292 || idPuerta == 293 || idPuerta == 294) {
+                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 1 y Puerta 2');
+                        $('#divPuerta1').css({ display: 'none' });
+                    } else {
+                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 1');
+                        $('#divPuerta1').css({ display: 'block' });
+                    }
+                }
+                if (id == 1) {
+                    $('#calculadoraCarrito #precioPuerta1').text(data.body[0].precio + ' €');
+                    if (idPuerta == 290 || idPuerta == 291 || idPuerta == 292 || idPuerta == 293 || idPuerta == 294) {
+                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 1 y Puerta 2');
+                        $('#divPuerta0').css({ display: 'none' });
+                    } else {
+                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 2');
+                        $('#divPuerta0').css({ display: 'block' });
                     }
                 }
             }
@@ -7309,6 +7472,223 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     }
                     if (nombre == 'Puerta Batiente tirador DRAW') {
                         this.acaProdService.findAca(289).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+                $('#inputPuertas' + (id - 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id - 1)).attr('readonly');
+            }
+        }
+        if (texto == '3 PUERTAS DERECHA') {
+            if (id == 2) {
+                $('#inputPuertas' + id).val(nombre);
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    if (nombre == 'Puerta Aluminio') {
+                        this.acaProdService.findAca(48).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == 'Puerta Batiente sin tirador') {
+                        this.acaProdService.findAca(286).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == 'Puerta Batiente tirador tim') {
+                        this.acaProdService.findAca(287).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == 'Puerta Batiente tirador NYE') {
+                        this.acaProdService.findAca(288).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == 'Puerta Batiente tirador DRAW') {
+                        this.acaProdService.findAca(289).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle TIM Apertura izquierda') {
+                        this.acaProdService.findAca(290).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle TIM Apertura derecha') {
+                        this.acaProdService.findAca(291).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle NYE Apertura izquierda') {
+                        this.acaProdService.findAca(292).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle NYE Apertura derecha') {
+                        this.acaProdService.findAca(293).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                }
+            }
+            if (id == 0) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id + 1] = interTodos[j];
+                    }
+                }
+                this.puertasParaArray = arrayParaVer;
+
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    if (nombre == 'Puerta Aluminio') {
+                        this.acaProdService.findAca(48).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+
+                    if (nombre == 'Puerta Batiente sin tirador') {
+                        this.acaProdService.findAca(286).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                            this.acabadosPuerta1 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == 'Puerta Batiente tirador tim') {
+                        this.acaProdService.findAca(287).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                            this.acabadosPuerta1 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == 'Puerta Batiente tirador NYE') {
+                        this.acaProdService.findAca(288).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                            this.acabadosPuerta1 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == 'Puerta Batiente tirador DRAW') {
+                        this.acaProdService.findAca(289).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                            this.acabadosPuerta1 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle TIM Apertura izquierda') {
+                        this.acaProdService.findAca(290).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                            this.acabadosPuerta1 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle TIM Apertura derecha') {
+                        this.acaProdService.findAca(291).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                            this.acabadosPuerta1 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle NYE Apertura izquierda') {
+                        this.acaProdService.findAca(292).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                            this.acabadosPuerta1 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle NYE Apertura derecha') {
+                        this.acaProdService.findAca(293).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                            this.acabadosPuerta1 = data.body[0]['acabados'];
+                        });
+                    }
+                }
+                $('#inputPuertas' + (id + 1)).val(nombre);
+                $('#inputPuertas' + id).val(nombre);
+                $('#inputPuertas' + (id + 1)).attr('readonly');
+            }
+            if (id == 1) {
+                for (let j = 0; j < interTodos.length; j++) {
+                    if (interTodos[j]['nombre'] == nombre) {
+                        arrayParaVer[id - 1] = interTodos[j];
+                    }
+                }
+                if (nombre == 'Puerta Madera') {
+                    this.acaProdService.findAca(47).subscribe(data => {
+                        $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                        $('#inputs #inputPuertas' + (id - 1)).attr('data-target', '#modalAcabadosPuertas1');
+                        this.acabadosPuerta1 = data.body[0]['acabados'];
+                    });
+                } else {
+                    if (nombre == 'Puerta Aluminio') {
+                        this.acaProdService.findAca(48).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+
+                    if (nombre == 'Puerta Batiente sin tirador') {
+                        this.acaProdService.findAca(286).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == 'Puerta Batiente tirador tim') {
+                        this.acaProdService.findAca(287).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == 'Puerta Batiente tirador NYE') {
+                        this.acaProdService.findAca(288).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == 'Puerta Batiente tirador DRAW') {
+                        this.acaProdService.findAca(289).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle TIM Apertura izquierda') {
+                        this.acaProdService.findAca(290).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle TIM Apertura derecha') {
+                        this.acaProdService.findAca(291).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle NYE Apertura izquierda') {
+                        this.acaProdService.findAca(292).subscribe(data => {
+                            $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                            this.acabadosPuerta2 = data.body[0]['acabados'];
+                        });
+                    }
+                    if (nombre == '2 Puertas fuelle NYE Apertura derecha') {
+                        this.acaProdService.findAca(293).subscribe(data => {
                             $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                             this.acabadosPuerta2 = data.body[0]['acabados'];
                         });
@@ -9459,46 +9839,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#inputPuertas' + (id - 1)).attr('readonly');
             }
         }
-
-        if (texto == '3 PUERTAS DERECHA') {
-            if (id == 0) {
-                for (let j = 0; j < interTodos.length; j++) {
-                    if (interTodos[j]['nombre'] == nombre) {
-                        arrayParaVer[id + 1] = interTodos[j];
-                    }
-                }
-                this.puertasParaArray = arrayParaVer;
-                $('#inputPuertas' + (id + 1)).val(nombre);
-                $('#inputPuertas' + id).val(nombre);
-                $('#inputPuertas' + (id + 1)).attr('readonly');
-                if (nombre == 'Puerta Madera') {
-                    if (nombre == 'Puerta Madera') {
-                        this.acaProdService.findAca(47).subscribe(data => {
-                            $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas1');
-                            this.acabadosPuerta1 = data.body[0]['acabados'];
-                        });
-                    } else {
-                        this.acaProdService.findAca(48).subscribe(data => {
-                            $('#inputs #inputPuertas' + (id + 1)).attr('data-target', '#modalAcabadosPuertas2');
-                            this.acabadosPuerta2 = data.body[0]['acabados'];
-                        });
-                    }
-                }
-            }
-
-            $('#inputPuertas' + id).val(nombre);
-            if (nombre == 'Puerta Madera') {
-                this.acaProdService.findAca(47).subscribe(data => {
-                    $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
-                    this.acabadosPuerta1 = data.body[0]['acabados'];
-                });
-            } else {
-                this.acaProdService.findAca(48).subscribe(data => {
-                    $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
-                    this.acabadosPuerta2 = data.body[0]['acabados'];
-                });
-            }
-        }
     }
     public cambioAcabadoImagenPue(nombre) {
         var id = this.idPuertaInput;
@@ -9531,6 +9871,28 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         $('#inputs #inputPuertas1').empty();
                         $('#inputs #inputPuertas1').val(acabados[w].nombre);
                         $('#inputs #inputPuertas1').append(
+                            '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                acabados[w]['imagenFondo'] +
+                                '" style="max-width:100%;max-height:100%">'
+                        );
+                    }
+                }
+
+                if (texto == '3 PUERTAS DERECHA') {
+                    if (id == 1) {
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputs #inputPuertas1').val(acabados[w].nombre);
+                        $('#inputs #inputPuertas1').append(
+                            '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                acabados[w]['imagenFondo'] +
+                                '" style="max-width:100%;max-height:100%">'
+                        );
+                    }
+
+                    if (id == 2) {
+                        $('#inputs #inputPuertas0').empty();
+                        $('#inputs #inputPuertas0').val(acabados[w].nombre);
+                        $('#inputs #inputPuertas0').append(
                             '<img width="100%" height="100%" src="data:image/gif;base64,' +
                                 acabados[w]['imagenFondo'] +
                                 '" style="max-width:100%;max-height:100%">'
