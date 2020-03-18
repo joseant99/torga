@@ -119,7 +119,7 @@ public class PuertasPreciosResource {
      */
     @GetMapping("/puertas-precios-bus/{ancho}/{alto}/{puerta}")
     @Timed
-    public ResponseEntity<Collection<PuertasPrecios>> getAllCascosBus( @PathVariable("ancho") Float ancho , @PathVariable("alto") Float alto , @PathVariable("puerta") Long puerta ) {
+    public ResponseEntity<Collection<PuertasPrecios>> getAllCascosBus( @PathVariable("ancho") String ancho , @PathVariable("alto") Float alto , @PathVariable("puerta") Long puerta ) {
         log.debug("REST request to get a page of Cascos");
         Collection<PuertasPrecios> page = puertasPreciosRepository.findAncho(ancho, alto, puerta);
         return ResponseEntity.ok().body(page);

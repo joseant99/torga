@@ -3,12 +3,14 @@ import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/ht
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
+import { Observable } from 'rxjs';
 
 import { IPuertasPrecios } from 'app/shared/model/puertas-precios.model';
 import { AccountService } from 'app/core';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { PuertasPreciosService } from './puertas-precios.service';
+import { ProductosDormitorioService } from '../productos-dormitorio/productos-dormitorio.service';
 
 @Component({
     selector: 'jhi-puertas-precios',
@@ -29,12 +31,14 @@ export class PuertasPreciosComponent implements OnInit, OnDestroy {
     predicate: any;
     previousPage: any;
     reverse: any;
+    isSaving: any;
 
     constructor(
         protected puertasPreciosService: PuertasPreciosService,
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
+        protected productosDormitorioService: ProductosDormitorioService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
         protected eventManager: JhiEventManager
@@ -59,6 +63,18 @@ export class PuertasPreciosComponent implements OnInit, OnDestroy {
                 (res: HttpResponse<IPuertasPrecios[]>) => this.paginatePuertasPrecios(res.body, res.headers),
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
+    }
+
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<IPuertasPrecios>>) {
+        result.subscribe((res: HttpResponse<IPuertasPrecios>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+
+    protected onSaveSuccess() {
+        this.isSaving = false;
+    }
+
+    protected onSaveError() {
+        this.isSaving = false;
     }
 
     loadPage(page: number) {

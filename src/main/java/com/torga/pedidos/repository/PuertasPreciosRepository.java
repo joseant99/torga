@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PuertasPreciosRepository extends JpaRepository<PuertasPrecios, Long> {
 	
-	@Query("SELECT u FROM PuertasPrecios u WHERE u.ancho >= ?1 and u.alto >= ?2 and u.productosDormitorio.id = ?3")
-	Collection<PuertasPrecios> findAncho(Float ancho,Float alto , Long puerta);
+	@Query("SELECT u FROM PuertasPrecios u WHERE u.tipo = ?1 and u.alto =?2 and u.productosDormitorio.id = ?3")
+	Collection<PuertasPrecios> findAncho(String ancho,Float alto , Long puerta);
 	
 }
