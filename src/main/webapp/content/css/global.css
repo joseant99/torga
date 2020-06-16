@@ -655,7 +655,7 @@ Generic styles
     border: 1px solid #dfdddc;
 }
 .productosColorSin72 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
 }
 .productosColorSin171 {
@@ -672,95 +672,153 @@ Generic styles
     margin-right: 100%;
 }
 .productosColorSin73 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
 }
 .productosColorSin74 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
 }
 .productosColorSin75 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
 }
 .productosColorSin76 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
 }
 .productosColorSin77 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
 }
 .productosColorSin78 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColorSin79 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColorSin80 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColorSin81 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColorSin81 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColorSin82 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColorSin83 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColorSin84 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColorSin85 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColorSin86 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
 }
 .productosColorSin87 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
 }
 .productosColorSin88 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
 }
 .productosColorSin89 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
 }
 .productosColorSin90 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColorSin91 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
+}
+.productosColorSin313 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin314 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin315 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin316 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin317 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin318 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+
+.productosColorSin319 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin320 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin321 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin322 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin323 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin324 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin325 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin326 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin327 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin328 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColorSin329 {
+    float: right;
+    border: 1px solid #dfdddc;
 }
 .productosColorSin180 {
     float: left;
@@ -781,9 +839,9 @@ Generic styles
     border: 1px solid #dfdddc;
 }
 .productosColorSin92 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
+    margin-right: 47.5%;
 }
 .productosColor33 {
     float: left;
@@ -791,14 +849,12 @@ Generic styles
     margin-right: 100%;
 }
 .productosColor14 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColor69 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColor174 {
     float: left;
@@ -1190,6 +1246,16 @@ Generic styles
     border: 1px solid #dfdddc;
     margin-right: 100%;
 }
+.productosColor332 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor333 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
 .productosColor207 {
     float: left;
     border: 1px solid #dfdddc;
@@ -1226,15 +1292,54 @@ Generic styles
     margin-right: 100%;
 }
 .productosColor62 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColor63 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
+.productosColor303 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColor304 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColor305 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColor306 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColor307 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColor308 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColor309 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColor310 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColor311 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+.productosColor312 {
+    float: right;
+    border: 1px solid #dfdddc;
+}
+
 .productosColor213 {
     float: left;
     border: 1px solid #dfdddc;
@@ -1316,39 +1421,32 @@ Generic styles
     width: 88.7%;
 }
 .productosColor64 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColor65 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColor66 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColor67 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColor68 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColor69 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColor53 {
-    float: left;
+    float: right;
     border: 1px solid #dfdddc;
-    margin-right: 100%;
 }
 .productosColor107 {
     float: left;
@@ -1370,6 +1468,43 @@ Generic styles
     border: 1px solid #dfdddc;
     margin-right: 100%;
 }
+.productosColor295 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor296 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor297 {
+    float: left;
+    border: 1px solid #dfdddc;
+}
+.productosColor298 {
+    float: left;
+    border: 1px solid #dfdddc;
+}
+.productosColor299 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+.productosColor300 {
+    float: left;
+    border: 1px solid #dfdddc;
+}
+.productosColor301 {
+    float: left;
+    border: 1px solid #dfdddc;
+}
+.productosColor302 {
+    float: left;
+    border: 1px solid #dfdddc;
+    margin-right: 100%;
+}
+
 .productosColor114 {
     float: left;
     border: 1px solid #dfdddc;
@@ -1460,6 +1595,14 @@ Generic styles
     float: left;
     border: 1px solid #dfdddc;
     margin-right: 100%;
+}
+.productosColor330 {
+    float: left;
+    border: 1px solid #dfdddc;
+}
+.productosColor331 {
+    float: left;
+    border: 1px solid #dfdddc;
 }
 .productosColor15 {
     float: left;
@@ -1904,6 +2047,9 @@ Generic styles
         margin-left: 5px;
         margin-top: 5px;
     }
+    .aparadoresSingulares {
+        padding-right: 30px !important;
+    }
     #posicion0 {
         position: absolute;
         right: 8px;
@@ -2049,6 +2195,37 @@ Generic styles
     }
 
     .productosColor18 {
+        font-size: 12px;
+    }
+    .productosColor303 {
+        font-size: 12px;
+    }
+    .productosColor304 {
+        font-size: 12px;
+    }
+    .productosColor305 {
+        font-size: 12px;
+    }
+
+    .productosColor306 {
+        font-size: 12px;
+    }
+    .productosColor307 {
+        font-size: 12px;
+    }
+    .productosColor308 {
+        font-size: 12px;
+    }
+    .productosColor309 {
+        font-size: 12px;
+    }
+    .productosColor310 {
+        font-size: 12px;
+    }
+    .productosColor311 {
+        font-size: 12px;
+    }
+    .productosColor312 {
         font-size: 12px;
     }
 

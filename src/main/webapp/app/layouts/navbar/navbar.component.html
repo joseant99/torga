@@ -608,7 +608,8 @@
 		                        </li>   
 					  </div>
       	 </ul>
-      	 
+      	 <!--  Contacto Fabrica capado
+      	
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li id="liTitulo4" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a (click)="contacto()" id="cntacto" data-toggle="collapse" data-target="#menuContacto">
@@ -644,9 +645,20 @@
 					</div>
 			</ul>
 			
+		-->	
 			
+			<ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a (click)="contacto()" id="cntacto" (click)="open('productos-precio',false,myModel)">
+                        <span>
+                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">GESTION PRODUCTOS</span>
+                        </span>
+					</a>
+					
+				</li>
+			</ul>
 			
-			
+			<!--  
       	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li id="liTitulo5" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a (click)="fabricantes()" id="fabricante" data-toggle="collapse" data-target="#menuFabricantesTorgaDentro">
@@ -680,6 +692,7 @@
 			                        
 							  </div>
 			</ul>
+			-->
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li id="liTitulo6" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a (click)="gestionTienda()"  id="comercial" data-toggle="collapse" data-target="#menuTienda">
@@ -747,12 +760,14 @@
 			</ul>
 			
 					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
+						<!--  Capado sugerencias chat
 						<li style="margin-top: -31px;border-top: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;">
 							<a  *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']" (click)="open('contacto-sugerencias',false,myModel)">
                             	<span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">SUGERENCIAS</span>
                         	</a>
 						 </li>
-						 <li style="border-top: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 65px;">
+						 -->
+						 <li style="padding-left: 20px;letter-spacing: 2px;height: 65px;">
 							 <a *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  (click)="logout()" id="logout">
 	                            <span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">CERRAR SESION</span>
 	                        </a>
@@ -1165,8 +1180,8 @@
 			        
 		        </div>
 		       <div class="modal-footer">
-			       <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>
-			       <span style="float: left;margin-top:30px;margin-bottom:30px;margin-left: 250px;" >TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px"></span> &euro;</span>
+			       <!--  <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>-->
+			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 350px;" >TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px"></span> &euro;</span>
 			       
 			        <button id="botonDerechaPresupuesto" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;" type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalConfirmarCreacionPresu">GENERAR PRESUPUESTO</button></p>
 		        </div>

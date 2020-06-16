@@ -4758,7 +4758,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                 var src = 'data:image/gif;base64,' + value['imagenFondo'];
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('src', src);
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('class', value['id']);
-
+                /*
                 if (id1 == 1) {
                     $('#tapa').remove();
                     if (nombre == 'sg1' || nombre == 'sg2' || nombre == 'sg3') {
@@ -4930,6 +4930,7 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
                         );
                     }
                 }
+                */
                 $('#val' + id1).remove();
                 $('#val' + id1 + 'Dato').remove();
                 $('#valor' + id1).remove();
@@ -4967,8 +4968,8 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         }
 
         if (contadorApoyo == cont - 1) {
-            $('.imagenAcabadoPrincipalImg').attr('style');
-            $('.imagenAcabadoPrincipalImg').css({ opacity: 0 });
+            // $('.imagenAcabadoPrincipalImg').attr('style');
+            // $('.imagenAcabadoPrincipalImg').css({ opacity: 0 });
         }
         var datos = [];
 
@@ -6181,6 +6182,8 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
         var todos = this.productosDormitorioService.todos;
         var iva = this.iva;
         if (todos != undefined) {
+            $('#productosPrincipal').css({ 'padding-right': '160px' });
+            $('#productosPrincipal').css({ 'padding-left': '0px' });
             var prod = todos;
             for (let q = 0; q < prod.length; q++) {
                 prod[q]['precio'] = 0;
@@ -6230,8 +6233,10 @@ export class ProductosSingularesComponent implements OnInit, OnDestroy {
             });
             this.productosDormitorios = todos;
         } else {
-            this.productosDormitorioService.categoria(13).subscribe(data => {
+            this.productosDormitorioService.categoria1(13).subscribe(data => {
                 this.productosDormitorioService.todos = data.body;
+                $('#productosPrincipal').css({ 'padding-right': '160px' });
+                $('#productosPrincipal').css({ 'padding-left': '0px' });
                 this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
                     console.log(data.body);
                     var datos = data.body;

@@ -180,6 +180,7 @@ export class ProductosPrecioComponent implements OnInit, OnDestroy {
             var clase = $('#porcentaje' + i).attr('class');
             if (clase == '') {
                 precioProd = $('#porcentaje' + i).val();
+
                 const precio = {
                     porcentaje: precioProd,
                     productosDormitorio: productos[i],

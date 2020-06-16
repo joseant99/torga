@@ -4695,13 +4695,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#producto').append('<datalist id="listaAltura"></datalist>');
         for (let i = 1; i < 457; i++) {
             if (i >= 1 && i <= 9) {
-                $('#listaAnchos').append('<option value="NA00' + i + '">NA00' + i + '</option>');
+                $('#listaAnchos').append('<option value="NH00' + i + '">NH00' + i + '</option>');
             }
             if (i >= 10 && i <= 99) {
-                $('#listaAnchos').append('<option value="NA0' + i + '">NA0' + i + '</option>');
+                $('#listaAnchos').append('<option value="NH0' + i + '">NH0' + i + '</option>');
             }
             if (i >= 100) {
-                $('#listaAnchos').append('<option value="NA' + i + '">NA' + i + '</option>');
+                $('#listaAnchos').append('<option value="NH' + i + '">NH' + i + '</option>');
             }
         }
 

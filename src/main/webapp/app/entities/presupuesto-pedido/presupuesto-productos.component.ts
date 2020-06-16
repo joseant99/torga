@@ -1177,6 +1177,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     prodNombre != 'sg15' &&
                                                     prodNombre != 'sg16'
                                                 ) {
+                                                    /*
                                                     if (nombreAcabado == 'cristal bronce') {
                                                         var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
                                                             .text()
@@ -1234,7 +1235,19 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                                 '_optimized.png">'
                                                         );
                                                     }
+                                                    */
+
+                                                    $('#imagen' + i).append(
+                                                        '<img id="tapa" class="' +
+                                                            nombreAcabado +
+                                                            '" width="500px" height="333px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                            prodNombre +
+                                                            '/0 NUMEROS/' +
+                                                            prodNombre +
+                                                            '_numeros_optimized.png">'
+                                                    );
                                                 } else {
+                                                    /*
                                                     if (nombreAcabado == 'cristal bronce') {
                                                         var aca1Nombre = $('.' + productos[i]['id'] + 'Datos .acabado1')
                                                             .text()
@@ -1292,6 +1305,16 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                                 '_optimized.png">'
                                                         );
                                                     }
+                                                    */
+                                                    $('#imagen' + i).append(
+                                                        '<img id="tapa" class="' +
+                                                            nombreAcabado +
+                                                            '" width="250px" height="383px" style="position: absolute;margin-top: 5px;margin-left:0px" src="../../../content/images/' +
+                                                            prodNombre +
+                                                            '/0 NUMEROS/' +
+                                                            prodNombre +
+                                                            '_numeros_optimized.png">'
+                                                    );
                                                 }
                                                 if (
                                                     contador == 1 &&

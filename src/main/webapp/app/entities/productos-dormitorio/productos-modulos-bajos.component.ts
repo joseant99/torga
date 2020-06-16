@@ -4497,6 +4497,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         nombre = res;
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
         var todosAcabados = this.acabados1234;
+
         $.each(todosAcabados, function(index, value) {
             if (value['id'] == idAca) {
                 $('#aca1' + id1 + ' #imagenAcabadoPrincipal' + k).remove();
@@ -4549,6 +4550,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         value['nombre'] +
                         '</span></p>'
                 );
+
+                /*
                 if (id1 == 1) {
                     $('#tapa').remove();
                     if (
@@ -4718,11 +4721,12 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 '_optimized.png">'
                         );
                     }
-                }
+                }*/
 
                 k++;
             }
         });
+
         var valoresAca = [];
         var cont = 1;
         var contadorApoyo = 0;
@@ -4741,8 +4745,8 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
         }
 
         if (contadorApoyo == cont - 1) {
-            $('.imagenAcabadoPrincipalImg').attr('style');
-            $('.imagenAcabadoPrincipalImg').css({ opacity: 0 });
+            // $('.imagenAcabadoPrincipalImg').attr('style');
+            // $('.imagenAcabadoPrincipalImg').css({ opacity: 0 });
         }
         var datos = [];
 

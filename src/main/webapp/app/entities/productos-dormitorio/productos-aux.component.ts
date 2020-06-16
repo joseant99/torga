@@ -4319,7 +4319,7 @@ export class ProductosAuxComponent implements OnInit, OnDestroy {
                 var src = 'data:image/gif;base64,' + value['imagenFondo'];
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('src', src);
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('class', value['id']);
-
+                /*
                 if (id1 == 1) {
                     $('#tapa').remove();
                     if (
@@ -4489,7 +4489,7 @@ export class ProductosAuxComponent implements OnInit, OnDestroy {
                                 '_optimized.png">'
                         );
                     }
-                }
+                } */
                 $('#val' + id1).remove();
                 $('#val' + id1 + 'Dato').remove();
                 $('#valor' + id1).remove();

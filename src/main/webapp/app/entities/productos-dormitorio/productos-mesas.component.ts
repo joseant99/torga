@@ -4706,7 +4706,7 @@ export class ProductosMesasComponent implements OnInit, OnDestroy {
                 var src = 'data:image/gif;base64,' + value['imagenFondo'];
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('src', src);
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('class', value['id']);
-
+                /*
                 if (id1 == 1) {
                     $('#tapa').remove();
                     if (
@@ -4877,6 +4877,7 @@ export class ProductosMesasComponent implements OnInit, OnDestroy {
                         );
                     }
                 }
+                 */
                 $('#val' + id1).remove();
                 $('#val' + id1 + 'Dato').remove();
                 $('#valor' + id1).remove();
@@ -4914,8 +4915,8 @@ export class ProductosMesasComponent implements OnInit, OnDestroy {
         }
 
         if (contadorApoyo == cont - 1) {
-            $('.imagenAcabadoPrincipalImg').attr('style');
-            $('.imagenAcabadoPrincipalImg').css({ opacity: 0 });
+            // $('.imagenAcabadoPrincipalImg').attr('style');
+            // $('.imagenAcabadoPrincipalImg').css({ opacity: 0 });
         }
         var datos = [];
 

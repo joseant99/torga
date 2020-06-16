@@ -108,4 +108,8 @@ public class ProductosDormitorioQueryService extends QueryService<ProductosDormi
 	public Collection<ProductosDormitorio> findByCategoria(Long id) {
 		return (Collection<ProductosDormitorio>) (productosDormitorioRepository.findByCategoriaDormi(id));
 	}
+	
+	public Collection<ProductosDormitorio> findByCategoria1(Long id) {
+		return (Collection<ProductosDormitorio>) (productosDormitorioRepository.findByCategoriaDormi1(id));
+	}
 }

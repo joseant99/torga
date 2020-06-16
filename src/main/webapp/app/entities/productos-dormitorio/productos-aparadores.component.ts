@@ -4146,6 +4146,8 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('src', src);
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('class', value['id']);
 
+                /*
+				
                 if (id1 == 1) {
                     $('#tapa').remove();
                     if (
@@ -4255,6 +4257,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                         );
                     }
                 }
+                */
                 $('#val' + id1).remove();
                 $('#val' + id1 + 'Dato').remove();
                 $('#valor' + id1).remove();
@@ -4292,8 +4295,8 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         }
 
         if (contadorApoyo == cont - 1) {
-            $('.imagenAcabadoPrincipalImg').attr('style');
-            $('.imagenAcabadoPrincipalImg').css({ opacity: 0 });
+            // $('.imagenAcabadoPrincipalImg').attr('style');
+            // $('.imagenAcabadoPrincipalImg').css({ opacity: 0 });
         }
         var datos = [];
 
@@ -5506,6 +5509,8 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         var todos = this.productosDormitorioService.todos;
         var iva = this.iva;
         if (todos != undefined) {
+            $('#productosPrincipal').css({ 'padding-right': '160px' });
+            $('#productosPrincipal').css({ 'padding-left': '0px' });
             var prod = todos;
             for (let q = 0; q < prod.length; q++) {
                 prod[q]['precio'] = 0;
@@ -5555,8 +5560,14 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
             });
             this.productosDormitorios = todos;
         } else {
-            this.productosDormitorioService.categoria(11).subscribe(data => {
-                this.productosDormitorioService.todos = data.body;
+            this.productosDormitorioService.categoria1(11).subscribe(data => {
+                var pruebagg = data.body;
+
+                $('#productosPrincipal').css({ 'padding-right': '160px' });
+                $('#productosPrincipal').css({ 'padding-left': '0px' });
+                console.log(pruebagg);
+
+                this.productosDormitorioService.todos = pruebagg;
                 this.dimensionesProductoTipoService.findPrecio().subscribe(data => {
                     console.log(data.body);
                     var datos = data.body;
