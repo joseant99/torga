@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="niveladores">
+            <h2><span jhiTranslate="torgaPedidosApp.niveladores.detail.title">Niveladores</span> {{niveladores.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.niveladores.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{niveladores.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.niveladores.precio">Precio</span></dt>
+                <dd>
+                    <span>{{niveladores.precio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.niveladores.armario">Armario</span></dt>
+                <dd>
+                    <div *ngIf="niveladores.armario">
+                        <a [routerLink]="['/armario', niveladores.armario?.id, 'view']">{{niveladores.armario?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/niveladores', niveladores.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

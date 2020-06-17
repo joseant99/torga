@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "armario",
+            "otherEntityName": "armario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "precio",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20200616110948",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "niveladores",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

@@ -109,6 +109,9 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.IvaProductoTienda.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.DireccionTiendas.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.PrecioFinalPresu.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.Niveladores.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.Cajeado.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.Enmarcados.class.getName() , jcacheConfiguration);
         };
     } 
 }

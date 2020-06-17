@@ -46,6 +46,10 @@ import { IPuertasPrecios } from 'app/shared/model/puertas-precios.model';
 import { PuertasPreciosService } from '../puertas-precios/puertas-precios.service';
 import { IInterioresArmarioNuevos } from 'app/shared/model/interiores-armario-nuevos.model';
 import { InterioresArmarioNuevosService } from '../interiores-armario-nuevos/interiores-armario-nuevos.service';
+import { NiveladoresService } from '../niveladores/niveladores.service';
+import { CajeadoService } from '../cajeado/cajeado.service';
+import { EnmarcadosService } from '../enmarcados/enmarcados.service';
+
 @Component({
     selector: 'jhi-productos-dormitorio',
     templateUrl: './armarios-dormitorio.component.html'
@@ -163,8 +167,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
         protected dataUtils: JhiDataUtils,
+        protected niveladoresService: NiveladoresService,
+        protected enmarcadosService: EnmarcadosService,
         protected puertasService: PuertasService,
         protected router: Router,
+        protected cajeadoService: CajeadoService,
         protected eventManager: JhiEventManager,
         private loginService: LoginService,
         private http: HttpClient
@@ -537,7 +544,61 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         dimens['dimenPuerta5'] = 'margin-left: 650px;margin-top: 240px;z-index: 100000;font-size: 30px;';
         this.dimenArmarios = dimens;
     }
+    public niveladoresCargar(id) {
+        if (id == 'si') {
+            var arma = this.armarioCogido;
+            this.niveladoresService.query().subscribe(data => {
+                console.log(data.body);
+                for (let i = 0; i < data.body.length; i++) {
+                    if (data.body[i]['armario']['id'] == arma['id']) {
+                        $('#precioNive').text('+' + data.body[i]['precio'] + ' €');
+                    }
+                }
+            });
+        } else {
+            $('#precioNive').text('+0 €');
+        }
+    }
 
+    public cajeadoCargar(id) {
+        $('#medidasCaje0').css({ display: 'none' });
+        $('#medidasCaje1').css({ display: 'none' });
+        $('#medidasCaje2').css({ display: 'none' });
+        $('#medidasCaje3').css({ display: 'none' });
+        if (id != 'no') {
+            this.cajeadoService.query().subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    if (data.body[i]['id'] == id + 1) {
+                        $('#precioCajeado').text('+' + data.body[i]['precio'] + ' €');
+                        $('#medidasCaje' + id).css({ display: 'block' });
+                    }
+                }
+            });
+        } else {
+            $('#precioCajeado').text('+0 €');
+        }
+    }
+
+    public enmarcadoCargar(id) {
+        $('#medidasEnmaA').css({ display: 'none' });
+        $('#medidasEnmaB').css({ display: 'none' });
+        $('#medidasEnmaC').css({ display: 'none' });
+        $('#medidasEnmaD').css({ display: 'none' });
+        if (id != 'no') {
+            $('#medidasEnma' + id).css({ display: 'block' });
+            var ancho = $('#anchosSelect').val();
+            var arma = this.armarioCogido;
+            this.enmarcadosService.categoria(arma.id, id).subscribe(data => {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['anchoMin'] < ancho && data.body[i]['anchoMax'] >= ancho) {
+                        $('#precioEnmarcados').text('+' + data.body[i]['precio'] + ' €');
+                    }
+                }
+            });
+        } else {
+            $('#precioEnmarcados').text('+0 €');
+        }
+    }
     public carcarCascosInterioresPuertas(id) {
         var ancho = $('#anchosSelect').val();
         var alto = $('#alturaSelect').val();
@@ -552,6 +613,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 this.armarioCogido = armariosTodos[j];
             }
         }
+
+        $('#armarioColorFondo0').css({ 'background-color': 'white' });
+        $('#armarioColorFondo1').css({ 'background-color': 'white' });
+        $('#armarioColorFondo2').css({ 'background-color': 'white' });
+        $('#armarioColorFondo3').css({ 'background-color': 'white' });
+        $('#armarioColorFondo4').css({ 'background-color': 'white' });
+        $('#armarioColorFondo5').css({ 'background-color': 'white' });
+        $('#armarioColorFondo6').css({ 'background-color': 'white' });
+        $('#armarioColorFondo7').css({ 'background-color': 'white' });
+        $('#armarioColorFondo8').css({ 'background-color': 'white' });
+        $('#armarioColorFondo9').css({ 'background-color': 'white' });
+
+        $('#armarioColorFondo' + id).css({ 'background-color': '#D0D0D0' });
+
+        $('#niveladoresCalcu').css({ display: 'block' });
+        $('#cajeadoCalcu').css({ display: 'block' });
+        $('#enmarcadoCalcu').css({ display: 'block' });
+
         $('#datos1').empty();
         $('#imagenesArmario2').empty();
         $('#imagenesArmario1').empty();
@@ -600,6 +679,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var texto = $('#textoMensajeArmario' + id).text();
         this.textoArmario = texto;
         var textoClase;
+
         if (texto == '1 PUERTA') {
             textoClase = '1PUERTA';
         }

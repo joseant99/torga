@@ -66,6 +66,9 @@
                 "ivaProductoTienda": "Iva Producto Tienda",
                 "direccionTiendas": "Direccion Tiendas",
                 "precioFinalPresu": "Precio Final Presu",
+                "niveladores": "Niveladores",
+                "cajeado": "Cajeado",
+                "enmarcados": "Enmarcados",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

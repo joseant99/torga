@@ -47,6 +47,10 @@ import { TorgaPedidosPuertasPreciosModule } from './puertas-precios/puertas-prec
 import { TorgaPedidosInterioresArmarioNuevosModule } from './interiores-armario-nuevos/interiores-armario-nuevos.module';
 import { TorgaPedidosInteriorArmarioDentroModule } from './interior-armario-dentro/interior-armario-dentro.module';
 import { TorgaPedidosDireccionTiendasModule } from './direccion-tiendas/direccion-tiendas.module';
+import { TorgaPedidosNiveladoresModule } from './niveladores/niveladores.module';
+import { TorgaPedidosCajeadoModule } from './cajeado/cajeado.module';
+import { TorgaPedidosEnmarcadosModule } from './enmarcados/enmarcados.module';
+
 @NgModule({
     // prettier-ignore
     imports: [
@@ -67,6 +71,7 @@ import { TorgaPedidosDireccionTiendasModule } from './direccion-tiendas/direccio
         TorgaPedidosRepresentanteModule,
         TorgaPedidosMedEspProductoPedidoPresuModule,
         TorgaPedidosCascoModule,
+        TorgaPedidosNiveladoresModule,
         TorgaPedidosPuertasPreciosModule,
         TorgaPedidosInterioresArmarioNuevosModule,
         TorgaPedidosLogisticaModule,
@@ -96,6 +101,8 @@ import { TorgaPedidosDireccionTiendasModule } from './direccion-tiendas/direccio
         TorgaPedidosTipoProductoModule,
         TorgaPedidosDimensionesProductoTipoModule,
         TorgaPedidosIvaProductoTiendaModule,
+        TorgaPedidosCajeadoModule,
+        TorgaPedidosEnmarcadosModule,
         TorgaPedidosDatosUsuarioModule
     ],
     declarations: [],

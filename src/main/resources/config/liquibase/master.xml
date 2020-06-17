@@ -99,5 +99,11 @@
     <include file="config/liquibase/changelog/20200123144207_added_entity_DireccionTiendas.xml" relativeToChangelogFile="false"/>    
     <include file="config/liquibase/changelog/20200123144207_added_entity_constraints_DireccionTiendas.xml" relativeToChangelogFile="false"/> 
     <include file="config/liquibase/changelog/202001240856401_added_entity_PrecioFinalPresu.xml" relativeToChangelogFile="false"/>    
-    <include file="config/liquibase/changelog/202001240856401_added_entity_constraints_PrecioFinalPresu.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/202001240856401_added_entity_constraints_PrecioFinalPresu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200616110948_added_entity_Niveladores.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20200616110948_added_entity_constraints_Niveladores.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617051804_added_entity_Cajeado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617065731_added_entity_Enmarcados.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20200617065731_added_entity_constraints_Enmarcados.xml" relativeToChangelogFile="false"/>    
 </databaseChangeLog> 
+

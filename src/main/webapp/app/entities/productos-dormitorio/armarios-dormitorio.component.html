@@ -1,29 +1,29 @@
 <div style="top:0" id="divarribatodo"></div>
 
-<div style="width:100%;margin-top:70px;overflow-x:hidden">
-    <h2 id="page-heading" style="text-align:center;margin-left:15%" class="soloArmarios">
-        <span style="width:100%;text-align:center">1.Armarios</span>
+<div style="width:100%;margin-top:70px;overflow-x:hidden;letter-spacing:1px;">
+    <h2 id="page-heading" style="text-align:center;margin-left:15%;margin-bottom: 2%;letter-spacing: 3px;" class="soloArmarios">
+        <span style="width:100%;text-align:center"><strong>MEDIDAS ARMARIOS</strong></span>
        
     </h2>
     <jhi-alert></jhi-alert>
     <br/>
     <div id="producto" class="armariosDivTodo">
-    	<p style="text-align:center;"><img onclick="prueba1()" style="width:25%" src="../../../content/images/armario.png"></p>
-    	<p style="text-align:center"><label>Longitud A (Ancho)&nbsp;</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label>Longitud B (Altura)&nbsp;</label><input style="text-align:center" list="listaAltura" id="alturaSelect" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label>Longitud C (Fondo)&nbsp;</label><input style="text-align:center" value="60" type="number" disabled/></p>
-		<p style="text-align:center"><button style="width: 140px;height: 55px;font-size: 24px;" (click)="cargarInterioresArmarios()">Buscar</button></p>
-		
-		<h2 style="text-align:center" id="textoTituloInterior"></h2>
-		<div *ngIf="armarioService.todo != undefined">
-	    	<div *ngFor="let tabla of armarioService.todo;let u=index" style="float:left;width:100%;">
-	    		<div>
-		    		<p style="width:100%;text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  style="max-height: 100%;max-width: 50%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></p>
-		    		<p style="width:100%;text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.productosDormitorio.imagenContentType + ';base64,' + tabla.productosDormitorio.imagen"  style="max-height: 100%;max-width: 50%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></p>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect" name="anchos" type="number"/></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO</label><input style="text-align:center" list="listaAltura" id="alturaSelect" name="anchos" type="number"/></p>
+		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO</label><input style="text-align:center" value="61" type="number" disabled/></p>
+		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="cargarInterioresArmarios()">Buscar</button></p>
+		   
+		<h2 style="text-align:center;margin-top: 5%;margin-bottom: 5%;" id="textoTituloInterior"></h2>
+		<div *ngIf="armarioService.todo != undefined" style="margin-left:200px">
+	    	<div *ngFor="let tabla of armarioService.todo;let u=index" style="width:45%;float:left;border:1px solid #B5BABD;margin-right:50px;" id="armarioColorFondo{{u}}">
+	    		<div style="margin-top:25px;margin-bottom:25px;">
+		    		<p style="text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  height="200px" width="500px" alt="productosDormitorio image"/></p>
+		    		<p style="text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.productosDormitorio.imagenContentType + ';base64,' + tabla.productosDormitorio.imagen" height="200px" width="500px" alt="productosDormitorio image"/></p>
 		    		<p id="textoMensajeArmario{{u}}" style="width:100%;text-align:center">{{tabla.mensaje}}</p>
 	    		</div>
 	    	</div>
     	</div>
+    	
     	<div style="width:100%;float:left" id="imagenesArmario1">
     		
     	</div>
@@ -324,6 +324,88 @@
 						<div id="datos1" style="float:left;margin-left:5px;width:100%;font-size: 14px;">
 								
 						</div>
+						<div id="niveladoresCalcu"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
+							<p style="float:left;width:100%;"><STRONG>NIVELADORES</STRONG><STRONG id="precioNive" STYLE="FLOAT:RIGHT">+0 &euro;</STRONG></p>
+							<form>
+								<label for="sinivelador" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Con Niveladores</label>
+								  <input type="radio" id="siNivelador" name="nive" value="sinivelador" (click)="niveladoresCargar('si')">
+								  <br>
+								  <label for="noNivelador" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:30px;">Sin Niveladores</label>
+								  <input type="radio" id="noNivelador" name="nive" value="noNivelador" (click)="niveladoresCargar('no')" checked><br>
+								  
+
+							</form>
+						</div>
+						
+						<div id="cajeadoCalcu"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
+							<p style="float:left;width:100%;"><STRONG>CAJEADO</STRONG><STRONG id="precioCajeado" STYLE="FLOAT:RIGHT">+0 &euro;</STRONG></p>
+							<form>
+								  <label for="cajeA" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo A</label>
+								  <input type="radio" id="cajeA" name="cajeado" value="cajeA" (click)="cajeadoCargar(0)"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje0">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="cajeB" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo B</label>
+								  <input type="radio" id="cajeB" name="cajeado" value="cajeB" (click)="cajeadoCargar(1)"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje1">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="cajeC" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo C</label>
+								  <input type="radio" id="cajeC" name="cajeado" value="cajeC" (click)="cajeadoCargar(2)"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje2">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA C cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="cajeD" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo D</label>
+								  <input type="radio" id="cajeD" name="cajeado" value="cajeD" (click)="cajeadoCargar(3)"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje3">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="noCaje" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:30px;">Sin Cajeado</label>
+								  <input type="radio" id="noCaje" name="cajeado" value="noCaje" (click)="cajeadoCargar('no')" checked><br>
+								  
+
+							</form>
+						</div>
+						
+						
+						<div id="enmarcadoCalcu"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
+							<p style="float:left;width:100%;"><STRONG>ENMARCADOS</STRONG><STRONG id="precioEnmarcados" STYLE="FLOAT:RIGHT">+0 &euro;</STRONG></p>
+							<form>
+								  <label for="enmaA" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo A</label>
+								  <input type="radio" id="enmaA" name="enmarcado" value="enmaA" (click)="enmarcadoCargar('A')"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaA">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="enmaB" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo B</label>
+								  <input type="radio" id="enmaB" name="enmarcado" value="enmaB" (click)="enmarcadoCargar('B')"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaB">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="enmaC" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo C</label>
+								  <input type="radio" id="enmaC" name="enmarcado" value="enmaC" (click)="enmarcadoCargar('C')"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaC">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="enmaD" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo D</label>
+								  <input type="radio" id="enmaD" name="enmarcado" value="enmaD" (click)="enmarcadoCargar('D')"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaD">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA C cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="noenma" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:30px;">Sin Enmarcado</label>
+								  <input type="radio" id="noenma" name="enmarcado" value="noenma" (click)="enmarcadoCargar('no')" checked><br>
+								  
+
+							</form>
+						</div>
+						
 						<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 							<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
 							<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalInterioresAcabados"> </div></p></a>

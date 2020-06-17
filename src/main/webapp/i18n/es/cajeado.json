@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "cajeado": {
+            "home": {
+                "title": "Cajeados",
+                "createLabel": "Crear nuevo Cajeado",
+                "createOrEditLabel": "Crear o editar Cajeado"
+            },
+            "created": "Un nuevo Cajeado ha sido creado con el identificador {{ param }}",
+            "updated": "Un Cajeado ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Cajeado ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Cajeado {{ id }}?"
+            },
+            "detail": {
+                "title": "Cajeado"
+            },
+            "codigo": "Codigo",
+            "tipo": "Tipo",
+            "precio": "Precio"
+        }
+    }
+}

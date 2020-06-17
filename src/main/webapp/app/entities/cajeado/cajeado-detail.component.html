@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cajeado">
+            <h2><span jhiTranslate="torgaPedidosApp.cajeado.detail.title">Cajeado</span> {{cajeado.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.cajeado.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{cajeado.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.cajeado.tipo">Tipo</span></dt>
+                <dd>
+                    <span>{{cajeado.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.cajeado.precio">Precio</span></dt>
+                <dd>
+                    <span>{{cajeado.precio}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cajeado', cajeado.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

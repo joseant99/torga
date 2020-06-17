@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="enmarcados">
+            <h2><span jhiTranslate="torgaPedidosApp.enmarcados.detail.title">Enmarcados</span> {{enmarcados.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.enmarcados.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{enmarcados.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.enmarcados.precio">Precio</span></dt>
+                <dd>
+                    <span>{{enmarcados.precio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.enmarcados.anchoMin">Ancho Min</span></dt>
+                <dd>
+                    <span>{{enmarcados.anchoMin}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.enmarcados.anchoMax">Ancho Max</span></dt>
+                <dd>
+                    <span>{{enmarcados.anchoMax}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.enmarcados.armario">Armario</span></dt>
+                <dd>
+                    <div *ngIf="enmarcados.armario">
+                        <a [routerLink]="['/armario', enmarcados.armario?.id, 'view']">{{enmarcados.armario?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/enmarcados', enmarcados.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

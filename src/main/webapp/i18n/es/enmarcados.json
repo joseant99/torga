@@ -1,0 +1,25 @@
+{
+    "torgaPedidosApp": {
+        "enmarcados": {
+            "home": {
+                "title": "Enmarcados",
+                "createLabel": "Crear nuevo Enmarcados",
+                "createOrEditLabel": "Crear o editar Enmarcados"
+            },
+            "created": "Un nuevo Enmarcados ha sido creado con el identificador {{ param }}",
+            "updated": "Un Enmarcados ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Enmarcados ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Enmarcados {{ id }}?"
+            },
+            "detail": {
+                "title": "Enmarcados"
+            },
+            "codigo": "Codigo",
+            "precio": "Precio",
+            "anchoMin": "Ancho Min",
+            "anchoMax": "Ancho Max",
+            "armario": "Armario"
+        }
+    }
+}

@@ -92,6 +92,12 @@ Generic styles
 #menuPrincipal::-webkit-scrollbar {
     display: none;
 }
+input[type='radio'] {
+    content: 'f10c'; /* circle-blank */
+}
+nput[type='radio'] {
+    content: 'f111'; /* circle */
+}
 #botonEsconder {
     display: block;
     position: fixed;

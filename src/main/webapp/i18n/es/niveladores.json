@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "niveladores": {
+            "home": {
+                "title": "Niveladores",
+                "createLabel": "Crear nuevo Niveladores",
+                "createOrEditLabel": "Crear o editar Niveladores"
+            },
+            "created": "Un nuevo Niveladores ha sido creado con el identificador {{ param }}",
+            "updated": "Un Niveladores ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Niveladores ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Niveladores {{ id }}?"
+            },
+            "detail": {
+                "title": "Niveladores"
+            },
+            "codigo": "Codigo",
+            "precio": "Precio",
+            "armario": "Armario"
+        }
+    }
+}
