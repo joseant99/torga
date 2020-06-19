@@ -6,6 +6,8 @@ export * from './productos-dormitorio.component';
 export * from './productos-colgantes.component';
 export * from './productos-dormitorio.route';
 export * from './armarios-dormitorio.component';
+export * from './armarios-dormitorio-vista.component';
+export * from './armarios-dormitorio-oculta.component';
 export * from './productos-dormitorio-categoria.component';
 export * from './productos-dormitorio-chinfonier.component';
 export * from './productos-dormitorio-cabeceros.component';

@@ -104,6 +104,23 @@ public class ArmarioResource {
         Collection<Armario> page = armarioRepository.findAncho(min, max);
         return ResponseEntity.ok().body(page);
     }
+    
+
+    @GetMapping("/armarios-bus1/{min}/{max}")
+    @Timed
+    public ResponseEntity<Collection<Armario>> getAllArmariosBus1(@PathVariable("min") Float min , @PathVariable("max") Float max ) {
+        log.debug("REST request to get a page of Armarios");
+        Collection<Armario> page = armarioRepository.findAncho1(min, max);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    @GetMapping("/armarios-bus2/{min}/{max}")
+    @Timed
+    public ResponseEntity<Collection<Armario>> getAllArmariosBus2(@PathVariable("min") Float min , @PathVariable("max") Float max ) {
+        log.debug("REST request to get a page of Armarios");
+        Collection<Armario> page = armarioRepository.findAncho2(min, max);
+        return ResponseEntity.ok().body(page);
+    }
 
     /**
      * GET  /armarios/:id : get the "id" armario.

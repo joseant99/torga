@@ -39,4 +39,11 @@ export class ArmarioService {
     findBus(min: any, max: any): Observable<EntityResponseType> {
         return this.http.get<IArmario>(`${this.resourceUrl}-bus/${min}/${max}`, { observe: 'response' });
     }
+    findBus1(min: any, max: any): Observable<EntityResponseType> {
+        return this.http.get<IArmario>(`${this.resourceUrl}-bus1/${min}/${max}`, { observe: 'response' });
+    }
+
+    findBus2(min: any, max: any): Observable<EntityResponseType> {
+        return this.http.get<IArmario>(`${this.resourceUrl}-bus2/${min}/${max}`, { observe: 'response' });
+    }
 }

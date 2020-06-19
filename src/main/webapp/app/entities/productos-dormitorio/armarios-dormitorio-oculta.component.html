@@ -415,11 +415,11 @@
 	    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></a>
 						</div>
 						
-							<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
-				    			<div style="width:100%;float:left" *ngFor="let interior of arraySaberHuecos;let u=index">
-					    			<p style="width:100%;float:left;margin-top:15px;"><strong class="cambiarAcabado" style="float:left">Hueco {{arrayLetras[u]}}</strong><span style="float:right" id="precioInt{{u}}"></span></p>
-					    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalInteriorArmario" (click)="cogerIDHueco(u+1)" readonly="readonly"></div></a>
-					    		<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none; margin-top:30px;">
+						<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
+			    			<div style="width:100%;float:left" *ngFor="let interior of arraySaberHuecos;let u=index">
+				    			<p style="width:100%;float:left;margin-top:15px;"><strong class="cambiarAcabado" style="float:left">Hueco {{arrayLetras[u]}}</strong><span style="float:right" id="precioInt{{u}}"></span></p>
+				    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalInteriorArmario" (click)="cogerIDHueco(u+1)" readonly="readonly"></div></a>
+			    				<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none; margin-top:30px;">
 									<form>
 										  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO</label>
 										  <input type="radio" id="luz1" name="todoluz" value="luz1" style="margin-left: 25%;" (click)="luzInteriores(u,1)"><span id="precioLuz{{u}}1" STYLE="display:none;float:right">+ 120&euro;</span><br>
@@ -432,9 +432,9 @@
 		
 									</form>
 								</div>
-			    				
-			    			<!--  	<div style="float:left;height: 50px;width: 60px;margin-left: 30px;text-align: center;border: 1px solid black;display:none" readonly="readonly" id="luzInterior{{u}}" class="siLuz" (click)="luzInteriores(u)">LUZ</div>
-			    			--></div>
+			    			
+			    			
+			    			</div>
 			    			
 			    			
 			    			<div style="width:100%;float:left;margin-top:20px" *ngFor="let interior of arraySaberPuertas;let u=index" id="divPuerta{{u}}">

@@ -10,6 +10,8 @@ import { ProductosDormitorioService } from './productos-dormitorio.service';
 import { ProductosDormitorioComponent } from './productos-dormitorio.component';
 import { ProductosColgantesComponent } from './productos-colgantes.component';
 import { ArmariosDormitorioComponent } from './armarios-dormitorio.component';
+import { ArmariosDormitorioOcultaComponent } from './armarios-dormitorio-oculta.component';
+import { ArmariosDormitorioVistaComponent } from './armarios-dormitorio-vista.component';
 import { ProductosDormitorioDetailComponent } from './productos-dormitorio-detail.component';
 import { ProductosDormitorioCategoriaComponent } from './productos-dormitorio-categoria.component';
 import { ProductosDormitorioChinfonierComponent } from './productos-dormitorio-chinfonier.component';
@@ -68,6 +70,32 @@ export const productosDormitorioRoute: Routes = [
     {
         path: 'armarios-dormitorio',
         component: ArmariosDormitorioComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'armarios-dormitorio-oculta',
+        component: ArmariosDormitorioOcultaComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'armarios-dormitorio-vista',
+        component: ArmariosDormitorioVistaComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

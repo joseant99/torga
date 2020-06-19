@@ -52,9 +52,9 @@ import { EnmarcadosService } from '../enmarcados/enmarcados.service';
 
 @Component({
     selector: 'jhi-productos-dormitorio',
-    templateUrl: './armarios-dormitorio.component.html'
+    templateUrl: './armarios-dormitorio-vista.component.html'
 })
-export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterViewInit {
+export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, AfterViewInit {
     currentAccount: any;
     productosDormitorios: IProductosDormitorio[];
     dimensionesProductos: IDimensionesProducto[];
@@ -719,6 +719,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         if (texto == '6 PUERTAS ASIMETRICAS') {
             textoClase = '6PUERTASASIMETRICAS';
         }
+        if (texto == '2 PUERTAS CORREDERA') {
+            textoClase = '2PUERTASCORREDERA';
+        }
+        if (texto == '3 PUERTAS CORREDERA') {
+            textoClase = '3PUERTASCORREDERA';
+        }
+
         var segunWIDTH = this.segunWIDTH;
         var width = $(window).width();
         var puertas = 0;
@@ -944,6 +951,49 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         this.acabadosInteriores = data.body[0]['acabados'];
                     });
                 }
+            }
+            if (texto == '2 PUERTAS CORREDERA VISTA') {
+                var array = [];
+                var arrayPuertas = [];
+                array[0] = 0;
+                array[1] = 1;
+
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+
+                $('#acabadosTodo').removeAttr('class');
+                this.acaProdService.findAca(42).subscribe(data => {
+                    this.todos = data.body[0]['acabados'];
+                    this.acabadosTrasera = data.body[0]['acabados'];
+                });
+                this.acaProdService.findAca(122).subscribe(data => {
+                    this.acabadosInteriores = data.body[0]['acabados'];
+                });
+            }
+
+            if (texto == '3 PUERTAS CORREDERA VISTA') {
+                var array = [];
+                var arrayPuertas = [];
+                array[0] = 0;
+                array[1] = 1;
+                array[2] = 2;
+
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+
+                $('#acabadosTodo').removeAttr('class');
+                this.acaProdService.findAca(42).subscribe(data => {
+                    this.todos = data.body[0]['acabados'];
+                    this.acabadosTrasera = data.body[0]['acabados'];
+                });
+                this.acaProdService.findAca(122).subscribe(data => {
+                    this.acabadosInteriores = data.body[0]['acabados'];
+                });
             }
 
             if (texto == '3 PUERTAS IZQUIERDA') {
@@ -3225,7 +3275,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
         } else {
-            if (texto == '3 PUERTAS IZQUIERDA') {
+            if (texto == '2 PUERTAS CORREDERA VISTA') {
                 for (let i = 1; i <= 2; i++) {
                     if (hueco == 1) {
                         cuenta = ancho / puertas;
@@ -3304,28 +3354,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     }
                 }
             } else {
-                if (texto == '3 PUERTAS DERECHA') {
+                if (texto == '3 PUERTAS CORREDERA VISTA') {
                     for (let i = 1; i <= 2; i++) {
                         if (hueco == 1) {
                             cuenta = ancho / puertas;
-                            cuenta = cuenta * 2;
+                            cuenta = cuenta * 1;
                             if (i == 1) {
-                                if (ancho >= 100 && ancho < 110) {
-                                    cuenta = 338;
-                                }
-                                if (ancho >= 110 && ancho < 120) {
-                                    cuenta = 374;
-                                }
-                                if (ancho >= 120 && ancho < 130) {
-                                    cuenta = 410;
-                                }
-                                if (ancho >= 130 && ancho < 140) {
-                                    cuenta = 443;
-                                }
-                                if (ancho >= 140 && ancho < 150) {
-                                    cuenta = 478;
-                                }
-                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                var dato = this.cascoService.dato;
+                                this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                                    console.log(data.body);
                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                         '<p style="width:100%;display:none">Hueco ' +
                                             letras[hueco - 1] +
@@ -3334,28 +3371,16 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             '">Interior ' +
                                             nombre +
                                             '</span><span style="float:right">+ ' +
-                                            data.body[0].precio +
+                                            data.body[0].a +
                                             '€</span><p/>'
                                     );
-                                    $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
                                     var precioTodo;
                                     precioTodo = $('#precioDimension').text();
-                                    var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                    var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                     $('#precioDimension').text(precioTodoFloat);
                                 });
                             }
-                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                '<img id="interiorDentroArmario' +
-                                    hueco +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                    nombre +
-                                    '/grande_interior_' +
-                                    nombre +
-                                    '_' +
-                                    interior1.toLowerCase() +
-                                    '_optimized.png">'
-                            );
-                            $('#textoLetraHueco' + (hueco - 1)).remove();
                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                 '<img id="interiorDentroArmario' +
                                     hueco +
@@ -3370,24 +3395,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             $('#textoLetraHueco' + (hueco - 1)).remove();
                         } else {
                             cuenta = ancho / puertas;
-                            cuenta = cuenta * 1;
+                            cuenta = cuenta * 2;
                             if (i == 1) {
-                                if (ancho >= 100 && ancho < 110) {
-                                    cuenta = 695;
-                                }
-                                if (ancho >= 110 && ancho < 120) {
-                                    cuenta = 767;
-                                }
-                                if (ancho >= 120 && ancho < 130) {
-                                    cuenta = 838;
-                                }
-                                if (ancho >= 130 && ancho < 140) {
-                                    cuenta = 905;
-                                }
-                                if (ancho >= 140 && ancho < 150) {
-                                    cuenta = 975;
-                                }
-                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                var dato = this.cascoService.dato;
+                                this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                                    console.log(data.body);
                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                         '<p style="width:100%;display:none">Hueco ' +
                                             letras[hueco - 1] +
@@ -3396,22 +3408,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             '">Interior ' +
                                             nombre +
                                             '</span><span style="float:right">+ ' +
-                                            data.body[0].precio +
+                                            data.body[0].b +
                                             '€</span><p/>'
                                     );
-                                    $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                    $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
                                     var precioTodo;
                                     precioTodo = $('#precioDimension').text();
-                                    var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                    var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                     $('#precioDimension').text(precioTodoFloat);
                                 });
                             }
                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                 '<img id="interiorDentroArmario' +
                                     hueco +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
                                     nombre +
-                                    '/peque_interior_' +
+                                    '/grande_interior_' +
                                     nombre +
                                     '_' +
                                     interior1.toLowerCase() +
@@ -13715,7 +13727,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var alto = $('#alturaSelect').val();
         $('#datos1').empty();
         if (ancho != '' && alto != '') {
-            this.armarioService.findBus(ancho, ancho).subscribe(data => {
+            this.armarioService.findBus2(ancho, ancho).subscribe(data => {
                 this.armarioService.todo = data.body;
                 $('#textoTituloInterior').text('OPCIONES DISPONIBLES');
             });
