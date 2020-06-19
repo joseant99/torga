@@ -21,10 +21,46 @@
                 <dd>
                     <span>{{interioresArmarioNuevos.luz}}</span>
                 </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.a">A</span></dt>
+                <dd>
+                    <span>{{interioresArmarioNuevos.a}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.b">B</span></dt>
+                <dd>
+                    <span>{{interioresArmarioNuevos.b}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.c">C</span></dt>
+                <dd>
+                    <span>{{interioresArmarioNuevos.c}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.d">D</span></dt>
+                <dd>
+                    <span>{{interioresArmarioNuevos.d}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.e">E</span></dt>
+                <dd>
+                    <span>{{interioresArmarioNuevos.e}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.piloto">Piloto</span></dt>
+                <dd>
+                    <span>{{interioresArmarioNuevos.piloto}}</span>
+                </dd>
                 <dt><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.productosDormitorio">Productos Dormitorio</span></dt>
                 <dd>
                     <div *ngIf="interioresArmarioNuevos.productosDormitorio">
                         <a [routerLink]="['/productos-dormitorio', interioresArmarioNuevos.productosDormitorio?.id, 'view']">{{interioresArmarioNuevos.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.armario">Armario</span></dt>
+                <dd>
+                    <div *ngIf="interioresArmarioNuevos.armario">
+                        <a [routerLink]="['/armario', interioresArmarioNuevos.armario?.id, 'view']">{{interioresArmarioNuevos.armario?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.casco">Casco</span></dt>
+                <dd>
+                    <div *ngIf="interioresArmarioNuevos.casco">
+                        <a [routerLink]="['/casco', interioresArmarioNuevos.casco?.id, 'view']">{{interioresArmarioNuevos.casco?.id}}</a>
                     </div>
                 </dd>
             </dl>

@@ -18,7 +18,14 @@
             "ancho": "Ancho",
             "alto": "Alto",
             "precio": "Precio",
-            "precioCostado": "Precio Costado"
+            "precioCostado": "Precio Costado",
+            "anchoMin": "Ancho Min",
+            "anchoMax": "Ancho Max",
+            "altoMin": "Alto Min",
+            "altoMax": "Alto Max",
+            "codigo": "Codigo",
+            "piloto": "Piloto",
+            "armario": "Armario"
         }
     }
 }

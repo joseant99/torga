@@ -46,6 +46,9 @@ public class NiveladoresResourceIntTest {
     private static final Float DEFAULT_PRECIO = 1F;
     private static final Float UPDATED_PRECIO = 2F;
 
+    private static final Float DEFAULT_PILOTO = 1F;
+    private static final Float UPDATED_PILOTO = 2F;
+
     @Autowired
     private NiveladoresRepository niveladoresRepository;
 
@@ -89,7 +92,8 @@ public class NiveladoresResourceIntTest {
     public static Niveladores createEntity(EntityManager em) {
         Niveladores niveladores = new Niveladores()
             .codigo(DEFAULT_CODIGO)
-            .precio(DEFAULT_PRECIO);
+            .precio(DEFAULT_PRECIO)
+            .piloto(DEFAULT_PILOTO);
         return niveladores;
     }
 
@@ -115,6 +119,7 @@ public class NiveladoresResourceIntTest {
         Niveladores testNiveladores = niveladoresList.get(niveladoresList.size() - 1);
         assertThat(testNiveladores.getCodigo()).isEqualTo(DEFAULT_CODIGO);
         assertThat(testNiveladores.getPrecio()).isEqualTo(DEFAULT_PRECIO);
+        assertThat(testNiveladores.getPiloto()).isEqualTo(DEFAULT_PILOTO);
     }
 
     @Test
@@ -148,7 +153,8 @@ public class NiveladoresResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(niveladores.getId().intValue())))
             .andExpect(jsonPath("$.[*].codigo").value(hasItem(DEFAULT_CODIGO.toString())))
-            .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())));
+            .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())))
+            .andExpect(jsonPath("$.[*].piloto").value(hasItem(DEFAULT_PILOTO.doubleValue())));
     }
     
     @Test
@@ -163,7 +169,8 @@ public class NiveladoresResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(niveladores.getId().intValue()))
             .andExpect(jsonPath("$.codigo").value(DEFAULT_CODIGO.toString()))
-            .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()));
+            .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()))
+            .andExpect(jsonPath("$.piloto").value(DEFAULT_PILOTO.doubleValue()));
     }
 
     @Test
@@ -188,7 +195,8 @@ public class NiveladoresResourceIntTest {
         em.detach(updatedNiveladores);
         updatedNiveladores
             .codigo(UPDATED_CODIGO)
-            .precio(UPDATED_PRECIO);
+            .precio(UPDATED_PRECIO)
+            .piloto(UPDATED_PILOTO);
 
         restNiveladoresMockMvc.perform(put("/api/niveladores")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -201,6 +209,7 @@ public class NiveladoresResourceIntTest {
         Niveladores testNiveladores = niveladoresList.get(niveladoresList.size() - 1);
         assertThat(testNiveladores.getCodigo()).isEqualTo(UPDATED_CODIGO);
         assertThat(testNiveladores.getPrecio()).isEqualTo(UPDATED_PRECIO);
+        assertThat(testNiveladores.getPiloto()).isEqualTo(UPDATED_PILOTO);
     }
 
     @Test

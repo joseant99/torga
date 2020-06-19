@@ -21,6 +21,36 @@
                 <dd>
                     <span>{{casco.precioCostado}}</span>
                 </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.casco.anchoMin">Ancho Min</span></dt>
+                <dd>
+                    <span>{{casco.anchoMin}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.casco.anchoMax">Ancho Max</span></dt>
+                <dd>
+                    <span>{{casco.anchoMax}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.casco.altoMin">Alto Min</span></dt>
+                <dd>
+                    <span>{{casco.altoMin}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.casco.altoMax">Alto Max</span></dt>
+                <dd>
+                    <span>{{casco.altoMax}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.casco.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{casco.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.casco.piloto">Piloto</span></dt>
+                <dd>
+                    <span>{{casco.piloto}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.casco.armario">Armario</span></dt>
+                <dd>
+                    <div *ngIf="casco.armario">
+                        <a [routerLink]="['/armario', casco.armario?.id, 'view']">{{casco.armario?.id}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

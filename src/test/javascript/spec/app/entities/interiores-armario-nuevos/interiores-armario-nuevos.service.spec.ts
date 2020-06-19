@@ -21,7 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(InterioresArmarioNuevosService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new InterioresArmarioNuevos(0, 'AAAAAAA', 0, 0, 0);
+            elemDefault = new InterioresArmarioNuevos(0, 'AAAAAAA', 0, 0, 0, 0, 0, 0, 0, 0, 0);
         });
 
         describe('Service methods', async () => {
@@ -58,7 +58,13 @@ describe('Service Tests', () => {
                         nombre: 'BBBBBB',
                         ancho: 1,
                         precio: 1,
-                        luz: 1
+                        luz: 1,
+                        a: 1,
+                        b: 1,
+                        c: 1,
+                        d: 1,
+                        e: 1,
+                        piloto: 1
                     },
                     elemDefault
                 );
@@ -78,7 +84,13 @@ describe('Service Tests', () => {
                         nombre: 'BBBBBB',
                         ancho: 1,
                         precio: 1,
-                        luz: 1
+                        luz: 1,
+                        a: 1,
+                        b: 1,
+                        c: 1,
+                        d: 1,
+                        e: 1,
+                        piloto: 1
                     },
                     elemDefault
                 );

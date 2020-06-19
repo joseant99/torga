@@ -17,6 +17,7 @@
             },
             "codigo": "Codigo",
             "precio": "Precio",
+            "piloto": "Piloto",
             "armario": "Armario"
         }
     }

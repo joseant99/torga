@@ -19,7 +19,15 @@
             "ancho": "Ancho",
             "precio": "Precio",
             "luz": "Luz",
-            "productosDormitorio": "Productos Dormitorio"
+            "a": "A",
+            "b": "B",
+            "c": "C",
+            "d": "D",
+            "e": "E",
+            "piloto": "Piloto",
+            "productosDormitorio": "Productos Dormitorio",
+            "armario": "Armario",
+            "casco": "Casco"
         }
     }
 }

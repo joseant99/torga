@@ -1,7 +1,6 @@
 package com.torga.pedidos.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import com.torga.pedidos.domain.DatosUsuario;
 import com.torga.pedidos.domain.Enmarcados;
 import com.torga.pedidos.repository.EnmarcadosRepository;
 import com.torga.pedidos.web.rest.errors.BadRequestAlertException;
@@ -59,7 +58,21 @@ public class EnmarcadosResource {
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
-
+    
+    /**
+     * GET  /enmarcados : get all the enmarcados.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of enmarcados in body
+     */
+    @GetMapping("/enmarcados-id/{id}/{letra}")
+    @Timed
+    public ResponseEntity<Collection<Enmarcados>> getAllEnmarcados1(@PathVariable Long id ,@PathVariable String letra) {
+        Collection<Enmarcados> page = enmarcadosRepository.buscarArmario(id,letra);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    
     /**
      * PUT  /enmarcados : Updates an existing enmarcados.
      *
@@ -96,23 +109,7 @@ public class EnmarcadosResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/enmarcados");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
-    
-    
-    /**
-     * GET  /enmarcados : get all the enmarcados.
-     *
-     * @param pageable the pagination information
-     * @return the ResponseEntity with status 200 (OK) and the list of enmarcados in body
-     */
-    @GetMapping("/enmarcados-id/{id}/{letra}")
-    @Timed
-    public ResponseEntity<Collection<Enmarcados>> getAllEnmarcados1(@PathVariable Long id ,@PathVariable String letra) {
-        Collection<Enmarcados> page = enmarcadosRepository.buscarArmario(id,letra);
-        return ResponseEntity.ok().body(page);
-    }
-    
-    
-    
+
     /**
      * GET  /enmarcados/:id : get the "id" enmarcados.
      *

@@ -31,6 +31,9 @@ public class Cajeado implements Serializable {
     @Column(name = "precio")
     private Float precio;
 
+    @Column(name = "piloto")
+    private Float piloto;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -78,6 +81,19 @@ public class Cajeado implements Serializable {
     public void setPrecio(Float precio) {
         this.precio = precio;
     }
+
+    public Float getPiloto() {
+        return piloto;
+    }
+
+    public Cajeado piloto(Float piloto) {
+        this.piloto = piloto;
+        return this;
+    }
+
+    public void setPiloto(Float piloto) {
+        this.piloto = piloto;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -107,6 +123,7 @@ public class Cajeado implements Serializable {
             ", codigo='" + getCodigo() + "'" +
             ", tipo='" + getTipo() + "'" +
             ", precio=" + getPrecio() +
+            ", piloto=" + getPiloto() +
             "}";
     }
 }

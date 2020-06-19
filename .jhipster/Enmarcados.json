@@ -25,6 +25,10 @@
         {
             "fieldName": "anchoMax",
             "fieldType": "Float"
+        },
+        {
+            "fieldName": "piloto",
+            "fieldType": "Float"
         }
     ],
     "changelogDate": "20200617065731",

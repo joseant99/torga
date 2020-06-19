@@ -52,6 +52,24 @@ public class CascoResourceIntTest {
     private static final Float DEFAULT_PRECIO_COSTADO = 1F;
     private static final Float UPDATED_PRECIO_COSTADO = 2F;
 
+    private static final Float DEFAULT_ANCHO_MIN = 1F;
+    private static final Float UPDATED_ANCHO_MIN = 2F;
+
+    private static final Float DEFAULT_ANCHO_MAX = 1F;
+    private static final Float UPDATED_ANCHO_MAX = 2F;
+
+    private static final Float DEFAULT_ALTO_MIN = 1F;
+    private static final Float UPDATED_ALTO_MIN = 2F;
+
+    private static final Float DEFAULT_ALTO_MAX = 1F;
+    private static final Float UPDATED_ALTO_MAX = 2F;
+
+    private static final String DEFAULT_CODIGO = "AAAAAAAAAA";
+    private static final String UPDATED_CODIGO = "BBBBBBBBBB";
+
+    private static final Float DEFAULT_PILOTO = 1F;
+    private static final Float UPDATED_PILOTO = 2F;
+
     @Autowired
     private CascoRepository cascoRepository;
 
@@ -97,7 +115,13 @@ public class CascoResourceIntTest {
             .ancho(DEFAULT_ANCHO)
             .alto(DEFAULT_ALTO)
             .precio(DEFAULT_PRECIO)
-            .precioCostado(DEFAULT_PRECIO_COSTADO);
+            .precioCostado(DEFAULT_PRECIO_COSTADO)
+            .anchoMin(DEFAULT_ANCHO_MIN)
+            .anchoMax(DEFAULT_ANCHO_MAX)
+            .altoMin(DEFAULT_ALTO_MIN)
+            .altoMax(DEFAULT_ALTO_MAX)
+            .codigo(DEFAULT_CODIGO)
+            .piloto(DEFAULT_PILOTO);
         return casco;
     }
 
@@ -125,6 +149,12 @@ public class CascoResourceIntTest {
         assertThat(testCasco.getAlto()).isEqualTo(DEFAULT_ALTO);
         assertThat(testCasco.getPrecio()).isEqualTo(DEFAULT_PRECIO);
         assertThat(testCasco.getPrecioCostado()).isEqualTo(DEFAULT_PRECIO_COSTADO);
+        assertThat(testCasco.getAnchoMin()).isEqualTo(DEFAULT_ANCHO_MIN);
+        assertThat(testCasco.getAnchoMax()).isEqualTo(DEFAULT_ANCHO_MAX);
+        assertThat(testCasco.getAltoMin()).isEqualTo(DEFAULT_ALTO_MIN);
+        assertThat(testCasco.getAltoMax()).isEqualTo(DEFAULT_ALTO_MAX);
+        assertThat(testCasco.getCodigo()).isEqualTo(DEFAULT_CODIGO);
+        assertThat(testCasco.getPiloto()).isEqualTo(DEFAULT_PILOTO);
     }
 
     @Test
@@ -160,7 +190,13 @@ public class CascoResourceIntTest {
             .andExpect(jsonPath("$.[*].ancho").value(hasItem(DEFAULT_ANCHO.doubleValue())))
             .andExpect(jsonPath("$.[*].alto").value(hasItem(DEFAULT_ALTO.doubleValue())))
             .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())))
-            .andExpect(jsonPath("$.[*].precioCostado").value(hasItem(DEFAULT_PRECIO_COSTADO.doubleValue())));
+            .andExpect(jsonPath("$.[*].precioCostado").value(hasItem(DEFAULT_PRECIO_COSTADO.doubleValue())))
+            .andExpect(jsonPath("$.[*].anchoMin").value(hasItem(DEFAULT_ANCHO_MIN.doubleValue())))
+            .andExpect(jsonPath("$.[*].anchoMax").value(hasItem(DEFAULT_ANCHO_MAX.doubleValue())))
+            .andExpect(jsonPath("$.[*].altoMin").value(hasItem(DEFAULT_ALTO_MIN.doubleValue())))
+            .andExpect(jsonPath("$.[*].altoMax").value(hasItem(DEFAULT_ALTO_MAX.doubleValue())))
+            .andExpect(jsonPath("$.[*].codigo").value(hasItem(DEFAULT_CODIGO.toString())))
+            .andExpect(jsonPath("$.[*].piloto").value(hasItem(DEFAULT_PILOTO.doubleValue())));
     }
     
     @Test
@@ -177,7 +213,13 @@ public class CascoResourceIntTest {
             .andExpect(jsonPath("$.ancho").value(DEFAULT_ANCHO.doubleValue()))
             .andExpect(jsonPath("$.alto").value(DEFAULT_ALTO.doubleValue()))
             .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()))
-            .andExpect(jsonPath("$.precioCostado").value(DEFAULT_PRECIO_COSTADO.doubleValue()));
+            .andExpect(jsonPath("$.precioCostado").value(DEFAULT_PRECIO_COSTADO.doubleValue()))
+            .andExpect(jsonPath("$.anchoMin").value(DEFAULT_ANCHO_MIN.doubleValue()))
+            .andExpect(jsonPath("$.anchoMax").value(DEFAULT_ANCHO_MAX.doubleValue()))
+            .andExpect(jsonPath("$.altoMin").value(DEFAULT_ALTO_MIN.doubleValue()))
+            .andExpect(jsonPath("$.altoMax").value(DEFAULT_ALTO_MAX.doubleValue()))
+            .andExpect(jsonPath("$.codigo").value(DEFAULT_CODIGO.toString()))
+            .andExpect(jsonPath("$.piloto").value(DEFAULT_PILOTO.doubleValue()));
     }
 
     @Test
@@ -204,7 +246,13 @@ public class CascoResourceIntTest {
             .ancho(UPDATED_ANCHO)
             .alto(UPDATED_ALTO)
             .precio(UPDATED_PRECIO)
-            .precioCostado(UPDATED_PRECIO_COSTADO);
+            .precioCostado(UPDATED_PRECIO_COSTADO)
+            .anchoMin(UPDATED_ANCHO_MIN)
+            .anchoMax(UPDATED_ANCHO_MAX)
+            .altoMin(UPDATED_ALTO_MIN)
+            .altoMax(UPDATED_ALTO_MAX)
+            .codigo(UPDATED_CODIGO)
+            .piloto(UPDATED_PILOTO);
 
         restCascoMockMvc.perform(put("/api/cascos")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -219,6 +267,12 @@ public class CascoResourceIntTest {
         assertThat(testCasco.getAlto()).isEqualTo(UPDATED_ALTO);
         assertThat(testCasco.getPrecio()).isEqualTo(UPDATED_PRECIO);
         assertThat(testCasco.getPrecioCostado()).isEqualTo(UPDATED_PRECIO_COSTADO);
+        assertThat(testCasco.getAnchoMin()).isEqualTo(UPDATED_ANCHO_MIN);
+        assertThat(testCasco.getAnchoMax()).isEqualTo(UPDATED_ANCHO_MAX);
+        assertThat(testCasco.getAltoMin()).isEqualTo(UPDATED_ALTO_MIN);
+        assertThat(testCasco.getAltoMax()).isEqualTo(UPDATED_ALTO_MAX);
+        assertThat(testCasco.getCodigo()).isEqualTo(UPDATED_CODIGO);
+        assertThat(testCasco.getPiloto()).isEqualTo(UPDATED_PILOTO);
     }
 
     @Test

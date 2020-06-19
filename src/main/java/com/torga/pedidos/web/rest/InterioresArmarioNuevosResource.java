@@ -2,7 +2,6 @@ package com.torga.pedidos.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.torga.pedidos.domain.InterioresArmarioNuevos;
-import com.torga.pedidos.domain.PuertasPrecios;
 import com.torga.pedidos.repository.InterioresArmarioNuevosRepository;
 import com.torga.pedidos.web.rest.errors.BadRequestAlertException;
 import com.torga.pedidos.web.rest.util.HeaderUtil;
@@ -97,7 +96,6 @@ public class InterioresArmarioNuevosResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
     
-    
     /**
      * GET  /cascos : get all the cascos.
      *
@@ -106,13 +104,11 @@ public class InterioresArmarioNuevosResource {
      */
     @GetMapping("/interiores-armario-nuevos-bus/{ancho}/{puerta}")
     @Timed
-    public ResponseEntity<Collection<InterioresArmarioNuevos>> getAllCascosBus( @PathVariable("ancho") Float ancho , @PathVariable("puerta") Long puerta ) {
+    public ResponseEntity<Collection<InterioresArmarioNuevos>> getAllCascosBus( @PathVariable("ancho") String ancho , @PathVariable("puerta") Long puerta ) {
         log.debug("REST request to get a page of Cascos");
         Collection<InterioresArmarioNuevos> page = interioresArmarioNuevosRepository.findAncho(ancho, puerta);
         return ResponseEntity.ok().body(page);
     }
-    
-
     /**
      * GET  /interiores-armario-nuevos/:id : get the "id" interioresArmarioNuevos.
      *

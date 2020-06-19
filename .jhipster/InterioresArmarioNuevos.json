@@ -7,6 +7,18 @@
             "otherEntityName": "productosDormitorio",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "armario",
+            "otherEntityName": "armario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "casco",
+            "otherEntityName": "casco",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [
@@ -24,6 +36,30 @@
         },
         {
             "fieldName": "luz",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "a",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "b",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "c",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "d",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "e",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "piloto",
             "fieldType": "Float"
         }
     ],

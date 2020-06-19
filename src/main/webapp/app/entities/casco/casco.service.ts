@@ -12,6 +12,7 @@ type EntityArrayResponseType = HttpResponse<ICasco[]>;
 @Injectable({ providedIn: 'root' })
 export class CascoService {
     public resourceUrl = SERVER_API_URL + 'api/cascos';
+    public dato;
 
     constructor(protected http: HttpClient) {}
 
@@ -36,7 +37,7 @@ export class CascoService {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
 
-    findBus(ancho: any, alto: any): Observable<EntityArrayResponseType> {
-        return this.http.get<ICasco[]>(`${this.resourceUrl}-bus/${ancho}/${alto}`, { observe: 'response' });
+    findBus(ancho: any, alto: any, id: any): Observable<EntityArrayResponseType> {
+        return this.http.get<ICasco[]>(`${this.resourceUrl}-bus/${ancho}/${alto}/${id}`, { observe: 'response' });
     }
 }

@@ -91,6 +91,7 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
     iva: any;
     acabados1234: any;
     arrayMostrar: any;
+    precioProdsCat: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -364,6 +365,8 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
                     var precioProducto = todosLosPrecios[y][1];
                 }
             }
+            precioProducto = this.precioProdsCat['precio'];
+
             this.dimensionesProductoTipoService.findProducto(producto).subscribe(data => {
                 this.dimensionesProductoTipoService.todos = data.body;
                 this.todasDimensiones = data.body;
@@ -5402,6 +5405,7 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
         var precioPunto = this.precioPunto[0];
         var precio = this.precioTiendaProductosService.todos;
         console.log(precio);
+        var precioCat = this.precioProdsCat;
         var todos = this.productosDormitorioService.todos;
         var iva = this.iva;
         if (todos != undefined) {
@@ -5430,20 +5434,21 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
                             if (prod[q]['precio'] == 0) {
                                 if (datos[n][1] != 0) {
                                     prod[q]['precio'] = datos[n][1];
-                                    if (precio[q][2] == prod[q]['id']) {
-                                        var cuenta = precio[q][1] / 100;
-                                        var cuenta = cuenta + 1;
-                                        var precio1 = prod[q]['precio'];
-                                        precio1 = precio1 * precioPunto;
-                                        precio1 = precio1 * cuenta;
-                                        if (iva == 1) {
-                                            var todasCuenta = precio1 * 1.21;
-                                        } else {
-                                            var todasCuenta = 0;
-                                            todasCuenta = precio1;
-                                        }
-                                        prod[q]['precio'] = todasCuenta.toFixed(2);
+                                    //if (precio[q][2] == prod[q]['id']) {
+                                    //var cuenta = precio[q][1] / 100;
+                                    var cuenta = precioCat['precio'] / 100;
+                                    var cuenta = cuenta + 1;
+                                    var precio1 = prod[q]['precio'];
+                                    precio1 = precio1 * precioPunto;
+                                    precio1 = precio1 * cuenta;
+                                    if (iva == 1) {
+                                        var todasCuenta = precio1 * 1.21;
+                                    } else {
+                                        var todasCuenta = 0;
+                                        todasCuenta = precio1;
                                     }
+                                    prod[q]['precio'] = todasCuenta.toFixed(2);
+                                    //}
                                 }
                             }
                         }
@@ -5477,20 +5482,21 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
                                 if (prod[q]['precio'] == 0) {
                                     if (datos[n][1] != 0) {
                                         prod[q]['precio'] = datos[n][1];
-                                        if (precio[q][2] == prod[q]['id']) {
-                                            var cuenta = precio[q][1] / 100;
-                                            var cuenta = cuenta + 1;
-                                            var precio1 = prod[q]['precio'];
-                                            precio1 = precio1 * precioPunto;
-                                            precio1 = precio1 * cuenta;
-                                            if (iva == 1) {
-                                                var todasCuenta = precio1 * 1.21;
-                                            } else {
-                                                var todasCuenta = 0;
-                                                todasCuenta = precio1;
-                                            }
-                                            prod[q]['precio'] = todasCuenta.toFixed(2);
+                                        //if (precio[q][2] == prod[q]['id']) {
+                                        //var cuenta = precio[q][1] / 100;
+                                        var cuenta = precioCat['precio'] / 100;
+                                        var cuenta = cuenta + 1;
+                                        var precio1 = prod[q]['precio'];
+                                        precio1 = precio1 * precioPunto;
+                                        precio1 = precio1 * cuenta;
+                                        if (iva == 1) {
+                                            var todasCuenta = precio1 * 1.21;
+                                        } else {
+                                            var todasCuenta = 0;
+                                            todasCuenta = precio1;
                                         }
+                                        prod[q]['precio'] = todasCuenta.toFixed(2);
+                                        //}
                                     }
                                 }
                             }
@@ -5545,6 +5551,9 @@ export class ProductosColgantesEstanteriaComponent implements OnInit, OnDestroy 
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
         this.precioTiendaService.findBus(tienda.id).subscribe(data => {
             this.precioPunto = data.body;
+        });
+        this.precioTiendaService.findBus1(tienda.id, 1).subscribe(data => {
+            this.precioProdsCat = data.body[0];
         });
         this.precioTiendaProductosService.findProdId(17, tienda.id).subscribe(data => {
             this.precioTiendaProductosService.todos = data.body;

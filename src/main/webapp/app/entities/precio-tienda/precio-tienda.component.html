@@ -16,6 +16,7 @@
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="precio"><span jhiTranslate="torgaPedidosApp.precioTienda.precio">Precio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="catalogo"><span jhiTranslate="torgaPedidosApp.precioTienda.catalogo">Catalogo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="datosUsuario.id"><span jhiTranslate="torgaPedidosApp.precioTienda.datosUsuario">Datos Usuario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
@@ -24,6 +25,7 @@
             <tr *ngFor="let precioTienda of precioTiendas ;trackBy: trackId">
                 <td><a [routerLink]="['/precio-tienda', precioTienda.id, 'view' ]">{{precioTienda.id}}</a></td>
                 <td>{{precioTienda.precio}}</td>
+                <td>{{precioTienda.catalogo}}</td>
                 <td>
                     <div *ngIf="precioTienda.datosUsuario">
                         <a [routerLink]="['../datos-usuario', precioTienda.datosUsuario?.id, 'view' ]" >{{precioTienda.datosUsuario?.id}}</a>

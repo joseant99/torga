@@ -77,15 +77,16 @@
     <include file="config/liquibase/changelog/20190916064026_added_entity_TiradoresArmario.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190919092642_added_entity_Puertas.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190919092642_added_entity_constraints_Puertas.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190925135523_added_entity_PrecioTienda.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190925135523_added_entity_constraints_PrecioTienda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190925135523_added_entity_PrecioTienda1.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190925135523_added_entity_constraints_PrecioTienda1.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191011092807_added_entity_PrecioTiendaProductos2.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191011092807_added_entity_constraints_PrecioTiendaProductos2.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191105114218_added_entity_Armario.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191105114218_added_entity_constraints_Armario.xml" relativeToChangelogFile="false"/>    
-    <include file="config/liquibase/changelog/20191106103636_added_entity_Casco.xml" relativeToChangelogFile="false"/> 
-    <include file="config/liquibase/changelog/20191107153915_added_entity_InterioresArmarioNuevos.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191107153915_added_entity_constraints_InterioresArmarioNuevos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191106103636_added_entity_Casco1.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20191106103636_added_entity_constraints_Casco1.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20191107153915_added_entity_InterioresArmarioNuevos3.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107153915_added_entity_constraints_InterioresArmarioNuevos3.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191107154229_added_entity_PuertasPrecios.xml" relativeToChangelogFile="false"/>    
     <include file="config/liquibase/changelog/20191107154229_added_entity_constraints_PuertasPrecios.xml" relativeToChangelogFile="false"/> 
     <include file="config/liquibase/changelog/20191121110021_added_entity_PresupuestoArmario.xml" relativeToChangelogFile="false"/>    
@@ -100,10 +101,10 @@
     <include file="config/liquibase/changelog/20200123144207_added_entity_constraints_DireccionTiendas.xml" relativeToChangelogFile="false"/> 
     <include file="config/liquibase/changelog/202001240856401_added_entity_PrecioFinalPresu.xml" relativeToChangelogFile="false"/>    
     <include file="config/liquibase/changelog/202001240856401_added_entity_constraints_PrecioFinalPresu.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200616110948_added_entity_Niveladores.xml" relativeToChangelogFile="false"/> 
-    <include file="config/liquibase/changelog/20200616110948_added_entity_constraints_Niveladores.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200617051804_added_entity_Cajeado.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200617065731_added_entity_Enmarcados.xml" relativeToChangelogFile="false"/> 
-    <include file="config/liquibase/changelog/20200617065731_added_entity_constraints_Enmarcados.xml" relativeToChangelogFile="false"/>    
+    <include file="config/liquibase/changelog/20200616110948_added_entity_Niveladores1.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20200616110948_added_entity_constraints_Niveladores1.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617051804_added_entity_Cajeado1.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617065731_added_entity_Enmarcados1.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20200617065731_added_entity_constraints_Enmarcados1.xml" relativeToChangelogFile="false"/>    
 </databaseChangeLog> 
 

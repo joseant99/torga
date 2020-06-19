@@ -49,6 +49,9 @@ public class CajeadoResourceIntTest {
     private static final Float DEFAULT_PRECIO = 1F;
     private static final Float UPDATED_PRECIO = 2F;
 
+    private static final Float DEFAULT_PILOTO = 1F;
+    private static final Float UPDATED_PILOTO = 2F;
+
     @Autowired
     private CajeadoRepository cajeadoRepository;
 
@@ -93,7 +96,8 @@ public class CajeadoResourceIntTest {
         Cajeado cajeado = new Cajeado()
             .codigo(DEFAULT_CODIGO)
             .tipo(DEFAULT_TIPO)
-            .precio(DEFAULT_PRECIO);
+            .precio(DEFAULT_PRECIO)
+            .piloto(DEFAULT_PILOTO);
         return cajeado;
     }
 
@@ -120,6 +124,7 @@ public class CajeadoResourceIntTest {
         assertThat(testCajeado.getCodigo()).isEqualTo(DEFAULT_CODIGO);
         assertThat(testCajeado.getTipo()).isEqualTo(DEFAULT_TIPO);
         assertThat(testCajeado.getPrecio()).isEqualTo(DEFAULT_PRECIO);
+        assertThat(testCajeado.getPiloto()).isEqualTo(DEFAULT_PILOTO);
     }
 
     @Test
@@ -154,7 +159,8 @@ public class CajeadoResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(cajeado.getId().intValue())))
             .andExpect(jsonPath("$.[*].codigo").value(hasItem(DEFAULT_CODIGO.toString())))
             .andExpect(jsonPath("$.[*].tipo").value(hasItem(DEFAULT_TIPO.toString())))
-            .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())));
+            .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())))
+            .andExpect(jsonPath("$.[*].piloto").value(hasItem(DEFAULT_PILOTO.doubleValue())));
     }
     
     @Test
@@ -170,7 +176,8 @@ public class CajeadoResourceIntTest {
             .andExpect(jsonPath("$.id").value(cajeado.getId().intValue()))
             .andExpect(jsonPath("$.codigo").value(DEFAULT_CODIGO.toString()))
             .andExpect(jsonPath("$.tipo").value(DEFAULT_TIPO.toString()))
-            .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()));
+            .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()))
+            .andExpect(jsonPath("$.piloto").value(DEFAULT_PILOTO.doubleValue()));
     }
 
     @Test
@@ -196,7 +203,8 @@ public class CajeadoResourceIntTest {
         updatedCajeado
             .codigo(UPDATED_CODIGO)
             .tipo(UPDATED_TIPO)
-            .precio(UPDATED_PRECIO);
+            .precio(UPDATED_PRECIO)
+            .piloto(UPDATED_PILOTO);
 
         restCajeadoMockMvc.perform(put("/api/cajeados")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -210,6 +218,7 @@ public class CajeadoResourceIntTest {
         assertThat(testCajeado.getCodigo()).isEqualTo(UPDATED_CODIGO);
         assertThat(testCajeado.getTipo()).isEqualTo(UPDATED_TIPO);
         assertThat(testCajeado.getPrecio()).isEqualTo(UPDATED_PRECIO);
+        assertThat(testCajeado.getPiloto()).isEqualTo(UPDATED_PILOTO);
     }
 
     @Test

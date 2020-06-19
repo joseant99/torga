@@ -21,7 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(PrecioTiendaService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new PrecioTienda(0, 0);
+            elemDefault = new PrecioTienda(0, 0, 0);
         });
 
         describe('Service methods', async () => {
@@ -55,7 +55,8 @@ describe('Service Tests', () => {
             it('should update a PrecioTienda', async () => {
                 const returnedFromService = Object.assign(
                     {
-                        precio: 1
+                        precio: 1,
+                        catalogo: 1
                     },
                     elemDefault
                 );
@@ -72,7 +73,8 @@ describe('Service Tests', () => {
             it('should return a list of PrecioTienda', async () => {
                 const returnedFromService = Object.assign(
                     {
-                        precio: 1
+                        precio: 1,
+                        catalogo: 1
                     },
                     elemDefault
                 );

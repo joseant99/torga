@@ -12,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<IPrecioTienda[]>;
 @Injectable({ providedIn: 'root' })
 export class PrecioTiendaService {
     public resourceUrl = SERVER_API_URL + 'api/precio-tiendas';
-
+    public todo;
     constructor(protected http: HttpClient) {}
 
     create(precioTienda: IPrecioTienda): Observable<EntityResponseType> {
@@ -35,7 +35,12 @@ export class PrecioTiendaService {
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
+
+    findBus1(id: number, catalogo: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IPrecioTienda[]>(`${this.resourceUrl}-buscado/${id}/${catalogo}`, { observe: 'response' });
+    }
+
     findBus(id: number): Observable<EntityArrayResponseType> {
-        return this.http.get<IPrecioTienda[]>(`${this.resourceUrl}-buscado/${id}`, { observe: 'response' });
+        return this.http.get<IPrecioTienda[]>(`${this.resourceUrl}-buscado1/${id}`, { observe: 'response' });
     }
 }

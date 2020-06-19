@@ -8,6 +8,10 @@ import { IInterioresArmarioNuevos } from 'app/shared/model/interiores-armario-nu
 import { InterioresArmarioNuevosService } from './interiores-armario-nuevos.service';
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
 import { ProductosDormitorioService } from 'app/entities/productos-dormitorio';
+import { IArmario } from 'app/shared/model/armario.model';
+import { ArmarioService } from 'app/entities/armario';
+import { ICasco } from 'app/shared/model/casco.model';
+import { CascoService } from 'app/entities/casco';
 
 @Component({
     selector: 'jhi-interiores-armario-nuevos-update',
@@ -19,10 +23,16 @@ export class InterioresArmarioNuevosUpdateComponent implements OnInit {
 
     productosdormitorios: IProductosDormitorio[];
 
+    armarios: IArmario[];
+
+    cascos: ICasco[];
+
     constructor(
         protected jhiAlertService: JhiAlertService,
         protected interioresArmarioNuevosService: InterioresArmarioNuevosService,
         protected productosDormitorioService: ProductosDormitorioService,
+        protected armarioService: ArmarioService,
+        protected cascoService: CascoService,
         protected activatedRoute: ActivatedRoute
     ) {}
 
@@ -31,14 +41,24 @@ export class InterioresArmarioNuevosUpdateComponent implements OnInit {
         this.activatedRoute.data.subscribe(({ interioresArmarioNuevos }) => {
             this.interioresArmarioNuevos = interioresArmarioNuevos;
         });
-        this.productosDormitorioService
-            .query({
-                size: 1000000
-            })
-            .subscribe(
-                (res: HttpResponse<IProductosDormitorio[]>) => (this.productosdormitorios = res.body),
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
+        this.productosDormitorioService.query().subscribe(
+            (res: HttpResponse<IProductosDormitorio[]>) => {
+                this.productosdormitorios = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.armarioService.query().subscribe(
+            (res: HttpResponse<IArmario[]>) => {
+                this.armarios = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.cascoService.query().subscribe(
+            (res: HttpResponse<ICasco[]>) => {
+                this.cascos = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
     }
 
     previousState() {
@@ -75,6 +95,14 @@ export class InterioresArmarioNuevosUpdateComponent implements OnInit {
     }
 
     trackProductosDormitorioById(index: number, item: IProductosDormitorio) {
+        return item.id;
+    }
+
+    trackArmarioById(index: number, item: IArmario) {
+        return item.id;
+    }
+
+    trackCascoById(index: number, item: ICasco) {
         return item.id;
     }
 }

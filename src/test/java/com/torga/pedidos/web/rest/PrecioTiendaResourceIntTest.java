@@ -43,6 +43,9 @@ public class PrecioTiendaResourceIntTest {
     private static final Float DEFAULT_PRECIO = 1F;
     private static final Float UPDATED_PRECIO = 2F;
 
+    private static final Float DEFAULT_CATALOGO = 1F;
+    private static final Float UPDATED_CATALOGO = 2F;
+
     @Autowired
     private PrecioTiendaRepository precioTiendaRepository;
 
@@ -85,7 +88,8 @@ public class PrecioTiendaResourceIntTest {
      */
     public static PrecioTienda createEntity(EntityManager em) {
         PrecioTienda precioTienda = new PrecioTienda()
-            .precio(DEFAULT_PRECIO);
+            .precio(DEFAULT_PRECIO)
+            .catalogo(DEFAULT_CATALOGO);
         return precioTienda;
     }
 
@@ -110,6 +114,7 @@ public class PrecioTiendaResourceIntTest {
         assertThat(precioTiendaList).hasSize(databaseSizeBeforeCreate + 1);
         PrecioTienda testPrecioTienda = precioTiendaList.get(precioTiendaList.size() - 1);
         assertThat(testPrecioTienda.getPrecio()).isEqualTo(DEFAULT_PRECIO);
+        assertThat(testPrecioTienda.getCatalogo()).isEqualTo(DEFAULT_CATALOGO);
     }
 
     @Test
@@ -142,7 +147,8 @@ public class PrecioTiendaResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(precioTienda.getId().intValue())))
-            .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())));
+            .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())))
+            .andExpect(jsonPath("$.[*].catalogo").value(hasItem(DEFAULT_CATALOGO.doubleValue())));
     }
     
     @Test
@@ -156,7 +162,8 @@ public class PrecioTiendaResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(precioTienda.getId().intValue()))
-            .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()));
+            .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()))
+            .andExpect(jsonPath("$.catalogo").value(DEFAULT_CATALOGO.doubleValue()));
     }
 
     @Test
@@ -180,7 +187,8 @@ public class PrecioTiendaResourceIntTest {
         // Disconnect from session so that the updates on updatedPrecioTienda are not directly saved in db
         em.detach(updatedPrecioTienda);
         updatedPrecioTienda
-            .precio(UPDATED_PRECIO);
+            .precio(UPDATED_PRECIO)
+            .catalogo(UPDATED_CATALOGO);
 
         restPrecioTiendaMockMvc.perform(put("/api/precio-tiendas")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -192,6 +200,7 @@ public class PrecioTiendaResourceIntTest {
         assertThat(precioTiendaList).hasSize(databaseSizeBeforeUpdate);
         PrecioTienda testPrecioTienda = precioTiendaList.get(precioTiendaList.size() - 1);
         assertThat(testPrecioTienda.getPrecio()).isEqualTo(UPDATED_PRECIO);
+        assertThat(testPrecioTienda.getCatalogo()).isEqualTo(UPDATED_CATALOGO);
     }
 
     @Test

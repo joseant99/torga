@@ -52,6 +52,24 @@ public class InterioresArmarioNuevosResourceIntTest {
     private static final Float DEFAULT_LUZ = 1F;
     private static final Float UPDATED_LUZ = 2F;
 
+    private static final Float DEFAULT_A = 1F;
+    private static final Float UPDATED_A = 2F;
+
+    private static final Float DEFAULT_B = 1F;
+    private static final Float UPDATED_B = 2F;
+
+    private static final Float DEFAULT_C = 1F;
+    private static final Float UPDATED_C = 2F;
+
+    private static final Float DEFAULT_D = 1F;
+    private static final Float UPDATED_D = 2F;
+
+    private static final Float DEFAULT_E = 1F;
+    private static final Float UPDATED_E = 2F;
+
+    private static final Float DEFAULT_PILOTO = 1F;
+    private static final Float UPDATED_PILOTO = 2F;
+
     @Autowired
     private InterioresArmarioNuevosRepository interioresArmarioNuevosRepository;
 
@@ -97,7 +115,13 @@ public class InterioresArmarioNuevosResourceIntTest {
             .nombre(DEFAULT_NOMBRE)
             .ancho(DEFAULT_ANCHO)
             .precio(DEFAULT_PRECIO)
-            .luz(DEFAULT_LUZ);
+            .luz(DEFAULT_LUZ)
+            .a(DEFAULT_A)
+            .b(DEFAULT_B)
+            .c(DEFAULT_C)
+            .d(DEFAULT_D)
+            .e(DEFAULT_E)
+            .piloto(DEFAULT_PILOTO);
         return interioresArmarioNuevos;
     }
 
@@ -125,6 +149,12 @@ public class InterioresArmarioNuevosResourceIntTest {
         assertThat(testInterioresArmarioNuevos.getAncho()).isEqualTo(DEFAULT_ANCHO);
         assertThat(testInterioresArmarioNuevos.getPrecio()).isEqualTo(DEFAULT_PRECIO);
         assertThat(testInterioresArmarioNuevos.getLuz()).isEqualTo(DEFAULT_LUZ);
+        assertThat(testInterioresArmarioNuevos.getA()).isEqualTo(DEFAULT_A);
+        assertThat(testInterioresArmarioNuevos.getB()).isEqualTo(DEFAULT_B);
+        assertThat(testInterioresArmarioNuevos.getC()).isEqualTo(DEFAULT_C);
+        assertThat(testInterioresArmarioNuevos.getD()).isEqualTo(DEFAULT_D);
+        assertThat(testInterioresArmarioNuevos.getE()).isEqualTo(DEFAULT_E);
+        assertThat(testInterioresArmarioNuevos.getPiloto()).isEqualTo(DEFAULT_PILOTO);
     }
 
     @Test
@@ -160,7 +190,13 @@ public class InterioresArmarioNuevosResourceIntTest {
             .andExpect(jsonPath("$.[*].nombre").value(hasItem(DEFAULT_NOMBRE.toString())))
             .andExpect(jsonPath("$.[*].ancho").value(hasItem(DEFAULT_ANCHO.doubleValue())))
             .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())))
-            .andExpect(jsonPath("$.[*].luz").value(hasItem(DEFAULT_LUZ.doubleValue())));
+            .andExpect(jsonPath("$.[*].luz").value(hasItem(DEFAULT_LUZ.doubleValue())))
+            .andExpect(jsonPath("$.[*].a").value(hasItem(DEFAULT_A.doubleValue())))
+            .andExpect(jsonPath("$.[*].b").value(hasItem(DEFAULT_B.doubleValue())))
+            .andExpect(jsonPath("$.[*].c").value(hasItem(DEFAULT_C.doubleValue())))
+            .andExpect(jsonPath("$.[*].d").value(hasItem(DEFAULT_D.doubleValue())))
+            .andExpect(jsonPath("$.[*].e").value(hasItem(DEFAULT_E.doubleValue())))
+            .andExpect(jsonPath("$.[*].piloto").value(hasItem(DEFAULT_PILOTO.doubleValue())));
     }
     
     @Test
@@ -177,7 +213,13 @@ public class InterioresArmarioNuevosResourceIntTest {
             .andExpect(jsonPath("$.nombre").value(DEFAULT_NOMBRE.toString()))
             .andExpect(jsonPath("$.ancho").value(DEFAULT_ANCHO.doubleValue()))
             .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()))
-            .andExpect(jsonPath("$.luz").value(DEFAULT_LUZ.doubleValue()));
+            .andExpect(jsonPath("$.luz").value(DEFAULT_LUZ.doubleValue()))
+            .andExpect(jsonPath("$.a").value(DEFAULT_A.doubleValue()))
+            .andExpect(jsonPath("$.b").value(DEFAULT_B.doubleValue()))
+            .andExpect(jsonPath("$.c").value(DEFAULT_C.doubleValue()))
+            .andExpect(jsonPath("$.d").value(DEFAULT_D.doubleValue()))
+            .andExpect(jsonPath("$.e").value(DEFAULT_E.doubleValue()))
+            .andExpect(jsonPath("$.piloto").value(DEFAULT_PILOTO.doubleValue()));
     }
 
     @Test
@@ -204,7 +246,13 @@ public class InterioresArmarioNuevosResourceIntTest {
             .nombre(UPDATED_NOMBRE)
             .ancho(UPDATED_ANCHO)
             .precio(UPDATED_PRECIO)
-            .luz(UPDATED_LUZ);
+            .luz(UPDATED_LUZ)
+            .a(UPDATED_A)
+            .b(UPDATED_B)
+            .c(UPDATED_C)
+            .d(UPDATED_D)
+            .e(UPDATED_E)
+            .piloto(UPDATED_PILOTO);
 
         restInterioresArmarioNuevosMockMvc.perform(put("/api/interiores-armario-nuevos")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -219,6 +267,12 @@ public class InterioresArmarioNuevosResourceIntTest {
         assertThat(testInterioresArmarioNuevos.getAncho()).isEqualTo(UPDATED_ANCHO);
         assertThat(testInterioresArmarioNuevos.getPrecio()).isEqualTo(UPDATED_PRECIO);
         assertThat(testInterioresArmarioNuevos.getLuz()).isEqualTo(UPDATED_LUZ);
+        assertThat(testInterioresArmarioNuevos.getA()).isEqualTo(UPDATED_A);
+        assertThat(testInterioresArmarioNuevos.getB()).isEqualTo(UPDATED_B);
+        assertThat(testInterioresArmarioNuevos.getC()).isEqualTo(UPDATED_C);
+        assertThat(testInterioresArmarioNuevos.getD()).isEqualTo(UPDATED_D);
+        assertThat(testInterioresArmarioNuevos.getE()).isEqualTo(UPDATED_E);
+        assertThat(testInterioresArmarioNuevos.getPiloto()).isEqualTo(UPDATED_PILOTO);
     }
 
     @Test

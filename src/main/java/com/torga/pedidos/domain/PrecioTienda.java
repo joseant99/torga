@@ -26,6 +26,9 @@ public class PrecioTienda implements Serializable {
     @Column(name = "precio")
     private Float precio;
 
+    @Column(name = "catalogo")
+    private Float catalogo;
+
     @ManyToOne
     @JsonIgnoreProperties("")
     private DatosUsuario datosUsuario;
@@ -50,6 +53,19 @@ public class PrecioTienda implements Serializable {
 
     public void setPrecio(Float precio) {
         this.precio = precio;
+    }
+
+    public Float getCatalogo() {
+        return catalogo;
+    }
+
+    public PrecioTienda catalogo(Float catalogo) {
+        this.catalogo = catalogo;
+        return this;
+    }
+
+    public void setCatalogo(Float catalogo) {
+        this.catalogo = catalogo;
     }
 
     public DatosUsuario getDatosUsuario() {
@@ -91,6 +107,7 @@ public class PrecioTienda implements Serializable {
         return "PrecioTienda{" +
             "id=" + getId() +
             ", precio=" + getPrecio() +
+            ", catalogo=" + getCatalogo() +
             "}";
     }
 }

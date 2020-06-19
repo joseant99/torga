@@ -103,14 +103,26 @@ public class PrecioTiendaResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of precioTiendas in body
      */
-    @GetMapping("/precio-tiendas-buscado/{id}")
+    @GetMapping("/precio-tiendas-buscado/{id}/{catalogo}")
     @Timed
-    public ResponseEntity<Collection<PrecioTienda>> getAllPrecioTiendasBus(@PathVariable Long id) {
+    public ResponseEntity<Collection<PrecioTienda>> getAllPrecioTiendasBus(@PathVariable Long id,@PathVariable Float catalogo) {
         log.debug("REST request to get a page of PrecioTiendas");
-        Collection<PrecioTienda> page = precioTiendaRepository.findProducto(id);
+        Collection<PrecioTienda> page = precioTiendaRepository.findProducto(id,catalogo);
         return ResponseEntity.ok().body(page);
     }
-    
+    /**
+     * GET  /precio-tiendas : get all the precioTiendas.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of precioTiendas in body
+     */
+    @GetMapping("/precio-tiendas-buscado1/{id}")
+    @Timed
+    public ResponseEntity<Collection<PrecioTienda>> getAllPrecioTiendasBus1(@PathVariable Long id) {
+        log.debug("REST request to get a page of PrecioTiendas");
+        Collection<PrecioTienda> page = precioTiendaRepository.findProducto1(id);
+        return ResponseEntity.ok().body(page);
+    }
 
     /**
      * GET  /precio-tiendas/:id : get the "id" precioTienda.

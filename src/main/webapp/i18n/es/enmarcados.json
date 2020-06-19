@@ -19,6 +19,7 @@
             "precio": "Precio",
             "anchoMin": "Ancho Min",
             "anchoMax": "Ancho Max",
+            "piloto": "Piloto",
             "armario": "Armario"
         }
     }

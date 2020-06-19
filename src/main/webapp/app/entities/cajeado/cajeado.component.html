@@ -18,6 +18,7 @@
             <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.cajeado.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="tipo"><span jhiTranslate="torgaPedidosApp.cajeado.tipo">Tipo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="precio"><span jhiTranslate="torgaPedidosApp.cajeado.precio">Precio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="piloto"><span jhiTranslate="torgaPedidosApp.cajeado.piloto">Piloto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -27,6 +28,7 @@
                 <td>{{cajeado.codigo}}</td>
                 <td>{{cajeado.tipo}}</td>
                 <td>{{cajeado.precio}}</td>
+                <td>{{cajeado.piloto}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

@@ -29,6 +29,9 @@ public class Niveladores implements Serializable {
     @Column(name = "precio")
     private Float precio;
 
+    @Column(name = "piloto")
+    private Float piloto;
+
     @ManyToOne
     @JsonIgnoreProperties("")
     private Armario armario;
@@ -66,6 +69,19 @@ public class Niveladores implements Serializable {
 
     public void setPrecio(Float precio) {
         this.precio = precio;
+    }
+
+    public Float getPiloto() {
+        return piloto;
+    }
+
+    public Niveladores piloto(Float piloto) {
+        this.piloto = piloto;
+        return this;
+    }
+
+    public void setPiloto(Float piloto) {
+        this.piloto = piloto;
     }
 
     public Armario getArmario() {
@@ -108,6 +124,7 @@ public class Niveladores implements Serializable {
             "id=" + getId() +
             ", codigo='" + getCodigo() + "'" +
             ", precio=" + getPrecio() +
+            ", piloto=" + getPiloto() +
             "}";
     }
 }

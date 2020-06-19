@@ -35,6 +35,9 @@ public class Enmarcados implements Serializable {
     @Column(name = "ancho_max")
     private Float anchoMax;
 
+    @Column(name = "piloto")
+    private Float piloto;
+
     @ManyToOne
     @JsonIgnoreProperties("")
     private Armario armario;
@@ -100,6 +103,19 @@ public class Enmarcados implements Serializable {
         this.anchoMax = anchoMax;
     }
 
+    public Float getPiloto() {
+        return piloto;
+    }
+
+    public Enmarcados piloto(Float piloto) {
+        this.piloto = piloto;
+        return this;
+    }
+
+    public void setPiloto(Float piloto) {
+        this.piloto = piloto;
+    }
+
     public Armario getArmario() {
         return armario;
     }
@@ -142,6 +158,7 @@ public class Enmarcados implements Serializable {
             ", precio=" + getPrecio() +
             ", anchoMin=" + getAnchoMin() +
             ", anchoMax=" + getAnchoMax() +
+            ", piloto=" + getPiloto() +
             "}";
     }
 }

@@ -16,6 +16,7 @@
                 "title": "Precio Tienda"
             },
             "precio": "Precio",
+            "catalogo": "Catalogo",
             "datosUsuario": "Datos Usuario"
         }
     }

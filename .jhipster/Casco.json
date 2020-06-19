@@ -1,7 +1,14 @@
 {
     "fluentMethods": true,
     "clientRootFolder": "",
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "armario",
+            "otherEntityName": "armario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
     "fields": [
         {
             "fieldName": "ancho",
@@ -17,6 +24,30 @@
         },
         {
             "fieldName": "precioCostado",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "anchoMin",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "anchoMax",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "altoMin",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "altoMax",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "piloto",
             "fieldType": "Float"
         }
     ],

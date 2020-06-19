@@ -7,6 +7,8 @@ import com.torga.pedidos.web.rest.errors.BadRequestAlertException;
 import com.torga.pedidos.web.rest.util.HeaderUtil;
 import com.torga.pedidos.web.rest.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+
+import org.hibernate.mapping.Collection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -18,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Collection;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -95,22 +97,6 @@ public class CascoResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/cascos");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
-    
-    /**
-     * GET  /cascos : get all the cascos.
-     *
-     * @param pageable the pagination information
-     * @return the ResponseEntity with status 200 (OK) and the list of cascos in body
-     */
-    @GetMapping("/cascos-bus/{ancho}/{alto}")
-    @Timed
-    public ResponseEntity<Collection<Casco>> getAllCascosBus( @PathVariable("ancho") Float ancho , @PathVariable("alto") Float alto ) {
-        log.debug("REST request to get a page of Cascos");
-        Collection<Casco> page = cascoRepository.findAncho(ancho, alto);
-        return ResponseEntity.ok().body(page);
-    }
-    
-   
 
     /**
      * GET  /cascos/:id : get the "id" casco.
@@ -124,6 +110,20 @@ public class CascoResource {
         log.debug("REST request to get Casco : {}", id);
         Optional<Casco> casco = cascoRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(casco);
+    }
+    
+    /**
+     * GET  /cascos : get all the cascos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of cascos in body
+     */
+    @GetMapping("/cascos-bus/{ancho}/{alto}/{id}")
+    @Timed
+    public ResponseEntity<java.util.Collection<Casco>> getAllCascosBus( @PathVariable("ancho") Float ancho , @PathVariable("alto") Float alto ,@PathVariable("id") Long id ) {
+        log.debug("REST request to get a page of Cascos");
+        java.util.Collection<Casco> page =   cascoRepository.findAncho(ancho,alto,id);
+        return ResponseEntity.ok().body(page);
     }
 
     /**

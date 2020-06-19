@@ -15,6 +15,7 @@ import { CategoriasDormiService } from './categorias-dormi.service';
 import { ProductosDormitorioService } from '../productos-dormitorio/productos-dormitorio.service';
 import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
 import { IvaProductoTiendaService } from '../iva-producto-tienda/iva-producto-tienda.service';
+import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 
 @Component({
     selector: 'jhi-categorias-dormi',
@@ -40,7 +41,8 @@ export class ProductosPrecioComponent implements OnInit, OnDestroy {
     previousPage: any;
     reverse: any;
     iva: any;
-
+    catalogo: any;
+    actualizar: any;
     constructor(
         protected categoriasDormiService: CategoriasDormiService,
         protected ivaProductoTiendaService: IvaProductoTiendaService,
@@ -51,6 +53,7 @@ export class ProductosPrecioComponent implements OnInit, OnDestroy {
         public productosDormitorioService: ProductosDormitorioService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
+        protected precioTiendaService: PrecioTiendaService,
         protected eventManager: JhiEventManager
     ) {
         this.itemsPerPage = ITEMS_PER_PAGE;
@@ -110,7 +113,48 @@ export class ProductosPrecioComponent implements OnInit, OnDestroy {
             });
         });
     }
+
+    public precioTiendaNuevo(catalogo) {
+        $('#ivaDiv').attr('class', 'displayBoton');
+        $('#precioCatDiv').attr('class', 'displayBoton');
+        this.catalogo = catalogo;
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+
+        this.precioTiendaService.findBus1(tienda.id, catalogo).subscribe(data => {
+            $('#precioCatDiv').removeAttr('class');
+            if (data.body['length'] != 0) {
+                $('#inputCatDiv').val(data.body[0]['precio']);
+                this.actualizar = 'si';
+                this.precioTiendaService.todo = data.body[0];
+            } else {
+                this.actualizar = 'no';
+            }
+        });
+    }
+
+    public guardarPrecioTipo() {
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        var catalogo = 0;
+        var precio;
+        precio = $('#inputCatDiv').val();
+        precio = parseFloat(precio);
+        catalogo = this.catalogo;
+        var act = this.actualizar;
+        if (act == 'no') {
+            var hola = {
+                precio: precio,
+                catalogo: catalogo,
+                datosUsuario: tienda
+            };
+            this.subscribeToSaveResponse(this.precioTiendaService.create(hola));
+        } else {
+            var todo = this.precioTiendaService.todo;
+            todo['precio'] = $('#inputCatDiv').val();
+            this.subscribeToSaveResponse(this.precioTiendaService.update(todo));
+        }
+    }
     public mostrarIva() {
+        $('#precioCatDiv').attr('class', 'displayBoton');
         $('#ivaDiv').removeAttr('class');
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
         this.ivaProductoTiendaService.bus(tienda['id']).subscribe(data => {

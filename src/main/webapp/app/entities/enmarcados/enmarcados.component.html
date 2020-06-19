@@ -19,6 +19,7 @@
             <th jhiSortBy="precio"><span jhiTranslate="torgaPedidosApp.enmarcados.precio">Precio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="anchoMin"><span jhiTranslate="torgaPedidosApp.enmarcados.anchoMin">Ancho Min</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="anchoMax"><span jhiTranslate="torgaPedidosApp.enmarcados.anchoMax">Ancho Max</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="piloto"><span jhiTranslate="torgaPedidosApp.enmarcados.piloto">Piloto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="armario.id"><span jhiTranslate="torgaPedidosApp.enmarcados.armario">Armario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
@@ -30,6 +31,7 @@
                 <td>{{enmarcados.precio}}</td>
                 <td>{{enmarcados.anchoMin}}</td>
                 <td>{{enmarcados.anchoMax}}</td>
+                <td>{{enmarcados.piloto}}</td>
                 <td>
                     <div *ngIf="enmarcados.armario">
                         <a [routerLink]="['../armario', enmarcados.armario?.id, 'view' ]" >{{enmarcados.armario?.id}}</a>

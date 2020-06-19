@@ -30,6 +30,10 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="piloto" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
             <column name="armario_id" type="bigint">
                 <constraints nullable="true" />
             </column>

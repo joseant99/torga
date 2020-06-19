@@ -609,7 +609,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 console.log(armariosTodos[j]);
                 armariosTodos[j]['ancho'] = ancho;
                 armariosTodos[j]['alto'] = alto;
-                armariosTodos[j]['fondo'] = 60;
+                armariosTodos[j]['fondo'] = 61;
                 this.armarioCogido = armariosTodos[j];
             }
         }
@@ -635,18 +635,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#imagenesArmario2').empty();
         $('#imagenesArmario1').empty();
         $('#botonesAcabadosCuerpo').css({ display: 'block' });
-        this.cascoService.findBus(ancho, alto).subscribe(data => {
+        this.cascoService.findBus(ancho, alto, this.armarioCogido.id).subscribe(data => {
+            console.log(data.body);
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                 '<p id="cascoCalculadora" style="width:97%;"><strong>CASCO: </strong><span style="float:right"><strong>+ <span  id="precio">' +
                     data.body[0].precio +
                     '</span>€</strong></span><p/>'
             );
+            this.cascoService.dato = data.body[0];
             $('#precioDimension').text(data.body[0].precio);
             var nombreArmario = $('#textoMensajeArmario' + id).text();
             $('#nombreMesita').text(nombreArmario);
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Ancho: ' + ancho + '<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Altura: ' + alto + '<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Fondo: 60<p/>');
+            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                '<p style="width:100%">Codigo: ' + data.body[0]['codigo'] + '<p/>'
+            );
         });
         var mai = [
             'A',
@@ -885,9 +890,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 1; j++) {
                     array[j] = j;
                 }
-                for (let k = 0; k < puertas; k++) {
-                    arrayPuertas[k] = k + 1;
-                }
+                arrayPuertas[0] = '1 y 2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 2) {
@@ -950,9 +953,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 1; j++) {
                     array[j] = j;
                 }
-                for (let k = 0; k < puertas; k++) {
-                    arrayPuertas[k] = k + 1;
-                }
+
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2 y 3';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 3) {
@@ -1049,9 +1052,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 1; j++) {
                     array[j] = j;
                 }
-                for (let k = 0; k < puertas; k++) {
-                    arrayPuertas[k] = k + 1;
-                }
+                arrayPuertas[0] = '2 y 3';
+                arrayPuertas[1] = '1';
+
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 3) {
@@ -1140,9 +1143,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 1; j++) {
                     array[j] = j;
                 }
-                for (let k = 0; k < puertas; k++) {
-                    arrayPuertas[k] = k + 1;
-                }
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2 y 3';
+                arrayPuertas[2] = '4';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 4) {
@@ -1252,9 +1255,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 2; j++) {
                     array[j] = j;
                 }
-                for (let k = 0; k < puertas; k++) {
-                    arrayPuertas[k] = k + 1;
-                }
+                arrayPuertas[0] = '1 y 2';
+                arrayPuertas[1] = '3';
+                arrayPuertas[2] = '4 y 5';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 5) {
@@ -1369,9 +1372,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 2; j++) {
                     array[j] = j;
                 }
-                for (let k = 0; k < puertas; k++) {
-                    arrayPuertas[k] = k + 1;
-                }
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2 y 3';
+                arrayPuertas[2] = '4 y 5';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 5) {
@@ -1489,6 +1492,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let k = 0; k < puertas; k++) {
                     arrayPuertas[k] = k + 1;
                 }
+                arrayPuertas[0] = '1 y 2';
+                arrayPuertas[1] = '3 y 4';
+                arrayPuertas[2] = '5';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 5) {
@@ -1609,9 +1615,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 2; j++) {
                     array[j] = j;
                 }
-                for (let k = 0; k < puertas; k++) {
-                    arrayPuertas[k] = k + 1;
-                }
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2 y 3';
+                arrayPuertas[2] = '4 y 5';
+                arrayPuertas[3] = '6';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 6) {
@@ -1757,9 +1764,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 3; j++) {
                     array[j] = j;
                 }
-                for (let k = 0; k < puertas; k++) {
-                    arrayPuertas[k] = k + 1;
-                }
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2 y 3';
+                arrayPuertas[2] = '4 y 5';
+                arrayPuertas[3] = '6 y 7';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 7) {
@@ -1882,9 +1890,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 3; j++) {
                     array[j] = j;
                 }
-                for (let k = 0; k < puertas; k++) {
-                    arrayPuertas[k] = k + 1;
-                }
+                arrayPuertas[0] = '1 y 2';
+                arrayPuertas[1] = '3 y 4';
+                arrayPuertas[2] = '5 y 6';
+                arrayPuertas[3] = '7';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 7) {
@@ -2010,6 +2019,12 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let k = 0; k < puertas; k++) {
                     arrayPuertas[k] = k + 1;
                 }
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2 y 3';
+                arrayPuertas[2] = '4 y 5';
+                arrayPuertas[3] = '6 y 7';
+                arrayPuertas[4] = '8';
+
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 8) {
@@ -2993,6 +3008,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 this.armarioCogido = array;
             }
         }
+        /*
         for (let i = 0; i < hueco; i++) {
             var casco = $('#imagenesArmario1 #casco' + i).attr('src');
             var parte1Casco = casco.split('_')[0];
@@ -3001,6 +3017,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             $('#imagenesArmario1 #casco' + i).attr('src', enteroCasco);
             $('#imagenesArmario2 #casco' + i).attr('src', enteroCasco);
         }
+        */
         var interior = $('#inputAcabadoInterior').val();
         var trasera = $('#inputAcabadoTrasera').val();
         if (interior != '' && trasera != '') {
@@ -3176,22 +3193,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         cuenta = ancho / puertas;
                         cuenta = cuenta * 1;
                         if (i == 1) {
-                            if (ancho >= 100 && ancho < 110) {
-                                cuenta = 338;
-                            }
-                            if (ancho >= 110 && ancho < 120) {
-                                cuenta = 374;
-                            }
-                            if (ancho >= 120 && ancho < 130) {
-                                cuenta = 410;
-                            }
-                            if (ancho >= 130 && ancho < 140) {
-                                cuenta = 443;
-                            }
-                            if (ancho >= 140 && ancho < 150) {
-                                cuenta = 478;
-                            }
-                            this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                            var dato = this.cascoService.dato;
+                            this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                                console.log(data.body);
                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                     '<p style="width:100%;display:none">Hueco ' +
                                         letras[hueco - 1] +
@@ -3200,13 +3204,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         '">Interior ' +
                                         nombre +
                                         '</span><span style="float:right">+ ' +
-                                        data.body[0].precio +
+                                        data.body[0].a +
                                         '€</span><p/>'
                                 );
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
                                 var precioTodo;
                                 precioTodo = $('#precioDimension').text();
-                                var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                 $('#precioDimension').text(precioTodoFloat);
                             });
                         }
@@ -3226,22 +3230,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         cuenta = ancho / puertas;
                         cuenta = cuenta * 2;
                         if (i == 1) {
-                            if (ancho >= 100 && ancho < 110) {
-                                cuenta = 695;
-                            }
-                            if (ancho >= 110 && ancho < 120) {
-                                cuenta = 767;
-                            }
-                            if (ancho >= 120 && ancho < 130) {
-                                cuenta = 838;
-                            }
-                            if (ancho >= 130 && ancho < 140) {
-                                cuenta = 905;
-                            }
-                            if (ancho >= 140 && ancho < 150) {
-                                cuenta = 975;
-                            }
-                            this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                            var dato = this.cascoService.dato;
+                            this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                                console.log(data.body);
                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                     '<p style="width:100%;display:none">Hueco ' +
                                         letras[hueco - 1] +
@@ -3250,13 +3241,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         '">Interior ' +
                                         nombre +
                                         '</span><span style="float:right">+ ' +
-                                        data.body[0].precio +
+                                        data.body[0].b +
                                         '€</span><p/>'
                                 );
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
                                 var precioTodo;
                                 precioTodo = $('#precioDimension').text();
-                                var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                 $('#precioDimension').text(precioTodoFloat);
                             });
                         }
@@ -5896,6 +5887,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         nombre +
                         '</span><span style="float:right">+ 0€</span><p/>'
                 );
+                /*
                 for (let j = 1; j <= 12; j++) {
                     var src = $('#interiorDentroArmario' + j).attr('src');
                     if (src != '' && src != null && src != undefined) {
@@ -5907,6 +5899,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         $('#imagenesArmario2 #interiorDentroArmario' + j).attr('src', todo);
                     }
                 }
+                */
             }
         }
         var casco = $('#inputAcabadoCasco').val();
@@ -13548,6 +13541,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 );
             }
         }
+        /*
         for (let i = 0; i < hueco; i++) {
             var trasera = $('#imagenesArmario1 #trasera' + i).attr('src');
             var parte1Trasera = trasera.split('_')[0];
@@ -13556,6 +13550,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             $('#imagenesArmario1 #trasera' + i).attr('src', enteraTrasera);
             $('#imagenesArmario2 #trasera' + i).attr('src', enteraTrasera);
         }
+        */
         var interior = $('#inputAcabadoInterior').val();
         var casco = $('#inputAcabadoCasco').val();
         if (interior != '' && casco != '') {

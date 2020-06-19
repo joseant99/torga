@@ -17,6 +17,10 @@
         {
             "fieldName": "precio",
             "fieldType": "Float"
+        },
+        {
+            "fieldName": "piloto",
+            "fieldType": "Float"
         }
     ],
     "changelogDate": "20200616110948",

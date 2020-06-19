@@ -52,6 +52,9 @@ public class EnmarcadosResourceIntTest {
     private static final Float DEFAULT_ANCHO_MAX = 1F;
     private static final Float UPDATED_ANCHO_MAX = 2F;
 
+    private static final Float DEFAULT_PILOTO = 1F;
+    private static final Float UPDATED_PILOTO = 2F;
+
     @Autowired
     private EnmarcadosRepository enmarcadosRepository;
 
@@ -97,7 +100,8 @@ public class EnmarcadosResourceIntTest {
             .codigo(DEFAULT_CODIGO)
             .precio(DEFAULT_PRECIO)
             .anchoMin(DEFAULT_ANCHO_MIN)
-            .anchoMax(DEFAULT_ANCHO_MAX);
+            .anchoMax(DEFAULT_ANCHO_MAX)
+            .piloto(DEFAULT_PILOTO);
         return enmarcados;
     }
 
@@ -125,6 +129,7 @@ public class EnmarcadosResourceIntTest {
         assertThat(testEnmarcados.getPrecio()).isEqualTo(DEFAULT_PRECIO);
         assertThat(testEnmarcados.getAnchoMin()).isEqualTo(DEFAULT_ANCHO_MIN);
         assertThat(testEnmarcados.getAnchoMax()).isEqualTo(DEFAULT_ANCHO_MAX);
+        assertThat(testEnmarcados.getPiloto()).isEqualTo(DEFAULT_PILOTO);
     }
 
     @Test
@@ -160,7 +165,8 @@ public class EnmarcadosResourceIntTest {
             .andExpect(jsonPath("$.[*].codigo").value(hasItem(DEFAULT_CODIGO.toString())))
             .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())))
             .andExpect(jsonPath("$.[*].anchoMin").value(hasItem(DEFAULT_ANCHO_MIN.doubleValue())))
-            .andExpect(jsonPath("$.[*].anchoMax").value(hasItem(DEFAULT_ANCHO_MAX.doubleValue())));
+            .andExpect(jsonPath("$.[*].anchoMax").value(hasItem(DEFAULT_ANCHO_MAX.doubleValue())))
+            .andExpect(jsonPath("$.[*].piloto").value(hasItem(DEFAULT_PILOTO.doubleValue())));
     }
     
     @Test
@@ -177,7 +183,8 @@ public class EnmarcadosResourceIntTest {
             .andExpect(jsonPath("$.codigo").value(DEFAULT_CODIGO.toString()))
             .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()))
             .andExpect(jsonPath("$.anchoMin").value(DEFAULT_ANCHO_MIN.doubleValue()))
-            .andExpect(jsonPath("$.anchoMax").value(DEFAULT_ANCHO_MAX.doubleValue()));
+            .andExpect(jsonPath("$.anchoMax").value(DEFAULT_ANCHO_MAX.doubleValue()))
+            .andExpect(jsonPath("$.piloto").value(DEFAULT_PILOTO.doubleValue()));
     }
 
     @Test
@@ -204,7 +211,8 @@ public class EnmarcadosResourceIntTest {
             .codigo(UPDATED_CODIGO)
             .precio(UPDATED_PRECIO)
             .anchoMin(UPDATED_ANCHO_MIN)
-            .anchoMax(UPDATED_ANCHO_MAX);
+            .anchoMax(UPDATED_ANCHO_MAX)
+            .piloto(UPDATED_PILOTO);
 
         restEnmarcadosMockMvc.perform(put("/api/enmarcados")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -219,6 +227,7 @@ public class EnmarcadosResourceIntTest {
         assertThat(testEnmarcados.getPrecio()).isEqualTo(UPDATED_PRECIO);
         assertThat(testEnmarcados.getAnchoMin()).isEqualTo(UPDATED_ANCHO_MIN);
         assertThat(testEnmarcados.getAnchoMax()).isEqualTo(UPDATED_ANCHO_MAX);
+        assertThat(testEnmarcados.getPiloto()).isEqualTo(UPDATED_PILOTO);
     }
 
     @Test

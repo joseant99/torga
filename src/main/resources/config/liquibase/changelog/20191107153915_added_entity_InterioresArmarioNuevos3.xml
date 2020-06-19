@@ -15,14 +15,18 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity Enmarcados.
+        Added the entity InterioresArmarioNuevos.
     -->
-    <changeSet id="20200617065731-1" author="jhipster">
-        <createTable tableName="enmarcados">
+    <changeSet id="20191107153915-1" author="jhipster">
+        <createTable tableName="interiores_armario_nuevos">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="codigo" type="varchar(255)">
+            <column name="nombre" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ancho" type="${floatType}">
                 <constraints nullable="true" />
             </column>
 
@@ -30,15 +34,42 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="ancho_min" type="${floatType}">
+            <column name="luz" type="${floatType}">
                 <constraints nullable="true" />
             </column>
 
-            <column name="ancho_max" type="${floatType}">
+            <column name="a" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="b" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="c" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="d" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="e" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="piloto" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="productos_dormitorio_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 
             <column name="armario_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="casco_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

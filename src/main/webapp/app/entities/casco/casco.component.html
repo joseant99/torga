@@ -19,6 +19,13 @@
             <th jhiSortBy="alto"><span jhiTranslate="torgaPedidosApp.casco.alto">Alto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="precio"><span jhiTranslate="torgaPedidosApp.casco.precio">Precio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="precioCostado"><span jhiTranslate="torgaPedidosApp.casco.precioCostado">Precio Costado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="anchoMin"><span jhiTranslate="torgaPedidosApp.casco.anchoMin">Ancho Min</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="anchoMax"><span jhiTranslate="torgaPedidosApp.casco.anchoMax">Ancho Max</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="altoMin"><span jhiTranslate="torgaPedidosApp.casco.altoMin">Alto Min</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="altoMax"><span jhiTranslate="torgaPedidosApp.casco.altoMax">Alto Max</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.casco.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="piloto"><span jhiTranslate="torgaPedidosApp.casco.piloto">Piloto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="armario.id"><span jhiTranslate="torgaPedidosApp.casco.armario">Armario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -29,6 +36,17 @@
                 <td>{{casco.alto}}</td>
                 <td>{{casco.precio}}</td>
                 <td>{{casco.precioCostado}}</td>
+                <td>{{casco.anchoMin}}</td>
+                <td>{{casco.anchoMax}}</td>
+                <td>{{casco.altoMin}}</td>
+                <td>{{casco.altoMax}}</td>
+                <td>{{casco.codigo}}</td>
+                <td>{{casco.piloto}}</td>
+                <td>
+                    <div *ngIf="casco.armario">
+                        <a [routerLink]="['../armario', casco.armario?.id, 'view' ]" >{{casco.armario?.id}}</a>
+                    </div>
+                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

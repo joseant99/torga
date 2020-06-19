@@ -29,7 +29,44 @@
                     <input type="number" class="form-control" name="precioCostado" id="field_precioCostado"
                         [(ngModel)]="casco.precioCostado" />
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.casco.anchoMin" for="field_anchoMin">Ancho Min</label>
+                    <input type="number" class="form-control" name="anchoMin" id="field_anchoMin"
+                        [(ngModel)]="casco.anchoMin" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.casco.anchoMax" for="field_anchoMax">Ancho Max</label>
+                    <input type="number" class="form-control" name="anchoMax" id="field_anchoMax"
+                        [(ngModel)]="casco.anchoMax" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.casco.altoMin" for="field_altoMin">Alto Min</label>
+                    <input type="number" class="form-control" name="altoMin" id="field_altoMin"
+                        [(ngModel)]="casco.altoMin" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.casco.altoMax" for="field_altoMax">Alto Max</label>
+                    <input type="number" class="form-control" name="altoMax" id="field_altoMax"
+                        [(ngModel)]="casco.altoMax" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.casco.codigo" for="field_codigo">Codigo</label>
+                    <input type="text" class="form-control" name="codigo" id="field_codigo"
+                        [(ngModel)]="casco.codigo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.casco.piloto" for="field_piloto">Piloto</label>
+                    <input type="number" class="form-control" name="piloto" id="field_piloto"
+                        [(ngModel)]="casco.piloto" />
+                </div>
 
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.casco.armario" for="field_armario">Armario</label>
+                    <select class="form-control" id="field_armario" name="armario" [(ngModel)]="casco.armario" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="armarioOption.id === casco.armario?.id ? casco.armario : armarioOption" *ngFor="let armarioOption of armarios; trackBy: trackArmarioById">{{armarioOption.mensaje}}</option>
+                    </select>
+                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

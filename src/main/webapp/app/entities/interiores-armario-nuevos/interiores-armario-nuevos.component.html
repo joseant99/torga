@@ -19,7 +19,15 @@
             <th jhiSortBy="ancho"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.ancho">Ancho</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="precio"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.precio">Precio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="luz"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.luz">Luz</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="a"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.a">A</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="b"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.b">B</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="c"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.c">C</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="d"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.d">D</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="e"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.e">E</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="piloto"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.piloto">Piloto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="productosDormitorio.id"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.productosDormitorio">Productos Dormitorio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="armario.id"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.armario">Armario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="casco.id"><span jhiTranslate="torgaPedidosApp.interioresArmarioNuevos.casco">Casco</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -30,9 +38,25 @@
                 <td>{{interioresArmarioNuevos.ancho}}</td>
                 <td>{{interioresArmarioNuevos.precio}}</td>
                 <td>{{interioresArmarioNuevos.luz}}</td>
+                <td>{{interioresArmarioNuevos.a}}</td>
+                <td>{{interioresArmarioNuevos.b}}</td>
+                <td>{{interioresArmarioNuevos.c}}</td>
+                <td>{{interioresArmarioNuevos.d}}</td>
+                <td>{{interioresArmarioNuevos.e}}</td>
+                <td>{{interioresArmarioNuevos.piloto}}</td>
                 <td>
                     <div *ngIf="interioresArmarioNuevos.productosDormitorio">
                         <a [routerLink]="['../productos-dormitorio', interioresArmarioNuevos.productosDormitorio?.id, 'view' ]" >{{interioresArmarioNuevos.productosDormitorio?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="interioresArmarioNuevos.armario">
+                        <a [routerLink]="['../armario', interioresArmarioNuevos.armario?.id, 'view' ]" >{{interioresArmarioNuevos.armario?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="interioresArmarioNuevos.casco">
+                        <a [routerLink]="['../casco', interioresArmarioNuevos.casco?.id, 'view' ]" >{{interioresArmarioNuevos.casco?.id}}</a>
                     </div>
                 </td>
                 <td class="text-right">

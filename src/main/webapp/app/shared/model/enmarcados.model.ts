@@ -6,6 +6,7 @@ export interface IEnmarcados {
     precio?: number;
     anchoMin?: number;
     anchoMax?: number;
+    piloto?: number;
     armario?: IArmario;
 }
 
@@ -16,6 +17,7 @@ export class Enmarcados implements IEnmarcados {
         public precio?: number,
         public anchoMin?: number,
         public anchoMax?: number,
+        public piloto?: number,
         public armario?: IArmario
     ) {}
 }

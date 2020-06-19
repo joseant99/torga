@@ -1,5 +1,6 @@
 package com.torga.pedidos.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -33,6 +34,28 @@ public class Casco implements Serializable {
 
     @Column(name = "precio_costado")
     private Float precioCostado;
+
+    @Column(name = "ancho_min")
+    private Float anchoMin;
+
+    @Column(name = "ancho_max")
+    private Float anchoMax;
+
+    @Column(name = "alto_min")
+    private Float altoMin;
+
+    @Column(name = "alto_max")
+    private Float altoMax;
+
+    @Column(name = "codigo")
+    private String codigo;
+
+    @Column(name = "piloto")
+    private Float piloto;
+
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Armario armario;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -94,6 +117,97 @@ public class Casco implements Serializable {
     public void setPrecioCostado(Float precioCostado) {
         this.precioCostado = precioCostado;
     }
+
+    public Float getAnchoMin() {
+        return anchoMin;
+    }
+
+    public Casco anchoMin(Float anchoMin) {
+        this.anchoMin = anchoMin;
+        return this;
+    }
+
+    public void setAnchoMin(Float anchoMin) {
+        this.anchoMin = anchoMin;
+    }
+
+    public Float getAnchoMax() {
+        return anchoMax;
+    }
+
+    public Casco anchoMax(Float anchoMax) {
+        this.anchoMax = anchoMax;
+        return this;
+    }
+
+    public void setAnchoMax(Float anchoMax) {
+        this.anchoMax = anchoMax;
+    }
+
+    public Float getAltoMin() {
+        return altoMin;
+    }
+
+    public Casco altoMin(Float altoMin) {
+        this.altoMin = altoMin;
+        return this;
+    }
+
+    public void setAltoMin(Float altoMin) {
+        this.altoMin = altoMin;
+    }
+
+    public Float getAltoMax() {
+        return altoMax;
+    }
+
+    public Casco altoMax(Float altoMax) {
+        this.altoMax = altoMax;
+        return this;
+    }
+
+    public void setAltoMax(Float altoMax) {
+        this.altoMax = altoMax;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public Casco codigo(String codigo) {
+        this.codigo = codigo;
+        return this;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Float getPiloto() {
+        return piloto;
+    }
+
+    public Casco piloto(Float piloto) {
+        this.piloto = piloto;
+        return this;
+    }
+
+    public void setPiloto(Float piloto) {
+        this.piloto = piloto;
+    }
+
+    public Armario getArmario() {
+        return armario;
+    }
+
+    public Casco armario(Armario armario) {
+        this.armario = armario;
+        return this;
+    }
+
+    public void setArmario(Armario armario) {
+        this.armario = armario;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -124,6 +238,12 @@ public class Casco implements Serializable {
             ", alto=" + getAlto() +
             ", precio=" + getPrecio() +
             ", precioCostado=" + getPrecioCostado() +
+            ", anchoMin=" + getAnchoMin() +
+            ", anchoMax=" + getAnchoMax() +
+            ", altoMin=" + getAltoMin() +
+            ", altoMax=" + getAltoMax() +
+            ", codigo='" + getCodigo() + "'" +
+            ", piloto=" + getPiloto() +
             "}";
     }
 }

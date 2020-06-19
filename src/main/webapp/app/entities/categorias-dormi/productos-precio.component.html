@@ -3,25 +3,16 @@
         <span>PRECIO PRODUCTOS</span>
     </h2>
     <br/>
-    <div class="table-responsive" style="float:left;width:50%">
+    <div class="table-responsive" style="float:left;width:50%;margin-left:100px">
 			<a  id="torgaTarifa" data-toggle="collapse" data-target="#menuTarifaTorga">
-    			<li style="font-size:25px">NATIV COMEDORES</li>
+    			<li style="font-size:25px" (click)="precioTiendaNuevo(1)">NATIV COMEDORES</li>
     		</a>
-    		<div id="menuTarifaTorga" class="collapse">
-    			<ol>
-    				<li *ngFor="let comedor of comedores" (click)="productosCategoria(comedor.id)" style="margin-left:25%;font-size:20px">{{comedor.nombre}}</li>
-    			</ol>			
-    		</div>
     		
     		
     		<a  id="torgaDormi" data-toggle="collapse" data-target="#menuTarifaDormi">
-    			<li style="font-size:25px">NATIV DORMITORIOS</li>
+    			<li style="font-size:25px" (click)="precioTiendaNuevo(2)">NATIV DORMITORIOS</li>
     		</a>
-    		<div id="menuTarifaDormi" class="collapse">
-    			<ol>
-    				<li *ngFor="let comedor of dormitorio" (click)="productosCategoria(comedor.id)" style="margin-left:25%;font-size:20px">{{comedor.nombre}}</li>
-    			</ol>			
-    		</div>
+    		
     		<a data-toggle="collapse">
     			<li style="font-size:25px" (click)="mostrarIva()">IVA</li>
     		</a>
@@ -35,7 +26,11 @@
     	<p style="text-align:center"><button (click)="guardar()" data-toggle="modal" data-target="#modalAcabadosPuertas1">Guardar</button></p>
     
     </div>
-    
+    <div id="precioCatDiv" style="text-align:center;float:left;position:absolute;margin-left:41%" class="displayBoton">
+    	<p style="font-size:22px;">PRECIO CATALOGO</p>
+    	<input type="number" id="inputCatDiv">
+    	<button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="guardarPrecioTipo()" data-toggle="modal" data-target="#modalAcabadosPuertas1">GUARDAR</button>
+    </div>
     <div id="ivaDiv" style="text-align:center;float:left;position:absolute;margin-left:41%" class="displayBoton">
     	<p style="font-size:22px;">MOSTRAR LOS PRECIOS CON EL IVA</p>
     	<div id="ivaSi" style="float:left;border:1px solid black;width: 130px;height: 60px;"><span style="font-size: 35px;" (click)="guardarIva('Si')">SI</span></div>

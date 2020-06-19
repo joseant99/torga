@@ -21,7 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(CajeadoService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new Cajeado(0, 'AAAAAAA', 'AAAAAAA', 0);
+            elemDefault = new Cajeado(0, 'AAAAAAA', 'AAAAAAA', 0, 0);
         });
 
         describe('Service methods', async () => {
@@ -57,7 +57,8 @@ describe('Service Tests', () => {
                     {
                         codigo: 'BBBBBB',
                         tipo: 'BBBBBB',
-                        precio: 1
+                        precio: 1,
+                        piloto: 1
                     },
                     elemDefault
                 );
@@ -76,7 +77,8 @@ describe('Service Tests', () => {
                     {
                         codigo: 'BBBBBB',
                         tipo: 'BBBBBB',
-                        precio: 1
+                        precio: 1,
+                        piloto: 1
                     },
                     elemDefault
                 );

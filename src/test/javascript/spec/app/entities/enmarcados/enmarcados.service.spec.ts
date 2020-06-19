@@ -21,7 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(EnmarcadosService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new Enmarcados(0, 'AAAAAAA', 0, 0, 0);
+            elemDefault = new Enmarcados(0, 'AAAAAAA', 0, 0, 0, 0);
         });
 
         describe('Service methods', async () => {
@@ -58,7 +58,8 @@ describe('Service Tests', () => {
                         codigo: 'BBBBBB',
                         precio: 1,
                         anchoMin: 1,
-                        anchoMax: 1
+                        anchoMax: 1,
+                        piloto: 1
                     },
                     elemDefault
                 );
@@ -78,7 +79,8 @@ describe('Service Tests', () => {
                         codigo: 'BBBBBB',
                         precio: 1,
                         anchoMin: 1,
-                        anchoMax: 1
+                        anchoMax: 1,
+                        piloto: 1
                     },
                     elemDefault
                 );

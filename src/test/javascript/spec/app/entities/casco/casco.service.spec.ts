@@ -21,7 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(CascoService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new Casco(0, 0, 0, 0, 0);
+            elemDefault = new Casco(0, 0, 0, 0, 0, 0, 0, 0, 0, 'AAAAAAA', 0);
         });
 
         describe('Service methods', async () => {
@@ -58,7 +58,13 @@ describe('Service Tests', () => {
                         ancho: 1,
                         alto: 1,
                         precio: 1,
-                        precioCostado: 1
+                        precioCostado: 1,
+                        anchoMin: 1,
+                        anchoMax: 1,
+                        altoMin: 1,
+                        altoMax: 1,
+                        codigo: 'BBBBBB',
+                        piloto: 1
                     },
                     elemDefault
                 );
@@ -78,7 +84,13 @@ describe('Service Tests', () => {
                         ancho: 1,
                         alto: 1,
                         precio: 1,
-                        precioCostado: 1
+                        precioCostado: 1,
+                        anchoMin: 1,
+                        anchoMax: 1,
+                        altoMin: 1,
+                        altoMax: 1,
+                        codigo: 'BBBBBB',
+                        piloto: 1
                     },
                     elemDefault
                 );

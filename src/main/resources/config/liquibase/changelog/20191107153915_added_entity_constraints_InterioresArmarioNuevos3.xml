@@ -19,7 +19,6 @@
                                  constraintName="fk_interiores_armario_nuevos_armario_id"
                                  referencedColumnNames="id"
                                  referencedTableName="armario"/>
-
         <addForeignKeyConstraint baseColumnNames="casco_id"
                                  baseTableName="interiores_armario_nuevos"
                                  constraintName="fk_interiores_armario_nuevos_casco_id"

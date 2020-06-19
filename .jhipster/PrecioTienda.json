@@ -13,6 +13,10 @@
         {
             "fieldName": "precio",
             "fieldType": "Float"
+        },
+        {
+            "fieldName": "catalogo",
+            "fieldType": "Float"
         }
     ],
     "changelogDate": "20190925135523",

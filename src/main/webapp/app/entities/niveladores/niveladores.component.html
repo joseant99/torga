@@ -17,6 +17,7 @@
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.niveladores.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="precio"><span jhiTranslate="torgaPedidosApp.niveladores.precio">Precio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="piloto"><span jhiTranslate="torgaPedidosApp.niveladores.piloto">Piloto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="armario.id"><span jhiTranslate="torgaPedidosApp.niveladores.armario">Armario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
@@ -26,6 +27,7 @@
                 <td><a [routerLink]="['/niveladores', niveladores.id, 'view' ]">{{niveladores.id}}</a></td>
                 <td>{{niveladores.codigo}}</td>
                 <td>{{niveladores.precio}}</td>
+                <td>{{niveladores.piloto}}</td>
                 <td>
                     <div *ngIf="niveladores.armario">
                         <a [routerLink]="['../armario', niveladores.armario?.id, 'view' ]" >{{niveladores.armario?.id}}</a>

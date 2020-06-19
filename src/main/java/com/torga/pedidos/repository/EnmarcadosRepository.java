@@ -1,7 +1,6 @@
 package com.torga.pedidos.repository;
 
 import com.torga.pedidos.domain.Enmarcados;
-import com.torga.pedidos.domain.ProductosDormitorio;
 
 import java.util.Collection;
 

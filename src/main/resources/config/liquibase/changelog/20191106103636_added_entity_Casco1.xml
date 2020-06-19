@@ -15,18 +15,54 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity PrecioTienda.
+        Added the entity Casco.
     -->
-    <changeSet id="20190925135523-1" author="jhipster">
-        <createTable tableName="precio_tienda">
+    <changeSet id="20191106103636-1" author="jhipster">
+        <createTable tableName="casco">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="ancho" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="alto" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
             <column name="precio" type="${floatType}">
                 <constraints nullable="true" />
             </column>
 
-            <column name="datos_usuario_id" type="bigint">
+            <column name="precio_costado" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ancho_min" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ancho_max" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="alto_min" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="alto_max" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="codigo" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="piloto" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="armario_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 
