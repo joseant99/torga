@@ -140,6 +140,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
     interioresParaArray: any;
     puertasParaArray: any;
     segunWIDTH: any;
+    niveladoresPrecio: any;
+    cajeadoPrecio: any;
+    enmarcadosPrecio: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -512,6 +515,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
     }
 
     loadAll() {
+        this.cajeadoPrecio = 0;
+        this.enmarcadosPrecio = 0;
         this.saberPuerta = 0;
         this.interioresParaArray = [];
         this.puertasParaArray = [];
@@ -546,6 +551,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         this.dimenArmarios = dimens;
     }
     public niveladoresCargar(id) {
+        var precio;
+        precio = $('#precioDimension').text();
+        precio = parseFloat(precio);
         if (id == 'si') {
             var arma = this.armarioCogido;
             this.niveladoresService.query().subscribe(data => {
@@ -553,15 +561,24 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 for (let i = 0; i < data.body.length; i++) {
                     if (data.body[i]['armario']['id'] == arma['id']) {
                         $('#precioNive').text('+' + data.body[i]['precio'] + ' €');
+                        this.niveladoresPrecio = data.body[i]['precio'];
+                        precio = precio + data.body[i]['precio'];
+                        $('#precioDimension').text(precio);
                     }
                 }
             });
         } else {
             $('#precioNive').text('+0 €');
+            precio = precio - this.niveladoresPrecio;
+            this.niveladoresPrecio = 0;
+            $('#precioDimension').text(precio);
         }
     }
 
     public cajeadoCargar(id) {
+        var precio;
+        precio = $('#precioDimension').text();
+        precio = parseFloat(precio);
         $('#medidasCaje0').css({ display: 'none' });
         $('#medidasCaje1').css({ display: 'none' });
         $('#medidasCaje2').css({ display: 'none' });
@@ -570,34 +587,53 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             this.cajeadoService.query().subscribe(data => {
                 for (let i = 0; i < data.body.length; i++) {
                     if (data.body[i]['id'] == id + 1) {
+                        var precioCajeado = this.cajeadoPrecio;
                         $('#precioCajeado').text('+' + data.body[i]['precio'] + ' €');
+                        this.cajeadoPrecio = data.body[i]['precio'];
+                        precio = precio - precioCajeado;
+                        precio = precio + data.body[i]['precio'];
+                        $('#precioDimension').text(precio);
                         $('#medidasCaje' + id).css({ display: 'block' });
                     }
                 }
             });
         } else {
             $('#precioCajeado').text('+0 €');
+            precio = precio - this.cajeadoPrecio;
+            $('#precioDimension').text(precio);
         }
     }
 
     public enmarcadoCargar(id) {
+        var precio;
+        precio = $('#precioDimension').text();
+        precio = parseFloat(precio);
         $('#medidasEnmaA').css({ display: 'none' });
         $('#medidasEnmaB').css({ display: 'none' });
         $('#medidasEnmaC').css({ display: 'none' });
         $('#medidasEnmaD').css({ display: 'none' });
         if (id != 'no') {
             $('#medidasEnma' + id).css({ display: 'block' });
+            var precioCajeado = this.cajeadoPrecio;
             var ancho = $('#anchosSelect').val();
             var arma = this.armarioCogido;
             this.enmarcadosService.categoria(arma.id, id).subscribe(data => {
                 for (let i = 0; i < data.body['length']; i++) {
                     if (data.body[i]['anchoMin'] < ancho && data.body[i]['anchoMax'] >= ancho) {
+                        var precioCajeado = this.enmarcadosPrecio;
                         $('#precioEnmarcados').text('+' + data.body[i]['precio'] + ' €');
+                        this.enmarcadosPrecio = data.body[i]['precio'];
+                        precio = precio - precioCajeado;
+                        precio = precio + data.body[i]['precio'];
+                        $('#precioDimension').text(precio);
+                        $('#medidasCaje' + id).css({ display: 'block' });
                     }
                 }
             });
         } else {
             $('#precioEnmarcados').text('+0 €');
+            precio = precio - this.enmarcadosPrecio;
+            $('#precioDimension').text(precio);
         }
     }
     public carcarCascosInterioresPuertas(id) {
