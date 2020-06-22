@@ -5000,7 +5000,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             }
         }
         if (idApoyo == 18) {
-            var hbueno = parseFloat(h) - 5;
+            if (parseFloat(h) <= 100.5) {
+                var hbueno = parseFloat(h) - 5.5;
+            } else {
+                var hbueno = parseFloat(h) - 5;
+            }
         }
         if (idApoyo == 17) {
             var hbueno = parseFloat(h) - 12.5;
@@ -5017,7 +5021,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                     if (idApoyo == 15 || idApoyo == 16) {
                         if (idApoyo == 16) {
                             if (h < 175) {
-                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 175 && value['fondo'] == fondo - 1) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 175) {
                                     var precio = parseFloat(value['precio']);
                                     for (let f = 0; f < todosLosPrecios.length; f++) {
                                         if (idApoyo == todosLosPrecios[f][2]) {
@@ -5059,7 +5063,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                             }
 
                             if (h >= 175) {
-                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] >= 175 && value['fondo'] == fondo - 1) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] >= 175) {
                                     var precio = parseFloat(value['precio']);
                                     for (let f = 0; f < todosLosPrecios.length; f++) {
                                         if (idApoyo == todosLosPrecios[f][2]) {
@@ -5188,7 +5192,7 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                         }
                     } else {
                         if (idApoyo == 18) {
-                            if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == hbueno && value['fondo'] == fondo) {
+                            if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == hbueno) {
                                 var precio = parseFloat(value['precio']);
                                 for (let f = 0; f < todosLosPrecios.length; f++) {
                                     if (idApoyo == todosLosPrecios[f][2]) {
