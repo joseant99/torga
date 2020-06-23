@@ -10,6 +10,7 @@ import { ProductosDormitorioService } from './productos-dormitorio.service';
 import { ProductosDormitorioComponent } from './productos-dormitorio.component';
 import { ProductosColgantesComponent } from './productos-colgantes.component';
 import { ArmariosDormitorioComponent } from './armarios-dormitorio.component';
+import { VestidoresDormitorioComponent } from './vestidores-dormitorio.component';
 import { ArmariosDormitorioOcultaComponent } from './armarios-dormitorio-oculta.component';
 import { ArmariosDormitorioVistaComponent } from './armarios-dormitorio-vista.component';
 import { ProductosDormitorioDetailComponent } from './productos-dormitorio-detail.component';
@@ -70,6 +71,19 @@ export const productosDormitorioRoute: Routes = [
     {
         path: 'armarios-dormitorio',
         component: ArmariosDormitorioComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'vestidores-dormitorio',
+        component: VestidoresDormitorioComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

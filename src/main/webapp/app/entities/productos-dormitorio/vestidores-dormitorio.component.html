@@ -1,0 +1,625 @@
+<div style="top:0" id="divarribatodo"></div>
+
+<div style="width:100%;margin-top:70px;overflow-x:hidden;letter-spacing:1px;">
+    <h2 id="page-heading" style="text-align:center;margin-left:15%;margin-bottom: 2%;letter-spacing: 3px;" class="soloArmarios">
+        <span style="width:100%;text-align:center"><strong>MEDIDAS VESTIDORES</strong></span>
+       
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div id="producto" class="armariosDivTodo">
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect" name="anchos" type="number"/></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO</label><input style="text-align:center" list="listaAltura" id="alturaSelect" name="anchos" type="number"/></p>
+		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO</label><input style="text-align:center" value="61" type="number" disabled/></p>
+		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="cargarInterioresArmarios()">Buscar</button></p>
+		   
+		<h2 style="text-align:center;margin-top: 5%;margin-bottom: 5%;" id="textoTituloInterior"></h2>
+		<div *ngIf="armarioService.todo != undefined" style="margin-left:200px">
+	    	<div *ngFor="let tabla of armarioService.todo;let u=index" style="width:45%;float:left;border:1px solid #B5BABD;margin-right:50px;margin-bottom:50px" id="armarioColorFondo{{u}}">
+	    		<div style="margin-top:25px;margin-bottom:25px;">
+		    		<p style="text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  height="200px" width="500px" alt="productosDormitorio image"/></p>
+		    		<p style="text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.productosDormitorio.imagenContentType + ';base64,' + tabla.productosDormitorio.imagen" height="200px" width="500px" alt="productosDormitorio image"/></p>
+		    		<p id="textoMensajeArmario{{u}}" style="width:100%;text-align:center">{{tabla.mensaje}}</p>
+	    		</div>
+	    	</div>
+    	</div>
+    	
+    	<div style="width:100%;float:left" id="imagenesArmario1">
+    		
+    	</div>
+    	<div style="width:100%;float:left" id="imagenesArmario2">
+    		
+    	</div> 
+    	<div style="width:100%" id="imagenInteriorPuertas">
+    	<h2 style="text-align:center" id="textoImagenInterior"></h2>
+    	<div id="imagenesLasDos"></div>
+    		<p style="display:none" id="acabado1"></p>
+    	</div>
+    	<div style="float:left;width:100%;margin-top:7%;margin-left:7%" id="puertasTodo">
+    		<p style="text-align:center;display:none" id="tipoAcabados"><i style="margin-right:100px">Tipo Puerta</i><i style="margin-right:100px;font-size:20px">Acabado 1</i><i style="margin-right:100px;font-size:20px">Acabado 2</i><i style="margin-right:100px;font-size:20px">Acabado 3</i><i style="margin-right:100px;font-size:20px">Acabado 4</i><i style="margin-right:100px;font-size:20px">Acabado 5</i></p>
+    		<div *ngFor="let puerta of numeroPuertas;let u=index;" id="puertaAcabados" style="float:left;width:100%"><p style="float:left;margin-left:110px"><strong style="font-size:25px;margin-left: -150px;margin-right: 25px;">{{puerta}} :</strong><input (click)="cogerIdAcabados(0,u)"  data-toggle="modal" data-target="#modalPuertas" style="margin-right:70px;width:120px" type="text" class="input0{{u}}"  readonly="readonly"><div (click)="mostrarAcabadosPuerta(0,u)" data-toggle="modal" data-target="#modalAcabadosPuertas"  style="margin-right:70px;width:120px;float:left;background-color:white;height: 40px;" class="input1{{u}}" ></div><div (click)="mostrarAcabadosPuerta(1,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input2{{u}}" ></div><div (click)="mostrarAcabadosPuerta(2,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input3{{u}}"  ></div><div (click)="mostrarAcabadosPuerta(3,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input4{{u}}"  ></div><div (click)="mostrarAcabadosPuerta(4,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input5{{u}}"  ></div></p></div>
+    	</div>
+    	
+    	<div id="tiradoresDiv" style="float:left;width:100%;display:none">
+    		<p style="margin-left:145px;font-size:25px">Tipo</p><strong class="cambiarAcabado" style="margin-bottom:35px;margin-top:15px">Tirador</strong>
+    		<input type="text" style="height:60px;width:200px;margin-left:20px;text-align:center" id="inputTiradores" data-toggle="modal" data-target="#modalTiradores" readonly="readonly"/>
+    	</div>
+    	
+    	<div style="float:left;width:100%;margin-top:7%">
+    		<div *ngFor="let armario of interiorArmario; let i=index;" style="width:50%;float:left" id="{{i}}">			
+    				<div *ngIf="i === 0">
+	    				<p ><strong style="margin-right:140px;margin-left:125px">Interior</strong><strong style="margin-right:50px">Luz</strong><strong style="margin-left:70px;margin-right: -80px;">Acabado</strong></p>
+	    				<div *ngFor="let interior of numeroInteriorArmario[i];let u=index" style="width:100%;float:left">
+	    					<p *ngIf="i===0" style="float:left"><strong *ngIf="u===0">Interior A</strong><strong *ngIf="u===1">Interior B</strong><strong *ngIf="u===2">Interior C</strong><strong *ngIf="u===3">Interior D</strong><input type="text" style="text-align:center"  id="{{interior.id}}" data-toggle="modal" data-target="#modalInteriores" (click)="guardarIdInterior(u)"  class="interior{{u}}"  readonly="readonly"/><input class="luzInterior{{u}}" type="text" id="{{interior.id}}" (click)="cogerLuz(u)"  class="interiorLuz{{u}}"  readonly="readonly" style="display:none"><div style="display:none" id="{{interior.id}}" (click)="guardarIdInterior(u)" data-toggle="modal" data-target="#modalInterioresAcabados"  class="interiorAcabado{{u}}"></div></p>
+	    				</div>
+	    			</div>
+    				 	
+    		</div>
+    	</div>
+    	
+    </div>
+	  <div class="modal fade" id="myModalColores1" role="dialog" style="z-index: 10000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un acabado</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen0" (click)="cambiarAcabado(0,1,1)"  data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen1" (click)="cambiarAcabado(1,1,1)"  data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen2" (click)="cambiarAcabado(2,1,1)"  data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen3" (click)="cambiarAcabado(3,1,1)"  data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen4" (click)="cambiarAcabado(4,1,1)"  data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen5" (click)="cambiarAcabado(5,1,1)"  data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen6" (click)="cambiarAcabado(6,1,1)"  data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen7" (click)="cambiarAcabado(7,1,1)"  data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen8" (click)="cambiarAcabado(8,1,1)"  data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen9" (click)="cambiarAcabado(9,1,1)" data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen10" (click)="cambiarAcabado(10,1,1)" data-dismiss="modal"></div>
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen11" (click)="cambiarAcabado(11,1,1)" data-dismiss="modal"></div> 
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen12" (click)="cambiarAcabado(12,1,1)" data-dismiss="modal"></div>          
+		          <div style="float:left; width:280px; height:160px ;margin-left:80px;margin-top: 30px;" id="acabadoImagen13" (click)="cambiarAcabado(13,1,1)" data-dismiss="modal"></div>          
+		                   
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+		   <div class="modal fade" id="modalAcabadosPuertas1" role="dialog"  style="z-index: 10000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un Acabado para la Puerta 1</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div *ngFor="let aca of acabadosPuerta1;" (click)="cambioAcabadoImagenPue(aca.nombre)" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalAcabadosPuertas2" role="dialog"  style="z-index: 10000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un Acabado para la Puerta 1</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div *ngFor="let aca of acabadosPuerta2;" (click)="cambioAcabadoImagenPue(aca.nombre)" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalInterioresAcabados" role="dialog" style="z-index: 10000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un acabado</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div *ngFor="let aca of todos" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="cambiarAcabadoCasco(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalTraseraAcabados" role="dialog" style="z-index: 10000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un acabado</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div *ngFor="let aca of acabadosTrasera" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="cambiarAcabadoTrasera(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalInterioresAcabados1" role="dialog" style="z-index: 10000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un acabado</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div *ngFor="let aca of acabadosInteriores" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="cambiarAcabadoInterior(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  
+	  <div class="modal fade" id="modalInteriorArmario" role="dialog" style="z-index: 10000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un interior</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div *ngFor="let aca of productosDormitorioModal" style="float:left; width:140px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{aca.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" (click)="pintarInteriores(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalPuertasArmario" role="dialog" style="z-index: 10000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un interior</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div *ngFor="let aca of puertasModal" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{aca.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" (click)="puertasArmarioModal(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalInteriores" role="dialog" style="z-index: 10000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un Interior</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div *ngFor="let tirador of interiorArmario;" style="float:left; width:25%; height:500px ;margin-left:80px;margin-top: 30px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{tirador.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tirador.imagenContentType + ';base64,' + tirador.imagen" (click)="cogidoInterior(tirador.id)" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalPuertas" role="dialog" style="z-index: 10000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge una puerta</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div *ngFor="let puertas of puertasTabla" style="float:left; width:25%; height:500px ;margin-left:80px;margin-top: 30px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{puertas.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" (click)="cargarAcabadosPuertas(puertas.id)" [src]="'data:' + puertas.imagenContentType + ';base64,' + puertas.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalTiradores" role="dialog" style="margin-top: 100px;z-index: 10000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un Tirador</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          	<div style="float:left; width:25%; height:500px ;margin-left:80px;margin-top: 30px;" id="tirador0" data-dismiss="modal"><p style="width:100%;text-align:center">TESTA</p><img (click)="cogidoTirador('testa')" title="Foto de linea de codigo" style="width:200px" class="tirador" src="../../../content/images/tiradores/HUECO GRANDE/TESTA/grande_tirador_testa_derecha.png"/></div>  
+		        	<div style="float:left; width:25%; height:500px ;margin-left:80px;margin-top: 30px;" id="tirador0" data-dismiss="modal"><p style="width:100%;text-align:center">TIRADOR LARGO</p><img (click)="cogidoTirador('Largo')" title="Foto de linea de codigo" style="width:200px" class="tirador" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR LARGO/grande_tirador_largo_derecha.png"/></div>  
+		        	<div style="float:left; width:25%; height:500px ;margin-left:80px;margin-top: 30px;" id="tirador0" data-dismiss="modal"><p style="width:100%;text-align:center">TIRADOR PEQUE&Ntilde;O</p><img (click)="cogidoTirador('Corto')" title="Foto de linea de codigo" style="width:200px" class="tirador" src="../../../content/images/tiradores/HUECO GRANDE/TIRADOR CORTO/grande_tirador_corto_derecha.png"/></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalEnviadoCarrito" role="dialog">
+	    <div class="modal-dialog modal-sm">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title"></h4>
+	        </div>
+	        <div class="modal-body">
+	          <p>Su articulo se ha mandado al carro de compra</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	  
+	  
+</div>
+<div id="calculadoraCarrito" style="display:block;z-index:999">
+
+  <div style="width:90%;height: 85%;margin-left:25px;margin-top:10px;overflow-y: scroll;overflow-x: hidden;" id="fondoCalcu">
+
+				<div style="width:100%;height:7%;color:black;top:0;letter-spacing:2px;font-family:'Lato';font-weight:300">		
+					<strong style="float:left;"><p id="nombreMesita"></p></strong><p  style="float:right;"><strong id="precioDimension">0</strong>&euro;</p >
+				</div>
+			
+					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:95%">
+						<div id="datos1" style="float:left;margin-left:5px;width:100%;font-size: 14px;">
+								
+						</div>
+						<div id="niveladoresCalcu"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
+							<p style="float:left;width:100%;"><STRONG>NIVELADORES</STRONG><STRONG id="precioNive" STYLE="FLOAT:RIGHT">+0 &euro;</STRONG></p>
+							<form>
+								<label for="sinivelador" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Con Niveladores</label>
+								  <input type="radio" id="siNivelador" name="nive" value="sinivelador" (click)="niveladoresCargar('si')">
+								  <br>
+								  <label for="noNivelador" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:30px;">Sin Niveladores</label>
+								  <input type="radio" id="noNivelador" name="nive" value="noNivelador" (click)="niveladoresCargar('no')" checked><br>
+								  
+
+							</form>
+						</div>
+						
+						<div id="cajeadoCalcu"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
+							<p style="float:left;width:100%;"><STRONG>CAJEADO</STRONG><STRONG id="precioCajeado" STYLE="FLOAT:RIGHT">+0 &euro;</STRONG></p>
+							<form>
+								  <label for="cajeA" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo A</label>
+								  <input type="radio" id="cajeA" name="cajeado" value="cajeA" (click)="cajeadoCargar(0)"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje0">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="cajeB" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo B</label>
+								  <input type="radio" id="cajeB" name="cajeado" value="cajeB" (click)="cajeadoCargar(1)"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje1">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="cajeC" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo C</label>
+								  <input type="radio" id="cajeC" name="cajeado" value="cajeC" (click)="cajeadoCargar(2)"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje2">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA C cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="cajeD" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo D</label>
+								  <input type="radio" id="cajeD" name="cajeado" value="cajeD" (click)="cajeadoCargar(3)"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje3">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="noCaje" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:30px;">Sin Cajeado</label>
+								  <input type="radio" id="noCaje" name="cajeado" value="noCaje" (click)="cajeadoCargar('no')" checked><br>
+								  
+
+							</form>
+						</div>
+						
+						
+						<div id="enmarcadoCalcu"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
+							<p style="float:left;width:100%;"><STRONG>ENMARCADOS</STRONG><STRONG id="precioEnmarcados" STYLE="FLOAT:RIGHT">+0 &euro;</STRONG></p>
+							<form>
+								  <label for="enmaA" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo A</label>
+								  <input type="radio" id="enmaA" name="enmarcado" value="enmaA" (click)="enmarcadoCargar('A')"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaA">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="enmaB" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo B</label>
+								  <input type="radio" id="enmaB" name="enmarcado" value="enmaB" (click)="enmarcadoCargar('B')"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaB">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="enmaC" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo C</label>
+								  <input type="radio" id="enmaC" name="enmarcado" value="enmaC" (click)="enmarcadoCargar('C')"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaC">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="enmaD" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo D</label>
+								  <input type="radio" id="enmaD" name="enmarcado" value="enmaD" (click)="enmarcadoCargar('D')"><br>
+								  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaD">
+								  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  	<p style="letter-spacing:3px">MEDIDA C cm <input type="number" style="width:60px;margin-left:20px"></p>
+								  </div>
+								  <label for="noenma" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:30px;">Sin Enmarcado</label>
+								  <input type="radio" id="noenma" name="enmarcado" value="noenma" (click)="enmarcadoCargar('no')" checked><br>
+								  
+
+							</form>
+						</div>
+						
+						<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
+							<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
+							<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalInterioresAcabados"> </div></p></a>
+							<label style="float: left;margin-right:20px;margin-top: 15px;">TRASERA :</label>
+							<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalTraseraAcabados"> </div></a>
+	    					<label style="float: left;margin-right:20px;margin-top: 15px;">INTERIORES :</label>
+	    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></a>
+						</div>
+						
+							<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
+				    			<div style="width:100%;float:left" *ngFor="let interior of arraySaberHuecos;let u=index">
+					    			<p style="width:100%;float:left;margin-top:15px;"><strong class="cambiarAcabado" style="float:left">Hueco {{arrayLetras[u]}}</strong><span style="float:right" id="precioInt{{u}}"></span></p>
+					    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalInteriorArmario" (click)="cogerIDHueco(u+1)" readonly="readonly"></div></a>
+					    		<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px; margin-top:30px;">
+									<form>
+										  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO</label>
+										  <input type="radio" id="luz1" name="todoluz" value="luz1" style="margin-left: 25%;" (click)="luzInteriores(u,1)"><span id="precioLuz{{u}}1" STYLE="display:none;float:right">+ 120&euro;</span><br>
+										  
+										  <label for="luz2" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN LOS DOS<br>COSTADOS</label>
+										  <input type="radio" id="luz2" name="todoluz" value="luz2" style="margin-left: 9%;" (click)="luzInteriores(u,2)"><span id="precioLuz{{u}}2" STYLE="display:none;float:right">+ 200&euro;</span><br>
+										  
+										  <label for="luz3" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">SIN LUZ</label>
+										  <input type="radio" id="luz3" name="todoluz" value="luz3" style="margin-left: 34%;" (click)="luzInteriores(u,0)" checked><br>
+		
+									</form>
+								</div>
+			    				
+			    			<!--  	<div style="float:left;height: 50px;width: 60px;margin-left: 30px;text-align: center;border: 1px solid black;display:none" readonly="readonly" id="luzInterior{{u}}" class="siLuz" (click)="luzInteriores(u)">LUZ</div>
+			    			--></div>
+			    			
+			    			
+			    			<div style="width:100%;float:left;margin-top:20px" *ngFor="let interior of arraySaberPuertas;let u=index" id="divPuerta{{u}}">
+				    			<p style="float:left;width:100%"><strong class="cambiarAcabado" style="margin-top:15px;float:left" id="nombrePuerta{{u}}">Puerta {{interior}}</strong><span style="float:right;margin-top:15px;" id="precioPuerta{{u}}"></span></p>
+				    			<p style="float:left;width:100%"><span style="float:left;margin-top:15px">TIPO</span> <input type="text" style="height:60px;width:100px;margin-left:10px;text-align:center;float:right;margin-right:30%;;font-size:14px" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="guardarIdPuerta(u,interior)" value="TIPO" data-target="#modalPuertasArmario" readonly="readonly"/></p>
+				    			<div id="inputs" style="float:left;width:100%">
+				    				<span style="float:left;margin-top:15px" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
+				    				<div style="display:none;float: left;width: 100%;margin-top: 20px;" id="2acaPuerta{{u}}">
+				    					<span style="float:left;margin-top:15px;" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
+				    				</div>
+				    			</div>
+				    			
+			    			</div>
+						    			<!--  <div style="width:100%;float:left">
+							    			<p style="float:left;width:100%;"><strong class="cambiarAcabado" style="margin-top:15px;float:left">TIRADOR</strong></p>
+							    			<p style="float:left;width:100%;"><span style="float:left;margin-top:15px;">TIPO</span><a href="#imagenesArmario3"><div type="text" style="height:60px;width:100px;float:right;margin-right:30%;text-align:center;border:1px solid black" id="inputTiradorCogido" data-toggle="modal" data-target="#modalTiradores" readonly="readonly"></div></a></p>
+						    				<input type="text" style="height:60px;width:100px;margin-left:39px;text-align:center;float:left" (click)="tiradoresMostrar('izquierda')" id="izquierdaTirador" value="OPCION 1" readonly="readonly"/>
+											<input type="text" style="height:60px;width:100px;margin-left:39px;text-align:center;float:left" (click)="tiradoresMostrar('derecha')"id="derechaTirador" value="OPCION 2" readonly="readonly"/>
+						    			</div>-->
+			    		</div>
+						
+						
+						
+						<div style="float:left;margin-left:50px;"id="precios1">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado1">
+							
+						</div>
+						<div id="botonEliminar" class="displayBoton" style="float:left" (click)="borrarProdCalculadora()"><u>Eliminar</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x</div>		
+					</div>
+					<div id="productoCalculadora2" style="float:left">
+						<div id="datos2" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios2">
+						
+						</div>
+						<div style="float:right;margin-right:20px;"id="precioCalculado2">
+							
+						</div>
+					</div>
+					<div id="productoCalculadora3" style="float:left">
+						<div id="datos3" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios3">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado3">
+							
+						</div>
+					</div>
+					
+					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 520px;display: none;">				
+						<p>Precio Total <strong id="total">0</strong>&euro;</p>
+					</div>
+				<button id="botonCalculadora" data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" style="width: 86%;height: 7%; bottom: 50px;position: absolute;font-size:16px;background-color:white;left:35px;color:black" (click)="enviarCarrito()"><a style="padding-top: 25px;padding-bottom: 25px;color:black" href="#divarribatodo">Mandar articulo/s al carro de la compra</a></button>
+				
+			</div>
+			
+			<div id="carrito" class="container tab-pane fade" style="height:600px;overflow:scroll;display:none">
+			<button data-toggle="modal" data-target="#myModalComposicion">Composicion</button>
+					<div id="productoCarrito1" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(1)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos1" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios1">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado1">
+							
+						</div>
+					</div>
+					<div id="productoCarrito2" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(2)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos2" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios2">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado2">
+							
+						</div>
+					</div>
+					<div id="productoCarrito3" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(3)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos3" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios3">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado3">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito4" style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(4)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos4" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios4">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado4">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito5" style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(5)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos5" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios5">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado5">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito6" style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(6)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos6" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios6">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado6">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito7" style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(7)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos7" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios7">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado7">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito8"  style="display:none">
+						<div style="float:left" (click)="borrarCarritoProd(8)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos8" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios8">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado8">
+							
+						</div>
+					</div>	<div id="productoCarrito9" style="display:none">
+					<div style="float:left"  (click)="borrarCarritoProd(9)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos9" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios9">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado9">
+							
+						</div>
+					</div>	
+					<div id="productoCarrito10"  style="display:none">
+					<div style="float:left" (click)="borrarCarritoProd(10)"><img width="16px" height="16px" src="../../../content/images/marca-de-prohibido.png"></div>
+						<div id="datos10" style="float:left;margin-left:5px">
+								
+						</div>
+						<div style="float:left;margin-left:50px;"id="precios10">
+						
+						</div>
+						<div style="float:left;margin-left:20px;"id="precioCalculado10">
+							
+						</div>
+					</div>	
+				<button style="width: 86%;height: 7%; bottom: 35px;left:25px;position: absolute;font-size:16px;background-color:#75D775" data-toggle="modal" data-target="#modalPresupuesto" >Finalizar y Generar<br> Presupuesto</button>
+			</div>
+	
+
+</div>
+</div>
