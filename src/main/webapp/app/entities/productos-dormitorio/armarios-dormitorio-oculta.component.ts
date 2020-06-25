@@ -259,8 +259,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         $('#acabadosTodo').attr('class', 'displayBoton');
         this.arraySaberHuecos = [];
         this.arraySaberPuertas = [];
-        $('#anchosSelect').val('');
-        $('#alturaSelect').val('');
+        $('#anchosSelect2').val('');
+        $('#alturaSelect2').val('');
         $('#textoTituloInterior').text('');
 
         todo[1]['precioCasco'] = precioCasco;
@@ -615,7 +615,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         if (id != 'no') {
             $('#medidasEnma' + id).css({ display: 'block' });
             var precioCajeado = this.cajeadoPrecio;
-            var ancho = $('#anchosSelect').val();
+            var ancho = $('#anchosSelect2').val();
             var arma = this.armarioCogido;
             this.enmarcadosService.categoria(arma.id, id).subscribe(data => {
                 for (let i = 0; i < data.body['length']; i++) {
@@ -637,8 +637,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         }
     }
     public carcarCascosInterioresPuertas(id) {
-        var ancho = $('#anchosSelect').val();
-        var alto = $('#alturaSelect').val();
+        var ancho = $('#anchosSelect2').val();
+        var alto = $('#alturaSelect2').val();
         var armariosTodos = this.armarioService.todo;
         var classe = $('#armariosCogidos' + id).attr('class');
         for (let j = 0; j < armariosTodos.length; j++) {
@@ -3074,21 +3074,23 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
 
     public cambiarAcabadoCasco(nombre) {
         var hueco = this.numeroDeHuecos;
-        var acabados = this.acabados;
+        var acabados = this.todos;
         var array = this.armarioCogido;
         $('#inputAcabadoCasco').empty();
         $('#calculadoraCarrito #inputAcabadoCasco').empty();
         for (let w = 0; w < acabados.length; w++) {
             if (acabados[w]['nombre'] == nombre) {
-                $('#inputAcabadoCasco').val(acabados[w].nombre);
-                $('#datos1 #acabadoCasco').text(acabados[w].nombre);
+                $('#calcuOculta #inputAcabadoCasco').val(acabados[w].nombre);
+                $('#datos1 #calcuOculta #acabadoCasco').text(acabados[w].nombre);
 
-                $('#calculadoraCarrito #inputAcabadoCasco').append(
+                $('#calculadoraCarrito #calcuOculta #inputAcabadoCasco').append(
                     '<img width="100%" height="100%" src="data:image/gif;base64,' +
                         acabados[w]['imagenFondo'] +
                         '" style="max-width:100%;max-height:100%">'
                 );
-                $('#calculadoraCarrito #inputAcabadoCasco').append('<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>');
+                $('#calculadoraCarrito #calcuOculta #inputAcabadoCasco').append(
+                    '<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>'
+                );
 
                 array['acabadoCasco'] = acabados[w];
                 this.armarioCogido = array;
@@ -3104,8 +3106,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             $('#imagenesArmario2 #casco' + i).attr('src', enteroCasco);
         }
         */
-        var interior = $('#inputAcabadoInterior').val();
-        var trasera = $('#inputAcabadoTrasera').val();
+        var interior = $('#calcuOculta #inputAcabadoInterior').val();
+        var trasera = $('#calcuOculta #inputAcabadoTrasera').val();
         if (interior != '' && trasera != '') {
             $('#interioresDiv').removeAttr('class');
             this.productosDormitorioService.categoria(24).subscribe(data => {
@@ -3212,8 +3214,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         var dimens = this.dimenArmarios;
         var alto;
         var ancho;
-        ancho = $('#anchosSelect').val();
-        alto = $('#alturaSelect').val();
+        ancho = $('#anchosSelect2').val();
+        alto = $('#alturaSelect2').val();
         var cuenta = 0;
 
         puertas = parseFloat(texto.split(' ')[0]);
@@ -3225,9 +3227,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
 
         $('#interiorDentroArmario' + hueco).remove();
         $('#inputInterior' + (hueco - 1)).empty();
-        $('#interioresLuzDiv' + (hueco - 1)).css({ display: 'block' });
-        $('#inputInterior' + (hueco - 1)).val('interior ' + nombre);
-        $('#inputInterior' + (hueco - 1)).append('interior ' + nombre);
+        $('#calcuOculta #interioresLuzDiv' + (hueco - 1)).css({ display: 'block' });
+        $('#calcuOculta #inputInterior' + (hueco - 1)).val('interior ' + nombre);
+        $('#calcuOculta #inputInterior' + (hueco - 1)).append('interior ' + nombre);
         var grandes = dimens['grandes'];
 
         if (texto == '1 PUERTA') {
@@ -5949,21 +5951,23 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
     }
     public cambiarAcabadoInterior(nombre) {
         var hueco = this.numeroDeHuecos;
-        var acabados = this.acabados;
+        var acabados = this.todos;
         var dimens = this.dimenArmarios;
         var grandes = dimens['grandes'];
         var array = this.armarioCogido;
-        $('#inputAcabadoInterior').empty();
-        $('#calculadoraCarrito #inputAcabadoInterior').empty();
+        $('#calcuOculta #inputAcabadoInterior').empty();
+        $('#calculadoraCarrito #calcuOculta #inputAcabadoInterior').empty();
         for (let w = 0; w < acabados.length; w++) {
             if (acabados[w]['nombre'] == nombre) {
-                $('#inputAcabadoInterior').val(acabados[w].nombre);
-                $('#calculadoraCarrito #inputAcabadoInterior').append(
+                $(' #calcuOculta #inputAcabadoInterior').val(acabados[w].nombre);
+                $('#calculadoraCarrito #calcuOculta #inputAcabadoInterior').append(
                     '<img width="100%" height="100%" src="data:image/gif;base64,' +
                         acabados[w]['imagenFondo'] +
                         '" style="max-width:100%;max-height:100%">'
                 );
-                $('#calculadoraCarrito #inputAcabadoInterior').append('<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>');
+                $('#calculadoraCarrito #calcuOculta #inputAcabadoInterior').append(
+                    '<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>'
+                );
                 array['acabadoInterior'] = acabados[w];
                 this.armarioCogido = array;
                 console.log(this.armarioCogido);
@@ -5987,9 +5991,10 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 */
             }
         }
-        var casco = $('#inputAcabadoCasco').val();
-        var trasera = $('#inputAcabadoTrasera').val();
+        var casco = $('#calcuOculta #inputAcabadoCasco').val();
+        var trasera = $('#calcuOculta #inputAcabadoTrasera').val();
         if (casco != '' && trasera != '') {
+            $('#calcuOculta #interioresDiv').removeAttr('class');
             $('#interioresDiv').removeAttr('class');
             this.productosDormitorioService.categoria(24).subscribe(data => {
                 this.productosDormitorioModal = data.body;
@@ -6920,8 +6925,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         var puertas = this.arraySaberPuertas.length;
         var alto;
         var ancho;
-        ancho = $('#anchosSelect').val();
-        alto = $('#alturaSelect').val();
+        ancho = $('#anchosSelect2').val();
+        alto = $('#alturaSelect2').val();
         if (nombre == 'Puerta Madera') {
             var idPuerta = 47;
         }
@@ -13603,19 +13608,21 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
     }
     public cambiarAcabadoTrasera(nombre) {
         var hueco = this.numeroDeHuecos;
-        var acabados = this.acabados;
+        var acabados = this.todos;
         var array = this.armarioCogido;
-        $('#inputAcabadoTrasera').empty();
-        $('#calculadoraCarrito #inputAcabadoTrasera').empty();
+        $('#calcuOculta #inputAcabadoTrasera').empty();
+        $('#calculadoraCarrito #calcuOculta #inputAcabadoTrasera').empty();
         for (let w = 0; w < acabados.length; w++) {
             if (acabados[w]['nombre'] == nombre) {
-                $('#inputAcabadoTrasera').val(acabados[w].nombre);
-                $('#calculadoraCarrito #inputAcabadoTrasera').append(
+                $('#calcuOculta #inputAcabadoTrasera').val(acabados[w].nombre);
+                $('#calculadoraCarrito #calcuOculta #inputAcabadoTrasera').append(
                     '<img width="100%" height="100%" src="data:image/gif;base64,' +
                         acabados[w]['imagenFondo'] +
                         '" style="max-width:100%;max-height:100%">'
                 );
-                $('#calculadoraCarrito #inputAcabadoTrasera').append('<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>');
+                $('#calculadoraCarrito #calcuOculta #inputAcabadoTrasera').append(
+                    '<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>'
+                );
 
                 array['acabadoTrasera'] = acabados[w];
                 this.armarioCogido = array;
@@ -13636,8 +13643,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             $('#imagenesArmario2 #trasera' + i).attr('src', enteraTrasera);
         }
         */
-        var interior = $('#inputAcabadoInterior').val();
-        var casco = $('#inputAcabadoCasco').val();
+        var interior = $('#calcuOculta #inputAcabadoInterior').val();
+        var casco = $('#calcuOculta #inputAcabadoCasco').val();
         if (interior != '' && casco != '') {
             $('#interioresDiv').removeAttr('class');
             this.productosDormitorioService.categoria(24).subscribe(data => {
@@ -13683,7 +13690,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
 
     ngOnDestroy() {
         this.armarioService.todo = undefined;
-        this.eventManager.destroy(this.eventSubscriber);
+        this.eventSubscriber;
     }
 
     byteSize(field) {
@@ -13758,8 +13765,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
     }
 
     public cargarInterioresArmarios() {
-        var ancho = $('#anchosSelect').val();
-        var alto = $('#alturaSelect').val();
+        var ancho = $('#anchosSelect2').val();
+        var alto = $('#alturaSelect2').val();
         $('#datos1').empty();
         if (ancho != '' && alto != '') {
             this.armarioService.findBus1(ancho, ancho).subscribe(data => {

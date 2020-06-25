@@ -1,0 +1,108 @@
+<div style="width: 99%;overflow-x:hidden">
+    <div *ngIf="datosUsuarios">
+    	<div style="text-align:center" *ngFor="let datosUsuario of datosUsuarios ;trackBy: trackId">
+    		<div>
+    		<br><br>
+    			<h2>GESTI&#211;N DE TIENDA</h2>
+    			<br><br>
+    		</div>
+    		<br>
+    		<div>
+    	
+    			<div style="margin-left:30%" class="form-group row">
+				    <label for="nombreComercial" class="col-sm-2 col-form-label">Nombre Comercial</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="nombreComercial" value="{{datosUsuario.nombreComercial}}" disabled>
+				    </div>
+				  </div>
+				<div style="margin-left:30%" class="form-group row">
+				    <label for="nombreComercial" class="col-sm-2 col-form-label">Nombre Fiscal</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="nombreFiscal" value="{{datosUsuario.nombreFiscal}}" disabled>
+				    </div>
+				  </div>
+				<div style="margin-left:30%" class="form-group row">
+				    <label for="movil" class="col-sm-2 col-form-label">Telefono</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="telefono" value="{{datosUsuario.telefono}}" disabled>
+				    </div>
+				  </div>
+				<div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Email</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="email" value="{{datosUsuario.email}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Direccion:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="direccion" value="{{datosUsuario.direccion}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Provincia:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="provincia" value="{{datosUsuario.provincias.nombre}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Municipio:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="municipio" value="{{datosUsuario.municipios.nombre}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left:30%" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Codigo Postal:</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{datosUsuario.codPostal}}" disabled>
+				    </div>
+				  </div>
+				<!-- <div style="margin-left:30%" class="form-group row">
+				    <label for="logoInput" class="col-sm-2 col-form-label" style="border: 1px solid lightgray;">Adjuntar logo:</label>
+				    <div class="col-sm-4">
+				      <input type="file" style="text-align:center;height:70px;visibility:hidden;color:transparent" (change)="setFileData($event, datosUsuario, 'logo', true)" accept="image/*" class="form-control" id="logoInput" text="Adjuntar Logo:">
+				      <div style="float: left;margin-top: -85px;margin-bottom: -92px;margin-left: 80px;" id="meterLogo" *ngIf='datosUsuario.logo != undefined'><img style="max-width:200px;max-height: 100px;"  [src]="'data:' + datosUsuario.logoContentType + ';base64,' + datosUsuario.logo" /></div>
+				    </div>
+				  </div> -->
+				 
+    		</div>
+    		<br><br><br>
+    		<div>
+    		<br><br>
+    			<h2>DIRECCIONES DE ENTREGA</h2>
+    			<br><br>
+    		</div>
+    		<br>
+    		<div style="float:left;width:75%;margin-left: 13%;margin-bottom:5%">
+    		<div *ngFor="let direc of direccionTiendasService.todos" style="FLOAT: LEFT;WIDTH: 47%;background-color:#F4F4F4;margin-right:40px;padding-top:40px;padding-bottom:40px">
+    			<div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Direccion</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.direccion}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Provincia</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.provincias.nombre}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Municipio</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.municipios.nombre}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Codigo Postal</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.codPostal}}" disabled>
+				    </div>
+				  </div>
+    		</div>
+    		</div>
+    		<!-- <button style="width: 200px;height: 60px;background-color: white" (click) = "guardar(datosUsuarios)">Guardar Cambios</button>		 -->
+	 	</div>
+    </div>
+    
+</div>

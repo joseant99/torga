@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ArmarioRepository extends JpaRepository<Armario, Long> {
 
-	@Query("SELECT u FROM Armario u WHERE u.anchoMin <= ?1 and u.anchoMax >= ?2")
+	@Query("SELECT u FROM Armario u WHERE u.anchoMin <= ?1 and u.anchoMax >= ?2 and u.id<23")
 	Collection<Armario> findAncho(Float anchoMin, Float anchoMax);
 	
 	@Query("SELECT u FROM Armario u WHERE u.anchoMin <= ?1 and u.anchoMax >= ?2 and u.id>22 and u.id<25")

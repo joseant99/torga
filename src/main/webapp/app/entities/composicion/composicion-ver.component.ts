@@ -363,7 +363,48 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
 
                         $('#imagenesAcabados' + i).attr('style');
                         $('#imagenesAcabados' + i).css({ 'margin-left': '65px' });
-
+                        /**
+                        if(h == 0){
+	                        if (
+	                            nombre != 'sg16' &&
+	                            nombre != 'sg15' &&
+	                            nombre != 'sg14' &&
+	                            nombre != 'sg13' &&
+	                            nombre != 'sg12' &&
+	                            nombre != 'sg11' &&
+	                            nombre != 'sg10' &&
+	                            nombre != 'sg9' &&
+	                            nombre != 'sg8' &&
+	                            nombre != 'sg7' &&
+	                            nombre != 'sg6' &&
+	                            nombre != 'sg5' &&
+	                            nombre != 'sg4' &&
+	                            nombre != 'sg3' &&
+	                            nombre != 'sg2' &&
+	                            nombre != 'sg1'
+	                        ) {
+	                        	
+	                        	$('#imagenesAcabados' + i).append(
+	                                    '<img id="tapa" width="500px" style="margin-left:0px;" height="333px" src="../../../content/images/' +
+	                                        nombre +
+	                                        '/0 APERTURA/' +
+	                                        nombre +
+	                                        '_apertura_optimized.png">'
+	                                );
+	                        
+	                        
+	                        }else{
+	                        	$('#imagenesAcabados' + i).append(
+	                                    '<img id="tapa" width="300px" style="margin-left:0px;" height="483px" src="../../../content/images/' +
+	                                        nombre +
+	                                        '/0 APERTURA/' +
+	                                        nombre +
+	                                        '_apertura_optimized.png">'
+	                                );
+	                        }
+                        }
+                        **/
+                        /**
                         if (
                             nombre != 'sg16' &&
                             nombre != 'sg15' &&
@@ -475,6 +516,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                 );
                             }
                         }
+                         **/
                     }
                 });
                 var productos = this.productos;
@@ -1736,6 +1778,7 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                             $('#estoEsTodo' + id + ' .acabados').css({ 'margin-top': '2%' });
                             $('#estoEsTodo' + id + ' .acabados').css({ border: '1px solid #7AC8FE' });
                         }
+                        /**
                         if (contador == 1) {
                             for (let n = 0; n < aca.length; n++) {
                                 if (n == 0) {
@@ -1849,8 +1892,11 @@ export class ComposicionVerComponent implements OnInit, OnDestroy, AfterViewInit
                                         );
                                     }
                                 }
+                                 
                             }
+                           
                         }
+                        **/
                         acabadosTodos = value['acabados'];
 
                         contador++;

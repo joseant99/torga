@@ -9,6 +9,7 @@ import { DatosUsuario } from 'app/shared/model/datos-usuario.model';
 import { DatosUsuarioService } from './datos-usuario.service';
 import { DatosUsuarioComponent } from './datos-usuario.component';
 import { GestionFabricantesComponent } from './gestion-fabricantes.component';
+import { GestionTiendaComponent } from './gestion-tienda.component';
 import { MisTiendasComponent } from './mis-tiendas.component';
 import { DatosGeneralesComponent } from './datos-generales.component';
 import { DatosUsuarioDetailComponent } from './datos-usuario-detail.component';
@@ -50,6 +51,19 @@ export const datosUsuarioRoute: Routes = [
     {
         path: 'gestion-fabricantes',
         component: GestionFabricantesComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_ADMIN'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.datosUsuario.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'gestion-tienda',
+        component: GestionTiendaComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

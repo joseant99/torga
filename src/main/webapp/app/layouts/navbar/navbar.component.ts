@@ -123,6 +123,46 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             }
         }, 10);
     }
+    public comprobarContrase() {
+        var valor = $('#contIdMaqui').val();
+        if (valor == '1234') {
+            $('#contraseModalMen').css({ display: 'none' });
+            $('#contIdMaqui').val('');
+            this.open('productos-precio', 'false', 'myModel');
+            $('#modalContrase').attr('class', 'modal fade'); //ocultamos el modal
+            $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
+            $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
+        } else {
+            $('#contraseModalMen').css({ display: 'block' });
+        }
+    }
+
+    public comprobarContrase1() {
+        var valor = $('#contIdMaqui1').val();
+        if (valor == '1234') {
+            $('#contraseModalMen1').css({ display: 'none' });
+            $('#contIdMaqui1').val('');
+            this.open('gestion-tienda', 'false', 'myModel');
+            $('#modalContrase1').attr('class', 'modal fade'); //ocultamos el modal
+            $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
+            $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
+        } else {
+            $('#contraseModalMen1').css({ display: 'block' });
+        }
+    }
+    public comprobarContrase2() {
+        var valor = $('#contIdMaqui2').val();
+        if (valor == '1234') {
+            $('#contraseModalMen2').css({ display: 'none' });
+            $('#contIdMaqui2').val('');
+            this.open('password', 'false', 'myModel');
+            $('#modalContrase2').attr('class', 'modal fade'); //ocultamos el modal
+            $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
+            $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
+        } else {
+            $('#contraseModalMen2').css({ display: 'block' });
+        }
+    }
 
     open(ruta, bool, content) {
         var prod = $('#calculadoraCarrito #nombreMesita').text();

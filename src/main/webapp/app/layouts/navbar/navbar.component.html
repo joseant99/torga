@@ -27,7 +27,7 @@
 						</a>
 						</li>
 					</ul> 
-
+<!-- 
 	   <ul style="list-style:none;margin-left:-40px;margin-top:30px">
 	       		 		<li id="liTitulo1" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 						                            <a  id="torgaTarifaComedoresPrincipal" data-toggle="collapse" data-target="#torgaTarifaComedores">
@@ -366,7 +366,8 @@
 												 	</div>
 						                    	</li>
 						                    </ul>
-      	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+						                     -->
+      	<!-- <ul style="list-style:none;margin-left:-40px;margin-top:30px">
 	       		 		<li id="liTitulo2" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 						                             <a  id="torgaTarifaDormitoriosPrincipal" data-toggle="collapse" data-target="#torgaTarifaDormitorios">
 								                        <span>
@@ -597,7 +598,7 @@
 													  </div>
 						                    	</li>
 						                    </ul>
-      	  
+      	   -->
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a (click)="contacto()" id="cntacto" (click)="open('productos-buscador',false,myModel)">
@@ -608,6 +609,23 @@
 					
 				</li>
 			</ul>
+			 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a (click)="open('presupuesto-usuario',false,myModel)">
+		                                <span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">PRESUPUESTOS <i *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_REPRESENTATE']">{{numeroPresupuestos}}</i></span>
+		                            </a>
+					
+				</li>
+			</ul>
+			 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                      <a (click)="open('pedidos-usuario',false,myModel)">
+		                                <span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">PEDIDOS <i *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_REPRESENTATE']">{{numeroPedidos}}</i></span>
+		                            </a>
+					
+				</li>
+			</ul>
+			<!-- 
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li id="liTitulo3" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a (click)="comercial()" (click)="presupuestosCargar()" id="comercial" data-toggle="collapse" data-target="#menuComercial">
@@ -631,6 +649,7 @@
 		                        </li>   
 					  </div>
       	 </ul>
+      	  -->
       	 <!--  Contacto Fabrica capado
       	
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
@@ -672,9 +691,30 @@
 			
 			<ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a (click)="contacto()" id="cntacto" (click)="open('productos-precio',false,myModel)">
+                    <a (click)="contacto()" id="cntacto"  data-toggle="modal" data-target="#modalContrase">
                         <span>
                             <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">GESTION PRODUCTOS</span>
+                        </span>
+					</a>
+					
+				</li>
+			</ul>
+			
+			<ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a (click)="contacto()" id="cntacto"  data-toggle="modal" data-target="#modalContrase1">
+                        <span>
+                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">GESTION DE TIENDA</span>
+                        </span>
+					</a>
+					
+				</li>
+			</ul>
+			<ul style="list-style:none;margin-left:-40px;margin-top:30px">
+       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a (click)="contacto()" id="cntacto"  data-toggle="modal" data-target="#modalContrase2">
+                        <span>
+                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">CAMBIAR CONTRASE&Ntilde;A</span>
                         </span>
 					</a>
 					
@@ -716,6 +756,8 @@
 							  </div>
 			</ul>
 			-->
+			
+			<!--  
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li id="liTitulo6" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a (click)="gestionTienda()"  id="comercial" data-toggle="collapse" data-target="#menuTienda">
@@ -740,7 +782,7 @@
 			                        </li>  
 						  </div>
       	 </ul>
-      	 
+      	 -->
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a id="comercial">
@@ -751,7 +793,7 @@
 				</li>	
       	 </ul>
       	 
-      	 
+      	 <!-- 
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li id="liTitulo7" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a (click)="contacto()" id="cntacto" data-toggle="collapse" data-target="#menuGestionUsuario">
@@ -781,7 +823,7 @@
 					
 					</div>
 			</ul>
-			
+			 -->
 					<ul style="list-style:none;margin-left:-40px;margin-top:30px">
 						<!--  Capado sugerencias chat
 						<li style="margin-top: -31px;border-top: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;">
@@ -1233,6 +1275,7 @@
 		    </div>
 	  </div> 
 	  
+	  
 	  <div class="modal fade" id="modalConfirmarEditar" role="dialog" style="margin-top:150px;">
 		    <div class="modal-dialog modal-sm">
 		    
@@ -1244,6 +1287,74 @@
 		        </div>
 		        <div class="modal-body"> 
 		        	<button type="button" style="width: 110px;float: left;background-color: white;border: 1px solid;" (click)="cargarEditarLink()">Editar</button>
+			        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">Cerrar</button>
+		        </div>
+		       <div class="modal-footer">
+			   </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalContrase" role="dialog" style="margin-top:150px;">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content" style="background-color:#f5f5f5!important">
+		        <div class="modal-header">
+		        	<div class="alert alert-danger" role="alert" id="contraseModalMen" style="display:none;position: absolute;margin-top: 170px;">
+						Contrase&ntilde;a no valida.
+					</div>
+		          <p style="width:100%;float:left;text-align:center">Contrase&ntilde;a<br><br>
+		          <input type="password" id="contIdMaqui"><br><br>
+		          <button type="button" (click)="comprobarContrase()" >Acceder</button></p>
+		        </div>
+		        <div class="modal-body"> 
+			        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">Cerrar</button>
+		        </div>
+		       <div class="modal-footer">
+			   </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalContrase1" role="dialog" style="margin-top:150px;">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content" style="background-color:#f5f5f5!important">
+		        <div class="modal-header">
+		        	<div class="alert alert-danger" role="alert" id="contraseModalMen1" style="display:none;position: absolute;margin-top: 170px;">
+						Contrase&ntilde;a no valida.
+					</div>
+		          <p style="width:100%;float:left;text-align:center">Contrase&ntilde;a<br><br>
+		          <input type="password" id="contIdMaqui1"><br><br>
+		          <button type="button" (click)="comprobarContrase1()" >Acceder</button></p>
+		        </div>
+		        <div class="modal-body"> 
+			        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">Cerrar</button>
+		        </div>
+		       <div class="modal-footer">
+			   </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalContrase2" role="dialog" style="margin-top:150px;">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content" style="background-color:#f5f5f5!important">
+		        <div class="modal-header">
+		        	<div class="alert alert-danger" role="alert" id="contraseModalMen2" style="display:none;position: absolute;margin-top: 170px;">
+						Contrase&ntilde;a no valida.
+					</div>
+		          <p style="width:100%;float:left;text-align:center">Contrase&ntilde;a<br><br>
+		          <input type="password" id="contIdMaqui2"><br><br>
+		          <button type="button" (click)="comprobarContrase2()" >Acceder</button></p>
+		        </div>
+		        <div class="modal-body"> 
 			        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">Cerrar</button>
 		        </div>
 		       <div class="modal-footer">

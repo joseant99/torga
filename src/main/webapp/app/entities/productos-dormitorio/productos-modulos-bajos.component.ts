@@ -273,6 +273,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 108) {
                 arrayComprobar[107] = undefined;
@@ -287,6 +295,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 109) {
                 arrayComprobar[108] = undefined;
@@ -301,6 +317,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[107] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 110) {
                 arrayComprobar[108] = undefined;
@@ -315,6 +339,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 111) {
                 arrayComprobar[108] = undefined;
@@ -329,6 +361,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 112) {
                 arrayComprobar[108] = undefined;
@@ -343,6 +383,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 113) {
                 arrayComprobar[108] = undefined;
@@ -357,6 +405,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 114) {
                 arrayComprobar[108] = undefined;
@@ -371,6 +427,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 115) {
                 arrayComprobar[108] = undefined;
@@ -385,6 +449,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 116) {
                 arrayComprobar[108] = undefined;
@@ -399,6 +471,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 117) {
                 arrayComprobar[108] = undefined;
@@ -413,6 +493,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 118) {
                 arrayComprobar[108] = undefined;
@@ -427,6 +515,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[107] = undefined;
                 arrayComprobar[119] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
             }
             if (producto == 119) {
                 arrayComprobar[108] = undefined;
@@ -441,6 +537,190 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 arrayComprobar[118] = undefined;
                 arrayComprobar[107] = undefined;
                 arrayComprobar[109] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
+            }
+            if (producto == 295) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[109] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
+            }
+            if (producto == 296) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[109] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
+            }
+            if (producto == 297) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[109] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
+            }
+            if (producto == 298) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[109] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
+            }
+            if (producto == 299) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[109] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
+            }
+            if (producto == 300) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[109] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[302] = undefined;
+            }
+            if (producto == 301) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[109] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[295] = undefined;
+                arrayComprobar[302] = undefined;
+            }
+            if (producto == 302) {
+                arrayComprobar[108] = undefined;
+                arrayComprobar[110] = undefined;
+                arrayComprobar[111] = undefined;
+                arrayComprobar[112] = undefined;
+                arrayComprobar[113] = undefined;
+                arrayComprobar[114] = undefined;
+                arrayComprobar[115] = undefined;
+                arrayComprobar[116] = undefined;
+                arrayComprobar[117] = undefined;
+                arrayComprobar[118] = undefined;
+                arrayComprobar[107] = undefined;
+                arrayComprobar[109] = undefined;
+                arrayComprobar[119] = undefined;
+                arrayComprobar[296] = undefined;
+                arrayComprobar[297] = undefined;
+                arrayComprobar[298] = undefined;
+                arrayComprobar[299] = undefined;
+                arrayComprobar[300] = undefined;
+                arrayComprobar[301] = undefined;
+                arrayComprobar[295] = undefined;
             }
 
             $('#botonCalculadora').attr('class', 'displayBoton');
@@ -459,6 +739,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor117 #acabados').css({ display: 'none' });
             $('.productosColor118 #acabados').css({ display: 'none' });
             $('.productosColor119 #acabados').css({ display: 'none' });
+            $('.productosColor295 #acabados').css({ display: 'none' });
+            $('.productosColor296 #acabados').css({ display: 'none' });
+            $('.productosColor297 #acabados').css({ display: 'none' });
+            $('.productosColor298 #acabados').css({ display: 'none' });
+            $('.productosColor299 #acabados').css({ display: 'none' });
+            $('.productosColor300 #acabados').css({ display: 'none' });
+            $('.productosColor301 #acabados').css({ display: 'none' });
+            $('.productosColor302 #acabados').css({ display: 'none' });
 
             $('.productosColor' + producto + ' #dimensionesInput1').css({ 'background-color': 'white' });
             $('.productosColor' + producto + ' #dimensionesInput2').css({ 'background-color': 'white' });
@@ -484,6 +772,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor117 #dimensiones').css({ display: 'none' });
             $('.productosColor118 #dimensiones').css({ display: 'none' });
             $('.productosColor119 #dimensiones').css({ display: 'none' });
+            $('.productosColor295 #dimensiones').css({ display: 'none' });
+            $('.productosColor296 #dimensiones').css({ display: 'none' });
+            $('.productosColor297 #dimensiones').css({ display: 'none' });
+            $('.productosColor298 #dimensiones').css({ display: 'none' });
+            $('.productosColor299 #dimensiones').css({ display: 'none' });
+            $('.productosColor300 #dimensiones').css({ display: 'none' });
+            $('.productosColor301 #dimensiones').css({ display: 'none' });
+            $('.productosColor302 #dimensiones').css({ display: 'none' });
 
             var acabados = [];
             this.acabadosService
@@ -561,6 +857,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor117').removeAttr('style');
             $('.productosColor118').removeAttr('style');
             $('.productosColor119').removeAttr('style');
+            $('.productosColor295').removeAttr('style');
+            $('.productosColor296').removeAttr('style');
+            $('.productosColor297').removeAttr('style');
+            $('.productosColor298').removeAttr('style');
+            $('.productosColor299').removeAttr('style');
+            $('.productosColor300').removeAttr('style');
+            $('.productosColor301').removeAttr('style');
+            $('.productosColor302').removeAttr('style');
+
             $('.productosColorSolo107').removeAttr('style');
             $('.productosColorSolo108').removeAttr('style');
             $('.productosColorSolo109').removeAttr('style');
@@ -574,6 +879,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColorSolo117').removeAttr('style');
             $('.productosColorSolo118').removeAttr('style');
             $('.productosColorSolo119').removeAttr('style');
+            $('.productosColorSolo295').removeAttr('style');
+            $('.productosColorSolo296').removeAttr('style');
+            $('.productosColorSolo297').removeAttr('style');
+            $('.productosColorSolo298').removeAttr('style');
+            $('.productosColorSolo299').removeAttr('style');
+            $('.productosColorSolo300').removeAttr('style');
+            $('.productosColorSolo301').removeAttr('style');
+            $('.productosColorSolo302').removeAttr('style');
+
             $('.productosColor107').css({ 'background-color': 'white' });
             $('.productosColor108').css({ 'background-color': 'white' });
             $('.productosColor109').css({ 'background-color': 'white' });
@@ -587,6 +901,15 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor117').css({ 'background-color': 'white' });
             $('.productosColor118').css({ 'background-color': 'white' });
             $('.productosColor119').css({ 'background-color': 'white' });
+            $('.productosColor295').css({ 'background-color': 'white' });
+            $('.productosColor296').css({ 'background-color': 'white' });
+            $('.productosColor297').css({ 'background-color': 'white' });
+            $('.productosColor298').css({ 'background-color': 'white' });
+            $('.productosColor299').css({ 'background-color': 'white' });
+            $('.productosColor300').css({ 'background-color': 'white' });
+            $('.productosColor301').css({ 'background-color': 'white' });
+            $('.productosColor302').css({ 'background-color': 'white' });
+
             $('.productosColor107 #dimensiones').css({ display: 'none' });
             $('.productosColor' + producto).css({ 'overflow-x': 'hidden' });
             $('.productosColor' + producto).css({ border: '1px solid white' });
@@ -1126,7 +1449,26 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                 $('.productosColor117').css({ 'margin-bottom': '650px' });
                 $('.productosColor118').css({ 'margin-bottom': '650px' });
             }
-            if (producto == 107 || producto == 108 || producto == 109 || producto == 114 || producto == 119) {
+            if (producto == 297 || producto == 298) {
+                $('.productosColor297').css({ 'margin-bottom': '650px' });
+                $('.productosColor298').css({ 'margin-bottom': '650px' });
+            }
+            if (producto == 300 || producto == 301) {
+                $('.productosColor300').css({ 'margin-bottom': '650px' });
+                $('.productosColor301').css({ 'margin-bottom': '650px' });
+            }
+
+            if (
+                producto == 107 ||
+                producto == 108 ||
+                producto == 109 ||
+                producto == 114 ||
+                producto == 119 ||
+                producto == 295 ||
+                producto == 296 ||
+                producto == 299 ||
+                producto == 302
+            ) {
                 $('.productosColor' + producto).css({ 'margin-bottom': '650px' });
             }
 
@@ -1168,6 +1510,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor117 #acabados').css({ display: 'none' });
             $('.productosColor118 #acabados').css({ display: 'none' });
             $('.productosColor119 #acabados').css({ display: 'none' });
+            $('.productosColor295 #acabados').css({ display: 'none' });
+            $('.productosColor296 #acabados').css({ display: 'none' });
+            $('.productosColor297 #acabados').css({ display: 'none' });
+            $('.productosColor298 #acabados').css({ display: 'none' });
+            $('.productosColor299 #acabados').css({ display: 'none' });
+            $('.productosColor300 #acabados').css({ display: 'none' });
+            $('.productosColor301 #acabados').css({ display: 'none' });
+            $('.productosColor302 #acabados').css({ display: 'none' });
 
             $('.productosColor107 #dimensiones').css({ display: 'none' });
             $('.productosColor108 #dimensiones').css({ display: 'none' });
@@ -1182,6 +1532,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor117 #dimensiones').css({ display: 'none' });
             $('.productosColor118 #dimensiones').css({ display: 'none' });
             $('.productosColor119 #dimensiones').css({ display: 'none' });
+            $('.productosColor295 #dimensiones').css({ display: 'none' });
+            $('.productosColor296 #dimensiones').css({ display: 'none' });
+            $('.productosColor297 #dimensiones').css({ display: 'none' });
+            $('.productosColor298 #dimensiones').css({ display: 'none' });
+            $('.productosColor299 #dimensiones').css({ display: 'none' });
+            $('.productosColor300 #dimensiones').css({ display: 'none' });
+            $('.productosColor301 #dimensiones').css({ display: 'none' });
+            $('.productosColor302 #dimensiones').css({ display: 'none' });
 
             $('.dimensionesColor1').css({ 'background-color': 'white' });
             $('.dimensionesColor2').css({ 'background-color': 'white' });
@@ -1202,6 +1560,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor117').removeAttr('style');
             $('.productosColor118').removeAttr('style');
             $('.productosColor119').removeAttr('style');
+            $('.productosColor295').removeAttr('style');
+            $('.productosColor296').removeAttr('style');
+            $('.productosColor297').removeAttr('style');
+            $('.productosColor298').removeAttr('style');
+            $('.productosColor299').removeAttr('style');
+            $('.productosColor300').removeAttr('style');
+            $('.productosColor301').removeAttr('style');
+            $('.productosColor302').removeAttr('style');
             $('.productosColorSolo107').removeAttr('style');
             $('.productosColorSolo108').removeAttr('style');
             $('.productosColorSolo109').removeAttr('style');
@@ -1215,6 +1581,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColorSolo117').removeAttr('style');
             $('.productosColorSolo118').removeAttr('style');
             $('.productosColorSolo119').removeAttr('style');
+            $('.productosColorSolo295').removeAttr('style');
+            $('.productosColorSolo296').removeAttr('style');
+            $('.productosColorSolo297').removeAttr('style');
+            $('.productosColorSolo298').removeAttr('style');
+            $('.productosColorSolo299').removeAttr('style');
+            $('.productosColorSolo300').removeAttr('style');
+            $('.productosColorSolo301').removeAttr('style');
+            $('.productosColorSolo302').removeAttr('style');
             $('.productosColor107').css({ 'background-color': 'white' });
             $('.productosColor108').css({ 'background-color': 'white' });
             $('.productosColor109').css({ 'background-color': 'white' });
@@ -1228,6 +1602,14 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             $('.productosColor117').css({ 'background-color': 'white' });
             $('.productosColor118').css({ 'background-color': 'white' });
             $('.productosColor119').css({ 'background-color': 'white' });
+            $('.productosColor295').css({ 'background-color': 'white' });
+            $('.productosColor296').css({ 'background-color': 'white' });
+            $('.productosColor297').css({ 'background-color': 'white' });
+            $('.productosColor298').css({ 'background-color': 'white' });
+            $('.productosColor299').css({ 'background-color': 'white' });
+            $('.productosColor300').css({ 'background-color': 'white' });
+            $('.productosColor301').css({ 'background-color': 'white' });
+            $('.productosColor302').css({ 'background-color': 'white' });
 
             $('#productoCalculadora1 #precios1').empty();
             $('#productoCalculadora1 #precioCalculado1').empty();
@@ -5007,7 +5389,11 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
             }
         }
         if (idApoyo == 17) {
-            var hbueno = parseFloat(h) - 12.5;
+            if (parseFloat(h) <= 100.5) {
+                var hbueno = parseFloat(h) - 13;
+            } else {
+                var hbueno = parseFloat(h) - 12.5;
+            }
         }
         this.tiposApoyoService
             .query({
@@ -5231,6 +5617,17 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
                                 totalfloat = totalfloat + precio;
                                 $('#total').text(totalfloat);
                             }
+                        }
+
+                        if (idApoyo == 32) {
+                            $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                            $('#datos1 #precioApoyo').text('+ 0 ');
+                            $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                            $('#botonApoyoNuevo').append(
+                                '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                    value['productoApoyo']['nombre'] +
+                                    '</p>'
+                            );
                         }
 
                         if (idApoyo == 212) {

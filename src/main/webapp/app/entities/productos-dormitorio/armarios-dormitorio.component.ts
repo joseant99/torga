@@ -3026,7 +3026,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
 
     public cambiarAcabadoCasco(nombre) {
         var hueco = this.numeroDeHuecos;
-        var acabados = this.acabados;
+        var acabados = this.todos;
         var array = this.armarioCogido;
         $('#inputAcabadoCasco').empty();
         $('#calculadoraCarrito #inputAcabadoCasco').empty();
@@ -5939,7 +5939,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     }
     public cambiarAcabadoInterior(nombre) {
         var hueco = this.numeroDeHuecos;
-        var acabados = this.acabados;
+        var acabados = this.todos;
         var dimens = this.dimenArmarios;
         var grandes = dimens['grandes'];
         var array = this.armarioCogido;
@@ -13627,7 +13627,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     }
     public cambiarAcabadoTrasera(nombre) {
         var hueco = this.numeroDeHuecos;
-        var acabados = this.acabados;
+        var acabados = this.todos;
         var array = this.armarioCogido;
         $('#inputAcabadoTrasera').empty();
         $('#calculadoraCarrito #inputAcabadoTrasera').empty();
@@ -13706,8 +13706,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     }
 
     ngOnDestroy() {
-        this.armarioService.todo = undefined;
-        this.eventManager.destroy(this.eventSubscriber);
+        this.eventSubscriber;
     }
 
     byteSize(field) {
