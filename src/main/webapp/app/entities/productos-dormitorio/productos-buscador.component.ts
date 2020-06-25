@@ -138,13 +138,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     }
     public cargarEstanterias(altura) {
         this.alturaEstan = altura;
-        this.dimensionesProductoTipoService.findProducto(producto).subscribe(data => {
+        this.dimensionesProductoTipoService.findProducto(352).subscribe(data => {
             for (let i = 0; i < data.body['length']; i++) {}
         });
     }
     public cargarAntesEstant() {
         this.productosDormitorioService.categoria(28).subscribe(data => {
-            estantModu;
+            this.estantModu;
         });
     }
     public elegirBusqueda(id) {
