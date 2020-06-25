@@ -89,6 +89,16 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     reverse: any;
     eventSubscriber: any;
     precioPunto: any;
+    mostrarAcabadosPuerta: any;
+    cogerLuz: any;
+    guardarIdInterior: any;
+    numeroInteriorArmario: any;
+    cogerIdAcabados: any;
+    numeroPuertas: any;
+    interiorArmario: any;
+    acabadosPuerta2: any;
+    puertasTabla: any;
+    cogidoTirador: any;
     precioDimension: any;
     modulosBajos: any;
     aparadores: any;
@@ -139,7 +149,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     public cargarEstanterias(altura) {
         this.alturaEstan = altura;
         this.dimensionesProductoTipoService.findProducto(352).subscribe(data => {
-            for (let i = 0; i < data.body['length']; i++) {}
+            for (let i = 0; i < data.body['length']; i++) {
+                if (data.body[i]['alto'] == altura) {
+                    console.log(data.body);
+                }
+            }
         });
     }
     public cargarAntesEstant() {
