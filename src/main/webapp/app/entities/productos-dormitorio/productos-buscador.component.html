@@ -67,7 +67,6 @@
     	</div>
     	<div style="float:left;width:100%;margin-top:7%;margin-left:7%" id="puertasTodo">
     		<p style="text-align:center;display:none" id="tipoAcabados"><i style="margin-right:100px">Tipo Puerta</i><i style="margin-right:100px;font-size:20px">Acabado 1</i><i style="margin-right:100px;font-size:20px">Acabado 2</i><i style="margin-right:100px;font-size:20px">Acabado 3</i><i style="margin-right:100px;font-size:20px">Acabado 4</i><i style="margin-right:100px;font-size:20px">Acabado 5</i></p>
-    		<div *ngFor="let puerta of numeroPuertas;let u=index;" id="puertaAcabados" style="float:left;width:100%"><p style="float:left;margin-left:110px"><strong style="font-size:25px;margin-left: -150px;margin-right: 25px;">{{puerta}} :</strong><input (click)="cogerIdAcabados(0,u)"  data-toggle="modal" data-target="#modalPuertas" style="margin-right:70px;width:120px" type="text" class="input0{{u}}"  readonly="readonly"><div (click)="mostrarAcabadosPuerta(0,u)" data-toggle="modal" data-target="#modalAcabadosPuertas"  style="margin-right:70px;width:120px;float:left;background-color:white;height: 40px;" class="input1{{u}}" ></div><div (click)="mostrarAcabadosPuerta(1,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input2{{u}}" ></div><div (click)="mostrarAcabadosPuerta(2,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input3{{u}}"  ></div><div (click)="mostrarAcabadosPuerta(3,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input4{{u}}"  ></div><div (click)="mostrarAcabadosPuerta(4,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input5{{u}}"  ></div></p></div>
     	</div>
     	
     	<div id="tiradoresDiv" style="float:left;width:100%;display:none">
@@ -80,7 +79,6 @@
     				<div *ngIf="i === 0">
 	    				<p ><strong style="margin-right:140px;margin-left:125px">Interior</strong><strong style="margin-right:50px">Luz</strong><strong style="margin-left:70px;margin-right: -80px;">Acabado</strong></p>
 	    				<div *ngFor="let interior of numeroInteriorArmario[i];let u=index" style="width:100%;float:left">
-	    					<p *ngIf="i===0" style="float:left"><strong *ngIf="u===0">Interior A</strong><strong *ngIf="u===1">Interior B</strong><strong *ngIf="u===2">Interior C</strong><strong *ngIf="u===3">Interior D</strong><input type="text" style="text-align:center"  id="{{interior.id}}" data-toggle="modal" data-target="#modalInteriores" (click)="guardarIdInterior(u)"  class="interior{{u}}"  readonly="readonly"/><input class="luzInterior{{u}}" type="text" id="{{interior.id}}" (click)="cogerLuz(u)"  class="interiorLuz{{u}}"  readonly="readonly" style="display:none"><div style="display:none" id="{{interior.id}}" (click)="guardarIdInterior(u)" data-toggle="modal" data-target="#modalInterioresAcabados"  class="interiorAcabado{{u}}"></div></p>
 	    				</div>
 	    			</div>
     				 	
@@ -120,7 +118,6 @@
     	</div>
     	<div style="float:left;width:100%;margin-top:7%;margin-left:7%" id="puertasTodo">
     		<p style="text-align:center;display:none" id="tipoAcabados"><i style="margin-right:100px">Tipo Puerta</i><i style="margin-right:100px;font-size:20px">Acabado 1</i><i style="margin-right:100px;font-size:20px">Acabado 2</i><i style="margin-right:100px;font-size:20px">Acabado 3</i><i style="margin-right:100px;font-size:20px">Acabado 4</i><i style="margin-right:100px;font-size:20px">Acabado 5</i></p>
-    		<div *ngFor="let puerta of numeroPuertas;let u=index;" id="puertaAcabados" style="float:left;width:100%"><p style="float:left;margin-left:110px"><strong style="font-size:25px;margin-left: -150px;margin-right: 25px;">{{puerta}} :</strong><input (click)="cogerIdAcabados(0,u)"  data-toggle="modal" data-target="#modalPuertas" style="margin-right:70px;width:120px" type="text" class="input0{{u}}"  readonly="readonly"><div (click)="mostrarAcabadosPuerta(0,u)" data-toggle="modal" data-target="#modalAcabadosPuertas"  style="margin-right:70px;width:120px;float:left;background-color:white;height: 40px;" class="input1{{u}}" ></div><div (click)="mostrarAcabadosPuerta(1,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input2{{u}}" ></div><div (click)="mostrarAcabadosPuerta(2,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input3{{u}}"  ></div><div (click)="mostrarAcabadosPuerta(3,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input4{{u}}"  ></div><div (click)="mostrarAcabadosPuerta(4,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input5{{u}}"  ></div></p></div>
     	</div>
     	
     	<div id="tiradoresDiv" style="float:left;width:100%;display:none">
@@ -132,9 +129,7 @@
     		<div *ngFor="let armario of interiorArmario; let i=index;" style="width:50%;float:left" id="{{i}}">			
     				<div *ngIf="i === 0">
 	    				<p ><strong style="margin-right:140px;margin-left:125px">Interior</strong><strong style="margin-right:50px">Luz</strong><strong style="margin-left:70px;margin-right: -80px;">Acabado</strong></p>
-	    				<div *ngFor="let interior of numeroInteriorArmario[i];let u=index" style="width:100%;float:left">
-	    					<p *ngIf="i===0" style="float:left"><strong *ngIf="u===0">Interior A</strong><strong *ngIf="u===1">Interior B</strong><strong *ngIf="u===2">Interior C</strong><strong *ngIf="u===3">Interior D</strong><input type="text" style="text-align:center"  id="{{interior.id}}" data-toggle="modal" data-target="#modalInteriores" (click)="guardarIdInterior(u)"  class="interior{{u}}"  readonly="readonly"/><input class="luzInterior{{u}}" type="text" id="{{interior.id}}" (click)="cogerLuz(u)"  class="interiorLuz{{u}}"  readonly="readonly" style="display:none"><div style="display:none" id="{{interior.id}}" (click)="guardarIdInterior(u)" data-toggle="modal" data-target="#modalInterioresAcabados"  class="interiorAcabado{{u}}"></div></p>
-	    				</div>
+	    				
 	    			</div>
     				 	
     		</div>
@@ -175,7 +170,6 @@
     	</div>
     	<div style="float:left;width:100%;margin-top:7%;margin-left:7%" id="puertasTodo">
     		<p style="text-align:center;display:none" id="tipoAcabados"><i style="margin-right:100px">Tipo Puerta</i><i style="margin-right:100px;font-size:20px">Acabado 1</i><i style="margin-right:100px;font-size:20px">Acabado 2</i><i style="margin-right:100px;font-size:20px">Acabado 3</i><i style="margin-right:100px;font-size:20px">Acabado 4</i><i style="margin-right:100px;font-size:20px">Acabado 5</i></p>
-    		<div *ngFor="let puerta of numeroPuertas;let u=index;" id="puertaAcabados" style="float:left;width:100%"><p style="float:left;margin-left:110px"><strong style="font-size:25px;margin-left: -150px;margin-right: 25px;">{{puerta}} :</strong><input (click)="cogerIdAcabados(0,u)"  data-toggle="modal" data-target="#modalPuertas" style="margin-right:70px;width:120px" type="text" class="input0{{u}}"  readonly="readonly"><div (click)="mostrarAcabadosPuerta(0,u)" data-toggle="modal" data-target="#modalAcabadosPuertas"  style="margin-right:70px;width:120px;float:left;background-color:white;height: 40px;" class="input1{{u}}" ></div><div (click)="mostrarAcabadosPuerta(1,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input2{{u}}" ></div><div (click)="mostrarAcabadosPuerta(2,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input3{{u}}"  ></div><div (click)="mostrarAcabadosPuerta(3,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input4{{u}}"  ></div><div (click)="mostrarAcabadosPuerta(4,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input5{{u}}"  ></div></p></div>
     	</div>
     	
     	<div id="tiradoresDiv" style="float:left;width:100%;display:none">
@@ -185,12 +179,7 @@
     	
     	<div style="float:left;width:100%;margin-top:7%">
     		<div *ngFor="let armario of interiorArmario; let i=index;" style="width:50%;float:left" id="{{i}}">			
-    				<div *ngIf="i === 0">
-	    				<p ><strong style="margin-right:140px;margin-left:125px">Interior</strong><strong style="margin-right:50px">Luz</strong><strong style="margin-left:70px;margin-right: -80px;">Acabado</strong></p>
-	    				<div *ngFor="let interior of numeroInteriorArmario[i];let u=index" style="width:100%;float:left">
-	    					<p *ngIf="i===0" style="float:left"><strong *ngIf="u===0">Interior A</strong><strong *ngIf="u===1">Interior B</strong><strong *ngIf="u===2">Interior C</strong><strong *ngIf="u===3">Interior D</strong><input type="text" style="text-align:center"  id="{{interior.id}}" data-toggle="modal" data-target="#modalInteriores" (click)="guardarIdInterior(u)"  class="interior{{u}}"  readonly="readonly"/><input class="luzInterior{{u}}" type="text" id="{{interior.id}}" (click)="cogerLuz(u)"  class="interiorLuz{{u}}"  readonly="readonly" style="display:none"><div style="display:none" id="{{interior.id}}" (click)="guardarIdInterior(u)" data-toggle="modal" data-target="#modalInterioresAcabados"  class="interiorAcabado{{u}}"></div></p>
-	    				</div>
-	    			</div>
+    				
     				 	
     		</div>
     	</div>
@@ -230,7 +219,6 @@
     	</div>
     	<div style="float:left;width:100%;margin-top:7%;margin-left:7%" id="puertasTodo">
     		<p style="text-align:center;display:none" id="tipoAcabados"><i style="margin-right:100px">Tipo Puerta</i><i style="margin-right:100px;font-size:20px">Acabado 1</i><i style="margin-right:100px;font-size:20px">Acabado 2</i><i style="margin-right:100px;font-size:20px">Acabado 3</i><i style="margin-right:100px;font-size:20px">Acabado 4</i><i style="margin-right:100px;font-size:20px">Acabado 5</i></p>
-    		<div *ngFor="let puerta of numeroPuertas;let u=index;" id="puertaAcabados" style="float:left;width:100%"><p style="float:left;margin-left:110px"><strong style="font-size:25px;margin-left: -150px;margin-right: 25px;">{{puerta}} :</strong><input (click)="cogerIdAcabados(0,u)"  data-toggle="modal" data-target="#modalPuertas" style="margin-right:70px;width:120px" type="text" class="input0{{u}}"  readonly="readonly"><div (click)="mostrarAcabadosPuerta(0,u)" data-toggle="modal" data-target="#modalAcabadosPuertas"  style="margin-right:70px;width:120px;float:left;background-color:white;height: 40px;" class="input1{{u}}" ></div><div (click)="mostrarAcabadosPuerta(1,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input2{{u}}" ></div><div (click)="mostrarAcabadosPuerta(2,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input3{{u}}"  ></div><div (click)="mostrarAcabadosPuerta(3,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input4{{u}}"  ></div><div (click)="mostrarAcabadosPuerta(4,u)" data-toggle="modal" data-target="#modalAcabadosPuertas" style="height: 40px;margin-right:70px;width:120px;float:left;background-color:white" class="input5{{u}}"  ></div></p></div>
     	</div>
     	
     	<div id="tiradoresDiv" style="float:left;width:100%;display:none">
@@ -240,13 +228,7 @@
     	
     	<div style="float:left;width:100%;margin-top:7%">
     		<div *ngFor="let armario of interiorArmario; let i=index;" style="width:50%;float:left" id="{{i}}">			
-    				<div *ngIf="i === 0">
-	    				<p ><strong style="margin-right:140px;margin-left:125px">Interior</strong><strong style="margin-right:50px">Luz</strong><strong style="margin-left:70px;margin-right: -80px;">Acabado</strong></p>
-	    				<div *ngFor="let interior of numeroInteriorArmario[i];let u=index" style="width:100%;float:left">
-	    					<p *ngIf="i===0" style="float:left"><strong *ngIf="u===0">Interior A</strong><strong *ngIf="u===1">Interior B</strong><strong *ngIf="u===2">Interior C</strong><strong *ngIf="u===3">Interior D</strong><input type="text" style="text-align:center"  id="{{interior.id}}" data-toggle="modal" data-target="#modalInteriores" (click)="guardarIdInterior(u)"  class="interior{{u}}"  readonly="readonly"/><input class="luzInterior{{u}}" type="text" id="{{interior.id}}" (click)="cogerLuz(u)"  class="interiorLuz{{u}}"  readonly="readonly" style="display:none"><div style="display:none" id="{{interior.id}}" (click)="guardarIdInterior(u)" data-toggle="modal" data-target="#modalInterioresAcabados"  class="interiorAcabado{{u}}"></div></p>
-	    				</div>
-	    			</div>
-    				 	
+    			
     		</div>
     	</div>
     	
