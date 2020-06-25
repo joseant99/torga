@@ -93,6 +93,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     modulosBajos: any;
     aparadores: any;
     singulares: any;
+    alturaEstan: any;
+    estantModu: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -134,7 +136,17 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             this.predicate = data.pagingParams.predicate;
         });
     }
-
+    public cargarEstanterias(altura) {
+        this.alturaEstan = altura;
+        this.dimensionesProductoTipoService.findProducto(producto).subscribe(data => {
+            for (let i = 0; i < data.body['length']; i++) {}
+        });
+    }
+    public cargarAntesEstant() {
+        this.productosDormitorioService.categoria(28).subscribe(data => {
+            estantModu;
+        });
+    }
     public elegirBusqueda(id) {
         $('.armariosDivTodo').css({ display: 'none' });
         $('#inputBusca').css({ display: 'none' });
