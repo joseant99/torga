@@ -13603,7 +13603,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             $('#botonCalculadora').removeAttr('class');
         }
     }
-    public guardarIdPuerta(id, interior) {
+    public guardarIdPuerta(id) {
         this.idPuertaInput = id;
     }
     public cambiarAcabadoTrasera(nombre) {
