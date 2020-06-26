@@ -158,6 +158,22 @@ public class AccountResource {
                .orElseThrow(EmailNotFoundException::new)
        );
     }
+    
+    /**
+     * POST   /account/reset-password/init : Send an email to reset the password of the user
+     *
+     * @param mail the mail of the user
+     * @throws EmailNotFoundException 400 (Bad Request) if the email address is not registered
+     */
+    @PostMapping(path = "/account/enviarmensaje")
+    @Timed
+    public void enviarmensaje(@RequestBody String mail) {
+    	/**mailService.sendPasswordResetMail(
+           userService.requestPasswordReset(mail)
+               .orElseThrow(EmailNotFoundException::new)
+       );**/
+       mailService.sendEmail();
+    }
 
     /**
      * POST   /account/reset-password/finish : Finish to reset the password of the user

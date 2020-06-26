@@ -11,6 +11,7 @@ import javax.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
@@ -72,7 +73,21 @@ public class MailService {
             }
         }
     }
+    
+   public void sendEmail() {
 
+        SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setTo("jose45335@gmail.com");
+
+        msg.setSubject("Testing from Spring Boot");
+        msg.setText("Hello World \n Spring Boot Email");
+
+        javaMailSender.send(msg);
+
+    }
+    
+    
+    
     @Async
     public void sendEmailFromTemplate(User user, String templateName, String titleKey) {
         Locale locale = Locale.forLanguageTag(user.getLangKey());

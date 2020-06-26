@@ -16,6 +16,7 @@ import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
 import { RepresentanteTiendaService } from '../representante-tienda/representante-tienda.service';
 import { PagosTorgaTiendasService } from '../pagos-torga-tiendas/pagos-torga-tiendas.service';
 import { DireccionTiendasService } from '../direccion-tiendas/direccion-tiendas.service';
+import { PasswordResetInitService } from '../../account/password-reset/init/password-reset-init.service';
 
 @Component({
     selector: 'jhi-gestion-fabricantes',
@@ -54,6 +55,7 @@ export class GestionTiendaComponent implements OnInit, OnDestroy {
         protected pagosTiendaService: PagosTiendaService,
         protected dataUtils: JhiDataUtils,
         protected pagosTorgaTiendasService: PagosTorgaTiendasService,
+        public passwordResetInitService: PasswordResetInitService,
         protected router: Router,
         protected eventManager: JhiEventManager
     ) {
@@ -65,7 +67,9 @@ export class GestionTiendaComponent implements OnInit, OnDestroy {
             this.predicate = data.pagingParams.predicate;
         });
     }
-
+    public enviarMensaje() {
+        this.passwordResetInitService.enviar1('hola');
+    }
     loadAll() {
         var tiendaBuena = [];
         this.datosUsuarioService

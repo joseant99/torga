@@ -62,6 +62,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     iluminacion: any;
     acabados: any;
     todosAcabados: any;
+    saberNumArrayAca: any;
     acaProdsCar: any;
     ruta: any;
     iva: any;
@@ -105,6 +106,12 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     singulares: any;
     alturaEstan: any;
     estantModu: any;
+    catalogoDormi: any;
+    catalogoCome: any;
+    estanteria: any;
+    acabadosEstanteria: any;
+    uid: any;
+    idMeterimagen: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -148,17 +155,110 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     }
     public cargarEstanterias(altura) {
         this.alturaEstan = altura;
+        var preciosPuntos = this.precioPunto;
+        var precioCat = this.catalogoCome;
         this.dimensionesProductoTipoService.findProducto(352).subscribe(data => {
             for (let i = 0; i < data.body['length']; i++) {
                 if (data.body[i]['alto'] == altura) {
-                    console.log(data.body);
+                    var precio = data.body[i]['precio'];
+                    precio = precio * preciosPuntos[0];
+                    var preciosum = precio * (precioCat[0]['precio'] / 100);
+                    precio = precio + preciosum;
+                    $('#divEstant').css({ display: 'block' });
+                    $('#precioCostado').text(precio + ' €');
+                    $('#anchoEstant').text(data.body[i]['ancho']);
+                    $('#precioDimension').text(precio);
+                    $('#euroCalculadora').css({ display: 'block' });
                 }
             }
         });
     }
+
+    public escogidaEstanteria(estant) {
+        var altura = this.alturaEstan;
+        var array = this.estanteria;
+        var preciosPuntos = this.precioPunto;
+        var precioCat = this.catalogoCome;
+        var anchoEstant = $('#anchoEstant').text();
+        var precioTodo = $('#precioDimension').text();
+
+        this.dimensionesProductoTipoService.findProducto(estant.id).subscribe(data => {
+            for (let i = 0; i < data.body['length']; i++) {
+                if (data.body[i]['alto'] == altura) {
+                    var precio = data.body[i]['precio'];
+                    precio = precio * preciosPuntos[0];
+                    var preciosum = precio * (precioCat[0]['precio'] / 100);
+                    precio = precio + preciosum;
+                    var ancho = parseFloat(anchoEstant) + data.body[i]['ancho'];
+                    var todoPrecio = parseFloat(precioTodo) + precio;
+                    $('#precioDimension').text(todoPrecio);
+                    $('#anchoEstant').text(ancho);
+                    data.body[i]['precio'] = precio;
+                    array[array['length']] = data.body[i];
+                    this.estanteria = array;
+                }
+            }
+        });
+
+        this.acaProdService.findAca(estant.id).subscribe(data => {
+            var arrayAca = this.saberNumArrayAca;
+            var otro = [];
+            this.acabadosEstanteria = data.body[0]['acabados'];
+            for (let i = 0; i < data.body['length']; i++) {
+                otro[i] = data.body[i];
+            }
+            arrayAca[arrayAca.length] = otro;
+            console.log(arrayAca);
+            this.saberNumArrayAca = arrayAca;
+        });
+    }
+
+    public acabadoPonerDiv(id, texto) {
+        var acabados = this.acabadosEstanteria;
+        this.uid = id;
+        this.idMeterimagen = texto;
+    }
+
+    public acabadosModal(id, nombre) {
+        var acabados = this.acabadosEstanteria;
+        var u = this.uid;
+        var texto = this.idMeterimagen;
+        for (let i = 0; i < acabados.length; i++) {
+            if (acabados[i]['id'] == id) {
+                var src = 'data:image/gif;base64,' + acabados[i]['imagenFondo'];
+            }
+        }
+        $('#estanteria' + u + ' #inputAcabado' + texto).empty();
+        $('#estanteria' + u + ' #inputAcabado' + texto).append('<img src="' + src + '" height="60px" border="0" width="120px" />');
+        $('#estanteria' + u + ' #inputAcabado' + texto).append('<p style="margin-top:-40px">' + nombre + '</p>');
+    }
+
     public cargarAntesEstant() {
+        var altura = this.alturaEstan;
         this.productosDormitorioService.categoria(28).subscribe(data => {
-            this.estantModu;
+            $('#otroCuerpo').css({ display: 'block' });
+            if (altura == 125) {
+                var yes = [];
+                var cont = 0;
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (i != 3 && i != 0) {
+                        yes[cont] = data.body[i];
+                        cont++;
+                    }
+                }
+                this.estantModu = yes;
+                console.log(yes);
+            } else {
+                var yes = [];
+                var cont = 0;
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (i != 0) {
+                        yes[cont] = data.body[i];
+                        cont++;
+                    }
+                }
+                this.estantModu = yes;
+            }
         });
     }
     public elegirBusqueda(id) {
@@ -4932,7 +5032,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         this.armariosDormitorioOcultaComponent.loadAll();
         this.armariosDormitorioVistaComponent.loadAll();
         this.vestidoresDormitorioComponent.loadAll();
-
+        this.estanteria = [];
+        this.saberNumArrayAca = [];
         $('#producto').append('<datalist id="listaAnchos1"></datalist>');
         $('#producto').append('<datalist id="listaAltura"></datalist>');
         for (let i = 1; i < 457; i++) {
@@ -5013,6 +5114,15 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
         this.precioTiendaService.findBus(tienda.id).subscribe(data => {
             this.precioPunto = data.body;
+        });
+
+        this.precioTiendaService.findBus1(tienda.id, 2).subscribe(data => {
+            this.catalogoDormi = data.body;
+            console.log(data.body);
+        });
+        this.precioTiendaService.findBus1(tienda.id, 1).subscribe(data => {
+            this.catalogoCome = data.body;
+            console.log(data.body);
         });
         this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
             this.precioTiendaProductosService.todos = data.body;
