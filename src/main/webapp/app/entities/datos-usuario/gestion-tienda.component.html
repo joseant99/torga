@@ -57,7 +57,7 @@
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{datosUsuario.codPostal}}" disabled>
 				    </div>
 				  </div>
-				  <button style="width:210px;height:60px;margin-top:30px" (click)="enviarMensaje()">Solicitar un cambio</button>
+				  <button style="width:210px;height:60px;margin-top:30px" data-toggle="modal" data-target="#modalMeteTexto">Solicitar un cambio</button>
 				<!-- <div style="margin-left:30%" class="form-group row">
 				    <label for="logoInput" class="col-sm-2 col-form-label" style="border: 1px solid lightgray;">Adjuntar logo:</label>
 				    <div class="col-sm-4">
@@ -108,5 +108,24 @@
     		
 	 	</div>
     </div>
-    
+    <div class="modal fade" id="modalMeteTexto" role="dialog" style="z-index: 10000000000;">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Notifique error</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	
+		        <textarea id="textAreacomentarios" name="comentarios" rows="10" cols="40" style="float:left">Escribe aqu&iacute; tus comentarios</textarea>  
+		        <button style="width:210px;height:60px;margin-top:30px;float:left" (click)="enviarMensaje()" data-dismiss="modal">NOTIFICAR</button>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
 </div>

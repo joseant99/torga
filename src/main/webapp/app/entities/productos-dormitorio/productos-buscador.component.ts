@@ -3987,8 +3987,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 cont++;
             }
         }
+
         for (let m = 1; m <= 14; m++) {
-            if ($('#aca1' + m).html()) {
+            if ($('#val' + m + 'Dato').text() != '') {
                 contadorApoyo++;
             }
         }
@@ -4040,7 +4041,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             idProd != '210' &&
             idProd != '211'
         ) {
-            if (contadorApoyo == cont - 1 && apoyoBueno != '') {
+            if (contadorApoyo == this.acaProdService.todos.length && apoyoBueno != '') {
                 var iluminacion = this.iluminacion;
                 var texto = 0;
                 for (let k = 0; k < iluminacion.length; k++) {
@@ -4064,9 +4065,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 $('#terminarConfiguracion').css({ width: '100%' });
             }
         } else {
-            if (contadorApoyo == cont - 1) {
+            if (contadorApoyo == this.acaProdService.todos.length) {
                 var iluminacion = this.iluminacion;
                 var texto = 0;
+                texto = 1;
                 for (let k = 0; k < iluminacion.length; k++) {
                     if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
                         $('#iluminacion').removeAttr('style');
@@ -4076,7 +4078,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         $('#ilu1').attr('class', iluminacion[k]['id']);
                         texto = 0;
                     } else {
-                        texto = 1;
                     }
                 }
                 if (texto == 1) {

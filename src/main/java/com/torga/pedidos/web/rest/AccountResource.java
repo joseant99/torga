@@ -165,14 +165,14 @@ public class AccountResource {
      * @param mail the mail of the user
      * @throws EmailNotFoundException 400 (Bad Request) if the email address is not registered
      */
-    @PostMapping(path = "/account/enviarmensaje")
+    @PostMapping("/account/enviarmensaje/{mail}/{correo}")
     @Timed
-    public void enviarmensaje(@RequestBody String mail) {
+    public void enviarmensaje(@PathVariable String mail, @PathVariable String correo) {
     	/**mailService.sendPasswordResetMail(
            userService.requestPasswordReset(mail)
                .orElseThrow(EmailNotFoundException::new)
        );**/
-       mailService.sendEmail();
+       mailService.sendEmail(mail,correo);
     }
 
     /**

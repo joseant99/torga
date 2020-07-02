@@ -68,7 +68,8 @@ export class GestionTiendaComponent implements OnInit, OnDestroy {
         });
     }
     public enviarMensaje() {
-        this.passwordResetInitService.enviar1('hola');
+        var textArea = $('#textAreacomentarios').val();
+        this.passwordResetInitService.enviar1(textArea, this.datosUsuarios[0]['email']).subscribe();
     }
     loadAll() {
         var tiendaBuena = [];

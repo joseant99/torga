@@ -74,13 +74,13 @@ public class MailService {
         }
     }
     
-   public void sendEmail() {
+   public void sendEmail(String mail,String correo) {
 
         SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setTo("jose45335@gmail.com");
+        msg.setTo(correo);
 
-        msg.setSubject("Testing from Spring Boot");
-        msg.setText("Hello World \n Spring Boot Email");
+        msg.setSubject("Error en gestion de tienda");
+        msg.setText(mail);
 
         javaMailSender.send(msg);
 
