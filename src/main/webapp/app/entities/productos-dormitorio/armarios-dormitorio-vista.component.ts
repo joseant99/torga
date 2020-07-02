@@ -3268,9 +3268,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                             nombre +
                             '/peque_interior_' +
                             nombre +
-                            '_' +
-                            interior1.toLowerCase() +
-                            '_optimized.png">'
+                            '_blanco_optimized.png">'
                     );
                     $('#textoLetraHueco' + (hueco - 1)).remove();
                 } else {
@@ -3347,9 +3345,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                                 nombre +
                                 '/peque_interior_' +
                                 nombre +
-                                '_' +
-                                interior1.toLowerCase() +
-                                '_optimized.png">'
+                                '_blanco_optimized.png">'
                         );
                         $('#textoLetraHueco' + (hueco - 1)).remove();
                     } else {
@@ -3384,9 +3380,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                                 nombre +
                                 '/grande_interior_' +
                                 nombre +
-                                '_' +
-                                interior1.toLowerCase() +
-                                '_optimized.png">'
+                                '_blanco_optimized.png">'
                         );
                         $('#textoLetraHueco' + (hueco - 1)).remove();
                     }
@@ -3426,9 +3420,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                                     nombre +
                                     '/peque_interior_' +
                                     nombre +
-                                    '_' +
-                                    interior1.toLowerCase() +
-                                    '_optimized.png">'
+                                    '_blanco_optimized.png">'
                             );
                             $('#textoLetraHueco' + (hueco - 1)).remove();
                         } else {
@@ -3463,9 +3455,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                                     nombre +
                                     '/grande_interior_' +
                                     nombre +
-                                    '_' +
-                                    interior1.toLowerCase() +
-                                    '_optimized.png">'
+                                    '_blanco_optimized.png">'
                             );
                             $('#textoLetraHueco' + (hueco - 1)).remove();
                         }

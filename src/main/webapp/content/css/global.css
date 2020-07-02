@@ -2929,12 +2929,13 @@ ui bootstrap tweaks
     color: black;
 }
 #divDentroCalcu {
-    width: 86%;
+    width: 92%;
     height: 85%;
     margin-left: 25px;
     margin-top: 10px;
     overflow-y: auto;
     overflow-x: hidden;
+    padding-right: 10px;
 }
 
 #productosFiltrados {

@@ -1267,7 +1267,7 @@
 			       <!--  <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>-->
 			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 350px;" >TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px"></span> &euro;</span>
 			       
-			        <button id="botonDerechaPresupuesto" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;" type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalConfirmarCreacionPresu">GENERAR PRESUPUESTO</button></p>
+			        <button id="botonDerechaPresupuesto" (click)="cargarTodasTiendas()" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;" type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalConfirmarCreacionPresu">GENERAR PRESUPUESTO</button></p>
 		        </div>
 		      </div>
 		
@@ -1366,7 +1366,7 @@
 	  
 	  
 	  <div class="modal fade" id="modalConfirmarCreacionPresu" role="dialog" style="margin-top:150px;">
-		    <div class="modal-dialog modal-sm">
+		    <div class="modal-dialog">
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content" style="background-color:#f5f5f5!important">
@@ -1374,8 +1374,10 @@
 		          <h4 class="modal-title" style="text-align:center;width: 100%;font-size: 25px;">Presupuesto</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
-		        <div class="modal-body"> 
-		        	<p>Vas a generar un presupuesto &#191;Estas seguro?</p>
+		        <div class="modal-body" style="text-align:center">
+		        	<select id="selectTiendas" style="height:30px;width:180px;margin-right:35px"><option></option><option *ngFor="let tiendas of todasLasTiendas" value="{{tiendas.id}}">{{tiendas.nombreFiscal}}</option></select><label style="margin-left:10px">Nombre fiscal</label><br>
+		        	<br><input type="text" id="referenciaCliente"> <label style="margin-left:10px" >Referencia Cliente</label><br>
+		        	<p>Vas a generar un presupuesto &#191;Estas seguro?</p><br>
 		        	<button type="button" style="width: 110px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="generarPresupuesto()" onclick="cerrarModal()">Si</button>
 			        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal" >No</button>
 		        </div>

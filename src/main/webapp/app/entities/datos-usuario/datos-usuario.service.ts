@@ -13,6 +13,7 @@ type EntityArrayResponseType = HttpResponse<IDatosUsuario[]>;
 export class DatosUsuarioService {
     public resourceUrl = SERVER_API_URL + 'api/datos-usuarios';
     public uno;
+    public tiendaCargadaPresu;
     constructor(protected http: HttpClient) {}
 
     create(datosUsuario: IDatosUsuario): Observable<EntityResponseType> {

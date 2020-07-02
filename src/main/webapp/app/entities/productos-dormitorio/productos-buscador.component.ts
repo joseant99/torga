@@ -279,7 +279,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#precioDimension').empty();
         $('#nombreMesita').empty();
         $('#estanteriaDiv').css({ display: 'none' });
-
+        $('#botonCalculadora').attr('class', 'displayBoton');
+        $('#imagenAcabadoPrincipal').css({ display: 'none' });
         if (id == 0) {
             $('#inputBusca').css({ display: 'block' });
         }
@@ -4965,6 +4966,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         for (let i = 1; i <= 100; i++) {
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
             if (sesion != null) {
+                this.productosDormitorioService.numeroCesta = i;
                 console.log(sessionStorage);
                 $('#productoCarrito' + i).removeAttr('style');
                 $('#productoCarrito' + i).attr('style');

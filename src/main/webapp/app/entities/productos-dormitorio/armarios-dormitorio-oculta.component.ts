@@ -600,6 +600,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         } else {
             $('#precioCajeado').text('+0 €');
             precio = precio - this.cajeadoPrecio;
+            this.cajeadoPrecio = 0;
             $('#precioDimension').text(precio);
         }
     }
@@ -633,6 +634,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         } else {
             $('#precioEnmarcados').text('+0 €');
             precio = precio - this.enmarcadosPrecio;
+            this.enmarcadosPrecio = 0;
             $('#precioDimension').text(precio);
         }
     }
@@ -3346,9 +3348,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                                 nombre +
                                 '/peque_interior_' +
                                 nombre +
-                                '_' +
-                                interior1.toLowerCase() +
-                                '_optimized.png">'
+                                '_blanco_optimized.png">'
                         );
                         $('#textoLetraHueco' + (hueco - 1)).remove();
                     } else {
@@ -3383,9 +3383,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                                 nombre +
                                 '/grande_interior_' +
                                 nombre +
-                                '_' +
-                                interior1.toLowerCase() +
-                                '_optimized.png">'
+                                '_blanco_optimized.png">'
                         );
                         $('#textoLetraHueco' + (hueco - 1)).remove();
                     }
@@ -3425,9 +3423,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                                     nombre +
                                     '/peque_interior_' +
                                     nombre +
-                                    '_' +
-                                    interior1.toLowerCase() +
-                                    '_optimized.png">'
+                                    '_blanco_optimized.png">'
                             );
                             $('#textoLetraHueco' + (hueco - 1)).remove();
                         } else {
@@ -3462,9 +3458,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                                     nombre +
                                     '/grande_interior_' +
                                     nombre +
-                                    '_' +
-                                    interior1.toLowerCase() +
-                                    '_optimized.png">'
+                                    '_blanco_optimized.png">'
                             );
                             $('#textoLetraHueco' + (hueco - 1)).remove();
                         }

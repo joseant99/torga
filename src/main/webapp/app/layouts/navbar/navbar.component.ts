@@ -74,6 +74,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     predicate: any;
     reverse: any;
     routeData: any;
+    todasLasTiendas: any;
     constructor(
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         private loginService: LoginService,
@@ -122,6 +123,16 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 $('.logo-img').css({ background: 'none' });
             }
         }, 10);
+    }
+
+    cargarTodasTiendas() {
+        this.datosUsuarioService
+            .query({
+                size: 100000
+            })
+            .subscribe(data => {
+                this.todasLasTiendas = data.body;
+            });
     }
     public comprobarContrase() {
         var valor = $('#contIdMaqui').val();
@@ -342,6 +353,19 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             };
                         }
                     }
+                    var tiendaElegida = $('#selectTiendas').val();
+                    var referenciaCliente = $('#referenciaCliente').val();
+                    var todasTiendaBuenas = this.todasLasTiendas;
+                    if (tiendaElegida != null && tiendaElegida != '' && referenciaCliente != null && referenciaCliente != '') {
+                        for (let q = 0; q < todasTiendaBuenas.length; q++) {
+                            if (todasTiendaBuenas[q]['id'] == tiendaElegida) {
+                                var usuGG = todasTiendaBuenas[q]['user'];
+                            }
+                        }
+                        prueba['user'] = usuGG;
+                        prueba['codigo'] = referenciaCliente;
+                    }
+                    console.log(prueba);
                     this.presupuestoPedido = prueba;
 
                     this.presupuestoPedidoService

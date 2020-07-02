@@ -3492,14 +3492,29 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         $('#inputInterior' + (hueco - 1)).val('interior ' + nombre);
         $('#inputInterior' + (hueco - 1)).append('interior ' + nombre);
         var grandes = dimens['grandes'];
-
-        if (texto == '1 PUERTA') {
+        if (texto == '3 CUERPOS TIPO 1' || texto == '3 CUERPOS TIPO 2' || texto == '3 CUERPOS TIPO 3') {
+            texto = '3 CUERPOS';
+        }
+        if (texto == '2 CUERPOS TIPO 1' || texto == '2 CUERPOS TIPO 2' || texto == '2 CUERPOS TIPO 3') {
+            texto = '2 CUERPOS';
+        }
+        if (texto == '1 CUERPO TIPO 1' || texto == '1 CUERPO TIPO 2' || texto == '1 CUERPO TIPO 3') {
+            texto = '1 CUERPO';
+        }
+        if (texto == '4 CUERPOS TIPO 1' || texto == '4 CUERPOS TIPO 2' || texto == '4 CUERPOS TIPO 3') {
+            texto = '4 CUERPOS';
+        }
+        if (texto == '5 CUERPOS TIPO 1' || texto == '5 CUERPOS TIPO 2' || texto == '5 CUERPOS TIPO 3') {
+            texto = '5 CUERPOS';
+        }
+        var dato = this.cascoService.dato;
+        if (texto == '1 CUERPO') {
             for (let i = 1; i <= 2; i++) {
                 if (hueco == 1) {
                     cuenta = ancho / puertas;
                     cuenta = cuenta * 1;
                     if (i == 1) {
-                        this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                 '<p id="interiorHueco' +
                                     hueco +
@@ -3510,13 +3525,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     '">Interior ' +
                                     nombre +
                                     '</span><span style="float:right">+ <span id="precio">' +
-                                    data.body[0].precio +
+                                    data.body[0].a +
                                     '</span>€</span><p/>'
                             );
-                            $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
                             var precioTodo;
                             precioTodo = $('#precioDimension').text();
-                            var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             $('#precioDimension').text(precioTodoFloat);
                         });
                     }
@@ -3528,16 +3543,14 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                             nombre +
                             '/peque_interior_' +
                             nombre +
-                            '_' +
-                            interior1.toLowerCase() +
-                            '_optimized.png">'
+                            '_blanco_optimized.png">'
                     );
                     $('#textoLetraHueco' + (hueco - 1)).remove();
                 } else {
                     cuenta = ancho / puertas;
                     cuenta = cuenta * 2;
                     if (i == 1) {
-                        this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                 '<p style="width:100%;display:none">Hueco ' +
                                     letras[hueco - 1] +
@@ -3546,13 +3559,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     '">Interior ' +
                                     nombre +
                                     '</span><span style="float:right">+ ' +
-                                    data.body[0].precio +
+                                    data.body[0].a +
                                     '€</span><p/>'
                             );
-                            $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
                             var precioTodo;
                             precioTodo = $('#precioDimension').text();
-                            var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             $('#precioDimension').text(precioTodoFloat);
                         });
                     }
@@ -3565,15 +3578,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                             nombre +
                             '/peque_interior_' +
                             nombre +
-                            '_' +
-                            interior1.toLowerCase() +
-                            '_optimized.png">'
+                            '_blanco_optimized.png">'
                     );
                     $('#textoLetraHueco' + (hueco - 1)).remove();
                 }
             }
         } else {
-            if (texto == '3 PUERTAS IZQUIERDA') {
+            if (texto == '2 CUERPOS') {
                 for (let i = 1; i <= 2; i++) {
                     if (hueco == 1) {
                         cuenta = ancho / puertas;
@@ -3607,9 +3618,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                 nombre +
                                 '/peque_interior_' +
                                 nombre +
-                                '_' +
-                                interior1.toLowerCase() +
-                                '_optimized.png">'
+                                '_blanco_optimized.png">'
                         );
                         $('#textoLetraHueco' + (hueco - 1)).remove();
                     } else {
@@ -3644,9 +3653,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                 nombre +
                                 '/grande_interior_' +
                                 nombre +
-                                '_' +
-                                interior1.toLowerCase() +
-                                '_optimized.png">'
+                                '_blanco_optimized.png">'
                         );
                         $('#textoLetraHueco' + (hueco - 1)).remove();
                     }
@@ -3769,7 +3776,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         }
                     }
                 } else {
-                    if (texto == '4 PUERTAS ASIMETRICAS') {
+                    if (texto == '3 CUERPOS') {
                         for (let i = 1; i <= 2; i++) {
                             if (hueco == 1) {
                                 cuenta = ancho / puertas;
@@ -3790,7 +3797,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     if (ancho >= 180 && ancho < 190) {
                                         cuenta = 462;
                                     }
-                                    this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                    this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                             '<p style="width:100%;display:none">Hueco ' +
                                                 letras[hueco - 1] +
@@ -3799,13 +3806,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 '">Interior ' +
                                                 nombre +
                                                 '</span><span style="float:right">+ ' +
-                                                data.body[0].precio +
+                                                data.body[0].a +
                                                 '€</span><p/>'
                                         );
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
                                         var precioTodo;
                                         precioTodo = $('#precioDimension').text();
-                                        var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                        var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                         $('#precioDimension').text(precioTodoFloat);
                                     });
                                 }
@@ -3816,9 +3823,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         nombre +
                                         '/peque_interior_' +
                                         nombre +
-                                        '_' +
-                                        interior1.toLowerCase() +
-                                        '_optimized.png">'
+                                        '_blanco_optimized.png">'
                                 );
                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                             }
@@ -3841,7 +3846,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     if (ancho >= 180 && ancho < 190) {
                                         cuenta = 938;
                                     }
-                                    this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                    this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                             '<p style="width:100%;display:none">Hueco ' +
                                                 letras[hueco - 1] +
@@ -3850,13 +3855,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 '">Interior ' +
                                                 nombre +
                                                 '</span><span style="float:right">+ ' +
-                                                data.body[0].precio +
+                                                data.body[0].b +
                                                 '€</span><p/>'
                                         );
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                        $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
                                         var precioTodo;
                                         precioTodo = $('#precioDimension').text();
-                                        var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                        var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                         $('#precioDimension').text(precioTodoFloat);
                                     });
                                 }
@@ -3867,9 +3872,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         nombre +
                                         '/grande_interior_' +
                                         nombre +
-                                        '_' +
-                                        interior1.toLowerCase() +
-                                        '_optimized.png">'
+                                        '_blanco_optimized.png">'
                                 );
                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                             }
@@ -3892,7 +3895,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     if (ancho >= 180 && ancho < 190) {
                                         cuenta = 462;
                                     }
-                                    this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                    this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                             '<p style="width:100%;display:none">Hueco ' +
                                                 letras[hueco - 1] +
@@ -3901,13 +3904,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 '">Interior ' +
                                                 nombre +
                                                 '</span><span style="float:right">+ ' +
-                                                data.body[0].precio +
+                                                data.body[0].c +
                                                 '€</span><p/>'
                                         );
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                        $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
                                         var precioTodo;
                                         precioTodo = $('#precioDimension').text();
-                                        var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                        var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                         $('#precioDimension').text(precioTodoFloat);
                                     });
                                 }
@@ -3918,15 +3921,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         nombre +
                                         '/peque_interior_' +
                                         nombre +
-                                        '_' +
-                                        interior1.toLowerCase() +
-                                        '_optimized.png">'
+                                        '_blanco_optimized.png">'
                                 );
                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                             }
                         }
                     } else {
-                        if (texto == '5 PUERTAS CENTRAL') {
+                        if (texto == '4 CUERPOS') {
                             for (let i = 1; i <= 2; i++) {
                                 if (hueco == 1) {
                                     cuenta = ancho / puertas;
@@ -3947,7 +3948,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         if (ancho >= 240 && ancho < 250) {
                                             cuenta = 975;
                                         }
-                                        this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                 '<p style="width:100%;display:none">Hueco ' +
                                                     letras[hueco - 1] +
@@ -3956,13 +3957,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                     '">Interior ' +
                                                     nombre +
                                                     '</span><span style="float:right">+ ' +
-                                                    data.body[0].precio +
+                                                    data.body[0].a +
                                                     '€</span><p/>'
                                             );
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
                                             var precioTodo;
                                             precioTodo = $('#precioDimension').text();
-                                            var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                             $('#precioDimension').text(precioTodoFloat);
                                         });
                                     }
@@ -3973,9 +3974,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             nombre +
                                             '/grande_interior_' +
                                             nombre +
-                                            '_' +
-                                            interior1.toLowerCase() +
-                                            '_optimized.png">'
+                                            '_blanco_optimized.png">'
                                     );
                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                 }
@@ -3998,7 +3997,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         if (ancho >= 240 && ancho < 250) {
                                             cuenta = 478;
                                         }
-                                        this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                 '<p style="width:100%;display:none">Hueco ' +
                                                     letras[hueco - 1] +
@@ -4007,13 +4006,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                     '">Interior ' +
                                                     nombre +
                                                     '</span><span style="float:right">+ ' +
-                                                    data.body[0].precio +
+                                                    data.body[0].b +
                                                     '€</span><p/>'
                                             );
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                            $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
                                             var precioTodo;
                                             precioTodo = $('#precioDimension').text();
-                                            var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                            var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                             $('#precioDimension').text(precioTodoFloat);
                                         });
                                     }
@@ -4024,9 +4023,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             nombre +
                                             '/peque_interior_' +
                                             nombre +
-                                            '_' +
-                                            interior1.toLowerCase() +
-                                            '_optimized.png">'
+                                            '_blanco_optimized.png">'
                                     );
                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                 }
@@ -4049,7 +4046,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         if (ancho >= 240 && ancho < 250) {
                                             cuenta = 975;
                                         }
-                                        this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                 '<p style="width:100%;display:none">Hueco ' +
                                                     letras[hueco - 1] +
@@ -4058,13 +4055,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                     '">Interior ' +
                                                     nombre +
                                                     '</span><span style="float:right">+ ' +
-                                                    data.body[0].precio +
+                                                    data.body[0].c +
                                                     '€</span><p/>'
                                             );
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                            $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
                                             var precioTodo;
                                             precioTodo = $('#precioDimension').text();
-                                            var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                            var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                             $('#precioDimension').text(precioTodoFloat);
                                         });
                                     }
@@ -4075,9 +4072,56 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             nombre +
                                             '/grande_interior_' +
                                             nombre +
-                                            '_' +
-                                            interior1.toLowerCase() +
-                                            '_optimized.png">'
+                                            '_blanco_optimized.png">'
+                                    );
+                                    $('#textoLetraHueco' + (hueco - 1)).remove();
+                                }
+                                if (hueco == 4) {
+                                    cuenta = ancho / puertas;
+                                    cuenta = cuenta * 2;
+                                    if (i == 1) {
+                                        if (ancho >= 200 && ancho < 210) {
+                                            cuenta = 817;
+                                        }
+                                        if (ancho >= 210 && ancho < 220) {
+                                            cuenta = 852;
+                                        }
+                                        if (ancho >= 220 && ancho < 230) {
+                                            cuenta = 905;
+                                        }
+                                        if (ancho >= 230 && ancho < 240) {
+                                            cuenta = 938;
+                                        }
+                                        if (ancho >= 240 && ancho < 250) {
+                                            cuenta = 975;
+                                        }
+                                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                '<p style="width:100%;display:none">Hueco ' +
+                                                    letras[hueco - 1] +
+                                                    ': <span id="acabadoHueco' +
+                                                    hueco +
+                                                    '">Interior ' +
+                                                    nombre +
+                                                    '</span><span style="float:right">+ ' +
+                                                    data.body[0].d +
+                                                    '€</span><p/>'
+                                            );
+                                            $('#precioInt' + (hueco - 1)).text(data.body[0].d + ' €');
+                                            var precioTodo;
+                                            precioTodo = $('#precioDimension').text();
+                                            var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
+                                            $('#precioDimension').text(precioTodoFloat);
+                                        });
+                                    }
+                                    $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                        '<img id="interiorDentroArmario' +
+                                            hueco +
+                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:424px;margin-top:-78px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                            nombre +
+                                            '/grande_interior_' +
+                                            nombre +
+                                            '_blanco_optimized.png">'
                                     );
                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                 }
@@ -4841,7 +4885,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 }
                                             }
                                         } else {
-                                            if (texto == '8 PUERTAS ASIMETRICAS') {
+                                            if (texto == '5 CUERPOS') {
                                                 for (let i = 1; i <= 2; i++) {
                                                     if (hueco == 1) {
                                                         cuenta = ancho / puertas;
@@ -4863,7 +4907,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 cuenta = 478;
                                                             }
                                                             this.interioresArmarioNuevosService
-                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                                         '<p style="width:100%">Hueco ' +
@@ -4873,9 +4917,14 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             '">Interior ' +
                                                                             nombre +
                                                                             '</span><span style="float:right">+ ' +
-                                                                            data.body[0].precio +
+                                                                            data.body[0].a +
                                                                             '€</span><p/>'
                                                                     );
+                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                    var precioTodo;
+                                                                    precioTodo = $('#precioDimension').text();
+                                                                    var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -4885,9 +4934,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 nombre +
                                                                 '/peque_interior_' +
                                                                 nombre +
-                                                                '_' +
-                                                                interior1.toLowerCase() +
-                                                                '_optimized.png">'
+                                                                '_blanco_optimized.png">'
                                                         );
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
@@ -4896,7 +4943,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         cuenta = cuenta * 2;
                                                         if (i == 1) {
                                                             this.interioresArmarioNuevosService
-                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                                         '<p style="width:100%">Hueco ' +
@@ -4906,9 +4953,14 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             '">Interior ' +
                                                                             nombre +
                                                                             '</span><span style="float:right">+ ' +
-                                                                            data.body[0].precio +
+                                                                            data.body[0].b +
                                                                             '€</span><p/>'
                                                                     );
+                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
+                                                                    var precioTodo;
+                                                                    precioTodo = $('#precioDimension').text();
+                                                                    var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
+                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -4918,9 +4970,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 nombre +
                                                                 '/grande_interior_' +
                                                                 nombre +
-                                                                '_' +
-                                                                interior1.toLowerCase() +
-                                                                '_optimized.png">'
+                                                                '_blanco_optimized.png">'
                                                         );
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
@@ -4929,7 +4979,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         cuenta = cuenta * 2;
                                                         if (i == 1) {
                                                             this.interioresArmarioNuevosService
-                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                                         '<p style="width:100%">Hueco ' +
@@ -4939,9 +4989,14 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             '">Interior ' +
                                                                             nombre +
                                                                             '</span><span style="float:right">+ ' +
-                                                                            data.body[0].precio +
+                                                                            data.body[0].c +
                                                                             '€</span><p/>'
                                                                     );
+                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
+                                                                    var precioTodo;
+                                                                    precioTodo = $('#precioDimension').text();
+                                                                    var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
+                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -4951,9 +5006,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 nombre +
                                                                 '/grande_interior_' +
                                                                 nombre +
-                                                                '_' +
-                                                                interior1.toLowerCase() +
-                                                                '_optimized.png">'
+                                                                '_blanco_optimized.png">'
                                                         );
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
@@ -4962,7 +5015,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         cuenta = cuenta * 2;
                                                         if (i == 1) {
                                                             this.interioresArmarioNuevosService
-                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                                         '<p style="width:100%">Hueco ' +
@@ -4972,9 +5025,14 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             '">Interior ' +
                                                                             nombre +
                                                                             '</span><span style="float:right">+ ' +
-                                                                            data.body[0].precio +
+                                                                            data.body[0].d +
                                                                             '€</span><p/>'
                                                                     );
+                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].d + ' €');
+                                                                    var precioTodo;
+                                                                    precioTodo = $('#precioDimension').text();
+                                                                    var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
+                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -4984,9 +5042,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 nombre +
                                                                 '/grande_interior_' +
                                                                 nombre +
-                                                                '_' +
-                                                                interior1.toLowerCase() +
-                                                                '_optimized.png">'
+                                                                '_blanco_optimized.png">'
                                                         );
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
@@ -4995,7 +5051,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         cuenta = cuenta * 1;
                                                         if (i == 1) {
                                                             this.interioresArmarioNuevosService
-                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                                         '<p style="width:100%">Hueco ' +
@@ -5005,9 +5061,14 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             '">Interior ' +
                                                                             nombre +
                                                                             '</span><span style="float:right">+ ' +
-                                                                            data.body[0].precio +
+                                                                            data.body[0].e +
                                                                             '€</span><p/>'
                                                                     );
+                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].e + ' €');
+                                                                    var precioTodo;
+                                                                    precioTodo = $('#precioDimension').text();
+                                                                    var precioTodoFloat = data.body[0].e + parseFloat(precioTodo);
+                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -5017,9 +5078,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 nombre +
                                                                 '/peque_interior_' +
                                                                 nombre +
-                                                                '_' +
-                                                                interior1.toLowerCase() +
-                                                                '_optimized.png">'
+                                                                '_blanco_optimized.png">'
                                                         );
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();

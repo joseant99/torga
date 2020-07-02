@@ -32,6 +32,7 @@ import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { DireccionTiendasService } from '../direccion-tiendas/direccion-tiendas.service';
 import { PrecioFinalPresuService } from '../precio-final-presu/precio-final-presu.service';
 import { DimensionesProductoTipoService } from '../dimensiones-producto-tipo/dimensiones-producto-tipo.service';
+import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 @Component({
     selector: 'jhi-presupuesto-productos',
     templateUrl: './presupuesto-productos.component.html'
@@ -71,6 +72,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     productosPresupuestoPedidos: any;
     tiendaNombre: any;
     numero: any;
+    tiendaCargadaPresu: any;
     singulares: any;
     vitrinas: any;
     constructor(
@@ -90,6 +92,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         protected provinciasService: ProvinciasService,
         protected municipiosService: MunicipiosService,
         protected datosClienteService: DatosClienteService,
+        protected datosUsuarioService: DatosUsuarioService,
         protected pagosTiendaService: PagosTiendaService,
         protected presupuestoArmarioService: PresupuestoArmarioService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
@@ -285,7 +288,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         this.productosPresupuestoPedidosService.query1(parseFloat(presu)).subscribe(
             (res: HttpResponse<IProductosPresupuestoPedidos[]>) => {
                 for (let i = 0; i < res.body.length; i++) {
-                    var precioPunto = this.precioPunto;
+                    if (this.precioPunto != undefined) {
+                        var precioPunto = this.precioPunto[0];
+                    }
                     if (res.body[i]['presupuestoPedido'] != null) {
                         if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
                             if (res.body[i]['productosDormitorio']['categoriasDormi']['id'] == 9) {
@@ -926,9 +931,10 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                         }
                         this.iluminacionProdPrePedService.metidos = ilu;
                     });
-                var precioPunto = this.precioPunto;
+                var precioPunto = this.precioPunto[0];
                 var apoyoPrecios = this.apoyoPrecios;
-
+                var olauseleles = this.precioTiendaService.precioTienda[0].precio / 100 + 1;
+                var yeahburi = this.precioTiendaService.precioTienda[0].precio / 100 + 1;
                 var precioAparadores = this.aparadores;
                 var precioVitrinas = this.vitrinas;
                 var precioSingulares = this.singulares;
@@ -1403,6 +1409,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     precioApo = precioApo / 100 + 1;
                                                 }
                                             }
+                                            precioProd = olauseleles;
+                                            precioApo = yeahburi;
                                             var precioApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
                                             precioApoyo = precioApoyo * precioPunto;
                                             precioApoyo = precioApoyo * precioApo;
@@ -1616,6 +1624,10 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
     ngOnInit() {
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+
+        var idPresu;
+        idPresu = sessionStorage.getItem('presupuesto');
+
         var ilu = [];
         this.iluminacionProdPrePedService
             .query({
@@ -1636,9 +1648,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
             this.modulosBajos = data.body;
         });
-        this.precioTiendaService.findBus(tienda.id).subscribe(data => {
-            this.precioPunto = data.body;
-        });
+
         this.precioTiendaProductosService.findProdId(11, tienda.id).subscribe(data => {
             this.aparadores = data.body;
         });
@@ -1657,14 +1667,12 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var presupuestos = [];
         var saber = 0;
         var acabados = [];
-        this.soloMedBuen();
 
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
         this.registerChangeInProductosPresupuestoPedidos();
-        var idPresu;
-        idPresu = sessionStorage.getItem('presupuesto');
+
         this.idPresu = idPresu;
         this.contactoFabricaService
             .query({
@@ -1717,6 +1725,28 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
         this.productosPresupuestoPedidosService.query1(idPresu).subscribe(data => {
             this.productosPresupuestoPedidosService.todos = data.body;
+        });
+        this.presupuestoPedidoService.find(idPresu).subscribe(data => {
+            var usuario = data.body.user;
+            this.datosUsuarioService
+                .query({
+                    size: 1000000
+                })
+                .subscribe(data => {
+                    for (let b = 0; b < data.body.length; b++) {
+                        if (data.body[b]['user']['id'] == usuario['id']) {
+                            tienda = data.body[b];
+                            this.datosUsuarioService.tiendaCargadaPresu = tienda;
+                            this.precioTiendaService.findBus(this.datosUsuarioService.tiendaCargadaPresu.id).subscribe(data => {
+                                this.precioPunto = data.body;
+                                this.precioTiendaService.findBus1(this.datosUsuarioService.tiendaCargadaPresu.id, 1).subscribe(data => {
+                                    this.precioTiendaService.precioTienda = data.body;
+                                    this.soloMedBuen();
+                                });
+                            });
+                        }
+                    }
+                });
         });
 
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
