@@ -1,0 +1,58 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vencimientos",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "d1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "d2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "d3",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "d4",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "d5",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "d6",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "d7",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "d8",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dTopp",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20200703084121",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "fpago",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

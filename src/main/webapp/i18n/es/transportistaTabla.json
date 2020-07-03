@@ -1,0 +1,28 @@
+{
+    "torgaPedidosApp": {
+        "transportistaTabla": {
+            "home": {
+                "title": "Transportista Tablas",
+                "createLabel": "Crear nuevo Transportista Tabla",
+                "createOrEditLabel": "Crear o editar Transportista Tabla"
+            },
+            "created": "Un nuevo Transportista Tabla ha sido creado con el identificador {{ param }}",
+            "updated": "Un Transportista Tabla ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Transportista Tabla ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Transportista Tabla {{ id }}?"
+            },
+            "detail": {
+                "title": "Transportista Tabla"
+            },
+            "nombre": "Nombre",
+            "telefono": "Telefono",
+            "email": "Email",
+            "direccion": "Direccion",
+            "nombreFiscal": "Nombre Fiscal",
+            "cp": "Cp",
+            "provincias": "Provincias",
+            "municipios": "Municipios"
+        }
+    }
+}

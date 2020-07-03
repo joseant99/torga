@@ -1,0 +1,167 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="repreGCompra">
+            <h2><span jhiTranslate="torgaPedidosApp.repreGCompra.detail.title">Repre G Compra</span> {{repreGCompra.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{repreGCompra.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.cif">Cif</span></dt>
+                <dd>
+                    <span>{{repreGCompra.cif}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.activo">Activo</span></dt>
+                <dd>
+                    <span>{{repreGCompra.activo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.fAlta">F Alta</span></dt>
+                <dd>
+                    <span>{{repreGCompra.fAlta}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.fBaja">F Baja</span></dt>
+                <dd>
+                    <span>{{repreGCompra.fBaja}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.comision">Comision</span></dt>
+                <dd>
+                    <span>{{repreGCompra.comision}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.dto1">Dto 1</span></dt>
+                <dd>
+                    <span>{{repreGCompra.dto1}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.com1">Com 1</span></dt>
+                <dd>
+                    <span>{{repreGCompra.com1}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.dto2">Dto 2</span></dt>
+                <dd>
+                    <span>{{repreGCompra.dto2}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.com2">Com 2</span></dt>
+                <dd>
+                    <span>{{repreGCompra.com2}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.dto3">Dto 3</span></dt>
+                <dd>
+                    <span>{{repreGCompra.dto3}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.com3">Com 3</span></dt>
+                <dd>
+                    <span>{{repreGCompra.com3}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.dto4">Dto 4</span></dt>
+                <dd>
+                    <span>{{repreGCompra.dto4}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.com4">Com 4</span></dt>
+                <dd>
+                    <span>{{repreGCompra.com4}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.dto5">Dto 5</span></dt>
+                <dd>
+                    <span>{{repreGCompra.dto5}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.com5">Com 5</span></dt>
+                <dd>
+                    <span>{{repreGCompra.com5}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.dtoGrupo">Dto Grupo</span></dt>
+                <dd>
+                    <span>{{repreGCompra.dtoGrupo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.ctaContable">Cta Contable</span></dt>
+                <dd>
+                    <span>{{repreGCompra.ctaContable}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.observaciones">Observaciones</span></dt>
+                <dd>
+                    <span>{{repreGCompra.observaciones}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.apIva">Ap Iva</span></dt>
+                <dd>
+                    <span>{{repreGCompra.apIva}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.apReq">Ap Req</span></dt>
+                <dd>
+                    <span>{{repreGCompra.apReq}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.tipoIva">Tipo Iva</span></dt>
+                <dd>
+                    <span>{{repreGCompra.tipoIva}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.retencion">Retencion</span></dt>
+                <dd>
+                    <span>{{repreGCompra.retencion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{repreGCompra.direccion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.cp">Cp</span></dt>
+                <dd>
+                    <span>{{repreGCompra.cp}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.poblacion">Poblacion</span></dt>
+                <dd>
+                    <span>{{repreGCompra.poblacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.provincia">Provincia</span></dt>
+                <dd>
+                    <span>{{repreGCompra.provincia}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.zona">Zona</span></dt>
+                <dd>
+                    <span>{{repreGCompra.zona}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.tipo">Tipo</span></dt>
+                <dd>
+                    <span>{{repreGCompra.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.email">Email</span></dt>
+                <dd>
+                    <span>{{repreGCompra.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.web">Web</span></dt>
+                <dd>
+                    <span>{{repreGCompra.web}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.objetivos">Objetivos</span></dt>
+                <dd>
+                    <span>{{repreGCompra.objetivos}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.fijo">Fijo</span></dt>
+                <dd>
+                    <span>{{repreGCompra.fijo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.movil">Movil</span></dt>
+                <dd>
+                    <span>{{repreGCompra.movil}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.fax">Fax</span></dt>
+                <dd>
+                    <span>{{repreGCompra.fax}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.repreGCompra.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{repreGCompra.codigo}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/repre-g-compra', repreGCompra.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-f-pago-heading" jhiTranslate="torgaPedidosApp.fPago.home.createOrEditLabel">Create or edit a F Pago</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!fPago.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="fPago.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                        [(ngModel)]="fPago.descripcion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.vencimientos" for="field_vencimientos">Vencimientos</label>
+                    <input type="text" class="form-control" name="vencimientos" id="field_vencimientos"
+                        [(ngModel)]="fPago.vencimientos" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.d1" for="field_d1">D 1</label>
+                    <input type="number" class="form-control" name="d1" id="field_d1"
+                        [(ngModel)]="fPago.d1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.d2" for="field_d2">D 2</label>
+                    <input type="number" class="form-control" name="d2" id="field_d2"
+                        [(ngModel)]="fPago.d2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.d3" for="field_d3">D 3</label>
+                    <input type="number" class="form-control" name="d3" id="field_d3"
+                        [(ngModel)]="fPago.d3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.d4" for="field_d4">D 4</label>
+                    <input type="number" class="form-control" name="d4" id="field_d4"
+                        [(ngModel)]="fPago.d4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.d5" for="field_d5">D 5</label>
+                    <input type="number" class="form-control" name="d5" id="field_d5"
+                        [(ngModel)]="fPago.d5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.d6" for="field_d6">D 6</label>
+                    <input type="number" class="form-control" name="d6" id="field_d6"
+                        [(ngModel)]="fPago.d6" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.d7" for="field_d7">D 7</label>
+                    <input type="number" class="form-control" name="d7" id="field_d7"
+                        [(ngModel)]="fPago.d7" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.d8" for="field_d8">D 8</label>
+                    <input type="number" class="form-control" name="d8" id="field_d8"
+                        [(ngModel)]="fPago.d8" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.fPago.dTopp" for="field_dTopp">D Topp</label>
+                    <input type="text" class="form-control" name="dTopp" id="field_dTopp"
+                        [(ngModel)]="fPago.dTopp" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

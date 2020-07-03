@@ -1,0 +1,204 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-repre-g-compra-heading" jhiTranslate="torgaPedidosApp.repreGCompra.home.createOrEditLabel">Create or edit a Repre G Compra</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!repreGCompra.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="repreGCompra.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="repreGCompra.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.cif" for="field_cif">Cif</label>
+                    <input type="text" class="form-control" name="cif" id="field_cif"
+                        [(ngModel)]="repreGCompra.cif" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.activo" for="field_activo">Activo</label>
+                    <input type="checkbox" class="form-control" name="activo" id="field_activo"
+                        [(ngModel)]="repreGCompra.activo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.fAlta" for="field_fAlta">F Alta</label>
+                    <input type="text" class="form-control" name="fAlta" id="field_fAlta"
+                        [(ngModel)]="repreGCompra.fAlta" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.fBaja" for="field_fBaja">F Baja</label>
+                    <input type="text" class="form-control" name="fBaja" id="field_fBaja"
+                        [(ngModel)]="repreGCompra.fBaja" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.comision" for="field_comision">Comision</label>
+                    <input type="number" class="form-control" name="comision" id="field_comision"
+                        [(ngModel)]="repreGCompra.comision" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.dto1" for="field_dto1">Dto 1</label>
+                    <input type="number" class="form-control" name="dto1" id="field_dto1"
+                        [(ngModel)]="repreGCompra.dto1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.com1" for="field_com1">Com 1</label>
+                    <input type="number" class="form-control" name="com1" id="field_com1"
+                        [(ngModel)]="repreGCompra.com1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.dto2" for="field_dto2">Dto 2</label>
+                    <input type="number" class="form-control" name="dto2" id="field_dto2"
+                        [(ngModel)]="repreGCompra.dto2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.com2" for="field_com2">Com 2</label>
+                    <input type="number" class="form-control" name="com2" id="field_com2"
+                        [(ngModel)]="repreGCompra.com2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.dto3" for="field_dto3">Dto 3</label>
+                    <input type="number" class="form-control" name="dto3" id="field_dto3"
+                        [(ngModel)]="repreGCompra.dto3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.com3" for="field_com3">Com 3</label>
+                    <input type="number" class="form-control" name="com3" id="field_com3"
+                        [(ngModel)]="repreGCompra.com3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.dto4" for="field_dto4">Dto 4</label>
+                    <input type="number" class="form-control" name="dto4" id="field_dto4"
+                        [(ngModel)]="repreGCompra.dto4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.com4" for="field_com4">Com 4</label>
+                    <input type="number" class="form-control" name="com4" id="field_com4"
+                        [(ngModel)]="repreGCompra.com4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.dto5" for="field_dto5">Dto 5</label>
+                    <input type="number" class="form-control" name="dto5" id="field_dto5"
+                        [(ngModel)]="repreGCompra.dto5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.com5" for="field_com5">Com 5</label>
+                    <input type="number" class="form-control" name="com5" id="field_com5"
+                        [(ngModel)]="repreGCompra.com5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.dtoGrupo" for="field_dtoGrupo">Dto Grupo</label>
+                    <input type="number" class="form-control" name="dtoGrupo" id="field_dtoGrupo"
+                        [(ngModel)]="repreGCompra.dtoGrupo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.ctaContable" for="field_ctaContable">Cta Contable</label>
+                    <input type="number" class="form-control" name="ctaContable" id="field_ctaContable"
+                        [(ngModel)]="repreGCompra.ctaContable" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.observaciones" for="field_observaciones">Observaciones</label>
+                    <input type="text" class="form-control" name="observaciones" id="field_observaciones"
+                        [(ngModel)]="repreGCompra.observaciones" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.apIva" for="field_apIva">Ap Iva</label>
+                    <input type="checkbox" class="form-control" name="apIva" id="field_apIva"
+                        [(ngModel)]="repreGCompra.apIva" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.apReq" for="field_apReq">Ap Req</label>
+                    <input type="checkbox" class="form-control" name="apReq" id="field_apReq"
+                        [(ngModel)]="repreGCompra.apReq" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.tipoIva" for="field_tipoIva">Tipo Iva</label>
+                    <input type="number" class="form-control" name="tipoIva" id="field_tipoIva"
+                        [(ngModel)]="repreGCompra.tipoIva" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.retencion" for="field_retencion">Retencion</label>
+                    <input type="number" class="form-control" name="retencion" id="field_retencion"
+                        [(ngModel)]="repreGCompra.retencion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.direccion" for="field_direccion">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="field_direccion"
+                        [(ngModel)]="repreGCompra.direccion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.cp" for="field_cp">Cp</label>
+                    <input type="number" class="form-control" name="cp" id="field_cp"
+                        [(ngModel)]="repreGCompra.cp" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.poblacion" for="field_poblacion">Poblacion</label>
+                    <input type="text" class="form-control" name="poblacion" id="field_poblacion"
+                        [(ngModel)]="repreGCompra.poblacion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.provincia" for="field_provincia">Provincia</label>
+                    <input type="text" class="form-control" name="provincia" id="field_provincia"
+                        [(ngModel)]="repreGCompra.provincia" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.zona" for="field_zona">Zona</label>
+                    <input type="text" class="form-control" name="zona" id="field_zona"
+                        [(ngModel)]="repreGCompra.zona" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.tipo" for="field_tipo">Tipo</label>
+                    <input type="text" class="form-control" name="tipo" id="field_tipo"
+                        [(ngModel)]="repreGCompra.tipo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="repreGCompra.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.web" for="field_web">Web</label>
+                    <input type="text" class="form-control" name="web" id="field_web"
+                        [(ngModel)]="repreGCompra.web" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.objetivos" for="field_objetivos">Objetivos</label>
+                    <input type="number" class="form-control" name="objetivos" id="field_objetivos"
+                        [(ngModel)]="repreGCompra.objetivos" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.fijo" for="field_fijo">Fijo</label>
+                    <input type="number" class="form-control" name="fijo" id="field_fijo"
+                        [(ngModel)]="repreGCompra.fijo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.movil" for="field_movil">Movil</label>
+                    <input type="number" class="form-control" name="movil" id="field_movil"
+                        [(ngModel)]="repreGCompra.movil" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.fax" for="field_fax">Fax</label>
+                    <input type="text" class="form-control" name="fax" id="field_fax"
+                        [(ngModel)]="repreGCompra.fax" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.repreGCompra.codigo" for="field_codigo">Codigo</label>
+                    <input type="number" class="form-control" name="codigo" id="field_codigo"
+                        [(ngModel)]="repreGCompra.codigo" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

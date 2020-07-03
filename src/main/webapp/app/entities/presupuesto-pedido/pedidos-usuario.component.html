@@ -21,11 +21,8 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="pedido" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.pedido">Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo"><span >Referencia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="fecha_presupuesto"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto">Fecha Presupuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="fecha_pedido" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_pedido">Fecha Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>

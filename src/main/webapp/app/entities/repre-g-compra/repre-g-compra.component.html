@@ -1,0 +1,132 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.repreGCompra.home.title">Repre G Compras</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-repre-g-compra" [routerLink]="['/repre-g-compra/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.repreGCompra.home.createLabel">
+            Create new Repre G Compra
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="repreGCompras">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nombre"><span jhiTranslate="torgaPedidosApp.repreGCompra.nombre">Nombre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cif"><span jhiTranslate="torgaPedidosApp.repreGCompra.cif">Cif</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="activo"><span jhiTranslate="torgaPedidosApp.repreGCompra.activo">Activo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fAlta"><span jhiTranslate="torgaPedidosApp.repreGCompra.fAlta">F Alta</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fBaja"><span jhiTranslate="torgaPedidosApp.repreGCompra.fBaja">F Baja</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="comision"><span jhiTranslate="torgaPedidosApp.repreGCompra.comision">Comision</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dto1"><span jhiTranslate="torgaPedidosApp.repreGCompra.dto1">Dto 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="com1"><span jhiTranslate="torgaPedidosApp.repreGCompra.com1">Com 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dto2"><span jhiTranslate="torgaPedidosApp.repreGCompra.dto2">Dto 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="com2"><span jhiTranslate="torgaPedidosApp.repreGCompra.com2">Com 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dto3"><span jhiTranslate="torgaPedidosApp.repreGCompra.dto3">Dto 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="com3"><span jhiTranslate="torgaPedidosApp.repreGCompra.com3">Com 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dto4"><span jhiTranslate="torgaPedidosApp.repreGCompra.dto4">Dto 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="com4"><span jhiTranslate="torgaPedidosApp.repreGCompra.com4">Com 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dto5"><span jhiTranslate="torgaPedidosApp.repreGCompra.dto5">Dto 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="com5"><span jhiTranslate="torgaPedidosApp.repreGCompra.com5">Com 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dtoGrupo"><span jhiTranslate="torgaPedidosApp.repreGCompra.dtoGrupo">Dto Grupo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ctaContable"><span jhiTranslate="torgaPedidosApp.repreGCompra.ctaContable">Cta Contable</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="observaciones"><span jhiTranslate="torgaPedidosApp.repreGCompra.observaciones">Observaciones</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="apIva"><span jhiTranslate="torgaPedidosApp.repreGCompra.apIva">Ap Iva</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="apReq"><span jhiTranslate="torgaPedidosApp.repreGCompra.apReq">Ap Req</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipoIva"><span jhiTranslate="torgaPedidosApp.repreGCompra.tipoIva">Tipo Iva</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="retencion"><span jhiTranslate="torgaPedidosApp.repreGCompra.retencion">Retencion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="direccion"><span jhiTranslate="torgaPedidosApp.repreGCompra.direccion">Direccion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cp"><span jhiTranslate="torgaPedidosApp.repreGCompra.cp">Cp</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="poblacion"><span jhiTranslate="torgaPedidosApp.repreGCompra.poblacion">Poblacion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="provincia"><span jhiTranslate="torgaPedidosApp.repreGCompra.provincia">Provincia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="zona"><span jhiTranslate="torgaPedidosApp.repreGCompra.zona">Zona</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipo"><span jhiTranslate="torgaPedidosApp.repreGCompra.tipo">Tipo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="email"><span jhiTranslate="torgaPedidosApp.repreGCompra.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="web"><span jhiTranslate="torgaPedidosApp.repreGCompra.web">Web</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="objetivos"><span jhiTranslate="torgaPedidosApp.repreGCompra.objetivos">Objetivos</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fijo"><span jhiTranslate="torgaPedidosApp.repreGCompra.fijo">Fijo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="movil"><span jhiTranslate="torgaPedidosApp.repreGCompra.movil">Movil</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fax"><span jhiTranslate="torgaPedidosApp.repreGCompra.fax">Fax</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.repreGCompra.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let repreGCompra of repreGCompras ;trackBy: trackId">
+                <td><a [routerLink]="['/repre-g-compra', repreGCompra.id, 'view' ]">{{repreGCompra.id}}</a></td>
+                <td>{{repreGCompra.nombre}}</td>
+                <td>{{repreGCompra.cif}}</td>
+                <td>{{repreGCompra.activo}}</td>
+                <td>{{repreGCompra.fAlta}}</td>
+                <td>{{repreGCompra.fBaja}}</td>
+                <td>{{repreGCompra.comision}}</td>
+                <td>{{repreGCompra.dto1}}</td>
+                <td>{{repreGCompra.com1}}</td>
+                <td>{{repreGCompra.dto2}}</td>
+                <td>{{repreGCompra.com2}}</td>
+                <td>{{repreGCompra.dto3}}</td>
+                <td>{{repreGCompra.com3}}</td>
+                <td>{{repreGCompra.dto4}}</td>
+                <td>{{repreGCompra.com4}}</td>
+                <td>{{repreGCompra.dto5}}</td>
+                <td>{{repreGCompra.com5}}</td>
+                <td>{{repreGCompra.dtoGrupo}}</td>
+                <td>{{repreGCompra.ctaContable}}</td>
+                <td>{{repreGCompra.observaciones}}</td>
+                <td>{{repreGCompra.apIva}}</td>
+                <td>{{repreGCompra.apReq}}</td>
+                <td>{{repreGCompra.tipoIva}}</td>
+                <td>{{repreGCompra.retencion}}</td>
+                <td>{{repreGCompra.direccion}}</td>
+                <td>{{repreGCompra.cp}}</td>
+                <td>{{repreGCompra.poblacion}}</td>
+                <td>{{repreGCompra.provincia}}</td>
+                <td>{{repreGCompra.zona}}</td>
+                <td>{{repreGCompra.tipo}}</td>
+                <td>{{repreGCompra.email}}</td>
+                <td>{{repreGCompra.web}}</td>
+                <td>{{repreGCompra.objetivos}}</td>
+                <td>{{repreGCompra.fijo}}</td>
+                <td>{{repreGCompra.movil}}</td>
+                <td>{{repreGCompra.fax}}</td>
+                <td>{{repreGCompra.codigo}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/repre-g-compra', repreGCompra.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/repre-g-compra', repreGCompra.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'repre-g-compra/'+ repreGCompra.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="repreGCompras && repreGCompras.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

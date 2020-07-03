@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.transportistaTabla.home.title">Transportista Tablas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-transportista-tabla" [routerLink]="['/transportista-tabla/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.transportistaTabla.home.createLabel">
+            Create new Transportista Tabla
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="transportistaTablas">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nombre"><span jhiTranslate="torgaPedidosApp.transportistaTabla.nombre">Nombre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="telefono"><span jhiTranslate="torgaPedidosApp.transportistaTabla.telefono">Telefono</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="email"><span jhiTranslate="torgaPedidosApp.transportistaTabla.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="direccion"><span jhiTranslate="torgaPedidosApp.transportistaTabla.direccion">Direccion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nombreFiscal"><span jhiTranslate="torgaPedidosApp.transportistaTabla.nombreFiscal">Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cp"><span jhiTranslate="torgaPedidosApp.transportistaTabla.cp">Cp</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="provincias.id"><span jhiTranslate="torgaPedidosApp.transportistaTabla.provincias">Provincias</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="municipios.id"><span jhiTranslate="torgaPedidosApp.transportistaTabla.municipios">Municipios</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let transportistaTabla of transportistaTablas ;trackBy: trackId">
+                <td><a [routerLink]="['/transportista-tabla', transportistaTabla.id, 'view' ]">{{transportistaTabla.id}}</a></td>
+                <td>{{transportistaTabla.nombre}}</td>
+                <td>{{transportistaTabla.telefono}}</td>
+                <td>{{transportistaTabla.email}}</td>
+                <td>{{transportistaTabla.direccion}}</td>
+                <td>{{transportistaTabla.nombreFiscal}}</td>
+                <td>{{transportistaTabla.cp}}</td>
+                <td>
+                    <div *ngIf="transportistaTabla.provincias">
+                        <a [routerLink]="['../provincias', transportistaTabla.provincias?.id, 'view' ]" >{{transportistaTabla.provincias?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transportistaTabla.municipios">
+                        <a [routerLink]="['../municipios', transportistaTabla.municipios?.id, 'view' ]" >{{transportistaTabla.municipios?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/transportista-tabla', transportistaTabla.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/transportista-tabla', transportistaTabla.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'transportista-tabla/'+ transportistaTabla.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="transportistaTablas && transportistaTablas.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "provincias",
+            "otherEntityName": "provincias",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "municipios",
+            "otherEntityName": "municipios",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombreFiscal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cp",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20200703071834",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "transportista_tabla",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

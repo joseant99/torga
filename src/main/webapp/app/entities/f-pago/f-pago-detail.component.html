@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fPago">
+            <h2><span jhiTranslate="torgaPedidosApp.fPago.detail.title">F Pago</span> {{fPago.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{fPago.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.vencimientos">Vencimientos</span></dt>
+                <dd>
+                    <span>{{fPago.vencimientos}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.d1">D 1</span></dt>
+                <dd>
+                    <span>{{fPago.d1}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.d2">D 2</span></dt>
+                <dd>
+                    <span>{{fPago.d2}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.d3">D 3</span></dt>
+                <dd>
+                    <span>{{fPago.d3}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.d4">D 4</span></dt>
+                <dd>
+                    <span>{{fPago.d4}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.d5">D 5</span></dt>
+                <dd>
+                    <span>{{fPago.d5}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.d6">D 6</span></dt>
+                <dd>
+                    <span>{{fPago.d6}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.d7">D 7</span></dt>
+                <dd>
+                    <span>{{fPago.d7}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.d8">D 8</span></dt>
+                <dd>
+                    <span>{{fPago.d8}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.fPago.dTopp">D Topp</span></dt>
+                <dd>
+                    <span>{{fPago.dTopp}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/f-pago', fPago.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -18,7 +18,7 @@
     <include file="config/liquibase/changelog/20190626140349_added_entity_ProductosDormitorio.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190628091003_added_entity_DimensionesProducto.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/201907010708591_added_entity_Acabados.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/201907011510163_added_entity_AcaProd.xml" relativeToChangelogFile="false"/>
+   <include file="config/liquibase/changelog/201907011510163_added_entity_AcaProd.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190701151016_added_entity_constraints_AcaProd.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190202121517_added_entity_constraints_Cliente.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190202121518_added_entity_constraints_ReferenciaClientes.xml" relativeToChangelogFile="false"/>
@@ -105,6 +105,10 @@
     <include file="config/liquibase/changelog/20200616110948_added_entity_constraints_Niveladores1.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200617051804_added_entity_Cajeado1.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200617065731_added_entity_Enmarcados1.xml" relativeToChangelogFile="false"/> 
-    <include file="config/liquibase/changelog/20200617065731_added_entity_constraints_Enmarcados1.xml" relativeToChangelogFile="false"/>    
+    <include file="config/liquibase/changelog/20200617065731_added_entity_constraints_Enmarcados1.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200703071834_added_entity_TransportistaTabla.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20200703071834_added_entity_constraints_TransportistaTabla.xml" relativeToChangelogFile="false"/>      
+    <include file="config/liquibase/changelog/20200703080014_added_entity_Zonas.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200703084121_added_entity_FPago.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200703092738_added_entity_RepreGCompra.xml" relativeToChangelogFile="false"/>   
 </databaseChangeLog> 
-

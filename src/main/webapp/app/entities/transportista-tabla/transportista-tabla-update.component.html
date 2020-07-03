@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-transportista-tabla-heading" jhiTranslate="torgaPedidosApp.transportistaTabla.home.createOrEditLabel">Create or edit a Transportista Tabla</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!transportistaTabla.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="transportistaTabla.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.transportistaTabla.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="transportistaTabla.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.transportistaTabla.telefono" for="field_telefono">Telefono</label>
+                    <input type="text" class="form-control" name="telefono" id="field_telefono"
+                        [(ngModel)]="transportistaTabla.telefono" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.transportistaTabla.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="transportistaTabla.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.transportistaTabla.direccion" for="field_direccion">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="field_direccion"
+                        [(ngModel)]="transportistaTabla.direccion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.transportistaTabla.nombreFiscal" for="field_nombreFiscal">Nombre Fiscal</label>
+                    <input type="text" class="form-control" name="nombreFiscal" id="field_nombreFiscal"
+                        [(ngModel)]="transportistaTabla.nombreFiscal" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.transportistaTabla.cp" for="field_cp">Cp</label>
+                    <input type="number" class="form-control" name="cp" id="field_cp"
+                        [(ngModel)]="transportistaTabla.cp" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.transportistaTabla.provincias" for="field_provincias">Provincias</label>
+                    <select class="form-control" id="field_provincias" name="provincias" [(ngModel)]="transportistaTabla.provincias" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="provinciasOption.id === transportistaTabla.provincias?.id ? transportistaTabla.provincias : provinciasOption" *ngFor="let provinciasOption of provincias; trackBy: trackProvinciasById">{{provinciasOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.transportistaTabla.municipios" for="field_municipios">Municipios</label>
+                    <select class="form-control" id="field_municipios" name="municipios" [(ngModel)]="transportistaTabla.municipios" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="municipiosOption.id === transportistaTabla.municipios?.id ? transportistaTabla.municipios : municipiosOption" *ngFor="let municipiosOption of municipios; trackBy: trackMunicipiosById">{{municipiosOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

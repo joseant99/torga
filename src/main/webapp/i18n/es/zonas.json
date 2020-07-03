@@ -1,0 +1,21 @@
+{
+    "torgaPedidosApp": {
+        "zonas": {
+            "home": {
+                "title": "Zonas",
+                "createLabel": "Crear nuevo Zonas",
+                "createOrEditLabel": "Crear o editar Zonas"
+            },
+            "created": "Un nuevo Zonas ha sido creado con el identificador {{ param }}",
+            "updated": "Un Zonas ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Zonas ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Zonas {{ id }}?"
+            },
+            "detail": {
+                "title": "Zonas"
+            },
+            "descripcion": "Descripcion"
+        }
+    }
+}

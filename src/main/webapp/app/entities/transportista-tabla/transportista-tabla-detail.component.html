@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transportistaTabla">
+            <h2><span jhiTranslate="torgaPedidosApp.transportistaTabla.detail.title">Transportista Tabla</span> {{transportistaTabla.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.transportistaTabla.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{transportistaTabla.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.transportistaTabla.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{transportistaTabla.telefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.transportistaTabla.email">Email</span></dt>
+                <dd>
+                    <span>{{transportistaTabla.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.transportistaTabla.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{transportistaTabla.direccion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.transportistaTabla.nombreFiscal">Nombre Fiscal</span></dt>
+                <dd>
+                    <span>{{transportistaTabla.nombreFiscal}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.transportistaTabla.cp">Cp</span></dt>
+                <dd>
+                    <span>{{transportistaTabla.cp}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.transportistaTabla.provincias">Provincias</span></dt>
+                <dd>
+                    <div *ngIf="transportistaTabla.provincias">
+                        <a [routerLink]="['/provincias', transportistaTabla.provincias?.id, 'view']">{{transportistaTabla.provincias?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.transportistaTabla.municipios">Municipios</span></dt>
+                <dd>
+                    <div *ngIf="transportistaTabla.municipios">
+                        <a [routerLink]="['/municipios', transportistaTabla.municipios?.id, 'view']">{{transportistaTabla.municipios?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transportista-tabla', transportistaTabla.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

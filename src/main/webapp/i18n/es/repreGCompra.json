@@ -1,0 +1,56 @@
+{
+    "torgaPedidosApp": {
+        "repreGCompra": {
+            "home": {
+                "title": "Repre G Compras",
+                "createLabel": "Crear nuevo Repre G Compra",
+                "createOrEditLabel": "Crear o editar Repre G Compra"
+            },
+            "created": "Un nuevo Repre G Compra ha sido creado con el identificador {{ param }}",
+            "updated": "Un Repre G Compra ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Repre G Compra ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Repre G Compra {{ id }}?"
+            },
+            "detail": {
+                "title": "Repre G Compra"
+            },
+            "nombre": "Nombre",
+            "cif": "Cif",
+            "activo": "Activo",
+            "fAlta": "F Alta",
+            "fBaja": "F Baja",
+            "comision": "Comision",
+            "dto1": "Dto 1",
+            "com1": "Com 1",
+            "dto2": "Dto 2",
+            "com2": "Com 2",
+            "dto3": "Dto 3",
+            "com3": "Com 3",
+            "dto4": "Dto 4",
+            "com4": "Com 4",
+            "dto5": "Dto 5",
+            "com5": "Com 5",
+            "dtoGrupo": "Dto Grupo",
+            "ctaContable": "Cta Contable",
+            "observaciones": "Observaciones",
+            "apIva": "Ap Iva",
+            "apReq": "Ap Req",
+            "tipoIva": "Tipo Iva",
+            "retencion": "Retencion",
+            "direccion": "Direccion",
+            "cp": "Cp",
+            "poblacion": "Poblacion",
+            "provincia": "Provincia",
+            "zona": "Zona",
+            "tipo": "Tipo",
+            "email": "Email",
+            "web": "Web",
+            "objetivos": "Objetivos",
+            "fijo": "Fijo",
+            "movil": "Movil",
+            "fax": "Fax",
+            "codigo": "Codigo"
+        }
+    }
+}

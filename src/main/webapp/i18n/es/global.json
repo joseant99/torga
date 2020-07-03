@@ -69,6 +69,10 @@
                 "niveladores": "Niveladores",
                 "cajeado": "Cajeado",
                 "enmarcados": "Enmarcados",
+                "transportistaTabla": "Transportista Tabla",
+                "zonas": "Zonas",
+                "fPago": "F Pago",
+                "repreGCompra": "Repre G Compra",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -112,6 +112,10 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.Niveladores.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.Cajeado.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.Enmarcados.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.TransportistaTabla.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.Zonas.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.FPago.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.RepreGCompra.class.getName() , jcacheConfiguration);
         };
     } 
 }

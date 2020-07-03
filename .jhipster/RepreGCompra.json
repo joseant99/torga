@@ -1,0 +1,158 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cif",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "fAlta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fBaja",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comision",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dto1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "com1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dto2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "com2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dto3",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "com3",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dto4",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "com4",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dto5",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "com5",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dtoGrupo",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "ctaContable",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "observaciones",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "apIva",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "apReq",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "tipoIva",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "retencion",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cp",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "poblacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "provincia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zona",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "web",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "objetivos",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fijo",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "movil",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20200703092738",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "repregcompra",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

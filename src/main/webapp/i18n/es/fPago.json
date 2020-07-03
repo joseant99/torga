@@ -1,0 +1,31 @@
+{
+    "torgaPedidosApp": {
+        "fPago": {
+            "home": {
+                "title": "F Pagos",
+                "createLabel": "Crear nuevo F Pago",
+                "createOrEditLabel": "Crear o editar F Pago"
+            },
+            "created": "Un nuevo F Pago ha sido creado con el identificador {{ param }}",
+            "updated": "Un F Pago ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un F Pago ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar F Pago {{ id }}?"
+            },
+            "detail": {
+                "title": "F Pago"
+            },
+            "descripcion": "Descripcion",
+            "vencimientos": "Vencimientos",
+            "d1": "D 1",
+            "d2": "D 2",
+            "d3": "D 3",
+            "d4": "D 4",
+            "d5": "D 5",
+            "d6": "D 6",
+            "d7": "D 7",
+            "d8": "D 8",
+            "dTopp": "D Topp"
+        }
+    }
+}

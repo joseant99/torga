@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TransportistaTabla.
+    -->
+    <changeSet id="20200703071834-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="provincias_id"
+                                 baseTableName="transportista_tabla"
+                                 constraintName="fk_transportista_tabla_provincias_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="provincias"/>
+
+        <addForeignKeyConstraint baseColumnNames="municipios_id"
+                                 baseTableName="transportista_tabla"
+                                 constraintName="fk_transportista_tabla_municipios_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="municipios"/>
+
+    </changeSet>
+</databaseChangeLog>

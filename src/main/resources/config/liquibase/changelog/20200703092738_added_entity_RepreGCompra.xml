@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity RepreGCompra.
+    -->
+    <changeSet id="20200703092738-1" author="jhipster">
+        <createTable tableName="repregcompra">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nombre" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cif" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="activo" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="f_alta" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="f_baja" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="comision" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dto_1" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="com_1" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dto_2" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="com_2" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dto_3" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="com_3" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dto_4" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="com_4" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dto_5" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="com_5" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dto_grupo" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cta_contable" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="observaciones" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ap_iva" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ap_req" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipo_iva" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="retencion" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="direccion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cp" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="poblacion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="provincia" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="zona" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipo" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="email" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="web" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="objetivos" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fijo" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="movil" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fax" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="codigo" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>
