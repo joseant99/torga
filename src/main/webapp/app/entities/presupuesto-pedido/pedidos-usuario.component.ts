@@ -32,6 +32,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     previousPage: any;
     reverse: any;
     presuped1: any;
+    tiendas: any;
     constructor(
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected parseLinks: JhiParseLinks,
@@ -181,6 +182,28 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
             }
         ]);
         this.loadAll();
+    }
+
+    public sacarPresupuestos() {
+        var val = $('#tiendaSelect').val();
+        var presu = [];
+        var cont = 0;
+        this.presupuestoPedidoService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
+                for (let i = 0; i < res.body.length; i++) {
+                    if (res.body[i]['user']['id'] == val) {
+                        presu[cont] = res.body[i];
+                        cont++;
+                    }
+                }
+                this.presupuestoPedidos = presu;
+                this.presuped1 = presu;
+            });
     }
 
     ngOnInit() {
