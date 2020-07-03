@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -104,6 +104,15 @@ public class DatosUsuarioResource {
         List<DatosUsuario> page = datosUsuarioRepository.findByUserIsCurrentUser();
         return ResponseEntity.ok().body(page);
     }
+    
+    @GetMapping("/datos-usuarios-id1")
+    @Timed
+    public ResponseEntity<Collection<DatosUsuario>> getAllDatosUsuariosId1() {
+        log.debug("REST request to get a page of DatosUsuarios");
+        Collection<DatosUsuario> page = datosUsuarioRepository.busquing();
+        return ResponseEntity.ok().body(page);
+    }
+
 
     /**
      * GET  /datos-usuarios/:id : get the "id" datosUsuario.

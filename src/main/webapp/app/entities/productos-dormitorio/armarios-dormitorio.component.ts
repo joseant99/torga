@@ -3076,6 +3076,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     }
 
     public luzInteriores(id, lol) {
+        var precioDimen = parseFloat($('#precioDimension').text());
         if (lol == 0) {
             var quitar = this.gg;
             this.gg = 0;
@@ -3084,6 +3085,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 prec = prec.split(' ')[0];
                 var precio = parseFloat(prec);
                 precio = precio - 120;
+                precioDimen = precioDimen - 120;
+                $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text(precio + ' €');
                 $('#precioLuz' + id + '1').css({ display: 'none' });
             }
@@ -3092,6 +3095,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 prec = prec.split(' ')[0];
                 var precio = parseFloat(prec);
                 precio = precio - 200;
+                precioDimen = precioDimen - 200;
+                $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text(precio + ' €');
                 $('#precioLuz' + id + '2').css({ display: 'none' });
             }
@@ -3104,17 +3109,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 prec = prec.split(' ')[0];
                 var precio = parseFloat(prec);
                 precio = precio - 200;
+                precioDimen = precioDimen - 200;
+                $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text(precio + ' €');
                 $('#precioLuz' + id + '2').css({ display: 'none' });
             }
+            if (this.gg != 1) {
+                precioDimen = precioDimen + 120;
+                $('#precioDimension').text(precioDimen);
+                $('#precioLuz' + id + '2').css({ display: 'none' });
+                $('#precioLuz' + id + '' + lol).css({ display: 'block' });
+                var prec = $('#precioInt' + id).text();
+                prec = prec.split(' ')[0];
+                var precio = parseFloat(prec);
+                precio = precio + 120;
+                $('#precioInt' + id).text(precio + ' €');
+            }
             this.gg = 1;
-            $('#precioLuz' + id + '2').css({ display: 'none' });
-            $('#precioLuz' + id + '' + lol).css({ display: 'block' });
-            var prec = $('#precioInt' + id).text();
-            prec = prec.split(' ')[0];
-            var precio = parseFloat(prec);
-            precio = precio + 120;
-            $('#precioInt' + id).text(precio + ' €');
         }
         if (lol == 2) {
             var quitar = this.gg;
@@ -3123,17 +3134,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 prec = prec.split(' ')[0];
                 var precio = parseFloat(prec);
                 precio = precio - 120;
+                precioDimen = precioDimen - 120;
+                $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text(precio + ' €');
                 $('#precioLuz' + id + '1').css({ display: 'none' });
             }
             $('#precioLuz' + id + '1').css({ display: 'none' });
             $('#precioLuz' + id + '' + lol).css({ display: 'block' });
+            if (this.gg != 2) {
+                precioDimen = precioDimen + 200;
+                $('#precioDimension').text(precioDimen);
+                var prec = $('#precioInt' + id).text();
+                prec = prec.split(' ')[0];
+                var precio = parseFloat(prec);
+                precio = precio + 200;
+                $('#precioInt' + id).text(precio + ' €');
+            }
             this.gg = 2;
-            var prec = $('#precioInt' + id).text();
-            prec = prec.split(' ')[0];
-            var precio = parseFloat(prec);
-            precio = precio + 200;
-            $('#precioInt' + id).text(precio + ' €');
         }
     }
 

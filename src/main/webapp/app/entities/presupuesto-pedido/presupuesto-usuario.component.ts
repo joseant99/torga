@@ -13,6 +13,8 @@ import { RepresentanteTiendaService } from '../representante-tienda/representant
 import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
 import { RepresenTorgaService } from '../represen-torga/represen-torga.service';
 import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
+
+import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 @Component({
     selector: 'jhi-presupuesto-usuario',
     templateUrl: './presupuesto-usuario.component.html'
@@ -35,7 +37,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
     predicate: any;
     previousPage: any;
     reverse: any;
-
+    presuped1: any;
     constructor(
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected parseLinks: JhiParseLinks,
@@ -45,6 +47,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
+        public datosUsuarioService: DatosUsuarioService,
         protected eventManager: JhiEventManager
     ) {
         this.itemsPerPage = ITEMS_PER_PAGE;
@@ -54,6 +57,78 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
             this.reverse = data.pagingParams.ascending;
             this.predicate = data.pagingParams.predicate;
         });
+    }
+    public filtrosBuscados() {
+        var filtro = $('#filtroos').val();
+        $('#fechaFiltrado').css({ display: 'none' });
+        $('#textoDemasFiltros').css({ display: 'none' });
+        if (filtro == 'FECHA PRESUPUESTO') {
+            $('#fechaFiltrado').css({ display: 'block' });
+        }
+        if (filtro == 'CODIGO CLIENTE') {
+            $('#textoDemasFiltros').css({ display: 'block' });
+        }
+        if (filtro == 'NOMBRE FISCAL') {
+            $('#textoDemasFiltros').css({ display: 'block' });
+            $('#presupuestoPedidos').append('<datalist id="listaBuena"></datalist>');
+            this.datosUsuarioService.findCoger1().subscribe(data => {
+                for (let i = 0; i < data.body['length']; i++) {
+                    $('#listaBuena').append('<option value="' + data.body[i] + '">' + data.body[i] + '</option>');
+                }
+            });
+        }
+        if (filtro == 'REFERENCIA CLIENTE') {
+            $('#textoDemasFiltros').css({ display: 'block' });
+            $('#listaBuena').empty();
+        }
+    }
+
+    public buscarPresu() {
+        var filtro = $('#filtroos').val();
+        var texto = $('#inputFiltro').val();
+        var fechaBus = $('#fechaBus')
+            .val()
+            .toString();
+        console.log(fechaBus);
+        var pedidos = this.presuped1;
+        var cont = 0;
+        var array = [];
+        if (filtro == 'NOMBRE FISCAL') {
+            this.datosUsuarioService.query({ size: 1000000 }).subscribe(data => {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['nombreFiscal'] == texto) {
+                        for (let u = 0; u < pedidos.length; u++) {
+                            if (pedidos[u]['user']['id'] == data.body[i]['user']['id']) {
+                                array[cont] = pedidos[u];
+                                cont++;
+                            }
+                        }
+                        this.presupuestoPedidos = array;
+                    }
+                }
+            });
+        }
+
+        if (filtro == 'FECHA PRESUPUESTO') {
+            var fechCorrecta = fechaBus.split('-')[0] + '/' + fechaBus.split('-')[1] + '/' + fechaBus.split('-')[2];
+            for (let u = 0; u < pedidos.length; u++) {
+                if (pedidos[u]['fecha_presupuesto'] == fechCorrecta) {
+                    array[cont] = pedidos[u];
+                    cont++;
+                }
+            }
+            this.presupuestoPedidos = array;
+        }
+
+        if (filtro == 'REFERENCIA CLIENTE') {
+            for (let u = 0; u < pedidos.length; u++) {
+                if (pedidos[u]['codigo'] == texto) {
+                    array[cont] = pedidos[u];
+                    cont++;
+                }
+            }
+            this.presupuestoPedidos = array;
+        }
     }
 
     loadAll() {
@@ -96,6 +171,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
                 if (res['body']['0'] != 'undefined') {
                     this.tamano = contador;
                     this.todos = cogidos;
+                    this.presuped1 = cogidos;
                     this.paginatePresupuestoPedidos(cogidos, res.headers);
                 }
 
@@ -132,6 +208,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
                     }
                 }
                 this.presupuestoPedidos = presu;
+                this.presuped1 = presu;
             });
     }
 

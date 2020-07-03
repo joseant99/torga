@@ -9,7 +9,7 @@ import { AccountService } from 'app/core';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { PresupuestoPedidoService } from './presupuesto-pedido.service';
-
+import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 @Component({
     selector: 'jhi-pedidos-usuario',
     templateUrl: './pedidos-usuario.component.html'
@@ -31,7 +31,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     predicate: any;
     previousPage: any;
     reverse: any;
-
+    presuped1: any;
     constructor(
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected parseLinks: JhiParseLinks,
@@ -39,6 +39,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
+        public datosUsuarioService: DatosUsuarioService,
         protected eventManager: JhiEventManager
     ) {
         this.itemsPerPage = ITEMS_PER_PAGE;
@@ -49,7 +50,78 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
             this.predicate = data.pagingParams.predicate;
         });
     }
+    public filtrosBuscados() {
+        var filtro = $('#filtroos').val();
+        $('#fechaFiltrado').css({ display: 'none' });
+        $('#textoDemasFiltros').css({ display: 'none' });
+        if (filtro == 'FECHA PEDIDO') {
+            $('#fechaFiltrado').css({ display: 'block' });
+        }
+        if (filtro == 'CODIGO CLIENTE') {
+            $('#textoDemasFiltros').css({ display: 'block' });
+        }
+        if (filtro == 'NOMBRE FISCAL') {
+            $('#textoDemasFiltros').css({ display: 'block' });
+            $('#presupuestoPedidos').append('<datalist id="listaBuena"></datalist>');
+            this.datosUsuarioService.findCoger1().subscribe(data => {
+                for (let i = 0; i < data.body['length']; i++) {
+                    $('#listaBuena').append('<option value="' + data.body[i] + '">' + data.body[i] + '</option>');
+                }
+            });
+        }
+        if (filtro == 'REFERENCIA CLIENTE') {
+            $('#textoDemasFiltros').css({ display: 'block' });
+            $('#listaBuena').empty();
+        }
+    }
 
+    public buscarPresu() {
+        var filtro = $('#filtroos').val();
+        var texto = $('#inputFiltro').val();
+        var fechaBus = $('#fechaBus')
+            .val()
+            .toString();
+        console.log(fechaBus);
+        var pedidos = this.presuped1;
+        var cont = 0;
+        var array = [];
+        if (filtro == 'NOMBRE FISCAL') {
+            this.datosUsuarioService.query({ size: 1000000 }).subscribe(data => {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['nombreFiscal'] == texto) {
+                        for (let u = 0; u < pedidos.length; u++) {
+                            if (pedidos[u]['user']['id'] == data.body[i]['user']['id']) {
+                                array[cont] = pedidos[u];
+                                cont++;
+                            }
+                        }
+                        this.presupuestoPedidos = array;
+                    }
+                }
+            });
+        }
+
+        if (filtro == 'FECHA PEDIDO') {
+            var fechCorrecta = fechaBus.split('-')[0] + '/' + fechaBus.split('-')[1] + '/' + fechaBus.split('-')[2];
+            for (let u = 0; u < pedidos.length; u++) {
+                if (pedidos[u]['fecha_pedido'] == fechCorrecta) {
+                    array[cont] = pedidos[u];
+                    cont++;
+                }
+            }
+            this.presupuestoPedidos = array;
+        }
+
+        if (filtro == 'REFERENCIA CLIENTE') {
+            for (let u = 0; u < pedidos.length; u++) {
+                if (pedidos[u]['codigo'] == texto) {
+                    array[cont] = pedidos[u];
+                    cont++;
+                }
+            }
+            this.presupuestoPedidos = array;
+        }
+    }
     loadAll() {
         var idUsu = this.accountService['userIdentity']['id'];
         var cogidos = [];
@@ -63,13 +135,14 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
             .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
                 $.each(res['body'], function(index, value) {
                     if (value['pedido'] == 1) {
-                        cogidos[index] = value;
+                        cogidos[contador] = value;
                         contador++;
                     }
                 });
                 if (res['body']['0'] != 'undefined') {
                     this.tamano = contador;
                     this.todos = cogidos;
+                    this.presuped1 = cogidos;
                     this.paginatePresupuestoPedidos(cogidos, res.headers);
                 }
                 (res: HttpErrorResponse) => this.onError(res.message);
