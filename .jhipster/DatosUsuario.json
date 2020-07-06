@@ -21,6 +21,30 @@
             "otherEntityField": "login",
             "ownerSide": true,
             "otherEntityRelationshipName": "datosUsuario"
+        },
+        {
+            "relationshipName": "repreGCompra",
+            "otherEntityName": "repreGCompra",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "fPago",
+            "otherEntityName": "fPago",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "zonas",
+            "otherEntityName": "zonas",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "transportistaTabla",
+            "otherEntityName": "transportistaTabla",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [
@@ -59,6 +83,130 @@
         },
         {
             "fieldName": "nombreFiscal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fAlta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fBaja",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prioridadCarga",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "apIVA",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "apReq",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valAlbaran",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "facXAlbaran",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dto1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dto2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dto3",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dtoTras",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "idGc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valPedido",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valPuntos",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dPago1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dPago2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dPago3",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "desdeVaca",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hastaVaca",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "web",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "movil",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ctaContable",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "observaciones",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observacionesPed",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observacionesAlb",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observacionesFac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "noGiroVaca",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observacionesDireccion",
             "fieldType": "String"
         }
     ],

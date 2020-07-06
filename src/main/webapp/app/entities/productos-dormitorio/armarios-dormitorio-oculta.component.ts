@@ -686,7 +686,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             $('#nombreMesita').text(nombreArmario);
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Ancho: ' + ancho + '<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Altura: ' + alto + '<p/>');
-            $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Fondo: 60<p/>');
+            $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Fondo: 64<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                 '<p style="width:100%">Codigo: ' + data.body[0]['codigo'] + '<p/>'
             );

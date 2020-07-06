@@ -11,6 +11,14 @@ import { ProvinciasService } from 'app/entities/provincias';
 import { IMunicipios } from 'app/shared/model/municipios.model';
 import { MunicipiosService } from 'app/entities/municipios';
 import { IUser, UserService } from 'app/core';
+import { IRepreGCompra } from 'app/shared/model/repre-g-compra.model';
+import { RepreGCompraService } from 'app/entities/repre-g-compra';
+import { IFPago } from 'app/shared/model/f-pago.model';
+import { FPagoService } from 'app/entities/f-pago';
+import { IZonas } from 'app/shared/model/zonas.model';
+import { ZonasService } from 'app/entities/zonas';
+import { ITransportistaTabla } from 'app/shared/model/transportista-tabla.model';
+import { TransportistaTablaService } from 'app/entities/transportista-tabla';
 
 @Component({
     selector: 'jhi-datos-usuario-update',
@@ -26,6 +34,14 @@ export class DatosUsuarioUpdateComponent implements OnInit {
 
     users: IUser[];
 
+    repregcompras: IRepreGCompra[];
+
+    fpagos: IFPago[];
+
+    zonas: IZonas[];
+
+    transportistatablas: ITransportistaTabla[];
+
     constructor(
         protected dataUtils: JhiDataUtils,
         protected jhiAlertService: JhiAlertService,
@@ -33,6 +49,10 @@ export class DatosUsuarioUpdateComponent implements OnInit {
         protected provinciasService: ProvinciasService,
         protected municipiosService: MunicipiosService,
         protected userService: UserService,
+        protected repreGCompraService: RepreGCompraService,
+        protected fPagoService: FPagoService,
+        protected zonasService: ZonasService,
+        protected transportistaTablaService: TransportistaTablaService,
         protected elementRef: ElementRef,
         protected activatedRoute: ActivatedRoute
     ) {}
@@ -60,6 +80,30 @@ export class DatosUsuarioUpdateComponent implements OnInit {
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
+        this.repreGCompraService.query().subscribe(
+            (res: HttpResponse<IRepreGCompra[]>) => {
+                this.repregcompras = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.fPagoService.query().subscribe(
+            (res: HttpResponse<IFPago[]>) => {
+                this.fpagos = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.zonasService.query().subscribe(
+            (res: HttpResponse<IZonas[]>) => {
+                this.zonas = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.transportistaTablaService.query().subscribe(
+            (res: HttpResponse<ITransportistaTabla[]>) => {
+                this.transportistatablas = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
     }
 
     byteSize(field) {
@@ -79,8 +123,7 @@ export class DatosUsuarioUpdateComponent implements OnInit {
     }
 
     previousState() {
-        location.href = '#/datos-usuario';
-        location.reload();
+        window.history.back();
     }
 
     save() {
@@ -118,6 +161,22 @@ export class DatosUsuarioUpdateComponent implements OnInit {
     }
 
     trackUserById(index: number, item: IUser) {
+        return item.id;
+    }
+
+    trackRepreGCompraById(index: number, item: IRepreGCompra) {
+        return item.id;
+    }
+
+    trackFPagoById(index: number, item: IFPago) {
+        return item.id;
+    }
+
+    trackZonasById(index: number, item: IZonas) {
+        return item.id;
+    }
+
+    trackTransportistaTablaById(index: number, item: ITransportistaTabla) {
         return item.id;
     }
 }

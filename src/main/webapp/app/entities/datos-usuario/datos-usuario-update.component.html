@@ -66,6 +66,161 @@
                     <input type="text" class="form-control" name="nombreFiscal" id="field_nombreFiscal"
                         [(ngModel)]="datosUsuario.nombreFiscal" />
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.codigo" for="field_codigo">Codigo</label>
+                    <input type="number" class="form-control" name="codigo" id="field_codigo"
+                        [(ngModel)]="datosUsuario.codigo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.estado" for="field_estado">Estado</label>
+                    <input type="text" class="form-control" name="estado" id="field_estado"
+                        [(ngModel)]="datosUsuario.estado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.fAlta" for="field_fAlta">F Alta</label>
+                    <input type="text" class="form-control" name="fAlta" id="field_fAlta"
+                        [(ngModel)]="datosUsuario.fAlta" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.fBaja" for="field_fBaja">F Baja</label>
+                    <input type="text" class="form-control" name="fBaja" id="field_fBaja"
+                        [(ngModel)]="datosUsuario.fBaja" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.prioridadCarga" for="field_prioridadCarga">Prioridad Carga</label>
+                    <input type="number" class="form-control" name="prioridadCarga" id="field_prioridadCarga"
+                        [(ngModel)]="datosUsuario.prioridadCarga" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.apIVA" for="field_apIVA">Ap IVA</label>
+                    <input type="text" class="form-control" name="apIVA" id="field_apIVA"
+                        [(ngModel)]="datosUsuario.apIVA" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.apReq" for="field_apReq">Ap Req</label>
+                    <input type="text" class="form-control" name="apReq" id="field_apReq"
+                        [(ngModel)]="datosUsuario.apReq" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.valAlbaran" for="field_valAlbaran">Val Albaran</label>
+                    <input type="text" class="form-control" name="valAlbaran" id="field_valAlbaran"
+                        [(ngModel)]="datosUsuario.valAlbaran" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.facXAlbaran" for="field_facXAlbaran">Fac X Albaran</label>
+                    <input type="text" class="form-control" name="facXAlbaran" id="field_facXAlbaran"
+                        [(ngModel)]="datosUsuario.facXAlbaran" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.dto1" for="field_dto1">Dto 1</label>
+                    <input type="number" class="form-control" name="dto1" id="field_dto1"
+                        [(ngModel)]="datosUsuario.dto1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.dto2" for="field_dto2">Dto 2</label>
+                    <input type="number" class="form-control" name="dto2" id="field_dto2"
+                        [(ngModel)]="datosUsuario.dto2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.dto3" for="field_dto3">Dto 3</label>
+                    <input type="number" class="form-control" name="dto3" id="field_dto3"
+                        [(ngModel)]="datosUsuario.dto3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.dtoTras" for="field_dtoTras">Dto Tras</label>
+                    <input type="number" class="form-control" name="dtoTras" id="field_dtoTras"
+                        [(ngModel)]="datosUsuario.dtoTras" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.idGc" for="field_idGc">Id Gc</label>
+                    <input type="text" class="form-control" name="idGc" id="field_idGc"
+                        [(ngModel)]="datosUsuario.idGc" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.valPedido" for="field_valPedido">Val Pedido</label>
+                    <input type="text" class="form-control" name="valPedido" id="field_valPedido"
+                        [(ngModel)]="datosUsuario.valPedido" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.valPuntos" for="field_valPuntos">Val Puntos</label>
+                    <input type="text" class="form-control" name="valPuntos" id="field_valPuntos"
+                        [(ngModel)]="datosUsuario.valPuntos" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.dPago1" for="field_dPago1">D Pago 1</label>
+                    <input type="number" class="form-control" name="dPago1" id="field_dPago1"
+                        [(ngModel)]="datosUsuario.dPago1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.dPago2" for="field_dPago2">D Pago 2</label>
+                    <input type="number" class="form-control" name="dPago2" id="field_dPago2"
+                        [(ngModel)]="datosUsuario.dPago2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.dPago3" for="field_dPago3">D Pago 3</label>
+                    <input type="number" class="form-control" name="dPago3" id="field_dPago3"
+                        [(ngModel)]="datosUsuario.dPago3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.desdeVaca" for="field_desdeVaca">Desde Vaca</label>
+                    <input type="text" class="form-control" name="desdeVaca" id="field_desdeVaca"
+                        [(ngModel)]="datosUsuario.desdeVaca" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.hastaVaca" for="field_hastaVaca">Hasta Vaca</label>
+                    <input type="text" class="form-control" name="hastaVaca" id="field_hastaVaca"
+                        [(ngModel)]="datosUsuario.hastaVaca" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.web" for="field_web">Web</label>
+                    <input type="text" class="form-control" name="web" id="field_web"
+                        [(ngModel)]="datosUsuario.web" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.movil" for="field_movil">Movil</label>
+                    <input type="text" class="form-control" name="movil" id="field_movil"
+                        [(ngModel)]="datosUsuario.movil" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.fax" for="field_fax">Fax</label>
+                    <input type="text" class="form-control" name="fax" id="field_fax"
+                        [(ngModel)]="datosUsuario.fax" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.ctaContable" for="field_ctaContable">Cta Contable</label>
+                    <input type="number" class="form-control" name="ctaContable" id="field_ctaContable"
+                        [(ngModel)]="datosUsuario.ctaContable" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.observaciones" for="field_observaciones">Observaciones</label>
+                    <input type="text" class="form-control" name="observaciones" id="field_observaciones"
+                        [(ngModel)]="datosUsuario.observaciones" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.observacionesPed" for="field_observacionesPed">Observaciones Ped</label>
+                    <input type="text" class="form-control" name="observacionesPed" id="field_observacionesPed"
+                        [(ngModel)]="datosUsuario.observacionesPed" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.observacionesAlb" for="field_observacionesAlb">Observaciones Alb</label>
+                    <input type="text" class="form-control" name="observacionesAlb" id="field_observacionesAlb"
+                        [(ngModel)]="datosUsuario.observacionesAlb" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.observacionesFac" for="field_observacionesFac">Observaciones Fac</label>
+                    <input type="text" class="form-control" name="observacionesFac" id="field_observacionesFac"
+                        [(ngModel)]="datosUsuario.observacionesFac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.noGiroVaca" for="field_noGiroVaca">No Giro Vaca</label>
+                    <input type="text" class="form-control" name="noGiroVaca" id="field_noGiroVaca"
+                        [(ngModel)]="datosUsuario.noGiroVaca" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.observacionesDireccion" for="field_observacionesDireccion">Observaciones Direccion</label>
+                    <input type="text" class="form-control" name="observacionesDireccion" id="field_observacionesDireccion"
+                        [(ngModel)]="datosUsuario.observacionesDireccion" />
+                </div>
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.provincias" for="field_provincias">Provincias</label>
@@ -86,6 +241,34 @@
                     <select class="form-control" id="field_user" name="user" [(ngModel)]="datosUsuario.user" >
                         <option [ngValue]="null"></option>
                         <option [ngValue]="userOption.id === datosUsuario.user?.id ? datosUsuario.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.repreGCompra" for="field_repreGCompra">Repre G Compra</label>
+                    <select class="form-control" id="field_repreGCompra" name="repreGCompra" [(ngModel)]="datosUsuario.repreGCompra" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="repreGCompraOption.id === datosUsuario.repreGCompra?.id ? datosUsuario.repreGCompra : repreGCompraOption" *ngFor="let repreGCompraOption of repregcompras; trackBy: trackRepreGCompraById">{{repreGCompraOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.fPago" for="field_fPago">F Pago</label>
+                    <select class="form-control" id="field_fPago" name="fPago" [(ngModel)]="datosUsuario.fPago" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fPagoOption.id === datosUsuario.fPago?.id ? datosUsuario.fPago : fPagoOption" *ngFor="let fPagoOption of fpagos; trackBy: trackFPagoById">{{fPagoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.zonas" for="field_zonas">Zonas</label>
+                    <select class="form-control" id="field_zonas" name="zonas" [(ngModel)]="datosUsuario.zonas" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="zonasOption.id === datosUsuario.zonas?.id ? datosUsuario.zonas : zonasOption" *ngFor="let zonasOption of zonas; trackBy: trackZonasById">{{zonasOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.datosUsuario.transportistaTabla" for="field_transportistaTabla">Transportista Tabla</label>
+                    <select class="form-control" id="field_transportistaTabla" name="transportistaTabla" [(ngModel)]="datosUsuario.transportistaTabla" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transportistaTablaOption.id === datosUsuario.transportistaTabla?.id ? datosUsuario.transportistaTabla : transportistaTablaOption" *ngFor="let transportistaTablaOption of transportistatablas; trackBy: trackTransportistaTablaById">{{transportistaTablaOption.id}}</option>
                     </select>
                 </div>
             </div>

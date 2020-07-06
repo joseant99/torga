@@ -132,6 +132,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             })
             .subscribe(data => {
                 this.todasLasTiendas = data.body;
+                for (let o = 0; o < data.body['length']; o++) {
+                    $('#modalConfirmarCreacionPresu').append('<datalist id="listaTiendas"></datalist>');
+                    $('#listaTiendas').append('<option value="' + data.body[o]['id'] + '">' + data.body[o]['nombreFiscal'] + '</option>');
+                }
             });
     }
     public comprobarContrase() {
@@ -237,6 +241,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
     public generarPresupuesto() {
         this.todasDimensiones = this.dimensionesProductoTipoService.todos;
+        var memo = document.getElementsByName('estado');
 
         var numeroProductos = [];
         this.productosPresupuestoPedidosService
@@ -364,6 +369,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                         prueba['user'] = usuGG;
                         prueba['codigo'] = referenciaCliente;
+                    }
+                    if (memo[1]['checked'] == true) {
+                        prueba['pedido'] = 1;
+                        prueba['fecha_pedido'] = output;
                     }
                     console.log(prueba);
                     this.presupuestoPedido = prueba;
@@ -638,7 +647,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
                                         $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
                                         $('#todometerFondo').css({ display: 'none' });
-                                        this.router.navigate(['/presupuesto-producto']);
+                                        if (memo[1]['checked'] == true) {
+                                            this.router.navigate(['/pedidos-producto']);
+                                        } else {
+                                            this.router.navigate(['/presupuesto-producto']);
+                                        }
                                     });
                             }
                         });

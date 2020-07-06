@@ -95,7 +95,20 @@ public class DatosUsuarioResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/datos-usuarios");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
-    
+
+    /**
+     * GET  /datos-usuarios/:id : get the "id" datosUsuario.
+     *
+     * @param id the id of the datosUsuario to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the datosUsuario, or with status 404 (Not Found)
+     */
+    @GetMapping("/datos-usuarios/{id}")
+    @Timed
+    public ResponseEntity<DatosUsuario> getDatosUsuario(@PathVariable Long id) {
+        log.debug("REST request to get DatosUsuario : {}", id);
+        Optional<DatosUsuario> datosUsuario = datosUsuarioRepository.findById(id);
+        return ResponseUtil.wrapOrNotFound(datosUsuario);
+    }
     
     @GetMapping("/datos-usuarios-id/{id}")
     @Timed
@@ -111,21 +124,6 @@ public class DatosUsuarioResource {
         log.debug("REST request to get a page of DatosUsuarios");
         Collection<DatosUsuario> page = datosUsuarioRepository.busquing();
         return ResponseEntity.ok().body(page);
-    }
-
-
-    /**
-     * GET  /datos-usuarios/:id : get the "id" datosUsuario.
-     *
-     * @param id the id of the datosUsuario to retrieve
-     * @return the ResponseEntity with status 200 (OK) and with body the datosUsuario, or with status 404 (Not Found)
-     */
-    @GetMapping("/datos-usuarios/{id}")
-    @Timed
-    public ResponseEntity<DatosUsuario> getDatosUsuario(@PathVariable Long id) {
-        log.debug("REST request to get DatosUsuario : {}", id);
-        Optional<DatosUsuario> datosUsuario = datosUsuarioRepository.findById(id);
-        return ResponseUtil.wrapOrNotFound(datosUsuario);
     }
 
     /**

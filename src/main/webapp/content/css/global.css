@@ -2921,11 +2921,11 @@ ui bootstrap tweaks
 #botonCalculadora {
     width: 86%;
     height: 7%;
-    bottom: 120px;
+    bottom: 60px;
     position: absolute;
     font-size: 16px;
     background-color: black;
-    left: 35px;
+    left: 25px;
     color: black;
 }
 #divDentroCalcu {

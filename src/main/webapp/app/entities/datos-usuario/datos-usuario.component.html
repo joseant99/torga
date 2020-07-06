@@ -10,7 +10,7 @@
     </h2>
     <jhi-alert></jhi-alert>
     <br/>
-    <div class="table-responsive" *ngIf="datosUsuarios">
+    <div class="table-responsive" *ngIf="datosUsuarios" style="overflow-x: initial">
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
@@ -24,9 +24,44 @@
             <th jhiSortBy="logo"><span jhiTranslate="torgaPedidosApp.datosUsuario.logo">Logo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="cif"><span jhiTranslate="torgaPedidosApp.datosUsuario.cif">Cif</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="nombreFiscal"><span jhiTranslate="torgaPedidosApp.datosUsuario.nombreFiscal">Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo"><span jhiTranslate="torgaPedidosApp.datosUsuario.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estado"><span jhiTranslate="torgaPedidosApp.datosUsuario.estado">Estado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fAlta"><span jhiTranslate="torgaPedidosApp.datosUsuario.fAlta">F Alta</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fBaja"><span jhiTranslate="torgaPedidosApp.datosUsuario.fBaja">F Baja</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prioridadCarga"><span jhiTranslate="torgaPedidosApp.datosUsuario.prioridadCarga">Prioridad Carga</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="apIVA"><span jhiTranslate="torgaPedidosApp.datosUsuario.apIVA">Ap IVA</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="apReq"><span jhiTranslate="torgaPedidosApp.datosUsuario.apReq">Ap Req</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="valAlbaran"><span jhiTranslate="torgaPedidosApp.datosUsuario.valAlbaran">Val Albaran</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="facXAlbaran"><span jhiTranslate="torgaPedidosApp.datosUsuario.facXAlbaran">Fac X Albaran</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dto1"><span jhiTranslate="torgaPedidosApp.datosUsuario.dto1">Dto 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dto2"><span jhiTranslate="torgaPedidosApp.datosUsuario.dto2">Dto 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dto3"><span jhiTranslate="torgaPedidosApp.datosUsuario.dto3">Dto 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dtoTras"><span jhiTranslate="torgaPedidosApp.datosUsuario.dtoTras">Dto Tras</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="idGc"><span jhiTranslate="torgaPedidosApp.datosUsuario.idGc">Id Gc</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="valPedido"><span jhiTranslate="torgaPedidosApp.datosUsuario.valPedido">Val Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="valPuntos"><span jhiTranslate="torgaPedidosApp.datosUsuario.valPuntos">Val Puntos</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dPago1"><span jhiTranslate="torgaPedidosApp.datosUsuario.dPago1">D Pago 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dPago2"><span jhiTranslate="torgaPedidosApp.datosUsuario.dPago2">D Pago 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dPago3"><span jhiTranslate="torgaPedidosApp.datosUsuario.dPago3">D Pago 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="desdeVaca"><span jhiTranslate="torgaPedidosApp.datosUsuario.desdeVaca">Desde Vaca</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="hastaVaca"><span jhiTranslate="torgaPedidosApp.datosUsuario.hastaVaca">Hasta Vaca</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="web"><span jhiTranslate="torgaPedidosApp.datosUsuario.web">Web</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="movil"><span jhiTranslate="torgaPedidosApp.datosUsuario.movil">Movil</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fax"><span jhiTranslate="torgaPedidosApp.datosUsuario.fax">Fax</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ctaContable"><span jhiTranslate="torgaPedidosApp.datosUsuario.ctaContable">Cta Contable</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="observaciones"><span jhiTranslate="torgaPedidosApp.datosUsuario.observaciones">Observaciones</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="observacionesPed"><span jhiTranslate="torgaPedidosApp.datosUsuario.observacionesPed">Observaciones Ped</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="observacionesAlb"><span jhiTranslate="torgaPedidosApp.datosUsuario.observacionesAlb">Observaciones Alb</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="observacionesFac"><span jhiTranslate="torgaPedidosApp.datosUsuario.observacionesFac">Observaciones Fac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="noGiroVaca"><span jhiTranslate="torgaPedidosApp.datosUsuario.noGiroVaca">No Giro Vaca</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="observacionesDireccion"><span jhiTranslate="torgaPedidosApp.datosUsuario.observacionesDireccion">Observaciones Direccion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="provincias.id"><span jhiTranslate="torgaPedidosApp.datosUsuario.provincias">Provincias</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="municipios.id"><span jhiTranslate="torgaPedidosApp.datosUsuario.municipios">Municipios</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.datosUsuario.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="repreGCompra.id"><span jhiTranslate="torgaPedidosApp.datosUsuario.repreGCompra">Repre G Compra</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fPago.id"><span jhiTranslate="torgaPedidosApp.datosUsuario.fPago">F Pago</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="zonas.id"><span jhiTranslate="torgaPedidosApp.datosUsuario.zonas">Zonas</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="transportistaTabla.id"><span jhiTranslate="torgaPedidosApp.datosUsuario.transportistaTabla">Transportista Tabla</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -47,27 +82,72 @@
                 </td>
                 <td>{{datosUsuario.cif}}</td>
                 <td>{{datosUsuario.nombreFiscal}}</td>
+                <td>{{datosUsuario.codigo}}</td>
+                <td>{{datosUsuario.estado}}</td>
+                <td>{{datosUsuario.fAlta}}</td>
+                <td>{{datosUsuario.fBaja}}</td>
+                <td>{{datosUsuario.prioridadCarga}}</td>
+                <td>{{datosUsuario.apIVA}}</td>
+                <td>{{datosUsuario.apReq}}</td>
+                <td>{{datosUsuario.valAlbaran}}</td>
+                <td>{{datosUsuario.facXAlbaran}}</td>
+                <td>{{datosUsuario.dto1}}</td>
+                <td>{{datosUsuario.dto2}}</td>
+                <td>{{datosUsuario.dto3}}</td>
+                <td>{{datosUsuario.dtoTras}}</td>
+                <td>{{datosUsuario.idGc}}</td>
+                <td>{{datosUsuario.valPedido}}</td>
+                <td>{{datosUsuario.valPuntos}}</td>
+                <td>{{datosUsuario.dPago1}}</td>
+                <td>{{datosUsuario.dPago2}}</td>
+                <td>{{datosUsuario.dPago3}}</td>
+                <td>{{datosUsuario.desdeVaca}}</td>
+                <td>{{datosUsuario.hastaVaca}}</td>
+                <td>{{datosUsuario.web}}</td>
+                <td>{{datosUsuario.movil}}</td>
+                <td>{{datosUsuario.fax}}</td>
+                <td>{{datosUsuario.ctaContable}}</td>
+                <td>{{datosUsuario.observaciones}}</td>
+                <td>{{datosUsuario.observacionesPed}}</td>
+                <td>{{datosUsuario.observacionesAlb}}</td>
+                <td>{{datosUsuario.observacionesFac}}</td>
+                <td>{{datosUsuario.noGiroVaca}}</td>
+                <td>{{datosUsuario.observacionesDireccion}}</td>
                 <td>
                     <div *ngIf="datosUsuario.provincias">
-                        <a [routerLink]="['../provincias', datosUsuario.provincias?.id, 'view' ]" >{{datosUsuario.provincias?.nombre}}</a>
+                        <a [routerLink]="['../provincias', datosUsuario.provincias?.id, 'view' ]" >{{datosUsuario.provincias?.id}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="datosUsuario.municipios">
-                        <a [routerLink]="['../municipios', datosUsuario.municipios?.id, 'view' ]" >{{datosUsuario.municipios?.nombre}}</a>
+                        <a [routerLink]="['../municipios', datosUsuario.municipios?.id, 'view' ]" >{{datosUsuario.municipios?.id}}</a>
                     </div>
                 </td>
                 <td>
                     {{datosUsuario.user?.login}}
                 </td>
+                <td>
+                    <div *ngIf="datosUsuario.repreGCompra">
+                        <a [routerLink]="['../repre-g-compra', datosUsuario.repreGCompra?.id, 'view' ]" >{{datosUsuario.repreGCompra?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="datosUsuario.fPago">
+                        <a [routerLink]="['../f-pago', datosUsuario.fPago?.id, 'view' ]" >{{datosUsuario.fPago?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="datosUsuario.zonas">
+                        <a [routerLink]="['../zonas', datosUsuario.zonas?.id, 'view' ]" >{{datosUsuario.zonas?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="datosUsuario.transportistaTabla">
+                        <a [routerLink]="['../transportista-tabla', datosUsuario.transportistaTabla?.id, 'view' ]" >{{datosUsuario.transportistaTabla?.id}}</a>
+                    </div>
+                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
-                    	<button type="submit"
-                                [routerLink]="['../admin/user-management/new']"
-                                class="btn btn-success btn-sm">
-                            <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" >Crear Usuario</span>
-                        </button>
                         <button type="submit"
                                 [routerLink]="['/datos-usuario', datosUsuario.id, 'view' ]"
                                 class="btn btn-info btn-sm">

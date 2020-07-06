@@ -22,7 +22,7 @@
 	       		 		<li id="noticiasClass" style="margin-top: -20px;border-bottom: 1px solid #D9D9D9;height: 50px;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN', 'ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 	                    <a  id="noticias" (click)="open('inicio',false,myModel)">
 	                        <span>
-	                            <span style="color:black;font-size:18px;margin-top: 18px;font-weight: 400;">NOTICIAS</span>
+	                            <span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">NOTICIAS</span>
 	                        </span>
 						</a>
 						</li>
@@ -883,6 +883,13 @@
                                 <span jhiTranslate="global.menu.admin.userManagement">User management</span>
                             </a>
                         </li>
+                        <li style="margin-top:10px;padding-bottom: 25px;" *jhiHasAnyAuthority="['ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				                    <a  id="comercial" data-toggle="collapse" data-target="#menuComercial" (click)="open('datos-usuario',false,myModel)">
+				                        <span>
+				                           <span id="contadorDatos" style="color:black;font-size:20px;">{{contador}}</span>
+				                        </span>
+									</a>
+							</li>
                         <li>
                             <a class="dropdown-item" routerLink="admin/jhi-metrics" routerLinkActive="active" (click)="collapseNavbar()">
                                 <fa-icon icon="tachometer-alt" fixedWidth="true"></fa-icon>
@@ -1375,9 +1382,11 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body" style="text-align:center">
-		        	<select id="selectTiendas" style="height:30px;width:180px;margin-right:35px"><option></option><option *ngFor="let tiendas of todasLasTiendas" value="{{tiendas.id}}">{{tiendas.nombreFiscal}}</option></select><label style="margin-left:10px">Nombre fiscal</label><br>
+		        	<input style="height:30px;width:180px;margin-right:35px" list="listaTiendas" id="selectTiendas" name="listaTi" type="text" /><label style="margin-left:10px">Nombre fiscal</label><br>
 		        	<br><input type="text" id="referenciaCliente"> <label style="margin-left:10px" >Referencia Cliente</label><br>
 		        	<p>Vas a generar un presupuesto &#191;Estas seguro?</p><br>
+		        	 <input type="radio" name="estado" id="Activo" value="Activo"> Presupuesto
+     				 <input type="radio" name="estado" id="Inactivo" value="Inactivo"> Pedido
 		        	<button type="button" style="width: 110px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="generarPresupuesto()" onclick="cerrarModal()">Si</button>
 			        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal" >No</button>
 		        </div>

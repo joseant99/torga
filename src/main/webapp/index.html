@@ -175,7 +175,8 @@
 		$("#cestaTotal").text(cestaTotal);
 		$("#modalCesta .modal-body #cuerpo"+id).remove();
 		$("#modalCesta .modal-body #textoCesta"+id).remove();
-		
+		var posicion0 = parseFloat($("#posicion0").text());
+		$("#posicion0").text(posicion0 - 1);
 			for(let i = id;i<15;i++){
 				var prod = sessionStorage.getItem("prod"+(i+1));
 				if(prod != undefined){

@@ -688,7 +688,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             $('#nombreMesita').text(nombreArmario);
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Ancho: ' + ancho + '<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Altura: ' + alto + '<p/>');
-            $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Fondo: 60<p/>');
+            $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Fondo: 61<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                 '<p style="width:100%">Codigo: ' + data.body[0]['codigo'] + '<p/>'
             );
@@ -3205,6 +3205,47 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#inputInterior' + (hueco - 1)).append('interior ' + nombre);
         var grandes = dimens['grandes'];
         var dato = this.cascoService.dato;
+        if (texto == '2 PUERTAS') {
+            for (let i = 1; i <= 2; i++) {
+                if (hueco == 1) {
+                    cuenta = ancho / puertas;
+                    cuenta = cuenta * 1;
+                    if (i == 1) {
+                        var dato = this.cascoService.dato;
+                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                            console.log(data.body);
+                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                '<p style="width:100%;display:none">Hueco ' +
+                                    letras[hueco - 1] +
+                                    ': <span id="acabadoHueco' +
+                                    hueco +
+                                    '">Interior ' +
+                                    nombre +
+                                    '</span><span style="float:right">+ ' +
+                                    data.body[0].a +
+                                    '€</span><p/>'
+                            );
+                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                            var precioTodo;
+                            precioTodo = $('#precioDimension').text();
+                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                            $('#precioDimension').text(precioTodoFloat);
+                        });
+                    }
+                    $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                        '<img id="interiorDentroArmario' +
+                            hueco +
+                            '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                            nombre +
+                            '/peque_interior_' +
+                            nombre +
+                            '_blanco_optimized.png">'
+                    );
+                    $('#textoLetraHueco' + (hueco - 1)).remove();
+                }
+            }
+        }
+
         if (texto == '1 PUERTA') {
             for (let i = 1; i <= 2; i++) {
                 if (hueco == 1) {
@@ -4154,7 +4195,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         .findBus(dato.codigo, idProdInt[nombre])
                                                         .subscribe(data => {
                                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                '<p style="width:100%">Hueco ' +
+                                                                '<p style="width:100%;display:none">Hueco ' +
                                                                     letras[hueco - 1] +
                                                                     ': <span id="acabadoHueco' +
                                                                     hueco +
@@ -4205,7 +4246,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         .findBus(dato.codigo, idProdInt[nombre])
                                                         .subscribe(data => {
                                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                '<p style="width:100%">Hueco ' +
+                                                                '<p style="width:100%;display:none">Hueco ' +
                                                                     letras[hueco - 1] +
                                                                     ': <span id="acabadoHueco' +
                                                                     hueco +
@@ -4256,7 +4297,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         .findBus(dato.codigo, idProdInt[nombre])
                                                         .subscribe(data => {
                                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                '<p style="width:100%">Hueco ' +
+                                                                '<p style="width:100%;display:none">Hueco ' +
                                                                     letras[hueco - 1] +
                                                                     ': <span id="acabadoHueco' +
                                                                     hueco +
@@ -4307,7 +4348,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         .findBus(dato.codigo, idProdInt[nombre])
                                                         .subscribe(data => {
                                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                '<p style="width:100%">Hueco ' +
+                                                                '<p style="width:100%;display:none">Hueco ' +
                                                                     letras[hueco - 1] +
                                                                     ': <span id="acabadoHueco' +
                                                                     hueco +
@@ -4362,7 +4403,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             .findBus(dato.codigo, idProdInt[nombre])
                                                             .subscribe(data => {
                                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                    '<p style="width:100%">Hueco ' +
+                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                         letras[hueco - 1] +
                                                                         ': <span id="acabadoHueco' +
                                                                         hueco +
@@ -4413,7 +4454,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             .findBus(dato.codigo, idProdInt[nombre])
                                                             .subscribe(data => {
                                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                    '<p style="width:100%">Hueco ' +
+                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                         letras[hueco - 1] +
                                                                         ': <span id="acabadoHueco' +
                                                                         hueco +
@@ -4464,7 +4505,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             .findBus(dato.codigo, idProdInt[nombre])
                                                             .subscribe(data => {
                                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                    '<p style="width:100%">Hueco ' +
+                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                         letras[hueco - 1] +
                                                                         ': <span id="acabadoHueco' +
                                                                         hueco +
@@ -4515,7 +4556,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             .findBus(dato.codigo, idProdInt[nombre])
                                                             .subscribe(data => {
                                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                    '<p style="width:100%">Hueco ' +
+                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                         letras[hueco - 1] +
                                                                         ': <span id="acabadoHueco' +
                                                                         hueco +
@@ -4570,7 +4611,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                        '<p style="width:100%">Hueco ' +
+                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                             letras[hueco - 1] +
                                                                             ': <span id="acabadoHueco' +
                                                                             hueco +
@@ -4606,7 +4647,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                        '<p style="width:100%">Hueco ' +
+                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                             letras[hueco - 1] +
                                                                             ': <span id="acabadoHueco' +
                                                                             hueco +
@@ -4642,7 +4683,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                        '<p style="width:100%">Hueco ' +
+                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                             letras[hueco - 1] +
                                                                             ': <span id="acabadoHueco' +
                                                                             hueco +
@@ -4678,7 +4719,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                        '<p style="width:100%">Hueco ' +
+                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                             letras[hueco - 1] +
                                                                             ': <span id="acabadoHueco' +
                                                                             hueco +
@@ -4714,7 +4755,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                        '<p style="width:100%">Hueco ' +
+                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                             letras[hueco - 1] +
                                                                             ': <span id="acabadoHueco' +
                                                                             hueco +
@@ -5764,37 +5805,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         }
                                                                     }
                                                                 } else {
-                                                                    for (let i = 1; i <= 2; i++) {
-                                                                        if (hueco == 1) {
-                                                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                                                '<img id="interiorDentroArmario' +
-                                                                                    hueco +
-                                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                                                    nombre +
-                                                                                    '/grande_interior_' +
-                                                                                    nombre +
-                                                                                    '_' +
-                                                                                    interior1.toLowerCase() +
-                                                                                    '_optimized.png">'
-                                                                            );
-                                                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                                        } else {
-                                                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                                                '<img id="interiorDentroArmario' +
-                                                                                    hueco +
-                                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;' +
-                                                                                    grandes +
-                                                                                    '" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                                                    nombre +
-                                                                                    '/grande_interior_' +
-                                                                                    nombre +
-                                                                                    '_' +
-                                                                                    interior1.toLowerCase() +
-                                                                                    '_optimized.png">'
-                                                                            );
-                                                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                                        }
-                                                                    }
                                                                     if (texto == '5 PUERTAS DERECHA') {
                                                                         for (let i = 1; i <= 2; i++) {
                                                                             if (hueco == 3) {

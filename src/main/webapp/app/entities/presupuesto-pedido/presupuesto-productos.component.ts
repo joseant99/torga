@@ -982,7 +982,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 );
                                                 var prodNombre =
                                                     acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
-                                                if (prodNombre == 'Modulo Bajo 1') {
+                                                var idProdNombre = acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['id'];
+                                                if (prodNombre == 'Modulo Bajo 1' || idProdNombre == 107) {
                                                     prodNombre = 'mb1';
                                                 }
                                                 if (prodNombre == 'Modulo Bajo 2') {
@@ -1734,16 +1735,18 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 })
                 .subscribe(data => {
                     for (let b = 0; b < data.body.length; b++) {
-                        if (data.body[b]['user']['id'] == usuario['id']) {
-                            tienda = data.body[b];
-                            this.datosUsuarioService.tiendaCargadaPresu = tienda;
-                            this.precioTiendaService.findBus(this.datosUsuarioService.tiendaCargadaPresu.id).subscribe(data => {
-                                this.precioPunto = data.body;
-                                this.precioTiendaService.findBus1(this.datosUsuarioService.tiendaCargadaPresu.id, 1).subscribe(data => {
-                                    this.precioTiendaService.precioTienda = data.body;
-                                    this.soloMedBuen();
+                        if (data.body[b]['user'] != null) {
+                            if (data.body[b]['user']['id'] == usuario['id']) {
+                                tienda = data.body[b];
+                                this.datosUsuarioService.tiendaCargadaPresu = tienda;
+                                this.precioTiendaService.findBus(this.datosUsuarioService.tiendaCargadaPresu.id).subscribe(data => {
+                                    this.precioPunto = data.body;
+                                    this.precioTiendaService.findBus1(this.datosUsuarioService.tiendaCargadaPresu.id, 1).subscribe(data => {
+                                        this.precioTiendaService.precioTienda = data.body;
+                                        this.soloMedBuen();
+                                    });
                                 });
-                            });
+                            }
                         }
                     }
                 });
