@@ -111,7 +111,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     estanteria: any;
     acabadosEstanteria: any;
     uid: any;
+    idDelProducto: any;
     idMeterimagen: any;
+    estaEsLaLUZ: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -795,6 +797,14 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             });
 			**/
             var idProd = producto;
+            this.idDelProducto = idProd;
+            $('#tenerLUZ').css({ display: 'none' });
+            this.iluminacionService.findProd(idProd).subscribe(data => {
+                console.log(data.body);
+                if (data.body.length != 0) {
+                    $('#tenerLUZ').css({ display: 'block' });
+                }
+            });
             var imagen;
             $('#acabado').removeAttr('style');
             $('#acabado').attr('style');
@@ -1229,6 +1239,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#medidasFondo').css({ display: 'none' });
         $('#medidasAlto').css({ display: 'none' });
         $('#especiales').css({ display: 'none' });
+        $('#tenerLUZ').css({ display: 'none' });
         $('#productoCalculadora1 #precios1').empty();
         $('#euroCalculadora').attr('style');
         $('#euroCalculadora').css({ display: 'none' });
@@ -1657,7 +1668,37 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#nombreMesita').text(productoNombre);
         $('#nombreMesita').attr('class', producto);
     }
-
+    public cogidaLuz(id) {
+        if (id == 'Si') {
+            var idProd = this.idDelProducto;
+            $('#precioDeLaLuz').css({ display: 'block' });
+            var luz = this.estaEsLaLUZ;
+            if (luz != undefined) {
+                var precioDimen = parseFloat($('#precioDimension').text());
+                $('#precioDimension').text(precioDimen - luz['precio']);
+            }
+            this.estaEsLaLUZ = undefined;
+            this.iluminacionService.findProd(idProd).subscribe(data => {
+                console.log(data.body);
+                if (data.body.length != 0) {
+                    $('#tenerLUZ').css({ display: 'block' });
+                    $('#precioDeLaLuz').text(data.body[0]['precio']);
+                    $('#datos1').append('<p style="display:none" id="iluminacion1" class="' + data.body[0]['id'] + '"></p>');
+                    this.estaEsLaLUZ = data.body[0];
+                    var precioDimen = parseFloat($('#precioDimension').text());
+                    $('#precioDimension').text(precioDimen + data.body[0]['precio']);
+                }
+            });
+        } else {
+            $('#precioDeLaLuz').css({ display: 'none' });
+            var luz = this.estaEsLaLUZ;
+            if (luz != undefined) {
+                var precioDimen = parseFloat($('#precioDimension').text());
+                $('#precioDimension').text(precioDimen - luz['precio']);
+            }
+            this.estaEsLaLUZ = undefined;
+        }
+    }
     public open1(producto1) {
         for (let i = 1; i <= 14; i++) {
             for (let u = 0; u < 14; u++) {
