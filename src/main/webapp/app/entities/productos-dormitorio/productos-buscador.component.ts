@@ -38,6 +38,10 @@ import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
 import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
 import { IvaProductoTiendaService } from '../iva-producto-tienda/iva-producto-tienda.service';
+import { UsbService } from '../usb/usb.service';
+import { VistaAdminService } from '../vista-admin/vista-admin.service';
+import { HttpEventType } from '@angular/common/http';
+
 @Component({
     providers: [
         ArmariosDormitorioComponent,
@@ -70,6 +74,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     precioTienda: any;
     presupuestoPedido: IPresupuestoPedido;
     presupuesto: any;
+    mostrarTextoSINO: any;
     productosPresupuestoPedidos: IProductosPresupuestoPedidos;
     user: any;
     todasDimensiones: any;
@@ -114,6 +119,19 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     idDelProducto: any;
     idMeterimagen: any;
     estaEsLaLUZ: any;
+    usbCogido: any;
+    usb: any;
+    selectedFilesFactura: FileList;
+    selectedFilesConfirmacion: FileList;
+    selectedFilesExcel: FileList;
+    currentFileUploadFactura: File;
+    currentFileUploadConfirmacion: File;
+    currentFileUploadExcel: File;
+    progressFactura: { percentage: number } = { percentage: 0 };
+    progressConfirmacion: { percentage: number } = { percentage: 0 };
+    progressExcel: { percentage: number } = { percentage: 0 };
+    errormessage: string;
+
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -125,6 +143,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         protected iluminacionService: IluminacionService,
         protected precioTiendaProductosService: PrecioTiendaProductosService,
         protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
+        protected vistaadminService: VistaAdminService,
         protected interioresService: InterioresService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected acaProdService: AcaProdService,
@@ -134,6 +153,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         protected dimensionesProductoService: DimensionesProductoService,
         public productosDormitorioService: ProductosDormitorioService,
         protected parseLinks: JhiParseLinks,
+        protected usbService: UsbService,
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
         protected activatedRoute: ActivatedRoute,
@@ -174,6 +194,108 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 }
             }
         });
+    }
+
+    selectedFilesFacturas(event) {
+        this.selectedFilesFactura = event.target.files;
+    }
+    selectedFilesConfirmaciones(event) {
+        this.selectedFilesConfirmacion = event.target.files;
+    }
+    selectFileExcel(event) {
+        this.selectedFilesExcel = event.target.files;
+    }
+
+    uploadFactura() {
+        var long = this.selectedFilesFactura.length;
+        for (var i = 0; i < long; i++) {
+            this.progressFactura.percentage = 0;
+
+            this.currentFileUploadFactura = this.selectedFilesFactura.item(i);
+            this.vistaadminService.pushFileToStorageFactura(this.currentFileUploadFactura).subscribe(event => {
+                if (i === long) {
+                    if (event.type === HttpEventType.UploadProgress) {
+                        this.progressFactura.percentage = Math.round((100 * event.loaded) / event.total);
+                    } else if (event instanceof HttpResponse) {
+                        console.log('File is completely uploaded!');
+                    }
+                }
+            });
+        }
+
+        this.selectedFilesFactura = undefined;
+    }
+
+    uploadConfirmacion() {
+        var long = this.selectedFilesConfirmacion.length;
+        for (var i = 0; i < long; i++) {
+            this.progressConfirmacion.percentage = 0;
+            this.currentFileUploadConfirmacion = this.selectedFilesConfirmacion.item(i);
+            this.vistaadminService.pushFileToStorageConfirmacion(this.selectedFilesConfirmacion.item(i)).subscribe(event => {
+                if (i === long) {
+                    if (event.type === HttpEventType.UploadProgress) {
+                        this.progressConfirmacion.percentage = Math.round((100 * event.loaded) / event.total);
+                    } else if (event instanceof HttpResponse) {
+                        console.log('File is completely uploaded!');
+                    }
+                }
+            });
+        }
+
+        this.selectedFilesConfirmacion = undefined;
+    }
+
+    uploadExcel() {
+        this.progressExcel.percentage = 0;
+
+        this.currentFileUploadExcel = this.selectedFilesExcel.item(0);
+
+        this.vistaadminService.pushFileToStorageExcel(this.currentFileUploadExcel).subscribe(event => {});
+
+        this.selectedFilesExcel = undefined;
+    }
+    public mostrarTexto(id) {
+        if (id == 'Si') {
+            $('#inputSi').css({ display: 'block' });
+            this.mostrarTextoSINO = 1;
+        } else {
+            $('#inputSi').css({ display: 'none' });
+            this.mostrarTextoSINO = 2;
+        }
+    }
+
+    public abrirBotonEspecial() {
+        var textarticulo = $('#textArticulo').val();
+        if (textarticulo != '') {
+            $('#botonEnviarEspecial').css({ display: 'block' });
+        }
+    }
+
+    public enviarCarritoEspecial() {
+        var nombre = this.currentFileUploadExcel['name'];
+        var textarticulo = $('#textArticulo').val();
+        var valor;
+        if (this.mostrarTextoSINO == 1) {
+            valor = $('#inputSi').val();
+        } else {
+            valor = 'No definido';
+        }
+
+        var contador = 1;
+        var conta = 0;
+        for (let k = 1; k < sessionStorage.length; k++) {
+            if (sessionStorage['prod' + k] != null) {
+                contador++;
+            }
+        }
+        var contadorProd = contador;
+        var contadorDimen = contador;
+        var prod = [];
+        prod[1] = [];
+        prod[1]['texto'] = textarticulo;
+        prod[1]['precio'] = valor;
+        prod[1]['imagen'] = nombre;
+        sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
     }
 
     public escogidaEstanteria(estant) {
@@ -280,6 +402,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#datos1').empty();
         $('#precioDimension').empty();
         $('#nombreMesita').empty();
+        $('#articulosEspeciales').css({ display: 'none' });
+
         $('#estanteriaDiv').css({ display: 'none' });
         $('#botonCalculadora').attr('class', 'displayBoton');
         $('#imagenAcabadoPrincipal').css({ display: 'none' });
@@ -314,6 +438,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('.armariosDivTodo3').css({ display: 'block' });
             $('#calcuVesti').css({ display: 'block' });
             $('#modalesVesti').css({ display: 'block' });
+        }
+
+        if (id == 6) {
+            $('#articulosEspeciales').css({ display: 'block' });
         }
     }
 
@@ -805,6 +933,53 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     $('#tenerLUZ').css({ display: 'block' });
                 }
             });
+            var arrayUsb = [];
+            var contUsb = 0;
+            if (
+                idProd == 277 ||
+                idProd == 278 ||
+                idProd == 279 ||
+                idProd == 280 ||
+                idProd == 281 ||
+                idProd == 292 ||
+                idProd == 246 ||
+                idProd == 249 ||
+                idProd == 250 ||
+                idProd == 248 ||
+                idProd == 253 ||
+                idProd == 254 ||
+                idProd == 252 ||
+                idProd == 257 ||
+                idProd == 258 ||
+                idProd == 256 ||
+                idProd == 261 ||
+                idProd == 262 ||
+                idProd == 260 ||
+                idProd == 265 ||
+                idProd == 266 ||
+                idProd == 264 ||
+                idProd == 273 ||
+                idProd == 274 ||
+                idProd == 272 ||
+                idProd == 269 ||
+                idProd == 270 ||
+                idProd == 268
+            ) {
+                this.usbService
+                    .query({
+                        size: 1000000
+                    })
+                    .subscribe(data => {
+                        for (let x = 0; x < data.body.length; x++) {
+                            if (data.body[x]['productosDormitorio']['id'] == idProd) {
+                                arrayUsb[contUsb] = data.body[x];
+                                contUsb++;
+                            }
+                        }
+                        this.usb = arrayUsb;
+                    });
+            }
+
             var imagen;
             $('#acabado').removeAttr('style');
             $('#acabado').attr('style');
@@ -1229,6 +1404,40 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         this.aparadores = undefined;
         this.singulares = undefined;
     }
+    public formularioSubirImagen() {}
+    public cogidoUsb(id) {
+        var idProd = this.idDelProducto;
+        if (id != 'no') {
+            this.usbService
+                .query({
+                    size: 1000000
+                })
+                .subscribe(data => {
+                    for (let x = 0; x < data.body.length; x++) {
+                        if (data.body[x]['id'] == id) {
+                            if (this.usbCogido != undefined) {
+                                var precioDimen = parseFloat($('#precioDimension').text());
+                                $('#precioDimension').text(precioDimen - this.usbCogido['precio']);
+                            }
+                            this.usbCogido = data.body[x];
+                            $('#precioUSB').text(data.body[x]['precio']);
+                            $('#precioUSB').css({ display: 'block' });
+                            var precioDimen = parseFloat($('#precioDimension').text());
+                            $('#precioDimension').text(precioDimen + data.body[x]['precio']);
+                        }
+                    }
+                });
+        } else {
+            var usb = this.usbCogido;
+            if (usb != undefined) {
+                var precioDimen = parseFloat($('#precioDimension').text());
+                $('#precioDimension').text(precioDimen - usb['precio']);
+                $('#precioUSB').text('');
+            }
+            this.usbCogido = undefined;
+        }
+    }
+
     public escogidaLuz(id) {}
     public cargarComposicion() {}
     public borrarProdCalculadora() {

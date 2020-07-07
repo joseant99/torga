@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "usb": {
+            "home": {
+                "title": "Usbs",
+                "createLabel": "Crear nuevo Usb",
+                "createOrEditLabel": "Crear o editar Usb"
+            },
+            "created": "Un nuevo Usb ha sido creado con el identificador {{ param }}",
+            "updated": "Un Usb ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Usb ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Usb {{ id }}?"
+            },
+            "detail": {
+                "title": "Usb"
+            },
+            "mensaje": "Mensaje",
+            "precio": "Precio",
+            "productosDormitorio": "Productos Dormitorio"
+        }
+    }
+}

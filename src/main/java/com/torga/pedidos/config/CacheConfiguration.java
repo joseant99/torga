@@ -116,6 +116,7 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.Zonas.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.FPago.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.RepreGCompra.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.Usb.class.getName() , jcacheConfiguration);
         };
     } 
 }

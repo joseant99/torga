@@ -28,13 +28,13 @@ eureka:
             defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
 
 files:
-    upload-dir: /home/torga/Descargas
+    upload-dir: src/main/webapp/content/images/imagenesSubidas
     facturas-dir : /home/torga/facturas
     confirmacion-dir: /home/torga/confirmacion
 
 spring:
     
-    profiles:
+    profiles: 
         active: dev
         include:
             - swagger

@@ -81,7 +81,7 @@ spring:
                 enabled: true
 
 files:
-    upload-dir: /home/ubuntu/Descargas
+    upload-dir: src/main/webapp/content/images/imagenesSubidas
     facturas-dir : /home/ubuntu/facturas
     confirmacion-dir: /home/ubuntu/confirmacion
 

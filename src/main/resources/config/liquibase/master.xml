@@ -110,5 +110,9 @@
     <include file="config/liquibase/changelog/20200703071834_added_entity_constraints_TransportistaTabla.xml" relativeToChangelogFile="false"/>      
     <include file="config/liquibase/changelog/20200703080014_added_entity_Zonas.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200703084121_added_entity_FPago.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200703092738_added_entity_RepreGCompra.xml" relativeToChangelogFile="false"/>   
+    <include file="config/liquibase/changelog/20200703092738_added_entity_RepreGCompra.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200707062120_added_entity_Usb.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20200707062120_added_entity_constraints_Usb.xml" relativeToChangelogFile="false"/>    
 </databaseChangeLog> 
+
+

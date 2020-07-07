@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="usb">
+            <h2><span jhiTranslate="torgaPedidosApp.usb.detail.title">Usb</span> {{usb.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.usb.mensaje">Mensaje</span></dt>
+                <dd>
+                    <span>{{usb.mensaje}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.usb.precio">Precio</span></dt>
+                <dd>
+                    <span>{{usb.precio}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.usb.productosDormitorio">Productos Dormitorio</span></dt>
+                <dd>
+                    <div *ngIf="usb.productosDormitorio">
+                        <a [routerLink]="['/productos-dormitorio', usb.productosDormitorio?.id, 'view']">{{usb.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/usb', usb.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -22,7 +22,13 @@
 								  <label for="cajeG" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">VESTIDORES</label>
 								  <input type="radio" id="cajeG" name="cajeado" value="cajeG" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(5)"><br>
 								  
-
+								  <label for="cajeH" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARTICULOS ESPECIALES</label>
+								  <input type="radio" id="cajeH" name="cajeado" value="cajeH" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(6)"><br>
+								  
+								  <label for="cajeI" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS RINCON</label>
+								  <input type="radio" id="cajeI" name="cajeado" value="cajeI" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(7)"><br>
+								  
+								
 		</form>
 		
 		
@@ -36,6 +42,24 @@
     
     
     <br><br>
+    <div id="articulosEspeciales" style="width:100%;display:none">
+    	
+    	<p style="width:50%;margin-left:15%;font-size:14px;letter-spacing:3px;">1. Describe el articulo.</p>
+    	<textarea style="margin-left:15%" name="textarea" rows="10" cols="100" id="textArticulo" (change)="abrirBotonEspecial()"></textarea><br><br>
+    		<p style="width:50%;margin-left:12%;font-size:14px;letter-spacing:3px;"> 2. Inserta una imagen que nos ayude a entender lo que necesitas.</p><br>
+    		<p style="width:50%;margin-left:12%"><input type="file" multiple="multiple" (change)="selectFileExcel($event)">  
+			<button id="jh-create-entity"  class="btn btn-primary float-right btn-md"  [disabled]="!selectedFilesExcel" (click)="uploadExcel()" style="margin:5px; background-color: #004952" >
+                Adjuntar imagen
+            </button></p>
+            <p style="width:50%;margin-left:12%;font-size:14px;letter-spacing:3px;"> 3. &#191;Sabes cuantos puntos supone el articulo?</p><br>
+            <form>
+            	<p style="width:100%;float:left"><input type="radio" id="siMostrar" name="mostrarTexto" style="float:left;margin-left:20%" value="Si" (click)="mostrarTexto('Si')" checked><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:1%">SI</label><input type="number" style="display:none" id="inputSi">
+				</p>
+				<p style="width:100%;float:left"><input type="radio" id="noMostrar" name="mostrarTexto" style="float:left;margin-left:20%" value="No" (click)="mostrarTexto('No')" checked><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:1%">No</label>
+				</p>
+            </form>
+    		<p><button id="botonEnviarEspecial" style="display:none;margin-left: 40%;width: 180px;height: 50px;" (click)="enviarCarritoEspecial()">Enviar al carrito</button></p>
+    </div>
     <div id="producto" class="armariosDivTodo" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
     	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect" name="anchos" type="number"/></p>
@@ -1719,6 +1743,20 @@
 								<input type="radio" id="noLuz" name="luz" value="No" (click)="cogidaLuz('No')" checked></p>
 							</form>
 						</div>
+						
+						<div style="float:left;width:100%;" *ngIf="usb != undefined" >
+							<p style="width:100%"><strong>USB</strong><span style="float:right"><span id="precioUSB" style="display:none;float:left"></span>&euro;</span></p>
+							
+							<form>
+							
+								<p style="width:100%;float:left" *ngFor="let u of usb;"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:10%" >{{u.mensaje}}</label>
+								<input type="radio" id="siLuz" name="luz" style="float: right;margin-right: 75px;" value="Si" (click)="cogidoUsb(u.id)"></p>
+								<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:10%" >Sin USB</label>
+								<input style="float: right;margin-right: 75px;" type="radio" id="siLuz" name="luz" value="Si" (click)="cogidoUsb('no')" checked></p>
+							</form> 
+						</div>
+						
+						
 						<div id="estanteriaDiv" style="display:none">
 						
 							<p style="font-size:14px;letter-spacing:3px">MEDIDAS</p>

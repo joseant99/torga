@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "productosDormitorio",
+            "otherEntityName": "productosDormitorio",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "mensaje",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "precio",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20200707062120",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "usb",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

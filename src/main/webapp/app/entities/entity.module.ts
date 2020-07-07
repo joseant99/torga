@@ -50,6 +50,11 @@ import { TorgaPedidosDireccionTiendasModule } from './direccion-tiendas/direccio
 import { TorgaPedidosNiveladoresModule } from './niveladores/niveladores.module';
 import { TorgaPedidosCajeadoModule } from './cajeado/cajeado.module';
 import { TorgaPedidosEnmarcadosModule } from './enmarcados/enmarcados.module';
+import { TorgaPedidosUsbModule } from './usb/usb.module';
+import { TorgaPedidosFPagoModule } from './f-pago/f-pago.module';
+import { TorgaPedidosRepreGCompraModule } from './repre-g-compra/repre-g-compra.module';
+import { TorgaPedidosZonasModule } from './zonas/zonas.module';
+import { TorgaPedidosTransportistaTablaModule } from './transportista-tabla/transportista-tabla.module';
 
 @NgModule({
     // prettier-ignore
@@ -59,6 +64,8 @@ import { TorgaPedidosEnmarcadosModule } from './enmarcados/enmarcados.module';
         TorgaPedidosRepresenTorgaModule,
         TorgaPedidosProductosComposicionModule,
         TorgaPedidosAcabadosComposicionModule,
+        TorgaPedidosZonasModule,
+        TorgaPedidosTransportistaTablaModule,
         TorgaPedidosComposicionModule,
         TorgaPedidosInterioresModule,
         TorgaPedidosInterioresArmariosModule,
@@ -73,6 +80,7 @@ import { TorgaPedidosEnmarcadosModule } from './enmarcados/enmarcados.module';
         TorgaPedidosCascoModule,
         TorgaPedidosNiveladoresModule,
         TorgaPedidosPuertasPreciosModule,
+        TorgaPedidosUsbModule,
         TorgaPedidosInterioresArmarioNuevosModule,
         TorgaPedidosLogisticaModule,
         TorgaPedidosPedidosModule,
@@ -94,10 +102,12 @@ import { TorgaPedidosEnmarcadosModule } from './enmarcados/enmarcados.module';
         TorgaPedidosProductosDormitorioModule,
         TorgaPedidosDimensionesProductoModule, 
         TorgaPedidosAcabadosModule,
+        TorgaPedidosFPagoModule,
         TorgaPedidosPresupuestoPedidoModule,
         TorgaPedidosAcabadosProductoModule,
         TorgaPedidosAcaProdModule,
         TorgaPedidosTiposApoyoModule,
+        TorgaPedidosRepreGCompraModule,
         TorgaPedidosTipoProductoModule,
         TorgaPedidosDimensionesProductoTipoModule,
         TorgaPedidosIvaProductoTiendaModule,
