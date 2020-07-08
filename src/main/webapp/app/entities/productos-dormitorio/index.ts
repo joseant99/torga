@@ -7,6 +7,7 @@ export * from './productos-colgantes.component';
 export * from './productos-dormitorio.route';
 export * from './armarios-dormitorio.component';
 export * from './vestidores-dormitorio.component';
+export * from './rincon-dormitorio.component';
 export * from './armarios-dormitorio-vista.component';
 export * from './armarios-dormitorio-oculta.component';
 export * from './productos-dormitorio-categoria.component';

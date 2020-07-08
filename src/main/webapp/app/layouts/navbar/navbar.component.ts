@@ -6038,44 +6038,93 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         acabados = [];
                     }
                 } else {
-                    console.log(acabados);
-                    $('#modalCesta .modal-body').append(
-                        '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative" id="cuerpo' +
-                            i +
-                            '"></div>'
-                    );
-                    $('#modalCesta .modal-body').append(
-                        '<div style="float: left;width: 100%;height:180px:margin-bottom:50px;" id="textoCesta' + i + '"></div>'
-                    );
-                    $('#textoCesta' + i).append(
-                        '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
-                            sesion[1]['apoyo']['productoApoyo']['nombre'].toUpperCase() +
-                            '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
-                            i +
-                            '">' +
-                            sesion[1]['todoSumadoPrecio'] +
-                            '</span> &euro; </i></p>'
-                    );
+                    if (sesion[1]['productosDormitorio'] != undefined) {
+                        console.log(acabados);
+                        $('#modalCesta .modal-body').append(
+                            '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative" id="cuerpo' +
+                                i +
+                                '"></div>'
+                        );
+                        $('#modalCesta .modal-body').append(
+                            '<div style="float: left;width: 100%;height:180px:margin-bottom:50px;" id="textoCesta' + i + '"></div>'
+                        );
+                        $('#textoCesta' + i).append(
+                            '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
+                                sesion[1]['apoyo']['productoApoyo']['nombre'].toUpperCase() +
+                                '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                i +
+                                '">' +
+                                sesion[1]['todoSumadoPrecio'] +
+                                '</span> &euro; </i></p>'
+                        );
 
-                    var precioTotalCesta;
-                    precioTotalCesta = $('#cestaTotal').text();
-                    if (precioTotalCesta != '') {
-                        var cogerPrecio = parseFloat(sesion[1]['todoSumadoPrecio']);
-                        precioTotalCesta = parseFloat(precioTotalCesta);
-                        precioTotalCesta = cogerPrecio + precioTotalCesta;
-                        $('#cestaTotal').text(precioTotalCesta);
+                        var precioTotalCesta;
+                        precioTotalCesta = $('#cestaTotal').text();
+                        if (precioTotalCesta != '') {
+                            var cogerPrecio = parseFloat(sesion[1]['todoSumadoPrecio']);
+                            precioTotalCesta = parseFloat(precioTotalCesta);
+                            precioTotalCesta = cogerPrecio + precioTotalCesta;
+                            $('#cestaTotal').text(precioTotalCesta);
+                        } else {
+                            var cogerPrecio = parseFloat(sesion[1]['todoSumadoPrecio']);
+                            $('#cestaTotal').text(cogerPrecio);
+                        }
+
+                        $('#textoCesta' + i).append(
+                            '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;font-size: 16px;"><span onclick="borrarProdCesta(' +
+                                i +
+                                ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
+                        );
+                        $('#textoCesta' + i).append('<hr style="100%"></hr>');
+                        acabados = [];
                     } else {
-                        var cogerPrecio = parseFloat(sesion[1]['todoSumadoPrecio']);
-                        $('#cestaTotal').text(cogerPrecio);
-                    }
+                        if (sesion[1]['especial'] == 0) {
+                            $('#modalCesta .modal-body').append(
+                                '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative" id="cuerpo' +
+                                    i +
+                                    '"></div>'
+                            );
 
-                    $('#textoCesta' + i).append(
-                        '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;font-size: 16px;"><span onclick="borrarProdCesta(' +
-                            i +
-                            ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
-                    );
-                    $('#textoCesta' + i).append('<hr style="100%"></hr>');
-                    acabados = [];
+                            $('#cuerpo' + i).append(
+                                '<img style="z-index:' +
+                                    (100 - i) +
+                                    ';max-width:400px;max-height:400px;;max-width:400px;max-height:250px;position:absolute;top:0px;margin-left:270px" width="1000px" height="1000px" src="../../../content/images/especial.png">'
+                            );
+                            $('#modalCesta .modal-body').append(
+                                '<div style="float: left;width: 100%;height:180px:margin-bottom:50px;" id="textoCesta' + i + '"></div>'
+                            );
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">Articulo Especial<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    i +
+                                    '">' +
+                                    sesion[1]['precio'] +
+                                    '</span> &euro; </i></p>'
+                            );
+                            var precioTotalCesta;
+                            precioTotalCesta = $('#cestaTotal').text();
+                            if (precioTotalCesta != '') {
+                                if (sesion[1]['precio'] != 'No definido') {
+                                    var cogerPrecio = parseFloat(sesion[1]['precio']);
+                                    precioTotalCesta = parseFloat(precioTotalCesta);
+                                    precioTotalCesta = cogerPrecio + precioTotalCesta;
+                                    $('#cestaTotal').text(precioTotalCesta);
+                                }
+                            } else {
+                                if (sesion[1]['precio'] != 'No definido') {
+                                    var cogerPrecio = parseFloat(sesion[1]['precio']);
+                                    $('#cestaTotal').text(cogerPrecio);
+                                }
+                            }
+
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;font-size: 16px;"><span onclick="borrarProdCesta(' +
+                                    i +
+                                    ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
+                            );
+
+                            $('#textoCesta' + i).append('<hr style="100%"></hr>');
+                        }
+                    }
                 }
             }
         }

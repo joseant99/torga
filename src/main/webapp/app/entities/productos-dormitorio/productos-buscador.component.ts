@@ -291,10 +291,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var contadorProd = contador;
         var contadorDimen = contador;
         var prod = [];
-        prod[1] = [];
+        prod[1] = {};
         prod[1]['texto'] = textarticulo;
         prod[1]['precio'] = valor;
         prod[1]['imagen'] = nombre;
+        prod[1]['especial'] = 0;
         sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
     }
 

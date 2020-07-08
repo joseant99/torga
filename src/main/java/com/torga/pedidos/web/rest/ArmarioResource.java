@@ -129,6 +129,14 @@ public class ArmarioResource {
         Collection<Armario> page = armarioRepository.findAncho3(min, max);
         return ResponseEntity.ok().body(page);
     }
+    
+    @GetMapping("/armarios-bus4/{min}/{max}")
+    @Timed
+    public ResponseEntity<Collection<Armario>> getAllArmariosBus4(@PathVariable("min") Float min , @PathVariable("max") Float max ) {
+        log.debug("REST request to get a page of Armarios");
+        Collection<Armario> page = armarioRepository.findAncho4(min, max);
+        return ResponseEntity.ok().body(page);
+    }
 
     /**
      * GET  /armarios/:id : get the "id" armario.

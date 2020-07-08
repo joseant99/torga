@@ -25,6 +25,9 @@ public interface ArmarioRepository extends JpaRepository<Armario, Long> {
 	@Query("SELECT u FROM Armario u WHERE u.anchoMin <= ?1 and u.anchoMax >= ?2 and u.id>24 and u.id<27")
 	Collection<Armario> findAncho2(Float anchoMin, Float anchoMax);
 	
-	@Query("SELECT u FROM Armario u WHERE u.anchoMin <= ?1 and u.anchoMax >= ?2 and u.id>26")
+	@Query("SELECT u FROM Armario u WHERE u.anchoMin <= ?1 and u.anchoMax >= ?2 and u.id>26 and u.id<154")
 	Collection<Armario> findAncho3(Float anchoMin, Float anchoMax);
+	
+	@Query("SELECT u FROM Armario u WHERE u.anchoMin <= ?1 and u.anchoMax >= ?2 and u.id>153")
+	Collection<Armario> findAncho4(Float anchoMin, Float anchoMax);
 }
