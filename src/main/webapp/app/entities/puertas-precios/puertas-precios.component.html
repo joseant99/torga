@@ -19,7 +19,16 @@
             <th jhiSortBy="alto"><span jhiTranslate="torgaPedidosApp.puertasPrecios.alto">Alto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="precio"><span jhiTranslate="torgaPedidosApp.puertasPrecios.precio">Precio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="tipo"><span jhiTranslate="torgaPedidosApp.puertasPrecios.tipo">Tipo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="puerta1"><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta1">Puerta 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="puerta2"><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta2">Puerta 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="puerta3"><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta3">Puerta 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="puerta4"><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta4">Puerta 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="puerta5"><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta5">Puerta 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="puerta6"><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta6">Puerta 6</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="puerta7"><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta7">Puerta 7</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="puerta8"><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta8">Puerta 8</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="productosDormitorio.id"><span jhiTranslate="torgaPedidosApp.puertasPrecios.productosDormitorio">Productos Dormitorio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="casco.id"><span jhiTranslate="torgaPedidosApp.puertasPrecios.casco">Casco</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -30,9 +39,22 @@
                 <td>{{puertasPrecios.alto}}</td>
                 <td>{{puertasPrecios.precio}}</td>
                 <td>{{puertasPrecios.tipo}}</td>
+                <td>{{puertasPrecios.puerta1}}</td>
+                <td>{{puertasPrecios.puerta2}}</td>
+                <td>{{puertasPrecios.puerta3}}</td>
+                <td>{{puertasPrecios.puerta4}}</td>
+                <td>{{puertasPrecios.puerta5}}</td>
+                <td>{{puertasPrecios.puerta6}}</td>
+                <td>{{puertasPrecios.puerta7}}</td>
+                <td>{{puertasPrecios.puerta8}}</td>
                 <td>
                     <div *ngIf="puertasPrecios.productosDormitorio">
                         <a [routerLink]="['../productos-dormitorio', puertasPrecios.productosDormitorio?.id, 'view' ]" >{{puertasPrecios.productosDormitorio?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="puertasPrecios.casco">
+                        <a [routerLink]="['../casco', puertasPrecios.casco?.id, 'view' ]" >{{puertasPrecios.casco?.id}}</a>
                     </div>
                 </td>
                 <td class="text-right">

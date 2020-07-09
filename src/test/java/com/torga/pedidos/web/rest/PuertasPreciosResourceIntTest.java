@@ -52,6 +52,30 @@ public class PuertasPreciosResourceIntTest {
     private static final String DEFAULT_TIPO = "AAAAAAAAAA";
     private static final String UPDATED_TIPO = "BBBBBBBBBB";
 
+    private static final Float DEFAULT_PUERTA_1 = 1F;
+    private static final Float UPDATED_PUERTA_1 = 2F;
+
+    private static final Float DEFAULT_PUERTA_2 = 1F;
+    private static final Float UPDATED_PUERTA_2 = 2F;
+
+    private static final Float DEFAULT_PUERTA_3 = 1F;
+    private static final Float UPDATED_PUERTA_3 = 2F;
+
+    private static final Float DEFAULT_PUERTA_4 = 1F;
+    private static final Float UPDATED_PUERTA_4 = 2F;
+
+    private static final Float DEFAULT_PUERTA_5 = 1F;
+    private static final Float UPDATED_PUERTA_5 = 2F;
+
+    private static final Float DEFAULT_PUERTA_6 = 1F;
+    private static final Float UPDATED_PUERTA_6 = 2F;
+
+    private static final Float DEFAULT_PUERTA_7 = 1F;
+    private static final Float UPDATED_PUERTA_7 = 2F;
+
+    private static final Float DEFAULT_PUERTA_8 = 1F;
+    private static final Float UPDATED_PUERTA_8 = 2F;
+
     @Autowired
     private PuertasPreciosRepository puertasPreciosRepository;
 
@@ -97,7 +121,15 @@ public class PuertasPreciosResourceIntTest {
             .ancho(DEFAULT_ANCHO)
             .alto(DEFAULT_ALTO)
             .precio(DEFAULT_PRECIO)
-            .tipo(DEFAULT_TIPO);
+            .tipo(DEFAULT_TIPO)
+            .puerta1(DEFAULT_PUERTA_1)
+            .puerta2(DEFAULT_PUERTA_2)
+            .puerta3(DEFAULT_PUERTA_3)
+            .puerta4(DEFAULT_PUERTA_4)
+            .puerta5(DEFAULT_PUERTA_5)
+            .puerta6(DEFAULT_PUERTA_6)
+            .puerta7(DEFAULT_PUERTA_7)
+            .puerta8(DEFAULT_PUERTA_8);
         return puertasPrecios;
     }
 
@@ -125,6 +157,14 @@ public class PuertasPreciosResourceIntTest {
         assertThat(testPuertasPrecios.getAlto()).isEqualTo(DEFAULT_ALTO);
         assertThat(testPuertasPrecios.getPrecio()).isEqualTo(DEFAULT_PRECIO);
         assertThat(testPuertasPrecios.getTipo()).isEqualTo(DEFAULT_TIPO);
+        assertThat(testPuertasPrecios.getPuerta1()).isEqualTo(DEFAULT_PUERTA_1);
+        assertThat(testPuertasPrecios.getPuerta2()).isEqualTo(DEFAULT_PUERTA_2);
+        assertThat(testPuertasPrecios.getPuerta3()).isEqualTo(DEFAULT_PUERTA_3);
+        assertThat(testPuertasPrecios.getPuerta4()).isEqualTo(DEFAULT_PUERTA_4);
+        assertThat(testPuertasPrecios.getPuerta5()).isEqualTo(DEFAULT_PUERTA_5);
+        assertThat(testPuertasPrecios.getPuerta6()).isEqualTo(DEFAULT_PUERTA_6);
+        assertThat(testPuertasPrecios.getPuerta7()).isEqualTo(DEFAULT_PUERTA_7);
+        assertThat(testPuertasPrecios.getPuerta8()).isEqualTo(DEFAULT_PUERTA_8);
     }
 
     @Test
@@ -160,7 +200,15 @@ public class PuertasPreciosResourceIntTest {
             .andExpect(jsonPath("$.[*].ancho").value(hasItem(DEFAULT_ANCHO.doubleValue())))
             .andExpect(jsonPath("$.[*].alto").value(hasItem(DEFAULT_ALTO.doubleValue())))
             .andExpect(jsonPath("$.[*].precio").value(hasItem(DEFAULT_PRECIO.doubleValue())))
-            .andExpect(jsonPath("$.[*].tipo").value(hasItem(DEFAULT_TIPO.toString())));
+            .andExpect(jsonPath("$.[*].tipo").value(hasItem(DEFAULT_TIPO.toString())))
+            .andExpect(jsonPath("$.[*].puerta1").value(hasItem(DEFAULT_PUERTA_1.doubleValue())))
+            .andExpect(jsonPath("$.[*].puerta2").value(hasItem(DEFAULT_PUERTA_2.doubleValue())))
+            .andExpect(jsonPath("$.[*].puerta3").value(hasItem(DEFAULT_PUERTA_3.doubleValue())))
+            .andExpect(jsonPath("$.[*].puerta4").value(hasItem(DEFAULT_PUERTA_4.doubleValue())))
+            .andExpect(jsonPath("$.[*].puerta5").value(hasItem(DEFAULT_PUERTA_5.doubleValue())))
+            .andExpect(jsonPath("$.[*].puerta6").value(hasItem(DEFAULT_PUERTA_6.doubleValue())))
+            .andExpect(jsonPath("$.[*].puerta7").value(hasItem(DEFAULT_PUERTA_7.doubleValue())))
+            .andExpect(jsonPath("$.[*].puerta8").value(hasItem(DEFAULT_PUERTA_8.doubleValue())));
     }
     
     @Test
@@ -177,7 +225,15 @@ public class PuertasPreciosResourceIntTest {
             .andExpect(jsonPath("$.ancho").value(DEFAULT_ANCHO.doubleValue()))
             .andExpect(jsonPath("$.alto").value(DEFAULT_ALTO.doubleValue()))
             .andExpect(jsonPath("$.precio").value(DEFAULT_PRECIO.doubleValue()))
-            .andExpect(jsonPath("$.tipo").value(DEFAULT_TIPO.toString()));
+            .andExpect(jsonPath("$.tipo").value(DEFAULT_TIPO.toString()))
+            .andExpect(jsonPath("$.puerta1").value(DEFAULT_PUERTA_1.doubleValue()))
+            .andExpect(jsonPath("$.puerta2").value(DEFAULT_PUERTA_2.doubleValue()))
+            .andExpect(jsonPath("$.puerta3").value(DEFAULT_PUERTA_3.doubleValue()))
+            .andExpect(jsonPath("$.puerta4").value(DEFAULT_PUERTA_4.doubleValue()))
+            .andExpect(jsonPath("$.puerta5").value(DEFAULT_PUERTA_5.doubleValue()))
+            .andExpect(jsonPath("$.puerta6").value(DEFAULT_PUERTA_6.doubleValue()))
+            .andExpect(jsonPath("$.puerta7").value(DEFAULT_PUERTA_7.doubleValue()))
+            .andExpect(jsonPath("$.puerta8").value(DEFAULT_PUERTA_8.doubleValue()));
     }
 
     @Test
@@ -204,7 +260,15 @@ public class PuertasPreciosResourceIntTest {
             .ancho(UPDATED_ANCHO)
             .alto(UPDATED_ALTO)
             .precio(UPDATED_PRECIO)
-            .tipo(UPDATED_TIPO);
+            .tipo(UPDATED_TIPO)
+            .puerta1(UPDATED_PUERTA_1)
+            .puerta2(UPDATED_PUERTA_2)
+            .puerta3(UPDATED_PUERTA_3)
+            .puerta4(UPDATED_PUERTA_4)
+            .puerta5(UPDATED_PUERTA_5)
+            .puerta6(UPDATED_PUERTA_6)
+            .puerta7(UPDATED_PUERTA_7)
+            .puerta8(UPDATED_PUERTA_8);
 
         restPuertasPreciosMockMvc.perform(put("/api/puertas-precios")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -219,6 +283,14 @@ public class PuertasPreciosResourceIntTest {
         assertThat(testPuertasPrecios.getAlto()).isEqualTo(UPDATED_ALTO);
         assertThat(testPuertasPrecios.getPrecio()).isEqualTo(UPDATED_PRECIO);
         assertThat(testPuertasPrecios.getTipo()).isEqualTo(UPDATED_TIPO);
+        assertThat(testPuertasPrecios.getPuerta1()).isEqualTo(UPDATED_PUERTA_1);
+        assertThat(testPuertasPrecios.getPuerta2()).isEqualTo(UPDATED_PUERTA_2);
+        assertThat(testPuertasPrecios.getPuerta3()).isEqualTo(UPDATED_PUERTA_3);
+        assertThat(testPuertasPrecios.getPuerta4()).isEqualTo(UPDATED_PUERTA_4);
+        assertThat(testPuertasPrecios.getPuerta5()).isEqualTo(UPDATED_PUERTA_5);
+        assertThat(testPuertasPrecios.getPuerta6()).isEqualTo(UPDATED_PUERTA_6);
+        assertThat(testPuertasPrecios.getPuerta7()).isEqualTo(UPDATED_PUERTA_7);
+        assertThat(testPuertasPrecios.getPuerta8()).isEqualTo(UPDATED_PUERTA_8);
     }
 
     @Test

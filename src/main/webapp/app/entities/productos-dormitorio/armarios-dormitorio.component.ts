@@ -930,7 +930,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 1; j++) {
                     array[j] = j;
                 }
-                arrayPuertas[0] = '1 y 2';
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 2) {
@@ -995,7 +996,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2 y 3';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 3) {
@@ -1092,8 +1094,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 1; j++) {
                     array[j] = j;
                 }
-                arrayPuertas[0] = '2 y 3';
-                arrayPuertas[1] = '1';
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
 
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
@@ -1184,8 +1187,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     array[j] = j;
                 }
                 arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2 y 3';
-                arrayPuertas[2] = '4';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 4) {
@@ -1295,9 +1299,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 2; j++) {
                     array[j] = j;
                 }
-                arrayPuertas[0] = '1 y 2';
-                arrayPuertas[1] = '3';
-                arrayPuertas[2] = '4 y 5';
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 5) {
@@ -1413,8 +1419,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     array[j] = j;
                 }
                 arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2 y 3';
-                arrayPuertas[2] = '4 y 5';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 5) {
@@ -1532,9 +1540,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let k = 0; k < puertas; k++) {
                     arrayPuertas[k] = k + 1;
                 }
-                arrayPuertas[0] = '1 y 2';
-                arrayPuertas[1] = '3 y 4';
-                arrayPuertas[2] = '5';
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 5) {
@@ -1656,9 +1666,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     array[j] = j;
                 }
                 arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2 y 3';
-                arrayPuertas[2] = '4 y 5';
-                arrayPuertas[3] = '6';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 6) {
@@ -1805,9 +1817,12 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     array[j] = j;
                 }
                 arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2 y 3';
-                arrayPuertas[2] = '4 y 5';
-                arrayPuertas[3] = '6 y 7';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
+                arrayPuertas[6] = '7';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 7) {
@@ -1930,10 +1945,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let j = 0; j < puertas - 3; j++) {
                     array[j] = j;
                 }
-                arrayPuertas[0] = '1 y 2';
-                arrayPuertas[1] = '3 y 4';
-                arrayPuertas[2] = '5 y 6';
-                arrayPuertas[3] = '7';
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
+                arrayPuertas[6] = '7';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 7) {
@@ -2060,10 +2078,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     arrayPuertas[k] = k + 1;
                 }
                 arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2 y 3';
-                arrayPuertas[2] = '4 y 5';
-                arrayPuertas[3] = '6 y 7';
-                arrayPuertas[4] = '8';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
+                arrayPuertas[6] = '7';
+                arrayPuertas[7] = '8';
 
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
@@ -6958,401 +6979,179 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var puertas = this.arraySaberPuertas.length;
         var alto;
         var ancho;
-
+        var casco = this.cascoService.dato['id'];
         ancho = $('#anchosSelect').val();
         alto = $('#alturaSelect').val();
-        if (nombre == 'Puerta Madera') {
-            var idPuerta = 47;
-        }
-        if (nombre == 'Puerta Aluminio') {
-            var idPuerta = 48;
-            $('#2acaPuerta' + id).css({ display: 'block' });
-        }
-        if (nombre == 'Puerta Batiente sin tirador') {
-            var idPuerta = 286;
-        }
-        if (nombre == 'Puerta Batiente tirador tim') {
-            var idPuerta = 287;
-        }
-        if (nombre == 'Puerta Batiente tirador NYE') {
-            var idPuerta = 288;
-        }
-        if (nombre == 'Puerta Batiente tirador DRAW') {
-            var idPuerta = 289;
-        }
-        if (nombre == '2 Puertas fuelle TIM Apertura izquierda') {
-            var idPuerta = 290;
-        }
-        if (nombre == '2 Puertas fuelle TIM Apertura derecha') {
-            var idPuerta = 291;
-        }
-        if (nombre == '2 Puertas fuelle NYE Apertura izquierda') {
-            var idPuerta = 292;
-        }
-        if (nombre == '2 Puertas fuelle NYE Apertura derecha') {
-            var idPuerta = 293;
-        }
-        if (nombre == 'Sin puerta') {
-            var idPuerta = 294;
-        }
-
-        var interTodos = this.puertasModal;
-        var arrayParaVer = this.puertasParaArray;
-        for (let j = 0; j < interTodos.length; j++) {
-            if (interTodos[j]['nombre'] == nombre) {
-                arrayParaVer[id] = interTodos[j];
-            }
-        }
-        this.puertasParaArray = arrayParaVer;
-        var texto = this.textoArmario;
-        if (texto == '3 PUERTAS IZQUIERDA') {
+        var arrayParaVer = [];
+        var interTodos = [];
+        var texto;
+        var nombreArmario = $('#nombreMesita').text();
+        var idPuerta;
+        this.puertasPreciosService.findBus1(casco, nombre).subscribe(data => {
             if (id == 0) {
-                if (ancho >= 100 && ancho < 120) {
-                    if (alto >= 220 && alto < 240) {
-                        var cuenta = '391';
-                        alto = 220;
-                    }
-                    if (alto >= 240 && alto <= 260) {
-                        var cuenta = '391';
-                        alto = 240;
-                    }
-                }
-                if (ancho >= 120 && ancho < 130) {
-                    if (alto >= 220 && alto < 240) {
-                        var cuenta = '427';
-                        alto = 220;
-                    }
-                    if (alto >= 240 && alto <= 260) {
-                        var cuenta = '427';
-                        alto = 240;
-                    }
-                }
-                if (ancho >= 130 && ancho < 140) {
-                    if (alto >= 220 && alto < 240) {
-                        var cuenta = '460';
-                        alto = 220;
-                    }
-                    if (alto >= 240 && alto <= 260) {
-                        var cuenta = '460';
-                        alto = 240;
-                    }
-                }
-                if (ancho >= 140 && ancho < 150) {
-                    if (alto >= 220 && alto < 240) {
-                        var cuenta = '495';
-                        alto = 220;
-                    }
-                    if (alto >= 240 && alto <= 260) {
-                        var cuenta = '495';
-                        alto = 240;
-                    }
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p id="puertaHueco' +
+                        (id + 1) +
+                        '" style="width:100%;display:none">Puerta ' +
+                        (id + 1) +
+                        ': <span id="PuertaAcabado' +
+                        id +
+                        '"></span><span style="float:right">+ <span id="precio">' +
+                        data.body[0].puerta1 +
+                        '</span>€</span><p/>'
+                );
+                $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta1 + ' €');
+
+                $('#inputPuertas' + id).val(data.body[0].tipo);
+                if (nombreArmario == '3 PUERTAS IZQUIERDA') {
                 }
             }
+
             if (id == 1) {
-                if (idPuerta != 290 && idPuerta != 291 && idPuerta != 292 && idPuerta != 293 && idPuerta != 294) {
-                    if (ancho >= 100 && ancho < 120) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '391';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '391';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 120 && ancho < 130) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '427';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '427';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 130 && ancho < 140) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '460';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '460';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 140 && ancho < 150) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '495';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '495';
-                            alto = 240;
-                        }
-                    }
-                } else {
-                    if (ancho >= 100 && ancho < 110) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '695';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '695';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 110 && ancho < 120) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '767';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '767';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 120 && ancho < 130) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '838';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '838';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 130 && ancho < 140) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '905';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '905';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 140 && ancho < 150) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '975';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '975';
-                            alto = 240;
-                        }
-                    }
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p id="puertaHueco' +
+                        (id + 1) +
+                        '" style="width:100%;display:none">Puerta ' +
+                        (id + 1) +
+                        ': <span id="PuertaAcabado' +
+                        id +
+                        '"></span><span style="float:right">+ <span id="precio">' +
+                        data.body[0].puerta2 +
+                        '</span>€</span><p/>'
+                );
+                var precioPuerta = 0;
+                precioPuerta = data.body[0].puerta2;
+                $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta + ' €');
+                if (nombreArmario == '3 PUERTAS IZQUIERDA') {
+                    precioPuerta = precioPuerta * 2;
+                    $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta + ' €');
                 }
+                $('#inputPuertas' + id).val(data.body[0].tipo);
             }
-        }
 
-        if (texto == '3 PUERTAS DERECHA') {
             if (id == 2) {
-                if (ancho >= 100 && ancho < 120) {
-                    if (alto >= 220 && alto < 240) {
-                        var cuenta = '391';
-                        alto = 220;
-                    }
-                    if (alto >= 240 && alto <= 260) {
-                        var cuenta = '391';
-                        alto = 240;
-                    }
-                }
-                if (ancho >= 120 && ancho < 130) {
-                    if (alto >= 220 && alto < 240) {
-                        var cuenta = '427';
-                        alto = 220;
-                    }
-                    if (alto >= 240 && alto <= 260) {
-                        var cuenta = '427';
-                        alto = 240;
-                    }
-                }
-                if (ancho >= 130 && ancho < 140) {
-                    if (alto >= 220 && alto < 240) {
-                        var cuenta = '460';
-                        alto = 220;
-                    }
-                    if (alto >= 240 && alto <= 260) {
-                        var cuenta = '460';
-                        alto = 240;
-                    }
-                }
-                if (ancho >= 140 && ancho < 150) {
-                    if (alto >= 220 && alto < 240) {
-                        var cuenta = '495';
-                        alto = 220;
-                    }
-                    if (alto >= 240 && alto <= 260) {
-                        var cuenta = '495';
-                        alto = 240;
-                    }
-                }
-            }
-            if (id == 0) {
-                if (idPuerta != 290 && idPuerta != 291 && idPuerta != 292 && idPuerta != 293 && idPuerta != 294) {
-                    if (ancho >= 100 && ancho < 120) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '391';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '391';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 120 && ancho < 130) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '427';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '427';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 130 && ancho < 140) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '460';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '460';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 140 && ancho < 150) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '495';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '495';
-                            alto = 240;
-                        }
-                    }
-                } else {
-                    if (ancho >= 100 && ancho < 110) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '695';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '695';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 110 && ancho < 120) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '767';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '767';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 120 && ancho < 130) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '838';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '838';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 130 && ancho < 140) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '905';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '905';
-                            alto = 240;
-                        }
-                    }
-                    if (ancho >= 140 && ancho < 150) {
-                        if (alto >= 220 && alto < 240) {
-                            var cuenta = '975';
-                            alto = 220;
-                        }
-                        if (alto >= 240 && alto <= 260) {
-                            var cuenta = '975';
-                            alto = 240;
-                        }
-                    }
-                }
-            }
-        }
-        this.puertasPreciosService.findBus(cuenta, alto, idPuerta).subscribe(data => {
-            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                '<p id="puertaHueco' +
-                    (id + 1) +
-                    '" style="width:100%;display:none">Puerta ' +
-                    (id + 1) +
-                    ': <span id="PuertaAcabado' +
-                    id +
-                    '"></span><span style="float:right">+ <span id="precio">' +
-                    data.body[0].precio +
-                    '</span>€</span><p/>'
-            );
-            $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].precio + ' €');
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p id="puertaHueco' +
+                        (id + 1) +
+                        '" style="width:100%;display:none">Puerta ' +
+                        (id + 1) +
+                        ': <span id="PuertaAcabado' +
+                        id +
+                        '"></span><span style="float:right">+ <span id="precio">' +
+                        data.body[0].puerta3 +
+                        '</span>€</span><p/>'
+                );
+                $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta3 + ' €');
 
-            if (texto == '3 PUERTAS IZQUIERDA') {
-                if (id == 1) {
-                    $('#calculadoraCarrito #precioPuerta2').text(data.body[0].precio + ' €');
-                    if (idPuerta == 290 || idPuerta == 291 || idPuerta == 292 || idPuerta == 293 || idPuerta == 294) {
-                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 2 y Puerta 3');
-                        $('#divPuerta2').css({ display: 'none' });
-                    } else {
-                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 2');
-                        $('#divPuerta2').css({ display: 'block' });
-                    }
-                }
-                if (id == 2) {
-                    $('#calculadoraCarrito #precioPuerta1').text(data.body[0].precio + ' €');
-                    if (idPuerta == 290 || idPuerta == 291 || idPuerta == 292 || idPuerta == 293 || idPuerta == 294) {
-                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 2 y Puerta 3');
-                        $('#divPuerta1').css({ display: 'none' });
-                    } else {
-                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 3');
-                        $('#divPuerta1').css({ display: 'block' });
-                    }
-                }
+                $('#inputPuertas' + id).val(data.body[0].tipo);
             }
 
-            if (texto == '3 PUERTAS DERECHA') {
-                if (id == 0) {
-                    $('#calculadoraCarrito #precioPuerta2').text(data.body[0].precio + ' €');
-                    if (idPuerta == 290 || idPuerta == 291 || idPuerta == 292 || idPuerta == 293 || idPuerta == 294) {
-                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 1 y Puerta 2');
-                        $('#divPuerta1').css({ display: 'none' });
-                    } else {
-                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 1');
-                        $('#divPuerta1').css({ display: 'block' });
-                    }
-                }
-                if (id == 1) {
-                    $('#calculadoraCarrito #precioPuerta1').text(data.body[0].precio + ' €');
-                    if (idPuerta == 290 || idPuerta == 291 || idPuerta == 292 || idPuerta == 293 || idPuerta == 294) {
-                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 1 y Puerta 2');
-                        $('#divPuerta0').css({ display: 'none' });
-                    } else {
-                        $('#calculadoraCarrito #nombrePuerta' + id).text('Puerta 2');
-                        $('#divPuerta0').css({ display: 'block' });
-                    }
-                }
+            if (id == 3) {
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p id="puertaHueco' +
+                        (id + 1) +
+                        '" style="width:100%;display:none">Puerta ' +
+                        (id + 1) +
+                        ': <span id="PuertaAcabado' +
+                        id +
+                        '"></span><span style="float:right">+ <span id="precio">' +
+                        data.body[0].puerta4 +
+                        '</span>€</span><p/>'
+                );
+                $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta4 + ' €');
+
+                $('#inputPuertas' + id).val(data.body[0].tipo);
+            }
+
+            if (id == 4) {
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p id="puertaHueco' +
+                        (id + 1) +
+                        '" style="width:100%;display:none">Puerta ' +
+                        (id + 1) +
+                        ': <span id="PuertaAcabado' +
+                        id +
+                        '"></span><span style="float:right">+ <span id="precio">' +
+                        data.body[0].puerta5 +
+                        '</span>€</span><p/>'
+                );
+                $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta5 + ' €');
+
+                $('#inputPuertas' + id).val(data.body[0].tipo);
+            }
+
+            if (id == 5) {
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p id="puertaHueco' +
+                        (id + 1) +
+                        '" style="width:100%;display:none">Puerta ' +
+                        (id + 1) +
+                        ': <span id="PuertaAcabado' +
+                        id +
+                        '"></span><span style="float:right">+ <span id="precio">' +
+                        data.body[0].puerta6 +
+                        '</span>€</span><p/>'
+                );
+                $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta6 + ' €');
+
+                $('#inputPuertas' + id).val(data.body[0].tipo);
+            }
+
+            if (id == 6) {
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p id="puertaHueco' +
+                        (id + 1) +
+                        '" style="width:100%;display:none">Puerta ' +
+                        (id + 1) +
+                        ': <span id="PuertaAcabado' +
+                        id +
+                        '"></span><span style="float:right">+ <span id="precio">' +
+                        data.body[0].puerta7 +
+                        '</span>€</span><p/>'
+                );
+                $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta7 + ' €');
+
+                $('#inputPuertas' + id).val(data.body[0].tipo);
+            }
+
+            if (id == 7) {
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p id="puertaHueco' +
+                        (id + 1) +
+                        '" style="width:100%;display:none">Puerta ' +
+                        (id + 1) +
+                        ': <span id="PuertaAcabado' +
+                        id +
+                        '"></span><span style="float:right">+ <span id="precio">' +
+                        data.body[0].puerta8 +
+                        '</span>€</span><p/>'
+                );
+                $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta8 + ' €');
+
+                $('#inputPuertas' + id).val(data.body[0].tipo);
+            }
+
+            if (nombre == 381 || nombre == 382) {
+                this.acaProdService.findAca(381).subscribe(data => {
+                    $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
+                    this.acabadosPuerta1 = data.body[0]['acabados'];
+                });
+            } else {
+                this.acaProdService.findAca(383).subscribe(data => {
+                    $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
+                    this.acabadosPuerta2 = data.body[0]['acabados'];
+                });
             }
         });
         if (texto == '1 PUERTA') {
             $('#inputPuertas' + id).val(nombre);
             if (nombre == 'Puerta Madera') {
-                this.acaProdService.findAca(47).subscribe(data => {
+                this.acaProdService.findAca(381).subscribe(data => {
                     $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas1');
                     this.acabadosPuerta1 = data.body[0]['acabados'];
                 });
             } else {
-                this.acaProdService.findAca(48).subscribe(data => {
+                this.acaProdService.findAca(383).subscribe(data => {
                     $('#inputs #inputPuertas' + id).attr('data-target', '#modalAcabadosPuertas2');
                     this.acabadosPuerta2 = data.body[0]['acabados'];
                 });
@@ -13643,15 +13442,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         if (interior.indexOf('y') == 2) {
             this.productosDormitorioService.categoria(10).subscribe(data => {
                 for (let i = 0; i < data.body['length']; i++) {
-                    arrayPuertas[contPuertas] = data.body[i];
-                    contPuertas++;
+                    if (
+                        data.body[i]['id'] != 381 &&
+                        data.body[i]['id'] != 382 &&
+                        data.body[i]['id'] != 383 &&
+                        data.body[i]['id'] != 384 &&
+                        data.body[i]['id'] != 385 &&
+                        data.body[i]['id'] != 386
+                    ) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
                 }
                 this.puertasModal = arrayPuertas;
             });
         } else {
             this.productosDormitorioService.categoria(10).subscribe(data => {
                 for (let i = 0; i < data.body['length']; i++) {
-                    if (data.body[i]['id'] != 345 && data.body[i]['id'] != 346) {
+                    if (data.body[i]['id'] != 387 && data.body[i]['id'] != 388 && data.body[i]['id'] != 389 && data.body[i]['id'] != 390) {
                         arrayPuertas[contPuertas] = data.body[i];
                         contPuertas++;
                         var prueba = [];

@@ -39,4 +39,8 @@ export class PuertasPreciosService {
     findBus(ancho: any, alto: any, puerta: any): Observable<EntityArrayResponseType> {
         return this.http.get<IPuertasPrecios[]>(`${this.resourceUrl}-bus/${ancho}/${alto}/${puerta}`, { observe: 'response' });
     }
+
+    findBus1(casco: any, puerta: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IPuertasPrecios[]>(`${this.resourceUrl}-bus/${casco}/${puerta}`, { observe: 'response' });
+    }
 }

@@ -1,7 +1,6 @@
 package com.torga.pedidos.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import com.torga.pedidos.domain.Casco;
 import com.torga.pedidos.domain.PuertasPrecios;
 import com.torga.pedidos.repository.PuertasPreciosRepository;
 import com.torga.pedidos.web.rest.errors.BadRequestAlertException;
@@ -96,20 +95,6 @@ public class PuertasPreciosResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/puertas-precios");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
-
-    /**
-     * GET  /puertas-precios/:id : get the "id" puertasPrecios.
-     *
-     * @param id the id of the puertasPrecios to retrieve
-     * @return the ResponseEntity with status 200 (OK) and with body the puertasPrecios, or with status 404 (Not Found)
-     */
-    @GetMapping("/puertas-precios/{id}")
-    @Timed
-    public ResponseEntity<PuertasPrecios> getPuertasPrecios(@PathVariable Long id) {
-        log.debug("REST request to get PuertasPrecios : {}", id);
-        Optional<PuertasPrecios> puertasPrecios = puertasPreciosRepository.findById(id);
-        return ResponseUtil.wrapOrNotFound(puertasPrecios);
-    }
     
     /**
      * GET  /cascos : get all the cascos.
@@ -123,6 +108,35 @@ public class PuertasPreciosResource {
         log.debug("REST request to get a page of Cascos");
         Collection<PuertasPrecios> page = puertasPreciosRepository.findAncho(ancho, alto, puerta);
         return ResponseEntity.ok().body(page);
+    }
+    
+    /**
+     * GET  /cascos : get all the cascos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of cascos in body
+     */
+    @GetMapping("/puertas-precios-bus/{casco}/{puerta}")
+    @Timed
+    public ResponseEntity<Collection<PuertasPrecios>> getAllCascosBus1( @PathVariable("casco") Long casco , @PathVariable("puerta") Long puerta ) {
+        log.debug("REST request to get a page of Cascos");
+        Collection<PuertasPrecios> page = puertasPreciosRepository.findAncho1(casco, puerta);
+        return ResponseEntity.ok().body(page);
+    }
+
+
+    /**
+     * GET  /puertas-precios/:id : get the "id" puertasPrecios.
+     *
+     * @param id the id of the puertasPrecios to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the puertasPrecios, or with status 404 (Not Found)
+     */
+    @GetMapping("/puertas-precios/{id}")
+    @Timed
+    public ResponseEntity<PuertasPrecios> getPuertasPrecios(@PathVariable Long id) {
+        log.debug("REST request to get PuertasPrecios : {}", id);
+        Optional<PuertasPrecios> puertasPrecios = puertasPreciosRepository.findById(id);
+        return ResponseUtil.wrapOrNotFound(puertasPrecios);
     }
 
     /**

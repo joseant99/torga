@@ -21,7 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(PuertasPreciosService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new PuertasPrecios(0, 0, 0, 0, 'AAAAAAA');
+            elemDefault = new PuertasPrecios(0, 0, 0, 0, 'AAAAAAA', 0, 0, 0, 0, 0, 0, 0, 0);
         });
 
         describe('Service methods', async () => {
@@ -58,7 +58,15 @@ describe('Service Tests', () => {
                         ancho: 1,
                         alto: 1,
                         precio: 1,
-                        tipo: 'BBBBBB'
+                        tipo: 'BBBBBB',
+                        puerta1: 1,
+                        puerta2: 1,
+                        puerta3: 1,
+                        puerta4: 1,
+                        puerta5: 1,
+                        puerta6: 1,
+                        puerta7: 1,
+                        puerta8: 1
                     },
                     elemDefault
                 );
@@ -78,7 +86,15 @@ describe('Service Tests', () => {
                         ancho: 1,
                         alto: 1,
                         precio: 1,
-                        tipo: 'BBBBBB'
+                        tipo: 'BBBBBB',
+                        puerta1: 1,
+                        puerta2: 1,
+                        puerta3: 1,
+                        puerta4: 1,
+                        puerta5: 1,
+                        puerta6: 1,
+                        puerta7: 1,
+                        puerta8: 1
                     },
                     elemDefault
                 );

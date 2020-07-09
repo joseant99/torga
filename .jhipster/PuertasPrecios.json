@@ -7,6 +7,12 @@
             "otherEntityName": "productosDormitorio",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "casco",
+            "otherEntityName": "casco",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [
@@ -25,6 +31,38 @@
         {
             "fieldName": "tipo",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "puerta1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "puerta2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "puerta3",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "puerta4",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "puerta5",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "puerta6",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "puerta7",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "puerta8",
+            "fieldType": "Float"
         }
     ],
     "changelogDate": "20191107154229",

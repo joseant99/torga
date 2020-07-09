@@ -131,6 +131,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     progressConfirmacion: { percentage: number } = { percentage: 0 };
     progressExcel: { percentage: number } = { percentage: 0 };
     errormessage: string;
+    posicionEstanteria: any;
 
     constructor(
         protected tiposApoyoService: TiposApoyoService,
@@ -187,6 +188,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     var preciosum = precio * (precioCat[0]['precio'] / 100);
                     precio = precio + preciosum;
                     $('#divEstant').css({ display: 'block' });
+                    $('#articulosEstanterias').css({ display: 'block' });
+                    $('#articulosEstanterias').append(
+                        '<img style="z-index:100;position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/1-min.png">'
+                    );
                     $('#precioCostado').text(precio + ' €');
                     $('#anchoEstant').text(data.body[i]['ancho']);
                     $('#precioDimension').text(precio);
@@ -301,12 +306,64 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
     public escogidaEstanteria(estant) {
         var altura = this.alturaEstan;
+        var arrayMedidas = [];
+        var posicion = this.posicionEstanteria;
+        arrayMedidas[0] = 'z-index:99;margin-left: 25px;margin-top: -9px;';
+        arrayMedidas[1] = 'z-index:97;margin-left: 75px;margin-top: -21px;';
+        arrayMedidas[2] = 'z-index:96;margin-left: 114px;margin-top: -26px;';
+        arrayMedidas[3] = 'z-index:95;margin-left: 157px;margin-top: -38px;';
+        arrayMedidas[4] = 'z-index:94;margin-left: 25px;margin-top: -9px;';
+
         var array = this.estanteria;
         var preciosPuntos = this.precioPunto;
         var precioCat = this.catalogoCome;
         var anchoEstant = $('#anchoEstant').text();
         var precioTodo = $('#precioDimension').text();
-
+        if (estant.id == 353) {
+            $('#articulosEstanterias').append(
+                '<img style="' +
+                    arrayMedidas[posicion] +
+                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/2-min.png">'
+            );
+        }
+        if (estant.id == 354) {
+            $('#articulosEstanterias').append(
+                '<img style="' +
+                    arrayMedidas[posicion] +
+                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/3-min.png">'
+            );
+        }
+        if (estant.id == 355) {
+        }
+        if (estant.id == 356) {
+            $('#articulosEstanterias').append(
+                '<img style="' +
+                    arrayMedidas[posicion] +
+                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/4-min.png">'
+            );
+        }
+        if (estant.id == 357) {
+            $('#articulosEstanterias').append(
+                '<img style="' +
+                    arrayMedidas[posicion] +
+                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/5-min.png">'
+            );
+        }
+        if (estant.id == 358) {
+            $('#articulosEstanterias').append(
+                '<img style="' +
+                    arrayMedidas[posicion] +
+                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/6-min.png">'
+            );
+        }
+        if (estant.id == 359) {
+            $('#articulosEstanterias').append(
+                '<img style="' +
+                    arrayMedidas[posicion] +
+                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/7-min.png">'
+            );
+        }
+        this.posicionEstanteria = posicion + 1;
         this.dimensionesProductoTipoService.findProducto(estant.id).subscribe(data => {
             for (let i = 0; i < data.body['length']; i++) {
                 if (data.body[i]['alto'] == altura) {
@@ -404,7 +461,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#precioDimension').empty();
         $('#nombreMesita').empty();
         $('#articulosEspeciales').css({ display: 'none' });
-
+        $('#euroCalculadora').css({ display: 'none' });
         $('#estanteriaDiv').css({ display: 'none' });
         $('#botonCalculadora').attr('class', 'displayBoton');
         $('#imagenAcabadoPrincipal').css({ display: 'none' });
@@ -5104,6 +5161,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         precio +
                                         '&euro;</span></p>'
                                 );
+                                $('#precioDimension').text(precioDimension);
                                 $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                 $('#botonApoyoNuevo').append(
                                     '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
@@ -5608,6 +5666,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     loadAll() {
         var productos = [];
         var apoyos = [];
+        this.posicionEstanteria = 0;
         var cont = 0;
         this.armariosDormitorioComponent.loadAll();
         this.armariosDormitorioOcultaComponent.loadAll();

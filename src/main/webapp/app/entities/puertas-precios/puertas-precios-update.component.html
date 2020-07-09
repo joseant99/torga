@@ -29,12 +29,59 @@
                     <input type="text" class="form-control" name="tipo" id="field_tipo"
                         [(ngModel)]="puertasPrecios.tipo" />
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertasPrecios.puerta1" for="field_puerta1">Puerta 1</label>
+                    <input type="number" class="form-control" name="puerta1" id="field_puerta1"
+                        [(ngModel)]="puertasPrecios.puerta1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertasPrecios.puerta2" for="field_puerta2">Puerta 2</label>
+                    <input type="number" class="form-control" name="puerta2" id="field_puerta2"
+                        [(ngModel)]="puertasPrecios.puerta2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertasPrecios.puerta3" for="field_puerta3">Puerta 3</label>
+                    <input type="number" class="form-control" name="puerta3" id="field_puerta3"
+                        [(ngModel)]="puertasPrecios.puerta3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertasPrecios.puerta4" for="field_puerta4">Puerta 4</label>
+                    <input type="number" class="form-control" name="puerta4" id="field_puerta4"
+                        [(ngModel)]="puertasPrecios.puerta4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertasPrecios.puerta5" for="field_puerta5">Puerta 5</label>
+                    <input type="number" class="form-control" name="puerta5" id="field_puerta5"
+                        [(ngModel)]="puertasPrecios.puerta5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertasPrecios.puerta6" for="field_puerta6">Puerta 6</label>
+                    <input type="number" class="form-control" name="puerta6" id="field_puerta6"
+                        [(ngModel)]="puertasPrecios.puerta6" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertasPrecios.puerta7" for="field_puerta7">Puerta 7</label>
+                    <input type="number" class="form-control" name="puerta7" id="field_puerta7"
+                        [(ngModel)]="puertasPrecios.puerta7" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertasPrecios.puerta8" for="field_puerta8">Puerta 8</label>
+                    <input type="number" class="form-control" name="puerta8" id="field_puerta8"
+                        [(ngModel)]="puertasPrecios.puerta8" />
+                </div>
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertasPrecios.productosDormitorio" for="field_productosDormitorio">Productos Dormitorio</label>
                     <select class="form-control" id="field_productosDormitorio" name="productosDormitorio" [(ngModel)]="puertasPrecios.productosDormitorio" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="productosDormitorioOption.id === puertasPrecios.productosDormitorio?.id ? puertasPrecios.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.nombre}}</option>
+                        <option [ngValue]="productosDormitorioOption.id === puertasPrecios.productosDormitorio?.id ? puertasPrecios.productosDormitorio : productosDormitorioOption" *ngFor="let productosDormitorioOption of productosdormitorios; trackBy: trackProductosDormitorioById">{{productosDormitorioOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.puertasPrecios.casco" for="field_casco">Casco</label>
+                    <select class="form-control" id="field_casco" name="casco" [(ngModel)]="puertasPrecios.casco" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cascoOption.id === puertasPrecios.casco?.id ? puertasPrecios.casco : cascoOption" *ngFor="let cascoOption of cascos; trackBy: trackCascoById">{{cascoOption.id}}</option>
                     </select>
                 </div>
             </div>

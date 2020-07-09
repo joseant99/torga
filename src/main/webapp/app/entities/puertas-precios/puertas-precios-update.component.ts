@@ -8,6 +8,8 @@ import { IPuertasPrecios } from 'app/shared/model/puertas-precios.model';
 import { PuertasPreciosService } from './puertas-precios.service';
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
 import { ProductosDormitorioService } from 'app/entities/productos-dormitorio';
+import { ICasco } from 'app/shared/model/casco.model';
+import { CascoService } from 'app/entities/casco';
 
 @Component({
     selector: 'jhi-puertas-precios-update',
@@ -19,10 +21,13 @@ export class PuertasPreciosUpdateComponent implements OnInit {
 
     productosdormitorios: IProductosDormitorio[];
 
+    cascos: ICasco[];
+
     constructor(
         protected jhiAlertService: JhiAlertService,
         protected puertasPreciosService: PuertasPreciosService,
         protected productosDormitorioService: ProductosDormitorioService,
+        protected cascoService: CascoService,
         protected activatedRoute: ActivatedRoute
     ) {}
 
@@ -31,14 +36,18 @@ export class PuertasPreciosUpdateComponent implements OnInit {
         this.activatedRoute.data.subscribe(({ puertasPrecios }) => {
             this.puertasPrecios = puertasPrecios;
         });
-        this.productosDormitorioService
-            .query({
-                size: 1000000
-            })
-            .subscribe(
-                (res: HttpResponse<IProductosDormitorio[]>) => (this.productosdormitorios = res.body),
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
+        this.productosDormitorioService.query().subscribe(
+            (res: HttpResponse<IProductosDormitorio[]>) => {
+                this.productosdormitorios = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.cascoService.query().subscribe(
+            (res: HttpResponse<ICasco[]>) => {
+                this.cascos = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
     }
 
     previousState() {
@@ -72,6 +81,10 @@ export class PuertasPreciosUpdateComponent implements OnInit {
     }
 
     trackProductosDormitorioById(index: number, item: IProductosDormitorio) {
+        return item.id;
+    }
+
+    trackCascoById(index: number, item: ICasco) {
         return item.id;
     }
 }

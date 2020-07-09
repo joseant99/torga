@@ -21,10 +21,48 @@
                 <dd>
                     <span>{{puertasPrecios.tipo}}</span>
                 </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta1">Puerta 1</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.puerta1}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta2">Puerta 2</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.puerta2}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta3">Puerta 3</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.puerta3}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta4">Puerta 4</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.puerta4}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta5">Puerta 5</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.puerta5}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta6">Puerta 6</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.puerta6}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta7">Puerta 7</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.puerta7}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.puerta8">Puerta 8</span></dt>
+                <dd>
+                    <span>{{puertasPrecios.puerta8}}</span>
+                </dd>
                 <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.productosDormitorio">Productos Dormitorio</span></dt>
                 <dd>
                     <div *ngIf="puertasPrecios.productosDormitorio">
                         <a [routerLink]="['/productos-dormitorio', puertasPrecios.productosDormitorio?.id, 'view']">{{puertasPrecios.productosDormitorio?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.puertasPrecios.casco">Casco</span></dt>
+                <dd>
+                    <div *ngIf="puertasPrecios.casco">
+                        <a [routerLink]="['/casco', puertasPrecios.casco?.id, 'view']">{{puertasPrecios.casco?.id}}</a>
                     </div>
                 </dd>
             </dl>

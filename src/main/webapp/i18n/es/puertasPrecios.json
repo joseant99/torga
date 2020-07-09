@@ -19,7 +19,16 @@
             "alto": "Alto",
             "precio": "Precio",
             "tipo": "Tipo",
-            "productosDormitorio": "Productos Dormitorio"
+            "puerta1": "Puerta 1",
+            "puerta2": "Puerta 2",
+            "puerta3": "Puerta 3",
+            "puerta4": "Puerta 4",
+            "puerta5": "Puerta 5",
+            "puerta6": "Puerta 6",
+            "puerta7": "Puerta 7",
+            "puerta8": "Puerta 8",
+            "productosDormitorio": "Productos Dormitorio",
+            "casco": "Casco"
         }
     }
 }

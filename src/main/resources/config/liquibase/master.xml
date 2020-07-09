@@ -87,8 +87,8 @@
     <include file="config/liquibase/changelog/20191106103636_added_entity_constraints_Casco1.xml" relativeToChangelogFile="false"/> 
     <include file="config/liquibase/changelog/20191107153915_added_entity_InterioresArmarioNuevos3.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191107153915_added_entity_constraints_InterioresArmarioNuevos3.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191107154229_added_entity_PuertasPrecios.xml" relativeToChangelogFile="false"/>    
-    <include file="config/liquibase/changelog/20191107154229_added_entity_constraints_PuertasPrecios.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20191107154229_added_entity_PuertasPrecios2.xml" relativeToChangelogFile="false"/>    
+    <include file="config/liquibase/changelog/20191107154229_added_entity_constraints_PuertasPrecios2.xml" relativeToChangelogFile="false"/> 
     <include file="config/liquibase/changelog/20191121110021_added_entity_PresupuestoArmario.xml" relativeToChangelogFile="false"/>    
     <include file="config/liquibase/changelog/20191121110021_added_entity_constraints_PresupuestoArmario.xml" relativeToChangelogFile="false"/>    
     <include file="config/liquibase/changelog/20191121122756_added_entity_PresupuestoArmarioInteriores.xml" relativeToChangelogFile="false"/>    
