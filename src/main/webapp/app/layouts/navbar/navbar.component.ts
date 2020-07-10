@@ -533,8 +533,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         prodIlu[m] = prodPrePed;
                                         dimensionEspecialBien[m] = prodPrePed;
                                         this.productosPresupuestoPedidos = prodPrePed;
-                                        for (let ve = 0; ve <= 10000000; ve++) {
-                                            if (ve == 10000000) {
+                                        for (let ve = 0; ve <= 10050000; ve++) {
+                                            if (ve == 10050000) {
                                                 this.subscribeToSaveResponse1(
                                                     this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
                                                 );
@@ -546,8 +546,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             acaPedProd = this.acaProdPed[acaPedProd - 1];
                                             prodAca[m]['id'] = acaPedProd['id'] + m + 1;
                                             for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                                for (let ve = 0; ve <= 1000000000; ve++) {
-                                                    if (ve == 1000000000) {
+                                                for (let ve = 0; ve <= 1000050000; ve++) {
+                                                    if (ve == 1000050000) {
                                                         const acabados1 = {
                                                             acabados: numeroAcaProd[m][b],
                                                             productosPresupuestoPedidos: prodAca[m],
@@ -596,8 +596,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         prodIlu[m] = prodPrePed;
                                         dimensionEspecialBien[m] = prodPrePed;
                                         this.productosPresupuestoPedidos = prodPrePed;
-                                        for (let ve = 0; ve <= 10000000; ve++) {
-                                            if (ve == 10000000) {
+                                        for (let ve = 0; ve <= 10050000; ve++) {
+                                            if (ve == 10050000) {
                                                 this.subscribeToSaveResponse1(
                                                     this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
                                                 );
@@ -609,8 +609,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             acaPedProd = this.acaProdPed[acaPedProd - 1];
                                             prodAca[m]['id'] = acaPedProd['id'] + m + 1;
                                             for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                                for (let ve = 0; ve <= 1000000000; ve++) {
-                                                    if (ve == 1000000000) {
+                                                for (let ve = 0; ve <= 1000050000; ve++) {
+                                                    if (ve == 1000050000) {
                                                         const acabados1 = {
                                                             acabados: numeroAcaProd[m][b],
                                                             productosPresupuestoPedidos: prodAca[m],

@@ -3256,9 +3256,83 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                         '<img id="interiorDentroArmario' +
                             hueco +
-                            '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                            '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/3. INTERIORES/' +
                             nombre +
-                            '/peque_interior_' +
+                            '/grande_interior_' +
+                            nombre +
+                            '_blanco_optimized.png">'
+                    );
+                    $('#textoLetraHueco' + (hueco - 1)).remove();
+                }
+            }
+        }
+
+        if (texto == '4 PUERTAS - 2 HUECOS GRANDES') {
+            for (let i = 1; i <= 2; i++) {
+                if (hueco == 1) {
+                    cuenta = ancho / puertas;
+                    cuenta = cuenta * 1;
+                    if (i == 1) {
+                        var dato = this.cascoService.dato;
+                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                            console.log(data.body);
+                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                '<p style="width:100%;display:none">Hueco ' +
+                                    letras[hueco - 1] +
+                                    ': <span id="acabadoHueco' +
+                                    hueco +
+                                    '">Interior ' +
+                                    nombre +
+                                    '</span><span style="float:right">+ ' +
+                                    data.body[0].a +
+                                    '€</span><p/>'
+                            );
+                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                            var precioTodo;
+                            precioTodo = $('#precioDimension').text();
+                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                            $('#precioDimension').text(precioTodoFloat);
+                        });
+                    }
+                    $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                        '<img id="interiorDentroArmario' +
+                            hueco +
+                            '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            nombre +
+                            '/grande_interior_' +
+                            nombre +
+                            '_blanco_optimized.png">'
+                    );
+                    $('#textoLetraHueco' + (hueco - 1)).remove();
+                } else {
+                    if (i == 1) {
+                        var dato = this.cascoService.dato;
+                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                            console.log(data.body);
+                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                '<p style="width:100%;display:none">Hueco ' +
+                                    letras[hueco - 1] +
+                                    ': <span id="acabadoHueco' +
+                                    hueco +
+                                    '">Interior ' +
+                                    nombre +
+                                    '</span><span style="float:right">+ ' +
+                                    data.body[0].a +
+                                    '€</span><p/>'
+                            );
+                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                            var precioTodo;
+                            precioTodo = $('#precioDimension').text();
+                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                            $('#precioDimension').text(precioTodoFloat);
+                        });
+                    }
+                    $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                        '<img id="interiorDentroArmario' +
+                            hueco +
+                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:281px;margin-top:-52px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                            nombre +
+                            '/grande_interior_' +
                             nombre +
                             '_blanco_optimized.png">'
                     );
@@ -7001,10 +7075,166 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         '</span>€</span><p/>'
                 );
                 $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta1 + ' €');
+                var precioPuerta = 0;
+                precioPuerta = data.body[0].puerta1;
+
+                if (nombreArmario == '3 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '5 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '7 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '5 PUERTAS CENTRAL') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '2 PUERTAS') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '4 PUERTAS - 2 HUECOS GRANDES') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
 
                 $('#inputPuertas' + id).val(data.body[0].tipo);
-                if (nombreArmario == '3 PUERTAS IZQUIERDA') {
-                }
             }
 
             if (id == 1) {
@@ -7023,9 +7253,290 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 precioPuerta = data.body[0].puerta2;
                 $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta + ' €');
                 if (nombreArmario == '3 PUERTAS IZQUIERDA') {
-                    precioPuerta = precioPuerta * 2;
-                    $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta + ' €');
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas2').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
                 }
+
+                if (nombreArmario == '5 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas2').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '7 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas2').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '6 PUERTAS ASIMETRICAS') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas2').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '4 PUERTAS ASIMETRICAS') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas2').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '3 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas0').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+                if (nombreArmario == '5 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas0').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '7 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas0').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '5 PUERTAS CENTRAL') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas0').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '2 PUERTAS') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas0').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '4 PUERTAS - 2 HUECOS GRANDES') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas0').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
                 $('#inputPuertas' + id).val(data.body[0].tipo);
             }
 
@@ -7041,7 +7552,216 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].puerta3 +
                         '</span>€</span><p/>'
                 );
+                var precioPuerta = 0;
+                precioPuerta = data.body[0].puerta3;
                 $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta3 + ' €');
+                if (nombreArmario == '3 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '5 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '7 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '6 PUERTAS ASIMETRICAS') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '5 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas4').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '7 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas4').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '4 PUERTAS ASIMETRICAS') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '4 PUERTAS - 2 HUECOS GRANDES') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas1').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
 
                 $('#inputPuertas' + id).val(data.body[0].tipo);
             }
@@ -7060,6 +7780,190 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 );
                 $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta4 + ' €');
 
+                var precioPuerta = 0;
+                precioPuerta = data.body[0].puerta4;
+
+                if (nombreArmario == '4 PUERTAS - 2 HUECOS GRANDES') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas3').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '5 PUERTAS CENTRAL') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas4').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '5 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas4').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+                if (nombreArmario == '7 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas4').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '6 PUERTAS ASIMETRICAS') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas4').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '5 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas3').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '7 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas3').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
                 $('#inputPuertas' + id).val(data.body[0].tipo);
             }
 
@@ -7076,6 +7980,136 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         '</span>€</span><p/>'
                 );
                 $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta5 + ' €');
+                var precioPuerta = 0;
+                precioPuerta = data.body[0].puerta5;
+
+                if (nombreArmario == '5 PUERTAS CENTRAL') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas3').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+                if (nombreArmario == '7 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas5').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+                if (nombreArmario == '5 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas3').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '7 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas3').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '6 PUERTAS ASIMETRICAS') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas3').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
 
                 $('#inputPuertas' + id).val(data.body[0].tipo);
             }
@@ -7093,6 +8127,60 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         '</span>€</span><p/>'
                 );
                 $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta6 + ' €');
+                var precioPuerta = 0;
+                precioPuerta = data.body[0].puerta6;
+
+                if (nombreArmario == '7 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas6').empty();
+                        $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id + 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id + 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
+                        }
+                    }
+                }
+
+                if (nombreArmario == '7 PUERTAS DERECHA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas4').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
 
                 $('#inputPuertas' + id).val(data.body[0].tipo);
             }
@@ -7110,7 +8198,34 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         '</span>€</span><p/>'
                 );
                 $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta7 + ' €');
+                var precioPuerta = 0;
+                precioPuerta = data.body[0].puerta7;
 
+                if (nombreArmario == '7 PUERTAS IZQUIERDA') {
+                    if (
+                        data.body[0].productosDormitorio.id != 381 &&
+                        data.body[0].productosDormitorio.id != 382 &&
+                        data.body[0].productosDormitorio.id != 383 &&
+                        data.body[0].productosDormitorio.id != 384 &&
+                        data.body[0].productosDormitorio.id != 385 &&
+                        data.body[0].productosDormitorio.id != 386
+                    ) {
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#inputs #inputPuertas5').empty();
+                        $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
+                    } else {
+                        var comprobar = $('#inputPuertas' + (id - 1)).val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas' + (id - 1)).val('');
+                            $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
+                        }
+                    }
+                }
                 $('#inputPuertas' + id).val(data.body[0].tipo);
             }
 
@@ -9840,12 +10955,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var id = this.idPuertaInput;
         var texto = this.textoArmario;
         var prueba = 0;
-        var acabados = this.acabados;
+        var acabados = this.todos;
         $('#marco' + id).remove();
         for (let w = 0; w < acabados.length; w++) {
             if (acabados[w]['nombre'] == nombre) {
                 $('#inputs #inputPuertas' + id).empty();
-                $('#inputs #inputPuertas' + id).val(acabados[w].nombre);
+                $('#inputs #inputPuertas' + id).append(
+                    '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                );
                 $('#inputs #inputPuertas' + id).append(
                     '<img width="100%" height="100%" src="data:image/gif;base64,' +
                         acabados[w]['imagenFondo'] +
@@ -9854,45 +10971,821 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
 
                 if (texto == '3 PUERTAS IZQUIERDA') {
                     if (id == 1) {
-                        $('#inputs #inputPuertas2').empty();
-                        $('#inputs #inputPuertas2').val(acabados[w].nombre);
-                        $('#inputs #inputPuertas2').append(
-                            '<img width="100%" height="100%" src="data:image/gif;base64,' +
-                                acabados[w]['imagenFondo'] +
-                                '" style="max-width:100%;max-height:100%">'
-                        );
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas2').empty();
+                            $('#inputPuertas2').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputPuertas2').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
                     }
 
                     if (id == 2) {
-                        $('#inputs #inputPuertas1').empty();
-                        $('#inputs #inputPuertas1').val(acabados[w].nombre);
-                        $('#inputs #inputPuertas1').append(
-                            '<img width="100%" height="100%" src="data:image/gif;base64,' +
-                                acabados[w]['imagenFondo'] +
-                                '" style="max-width:100%;max-height:100%">'
-                        );
+                        var comprobar = $('#inputPuertas2').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
                     }
                 }
 
                 if (texto == '3 PUERTAS DERECHA') {
                     if (id == 1) {
-                        $('#inputs #inputPuertas1').empty();
-                        $('#inputs #inputPuertas1').val(acabados[w].nombre);
-                        $('#inputs #inputPuertas1').append(
-                            '<img width="100%" height="100%" src="data:image/gif;base64,' +
-                                acabados[w]['imagenFondo'] +
-                                '" style="max-width:100%;max-height:100%">'
-                        );
+                        var comprobar = $('#inputPuertas0').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas0').empty();
+                            $('#inputPuertas0').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputPuertas0').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 0) {
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                }
+
+                if (texto == '4 PUERTAS - 2 HUECOS GRANDES') {
+                    if (id == 1) {
+                        var comprobar = $('#inputPuertas0').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas0').empty();
+                            $('#inputPuertas0').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputPuertas0').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 0) {
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 3) {
+                        var comprobar = $('#inputPuertas2').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas2').empty();
+                            $('#inputPuertas2').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputPuertas2').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
                     }
 
                     if (id == 2) {
-                        $('#inputs #inputPuertas0').empty();
-                        $('#inputs #inputPuertas0').val(acabados[w].nombre);
-                        $('#inputs #inputPuertas0').append(
-                            '<img width="100%" height="100%" src="data:image/gif;base64,' +
-                                acabados[w]['imagenFondo'] +
-                                '" style="max-width:100%;max-height:100%">'
-                        );
+                        var comprobar = $('#inputPuertas3').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas3').empty();
+                            $('#inputs #inputPuertas3').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas3').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                }
+
+                if (texto == '4 PUERTAS ASIMETRICAS') {
+                    if (id == 1) {
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas2').empty();
+                            $('#inputs #inputPuertas2').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas2').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 2) {
+                        var comprobar = $('#inputPuertas2').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                }
+
+                if (texto == '5 PUERTAS CENTRAL') {
+                    if (id == 1) {
+                        var comprobar = $('#inputPuertas0').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas0').empty();
+                            $('#inputPuertas0').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputPuertas0').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 0) {
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 4) {
+                        var comprobar = $('#inputPuertas3').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas3').empty();
+                            $('#inputs #inputPuertas3').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas3').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 3) {
+                        var comprobar = $('#inputPuertas4').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas4').empty();
+                            $('#inputs #inputPuertas4').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas4').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                }
+
+                if (texto == '5 PUERTAS IZQUIERDA') {
+                    if (id == 1) {
+                        var comprobar = $('#inputPuertas2').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas2').empty();
+                            $('#inputs #inputPuertas2').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas2').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 2) {
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 4) {
+                        var comprobar = $('#inputPuertas3').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas3').empty();
+                            $('#inputs #inputPuertas3').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas3').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 3) {
+                        var comprobar = $('#inputPuertas4').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas4').empty();
+                            $('#inputs #inputPuertas4').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas4').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                }
+
+                if (texto == '7 PUERTAS IZQUIERDA') {
+                    if (id == 1) {
+                        var comprobar = $('#inputPuertas2').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas2').empty();
+                            $('#inputs #inputPuertas2').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas2').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 2) {
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 4) {
+                        var comprobar = $('#inputPuertas3').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas3').empty();
+                            $('#inputs #inputPuertas3').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas3').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 3) {
+                        var comprobar = $('#inputPuertas4').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas4').empty();
+                            $('#inputs #inputPuertas4').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas4').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                    if (id == 6) {
+                        var comprobar = $('#inputPuertas5').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas5').empty();
+                            $('#inputs #inputPuertas5').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas5').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 5) {
+                        var comprobar = $('#inputPuertas6').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas6').empty();
+                            $('#inputs #inputPuertas6').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas6').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                }
+
+                if (texto == '7 PUERTAS DERECHA') {
+                    if (id == 0) {
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 1) {
+                        var comprobar = $('#inputPuertas0').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas0').empty();
+                            $('#inputs #inputPuertas0').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas0').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 2) {
+                        var comprobar = $('#inputPuertas3').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas3').empty();
+                            $('#inputs #inputPuertas3').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas3').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 3) {
+                        var comprobar = $('#inputPuertas2').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas2').empty();
+                            $('#inputs #inputPuertas2').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas2').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                    if (id == 4) {
+                        var comprobar = $('#inputPuertas5').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas5').empty();
+                            $('#inputs #inputPuertas5').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas5').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 5) {
+                        var comprobar = $('#inputPuertas4').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas4').empty();
+                            $('#inputs #inputPuertas4').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas4').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                }
+
+                if (texto == '6 PUERTAS ASIMETRICAS') {
+                    if (id == 1) {
+                        var comprobar = $('#inputPuertas2').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas2').empty();
+                            $('#inputs #inputPuertas2').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas2').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 2) {
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 4) {
+                        var comprobar = $('#inputPuertas3').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas3').empty();
+                            $('#inputs #inputPuertas3').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas3').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 3) {
+                        var comprobar = $('#inputPuertas4').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas4').empty();
+                            $('#inputs #inputPuertas4').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas4').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                }
+
+                if (texto == '5 PUERTAS DERECHA') {
+                    if (id == 1) {
+                        var comprobar = $('#inputPuertas0').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas0').empty();
+                            $('#inputs #inputPuertas0').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas0').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 0) {
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 2) {
+                        var comprobar = $('#inputPuertas3').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas3').empty();
+                            $('#inputs #inputPuertas3').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas3').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 3) {
+                        var comprobar = $('#inputPuertas2').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas2').empty();
+                            $('#inputs #inputPuertas2').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas2').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+                }
+
+                if (texto == '2 PUERTAS') {
+                    if (id == 1) {
+                        var comprobar = $('#inputPuertas0').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputPuertas0').empty();
+                            $('#inputPuertas0').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputPuertas0').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
+                    }
+
+                    if (id == 0) {
+                        var comprobar = $('#inputPuertas1').val();
+                        if (
+                            comprobar == 'G Fuelle IZQ Tim' ||
+                            comprobar == 'H Fuelle DCH Tim' ||
+                            comprobar == 'I Fuelle IZQ Nye' ||
+                            comprobar == 'J Fuelle DCH Nye'
+                        ) {
+                            $('#inputs #inputPuertas1').empty();
+                            $('#inputs #inputPuertas1').append(
+                                '<p style="margin-bottom: -24px;position: relative;">' + acabados[w].nombre + '</p>'
+                            );
+                            $('#inputs #inputPuertas1').append(
+                                '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                                    acabados[w]['imagenFondo'] +
+                                    '" style="max-width:100%;max-height:100%">'
+                            );
+                        }
                     }
                 }
 
@@ -13439,41 +15332,629 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     public guardarIdPuerta(id, interior) {
         var arrayPuertas = [];
         var contPuertas = 0;
-        if (interior.indexOf('y') == 2) {
-            this.productosDormitorioService.categoria(10).subscribe(data => {
-                for (let i = 0; i < data.body['length']; i++) {
-                    if (
-                        data.body[i]['id'] != 381 &&
-                        data.body[i]['id'] != 382 &&
-                        data.body[i]['id'] != 383 &&
-                        data.body[i]['id'] != 384 &&
-                        data.body[i]['id'] != 385 &&
-                        data.body[i]['id'] != 386
-                    ) {
+        var nombreMesita = $('#nombreMesita').text();
+        if (nombreMesita == '3 PUERTAS IZQUIERDA') {
+            if (id == 0) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            } else {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
                         arrayPuertas[contPuertas] = data.body[i];
                         contPuertas++;
                         var prueba = [];
                         prueba[0] = '';
                         prueba[1] = '';
                     }
-                }
-                this.puertasModal = arrayPuertas;
-            });
-        } else {
-            this.productosDormitorioService.categoria(10).subscribe(data => {
-                for (let i = 0; i < data.body['length']; i++) {
-                    if (data.body[i]['id'] != 387 && data.body[i]['id'] != 388 && data.body[i]['id'] != 389 && data.body[i]['id'] != 390) {
-                        arrayPuertas[contPuertas] = data.body[i];
-                        contPuertas++;
-                        var prueba = [];
-                        prueba[0] = '';
-                        prueba[1] = '';
-                    }
-                }
-                this.saberAcabados = prueba;
-                this.puertasModal = arrayPuertas;
-            });
+                    this.puertasModal = arrayPuertas;
+                });
+            }
         }
+        if (nombreMesita == '3 PUERTAS DERECHA') {
+            if (id == 2) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            } else {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+        }
+
+        if (nombreMesita == '1 PUERTA') {
+            if (id == 0) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+        }
+
+        if (nombreMesita == '2 PUERTAS') {
+            if (id == 0) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+        }
+
+        if (nombreMesita == '4 PUERTAS - 2 HUECOS GRANDES') {
+            if (id == 0) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 2) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+        }
+
+        if (nombreMesita == '4 PUERTAS ASIMETRICAS') {
+            if (id == 0) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 2) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+        }
+
+        if (nombreMesita == '5 PUERTAS CENTRAL') {
+            if (id == 0) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 4) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 2) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+        }
+
+        if (nombreMesita == '5 PUERTAS IZQUIERDA') {
+            if (id == 2) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 4) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 0) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+        }
+
+        if (nombreMesita == '5 PUERTAS DERECHA') {
+            if (id == 4) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 4) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 2) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+        }
+
+        if (nombreMesita == '6 PUERTAS -3 HUECOS GRANDES') {
+            if (id == 4) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 4) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 2) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 5) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+        }
+
+        if (nombreMesita == '6 PUERTAS ASIMETRICAS') {
+            if (id == 4) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 0) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 2) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        arrayPuertas[contPuertas] = data.body[i];
+                        contPuertas++;
+                        var prueba = [];
+                        prueba[0] = '';
+                        prueba[1] = '';
+                    }
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+            if (id == 5) {
+                this.productosDormitorioService.categoria(10).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i]['id'] != 387 &&
+                            data.body[i]['id'] != 388 &&
+                            data.body[i]['id'] != 389 &&
+                            data.body[i]['id'] != 390
+                        ) {
+                            arrayPuertas[contPuertas] = data.body[i];
+                            contPuertas++;
+                            var prueba = [];
+                            prueba[0] = '';
+                            prueba[1] = '';
+                        }
+                    }
+                    this.saberAcabados = prueba;
+                    this.puertasModal = arrayPuertas;
+                });
+            }
+        }
+
         this.idPuertaInput = id;
     }
     public cambiarAcabadoTrasera(nombre) {

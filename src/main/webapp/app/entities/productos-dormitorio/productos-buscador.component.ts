@@ -5672,10 +5672,17 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         this.armariosDormitorioOcultaComponent.loadAll();
         this.armariosDormitorioVistaComponent.loadAll();
         this.vestidoresDormitorioComponent.loadAll();
+        $('#productosPrincipal').append('<datalist id="listaAnchos"></datalist>');
+        $('#productosPrincipal').append('<datalist id="listaAltura"></datalist>');
+        for (let i = 40; i < 401; i++) {
+            $('#listaAnchos').append('<option value="' + i + '">' + i + '</option>');
+        }
+        for (let i = 220; i < 261; i++) {
+            $('#listaAltura').append('<option style="color:red" value="' + i + '">' + i + '</option>');
+        }
         this.estanteria = [];
         this.saberNumArrayAca = [];
         $('#producto').append('<datalist id="listaAnchos1"></datalist>');
-        $('#producto').append('<datalist id="listaAltura"></datalist>');
         for (let i = 1; i < 457; i++) {
             if (i >= 1 && i <= 9) {
                 $('#listaAnchos1').append('<option value="NH00' + i + '">NH00' + i + '</option>');

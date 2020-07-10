@@ -1239,28 +1239,28 @@
     </div>
 </nav>
 
-<ng-template #myModel let-modal class="modalInicio" id="modalSalidaPagina">
+<ng-template #myModel let-modal class="modalInicio" id="modalSalidaPagina" style="z-index:10000000">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">&#191;Desea abandonar la pagina?</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body" style="z-index: 100000;">
    			 <p style="text-align:center">Aun no has finalizado la configuracion del articulo &#191;Desea abandonar la pagina?</p>
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="open(ruta,true,myModel)">Si</button></p>
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" (click)="modal.close()">No</button></p>
   </div>
 </ng-template>
 
-<ng-template #myModel1 let-modal id="modalSalidaPagina">
+<ng-template #myModel1 let-modal id="modalSalidaPagina" style="z-index:10000000">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">&#191;Desea abandonar la pagina?</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body" style="z-index: 100000;">
    			 <p style="text-align:center">Aun no has finalizado la configuracion del articulo &#191;Desea abandonar la pagina?</p>
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="open1(ruta,true,myModel1,id,'')">Si</button></p>
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" (click)="modal.close()">No</button></p>
