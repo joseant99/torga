@@ -6308,6 +6308,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         });
         sessionStorage.removeItem('C');
         sessionStorage.removeItem('A');
+        $('#siEsIva').css({ display: 'block' });
         $('#modalCambiar1B').css({ 'background-color': '#D8E8C6' });
         $('#modalCambiar1B').css({ color: 'black' });
         this.router.navigate(['/inicio']);
@@ -6325,9 +6326,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         sessionStorage.setItem('seccionPrecios', JSON.stringify('A'));
         sessionStorage.removeItem('C');
         sessionStorage.removeItem('B');
+        $('#siEsIva').css({ display: 'none' });
         this.router.navigate(['/inicio']);
         $('#modalCambiar1A').css({ 'background-color': '#D8E8C6' });
         $('#modalCambiar1A').css({ color: 'black' });
+        sessionStorage.setItem('IVA', JSON.stringify(0));
     }
 
     public siEsCambiarC() {
@@ -6345,6 +6348,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         sessionStorage.removeItem('B');
         $('#modalCambiar1C').css({ 'background-color': '#D8E8C6' });
         $('#modalCambiar1C').css({ color: 'black' });
+        $('#siEsIva').css({ display: 'block' });
         this.router.navigate(['/inicio']);
     }
 
@@ -6399,6 +6403,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('#modalCambiar1C').css({ color: 'white' });
         $('#modalCambiar1' + item).css({ 'background-color': '#D8E8C6' });
         $('#modalCambiar1' + item).css({ color: 'black' });
+        if (item != 'A') {
+            $('#siEsIva').css({ display: 'block' });
+        }
         if (item1 == 1) {
             $('#modalCambiar1D').css({ 'background-color': '#D8E8C6' });
             $('#modalCambiar1D').css({ color: 'black' });

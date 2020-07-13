@@ -22,16 +22,17 @@
 <a style="margin-left: 2%;color: white;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarC" id="modalCambiar1C">
 	<span>C</span>
 </a>
-<span style="margin-left: 2%;color: white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;">
-	<span>-</span>
-</span>
-<a style="margin-left: 2%;color: white;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarD" id="modalCambiar1D">
-	<span>IVA SI</span>
-</a>
-<a style="margin-left: 2%;color: black;background-color:#D8E8C6;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarE" id="modalCambiar1E">
-	<span>IVA NO</span>
-</a>
-    
+<div id="siEsIva" style="display:none">
+	<span style="margin-left: 2%;color: white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;">
+		<span>-</span>
+	</span>
+	<a style="margin-left: 2%;color: white;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarD" id="modalCambiar1D">
+		<span>IVA SI</span>
+	</a>
+	<a style="margin-left: 2%;color: black;background-color:#D8E8C6;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarE" id="modalCambiar1E">
+		<span>IVA NO</span>
+	</a>
+</div>    
 	<a id="cestaImagen" data-toggle="modal" data-target="#modalCesta"  (click)="abrirCesta()"><img id="imagenCesta" src="../../../content/images/CESTA-min.png"><i id="posicion0">{{productosDormitorioService.numeroCesta}}</i></a>
 </div>
 <nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal" style="display:none">
