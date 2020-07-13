@@ -125,6 +125,22 @@ public class CascoResource {
         java.util.Collection<Casco> page =   cascoRepository.findAncho(ancho,alto,id);
         return ResponseEntity.ok().body(page);
     }
+    
+    
+    
+    /**
+     * GET  /cascos : get all the cascos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of cascos in body
+     */
+    @GetMapping("/cascos-bus1/{codigo}")
+    @Timed
+    public ResponseEntity<java.util.Collection<Casco>> getAllCascosBus1( @PathVariable("codigo") String codigo) {
+        log.debug("REST request to get a page of Cascos");
+        java.util.Collection<Casco> page =   cascoRepository.findAncho1(codigo);
+        return ResponseEntity.ok().body(page);
+    }
 
     /**
      * DELETE  /cascos/:id : delete the "id" casco.

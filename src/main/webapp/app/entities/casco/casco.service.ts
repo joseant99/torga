@@ -40,4 +40,8 @@ export class CascoService {
     findBus(ancho: any, alto: any, id: any): Observable<EntityArrayResponseType> {
         return this.http.get<ICasco[]>(`${this.resourceUrl}-bus/${ancho}/${alto}/${id}`, { observe: 'response' });
     }
+
+    findBus1(codigo: any): Observable<EntityArrayResponseType> {
+        return this.http.get<ICasco[]>(`${this.resourceUrl}-bus1/${codigo}`, { observe: 'response' });
+    }
 }

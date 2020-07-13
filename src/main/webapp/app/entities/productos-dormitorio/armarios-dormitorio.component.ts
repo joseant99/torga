@@ -639,21 +639,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             $('#precioDimension').text(precio);
         }
     }
-    public carcarCascosInterioresPuertas(id) {
+    public carcarCascosInterioresPuertas() {
+        var id = 0;
         var ancho = $('#anchosSelect').val();
         var alto = $('#alturaSelect').val();
         var armariosTodos = this.armarioService.todo;
-        var classe = $('#armariosCogidos' + id).attr('class');
-        for (let j = 0; j < armariosTodos.length; j++) {
-            if (armariosTodos[j]['id'] == classe) {
-                console.log(armariosTodos[j]);
-                armariosTodos[j]['ancho'] = ancho;
-                armariosTodos[j]['alto'] = alto;
-                armariosTodos[j]['fondo'] = 61;
-                this.armarioCogido = armariosTodos[j];
-            }
+        var classe = $('#armariosCogidos').attr('class');
+        var codigo = $('#inputCodigoArmario').val();
+        if (armariosTodos[0]['id'] == classe) {
+            console.log(armariosTodos[0]);
+            armariosTodos[0]['ancho'] = ancho;
+            armariosTodos[0]['alto'] = alto;
+            armariosTodos[0]['fondo'] = 61;
+            this.armarioCogido = armariosTodos[0];
         }
 
+        $('.armariosDivTodo').append('<p id="textoMensajeArmario" style="display:none">' + armariosTodos[0].mensaje + '</p>');
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
         $('#armarioColorFondo1').css({ 'background-color': 'white' });
         $('#armarioColorFondo2').css({ 'background-color': 'white' });
@@ -665,8 +666,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#armarioColorFondo8').css({ 'background-color': 'white' });
         $('#armarioColorFondo9').css({ 'background-color': 'white' });
 
-        $('#armarioColorFondo' + id).css({ 'background-color': '#D0D0D0' });
-
         $('#niveladoresCalcu').css({ display: 'block' });
         $('#cajeadoCalcu').css({ display: 'block' });
         $('#enmarcadoCalcu').css({ display: 'block' });
@@ -675,7 +674,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#imagenesArmario2').empty();
         $('#imagenesArmario1').empty();
         $('#botonesAcabadosCuerpo').css({ display: 'block' });
-        this.cascoService.findBus(ancho, alto, this.armarioCogido.id).subscribe(data => {
+        this.cascoService.findBus1(codigo).subscribe(data => {
             console.log(data.body);
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                 '<p id="cascoCalculadora" style="width:97%;"><strong>CASCO: </strong><span style="float:right"><strong>+ <span  id="precio">' +
@@ -721,7 +720,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             'Z'
         ];
         this.arrayLetras = mai;
-        var texto = $('#textoMensajeArmario' + id).text();
+        var texto = $('#textoMensajeArmario').text();
         this.textoArmario = texto;
         var textoClase;
 
@@ -3094,6 +3093,343 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
 
     public cogerIDHueco(id) {
         this.huecoPinta = id;
+        var nombreArma = $('#nombreMesita').text();
+        var array = [];
+        var cont = 0;
+        if ((nombreArma = '3 PUERTAS IZQUIERDA')) {
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+
+        if ((nombreArma = '3 PUERTAS DERECHA')) {
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+
+        if ((nombreArma = '2 PUERTAS')) {
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+
+        if ((nombreArma = '1 PUERTA')) {
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+        }
+
+        if ((nombreArma = '4 PUERTAS - 2 HUECOS GRANDES')) {
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+
+        if ((nombreArma = '4 PUERTAS ASIMETRICAS')) {
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+        }
+
+        if ((nombreArma = '5 PUERTAS CENTRAL')) {
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+
+        if ((nombreArma = '5 PUERTAS IZQUIERDA')) {
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+
+        if ((nombreArma = '5 PUERTAS DERECHA')) {
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+
+        if ((nombreArma = '6 PUERTAS -3 HUECOS GRANDES')) {
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+
+        if ((nombreArma = '6 PUERTAS ASIMETRICAS')) {
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+            if (id == 4) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+        }
+
+        if ((nombreArma = '7 PUERTAS IZQUIERDA')) {
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+            if (id == 4) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+
+        if ((nombreArma = '7 PUERTAS DERECHA')) {
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+            if (id == 4) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+        if ((nombreArma = '7 PUERTA ASIMETRICAS')) {
+            if (id == 2) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
+                            array[cont] = data.body[i];
+                            cont++;
+                        }
+                    }
+                    this.productosDormitorioModal = array;
+                });
+            }
+            if (id == 3) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 1) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+            if (id == 4) {
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                });
+            }
+        }
+    }
+
+    public abrirArmariosTodos() {
+        var coger = $('#inputCodigoArmario').val();
+        this.cascoService.findBus1(coger).subscribe(data => {
+            $('#producto').append('<datalist id="listaAnchos"></datalist>');
+            $('#producto').append('<datalist id="listaAltura"></datalist>');
+            $('#armariosCogidos').attr('class', data.body[0].armario.id);
+            var array = [];
+            array[0] = data.body[0].armario;
+            this.armarioService.todo = array;
+            for (let i = data.body[0].anchoMin; i <= data.body[0].anchoMax; i++) {
+                $('#listaAnchos').append('<option value="' + i + '">' + i + '</option>');
+            }
+            for (let i = data.body[0].altoMin; i <= data.body[0].altoMax; i++) {
+                $('#listaAltura').append('<option value="' + i + '">' + i + '</option>');
+            }
+        });
+        $('.armariosDivTodo').css({ display: 'block' });
     }
 
     public luzInteriores(id, lol) {

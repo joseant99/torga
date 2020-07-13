@@ -62,15 +62,22 @@
             </form>
     		<p><button id="botonEnviarEspecial" style="display:none;margin-left: 40%;width: 180px;height: 50px;" (click)="enviarCarritoEspecial()">Enviar al carrito</button></p>
     </div>
+    
+    <div id="producto" class="armariosDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
+    	<p style="text-align:center"><label style="margin-right:3%">C&#211;DIGO</label><input list="listaArmarios" type="text" id="inputCodigoArmario" (change)="this.armariosDormitorioComponent.abrirArmariosTodos()"></p>
+    </div>
+    
+    
     <div id="producto" class="armariosDivTodo" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
+    	<p id="armariosCogidos" style="display:none"></p>
     	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect" name="anchos" type="number"/></p>
 		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM</label><input style="text-align:center" list="listaAltura" id="alturaSelect" name="anchos" type="number"/></p>
 		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input style="text-align:center" value="61" type="number" disabled/></p>
-		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="armariosDormitorioComponent.cargarInterioresArmarios()">Buscar</button></p>
+		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioComponent.carcarCascosInterioresPuertas()">OK</button></p>
 		   
 		<h2 style="text-align:center;margin-top: 5%;margin-bottom: 5%;" id="textoTituloInterior"></h2>
-		<div *ngIf="this.armariosDormitorioComponent.armarioService.todo != undefined" style="margin-left:25px">
+		<div *ngIf="this.armariosDormitorioComponent.armarioService.todo != undefined" style="margin-left:25px;display:none">
 	    	<div *ngFor="let tabla of this.armariosDormitorioComponent.armarioService.todo;let u=index" style="width:40%;float:left;border:1px solid #B5BABD;margin-right:50px;margin-bottom:50px" id="armarioColorFondo{{u}}">
 	    		<div style="margin-top:25px;margin-bottom:25px;">
 		    		<p style="text-align:center"><img (click)="this.armariosDormitorioComponent.carcarCascosInterioresPuertas(u)" (click)="quitarnone(1)" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  height="200px" width="500px" alt="productosDormitorio image"/></p>

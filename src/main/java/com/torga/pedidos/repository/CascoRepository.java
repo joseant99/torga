@@ -16,4 +16,7 @@ import org.springframework.stereotype.Repository;
 public interface CascoRepository extends JpaRepository<Casco, Long> {
 	@Query("SELECT u FROM Casco u WHERE u.anchoMax >= ?1 and u.anchoMin < ?1 and u.altoMin <= ?2 and u.altoMax > ?2 and u.armario.id = ?3")
 	Collection<Casco> findAncho(Float ancho,Float alto, Long id);
+	
+	@Query("SELECT u FROM Casco u WHERE u.codigo = ?1")
+	Collection<Casco> findAncho1(String codigo);
 }

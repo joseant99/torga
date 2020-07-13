@@ -13,6 +13,25 @@
 	                <span class="logo-img"></span>
 </a>
 	
+<a style="margin-left: 45%;color: black;background-color:#D8E8C6;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" id="modalCambiar1A" data-target="#modalCambiarA">
+	<span>A</span>
+</a>
+<a style="margin-left: 2%;color: white;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarB" id="modalCambiar1B">
+	<span>B</span>
+</a>
+<a style="margin-left: 2%;color: white;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarC" id="modalCambiar1C">
+	<span>C</span>
+</a>
+<span style="margin-left: 2%;color: white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;">
+	<span>-</span>
+</span>
+<a style="margin-left: 2%;color: white;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarD" id="modalCambiar1D">
+	<span>IVA SI</span>
+</a>
+<a style="margin-left: 2%;color: black;background-color:#D8E8C6;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarE" id="modalCambiar1E">
+	<span>IVA NO</span>
+</a>
+    
 	<a id="cestaImagen" data-toggle="modal" data-target="#modalCesta"  (click)="abrirCesta()"><img id="imagenCesta" src="../../../content/images/CESTA-min.png"><i id="posicion0">{{productosDormitorioService.numeroCesta}}</i></a>
 </div>
 <nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal" style="display:none">
@@ -1374,6 +1393,118 @@
 		        </div>
 		        <div class="modal-body"> 
 			        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">Cerrar</button>
+		        </div>
+		       <div class="modal-footer">
+			   </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  
+	  <div class="modal fade" id="modalCambiarA" role="dialog" style="margin-top:150px;">
+		    <div class="modal-dialog modal-sm">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content" style="background-color:#f5f5f5!important">
+		        <div class="modal-header">
+		          <p style="width:100%;float:left;text-align:center">A</p>
+		        </div>
+		        <div class="modal-body">
+		        	<p>&iquest;Desea establecer puntos de f&aacute;brica?</p>
+		        	<button type="button" style="width: 60px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="siEsCambiarA()">Si</button>
+			        <button type="button" style="width: 60px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">No</button>
+		        </div>
+		       <div class="modal-footer">
+			   </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  
+	  <div class="modal fade" id="modalCambiarB" role="dialog" style="margin-top:150px;">
+		    <div class="modal-dialog modal-sm">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content" style="background-color:#f5f5f5!important">
+		        <div class="modal-header">
+		          <p style="width:100%;float:left;text-align:center">B</p>
+		        </div>
+		        <div class="modal-body">
+		        	<div id="sinContrasena" style="display:block">
+		        		<p style="text-align:center;width:100%">Contrase&ntilde;a</p>
+		        		<p style="text-align:center;width:100%"><input type="text" id="inputVerContra"></p>
+		        		<p style="text-align:center;width:100%"><button (click)="comprobarCambiar()">Comprobar</button></p>
+		        	</div>
+		        	<div id="conContrasena" style="display:none">
+			        	<p style="float:left">&iquest;Desea cambiar a precio de fabrica?</p>
+			        	<p style="width:100%;float:left;margin-top: 15px;">
+			        	<button type="button" style="width: 60px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="siEsCambiarB()">Si</button>
+				        <button type="button" style="width: 60px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">No</button></p>
+					</div>
+		        </div>
+		       <div class="modal-footer">
+			   </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	  
+	  <div class="modal fade" id="modalCambiarC" role="dialog" style="margin-top:150px;">
+		    <div class="modal-dialog modal-sm">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content" style="background-color:#f5f5f5!important">
+		        <div class="modal-header">
+		          <p style="width:100%;float:left;text-align:center">C</p>
+		        </div>
+		        <div class="modal-body">
+		        	<p style="float:left">&iquest;Desea cambiar a precio de tienda?</p>
+		        	<label style="float:left">Valor del punto</label><input id="inputPrecioTienda" type="number" style="float: left;width: 130px;margin-left: 10px;"><br>
+		        	<p style="width:100%;float:left;margin-top: 15px;">
+		        	<button type="button" style="width: 60px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="siEsCambiarC()">Si</button>
+			        <button type="button" style="width: 60px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">No</button></p>
+		        </div>
+		       <div class="modal-footer">
+			   </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
+	   <div class="modal fade" id="modalCambiarD" role="dialog" style="margin-top:150px;">
+		    <div class="modal-dialog modal-sm">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content" style="background-color:#f5f5f5!important">
+		        <div class="modal-header">
+		          <p style="width:100%;float:left;text-align:center">A</p>
+		        </div>
+		        <div class="modal-body">
+		        	<p>&iquest;Desea que aparezca el precio con iba?</p>
+		        	<button type="button" style="width: 60px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="siEsCambiarD()">Si</button>
+			        <button type="button" style="width: 60px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">No</button>
+		        </div>
+		       <div class="modal-footer">
+			   </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalCambiarE" role="dialog" style="margin-top:150px;">
+		    <div class="modal-dialog modal-sm">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content" style="background-color:#f5f5f5!important">
+		        <div class="modal-header">
+		          <p style="width:100%;float:left;text-align:center">A</p>
+		        </div>
+		        <div class="modal-body">
+		        	<p>&iquest;Desea que aparezca el precio sin iba?</p>
+		        	<button type="button" style="width: 60px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="siEsCambiarE()">Si</button>
+			        <button type="button" style="width: 60px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">No</button>
 		        </div>
 		       <div class="modal-footer">
 			   </div>

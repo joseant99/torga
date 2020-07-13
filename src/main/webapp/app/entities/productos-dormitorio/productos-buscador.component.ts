@@ -443,6 +443,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             }
         });
     }
+
     public elegirBusqueda(id) {
         $('.armariosDivTodo').css({ display: 'none' });
         $('#inputBusca').css({ display: 'none' });
@@ -475,7 +476,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         }
 
         if (id == 2) {
-            $('.armariosDivTodo').css({ display: 'block' });
+            $('.armariosDivInputCodigo').css({ display: 'block' });
             $('#calcuBatientes').css({ display: 'block' });
             $('#modalesBatientes').css({ display: 'block' });
         }
@@ -597,7 +598,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 this.singulares = datos;
             }
             var producto = datos.productosDormitorio.id;
-            var precioPunto = this.precioPunto[0];
+            var precioPunto = parseFloat(this.precioPunto);
             var iva = this.iva;
             var cont = 0;
 
@@ -4811,7 +4812,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var idProd = $('#nombreMesita').attr('class');
         var h;
         h = $('#productoCalculadora1  #datos1 #ancho1').text();
-        var precioPunto = this.precioPunto[0];
+        var precioPunto = this.precioPunto;
         var todosLosPrecios = this.precioTiendaProductosService.apoyo;
         var precioDimension = this.precioDimension;
         var dimension = [];
@@ -4822,6 +4823,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var contadorApoyo = 0;
         var catalogoCome = this.catalogoCome;
         var fondo;
+        var iva = this.iva;
         fondo = $('#fondoDatosDimen').text();
         if (fondo == 42) {
             fondo = 38.5;
@@ -4869,17 +4871,14 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             if (h < 175) {
                                 if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 175) {
                                     var precio = parseFloat(value['precio']);
-                                    for (let f = 0; f < todosLosPrecios.length; f++) {
-                                        if (idApoyo == todosLosPrecios[f][2]) {
-                                            var precioProducto = todosLosPrecios[f][1];
-                                        }
-                                    }
-                                    precioProducto = precioProducto / 100;
+
                                     precio = precio * precioPunto;
-                                    var cuenta = precio * precioProducto;
-                                    cuenta = precio + cuenta;
-                                    precio = cuenta;
                                     precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
@@ -4889,7 +4888,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
                                             '">+' +
-                                            precio +
+                                            precio.toFixed(2) +
                                             '&euro;</span></p>'
                                     );
                                     $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
@@ -4910,17 +4909,14 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             if (h >= 175) {
                                 if (idApoyo == value['productoApoyo']['id'] && value['ancho'] >= 175) {
                                     var precio = parseFloat(value['precio']);
-                                    for (let f = 0; f < todosLosPrecios.length; f++) {
-                                        if (idApoyo == todosLosPrecios[f][2]) {
-                                            var precioProducto = todosLosPrecios[f][1];
-                                        }
-                                    }
-                                    precioProducto = precioProducto / 100;
+
                                     precio = precio * precioPunto;
-                                    var cuenta = precio * precioProducto;
-                                    cuenta = precio + cuenta;
-                                    precio = cuenta;
                                     precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
@@ -4930,7 +4926,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
                                             '">+' +
-                                            precio +
+                                            precio.toFixed(2) +
                                             '&euro;</span></p>'
                                     );
                                     $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
@@ -4954,12 +4950,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 175) {
                                     var precio = parseFloat(value['precio']);
 
-                                    precioProducto = catalogoCome[0]['precio'] / 100;
                                     precio = precio * precioPunto;
-                                    var cuenta = precio * precioProducto;
-                                    cuenta = precio + cuenta;
-                                    precio = cuenta;
                                     precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
@@ -4969,7 +4966,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
                                             '">+' +
-                                            precio +
+                                            precio.toFixed(2) +
                                             '&euro;</span></p>'
                                     );
                                     $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
@@ -4990,12 +4987,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             if (h >= 175) {
                                 if (idApoyo == value['productoApoyo']['id'] && value['ancho'] >= 175) {
                                     var precio = parseFloat(value['precio']);
-                                    precioProducto = catalogoCome[0]['precio'] / 100;
                                     precio = precio * precioPunto;
-                                    var cuenta = precio * precioProducto;
-                                    cuenta = precio + cuenta;
-                                    precio = cuenta;
                                     precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
@@ -5005,7 +5003,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
                                             '">+' +
-                                            precio +
+                                            precio.toFixed(2) +
                                             '&euro;</span></p>'
                                     );
                                     $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
@@ -5028,17 +5026,14 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             if (h < 150) {
                                 if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 150) {
                                     var precio = parseFloat(value['precio']);
-                                    for (let f = 0; f < todosLosPrecios.length; f++) {
-                                        if (idApoyo == todosLosPrecios[f][2]) {
-                                            var precioProducto = todosLosPrecios[f][1];
-                                        }
-                                    }
-                                    precioProducto = precioProducto / 100;
+
                                     precio = precio * precioPunto;
-                                    var cuenta = precio * precioProducto;
-                                    cuenta = precio + cuenta;
-                                    precio = cuenta;
                                     precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
@@ -5048,7 +5043,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
                                             '">+' +
-                                            precio +
+                                            precio.toFixed(2) +
                                             '&euro;</span></p>'
                                     );
                                     $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
@@ -5069,17 +5064,14 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             if (h >= 150) {
                                 if (idApoyo == value['productoApoyo']['id'] && value['ancho'] >= 150) {
                                     var precio = parseFloat(value['precio']);
-                                    for (let f = 0; f < todosLosPrecios.length; f++) {
-                                        if (idApoyo == todosLosPrecios[f][2]) {
-                                            var precioProducto = todosLosPrecios[f][1];
-                                        }
-                                    }
-                                    precioProducto = precioProducto / 100;
+
                                     precio = precio * precioPunto;
-                                    var cuenta = precio * precioProducto;
-                                    cuenta = precio + cuenta;
-                                    precio = cuenta;
                                     precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(2));
@@ -5089,7 +5081,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                             '</span><span style="float:right" id="apoyo1" class="' +
                                             value['id'] +
                                             '">+' +
-                                            precio +
+                                            precio.toFixed(2) +
                                             '&euro;</span></p>'
                                     );
                                     $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
@@ -5111,17 +5103,14 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         if (idApoyo == 18) {
                             if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == hbueno) {
                                 var precio = parseFloat(value['precio']);
-                                for (let f = 0; f < todosLosPrecios.length; f++) {
-                                    if (idApoyo == todosLosPrecios[f][2]) {
-                                        var precioProducto = todosLosPrecios[f][1];
-                                    }
-                                }
-                                precioProducto = precioProducto / 100;
+
                                 precio = precio * precioPunto;
-                                var cuenta = precio * precioProducto;
-                                cuenta = precio + cuenta;
-                                precio = cuenta;
                                 precio = Math.round(precio * 100) / 100;
+                                if (iva == 1) {
+                                    var precio = precio * 1.21;
+                                } else {
+                                    var precio = precio;
+                                }
                                 var totalfloat = parseFloat(precioDimension);
                                 totalfloat = totalfloat + precio;
                                 $('#precioDimension').text(totalfloat.toFixed(2));
@@ -5131,7 +5120,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         '</span><span style="float:right" id="apoyo1" class="' +
                                         value['id'] +
                                         '">+' +
-                                        precio +
+                                        precio.toFixed(2) +
                                         '&euro;</span></p>'
                                 );
                                 $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
@@ -5158,7 +5147,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         '</span><span style="float:right" id="apoyo1" class="' +
                                         value['id'] +
                                         '">+' +
-                                        precio +
+                                        precio.toFixed(2) +
                                         '&euro;</span></p>'
                                 );
                                 $('#precioDimension').text(precioDimension);
@@ -5174,17 +5163,14 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         if (idApoyo == 212) {
                             if (idApoyo == value['productoApoyo']['id']) {
                                 var precio = parseFloat(value['precio']);
-                                for (let f = 0; f < todosLosPrecios.length; f++) {
-                                    if (idApoyo == todosLosPrecios[f][2]) {
-                                        var precioProducto = todosLosPrecios[f][1];
-                                    }
-                                }
-                                precioProducto = precioProducto / 100;
+
                                 precio = precio * precioPunto;
-                                var cuenta = precio * precioProducto;
-                                cuenta = precio + cuenta;
-                                precio = cuenta;
                                 precio = Math.round(precio * 100) / 100;
+                                if (iva == 1) {
+                                    var precio = precio * 1.21;
+                                } else {
+                                    var precio = precio;
+                                }
                                 var totalfloat = parseFloat(precioDimension);
                                 totalfloat = totalfloat + precio;
                                 this.precioDimension1 = totalfloat;
@@ -5195,7 +5181,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         '</span><span style="float:right" id="apoyo1" class="' +
                                         value['id'] +
                                         '">+' +
-                                        precio +
+                                        precio.toFixed(2) +
                                         '&euro;</span></p>'
                                 );
                                 $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
@@ -5215,17 +5201,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         if (idApoyo == 17) {
                             if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == hbueno) {
                                 var precio = parseFloat(value['precio']);
-                                for (let f = 0; f < todosLosPrecios.length; f++) {
-                                    if (idApoyo == todosLosPrecios[f][2]) {
-                                        var precioProducto = todosLosPrecios[f][1];
-                                    }
-                                }
-                                precioProducto = precioProducto / 100;
                                 precio = precio * precioPunto;
-                                var cuenta = precio * precioProducto;
-                                cuenta = precio + cuenta;
-                                precio = cuenta;
                                 precio = Math.round(precio * 100) / 100;
+                                if (iva == 1) {
+                                    var precio = precio * 1.21;
+                                } else {
+                                    var precio = precio;
+                                }
                                 var totalfloat = parseFloat(precioDimension);
                                 totalfloat = totalfloat + precio;
                                 $('#precioDimension').text(totalfloat.toFixed(2));
@@ -5235,7 +5217,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         '</span><span style="float:right" id="apoyo1" class="' +
                                         value['id'] +
                                         '">+' +
-                                        precio +
+                                        precio.toFixed(2) +
                                         '&euro;</span></p>'
                                 );
                                 $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
@@ -5680,6 +5662,18 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         for (let i = 220; i < 261; i++) {
             $('#listaAltura').append('<option style="color:red" value="' + i + '">' + i + '</option>');
         }
+        $('#productosPrincipal').append('<datalist id="listaArmarios"></datalist>');
+        for (let i = 1; i < 277; i++) {
+            if (i >= 1 && i <= 9) {
+                $('#listaArmarios').append('<option value="NB00' + i + '">NB00' + i + '</option>');
+            }
+            if (i >= 10 && i <= 99) {
+                $('#listaArmarios').append('<option value="NB0' + i + '">NB0' + i + '</option>');
+            }
+            if (i >= 100) {
+                $('#listaArmarios').append('<option value="NB' + i + '">NB' + i + '</option>');
+            }
+        }
         this.estanteria = [];
         this.saberNumArrayAca = [];
         $('#producto').append('<datalist id="listaAnchos1"></datalist>');
@@ -5754,14 +5748,14 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var contDimenTipo = 0;
 
         this.pruebaCargar();
-
+        var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+        var precioMulti = JSON.parse(sessionStorage.getItem(item));
+        console.log(precioMulti);
+        this.precioPunto = precioMulti;
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        this.precioTiendaService.findBus(tienda.id).subscribe(data => {
-            this.precioPunto = data.body;
-        });
 
         this.precioTiendaService.findBus1(tienda.id, 2).subscribe(data => {
             this.catalogoDormi = data.body;
@@ -5779,17 +5773,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         });
 
         this.ivaProductoTiendaService.bus(tienda['id']).subscribe(data => {
-            if (data.body[0] != null) {
-                if (data.body[0]['iva'] == 1) {
-                    this.iva = 1;
-                } else {
-                    this.iva = 0;
-                }
-            } else {
-                this.iva = 0;
-            }
             this.loadAll();
         });
+        this.iva = JSON.parse(sessionStorage.getItem('IVA'));
 
         this.precioTienda = sessionStorage.getItem('precioTienda');
     }

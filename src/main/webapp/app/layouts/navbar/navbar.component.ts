@@ -32,6 +32,7 @@ import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
 import { IluminacionProdPrePedService } from '../../entities/iluminacion-prod-pre-ped/iluminacion-prod-pre-ped.service';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { Observable } from 'rxjs';
+import { PrecioTiendaService } from '../../entities/precio-tienda/precio-tienda.service';
 
 import { IPresupuestoArmario } from 'app/shared/model/presupuesto-armario.model';
 import { PresupuestoArmarioService } from '../../entities/presupuesto-armario/presupuesto-armario.service';
@@ -74,6 +75,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     predicate: any;
     reverse: any;
     routeData: any;
+    precioPunto: any;
     todasLasTiendas: any;
     constructor(
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
@@ -83,6 +85,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         protected dimensionesProductoTipoService: DimensionesProductoTipoService,
         private sessionStorage: SessionStorageService,
         protected datosUsuarioService: DatosUsuarioService,
+        protected precioTiendaService: PrecioTiendaService,
         private accountService: AccountService,
         protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
@@ -6289,6 +6292,96 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 this.numeroPedidos = numeroPedidos;
             });
     }
+
+    public siEsCambiarB() {
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        $('#modalCambiar1A').css({ 'background-color': 'black' });
+        $('#modalCambiar1B').css({ 'background-color': 'black' });
+        $('#modalCambiar1C').css({ 'background-color': 'black' });
+        $('#modalCambiar1A').css({ color: 'white' });
+        $('#modalCambiar1B').css({ color: 'white' });
+        $('#modalCambiar1C').css({ color: 'white' });
+        this.precioTiendaService.findBus(tienda.id).subscribe(data => {
+            this.precioPunto = data.body;
+            sessionStorage.setItem('B', JSON.stringify(this.precioPunto[0]));
+            sessionStorage.setItem('seccionPrecios', JSON.stringify('B'));
+        });
+        sessionStorage.removeItem('C');
+        sessionStorage.removeItem('A');
+        $('#modalCambiar1B').css({ 'background-color': '#D8E8C6' });
+        $('#modalCambiar1B').css({ color: 'black' });
+        this.router.navigate(['/inicio']);
+    }
+
+    public siEsCambiarA() {
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        $('#modalCambiar1A').css({ 'background-color': 'black' });
+        $('#modalCambiar1B').css({ 'background-color': 'black' });
+        $('#modalCambiar1C').css({ 'background-color': 'black' });
+        $('#modalCambiar1A').css({ color: 'white' });
+        $('#modalCambiar1B').css({ color: 'white' });
+        $('#modalCambiar1C').css({ color: 'white' });
+        sessionStorage.setItem('A', JSON.stringify(1));
+        sessionStorage.setItem('seccionPrecios', JSON.stringify('A'));
+        sessionStorage.removeItem('C');
+        sessionStorage.removeItem('B');
+        this.router.navigate(['/inicio']);
+        $('#modalCambiar1A').css({ 'background-color': '#D8E8C6' });
+        $('#modalCambiar1A').css({ color: 'black' });
+    }
+
+    public siEsCambiarC() {
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        $('#modalCambiar1A').css({ 'background-color': 'black' });
+        $('#modalCambiar1B').css({ 'background-color': 'black' });
+        $('#modalCambiar1C').css({ 'background-color': 'black' });
+        $('#modalCambiar1A').css({ color: 'white' });
+        $('#modalCambiar1B').css({ color: 'white' });
+        $('#modalCambiar1C').css({ color: 'white' });
+        var valorInput = $('#inputPrecioTienda').val();
+        sessionStorage.setItem('C', JSON.stringify(valorInput));
+        sessionStorage.setItem('seccionPrecios', JSON.stringify('C'));
+        sessionStorage.removeItem('A');
+        sessionStorage.removeItem('B');
+        $('#modalCambiar1C').css({ 'background-color': '#D8E8C6' });
+        $('#modalCambiar1C').css({ color: 'black' });
+        this.router.navigate(['/inicio']);
+    }
+
+    public siEsCambiarD() {
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        $('#modalCambiar1D').css({ 'background-color': 'black' });
+        $('#modalCambiar1D').css({ color: 'white' });
+        $('#modalCambiar1E').css({ 'background-color': 'black' });
+        $('#modalCambiar1E').css({ color: 'white' });
+        sessionStorage.setItem('IVA', JSON.stringify(1));
+        this.router.navigate(['/inicio']);
+        $('#modalCambiar1D').css({ 'background-color': '#D8E8C6' });
+        $('#modalCambiar1D').css({ color: 'black' });
+    }
+
+    public siEsCambiarE() {
+        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        $('#modalCambiar1D').css({ 'background-color': 'black' });
+        $('#modalCambiar1D').css({ color: 'white' });
+        $('#modalCambiar1E').css({ 'background-color': 'black' });
+        $('#modalCambiar1E').css({ color: 'white' });
+        sessionStorage.setItem('IVA', JSON.stringify(0));
+        this.router.navigate(['/inicio']);
+        $('#modalCambiar1D').css({ 'background-color': '#D8E8C6' });
+        $('#modalCambiar1D').css({ color: 'black' });
+    }
+
+    public comprobarCambiar() {
+        var text = $('#inputVerContra').val();
+        if (text == '1234') {
+            $('#modalCambiarB #conContrasena').css({ display: 'block' });
+            $('#modalCambiarB #sinContrasena').css({ display: 'none' });
+        } else {
+            $('#modalCambiarB #sinContrasena').css({ border: '1px solid red' });
+        }
+    }
+
     ngOnInit() {
         this.predicate = 'id';
 
@@ -6296,6 +6389,28 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.languageHelper.getAll().then(languages => {
             this.languages = languages;
         });
+        var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+        var item1 = JSON.parse(sessionStorage.getItem('IVA'));
+        $('#modalCambiar1A').css({ 'background-color': 'black' });
+        $('#modalCambiar1B').css({ 'background-color': 'black' });
+        $('#modalCambiar1C').css({ 'background-color': 'black' });
+        $('#modalCambiar1A').css({ color: 'white' });
+        $('#modalCambiar1B').css({ color: 'white' });
+        $('#modalCambiar1C').css({ color: 'white' });
+        $('#modalCambiar1' + item).css({ 'background-color': '#D8E8C6' });
+        $('#modalCambiar1' + item).css({ color: 'black' });
+        if (item1 == 1) {
+            $('#modalCambiar1D').css({ 'background-color': '#D8E8C6' });
+            $('#modalCambiar1D').css({ color: 'black' });
+            $('#modalCambiar1E').css({ 'background-color': 'black' });
+            $('#modalCambiar1E').css({ color: 'white' });
+        }
+        if (item1 == 0) {
+            $('#modalCambiar1E').css({ 'background-color': '#D8E8C6' });
+            $('#modalCambiar1E').css({ color: 'black' });
+            $('#modalCambiar1D').css({ 'background-color': 'black' });
+            $('#modalCambiar1D').css({ color: 'white' });
+        }
 
         var contCesta = 0;
         for (let i = 1; i < 20; i++) {
@@ -6303,6 +6418,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 contCesta++;
             }
         }
+
         this.productosDormitorioService.numeroCesta = contCesta;
         var bottomModulos = [];
         bottomModulos[2] = 'bottom:0px;';
