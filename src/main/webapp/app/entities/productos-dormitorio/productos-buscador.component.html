@@ -64,17 +64,20 @@
     </div>
     
     <div id="producto" class="armariosDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
-    	<p style="text-align:center"><label style="margin-right:3%">C&#211;DIGO</label><input list="listaArmarios" type="text" id="inputCodigoArmario" (change)="this.armariosDormitorioComponent.abrirArmariosTodos()"></p>
+    	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
+    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NB001 Y NB276]</label><input list="listaArmarios" type="text" id="inputCodigoArmario" ></p>
+   		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioComponent.abrirArmariosTodos()">OK</button></p>
+
     </div>
     
     
     <div id="producto" class="armariosDivTodo" style="display:none;margin-left:0%;width:100%">
-    <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
+    <h2 style="text-align:center;letter-spacing:3px">MEDIDAS</h2><BR><BR>
     	<p id="armariosCogidos" style="display:none"></p>
-    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM</label><input style="text-align:center" list="listaAltura" id="alturaSelect" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input style="text-align:center" value="61" type="number" disabled/></p>
-		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioComponent.carcarCascosInterioresPuertas()">OK</button></p>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.anchoMin}} Y {{this.armariosDormitorioComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect" name="anchos" type="number" (change)="this.armariosDormitorioComponent.comproAncho()"/></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.altoMin}} Y {{this.armariosDormitorioComponent.altoMax}}]</label><input style="text-align:center" list="listaAltura" id="alturaSelect" name="anchos" type="number" (change)="this.armariosDormitorioComponent.comproAlto()"/></p>
+		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input list="listaFondoBat" data-toggle="modal" data-target="#modalFondoCm" id="inputFondoBatientes" style="text-align:center;background-color:#F0F0F0" value="61" type="number" readonly="readonly"/></p>
+		<p style="text-align:center;margin-top:3%;"><button id="botonOkAnchos" style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioComponent.carcarCascosInterioresPuertas()">OK</button></p>
 		   
 		<h2 style="text-align:center;margin-top: 5%;margin-bottom: 5%;" id="textoTituloInterior"></h2>
 		<div *ngIf="this.armariosDormitorioComponent.armarioService.todo != undefined" style="margin-left:25px;display:none">
@@ -411,6 +414,22 @@
 	        <div class="modal-body">
 	          <div id="arriba" style="float:left;width:100%"></div>
 	          <div id="imagenInterior" style="float:left"></div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  <div class="modal fade" id="modalFondoCm" role="dialog" style="margin-top:10%">
+	    <div class="modal-dialog modal-sm">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-body">
+				<p>El fondo de los armarios est&aacute;<br>optimizado para perchas y<br>accesorios interiores<br>&iquest;Est&aacute;s seguro de querer cambiar<br>el fondo?</p>
+				<button data-dismiss="modal" (click)="fondoArmarioBatientes()" style="float:left;border-radius: 50%;">SI</button><button style="border-radius: 50%;float:right" data-dismiss="modal">NO</button>
 	        </div>
 	        <div class="modal-footer">
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1029,6 +1048,25 @@
 		        </div>
 		        <div class="modal-body">	          
 		          <div *ngFor="let aca of  this.armariosDormitorioComponent.todos" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.cambiarAcabadoInterior(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalInterioresAcabados2" role="dialog" style="z-index: 10000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un acabado</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div *ngFor="let aca of  this.armariosDormitorioComponent.todos" class="acabadosModal" id="acabadoTiradorProbar{{aca.id}}" data-dismiss="modal"><div  *ngIf="aca.id == 9 || aca.id == 12"><img title="Foto de linea de codigo" class="tirador" (click)="this.armariosDormitorioComponent.cambiarAcabadoTiradorBueno(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1736,7 +1774,7 @@
 
 			<div id="divDentroCalcu">
 				<div style="width:100%;height:7%;color:black;top:0;letter-spacing:2px;font-family:'Lato';font-weight:300">		
-					<strong style="float:left;" id="negritaNombre"><p id="nombreMesita"></p></strong><p  style="float:right;"><strong id="precioDimension" style="float:left"></strong><span style="display:none;float:left" id="euroCalculadora">&euro;</span></p >
+					<strong style="float:left;" id="negritaNombre"><p id="nombreMesita"></p><p id="nombreMesitaArma" style="display:none"></p></strong><p  style="float:right;"><strong id="precioDimension" style="float:left"></strong><span style="display:none;float:left" id="euroCalculadora">&euro;</span><span style="display:none;float:left" id="ppCalculadora">PP</span></p >
 				</div>
 			
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%">
@@ -1890,6 +1928,9 @@
 								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalTraseraAcabados"> </div></a>
 		    					<label style="float: left;margin-right:20px;margin-top: 15px;">INTERIORES :</label>
 		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></a>
+		    					<label style="float: left;margin-right:20px;margin-top: 65px;">TIRADORES :</label>
+		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalInterioresAcabados2"> </div></a>
+		    					
 							</div>
 							
 								<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
@@ -1898,8 +1939,12 @@
 						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalInteriorArmario" (click)="this.armariosDormitorioComponent.cogerIDHueco(u+1)" readonly="readonly"></div></a>
 						    		<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px; margin-top:30px;">
 										<form>
-											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO</label>
+											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO<br>IZQUIERDA</label>
 											  <input type="radio" id="luz1" name="todoluz" value="luz1" style="margin-left: 25%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,1)"><span id="precioLuz{{u}}1" STYLE="display:none;float:right">+ 120&euro;</span><br>
+											  
+											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO<br>DERECHA</label>
+											  <input type="radio" id="luz1" name="todoluz" value="luz1" style="margin-left: 25%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,1)"><span id="precioLuz{{u}}1" STYLE="display:none;float:right">+ 120&euro;</span><br>
+											  
 											  
 											  <label for="luz2" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN LOS DOS<br>COSTADOS</label>
 											  <input type="radio" id="luz2" name="todoluz" value="luz2" style="margin-left: 9%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,2)"><span id="precioLuz{{u}}2" STYLE="display:none;float:right">+ 200&euro;</span><br>

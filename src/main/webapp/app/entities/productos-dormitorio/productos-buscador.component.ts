@@ -231,6 +231,17 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         this.selectedFilesFactura = undefined;
     }
 
+    public fondoArmarioBatientes() {
+        $('#inputFondoBatientes').css({ 'background-color': 'white' });
+        $('#inputFondoBatientes').removeAttr('readonly');
+        $('#inputFondoBatientes').removeAttr('data-target');
+        $('#inputFondoBatientes').removeAttr('data-toggle');
+        $('#productosPrincipal').append('<datalist id="listaFondoBat"></datalist>');
+        for (let i = 45; i < 66; i++) {
+            $('#listaFondoBat').append('<option value="' + i + '">' + i + '</option>');
+        }
+    }
+
     uploadConfirmacion() {
         var long = this.selectedFilesConfirmacion.length;
         for (var i = 0; i < long; i++) {
@@ -626,7 +637,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 $('#dimensionesInput' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
                 $('#total').text(totalfloat);
                 $('#precioDimension').text(totalfloat);
-                $('#euroCalculadora').css({ display: 'block' });
+                var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+                if (saberlo != 'A') {
+                    $('#euroCalculadora').css({ display: 'block' });
+                } else {
+                    $('#ppCalculadora').css({ display: 'block' });
+                }
+
                 $('#datos1').append(
                     '<p style="width:100%"><span>Ancho : </span><span class="' +
                         datos['id'] +
@@ -1259,9 +1276,17 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     idProd != 284 &&
                     idProd != 285
                 ) {
-                    $('#datos1').append(
-                        '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
-                    );
+                    var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+                    if (saberlo != 'A') {
+                        $('#datos1').append(
+                            '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
+                        );
+                    } else {
+                        $('#datos1').append(
+                            '<p style="width:95%"><strong>APOYO </strong><span style="float:right">PP</span><span id="precioApoyo" style="float:right"></span></p>'
+                        );
+                    }
+
                     $('#datos1').append(
                         '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
                     );
@@ -1513,6 +1538,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#euroCalculadora').css({ display: 'none' });
         $('#productoCalculadora1 #precioCalculado1').empty();
         $('#productoCalculadora1 #datos1').empty();
+        $('#ppCalculadora').css({ display: 'none' });
         $('#nombreMesita').empty();
         $('#dimensiones').css({ display: 'none' });
         $('#precioDimension').empty();
@@ -1937,32 +1963,38 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#nombreMesita').attr('class', producto);
     }
     public cogidaLuz(id) {
+        var precioPunto = parseFloat(this.precioPunto);
+        var iva = this.iva;
         if (id == 'Si') {
             var idProd = this.idDelProducto;
             $('#precioDeLaLuz').css({ display: 'block' });
             var luz = this.estaEsLaLUZ;
             if (luz != undefined) {
+                var precioLuz = luz['precio'] * precioPunto;
                 var precioDimen = parseFloat($('#precioDimension').text());
-                $('#precioDimension').text(precioDimen - luz['precio']);
+                $('#precioDimension').text(precioDimen - precioLuz);
             }
             this.estaEsLaLUZ = undefined;
             this.iluminacionService.findProd(idProd).subscribe(data => {
                 console.log(data.body);
                 if (data.body.length != 0) {
                     $('#tenerLUZ').css({ display: 'block' });
-                    $('#precioDeLaLuz').text(data.body[0]['precio']);
+
                     $('#datos1').append('<p style="display:none" id="iluminacion1" class="' + data.body[0]['id'] + '"></p>');
                     this.estaEsLaLUZ = data.body[0];
                     var precioDimen = parseFloat($('#precioDimension').text());
-                    $('#precioDimension').text(precioDimen + data.body[0]['precio']);
+                    var precioLuz = data.body[0]['precio'] * precioPunto;
+                    $('#precioDeLaLuz').text(precioLuz);
+                    $('#precioDimension').text(precioDimen + precioLuz);
                 }
             });
         } else {
             $('#precioDeLaLuz').css({ display: 'none' });
             var luz = this.estaEsLaLUZ;
             if (luz != undefined) {
+                var precioLuz = luz['precio'] * precioPunto;
                 var precioDimen = parseFloat($('#precioDimension').text());
-                $('#precioDimension').text(precioDimen - luz['precio']);
+                $('#precioDimension').text(precioDimen - precioLuz);
             }
             this.estaEsLaLUZ = undefined;
         }

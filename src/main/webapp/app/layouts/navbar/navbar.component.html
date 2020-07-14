@@ -13,13 +13,13 @@
 	                <span class="logo-img"></span>
 </a>
 	
-<a style="margin-left: 45%;color: black;background-color:#D8E8C6;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" id="modalCambiar1A" data-target="#modalCambiarA">
+<a style="margin-left: 45%;color: black;background-color:#D8E8C6;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" id="modalCambiar1A" data-target="#modalCambiarA" (click)="textoRojoMostrarA()">
 	<span>A</span>
 </a>
-<a style="margin-left: 2%;color: white;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarB" id="modalCambiar1B">
+<a style="margin-left: 2%;color: white;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarB" id="modalCambiar1B" (click)="textoRojoMostrarB()">
 	<span>B</span>
 </a>
-<a style="margin-left: 2%;color: white;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarC" id="modalCambiar1C">
+<a style="margin-left: 2%;color: white;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarC" id="modalCambiar1C" (click)="textoRojoMostrarC()">
 	<span>C</span>
 </a>
 <div id="siEsIva" style="display:none">
@@ -1413,6 +1413,7 @@
 		        </div>
 		        <div class="modal-body">
 		        	<p>&iquest;Desea establecer puntos de f&aacute;brica?</p>
+		        	<p style="float:left;color:red;display:none" id="textoRojoCarrito">Si continua vaciara el carro de compra &iquest;Estas seguro?</p>
 		        	<button type="button" style="width: 60px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="siEsCambiarA()">Si</button>
 			        <button type="button" style="width: 60px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">No</button>
 		        </div>
@@ -1440,6 +1441,7 @@
 		        	</div>
 		        	<div id="conContrasena" style="display:none">
 			        	<p style="float:left">&iquest;Desea cambiar a precio de fabrica?</p>
+			        	<p style="float:left;color:red;display:none" id="textoRojoCarrito">Si continua vaciara el carro de compra &iquest;Estas seguro?</p>
 			        	<p style="width:100%;float:left;margin-top: 15px;">
 			        	<button type="button" style="width: 60px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="siEsCambiarB()">Si</button>
 				        <button type="button" style="width: 60px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">No</button></p>
@@ -1464,6 +1466,7 @@
 		        <div class="modal-body">
 		        	<p style="float:left">&iquest;Desea cambiar a precio de tienda?</p>
 		        	<label style="float:left">Valor del punto</label><input id="inputPrecioTienda" type="number" style="float: left;width: 130px;margin-left: 10px;"><br>
+		        	<p style="float:left;color:red;display:none" id="textoRojoCarrito">Si continua vaciara el carro de compra &iquest;Estas seguro?</p>
 		        	<p style="width:100%;float:left;margin-top: 15px;">
 		        	<button type="button" style="width: 60px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="siEsCambiarC()">Si</button>
 			        <button type="button" style="width: 60px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">No</button></p>
@@ -1481,10 +1484,10 @@
 		      <!-- Modal content-->
 		      <div class="modal-content" style="background-color:#f5f5f5!important">
 		        <div class="modal-header">
-		          <p style="width:100%;float:left;text-align:center">A</p>
+		          <p style="width:100%;float:left;text-align:center">IVA</p>
 		        </div>
 		        <div class="modal-body">
-		        	<p>&iquest;Desea que aparezca el precio con iba?</p>
+		        	<p>&iquest;Desea que aparezca el precio con iva?</p>
 		        	<button type="button" style="width: 60px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="siEsCambiarD()">Si</button>
 			        <button type="button" style="width: 60px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">No</button>
 		        </div>
@@ -1500,10 +1503,10 @@
 		      <!-- Modal content-->
 		      <div class="modal-content" style="background-color:#f5f5f5!important">
 		        <div class="modal-header">
-		          <p style="width:100%;float:left;text-align:center">A</p>
+		          <p style="width:100%;float:left;text-align:center">IVA</p>
 		        </div>
 		        <div class="modal-body">
-		        	<p>&iquest;Desea que aparezca el precio sin iba?</p>
+		        	<p>&iquest;Desea que aparezca el precio sin iva?</p>
 		        	<button type="button" style="width: 60px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="siEsCambiarE()">Si</button>
 			        <button type="button" style="width: 60px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal">No</button>
 		        </div>

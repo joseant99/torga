@@ -5932,15 +5932,30 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('#modalCesta .modal-body').append(
                             '<div style="float: left;width: 100%;height:180px:margin-bottom:50px;" id="textoCesta' + i + '"></div>'
                         );
-                        $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
-                                sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
-                                i +
-                                '">' +
-                                sesion[1]['todoSumadoPrecio'] +
-                                '</span> &euro; </i></p>'
-                        );
+
+                        var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+                        if (saberlo != 'A') {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
+                                    sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
+                                    '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    i +
+                                    '">' +
+                                    sesion[1]['todoSumadoPrecio'] +
+                                    '</span> &euro; </i></p>'
+                            );
+                        } else {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
+                                    sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
+                                    '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    i +
+                                    '">' +
+                                    sesion[1]['todoSumadoPrecio'] +
+                                    '</span> PP </i></p>'
+                            );
+                        }
+
                         $('#textoCesta' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Ancho: ' +
                                 sesion[1]['ancho'] +
@@ -5993,22 +6008,40 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '</p>'
                             );
                         }
-
-                        if (sesion[1]['apoyo'] != undefined) {
-                            $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
-                                    sesion[1]['apoyo']['productoApoyo']['nombre'] +
-                                    '<i style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                    sesion[1]['apoyo']['precio'] +
-                                    ' &euro;</i></p>'
-                            );
-                        }
-                        if (sesion[1]['iluminacion'] != undefined) {
-                            $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Iluminacion: <i style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                    sesion[1]['iluminacion']['precio'] +
-                                    ' &euro;</i></p>'
-                            );
+                        if (saberlo != 'A') {
+                            if (sesion[1]['apoyo'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
+                                        sesion[1]['apoyo']['productoApoyo']['nombre'] +
+                                        '<i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                        sesion[1]['apoyo']['precio'] +
+                                        ' &euro;</i></p>'
+                                );
+                            }
+                            if (sesion[1]['iluminacion'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Iluminacion: <i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                        sesion[1]['iluminacion']['precio'] +
+                                        ' &euro;</i></p>'
+                                );
+                            }
+                        } else {
+                            if (sesion[1]['apoyo'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
+                                        sesion[1]['apoyo']['productoApoyo']['nombre'] +
+                                        '<i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                        sesion[1]['apoyo']['precio'] +
+                                        ' PP</i></p>'
+                                );
+                            }
+                            if (sesion[1]['iluminacion'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Iluminacion: <i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                        sesion[1]['iluminacion']['precio'] +
+                                        ' PP</i></p>'
+                                );
+                            }
                         }
 
                         $('#textoCesta' + i).append(
@@ -6030,15 +6063,28 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('#modalCesta .modal-body').append(
                             '<div style="float: left;width: 100%;height:180px:margin-bottom:50px;" id="textoCesta' + i + '"></div>'
                         );
-                        $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
-                                sesion[1]['apoyo']['productoApoyo']['nombre'].toUpperCase() +
-                                '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
-                                i +
-                                '">' +
-                                sesion[1]['todoSumadoPrecio'] +
-                                '</span> &euro; </i></p>'
-                        );
+                        var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+                        if (saberlo != 'A') {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
+                                    sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
+                                    '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    i +
+                                    '">' +
+                                    sesion[1]['todoSumadoPrecio'] +
+                                    '</span> &euro; </i></p>'
+                            );
+                        } else {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
+                                    sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
+                                    '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    i +
+                                    '">' +
+                                    sesion[1]['todoSumadoPrecio'] +
+                                    '</span> PP </i></p>'
+                            );
+                        }
 
                         var precioTotalCesta;
                         precioTotalCesta = $('#cestaTotal').text();
@@ -6075,13 +6121,26 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             $('#modalCesta .modal-body').append(
                                 '<div style="float: left;width: 100%;height:180px:margin-bottom:50px;" id="textoCesta' + i + '"></div>'
                             );
-                            $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">Articulo Especial<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
-                                    i +
-                                    '">' +
-                                    sesion[1]['precio'] +
-                                    '</span> &euro; </i></p>'
-                            );
+
+                            var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+                            if (saberlo != 'A') {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">Articulo Especial<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                        i +
+                                        '">' +
+                                        sesion[1]['precio'] +
+                                        '</span> &euro; </i></p>'
+                                );
+                            } else {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">Articulo Especial<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                        i +
+                                        '">' +
+                                        sesion[1]['precio'] +
+                                        '</span> PP </i></p>'
+                                );
+                            }
+
                             var precioTotalCesta;
                             precioTotalCesta = $('#cestaTotal').text();
                             if (precioTotalCesta != '') {
@@ -6291,8 +6350,30 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('#modalCambiar1B').css({ 'background-color': '#D8E8C6' });
         $('#modalCambiar1B').css({ color: 'black' });
         this.router.navigate(['/inicio']);
+        $('#modalCambiarC #textoRojoCarrito').css({ display: 'none' });
+        this.productosDormitorioService.numeroCesta = 0;
+        for (let i = 1; i <= 100; i++) {
+            sessionStorage.removeItem('prod' + i);
+        }
     }
-
+    public textoRojoMostrarA() {
+        var cesta = this.productosDormitorioService.numeroCesta;
+        if (cesta != 0) {
+            $('#modalCambiarA #textoRojoCarrito').css({ display: 'block' });
+        }
+    }
+    public textoRojoMostrarB() {
+        var cesta = this.productosDormitorioService.numeroCesta;
+        if (cesta != 0) {
+            $('#modalCambiarB #textoRojoCarrito').css({ display: 'block' });
+        }
+    }
+    public textoRojoMostrarC() {
+        var cesta = this.productosDormitorioService.numeroCesta;
+        if (cesta != 0) {
+            $('#modalCambiarC #textoRojoCarrito').css({ display: 'block' });
+        }
+    }
     public siEsCambiarA() {
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
         $('#modalCambiar1A').css({ 'background-color': 'black' });
@@ -6310,6 +6391,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('#modalCambiar1A').css({ 'background-color': '#D8E8C6' });
         $('#modalCambiar1A').css({ color: 'black' });
         sessionStorage.setItem('IVA', JSON.stringify(0));
+        $('#modalCambiarC #textoRojoCarrito').css({ display: 'none' });
+        this.productosDormitorioService.numeroCesta = 0;
+        for (let i = 1; i <= 100; i++) {
+            sessionStorage.removeItem('prod' + i);
+        }
     }
 
     public siEsCambiarC() {
@@ -6329,6 +6415,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('#modalCambiar1C').css({ color: 'black' });
         $('#siEsIva').css({ display: 'block' });
         this.router.navigate(['/inicio']);
+        var cesta = this.productosDormitorioService.numeroCesta;
+        $('#modalCambiarC #textoRojoCarrito').css({ display: 'none' });
+        this.productosDormitorioService.numeroCesta = 0;
+        for (let i = 1; i <= 100; i++) {
+            sessionStorage.removeItem('prod' + i);
+        }
     }
 
     public siEsCambiarD() {
@@ -6351,8 +6443,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('#modalCambiar1E').css({ color: 'white' });
         sessionStorage.setItem('IVA', JSON.stringify(0));
         this.router.navigate(['/inicio']);
-        $('#modalCambiar1D').css({ 'background-color': '#D8E8C6' });
-        $('#modalCambiar1D').css({ color: 'black' });
+        $('#modalCambiar1E').css({ 'background-color': '#D8E8C6' });
+        $('#modalCambiar1E').css({ color: 'black' });
     }
 
     public comprobarCambiar() {
