@@ -5328,6 +5328,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 contador++;
             }
         }
+
         $('#anchosSelect1').val('');
         var contadorProd = contador;
         var contadorDimen = contador;

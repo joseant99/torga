@@ -35,14 +35,42 @@
                     {{presupuestoPedido.user?.login}}
                 </td>
                 <td *ngIf="presupuestoPedido != undefined" class="text-right">
-                    <div class="btn-group flex-btn-group-container">
+                   
+                    
+                    
+                    
+                     <div class="btn-group flex-btn-group-container" style="float: right;margin-left:20px">
+                        <button *ngIf="presupuestoPedido.puntos != NULL" (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                                [routerLink]="['/presupuesto-puntos' ]"
+                                class="btn btn-info btn-sm">
+                            <span class="d-none d-md-inline" >PRESUPUESTO <br>EN PRECIO <BR> TIENDA</span>
+                        </button>
+                        
+                        <button *ngIf="presupuestoPedido.puntos == NULL" (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                                data-toggle="modal" data-target="#modalPasar"
+                                class="btn btn-info btn-sm">
+                            <span class="d-none d-md-inline" >PRESUPUESTO <br>EN PRECIO <BR> TIENDA</span>
+                        </button>   
+                                   
+                    </div>
+                    
+                    <div class="btn-group flex-btn-group-container" style="float: right;margin-left:20px">
+                        <button (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                                [routerLink]="['/presupuesto-precios' ]"
+                                class="btn btn-info btn-sm">
+                            <span class="d-none d-md-inline" >PRESUPUESTO <br>EN PRECIO <BR> FABRICA</span>
+                        </button>           
+                    </div>
+                    
+                     <div class="btn-group flex-btn-group-container" style="float: right;margin-left:20px">
                         <button (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
                                 [routerLink]="['/presupuesto-producto' ]"
                                 class="btn btn-info btn-sm">
-                            <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            <span class="d-none d-md-inline">PRESUPUESTO <br>EN PUNTOS</span>
                         </button>           
                     </div>
+                    
+                    
                 </td>
             </tr>
             <tr></tr>
@@ -57,5 +85,22 @@
             <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
         </div>
     </div>
+    
+    <div class="modal fade" id="modalPasar" role="dialog" style="margin-top: 100px;">
+	    <div class="modal-dialog modal-sm">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-body">
+	        	<p style="text-align:center">No se ha establecido un <br>valor de punto para este <br>pedido/presupuesto</p>
+				<p style="text-align:center"><label>Valor del punto</label><input type="number" id="inputPunto"></p>
+	         <p style="float:left"> <button style="width:100px;background-color:#9FF781" (click)="anadirValorPunto()" data-dismiss="modal" >Confirmar</button></p>
+	         <p style="float:right"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">Cancelar</button></p>
+	        </div>
+	        	<p id="verPresupuesto" style="display:none"> <a data-dismiss="modal" routerLink="../presupuesto-usuario"  routerLinkActive="active"><span>Abrir Presupuesto</span></a></p>
+	      </div>
+	      
+	    </div>
+	  </div>
 </div>
 

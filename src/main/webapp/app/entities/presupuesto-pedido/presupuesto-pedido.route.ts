@@ -12,6 +12,8 @@ import { PresupuestoPedidoDetailComponent } from './presupuesto-pedido-detail.co
 import { PresupuestoPedidoUpdateComponent } from './presupuesto-pedido-update.component';
 import { PresupuestoUsuarioComponent } from './presupuesto-usuario.component';
 import { PresupuestoProductosComponent } from './presupuesto-productos.component';
+import { PresupuestoPuntosComponent } from './presupuesto-puntos.component';
+import { PresupuestoPreciosComponent } from './presupuesto-precios.component';
 import { PedidosProductosComponent } from './pedidos-productos.component';
 import { PedidosFabricaComponent } from './pedidos-fabrica.component';
 import { PresupuestoEdicionComponent } from './presupuesto-edicion.component';
@@ -52,6 +54,32 @@ export const presupuestoPedidoRoute: Routes = [
     {
         path: 'presupuesto-usuario',
         component: PresupuestoUsuarioComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_REPRESENTATE', 'ROLE_CLIENTE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.presupuestoPedido.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'presupuesto-precios',
+        component: PresupuestoPreciosComponent,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_REPRESENTATE', 'ROLE_CLIENTE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.presupuestoPedido.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'presupuesto-puntos',
+        component: PresupuestoPuntosComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

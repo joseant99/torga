@@ -31,6 +31,9 @@ public class PresupuestoPedido implements Serializable {
     @Column(name = "pedido")
     private Integer pedido;
 
+    @Column(name = "puntos")
+    private Float puntos;
+    
     @Column(name = "fecha_presupuesto")
     private String fecha_presupuesto;
 
@@ -56,6 +59,15 @@ public class PresupuestoPedido implements Serializable {
 
     public String getCodigo() {
         return codigo;
+    }
+    
+    public Float getPuntos() {
+        return puntos;
+    }
+
+    public PresupuestoPedido puntos(Float puntos) {
+        this.puntos = puntos;
+        return this;
     }
 
     public PresupuestoPedido codigo(String codigo) {
@@ -158,6 +170,7 @@ public class PresupuestoPedido implements Serializable {
         return "PresupuestoPedido{" +
             "id=" + getId() +
             ", codigo='" + getCodigo() + "'" +
+            ", puntos='" + getPuntos() + "'" +
             ", pedido=" + getPedido() +
             ", fecha_presupuesto='" + getFecha_presupuesto() + "'" +
             ", fecha_pedido='" + getFecha_pedido() + "'" +

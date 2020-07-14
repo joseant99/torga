@@ -3,6 +3,7 @@ import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/ht
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
+import { Observable } from 'rxjs';
 
 import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
 import { AccountService } from 'app/core';
@@ -36,6 +37,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
     page: any;
     predicate: any;
     previousPage: any;
+    isSaving: boolean;
     reverse: any;
     presuped1: any;
     constructor(
@@ -58,6 +60,43 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
             this.predicate = data.pagingParams.predicate;
         });
     }
+
+    public anadirValorPunto() {
+        var val = $('#inputPunto').val();
+        var id = sessionStorage.getItem('presupuesto');
+
+        this.presupuestoPedidoService
+            .query({
+                size: 1000000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    if (data.body[i]['id'] == parseFloat(id)) {
+                        var presu = data.body[i];
+                    }
+                }
+                presu['puntos'] = val;
+                this.subscribeToSaveResponse(this.presupuestoPedidoService.update(presu));
+            });
+    }
+
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<IPresupuestoPedido>>) {
+        result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+
+    protected onSaveSuccess() {
+        this.isSaving = false;
+        this.router.navigate(['/presupuesto-puntos']);
+    }
+
+    protected onSaveError() {
+        this.isSaving = false;
+    }
+
+    protected onError(errorMessage: string) {
+        this.jhiAlertService.error(errorMessage, null, null);
+    }
+
     public filtrosBuscados() {
         var filtro = $('#filtroos').val();
         $('#fechaFiltrado').css({ display: 'none' });
@@ -293,8 +332,5 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         this.totalItems = parseInt(tamano, 10);
         this.queryCount = this.totalItems;
         this.presupuestoPedidos = data;
-    }
-    protected onError(errorMessage: string) {
-        this.jhiAlertService.error(errorMessage, null, null);
     }
 }

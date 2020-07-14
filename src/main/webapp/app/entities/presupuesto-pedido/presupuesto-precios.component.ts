@@ -35,9 +35,9 @@ import { DimensionesProductoTipoService } from '../dimensiones-producto-tipo/dim
 import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 @Component({
     selector: 'jhi-presupuesto-productos',
-    templateUrl: './presupuesto-productos.component.html'
+    templateUrl: './presupuesto-precios.component.html'
 })
-export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterViewInit {
+export class PresupuestoPreciosComponent implements OnInit, OnDestroy, AfterViewInit {
     currentAccount: any;
     error: any;
     isSaving: boolean;
@@ -286,9 +286,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         this.numero = todaTienda['telefono'];
         var acabados = [];
         var todosInteriores;
+        var pedidoTodo;
         var iluminacion = this.iluminacionProdPrePedService.metidos;
         this.productosPresupuestoPedidosService.query1(parseFloat(presu)).subscribe(
             (res: HttpResponse<IProductosPresupuestoPedidos[]>) => {
+                pedidoTodo = res.body[0]['presupuestoPedido'];
                 for (let i = 0; i < res.body.length; i++) {
                     if (this.precioPunto != undefined) {
                         var precioPunto = this.precioPunto[0];
@@ -1402,7 +1404,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     }
                                                 }
                                             }
-                                            precioPunto = precioMulti;
+                                            precioPunto = precioPunto;
+                                            console.log(precioPunto);
                                             precioFloat = precioFloat * precioPunto;
                                             var todoApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo'];
                                             for (let s = 0; s < apoyoPrecios.length; s++) {

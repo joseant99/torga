@@ -245,7 +245,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     public generarPresupuesto() {
         this.todasDimensiones = this.dimensionesProductoTipoService.todos;
         var memo = document.getElementsByName('estado');
-
+        var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+        var puntos = null;
+        if (item == 'C') {
+            puntos = JSON.parse(sessionStorage.getItem(item));
+        }
         var numeroProductos = [];
         this.productosPresupuestoPedidosService
             .query({
@@ -339,6 +343,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             codigo: 'PR-' + usuario['id'],
                             pedido: 0,
                             user: usuario,
+                            puntos: puntos,
                             fecha_presupuesto: output,
                             usuarioCreadoPre: usuarioCreado
                         };
@@ -347,6 +352,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             prueba = {
                                 codigo: 'PR-' + usuarioCreado['id'],
                                 pedido: 0,
+                                puntos: puntos,
                                 user: usuario,
                                 fecha_presupuesto: output,
                                 usuarioCreadoPre: usuarioCreado
@@ -356,6 +362,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             prueba = {
                                 codigo: 'PR-' + usuario['id'],
                                 pedido: 0,
+                                puntos: puntos,
                                 user: usuario,
                                 fecha_presupuesto: output
                             };
@@ -382,10 +389,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                     this.presupuestoPedidoService
                         .query({
-                            size: 100000
+                            size: 1000000
                         })
                         .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
-                            this.subscribeToSaveResponse(this.presupuestoPedidoService.create(this.presupuestoPedido));
                             var presupuesto = this.presupuesto;
                             var id = localStorage.getItem('ultimoPresupuesto');
                             var id1 = parseFloat(id);
@@ -556,7 +562,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                             productosPresupuestoPedidos: prodAca[m],
                                                             orden: b + 1
                                                         };
-                                                        this.subscribeToSaveResponse(
+                                                        this.subscribeToSaveResponse2(
                                                             this.acabadosProductosPresupuestoPedidoService.create(acabados1)
                                                         );
                                                     }
@@ -627,35 +633,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             }
                                         }
                                     }
+                                    this.subscribeToSaveResponse4(this.presupuestoPedidoService.create(this.presupuestoPedido));
                                 }
-
-                                this.presupuestoPedidoService
-                                    .query({
-                                        size: 100000
-                                    })
-                                    .subscribe(data => {
-                                        for (let h = 0; h < data.body.length; h++) {
-                                            if (h == 0) {
-                                                var prod = data.body[h];
-                                            }
-
-                                            if (prod['id'] <= data.body[h]['id']) {
-                                                prod = data.body[h];
-                                            }
-                                        }
-
-                                        var id = prod['id'];
-                                        sessionStorage.setItem('presupuesto', '' + id);
-                                        sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
-                                        $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
-                                        $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
-                                        $('#todometerFondo').css({ display: 'none' });
-                                        if (memo[1]['checked'] == true) {
-                                            this.router.navigate(['/pedidos-producto']);
-                                        } else {
-                                            this.router.navigate(['/presupuesto-producto']);
-                                        }
-                                    });
                             }
                         });
                 }
@@ -6393,6 +6372,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.languageHelper.getAll().then(languages => {
             this.languages = languages;
         });
+        sessionStorage.setItem('A', JSON.stringify(1));
+        sessionStorage.setItem('seccionPrecios', JSON.stringify('A'));
+
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
         var item1 = JSON.parse(sessionStorage.getItem('IVA'));
         $('#modalCambiar1A').css({ 'background-color': 'black' });
@@ -6403,8 +6385,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('#modalCambiar1C').css({ color: 'white' });
         $('#modalCambiar1' + item).css({ 'background-color': '#D8E8C6' });
         $('#modalCambiar1' + item).css({ color: 'black' });
-        if (item != 'A') {
-            $('#siEsIva').css({ display: 'block' });
+        if (item != undefined && item != null) {
+            if (item != 'A') {
+                $('#siEsIva').css({ display: 'block' });
+            }
         }
         if (item1 == 1) {
             $('#modalCambiar1D').css({ 'background-color': '#D8E8C6' });
@@ -6735,8 +6719,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     protected subscribeToSaveResponse(result: Observable<HttpResponse<ICategoriasDormi>>) {
-        result.subscribe((res: HttpResponse<ICategoriasDormi>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+        result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
+
+    protected subscribeToSaveResponse4(result: Observable<HttpResponse<ICategoriasDormi>>) {
+        result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess4(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+
     protected onSaveError() {
         this.isSaving = false;
     }
@@ -6751,6 +6740,47 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     protected onSaveSuccess() {
         this.isSaving = false;
         this.previousState();
+    }
+
+    protected onSaveSuccess4() {
+        this.isSaving = false;
+        var memo = document.getElementsByName('estado');
+        var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+        this.presupuestoPedidoService
+            .query({
+                size: 100000
+            })
+            .subscribe(data => {
+                for (let h = 0; h < data.body.length; h++) {
+                    if (h == 0) {
+                        var prod = data.body[h];
+                    }
+
+                    if (prod['id'] <= data.body[h]['id']) {
+                        prod = data.body[h];
+                    }
+                }
+
+                var id = prod['id'];
+                sessionStorage.setItem('presupuesto', '' + id);
+                sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
+                $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
+                $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
+                $('#todometerFondo').css({ display: 'none' });
+                if (memo[1]['checked'] == true) {
+                    this.router.navigate(['/pedidos-producto']);
+                } else {
+                    if (item == 'A') {
+                        this.router.navigate(['/presupuesto-producto']);
+                    }
+                    if (item == 'B') {
+                        this.router.navigate(['/presupuesto-precios']);
+                    }
+                    if (item == 'C') {
+                        this.router.navigate(['/presupuesto-puntos']);
+                    }
+                }
+            });
     }
 
     previousState() {
