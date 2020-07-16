@@ -1840,7 +1840,7 @@
 						
 						<div id="calcuBatientes" style="display:none">
 							<div id="niveladoresCalcu"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
-								<p style="float:left;width:100%;"><STRONG>NIVELADORES</STRONG><STRONG id="precioNive" STYLE="FLOAT:RIGHT">+0 &euro;</STRONG></p>
+								<p style="float:left;width:100%;"><STRONG>NIVELADORES</STRONG><STRONG id="precioNive" STYLE="FLOAT:RIGHT">+0 <span id="euroNiveladores">&euro;</span></STRONG></p>
 								<form>
 									<label for="sinivelador" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Con Niveladores</label>
 									  <input type="radio" id="siNivelador" name="nive" value="sinivelador" (click)="this.armariosDormitorioComponent.niveladoresCargar('si')">
@@ -1853,7 +1853,7 @@
 							</div>
 							
 							<div id="cajeadoCalcu"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
-								<p style="float:left;width:100%;"><STRONG>CAJEADO</STRONG><STRONG id="precioCajeado" STYLE="FLOAT:RIGHT">+0 &euro;</STRONG></p>
+								<p style="float:left;width:100%;"><STRONG>CAJEADO</STRONG><STRONG id="precioCajeado" STYLE="FLOAT:RIGHT">+0 <span id="euroCajeado">&euro;</span></STRONG></p>
 								<form>
 									  <label for="cajeA" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo A</label>
 									  <input type="radio" id="cajeA" name="cajeado" value="cajeA" (click)="this.armariosDormitorioComponent.cajeadoCargar(0)"><br>
@@ -1889,7 +1889,7 @@
 							
 							
 							<div id="enmarcadoCalcu"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
-								<p style="float:left;width:100%;"><STRONG>ENMARCADOS</STRONG><STRONG id="precioEnmarcados" STYLE="FLOAT:RIGHT">+0 &euro;</STRONG></p>
+								<p style="float:left;width:100%;"><STRONG>ENMARCADOS</STRONG><STRONG id="precioEnmarcados" STYLE="FLOAT:RIGHT">+0 <span id="euroEnmarcado">&euro;</span></STRONG></p>
 								<form>
 									  <label for="enmaA" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo A</label>
 									  <input type="radio" id="enmaA" name="enmarcado" value="enmaA" (click)="this.armariosDormitorioComponent.enmarcadoCargar('A')"><br>
@@ -1928,7 +1928,7 @@
 								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalTraseraAcabados"> </div></a>
 		    					<label style="float: left;margin-right:20px;margin-top: 15px;">INTERIORES :</label>
 		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></a>
-		    					<label style="float: left;margin-right:20px;margin-top: 65px;">TIRADORES :</label>
+		    					<label style="float: left;margin-right:20px;margin-top: 55px;">TIRADORES <br>Y PERFILES :</label>
 		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalInterioresAcabados2"> </div></a>
 		    					
 							</div>

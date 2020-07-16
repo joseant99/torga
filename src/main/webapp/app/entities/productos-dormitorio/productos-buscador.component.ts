@@ -476,6 +476,26 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#euroCalculadora').css({ display: 'none' });
         $('#estanteriaDiv').css({ display: 'none' });
         $('#botonCalculadora').attr('class', 'displayBoton');
+        $('.armariosDivInputCodigo').css({ display: 'none' });
+        $('#inputCodigoArmario').removeAttr('readonly');
+        $('#inputCodigoArmario').val('');
+        $('#inputCodigoArmario').css({ 'background-color': 'white' });
+        $('#inputCodigoArmario').removeAttr('readonly');
+        $('#inputCodigoArmario').val('');
+        $('#inputCodigoArmario').css({ 'background-color': 'white' });
+        $('#anchosSelect').removeAttr('readonly');
+        $('#anchosSelect').val('');
+        $('#anchosSelect').css({ 'background-color': 'white' });
+        $('#alturaSelect').removeAttr('readonly');
+        $('#alturaSelect').val('');
+        $('#alturaSelect').css({ 'background-color': 'white' });
+        $('.armariosDivTodo #imagenesArmario1').empty();
+        $('.armariosDivTodo #imagenesArmario2').empty();
+        $('#calcuBatientes #cajeadoCalcu').css({ display: 'none' });
+        $('#calcuBatientes #enmarcadoCalcu').css({ display: 'none' });
+        $('#calcuBatientes #botonesAcabadosCuerpo').css({ display: 'none' });
+        $('#calcuBatientes #niveladoresCalcu').css({ display: 'none' });
+        $('#nombreMesitaArma').css({ display: 'none' });
         $('#imagenAcabadoPrincipal').css({ display: 'none' });
         if (id == 0) {
             $('#inputBusca').css({ display: 'block' });

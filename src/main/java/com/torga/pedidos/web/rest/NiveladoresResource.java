@@ -1,6 +1,7 @@
 package com.torga.pedidos.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.torga.pedidos.domain.Enmarcados;
 import com.torga.pedidos.domain.Niveladores;
 import com.torga.pedidos.repository.NiveladoresRepository;
 import com.torga.pedidos.web.rest.errors.BadRequestAlertException;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -94,6 +95,19 @@ public class NiveladoresResource {
         Page<Niveladores> page = niveladoresRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/niveladores");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+    
+    /**
+     * GET  /enmarcados : get all the enmarcados.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of enmarcados in body
+     */
+    @GetMapping("/niveladores-id/{id}")
+    @Timed
+    public ResponseEntity<Collection<Niveladores>> getAllEnmarcados1(@PathVariable Long id) {
+        Collection<Niveladores> page = niveladoresRepository.buscarArmario(id);
+        return ResponseEntity.ok().body(page);
     }
 
     /**
