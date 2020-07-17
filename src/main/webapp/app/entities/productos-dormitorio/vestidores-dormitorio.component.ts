@@ -717,7 +717,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         }
     }
 
-    public carcarCascosInterioresPuertas(id) {
+    public carcarCascosInterioresPuertas() {
         var ancho = $('#anchosSelect4').val();
         var alto = $('#alturaSelect4').val();
         var armariosTodos = this.armarioService.todo;
