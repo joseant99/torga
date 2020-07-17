@@ -544,6 +544,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         this.precioPuerta7 = 0;
         this.precioPuerta8 = 0;
         this.precioPuerta9 = 0;
+        this.niveladoresPrecio = 0;
 
         this.interioresParaArray = [];
         this.puertasParaArray = [];
@@ -581,6 +582,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var precio;
         precio = $('#precioDimension').text();
         precio = parseFloat(precio);
+        var precioNive = this.niveladoresPrecio;
+        precio = precio - precioNive;
         var todo = this.armarioCogido;
         var cogerSeccion = JSON.parse(sessionStorage.getItem('seccionPrecios'));
         if (cogerSeccion == 'C') {
@@ -624,7 +627,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#precioNive').text('+0 €');
             }
 
-            precio = precio - this.niveladoresPrecio;
             this.niveladoresPrecio = 0;
             $('#precioDimension').text(precio);
             todo['niveladores'] = undefined;
@@ -709,7 +711,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         if (id != 'no') {
             $('#medidasEnma' + id).css({ display: 'block' });
             var precioCajeado = this.cajeadoPrecio;
-            var ancho = $('#anchosSelect').val();
+            var ancho = $('#anchosSelect4').val();
             var arma = this.armarioCogido;
             this.enmarcadosService.categoria(arma.id, id).subscribe(data => {
                 for (let i = 0; i < data.body['length']; i++) {
@@ -769,7 +771,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var precioPuntosBuenos = JSON.parse(sessionStorage.getItem('C'));
         }
         var id = 0;
-        var ancho = $('#anchosSelect').val();
+        var ancho = $('#anchosSelect4').val();
         $('#inputFondoBatientes').removeAttr('data-target');
         $('#inputFondoBatientes').removeAttr('data-toggle');
         $('#inputFondoBatientes').attr('readonly', 'readonly');
@@ -779,7 +781,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#alturaSelect').attr('readonly', 'readonly');
         $('#anchosSelect').css({ border: '0.5px solid' });
         $('#alturaSelect').css({ border: '0.5px solid' });
-        var alto = $('#alturaSelect').val();
+        var alto = $('#alturaSelect4').val();
         var armariosTodos = this.armarioService.todo;
         var classe = $('#armariosCogidos').attr('class');
         var codigo = $('#inputCodigoArmario').val();
@@ -1604,6 +1606,148 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 '<p id="textoLetraHueco' +
                                     i +
                                     '" style="position:absolute;z-index:10000;margin-left: 590px;margin-top: 220px;font-size: 50px;">' +
+                                    mai[i] +
+                                    '</p>'
+                            );
+                        }
+                    }
+                    $('#acabadosTodo').removeAttr('class');
+                    this.acaProdService.findAca(42).subscribe(data => {
+                        this.todos = data.body[0]['acabados'];
+                        this.acabadosTrasera = data.body[0]['acabados'];
+                    });
+                    this.acaProdService.findAca(122).subscribe(data => {
+                        this.acabadosInteriores = data.body[0]['acabados'];
+                    });
+                }
+            }
+
+            if (texto == '7 PUERTA ASIMETRICAS') {
+                var dimens = this.dimenArmarios;
+                var grandes = dimens['grandes'];
+                var array = [];
+                var arrayPuertas = [];
+                for (let j = 0; j < puertas - 2; j++) {
+                    array[j] = j;
+                }
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
+                arrayPuertas[6] = '7';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+                if (puertas == 7) {
+                    for (let i = 0; i < puertas; i++) {
+                        if (width >= 1500 && width < 2200) {
+                            var dimensiones = dimens[puertas + ' puertas'];
+                        }
+                        if (width < 1650 && width >= 1500) {
+                            var dimensiones;
+                            dimensiones = 'margin-left: 25%;';
+                        }
+                        if (width < 1500 && width >= 1300) {
+                            var dimensiones = segunWIDTH[puertas + ' puertas'];
+                        }
+                        this.numeroDeHuecos = puertas;
+                        if (i == 0) {
+                            $('#imagenesArmario1').append(
+                                '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                            );
+                            $('#imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('#imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        } else {
+                            if (i == 1) {
+                                $('#imagenesArmario').append(
+                                    '<img id="casco' +
+                                        i +
+                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
+                                );
+                                $('#imagenesArmario').append(
+                                    '<img id="trasera' +
+                                        i +
+                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
+                                );
+                            }
+                            if (i == 2) {
+                                $('#imagenesArmario').append(
+                                    '<img id="casco' +
+                                        i +
+                                        '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                                );
+                                $('#imagenesArmario').append(
+                                    '<img id="trasera' +
+                                        i +
+                                        '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                                );
+                            }
+                            if (i == 3) {
+                                $('#imagenesArmario').append(
+                                    '<img id="casco' +
+                                        i +
+                                        '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 705px;margin-top: -130px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                                );
+                                $('#imagenesArmario').append(
+                                    '<img id="trasera' +
+                                        i +
+                                        '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 705px;margin-top: -130px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                                );
+                            }
+                        }
+                    }
+                    var html = $('#imagenesArmario1').html();
+                    $('#imagenesArmario2').css({ 'margin-top': '600px' });
+                    $('#imagenesArmario2').append(html);
+                    for (let i = 0; i < puertas; i++) {
+                        if (width >= 1500 && width < 2200) {
+                            var dimensiones = dimens[puertas + ' puertas'];
+                        }
+                        if (width < 1500 && width >= 1300) {
+                            var dimensiones = segunWIDTH[puertas + ' puertas'];
+                        }
+                        this.numeroDeHuecos = puertas;
+                        if (i == 0) {
+                            $('#imagenesArmario').append(
+                                '<p id="textoLetraHueco' +
+                                    i +
+                                    '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                    mai[i] +
+                                    '</p>'
+                            );
+                        }
+                        if (i == 1) {
+                            $('#imagenesArmario').append(
+                                '<p id="textoLetraHueco' +
+                                    i +
+                                    '" style="position:absolute;z-index:10000;margin-left: 370px;margin-top: 250px;font-size: 50px;">' +
+                                    mai[i] +
+                                    '</p>'
+                            );
+                        }
+                        if (i == 2) {
+                            $('#imagenesArmario').append(
+                                '<p id="textoLetraHueco' +
+                                    i +
+                                    '" style="position:absolute;z-index:10000;margin-left: 590px;margin-top: 220px;font-size: 50px;">' +
+                                    mai[i] +
+                                    '</p>'
+                            );
+                        }
+                        if (i == 3) {
+                            $('#imagenesArmario').append(
+                                '<p id="textoLetraHueco' +
+                                    i +
+                                    '" style="position:absolute;z-index:10000;margin-left: 865px;margin-top: 180px;font-size: 50px;">' +
                                     mai[i] +
                                     '</p>'
                             );
@@ -3734,25 +3878,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     public comproAncho() {
         var min = this.anchoMin;
         var max = this.anchoMax;
-        var ancho = $('#anchosSelect').val();
+        var ancho = $('.armariosDivTodo #anchosSelect4').val();
         if (ancho >= min && ancho <= max) {
-            $('#anchosSelect').css({ border: '0.5px solid' });
+            $('.armariosDivTodo #anchosSelect4').css({ border: '0.5px solid' });
             $('#botonOkAnchos').removeAttr('disabled');
         } else {
-            $('#anchosSelect').css({ border: '0.5px solid red' });
+            $('.armariosDivTodo #anchosSelect4').css({ border: '0.5px solid red' });
             $('#botonOkAnchos').attr('disabled', 'disabled');
         }
     }
     public comproAlto() {
         var min = this.altoMin;
         var max = this.altoMax;
-        var alto = $('#alturaSelect').val();
+        var alto = $('.armariosDivTodo #alturaSelect4').val();
         if (alto >= min && alto <= max) {
-            $('#alturaSelect').css({ border: '0.5px solid' });
+            $('.armariosDivTodo #alturaSelect4').css({ border: '0.5px solid' });
             $('#botonOkAnchos').removeAttr('disabled');
         } else {
-            $('#botonOkAnchos').attr('disabled', 'disabled');
-            $('#alturaSelect').css({ border: '0.5px solid red' });
+            $('.armariosDivTodo #botonOkAnchos').attr('disabled', 'disabled');
+            $('#alturaSelect4').css({ border: '0.5px solid red' });
         }
     }
 
@@ -7526,7 +7670,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 this.armarioCogido = array;
                 console.log(this.armarioCogido);
                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                    '<p style="width:100%;display:none">Interior: <span id="acabadoInterior">' +
+                    '<p style="width:100%;display:none">Interior: <span id="acabadoTirador">' +
                         nombre +
                         '</span><span style="float:right">+ 0€</span><p/>'
                 );
@@ -7883,6 +8027,56 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             }
                         }
                         for (let i = 1; i <= puertas; i++) {
+                            $('#imagenesArmario2 #imagenesArmario').append(
+                                '<p id="nombrePuerta' +
+                                    i +
+                                    '" style="position:absolute;' +
+                                    dimens['dimenPuerta' + i] +
+                                    '"> Puerta ' +
+                                    i +
+                                    '</p>'
+                            );
+                        }
+                    }
+
+                    if (texto == '7 PUERTA ASIMETRICAS') {
+                        var cuenta = puertas;
+                        if (cuenta % 1 == 0) {
+                            for (let i = 1; i <= puertas; i++) {
+                                if (i == 1) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                    );
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                    );
+                                }
+                                if (i == 2) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                    );
+                                }
+                                if (i == 3) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                    );
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424PX;margin-top: -78px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                    );
+                                }
+                                if (i == 4) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 708px;margin-top: -131px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                    );
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 708px;margin-top: -131px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                    );
+                                }
+                            }
+                        }
+                        for (let i = 1; i <= puertas; i++) {
+                            dimens['dimenPuerta6'] = 'margin-left:790px;margin-top:215px;z-index:100000;font-size:30px';
+                            dimens['dimenPuerta7'] = 'margin-left:930px;margin-top:185px;z-index:100000;font-size:30px';
                             $('#imagenesArmario2 #imagenesArmario').append(
                                 '<p id="nombrePuerta' +
                                     i +
@@ -8778,6 +8972,735 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         if (cogerSeccion == 'C') {
             var precioPuntosBuenos = JSON.parse(sessionStorage.getItem('C'));
         }
+        var tirador = $('#acabadoTirador').text();
+        if (nombreArmario == '3 PUERTAS IZQUIERDA' && id == 0) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
+                );
+            }
+
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '810px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-80px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '810px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-80px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
+            $('#puertaColorMarco' + id).remove();
+        }
+
+        if (nombreArmario == '3 PUERTAS IZQUIERDA' && id == 1) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
+                );
+            }
+
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-136px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ opacity: '0.4' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
+            $('#puertaColorMarco' + id).remove();
+        }
+
+        if (nombreArmario == '3 PUERTAS IZQUIERDA' && id == 2) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
+                );
+            }
+
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-136px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ opacity: '0.4' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
+            $('#puertaColorMarco' + id).remove();
+        }
+        if (nombreArmario == '1 PUERTA') {
+            $('#puertaColorMarco' + id).remove();
+            var codigoArmario = this.codigoArmario;
+            if (codigoArmario == 'NB001' || codigoArmario == 'NB002' || codigoArmario == 'NB003' || codigoArmario == 'NB004') {
+                if (nombre == 381) {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaColorMarco' +
+                            id +
+                            '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                    );
+
+                    $('#puertaColor' + id).attr(
+                        'src',
+                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
+                    );
+                }
+                if (nombre == 382) {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaColorMarco' +
+                            id +
+                            '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                    );
+
+                    $('#puertaColor' + id).attr(
+                        'src',
+                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
+                    );
+                }
+            } else {
+                if (nombre == 381) {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaColorMarco' +
+                            id +
+                            '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                    );
+
+                    $('#puertaColor' + id).attr(
+                        'src',
+                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
+                    );
+                }
+                if (nombre == 382) {
+                    $('#imagenesArmario2 #imagenesArmario').append(
+                        '<img id="puertaColorMarco' +
+                            id +
+                            '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                    );
+
+                    $('#puertaColor' + id).attr(
+                        'src',
+                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
+                    );
+                }
+            }
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '810px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-80px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '810px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-80px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
+        }
+
+        if (nombreArmario == '2 PUERTAS' && id == 0) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
+        }
+
+        if (nombreArmario == '2 PUERTAS' && id == 1) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
+        }
+
+        if (nombreArmario == '3 PUERTAS DERECHA' && id == 2) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '810px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-118px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-73px' });
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '810px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-118px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-73px' });
+        }
+
+        if (nombreArmario == '3 PUERTAS DERECHA' && id == 0) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ 'z-index': '102' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-286px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+        }
+
+        if (nombreArmario == '3 PUERTAS DERECHA' && id == 1) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'z-index': '102' });
+            $('#puertaColor' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-286px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+        }
+
+        if (nombreArmario == '4 PUERTAS - 2 HUECOS GRANDES' && id == 0) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ 'z-index': '102' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-286px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+        }
+
+        if (nombreArmario == '4 PUERTAS - 2 HUECOS GRANDES' && id == 1) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'z-index': '102' });
+            $('#puertaColor' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-284px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+        }
+
+        if (nombreArmario == '4 PUERTAS - 2 HUECOS GRANDES' && id == 2) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ 'z-index': '102' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-150px' });
+            $('#puertaColor' + id).css({ 'margin-left': '0px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+        }
+
+        if (nombreArmario == '4 PUERTAS - 2 HUECOS GRANDES' && id == 3) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'z-index': '102' });
+            $('#puertaColor' + id).css({ 'margin-top': '-150px' });
+            $('#puertaColor' + id).css({ 'margin-left': '0px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+        }
+
+        if (nombreArmario == '4 PUERTAS ASIMETRICAS' && id == 0) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '810px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-80px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '810px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-80px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
+        }
+
+        if (nombreArmario == '4 PUERTAS ASIMETRICAS' && id == 3) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '810px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-157px' });
+            $('#puertaColor' + id).css({ 'margin-left': '140px' });
+
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '810px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-157px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '140px' });
+        }
+
+        if (nombreArmario == '4 PUERTAS ASIMETRICAS' && id == 1) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-136px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
+        }
+
+        if (nombreArmario == '4 PUERTAS ASIMETRICAS' && id == 2) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
+                );
+            }
+            if (nombre == 382) {
+                $('#imagenesArmario2 #imagenesArmario').append(
+                    '<img id="puertaColorMarco' +
+                        id +
+                        '" style="position: absolute;z-index: 101;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png">'
+                );
+
+                $('#puertaColor' + id).attr(
+                    'src',
+                    '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
+                );
+            }
+
+            $('#nombrePuerta' + (id + 1)).remove();
+            $('#puertaColor' + id).css({ width: '915px' });
+            $('#puertaColor' + id).css({ height: '845px' });
+            $('#puertaColor' + id).css({ 'margin-top': '-136px' });
+            $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+
+            $('#puertaColor' + id).css({ opacity: '0.3' });
+            $('#puertaColorMarco' + id).css({ width: '915px' });
+            $('#puertaColorMarco' + id).css({ height: '845px' });
+            $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
+            $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
+        }
+
         var precioTodo;
         precioTodo = $('#precioDimension').text();
         this.puertasPreciosService.findBus1(casco, nombre).subscribe(data => {
@@ -13736,7 +14659,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#puertaTiradorImagen').remove();
         if (nombre != 'Cristal Bronce' && nombre != 'Cristal Transparente') {
             this.saberPuerta = 1;
-
+            $('#puertaColor' + id).css({ opacity: '1' });
             if (texto == '3 PUERTAS IZQUIERDA' && id == 0) {
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;

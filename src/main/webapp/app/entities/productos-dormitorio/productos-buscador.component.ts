@@ -510,6 +510,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('.armariosDivInputCodigo').css({ display: 'block' });
             $('#calcuBatientes').css({ display: 'block' });
             $('#modalesBatientes').css({ display: 'block' });
+            $('.armariosDivInputCodigo #botonOkAnchos').removeAttr('disabled');
         }
 
         if (id == 3) {
@@ -525,7 +526,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         }
 
         if (id == 5) {
-            $('.armariosDivTodo3').css({ display: 'block' });
+            $('.vestidoresDivInputCodigo').css({ display: 'block' });
             $('#calcuVesti').css({ display: 'block' });
             $('#modalesVesti').css({ display: 'block' });
         }
@@ -1510,6 +1511,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     }
     public formularioSubirImagen() {}
     public cogidoUsb(id) {
+        var precioPunto = parseFloat(this.precioPunto);
         var idProd = this.idDelProducto;
         if (id != 'no') {
             this.usbService
@@ -1521,13 +1523,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         if (data.body[x]['id'] == id) {
                             if (this.usbCogido != undefined) {
                                 var precioDimen = parseFloat($('#precioDimension').text());
-                                $('#precioDimension').text(precioDimen - this.usbCogido['precio']);
+                                $('#precioDimension').text(precioDimen - this.usbCogido['precio'] * precioPunto);
                             }
                             this.usbCogido = data.body[x];
-                            $('#precioUSB').text(data.body[x]['precio']);
+                            $('#precioUSB').text(data.body[x]['precio'] * precioPunto);
                             $('#precioUSB').css({ display: 'block' });
                             var precioDimen = parseFloat($('#precioDimension').text());
-                            $('#precioDimension').text(precioDimen + data.body[x]['precio']);
+                            $('#precioDimension').text(precioDimen + data.body[x]['precio'] * precioPunto);
                         }
                     }
                 });
@@ -1535,7 +1537,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             var usb = this.usbCogido;
             if (usb != undefined) {
                 var precioDimen = parseFloat($('#precioDimension').text());
-                $('#precioDimension').text(precioDimen - usb['precio']);
+                $('#precioDimension').text(precioDimen - usb['precio'] * precioPunto);
                 $('#precioUSB').text('');
             }
             this.usbCogido = undefined;
@@ -4682,17 +4684,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 var iluminacion = this.iluminacion;
                 var texto = 0;
                 texto = 1;
-                for (let k = 0; k < iluminacion.length; k++) {
-                    if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
-                        $('#iluminacion').removeAttr('style');
-                        $('#iluminacion').attr('style');
-                        $('#iluminacion').css({ width: '100%' });
-                        $('#iluminacion').css({ float: 'left' });
-                        $('#ilu1').attr('class', iluminacion[k]['id']);
-                        texto = 0;
-                    } else {
-                    }
-                }
+
                 if (texto == 1) {
                     $('#botonCalculadora').removeAttr('class');
                 }
@@ -5367,6 +5359,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var contador = 1;
         var acabados = this.acabados;
         var todosAcabados = this.todosAcabados;
+        var usb = this.usbCogido;
+        console.log(usb);
         var iluminacion = this.iluminacion;
         $('#textoFinal').removeAttr('style');
         $('#textoFinal').attr('style');
@@ -5413,6 +5407,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     iluBuena[1] = iluminacion[k];
                 }
             }
+
+            if (usb != undefined) {
+                usb['productosDormitorio']['imagen'] = '';
+            }
             const aca = [];
             var acabadoCogido;
             for (let j = 1; j <= 100; j++) {
@@ -5441,18 +5439,23 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     }
                     value['apoyo'] = apoyoBueno[1];
                     value['iluminacion'] = iluBuena[1];
+                    if (usb != undefined) {
+                        value['usb'] = usb;
+                    }
                     prod[1] = value;
                     prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
                     prod[1]['imagen'] = '';
                     prod[1]['productosDormitorio']['imagen'] = '';
-                    prod[1]['apoyo']['imagen'] = '';
+                    if (prod[1]['apoyo'] != undefined) {
+                        prod[1]['apoyo']['imagen'] = '';
+                    }
                     console.log(prod);
                     sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
                     contadorDimen++;
                 }
             });
         }
-
+        this.usb = undefined;
         for (let i = 1; i <= 100; i++) {
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
             if (sesion != null) {
@@ -5725,6 +5728,19 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             }
             if (i >= 100) {
                 $('#listaArmarios').append('<option value="NB' + i + '">NB' + i + '</option>');
+            }
+        }
+
+        $('#productosPrincipal').append('<datalist id="listaArmariosVest"></datalist>');
+        for (let i = 1; i < 505; i++) {
+            if (i >= 1 && i <= 9) {
+                $('#listaArmariosVest').append('<option value="NW00' + i + '">NW00' + i + '</option>');
+            }
+            if (i >= 10 && i <= 99) {
+                $('#listaArmariosVest').append('<option value="NW0' + i + '">NW0' + i + '</option>');
+            }
+            if (i >= 100) {
+                $('#listaArmariosVest').append('<option value="NW' + i + '">NW' + i + '</option>');
             }
         }
         this.estanteria = [];

@@ -70,12 +70,19 @@
 
     </div>
     
+    <div id="producto" class="vestidoresDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
+    	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
+    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NW001 Y NW504]</label><input list="listaArmariosVest" type="text" id="inputCodigoVes" ></p>
+   		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.vestidoresDormitorioComponent.abrirArmariosTodos()">OK</button></p>
+
+    </div>
+    
     
     <div id="producto" class="armariosDivTodo" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDAS</h2><BR><BR>
     	<p id="armariosCogidos" style="display:none"></p>
-    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.anchoMin}} Y {{this.armariosDormitorioComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect" name="anchos" type="number" (change)="this.armariosDormitorioComponent.comproAncho()"/></p>
-		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.altoMin}} Y {{this.armariosDormitorioComponent.altoMax}}]</label><input style="text-align:center" list="listaAltura" id="alturaSelect" name="anchos" type="number" (change)="this.armariosDormitorioComponent.comproAlto()"/></p>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.anchoMin}} Y {{this.armariosDormitorioComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect4" name="anchos" type="number" (change)="this.armariosDormitorioComponent.comproAncho()"/></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.altoMin}} Y {{this.armariosDormitorioComponent.altoMax}}]</label><input style="text-align:center" list="listaAltura" id="alturaSelect4" name="anchos" type="number" (change)="this.armariosDormitorioComponent.comproAlto()"/></p>
 		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input list="listaFondoBat" data-toggle="modal" data-target="#modalFondoCm" id="inputFondoBatientes" style="text-align:center;background-color:#F0F0F0" value="61" type="number" readonly="readonly"/></p>
 		<p style="text-align:center;margin-top:3%;"><button id="botonOkAnchos" style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioComponent.carcarCascosInterioresPuertas()">OK</button></p>
 		   
@@ -225,27 +232,17 @@
     
     
     <div id="producto" class="armariosDivTodo3" style="display:none;margin-left:0%;width:100%">
-    <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect4" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM</label><input style="text-align:center" list="listaAltura" id="alturaSelect4" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input style="text-align:center" value="61" type="number" disabled/></p>
-		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.vestidoresDormitorioComponent.cargarInterioresArmarios()">Buscar</button></p>
+    <h2 style="text-align:center;letter-spacing:3px">MEDIDAS</h2><BR><BR>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM &nbsp;&nbsp;[ENTRE {{this.vestidoresDormitorioComponent.anchoMin}} Y {{this.vestidoresDormitorioComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchosVes" step="10" id="anchosSelect" name="anchos" type="number" (change)="this.vestidoresDormitorioComponent.comproAncho()"/></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM &nbsp;&nbsp;[ENTRE {{this.vestidoresDormitorioComponent.altoMin}} Y {{this.vestidoresDormitorioComponent.altoMax}}]</label><input style="text-align:center" list="listaAlturaVes" id="alturaSelect" name="anchos" type="number" (change)="this.vestidoresDormitorioComponent.comproAlto()"/></p>
+		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input list="listaFondoBat" data-toggle="modal" data-target="#modalFondoCm" id="inputFondoBatientes" style="text-align:center;background-color:#F0F0F0" value="61" type="number" readonly="readonly"/></p>
+		<p style="text-align:center;margin-top:3%;"><button id="botonOkAnchos" style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.vestidoresDormitorioComponent.carcarCascosInterioresPuertas()">OK</button></p>
 		   
-		<h2 style="text-align:center;margin-top: 5%;margin-bottom: 5%;" id="textoTituloInterior"></h2>
-		<div *ngIf="this.vestidoresDormitorioComponent.armarioService.todo != undefined" style="margin-left:25px">
-	    	<div *ngFor="let tabla of this.vestidoresDormitorioComponent.armarioService.todo;let u=index" style="width:40%;float:left;border:1px solid #B5BABD;margin-right:50px;margin-bottom:50px" id="armarioColorFondo{{u}}">
-	    		<div style="margin-top:25px;margin-bottom:25px;">
-		    		<p style="text-align:center"><img (click)="this.vestidoresDormitorioComponent.carcarCascosInterioresPuertas(u)" (click)="quitarnone(4)" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  height="200px" width="500px" alt="productosDormitorio image"/></p>
-		    		<p style="text-align:center"><img (click)="this.vestidoresDormitorioComponent.carcarCascosInterioresPuertas(u)" (click)="quitarnone(4)" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.productosDormitorio.imagenContentType + ';base64,' + tabla.productosDormitorio.imagen" height="200px" width="500px" alt="productosDormitorio image"/></p>
-		    		<p id="textoMensajeArmario{{u}}" style="width:100%;text-align:center">{{tabla.mensaje}}</p>
-	    		</div>
-	    	</div>
-    	</div>
     	
-    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario1">
+    	<div style="width:100%;float:left;" id="imagenesArmario1">
     		
     	</div>
-    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario2">
+    	<div style="width:100%;float:left;" id="imagenesArmario2">
     		
     	</div> 
     	<div style="width:100%" id="imagenInteriorPuertas">
@@ -378,13 +375,6 @@
 		
 	</div>  	
 	
-	<div id="iluminacion"style="display:none">
-		<h2 id="iluminacionTexto" style="margin-left:40%">Paso 5: Iluminacion</h2>
-		<div id="ilu1"><img id="imagenIlu" src="../../../content/images/si.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(1)'>
-		</div>	
-		<div id="ilu2"><img id="imagenIlu" src="../../../content/images/no.png" height="200" width="200" style="opacity:0.7" (click)='ilumina(2)'>
-		</div>	
-	</div>
 	<div class="modal fade" id="modalPresupuesto" role="dialog">
 	    <div class="modal-dialog">
 	    

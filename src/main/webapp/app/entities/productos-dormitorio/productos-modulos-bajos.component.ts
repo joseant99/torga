@@ -6397,7 +6397,19 @@ export class ProductosModulosBajosComponent implements OnInit, OnDestroy {
     loadAll() {
         var productos = [];
         var apoyos = [];
-
+        var sistemasApoyo = [];
+        this.tiposApoyoService
+            .query({
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    sistemasApoyo[i] = data.body[i];
+                }
+            });
+        this.sistemasApoyo = sistemasApoyo;
         var precioPunto = this.precioPunto[0];
         var precio = this.precioTiendaProductosService.todos;
         var precioCat = this.precioProdsCat;

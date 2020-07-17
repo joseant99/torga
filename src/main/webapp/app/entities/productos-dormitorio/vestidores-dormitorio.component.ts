@@ -141,6 +141,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
     segunWIDTH: any;
     saberAcabados: any;
     gg: any;
+    anchoMin: any;
+    anchoMax: any;
+    altoMin: any;
+    altoMax: any;
     niveladoresPrecio: any;
     cajeadoPrecio: any;
     enmarcadosPrecio: any;
@@ -285,6 +289,56 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         $('#derechaTirador').css({ 'background-color': 'white' });
         $('#nombreMesita').empty();
         $('#precioDimension').empty();
+    }
+
+    public abrirArmariosTodos() {
+        var coger = $('#inputCodigoVes').val();
+        var bueno = 0;
+        for (let t = 0; t < 277; t++) {
+            if (t < 10 && bueno != 1) {
+                if (coger == 'NW00' + t) {
+                    bueno = 1;
+                }
+            }
+            if (t >= 10 && t < 100 && bueno != 1) {
+                if (coger == 'NW0' + t) {
+                    bueno = 1;
+                }
+            }
+            if (t >= 100 && bueno != 1) {
+                if (coger == 'NW' + t) {
+                    bueno = 1;
+                }
+            }
+        }
+        if (bueno == 1) {
+            this.cascoService.findBus1(coger).subscribe(data => {
+                this.anchoMin = data.body[0].anchoMin;
+                this.anchoMax = data.body[0].anchoMax;
+                this.altoMin = data.body[0].altoMin;
+                this.altoMax = data.body[0].altoMax;
+                $('#producto').append('<datalist id="listaAnchosVes"></datalist>');
+                $('#producto').append('<datalist id="listaAlturaVes"></datalist>');
+                $('#armariosCogidosVes').attr('class', data.body[0].armario.id);
+                var array = [];
+                array[0] = data.body[0].armario;
+                this.armarioService.todo = array;
+                for (let i = data.body[0].anchoMin; i <= data.body[0].anchoMax; i++) {
+                    $('#listaAnchosVes').append('<option value="' + i + '">' + i + '</option>');
+                }
+                for (let i = data.body[0].altoMin; i <= data.body[0].altoMax; i++) {
+                    $('#listaAlturaVes').append('<option value="' + i + '">' + i + '</option>');
+                }
+            });
+            $('.armariosDivTodo3').css({ display: 'block' });
+            $('#inputCodigoArmario').attr('readonly', 'readonly');
+            $('#inputCodigoArmario').attr('style');
+            $('#inputCodigoArmario').css({ 'background-color': '#f0f0f0' });
+            $('#inputCodigoArmario').css({ border: '0.5px solid' });
+        } else {
+            $('#inputCodigoArmario').attr('style');
+            $('#inputCodigoArmario').css({ border: '0.5px solid red' });
+        }
     }
 
     public generarPresupuesto() {
@@ -541,8 +595,8 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         dimens['11 puertas IZQUIERDA'] = 'margin-top: 15%;margin-left: 5%;';
         dimens['12 puertas'] = 'margin-top: 15%;';
         dimens['grandes'] = 'margin-left:280px;margin-top:-51px';
-        dimens['1 puertas'] = 'margin-left:41%;';
-        dimens['2 puertas'] = 'margin-left:40%;';
+        dimens['1 puertas'] = 'margin-left:30%;';
+        dimens['2 puertas'] = 'margin-left:30%;';
         dimens['3 puertas'] = 'margin-left:35%;';
         dimens['dimenPuerta1'] = 'margin-left: 85px;margin-top: 320px;z-index: 100000;font-size: 30px;';
         dimens['dimenPuerta2'] = 'margin-left: 220px;margin-top: 300px;z-index: 100000;font-size: 30px;';
@@ -637,6 +691,32 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             $('#precioDimension').text(precio);
         }
     }
+
+    public comproAncho() {
+        var min = this.anchoMin;
+        var max = this.anchoMax;
+        var ancho = $('#anchosSelect').val();
+        if (ancho >= min && ancho <= max) {
+            $('#anchosSelect').css({ border: '0.5px solid' });
+            $('#botonOkAnchos').removeAttr('disabled');
+        } else {
+            $('#anchosSelect').css({ border: '0.5px solid red' });
+            $('#botonOkAnchos').attr('disabled', 'disabled');
+        }
+    }
+    public comproAlto() {
+        var min = this.altoMin;
+        var max = this.altoMax;
+        var alto = $('#alturaSelect').val();
+        if (alto >= min && alto <= max) {
+            $('#alturaSelect').css({ border: '0.5px solid' });
+            $('#botonOkAnchos').removeAttr('disabled');
+        } else {
+            $('#botonOkAnchos').attr('disabled', 'disabled');
+            $('#alturaSelect').css({ border: '0.5px solid red' });
+        }
+    }
+
     public carcarCascosInterioresPuertas(id) {
         var ancho = $('#anchosSelect4').val();
         var alto = $('#alturaSelect4').val();
@@ -651,7 +731,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 this.armarioCogido = armariosTodos[j];
             }
         }
-
+        var codigo = $('#inputCodigoVes').val();
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
         $('#armarioColorFondo1').css({ 'background-color': 'white' });
         $('#armarioColorFondo2').css({ 'background-color': 'white' });
@@ -672,7 +752,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         $('#imagenesArmario2').empty();
         $('#imagenesArmario1').empty();
         $('#botonesAcabadosCuerpo').css({ display: 'block' });
-        this.cascoService.findBus(ancho, alto, this.armarioCogido.id).subscribe(data => {
+        this.cascoService.findBus1(codigo).subscribe(data => {
             console.log(data.body);
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                 '<p id="cascoCalculadora" style="width:97%;"><strong>CASCO: </strong><span style="float:right"><strong>+ <span  id="precio">' +
@@ -919,18 +999,18 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                     });
                 }
             }
-            if (texto == '2 PUERTAS') {
+            if (texto == '1 CUERPO TIPO 1') {
                 var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
                 var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
                 for (let j = 0; j < puertas - 1; j++) {
                     array[j] = j;
                 }
-                arrayPuertas[0] = '1 y 2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
-                if (puertas == 2) {
+                if (puertas == 1) {
                     for (let i = 0; i < puertas; i++) {
                         if (width >= 1500 && width < 2200) {
                             var dimensiones = dimens[puertas + ' puertas'];
@@ -940,29 +1020,29 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         }
                         this.numeroDeHuecos = puertas;
                         if (i == 0) {
-                            $('#imagenesArmario1').append(
+                            $('.armariosDivTodo3 #imagenesArmario1').append(
                                 '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                             );
-                            $('#imagenesArmario').append(
+                            $('.armariosDivTodo3 #imagenesArmario').append(
                                 '<img id="casco' +
                                     i +
                                     '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
                             );
-                            $('#imagenesArmario').append(
+                            $('.armariosDivTodo3 #imagenesArmario').append(
                                 '<img id="trasera' +
                                     i +
                                     '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
                             );
                         }
                     }
-                    var html = $('#imagenesArmario1').html();
-                    $('#imagenesArmario2').css({ 'margin-top': '600px' });
-                    $('#imagenesArmario2').append(html);
+                    var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                    $('.armariosDivTodo3 #imagenesArmario2').css({ 'margin-top': '600px' });
+                    $('.armariosDivTodo3 #imagenesArmario2').append(html);
                     for (let i = 0; i < puertas; i++) {
                         var dimensiones = dimens[puertas + ' puertas'];
                         this.numeroDeHuecos = puertas;
                         if (i == 0) {
-                            $('#imagenesArmario').append(
+                            $('.armariosDivTodo3 #imagenesArmario').append(
                                 '<p id="textoLetraHueco' +
                                     i +
                                     '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
