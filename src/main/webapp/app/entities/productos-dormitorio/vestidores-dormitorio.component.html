@@ -17,8 +17,8 @@
 		<div *ngIf="armarioService.todo != undefined" style="margin-left:200px">
 	    	<div *ngFor="let tabla of armarioService.todo;let u=index" style="width:45%;float:left;border:1px solid #B5BABD;margin-right:50px;margin-bottom:50px" id="armarioColorFondo{{u}}">
 	    		<div style="margin-top:25px;margin-bottom:25px;">
-		    		<p style="text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  height="200px" width="500px" alt="productosDormitorio image"/></p>
-		    		<p style="text-align:center"><img (click)="carcarCascosInterioresPuertas(u)" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.productosDormitorio.imagenContentType + ';base64,' + tabla.productosDormitorio.imagen" height="200px" width="500px" alt="productosDormitorio image"/></p>
+		    		<p style="text-align:center"><img (click)="carcarCascosInterioresPuertas()" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  height="200px" width="500px" alt="productosDormitorio image"/></p>
+		    		<p style="text-align:center"><img (click)="carcarCascosInterioresPuertas()" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.productosDormitorio.imagenContentType + ';base64,' + tabla.productosDormitorio.imagen" height="200px" width="500px" alt="productosDormitorio image"/></p>
 		    		<p id="textoMensajeArmario{{u}}" style="width:100%;text-align:center">{{tabla.mensaje}}</p>
 	    		</div>
 	    	</div>
