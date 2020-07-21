@@ -31,6 +31,24 @@ public class PresupuestoArmario implements Serializable {
 
     @Column(name = "fondo")
     private Float fondo;
+    
+    @Column(name = "medACaj")
+    private Float medACaj;
+    
+    @Column(name = "medBCaj")
+    private Float medBCaj;
+    
+    @Column(name = "medCCaj")
+    private Float medCCaj;
+    
+    @Column(name = "medAEnm")
+    private Float medAEnm;
+    
+    @Column(name = "medBEnm")
+    private Float medBEnm;
+    
+    @Column(name = "medCEnm")
+    private Float medCEnm;
 
     @Column(name = "casco_precio")
     private Float cascoPrecio;
@@ -50,10 +68,26 @@ public class PresupuestoArmario implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties("")
     private Acabados acabadosInterior;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Acabados acabadosTirador;
 
     @ManyToOne
     @JsonIgnoreProperties("")
     private ProductosPresupuestoPedidos productosPresupuestoPedidos;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Niveladores niveladores;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Cajeado cajeado;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Enmarcados enmarcados;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -102,6 +136,86 @@ public class PresupuestoArmario implements Serializable {
     public void setFondo(Float fondo) {
         this.fondo = fondo;
     }
+    
+    public Float getMedACaj() {
+        return medACaj;
+    }
+
+    public PresupuestoArmario medACaj(Float medACaj) {
+        this.medACaj = medACaj;
+        return this;
+    }
+
+    public void setMedACaj(Float medACaj) {
+        this.medACaj = medACaj;
+    }
+    
+    public Float getMedBCaj() {
+        return medBCaj;
+    }
+
+    public PresupuestoArmario medBCaj(Float medBCaj) {
+        this.medBCaj = medBCaj;
+        return this;
+    }
+
+    public void setMedBCaj(Float medBCaj) {
+        this.medBCaj = medBCaj;
+    }
+    
+    public Float getMedCCaj() {
+        return medCCaj;
+    }
+
+    public PresupuestoArmario medCCaj(Float medCCaj) {
+        this.medCCaj = medCCaj;
+        return this;
+    }
+
+    public void setMedCCaj(Float medCCaj) {
+        this.medCCaj = medCCaj;
+    }
+    
+    public Float getMedAEnm() {
+        return medAEnm;
+    }
+
+    public PresupuestoArmario medAEnm(Float medAEnm) {
+        this.medAEnm = medAEnm;
+        return this;
+    }
+
+    public void setMedAEnm(Float medAEnm) {
+        this.medAEnm = medAEnm;
+    }
+    
+    public Float getMedBEnm() {
+        return medBEnm;
+    }
+
+    public PresupuestoArmario medBEnm(Float medBEnm) {
+        this.medBEnm = medBEnm;
+        return this;
+    }
+
+    public void setMedBEnm(Float medBEnm) {
+        this.medBEnm = medBEnm;
+    }
+    
+    public Float getMedCEnm() {
+        return medCEnm;
+    }
+
+    public PresupuestoArmario medCEnm(Float medCEnm) {
+        this.medCEnm = medCEnm;
+        return this;
+    }
+
+    public void setMedCEnm(Float medCEnm) {
+        this.medCEnm = medCEnm;
+    }
+    
+    
 
     public Float getCascoPrecio() {
         return cascoPrecio;
@@ -167,6 +281,20 @@ public class PresupuestoArmario implements Serializable {
     public void setAcabadosInterior(Acabados acabados) {
         this.acabadosInterior = acabados;
     }
+    
+    public Acabados getAcabadosTirador() {
+        return acabadosTirador;
+    }
+
+    public PresupuestoArmario acabadosTirador(Acabados acabados) {
+        this.acabadosTirador = acabados;
+        return this;
+    }
+
+    public void setAcabadosTirador(Acabados acabados) {
+        this.acabadosTirador = acabados;
+    }
+    
 
     public ProductosPresupuestoPedidos getProductosPresupuestoPedidos() {
         return productosPresupuestoPedidos;
@@ -179,6 +307,46 @@ public class PresupuestoArmario implements Serializable {
 
     public void setProductosPresupuestoPedidos(ProductosPresupuestoPedidos productosPresupuestoPedidos) {
         this.productosPresupuestoPedidos = productosPresupuestoPedidos;
+    }
+    
+    public Niveladores getNiveladores() {
+        return niveladores;
+    }
+
+    public PresupuestoArmario niveladores(Niveladores niveladores) {
+        this.niveladores = niveladores;
+        return this;
+    }
+
+    public void setNiveladores(Niveladores niveladores) {
+        this.niveladores = niveladores;
+    }
+    
+    
+    public Cajeado getCajeado() {
+        return cajeado;
+    }
+
+    public PresupuestoArmario cajeado(Cajeado cajeado) {
+        this.cajeado = cajeado;
+        return this;
+    }
+
+    public void setCajeado(Cajeado cajeado) {
+        this.cajeado = cajeado;
+    }
+    
+    public Enmarcados getEnmarcados() {
+        return enmarcados;
+    }
+
+    public PresupuestoArmario enmarcados(Enmarcados enmarcados) {
+        this.enmarcados = enmarcados;
+        return this;
+    }
+
+    public void setEnmarcados(Enmarcados enmarcados) {
+        this.enmarcados = enmarcados;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

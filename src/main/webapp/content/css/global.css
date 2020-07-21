@@ -131,9 +131,7 @@ Generic styles
     margin-top: -25px;
 }
 .imagenAcabadoPrincipalImgSin {
-    margin-left: 33%;
-    max-height: 692.75px;
-    max-width: 400px;
+    margin-left: 30%;
 }
 .armariosDivTodo {
     width: 85%;
@@ -306,8 +304,6 @@ nput[type='radio'] {
 
 .imagenAcabadoPrincipalImg {
     margin-left: 25%;
-    max-height: 433px;
-    max-width: 650px;
 }
 
 .acabadoPartes {

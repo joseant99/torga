@@ -382,86 +382,30 @@ export class PresupuestoPuntosComponent implements OnInit, OnDestroy, AfterViewI
                                         var trasera = data.body[0]['presupuestoArmario']['acabados']['nombre'].toLowerCase();
                                         var interiorAca = data.body[0]['presupuestoArmario']['acabadosInterior']['nombre'].toLowerCase();
                                         if ('3 PUERTAS IZQUIERDA' == nombre) {
-                                            $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                                    casco +
-                                                    '.png">'
-                                            );
-                                            $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                    casco +
-                                                    '.png">'
-                                            );
-                                            $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                                    casco +
-                                                    '.png">'
-                                            );
-                                            $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                                    casco +
-                                                    '.png">'
-                                            );
-
-                                            $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                                    trasera +
-                                                    '.png">'
-                                            );
-                                            $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top:-19px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                    trasera +
-                                                    '.png">'
-                                            );
-                                            $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                                    trasera +
-                                                    '.png">'
-                                            );
-                                            $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;margin-left:91px;margin-top: 296px;z-index:99" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                                    trasera +
-                                                    '.png">'
-                                            );
-
                                             var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                             $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
                                                     nombreInt +
-                                                    '/peque_interior_' +
-                                                    nombreInt +
-                                                    '_' +
-                                                    interiorAca +
-                                                    '_optimized.png">'
+                                                    '.png">'
                                             );
+
                                             $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
                                                     nombreInt +
-                                                    '/peque_interior_' +
-                                                    nombreInt +
-                                                    '_' +
-                                                    interiorAca +
-                                                    '_optimized.png">'
+                                                    '.png">'
                                             );
 
                                             var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
                                             $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:-19px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                '<img style="max-width: 150px;position: absolute;z-index:100" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
                                                     nombreInt +
-                                                    '/grande_interior_' +
-                                                    nombreInt +
-                                                    '_' +
-                                                    interiorAca +
-                                                    '_optimized.png">'
+                                                    '.png">'
                                             );
+
                                             $('#imagen' + (cont - 1)).append(
-                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-left:91px;margin-top:296px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                '<img style="max-width: 150px;position: absolute;z-index:100;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
                                                     nombreInt +
-                                                    '/grande_interior_' +
-                                                    nombreInt +
-                                                    '_' +
-                                                    interiorAca +
-                                                    '_optimized.png">'
+                                                    '.png">'
                                             );
                                         }
                                         if ('5 PUERTAS IZQUIERDA' == nombre) {

@@ -482,6 +482,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#inputCodigoArmario').css({ 'background-color': 'white' });
         $('#inputCodigoArmario').removeAttr('readonly');
         $('#inputCodigoArmario').val('');
+        $('#inputCodigoArmario').css({ overflow: 'hidden' });
+        $('#alturaSelect4').css({ overflow: 'hidden' });
+        $('#anchosSelect4').css({ overflow: 'hidden' });
         $('#inputCodigoArmario').css({ 'background-color': 'white' });
         $('#anchosSelect').removeAttr('readonly');
         $('#anchosSelect').val('');
@@ -1126,7 +1129,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 $('#acabados #imagenAcabadoPrincipal').append(
                                     '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" class="imagenAcabadoPrincipalImg"  width="650px" height="433px">'
+                                        '" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
                                 );
                             }
                         } else {

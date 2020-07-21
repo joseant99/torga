@@ -14,6 +14,7 @@ export class ProductosDormitorioService {
     public resourceUrl = SERVER_API_URL + 'api/productos-dormitorios';
     public todos;
     public numeroCesta;
+    public puertas;
     constructor(protected http: HttpClient) {}
 
     create(productosDormitorio: IProductosDormitorio): Observable<EntityResponseType> {
