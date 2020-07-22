@@ -132,6 +132,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     progressExcel: { percentage: number } = { percentage: 0 };
     errormessage: string;
     posicionEstanteria: any;
+    acabados1: any;
 
     constructor(
         protected tiposApoyoService: TiposApoyoService,
@@ -576,6 +577,18 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#datos1').empty();
         $('#datos1').css({ display: 'block' });
         $('#acabado').css({ display: 'none' });
+        var acabados = [];
+        this.acabadosService
+            .query({
+                size: 1000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    acabados[i] = data.body[i];
+                }
+            });
+        this.acabados = acabados;
+        this.acabados1 = acabados;
         $('.productosColor').css({ 'background-color': 'white' });
         $('#nombreApoyoTitulo').css({ display: 'none' });
         $('#dimensionesInput1').css({ 'background-color': 'white' });
@@ -5360,8 +5373,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('#productoCarrito' + j + ' #precioCalculado' + j).empty();
         }
         var contador = 1;
-        var acabados = this.acabados;
         var todosAcabados = this.todosAcabados;
+        var acabados1 = this.acabados1;
+        var acabados = acabados1;
         var usb = this.usbCogido;
         console.log(usb);
         var iluminacion = this.iluminacion;
@@ -5431,8 +5445,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $.each(todasDimensiones, function(index, value) {
                 if (value['id'] == dimen) {
                     for (let w = 1; w < aca.length; w++) {
-                        aca[w]['imagenFondo'] = '';
                         value['acabado' + w] = aca[w];
+                        value['acabado' + w]['imagenFondo'] = '';
                     }
                     if (value['mensaje'] == 'Medidas Especiales') {
                         value['ancho'] = ancho;
@@ -5951,9 +5965,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
         this.acabadosService
             .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
+                size: 1000
             })
             .subscribe(data => {
                 for (let i = 0; i < data.body.length; i++) {
@@ -5961,6 +5973,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 }
             });
         this.acabados = acabados;
+        this.acabados1 = acabados;
         this.userService
             .query({
                 page: this.page - 1,
