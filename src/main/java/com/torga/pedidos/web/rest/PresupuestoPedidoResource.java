@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -95,6 +95,20 @@ public class PresupuestoPedidoResource {
         Page<PresupuestoPedido> page = presupuestoPedidoRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/presupuesto-pedidos");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+    
+    /**
+     * GET  /presupuesto-pedidos : get all the presupuestoPedidos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of presupuestoPedidos in body
+     */
+    @GetMapping("/presupuesto-pedidos1")
+    @Timed
+    public ResponseEntity<Collection<PresupuestoPedido>> getAllPresupuestoPedidos1() {
+        log.debug("REST request to get a page of PresupuestoPedidos");
+        Collection<PresupuestoPedido> page = presupuestoPedidoRepository.findByPresupuesto();
+        return ResponseEntity.ok().body(page);
     }
 
     /**
