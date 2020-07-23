@@ -475,6 +475,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#nombreMesita').empty();
         $('#articulosEspeciales').css({ display: 'none' });
         $('#euroCalculadora').css({ display: 'none' });
+        $('.vestidoresDivInputCodigo').css({ display: 'none' });
         $('#estanteriaDiv').css({ display: 'none' });
         $('#botonCalculadora').attr('class', 'displayBoton');
         $('.armariosDivInputCodigo').css({ display: 'none' });
@@ -518,9 +519,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         }
 
         if (id == 3) {
-            $('.armariosDivTodo1').css({ display: 'block' });
             $('#calcuOculta').css({ display: 'block' });
             $('#modalesOculta').css({ display: 'block' });
+            $('.armariosOcultaDivInputCodigo').css({ display: 'block' });
+            $('.armariosOcultaDivInputCodigo').removeAttr('disabled');
         }
 
         if (id == 4) {
@@ -5760,6 +5762,17 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 $('#listaArmariosVest').append('<option value="NW' + i + '">NW' + i + '</option>');
             }
         }
+
+        $('#productosPrincipal').append('<datalist id="listaArmariosOculta"></datalist>');
+        for (let i = 1; i < 77; i++) {
+            if (i >= 1 && i <= 9) {
+                $('#listaArmariosOculta').append('<option value="NL00' + i + '">NL00' + i + '</option>');
+            }
+            if (i >= 10 && i <= 76) {
+                $('#listaArmariosOculta').append('<option value="NL0' + i + '">NL0' + i + '</option>');
+            }
+        }
+
         this.estanteria = [];
         this.saberNumArrayAca = [];
         $('#producto').append('<datalist id="listaAnchos1"></datalist>');

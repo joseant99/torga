@@ -110,6 +110,10 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
     itemsPerPage: any;
     sistemasApoyo: any;
     page: any;
+    anchoMin: any;
+    anchoMax: any;
+    altoMin: any;
+    altoMax: any;
     predicate: any;
     previousPage: any;
     reverse: any;
@@ -284,6 +288,51 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         $('#derechaTirador').css({ 'background-color': 'white' });
         $('#nombreMesita').empty();
         $('#precioDimension').empty();
+    }
+
+    public abrirArmariosTodos() {
+        var coger = $('#inputCodigoOculta').val();
+        var bueno = 0;
+        for (let t = 0; t < 77; t++) {
+            if (t < 10 && bueno != 1) {
+                if (coger == 'NL00' + t) {
+                    bueno = 1;
+                }
+            }
+            if (t >= 10 && t < 77 && bueno != 1) {
+                if (coger == 'NL0' + t) {
+                    bueno = 1;
+                }
+            }
+        }
+        if (bueno == 1) {
+            this.cascoService.findBus1(coger).subscribe(data => {
+                this.anchoMin = data.body[0].anchoMin;
+                this.anchoMax = data.body[0].anchoMax;
+                this.altoMin = data.body[0].altoMin;
+                this.altoMax = data.body[0].altoMax;
+                $('#producto').append('<datalist id="listaAnchosOcu"></datalist>');
+                $('#producto').append('<datalist id="listaAlturaOcu"></datalist>');
+                $('#armariosCogidosVes').attr('class', data.body[0].armario.id);
+                var array = [];
+                array[0] = data.body[0].armario;
+                this.armarioService.todo = array;
+                for (let i = data.body[0].anchoMin; i <= data.body[0].anchoMax; i++) {
+                    $('#listaAnchosOcu').append('<option value="' + i + '">' + i + '</option>');
+                }
+                for (let i = data.body[0].altoMin; i <= data.body[0].altoMax; i++) {
+                    $('#listaAlturaOcu').append('<option value="' + i + '">' + i + '</option>');
+                }
+            });
+            $('.armariosDivTodo1').css({ display: 'block' });
+            $('#inputCodigoOculta').attr('readonly', 'readonly');
+            $('#inputCodigoOculta').attr('style');
+            $('#inputCodigoOculta').css({ 'background-color': '#f0f0f0' });
+            $('#inputCodigoOculta').css({ border: '0.5px solid' });
+        } else {
+            $('#inputCodigoOculta').attr('style');
+            $('#inputCodigoOculta').css({ border: '0.5px solid red' });
+        }
     }
 
     public generarPresupuesto() {

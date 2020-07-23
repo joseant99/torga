@@ -12930,6 +12930,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             (res: HttpErrorResponse) => this.onSaveError()
         );
     }
+
+    protected subscribeToSaveResponse10(result: Observable<HttpResponse<IPresupuestoArmarioPuertas>>) {
+        result.subscribe(
+            (res: HttpResponse<IPresupuestoArmarioPuertas>) => this.onSaveSuccess(),
+            (res: HttpErrorResponse) => this.onSaveError()
+        );
+    }
+
     protected subscribeToSaveResponse6(result: Observable<HttpResponse<IProductosPresupuestoPedidos>>) {
         result.subscribe(
             (res: HttpResponse<IProductosPresupuestoPedidos>) => this.onSaveSuccess6(),
@@ -12939,7 +12947,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
     protected onSaveSuccess() {
         this.isSaving = false;
-        this.previousState();
     }
 
     protected onSaveSuccess6() {
@@ -12971,7 +12978,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 presupuestoArmario: presupuestoArmario,
                                 productosDormitorio: prodCarr[m][1]['interiores'][x]
                             };
-                            this.subscribeToSaveResponse1(this.presupuestoArmarioInterioresService.create(interiores));
+                            this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
                         }
                     }
                 }

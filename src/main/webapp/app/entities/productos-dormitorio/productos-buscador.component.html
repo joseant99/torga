@@ -77,6 +77,13 @@
 
     </div>
     
+    <div id="producto" class="armariosOcultaDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
+    	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
+    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NL001 Y NL076]</label><input list="listaArmariosOculta" type="text" id="inputCodigoOculta" ></p>
+   		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioOcultaComponent.abrirArmariosTodos()">OK</button></p>
+
+    </div>
+    
     
     <div id="producto" class="armariosDivTodo" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDAS</h2><BR><BR>
@@ -132,8 +139,8 @@
     
     <div id="producto" class="armariosDivTodo1" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect2" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM</label><input style="text-align:center" list="listaAltura" id="alturaSelect2" name="anchos" type="number"/></p>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM</label><input style="text-align:center" list="listaAnchosOcu" step="10" id="anchosSelect2" name="anchos" type="number"/></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM</label><input style="text-align:center" list="listaAlturaOcu" id="alturaSelect2" name="anchos" type="number"/></p>
 		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input style="text-align:center" value="61" type="number" disabled/></p>
 		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioOcultaComponent.cargarInterioresArmarios()">Buscar</button></p>
 		   
