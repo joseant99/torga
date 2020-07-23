@@ -7346,7 +7346,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                     ': <span id="PuertaAcabado' +
                     id +
                     '"></span><span style="float:right">+ <span id="precio">' +
-                    data.body[0].precio +
+                    data.body[0].puerta1 +
                     '</span>€</span><p/>'
             );
             $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].precio + ' €');
@@ -7463,7 +7463,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             }
         }
 
-        if (texto == '4 PUERTAS - 2 HUECOS GRANDES') {
+        if (texto == '2 PUERTAS CORREDERA') {
             if (id == 0) {
                 for (let j = 0; j < interTodos.length; j++) {
                     if (interTodos[j]['nombre'] == nombre) {
