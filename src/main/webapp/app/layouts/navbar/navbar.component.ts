@@ -12993,6 +12993,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     productosDormitorio: prodCarr[m][1]['puertas'][x],
                                     acabados: prodCarr[m][1]['puertas'][x]['acabado' + x]
                                 };
+
                                 this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
                             }
                         }
@@ -13015,7 +13016,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
                     $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
                     $('#todometerFondo').css({ display: 'none' });
-
+                    alert('enviado');
                     if (item == 'A') {
                         this.router.navigate(['/presupuesto-producto']);
                     }

@@ -687,10 +687,11 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             $('#precioDimension').text(precio);
         }
     }
-    public carcarCascosInterioresPuertas(id) {
+    public carcarCascosInterioresPuertas() {
         var ancho = $('#anchosSelect2').val();
         var alto = $('#alturaSelect2').val();
         var armariosTodos = this.armarioService.todo;
+        var id = 0;
         var classe = $('#armariosCogidos' + id).attr('class');
         for (let j = 0; j < armariosTodos.length; j++) {
             if (armariosTodos[j]['id'] == classe) {
@@ -722,7 +723,22 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         $('#imagenesArmario2').empty();
         $('#imagenesArmario1').empty();
         $('#botonesAcabadosCuerpo').css({ display: 'block' });
-        this.cascoService.findBus(ancho, alto, this.armarioCogido.id).subscribe(data => {
+        $('#niveladoresCalcu').css({ display: 'block' });
+        $('#cajeadoCalcu').css({ display: 'block' });
+
+        $('#datos1').empty();
+        $('#imagenesArmario2').empty();
+        $('#imagenesArmario1').empty();
+        $('#botonesAcabadosCuerpo').css({ display: 'block' });
+        $('#calcuOculta #niveladoresCalcu').css({ display: 'block' });
+        $('#calcuOculta #cajeadoCalcu').css({ display: 'block' });
+
+        $('#datos1').empty();
+        $('#imagenesArmario2').empty();
+        $('#imagenesArmario1').empty();
+        $('#calcuOculta #botonesAcabadosCuerpo').css({ display: 'block' });
+        var codigo = $('#inputCodigoOculta').val();
+        this.cascoService.findBus1(codigo).subscribe(data => {
             console.log(data.body);
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                 '<p id="cascoCalculadora" style="width:97%;"><strong>CASCO: </strong><span style="float:right"><strong>+ <span  id="precio">' +
@@ -3164,7 +3180,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             this.productosDormitorioService.categoria(24).subscribe(data => {
                 this.productosDormitorioModal = data.body;
             });
-            this.productosDormitorioService.categoria(10).subscribe(data => {
+            this.productosDormitorioService.categoria(30).subscribe(data => {
                 this.puertasModal = data.body;
             });
         }
@@ -6042,7 +6058,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             this.productosDormitorioService.categoria(24).subscribe(data => {
                 this.productosDormitorioModal = data.body;
             });
-            this.productosDormitorioService.categoria(10).subscribe(data => {
+            this.productosDormitorioService.categoria(30).subscribe(data => {
                 this.puertasModal = data.body;
             });
             if (this.saberPuerta != 1) {
@@ -6970,38 +6986,36 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         var ancho;
         ancho = $('#anchosSelect2').val();
         alto = $('#alturaSelect2').val();
-        if (nombre == 'Puerta Madera') {
-            var idPuerta = 47;
+
+        if (nombre == 'Puerta Lisa') {
+            var idPuerta = 392;
         }
-        if (nombre == 'Puerta Aluminio') {
-            var idPuerta = 48;
+        if (nombre == 'Puerta 2 Plafones') {
+            var idPuerta = 393;
         }
-        if (nombre == 'Puerta Batiente sin tirador') {
-            var idPuerta = 286;
+        if (nombre == 'Puerta 3 Plafones') {
+            var idPuerta = 394;
         }
-        if (nombre == 'Puerta Batiente tirador tim') {
-            var idPuerta = 287;
+        if (nombre == 'Puerta 5 Plafones') {
+            var idPuerta = 395;
         }
-        if (nombre == 'Puerta Batiente tirador NYE') {
-            var idPuerta = 288;
+        if (nombre == 'Puerta 2 Plafones Verticales') {
+            var idPuerta = 396;
         }
-        if (nombre == 'Puerta Batiente tirador DRAW') {
-            var idPuerta = 289;
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            var idPuerta = 397;
         }
-        if (nombre == '2 Puertas fuelle TIM Apertura izquierda') {
-            var idPuerta = 290;
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            var idPuerta = 398;
         }
-        if (nombre == '2 Puertas fuelle TIM Apertura derecha') {
-            var idPuerta = 291;
+        if (nombre == 'Puerta 2 Plafones Verticales DER') {
+            var idPuerta = 399;
         }
-        if (nombre == '2 Puertas fuelle NYE Apertura izquierda') {
-            var idPuerta = 292;
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            var idPuerta = 400;
         }
-        if (nombre == '2 Puertas fuelle NYE Apertura derecha') {
-            var idPuerta = 293;
-        }
-        if (nombre == 'Sin puerta') {
-            var idPuerta = 294;
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            var idPuerta = 401;
         }
 
         var interTodos = this.puertasModal;
@@ -7012,7 +7026,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             }
         }
         this.puertasParaArray = arrayParaVer;
-        alert(id);
+        var casco = this.cascoService.dato['id'];
         var texto = this.textoArmario;
         if (texto == '3 PUERTAS IZQUIERDA') {
             if (id == 0) {
@@ -7293,7 +7307,37 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 }
             }
         }
-        this.puertasPreciosService.findBus(cuenta, alto, idPuerta).subscribe(data => {
+        if (nombre == 'Puerta Lisa') {
+            var idPuerta = 392;
+        }
+        if (nombre == 'Puerta 2 Plafones') {
+            var idPuerta = 393;
+        }
+        if (nombre == 'Puerta 3 Plafones') {
+            var idPuerta = 394;
+        }
+        if (nombre == 'Puerta 5 Plafones') {
+            var idPuerta = 395;
+        }
+        if (nombre == 'Puerta 2 Plafones Verticales') {
+            var idPuerta = 396;
+        }
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            var idPuerta = 397;
+        }
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            var idPuerta = 398;
+        }
+        if (nombre == 'Puerta 2 Plafones Verticales DER') {
+            var idPuerta = 399;
+        }
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            var idPuerta = 400;
+        }
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            var idPuerta = 401;
+        }
+        this.puertasPreciosService.findBus1(casco, idPuerta).subscribe(data => {
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                 '<p id="puertaHueco' +
                     (id + 1) +
@@ -13693,7 +13737,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             this.productosDormitorioService.categoria(24).subscribe(data => {
                 this.productosDormitorioModal = data.body;
             });
-            this.productosDormitorioService.categoria(10).subscribe(data => {
+            this.productosDormitorioService.categoria(30).subscribe(data => {
                 this.puertasModal = data.body;
             });
         }
