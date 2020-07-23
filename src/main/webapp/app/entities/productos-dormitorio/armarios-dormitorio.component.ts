@@ -136,6 +136,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     acabadosPuerta8: any;
     textoArmario: any;
     saberPuerta: any;
+    iva: any;
     armarioCogido: any;
     interioresParaArray: any;
     puertasParaArray: any;
@@ -160,6 +161,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     precioPuerta7: any;
     precioPuerta8: any;
     precioPuerta9: any;
+    precioInterior1: any;
+    precioInterior2: any;
+    precioInterior3: any;
+    precioInterior4: any;
+    precioInterior5: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -614,8 +620,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         this.precioPuerta7 = 0;
         this.precioPuerta8 = 0;
         this.precioPuerta9 = 0;
+        this.precioInterior1 = 0;
+        this.precioInterior2 = 0;
+        this.precioInterior3 = 0;
+        this.precioInterior4 = 0;
+        this.precioInterior5 = 0;
         this.niveladoresPrecio = 0;
-
+        this.iva = JSON.parse(sessionStorage.getItem('IVA'));
         this.interioresParaArray = [];
         this.puertasParaArray = [];
         var segunWIDTH = [];
@@ -659,6 +670,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         if (cogerSeccion == 'C') {
             var precioPuntosBuenos = JSON.parse(sessionStorage.getItem('C'));
         }
+        var iva = this.iva;
         if (id == 'si') {
             var arma = this.armarioCogido;
             this.niveladoresService.categoria(arma.id).subscribe(data => {
@@ -676,9 +688,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             precio = precio + data.body[i]['precio'];
                         }
                         if (cogerSeccion == 'C') {
-                            $('#precioNive').text('+' + data.body[i]['precio'] * precioPuntosBuenos + ' €');
-                            this.niveladoresPrecio = data.body[i]['precio'] * precioPuntosBuenos;
-                            precio = precio + data.body[i]['precio'] * precioPuntosBuenos;
+                            var todoslosprecios = data.body[i]['precio'] * precioPuntosBuenos;
+
+                            if (iva == 1) {
+                                todoslosprecios = todoslosprecios * 1.21;
+                            }
+                            $('#precioNive').text('+' + todoslosprecios.toFixed(2) + ' €');
+                            this.niveladoresPrecio = todoslosprecios.toFixed(2);
+                            precio = precio + todoslosprecios.toFixed(2);
                         }
 
                         $('#precioDimension').text(precio);
@@ -717,6 +734,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#medidasCaje2').css({ display: 'none' });
         var todo = this.armarioCogido;
         $('#medidasCaje3').css({ display: 'none' });
+        var iva = this.iva;
         if (id != 'no') {
             this.cajeadoService.query().subscribe(data => {
                 for (let i = 0; i < data.body.length; i++) {
@@ -735,10 +753,16 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             precio = precio + data.body[i]['precio'];
                         }
                         if (cogerSeccion == 'C') {
-                            $('#precioCajeado').text('+' + data.body[i]['precio'] * precioPuntosBuenos + ' €');
-                            this.cajeadoPrecio = data.body[i]['precio'] * precioPuntosBuenos;
+                            var todoslosprecios = data.body[i]['precio'] * precioPuntosBuenos;
+
+                            if (iva == 1) {
+                                todoslosprecios = todoslosprecios * 1.21;
+                            }
+
+                            $('#precioCajeado').text('+' + todoslosprecios + ' €');
+                            this.cajeadoPrecio = todoslosprecios;
                             precio = precio - precioCajeado;
-                            precio = precio + data.body[i]['precio'] * precioPuntosBuenos;
+                            precio = precio + todoslosprecios;
                         }
 
                         $('#precioDimension').text(precio);
@@ -777,6 +801,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         if (cogerSeccion == 'C') {
             var precioPuntosBuenos = JSON.parse(sessionStorage.getItem('C'));
         }
+        var iva = this.iva;
         $('#medidasEnmaD').css({ display: 'none' });
         if (id != 'no') {
             $('#medidasEnma' + id).css({ display: 'block' });
@@ -800,10 +825,16 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             precio = precio + data.body[i]['precio'];
                         }
                         if (cogerSeccion == 'C') {
-                            $('#precioEnmarcados').text('+' + data.body[i]['precio'] * precioPuntosBuenos + ' €');
-                            this.enmarcadosPrecio = data.body[i]['precio'] * precioPuntosBuenos;
+                            var todoslosprecios = data.body[i]['precio'] * precioPuntosBuenos;
+
+                            if (iva == 1) {
+                                todoslosprecios = todoslosprecios * 1.21;
+                            }
+
+                            $('#precioEnmarcados').text('+' + todoslosprecios + ' €');
+                            this.enmarcadosPrecio = todoslosprecios;
                             precio = precio - precioCajeado;
-                            precio = precio + data.body[i]['precio'] * precioPuntosBuenos;
+                            precio = precio + todoslosprecios;
                         }
 
                         $('#precioDimension').text(precio);
@@ -864,7 +895,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             this.armarioCogido = armariosTodos[0];
         }
         this.codigoArmario = codigo;
-
+        var iva = this.iva;
         $('.armariosDivTodo').append('<p id="textoMensajeArmario" style="display:none">' + armariosTodos[0].mensaje + '</p>');
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
         $('#armarioColorFondo1').css({ 'background-color': 'white' });
@@ -904,12 +935,16 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#precioDimension').text(data.body[0].precio);
             }
             if (cogerSeccion == 'C') {
+                var precioProdTODO = data.body[0].precio * precioPuntosBuenos;
+                if (iva == 1) {
+                    precioProdTODO = precioProdTODO * 1.21;
+                }
+                $('#precioDimension').text(precioProdTODO.toFixed(2));
                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                     '<p id="cascoCalculadora" style="width:97%;"><strong>CASCO: </strong><span style="float:right"><strong>+ <span  id="precio">' +
-                        data.body[0].precio * precioPuntosBuenos +
+                        precioProdTODO.toFixed(2) +
                         '</span>€</strong></span><p/>'
                 );
-                $('#precioDimension').text(data.body[0].precio * precioPuntosBuenos);
             }
             this.cascoService.dato = data.body[0];
 
@@ -4193,6 +4228,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#inputInterior' + (hueco - 1)).append('interior ' + nombre);
         var grandes = dimens['grandes'];
         var dato = this.cascoService.dato;
+        var iva = this.iva;
         if (texto == '2 PUERTAS') {
             for (let i = 1; i <= 2; i++) {
                 if (hueco == 1) {
@@ -4200,6 +4236,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     cuenta = cuenta * 1;
                     if (i == 1) {
                         var dato = this.cascoService.dato;
+                        var precioInterior1 = this.precioInterior1;
+                        var precioTodo;
+                        precioTodo = $('#precioDimension').text();
+                        precioTodo = precioTodo - precioInterior1;
                         this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                             console.log(data.body);
                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4216,21 +4256,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
 
                             if (cogerSeccion == 'A') {
                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                this.precioInterior1 = data.body[0].a;
                             }
                             if (cogerSeccion == 'B') {
                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
                             if (cogerSeccion == 'C') {
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
-                                var precioTodoFloat = data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                if (iva == 1) {
+                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                }
+                                this.precioInterior1 = todoPrecioLoco;
+                                $('#precioInt' + (hueco - 1)).text(todoPrecioLoco + ' €');
+
+                                var precioTodoFloat = todoPrecioLoco + parseFloat(precioTodo);
                             }
 
                             $('#precioDimension').text(precioTodoFloat);
@@ -4254,6 +4296,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     cuenta = ancho / puertas;
                     cuenta = cuenta * 1;
                     if (i == 1) {
+                        var precioInterior1 = this.precioInterior1;
+                        var precioTodo;
+                        precioTodo = $('#precioDimension').text();
+                        precioTodo = precioTodo - precioInterior1;
+
                         var dato = this.cascoService.dato;
                         this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                             console.log(data.body);
@@ -4270,21 +4317,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             );
                             if (cogerSeccion == 'A') {
                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
                             if (cogerSeccion == 'B') {
                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
                             if (cogerSeccion == 'C') {
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
-                                var precioTodoFloat = data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                if (iva == 1) {
+                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                }
+                                this.precioInterior1 = todoPrecioLoco;
+                                $('#precioInt' + (hueco - 1)).text(todoPrecioLoco + ' €');
+
+                                var precioTodoFloat = todoPrecioLoco + parseFloat(precioTodo);
                             }
 
                             $('#precioDimension').text(precioTodoFloat);
@@ -4301,6 +4350,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 } else {
                     if (i == 1) {
                         var dato = this.cascoService.dato;
+                        var precioInterior2 = this.precioInterior2;
+                        var precioTodo;
+                        precioTodo = $('#precioDimension').text();
+                        precioTodo = precioTodo - precioInterior2;
+
                         this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                             console.log(data.body);
                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4316,21 +4370,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             );
                             if (cogerSeccion == 'A') {
                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior2 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
                             if (cogerSeccion == 'B') {
                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior2 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
                             if (cogerSeccion == 'C') {
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
-                                var precioTodoFloat = data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                if (iva == 1) {
+                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                }
+                                this.precioInterior2 = todoPrecioLoco;
+                                $('#precioInt' + (hueco - 1)).text(this.precioInterior2 + ' €');
+                                var precioTodoFloat = 0;
+                                precioTodoFloat = this.precioInterior2 + parseFloat(precioTodo);
                             }
 
                             $('#precioDimension').text(precioTodoFloat);
@@ -4354,6 +4410,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     cuenta = ancho / puertas;
                     cuenta = cuenta * 1;
                     if (i == 1) {
+                        var precioInterior1 = this.precioInterior1;
+                        var precioTodo;
+                        precioTodo = $('#precioDimension').text();
+                        precioTodo = precioTodo - precioInterior1;
                         this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                 '<p id="interiorHueco' +
@@ -4370,21 +4430,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             );
                             if (cogerSeccion == 'A') {
                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
                             if (cogerSeccion == 'B') {
                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
                             if (cogerSeccion == 'C') {
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
-                                var precioTodoFloat = data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                if (iva == 1) {
+                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                }
+                                this.precioInterior1 = todoPrecioLoco;
+                                $('#precioInt' + (hueco - 1)).text(this.precioInterior1 + ' €');
+                                var precioTodoFloat = 0;
+                                precioTodoFloat = this.precioInterior1 + parseFloat(precioTodo);
                             }
 
                             $('#precioDimension').text(precioTodoFloat);
@@ -4402,6 +4464,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     cuenta = ancho / puertas;
                     cuenta = cuenta * 2;
                     if (i == 1) {
+                        var precioInterior1 = this.precioInterior1;
+                        var precioTodo;
+                        precioTodo = $('#precioDimension').text();
+                        precioTodo = precioTodo - precioInterior1;
                         this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                 '<p style="width:100%;display:none">Hueco ' +
@@ -4416,21 +4482,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             );
                             if (cogerSeccion == 'A') {
                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
                             if (cogerSeccion == 'B') {
                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
                             if (cogerSeccion == 'C') {
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
-                                var precioTodoFloat = data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                if (iva == 1) {
+                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                }
+                                this.precioInterior1 = todoPrecioLoco;
+                                $('#precioInt' + (hueco - 1)).text(this.precioInterior1 + ' €');
+                                var precioTodoFloat = 0;
+                                precioTodoFloat = this.precioInterior1 + parseFloat(precioTodo);
                             }
 
                             $('#precioDimension').text(precioTodoFloat);
@@ -4452,7 +4520,12 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     if (hueco == 1) {
                         cuenta = ancho / puertas;
                         cuenta = cuenta * 1;
+
                         if (i == 1) {
+                            var precioInterior1 = this.precioInterior1;
+                            var precioTodo;
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - precioInterior1;
                             var dato = this.cascoService.dato;
                             this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                 console.log(data.body);
@@ -4469,21 +4542,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 );
                                 if (cogerSeccion == 'A') {
                                     $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                    var precioTodo;
-                                    precioTodo = $('#precioDimension').text();
+                                    this.precioInterior1 = data.body[0].a;
                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                 }
                                 if (cogerSeccion == 'B') {
                                     $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                    var precioTodo;
-                                    precioTodo = $('#precioDimension').text();
+                                    this.precioInterior1 = data.body[0].a;
                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                 }
                                 if (cogerSeccion == 'C') {
-                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                    var precioTodo;
-                                    precioTodo = $('#precioDimension').text();
-                                    var precioTodoFloat = data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                    var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                    if (iva == 1) {
+                                        todoPrecioLoco = todoPrecioLoco * 1.21;
+                                    }
+                                    this.precioInterior1 = todoPrecioLoco;
+                                    $('#precioInt' + (hueco - 1)).text(this.precioInterior1 + ' €');
+                                    var precioTodoFloat = 0;
+                                    precioTodoFloat = this.precioInterior1 + parseFloat(precioTodo);
                                 }
 
                                 $('#precioDimension').text(precioTodoFloat);
@@ -4501,6 +4576,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         cuenta = ancho / puertas;
                         cuenta = cuenta * 2;
                         if (i == 1) {
+                            var precioInterior2 = this.precioInterior2;
+                            var precioTodo;
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - precioInterior2;
                             var dato = this.cascoService.dato;
                             this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                 console.log(data.body);
@@ -4517,21 +4596,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 );
                                 if (cogerSeccion == 'A') {
                                     $('#precioInt' + (hueco - 1)).text(data.body[0].b);
-                                    var precioTodo;
-                                    precioTodo = $('#precioDimension').text();
+                                    this.precioInterior2 = data.body[0].b;
                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                 }
                                 if (cogerSeccion == 'B') {
                                     $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                    var precioTodo;
-                                    precioTodo = $('#precioDimension').text();
+                                    this.precioInterior2 = data.body[0].b;
                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                 }
                                 if (cogerSeccion == 'C') {
-                                    $('#precioInt' + (hueco - 1)).text(data.body[0].b * precioPuntosBuenos + ' €');
-                                    var precioTodo;
-                                    precioTodo = $('#precioDimension').text();
-                                    var precioTodoFloat = data.body[0].b * precioPuntosBuenos + parseFloat(precioTodo);
+                                    var todoPrecioLoco = data.body[0].b * precioPuntosBuenos;
+                                    if (iva == 1) {
+                                        todoPrecioLoco = todoPrecioLoco * 1.21;
+                                    }
+                                    this.precioInterior2 = todoPrecioLoco;
+                                    $('#precioInt' + (hueco - 1)).text(this.precioInterior2 + ' €');
+                                    var precioTodoFloat = 0;
+                                    precioTodoFloat = this.precioInterior2 + parseFloat(precioTodo);
                                 }
 
                                 $('#precioDimension').text(precioTodoFloat);
@@ -4554,6 +4635,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             cuenta = ancho / puertas;
                             cuenta = cuenta * 2;
                             if (i == 1) {
+                                var precioInterior1 = this.precioInterior1;
+                                var precioTodo;
+                                precioTodo = $('#precioDimension').text();
+                                precioTodo = precioTodo - precioInterior1;
                                 if (ancho >= 100 && ancho < 110) {
                                     cuenta = 338;
                                 }
@@ -4583,21 +4668,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     );
                                     if (cogerSeccion == 'A') {
                                         $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                        var precioTodo;
-                                        precioTodo = $('#precioDimension').text();
+                                        this.precioInterior1 = data.body[0].a;
                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                     }
                                     if (cogerSeccion == 'B') {
                                         $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                        var precioTodo;
-                                        precioTodo = $('#precioDimension').text();
+                                        this.precioInterior1 = data.body[0].a;
                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                     }
                                     if (cogerSeccion == 'C') {
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                        var precioTodo;
-                                        precioTodo = $('#precioDimension').text();
-                                        var precioTodoFloat = data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                        var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                        if (iva == 1) {
+                                            todoPrecioLoco = todoPrecioLoco * 1.21;
+                                        }
+                                        this.precioInterior1 = todoPrecioLoco;
+                                        $('#precioInt' + (hueco - 1)).text(this.precioInterior1 + ' €');
+                                        var precioTodoFloat = 0;
+                                        precioTodoFloat = this.precioInterior1 + parseFloat(precioTodo);
                                     }
 
                                     $('#precioDimension').text(precioTodoFloat);
@@ -4615,6 +4702,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             cuenta = ancho / puertas;
                             cuenta = cuenta * 1;
                             if (i == 1) {
+                                var precioInterior2 = this.precioInterior2;
+                                var precioTodo;
+                                precioTodo = $('#precioDimension').text();
+                                precioTodo = precioTodo - precioInterior2;
                                 if (ancho >= 100 && ancho < 110) {
                                     cuenta = 695;
                                 }
@@ -4644,21 +4735,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     );
                                     if (cogerSeccion == 'A') {
                                         $('#precioInt' + (hueco - 1)).text(data.body[0].b);
-                                        var precioTodo;
-                                        precioTodo = $('#precioDimension').text();
+                                        this.precioInterior2 = data.body[0].b;
                                         var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                     }
                                     if (cogerSeccion == 'B') {
                                         $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                        var precioTodo;
-                                        precioTodo = $('#precioDimension').text();
+                                        this.precioInterior2 = data.body[0].b;
                                         var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                     }
                                     if (cogerSeccion == 'C') {
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].b * precioPuntosBuenos + ' €');
-                                        var precioTodo;
-                                        precioTodo = $('#precioDimension').text();
-                                        var precioTodoFloat = data.body[0].b * precioPuntosBuenos + parseFloat(precioTodo);
+                                        var todoPrecioLoco = data.body[0].b * precioPuntosBuenos;
+                                        if (iva == 1) {
+                                            todoPrecioLoco = todoPrecioLoco * 1.21;
+                                        }
+                                        this.precioInterior2 = todoPrecioLoco;
+                                        $('#precioInt' + (hueco - 1)).text(this.precioInterior2 + ' €');
+                                        var precioTodoFloat = 0;
+                                        precioTodoFloat = this.precioInterior2 + parseFloat(precioTodo);
                                     }
 
                                     $('#precioDimension').text(precioTodoFloat);
@@ -4681,6 +4774,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 cuenta = ancho / puertas;
                                 cuenta = cuenta * 1;
                                 if (i == 1) {
+                                    var precioInterior1 = this.precioInterior1;
+                                    var precioTodo;
+                                    precioTodo = $('#precioDimension').text();
+                                    precioTodo = precioTodo - precioInterior1;
+
                                     if (ancho >= 190 && ancho < 200) {
                                         cuenta = 478;
                                     }
@@ -4710,21 +4808,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         );
                                         if (cogerSeccion == 'A') {
                                             $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
+                                            this.precioInterior1 = data.body[0].a;
                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                         }
                                         if (cogerSeccion == 'B') {
                                             $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
+                                            this.precioInterior1 = data.body[0].a;
                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                         }
                                         if (cogerSeccion == 'C') {
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
-                                            var precioTodoFloat = data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                            var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                            if (iva == 1) {
+                                                todoPrecioLoco = todoPrecioLoco * 1.21;
+                                            }
+                                            this.precioInterior1 = todoPrecioLoco;
+                                            $('#precioInt' + (hueco - 1)).text(this.precioInterior1 + ' €');
+                                            var precioTodoFloat = 0;
+                                            precioTodoFloat = this.precioInterior1 + parseFloat(precioTodo);
                                         }
 
                                         $('#precioDimension').text(precioTodoFloat);
@@ -4743,6 +4843,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 cuenta = ancho / puertas;
                                 cuenta = cuenta * 2;
                                 if (i == 1) {
+                                    var precioInterior2 = this.precioInterior2;
+                                    var precioTodo;
+                                    precioTodo = $('#precioDimension').text();
+                                    precioTodo = precioTodo - precioInterior2;
                                     if (ancho >= 190 && ancho < 200) {
                                         cuenta = 975;
                                     }
@@ -4772,21 +4876,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         );
                                         if (cogerSeccion == 'A') {
                                             $('#precioInt' + (hueco - 1)).text(data.body[0].b);
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
+                                            this.precioInterior2 = data.body[0].b;
                                             var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                         }
                                         if (cogerSeccion == 'B') {
                                             $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
+                                            this.precioInterior2 = data.body[0].b;
                                             var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                         }
                                         if (cogerSeccion == 'C') {
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].b * precioPuntosBuenos + ' €');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
-                                            var precioTodoFloat = data.body[0].b * precioPuntosBuenos + parseFloat(precioTodo);
+                                            var todoPrecioLoco = data.body[0].b * precioPuntosBuenos;
+                                            if (iva == 1) {
+                                                todoPrecioLoco = todoPrecioLoco * 1.21;
+                                            }
+                                            this.precioInterior2 = todoPrecioLoco;
+                                            $('#precioInt' + (hueco - 1)).text(this.precioInterior2 + ' €');
+                                            var precioTodoFloat = 0;
+                                            precioTodoFloat = this.precioInterior2 + parseFloat(precioTodo);
                                         }
 
                                         $('#precioDimension').text(precioTodoFloat);
@@ -4805,6 +4911,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 cuenta = ancho / puertas;
                                 cuenta = cuenta * 1;
                                 if (i == 1) {
+                                    var precioInterior3 = this.precioInterior3;
+                                    var precioTodo;
+                                    precioTodo = $('#precioDimension').text();
+                                    precioTodo = precioTodo - precioInterior3;
                                     if (ancho >= 190 && ancho < 200) {
                                         cuenta = 478;
                                     }
@@ -4834,21 +4944,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         );
                                         if (cogerSeccion == 'A') {
                                             $('#precioInt' + (hueco - 1)).text(data.body[0].c);
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
+                                            this.precioInterior3 = data.body[0].c;
                                             var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                         }
                                         if (cogerSeccion == 'B') {
                                             $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
+                                            this.precioInterior3 = data.body[0].c;
                                             var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                         }
                                         if (cogerSeccion == 'C') {
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].c * precioPuntosBuenos + ' €');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
-                                            var precioTodoFloat = data.body[0].c * precioPuntosBuenos + parseFloat(precioTodo);
+                                            var todoPrecioLoco = data.body[0].c * precioPuntosBuenos;
+                                            if (iva == 1) {
+                                                todoPrecioLoco = todoPrecioLoco * 1.21;
+                                            }
+                                            this.precioInterior3 = todoPrecioLoco;
+                                            $('#precioInt' + (hueco - 1)).text(this.precioInterior3 + ' €');
+                                            var precioTodoFloat = 0;
+                                            precioTodoFloat = this.precioInterior3 + parseFloat(precioTodo);
                                         }
 
                                         $('#precioDimension').text(precioTodoFloat);
@@ -4871,6 +4983,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     cuenta = ancho / puertas;
                                     cuenta = cuenta * 2;
                                     if (i == 1) {
+                                        var precioInterior1 = this.precioInterior1;
+                                        var precioTodo;
+                                        precioTodo = $('#precioDimension').text();
+                                        precioTodo = precioTodo - precioInterior1;
+
                                         if (ancho >= 200 && ancho < 210) {
                                             cuenta = 817;
                                         }
@@ -4900,21 +5017,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             );
                                             if (cogerSeccion == 'A') {
                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
+                                                this.precioInterior1 = data.body[0].a;
                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                             }
                                             if (cogerSeccion == 'B') {
                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
+                                                this.precioInterior1 = data.body[0].a;
                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                             }
                                             if (cogerSeccion == 'C') {
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
-                                                var precioTodoFloat = data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                                var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                                if (iva == 1) {
+                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                }
+                                                this.precioInterior1 = todoPrecioLoco;
+                                                $('#precioInt' + (hueco - 1)).text(this.precioInterior1 + ' €');
+                                                var precioTodoFloat = 0;
+                                                precioTodoFloat = this.precioInterior1 + parseFloat(precioTodo);
                                             }
 
                                             $('#precioDimension').text(precioTodoFloat);
@@ -4933,6 +5052,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     cuenta = ancho / puertas;
                                     cuenta = cuenta * 1;
                                     if (i == 1) {
+                                        var precioInterior2 = this.precioInterior2;
+                                        var precioTodo;
+                                        precioTodo = $('#precioDimension').text();
+                                        precioTodo = precioTodo - precioInterior2;
+
                                         if (ancho >= 200 && ancho < 210) {
                                             cuenta = 410;
                                         }
@@ -4962,21 +5086,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             );
                                             if (cogerSeccion == 'A') {
                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].b);
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
+                                                this.precioInterior2 = data.body[0].b;
                                                 var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                             }
                                             if (cogerSeccion == 'B') {
                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
+                                                this.precioInterior2 = data.body[0].b;
                                                 var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                             }
                                             if (cogerSeccion == 'C') {
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].b * precioPuntosBuenos + ' €');
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
-                                                var precioTodoFloat = data.body[0].b * precioPuntosBuenos + parseFloat(precioTodo);
+                                                var todoPrecioLoco = data.body[0].b * precioPuntosBuenos;
+                                                if (iva == 1) {
+                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                }
+                                                this.precioInterior2 = todoPrecioLoco;
+                                                $('#precioInt' + (hueco - 1)).text(this.precioInterior2 + ' €');
+                                                var precioTodoFloat = 0;
+                                                precioTodoFloat = this.precioInterior2 + parseFloat(precioTodo);
                                             }
 
                                             $('#precioDimension').text(precioTodoFloat);
@@ -4995,6 +5121,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     cuenta = ancho / puertas;
                                     cuenta = cuenta * 2;
                                     if (i == 1) {
+                                        var precioInterior3 = this.precioInterior3;
+                                        var precioTodo;
+                                        precioTodo = $('#precioDimension').text();
+                                        precioTodo = precioTodo - precioInterior3;
                                         if (ancho >= 200 && ancho < 210) {
                                             cuenta = 817;
                                         }
@@ -5024,21 +5154,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             );
                                             if (cogerSeccion == 'A') {
                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].c);
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
+                                                this.precioInterior3 = data.body[0].c;
                                                 var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                             }
                                             if (cogerSeccion == 'B') {
                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
+                                                this.precioInterior3 = data.body[0].c;
                                                 var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                             }
                                             if (cogerSeccion == 'C') {
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].c * precioPuntosBuenos + ' €');
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
-                                                var precioTodoFloat = data.body[0].c * precioPuntosBuenos + parseFloat(precioTodo);
+                                                var todoPrecioLoco = data.body[0].c * precioPuntosBuenos;
+                                                if (iva == 1) {
+                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                }
+                                                this.precioInterior3 = todoPrecioLoco;
+                                                $('#precioInt' + (hueco - 1)).text(this.precioInterior3 + ' €');
+                                                var precioTodoFloat = 0;
+                                                precioTodoFloat = this.precioInterior3 + parseFloat(precioTodo);
                                             }
 
                                             $('#precioDimension').text(precioTodoFloat);
@@ -5061,6 +5193,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         cuenta = ancho / puertas;
                                         cuenta = cuenta * 1;
                                         if (i == 1) {
+                                            var precioInterior1 = this.precioInterior1;
+                                            var precioTodo;
+                                            precioTodo = $('#precioDimension').text();
+                                            precioTodo = precioTodo - precioInterior1;
+
                                             if (ancho >= 200 && ancho < 210) {
                                                 cuenta = 410;
                                             }
@@ -5090,21 +5227,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 );
                                                 if (cogerSeccion == 'A') {
                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
+                                                    this.precioInterior1 = data.body[0].a;
                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                 }
                                                 if (cogerSeccion == 'B') {
                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
+                                                    this.precioInterior1 = data.body[0].a;
                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                 }
                                                 if (cogerSeccion == 'C') {
-                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
-                                                    var precioTodoFloat = data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                                    var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                                    if (iva == 1) {
+                                                        todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                    }
+                                                    this.precioInterior1 = todoPrecioLoco;
+                                                    $('#precioInt' + (hueco - 1)).text(this.precioInterior1 + ' €');
+                                                    var precioTodoFloat = 0;
+                                                    precioTodoFloat = this.precioInterior1 + parseFloat(precioTodo);
                                                 }
 
                                                 $('#precioDimension').text(precioTodoFloat);
@@ -5123,6 +5262,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         cuenta = ancho / puertas;
                                         cuenta = cuenta * 2;
                                         if (i == 1) {
+                                            var precioInterior2 = this.precioInterior2;
+                                            var precioTodo;
+                                            precioTodo = $('#precioDimension').text();
+                                            precioTodo = precioTodo - precioInterior2;
+
                                             if (ancho >= 200 && ancho < 210) {
                                                 cuenta = 817;
                                             }
@@ -5152,21 +5296,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 );
                                                 if (cogerSeccion == 'A') {
                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].b);
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
+                                                    this.precioInterior2 = data.body[0].b;
                                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                 }
                                                 if (cogerSeccion == 'B') {
                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
+                                                    this.precioInterior2 = data.body[0].b;
                                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                 }
                                                 if (cogerSeccion == 'C') {
-                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].b * precioPuntosBuenos + ' €');
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
-                                                    var precioTodoFloat = data.body[0].b * precioPuntosBuenos + parseFloat(precioTodo);
+                                                    var todoPrecioLoco = data.body[0].b * precioPuntosBuenos;
+                                                    if (iva == 1) {
+                                                        todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                    }
+                                                    this.precioInterior2 = todoPrecioLoco;
+                                                    $('#precioInt' + (hueco - 1)).text(this.precioInterior2 + ' €');
+                                                    var precioTodoFloat = 0;
+                                                    precioTodoFloat = this.precioInterior2 + parseFloat(precioTodo);
                                                 }
 
                                                 $('#precioDimension').text(precioTodoFloat);
@@ -5185,6 +5331,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         cuenta = ancho / puertas;
                                         cuenta = cuenta * 2;
                                         if (i == 1) {
+                                            var precioInterior3 = this.precioInterior3;
+                                            var precioTodo;
+                                            precioTodo = $('#precioDimension').text();
+                                            precioTodo = precioTodo - precioInterior3;
                                             if (ancho >= 200 && ancho < 210) {
                                                 cuenta = 817;
                                             }
@@ -5214,21 +5364,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 );
                                                 if (cogerSeccion == 'A') {
                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].c);
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
+                                                    this.precioInterior3 = data.body[0].c;
                                                     var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                 }
                                                 if (cogerSeccion == 'B') {
                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
+                                                    this.precioInterior3 = data.body[0].c;
                                                     var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                 }
                                                 if (cogerSeccion == 'C') {
-                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].c * precioPuntosBuenos + ' €');
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
-                                                    var precioTodoFloat = data.body[0].c * precioPuntosBuenos + parseFloat(precioTodo);
+                                                    var todoPrecioLoco = data.body[0].c * precioPuntosBuenos;
+                                                    if (iva == 1) {
+                                                        todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                    }
+                                                    this.precioInterior3 = todoPrecioLoco;
+                                                    $('#precioInt' + (hueco - 1)).text(this.precioInterior3 + ' €');
+                                                    var precioTodoFloat = 0;
+                                                    precioTodoFloat = this.precioInterior3 + parseFloat(precioTodo);
                                                 }
 
                                                 $('#precioDimension').text(precioTodoFloat);
@@ -5251,6 +5403,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 1;
                                             if (i == 1) {
+                                                var precioInterior1 = this.precioInterior1;
+                                                var precioTodo;
+                                                precioTodo = $('#precioDimension').text();
+                                                precioTodo = precioTodo - precioInterior1;
                                                 if (ancho >= 250 && ancho < 260) {
                                                     cuenta = 410;
                                                 }
@@ -5282,22 +5438,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         );
                                                         if (cogerSeccion == 'A') {
                                                             $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior1 = data.body[0].a;
                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                         }
                                                         if (cogerSeccion == 'B') {
                                                             $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior1 = data.body[0].a;
                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                         }
                                                         if (cogerSeccion == 'C') {
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a * precioPuntosBuenos + ' €');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
-                                                            var precioTodoFloat =
-                                                                data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                                            var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                                            if (iva == 1) {
+                                                                todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                            }
+                                                            this.precioInterior1 = todoPrecioLoco;
+                                                            $('#precioInt' + (hueco - 1)).text(this.precioInterior1 + ' €');
+                                                            var precioTodoFloat = 0;
+                                                            precioTodoFloat = this.precioInterior1 + parseFloat(precioTodo);
                                                         }
 
                                                         $('#precioDimension').text(precioTodoFloat);
@@ -5316,6 +5473,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 2;
                                             if (i == 1) {
+                                                var precioInterior2 = this.precioInterior2;
+                                                var precioTodo;
+                                                precioTodo = $('#precioDimension').text();
+                                                precioTodo = precioTodo - precioInterior2;
                                                 if (ancho >= 250 && ancho < 260) {
                                                     cuenta = 838;
                                                 }
@@ -5347,22 +5508,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         );
                                                         if (cogerSeccion == 'A') {
                                                             $('#precioInt' + (hueco - 1)).text(data.body[0].b);
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior2 = data.body[0].b;
                                                             var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                         }
                                                         if (cogerSeccion == 'B') {
                                                             $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior2 = data.body[0].b;
                                                             var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                         }
                                                         if (cogerSeccion == 'C') {
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].b * precioPuntosBuenos + ' €');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
-                                                            var precioTodoFloat =
-                                                                data.body[0].b * precioPuntosBuenos + parseFloat(precioTodo);
+                                                            var todoPrecioLoco = data.body[0].b * precioPuntosBuenos;
+                                                            if (iva == 1) {
+                                                                todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                            }
+                                                            this.precioInterior2 = todoPrecioLoco;
+                                                            $('#precioInt' + (hueco - 1)).text(this.precioInterior2 + ' €');
+                                                            var precioTodoFloat = 0;
+                                                            precioTodoFloat = this.precioInterior2 + parseFloat(precioTodo);
                                                         }
 
                                                         $('#precioDimension').text(precioTodoFloat);
@@ -5381,6 +5543,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 2;
                                             if (i == 1) {
+                                                var precioInterior3 = this.precioInterior3;
+                                                var precioTodo;
+                                                precioTodo = $('#precioDimension').text();
+                                                precioTodo = precioTodo - precioInterior3;
+
                                                 if (ancho >= 250 && ancho < 260) {
                                                     cuenta = 838;
                                                 }
@@ -5412,22 +5579,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         );
                                                         if (cogerSeccion == 'A') {
                                                             $('#precioInt' + (hueco - 1)).text(data.body[0].c);
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior3 = data.body[0].c;
                                                             var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                         }
                                                         if (cogerSeccion == 'B') {
                                                             $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior3 = data.body[0].c;
                                                             var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                         }
                                                         if (cogerSeccion == 'C') {
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].c * precioPuntosBuenos + ' €');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
-                                                            var precioTodoFloat =
-                                                                data.body[0].c * precioPuntosBuenos + parseFloat(precioTodo);
+                                                            var todoPrecioLoco = data.body[0].c * precioPuntosBuenos;
+                                                            if (iva == 1) {
+                                                                todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                            }
+                                                            this.precioInterior3 = todoPrecioLoco;
+                                                            $('#precioInt' + (hueco - 1)).text(this.precioInterior3 + ' €');
+                                                            var precioTodoFloat = 0;
+                                                            precioTodoFloat = this.precioInterior3 + parseFloat(precioTodo);
                                                         }
 
                                                         $('#precioDimension').text(precioTodoFloat);
@@ -5446,6 +5614,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 1;
                                             if (i == 1) {
+                                                var precioInterior4 = this.precioInterior4;
+                                                var precioTodo;
+                                                precioTodo = $('#precioDimension').text();
+                                                precioTodo = precioTodo - precioInterior4;
                                                 if (ancho >= 250 && ancho < 260) {
                                                     cuenta = 410;
                                                 }
@@ -5477,22 +5649,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         );
                                                         if (cogerSeccion == 'A') {
                                                             $('#precioInt' + (hueco - 1)).text(data.body[0].d);
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior4 = data.body[0].d;
                                                             var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                         }
                                                         if (cogerSeccion == 'B') {
                                                             $('#precioInt' + (hueco - 1)).text(data.body[0].d + ' €');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior4 = data.body[0].d;
                                                             var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                         }
                                                         if (cogerSeccion == 'C') {
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].d * precioPuntosBuenos + ' €');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
-                                                            var precioTodoFloat =
-                                                                data.body[0].d * precioPuntosBuenos + parseFloat(precioTodo);
+                                                            var todoPrecioLoco = data.body[0].d * precioPuntosBuenos;
+                                                            if (iva == 1) {
+                                                                todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                            }
+                                                            this.precioInterior4 = todoPrecioLoco;
+                                                            $('#precioInt' + (hueco - 1)).text(this.precioInterior4 + ' €');
+                                                            var precioTodoFloat = 0;
+                                                            precioTodoFloat = this.precioInterior4 + parseFloat(precioTodo);
                                                         }
 
                                                         $('#precioDimension').text(precioTodoFloat);
@@ -5516,6 +5689,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 1;
                                                 if (i == 1) {
+                                                    var precioInterior1 = this.precioInterior1;
+                                                    var precioTodo;
+                                                    precioTodo = $('#precioDimension').text();
+                                                    precioTodo = precioTodo - precioInterior1;
                                                     if (ancho >= 300 && ancho < 310) {
                                                         cuenta = 426;
                                                     }
@@ -5547,24 +5724,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             );
                                                             if (cogerSeccion == 'A') {
                                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior1 = data.body[0].a;
                                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                             }
                                                             if (cogerSeccion == 'B') {
                                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior1 = data.body[0].a;
                                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                             }
                                                             if (cogerSeccion == 'C') {
-                                                                $('#precioInt' + (hueco - 1)).text(
-                                                                    data.body[0].a * precioPuntosBuenos + ' €'
-                                                                );
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
-                                                                var precioTodoFloat =
-                                                                    data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                                                var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                                                if (iva == 1) {
+                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                }
+                                                                this.precioInterior1 = todoPrecioLoco;
+                                                                $('#precioInt' + (hueco - 1)).text(this.precioInterior1 + ' €');
+                                                                var precioTodoFloat = 0;
+                                                                precioTodoFloat = this.precioInterior1 + parseFloat(precioTodo);
                                                             }
 
                                                             $('#precioDimension').text(precioTodoFloat);
@@ -5598,6 +5774,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 2;
                                                 if (i == 1) {
+                                                    var precioInterior2 = this.precioInterior2;
+                                                    var precioTodo;
+                                                    precioTodo = $('#precioDimension').text();
+                                                    precioTodo = precioTodo - precioInterior2;
                                                     this.interioresArmarioNuevosService
                                                         .findBus(dato.codigo, idProdInt[nombre])
                                                         .subscribe(data => {
@@ -5614,24 +5794,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             );
                                                             if (cogerSeccion == 'A') {
                                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].b);
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior2 = data.body[0].b;
                                                                 var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                             }
                                                             if (cogerSeccion == 'B') {
                                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior2 = data.body[0].b;
                                                                 var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                             }
                                                             if (cogerSeccion == 'C') {
-                                                                $('#precioInt' + (hueco - 1)).text(
-                                                                    data.body[0].b * precioPuntosBuenos + ' €'
-                                                                );
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
-                                                                var precioTodoFloat =
-                                                                    data.body[0].b * precioPuntosBuenos + parseFloat(precioTodo);
+                                                                var todoPrecioLoco = data.body[0].b * precioPuntosBuenos;
+                                                                if (iva == 1) {
+                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                }
+                                                                this.precioInterior2 = todoPrecioLoco;
+                                                                $('#precioInt' + (hueco - 1)).text(this.precioInterior2 + ' €');
+                                                                var precioTodoFloat = 0;
+                                                                precioTodoFloat = this.precioInterior2 + parseFloat(precioTodo);
                                                             }
 
                                                             $('#precioDimension').text(precioTodoFloat);
@@ -5650,6 +5829,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 2;
                                                 if (i == 1) {
+                                                    var precioInterior3 = this.precioInterior3;
+                                                    var precioTodo;
+                                                    precioTodo = $('#precioDimension').text();
+                                                    precioTodo = precioTodo - precioInterior3;
                                                     if (ancho >= 300 && ancho < 310) {
                                                         cuenta = 871;
                                                     }
@@ -5681,24 +5864,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             );
                                                             if (cogerSeccion == 'A') {
                                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].c);
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior3 = data.body[0].c;
                                                                 var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                             }
                                                             if (cogerSeccion == 'B') {
                                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior3 = data.body[0].c;
                                                                 var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                             }
                                                             if (cogerSeccion == 'C') {
-                                                                $('#precioInt' + (hueco - 1)).text(
-                                                                    data.body[0].c * precioPuntosBuenos + ' €'
-                                                                );
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
-                                                                var precioTodoFloat =
-                                                                    data.body[0].c * precioPuntosBuenos + parseFloat(precioTodo);
+                                                                var todoPrecioLoco = data.body[0].c * precioPuntosBuenos;
+                                                                if (iva == 1) {
+                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                }
+                                                                this.precioInterior3 = todoPrecioLoco;
+                                                                $('#precioInt' + (hueco - 1)).text(this.precioInterior3 + ' €');
+                                                                var precioTodoFloat = 0;
+                                                                precioTodoFloat = this.precioInterior3 + parseFloat(precioTodo);
                                                             }
 
                                                             $('#precioDimension').text(precioTodoFloat);
@@ -5716,6 +5898,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             if (hueco == 4) {
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 2;
+                                                var precioInterior4 = this.precioInterior4;
+                                                var precioTodo;
+                                                precioTodo = $('#precioDimension').text();
+                                                precioTodo = precioTodo - precioInterior4;
                                                 if (i == 1) {
                                                     if (ancho >= 300 && ancho < 310) {
                                                         cuenta = 871;
@@ -5748,24 +5934,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                             );
                                                             if (cogerSeccion == 'A') {
                                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].d);
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior4 = data.body[0].d;
                                                                 var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                             }
                                                             if (cogerSeccion == 'B') {
                                                                 $('#precioInt' + (hueco - 1)).text(data.body[0].d + ' €');
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior4 = data.body[0].d;
                                                                 var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                             }
                                                             if (cogerSeccion == 'C') {
-                                                                $('#precioInt' + (hueco - 1)).text(
-                                                                    data.body[0].d * precioPuntosBuenos + ' €'
-                                                                );
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
-                                                                var precioTodoFloat =
-                                                                    data.body[0].d * precioPuntosBuenos + parseFloat(precioTodo);
+                                                                var todoPrecioLoco = data.body[0].d * precioPuntosBuenos;
+                                                                if (iva == 1) {
+                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                }
+                                                                this.precioInterior4 = todoPrecioLoco;
+                                                                $('#precioInt' + (hueco - 1)).text(this.precioInterior4 + ' €');
+                                                                var precioTodoFloat = 0;
+                                                                precioTodoFloat = this.precioInterior4 + parseFloat(precioTodo);
                                                             }
 
                                                             $('#precioDimension').text(precioTodoFloat);
@@ -5789,6 +5974,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 1;
                                                     if (i == 1) {
+                                                        var precioInterior4 = this.precioInterior4;
+                                                        var precioTodo;
+                                                        precioTodo = $('#precioDimension').text();
+                                                        precioTodo = precioTodo - precioInterior4;
                                                         if (ancho >= 300 && ancho < 310) {
                                                             cuenta = 426;
                                                         }
@@ -5820,24 +6009,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 );
                                                                 if (cogerSeccion == 'A') {
                                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].d);
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
+                                                                    this.precioInterior4 = data.body[0].d;
                                                                     var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                                 }
                                                                 if (cogerSeccion == 'B') {
                                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].d + ' €');
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
+                                                                    this.precioInterior4 = data.body[0].d;
                                                                     var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                                 }
                                                                 if (cogerSeccion == 'C') {
-                                                                    $('#precioInt' + (hueco - 1)).text(
-                                                                        data.body[0].d * precioPuntosBuenos + ' €'
-                                                                    );
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
-                                                                    var precioTodoFloat =
-                                                                        data.body[0].d * precioPuntosBuenos + parseFloat(precioTodo);
+                                                                    var todoPrecioLoco = data.body[0].d * precioPuntosBuenos;
+                                                                    if (iva == 1) {
+                                                                        todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                    }
+                                                                    this.precioInterior4 = todoPrecioLoco;
+                                                                    $('#precioInt' + (hueco - 1)).text(this.precioInterior4 + ' €');
+                                                                    var precioTodoFloat = 0;
+                                                                    precioTodoFloat = this.precioInterior4 + parseFloat(precioTodo);
                                                                 }
 
                                                                 $('#precioDimension').text(precioTodoFloat);
@@ -5856,6 +6044,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 2;
                                                     if (i == 1) {
+                                                        var precioInterior2 = this.precioInterior2;
+                                                        var precioTodo;
+                                                        precioTodo = $('#precioDimension').text();
+                                                        precioTodo = precioTodo - precioInterior2;
                                                         if (ancho >= 300 && ancho < 310) {
                                                             cuenta = 871;
                                                         }
@@ -5887,24 +6079,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 );
                                                                 if (cogerSeccion == 'A') {
                                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].b);
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
+                                                                    this.precioInterior2 = data.body[0].b;
                                                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                                 }
                                                                 if (cogerSeccion == 'B') {
                                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
+                                                                    this.precioInterior2 = data.body[0].b;
                                                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                                 }
                                                                 if (cogerSeccion == 'C') {
-                                                                    $('#precioInt' + (hueco - 1)).text(
-                                                                        data.body[0].b * precioPuntosBuenos + ' €'
-                                                                    );
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
-                                                                    var precioTodoFloat =
-                                                                        data.body[0].b * precioPuntosBuenos + parseFloat(precioTodo);
+                                                                    var todoPrecioLoco = data.body[0].b * precioPuntosBuenos;
+                                                                    if (iva == 1) {
+                                                                        todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                    }
+                                                                    this.precioInterior2 = todoPrecioLoco;
+                                                                    $('#precioInt' + (hueco - 1)).text(this.precioInterior2 + ' €');
+                                                                    var precioTodoFloat = 0;
+                                                                    precioTodoFloat = this.precioInterior2 + parseFloat(precioTodo);
                                                                 }
 
                                                                 $('#precioDimension').text(precioTodoFloat);
@@ -5938,6 +6129,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 2;
                                                     if (i == 1) {
+                                                        var precioInterior3 = this.precioInterior3;
+                                                        var precioTodo;
+                                                        precioTodo = $('#precioDimension').text();
+                                                        precioTodo = precioTodo - precioInterior3;
                                                         this.interioresArmarioNuevosService
                                                             .findBus(dato.codigo, idProdInt[nombre])
                                                             .subscribe(data => {
@@ -5954,24 +6149,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 );
                                                                 if (cogerSeccion == 'A') {
                                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].c);
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
+                                                                    this.precioInterior3 = data.body[0].c;
                                                                     var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                                 }
                                                                 if (cogerSeccion == 'B') {
                                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
+                                                                    this.precioInterior3 = data.body[0].c;
                                                                     var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                                 }
                                                                 if (cogerSeccion == 'C') {
-                                                                    $('#precioInt' + (hueco - 1)).text(
-                                                                        data.body[0].c * precioPuntosBuenos + ' €'
-                                                                    );
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
-                                                                    var precioTodoFloat =
-                                                                        data.body[0].c * precioPuntosBuenos + parseFloat(precioTodo);
+                                                                    var todoPrecioLoco = data.body[0].c * precioPuntosBuenos;
+                                                                    if (iva == 1) {
+                                                                        todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                    }
+                                                                    this.precioInterior3 = todoPrecioLoco;
+                                                                    $('#precioInt' + (hueco - 1)).text(this.precioInterior3 + ' €');
+                                                                    var precioTodoFloat = 0;
+                                                                    precioTodoFloat = this.precioInterior3 + parseFloat(precioTodo);
                                                                 }
 
                                                                 $('#precioDimension').text(precioTodoFloat);
@@ -5990,6 +6184,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 2;
                                                     if (i == 1) {
+                                                        var precioInterior1 = this.precioInterior1;
+                                                        var precioTodo;
+                                                        precioTodo = $('#precioDimension').text();
+                                                        precioTodo = precioTodo - precioInterior1;
                                                         if (ancho >= 300 && ancho < 310) {
                                                             cuenta = 871;
                                                         }
@@ -6021,24 +6219,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 );
                                                                 if (cogerSeccion == 'A') {
                                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].a);
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
+                                                                    this.precioInterior1 = data.body[0].a;
                                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                 }
                                                                 if (cogerSeccion == 'B') {
                                                                     $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
+                                                                    this.precioInterior1 = data.body[0].a;
                                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                 }
                                                                 if (cogerSeccion == 'C') {
-                                                                    $('#precioInt' + (hueco - 1)).text(
-                                                                        data.body[0].a * precioPuntosBuenos + ' €'
-                                                                    );
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
-                                                                    var precioTodoFloat =
-                                                                        data.body[0].a * precioPuntosBuenos + parseFloat(precioTodo);
+                                                                    var todoPrecioLoco = data.body[0].a * precioPuntosBuenos;
+                                                                    if (iva == 1) {
+                                                                        todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                    }
+                                                                    this.precioInterior1 = todoPrecioLoco;
+                                                                    $('#precioInt' + (hueco - 1)).text(this.precioInterior1 + ' €');
+                                                                    var precioTodoFloat = 0;
+                                                                    precioTodoFloat = this.precioInterior1 + parseFloat(precioTodo);
                                                                 }
 
                                                                 $('#precioDimension').text(precioTodoFloat);
@@ -7281,6 +7478,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 cuenta = ancho / puertas;
                                                                                 cuenta = cuenta * 2;
                                                                                 if (i == 1) {
+                                                                                    var precioInterior2 = this.precioInterior2;
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    precioTodo = precioTodo - precioInterior2;
                                                                                     if (ancho >= 300 && ancho < 310) {
                                                                                         cuenta = 871;
                                                                                     }
@@ -7316,8 +7517,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].b
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior2 = data.body[0].b;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].b + parseFloat(precioTodo);
                                                                                             }
@@ -7325,20 +7525,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].b + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior2 = data.body[0].b;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].b + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'C') {
+                                                                                                var todoPrecioLoco =
+                                                                                                    data.body[0].b * precioPuntosBuenos;
+                                                                                                if (iva == 1) {
+                                                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                                                }
+                                                                                                this.precioInterior2 = todoPrecioLoco;
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].b * precioPuntosBuenos +
-                                                                                                        ' €'
+                                                                                                    this.precioInterior2 + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
-                                                                                                var precioTodoFloat =
-                                                                                                    data.body[0].b * precioPuntosBuenos +
+                                                                                                var precioTodoFloat = 0;
+                                                                                                precioTodoFloat =
+                                                                                                    this.precioInterior2 +
                                                                                                     parseFloat(precioTodo);
                                                                                             }
 
@@ -7373,6 +7576,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 cuenta = ancho / puertas;
                                                                                 cuenta = cuenta * 2;
                                                                                 if (i == 1) {
+                                                                                    var precioInterior3 = this.precioInterior3;
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    precioTodo = precioTodo - precioInterior3;
+
                                                                                     this.interioresArmarioNuevosService
                                                                                         .findBus(dato.codigo, idProdInt[nombre])
                                                                                         .subscribe(data => {
@@ -7393,8 +7601,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].c
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].c + parseFloat(precioTodo);
                                                                                             }
@@ -7402,20 +7609,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].c + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].c + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'C') {
+                                                                                                var todoPrecioLoco =
+                                                                                                    data.body[0].c * precioPuntosBuenos;
+                                                                                                if (iva == 1) {
+                                                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                                                }
+                                                                                                this.precioInterior3 = todoPrecioLoco;
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].c * precioPuntosBuenos +
-                                                                                                        ' €'
+                                                                                                    this.precioInterior3 + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
-                                                                                                var precioTodoFloat =
-                                                                                                    data.body[0].c * precioPuntosBuenos +
+                                                                                                var precioTodoFloat = 0;
+                                                                                                precioTodoFloat =
+                                                                                                    this.precioInterior3 +
                                                                                                     parseFloat(precioTodo);
                                                                                             }
 
@@ -7435,6 +7645,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 cuenta = ancho / puertas;
                                                                                 cuenta = cuenta * 2;
                                                                                 if (i == 1) {
+                                                                                    var precioInterior1 = this.precioInterior1;
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    precioTodo = precioTodo - precioInterior1;
+
                                                                                     if (ancho >= 300 && ancho < 310) {
                                                                                         cuenta = 871;
                                                                                     }
@@ -7470,8 +7685,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].a
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior1 = data.body[0].a;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].a + parseFloat(precioTodo);
                                                                                             }
@@ -7479,20 +7693,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].a + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior1 = data.body[0].a;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].a + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'C') {
+                                                                                                var todoPrecioLoco =
+                                                                                                    data.body[0].a * precioPuntosBuenos;
+                                                                                                if (iva == 1) {
+                                                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                                                }
+                                                                                                this.precioInterior1 = todoPrecioLoco;
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a * precioPuntosBuenos +
-                                                                                                        ' €'
+                                                                                                    this.precioInterior1 + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
-                                                                                                var precioTodoFloat =
-                                                                                                    data.body[0].a * precioPuntosBuenos +
+                                                                                                var precioTodoFloat = 0;
+                                                                                                precioTodoFloat =
+                                                                                                    this.precioInterior1 +
                                                                                                     parseFloat(precioTodo);
                                                                                             }
 
@@ -7517,6 +7734,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 cuenta = ancho / puertas;
                                                                                 cuenta = cuenta * 2;
                                                                                 if (i == 1) {
+                                                                                    var precioInterior1 = this.precioInterior1;
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    precioTodo = precioTodo - precioInterior1;
+
                                                                                     if (ancho >= 200 && ancho < 210) {
                                                                                         cuenta = 817;
                                                                                     }
@@ -7552,8 +7774,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].a
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior1 = data.body[0].a;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].a + parseFloat(precioTodo);
                                                                                             }
@@ -7561,20 +7782,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].a + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior1 = data.body[0].a;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].a + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'C') {
+                                                                                                var todoPrecioLoco =
+                                                                                                    data.body[0].a * precioPuntosBuenos;
+                                                                                                if (iva == 1) {
+                                                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                                                }
+                                                                                                this.precioInterior1 = todoPrecioLoco;
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a * precioPuntosBuenos +
-                                                                                                        ' €'
+                                                                                                    this.precioInterior1 + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
-                                                                                                var precioTodoFloat =
-                                                                                                    data.body[0].a * precioPuntosBuenos +
+                                                                                                var precioTodoFloat = 0;
+                                                                                                precioTodoFloat =
+                                                                                                    this.precioInterior1 +
                                                                                                     parseFloat(precioTodo);
                                                                                             }
 
@@ -7594,6 +7818,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 cuenta = ancho / puertas;
                                                                                 cuenta = cuenta * 1;
                                                                                 if (i == 1) {
+                                                                                    var precioInterior2 = this.precioInterior2;
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    precioTodo = precioTodo - precioInterior2;
+
                                                                                     if (ancho >= 200 && ancho < 210) {
                                                                                         cuenta = 410;
                                                                                     }
@@ -7629,8 +7858,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].b
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior2 = data.body[0].b;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].b + parseFloat(precioTodo);
                                                                                             }
@@ -7638,20 +7866,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].b + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior2 = data.body[0].b;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].b + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'C') {
+                                                                                                var todoPrecioLoco =
+                                                                                                    data.body[0].b * precioPuntosBuenos;
+                                                                                                if (iva == 1) {
+                                                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                                                }
+                                                                                                this.precioInterior2 = todoPrecioLoco;
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].b * precioPuntosBuenos +
-                                                                                                        ' €'
+                                                                                                    this.precioInterior2 + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
-                                                                                                var precioTodoFloat =
-                                                                                                    data.body[0].b * precioPuntosBuenos +
+                                                                                                var precioTodoFloat = 0;
+                                                                                                precioTodoFloat =
+                                                                                                    this.precioInterior2 +
                                                                                                     parseFloat(precioTodo);
                                                                                             }
 
@@ -7671,6 +7902,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 cuenta = ancho / puertas;
                                                                                 cuenta = cuenta * 2;
                                                                                 if (i == 1) {
+                                                                                    var precioInterior3 = this.precioInterior3;
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    precioTodo = precioTodo - precioInterior3;
                                                                                     if (ancho >= 200 && ancho < 210) {
                                                                                         cuenta = 817;
                                                                                     }
@@ -7706,8 +7941,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].c
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].c + parseFloat(precioTodo);
                                                                                             }
@@ -7715,20 +7949,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].c + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
                                                                                                     data.body[0].c + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'C') {
+                                                                                                var todoPrecioLoco =
+                                                                                                    data.body[0].c * precioPuntosBuenos;
+                                                                                                if (iva == 1) {
+                                                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                                                }
+                                                                                                this.precioInterior3 = todoPrecioLoco;
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].c * precioPuntosBuenos +
-                                                                                                        ' €'
+                                                                                                    this.precioInterior3 + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
-                                                                                                var precioTodoFloat =
-                                                                                                    data.body[0].c * precioPuntosBuenos +
+                                                                                                var precioTodoFloat = 0;
+                                                                                                precioTodoFloat =
+                                                                                                    this.precioInterior3 +
                                                                                                     parseFloat(precioTodo);
                                                                                             }
 
@@ -7748,6 +7985,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 cuenta = ancho / puertas;
                                                                                 cuenta = cuenta * 2;
                                                                                 if (i == 1) {
+                                                                                    var precioInterior4 = this.precioInterior4;
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    precioTodo = precioTodo - precioInterior4;
                                                                                     if (ancho >= 200 && ancho < 210) {
                                                                                         cuenta = 817;
                                                                                     }
@@ -7776,36 +8017,38 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '">Interior ' +
                                                                                                     nombre +
                                                                                                     '</span><span style="float:right">+ ' +
-                                                                                                    data.body[0].c +
+                                                                                                    data.body[0].d +
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].c
+                                                                                                    data.body[0].d
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior4 = data.body[0].d;
                                                                                                 var precioTodoFloat =
-                                                                                                    data.body[0].c + parseFloat(precioTodo);
+                                                                                                    data.body[0].d + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'B') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].c + ' €'
+                                                                                                    data.body[0].d + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior4 = data.body[0].d;
                                                                                                 var precioTodoFloat =
-                                                                                                    data.body[0].c + parseFloat(precioTodo);
+                                                                                                    data.body[0].d + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'C') {
+                                                                                                var todoPrecioLoco =
+                                                                                                    data.body[0].d * precioPuntosBuenos;
+                                                                                                if (iva == 1) {
+                                                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                                                }
+                                                                                                this.precioInterior4 = todoPrecioLoco;
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].c * precioPuntosBuenos +
-                                                                                                        ' €'
+                                                                                                    this.precioInterior4 + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
-                                                                                                var precioTodoFloat =
-                                                                                                    data.body[0].c * precioPuntosBuenos +
+                                                                                                var precioTodoFloat = 0;
+                                                                                                precioTodoFloat =
+                                                                                                    this.precioInterior4 +
                                                                                                     parseFloat(precioTodo);
                                                                                             }
 
@@ -7830,6 +8073,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 cuenta = ancho / puertas;
                                                                                 cuenta = cuenta * 1;
                                                                                 if (i == 1) {
+                                                                                    var precioInterior3 = this.precioInterior3;
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    precioTodo = precioTodo - precioInterior3;
                                                                                     this.interioresArmarioNuevosService
                                                                                         .findBus(cuenta, idProdInt[nombre])
                                                                                         .subscribe(data => {
@@ -7848,31 +8095,33 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a
+                                                                                                    data.body[0].c
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
-                                                                                                    data.body[0].a + parseFloat(precioTodo);
+                                                                                                    data.body[0].c + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'B') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a + ' €'
+                                                                                                    data.body[0].c + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
+                                                                                                this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
-                                                                                                    data.body[0].a + parseFloat(precioTodo);
+                                                                                                    data.body[0].c + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'C') {
+                                                                                                var todoPrecioLoco =
+                                                                                                    data.body[0].c * precioPuntosBuenos;
+                                                                                                if (iva == 1) {
+                                                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                                                }
+                                                                                                this.precioInterior3 = todoPrecioLoco;
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a * precioPuntosBuenos +
-                                                                                                        ' €'
+                                                                                                    this.precioInterior3 + ' €'
                                                                                                 );
-                                                                                                var precioTodo;
-                                                                                                precioTodo = $('#precioDimension').text();
-                                                                                                var precioTodoFloat =
-                                                                                                    data.body[0].a * precioPuntosBuenos +
+                                                                                                var precioTodoFloat = 0;
+                                                                                                precioTodoFloat =
+                                                                                                    this.precioInterior3 +
                                                                                                     parseFloat(precioTodo);
                                                                                             }
 
@@ -7893,6 +8142,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 cuenta = ancho / puertas;
                                                                                 cuenta = cuenta * 2;
                                                                                 if (i == 1) {
+                                                                                    var precioInterior2 = this.precioInterior2;
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    precioTodo = precioTodo - precioInterior2;
                                                                                     this.interioresArmarioNuevosService
                                                                                         .findBus(cuenta, idProdInt[nombre])
                                                                                         .subscribe(data => {
@@ -7911,24 +8164,36 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a
+                                                                                                    data.body[0].b
                                                                                                 );
+                                                                                                this.precioInterior2 = data.body[0].b;
+                                                                                                var precioTodoFloat =
+                                                                                                    data.body[0].b + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'B') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a + ' €'
+                                                                                                    data.body[0].b + ' €'
                                                                                                 );
+                                                                                                this.precioInterior2 = data.body[0].b;
+                                                                                                var precioTodoFloat =
+                                                                                                    data.body[0].b + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'C') {
+                                                                                                var todoPrecioLoco =
+                                                                                                    data.body[0].b * precioPuntosBuenos;
+                                                                                                if (iva == 1) {
+                                                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                                                }
+                                                                                                this.precioInterior2 = todoPrecioLoco;
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a + ' €'
+                                                                                                    this.precioInterior2 + ' €'
                                                                                                 );
+                                                                                                var precioTodoFloat = 0;
+                                                                                                precioTodoFloat =
+                                                                                                    this.precioInterior2 +
+                                                                                                    parseFloat(precioTodo);
                                                                                             }
-                                                                                            var precioTodo;
-                                                                                            precioTodo = $('#precioDimension').text();
-                                                                                            var precioTodoFloat =
-                                                                                                data.body[0].precio +
-                                                                                                parseFloat(precioTodo);
+
                                                                                             $('#precioDimension').text(precioTodoFloat);
                                                                                         });
                                                                                 }
@@ -7947,6 +8212,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 cuenta = ancho / puertas;
                                                                                 cuenta = cuenta * 2;
                                                                                 if (i == 1) {
+                                                                                    var precioInterior1 = this.precioInterior1;
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    precioTodo = precioTodo - precioInterior1;
                                                                                     this.interioresArmarioNuevosService
                                                                                         .findBus(cuenta, idProdInt[nombre])
                                                                                         .subscribe(data => {
@@ -7967,22 +8236,34 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].a
                                                                                                 );
+                                                                                                this.precioInterior1 = data.body[0].a;
+                                                                                                var precioTodoFloat =
+                                                                                                    data.body[0].a + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'B') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
                                                                                                     data.body[0].a + ' €'
                                                                                                 );
+                                                                                                this.precioInterior1 = data.body[0].a;
+                                                                                                var precioTodoFloat =
+                                                                                                    data.body[0].a + parseFloat(precioTodo);
                                                                                             }
                                                                                             if (cogerSeccion == 'C') {
+                                                                                                var todoPrecioLoco =
+                                                                                                    data.body[0].a * precioPuntosBuenos;
+                                                                                                if (iva == 1) {
+                                                                                                    todoPrecioLoco = todoPrecioLoco * 1.21;
+                                                                                                }
+                                                                                                this.precioInterior1 = todoPrecioLoco;
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a + ' €'
+                                                                                                    this.precioInterior1 + ' €'
                                                                                                 );
+                                                                                                var precioTodoFloat = 0;
+                                                                                                precioTodoFloat =
+                                                                                                    this.precioInterior1 +
+                                                                                                    parseFloat(precioTodo);
                                                                                             }
-                                                                                            var precioTodo;
-                                                                                            precioTodo = $('#precioDimension').text();
-                                                                                            var precioTodoFloat =
-                                                                                                data.body[0].precio +
-                                                                                                parseFloat(precioTodo);
+
                                                                                             $('#precioDimension').text(precioTodoFloat);
                                                                                         });
                                                                                 }
@@ -28013,6 +28294,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     }
 
     ngOnInit() {
+        this.iva = JSON.parse(sessionStorage.getItem('IVA'));
         this.loadAll();
         this.accountService.identity().then(account => {
             this.currentAccount = account;

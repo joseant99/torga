@@ -251,21 +251,17 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             todo[1]['interiores'][i]['precio'] = precio;
         }
 
-        for (let i = 0; i < todo[1]['puertas'].length; i++) {
-            var precio = $('#calculadoraCarrito #productoCalculadora1 #precioPuerta' + i).text();
-            precio = precio.split(' ')[0];
-            todo[1]['puertas'][i]['precio'] = precio;
-        }
+        const todoSumadoPrecio = $('#precioDimension').text();
         console.log(todo[1]);
         $('#productoCalculadora1 #datos1').empty();
         this.armarioService.todo = undefined;
-        $('#imagenesArmario1').empty();
-        $('#imagenesArmario2').empty();
+        $('.armariosDivTodo3 #imagenesArmario1').empty();
+        $('.armariosDivTodo3 #imagenesArmario2').empty();
         $('#acabadosTodo').attr('class', 'displayBoton');
         this.arraySaberHuecos = [];
         this.arraySaberPuertas = [];
-        $('#anchosSelect4').val('');
-        $('#alturaSelect4').val('');
+        $('#anchosSelect').val('');
+        $('#alturaSelect').val('');
         $('#textoTituloInterior').text('');
 
         todo[1]['precioCasco'] = precioCasco;
@@ -274,9 +270,40 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 contador++;
             }
         }
+        if (todo[1]['cajeado'] != undefined) {
+            if (todo[1]['cajeado']['tipo'] == 'TIPO A') {
+                var anchoNiv1 = $('#calcuVesti #medidasCaje0 #medABat0').val();
+                var altoNiv1 = $('#calcuVesti #medidasCaje0 #medABat1').val();
+                todo[1]['cajeado']['medA'] = anchoNiv1;
+                todo[1]['cajeado']['medB'] = altoNiv1;
+            }
+            if (todo[1]['cajeado']['tipo'] == 'TIPO B') {
+                var anchoNiv1 = $('#calcuVesti #medidasCaje1 #medABat0').val();
+                var altoNiv1 = $('#calcuVesti #medidasCaje1 #medABat1').val();
+                todo[1]['cajeado']['medA'] = anchoNiv1;
+                todo[1]['cajeado']['medB'] = altoNiv1;
+            }
+            if (todo[1]['cajeado']['tipo'] == 'TIPO C') {
+                var anchoNiv1 = $('#calcuVesti #medidasCaje2 #medABat0').val();
+                var altoNiv1 = $('#calcuVesti #medidasCaje2 #medABat1').val();
+                var fondoNiv1 = $('#calcuVesti #medidasCaje2 #medABat2').val();
+                todo[1]['cajeado']['medA'] = anchoNiv1;
+                todo[1]['cajeado']['medB'] = altoNiv1;
+                todo[1]['cajeado']['medC'] = fondoNiv1;
+            }
+            if (todo[1]['cajeado']['tipo'] == 'TIPO D') {
+                var anchoNiv1 = $('#calcuVesti #medidasCaje3 #medABat0').val();
+                var altoNiv1 = $('#calcuVesti #medidasCaje3 #medABat1').val();
+                todo[1]['cajeado']['medA'] = anchoNiv1;
+                todo[1]['cajeado']['medB'] = altoNiv1;
+            }
+        }
+
+        todo[1]['todoSumadoPrecio'] = todoSumadoPrecio;
         var contadorProd = contador;
         var contadorDimen = contador;
         sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(todo));
+
         var contAca = 0;
         $('#botonesAcabadosCuerpo').css({ display: 'none' });
         $('#inputAcabadoCasco').empty();
@@ -289,12 +316,29 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         $('#derechaTirador').css({ 'background-color': 'white' });
         $('#nombreMesita').empty();
         $('#precioDimension').empty();
+        $('#nombreMesita').empty();
+        $('#precioDimension').empty();
+        $('#nombreMesitaArma').empty();
+        $('#nombreMesitaArma').css({ display: 'none' });
+        $('#calcuVesti').css({ display: 'none' });
+        $('#botonCalculadoraVestidor').css({ display: 'none' });
+        $('.armariosDivInputCodigo').css({ display: 'none' });
+        $('.armariosDivTodo3').css({ display: 'none' });
+        $('.armariosDivTodo3 #anchosSelect').text('');
+        $('.armariosDivTodo3 #alturaSelect').text('');
+        $('#inputCodigoVes').text('');
+        for (let i = 1; i <= 100; i++) {
+            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+            if (sesion != null) {
+                this.productosDormitorioService.numeroCesta = i;
+            }
+        }
     }
 
     public abrirArmariosTodos() {
         var coger = $('#inputCodigoVes').val();
         var bueno = 0;
-        for (let t = 0; t < 277; t++) {
+        for (let t = 0; t < 505; t++) {
             if (t < 10 && bueno != 1) {
                 if (coger == 'NW00' + t) {
                     bueno = 1;
@@ -572,6 +616,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
     loadAll() {
         this.cajeadoPrecio = 0;
         this.enmarcadosPrecio = 0;
+        this.niveladoresPrecio = 0;
         this.saberPuerta = 0;
         this.interioresParaArray = [];
         this.puertasParaArray = [];
@@ -609,54 +654,117 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         var precio;
         precio = $('#precioDimension').text();
         precio = parseFloat(precio);
+        var precioNive = this.niveladoresPrecio;
+        precio = precio - precioNive;
+        var todo = this.armarioCogido;
+        var cogerSeccion = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+        if (cogerSeccion == 'C') {
+            var precioPuntosBuenos = JSON.parse(sessionStorage.getItem('C'));
+        }
         if (id == 'si') {
             var arma = this.armarioCogido;
-            this.niveladoresService.query({ size: 10000000 }).subscribe(data => {
+            this.niveladoresService.categoria(arma.id).subscribe(data => {
                 console.log(data.body);
-                for (let i = 0; i < data.body.length; i++) {
+                for (let i = 0; i < data.body['length']; i++) {
                     if (data.body[i]['armario']['id'] == arma['id']) {
-                        $('#calcuVesti #precioNive').text('+' + data.body[i]['precio'] + ' €');
-                        this.niveladoresPrecio = data.body[i]['precio'];
-                        precio = precio + data.body[i]['precio'];
+                        if (cogerSeccion == 'A') {
+                            $('#calcuVesti #precioNive').text('+' + data.body[i]['precio']);
+                            this.niveladoresPrecio = data.body[i]['precio'];
+                            precio = precio + data.body[i]['precio'];
+                        }
+                        if (cogerSeccion == 'B') {
+                            $('#calcuVesti #precioNive').text('+' + data.body[i]['precio'] + ' €');
+                            this.niveladoresPrecio = data.body[i]['precio'];
+                            precio = precio + data.body[i]['precio'];
+                        }
+                        if (cogerSeccion == 'C') {
+                            $('#calcuVesti #precioNive').text('+' + data.body[i]['precio'] * precioPuntosBuenos + ' €');
+                            this.niveladoresPrecio = data.body[i]['precio'] * precioPuntosBuenos;
+                            precio = precio + data.body[i]['precio'] * precioPuntosBuenos;
+                        }
+
                         $('#precioDimension').text(precio);
+                        todo['niveladores'] = data.body[i];
                     }
                 }
             });
         } else {
-            $('#calcuVesti #precioNive').text('+0 €');
-            precio = precio - this.niveladoresPrecio;
+            if (cogerSeccion == 'A') {
+                $('#calcuVesti #precioNive').text('+0');
+            }
+            if (cogerSeccion == 'B') {
+                $('#calcuVesti #precioNive').text('+0 €');
+            }
+            if (cogerSeccion == 'C') {
+                $('#calcuVesti #precioNive').text('+0 €');
+            }
+
             this.niveladoresPrecio = 0;
             $('#precioDimension').text(precio);
+            todo['niveladores'] = undefined;
         }
+        this.armarioCogido = todo;
     }
 
     public cajeadoCargar(id) {
         var precio;
         precio = $('#precioDimension').text();
         precio = parseFloat(precio);
+        var cogerSeccion = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+        if (cogerSeccion == 'C') {
+            var precioPuntosBuenos = JSON.parse(sessionStorage.getItem('C'));
+        }
         $('#calcuVesti #medidasCaje0').css({ display: 'none' });
         $('#calcuVesti #medidasCaje1').css({ display: 'none' });
         $('#calcuVesti #medidasCaje2').css({ display: 'none' });
+        var todo = this.armarioCogido;
         $('#calcuVesti #medidasCaje3').css({ display: 'none' });
         if (id != 'no') {
             this.cajeadoService.query().subscribe(data => {
                 for (let i = 0; i < data.body.length; i++) {
                     if (data.body[i]['id'] == id + 1) {
                         var precioCajeado = this.cajeadoPrecio;
-                        $('#calcuVesti #precioCajeado').text('+' + data.body[i]['precio'] + ' €');
-                        this.cajeadoPrecio = data.body[i]['precio'];
-                        precio = precio - precioCajeado;
-                        precio = precio + data.body[i]['precio'];
+                        if (cogerSeccion == 'A') {
+                            $('#calcuVesti #precioCajeado').text('+' + data.body[i]['precio']);
+                            this.cajeadoPrecio = data.body[i]['precio'];
+                            precio = precio - precioCajeado;
+                            precio = precio + data.body[i]['precio'];
+                        }
+                        if (cogerSeccion == 'B') {
+                            $('#calcuVesti #precioCajeado').text('+' + data.body[i]['precio'] + ' €');
+                            this.cajeadoPrecio = data.body[i]['precio'];
+                            precio = precio - precioCajeado;
+                            precio = precio + data.body[i]['precio'];
+                        }
+                        if (cogerSeccion == 'C') {
+                            $('#calcuVesti #precioCajeado').text('+' + data.body[i]['precio'] * precioPuntosBuenos + ' €');
+                            this.cajeadoPrecio = data.body[i]['precio'] * precioPuntosBuenos;
+                            precio = precio - precioCajeado;
+                            precio = precio + data.body[i]['precio'] * precioPuntosBuenos;
+                        }
+
                         $('#precioDimension').text(precio);
                         $('#calcuVesti #medidasCaje' + id).css({ display: 'block' });
+                        todo['cajeado'] = data.body[i];
                     }
                 }
             });
         } else {
-            $('#calcuVesti #precioCajeado').text('+0 €');
+            if (cogerSeccion == 'A') {
+                $('#calcuVesti #precioCajeado').text('+0');
+            }
+            if (cogerSeccion == 'B') {
+                $('#calcuVesti #precioCajeado').text('+0 €');
+            }
+            if (cogerSeccion == 'C') {
+                $('#calcuVesti #precioCajeado').text('+0 €');
+            }
             precio = precio - this.cajeadoPrecio;
+            this.cajeadoPrecio = 0;
             $('#precioDimension').text(precio);
+            todo['cajeado'] = undefined;
         }
+        this.armarioCogido = todo;
     }
 
     public enmarcadoCargar(id) {
@@ -718,8 +826,8 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
     }
 
     public carcarCascosInterioresPuertas() {
-        var ancho = $('#anchosSelect4').val();
-        var alto = $('#alturaSelect4').val();
+        var ancho = $('.armariosDivTodo3 #anchosSelect').val();
+        var alto = $('.armariosDivTodo3 #alturaSelect').val();
         var id = 0;
         var armariosTodos = this.armarioService.todo;
         var classe = $('#armariosCogidos' + id).attr('class');
@@ -746,13 +854,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
 
         $('#armarioColorFondo' + id).css({ 'background-color': '#D0D0D0' });
 
-        $('#niveladoresCalcu').css({ display: 'block' });
-        $('#cajeadoCalcu').css({ display: 'block' });
+        $('#calcuVesti #niveladoresCalcu').css({ display: 'block' });
+        $('#calcuVesti #cajeadoCalcu').css({ display: 'block' });
 
         $('#datos1').empty();
         $('#imagenesArmario2').empty();
         $('#imagenesArmario1').empty();
-        $('#botonesAcabadosCuerpo').css({ display: 'block' });
+        $('#calcuVesti #botonesAcabadosCuerpo').css({ display: 'block' });
         this.cascoService.findBus1(codigo).subscribe(data => {
             console.log(data.body);
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -848,7 +956,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             var grandes = dimens['grandes'];
             var array = [];
             var arrayPuertas = [];
-            for (let j = 0; j < huecos; j++) {
+            for (let j = 0; j < huecos - 1; j++) {
                 array[j] = j;
             }
             for (let k = 0; k < puertas; k++) {
@@ -871,25 +979,6 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                             '<img id="trasera' +
                                 i +
                                 '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                        );
-                    } else {
-                        $('#imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:' +
-                                (100 - (i + 1)) +
-                                ';' +
-                                grandes +
-                                '" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                        );
-                        $('#imagenesArmario').append(
-                            '<img id="trasera' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:' +
-                                (100 - (i + 1)) +
-                                ';' +
-                                grandes +
-                                '" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
                         );
                     }
                 }
@@ -1006,7 +1095,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                for (let j = 0; j < puertas - 1; j++) {
+                for (let j = 0; j < puertas; j++) {
                     array[j] = j;
                 }
                 this.arraySaberPuertas = arrayPuertas;
@@ -1037,8 +1126,6 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         }
                     }
                     var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                    $('.armariosDivTodo3 #imagenesArmario2').css({ 'margin-top': '600px' });
-                    $('.armariosDivTodo3 #imagenesArmario2').append(html);
                     for (let i = 0; i < puertas; i++) {
                         var dimensiones = dimens[puertas + ' puertas'];
                         this.numeroDeHuecos = puertas;
@@ -1063,79 +1150,189 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 }
             }
 
-            if (texto == '1 CUERPO TIPO 1') {
-                var array = [];
-                var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
-                this.arraySaberPuertas = arrayPuertas;
-                this.arraySaberHuecos = array;
-
-                $('#acabadosTodo').removeAttr('class');
-                this.acaProdService.findAca(42).subscribe(data => {
-                    this.todos = data.body[0]['acabados'];
-                    this.acabadosTrasera = data.body[0]['acabados'];
-                });
-                this.acaProdService.findAca(122).subscribe(data => {
-                    this.acabadosInteriores = data.body[0]['acabados'];
-                });
-            }
-
             if (texto == '1 CUERPO TIPO 2') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
-
-                $('#acabadosTodo').removeAttr('class');
-                this.acaProdService.findAca(42).subscribe(data => {
-                    this.todos = data.body[0]['acabados'];
-                    this.acabadosTrasera = data.body[0]['acabados'];
-                });
-                this.acaProdService.findAca(122).subscribe(data => {
-                    this.acabadosInteriores = data.body[0]['acabados'];
-                });
+                if (puertas == 1) {
+                    for (let i = 0; i < puertas; i++) {
+                        if (width >= 1500 && width < 2200) {
+                            var dimensiones = dimens[puertas + ' puertas'];
+                        }
+                        if (width < 1500 && width >= 1300) {
+                            var dimensiones = segunWIDTH[puertas + ' puertas'];
+                        }
+                        this.numeroDeHuecos = puertas;
+                        if (i == 0) {
+                            $('.armariosDivTodo3 #imagenesArmario1').append(
+                                '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -280px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                            );
+                        }
+                    }
+                    var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                    for (let i = 0; i < puertas; i++) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                        this.numeroDeHuecos = puertas;
+                        if (i == 0) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<p id="textoLetraHueco' +
+                                    i +
+                                    '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                    mai[i] +
+                                    '</p>'
+                            );
+                        }
+                    }
+                    $('#acabadosTodo').removeAttr('class');
+                    this.acaProdService.findAca(42).subscribe(data => {
+                        this.todos = data.body[0]['acabados'];
+                        this.acabadosTrasera = data.body[0]['acabados'];
+                    });
+                    this.acaProdService.findAca(122).subscribe(data => {
+                        this.acabadosInteriores = data.body[0]['acabados'];
+                    });
+                }
             }
             if (texto == '1 CUERPO TIPO 3') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
-
-                $('#acabadosTodo').removeAttr('class');
-                this.acaProdService.findAca(42).subscribe(data => {
-                    this.todos = data.body[0]['acabados'];
-                    this.acabadosTrasera = data.body[0]['acabados'];
-                });
-                this.acaProdService.findAca(122).subscribe(data => {
-                    this.acabadosInteriores = data.body[0]['acabados'];
-                });
+                if (puertas == 1) {
+                    for (let i = 0; i < puertas; i++) {
+                        if (width >= 1500 && width < 2200) {
+                            var dimensiones = dimens[puertas + ' puertas'];
+                        }
+                        if (width < 1500 && width >= 1300) {
+                            var dimensiones = segunWIDTH[puertas + ' puertas'];
+                        }
+                        this.numeroDeHuecos = puertas;
+                        if (i == 0) {
+                            $('.armariosDivTodo3 #imagenesArmario1').append(
+                                '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -280px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                            );
+                        }
+                    }
+                    var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                    for (let i = 0; i < puertas; i++) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                        this.numeroDeHuecos = puertas;
+                        if (i == 0) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<p id="textoLetraHueco' +
+                                    i +
+                                    '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                    mai[i] +
+                                    '</p>'
+                            );
+                        }
+                    }
+                    $('#acabadosTodo').removeAttr('class');
+                    this.acaProdService.findAca(42).subscribe(data => {
+                        this.todos = data.body[0]['acabados'];
+                        this.acabadosTrasera = data.body[0]['acabados'];
+                    });
+                    this.acaProdService.findAca(122).subscribe(data => {
+                        this.acabadosInteriores = data.body[0]['acabados'];
+                    });
+                }
             }
 
             if (texto == '2 CUERPOS TIPO 1') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
+                for (let i = 0; i < puertas; i++) {
+                    if (width >= 1500 && width < 2200) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                    }
+                    if (width < 1500 && width >= 1300) {
+                        var dimensiones = segunWIDTH[puertas + ' puertas'];
+                    }
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '22%' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="trasera' +
+                                i +
+                                '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left:281px;margin-top:-53px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="trasera' +
+                                i +
+                                '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left:281px;margin-top:-53px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                        );
+                    }
+                }
+                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 210px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1146,16 +1343,67 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 });
             }
             if (texto == '2 CUERPOS TIPO 2') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
+                for (let i = 0; i < puertas; i++) {
+                    if (width >= 1500 && width < 2200) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                    }
+                    if (width < 1500 && width >= 1300) {
+                        var dimensiones = segunWIDTH[puertas + ' puertas'];
+                    }
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '22%' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+                    }
+                }
+                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1167,16 +1415,67 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             }
 
             if (texto == '2 CUERPOS TIPO 3') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
+                for (let i = 0; i < puertas; i++) {
+                    if (width >= 1500 && width < 2200) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                    }
+                    if (width < 1500 && width >= 1300) {
+                        var dimensiones = segunWIDTH[puertas + ' puertas'];
+                    }
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '22%' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+                    }
+                }
+                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1188,17 +1487,97 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             }
 
             if (texto == '3 CUERPOS TIPO 1') {
+                var dimens = this.dimenArmarios;
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
 
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
-                $('#acabadosTodo').removeAttr('class');
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '11%' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                        );
+                        $('#imagenesArmario').append(
+                            '<img id="trasera' +
+                                i +
+                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                        );
+                    } else {
+                        if (i == 1) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                        if (i == 2) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                    }
+                }
+
+                var html = $('#imagenesArmario1').html();
+
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 250px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 2) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 730px;margin-top: 220px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
+                $('.armariosDivTodo3 #acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
                     this.acabadosTrasera = data.body[0]['acabados'];
@@ -1208,16 +1587,82 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 });
             }
             if (texto == '3 CUERPOS TIPO 2') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
+                for (let i = 0; i < puertas; i++) {
+                    if (width >= 1500 && width < 2200) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                    }
+                    if (width < 1500 && width >= 1300) {
+                        var dimensiones = segunWIDTH[puertas + ' puertas'];
+                    }
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '15%' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+                    }
+                }
+                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 2) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1229,16 +1674,82 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             }
 
             if (texto == '3 CUERPOS TIPO 3') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
+                for (let i = 0; i < puertas; i++) {
+                    if (width >= 1500 && width < 2200) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                    }
+                    if (width < 1500 && width >= 1300) {
+                        var dimensiones = segunWIDTH[puertas + ' puertas'];
+                    }
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '15%' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+                    }
+                }
+                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 2) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1250,17 +1761,118 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             }
 
             if (texto == '4 CUERPOS TIPO 1') {
+                var dimens = this.dimenArmarios;
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
 
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
-                $('#acabadosTodo').removeAttr('class');
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '0' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                        );
+                        $('#imagenesArmario').append(
+                            '<img id="trasera' +
+                                i +
+                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                        );
+                    } else {
+                        if (i == 1) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                        if (i == 2) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                        if (i == 3) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                    }
+                }
+
+                var html = $('#imagenesArmario1').html();
+
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 245px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 2) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 730px;margin-top: 205px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 3) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 1010px;margin-top: 165px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
+                $('.armariosDivTodo3 #acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
                     this.acabadosTrasera = data.body[0]['acabados'];
@@ -1270,16 +1882,97 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 });
             }
             if (texto == '4 CUERPOS TIPO 2') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
+                for (let i = 0; i < puertas; i++) {
+                    if (width >= 1500 && width < 2200) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                    }
+                    if (width < 1500 && width >= 1300) {
+                        var dimensiones = segunWIDTH[puertas + ' puertas'];
+                    }
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:9%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '10%' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-226px;margin-left: 378px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+                    }
+                }
+                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 2) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 3) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 840px;margin-top: 120px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1291,16 +1984,97 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             }
 
             if (texto == '4 CUERPOS TIPO 3') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
+                for (let i = 0; i < puertas; i++) {
+                    if (width >= 1500 && width < 2200) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                    }
+                    if (width < 1500 && width >= 1300) {
+                        var dimensiones = segunWIDTH[puertas + ' puertas'];
+                    }
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:9%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '10%' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-226px;margin-left: 378px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+                    }
+                }
+                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 2) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 3) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 840px;margin-top: 120px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1312,17 +2086,139 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             }
 
             if (texto == '5 CUERPOS TIPO 1') {
+                var dimens = this.dimenArmarios;
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
 
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
-                $('#acabadosTodo').removeAttr('class');
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:14%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '-10%' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                        );
+                        $('#imagenesArmario').append(
+                            '<img id="trasera' +
+                                i +
+                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                        );
+                    } else {
+                        if (i == 1) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                        if (i == 2) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                        if (i == 3) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                        if (i == 4) {
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="casco' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:96;margin-left: 1124px;margin-top: -206px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                            );
+                            $('.armariosDivTodo3 #imagenesArmario').append(
+                                '<img id="trasera' +
+                                    i +
+                                    '" style="position:absolute;width: 350px;height: 650px;z-index:96;margin-left: 1124px;margin-top: -206px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                            );
+                        }
+                    }
+                }
+
+                var html = $('#imagenesArmario1').html();
+
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 245px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 2) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 730px;margin-top: 205px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 3) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 1010px;margin-top: 165px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 4) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 1285px;margin-top: 115px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
+                $('.armariosDivTodo3 #acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
                     this.acabadosTrasera = data.body[0]['acabados'];
@@ -1332,16 +2228,112 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 });
             }
             if (texto == '5 CUERPOS TIPO 2') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
+                for (let i = 0; i < puertas; i++) {
+                    if (width >= 1500 && width < 2200) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                    }
+                    if (width < 1500 && width >= 1300) {
+                        var dimensiones = segunWIDTH[puertas + ' puertas'];
+                    }
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:9%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '0' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-226px;margin-left: 378px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:96;margin-top:-268px;margin-left: 603px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
+                        );
+                    }
+                }
+                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 2) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 3) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 840px;margin-top: 120px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 4) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 1060px;margin-top: 90px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1353,16 +2345,112 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             }
 
             if (texto == '5 CUERPOS TIPO 3') {
+                var dimens = this.dimenArmarios;
+                $('body').css({ 'overflow-x': 'hidden' });
+                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
-                array[0] = 0;
-                array[1] = 1;
-
-                arrayPuertas[0] = '1';
-                arrayPuertas[1] = '2';
+                for (let j = 0; j < puertas; j++) {
+                    array[j] = j;
+                }
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
+                for (let i = 0; i < puertas; i++) {
+                    if (width >= 1500 && width < 2200) {
+                        var dimensiones = dimens[puertas + ' puertas'];
+                    }
+                    if (width < 1500 && width >= 1300) {
+                        var dimensiones = segunWIDTH[puertas + ' puertas'];
+                    }
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario1').append(
+                            '<p style="width:100%;margin-top:9%;' + dimensiones + '" id="imagenesArmario"></p>'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '0' });
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-226px;margin-left: 378px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<img id="casco' +
+                                i +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:96;margin-top:-268px;margin-left: 603px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
+                        );
+                    }
+                }
+                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 1) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 2) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 3) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 840px;margin-top: 120px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+
+                    if (i == 4) {
+                        $('.armariosDivTodo3 #imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 1060px;margin-top: 90px ;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -3573,24 +4661,28 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         $('#inputInterior' + (hueco - 1)).val('interior ' + nombre);
         $('#inputInterior' + (hueco - 1)).append('interior ' + nombre);
         var grandes = dimens['grandes'];
-        if (texto == '3 CUERPOS TIPO 1' || texto == '3 CUERPOS TIPO 2' || texto == '3 CUERPOS TIPO 3') {
-            texto = '3 CUERPOS';
+        var buenInt;
+        var todo = this.armarioCogido;
+        var saberCont = 0;
+        var meterInt = [];
+        if (todo['interiores'] != undefined) {
+            saberCont = todo['interiores'].length;
+            meterInt = todo['interiores'];
         }
-        if (texto == '2 CUERPOS TIPO 1' || texto == '2 CUERPOS TIPO 2' || texto == '2 CUERPOS TIPO 3') {
-            texto = '2 CUERPOS';
+
+        var todosLosInteriores = this.productosDormitorioModal;
+        for (let o = 0; o < todosLosInteriores.length; o++) {
+            if (todosLosInteriores[o]['nombre'] == nombre) {
+                buenInt = todosLosInteriores[o];
+            }
         }
-        if (texto == '1 CUERPO TIPO 1' || texto == '1 CUERPO TIPO 2' || texto == '1 CUERPO TIPO 3') {
-            texto = '1 CUERPO';
-        }
-        if (texto == '4 CUERPOS TIPO 1' || texto == '4 CUERPOS TIPO 2' || texto == '4 CUERPOS TIPO 3') {
-            texto = '4 CUERPOS';
-        }
-        if (texto == '5 CUERPOS TIPO 1' || texto == '5 CUERPOS TIPO 2' || texto == '5 CUERPOS TIPO 3') {
-            texto = '5 CUERPOS';
-        }
+        meterInt[saberCont] = buenInt;
+        todo['interiores'] = meterInt;
+        this.armarioCogido = todo;
+
         var dato = this.cascoService.dato;
-        if (texto == '1 CUERPO') {
-            for (let i = 1; i <= 2; i++) {
+        if (texto == '1 CUERPO TIPO 1') {
+            for (let i = 1; i <= 1; i++) {
                 if (hueco == 1) {
                     cuenta = ancho / puertas;
                     cuenta = cuenta * 1;
@@ -3620,11 +4712,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                         '<img id="interiorDentroArmario' +
                             hueco +
-                            '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                            '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                             nombre +
-                            '/peque_interior_' +
-                            nombre +
-                            '_blanco_optimized.png">'
+                            '.png">'
                     );
                     $('#textoLetraHueco' + (hueco - 1)).remove();
                 } else {
@@ -3665,15 +4755,47 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 }
             }
         } else {
-            if (texto == '2 CUERPOS') {
-                for (let i = 1; i <= 2; i++) {
+            if (texto == '1 CUERPO TIPO 2') {
+                for (let i = 1; i <= 1; i++) {
                     if (hueco == 1) {
                         cuenta = ancho / puertas;
                         cuenta = cuenta * 1;
                         if (i == 1) {
-                            var dato = this.cascoService.dato;
                             this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
-                                console.log(data.body);
+                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                    '<p id="interiorHueco' +
+                                        hueco +
+                                        '" style="width:100%;display:none">Hueco ' +
+                                        letras[hueco - 1] +
+                                        ': <span id="acabadoHueco' +
+                                        hueco +
+                                        '">Interior ' +
+                                        nombre +
+                                        '</span><span style="float:right">+ <span id="precio">' +
+                                        data.body[0].a +
+                                        '</span>€</span><p/>'
+                                );
+                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                var precioTodo;
+                                precioTodo = $('#precioDimension').text();
+                                var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                $('#precioDimension').text(precioTodoFloat);
+                            });
+                        }
+
+                        $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                            '<img id="interiorDentroArmario' +
+                                hueco +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -280px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                nombre +
+                                '.png">'
+                        );
+                        $('#textoLetraHueco' + (hueco - 1)).remove();
+                    } else {
+                        cuenta = ancho / puertas;
+                        cuenta = cuenta * 2;
+                        if (i == 1) {
+                            this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                     '<p style="width:100%;display:none">Hueco ' +
                                         letras[hueco - 1] +
@@ -3695,135 +4817,55 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                             '<img id="interiorDentroArmario' +
                                 hueco +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -280px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                 nombre +
-                                '/peque_interior_' +
-                                nombre +
-                                '_blanco_optimized.png">'
-                        );
-                        $('#textoLetraHueco' + (hueco - 1)).remove();
-                    } else {
-                        cuenta = ancho / puertas;
-                        cuenta = cuenta * 2;
-                        if (i == 1) {
-                            var dato = this.cascoService.dato;
-                            this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
-                                console.log(data.body);
-                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                    '<p style="width:100%;display:none">Hueco ' +
-                                        letras[hueco - 1] +
-                                        ': <span id="acabadoHueco' +
-                                        hueco +
-                                        '">Interior ' +
-                                        nombre +
-                                        '</span><span style="float:right">+ ' +
-                                        data.body[0].b +
-                                        '€</span><p/>'
-                                );
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
-                                var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
-                                $('#precioDimension').text(precioTodoFloat);
-                            });
-                        }
-                        $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                            '<img id="interiorDentroArmario' +
-                                hueco +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                nombre +
-                                '/grande_interior_' +
-                                nombre +
-                                '_blanco_optimized.png">'
+                                '.png">'
                         );
                         $('#textoLetraHueco' + (hueco - 1)).remove();
                     }
                 }
             } else {
-                if (texto == '3 PUERTAS DERECHA') {
-                    for (let i = 1; i <= 2; i++) {
+                if (texto == '1 CUERPO TIPO 3') {
+                    for (let i = 1; i <= 1; i++) {
                         if (hueco == 1) {
                             cuenta = ancho / puertas;
-                            cuenta = cuenta * 2;
+                            cuenta = cuenta * 1;
                             if (i == 1) {
-                                if (ancho >= 100 && ancho < 110) {
-                                    cuenta = 338;
-                                }
-                                if (ancho >= 110 && ancho < 120) {
-                                    cuenta = 374;
-                                }
-                                if (ancho >= 120 && ancho < 130) {
-                                    cuenta = 410;
-                                }
-                                if (ancho >= 130 && ancho < 140) {
-                                    cuenta = 443;
-                                }
-                                if (ancho >= 140 && ancho < 150) {
-                                    cuenta = 478;
-                                }
-                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                        '<p style="width:100%;display:none">Hueco ' +
+                                        '<p id="interiorHueco' +
+                                            hueco +
+                                            '" style="width:100%;display:none">Hueco ' +
                                             letras[hueco - 1] +
                                             ': <span id="acabadoHueco' +
                                             hueco +
                                             '">Interior ' +
                                             nombre +
-                                            '</span><span style="float:right">+ ' +
-                                            data.body[0].precio +
-                                            '€</span><p/>'
+                                            '</span><span style="float:right">+ <span id="precio">' +
+                                            data.body[0].a +
+                                            '</span>€</span><p/>'
                                     );
-                                    $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
                                     var precioTodo;
                                     precioTodo = $('#precioDimension').text();
-                                    var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                    var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                     $('#precioDimension').text(precioTodoFloat);
                                 });
                             }
+
                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                 '<img id="interiorDentroArmario' +
                                     hueco +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                    '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -280px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                     nombre +
-                                    '/grande_interior_' +
-                                    nombre +
-                                    '_' +
-                                    interior1.toLowerCase() +
-                                    '_optimized.png">'
-                            );
-                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                '<img id="interiorDentroArmario' +
-                                    hueco +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                    nombre +
-                                    '/peque_interior_' +
-                                    nombre +
-                                    '_' +
-                                    interior1.toLowerCase() +
-                                    '_optimized.png">'
+                                    '.png">'
                             );
                             $('#textoLetraHueco' + (hueco - 1)).remove();
                         } else {
                             cuenta = ancho / puertas;
-                            cuenta = cuenta * 1;
+                            cuenta = cuenta * 2;
                             if (i == 1) {
-                                if (ancho >= 100 && ancho < 110) {
-                                    cuenta = 695;
-                                }
-                                if (ancho >= 110 && ancho < 120) {
-                                    cuenta = 767;
-                                }
-                                if (ancho >= 120 && ancho < 130) {
-                                    cuenta = 838;
-                                }
-                                if (ancho >= 130 && ancho < 140) {
-                                    cuenta = 905;
-                                }
-                                if (ancho >= 140 && ancho < 150) {
-                                    cuenta = 975;
-                                }
-                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                         '<p style="width:100%;display:none">Hueco ' +
                                             letras[hueco - 1] +
@@ -3832,52 +4874,67 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             '">Interior ' +
                                             nombre +
                                             '</span><span style="float:right">+ ' +
-                                            data.body[0].precio +
+                                            data.body[0].a +
                                             '€</span><p/>'
                                     );
-                                    $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
                                     var precioTodo;
                                     precioTodo = $('#precioDimension').text();
-                                    var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                    var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                     $('#precioDimension').text(precioTodoFloat);
                                 });
                             }
                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                 '<img id="interiorDentroArmario' +
                                     hueco +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                    '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -280px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                     nombre +
-                                    '/peque_interior_' +
-                                    nombre +
-                                    '_' +
-                                    interior1.toLowerCase() +
-                                    '_optimized.png">'
+                                    '.png">'
                             );
                             $('#textoLetraHueco' + (hueco - 1)).remove();
                         }
                     }
                 } else {
-                    if (texto == '3 CUERPOS') {
-                        for (let i = 1; i <= 2; i++) {
+                    if (texto == '2 CUERPOS TIPO 1') {
+                        for (let i = 1; i <= 1; i++) {
                             if (hueco == 1) {
                                 cuenta = ancho / puertas;
                                 cuenta = cuenta * 1;
                                 if (i == 1) {
-                                    if (ancho >= 190 && ancho < 200) {
-                                        cuenta = 478;
-                                    }
-                                    if (ancho >= 150 && ancho < 160) {
-                                        cuenta = 374;
-                                    }
-                                    if (ancho >= 160 && ancho < 170) {
-                                        cuenta = 410;
-                                    }
-                                    if (ancho >= 170 && ancho < 180) {
-                                        cuenta = 426;
-                                    }
-                                    if (ancho >= 180 && ancho < 190) {
-                                        cuenta = 462;
-                                    }
+                                    this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                            '<p id="interiorHueco' +
+                                                hueco +
+                                                '" style="width:100%;display:none">Hueco ' +
+                                                letras[hueco - 1] +
+                                                ': <span id="acabadoHueco' +
+                                                hueco +
+                                                '">Interior ' +
+                                                nombre +
+                                                '</span><span style="float:right">+ <span id="precio">' +
+                                                data.body[0].a +
+                                                '</span>€</span><p/>'
+                                        );
+                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                        var precioTodo;
+                                        precioTodo = $('#precioDimension').text();
+                                        var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                        $('#precioDimension').text(precioTodoFloat);
+                                    });
+                                }
+
+                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                    '<img id="interiorDentroArmario' +
+                                        hueco +
+                                        '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        nombre +
+                                        '.png">'
+                                );
+                                $('#textoLetraHueco' + (hueco - 1)).remove();
+                            } else {
+                                cuenta = ancho / puertas;
+                                cuenta = cuenta * 2;
+                                if (i == 1) {
                                     this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                             '<p style="width:100%;display:none">Hueco ' +
@@ -3900,135 +4957,54 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                     '<img id="interiorDentroArmario' +
                                         hueco +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                        '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-155px;margin-left: -13px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                         nombre +
-                                        '/peque_interior_' +
-                                        nombre +
-                                        '_blanco_optimized.png">'
-                                );
-                                $('#textoLetraHueco' + (hueco - 1)).remove();
-                            }
-                            if (hueco == 2) {
-                                cuenta = ancho / puertas;
-                                cuenta = cuenta * 2;
-                                if (i == 1) {
-                                    if (ancho >= 190 && ancho < 200) {
-                                        cuenta = 975;
-                                    }
-                                    if (ancho >= 150 && ancho < 160) {
-                                        cuenta = 767;
-                                    }
-                                    if (ancho >= 160 && ancho < 170) {
-                                        cuenta = 817;
-                                    }
-                                    if (ancho >= 170 && ancho < 180) {
-                                        cuenta = 871;
-                                    }
-                                    if (ancho >= 180 && ancho < 190) {
-                                        cuenta = 938;
-                                    }
-                                    this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
-                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                            '<p style="width:100%;display:none">Hueco ' +
-                                                letras[hueco - 1] +
-                                                ': <span id="acabadoHueco' +
-                                                hueco +
-                                                '">Interior ' +
-                                                nombre +
-                                                '</span><span style="float:right">+ ' +
-                                                data.body[0].b +
-                                                '€</span><p/>'
-                                        );
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                        var precioTodo;
-                                        precioTodo = $('#precioDimension').text();
-                                        var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
-                                        $('#precioDimension').text(precioTodoFloat);
-                                    });
-                                }
-                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                    '<img id="interiorDentroArmario' +
-                                        hueco +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                        nombre +
-                                        '/grande_interior_' +
-                                        nombre +
-                                        '_blanco_optimized.png">'
-                                );
-                                $('#textoLetraHueco' + (hueco - 1)).remove();
-                            }
-                            if (hueco == 3) {
-                                cuenta = ancho / puertas;
-                                cuenta = cuenta * 1;
-                                if (i == 1) {
-                                    if (ancho >= 190 && ancho < 200) {
-                                        cuenta = 478;
-                                    }
-                                    if (ancho >= 150 && ancho < 160) {
-                                        cuenta = 374;
-                                    }
-                                    if (ancho >= 160 && ancho < 170) {
-                                        cuenta = 410;
-                                    }
-                                    if (ancho >= 170 && ancho < 180) {
-                                        cuenta = 426;
-                                    }
-                                    if (ancho >= 180 && ancho < 190) {
-                                        cuenta = 462;
-                                    }
-                                    this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
-                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                            '<p style="width:100%;display:none">Hueco ' +
-                                                letras[hueco - 1] +
-                                                ': <span id="acabadoHueco' +
-                                                hueco +
-                                                '">Interior ' +
-                                                nombre +
-                                                '</span><span style="float:right">+ ' +
-                                                data.body[0].c +
-                                                '€</span><p/>'
-                                        );
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
-                                        var precioTodo;
-                                        precioTodo = $('#precioDimension').text();
-                                        var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
-                                        $('#precioDimension').text(precioTodoFloat);
-                                    });
-                                }
-                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                    '<img id="interiorDentroArmario' +
-                                        hueco +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:424px;margin-top:-78px" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                        nombre +
-                                        '/peque_interior_' +
-                                        nombre +
-                                        '_blanco_optimized.png">'
+                                        '.png">'
                                 );
                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                             }
                         }
                     } else {
-                        if (texto == '4 CUERPOS') {
-                            for (let i = 1; i <= 2; i++) {
+                        if (texto == '2 CUERPOS TIPO 2') {
+                            for (let i = 1; i <= 1; i++) {
                                 if (hueco == 1) {
+                                    cuenta = ancho / puertas;
+                                    cuenta = cuenta * 1;
+                                    if (i == 1) {
+                                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                '<p id="interiorHueco' +
+                                                    hueco +
+                                                    '" style="width:100%;display:none">Hueco ' +
+                                                    letras[hueco - 1] +
+                                                    ': <span id="acabadoHueco' +
+                                                    hueco +
+                                                    '">Interior ' +
+                                                    nombre +
+                                                    '</span><span style="float:right">+ <span id="precio">' +
+                                                    data.body[0].a +
+                                                    '</span>€</span><p/>'
+                                            );
+                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                            var precioTodo;
+                                            precioTodo = $('#precioDimension').text();
+                                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                            $('#precioDimension').text(precioTodoFloat);
+                                        });
+                                    }
+
+                                    $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                        '<img id="interiorDentroArmario' +
+                                            hueco +
+                                            '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                            nombre +
+                                            '.png">'
+                                    );
+                                    $('#textoLetraHueco' + (hueco - 1)).remove();
+                                } else {
                                     cuenta = ancho / puertas;
                                     cuenta = cuenta * 2;
                                     if (i == 1) {
-                                        if (ancho >= 200 && ancho < 210) {
-                                            cuenta = 817;
-                                        }
-                                        if (ancho >= 210 && ancho < 220) {
-                                            cuenta = 852;
-                                        }
-                                        if (ancho >= 220 && ancho < 230) {
-                                            cuenta = 905;
-                                        }
-                                        if (ancho >= 230 && ancho < 240) {
-                                            cuenta = 938;
-                                        }
-                                        if (ancho >= 240 && ancho < 250) {
-                                            cuenta = 975;
-                                        }
                                         this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                 '<p style="width:100%;display:none">Hueco ' +
@@ -4051,185 +5027,55 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                         '<img id="interiorDentroArmario' +
                                             hueco +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                            '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                             nombre +
-                                            '/grande_interior_' +
-                                            nombre +
-                                            '_blanco_optimized.png">'
-                                    );
-                                    $('#textoLetraHueco' + (hueco - 1)).remove();
-                                }
-                                if (hueco == 2) {
-                                    cuenta = ancho / puertas;
-                                    cuenta = cuenta * 1;
-                                    if (i == 1) {
-                                        if (ancho >= 200 && ancho < 210) {
-                                            cuenta = 410;
-                                        }
-                                        if (ancho >= 210 && ancho < 220) {
-                                            cuenta = 426;
-                                        }
-                                        if (ancho >= 220 && ancho < 230) {
-                                            cuenta = 443;
-                                        }
-                                        if (ancho >= 230 && ancho < 240) {
-                                            cuenta = 462;
-                                        }
-                                        if (ancho >= 240 && ancho < 250) {
-                                            cuenta = 478;
-                                        }
-                                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
-                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                '<p style="width:100%;display:none">Hueco ' +
-                                                    letras[hueco - 1] +
-                                                    ': <span id="acabadoHueco' +
-                                                    hueco +
-                                                    '">Interior ' +
-                                                    nombre +
-                                                    '</span><span style="float:right">+ ' +
-                                                    data.body[0].b +
-                                                    '€</span><p/>'
-                                            );
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
-                                            var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
-                                            $('#precioDimension').text(precioTodoFloat);
-                                        });
-                                    }
-                                    $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                        '<img id="interiorDentroArmario' +
-                                            hueco +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                            nombre +
-                                            '/peque_interior_' +
-                                            nombre +
-                                            '_blanco_optimized.png">'
-                                    );
-                                    $('#textoLetraHueco' + (hueco - 1)).remove();
-                                }
-                                if (hueco == 3) {
-                                    cuenta = ancho / puertas;
-                                    cuenta = cuenta * 2;
-                                    if (i == 1) {
-                                        if (ancho >= 200 && ancho < 210) {
-                                            cuenta = 817;
-                                        }
-                                        if (ancho >= 210 && ancho < 220) {
-                                            cuenta = 852;
-                                        }
-                                        if (ancho >= 220 && ancho < 230) {
-                                            cuenta = 905;
-                                        }
-                                        if (ancho >= 230 && ancho < 240) {
-                                            cuenta = 938;
-                                        }
-                                        if (ancho >= 240 && ancho < 250) {
-                                            cuenta = 975;
-                                        }
-                                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
-                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                '<p style="width:100%;display:none">Hueco ' +
-                                                    letras[hueco - 1] +
-                                                    ': <span id="acabadoHueco' +
-                                                    hueco +
-                                                    '">Interior ' +
-                                                    nombre +
-                                                    '</span><span style="float:right">+ ' +
-                                                    data.body[0].c +
-                                                    '€</span><p/>'
-                                            );
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
-                                            var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
-                                            $('#precioDimension').text(precioTodoFloat);
-                                        });
-                                    }
-                                    $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                        '<img id="interiorDentroArmario' +
-                                            hueco +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:424px;margin-top:-78px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                            nombre +
-                                            '/grande_interior_' +
-                                            nombre +
-                                            '_blanco_optimized.png">'
-                                    );
-                                    $('#textoLetraHueco' + (hueco - 1)).remove();
-                                }
-                                if (hueco == 4) {
-                                    cuenta = ancho / puertas;
-                                    cuenta = cuenta * 2;
-                                    if (i == 1) {
-                                        if (ancho >= 200 && ancho < 210) {
-                                            cuenta = 817;
-                                        }
-                                        if (ancho >= 210 && ancho < 220) {
-                                            cuenta = 852;
-                                        }
-                                        if (ancho >= 220 && ancho < 230) {
-                                            cuenta = 905;
-                                        }
-                                        if (ancho >= 230 && ancho < 240) {
-                                            cuenta = 938;
-                                        }
-                                        if (ancho >= 240 && ancho < 250) {
-                                            cuenta = 975;
-                                        }
-                                        this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
-                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                '<p style="width:100%;display:none">Hueco ' +
-                                                    letras[hueco - 1] +
-                                                    ': <span id="acabadoHueco' +
-                                                    hueco +
-                                                    '">Interior ' +
-                                                    nombre +
-                                                    '</span><span style="float:right">+ ' +
-                                                    data.body[0].d +
-                                                    '€</span><p/>'
-                                            );
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].d + ' €');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
-                                            var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
-                                            $('#precioDimension').text(precioTodoFloat);
-                                        });
-                                    }
-                                    $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                        '<img id="interiorDentroArmario' +
-                                            hueco +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:424px;margin-top:-78px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                            nombre +
-                                            '/grande_interior_' +
-                                            nombre +
-                                            '_blanco_optimized.png">'
+                                            '.png">'
                                     );
                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                 }
                             }
                         } else {
-                            if (texto == '5 PUERTAS IZQUIERDA') {
-                                for (let i = 1; i <= 2; i++) {
+                            if (texto == '2 CUERPOS TIPO 3') {
+                                for (let i = 1; i <= 1; i++) {
                                     if (hueco == 1) {
                                         cuenta = ancho / puertas;
                                         cuenta = cuenta * 1;
                                         if (i == 1) {
-                                            if (ancho >= 200 && ancho < 210) {
-                                                cuenta = 410;
-                                            }
-                                            if (ancho >= 210 && ancho < 220) {
-                                                cuenta = 426;
-                                            }
-                                            if (ancho >= 220 && ancho < 230) {
-                                                cuenta = 443;
-                                            }
-                                            if (ancho >= 230 && ancho < 240) {
-                                                cuenta = 462;
-                                            }
-                                            if (ancho >= 240 && ancho < 250) {
-                                                cuenta = 478;
-                                            }
-                                            this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
+                                            this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
+                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                    '<p id="interiorHueco' +
+                                                        hueco +
+                                                        '" style="width:100%;display:none">Hueco ' +
+                                                        letras[hueco - 1] +
+                                                        ': <span id="acabadoHueco' +
+                                                        hueco +
+                                                        '">Interior ' +
+                                                        nombre +
+                                                        '</span><span style="float:right">+ <span id="precio">' +
+                                                        data.body[0].a +
+                                                        '</span>€</span><p/>'
+                                                );
+                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                var precioTodo;
+                                                precioTodo = $('#precioDimension').text();
+                                                var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                $('#precioDimension').text(precioTodoFloat);
+                                            });
+                                        }
+
+                                        $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                            '<img id="interiorDentroArmario' +
+                                                hueco +
+                                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                nombre +
+                                                '.png">'
+                                        );
+                                        $('#textoLetraHueco' + (hueco - 1)).remove();
+                                    } else {
+                                        cuenta = ancho / puertas;
+                                        cuenta = cuenta * 2;
+                                        if (i == 1) {
+                                            this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                                                     '<p style="width:100%;display:none">Hueco ' +
                                                         letras[hueco - 1] +
@@ -4238,393 +5084,34 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         '">Interior ' +
                                                         nombre +
                                                         '</span><span style="float:right">+ ' +
-                                                        data.body[0].precio +
+                                                        data.body[0].a +
                                                         '€</span><p/>'
                                                 );
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
+                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
                                                 var precioTodo;
                                                 precioTodo = $('#precioDimension').text();
-                                                var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
+                                                var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                 $('#precioDimension').text(precioTodoFloat);
                                             });
                                         }
                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                             '<img id="interiorDentroArmario' +
                                                 hueco +
-                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                 nombre +
-                                                '/peque_interior_' +
-                                                nombre +
-                                                '_' +
-                                                interior1.toLowerCase() +
-                                                '_optimized.png">'
-                                        );
-                                        $('#textoLetraHueco' + (hueco - 1)).remove();
-                                    }
-                                    if (hueco == 2) {
-                                        cuenta = ancho / puertas;
-                                        cuenta = cuenta * 2;
-                                        if (i == 1) {
-                                            if (ancho >= 200 && ancho < 210) {
-                                                cuenta = 817;
-                                            }
-                                            if (ancho >= 210 && ancho < 220) {
-                                                cuenta = 852;
-                                            }
-                                            if (ancho >= 220 && ancho < 230) {
-                                                cuenta = 905;
-                                            }
-                                            if (ancho >= 230 && ancho < 240) {
-                                                cuenta = 938;
-                                            }
-                                            if (ancho >= 240 && ancho < 250) {
-                                                cuenta = 975;
-                                            }
-                                            this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
-                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                    '<p style="width:100%;display:none;">Hueco ' +
-                                                        letras[hueco - 1] +
-                                                        ': <span id="acabadoHueco' +
-                                                        hueco +
-                                                        '">Interior ' +
-                                                        nombre +
-                                                        '</span><span style="float:right">+ ' +
-                                                        data.body[0].precio +
-                                                        '€</span><p/>'
-                                                );
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
-                                                var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
-                                                $('#precioDimension').text(precioTodoFloat);
-                                            });
-                                        }
-                                        $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                            '<img id="interiorDentroArmario' +
-                                                hueco +
-                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                nombre +
-                                                '/grande_interior_' +
-                                                nombre +
-                                                '_' +
-                                                interior1.toLowerCase() +
-                                                '_optimized.png">'
-                                        );
-                                        $('#textoLetraHueco' + (hueco - 1)).remove();
-                                    }
-                                    if (hueco == 3) {
-                                        cuenta = ancho / puertas;
-                                        cuenta = cuenta * 2;
-                                        if (i == 1) {
-                                            if (ancho >= 200 && ancho < 210) {
-                                                cuenta = 817;
-                                            }
-                                            if (ancho >= 210 && ancho < 220) {
-                                                cuenta = 852;
-                                            }
-                                            if (ancho >= 220 && ancho < 230) {
-                                                cuenta = 905;
-                                            }
-                                            if (ancho >= 230 && ancho < 240) {
-                                                cuenta = 938;
-                                            }
-                                            if (ancho >= 240 && ancho < 250) {
-                                                cuenta = 975;
-                                            }
-                                            this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
-                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                    '<p style="width:100%;display:none">Hueco ' +
-                                                        letras[hueco - 1] +
-                                                        ': <span id="acabadoHueco' +
-                                                        hueco +
-                                                        '">Interior ' +
-                                                        nombre +
-                                                        '</span><span style="float:right">+ ' +
-                                                        data.body[0].precio +
-                                                        '€</span><p/>'
-                                                );
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
-                                                var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
-                                                $('#precioDimension').text(precioTodoFloat);
-                                            });
-                                        }
-                                        $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                            '<img id="interiorDentroArmario' +
-                                                hueco +
-                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:494px;margin-top:-91px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                nombre +
-                                                '/grande_interior_' +
-                                                nombre +
-                                                '_' +
-                                                interior1.toLowerCase() +
-                                                '_optimized.png">'
+                                                '.png">'
                                         );
                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                     }
                                 }
                             } else {
-                                if (texto == '6 PUERTAS ASIMETRICAS') {
+                                if (texto == '3 CUERPOS TIPO 1') {
+                                    $('body').css({ 'overflow-x': 'hidden' });
                                     for (let i = 1; i <= 2; i++) {
-                                        if (hueco == 1) {
-                                            cuenta = ancho / puertas;
-                                            cuenta = cuenta * 1;
-                                            if (i == 1) {
-                                                if (ancho >= 250 && ancho < 260) {
-                                                    cuenta = 410;
-                                                }
-                                                if (ancho >= 260 && ancho < 270) {
-                                                    cuenta = 426;
-                                                }
-                                                if (ancho >= 270 && ancho < 280) {
-                                                    cuenta = 443;
-                                                }
-                                                if (ancho >= 280 && ancho < 290) {
-                                                    cuenta = 462;
-                                                }
-                                                if (ancho >= 290 && ancho < 300) {
-                                                    cuenta = 478;
-                                                }
-                                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
-                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                        '<p style="width:100%;display:none">Hueco ' +
-                                                            letras[hueco - 1] +
-                                                            ': <span id="acabadoHueco' +
-                                                            hueco +
-                                                            '">Interior ' +
-                                                            nombre +
-                                                            '</span><span style="float:right">+ ' +
-                                                            data.body[0].precio +
-                                                            '€</span><p/>'
-                                                    );
-                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
-                                                    var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
-                                                    $('#precioDimension').text(precioTodoFloat);
-                                                });
-                                            }
-                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                '<img id="interiorDentroArmario' +
-                                                    hueco +
-                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                    nombre +
-                                                    '/peque_interior_' +
-                                                    nombre +
-                                                    '_' +
-                                                    interior1.toLowerCase() +
-                                                    '_optimized.png">'
-                                            );
-                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                        }
                                         if (hueco == 2) {
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 2;
                                             if (i == 1) {
-                                                if (ancho >= 250 && ancho < 260) {
-                                                    cuenta = 838;
-                                                }
-                                                if (ancho >= 260 && ancho < 270) {
-                                                    cuenta = 871;
-                                                }
-                                                if (ancho >= 270 && ancho < 280) {
-                                                    cuenta = 905;
-                                                }
-                                                if (ancho >= 280 && ancho < 290) {
-                                                    cuenta = 938;
-                                                }
-                                                if (ancho >= 290 && ancho < 300) {
-                                                    cuenta = 975;
-                                                }
-                                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
-                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                        '<p style="width:100%;display:none">Hueco ' +
-                                                            letras[hueco - 1] +
-                                                            ': <span id="acabadoHueco' +
-                                                            hueco +
-                                                            '">Interior ' +
-                                                            nombre +
-                                                            '</span><span style="float:right">+ ' +
-                                                            data.body[0].precio +
-                                                            '€</span><p/>'
-                                                    );
-                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
-                                                    var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
-                                                    $('#precioDimension').text(precioTodoFloat);
-                                                });
-                                            }
-                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                '<img id="interiorDentroArmario' +
-                                                    hueco +
-                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                    nombre +
-                                                    '/grande_interior_' +
-                                                    nombre +
-                                                    '_' +
-                                                    interior1.toLowerCase() +
-                                                    '_optimized.png">'
-                                            );
-                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                        }
-                                        if (hueco == 3) {
-                                            cuenta = ancho / puertas;
-                                            cuenta = cuenta * 2;
-                                            if (i == 1) {
-                                                if (ancho >= 250 && ancho < 260) {
-                                                    cuenta = 838;
-                                                }
-                                                if (ancho >= 260 && ancho < 270) {
-                                                    cuenta = 871;
-                                                }
-                                                if (ancho >= 270 && ancho < 280) {
-                                                    cuenta = 905;
-                                                }
-                                                if (ancho >= 280 && ancho < 290) {
-                                                    cuenta = 938;
-                                                }
-                                                if (ancho >= 290 && ancho < 300) {
-                                                    cuenta = 975;
-                                                }
-                                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
-                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                        '<p style="width:100%;display:none">Hueco ' +
-                                                            letras[hueco - 1] +
-                                                            ': <span id="acabadoHueco' +
-                                                            hueco +
-                                                            '">Interior ' +
-                                                            nombre +
-                                                            '</span><span style="float:right">+ ' +
-                                                            data.body[0].precio +
-                                                            '€</span><p/>'
-                                                    );
-                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
-                                                    var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
-                                                    $('#precioDimension').text(precioTodoFloat);
-                                                });
-                                            }
-                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                '<img id="interiorDentroArmario' +
-                                                    hueco +
-                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:494px;margin-top:-91px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                    nombre +
-                                                    '/grande_interior_' +
-                                                    nombre +
-                                                    '_' +
-                                                    interior1.toLowerCase() +
-                                                    '_optimized.png">'
-                                            );
-                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                        }
-                                        if (hueco == 4) {
-                                            cuenta = ancho / puertas;
-                                            cuenta = cuenta * 1;
-                                            if (i == 1) {
-                                                if (ancho >= 250 && ancho < 260) {
-                                                    cuenta = 410;
-                                                }
-                                                if (ancho >= 260 && ancho < 270) {
-                                                    cuenta = 426;
-                                                }
-                                                if (ancho >= 270 && ancho < 280) {
-                                                    cuenta = 443;
-                                                }
-                                                if (ancho >= 280 && ancho < 290) {
-                                                    cuenta = 462;
-                                                }
-                                                if (ancho >= 290 && ancho < 300) {
-                                                    cuenta = 478;
-                                                }
-                                                this.interioresArmarioNuevosService.findBus(cuenta, idProdInt[nombre]).subscribe(data => {
-                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                        '<p style="width:100%;display:none">Hueco ' +
-                                                            letras[hueco - 1] +
-                                                            ': <span id="acabadoHueco' +
-                                                            hueco +
-                                                            '">Interior ' +
-                                                            nombre +
-                                                            '</span><span style="float:right">+ ' +
-                                                            data.body[0].precio +
-                                                            '€</span><p/>'
-                                                    );
-                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].precio + ' €');
-                                                    var precioTodo;
-                                                    precioTodo = $('#precioDimension').text();
-                                                    var precioTodoFloat = data.body[0].precio + parseFloat(precioTodo);
-                                                    $('#precioDimension').text(precioTodoFloat);
-                                                });
-                                            }
-                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                '<img id="interiorDentroArmario' +
-                                                    hueco +
-                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left: 704px;margin-top: -130px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                    nombre +
-                                                    '/peque_interior_' +
-                                                    nombre +
-                                                    '_' +
-                                                    interior1.toLowerCase() +
-                                                    '_optimized.png">'
-                                            );
-                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                        }
-                                    }
-                                } else {
-                                    if (texto == '7 PUERTAS IZQUIERDA') {
-                                        for (let i = 1; i <= 2; i++) {
-                                            if (hueco == 1) {
-                                                cuenta = ancho / puertas;
-                                                cuenta = cuenta * 1;
-                                                if (i == 1) {
-                                                    if (ancho >= 300 && ancho < 310) {
-                                                        cuenta = 426;
-                                                    }
-                                                    if (ancho >= 310 && ancho < 320) {
-                                                        cuenta = 443;
-                                                    }
-                                                    if (ancho >= 320 && ancho < 330) {
-                                                        cuenta = 462;
-                                                    }
-                                                    if (ancho >= 330 && ancho < 340) {
-                                                        cuenta = 462;
-                                                    }
-                                                    if (ancho >= 340 && ancho < 350) {
-                                                        cuenta = 478;
-                                                    }
-                                                    this.interioresArmarioNuevosService
-                                                        .findBus(cuenta, idProdInt[nombre])
-                                                        .subscribe(data => {
-                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                '<p style="width:100%">Hueco ' +
-                                                                    letras[hueco - 1] +
-                                                                    ': <span id="acabadoHueco' +
-                                                                    hueco +
-                                                                    '">Interior ' +
-                                                                    nombre +
-                                                                    '</span><span style="float:right">+ ' +
-                                                                    data.body[0].precio +
-                                                                    '€</span><p/>'
-                                                            );
-                                                        });
-                                                }
-                                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                    '<img id="interiorDentroArmario' +
-                                                        hueco +
-                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                        nombre +
-                                                        '/peque_interior_' +
-                                                        nombre +
-                                                        '_' +
-                                                        interior1.toLowerCase() +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#textoLetraHueco' + (hueco - 1)).remove();
-                                            }
-                                            if (hueco == 2) {
                                                 if (ancho >= 300 && ancho < 310) {
                                                     cuenta = 871;
                                                 }
@@ -4640,183 +5127,267 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 if (ancho >= 340 && ancho < 350) {
                                                     cuenta = 975;
                                                 }
+                                                this.interioresArmarioNuevosService
+                                                    .findBus(dato.codigo, idProdInt[nombre])
+                                                    .subscribe(data => {
+                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                            '<p style="width:100%;display:none">Hueco ' +
+                                                                letras[hueco - 1] +
+                                                                ': <span id="acabadoHueco' +
+                                                                hueco +
+                                                                '">Interior ' +
+                                                                nombre +
+                                                                '</span><span style="float:right">+ ' +
+                                                                data.body[0].b +
+                                                                '€</span><p/>'
+                                                        );
+                                                    });
+                                            }
+                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                                '<img id="interiorDentroArmario' +
+                                                    hueco +
+                                                    '" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-150px;margin-left: -20px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    nombre +
+                                                    '.png">'
+                                            );
+                                            $('#textoLetraHueco' + (hueco - 1)).remove();
+                                        }
+                                        if (hueco == 3) {
+                                            if (ancho >= 300 && ancho < 310) {
+                                                cuenta = 871;
+                                            }
+                                            if (ancho >= 310 && ancho < 320) {
+                                                cuenta = 905;
+                                            }
+                                            if (ancho >= 320 && ancho < 330) {
+                                                cuenta = 938;
+                                            }
+                                            if (ancho >= 330 && ancho < 340) {
+                                                cuenta = 975;
+                                            }
+                                            if (ancho >= 340 && ancho < 350) {
+                                                cuenta = 975;
+                                            }
+                                            cuenta = ancho / puertas;
+                                            cuenta = cuenta * 2;
+                                            if (i == 1) {
+                                                this.interioresArmarioNuevosService
+                                                    .findBus(dato.codigo, idProdInt[nombre])
+                                                    .subscribe(data => {
+                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                            '<p style="width:100%;display:none">Hueco ' +
+                                                                letras[hueco - 1] +
+                                                                ': <span id="acabadoHueco' +
+                                                                hueco +
+                                                                '">Interior ' +
+                                                                nombre +
+                                                                '</span><span style="float:right">+ ' +
+                                                                data.body[0].c +
+                                                                '€</span><p/>'
+                                                        );
+                                                    });
+                                            }
+                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                                '<img id="interiorDentroArmario' +
+                                                    hueco +
+                                                    '" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-202px;margin-left: 262px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    nombre +
+                                                    '.png">'
+                                            );
+                                            $('#textoLetraHueco' + (hueco - 1)).remove();
+                                        }
+                                        if (hueco == 1) {
+                                            cuenta = ancho / puertas;
+                                            cuenta = cuenta * 2;
+                                            if (i == 1) {
+                                                if (ancho >= 300 && ancho < 310) {
+                                                    cuenta = 871;
+                                                }
+                                                if (ancho >= 310 && ancho < 320) {
+                                                    cuenta = 905;
+                                                }
+                                                if (ancho >= 320 && ancho < 330) {
+                                                    cuenta = 938;
+                                                }
+                                                if (ancho >= 330 && ancho < 340) {
+                                                    cuenta = 975;
+                                                }
+                                                if (ancho >= 340 && ancho < 350) {
+                                                    cuenta = 975;
+                                                }
+                                                this.interioresArmarioNuevosService
+                                                    .findBus(dato.codigo, idProdInt[nombre])
+                                                    .subscribe(data => {
+                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                            '<p style="width:100%;display:none">Hueco ' +
+                                                                letras[hueco - 1] +
+                                                                ': <span id="acabadoHueco' +
+                                                                hueco +
+                                                                '">Interior ' +
+                                                                nombre +
+                                                                '</span><span style="float:right">+ ' +
+                                                                data.body[0].a +
+                                                                '€</span><p/>'
+                                                        );
+                                                    });
+                                            }
+                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                                '<img id="interiorDentroArmario' +
+                                                    hueco +
+                                                    '" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    nombre +
+                                                    '.png">'
+                                            );
+                                            $('#textoLetraHueco' + (hueco - 1)).remove();
+                                        }
+                                    }
+                                } else {
+                                    if (texto == '3 CUERPOS TIPO 2') {
+                                        for (let i = 1; i <= 1; i++) {
+                                            if (hueco == 1) {
+                                                cuenta = ancho / puertas;
+                                                cuenta = cuenta * 1;
+                                                if (i == 1) {
+                                                    this.interioresArmarioNuevosService
+                                                        .findBus(dato.codigo, idProdInt[nombre])
+                                                        .subscribe(data => {
+                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                '<p id="interiorHueco' +
+                                                                    hueco +
+                                                                    '" style="width:100%;display:none">Hueco ' +
+                                                                    letras[hueco - 1] +
+                                                                    ': <span id="acabadoHueco' +
+                                                                    hueco +
+                                                                    '">Interior ' +
+                                                                    nombre +
+                                                                    '</span><span style="float:right">+ <span id="precio">' +
+                                                                    data.body[0].a +
+                                                                    '</span>€</span><p/>'
+                                                            );
+                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                            var precioTodo;
+                                                            precioTodo = $('#precioDimension').text();
+                                                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                            $('#precioDimension').text(precioTodoFloat);
+                                                        });
+                                                }
+
+                                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                                    '<img id="interiorDentroArmario' +
+                                                        hueco +
+                                                        '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                        nombre +
+                                                        '.png">'
+                                                );
+                                                $('#textoLetraHueco' + (hueco - 1)).remove();
+                                            }
+                                            if (hueco == 2) {
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 2;
                                                 if (i == 1) {
                                                     this.interioresArmarioNuevosService
-                                                        .findBus(cuenta, idProdInt[nombre])
+                                                        .findBus(dato.codigo, idProdInt[nombre])
                                                         .subscribe(data => {
                                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                '<p style="width:100%">Hueco ' +
+                                                                '<p style="width:100%;display:none">Hueco ' +
                                                                     letras[hueco - 1] +
                                                                     ': <span id="acabadoHueco' +
                                                                     hueco +
                                                                     '">Interior ' +
                                                                     nombre +
                                                                     '</span><span style="float:right">+ ' +
-                                                                    data.body[0].precio +
+                                                                    data.body[0].a +
                                                                     '€</span><p/>'
                                                             );
+                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                            var precioTodo;
+                                                            precioTodo = $('#precioDimension').text();
+                                                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                            $('#precioDimension').text(precioTodoFloat);
                                                         });
                                                 }
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
-                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                        '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                                         nombre +
-                                                        '/grande_interior_' +
-                                                        nombre +
-                                                        '_' +
-                                                        interior1.toLowerCase() +
-                                                        '_optimized.png">'
+                                                        '.png">'
                                                 );
                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                             }
+
                                             if (hueco == 3) {
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 2;
                                                 if (i == 1) {
-                                                    if (ancho >= 300 && ancho < 310) {
-                                                        cuenta = 871;
-                                                    }
-                                                    if (ancho >= 310 && ancho < 320) {
-                                                        cuenta = 905;
-                                                    }
-                                                    if (ancho >= 320 && ancho < 330) {
-                                                        cuenta = 938;
-                                                    }
-                                                    if (ancho >= 330 && ancho < 340) {
-                                                        cuenta = 975;
-                                                    }
-                                                    if (ancho >= 340 && ancho < 350) {
-                                                        cuenta = 975;
-                                                    }
                                                     this.interioresArmarioNuevosService
-                                                        .findBus(cuenta, idProdInt[nombre])
+                                                        .findBus(dato.codigo, idProdInt[nombre])
                                                         .subscribe(data => {
                                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                '<p style="width:100%">Hueco ' +
+                                                                '<p style="width:100%;display:none">Hueco ' +
                                                                     letras[hueco - 1] +
                                                                     ': <span id="acabadoHueco' +
                                                                     hueco +
                                                                     '">Interior ' +
                                                                     nombre +
                                                                     '</span><span style="float:right">+ ' +
-                                                                    data.body[0].precio +
+                                                                    data.body[0].a +
                                                                     '€</span><p/>'
                                                             );
+                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                            var precioTodo;
+                                                            precioTodo = $('#precioDimension').text();
+                                                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                            $('#precioDimension').text(precioTodoFloat);
                                                         });
                                                 }
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
-                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:494px;margin-top:-91px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                        '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-186px;margin-left: 158px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                                         nombre +
-                                                        '/grande_interior_' +
-                                                        nombre +
-                                                        '_' +
-                                                        interior1.toLowerCase() +
-                                                        '_optimized.png">'
-                                                );
-                                                $('#textoLetraHueco' + (hueco - 1)).remove();
-                                            }
-                                            if (hueco == 4) {
-                                                cuenta = ancho / puertas;
-                                                cuenta = cuenta * 2;
-                                                if (i == 1) {
-                                                    if (ancho >= 300 && ancho < 310) {
-                                                        cuenta = 871;
-                                                    }
-                                                    if (ancho >= 310 && ancho < 320) {
-                                                        cuenta = 905;
-                                                    }
-                                                    if (ancho >= 320 && ancho < 330) {
-                                                        cuenta = 938;
-                                                    }
-                                                    if (ancho >= 330 && ancho < 340) {
-                                                        cuenta = 975;
-                                                    }
-                                                    if (ancho >= 340 && ancho < 350) {
-                                                        cuenta = 975;
-                                                    }
-                                                    this.interioresArmarioNuevosService
-                                                        .findBus(cuenta, idProdInt[nombre])
-                                                        .subscribe(data => {
-                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                '<p style="width:100%">Hueco ' +
-                                                                    letras[hueco - 1] +
-                                                                    ': <span id="acabadoHueco' +
-                                                                    hueco +
-                                                                    '">Interior ' +
-                                                                    nombre +
-                                                                    '</span><span style="float:right">+ ' +
-                                                                    data.body[0].precio +
-                                                                    '€</span><p/>'
-                                                            );
-                                                        });
-                                                }
-                                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                    '<img id="interiorDentroArmario' +
-                                                        hueco +
-                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left: 776px;margin-top: -145px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                        nombre +
-                                                        '/grande_interior_' +
-                                                        nombre +
-                                                        '_' +
-                                                        interior1.toLowerCase() +
-                                                        '_optimized.png">'
+                                                        '.png">'
                                                 );
                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                             }
                                         }
                                     } else {
-                                        if (texto == '7 PUERTAS DERECHA') {
-                                            for (let i = 1; i <= 2; i++) {
-                                                if (hueco == 4) {
+                                        if (texto == '3 CUERPOS TIPO 3') {
+                                            for (let i = 1; i <= 1; i++) {
+                                                if (hueco == 1) {
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 1;
                                                     if (i == 1) {
-                                                        if (ancho >= 300 && ancho < 310) {
-                                                            cuenta = 426;
-                                                        }
-                                                        if (ancho >= 310 && ancho < 320) {
-                                                            cuenta = 443;
-                                                        }
-                                                        if (ancho >= 320 && ancho < 330) {
-                                                            cuenta = 462;
-                                                        }
-                                                        if (ancho >= 330 && ancho < 340) {
-                                                            cuenta = 462;
-                                                        }
-                                                        if (ancho >= 340 && ancho < 350) {
-                                                            cuenta = 478;
-                                                        }
                                                         this.interioresArmarioNuevosService
-                                                            .findBus(cuenta, idProdInt[nombre])
+                                                            .findBus(dato.codigo, idProdInt[nombre])
                                                             .subscribe(data => {
                                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                    '<p style="width:100%">Hueco ' +
+                                                                    '<p id="interiorHueco' +
+                                                                        hueco +
+                                                                        '" style="width:100%;display:none">Hueco ' +
                                                                         letras[hueco - 1] +
                                                                         ': <span id="acabadoHueco' +
                                                                         hueco +
                                                                         '">Interior ' +
                                                                         nombre +
-                                                                        '</span><span style="float:right">+ ' +
-                                                                        data.body[0].precio +
-                                                                        '€</span><p/>'
+                                                                        '</span><span style="float:right">+ <span id="precio">' +
+                                                                        data.body[0].a +
+                                                                        '</span>€</span><p/>'
                                                                 );
+                                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                var precioTodo;
+                                                                precioTodo = $('#precioDimension').text();
+                                                                var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                $('#precioDimension').text(precioTodoFloat);
                                                             });
                                                     }
+
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left: 772px;margin-top: -142px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                            '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                             nombre +
-                                                            '/peque_interior_' +
-                                                            nombre +
-                                                            '_' +
-                                                            interior1.toLowerCase() +
-                                                            '_optimized.png">'
+                                                            '.png">'
                                                     );
                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                 }
@@ -4824,210 +5395,100 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 2;
                                                     if (i == 1) {
-                                                        if (ancho >= 300 && ancho < 310) {
-                                                            cuenta = 871;
-                                                        }
-                                                        if (ancho >= 310 && ancho < 320) {
-                                                            cuenta = 905;
-                                                        }
-                                                        if (ancho >= 320 && ancho < 330) {
-                                                            cuenta = 938;
-                                                        }
-                                                        if (ancho >= 330 && ancho < 340) {
-                                                            cuenta = 975;
-                                                        }
-                                                        if (ancho >= 340 && ancho < 350) {
-                                                            cuenta = 975;
-                                                        }
                                                         this.interioresArmarioNuevosService
-                                                            .findBus(cuenta, idProdInt[nombre])
+                                                            .findBus(dato.codigo, idProdInt[nombre])
                                                             .subscribe(data => {
                                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                    '<p style="width:100%">Hueco ' +
+                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                         letras[hueco - 1] +
                                                                         ': <span id="acabadoHueco' +
                                                                         hueco +
                                                                         '">Interior ' +
                                                                         nombre +
                                                                         '</span><span style="float:right">+ ' +
-                                                                        data.body[0].precio +
+                                                                        data.body[0].a +
                                                                         '€</span><p/>'
                                                                 );
+                                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                var precioTodo;
+                                                                precioTodo = $('#precioDimension').text();
+                                                                var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                $('#precioDimension').text(precioTodoFloat);
                                                             });
                                                     }
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:281px;margin-top:-52px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                            '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                             nombre +
-                                                            '/grande_interior_' +
-                                                            nombre +
-                                                            '_' +
-                                                            interior1.toLowerCase() +
-                                                            '_optimized.png">'
+                                                            '.png">'
                                                     );
                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                 }
+
                                                 if (hueco == 3) {
-                                                    if (ancho >= 300 && ancho < 310) {
-                                                        cuenta = 871;
-                                                    }
-                                                    if (ancho >= 310 && ancho < 320) {
-                                                        cuenta = 905;
-                                                    }
-                                                    if (ancho >= 320 && ancho < 330) {
-                                                        cuenta = 938;
-                                                    }
-                                                    if (ancho >= 330 && ancho < 340) {
-                                                        cuenta = 975;
-                                                    }
-                                                    if (ancho >= 340 && ancho < 350) {
-                                                        cuenta = 975;
-                                                    }
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 2;
                                                     if (i == 1) {
                                                         this.interioresArmarioNuevosService
-                                                            .findBus(cuenta, idProdInt[nombre])
+                                                            .findBus(dato.codigo, idProdInt[nombre])
                                                             .subscribe(data => {
                                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                    '<p style="width:100%">Hueco ' +
+                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                         letras[hueco - 1] +
                                                                         ': <span id="acabadoHueco' +
                                                                         hueco +
                                                                         '">Interior ' +
                                                                         nombre +
                                                                         '</span><span style="float:right">+ ' +
-                                                                        data.body[0].precio +
+                                                                        data.body[0].a +
                                                                         '€</span><p/>'
                                                                 );
+                                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                var precioTodo;
+                                                                precioTodo = $('#precioDimension').text();
+                                                                var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                $('#precioDimension').text(precioTodoFloat);
                                                             });
                                                     }
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:562px;margin-top:-103px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                            '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-186px;margin-left: 158px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                             nombre +
-                                                            '/grande_interior_' +
-                                                            nombre +
-                                                            '_' +
-                                                            interior1.toLowerCase() +
-                                                            '_optimized.png">'
-                                                    );
-                                                    $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                }
-                                                if (hueco == 1) {
-                                                    cuenta = ancho / puertas;
-                                                    cuenta = cuenta * 2;
-                                                    if (i == 1) {
-                                                        if (ancho >= 300 && ancho < 310) {
-                                                            cuenta = 871;
-                                                        }
-                                                        if (ancho >= 310 && ancho < 320) {
-                                                            cuenta = 905;
-                                                        }
-                                                        if (ancho >= 320 && ancho < 330) {
-                                                            cuenta = 938;
-                                                        }
-                                                        if (ancho >= 330 && ancho < 340) {
-                                                            cuenta = 975;
-                                                        }
-                                                        if (ancho >= 340 && ancho < 350) {
-                                                            cuenta = 975;
-                                                        }
-                                                        this.interioresArmarioNuevosService
-                                                            .findBus(cuenta, idProdInt[nombre])
-                                                            .subscribe(data => {
-                                                                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                    '<p style="width:100%">Hueco ' +
-                                                                        letras[hueco - 1] +
-                                                                        ': <span id="acabadoHueco' +
-                                                                        hueco +
-                                                                        '">Interior ' +
-                                                                        nombre +
-                                                                        '</span><span style="float:right">+ ' +
-                                                                        data.body[0].precio +
-                                                                        '€</span><p/>'
-                                                                );
-                                                            });
-                                                    }
-                                                    $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                        '<img id="interiorDentroArmario' +
-                                                            hueco +
-                                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                            nombre +
-                                                            '/grande_interior_' +
-                                                            nombre +
-                                                            '_' +
-                                                            interior1.toLowerCase() +
-                                                            '_optimized.png">'
+                                                            '.png">'
                                                     );
                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                 }
                                             }
                                         } else {
-                                            if (texto == '5 CUERPOS') {
+                                            if (texto == '4 CUERPOS TIPO 1') {
+                                                $('body').css({ 'overflow-x': 'hidden' });
                                                 for (let i = 1; i <= 2; i++) {
-                                                    if (hueco == 1) {
-                                                        cuenta = ancho / puertas;
-                                                        cuenta = cuenta * 1;
-                                                        if (i == 1) {
-                                                            if (ancho >= 350 && ancho < 360) {
-                                                                cuenta = 426;
-                                                            }
-                                                            if (ancho >= 360 && ancho < 370) {
-                                                                cuenta = 443;
-                                                            }
-                                                            if (ancho >= 370 && ancho < 380) {
-                                                                cuenta = 462;
-                                                            }
-                                                            if (ancho >= 380 && ancho < 390) {
-                                                                cuenta = 462;
-                                                            }
-                                                            if (ancho >= 390 && ancho < 400) {
-                                                                cuenta = 478;
-                                                            }
-                                                            this.interioresArmarioNuevosService
-                                                                .findBus(dato.codigo, idProdInt[nombre])
-                                                                .subscribe(data => {
-                                                                    $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                        '<p style="width:100%">Hueco ' +
-                                                                            letras[hueco - 1] +
-                                                                            ': <span id="acabadoHueco' +
-                                                                            hueco +
-                                                                            '">Interior ' +
-                                                                            nombre +
-                                                                            '</span><span style="float:right">+ ' +
-                                                                            data.body[0].a +
-                                                                            '€</span><p/>'
-                                                                    );
-                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
-                                                                    var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
-                                                                    $('#precioDimension').text(precioTodoFloat);
-                                                                });
-                                                        }
-                                                        $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                            '<img id="interiorDentroArmario' +
-                                                                hueco +
-                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                                nombre +
-                                                                '/peque_interior_' +
-                                                                nombre +
-                                                                '_blanco_optimized.png">'
-                                                        );
-                                                        $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                    }
                                                     if (hueco == 2) {
                                                         cuenta = ancho / puertas;
                                                         cuenta = cuenta * 2;
                                                         if (i == 1) {
+                                                            if (ancho >= 300 && ancho < 310) {
+                                                                cuenta = 871;
+                                                            }
+                                                            if (ancho >= 310 && ancho < 320) {
+                                                                cuenta = 905;
+                                                            }
+                                                            if (ancho >= 320 && ancho < 330) {
+                                                                cuenta = 938;
+                                                            }
+                                                            if (ancho >= 330 && ancho < 340) {
+                                                                cuenta = 975;
+                                                            }
+                                                            if (ancho >= 340 && ancho < 350) {
+                                                                cuenta = 975;
+                                                            }
                                                             this.interioresArmarioNuevosService
                                                                 .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                        '<p style="width:100%">Hueco ' +
+                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                             letras[hueco - 1] +
                                                                             ': <span id="acabadoHueco' +
                                                                             hueco +
@@ -5037,25 +5498,33 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             data.body[0].b +
                                                                             '€</span><p/>'
                                                                     );
-                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].b + ' €');
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
-                                                                    var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
-                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                '" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-150px;margin-left: -20px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                 nombre +
-                                                                '/grande_interior_' +
-                                                                nombre +
-                                                                '_blanco_optimized.png">'
+                                                                '.png">'
                                                         );
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
                                                     if (hueco == 3) {
+                                                        if (ancho >= 300 && ancho < 310) {
+                                                            cuenta = 871;
+                                                        }
+                                                        if (ancho >= 310 && ancho < 320) {
+                                                            cuenta = 905;
+                                                        }
+                                                        if (ancho >= 320 && ancho < 330) {
+                                                            cuenta = 938;
+                                                        }
+                                                        if (ancho >= 330 && ancho < 340) {
+                                                            cuenta = 975;
+                                                        }
+                                                        if (ancho >= 340 && ancho < 350) {
+                                                            cuenta = 975;
+                                                        }
                                                         cuenta = ancho / puertas;
                                                         cuenta = cuenta * 2;
                                                         if (i == 1) {
@@ -5063,7 +5532,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                        '<p style="width:100%">Hueco ' +
+                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                             letras[hueco - 1] +
                                                                             ': <span id="acabadoHueco' +
                                                                             hueco +
@@ -5073,25 +5542,33 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             data.body[0].c +
                                                                             '€</span><p/>'
                                                                     );
-                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].c + ' €');
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
-                                                                    var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
-                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:494px;margin-top:-91px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                '" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-202px;margin-left: 262px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                 nombre +
-                                                                '/grande_interior_' +
-                                                                nombre +
-                                                                '_blanco_optimized.png">'
+                                                                '.png">'
                                                         );
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
                                                     if (hueco == 4) {
+                                                        if (ancho >= 300 && ancho < 310) {
+                                                            cuenta = 871;
+                                                        }
+                                                        if (ancho >= 310 && ancho < 320) {
+                                                            cuenta = 905;
+                                                        }
+                                                        if (ancho >= 320 && ancho < 330) {
+                                                            cuenta = 938;
+                                                        }
+                                                        if (ancho >= 330 && ancho < 340) {
+                                                            cuenta = 975;
+                                                        }
+                                                        if (ancho >= 340 && ancho < 350) {
+                                                            cuenta = 975;
+                                                        }
                                                         cuenta = ancho / puertas;
                                                         cuenta = cuenta * 2;
                                                         if (i == 1) {
@@ -5099,138 +5576,109 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                        '<p style="width:100%">Hueco ' +
+                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                             letras[hueco - 1] +
                                                                             ': <span id="acabadoHueco' +
                                                                             hueco +
                                                                             '">Interior ' +
                                                                             nombre +
                                                                             '</span><span style="float:right">+ ' +
-                                                                            data.body[0].d +
+                                                                            data.body[0].c +
                                                                             '€</span><p/>'
                                                                     );
-                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].d + ' €');
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
-                                                                    var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
-                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:775px;margin-top:-142px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                '" style="position:absolute;width: 950px;height: 845px;z-index:97;margin-top:-254px;margin-left: 545px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                 nombre +
-                                                                '/grande_interior_' +
-                                                                nombre +
-                                                                '_blanco_optimized.png">'
+                                                                '.png">'
                                                         );
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
-                                                    if (hueco == 5) {
+                                                    if (hueco == 1) {
                                                         cuenta = ancho / puertas;
-                                                        cuenta = cuenta * 1;
+                                                        cuenta = cuenta * 2;
                                                         if (i == 1) {
+                                                            if (ancho >= 300 && ancho < 310) {
+                                                                cuenta = 871;
+                                                            }
+                                                            if (ancho >= 310 && ancho < 320) {
+                                                                cuenta = 905;
+                                                            }
+                                                            if (ancho >= 320 && ancho < 330) {
+                                                                cuenta = 938;
+                                                            }
+                                                            if (ancho >= 330 && ancho < 340) {
+                                                                cuenta = 975;
+                                                            }
+                                                            if (ancho >= 340 && ancho < 350) {
+                                                                cuenta = 975;
+                                                            }
                                                             this.interioresArmarioNuevosService
                                                                 .findBus(dato.codigo, idProdInt[nombre])
                                                                 .subscribe(data => {
                                                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                        '<p style="width:100%">Hueco ' +
+                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                             letras[hueco - 1] +
                                                                             ': <span id="acabadoHueco' +
                                                                             hueco +
                                                                             '">Interior ' +
                                                                             nombre +
                                                                             '</span><span style="float:right">+ ' +
-                                                                            data.body[0].e +
+                                                                            data.body[0].a +
                                                                             '€</span><p/>'
                                                                     );
-                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].e + ' €');
-                                                                    var precioTodo;
-                                                                    precioTodo = $('#precioDimension').text();
-                                                                    var precioTodoFloat = data.body[0].e + parseFloat(precioTodo);
-                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left: 985px;margin-top: -182px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                                '" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                 nombre +
-                                                                '/peque_interior_' +
-                                                                nombre +
-                                                                '_blanco_optimized.png">'
+                                                                '.png">'
                                                         );
-                                                        $('#textoLetraHueco' + (hueco - 1)).remove();
                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                     }
                                                 }
                                             } else {
-                                                if (texto == '9 PUERTAS CENTRAL') {
-                                                    for (let i = 1; i <= 2; i++) {
-                                                        if (hueco == 3) {
+                                                if (texto == '4 CUERPOS TIPO 2') {
+                                                    for (let i = 1; i <= 1; i++) {
+                                                        if (hueco == 1) {
                                                             cuenta = ancho / puertas;
                                                             cuenta = cuenta * 1;
                                                             if (i == 1) {
                                                                 this.interioresArmarioNuevosService
-                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                    .findBus(dato.codigo, idProdInt[nombre])
                                                                     .subscribe(data => {
                                                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                            '<p style="width:100%">Hueco ' +
+                                                                            '<p id="interiorHueco' +
+                                                                                hueco +
+                                                                                '" style="width:100%;display:none">Hueco ' +
                                                                                 letras[hueco - 1] +
                                                                                 ': <span id="acabadoHueco' +
                                                                                 hueco +
                                                                                 '">Interior ' +
                                                                                 nombre +
-                                                                                '</span><span style="float:right">+ ' +
-                                                                                data.body[0].precio +
-                                                                                '€</span><p/>'
+                                                                                '</span><span style="float:right">+ <span id="precio">' +
+                                                                                data.body[0].a +
+                                                                                '</span>€</span><p/>'
                                                                         );
+                                                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                        var precioTodo;
+                                                                        precioTodo = $('#precioDimension').text();
+                                                                        var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                        $('#precioDimension').text(precioTodoFloat);
                                                                     });
                                                             }
+
                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                 '<img id="interiorDentroArmario' +
                                                                     hueco +
-                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:492px;margin-top:-92px" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                                    '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                                                     nombre +
-                                                                    '/peque_interior_' +
-                                                                    nombre +
-                                                                    '_' +
-                                                                    interior1.toLowerCase() +
-                                                                    '_optimized.png">'
-                                                            );
-                                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                        }
-                                                        if (hueco == 1) {
-                                                            cuenta = ancho / puertas;
-                                                            cuenta = cuenta * 2;
-                                                            if (i == 1) {
-                                                                this.interioresArmarioNuevosService
-                                                                    .findBus(cuenta, idProdInt[nombre])
-                                                                    .subscribe(data => {
-                                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                            '<p style="width:100%">Hueco ' +
-                                                                                letras[hueco - 1] +
-                                                                                ': <span id="acabadoHueco' +
-                                                                                hueco +
-                                                                                '">Interior ' +
-                                                                                nombre +
-                                                                                '</span><span style="float:right">+ ' +
-                                                                                data.body[0].precio +
-                                                                                '€</span><p/>'
-                                                                        );
-                                                                    });
-                                                            }
-                                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                                '<img id="interiorDentroArmario' +
-                                                                    hueco +
-                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                                    nombre +
-                                                                    '/grande_interior_' +
-                                                                    nombre +
-                                                                    '_' +
-                                                                    interior1.toLowerCase() +
-                                                                    '_optimized.png">'
+                                                                    '.png">'
                                                             );
                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                         }
@@ -5239,135 +5687,143 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                             cuenta = cuenta * 2;
                                                             if (i == 1) {
                                                                 this.interioresArmarioNuevosService
-                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                    .findBus(dato.codigo, idProdInt[nombre])
                                                                     .subscribe(data => {
                                                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                            '<p style="width:100%">Hueco ' +
+                                                                            '<p style="width:100%;display:none">Hueco ' +
                                                                                 letras[hueco - 1] +
                                                                                 ': <span id="acabadoHueco' +
                                                                                 hueco +
                                                                                 '">Interior ' +
                                                                                 nombre +
                                                                                 '</span><span style="float:right">+ ' +
-                                                                                data.body[0].precio +
+                                                                                data.body[0].a +
                                                                                 '€</span><p/>'
                                                                         );
+                                                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                        var precioTodo;
+                                                                        precioTodo = $('#precioDimension').text();
+                                                                        var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                        $('#precioDimension').text(precioTodoFloat);
                                                                     });
                                                             }
                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                 '<img id="interiorDentroArmario' +
                                                                     hueco +
-                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:281px;margin-top:-52px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                    '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                                                     nombre +
-                                                                    '/grande_interior_' +
-                                                                    nombre +
-                                                                    '_' +
-                                                                    interior1.toLowerCase() +
-                                                                    '_optimized.png">'
+                                                                    '.png">'
                                                             );
                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                         }
+
+                                                        if (hueco == 3) {
+                                                            cuenta = ancho / puertas;
+                                                            cuenta = cuenta * 2;
+                                                            if (i == 1) {
+                                                                this.interioresArmarioNuevosService
+                                                                    .findBus(dato.codigo, idProdInt[nombre])
+                                                                    .subscribe(data => {
+                                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                                                                            '<p style="width:100%;display:none">Hueco ' +
+                                                                                letras[hueco - 1] +
+                                                                                ': <span id="acabadoHueco' +
+                                                                                hueco +
+                                                                                '">Interior ' +
+                                                                                nombre +
+                                                                                '</span><span style="float:right">+ ' +
+                                                                                data.body[0].a +
+                                                                                '€</span><p/>'
+                                                                        );
+                                                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                        var precioTodo;
+                                                                        precioTodo = $('#precioDimension').text();
+                                                                        var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                        $('#precioDimension').text(precioTodoFloat);
+                                                                    });
+                                                            }
+                                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
+                                                                '<img id="interiorDentroArmario' +
+                                                                    hueco +
+                                                                    '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-186px;margin-left: 158px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                                    nombre +
+                                                                    '.png">'
+                                                            );
+                                                            $('#textoLetraHueco' + (hueco - 1)).remove();
+                                                        }
+
                                                         if (hueco == 4) {
                                                             cuenta = ancho / puertas;
                                                             cuenta = cuenta * 2;
                                                             if (i == 1) {
                                                                 this.interioresArmarioNuevosService
-                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                    .findBus(dato.codigo, idProdInt[nombre])
                                                                     .subscribe(data => {
                                                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                            '<p style="width:100%">Hueco ' +
+                                                                            '<p style="width:100%;display:none">Hueco ' +
                                                                                 letras[hueco - 1] +
                                                                                 ': <span id="acabadoHueco' +
                                                                                 hueco +
                                                                                 '">Interior ' +
                                                                                 nombre +
                                                                                 '</span><span style="float:right">+ ' +
-                                                                                data.body[0].precio +
+                                                                                data.body[0].a +
                                                                                 '€</span><p/>'
                                                                         );
+                                                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                        var precioTodo;
+                                                                        precioTodo = $('#precioDimension').text();
+                                                                        var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                        $('#precioDimension').text(precioTodoFloat);
                                                                     });
                                                             }
                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                 '<img id="interiorDentroArmario' +
                                                                     hueco +
-                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:703px;margin-top:-131px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                    '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-227px;margin-left: 379px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                                                     nombre +
-                                                                    '/grande_interior_' +
-                                                                    nombre +
-                                                                    '_' +
-                                                                    interior1.toLowerCase() +
-                                                                    '_optimized.png">'
+                                                                    '.png">'
                                                             );
-                                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                        }
-                                                        if (hueco == 5) {
-                                                            cuenta = ancho / puertas;
-                                                            cuenta = cuenta * 2;
-                                                            if (i == 1) {
-                                                                this.interioresArmarioNuevosService
-                                                                    .findBus(cuenta, idProdInt[nombre])
-                                                                    .subscribe(data => {
-                                                                        $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                            '<p style="width:100%">Hueco ' +
-                                                                                letras[hueco - 1] +
-                                                                                ': <span id="acabadoHueco' +
-                                                                                hueco +
-                                                                                '">Interior ' +
-                                                                                nombre +
-                                                                                '</span><span style="float:right">+ ' +
-                                                                                data.body[0].precio +
-                                                                                '€</span><p/>'
-                                                                        );
-                                                                    });
-                                                            }
-                                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                                '<img id="interiorDentroArmario' +
-                                                                    hueco +
-                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left: 985px;margin-top: -183px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                                    nombre +
-                                                                    '/grande_interior_' +
-                                                                    nombre +
-                                                                    '_' +
-                                                                    interior1.toLowerCase() +
-                                                                    '_optimized.png">'
-                                                            );
-                                                            $('#textoLetraHueco' + (hueco - 1)).remove();
                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                         }
                                                     }
                                                 } else {
-                                                    if (texto == '9 PUERTAS IZQUIERDA') {
-                                                        for (let i = 1; i <= 2; i++) {
+                                                    if (texto == '4 CUERPOS TIPO 3') {
+                                                        for (let i = 1; i <= 1; i++) {
                                                             if (hueco == 1) {
                                                                 cuenta = ancho / puertas;
                                                                 cuenta = cuenta * 1;
                                                                 if (i == 1) {
                                                                     this.interioresArmarioNuevosService
-                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                        .findBus(dato.codigo, idProdInt[nombre])
                                                                         .subscribe(data => {
                                                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                                '<p style="width:100%">Hueco ' +
+                                                                                '<p id="interiorHueco' +
+                                                                                    hueco +
+                                                                                    '" style="width:100%;display:none">Hueco ' +
                                                                                     letras[hueco - 1] +
                                                                                     ': <span id="acabadoHueco' +
                                                                                     hueco +
                                                                                     '">Interior ' +
                                                                                     nombre +
-                                                                                    '</span><span style="float:right">+ ' +
-                                                                                    data.body[0].precio +
-                                                                                    '€</span><p/>'
+                                                                                    '</span><span style="float:right">+ <span id="precio">' +
+                                                                                    data.body[0].a +
+                                                                                    '</span>€</span><p/>'
                                                                             );
+                                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                            var precioTodo;
+                                                                            precioTodo = $('#precioDimension').text();
+                                                                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                            $('#precioDimension').text(precioTodoFloat);
                                                                         });
                                                                 }
+
                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                     '<img id="interiorDentroArmario' +
                                                                         hueco +
-                                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                                        '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                                         nombre +
-                                                                        '/peque_interior_' +
-                                                                        nombre +
-                                                                        '_' +
-                                                                        interior1.toLowerCase() +
-                                                                        '_optimized.png">'
+                                                                        '.png">'
                                                                 );
                                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                                             }
@@ -5376,191 +5832,143 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 cuenta = cuenta * 2;
                                                                 if (i == 1) {
                                                                     this.interioresArmarioNuevosService
-                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                        .findBus(dato.codigo, idProdInt[nombre])
                                                                         .subscribe(data => {
                                                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                                '<p style="width:100%">Hueco ' +
+                                                                                '<p style="width:100%;display:none">Hueco ' +
                                                                                     letras[hueco - 1] +
                                                                                     ': <span id="acabadoHueco' +
                                                                                     hueco +
                                                                                     '">Interior ' +
                                                                                     nombre +
                                                                                     '</span><span style="float:right">+ ' +
-                                                                                    data.body[0].precio +
+                                                                                    data.body[0].a +
                                                                                     '€</span><p/>'
                                                                             );
+                                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                            var precioTodo;
+                                                                            precioTodo = $('#precioDimension').text();
+                                                                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                            $('#precioDimension').text(precioTodoFloat);
                                                                         });
                                                                 }
                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                     '<img id="interiorDentroArmario' +
                                                                         hueco +
-                                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                        '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                                         nombre +
-                                                                        '/grande_interior_' +
-                                                                        nombre +
-                                                                        '_' +
-                                                                        interior1.toLowerCase() +
-                                                                        '_optimized.png">'
+                                                                        '.png">'
                                                                 );
                                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                                             }
+
                                                             if (hueco == 3) {
                                                                 cuenta = ancho / puertas;
                                                                 cuenta = cuenta * 2;
                                                                 if (i == 1) {
                                                                     this.interioresArmarioNuevosService
-                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                        .findBus(dato.codigo, idProdInt[nombre])
                                                                         .subscribe(data => {
                                                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                                '<p style="width:100%">Hueco ' +
+                                                                                '<p style="width:100%;display:none">Hueco ' +
                                                                                     letras[hueco - 1] +
                                                                                     ': <span id="acabadoHueco' +
                                                                                     hueco +
                                                                                     '">Interior ' +
                                                                                     nombre +
                                                                                     '</span><span style="float:right">+ ' +
-                                                                                    data.body[0].precio +
+                                                                                    data.body[0].a +
                                                                                     '€</span><p/>'
                                                                             );
+                                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                            var precioTodo;
+                                                                            precioTodo = $('#precioDimension').text();
+                                                                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                            $('#precioDimension').text(precioTodoFloat);
                                                                         });
                                                                 }
                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                     '<img id="interiorDentroArmario' +
                                                                         hueco +
-                                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:494px;margin-top:-91px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                        '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-186px;margin-left: 154px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                                         nombre +
-                                                                        '/grande_interior_' +
-                                                                        nombre +
-                                                                        '_' +
-                                                                        interior1.toLowerCase() +
-                                                                        '_optimized.png">'
+                                                                        '.png">'
                                                                 );
                                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                                             }
+
                                                             if (hueco == 4) {
                                                                 cuenta = ancho / puertas;
                                                                 cuenta = cuenta * 2;
                                                                 if (i == 1) {
                                                                     this.interioresArmarioNuevosService
-                                                                        .findBus(cuenta, idProdInt[nombre])
+                                                                        .findBus(dato.codigo, idProdInt[nombre])
                                                                         .subscribe(data => {
                                                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                                '<p style="width:100%">Hueco ' +
+                                                                                '<p style="width:100%;display:none">Hueco ' +
                                                                                     letras[hueco - 1] +
                                                                                     ': <span id="acabadoHueco' +
                                                                                     hueco +
                                                                                     '">Interior ' +
                                                                                     nombre +
                                                                                     '</span><span style="float:right">+ ' +
-                                                                                    data.body[0].precio +
+                                                                                    data.body[0].a +
                                                                                     '€</span><p/>'
                                                                             );
+                                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                            var precioTodo;
+                                                                            precioTodo = $('#precioDimension').text();
+                                                                            var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                            $('#precioDimension').text(precioTodoFloat);
                                                                         });
                                                                 }
                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                     '<img id="interiorDentroArmario' +
                                                                         hueco +
-                                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:776px;margin-top:-142px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                        '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-227px;margin-left: 380px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                                         nombre +
-                                                                        '/grande_interior_' +
-                                                                        nombre +
-                                                                        '_' +
-                                                                        interior1.toLowerCase() +
-                                                                        '_optimized.png">'
+                                                                        '.png">'
                                                                 );
-                                                                $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                            }
-                                                            if (hueco == 5) {
-                                                                cuenta = ancho / puertas;
-                                                                cuenta = cuenta * 2;
-                                                                if (i == 1) {
-                                                                    this.interioresArmarioNuevosService
-                                                                        .findBus(cuenta, idProdInt[nombre])
-                                                                        .subscribe(data => {
-                                                                            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                                                                                '<p style="width:100%">Hueco ' +
-                                                                                    letras[hueco - 1] +
-                                                                                    ': <span id="acabadoHueco' +
-                                                                                    hueco +
-                                                                                    '">Interior ' +
-                                                                                    nombre +
-                                                                                    '</span><span style="float:right">+ ' +
-                                                                                    data.body[0].precio +
-                                                                                    '€</span><p/>'
-                                                                            );
-                                                                        });
-                                                                }
-                                                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                                    '<img id="interiorDentroArmario' +
-                                                                        hueco +
-                                                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left: 1057px;margin-top: -194px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                                        nombre +
-                                                                        '/grande_interior_' +
-                                                                        nombre +
-                                                                        '_' +
-                                                                        interior1.toLowerCase() +
-                                                                        '_optimized.png">'
-                                                                );
-                                                                $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                                                             }
                                                         }
                                                     } else {
-                                                        if (texto == '10 PUERTAS ASIMETRICAS') {
+                                                        if (texto == '5 CUERPOS TIPO 1') {
+                                                            $('body').css({ 'overflow-x': 'hidden' });
                                                             for (let i = 1; i <= 2; i++) {
-                                                                if (hueco == 1) {
-                                                                    cuenta = ancho / puertas;
-                                                                    cuenta = cuenta * 1;
-                                                                    if (i == 1) {
-                                                                        this.interioresArmarioNuevosService
-                                                                            .findBus(cuenta, idProdInt[nombre])
-                                                                            .subscribe(data => {
-                                                                                $(
-                                                                                    '#calculadoraCarrito #productoCalculadora1 #datos1'
-                                                                                ).append(
-                                                                                    '<p style="width:100%">Hueco ' +
-                                                                                        letras[hueco - 1] +
-                                                                                        ': <span id="acabadoHueco' +
-                                                                                        hueco +
-                                                                                        '">Interior ' +
-                                                                                        nombre +
-                                                                                        '</span><span style="float:right">+ ' +
-                                                                                        data.body[0].precio +
-                                                                                        '€</span><p/>'
-                                                                                );
-                                                                            });
-                                                                    }
-                                                                    $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                                        '<img id="interiorDentroArmario' +
-                                                                            hueco +
-                                                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                                            nombre +
-                                                                            '/peque_interior_' +
-                                                                            nombre +
-                                                                            '_' +
-                                                                            interior1.toLowerCase() +
-                                                                            '_optimized.png">'
-                                                                    );
-                                                                    $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                                }
                                                                 if (hueco == 2) {
                                                                     cuenta = ancho / puertas;
                                                                     cuenta = cuenta * 2;
                                                                     if (i == 1) {
+                                                                        if (ancho >= 300 && ancho < 310) {
+                                                                            cuenta = 871;
+                                                                        }
+                                                                        if (ancho >= 310 && ancho < 320) {
+                                                                            cuenta = 905;
+                                                                        }
+                                                                        if (ancho >= 320 && ancho < 330) {
+                                                                            cuenta = 938;
+                                                                        }
+                                                                        if (ancho >= 330 && ancho < 340) {
+                                                                            cuenta = 975;
+                                                                        }
+                                                                        if (ancho >= 340 && ancho < 350) {
+                                                                            cuenta = 975;
+                                                                        }
                                                                         this.interioresArmarioNuevosService
-                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .findBus(dato.codigo, idProdInt[nombre])
                                                                             .subscribe(data => {
                                                                                 $(
                                                                                     '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                 ).append(
-                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                                         letras[hueco - 1] +
                                                                                         ': <span id="acabadoHueco' +
                                                                                         hueco +
                                                                                         '">Interior ' +
                                                                                         nombre +
                                                                                         '</span><span style="float:right">+ ' +
-                                                                                        data.body[0].precio +
+                                                                                        data.body[0].b +
                                                                                         '€</span><p/>'
                                                                                 );
                                                                             });
@@ -5568,34 +5976,45 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
-                                                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                            '" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-150px;margin-left: -20px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                             nombre +
-                                                                            '/grande_interior_' +
-                                                                            nombre +
-                                                                            '_' +
-                                                                            interior1.toLowerCase() +
-                                                                            '_optimized.png">'
+                                                                            '.png">'
                                                                     );
                                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 }
                                                                 if (hueco == 3) {
+                                                                    if (ancho >= 300 && ancho < 310) {
+                                                                        cuenta = 871;
+                                                                    }
+                                                                    if (ancho >= 310 && ancho < 320) {
+                                                                        cuenta = 905;
+                                                                    }
+                                                                    if (ancho >= 320 && ancho < 330) {
+                                                                        cuenta = 938;
+                                                                    }
+                                                                    if (ancho >= 330 && ancho < 340) {
+                                                                        cuenta = 975;
+                                                                    }
+                                                                    if (ancho >= 340 && ancho < 350) {
+                                                                        cuenta = 975;
+                                                                    }
                                                                     cuenta = ancho / puertas;
                                                                     cuenta = cuenta * 2;
                                                                     if (i == 1) {
                                                                         this.interioresArmarioNuevosService
-                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .findBus(dato.codigo, idProdInt[nombre])
                                                                             .subscribe(data => {
                                                                                 $(
                                                                                     '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                 ).append(
-                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                                         letras[hueco - 1] +
                                                                                         ': <span id="acabadoHueco' +
                                                                                         hueco +
                                                                                         '">Interior ' +
                                                                                         nombre +
                                                                                         '</span><span style="float:right">+ ' +
-                                                                                        data.body[0].precio +
+                                                                                        data.body[0].c +
                                                                                         '€</span><p/>'
                                                                                 );
                                                                             });
@@ -5603,34 +6022,45 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
-                                                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:494px;margin-top:-91px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                            '" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-202px;margin-left: 262px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                             nombre +
-                                                                            '/grande_interior_' +
-                                                                            nombre +
-                                                                            '_' +
-                                                                            interior1.toLowerCase() +
-                                                                            '_optimized.png">'
+                                                                            '.png">'
                                                                     );
                                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 }
                                                                 if (hueco == 4) {
+                                                                    if (ancho >= 300 && ancho < 310) {
+                                                                        cuenta = 871;
+                                                                    }
+                                                                    if (ancho >= 310 && ancho < 320) {
+                                                                        cuenta = 905;
+                                                                    }
+                                                                    if (ancho >= 320 && ancho < 330) {
+                                                                        cuenta = 938;
+                                                                    }
+                                                                    if (ancho >= 330 && ancho < 340) {
+                                                                        cuenta = 975;
+                                                                    }
+                                                                    if (ancho >= 340 && ancho < 350) {
+                                                                        cuenta = 975;
+                                                                    }
                                                                     cuenta = ancho / puertas;
                                                                     cuenta = cuenta * 2;
                                                                     if (i == 1) {
                                                                         this.interioresArmarioNuevosService
-                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .findBus(dato.codigo, idProdInt[nombre])
                                                                             .subscribe(data => {
                                                                                 $(
                                                                                     '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                 ).append(
-                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                                         letras[hueco - 1] +
                                                                                         ': <span id="acabadoHueco' +
                                                                                         hueco +
                                                                                         '">Interior ' +
                                                                                         nombre +
                                                                                         '</span><span style="float:right">+ ' +
-                                                                                        data.body[0].precio +
+                                                                                        data.body[0].c +
                                                                                         '€</span><p/>'
                                                                                 );
                                                                             });
@@ -5638,34 +6068,46 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
-                                                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:775px;margin-top:-142px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                            '" style="position:absolute;width: 950px;height: 845px;z-index:97;margin-top:-254px;margin-left: 545px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                             nombre +
-                                                                            '/grande_interior_' +
-                                                                            nombre +
-                                                                            '_' +
-                                                                            interior1.toLowerCase() +
-                                                                            '_optimized.png">'
+                                                                            '.png">'
                                                                     );
                                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 }
+
                                                                 if (hueco == 5) {
+                                                                    if (ancho >= 300 && ancho < 310) {
+                                                                        cuenta = 871;
+                                                                    }
+                                                                    if (ancho >= 310 && ancho < 320) {
+                                                                        cuenta = 905;
+                                                                    }
+                                                                    if (ancho >= 320 && ancho < 330) {
+                                                                        cuenta = 938;
+                                                                    }
+                                                                    if (ancho >= 330 && ancho < 340) {
+                                                                        cuenta = 975;
+                                                                    }
+                                                                    if (ancho >= 340 && ancho < 350) {
+                                                                        cuenta = 975;
+                                                                    }
                                                                     cuenta = ancho / puertas;
                                                                     cuenta = cuenta * 2;
                                                                     if (i == 1) {
                                                                         this.interioresArmarioNuevosService
-                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .findBus(dato.codigo, idProdInt[nombre])
                                                                             .subscribe(data => {
                                                                                 $(
                                                                                     '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                 ).append(
-                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                                         letras[hueco - 1] +
                                                                                         ': <span id="acabadoHueco' +
                                                                                         hueco +
                                                                                         '">Interior ' +
                                                                                         nombre +
                                                                                         '</span><span style="float:right">+ ' +
-                                                                                        data.body[0].precio +
+                                                                                        data.body[0].c +
                                                                                         '€</span><p/>'
                                                                                 );
                                                                             });
@@ -5673,34 +6115,46 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
-                                                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:1056px;margin-top:-194px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                            '" style="position:absolute;width: 950px;height: 845px;z-index:96;margin-top:-305px;margin-left: 824px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                             nombre +
-                                                                            '/grande_interior_' +
-                                                                            nombre +
-                                                                            '_' +
-                                                                            interior1.toLowerCase() +
-                                                                            '_optimized.png">'
+                                                                            '.png">'
                                                                     );
                                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 }
-                                                                if (hueco == 6) {
+
+                                                                if (hueco == 1) {
                                                                     cuenta = ancho / puertas;
-                                                                    cuenta = cuenta * 1;
+                                                                    cuenta = cuenta * 2;
                                                                     if (i == 1) {
+                                                                        if (ancho >= 300 && ancho < 310) {
+                                                                            cuenta = 871;
+                                                                        }
+                                                                        if (ancho >= 310 && ancho < 320) {
+                                                                            cuenta = 905;
+                                                                        }
+                                                                        if (ancho >= 320 && ancho < 330) {
+                                                                            cuenta = 938;
+                                                                        }
+                                                                        if (ancho >= 330 && ancho < 340) {
+                                                                            cuenta = 975;
+                                                                        }
+                                                                        if (ancho >= 340 && ancho < 350) {
+                                                                            cuenta = 975;
+                                                                        }
                                                                         this.interioresArmarioNuevosService
-                                                                            .findBus(cuenta, idProdInt[nombre])
+                                                                            .findBus(dato.codigo, idProdInt[nombre])
                                                                             .subscribe(data => {
                                                                                 $(
                                                                                     '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                 ).append(
-                                                                                    '<p style="width:100%">Hueco ' +
+                                                                                    '<p style="width:100%;display:none">Hueco ' +
                                                                                         letras[hueco - 1] +
                                                                                         ': <span id="acabadoHueco' +
                                                                                         hueco +
                                                                                         '">Interior ' +
                                                                                         nombre +
                                                                                         '</span><span style="float:right">+ ' +
-                                                                                        data.body[0].precio +
+                                                                                        data.body[0].a +
                                                                                         '€</span><p/>'
                                                                                 );
                                                                             });
@@ -5708,53 +6162,55 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                         '<img id="interiorDentroArmario' +
                                                                             hueco +
-                                                                            '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left: 1266px;margin-top: -233px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                                            '" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                             nombre +
-                                                                            '/peque_interior_' +
-                                                                            nombre +
-                                                                            '_' +
-                                                                            interior1.toLowerCase() +
-                                                                            '_optimized.png">'
+                                                                            '.png">'
                                                                     );
-                                                                    $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                 }
                                                             }
                                                         } else {
-                                                            if (texto == '11 PUERTAS IZQUIERDA') {
-                                                                for (let i = 1; i <= 2; i++) {
+                                                            if (texto == '5 CUERPOS TIPO 2') {
+                                                                for (let i = 1; i <= 1; i++) {
                                                                     if (hueco == 1) {
                                                                         cuenta = ancho / puertas;
                                                                         cuenta = cuenta * 1;
                                                                         if (i == 1) {
                                                                             this.interioresArmarioNuevosService
-                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .findBus(dato.codigo, idProdInt[nombre])
                                                                                 .subscribe(data => {
                                                                                     $(
                                                                                         '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                     ).append(
-                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                        '<p id="interiorHueco' +
+                                                                                            hueco +
+                                                                                            '" style="width:100%;display:none">Hueco ' +
                                                                                             letras[hueco - 1] +
                                                                                             ': <span id="acabadoHueco' +
                                                                                             hueco +
                                                                                             '">Interior ' +
                                                                                             nombre +
-                                                                                            '</span><span style="float:right">+ ' +
-                                                                                            data.body[0].precio +
-                                                                                            '€</span><p/>'
+                                                                                            '</span><span style="float:right">+ <span id="precio">' +
+                                                                                            data.body[0].a +
+                                                                                            '</span>€</span><p/>'
                                                                                     );
+                                                                                    $('#precioInt' + (hueco - 1)).text(
+                                                                                        data.body[0].a + ' €'
+                                                                                    );
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    var precioTodoFloat =
+                                                                                        data.body[0].a + parseFloat(precioTodo);
+                                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                                 });
                                                                         }
+
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
-                                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                                                                 nombre +
-                                                                                '/peque_interior_' +
-                                                                                nombre +
-                                                                                '_' +
-                                                                                interior1.toLowerCase() +
-                                                                                '_optimized.png">'
+                                                                                '.png">'
                                                                         );
                                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     }
@@ -5763,212 +6219,203 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         cuenta = cuenta * 2;
                                                                         if (i == 1) {
                                                                             this.interioresArmarioNuevosService
-                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .findBus(dato.codigo, idProdInt[nombre])
                                                                                 .subscribe(data => {
                                                                                     $(
                                                                                         '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                     ).append(
-                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                                             letras[hueco - 1] +
                                                                                             ': <span id="acabadoHueco' +
                                                                                             hueco +
                                                                                             '">Interior ' +
                                                                                             nombre +
                                                                                             '</span><span style="float:right">+ ' +
-                                                                                            data.body[0].precio +
+                                                                                            data.body[0].a +
                                                                                             '€</span><p/>'
                                                                                     );
+                                                                                    $('#precioInt' + (hueco - 1)).text(
+                                                                                        data.body[0].a + ' €'
+                                                                                    );
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    var precioTodoFloat =
+                                                                                        data.body[0].a + parseFloat(precioTodo);
+                                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                                 });
                                                                         }
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
-                                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                                                                 nombre +
-                                                                                '/grande_interior_' +
-                                                                                nombre +
-                                                                                '_' +
-                                                                                interior1.toLowerCase() +
-                                                                                '_optimized.png">'
+                                                                                '.png">'
                                                                         );
                                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     }
+
                                                                     if (hueco == 3) {
                                                                         cuenta = ancho / puertas;
                                                                         cuenta = cuenta * 2;
                                                                         if (i == 1) {
                                                                             this.interioresArmarioNuevosService
-                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .findBus(dato.codigo, idProdInt[nombre])
                                                                                 .subscribe(data => {
                                                                                     $(
                                                                                         '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                     ).append(
-                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                                             letras[hueco - 1] +
                                                                                             ': <span id="acabadoHueco' +
                                                                                             hueco +
                                                                                             '">Interior ' +
                                                                                             nombre +
                                                                                             '</span><span style="float:right">+ ' +
-                                                                                            data.body[0].precio +
+                                                                                            data.body[0].a +
                                                                                             '€</span><p/>'
                                                                                     );
+                                                                                    $('#precioInt' + (hueco - 1)).text(
+                                                                                        data.body[0].a + ' €'
+                                                                                    );
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    var precioTodoFloat =
+                                                                                        data.body[0].a + parseFloat(precioTodo);
+                                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                                 });
                                                                         }
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
-                                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:494px;margin-top:-91px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-186px;margin-left: 154px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                                                                 nombre +
-                                                                                '/grande_interior_' +
-                                                                                nombre +
-                                                                                '_' +
-                                                                                interior1.toLowerCase() +
-                                                                                '_optimized.png">'
+                                                                                '.png">'
                                                                         );
                                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     }
+
                                                                     if (hueco == 4) {
                                                                         cuenta = ancho / puertas;
                                                                         cuenta = cuenta * 2;
                                                                         if (i == 1) {
                                                                             this.interioresArmarioNuevosService
-                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .findBus(dato.codigo, idProdInt[nombre])
                                                                                 .subscribe(data => {
                                                                                     $(
                                                                                         '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                     ).append(
-                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                                             letras[hueco - 1] +
                                                                                             ': <span id="acabadoHueco' +
                                                                                             hueco +
                                                                                             '">Interior ' +
                                                                                             nombre +
                                                                                             '</span><span style="float:right">+ ' +
-                                                                                            data.body[0].precio +
+                                                                                            data.body[0].a +
                                                                                             '€</span><p/>'
                                                                                     );
+                                                                                    $('#precioInt' + (hueco - 1)).text(
+                                                                                        data.body[0].a + ' €'
+                                                                                    );
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    var precioTodoFloat =
+                                                                                        data.body[0].a + parseFloat(precioTodo);
+                                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                                 });
                                                                         }
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
-                                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:775px;margin-top:-142px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                                '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-227px;margin-left: 379px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                                                                 nombre +
-                                                                                '/grande_interior_' +
-                                                                                nombre +
-                                                                                '_' +
-                                                                                interior1.toLowerCase() +
-                                                                                '_optimized.png">'
+                                                                                '.png">'
                                                                         );
                                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     }
+
                                                                     if (hueco == 5) {
                                                                         cuenta = ancho / puertas;
                                                                         cuenta = cuenta * 2;
                                                                         if (i == 1) {
                                                                             this.interioresArmarioNuevosService
-                                                                                .findBus(cuenta, idProdInt[nombre])
+                                                                                .findBus(dato.codigo, idProdInt[nombre])
                                                                                 .subscribe(data => {
                                                                                     $(
                                                                                         '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                     ).append(
-                                                                                        '<p style="width:100%">Hueco ' +
+                                                                                        '<p style="width:100%;display:none">Hueco ' +
                                                                                             letras[hueco - 1] +
                                                                                             ': <span id="acabadoHueco' +
                                                                                             hueco +
                                                                                             '">Interior ' +
                                                                                             nombre +
                                                                                             '</span><span style="float:right">+ ' +
-                                                                                            data.body[0].precio +
+                                                                                            data.body[0].a +
                                                                                             '€</span><p/>'
                                                                                     );
+                                                                                    $('#precioInt' + (hueco - 1)).text(
+                                                                                        data.body[0].a + ' €'
+                                                                                    );
+                                                                                    var precioTodo;
+                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    var precioTodoFloat =
+                                                                                        data.body[0].a + parseFloat(precioTodo);
+                                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                                 });
                                                                         }
                                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                             '<img id="interiorDentroArmario' +
                                                                                 hueco +
-                                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:1057px;margin-top:-194px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                                '" style="position:absolute;width: 950px;height: 850px;z-index:96;margin-top:-268px;margin-left: 605px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
                                                                                 nombre +
-                                                                                '/grande_interior_' +
-                                                                                nombre +
-                                                                                '_' +
-                                                                                interior1.toLowerCase() +
-                                                                                '_optimized.png">'
-                                                                        );
-                                                                        $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                                    }
-                                                                    if (hueco == 6) {
-                                                                        cuenta = ancho / puertas;
-                                                                        cuenta = cuenta * 2;
-                                                                        if (i == 1) {
-                                                                            this.interioresArmarioNuevosService
-                                                                                .findBus(cuenta, idProdInt[nombre])
-                                                                                .subscribe(data => {
-                                                                                    $(
-                                                                                        '#calculadoraCarrito #productoCalculadora1 #datos1'
-                                                                                    ).append(
-                                                                                        '<p style="width:100%">Hueco ' +
-                                                                                            letras[hueco - 1] +
-                                                                                            ': <span id="acabadoHueco' +
-                                                                                            hueco +
-                                                                                            '">Interior ' +
-                                                                                            nombre +
-                                                                                            '</span><span style="float:right">+ ' +
-                                                                                            data.body[0].precio +
-                                                                                            '€</span><p/>'
-                                                                                    );
-                                                                                });
-                                                                        }
-                                                                        $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                                            '<img id="interiorDentroArmario' +
-                                                                                hueco +
-                                                                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:1338px;margin-top:-246px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                                                nombre +
-                                                                                '/grande_interior_' +
-                                                                                nombre +
-                                                                                '_' +
-                                                                                interior1.toLowerCase() +
-                                                                                '_optimized.png">'
+                                                                                '.png">'
                                                                         );
                                                                         $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                     }
                                                                 }
                                                             } else {
-                                                                if (texto == '12 PUERTAS ASIMETRICAS') {
-                                                                    for (let i = 1; i <= 2; i++) {
+                                                                if (texto == '5 CUERPOS TIPO 3') {
+                                                                    for (let i = 1; i <= 1; i++) {
                                                                         if (hueco == 1) {
                                                                             cuenta = ancho / puertas;
                                                                             cuenta = cuenta * 1;
                                                                             if (i == 1) {
                                                                                 this.interioresArmarioNuevosService
-                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .findBus(dato.codigo, idProdInt[nombre])
                                                                                     .subscribe(data => {
                                                                                         $(
                                                                                             '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                         ).append(
-                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                            '<p id="interiorHueco' +
+                                                                                                hueco +
+                                                                                                '" style="width:100%;display:none">Hueco ' +
                                                                                                 letras[hueco - 1] +
                                                                                                 ': <span id="acabadoHueco' +
                                                                                                 hueco +
                                                                                                 '">Interior ' +
                                                                                                 nombre +
-                                                                                                '</span><span style="float:right">+ ' +
-                                                                                                data.body[0].precio +
-                                                                                                '€</span><p/>'
+                                                                                                '</span><span style="float:right">+ <span id="precio">' +
+                                                                                                data.body[0].a +
+                                                                                                '</span>€</span><p/>'
                                                                                         );
+                                                                                        $('#precioInt' + (hueco - 1)).text(
+                                                                                            data.body[0].a + ' €'
+                                                                                        );
+                                                                                        var precioTodo;
+                                                                                        precioTodo = $('#precioDimension').text();
+                                                                                        var precioTodoFloat =
+                                                                                            data.body[0].a + parseFloat(precioTodo);
+                                                                                        $('#precioDimension').text(precioTodoFloat);
                                                                                     });
                                                                             }
+
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
-                                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                                                                    '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                                                     nombre +
-                                                                                    '/peque_interior_' +
-                                                                                    nombre +
-                                                                                    '_' +
-                                                                                    interior1.toLowerCase() +
-                                                                                    '_optimized.png">'
+                                                                                    '.png">'
                                                                             );
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
@@ -5977,210 +6424,158 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             cuenta = cuenta * 2;
                                                                             if (i == 1) {
                                                                                 this.interioresArmarioNuevosService
-                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .findBus(dato.codigo, idProdInt[nombre])
                                                                                     .subscribe(data => {
                                                                                         $(
                                                                                             '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                         ).append(
-                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                            '<p style="width:100%;display:none">Hueco ' +
                                                                                                 letras[hueco - 1] +
                                                                                                 ': <span id="acabadoHueco' +
                                                                                                 hueco +
                                                                                                 '">Interior ' +
                                                                                                 nombre +
                                                                                                 '</span><span style="float:right">+ ' +
-                                                                                                data.body[0].precio +
+                                                                                                data.body[0].a +
                                                                                                 '€</span><p/>'
                                                                                         );
+                                                                                        $('#precioInt' + (hueco - 1)).text(
+                                                                                            data.body[0].a + ' €'
+                                                                                        );
+                                                                                        var precioTodo;
+                                                                                        precioTodo = $('#precioDimension').text();
+                                                                                        var precioTodoFloat =
+                                                                                            data.body[0].a + parseFloat(precioTodo);
+                                                                                        $('#precioDimension').text(precioTodoFloat);
                                                                                     });
                                                                             }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
-                                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                                    '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                                                     nombre +
-                                                                                    '/grande_interior_' +
-                                                                                    nombre +
-                                                                                    '_' +
-                                                                                    interior1.toLowerCase() +
-                                                                                    '_optimized.png">'
+                                                                                    '.png">'
                                                                             );
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
+
                                                                         if (hueco == 3) {
                                                                             cuenta = ancho / puertas;
                                                                             cuenta = cuenta * 2;
                                                                             if (i == 1) {
                                                                                 this.interioresArmarioNuevosService
-                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .findBus(dato.codigo, idProdInt[nombre])
                                                                                     .subscribe(data => {
                                                                                         $(
                                                                                             '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                         ).append(
-                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                            '<p style="width:100%;display:none">Hueco ' +
                                                                                                 letras[hueco - 1] +
                                                                                                 ': <span id="acabadoHueco' +
                                                                                                 hueco +
                                                                                                 '">Interior ' +
                                                                                                 nombre +
                                                                                                 '</span><span style="float:right">+ ' +
-                                                                                                data.body[0].precio +
+                                                                                                data.body[0].a +
                                                                                                 '€</span><p/>'
                                                                                         );
+                                                                                        $('#precioInt' + (hueco - 1)).text(
+                                                                                            data.body[0].a + ' €'
+                                                                                        );
+                                                                                        var precioTodo;
+                                                                                        precioTodo = $('#precioDimension').text();
+                                                                                        var precioTodoFloat =
+                                                                                            data.body[0].a + parseFloat(precioTodo);
+                                                                                        $('#precioDimension').text(precioTodoFloat);
                                                                                     });
                                                                             }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
-                                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:494px;margin-top:-91px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                                    '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-186px;margin-left: 154px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                                                     nombre +
-                                                                                    '/grande_interior_' +
-                                                                                    nombre +
-                                                                                    '_' +
-                                                                                    interior1.toLowerCase() +
-                                                                                    '_optimized.png">'
+                                                                                    '.png">'
                                                                             );
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
+
                                                                         if (hueco == 4) {
                                                                             cuenta = ancho / puertas;
                                                                             cuenta = cuenta * 2;
                                                                             if (i == 1) {
                                                                                 this.interioresArmarioNuevosService
-                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .findBus(dato.codigo, idProdInt[nombre])
                                                                                     .subscribe(data => {
                                                                                         $(
                                                                                             '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                         ).append(
-                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                            '<p style="width:100%;display:none">Hueco ' +
                                                                                                 letras[hueco - 1] +
                                                                                                 ': <span id="acabadoHueco' +
                                                                                                 hueco +
                                                                                                 '">Interior ' +
                                                                                                 nombre +
                                                                                                 '</span><span style="float:right">+ ' +
-                                                                                                data.body[0].precio +
+                                                                                                data.body[0].a +
                                                                                                 '€</span><p/>'
                                                                                         );
+                                                                                        $('#precioInt' + (hueco - 1)).text(
+                                                                                            data.body[0].a + ' €'
+                                                                                        );
+                                                                                        var precioTodo;
+                                                                                        precioTodo = $('#precioDimension').text();
+                                                                                        var precioTodoFloat =
+                                                                                            data.body[0].a + parseFloat(precioTodo);
+                                                                                        $('#precioDimension').text(precioTodoFloat);
                                                                                     });
                                                                             }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
-                                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:775px;margin-top:-142px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                                    '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-227px;margin-left: 379px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                                                     nombre +
-                                                                                    '/grande_interior_' +
-                                                                                    nombre +
-                                                                                    '_' +
-                                                                                    interior1.toLowerCase() +
-                                                                                    '_optimized.png">'
+                                                                                    '.png">'
                                                                             );
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
+
                                                                         if (hueco == 5) {
                                                                             cuenta = ancho / puertas;
                                                                             cuenta = cuenta * 2;
                                                                             if (i == 1) {
                                                                                 this.interioresArmarioNuevosService
-                                                                                    .findBus(cuenta, idProdInt[nombre])
+                                                                                    .findBus(dato.codigo, idProdInt[nombre])
                                                                                     .subscribe(data => {
                                                                                         $(
                                                                                             '#calculadoraCarrito #productoCalculadora1 #datos1'
                                                                                         ).append(
-                                                                                            '<p style="width:100%">Hueco ' +
+                                                                                            '<p style="width:100%;display:none">Hueco ' +
                                                                                                 letras[hueco - 1] +
                                                                                                 ': <span id="acabadoHueco' +
                                                                                                 hueco +
                                                                                                 '">Interior ' +
                                                                                                 nombre +
                                                                                                 '</span><span style="float:right">+ ' +
-                                                                                                data.body[0].precio +
+                                                                                                data.body[0].a +
                                                                                                 '€</span><p/>'
                                                                                         );
+                                                                                        $('#precioInt' + (hueco - 1)).text(
+                                                                                            data.body[0].a + ' €'
+                                                                                        );
+                                                                                        var precioTodo;
+                                                                                        precioTodo = $('#precioDimension').text();
+                                                                                        var precioTodoFloat =
+                                                                                            data.body[0].a + parseFloat(precioTodo);
+                                                                                        $('#precioDimension').text(precioTodoFloat);
                                                                                     });
                                                                             }
                                                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                 '<img id="interiorDentroArmario' +
                                                                                     hueco +
-                                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:1056px;margin-top:-194px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                                                                    '" style="position:absolute;width: 950px;height: 850px;z-index:96;margin-top:-268px;margin-left: 605px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                                                                     nombre +
-                                                                                    '/grande_interior_' +
-                                                                                    nombre +
-                                                                                    '_' +
-                                                                                    interior1.toLowerCase() +
-                                                                                    '_optimized.png">'
+                                                                                    '.png">'
                                                                             );
-                                                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                                        }
-                                                                        if (hueco == 6) {
-                                                                            cuenta = ancho / puertas;
-                                                                            cuenta = cuenta * 2;
-                                                                            if (i == 1) {
-                                                                                this.interioresArmarioNuevosService
-                                                                                    .findBus(cuenta, idProdInt[nombre])
-                                                                                    .subscribe(data => {
-                                                                                        $(
-                                                                                            '#calculadoraCarrito #productoCalculadora1 #datos1'
-                                                                                        ).append(
-                                                                                            '<p style="width:100%">Hueco ' +
-                                                                                                letras[hueco - 1] +
-                                                                                                ': <span id="acabadoHueco' +
-                                                                                                hueco +
-                                                                                                '">Interior ' +
-                                                                                                nombre +
-                                                                                                '</span><span style="float:right">+ ' +
-                                                                                                data.body[0].precio +
-                                                                                                '€</span><p/>'
-                                                                                        );
-                                                                                    });
-                                                                            }
-                                                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                                                '<img id="interiorDentroArmario' +
-                                                                                    hueco +
-                                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:1337px;margin-top:-246px" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                                                                    nombre +
-                                                                                    '/grande_interior_' +
-                                                                                    nombre +
-                                                                                    '_' +
-                                                                                    interior1.toLowerCase() +
-                                                                                    '_optimized.png">'
-                                                                            );
-                                                                            $('#textoLetraHueco' + (hueco - 1)).remove();
-                                                                        }
-                                                                        if (hueco == 7) {
-                                                                            cuenta = ancho / puertas;
-                                                                            cuenta = cuenta * 1;
-                                                                            if (i == 1) {
-                                                                                this.interioresArmarioNuevosService
-                                                                                    .findBus(cuenta, idProdInt[nombre])
-                                                                                    .subscribe(data => {
-                                                                                        $(
-                                                                                            '#calculadoraCarrito #productoCalculadora1 #datos1'
-                                                                                        ).append(
-                                                                                            '<p style="width:100%">Hueco ' +
-                                                                                                letras[hueco - 1] +
-                                                                                                ': <span id="acabadoHueco' +
-                                                                                                hueco +
-                                                                                                '">Interior ' +
-                                                                                                nombre +
-                                                                                                '</span><span style="float:right">+ ' +
-                                                                                                data.body[0].precio +
-                                                                                                '€</span><p/>'
-                                                                                        );
-                                                                                    });
-                                                                            }
-                                                                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                                                                '<img id="interiorDentroArmario' +
-                                                                                    hueco +
-                                                                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left: 1545px;margin-top: -286px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                                                                    nombre +
-                                                                                    '/peque_interior_' +
-                                                                                    nombre +
-                                                                                    '_' +
-                                                                                    interior1.toLowerCase() +
-                                                                                    '_optimized.png">'
-                                                                            );
-                                                                            $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                             $('#textoLetraHueco' + (hueco - 1)).remove();
                                                                         }
                                                                     }
@@ -6386,6 +6781,12 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             var array = this.armarioCogido;
             array['interiores'] = arrayParaVer;
             this.armarioCogido = array;
+        }
+
+        var arrayHuecos = this.arraySaberHuecos;
+        var mejorArmario = this.armarioCogido;
+        if (mejorArmario['interiores'].length == arrayHuecos.length) {
+            $('#botonCalculadoraVestidor').css({ display: 'block' });
         }
     }
     public cambiarAcabadoInterior(nombre) {

@@ -909,6 +909,48 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             );
                         }
 
+                        if (nombreArmario == '1 CUERPO TIPO 1') {
+                            var interior1 = sesion[1]['interiores'][0];
+
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 1;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '1 CUERPO TIPO 2') {
+                            var interior1 = sesion[1]['interiores'][0];
+
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 1;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '1 CUERPO TIPO 3') {
+                            var interior1 = sesion[1]['interiores'][0];
+
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 1;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
                         if (nombreArmario == '2 PUERTAS') {
                             var interior1 = sesion[1]['interiores'][0];
                             var puerta1 = sesion[1]['puertas'][0];
@@ -8439,7 +8481,15 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 sesion[1]['todoSumadoPrecio'] +
                                 '</i></p>'
                         );
-
+                        if (nombreArmario == '1 CUERPO TIPO 1') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '1 CUERPO TIPO 2') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '1 CUERPO TIPO 3') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
                         $('#textoCesta' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Ancho: ' +
                                 sesion[1]['ancho'] +
@@ -8502,11 +8552,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 sesion[1]['acabadoInterior']['nombre'] +
                                 '</p>'
                         );
-                        $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Tirador: ' +
-                                sesion[1]['acabadoTirador']['nombre'] +
-                                '</p>'
-                        );
+                        if (sesion[1]['acabadoTirador'] != undefined) {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Tirador: ' +
+                                    sesion[1]['acabadoTirador']['nombre'] +
+                                    '</p>'
+                            );
+                        }
 
                         for (let w = 0; w < sesion[1]['interiores']['length']; w++) {
                             $('#textoCesta' + i).append(
@@ -8519,17 +8571,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '</i></p>'
                             );
                         }
-
-                        for (let w = 0; w < sesion[1]['puertas']['length']; w++) {
-                            $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Puerta ' +
-                                    (w + 1) +
-                                    ': ' +
-                                    sesion[1]['puertas'][w]['nombre'] +
-                                    '<i style="float:right;margin-right:40%">&euro; ' +
-                                    sesion[1]['puertas'][w]['precio'] +
-                                    '</i></p>'
-                            );
+                        if (sesion[1]['puertas'] != undefined) {
+                            for (let w = 0; w < sesion[1]['puertas']['length']; w++) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Puerta ' +
+                                        (w + 1) +
+                                        ': ' +
+                                        sesion[1]['puertas'][w]['nombre'] +
+                                        '<i style="float:right;margin-right:40%">&euro; ' +
+                                        sesion[1]['puertas'][w]['precio'] +
+                                        '</i></p>'
+                                );
+                            }
                         }
 
                         $('#textoCesta' + i).append('<hr style="100%"></hr>');
@@ -12911,25 +12964,32 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                 for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
                     var interiores;
-                    interiores = {
-                        precio: prodCarr[m][1]['interiores'][x]['precio'],
-                        presupuestoArmario: presupuestoArmario,
-                        productosDormitorio: prodCarr[m][1]['interiores'][x]
-                    };
-
-                    this.subscribeToSaveResponse1(this.presupuestoArmarioInterioresService.create(interiores));
+                    for (let ve = 0; ve <= 10000500; ve++) {
+                        if (ve == 10000500) {
+                            interiores = {
+                                precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                presupuestoArmario: presupuestoArmario,
+                                productosDormitorio: prodCarr[m][1]['interiores'][x]
+                            };
+                            this.subscribeToSaveResponse1(this.presupuestoArmarioInterioresService.create(interiores));
+                        }
+                    }
                 }
-
-                for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
-                    var puertas;
-                    puertas = {
-                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                        presupuestoArmario: presupuestoArmario,
-                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                        acabados: prodCarr[m][1]['puertas'][x]['acabado' + x]
-                    };
-
-                    this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                if (prodCarr[m][1]['puertas'] != undefined) {
+                    for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
+                        var puertas;
+                        for (let ve = 0; ve <= 10000500; ve++) {
+                            if (ve == 10000500) {
+                                puertas = {
+                                    precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                    presupuestoArmario: presupuestoArmario,
+                                    productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                    acabados: prodCarr[m][1]['puertas'][x]['acabado' + x]
+                                };
+                                this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                            }
+                        }
+                    }
                 }
 
                 for (let h = 0; h < data.body.length; h++) {
@@ -12948,18 +13008,15 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
                     $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
                     $('#todometerFondo').css({ display: 'none' });
-                    if (memo[1]['checked'] == true) {
-                        this.router.navigate(['/pedidos-producto']);
-                    } else {
-                        if (item == 'A') {
-                            this.router.navigate(['/presupuesto-producto']);
-                        }
-                        if (item == 'B') {
-                            this.router.navigate(['/presupuesto-precios']);
-                        }
-                        if (item == 'C') {
-                            this.router.navigate(['/presupuesto-puntos']);
-                        }
+
+                    if (item == 'A') {
+                        this.router.navigate(['/presupuesto-producto']);
+                    }
+                    if (item == 'B') {
+                        this.router.navigate(['/presupuesto-precios']);
+                    }
+                    if (item == 'C') {
+                        this.router.navigate(['/presupuesto-puntos']);
                     }
                 });
             });
@@ -13261,18 +13318,15 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
                         $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
                         $('#todometerFondo').css({ display: 'none' });
-                        if (memo[1]['checked'] == true) {
-                            this.router.navigate(['/pedidos-producto']);
-                        } else {
-                            if (item == 'A') {
-                                this.router.navigate(['/presupuesto-producto']);
-                            }
-                            if (item == 'B') {
-                                this.router.navigate(['/presupuesto-precios']);
-                            }
-                            if (item == 'C') {
-                                this.router.navigate(['/presupuesto-puntos']);
-                            }
+
+                        if (item == 'A') {
+                            this.router.navigate(['/presupuesto-producto']);
+                        }
+                        if (item == 'B') {
+                            this.router.navigate(['/presupuesto-precios']);
+                        }
+                        if (item == 'C') {
+                            this.router.navigate(['/presupuesto-puntos']);
                         }
                     });
                 }
