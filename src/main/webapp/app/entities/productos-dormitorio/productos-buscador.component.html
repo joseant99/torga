@@ -84,6 +84,12 @@
 
     </div>
     
+    <div id="producto" class="armariosVistaDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
+    	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
+    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NV001 Y NV076]</label><input list="listaArmariosVista" type="text" id="inputCodigoVista" ></p>
+   		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioVistaComponent.abrirArmariosTodos()">OK</button></p>
+    </div>
+    
     
     <div id="producto" class="armariosDivTodo" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDAS</h2><BR><BR>
@@ -139,8 +145,8 @@
     
     <div id="producto" class="armariosDivTodo1" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM</label><input style="text-align:center" list="listaAnchosOcu" step="10" id="anchosSelect2" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM</label><input style="text-align:center" list="listaAlturaOcu" id="alturaSelect2" name="anchos" type="number"/></p>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioOcultaComponent.anchoMin}} Y {{this.armariosDormitorioOcultaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchosOcu" step="10" id="anchosSelect2" name="anchos" type="number"/></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioOcultaComponent.altoMin}} Y {{this.armariosDormitorioOcultaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAlturaOcu" id="alturaSelect2" name="anchos" type="number"/></p>
 		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input style="text-align:center" value="61" type="number" disabled/></p>
 		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioOcultaComponent.carcarCascosInterioresPuertas()">Buscar</button></p>
 		   
@@ -182,22 +188,11 @@
     
     <div id="producto" class="armariosDivTodo2" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect3" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM</label><input style="text-align:center" list="listaAltura" id="alturaSelect3" name="anchos" type="number"/></p>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioVistaComponent.anchoMin}} Y {{this.armariosDormitorioVistaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchosVista" step="10" id="anchosSelect3" name="anchos" type="number"/></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioVistaComponent.altoMin}} Y {{this.armariosDormitorioVistaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAlturaVista" id="alturaSelect3" name="anchos" type="number"/></p>
 		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input style="text-align:center" value="61" type="number" disabled/></p>
-		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioVistaComponent.cargarInterioresArmarios()">Buscar</button></p>
+		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioVistaComponent.carcarCascosInterioresPuertas()">Buscar</button></p>
 		   
-		<h2 style="text-align:center;margin-top: 5%;margin-bottom: 5%;" id="textoTituloInterior"></h2>
-		<div *ngIf="this.armariosDormitorioVistaComponent.armarioService.todo != undefined" style="margin-left:25px">
-	    	<div *ngFor="let tabla of this.armariosDormitorioVistaComponent.armarioService.todo;let u=index" style="width:40%;float:left;border:1px solid #B5BABD;margin-right:50px;margin-bottom:50px" id="armarioColorFondo{{u}}">
-	    		<div style="margin-top:25px;margin-bottom:25px;">
-		    		<p style="text-align:center"><img (click)="this.armariosDormitorioVistaComponent.carcarCascosInterioresPuertas(u)" (click)="quitarnone(3)" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  height="200px" width="500px" alt="productosDormitorio image"/></p>
-		    		<p style="text-align:center"><img (click)="this.armariosDormitorioVistaComponent.carcarCascosInterioresPuertas(u)" (click)="quitarnone(3)" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.productosDormitorio.imagenContentType + ';base64,' + tabla.productosDormitorio.imagen" height="200px" width="500px" alt="productosDormitorio image"/></p>
-		    		<p id="textoMensajeArmario{{u}}" style="width:100%;text-align:center">{{tabla.mensaje}}</p>
-	    		</div>
-	    	</div>
-    	</div>
-    	
     	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario1">
     		
     	</div>
@@ -1170,7 +1165,7 @@
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        </div>
 			        <div class="modal-body">	          
-			          <div *ngFor="let aca of this.armariosDormitorioOcultaComponent.acabadosPuerta1;" (click)="this.armariosDormitorioOcultaComponent.cambioAcabadoImagenPue(aca.nombre)" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+			          <div *ngFor="let aca of this.armariosDormitorioOcultaComponent.todos;" (click)="this.armariosDormitorioOcultaComponent.cambioAcabadoImagenPue(aca.nombre)" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
 			        </div>
 			        <div class="modal-footer">
 			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1189,7 +1184,7 @@
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        </div>
 			        <div class="modal-body">	          
-			          <div *ngFor="let aca of acabadosPuerta2;" (click)="this.armariosDormitorioOcultaComponent.cambioAcabadoImagenPue(aca.nombre)" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+			          <div *ngFor="let aca of this.armariosDormitorioOcultaComponent.todos;" (click)="this.armariosDormitorioOcultaComponent.cambioAcabadoImagenPue(aca.nombre)" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
 			        </div>
 			        <div class="modal-footer">
 			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1536,7 +1531,7 @@
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        </div>
 			        <div class="modal-body">	          
-			          <div *ngFor="let aca of this.armariosDormitorioVistaComponent.acabadosPuerta1;" (click)="this.armariosDormitorioVistaComponent.cambioAcabadoImagenPue(aca.nombre)" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+			          <div *ngFor="let aca of this.armariosDormitorioVistaComponent.todos;" (click)="this.armariosDormitorioVistaComponent.cambioAcabadoImagenPue(aca.nombre)" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
 			        </div>
 			        <div class="modal-footer">
 			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1555,7 +1550,7 @@
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        </div>
 			        <div class="modal-body">	          
-			          <div *ngFor="let aca of acabadosPuerta2;" (click)="this.armariosDormitorioVistaComponent.cambioAcabadoImagenPue(aca.nombre)" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+			          <div *ngFor="let aca of this.armariosDormitorioVistaComponent.todos;"  (click)="this.armariosDormitorioVistaComponent.cambioAcabadoImagenPue(aca.nombre)" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
 			        </div>
 			        <div class="modal-footer">
 			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -2111,6 +2106,8 @@
 												<input type="text" style="height:60px;width:100px;margin-left:39px;text-align:center;float:left" (click)="tiradoresMostrar('derecha')"id="derechaTirador" value="OPCION 2" readonly="readonly"/>
 							    			</div>-->
 				    		</div>
+				    			<button style="width: 86%;height: 6%;bottom: 60px;position: absolute;font-size: 16px;background-color: black;left: 25px;color: white;display:none"  data-toggle="modal" id="botonCalculadoraOculta" data-target="#modalEnviadoCarrito" (click)="this.armariosDormitorioOcultaComponent.enviarCarrito()">Mandar articulo/s al carro de la compra</button>
+				    		
 						</div>
 						
 						
@@ -2247,6 +2244,8 @@
 												<input type="text" style="height:60px;width:100px;margin-left:39px;text-align:center;float:left" (click)="tiradoresMostrar('derecha')"id="derechaTirador" value="OPCION 2" readonly="readonly"/>
 							    			</div>-->
 				    		</div>
+							<button style="width: 86%;height: 6%;bottom: 60px;position: absolute;font-size: 16px;background-color: black;left: 25px;color: white;display:none"  data-toggle="modal" id="botonCalculadoraVista" data-target="#modalEnviadoCarrito" (click)="this.armariosDormitorioVistaComponent.enviarCarrito()">Mandar articulo/s al carro de la compra</button>
+				    		
 						</div>
 						
 						

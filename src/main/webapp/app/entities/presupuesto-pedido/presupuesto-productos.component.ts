@@ -353,8 +353,16 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                         ' €</span></p>'
                                                 );
                                                 $('#precioTotal' + (cont - 1)).text(
-                                                    datosInteriores[p]['presupuestoArmario']['cascoPrecio']
+                                                    datosInteriores[p]['presupuestoArmario']['precioTotal']
                                                 );
+                                                var cogerlo = parseFloat($('#precioTotal' + (cont - 1)).text());
+                                                var precioTotal = parseFloat($('#totalDescuentoTexto').text());
+                                                precioTotal = cogerlo + precioTotal;
+                                                $('#totalDescuentoTexto').text(precioTotal.toFixed(2));
+
+                                                var ivaTodo = precioTotal * 0.21;
+                                                $('#ivaPrecioQuitar').text(ivaTodo.toFixed(2) + ' €');
+                                                $('#precioIvaSumado').text((ivaTodo + precioTotal).toFixed(2) + ' €');
                                             }
 
                                             precioTodo1 = precioTodo1 + datosInteriores[p]['precio'];
@@ -366,8 +374,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     ' €</span></p>'
                                             );
                                         }
-                                        var precioTodo = $('#precioTotal' + (cont - 1)).text();
-                                        $('#precioTotal' + (cont - 1)).text(parseFloat(precioTodo) + precioTodo1);
+
                                         if ('3 PUERTAS IZQUIERDA' == nombre) {
                                             var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                             $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
@@ -1041,7 +1048,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             );
                                             precioTodo1 = precioTodo1 + datosInteriores[p]['precio'];
                                         }
-                                        $('#precioTotal' + (cont - 1)).text(precioTodo1 + parseFloat(precioTodo));
                                         if ('3 PUERTAS IZQUIERDA' == nombre) {
                                             var tipo = data.body[0]['productosDormitorio']['nombre'];
                                             if (tipo == 'Puerta Aluminio Transparente') {
@@ -7197,10 +7203,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 );
                                             }
                                         }
-                                        var cogerlo = parseFloat($('#precioTotal' + (cont - 1)).text());
-                                        var precioTotal = parseFloat($('#totalDescuentoTexto').text());
-                                        precioTotal = cogerlo + precioTotal;
-                                        $('#totalDescuentoTexto').text(precioTotal.toFixed(2));
                                     });
                                 });
                             } else {

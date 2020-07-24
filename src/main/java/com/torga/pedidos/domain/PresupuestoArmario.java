@@ -25,6 +25,9 @@ public class PresupuestoArmario implements Serializable {
 
     @Column(name = "ancho")
     private Float ancho;
+    
+    @Column(name = "precio_total")
+    private Float precioTotal;
 
     @Column(name = "alto")
     private Float alto;
@@ -109,6 +112,19 @@ public class PresupuestoArmario implements Serializable {
 
     public void setAncho(Float ancho) {
         this.ancho = ancho;
+    }
+    
+    public Float getPrecioTotal() {
+        return precioTotal;
+    }
+
+    public PresupuestoArmario precioTotal(Float precioTotal) {
+        this.precioTotal = precioTotal;
+        return this;
+    }
+
+    public void setPrecioTotal(Float precioTotal) {
+        this.precioTotal = precioTotal;
     }
 
     public Float getAlto() {

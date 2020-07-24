@@ -8585,6 +8585,15 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                         }
 
+                        var cestaTodo = parseFloat($('#cestaTotal').text());
+
+                        if ($('#cestaTotal').text() == '') {
+                            cestaTodo = 0;
+                        }
+                        cestaTodo = cestaTodo + parseFloat(sesion[1]['todoSumadoPrecio']);
+
+                        $('#cestaTotal').text(cestaTodo.toFixed(2));
+
                         $('#textoCesta' + i).append('<hr style="100%"></hr>');
                     } else {
                         $('#modalCesta .modal-body').append(
@@ -13016,6 +13025,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
                     $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
                     $('#todometerFondo').css({ display: 'none' });
+                    this.productosDormitorioService.numeroCesta = 0;
+                    for (let i = 1; i <= 100; i++) {
+                        sessionStorage.removeItem('prod' + i);
+                    }
+
                     alert('enviado');
                     if (item == 'A') {
                         this.router.navigate(['/presupuesto-producto']);
@@ -13101,6 +13115,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             numeroPuertas: prodCarr[m][1]['numeroPuertas'],
                             productosDormitorio: prodCarr[m][1]['productosDormitorio']
                         };
+
                         var presupuestoArmario;
 
                         if (prodCarr[m][1]['niveladores'] == undefined) {
@@ -13137,6 +13152,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             medBEnm: 0,
                             medCEnm: 0,
                             armario: armario,
+                            precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
                             cascoPrecio: prodCarr[m][1]['precioCasco'],
                             fondo: prodCarr[m][1]['fondo'],
                             alto: prodCarr[m][1]['alto'],
@@ -13326,6 +13342,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
                         $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
                         $('#todometerFondo').css({ display: 'none' });
+                        this.productosDormitorioService.numeroCesta = 0;
+                        for (let i = 1; i <= 100; i++) {
+                            sessionStorage.removeItem('prod' + i);
+                        }
 
                         if (item == 'A') {
                             this.router.navigate(['/presupuesto-producto']);

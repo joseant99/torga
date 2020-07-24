@@ -384,8 +384,16 @@ export class PresupuestoPuntosComponent implements OnInit, OnDestroy, AfterViewI
                                                         ' €</span></p>'
                                                 );
                                                 $('#precioTotal' + (cont - 1)).text(
-                                                    datosInteriores[p]['presupuestoArmario']['cascoPrecio']
+                                                    datosInteriores[p]['presupuestoArmario']['precioTotal']
                                                 );
+                                                var cogerlo = parseFloat($('#precioTotal' + (cont - 1)).text());
+                                                var precioTotal = parseFloat($('#totalDescuentoTexto').text());
+                                                precioTotal = cogerlo + precioTotal;
+                                                $('#totalDescuentoTexto').text(precioTotal.toFixed(2));
+
+                                                var ivaTodo = precioTotal * 0.21;
+                                                $('#ivaPrecioQuitar').text(ivaTodo.toFixed(2) + ' €');
+                                                $('#precioIvaSumado').text((ivaTodo + precioTotal).toFixed(2) + ' €');
                                             }
                                         }
                                         var casco = data.body[0]['presupuestoArmario']['acabadosCasco']['nombre'].toLowerCase();
@@ -7224,10 +7232,6 @@ export class PresupuestoPuntosComponent implements OnInit, OnDestroy, AfterViewI
                                                 );
                                             }
                                         }
-                                        var cogerlo = parseFloat($('#precioTotal' + (cont - 1)).text());
-                                        var precioTotal = parseFloat($('#totalDescuentoTexto').text());
-                                        precioTotal = cogerlo + precioTotal;
-                                        $('#totalDescuentoTexto').text(precioTotal.toFixed(2));
                                     });
                                 });
                             } else {
