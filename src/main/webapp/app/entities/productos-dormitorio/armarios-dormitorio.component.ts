@@ -678,7 +678,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 for (let i = 0; i < data.body['length']; i++) {
                     if (data.body[i]['armario']['id'] == arma['id']) {
                         if (cogerSeccion == 'A') {
-                            $('#precioNive').text('+' + data.body[i]['precio']);
+                            $('#precioNive').text('+ ' + data.body[i]['precio'] + ' pp');
                             this.niveladoresPrecio = data.body[i]['precio'];
                             precio = precio + data.body[i]['precio'];
                         }
@@ -705,7 +705,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             });
         } else {
             if (cogerSeccion == 'A') {
-                $('#precioNive').text('+0');
+                $('#precioNive').text('+ 0 pp');
             }
             if (cogerSeccion == 'B') {
                 $('#precioNive').text('+0 €');
@@ -741,7 +741,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     if (data.body[i]['id'] == id + 1) {
                         var precioCajeado = this.cajeadoPrecio;
                         if (cogerSeccion == 'A') {
-                            $('#precioCajeado').text('+' + data.body[i]['precio']);
+                            $('#precioCajeado').text('+ ' + data.body[i]['precio'] + ' pp');
                             this.cajeadoPrecio = data.body[i]['precio'];
                             precio = precio - precioCajeado;
                             precio = precio + data.body[i]['precio'];
@@ -773,7 +773,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             });
         } else {
             if (cogerSeccion == 'A') {
-                $('#precioCajeado').text('+0');
+                $('#precioCajeado').text('+ 0 pp');
             }
             if (cogerSeccion == 'B') {
                 $('#precioCajeado').text('+0 €');
@@ -813,7 +813,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     if (data.body[i]['anchoMin'] < ancho && data.body[i]['anchoMax'] >= ancho) {
                         var precioCajeado = this.enmarcadosPrecio;
                         if (cogerSeccion == 'A') {
-                            $('#precioEnmarcados').text('+' + data.body[i]['precio']);
+                            $('#precioEnmarcados').text('+ ' + data.body[i]['precio'] + ' pp');
                             this.enmarcadosPrecio = data.body[i]['precio'];
                             precio = precio - precioCajeado;
                             precio = precio + data.body[i]['precio'];
@@ -845,7 +845,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             });
         } else {
             if (cogerSeccion == 'A') {
-                $('#precioEnmarcados').text('+0');
+                $('#precioEnmarcados').text('+ 0 pp');
             }
             if (cogerSeccion == 'B') {
                 $('#precioEnmarcados').text('+0 €');
@@ -920,9 +920,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             console.log(data.body);
             if (cogerSeccion == 'A') {
                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                    '<p id="cascoCalculadora" style="width:97%;"><strong>CASCO: </strong><span style="float:right"><strong>+ <span  id="precio">' +
+                    '<p id="cascoCalculadora" style="width:97%;"><strong>CASCO: </strong><span style="float:right">+ <span  id="precio">' +
                         data.body[0].precio +
-                        '</span></strong></span><p/>'
+                        ' pp</span></span><p/>'
                 );
                 $('#precioDimension').text(data.body[0].precio);
             }
@@ -4255,7 +4255,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             );
 
                             if (cogerSeccion == 'A') {
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                 this.precioInterior1 = data.body[0].a;
                             }
@@ -4316,7 +4316,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '€</span><p/>'
                             );
                             if (cogerSeccion == 'A') {
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                 this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
@@ -4369,7 +4369,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '€</span><p/>'
                             );
                             if (cogerSeccion == 'A') {
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                 this.precioInterior2 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
@@ -4429,7 +4429,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '</span>€</span><p/>'
                             );
                             if (cogerSeccion == 'A') {
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                 this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
@@ -4481,7 +4481,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '€</span><p/>'
                             );
                             if (cogerSeccion == 'A') {
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                 this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
@@ -4541,7 +4541,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         '€</span><p/>'
                                 );
                                 if (cogerSeccion == 'A') {
-                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                     this.precioInterior1 = data.body[0].a;
                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                 }
@@ -4595,7 +4595,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         '€</span><p/>'
                                 );
                                 if (cogerSeccion == 'A') {
-                                    $('#precioInt' + (hueco - 1)).text(data.body[0].b);
+                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
                                     this.precioInterior2 = data.body[0].b;
                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                 }
@@ -4667,7 +4667,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             '€</span><p/>'
                                     );
                                     if (cogerSeccion == 'A') {
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                         this.precioInterior1 = data.body[0].a;
                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                     }
@@ -4734,7 +4734,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             '€</span><p/>'
                                     );
                                     if (cogerSeccion == 'A') {
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].b);
+                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
                                         this.precioInterior2 = data.body[0].b;
                                         var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                     }
@@ -4807,7 +4807,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 '€</span><p/>'
                                         );
                                         if (cogerSeccion == 'A') {
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                             this.precioInterior1 = data.body[0].a;
                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                         }
@@ -4875,7 +4875,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 '€</span><p/>'
                                         );
                                         if (cogerSeccion == 'A') {
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].b);
+                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
                                             this.precioInterior2 = data.body[0].b;
                                             var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                         }
@@ -4943,7 +4943,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 '€</span><p/>'
                                         );
                                         if (cogerSeccion == 'A') {
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].c);
+                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
                                             this.precioInterior3 = data.body[0].c;
                                             var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                         }
@@ -5016,7 +5016,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     '€</span><p/>'
                                             );
                                             if (cogerSeccion == 'A') {
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                 this.precioInterior1 = data.body[0].a;
                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                             }
@@ -5085,7 +5085,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     '€</span><p/>'
                                             );
                                             if (cogerSeccion == 'A') {
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].b);
+                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
                                                 this.precioInterior2 = data.body[0].b;
                                                 var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                             }
@@ -5153,7 +5153,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     '€</span><p/>'
                                             );
                                             if (cogerSeccion == 'A') {
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].c);
+                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
                                                 this.precioInterior3 = data.body[0].c;
                                                 var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                             }
@@ -5226,7 +5226,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         '€</span><p/>'
                                                 );
                                                 if (cogerSeccion == 'A') {
-                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                     this.precioInterior1 = data.body[0].a;
                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                 }
@@ -5295,7 +5295,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         '€</span><p/>'
                                                 );
                                                 if (cogerSeccion == 'A') {
-                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].b);
+                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
                                                     this.precioInterior2 = data.body[0].b;
                                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                 }
@@ -5363,7 +5363,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         '€</span><p/>'
                                                 );
                                                 if (cogerSeccion == 'A') {
-                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].c);
+                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
                                                     this.precioInterior3 = data.body[0].c;
                                                     var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                 }
@@ -5437,7 +5437,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 '€</span><p/>'
                                                         );
                                                         if (cogerSeccion == 'A') {
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                             this.precioInterior1 = data.body[0].a;
                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                         }
@@ -5507,7 +5507,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 '€</span><p/>'
                                                         );
                                                         if (cogerSeccion == 'A') {
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].b);
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
                                                             this.precioInterior2 = data.body[0].b;
                                                             var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                         }
@@ -5578,7 +5578,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 '€</span><p/>'
                                                         );
                                                         if (cogerSeccion == 'A') {
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].c);
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
                                                             this.precioInterior3 = data.body[0].c;
                                                             var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                         }
@@ -5648,7 +5648,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 '€</span><p/>'
                                                         );
                                                         if (cogerSeccion == 'A') {
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].d);
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].d + ' pp');
                                                             this.precioInterior4 = data.body[0].d;
                                                             var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                         }
@@ -5723,7 +5723,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     '€</span><p/>'
                                                             );
                                                             if (cogerSeccion == 'A') {
-                                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                                 this.precioInterior1 = data.body[0].a;
                                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                             }
@@ -5793,7 +5793,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     '€</span><p/>'
                                                             );
                                                             if (cogerSeccion == 'A') {
-                                                                $('#precioInt' + (hueco - 1)).text(data.body[0].b);
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
                                                                 this.precioInterior2 = data.body[0].b;
                                                                 var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                             }
@@ -5863,7 +5863,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     '€</span><p/>'
                                                             );
                                                             if (cogerSeccion == 'A') {
-                                                                $('#precioInt' + (hueco - 1)).text(data.body[0].c);
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
                                                                 this.precioInterior3 = data.body[0].c;
                                                                 var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                             }
@@ -5933,7 +5933,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     '€</span><p/>'
                                                             );
                                                             if (cogerSeccion == 'A') {
-                                                                $('#precioInt' + (hueco - 1)).text(data.body[0].d);
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].d + ' pp');
                                                                 this.precioInterior4 = data.body[0].d;
                                                                 var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                             }
@@ -6008,7 +6008,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         '€</span><p/>'
                                                                 );
                                                                 if (cogerSeccion == 'A') {
-                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].d);
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].d + ' pp');
                                                                     this.precioInterior4 = data.body[0].d;
                                                                     var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                                 }
@@ -6078,7 +6078,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         '€</span><p/>'
                                                                 );
                                                                 if (cogerSeccion == 'A') {
-                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].b);
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
                                                                     this.precioInterior2 = data.body[0].b;
                                                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                                 }
@@ -6148,7 +6148,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         '€</span><p/>'
                                                                 );
                                                                 if (cogerSeccion == 'A') {
-                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].c);
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
                                                                     this.precioInterior3 = data.body[0].c;
                                                                     var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                                 }
@@ -6218,7 +6218,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         '€</span><p/>'
                                                                 );
                                                                 if (cogerSeccion == 'A') {
-                                                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a);
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                                     this.precioInterior1 = data.body[0].a;
                                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                 }
@@ -7515,7 +7515,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].b
+                                                                                                    '+ ' + data.body[0].b + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior2 = data.body[0].b;
                                                                                                 var precioTodoFloat =
@@ -7599,7 +7599,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].c
+                                                                                                    '+ ' + data.body[0].c + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
@@ -7683,7 +7683,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a
+                                                                                                    '+ ' + data.body[0].a + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior1 = data.body[0].a;
                                                                                                 var precioTodoFloat =
@@ -7772,7 +7772,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a
+                                                                                                    '+ ' + data.body[0].a + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior1 = data.body[0].a;
                                                                                                 var precioTodoFloat =
@@ -7856,7 +7856,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].b
+                                                                                                    '+ ' + data.body[0].b + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior2 = data.body[0].b;
                                                                                                 var precioTodoFloat =
@@ -7939,7 +7939,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].c
+                                                                                                    '+ ' + data.body[0].c + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
@@ -8022,7 +8022,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].d
+                                                                                                    '+ ' + data.body[0].d + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior4 = data.body[0].d;
                                                                                                 var precioTodoFloat =
@@ -8095,7 +8095,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].c
+                                                                                                    '+ ' + data.body[0].c + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
@@ -8164,7 +8164,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].b
+                                                                                                    '+ ' + data.body[0].b + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior2 = data.body[0].b;
                                                                                                 var precioTodoFloat =
@@ -8234,7 +8234,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    data.body[0].a
+                                                                                                    '+ ' + data.body[0].a + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior1 = data.body[0].a;
                                                                                                 var precioTodoFloat =
@@ -9704,10 +9704,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -9736,10 +9733,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -9775,10 +9769,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -9809,10 +9800,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -9847,10 +9835,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -9881,10 +9866,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -9918,10 +9900,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     var arrayPuertas = this.arraySaberPuertas;
                     var arrayHuecos = this.arraySaberHuecos;
                     var mejorArmario = this.armarioCogido;
-                    if (
-                        mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                        mejorArmario['interiores'].length == arrayHuecos.length
-                    ) {
+                    if (mejorArmario['puertas'].length == 1 && mejorArmario['interiores'].length == arrayHuecos.length) {
                         $('#botonCalculadoraBatientes').css({ display: 'block' });
                     }
                 }
@@ -9950,10 +9929,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     var arrayPuertas = this.arraySaberPuertas;
                     var arrayHuecos = this.arraySaberHuecos;
                     var mejorArmario = this.armarioCogido;
-                    if (
-                        mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                        mejorArmario['interiores'].length == arrayHuecos.length
-                    ) {
+                    if (mejorArmario['puertas'].length == 1 && mejorArmario['interiores'].length == arrayHuecos.length) {
                         $('#botonCalculadoraBatientes').css({ display: 'block' });
                     }
                 }
@@ -9983,10 +9959,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     var arrayPuertas = this.arraySaberPuertas;
                     var arrayHuecos = this.arraySaberHuecos;
                     var mejorArmario = this.armarioCogido;
-                    if (
-                        mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                        mejorArmario['interiores'].length == arrayHuecos.length
-                    ) {
+                    if (mejorArmario['puertas'].length == 1 && mejorArmario['interiores'].length == arrayHuecos.length) {
                         $('#botonCalculadoraBatientes').css({ display: 'block' });
                     }
                 }
@@ -10015,10 +9988,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     var arrayPuertas = this.arraySaberPuertas;
                     var arrayHuecos = this.arraySaberHuecos;
                     var mejorArmario = this.armarioCogido;
-                    if (
-                        mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                        mejorArmario['interiores'].length == arrayHuecos.length
-                    ) {
+                    if (mejorArmario['puertas'].length == 1 && mejorArmario['interiores'].length == arrayHuecos.length) {
                         $('#botonCalculadoraBatientes').css({ display: 'block' });
                     }
                 }
@@ -10054,10 +10024,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 2 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10087,10 +10054,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 2 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10125,10 +10089,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 2 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10158,10 +10119,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 2 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10195,10 +10153,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10227,10 +10182,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10267,10 +10219,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10302,10 +10251,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10341,10 +10287,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10376,10 +10319,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 3 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10415,10 +10355,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10449,10 +10386,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10488,10 +10422,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10522,10 +10453,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10561,10 +10489,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10595,10 +10520,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10634,10 +10556,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10668,10 +10587,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10706,10 +10622,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10739,10 +10652,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10777,10 +10687,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10810,10 +10717,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10849,10 +10753,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10883,10 +10784,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10922,10 +10820,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10956,10 +10851,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 4 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -10996,10 +10888,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11031,10 +10920,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11069,10 +10955,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11102,10 +10985,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11141,10 +11021,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11175,10 +11052,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11214,10 +11088,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11248,10 +11119,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11287,10 +11155,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11321,10 +11186,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11360,10 +11222,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11394,10 +11253,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11432,10 +11288,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11465,10 +11318,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11503,10 +11353,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11536,10 +11383,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11575,10 +11419,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11609,10 +11450,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11648,10 +11486,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11682,10 +11517,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11721,10 +11553,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11755,10 +11584,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11794,10 +11620,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11828,10 +11651,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11867,10 +11687,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11901,10 +11718,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11939,10 +11753,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -11972,10 +11783,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12010,10 +11818,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12043,10 +11848,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12082,10 +11884,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12116,10 +11915,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12155,10 +11951,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12189,10 +11982,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12228,10 +12018,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12262,10 +12049,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12301,10 +12085,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12335,10 +12116,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 6 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12375,10 +12153,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12410,10 +12185,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12450,10 +12222,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12485,10 +12254,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12523,10 +12289,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12556,10 +12319,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12596,10 +12356,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12631,10 +12388,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12671,10 +12425,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12706,10 +12457,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12746,10 +12494,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12781,10 +12526,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12821,10 +12563,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12856,10 +12595,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12896,10 +12632,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12931,10 +12664,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -12969,10 +12699,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13002,10 +12729,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13042,10 +12766,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13077,10 +12798,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13117,10 +12835,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13152,10 +12867,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13192,10 +12904,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13227,10 +12936,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13266,10 +12972,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13300,10 +13003,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13340,10 +13040,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13375,10 +13072,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13415,10 +13109,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13450,10 +13141,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13489,10 +13177,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13523,10 +13208,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
-                if (
-                    mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
-                    mejorArmario['interiores'].length == arrayHuecos.length
-                ) {
+                if (mejorArmario['puertas'].length == 5 && mejorArmario['interiores'].length == arrayHuecos.length) {
                     $('#botonCalculadoraBatientes').css({ display: 'block' });
                 }
             }
@@ -13549,7 +13231,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 );
 
                 if (cogerSeccion == 'A') {
-                    $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta1);
+                    $('#calculadoraCarrito #precioPuerta' + id).text('+ ' + data.body[0].puerta1 + ' pp');
                     precioTodo = precioTodo - this.precioPuerta0;
                     this.precioPuerta0 = data.body[0].puerta1;
                     precioTodo = precioTodo + this.precioPuerta0;
@@ -13581,7 +13263,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13607,7 +13289,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13633,7 +13315,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13659,7 +13341,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13685,7 +13367,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13711,7 +13393,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13737,7 +13419,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13763,7 +13445,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13797,10 +13479,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 );
                 var precioPuerta = 0;
                 precioPuerta = data.body[0].puerta2;
-                $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta + ' €');
+                $('#calculadoraCarrito #precioPuerta' + id).text('+ ' + precioPuerta + ' pp');
 
                 if (cogerSeccion == 'A') {
-                    $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
+                    $('#calculadoraCarrito #precioPuerta' + id).text('+ ' + precioPuerta + ' pp');
                     precioTodo = precioTodo - this.precioPuerta1;
                     this.precioPuerta1 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta1;
@@ -13830,7 +13512,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas2').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13856,7 +13538,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas2').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13882,7 +13564,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas2').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13908,7 +13590,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas2').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13934,7 +13616,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas2').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -13960,7 +13642,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas0').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -13985,7 +13667,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas0').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14011,7 +13693,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas0').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14037,7 +13719,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas0').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14063,7 +13745,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas0').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14089,7 +13771,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas0').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14115,7 +13797,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas0').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14141,7 +13823,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas0').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14176,7 +13858,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var precioPuerta = 0;
                 precioPuerta = data.body[0].puerta3;
                 if (cogerSeccion == 'A') {
-                    $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
+                    $('#calculadoraCarrito #precioPuerta' + id).text('+ ' + precioPuerta + ' pp');
                     precioTodo = precioTodo - this.precioPuerta2;
                     this.precioPuerta2 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta2;
@@ -14205,7 +13887,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14231,7 +13913,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14257,7 +13939,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14283,7 +13965,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14309,7 +13991,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14335,7 +14017,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14361,7 +14043,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14387,7 +14069,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14413,7 +14095,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14439,7 +14121,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14465,7 +14147,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14501,7 +14183,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var precioPuerta = 0;
                 precioPuerta = data.body[0].puerta4;
                 if (cogerSeccion == 'A') {
-                    $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
+                    $('#calculadoraCarrito #precioPuerta' + id).text('+ ' + precioPuerta + ' pp');
                     precioTodo = precioTodo - this.precioPuerta3;
                     this.precioPuerta3 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta3;
@@ -14530,7 +14212,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas3').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14556,7 +14238,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14582,7 +14264,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14608,7 +14290,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14633,7 +14315,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14659,7 +14341,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14685,7 +14367,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas3').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14711,7 +14393,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas3').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14737,7 +14419,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas3').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14772,7 +14454,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var precioPuerta = 0;
                 precioPuerta = data.body[0].puerta5;
                 if (cogerSeccion == 'A') {
-                    $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
+                    $('#calculadoraCarrito #precioPuerta' + id).text('+ ' + precioPuerta + ' pp');
                     precioTodo = precioTodo - this.precioPuerta4;
                     this.precioPuerta4 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta4;
@@ -14801,7 +14483,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas3').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14827,7 +14509,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas3').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14852,7 +14534,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas5').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14878,7 +14560,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas5').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -14903,7 +14585,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas3').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14929,7 +14611,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas3').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14955,7 +14637,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas3').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -14990,7 +14672,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var precioPuerta = 0;
                 precioPuerta = data.body[0].puerta6;
                 if (cogerSeccion == 'A') {
-                    $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
+                    $('#calculadoraCarrito #precioPuerta' + id).text('+ ' + precioPuerta + ' pp');
                     precioTodo = precioTodo - this.precioPuerta5;
                     this.precioPuerta5 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta5;
@@ -15019,7 +14701,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas6').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -15045,7 +14727,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas6').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
@@ -15071,7 +14753,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -15097,7 +14779,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas4').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -15132,7 +14814,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var precioPuerta = 0;
                 precioPuerta = data.body[0].puerta7;
                 if (cogerSeccion == 'A') {
-                    $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
+                    $('#calculadoraCarrito #precioPuerta' + id).text('+ ' + precioPuerta + ' pp');
                     precioTodo = precioTodo - this.precioPuerta6;
                     this.precioPuerta6 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta6;
@@ -15161,7 +14843,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas5').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -15187,7 +14869,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 385 &&
                         data.body[0].productosDormitorio.id != 386
                     ) {
-                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text(precioPuerta + ' €');
+                        $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('+ ' + precioPuerta + ' pp');
                         $('#inputs #inputPuertas5').empty();
                         $('#inputPuertas' + (id - 1)).val(data.body[0].tipo);
                     } else {
@@ -15219,7 +14901,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         '</span>€</span><p/>'
                 );
                 if (cogerSeccion == 'A') {
-                    $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
+                    $('#calculadoraCarrito #precioPuerta' + id).text('+ ' + precioPuerta + ' pp');
                     precioTodo = precioTodo - this.precioPuerta7;
                     this.precioPuerta7 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta7;
@@ -27969,10 +27651,42 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             }
         }
 
+        if (texto == '3 PUERTAS IZQUIERDA' || texto == '3 PUERTAS DERECHA') {
+            var puertasQueTiene = 3;
+        }
+
+        if (texto == '4 PUERTAS - 2 HUECOS GRANDES' || texto == '4 PUERTAS ASIMETRICAS') {
+            var puertasQueTiene = 4;
+        }
+
+        if (texto == '5 PUERTAS CENTRAL' || texto == '5 PUERTAS IZQUIERDA' || texto == '5 PUERTAS DERECHA') {
+            var puertasQueTiene = 5;
+        }
+
+        if (texto == '6 PUERTAS -3 HUECOS GRANDES' || texto == '6 PUERTAS ASIMETRICAS') {
+            var puertasQueTiene = 6;
+        }
+
+        if (texto == '7 PUERTAS IZQUIERDA' || texto == '7 PUERTAS DERECHA' || texto == '7 PUERTA ASIMETRICAS') {
+            var puertasQueTiene = 7;
+        }
+
+        if (texto == '8 PUERTAS ASIMETRICAS') {
+            var puertasQueTiene = 8;
+        }
+
+        if (texto == '1 PUERTA') {
+            var puertasQueTiene = 1;
+        }
+
+        if (texto == '2 PUERTAS') {
+            var puertasQueTiene = 2;
+        }
+
         var arrayPuertas = this.arraySaberPuertas;
         var arrayHuecos = this.arraySaberHuecos;
         var mejorArmario = this.armarioCogido;
-        if (mejorArmario['puertas'].length == parseFloat(arrayPuertas) && mejorArmario['interiores'].length == arrayHuecos.length) {
+        if (mejorArmario['puertas'].length == puertasQueTiene && mejorArmario['interiores'].length == arrayHuecos.length) {
             $('#botonCalculadoraBatientes').css({ display: 'block' });
         }
     }

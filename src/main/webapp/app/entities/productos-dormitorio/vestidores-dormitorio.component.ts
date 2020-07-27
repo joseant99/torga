@@ -668,7 +668,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 for (let i = 0; i < data.body['length']; i++) {
                     if (data.body[i]['armario']['id'] == arma['id']) {
                         if (cogerSeccion == 'A') {
-                            $('#calcuVesti #precioNive').text('+' + data.body[i]['precio']);
+                            $('#calcuVesti #precioNive').text('+ ' + data.body[i]['precio'] + ' pp');
                             this.niveladoresPrecio = data.body[i]['precio'];
                             precio = precio + data.body[i]['precio'];
                         }
@@ -690,7 +690,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             });
         } else {
             if (cogerSeccion == 'A') {
-                $('#calcuVesti #precioNive').text('+0');
+                $('#calcuVesti #precioNive').text('+ 0 pp');
             }
             if (cogerSeccion == 'B') {
                 $('#calcuVesti #precioNive').text('+0 €');
@@ -725,7 +725,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                     if (data.body[i]['id'] == id + 1) {
                         var precioCajeado = this.cajeadoPrecio;
                         if (cogerSeccion == 'A') {
-                            $('#calcuVesti #precioCajeado').text('+' + data.body[i]['precio']);
+                            $('#calcuVesti #precioCajeado').text('+ ' + data.body[i]['precio'] + ' pp');
                             this.cajeadoPrecio = data.body[i]['precio'];
                             precio = precio - precioCajeado;
                             precio = precio + data.body[i]['precio'];
@@ -751,7 +751,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             });
         } else {
             if (cogerSeccion == 'A') {
-                $('#calcuVesti #precioCajeado').text('+0');
+                $('#calcuVesti #precioCajeado').text('+ 0 pp');
             }
             if (cogerSeccion == 'B') {
                 $('#calcuVesti #precioCajeado').text('+0 €');
@@ -864,9 +864,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         this.cascoService.findBus1(codigo).subscribe(data => {
             console.log(data.body);
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                '<p id="cascoCalculadora" style="width:97%;"><strong>CASCO: </strong><span style="float:right"><strong>+ <span  id="precio">' +
+                '<p id="cascoCalculadora" style="width:97%;"><strong>CASCO: </strong><span style="float:right">+ <span  id="precio">' +
                     data.body[0].precio +
-                    '</span>€</strong></span><p/>'
+                    '</span> pp</span><p/>'
             );
             this.cascoService.dato = data.body[0];
             $('#precioDimension').text(data.body[0].precio);
@@ -4701,7 +4701,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     data.body[0].a +
                                     '</span>€</span><p/>'
                             );
-                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                             var precioTodo;
                             precioTodo = $('#precioDimension').text();
                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -4733,7 +4733,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     data.body[0].a +
                                     '€</span><p/>'
                             );
-                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                             var precioTodo;
                             precioTodo = $('#precioDimension').text();
                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -4775,7 +4775,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         data.body[0].a +
                                         '</span>€</span><p/>'
                                 );
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                 var precioTodo;
                                 precioTodo = $('#precioDimension').text();
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -4807,7 +4807,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         data.body[0].a +
                                         '€</span><p/>'
                                 );
-                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                 var precioTodo;
                                 precioTodo = $('#precioDimension').text();
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -4845,7 +4845,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             data.body[0].a +
                                             '</span>€</span><p/>'
                                     );
-                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                     var precioTodo;
                                     precioTodo = $('#precioDimension').text();
                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -4877,7 +4877,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             data.body[0].a +
                                             '€</span><p/>'
                                     );
-                                    $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                     var precioTodo;
                                     precioTodo = $('#precioDimension').text();
                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -4915,7 +4915,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 data.body[0].a +
                                                 '</span>€</span><p/>'
                                         );
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                         var precioTodo;
                                         precioTodo = $('#precioDimension').text();
                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -4947,7 +4947,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 data.body[0].a +
                                                 '€</span><p/>'
                                         );
-                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                         var precioTodo;
                                         precioTodo = $('#precioDimension').text();
                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -4985,7 +4985,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                     data.body[0].a +
                                                     '</span>€</span><p/>'
                                             );
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                             var precioTodo;
                                             precioTodo = $('#precioDimension').text();
                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5017,7 +5017,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                     data.body[0].a +
                                                     '€</span><p/>'
                                             );
-                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                             var precioTodo;
                                             precioTodo = $('#precioDimension').text();
                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5055,7 +5055,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         data.body[0].a +
                                                         '</span>€</span><p/>'
                                                 );
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                 var precioTodo;
                                                 precioTodo = $('#precioDimension').text();
                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5087,7 +5087,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         data.body[0].a +
                                                         '€</span><p/>'
                                                 );
-                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                 var precioTodo;
                                                 precioTodo = $('#precioDimension').text();
                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5264,7 +5264,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     data.body[0].a +
                                                                     '</span>€</span><p/>'
                                                             );
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                             var precioTodo;
                                                             precioTodo = $('#precioDimension').text();
                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5299,7 +5299,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     data.body[0].a +
                                                                     '€</span><p/>'
                                                             );
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                             var precioTodo;
                                                             precioTodo = $('#precioDimension').text();
                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5334,7 +5334,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     data.body[0].a +
                                                                     '€</span><p/>'
                                                             );
-                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                             var precioTodo;
                                                             precioTodo = $('#precioDimension').text();
                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5374,7 +5374,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         data.body[0].a +
                                                                         '</span>€</span><p/>'
                                                                 );
-                                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                                 var precioTodo;
                                                                 precioTodo = $('#precioDimension').text();
                                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5409,7 +5409,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         data.body[0].a +
                                                                         '€</span><p/>'
                                                                 );
-                                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                                 var precioTodo;
                                                                 precioTodo = $('#precioDimension').text();
                                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5444,7 +5444,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         data.body[0].a +
                                                                         '€</span><p/>'
                                                                 );
-                                                                $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                                 var precioTodo;
                                                                 precioTodo = $('#precioDimension').text();
                                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5665,7 +5665,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                 data.body[0].a +
                                                                                 '</span>€</span><p/>'
                                                                         );
-                                                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                                         var precioTodo;
                                                                         precioTodo = $('#precioDimension').text();
                                                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5700,7 +5700,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                 data.body[0].a +
                                                                                 '€</span><p/>'
                                                                         );
-                                                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                                         var precioTodo;
                                                                         precioTodo = $('#precioDimension').text();
                                                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5735,7 +5735,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                 data.body[0].a +
                                                                                 '€</span><p/>'
                                                                         );
-                                                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                                         var precioTodo;
                                                                         precioTodo = $('#precioDimension').text();
                                                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5770,7 +5770,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                 data.body[0].a +
                                                                                 '€</span><p/>'
                                                                         );
-                                                                        $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
                                                                         var precioTodo;
                                                                         precioTodo = $('#precioDimension').text();
                                                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5810,7 +5810,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                     data.body[0].a +
                                                                                     '</span>€</span><p/>'
                                                                             );
-                                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                            $('#precioInt' + (hueco - 1)).text(
+                                                                                '+ ' + data.body[0].a + ' pp'
+                                                                            );
                                                                             var precioTodo;
                                                                             precioTodo = $('#precioDimension').text();
                                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5845,7 +5847,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                     data.body[0].a +
                                                                                     '€</span><p/>'
                                                                             );
-                                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                            $('#precioInt' + (hueco - 1)).text(
+                                                                                '+ ' + data.body[0].a + ' pp'
+                                                                            );
                                                                             var precioTodo;
                                                                             precioTodo = $('#precioDimension').text();
                                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5880,7 +5884,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                     data.body[0].a +
                                                                                     '€</span><p/>'
                                                                             );
-                                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                            $('#precioInt' + (hueco - 1)).text(
+                                                                                '+ ' + data.body[0].a + ' pp'
+                                                                            );
                                                                             var precioTodo;
                                                                             precioTodo = $('#precioDimension').text();
                                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -5915,7 +5921,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                     data.body[0].a +
                                                                                     '€</span><p/>'
                                                                             );
-                                                                            $('#precioInt' + (hueco - 1)).text(data.body[0].a + ' €');
+                                                                            $('#precioInt' + (hueco - 1)).text(
+                                                                                '+ ' + data.body[0].a + ' pp'
+                                                                            );
                                                                             var precioTodo;
                                                                             precioTodo = $('#precioDimension').text();
                                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
@@ -6195,7 +6203,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                             '</span>€</span><p/>'
                                                                                     );
                                                                                     $('#precioInt' + (hueco - 1)).text(
-                                                                                        data.body[0].a + ' €'
+                                                                                        '+ ' + data.body[0].a + ' pp'
                                                                                     );
                                                                                     var precioTodo;
                                                                                     precioTodo = $('#precioDimension').text();
@@ -6235,7 +6243,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                             '€</span><p/>'
                                                                                     );
                                                                                     $('#precioInt' + (hueco - 1)).text(
-                                                                                        data.body[0].a + ' €'
+                                                                                        '+ ' + data.body[0].a + ' pp'
                                                                                     );
                                                                                     var precioTodo;
                                                                                     precioTodo = $('#precioDimension').text();
@@ -6275,7 +6283,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                             '€</span><p/>'
                                                                                     );
                                                                                     $('#precioInt' + (hueco - 1)).text(
-                                                                                        data.body[0].a + ' €'
+                                                                                        '+ ' + data.body[0].a + ' pp'
                                                                                     );
                                                                                     var precioTodo;
                                                                                     precioTodo = $('#precioDimension').text();
@@ -6315,7 +6323,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                             '€</span><p/>'
                                                                                     );
                                                                                     $('#precioInt' + (hueco - 1)).text(
-                                                                                        data.body[0].a + ' €'
+                                                                                        '+ ' + data.body[0].a + ' pp'
                                                                                     );
                                                                                     var precioTodo;
                                                                                     precioTodo = $('#precioDimension').text();
@@ -6355,7 +6363,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                             '€</span><p/>'
                                                                                     );
                                                                                     $('#precioInt' + (hueco - 1)).text(
-                                                                                        data.body[0].a + ' €'
+                                                                                        '+ ' + data.body[0].a + ' pp'
                                                                                     );
                                                                                     var precioTodo;
                                                                                     precioTodo = $('#precioDimension').text();
@@ -6400,7 +6408,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                                 '</span>€</span><p/>'
                                                                                         );
                                                                                         $('#precioInt' + (hueco - 1)).text(
-                                                                                            data.body[0].a + ' €'
+                                                                                            '+ ' + data.body[0].a + ' pp'
                                                                                         );
                                                                                         var precioTodo;
                                                                                         precioTodo = $('#precioDimension').text();
@@ -6440,7 +6448,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                                 '€</span><p/>'
                                                                                         );
                                                                                         $('#precioInt' + (hueco - 1)).text(
-                                                                                            data.body[0].a + ' €'
+                                                                                            '+ ' + data.body[0].a + ' pp'
                                                                                         );
                                                                                         var precioTodo;
                                                                                         precioTodo = $('#precioDimension').text();
@@ -6480,7 +6488,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                                 '€</span><p/>'
                                                                                         );
                                                                                         $('#precioInt' + (hueco - 1)).text(
-                                                                                            data.body[0].a + ' €'
+                                                                                            '+ ' + data.body[0].a + ' pp'
                                                                                         );
                                                                                         var precioTodo;
                                                                                         precioTodo = $('#precioDimension').text();
@@ -6520,7 +6528,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                                 '€</span><p/>'
                                                                                         );
                                                                                         $('#precioInt' + (hueco - 1)).text(
-                                                                                            data.body[0].a + ' €'
+                                                                                            '+ ' + data.body[0].a + ' pp'
                                                                                         );
                                                                                         var precioTodo;
                                                                                         precioTodo = $('#precioDimension').text();
@@ -6560,7 +6568,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                                 '€</span><p/>'
                                                                                         );
                                                                                         $('#precioInt' + (hueco - 1)).text(
-                                                                                            data.body[0].a + ' €'
+                                                                                            '+ ' + data.body[0].a + ' pp'
                                                                                         );
                                                                                         var precioTodo;
                                                                                         precioTodo = $('#precioDimension').text();

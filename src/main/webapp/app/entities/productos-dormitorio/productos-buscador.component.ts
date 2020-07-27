@@ -5206,15 +5206,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             if (idApoyo == value['productoApoyo']['id']) {
                                 $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
                                 $('#datos1 #precioApoyo').text('+ 0 ');
-                                $('#datos1').append(
-                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
-                                        value['productoApoyo']['nombre'] +
-                                        '</span><span style="float:right" id="apoyo1" class="' +
-                                        value['id'] +
-                                        '">+' +
-                                        precio.toFixed(2) +
-                                        '&euro;</span></p>'
-                                );
+
                                 $('#precioDimension').text(precioDimension);
                                 $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                 $('#botonApoyoNuevo').append(
@@ -5222,6 +5214,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         value['productoApoyo']['nombre'] +
                                         '</p>'
                                 );
+                                var totalfloat = parseFloat(total);
+                                $('#total').text(totalfloat);
                             }
                         }
 

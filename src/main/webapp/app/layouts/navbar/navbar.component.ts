@@ -8477,9 +8477,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('#textoCesta' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;">' +
                                 sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                '<i style="float:right;margin-right:40%">&euro; ' +
+                                '<i style="float:right;margin-right:40%">' +
                                 sesion[1]['todoSumadoPrecio'] +
-                                '</i></p>'
+                                ' pp</i></p>'
                         );
                         if (nombreArmario == '1 CUERPO TIPO 1') {
                             $('#textoCesta' + i).css({ 'margin-top': '20%' });
@@ -8508,33 +8508,33 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('#textoCesta' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Codigo: ' +
                                 sesion[1]['codigo'] +
-                                '<i style="float:right;margin-right:40%">&euro; ' +
+                                '<i style="float:right;margin-right:40%">+ ' +
                                 sesion[1]['precioCasco'] +
-                                '</i></p>'
+                                ' pp</i></p>'
                         );
                         if (sesion[1]['niveladores'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Niveladores: <i style="float:right;margin-right:40%">&euro; ' +
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Niveladores: <i style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['niveladores']['precio'] +
-                                    '</i></p>'
+                                    ' pp</i></p>'
                             );
                         }
                         if (sesion[1]['cajeado'] != undefined) {
                             $('#textoCesta' + i).append(
                                 '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado: ' +
                                     sesion[1]['cajeado']['tipo'] +
-                                    '<i style="float:right;margin-right:40%">&euro; ' +
+                                    '<i style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['cajeado']['precio'] +
-                                    '</i></p>'
+                                    ' pp</i></p>'
                             );
                         }
                         if (sesion[1]['enmarcado'] != undefined) {
                             $('#textoCesta' + i).append(
                                 '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado: ' +
                                     sesion[1]['enmarcado']['codigo'] +
-                                    '<i style="float:right;margin-right:40%">&euro; ' +
+                                    '<i style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['enmarcado']['precio'] +
-                                    '</i></p>'
+                                    ' pp</i></p>'
                             );
                         }
                         $('#textoCesta' + i).append(
@@ -8566,9 +8566,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     (w + 1) +
                                     ': ' +
                                     sesion[1]['interiores'][w]['nombre'] +
-                                    '<i style="float:right;margin-right:40%">&euro; ' +
+                                    '<i style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['interiores'][w]['precio'] +
-                                    '</i></p>'
+                                    ' pp</i></p>'
                             );
                         }
                         if (sesion[1]['puertas'] != undefined) {
@@ -8578,9 +8578,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         (w + 1) +
                                         ': ' +
                                         sesion[1]['puertas'][w]['nombre'] +
-                                        '<i style="float:right;margin-right:40%">&euro; ' +
+                                        '<i style="float:right;margin-right:40%">+ ' +
                                         sesion[1]['puertas'][w]['precio'] +
-                                        '</i></p>'
+                                        ' pp</i></p>'
                                 );
                             }
                         }
@@ -8609,3230 +8609,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                         }
                         console.log(nombre);
-                        if (
-                            nombre == 'mb6' ||
-                            nombre == 'mb9' ||
-                            nombre == 'mb7' ||
-                            nombre == 'mb8' ||
-                            nombre == 'mb10' ||
-                            nombre == 'mb11' ||
-                            nombre == 'mb12' ||
-                            nombre == 'mb13' ||
-                            nombre == 'mb14'
-                        ) {
-                            nombreCarpeta = 'mb5';
-                        } else {
-                            nombreCarpeta = nombre;
-                        }
-                        var bottomModulos = this.bottomModulos;
-                        if (nombre == 'mb1') {
-                            $('#cuerpo' + i).append(
-                                '<div id="izquierda" class="marginIzquierda" style="float: left;margin-top:20px"></div>'
-                            );
-                            if (i == 1) {
-                                this.acaProdService.findAca(sesion[1]['productosDormitorio']['id']).subscribe(data => {
-                                    if (data.body[0]['imagen'] != null) {
-                                        $('#cuerpo' + i + ' #izquierda').append(
-                                            '<img style="z-index:' +
-                                                (100 - i) +
-                                                ';max-width:400px;max-height:400px;;max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="data:image/gif;base64,' +
-                                                data.body[0]['imagen'] +
-                                                '>'
-                                        );
-                                    }
-                                });
-                            }
 
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (acabados[k].toLowerCase() == 'marmol blanco') {
-                                    acabados[k] = 'marmolblanco';
-                                }
-                                if (acabados[k].toLowerCase() == 'marmol negro') {
-                                    acabados[k] = 'marmolnegro';
-                                }
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                        var left = prodMed.split(';')[0];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                            var left = prodMed.split(';')[0];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                            var left = prodMed.split(';')[0];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        } else {
-                            contAca = 1;
-                            $('#cuerpo' + i).append(
-                                '<div id="izquierda" class="marginIzquierda" style="float: left;margin-top:20px"></div>'
-                            );
-
-                            if (nombre == 'mb6') {
-                                var prodMed = this.medidasModal[nombre];
-                                var height = prodMed.split(';')[3];
-                                var width = prodMed.split(';')[2];
-                                var left = prodMed.split(';')[0];
-                                $('#cuerpo' + i + ' #izquierda').append(
-                                    '<img style="z-index:' +
-                                        (100 - i) +
-                                        ';max-width:400px;max-height:400px;' +
-                                        left +
-                                        ';' +
-                                        height +
-                                        ';' +
-                                        width +
-                                        ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                        nombreCarpeta +
-                                        '/0 NUMEROS/' +
-                                        nombreCarpeta +
-                                        '_numeros_optimized.png">'
-                                );
-
-                                for (let k = 0; k < acabados.length; k++) {
-                                    if (k == 0) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 1) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                                $('#cuerpo' + i + ' #izquierda').append(
-                                                    '<img style="z-index:100;margin-left:-60px;top:20px;max-width:400px;max-height:400px;' +
-                                                        height +
-                                                        ';' +
-                                                        width +
-                                                        ';max-width:400px;max-height:250px;" id="' +
-                                                        nombre +
-                                                        '" class="' +
-                                                        acabados[k].toLowerCase() +
-                                                        'Modal" width="1000px" height="1000px" src="../../../content/images/' +
-                                                        nombreCarpeta +
-                                                        '/' +
-                                                        (k + 1) +
-                                                        '/' +
-                                                        nombreCarpeta +
-                                                        '_' +
-                                                        (k + 1) +
-                                                        '_' +
-                                                        acabados[k].toLowerCase() +
-                                                        '_optimized.png">'
-                                                );
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        } else {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'ap2') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg1') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        if (nombre == 'sg2') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg3') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                            $('#cuerpo' + i + ' #izquierda').append(
-                                                '<img style="z-index:100;margin-left:0px;top:20px;max-width:400px;max-height:400px;' +
-                                                    height +
-                                                    ';' +
-                                                    width +
-                                                    ';max-width:200px;max-height:350px;" id="' +
-                                                    nombre +
-                                                    '" class="' +
-                                                    acabados[k].toLowerCase() +
-                                                    'Modal" width="1000px" height="1000px" src="../../../content/images/' +
-                                                    nombre +
-                                                    ' apertura izquierda/' +
-                                                    (k + 1) +
-                                                    '/' +
-                                                    nombre +
-                                                    '_' +
-                                                    (k + 1) +
-                                                    '_' +
-                                                    acabados[k].toLowerCase() +
-                                                    '_optimized.png">'
-                                            );
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 2) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg4') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 3) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                        if (k == 4) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg5') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 3) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                        if (k == 4) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg6') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 4) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 5) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (
-                            nombre == 'cv27' ||
-                            nombre == 'cv25' ||
-                            nombre == 'cv6' ||
-                            nombre == 'cv19' ||
-                            nombre == 'cv10' ||
-                            nombre == 'cv12'
-                        ) {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 4) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg7') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 4) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 5) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg9') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 3) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                        if (k == 4) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg14') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 2) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg11') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 4) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                        if (k == 5) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg15') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 2) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        if (nombre == 'sg16') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        var acaCristal = acabados[k].toLowerCase();
-                                        if (acaCristal == 'cristal bronce') {
-                                            acaCristal = 'bronce';
-                                        } else {
-                                            acaCristal = 'transparente';
-                                        }
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg12') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        var acaCristal = acabados[k].toLowerCase();
-                                        if (acaCristal == 'cristal bronce') {
-                                            acaCristal = 'bronce';
-                                        } else {
-                                            acaCristal = 'transparente';
-                                        }
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg13') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        var acaCristal = acabados[k].toLowerCase();
-                                        if (acaCristal == 'cristal bronce') {
-                                            acaCristal = 'bronce';
-                                        } else {
-                                            acaCristal = 'transparente';
-                                        }
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                    if (k == 2) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg8') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 4) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'sg10') {
-                            $('#cuerpo' + i).css({ height: '400px' });
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:200px;max-height:350px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 4) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'ap4') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'ap7') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'ap10') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'ap5') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                        var acabadoCasco = acabados[k].toLowerCase();
-                                    } else {
-                                        var acabadoCasco = acabados[k].toLowerCase();
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k != 4) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        } else {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                                var aca1Nombre = acabados[k].toLowerCase();
-                                                if (aca1Nombre == 'cristal bronce') {
-                                                }
-
-                                                if (aca1Nombre == 'cristal transparente') {
-                                                }
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-
-                                                var aca1Nombre = acabados[k].toLowerCase();
-                                                if (aca1Nombre == 'cristal bronce') {
-                                                }
-
-                                                if (aca1Nombre == 'cristal transparente') {
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'ap6') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                        var acabadoCasco = acabados[k].toLowerCase();
-                                    } else {
-                                        var acabadoCasco = acabados[k].toLowerCase();
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k != 4) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        } else {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                                var aca1Nombre = acabados[k].toLowerCase();
-                                                if (aca1Nombre == 'cristal bronce') {
-                                                }
-
-                                                if (aca1Nombre == 'cristal transparente') {
-                                                }
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-
-                                                var aca1Nombre = acabados[k].toLowerCase();
-                                                if (aca1Nombre == 'cristal bronce') {
-                                                }
-
-                                                if (aca1Nombre == 'cristal transparente') {
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'ap9') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                        var acabadoCasco = acabados[k].toLowerCase();
-                                    } else {
-                                        var acabadoCasco = acabados[k].toLowerCase();
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k != 5) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        } else {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                                var aca1Nombre = acabados[k].toLowerCase();
-                                                if (aca1Nombre == 'cristal bronce') {
-                                                }
-
-                                                if (aca1Nombre == 'cristal transparente') {
-                                                }
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-
-                                                var aca1Nombre = acabados[k].toLowerCase();
-                                                if (aca1Nombre == 'cristal bronce') {
-                                                }
-
-                                                if (aca1Nombre == 'cristal transparente') {
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'ap8') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                        var acabadoCasco = acabados[k].toLowerCase();
-                                    } else {
-                                        var acabadoCasco = acabados[k].toLowerCase();
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k != 10) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        } else {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                                var aca1Nombre = acabados[k].toLowerCase();
-                                                if (aca1Nombre == 'cristal bronce') {
-                                                }
-
-                                                if (aca1Nombre == 'cristal transparente') {
-                                                }
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-
-                                                var aca1Nombre = acabados[k].toLowerCase();
-                                                if (aca1Nombre == 'cristal bronce') {
-                                                }
-
-                                                if (aca1Nombre == 'cristal transparente') {
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'ap3') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'mb9') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        if (nombre == 'mb10') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        if (nombre == 'mb11') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'mb14') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'mb5') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'mb4') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'mb8') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 2) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'mb13') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 2) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 4) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'mb12') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 4) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'mb7') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 4) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 3) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        if (nombre == 'mb7') {
-                            var prodMed = this.medidasModal[nombre];
-                            var height = prodMed.split(';')[3];
-                            var width = prodMed.split(';')[2];
-                            var left = prodMed.split(';')[0];
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;' +
-                                    left +
-                                    ';' +
-                                    height +
-                                    ';' +
-                                    width +
-                                    ';max-width:400px;max-height:250px;position:absolute;top:0px" width="1000px" height="1000px" src="../../../content/images/' +
-                                    nombreCarpeta +
-                                    '/0 NUMEROS/' +
-                                    nombreCarpeta +
-                                    '_numeros_optimized.png">'
-                            );
-                            for (let k = 0; k < acabados.length; k++) {
-                                if (k == 0) {
-                                    if (i == 1) {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    } else {
-                                        var prodMed = this.medidasModal[nombre];
-                                        var left = prodMed.split(';')[0];
-                                        var bottom = prodMed.split(';')[1];
-                                        var height = prodMed.split(';')[3];
-                                        var width = prodMed.split(';')[2];
-                                    }
-                                } else {
-                                    if (k == 1) {
-                                        if (i == 1) {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        } else {
-                                            var prodMed = this.medidasModal[nombre];
-                                            var left = prodMed.split(';')[0];
-                                            var bottom = prodMed.split(';')[1];
-                                            var height = prodMed.split(';')[3];
-                                            var width = prodMed.split(';')[2];
-                                        }
-                                    } else {
-                                        if (k == 3) {
-                                            var acaCristal = acabados[k].toLowerCase();
-                                            if (acaCristal == 'cristal bronce') {
-                                                acaCristal = 'bronce';
-                                            } else {
-                                                acaCristal = 'transparente';
-                                            }
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-
-                                        if (k == 2) {
-                                            if (i == 1) {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            } else {
-                                                var prodMed = this.medidasModal[nombre];
-                                                var left = prodMed.split(';')[0];
-                                                var bottom = prodMed.split(';')[1];
-                                                var height = prodMed.split(';')[3];
-                                                var width = prodMed.split(';')[2];
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        contAca = 1;
+                        $('#cuerpo' + i).append('<div id="izquierda" class="marginIzquierda" style="float: left;margin-top:20px"></div>');
 
                         $('#modalCesta .modal-body').append(
                             '<div style="float: left;width: 100%;height:180px:margin-bottom:50px;" id="textoCesta' + i + '"></div>'
@@ -11847,7 +8626,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     i +
                                     '">' +
                                     sesion[1]['todoSumadoPrecio'] +
-                                    '</span> &euro; </i></p>'
+                                    '</span> pp </i></p>'
                             );
                         } else {
                             $('#textoCesta' + i).append(
@@ -11857,7 +8636,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     i +
                                     '">' +
                                     sesion[1]['todoSumadoPrecio'] +
-                                    '</span> PP </i></p>'
+                                    '</span> pp </i></p>'
                             );
                         }
 
@@ -11866,199 +8645,568 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 sesion[1]['ancho'] +
                                 '</p>'
                         );
-                        if (
-                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 8 &&
-                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 9 &&
-                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 11 &&
-                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 12 &&
-                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 13 &&
-                            sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 16
-                        ) {
-                            var nombreCargarImagen;
-                            if (sesion[1]['productosDormitorio']['id'] == 277) {
-                                nombreCargarImagen = 'NT007_NT022';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 275) {
-                                nombreCargarImagen = 'NT001_NT004';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 276) {
-                                nombreCargarImagen = 'NT005_NT006';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 278) {
-                                nombreCargarImagen = 'NT023_NT038';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 279) {
-                                nombreCargarImagen = 'NT039_NT054';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 280) {
-                                nombreCargarImagen = 'NT055_NT070';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 281) {
-                                nombreCargarImagen = 'NT071_NT078';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 246) {
-                                nombreCargarImagen = 'NT079_NT094';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 282) {
-                                nombreCargarImagen = 'NT095_NT110';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 247) {
-                                nombreCargarImagen = 'NT111_NT115';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 249) {
-                                nombreCargarImagen = 'NT116_NT123';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 250) {
-                                nombreCargarImagen = 'NT116_NT123';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 248) {
-                                nombreCargarImagen = 'NT124_NT143';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 251) {
-                                nombreCargarImagen = 'NT144_NT148';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 253) {
-                                nombreCargarImagen = 'NT149_NT156';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 254) {
-                                nombreCargarImagen = 'NT149_NT156';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 252) {
-                                nombreCargarImagen = 'NT157_NT176';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 255) {
-                                nombreCargarImagen = 'NT177_NT181';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 257) {
-                                nombreCargarImagen = 'NT182_NT189';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 258) {
-                                nombreCargarImagen = 'NT182_NT189';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 256) {
-                                nombreCargarImagen = 'NT190_NT209';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 259) {
-                                nombreCargarImagen = 'NT210_NT211';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 261) {
-                                nombreCargarImagen = 'NT212_NT219';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 262) {
-                                nombreCargarImagen = 'NT212_NT219';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 260) {
-                                nombreCargarImagen = 'NT220_NT227';
-                            }
 
-                            if (sesion[1]['productosDormitorio']['id'] == 263) {
-                                nombreCargarImagen = 'NT228_NT229';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 266) {
-                                nombreCargarImagen = 'NT230_NT237';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 265) {
-                                nombreCargarImagen = 'NT230_NT237';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 264) {
-                                nombreCargarImagen = 'NT238_NT245';
-                            }
-
-                            if (sesion[1]['productosDormitorio']['id'] == 271) {
-                                nombreCargarImagen = 'NT246_NT250';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 274) {
-                                nombreCargarImagen = 'NT251_NT258';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 273) {
-                                nombreCargarImagen = 'NT251_NT258';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 272) {
-                                nombreCargarImagen = 'NT259_NT278';
-                            }
-
-                            if (sesion[1]['productosDormitorio']['id'] == 267) {
-                                nombreCargarImagen = 'NT279_NT280';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 269) {
-                                nombreCargarImagen = 'NT281_NT288';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 270) {
-                                nombreCargarImagen = 'NT281_NT288';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 268) {
-                                nombreCargarImagen = 'NT289_NT296';
-                            }
-
-                            if (sesion[1]['productosDormitorio']['id'] == 283) {
-                                nombreCargarImagen = 'NT297_NT314';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 284) {
-                                nombreCargarImagen = 'NT315_NT332';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 285) {
-                                nombreCargarImagen = 'NT333_NT350';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 1) {
-                                nombreCargarImagen = 'NX009_NX012';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 2) {
-                                nombreCargarImagen = 'NX009_NX012';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 3) {
-                                nombreCargarImagen = 'NX009_NX012';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 4) {
-                                nombreCargarImagen = 'NX013_NX016';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 5) {
-                                nombreCargarImagen = 'NX017_NX020';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 6) {
-                                nombreCargarImagen = 'NX021_NX024';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 7) {
-                                nombreCargarImagen = 'NX025_NX028';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 8) {
-                                nombreCargarImagen = 'NX029_NX032';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 9) {
-                                nombreCargarImagen = 'NX033_NX036';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 10) {
-                                nombreCargarImagen = 'NX037_NX040';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 11) {
-                                nombreCargarImagen = 'NX041_NX044';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 12) {
-                                nombreCargarImagen = 'NX045_NX048';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 13) {
-                                nombreCargarImagen = 'NX049_NX052';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 229) {
-                                nombreCargarImagen = 'NX053';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 239) {
-                                nombreCargarImagen = 'NX058_NX061';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 240) {
-                                nombreCargarImagen = 'NX062_NX065';
-                            }
-                            if (sesion[1]['productosDormitorio']['id'] == 241) {
-                                nombreCargarImagen = 'NX066_NX069';
-                            }
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="z-index:' +
-                                    (100 - i) +
-                                    ';max-width:400px;max-height:400px;;max-width:430px;max-height:350px;position:absolute;top:-30px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO/' +
-                                    nombreCargarImagen +
-                                    '.jpg">'
-                            );
+                        var nombreCargarImagen;
+                        if (sesion[1]['productosDormitorio']['id'] == 277) {
+                            nombreCargarImagen = 'NT007_NT022';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 275) {
+                            nombreCargarImagen = 'NT001_NT004';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 276) {
+                            nombreCargarImagen = 'NT005_NT006';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 278) {
+                            nombreCargarImagen = 'NT023_NT038';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 279) {
+                            nombreCargarImagen = 'NT039_NT054';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 280) {
+                            nombreCargarImagen = 'NT055_NT070';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 281) {
+                            nombreCargarImagen = 'NT071_NT078';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 246) {
+                            nombreCargarImagen = 'NT079_NT094';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 282) {
+                            nombreCargarImagen = 'NT095_NT110';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 247) {
+                            nombreCargarImagen = 'NT111_NT115';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 249) {
+                            nombreCargarImagen = 'NT116_NT123';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 250) {
+                            nombreCargarImagen = 'NT116_NT123';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 248) {
+                            nombreCargarImagen = 'NT124_NT143';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 251) {
+                            nombreCargarImagen = 'NT144_NT148';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 253) {
+                            nombreCargarImagen = 'NT149_NT156';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 254) {
+                            nombreCargarImagen = 'NT149_NT156';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 252) {
+                            nombreCargarImagen = 'NT157_NT176';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 255) {
+                            nombreCargarImagen = 'NT177_NT181';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 257) {
+                            nombreCargarImagen = 'NT182_NT189';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 258) {
+                            nombreCargarImagen = 'NT182_NT189';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 256) {
+                            nombreCargarImagen = 'NT190_NT209';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 259) {
+                            nombreCargarImagen = 'NT210_NT211';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 261) {
+                            nombreCargarImagen = 'NT212_NT219';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 262) {
+                            nombreCargarImagen = 'NT212_NT219';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 260) {
+                            nombreCargarImagen = 'NT220_NT227';
+                        }
+
+                        if (sesion[1]['productosDormitorio']['id'] == 263) {
+                            nombreCargarImagen = 'NT228_NT229';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 266) {
+                            nombreCargarImagen = 'NT230_NT237';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 265) {
+                            nombreCargarImagen = 'NT230_NT237';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 264) {
+                            nombreCargarImagen = 'NT238_NT245';
+                        }
+
+                        if (sesion[1]['productosDormitorio']['id'] == 271) {
+                            nombreCargarImagen = 'NT246_NT250';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 274) {
+                            nombreCargarImagen = 'NT251_NT258';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 273) {
+                            nombreCargarImagen = 'NT251_NT258';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 272) {
+                            nombreCargarImagen = 'NT259_NT278';
+                        }
+
+                        if (sesion[1]['productosDormitorio']['id'] == 267) {
+                            nombreCargarImagen = 'NT279_NT280';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 269) {
+                            nombreCargarImagen = 'NT281_NT288';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 270) {
+                            nombreCargarImagen = 'NT281_NT288';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 268) {
+                            nombreCargarImagen = 'NT289_NT296';
+                        }
+
+                        if (sesion[1]['productosDormitorio']['id'] == 283) {
+                            nombreCargarImagen = 'NT297_NT314';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 284) {
+                            nombreCargarImagen = 'NT315_NT332';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 285) {
+                            nombreCargarImagen = 'NT333_NT350';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 1) {
+                            nombreCargarImagen = 'NX009_NX012';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 2) {
+                            nombreCargarImagen = 'NX009_NX012';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 3) {
+                            nombreCargarImagen = 'NX009_NX012';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 4) {
+                            nombreCargarImagen = 'NX013_NX016';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 5) {
+                            nombreCargarImagen = 'NX017_NX020';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 6) {
+                            nombreCargarImagen = 'NX021_NX024';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 7) {
+                            nombreCargarImagen = 'NX025_NX028';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 8) {
+                            nombreCargarImagen = 'NX029_NX032';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 9) {
+                            nombreCargarImagen = 'NX033_NX036';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 10) {
+                            nombreCargarImagen = 'NX037_NX040';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 11) {
+                            nombreCargarImagen = 'NX041_NX044';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 12) {
+                            nombreCargarImagen = 'NX045_NX048';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 13) {
+                            nombreCargarImagen = 'NX049_NX052';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 229) {
+                            nombreCargarImagen = 'NX053';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 239) {
+                            nombreCargarImagen = 'NX058_NX061';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 240) {
+                            nombreCargarImagen = 'NX062_NX065';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 241) {
+                            nombreCargarImagen = 'NX066_NX069';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 107) {
+                            nombreCargarImagen = 'NH001-NH006';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 108) {
+                            nombreCargarImagen = 'NH011-NH014';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 109) {
+                            nombreCargarImagen = 'NH015-NH016';
+                        }
+
+                        if (sesion[1]['productosDormitorio']['id'] == 295) {
+                            nombreCargarImagen = 'NH017-NH018';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 296) {
+                            nombreCargarImagen = 'NH019-NH020';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 111) {
+                            nombreCargarImagen = 'NH021-NH024';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 110) {
+                            nombreCargarImagen = 'NH025_NH028';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 113) {
+                            nombreCargarImagen = 'NH029_NH032';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 112) {
+                            nombreCargarImagen = 'NH033_NH036';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 114) {
+                            nombreCargarImagen = 'NH037_NH041';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 116) {
+                            nombreCargarImagen = 'NH042_NH045';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 115) {
+                            nombreCargarImagen = 'NH046_NH049';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 298) {
+                            nombreCargarImagen = 'NH050_NH051';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 297) {
+                            nombreCargarImagen = 'NH052_NH053';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 118) {
+                            nombreCargarImagen = 'NH054_NH057';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 117) {
+                            nombreCargarImagen = 'NH058_NH061';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 119) {
+                            nombreCargarImagen = 'NH062_NH066';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 299) {
+                            nombreCargarImagen = 'NH067_NH069';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 301) {
+                            nombreCargarImagen = 'NH070_NH071';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 300) {
+                            nombreCargarImagen = 'NH072_NH073';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 302) {
+                            nombreCargarImagen = 'NH074_NH077';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 334) {
+                            nombreCargarImagen = 'NH078_NH079';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 303) {
+                            nombreCargarImagen = 'NH080_NH081';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 14) {
+                            nombreCargarImagen = 'NH082_NH083';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 304) {
+                            nombreCargarImagen = 'NH084';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 53) {
+                            nombreCargarImagen = 'NH085';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 305) {
+                            nombreCargarImagen = 'NH086_NH088';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 62) {
+                            nombreCargarImagen = 'NH089_NH091';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 306) {
+                            nombreCargarImagen = 'NH092_NH094';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 63) {
+                            nombreCargarImagen = 'NH095_NH097';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 307) {
+                            nombreCargarImagen = 'NH098_NH100';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 64) {
+                            nombreCargarImagen = 'NH101_NH103';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 308) {
+                            nombreCargarImagen = 'NH104_NH106';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 65) {
+                            nombreCargarImagen = 'NH107_NH109';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 308) {
+                            nombreCargarImagen = 'NH104_NH106';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 65) {
+                            nombreCargarImagen = 'NH107_NH109';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 309) {
+                            nombreCargarImagen = 'NH110_NH112';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 66) {
+                            nombreCargarImagen = 'NH113_NH115';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 310) {
+                            nombreCargarImagen = 'NH116_NH118';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 67) {
+                            nombreCargarImagen = 'NH119_NH121';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 311) {
+                            nombreCargarImagen = 'NH122_NH124';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 68) {
+                            nombreCargarImagen = 'NH125_NH127';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 171) {
+                            nombreCargarImagen = 'NH136';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 172) {
+                            nombreCargarImagen = 'NH137';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 173) {
+                            nombreCargarImagen = 'NH138';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 73) {
+                            nombreCargarImagen = 'NH139_NH140';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 72) {
+                            nombreCargarImagen = 'NH141_NH142';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 75) {
+                            nombreCargarImagen = 'NH143';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 74) {
+                            nombreCargarImagen = 'NH144';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 87) {
+                            nombreCargarImagen = 'NH145';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 86) {
+                            nombreCargarImagen = 'NH146';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 77) {
+                            nombreCargarImagen = 'NH147';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 76) {
+                            nombreCargarImagen = 'NH148';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 313) {
+                            nombreCargarImagen = 'NH149';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 79) {
+                            nombreCargarImagen = 'NH152';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 319) {
+                            nombreCargarImagen = 'NH154';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 320) {
+                            nombreCargarImagen = 'NH156';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 325) {
+                            nombreCargarImagen = 'NH168';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 320) {
+                            nombreCargarImagen = 'NH179';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 89) {
+                            nombreCargarImagen = 'NH189';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 88) {
+                            nombreCargarImagen = 'NH190';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 322) {
+                            nombreCargarImagen = 'NH191';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 80) {
+                            nombreCargarImagen = 'NH194';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 316) {
+                            nombreCargarImagen = 'NH195';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 81) {
+                            nombreCargarImagen = 'NH196';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 174) {
+                            nombreCargarImagen = 'NH197';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 175) {
+                            nombreCargarImagen = 'NH198';
+                        }
+
+                        if (sesion[1]['productosDormitorio']['id'] == 177) {
+                            nombreCargarImagen = 'NH234-NH235';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 178) {
+                            nombreCargarImagen = 'NH236-NH240';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 179) {
+                            nombreCargarImagen = 'NH241-NH245';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 159) {
+                            nombreCargarImagen = 'NH246';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 158) {
+                            nombreCargarImagen = 'NH247';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 161) {
+                            nombreCargarImagen = 'NH248';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 160) {
+                            nombreCargarImagen = 'NH249';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 163) {
+                            nombreCargarImagen = 'NH250';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 162) {
+                            nombreCargarImagen = 'NH251';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 165) {
+                            nombreCargarImagen = 'NH258';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 164) {
+                            nombreCargarImagen = 'NH259';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 167) {
+                            nombreCargarImagen = 'NH268';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 166) {
+                            nombreCargarImagen = 'NH269';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 169) {
+                            nombreCargarImagen = 'NH270';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 168) {
+                            nombreCargarImagen = 'NH271';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 170) {
+                            nombreCargarImagen = 'NH272';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 180) {
+                            nombreCargarImagen = 'NH279_NH280';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 181) {
+                            nombreCargarImagen = 'NH281_NH282';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 182) {
+                            nombreCargarImagen = 'NH283';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 183) {
+                            nombreCargarImagen = 'NH284';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 184) {
+                            nombreCargarImagen = 'NH289_NH293';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 185) {
+                            nombreCargarImagen = 'NH294_NH298';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 186) {
+                            nombreCargarImagen = 'NH299_NH303';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 188) {
+                            nombreCargarImagen = 'NH304_NH308';
+                        }
+
+                        if (sesion[1]['productosDormitorio']['id'] == 187) {
+                            nombreCargarImagen = 'NH309_NH313';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 189) {
+                            nombreCargarImagen = 'NH314_NH318';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 194) {
+                            nombreCargarImagen = 'NH319_NH320';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 190) {
+                            nombreCargarImagen = 'NH321_NH322';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 195) {
+                            nombreCargarImagen = 'NH323_NH324';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 191) {
+                            nombreCargarImagen = 'NH325_NH326';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 196) {
+                            nombreCargarImagen = 'NH327_NH331';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 200) {
+                            nombreCargarImagen = 'NH332_NH336';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 192) {
+                            nombreCargarImagen = 'NH337_NH341';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 198) {
+                            nombreCargarImagen = 'NH342_NH346';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 197) {
+                            nombreCargarImagen = 'NH347_NH351';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 201) {
+                            nombreCargarImagen = 'NH352_NH356';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 193) {
+                            nombreCargarImagen = 'NH357_NH361';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 199) {
+                            nombreCargarImagen = 'NH362_NH366';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 203) {
+                            nombreCargarImagen = 'NH372_NH373';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 204) {
+                            nombreCargarImagen = 'NH455_NH458';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 333) {
+                            nombreCargarImagen = 'NH461';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 206) {
+                            nombreCargarImagen = 'NH462';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 207) {
+                            nombreCargarImagen = 'NH463_NH468';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 208) {
+                            nombreCargarImagen = 'NH469_NH474';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 209) {
+                            nombreCargarImagen = 'NH475_NH480';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 210) {
+                            nombreCargarImagen = 'NH481_NH486';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 211) {
+                            nombreCargarImagen = 'NH487_NH492';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 213) {
+                            nombreCargarImagen = 'NH493_NH496';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 214) {
+                            nombreCargarImagen = 'NH493_NH496';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 215) {
+                            nombreCargarImagen = 'NH497_NH500';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 216) {
+                            nombreCargarImagen = 'NH497_NH500';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 217) {
+                            nombreCargarImagen = 'NH501_NH502';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 218) {
+                            nombreCargarImagen = 'NH503';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 219) {
+                            nombreCargarImagen = 'NH504';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 220) {
+                            nombreCargarImagen = 'NH505';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 221) {
+                            nombreCargarImagen = 'NH506';
+                        }
+
+                        if (sesion[1]['productosDormitorio']['id'] == 222) {
+                            nombreCargarImagen = 'NH507_NH510';
+                        }
+
+                        $('#cuerpo' + i + ' #izquierda').append(
+                            '<img style="z-index:' +
+                                (100 - i) +
+                                ';max-width:400px;max-height:400px;;max-width:410px;max-height:350px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO/' +
+                                nombreCargarImagen +
+                                '.jpg">'
+                        );
+                        $('#textoCesta' + i).css({ 'margin-top': '50px' });
                         var precioTotalCesta;
                         precioTotalCesta = $('#cestaTotal').text();
                         if (precioTotalCesta != '') {

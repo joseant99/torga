@@ -12,7 +12,7 @@
 <a  *jhiHasAnyAuthority="'ROLE_REPRESENTATE'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" id="imagenLogoCuenta">
 	                <span class="logo-img"></span>
 </a>
-	
+<!--  	
 <a style="margin-left: 45%;color: black;background-color:#D8E8C6;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" id="modalCambiar1A" data-target="#modalCambiarA" (click)="textoRojoMostrarA()">
 	<span>A</span>
 </a>
@@ -32,7 +32,8 @@
 	<a style="margin-left: 2%;color: black;background-color:#D8E8C6;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" data-target="#modalCambiarE" id="modalCambiar1E">
 		<span>IVA NO</span>
 	</a>
-</div>    
+</div>
+-->    
 	<a id="cestaImagen" data-toggle="modal" data-target="#modalCesta"  (click)="abrirCesta()"><img id="imagenCesta" src="../../../content/images/CESTA-min.png"><i id="posicion0">{{productosDormitorioService.numeroCesta}}</i></a>
 </div>
 <nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal" style="display:none">
@@ -1293,7 +1294,7 @@
 		        </div>
 		       <div class="modal-footer">
 			       <!--  <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>-->
-			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 350px;" >TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px"></span> &euro;</span>
+			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 350px;" >TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px"></span> pp</span>
 			       
 			        <button id="botonDerechaPresupuesto" (click)="cargarTodasTiendas()" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;" type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalConfirmarCreacionPresu">GENERAR PRESUPUESTO</button></p>
 		        </div>
