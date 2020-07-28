@@ -1955,20 +1955,20 @@
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalInterioresAcabados"> </div></p></a>
+								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalInterioresAcabados"> </div></p></a>
 								<label style="float: left;margin-right:20px;margin-top: 15px;">TRASERA :</label>
-								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalTraseraAcabados"> </div></a>
+								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalTraseraAcabados"> </div></a>
 		    					<label style="float: left;margin-right:20px;margin-top: 15px;">INTERIORES :</label>
-		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></a>
+		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></a>
 		    					<label style="float: left;margin-right:20px;margin-top: 55px;">TIRADORES <br>Y PERFILES :</label>
-		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalInterioresAcabados2"> </div></a>
+		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalInterioresAcabados2"> </div></a>
 		    					
 							</div>
 							
 								<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
 					    			<div style="width:100%;float:left" *ngFor="let interior of this.armariosDormitorioComponent.arraySaberHuecos;let u=index">
 						    			<p style="width:100%;float:left;margin-top:15px;"><strong class="cambiarAcabado" style="float:left">Hueco {{this.armariosDormitorioComponent.arrayLetras[u]}}</strong><span style="float:right" id="precioInt{{u}}"></span></p>
-						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalInteriorArmario" (click)="this.armariosDormitorioComponent.cogerIDHueco(u+1)" readonly="readonly"></div></a>
+						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black;background-color:white" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalInteriorArmario" (click)="this.armariosDormitorioComponent.cogerIDHueco(u+1)" readonly="readonly"></div></a>
 						    		<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px; margin-top:30px;">
 										<form>
 											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO<br>IZQUIERDA</label>
@@ -1995,9 +1995,9 @@
 					    			<p style="float:left;width:100%"><strong class="cambiarAcabado" style="margin-top:15px;float:left" id="nombrePuertaGG{{u}}">Puerta {{interior}}</strong><span style="float:right;margin-top:15px;" id="precioPuerta{{u}}"></span></p>
 					    			<p style="float:left;width:100%"><span style="float:left;margin-top:15px">TIPO</span> <input type="text" style="height:60px;width:155px;margin-left:10px;text-align:center;float:right;margin-right:14%;;font-size:14px" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" value="TIPO" data-target="#modalPuertasArmario" readonly="readonly"/></p>
 					    			<div id="inputs" style="float:left;width:100%">
-					    				<span style="float:left;margin-top:15px" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
+					    				<span style="float:left;margin-top:15px" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
 					    				<div style="display:none;float: left;width: 100%;margin-top: 20px;" id="2acaPuerta{{u}}">
-					    					<span style="float:left;margin-top:15px;" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
+					    					<span style="float:left;margin-top:15px;" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
 					    				</div>
 					    			</div>
 					    			
@@ -2097,20 +2097,20 @@
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados"> </div></p></a>
+								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados"> </div></p></a>
 								<label style="float: left;margin-right:20px;margin-top: 15px;">TRASERA :</label>
-								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesOculta #modalTraseraAcabados"> </div></a>
+								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesOculta #modalTraseraAcabados"> </div></a>
 		    					<label style="float: left;margin-right:20px;margin-top: 15px;">INTERIORES :</label>
-		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados1"> </div></a>
+		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados1"> </div></a>
 								<label style="float: left;margin-right:20px;margin-top: 55px;">TIRADORES <br>Y PERFILES :</label>
-		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados2"> </div></a>
+		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados2"> </div></a>
 								
 							</div>
 							
 								<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
 					    			<div style="width:100%;float:left" *ngFor="let interior of this.armariosDormitorioOcultaComponent.arraySaberHuecos;let u=index">
 						    			<p style="width:100%;float:left;margin-top:15px;"><strong class="cambiarAcabado" style="float:left">Hueco {{this.armariosDormitorioOcultaComponent.arrayLetras[u]}}</strong><span style="float:right" id="precioInt{{u}}"></span></p>
-						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalesOculta #modalInteriorArmario" (click)="this.armariosDormitorioOcultaComponent.cogerIDHueco(u+1)" readonly="readonly"></div></a>
+						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black;background-color:white" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalesOculta #modalInteriorArmario" (click)="this.armariosDormitorioOcultaComponent.cogerIDHueco(u+1)" readonly="readonly"></div></a>
 						    		<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px; margin-top:30px;">
 										<form>
 											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO</label>
@@ -2133,9 +2133,9 @@
 					    			<p style="float:left;width:100%"><strong class="cambiarAcabado" style="margin-top:15px;float:left" id="nombrePuerta{{u}}">Puerta {{interior}}</strong><span style="float:right;margin-top:15px;" id="precioPuerta{{u}}"></span></p>
 					    			<p style="float:left;width:100%"><span style="float:left;margin-top:15px">TIPO</span> <input type="text" style="height:60px;width:100px;margin-left:10px;text-align:center;float:right;margin-right:30%;;font-size:14px" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioOcultaComponent.guardarIdPuerta(u)" value="TIPO" data-target="#modalesOculta #modalPuertasArmario" readonly="readonly"/></p>
 					    			<div id="inputs" style="float:left;width:100%">
-					    				<span style="float:left;margin-top:15px" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioOcultaComponent.guardarIdPuerta(u)" data-target="#modalesOculta #modalAcabadosPuertas1"></div></a>
+					    				<span style="float:left;margin-top:15px" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioOcultaComponent.guardarIdPuerta(u)" data-target="#modalesOculta #modalAcabadosPuertas1"></div></a>
 					    				<div style="display:none;float: left;width: 100%;margin-top: 20px;" id="2acaPuerta{{u}}">
-					    					<span style="float:left;margin-top:15px;" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioOcultaComponent.guardarIdPuerta(u)" data-target="#modalesOculta #modalAcabadosPuertas1"></div></a>
+					    					<span style="float:left;margin-top:15px;" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioOcultaComponent.guardarIdPuerta(u)" data-target="#modalesOculta #modalAcabadosPuertas1"></div></a>
 					    				</div>
 					    			</div>
 					    			
@@ -2238,20 +2238,20 @@
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados"> </div></p></a>
+								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados"> </div></p></a>
 								<label style="float: left;margin-right:20px;margin-top: 15px;">TRASERA :</label>
-								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesVista #modalTraseraAcabados"> </div></a>
+								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesVista #modalTraseraAcabados"> </div></a>
 		    					<label style="float: left;margin-right:20px;margin-top: 15px;">INTERIORES :</label>
-		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados1"> </div></a>
+		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados1"> </div></a>
 								<label style="float: left;margin-right:20px;margin-top: 55px;">TIRADORES <br>Y PERFILES :</label>
-		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados2"> </div></a>
+		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados2"> </div></a>
 								
 							</div>
 							
 								<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
 					    			<div style="width:100%;float:left" *ngFor="let interior of this.armariosDormitorioVistaComponent.arraySaberHuecos;let u=index">
 						    			<p style="width:100%;float:left;margin-top:15px;"><strong class="cambiarAcabado" style="float:left">Hueco {{this.armariosDormitorioVistaComponent.arrayLetras[u]}}</strong><span style="float:right" id="precioInt{{u}}"></span></p>
-						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalesVista #modalInteriorArmario" (click)="this.armariosDormitorioVistaComponent.cogerIDHueco(u+1)" readonly="readonly"></div></a>
+						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black;background-color:white" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalesVista #modalInteriorArmario" (click)="this.armariosDormitorioVistaComponent.cogerIDHueco(u+1)" readonly="readonly"></div></a>
 						    		<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px; margin-top:30px;">
 										<form>
 											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO</label>
@@ -2274,9 +2274,9 @@
 					    			<p style="float:left;width:100%"><strong class="cambiarAcabado" style="margin-top:15px;float:left" id="nombrePuerta{{u}}">Puerta {{interior}}</strong><span style="float:right;margin-top:15px;" id="precioPuerta{{u}}"></span></p>
 					    			<p style="float:left;width:100%"><span style="float:left;margin-top:15px">TIPO</span> <input type="text" style="height:60px;width:100px;margin-left:10px;text-align:center;float:right;margin-right:30%;;font-size:14px" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioVistaComponent.guardarIdPuerta(u)" value="TIPO" data-target="#modalesVista #modalPuertasArmario" readonly="readonly"/></p>
 					    			<div id="inputs" style="float:left;width:100%">
-					    				<span style="float:left;margin-top:15px" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioVistaComponent.guardarIdPuerta(u)" data-target="#modalesVista #modalAcabadosPuertas1"></div></a>
+					    				<span style="float:left;margin-top:15px" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioVistaComponent.guardarIdPuerta(u)" data-target="#modalesVista #modalAcabadosPuertas1"></div></a>
 					    				<div style="display:none;float: left;width: 100%;margin-top: 20px;" id="2acaPuerta{{u}}">
-					    					<span style="float:left;margin-top:15px;" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioVistaComponent.guardarIdPuerta(u)" data-target="#modalesVista #modalAcabadosPuertas1"></div></a>
+					    					<span style="float:left;margin-top:15px;" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioVistaComponent.guardarIdPuerta(u)" data-target="#modalesVista #modalAcabadosPuertas1"></div></a>
 					    				</div>
 					    			</div>
 					    			
@@ -2379,17 +2379,17 @@
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados"> </div></p></a>
+								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados"> </div></p></a>
 								<label style="float: left;margin-right:20px;margin-top: 15px;">TRASERA :</label>
-								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesVestidor #modalTraseraAcabados"> </div></a>
+								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesVestidor #modalTraseraAcabados"> </div></a>
 		    					<label style="float: left;margin-right:20px;margin-top: 15px;">INTERIORES :</label>
-		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados1"> </div></a>
+		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados1"> </div></a>
 							</div>
 							
 								<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
 					    			<div style="width:100%;float:left" *ngFor="let interior of this.vestidoresDormitorioComponent.arraySaberHuecos;let u=index">
 						    			<p style="width:100%;float:left;margin-top:15px;"><strong class="cambiarAcabado" style="float:left">Hueco {{this.vestidoresDormitorioComponent.arrayLetras[u]}}</strong><span style="float:right" id="precioInt{{u}}"></span></p>
-						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalesVestidor #modalInteriorArmario" (click)="this.vestidoresDormitorioComponent.cogerIDHueco(u+1)" readonly="readonly"></div></a>
+						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black;background-color:white" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalesVestidor #modalInteriorArmario" (click)="this.vestidoresDormitorioComponent.cogerIDHueco(u+1)" readonly="readonly"></div></a>
 						    		<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px; margin-top:30px;">
 										<form>
 											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO</label>

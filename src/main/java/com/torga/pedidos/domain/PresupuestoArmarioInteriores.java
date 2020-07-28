@@ -26,6 +26,12 @@ public class PresupuestoArmarioInteriores implements Serializable {
     @Column(name = "precio")
     private Float precio;
 
+    @Column(name = "orden")
+    private Float orden;
+    
+    @Column(name = "mensaje_luz")
+    private String mensajeLuz;
+   
     @ManyToOne
     @JsonIgnoreProperties("")
     private ProductosDormitorio productosDormitorio;
@@ -54,6 +60,32 @@ public class PresupuestoArmarioInteriores implements Serializable {
 
     public void setPrecio(Float precio) {
         this.precio = precio;
+    }
+    
+    public String getMensajeLuz() {
+        return mensajeLuz;
+    }
+
+    public PresupuestoArmarioInteriores mensajeLuz(String mensajeLuz) {
+        this.mensajeLuz = mensajeLuz;
+        return this;
+    }
+
+    public void setMensajeLuz(String mensajeLuz) {
+        this.mensajeLuz = mensajeLuz;
+    }
+    
+    public Float getOrden() {
+        return orden;
+    }
+
+    public PresupuestoArmarioInteriores orden(Float orden) {
+        this.orden = orden;
+        return this;
+    }
+
+    public void setOrden(Float orden) {
+        this.orden = orden;
     }
 
     public ProductosDormitorio getProductosDormitorio() {

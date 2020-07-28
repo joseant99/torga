@@ -369,7 +369,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             $('#datosMeter' + (cont - 1)).append(
                                                 '<p><strong>Interior ' +
                                                     datosInteriores[p]['productosDormitorio']['nombre'] +
-                                                    '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
+                                                    '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
+                                                    datosInteriores[p]['mensajeLuz'] +
+                                                    '</span><span>+ ' +
                                                     datosInteriores[p]['precio'] +
                                                     ' pp</span></p>'
                                             );

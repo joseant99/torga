@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface PresupuestoArmarioPuertasRepository extends JpaRepository<PresupuestoArmarioPuertas, Long> {
-	@Query("Select u from PresupuestoArmarioPuertas u where u.presupuestoArmario.id = ?1")
+	@Query("Select u from PresupuestoArmarioPuertas u where u.presupuestoArmario.id = ?1 order by u.orden")
 	Collection<PresupuestoArmarioPuertas> findByPresupuestoArmario(Long id);
 }

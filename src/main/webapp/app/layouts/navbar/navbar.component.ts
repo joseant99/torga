@@ -10130,11 +10130,22 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     var interiores;
                     for (let ve = 0; ve <= 10000500; ve++) {
                         if (ve == 10000500) {
-                            interiores = {
-                                precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                presupuestoArmario: presupuestoArmario,
-                                productosDormitorio: prodCarr[m][1]['interiores'][x]
-                            };
+                            if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
+                                interiores = {
+                                    precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                    presupuestoArmario: presupuestoArmario,
+                                    productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                    orden: x
+                                };
+                            } else {
+                                interiores = {
+                                    precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                    presupuestoArmario: presupuestoArmario,
+                                    productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                    orden: x,
+                                    mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
+                                };
+                            }
                             this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
                         }
                     }
@@ -10148,7 +10159,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     precio: prodCarr[m][1]['puertas'][x]['precio'],
                                     presupuestoArmario: presupuestoArmario,
                                     productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                    acabados: prodCarr[m][1]['puertas'][x]['acabado' + x]
+                                    acabados: prodCarr[m][1]['puertas'][x]['acabado' + x],
+                                    orden: x
                                 };
 
                                 this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));

@@ -25,6 +25,9 @@ public class PresupuestoArmarioPuertas implements Serializable {
 
     @Column(name = "precio")
     private Float precio;
+    
+    @Column(name = "orden")
+    private Float orden;
 
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -58,6 +61,19 @@ public class PresupuestoArmarioPuertas implements Serializable {
 
     public void setPrecio(Float precio) {
         this.precio = precio;
+    }
+    
+    public Float getOrden() {
+        return orden;
+    }
+
+    public PresupuestoArmarioPuertas orden(Float orden) {
+        this.orden = orden;
+        return this;
+    }
+
+    public void setOrden(Float orden) {
+        this.orden = orden;
     }
 
     public Acabados getAcabados() {
