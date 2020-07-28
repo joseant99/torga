@@ -263,13 +263,13 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
 
         for (let i = 0; i < todo[1]['interiores'].length; i++) {
             var precio = $('#calculadoraCarrito #productoCalculadora1 #precioInt' + i).text();
-            precio = precio.split(' ')[0];
+            precio = precio.split(' ')[1];
             todo[1]['interiores'][i]['precio'] = precio;
         }
 
         for (let i = 0; i < todo[1]['puertas'].length; i++) {
             var precio = $('#calculadoraCarrito #productoCalculadora1 #precioPuerta' + i).text();
-            precio = precio.split(' ')[0];
+            precio = precio.split(' ')[1];
             todo[1]['puertas'][i]['precio'] = precio;
         }
         const todoSumadoPrecio = $('#precioDimension').text();
@@ -285,7 +285,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
         $('#alturaSelect').val('');
         $('#textoTituloInterior').text('');
 
-        todo[1]['precioCasco'] = precioCasco;
+        todo[1]['precioCasco'] = precioCasco.split(' ')[0];
         for (let k = 1; k < sessionStorage.length; k++) {
             if (sessionStorage['prod' + k] != null) {
                 contador++;
@@ -3362,23 +3362,68 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
         this.huecoPinta = id;
     }
 
+    public cambiarAcabadoTiradorBueno(nombre) {
+        var hueco = this.numeroDeHuecos;
+        var acabados = this.todos;
+        var dimens = this.dimenArmarios;
+        var grandes = dimens['grandes'];
+        var array = this.armarioCogido;
+        $('#inputAcabadoTirador').empty();
+        var todo = this.armarioCogido;
+        $('#calcuVista #inputAcabadoTirador').empty();
+        for (let w = 0; w < acabados.length; w++) {
+            if (acabados[w]['nombre'] == nombre) {
+                $('#calcuVista #inputAcabadoTirador').val(acabados[w].nombre);
+                $('#calcuVista #inputAcabadoTirador').append(
+                    '<img width="100%" height="100%" src="data:image/gif;base64,' +
+                        acabados[w]['imagenFondo'] +
+                        '" style="max-width:100%;max-height:100%">'
+                );
+                todo['acabadoTirador'] = acabados[w];
+                this.armarioCogido = todo;
+                $('#calcuVista #inputAcabadoTirador').append('<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>');
+                array['acabadoTirador'] = acabados[w];
+                this.armarioCogido = array;
+                console.log(this.armarioCogido);
+                $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                    '<p style="width:100%;display:none">Interior: <span id="acabadoTirador">' +
+                        nombre +
+                        '</span><span style="float:right">+ 0€</span><p/>'
+                );
+                /*
+                for (let j = 1; j <= 12; j++) {
+                    var src = $('#interiorDentroArmario' + j).attr('src');
+                    if (src != '' && src != null && src != undefined) {
+                        var parte1 = src.split('_')[0];
+                        var parte2 = src.split('_')[1];
+                        var parte3 = src.split('_')[2];
+                        var todo = parte1 + '_' + parte2 + '_' + parte3 + '_' + nombre.toLowerCase() + '_optimized.png';
+                        $('#imagenesArmario1 #interiorDentroArmario' + j).attr('src', todo);
+                        $('#imagenesArmario2 #interiorDentroArmario' + j).attr('src', todo);
+                    }
+                }
+                */
+            }
+        }
+    }
+
     public luzInteriores(id, lol) {
         if (lol == 0) {
             var quitar = this.gg;
             if (quitar == 1) {
                 var prec = $('#precioInt' + id).text();
-                prec = prec.split(' ')[0];
+                prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 120;
-                $('#precioInt' + id).text(precio + ' €');
+                $('#precioInt' + id).text('+ ' + precio + ' pp');
             }
             if (quitar == 2) {
                 this.gg = 2;
                 var prec = $('#precioInt' + id).text();
-                prec = prec.split(' ')[0];
+                prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 200;
-                $('#precioInt' + id).text(precio + ' €');
+                $('#precioInt' + id).text('+ ' + precio + ' pp');
             }
         }
 
@@ -3386,37 +3431,37 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             var quitar = this.gg;
             if (quitar == 2) {
                 var prec = $('#precioInt' + id).text();
-                prec = prec.split(' ')[0];
+                prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 200;
-                $('#precioInt' + id).text(precio + ' €');
+                $('#precioInt' + id).text('+ ' + precio + ' pp');
             }
             this.gg = 1;
             $('#precioLuz' + id + '2').css({ display: 'none' });
             $('#precioLuz' + id + '' + lol).css({ display: 'block' });
             var prec = $('#precioInt' + id).text();
-            prec = prec.split(' ')[0];
+            prec = prec.split(' ')[1];
             var precio = parseFloat(prec);
             precio = precio + 120;
-            $('#precioInt' + id).text(precio + ' €');
+            $('#precioInt' + id).text('+ ' + precio + ' pp');
         }
         if (lol == 2) {
             var quitar = this.gg;
             if (quitar == 1) {
                 var prec = $('#precioInt' + id).text();
-                prec = prec.split(' ')[0];
+                prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 120;
-                $('#precioInt' + id).text(precio + ' €');
+                $('#precioInt' + id).text('+ ' + precio + ' pp');
             }
             $('#precioLuz' + id + '1').css({ display: 'none' });
             $('#precioLuz' + id + '' + lol).css({ display: 'block' });
             this.gg = 2;
             var prec = $('#precioInt' + id).text();
-            prec = prec.split(' ')[0];
+            prec = prec.split(' ')[1];
             var precio = parseFloat(prec);
             precio = precio + 200;
-            $('#precioInt' + id).text(precio + ' €');
+            $('#precioInt' + id).text('+ ' + precio + ' pp');
         }
     }
 
