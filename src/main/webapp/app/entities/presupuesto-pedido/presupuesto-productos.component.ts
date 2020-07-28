@@ -7313,6 +7313,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 var prodNombre =
                                                     acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
                                                 var idProdNombre = acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['id'];
+
                                                 var nombreCargarImagen;
                                                 if (idProdNombre == 277) {
                                                     nombreCargarImagen = 'NT007_NT022';
@@ -7878,32 +7879,71 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             }
                                         }
 
-                                        if (
-                                            productos[i]['productosDormitorio']['categoriasDormi']['id'] != 8 &&
-                                            productos[i]['productosDormitorio']['categoriasDormi']['id'] != 9 &&
-                                            productos[i]['productosDormitorio']['categoriasDormi']['id'] != 11 &&
-                                            productos[i]['productosDormitorio']['categoriasDormi']['id'] != 12 &&
-                                            productos[i]['productosDormitorio']['categoriasDormi']['id'] != 13 &&
-                                            productos[i]['productosDormitorio']['categoriasDormi']['id'] != 16
-                                        ) {
-                                            $('#imagen' + i).append(
-                                                '<img style="z-index:' +
-                                                    (100 - i) +
-                                                    ';max-width:400px;max-height:400px;;max-width:400px;max-height:250px;position:absolute;" width="1000px" height="1000px" src="../../../content/images/numeros' +
-                                                    productos[i]['productosDormitorio']['id'] +
-                                                    '.png">'
+                                        if (productos[w]['tiposApoyo'] != null) {
+                                            apoyo = productos[w]['tiposApoyo'];
+                                        }
+                                        var luz = undefined;
+                                        if (productos[w]['iluminacion'] != undefined) {
+                                            luz = productos[w]['iluminacion'];
+                                        }
+                                        var usb = undefined;
+                                        if (productos[w]['usb'] != undefined) {
+                                            usb = productos[w]['usb'];
+                                        }
+
+                                        if (luz != undefined) {
+                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                '<p>Luz: &nbsp;&nbsp;&nbsp; <span id="precioLuz' +
+                                                    i +
+                                                    '">' +
+                                                    luz['precio'] +
+                                                    '</span> pp</p>'
                                             );
+                                            var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                            if (precioTotal != '') {
+                                                var precioFloat = parseFloat(precioTotal);
+                                            }
+                                            var precioLuz = luz['precio'];
+                                            precioLuz = precioLuz * 1;
+                                            precioFloat = precioFloat + precioLuz;
+                                            var subTotal = parseFloat($('#precioSubtotal').text());
+                                            subTotal = subTotal + precioFloat;
+                                            $('#precioSubtotal').text(subTotal.toFixed(2));
+                                            $('#totalDescuentoTexto').text(subTotal.toFixed(2));
+                                            $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(subTotal.toFixed(2));
+                                        }
+
+                                        if (usb != undefined) {
+                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                '<p>' +
+                                                    usb['mensaje'] +
+                                                    ': &nbsp;&nbsp;&nbsp; <span id="precioUsb' +
+                                                    i +
+                                                    '">' +
+                                                    usb['precio'] +
+                                                    '</span> pp</p>'
+                                            );
+                                            var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
+                                            var precioFloat = 0;
+                                            var precioLuz = usb['precio'];
+                                            precioLuz = precioLuz * 1;
+                                            precioFloat = precioFloat + precioLuz;
+                                            var subTotal = parseFloat($('#precioSubtotal').text());
+                                            subTotal = subTotal + precioFloat;
+                                            $('#precioSubtotal').text(subTotal.toFixed(2));
+                                            $('#totalDescuentoTexto').text(subTotal.toFixed(2));
+                                            $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(subTotal.toFixed(2));
                                         }
 
                                         if (apoyo != undefined) {
                                             $('.' + productos[i]['id'] + 'Datos').append(
                                                 '<p>' +
-                                                    apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo']['nombre'] +
+                                                    apoyo['productoApoyo']['nombre'] +
                                                     '&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
                                                     i +
                                                     '">' +
-                                                    apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'] +
-                                                    '</span>&euro;</p>'
+                                                    apoyo['precio'] +
+                                                    '</span> pp</p>'
                                             );
                                             var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
                                             if (precioTotal != '') {
@@ -7946,7 +7986,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             }
                                             precioPunto = precioMulti;
                                             precioFloat = precioFloat * precioPunto;
-                                            var todoApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['productoApoyo'];
+                                            var todoApoyo = apoyo['productoApoyo'];
                                             for (let s = 0; s < apoyoPrecios.length; s++) {
                                                 if (apoyoPrecios[s][2] == todoApoyo['id']) {
                                                     var precioApo = precioModulosBajos[s][1];
@@ -7955,7 +7995,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             }
                                             precioProd = olauseleles;
                                             precioApo = yeahburi;
-                                            var precioApoyo = apoyo['productosPresupuestoPedidos']['tiposApoyo']['precio'];
+                                            var precioApoyo = apoyo['precio'];
                                             precioApoyo = precioApoyo * precioPunto;
                                             precioFloat = precioFloat + precioApoyo;
                                             var subTotal = parseFloat($('#precioSubtotal').text());

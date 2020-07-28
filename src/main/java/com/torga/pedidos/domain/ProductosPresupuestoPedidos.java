@@ -42,6 +42,14 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties("")
     private TiposApoyo tiposApoyo;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Usb usb;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Iluminacion iluminacion;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -63,6 +71,32 @@ public class ProductosPresupuestoPedidos implements Serializable {
 
     public void setProductosDormitorio(ProductosDormitorio productosDormitorio) {
         this.productosDormitorio = productosDormitorio;
+    }
+    
+    public Usb getUsb() {
+        return usb;
+    }
+
+    public ProductosPresupuestoPedidos usb(Usb usb) {
+        this.usb = usb;
+        return this;
+    }
+
+    public void setUsb(Usb usb) {
+        this.usb = usb;
+    }
+    
+    public Iluminacion getIluminacion() {
+        return iluminacion;
+    }
+
+    public ProductosPresupuestoPedidos iluminacion(Iluminacion iluminacion) {
+        this.iluminacion = iluminacion;
+        return this;
+    }
+
+    public void setIluminacion(Iluminacion iluminacion) {
+        this.iluminacion = iluminacion;
     }
 
     public DimensionesProductoTipo getDimensionesProductoTipo() {

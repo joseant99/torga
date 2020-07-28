@@ -4333,7 +4333,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             );
 
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:0;margin-top: -43px;margin-left: 260px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:0;margin-top: -43px;margin-left: 260px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
                                     interior3['nombre'] +
                                     '.png">'
                             );
@@ -4857,7 +4857,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '.png">'
                             );
                             $('#cuerpo' + i + ' #izquierda').append(
-                                '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:0;margin-top: -43px;margin-left: 260px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:0;margin-top: -43px;margin-left: 260px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
                                     interior3['nombre'] +
                                     '.png">'
                             );
@@ -10388,6 +10388,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     tiposApoyo: prodCarr[m][1]['apoyo']
                                 };
                             }
+                            if (prodCarr[m][1]['usb'] != undefined) {
+                                prodPrePed = {
+                                    productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                    presupuestoPedido: prueba1,
+                                    dimensionesProductoTipo: dimen,
+                                    tiposApoyo: prodCarr[m][1]['apoyo'],
+                                    usb: prodCarr[m][1]['usb']
+                                };
+                            }
+                            if (prodCarr[m][1]['iluminacion'] != undefined) {
+                                prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
+                            }
                             numeroAcaProd[m]['prod'] = prodPrePed;
                             prodAca[m] = prodPrePed;
                             prodIlu[m] = prodPrePed;
@@ -10432,16 +10444,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     precio: dimensionesFinal['precio']
                                 };
                                 this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
-                            }
-                            if (prodCarr[m][1]['iluminacion'] != undefined && prodCarr[m][1]['iluminacion'] != '') {
-                                var acaPedProd = this.acaProdPed.length;
-                                acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                prodIlu[m]['id'] = acaPedProd['id'] + m + 1;
-                                const iluProd = {
-                                    iluminacion: prodCarr[m][1]['iluminacion'],
-                                    productosPresupuestoPedidos: prodIlu[m]
-                                };
-                                this.subscribeToSaveResponse(this.iluminacionProdPrePedService.create(iluProd));
                             }
                         } else {
                             prodPrePed = {

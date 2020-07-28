@@ -504,6 +504,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#calcuBatientes #niveladoresCalcu').css({ display: 'none' });
         $('#nombreMesitaArma').css({ display: 'none' });
         $('#imagenAcabadoPrincipal').css({ display: 'none' });
+        $('#ppCalculadora').css({ display: 'block' });
         if (id == 0) {
             $('#inputBusca').css({ display: 'block' });
         }
