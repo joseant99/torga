@@ -7089,6 +7089,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             var puerta4 = sesion[1]['puertas'][2];
                             var puerta5 = sesion[1]['puertas'][3];
                             var puerta6 = sesion[1]['puertas'][4];
+                            var puerta7 = sesion[1]['puertas'][5];
                             $('#cuerpo' + i).append(
                                 '<div id="izquierda" class="armarioIzquierda" style="margin-left: 270px;margin-top: 110px;float: left;"></div>'
                             );
@@ -7793,180 +7794,915 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             var interior2 = sesion[1]['interiores'][1];
                             var interior3 = sesion[1]['interiores'][2];
                             var interior4 = sesion[1]['interiores'][3];
-                            var interior5 = sesion[1]['interiores'][4];
-                            var puerta1 = sesion[1]['puertas'][0];
-                            var puerta2 = sesion[1]['puertas'][1];
-                            var puerta3 = sesion[1]['puertas'][2];
-                            var puerta4 = sesion[1]['puertas'][3];
-                            var puerta5 = sesion[1]['puertas'][4];
-                            var puerta6 = sesion[1]['puertas'][5];
-                            var puerta7 = sesion[1]['puertas'][6];
-                            var puerta8 = sesion[1]['puertas'][7];
-                            $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 360px;margin-top: 150px;float: left;"></div>');
-                            $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:535px;"></div>');
-                            $('#cuerpo' + i).css({ 'margin-bottom': '1%' });
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:5;margin-left: -120px;z-index: 5;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
+                            var puerta2 = sesion[1]['puertas'][0];
+                            var puerta3 = sesion[1]['puertas'][1];
+                            var puerta4 = sesion[1]['puertas'][2];
+                            var puerta5 = sesion[1]['puertas'][3];
+                            var puerta6 = sesion[1]['puertas'][4];
+                            var puerta7 = sesion[1]['puertas'][5];
+                            var puerta8 = sesion[1]['puertas'][6];
+                            var puerta9 = sesion[1]['puertas'][7];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 200px;margin-top: 110px;float: left;"></div>'
                             );
+                            $('#cuerpo' + i).append('<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>');
+
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:5;margin-left: -120px;z-index: 5;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:4;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 3;margin-top: -34px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 2;margin-top: -68px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:3;margin-left: 440px;z-index: 1;margin-top: -94px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                    casco.toLowerCase() +
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 388px;z-index: 1;margin-top: -93px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior3['nombre'] +
                                     '.png">'
                             );
 
-                            if (puerta1['nombre'] == 'Puerta Madera') {
-                                var src =
-                                    '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                    puerta1['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;" src="' +
-                                        src +
-                                        '">'
-                                );
-                            } else {
-                                if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
-                                    var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 3;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 243px;z-index: 2;margin-top: -63px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 533px;z-index: 0;margin-top: -123px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior4['nombre'] +
+                                    '.png">'
+                            );
+
+                            if (puerta2 != undefined) {
+                                if (puerta2['nombre'] == 'Puerta Aluminio Transparente') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;opacity:0.6" src="' +
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
-                                } else {
-                                    var src =
-                                        '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img style="width:199px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;opacity:0.5" src="' +
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta2['nombre'] == 'Puerta Aluminio Gris') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta2['nombre'] == 'Puerta Batiente sin tirador') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta2['nombre'] == 'Puerta Batiente tirador TIM') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta2['nombre'] == 'Puerta Batiente tirador NYE') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta2['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta2['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta2['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta2['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta2['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
                                 }
                             }
 
-                            if (puerta2['nombre'] == 'Puerta Madera') {
-                                var src1 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                    puerta1['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index: 10;" src="' + src1 + '">'
-                                );
-                            } else {
-                                var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta3['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                    puerta1['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index: 10;" src="' + src2 + '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta4['nombre'] == 'Puerta Madera') {
-                                var src1 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                    puerta4['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;margin-left: 160px;z-index: 10;margin-top: -34px;" src="' +
-                                        src1 +
-                                        '">'
-                                );
-                            } else {
-                                var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta5['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                    puerta5['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 10;margin-top: -34px;" src="' +
-                                        src2 +
-                                        '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta6['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                    puerta6['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 10;margin-top: -68px;" src="' +
-                                        src2 +
-                                        '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-                            if (puerta7['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                    puerta7['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 10;margin-top: -68px;" src="' +
-                                        src2 +
-                                        '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta8['nombre'] == 'Puerta Madera') {
-                                var src =
-                                    '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                    puerta6['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:199px;position:absolute;z-index:3;margin-left: 440px;z-index: 10;margin-top: -94px;" src="' +
-                                        src +
-                                        '">'
-                                );
-                            } else {
-                                if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
-                                    var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
+                            if (puerta3 != undefined) {
+                                if (puerta3['nombre'] == 'Puerta Aluminio Transparente') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img style="width:199px;position:absolute;z-index:3;margin-left: 440px;z-index: 10;margin-top: -94px;opacity:0.6" src="' +
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
-                                } else {
-                                    var src =
-                                        '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img style="width:199px;position:absolute;z-index:3;margin-left: 440px;z-index: 10;margin-top: -94px;opacity:0.5" src="' +
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta3['nombre'] == 'Puerta Aluminio Gris') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta3['nombre'] == 'Puerta Batiente sin tirador') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta3['nombre'] == 'Puerta Batiente tirador TIM') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta3['nombre'] == 'Puerta Batiente tirador NYE') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta3['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta3['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta3['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta3['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta3['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                            }
+
+                            if (puerta4 != undefined) {
+                                if (puerta4['nombre'] == 'Puerta Aluminio Transparente') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta4['nombre'] == 'Puerta Aluminio Gris') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta4['nombre'] == 'Puerta Batiente sin tirador') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta4['nombre'] == 'Puerta Batiente tirador TIM') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta4['nombre'] == 'Puerta Batiente tirador NYE') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta4['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta4['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta4['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta4['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta4['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                            }
+
+                            if (puerta5 != undefined) {
+                                if (puerta5['nombre'] == 'Puerta Aluminio Transparente') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta5['nombre'] == 'Puerta Aluminio Gris') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta5['nombre'] == 'Puerta Batiente sin tirador') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta5['nombre'] == 'Puerta Batiente tirador TIM') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta5['nombre'] == 'Puerta Batiente tirador NYE') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta5['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta5['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta5['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta5['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta5['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                            }
+
+                            if (puerta6 != undefined) {
+                                if (puerta6['nombre'] == 'Puerta Aluminio Transparente') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta6['nombre'] == 'Puerta Aluminio Gris') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta6['nombre'] == 'Puerta Batiente sin tirador') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta6['nombre'] == 'Puerta Batiente tirador TIM') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta6['nombre'] == 'Puerta Batiente tirador NYE') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta6['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta6['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta6['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta6['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta6['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                            }
+
+                            if (puerta7 != undefined) {
+                                if (puerta7['nombre'] == 'Puerta Aluminio Transparente') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta7['nombre'] == 'Puerta Aluminio Gris') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta7['nombre'] == 'Puerta Batiente sin tirador') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta7['nombre'] == 'Puerta Batiente tirador TIM') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta7['nombre'] == 'Puerta Batiente tirador NYE') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta7['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta7['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta7['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta7['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta7['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                            }
+
+                            if (puerta8 != undefined) {
+                                if (puerta8['nombre'] == 'Puerta Aluminio Transparente') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta8['nombre'] == 'Puerta Aluminio Gris') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta8['nombre'] == 'Puerta Batiente sin tirador') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta8['nombre'] == 'Puerta Batiente tirador TIM') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta8['nombre'] == 'Puerta Batiente tirador NYE') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta8['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta8['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta8['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta8['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta8['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                            }
+
+                            if (puerta9 != undefined) {
+                                if (puerta9['nombre'] == 'Puerta Aluminio Transparente') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta9['nombre'] == 'Puerta Aluminio Gris') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                    var src1 =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src1 +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta9['nombre'] == 'Puerta Batiente sin tirador') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta9['nombre'] == 'Puerta Batiente tirador TIM') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta9['nombre'] == 'Puerta Batiente tirador NYE') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta9['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta9['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta9['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+
+                                if (puerta9['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                            src +
+                                            '">'
+                                    );
+                                }
+                                if (puerta9['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                    var src =
+                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                    $('#cuerpo' + i + ' #derecha').append(
+                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -7974,499 +8710,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
 
                             $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:5;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:5;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:5;" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 3;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                     interior1['nombre'] +
-                                    '/peque_interior_' +
-                                    interior1['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 4;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
                                     '.png">'
                             );
                             $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 4;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 4;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 243px;z-index: 2;margin-top: -63px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                     interior2['nombre'] +
-                                    '/grande_interior_' +
-                                    interior2['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '_optimized.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 3;margin-left: 280px;margin-top: -60px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
                                     '.png">'
                             );
                             $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 3;margin-left: 280px;margin-top: -60px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 3;margin-left: 280px;margin-top: -60px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 388px;z-index: 1;margin-top: -93px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                     interior3['nombre'] +
-                                    '/grande_interior_' +
-                                    interior3['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '_optimized.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 2;margin-left: 440px;margin-top: -94px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
                                     '.png">'
                             );
                             $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 2;margin-left: 440px;margin-top: -94px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 2;margin-left: 440px;margin-top: -94px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 533px;z-index: 0;margin-top: -123px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                     interior4['nombre'] +
-                                    '/grande_interior_' +
-                                    interior4['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '_optimized.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:1;margin-left: 560px;margin-top: -120px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:1;margin-left: 560px;margin-top: -120px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:1;margin-left: 560px;margin-top: -120px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                    interior5['nombre'] +
-                                    '/peque_interior_' +
-                                    interior5['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '.png">'
-                            );
-                        }
-
-                        if (nombreArmario == '12 PUERTAS ASIMETRICAS') {
-                            var interior1 = sesion[1]['interiores'][0];
-                            var interior2 = sesion[1]['interiores'][1];
-                            var interior3 = sesion[1]['interiores'][2];
-                            var interior4 = sesion[1]['interiores'][3];
-                            var interior5 = sesion[1]['interiores'][4];
-                            var interior6 = sesion[1]['interiores'][5];
-                            var interior7 = sesion[1]['interiores'][6];
-                            var puerta1 = sesion[1]['puertas'][0];
-                            var puerta2 = sesion[1]['puertas'][1];
-                            var puerta3 = sesion[1]['puertas'][2];
-                            var puerta4 = sesion[1]['puertas'][3];
-                            var puerta5 = sesion[1]['puertas'][4];
-                            var puerta6 = sesion[1]['puertas'][5];
-                            var puerta7 = sesion[1]['puertas'][6];
-                            var puerta8 = sesion[1]['puertas'][7];
-                            var puerta9 = sesion[1]['puertas'][8];
-                            var puerta10 = sesion[1]['puertas'][9];
-                            var puerta11 = sesion[1]['puertas'][10];
-
-                            var puerta12 = sesion[1]['puertas'][11];
-                            $('#cuerpo' + i).append('<div id="izquierda" style="margin-left: 210px;margin-top: 200px;float: left;"></div>');
-                            $('#cuerpo' + i).append('<div id="derecha" style="float:left;margin-left: 125px;margin-top:585px;"></div>');
-                            $('#cuerpo' + i).css({ 'margin-bottom': '5%' });
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:5;margin-left: -120px;z-index: 7;margin-top: 26px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:5;margin-left: -120px;z-index: 7;margin-top: 26px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:6;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 5;margin-top: -33px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 4;margin-top: -66px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 480px;z-index: 3;margin-top: -99px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:200px;position:absolute;z-index:2;margin-left: 640px;z-index: 2;margin-top: -132px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img style="width:199px;position:absolute;z-index:3;margin-left: 760px;z-index: 1;margin-top: -156px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-
-                            if (puerta1['nombre'] == 'Puerta Madera') {
-                                var src =
-                                    '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                    puerta1['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;" src="' +
-                                        src +
-                                        '">'
-                                );
-                            } else {
-                                if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
-                                    var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img style="width:200px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;opacity:0.6" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                } else {
-                                    var src =
-                                        '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img style="width:200px;position:absolute;z-index:3;margin-left: -120px;z-index: 10;margin-top: 26px;opacity:0.5" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                            }
-
-                            if (puerta2['nombre'] == 'Puerta Madera') {
-                                var src1 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                    puerta1['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index: 10;" src="' + src1 + '">'
-                                );
-                            } else {
-                                var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta3['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                    puerta1['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index: 10;" src="' + src2 + '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta4['nombre'] == 'Puerta Madera') {
-                                var src1 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                    puerta4['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;margin-left: 160px;z-index: 10;margin-top: -33px;" src="' +
-                                        src1 +
-                                        '">'
-                                );
-                            } else {
-                                var src1 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta5['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                    puerta5['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:2;margin-left: 160px;z-index: 10;margin-top: -33px;" src="' +
-                                        src2 +
-                                        '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta6['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                    puerta6['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 10;margin-top: -66px;" src="' +
-                                        src2 +
-                                        '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-                            if (puerta7['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                    puerta7['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:2;margin-left: 320px;z-index: 10;margin-top: -66px;" src="' +
-                                        src2 +
-                                        '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta8['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                    puerta8['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:2;margin-left: 480px;z-index: 10;margin-top: -99px;" src="' +
-                                        src2 +
-                                        '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-                            if (puerta9['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                    puerta9['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:20;margin-left: 480px;z-index: 100;margin-top: -99px;" src="' +
-                                        src2 +
-                                        '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta10['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_' +
-                                    puerta10['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:20;margin-left: 640px;z-index: 100;margin-top: -132px;" src="' +
-                                        src2 +
-                                        '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-                            if (puerta11['nombre'] == 'Puerta Madera') {
-                                var src2 =
-                                    '../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_' +
-                                    puerta11['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:20;margin-left: 640px;z-index: 100;margin-top: -132px;" src="' +
-                                        src2 +
-                                        '">'
-                                );
-                            } else {
-                                var src2 = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                            }
-
-                            if (puerta12['nombre'] == 'Puerta Madera') {
-                                var src =
-                                    '../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_' +
-                                    puerta12['acabado']['nombre'].toLowerCase() +
-                                    '_optimized.png';
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img style="width:200px;position:absolute;z-index:30;margin-left: 760px;z-index: 100;margin-top: -156px;" src="' +
-                                        src +
-                                        '">'
-                                );
-                            } else {
-                                if (puerta1['acabado']['nombre'] == 'Cristal Bronce') {
-                                    var src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img style="width:200px;position:absolute;z-index:30;margin-left: 760px;z-index: 10;margin-top: -156px;opacity:0.6" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                } else {
-                                    var src =
-                                        '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_transparente.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img style="width:200px;position:absolute;z-index:30;margin-left: 760px;z-index: 10;margin-top: -156px;opacity:0.5" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                            }
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:7;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:7;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:7;" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                    interior1['nombre'] +
-                                    '/peque_interior_' +
-                                    interior1['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 6;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 6;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 6;margin-left: 120px;margin-top: -26px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                    interior2['nombre'] +
-                                    '/grande_interior_' +
-                                    interior2['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '_optimized.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 5;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 5;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 5;margin-left: 280px;margin-top: -59px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                    interior3['nombre'] +
-                                    '/grande_interior_' +
-                                    interior3['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '_optimized.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 4;margin-left: 440px;margin-top: -92px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 4;margin-left: 440px;margin-top: -92px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 4;margin-left: 440px;margin-top: -92px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                    interior4['nombre'] +
-                                    '/grande_interior_' +
-                                    interior4['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '_optimized.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 3;margin-left: 600px;margin-top: -125px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 3;margin-left: 600px;margin-top: -125px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 3;margin-left: 600px;margin-top: -125px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                    interior5['nombre'] +
-                                    '/grande_interior_' +
-                                    interior5['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '_optimized.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 2;margin-left: 760px;margin-top: -158px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 2;margin-left: 760px;margin-top: -158px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:200px;position:absolute;z-index: 2;margin-left: 760px;margin-top: -158px;" src="../../../content/images/ar/grande/3. INTERIORES/' +
-                                    interior6['nombre'] +
-                                    '/grande_interior_' +
-                                    interior6['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
-                                    '_optimized.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:1;margin-left: 880px;margin-top: -182px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_' +
-                                    casco.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:1;margin-left: 880px;margin-top: -182px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_' +
-                                    trasera.toLowerCase() +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img style="width:199px;position:absolute;z-index:1;margin-left: 880px;margin-top: -182px;" src="../../../content/images/ar/peque/3. INTERIORES/' +
-                                    interior7['nombre'] +
-                                    '/peque_interior_' +
-                                    interior7['nombre'] +
-                                    '_' +
-                                    interiores.toLowerCase() +
                                     '.png">'
                             );
                         }

@@ -5837,7 +5837,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             }
         }
 
-        for (let i = 1; i < 251; i++) {
+        for (let i = 1; i < 351; i++) {
             if (i >= 1 && i <= 9) {
                 $('#listaAnchos1').append('<option value="NT00' + i + '">NT00' + i + '</option>');
             }
