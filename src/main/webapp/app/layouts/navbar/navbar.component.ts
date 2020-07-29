@@ -10390,14 +10390,16 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodPrePed = {
                                     productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                     presupuestoPedido: prueba1,
-                                    dimensionesProductoTipo: dimen
+                                    dimensionesProductoTipo: dimen,
+                                    precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                 };
                             } else {
                                 prodPrePed = {
                                     productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                     presupuestoPedido: prueba1,
                                     dimensionesProductoTipo: dimen,
-                                    tiposApoyo: prodCarr[m][1]['apoyo']
+                                    tiposApoyo: prodCarr[m][1]['apoyo'],
+                                    precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                 };
                             }
                             if (prodCarr[m][1]['usb'] != undefined) {
@@ -10406,7 +10408,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     presupuestoPedido: prueba1,
                                     dimensionesProductoTipo: dimen,
                                     tiposApoyo: prodCarr[m][1]['apoyo'],
-                                    usb: prodCarr[m][1]['usb']
+                                    usb: prodCarr[m][1]['usb'],
+                                    precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                 };
                             }
                             if (prodCarr[m][1]['iluminacion'] != undefined) {
@@ -10461,7 +10464,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             prodPrePed = {
                                 productosDormitorio: prodCarr[m][1]['apoyo']['productoApoyo'],
                                 presupuestoPedido: prueba1,
-                                tiposApoyo: prodCarr[m][1]['apoyo']
+                                tiposApoyo: prodCarr[m][1]['apoyo'],
+                                precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                             };
                             numeroAcaProd[m]['prod'] = prodPrePed;
                             prodAca[m] = prodPrePed;

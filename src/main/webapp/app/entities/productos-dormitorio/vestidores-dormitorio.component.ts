@@ -4662,6 +4662,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         $('#inputInterior' + (hueco - 1)).append('interior ' + nombre);
         var grandes = dimens['grandes'];
         var buenInt;
+        var hueco = this.huecoPinta;
         var todo = this.armarioCogido;
         var saberCont = 0;
         var meterInt = [];
@@ -4676,7 +4677,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 buenInt = todosLosInteriores[o];
             }
         }
-        meterInt[saberCont] = buenInt;
+        meterInt[hueco - 1] = buenInt;
         todo['interiores'] = meterInt;
         this.armarioCogido = todo;
 

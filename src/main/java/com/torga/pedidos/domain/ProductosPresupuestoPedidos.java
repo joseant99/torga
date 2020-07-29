@@ -27,6 +27,10 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @JsonIgnoreProperties("")
     private ProductosDormitorio productosDormitorio;
 
+    @Column(name = "precio_total")
+    private Float precioTotal;
+    
+    
     @ManyToOne
     @JsonIgnoreProperties("")
     private DimensionesProductoTipo dimensionesProductoTipo;
@@ -71,6 +75,19 @@ public class ProductosPresupuestoPedidos implements Serializable {
 
     public void setProductosDormitorio(ProductosDormitorio productosDormitorio) {
         this.productosDormitorio = productosDormitorio;
+    }
+    
+    public Float getPrecioTotal() {
+        return precioTotal;
+    }
+
+    public ProductosPresupuestoPedidos precioTotal(Float precioTotal) {
+        this.precioTotal = precioTotal;
+        return this;
+    }
+
+    public void setPrecioTotal(Float precioTotal) {
+        this.precioTotal = precioTotal;
     }
     
     public Usb getUsb() {

@@ -4193,6 +4193,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         alto = $('#alturaSelect').val();
         var cuenta = 0;
         var buenInt;
+        var hueco = this.huecoPinta;
         var todo = this.armarioCogido;
         var saberCont = 0;
         var meterInt = [];
@@ -4207,14 +4208,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 buenInt = todosLosInteriores[o];
             }
         }
-        meterInt[saberCont] = buenInt;
+        meterInt[hueco - 1] = buenInt;
         todo['interiores'] = meterInt;
         this.armarioCogido = todo;
         puertas = parseFloat(texto.split(' ')[0]);
         var dimensiones = dimens[puertas + ' puertas'];
         var interior = $('#inputAcabadoInterior').val();
         var interior1 = interior.toString();
-        var hueco = this.huecoPinta;
         var arrayHuecos = this.arraySaberHuecos;
         var letras = this.arrayLetras;
         var cogerSeccion = JSON.parse(sessionStorage.getItem('seccionPrecios'));
@@ -13239,6 +13239,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     this.precioPuerta0 = data.body[0].puerta1;
                     precioTodo = precioTodo + this.precioPuerta0;
                     $('#precioDimension').text(precioTodo);
+                    if (
+                        data.body[0]['tipo'] == 'G Fuelle IZQ Tim' ||
+                        data.body[0]['tipo'] == 'H Fuelle DCH Tim' ||
+                        data.body[0]['tipo'] == 'I Fuelle IZQ Nye' ||
+                        data.body[0]['tipo'] == 'J Fuelle DCH Nye'
+                    ) {
+                        precioTodo = precioTodo + this.precioPuerta0;
+                        $('#precioDimension').text(precioTodo);
+                    }
                 }
                 if (cogerSeccion == 'B') {
                     $('#calculadoraCarrito #precioPuerta' + id).text(data.body[0].puerta1 + ' €');
@@ -13490,6 +13499,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     this.precioPuerta1 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta1;
                     $('#precioDimension').text(precioTodo);
+                    if (
+                        data.body[0]['tipo'] == 'G Fuelle IZQ Tim' ||
+                        data.body[0]['tipo'] == 'H Fuelle DCH Tim' ||
+                        data.body[0]['tipo'] == 'I Fuelle IZQ Nye' ||
+                        data.body[0]['tipo'] == 'J Fuelle DCH Nye'
+                    ) {
+                        precioTodo = precioTodo + this.precioPuerta1;
+                        $('#precioDimension').text(precioTodo);
+                    }
                 }
                 if (cogerSeccion == 'B') {
                     $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
@@ -13866,6 +13884,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     this.precioPuerta2 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta2;
                     $('#precioDimension').text(precioTodo);
+                    if (
+                        data.body[0]['tipo'] == 'G Fuelle IZQ Tim' ||
+                        data.body[0]['tipo'] == 'H Fuelle DCH Tim' ||
+                        data.body[0]['tipo'] == 'I Fuelle IZQ Nye' ||
+                        data.body[0]['tipo'] == 'J Fuelle DCH Nye'
+                    ) {
+                        precioTodo = precioTodo + this.precioPuerta2;
+                        $('#precioDimension').text(precioTodo);
+                    }
                 }
                 if (cogerSeccion == 'B') {
                     $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
@@ -14191,6 +14218,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     this.precioPuerta3 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta3;
                     $('#precioDimension').text(precioTodo);
+                    if (
+                        data.body[0]['tipo'] == 'G Fuelle IZQ Tim' ||
+                        data.body[0]['tipo'] == 'H Fuelle DCH Tim' ||
+                        data.body[0]['tipo'] == 'I Fuelle IZQ Nye' ||
+                        data.body[0]['tipo'] == 'J Fuelle DCH Nye'
+                    ) {
+                        precioTodo = precioTodo + this.precioPuerta3;
+                        $('#precioDimension').text(precioTodo);
+                    }
                 }
                 if (cogerSeccion == 'B') {
                     $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
@@ -14462,6 +14498,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     this.precioPuerta4 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta4;
                     $('#precioDimension').text(precioTodo);
+                    if (
+                        data.body[0]['tipo'] == 'G Fuelle IZQ Tim' ||
+                        data.body[0]['tipo'] == 'H Fuelle DCH Tim' ||
+                        data.body[0]['tipo'] == 'I Fuelle IZQ Nye' ||
+                        data.body[0]['tipo'] == 'J Fuelle DCH Nye'
+                    ) {
+                        precioTodo = precioTodo + this.precioPuerta4;
+                        $('#precioDimension').text(precioTodo);
+                    }
                 }
                 if (cogerSeccion == 'B') {
                     $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
@@ -14680,6 +14725,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     this.precioPuerta5 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta5;
                     $('#precioDimension').text(precioTodo);
+                    if (
+                        data.body[0]['tipo'] == 'G Fuelle IZQ Tim' ||
+                        data.body[0]['tipo'] == 'H Fuelle DCH Tim' ||
+                        data.body[0]['tipo'] == 'I Fuelle IZQ Nye' ||
+                        data.body[0]['tipo'] == 'J Fuelle DCH Nye'
+                    ) {
+                        precioTodo = precioTodo + this.precioPuerta5;
+                        $('#precioDimension').text(precioTodo);
+                    }
                 }
                 if (cogerSeccion == 'B') {
                     $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
@@ -14822,6 +14876,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     this.precioPuerta6 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta6;
                     $('#precioDimension').text(precioTodo);
+                    if (
+                        data.body[0]['tipo'] == 'G Fuelle IZQ Tim' ||
+                        data.body[0]['tipo'] == 'H Fuelle DCH Tim' ||
+                        data.body[0]['tipo'] == 'I Fuelle IZQ Nye' ||
+                        data.body[0]['tipo'] == 'J Fuelle DCH Nye'
+                    ) {
+                        precioTodo = precioTodo + this.precioPuerta6;
+                        $('#precioDimension').text(precioTodo);
+                    }
                 }
                 if (cogerSeccion == 'B') {
                     $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
@@ -14909,6 +14972,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     this.precioPuerta7 = precioPuerta;
                     precioTodo = precioTodo + this.precioPuerta7;
                     $('#precioDimension').text(precioTodo);
+                    if (
+                        data.body[0]['tipo'] == 'G Fuelle IZQ Tim' ||
+                        data.body[0]['tipo'] == 'H Fuelle DCH Tim' ||
+                        data.body[0]['tipo'] == 'I Fuelle IZQ Nye' ||
+                        data.body[0]['tipo'] == 'J Fuelle DCH Nye'
+                    ) {
+                        precioTodo = precioTodo + this.precioPuerta7;
+                        $('#precioDimension').text(precioTodo);
+                    }
                 }
                 if (cogerSeccion == 'B') {
                     $('#calculadoraCarrito #precioPuerta' + id).text(precioPuerta);
