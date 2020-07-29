@@ -6773,23 +6773,24 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 }
             }
 
-            var interior10 = $('#calculadoraCarrito #productoCalculadora1 #datos1 #interiorHueco' + hueco + ' #precio').text();
-            var interTodos = this.productosDormitorioModal;
-            var arrayParaVer = this.interioresParaArray;
-            for (let j = 0; j < interTodos.length; j++) {
-                if (interTodos[j]['nombre'] == nombre) {
-                    interTodos[j]['precio'] = interior10;
-                    if (arrayParaVer.length == 0) {
-                        arrayParaVer[0] = interTodos[j];
-                    } else {
-                        arrayParaVer[arrayParaVer.length] = interTodos[j];
-                    }
-                }
+            var hueco = this.huecoPinta;
+            var todo = this.armarioCogido;
+            var saberCont = 0;
+            var meterInt = [];
+            if (todo['interiores'] != undefined) {
+                saberCont = todo['interiores'].length;
+                meterInt = todo['interiores'];
             }
 
-            var array = this.armarioCogido;
-            array['interiores'] = arrayParaVer;
-            this.armarioCogido = array;
+            var todosLosInteriores = this.productosDormitorioModal;
+            for (let o = 0; o < todosLosInteriores.length; o++) {
+                if (todosLosInteriores[o]['nombre'] == nombre) {
+                    buenInt = todosLosInteriores[o];
+                }
+            }
+            meterInt[hueco - 1] = buenInt;
+            todo['interiores'] = meterInt;
+            this.armarioCogido = todo;
         }
 
         var arrayHuecos = this.arraySaberHuecos;
