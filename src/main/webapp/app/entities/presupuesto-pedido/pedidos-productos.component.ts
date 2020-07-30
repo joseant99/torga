@@ -9249,6 +9249,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                         var precioTotProd = productos[w]['precioTotal'];
                                         var subTotal = parseFloat($('#precioSubtotal').text());
                                         subTotal = subTotal + precioTotProd;
+                                        $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(2));
                                         $('#precioSubtotal').text(subTotal.toFixed(2));
                                         $('#totalDescuentoTexto').text(subTotal.toFixed(2));
 
@@ -9386,9 +9387,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             total = precioFloat * precioTienda;
                                             console.log(total);
                                             total = total - precioFloat;
-                                            $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioFloat.toFixed(2));
-                                            $('.' + productos[i]['id'] + 'Datos #precioFabrica' + i).text(precioFloat);
-                                            $('.' + productos[i]['id'] + 'Datos #precioGanancias' + i).text(total);
                                         }
                                     }
                                 }, 0);
