@@ -3698,6 +3698,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
 
                                     var precioTodoFloat = todoPrecioLoco + parseFloat(precioTodo);
                                 }
+                                $('#precioDimension').text(precioTodoFloat);
                             });
                         }
                         $('#imagenesArmario' + i + ' #imagenesArmario').append(

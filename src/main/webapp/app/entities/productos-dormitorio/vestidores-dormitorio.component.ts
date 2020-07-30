@@ -148,6 +148,11 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
     niveladoresPrecio: any;
     cajeadoPrecio: any;
     enmarcadosPrecio: any;
+    precioInterior1: any;
+    precioInterior2: any;
+    precioInterior3: any;
+    precioInterior4: any;
+    precioInterior5: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -617,6 +622,11 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         this.cajeadoPrecio = 0;
         this.enmarcadosPrecio = 0;
         this.niveladoresPrecio = 0;
+        this.precioInterior1 = 0;
+        this.precioInterior2 = 0;
+        this.precioInterior3 = 0;
+        this.precioInterior4 = 0;
+        this.precioInterior5 = 0;
         this.saberPuerta = 0;
         this.interioresParaArray = [];
         this.puertasParaArray = [];
@@ -4687,6 +4697,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 if (hueco == 1) {
                     cuenta = ancho / puertas;
                     cuenta = cuenta * 1;
+                    var precioInterior1 = this.precioInterior1;
+                    var precioTodo;
+                    precioTodo = $('#precioDimension').text();
+                    precioTodo = precioTodo - precioInterior1;
                     if (i == 1) {
                         this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4703,8 +4717,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     '</span>€</span><p/>'
                             );
                             $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                            var precioTodo;
-                            precioTodo = $('#precioDimension').text();
+                            this.precioInterior1 = data.body[0].a;
                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             $('#precioDimension').text(precioTodoFloat);
                         });
@@ -4721,6 +4734,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 } else {
                     cuenta = ancho / puertas;
                     cuenta = cuenta * 2;
+                    var precioInterior1 = this.precioInterior1;
+                    var precioTodo;
+                    precioTodo = $('#precioDimension').text();
+                    precioTodo = precioTodo - precioInterior1;
                     if (i == 1) {
                         this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4735,8 +4752,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     '€</span><p/>'
                             );
                             $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                            var precioTodo;
-                            precioTodo = $('#precioDimension').text();
+                            this.precioInterior1 = data.body[0].a;
                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             $('#precioDimension').text(precioTodoFloat);
                         });
@@ -4761,6 +4777,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                     if (hueco == 1) {
                         cuenta = ancho / puertas;
                         cuenta = cuenta * 1;
+                        var precioInterior1 = this.precioInterior1;
+                        var precioTodo;
+                        precioTodo = $('#precioDimension').text();
+                        precioTodo = precioTodo - precioInterior1;
                         if (i == 1) {
                             this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4777,8 +4797,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         '</span>€</span><p/>'
                                 );
                                 $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                 $('#precioDimension').text(precioTodoFloat);
                             });
@@ -4795,6 +4814,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                     } else {
                         cuenta = ancho / puertas;
                         cuenta = cuenta * 2;
+                        var precioInterior1 = this.precioInterior1;
+                        var precioTodo;
+                        precioTodo = $('#precioDimension').text();
+                        precioTodo = precioTodo - precioInterior1;
                         if (i == 1) {
                             this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4809,8 +4832,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         '€</span><p/>'
                                 );
                                 $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                var precioTodo;
-                                precioTodo = $('#precioDimension').text();
+                                this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                 $('#precioDimension').text(precioTodoFloat);
                             });
@@ -4831,6 +4853,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         if (hueco == 1) {
                             cuenta = ancho / puertas;
                             cuenta = cuenta * 1;
+                            var precioInterior1 = this.precioInterior1;
+                            var precioTodo;
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - precioInterior1;
                             if (i == 1) {
                                 this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4847,8 +4873,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             '</span>€</span><p/>'
                                     );
                                     $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                    var precioTodo;
-                                    precioTodo = $('#precioDimension').text();
+                                    this.precioInterior1 = data.body[0].a;
                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                     $('#precioDimension').text(precioTodoFloat);
                                 });
@@ -4865,6 +4890,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         } else {
                             cuenta = ancho / puertas;
                             cuenta = cuenta * 2;
+                            var precioInterior1 = this.precioInterior1;
+                            var precioTodo;
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - precioInterior1;
                             if (i == 1) {
                                 this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                     $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4879,8 +4908,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             '€</span><p/>'
                                     );
                                     $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                    var precioTodo;
-                                    precioTodo = $('#precioDimension').text();
+                                    this.precioInterior1 = data.body[0].a;
                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                     $('#precioDimension').text(precioTodoFloat);
                                 });
@@ -4901,6 +4929,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                             if (hueco == 1) {
                                 cuenta = ancho / puertas;
                                 cuenta = cuenta * 1;
+                                var precioInterior1 = this.precioInterior1;
+                                var precioTodo;
+                                precioTodo = $('#precioDimension').text();
+                                precioTodo = precioTodo - precioInterior1;
                                 if (i == 1) {
                                     this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4917,8 +4949,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 '</span>€</span><p/>'
                                         );
                                         $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                        var precioTodo;
-                                        precioTodo = $('#precioDimension').text();
+                                        this.precioInterior1 = data.body[0].a;
                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                         $('#precioDimension').text(precioTodoFloat);
                                     });
@@ -4935,6 +4966,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                             } else {
                                 cuenta = ancho / puertas;
                                 cuenta = cuenta * 2;
+                                var precioInterior2 = this.precioInterior2;
+                                var precioTodo;
+                                precioTodo = $('#precioDimension').text();
+                                precioTodo = precioTodo - precioInterior2;
                                 if (i == 1) {
                                     this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                         $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4949,8 +4984,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 '€</span><p/>'
                                         );
                                         $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                        var precioTodo;
-                                        precioTodo = $('#precioDimension').text();
+                                        this.precioInterior2 = data.body[0].a;
                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                         $('#precioDimension').text(precioTodoFloat);
                                     });
@@ -4971,6 +5005,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                 if (hueco == 1) {
                                     cuenta = ancho / puertas;
                                     cuenta = cuenta * 1;
+                                    var precioInterior1 = this.precioInterior1;
+                                    var precioTodo;
+                                    precioTodo = $('#precioDimension').text();
+                                    precioTodo = precioTodo - precioInterior1;
                                     if (i == 1) {
                                         this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -4987,8 +5025,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                     '</span>€</span><p/>'
                                             );
                                             $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
+                                            this.precioInterior1 = data.body[0].a;
                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                             $('#precioDimension').text(precioTodoFloat);
                                         });
@@ -5005,6 +5042,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                 } else {
                                     cuenta = ancho / puertas;
                                     cuenta = cuenta * 2;
+                                    var precioInterior2 = this.precioInterior2;
+                                    var precioTodo;
+                                    precioTodo = $('#precioDimension').text();
+                                    precioTodo = precioTodo - precioInterior2;
                                     if (i == 1) {
                                         this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -5019,8 +5060,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                     '€</span><p/>'
                                             );
                                             $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                            var precioTodo;
-                                            precioTodo = $('#precioDimension').text();
+                                            this.precioInterior2 = data.body[0].a;
                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                             $('#precioDimension').text(precioTodoFloat);
                                         });
@@ -5041,6 +5081,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     if (hueco == 1) {
                                         cuenta = ancho / puertas;
                                         cuenta = cuenta * 1;
+                                        var precioInterior1 = this.precioInterior1;
+                                        var precioTodo;
+                                        precioTodo = $('#precioDimension').text();
+                                        precioTodo = precioTodo - precioInterior1;
                                         if (i == 1) {
                                             this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -5057,8 +5101,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         '</span>€</span><p/>'
                                                 );
                                                 $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
+                                                this.precioInterior1 = data.body[0].a;
                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                 $('#precioDimension').text(precioTodoFloat);
                                             });
@@ -5075,6 +5118,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                     } else {
                                         cuenta = ancho / puertas;
                                         cuenta = cuenta * 2;
+                                        var precioInterior2 = this.precioInterior2;
+                                        var precioTodo;
+                                        precioTodo = $('#precioDimension').text();
+                                        precioTodo = precioTodo - precioInterior2;
                                         if (i == 1) {
                                             this.interioresArmarioNuevosService.findBus(dato.codigo, idProdInt[nombre]).subscribe(data => {
                                                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
@@ -5089,8 +5136,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         '€</span><p/>'
                                                 );
                                                 $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                var precioTodo;
-                                                precioTodo = $('#precioDimension').text();
+                                                this.precioInterior2 = data.body[0].a;
                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                 $('#precioDimension').text(precioTodoFloat);
                                             });
@@ -5112,6 +5158,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                         if (hueco == 2) {
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 2;
+                                            var precioInterior2 = this.precioInterior2;
+                                            var precioTodo;
+                                            precioTodo = $('#precioDimension').text();
+                                            precioTodo = precioTodo - precioInterior2;
                                             if (i == 1) {
                                                 if (ancho >= 300 && ancho < 310) {
                                                     cuenta = 871;
@@ -5142,6 +5192,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 data.body[0].b +
                                                                 '€</span><p/>'
                                                         );
+                                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                        this.precioInterior2 = data.body[0].a;
+                                                        var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                        $('#precioDimension').text(precioTodoFloat);
                                                     });
                                             }
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -5171,6 +5225,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             }
                                             cuenta = ancho / puertas;
                                             cuenta = cuenta * 2;
+                                            var precioInterior3 = this.precioInterior3;
+                                            var precioTodo;
+                                            precioTodo = $('#precioDimension').text();
+                                            precioTodo = precioTodo - precioInterior3;
                                             if (i == 1) {
                                                 this.interioresArmarioNuevosService
                                                     .findBus(dato.codigo, idProdInt[nombre])
@@ -5186,6 +5244,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 data.body[0].c +
                                                                 '€</span><p/>'
                                                         );
+                                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
+                                                        this.precioInterior3 = data.body[0].c;
+                                                        var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
+                                                        $('#precioDimension').text(precioTodoFloat);
                                                     });
                                             }
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -5216,6 +5278,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 if (ancho >= 340 && ancho < 350) {
                                                     cuenta = 975;
                                                 }
+                                                var precioInterior1 = this.precioInterior1;
+                                                var precioTodo;
+                                                precioTodo = $('#precioDimension').text();
+                                                precioTodo = precioTodo - precioInterior1;
                                                 this.interioresArmarioNuevosService
                                                     .findBus(dato.codigo, idProdInt[nombre])
                                                     .subscribe(data => {
@@ -5230,6 +5296,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 data.body[0].a +
                                                                 '€</span><p/>'
                                                         );
+                                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
+                                                        this.precioInterior1 = data.body[0].a;
+                                                        var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                        $('#precioDimension').text(precioTodoFloat);
                                                     });
                                             }
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -5248,6 +5318,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             if (hueco == 1) {
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 1;
+                                                var precioInterior1 = this.precioInterior1;
+                                                var precioTodo;
+                                                precioTodo = $('#precioDimension').text();
+                                                precioTodo = precioTodo - precioInterior1;
                                                 if (i == 1) {
                                                     this.interioresArmarioNuevosService
                                                         .findBus(dato.codigo, idProdInt[nombre])
@@ -5266,8 +5340,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     '</span>€</span><p/>'
                                                             );
                                                             $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior1 = data.body[0].a;
                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                             $('#precioDimension').text(precioTodoFloat);
                                                         });
@@ -5285,6 +5358,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             if (hueco == 2) {
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 2;
+                                                var precioInterior2 = this.precioInterior2;
+                                                var precioTodo;
+                                                precioTodo = $('#precioDimension').text();
+                                                precioTodo = precioTodo - precioInterior2;
                                                 if (i == 1) {
                                                     this.interioresArmarioNuevosService
                                                         .findBus(dato.codigo, idProdInt[nombre])
@@ -5301,8 +5378,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     '€</span><p/>'
                                                             );
                                                             $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior2 = data.body[0].a;
                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                             $('#precioDimension').text(precioTodoFloat);
                                                         });
@@ -5320,6 +5396,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                             if (hueco == 3) {
                                                 cuenta = ancho / puertas;
                                                 cuenta = cuenta * 2;
+                                                var precioInterior3 = this.precioInterior3;
+                                                var precioTodo;
+                                                precioTodo = $('#precioDimension').text();
+                                                precioTodo = precioTodo - precioInterior3;
                                                 if (i == 1) {
                                                     this.interioresArmarioNuevosService
                                                         .findBus(dato.codigo, idProdInt[nombre])
@@ -5336,8 +5416,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     '€</span><p/>'
                                                             );
                                                             $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                            var precioTodo;
-                                                            precioTodo = $('#precioDimension').text();
+                                                            this.precioInterior3 = data.body[0].a;
                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                             $('#precioDimension').text(precioTodoFloat);
                                                         });
@@ -5358,6 +5437,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 if (hueco == 1) {
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 1;
+                                                    var precioInterior1 = this.precioInterior1;
+                                                    var precioTodo;
+                                                    precioTodo = $('#precioDimension').text();
+                                                    precioTodo = precioTodo - precioInterior1;
                                                     if (i == 1) {
                                                         this.interioresArmarioNuevosService
                                                             .findBus(dato.codigo, idProdInt[nombre])
@@ -5376,8 +5459,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         '</span>€</span><p/>'
                                                                 );
                                                                 $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior1 = data.body[0].a;
                                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                 $('#precioDimension').text(precioTodoFloat);
                                                             });
@@ -5395,6 +5477,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 if (hueco == 2) {
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 2;
+                                                    var precioInterior2 = this.precioInterior2;
+                                                    var precioTodo;
+                                                    precioTodo = $('#precioDimension').text();
+                                                    precioTodo = precioTodo - precioInterior2;
                                                     if (i == 1) {
                                                         this.interioresArmarioNuevosService
                                                             .findBus(dato.codigo, idProdInt[nombre])
@@ -5411,8 +5497,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         '€</span><p/>'
                                                                 );
                                                                 $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior2 = data.body[0].a;
                                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                 $('#precioDimension').text(precioTodoFloat);
                                                             });
@@ -5430,6 +5515,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                 if (hueco == 3) {
                                                     cuenta = ancho / puertas;
                                                     cuenta = cuenta * 2;
+                                                    var precioInterior3 = this.precioInterior3;
+                                                    var precioTodo;
+                                                    precioTodo = $('#precioDimension').text();
+                                                    precioTodo = precioTodo - precioInterior3;
                                                     if (i == 1) {
                                                         this.interioresArmarioNuevosService
                                                             .findBus(dato.codigo, idProdInt[nombre])
@@ -5446,8 +5535,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         '€</span><p/>'
                                                                 );
                                                                 $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                                var precioTodo;
-                                                                precioTodo = $('#precioDimension').text();
+                                                                this.precioInterior3 = data.body[0].a;
                                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                 $('#precioDimension').text(precioTodoFloat);
                                                             });
@@ -5469,6 +5557,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                     if (hueco == 2) {
                                                         cuenta = ancho / puertas;
                                                         cuenta = cuenta * 2;
+                                                        var precioInterior2 = this.precioInterior2;
+                                                        var precioTodo;
+                                                        precioTodo = $('#precioDimension').text();
+                                                        precioTodo = precioTodo - precioInterior2;
                                                         if (i == 1) {
                                                             if (ancho >= 300 && ancho < 310) {
                                                                 cuenta = 871;
@@ -5499,6 +5591,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             data.body[0].b +
                                                                             '€</span><p/>'
                                                                     );
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                                    this.precioInterior2 = data.body[0].a;
+                                                                    var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -5528,6 +5624,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         }
                                                         cuenta = ancho / puertas;
                                                         cuenta = cuenta * 2;
+                                                        var precioInterior3 = this.precioInterior3;
+                                                        var precioTodo;
+                                                        precioTodo = $('#precioDimension').text();
+                                                        precioTodo = precioTodo - precioInterior3;
                                                         if (i == 1) {
                                                             this.interioresArmarioNuevosService
                                                                 .findBus(dato.codigo, idProdInt[nombre])
@@ -5543,6 +5643,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             data.body[0].c +
                                                                             '€</span><p/>'
                                                                     );
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                                    this.precioInterior3 = data.body[0].a;
+                                                                    var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -5572,6 +5676,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         }
                                                         cuenta = ancho / puertas;
                                                         cuenta = cuenta * 2;
+                                                        var precioInterior4 = this.precioInterior4;
+                                                        var precioTodo;
+                                                        precioTodo = $('#precioDimension').text();
+                                                        precioTodo = precioTodo - precioInterior4;
                                                         if (i == 1) {
                                                             this.interioresArmarioNuevosService
                                                                 .findBus(dato.codigo, idProdInt[nombre])
@@ -5587,6 +5695,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             data.body[0].c +
                                                                             '€</span><p/>'
                                                                     );
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                                    this.precioInterior4 = data.body[0].a;
+                                                                    var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -5601,6 +5713,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                     if (hueco == 1) {
                                                         cuenta = ancho / puertas;
                                                         cuenta = cuenta * 2;
+                                                        var precioInterior1 = this.precioInterior1;
+                                                        var precioTodo;
+                                                        precioTodo = $('#precioDimension').text();
+                                                        precioTodo = precioTodo - precioInterior1;
                                                         if (i == 1) {
                                                             if (ancho >= 300 && ancho < 310) {
                                                                 cuenta = 871;
@@ -5631,6 +5747,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             data.body[0].a +
                                                                             '€</span><p/>'
                                                                     );
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                                    this.precioInterior1 = data.body[0].a;
+                                                                    var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
+                                                                    $('#precioDimension').text(precioTodoFloat);
                                                                 });
                                                         }
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -5649,6 +5769,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         if (hueco == 1) {
                                                             cuenta = ancho / puertas;
                                                             cuenta = cuenta * 1;
+                                                            var precioInterior1 = this.precioInterior1;
+                                                            var precioTodo;
+                                                            precioTodo = $('#precioDimension').text();
+                                                            precioTodo = precioTodo - precioInterior1;
                                                             if (i == 1) {
                                                                 this.interioresArmarioNuevosService
                                                                     .findBus(dato.codigo, idProdInt[nombre])
@@ -5667,8 +5791,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                 '</span>€</span><p/>'
                                                                         );
                                                                         $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                                        var precioTodo;
-                                                                        precioTodo = $('#precioDimension').text();
+                                                                        this.precioInterior1 = data.body[0].a;
                                                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                         $('#precioDimension').text(precioTodoFloat);
                                                                     });
@@ -5686,6 +5809,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         if (hueco == 2) {
                                                             cuenta = ancho / puertas;
                                                             cuenta = cuenta * 2;
+                                                            var precioInterior2 = this.precioInterior2;
+                                                            var precioTodo;
+                                                            precioTodo = $('#precioDimension').text();
+                                                            precioTodo = precioTodo - precioInterior2;
                                                             if (i == 1) {
                                                                 this.interioresArmarioNuevosService
                                                                     .findBus(dato.codigo, idProdInt[nombre])
@@ -5702,8 +5829,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                 '€</span><p/>'
                                                                         );
                                                                         $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                                        var precioTodo;
-                                                                        precioTodo = $('#precioDimension').text();
+                                                                        this.precioInterior2 = data.body[0].a;
                                                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                         $('#precioDimension').text(precioTodoFloat);
                                                                     });
@@ -5721,6 +5847,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         if (hueco == 3) {
                                                             cuenta = ancho / puertas;
                                                             cuenta = cuenta * 2;
+                                                            var precioInterior3 = this.precioInterior3;
+                                                            var precioTodo;
+                                                            precioTodo = $('#precioDimension').text();
+                                                            precioTodo = precioTodo - precioInterior3;
                                                             if (i == 1) {
                                                                 this.interioresArmarioNuevosService
                                                                     .findBus(dato.codigo, idProdInt[nombre])
@@ -5737,8 +5867,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                 '€</span><p/>'
                                                                         );
                                                                         $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                                        var precioTodo;
-                                                                        precioTodo = $('#precioDimension').text();
+                                                                        this.precioInterior3 = data.body[0].a;
                                                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                         $('#precioDimension').text(precioTodoFloat);
                                                                     });
@@ -5756,6 +5885,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                         if (hueco == 4) {
                                                             cuenta = ancho / puertas;
                                                             cuenta = cuenta * 2;
+                                                            var precioInterior4 = this.precioInterior4;
+                                                            var precioTodo;
+                                                            precioTodo = $('#precioDimension').text();
+                                                            precioTodo = precioTodo - precioInterior4;
                                                             if (i == 1) {
                                                                 this.interioresArmarioNuevosService
                                                                     .findBus(dato.codigo, idProdInt[nombre])
@@ -5772,8 +5905,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                 '€</span><p/>'
                                                                         );
                                                                         $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
-                                                                        var precioTodo;
-                                                                        precioTodo = $('#precioDimension').text();
+                                                                        this.precioInterior4 = data.body[0].a;
                                                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                         $('#precioDimension').text(precioTodoFloat);
                                                                     });
@@ -5794,6 +5926,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                             if (hueco == 1) {
                                                                 cuenta = ancho / puertas;
                                                                 cuenta = cuenta * 1;
+                                                                var precioInterior1 = this.precioInterior1;
+                                                                var precioTodo;
+                                                                precioTodo = $('#precioDimension').text();
+                                                                precioTodo = precioTodo - precioInterior1;
                                                                 if (i == 1) {
                                                                     this.interioresArmarioNuevosService
                                                                         .findBus(dato.codigo, idProdInt[nombre])
@@ -5814,8 +5950,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             $('#precioInt' + (hueco - 1)).text(
                                                                                 '+ ' + data.body[0].a + ' pp'
                                                                             );
-                                                                            var precioTodo;
-                                                                            precioTodo = $('#precioDimension').text();
+                                                                            this.precioInterior1 = data.body[0].a;
                                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                             $('#precioDimension').text(precioTodoFloat);
                                                                         });
@@ -5833,6 +5968,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                             if (hueco == 2) {
                                                                 cuenta = ancho / puertas;
                                                                 cuenta = cuenta * 2;
+                                                                var precioInterior2 = this.precioInterior2;
+                                                                var precioTodo;
+                                                                precioTodo = $('#precioDimension').text();
+                                                                precioTodo = precioTodo - precioInterior2;
                                                                 if (i == 1) {
                                                                     this.interioresArmarioNuevosService
                                                                         .findBus(dato.codigo, idProdInt[nombre])
@@ -5851,8 +5990,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             $('#precioInt' + (hueco - 1)).text(
                                                                                 '+ ' + data.body[0].a + ' pp'
                                                                             );
-                                                                            var precioTodo;
-                                                                            precioTodo = $('#precioDimension').text();
+                                                                            this.precioInterior2 = data.body[0].a;
                                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                             $('#precioDimension').text(precioTodoFloat);
                                                                         });
@@ -5870,6 +6008,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                             if (hueco == 3) {
                                                                 cuenta = ancho / puertas;
                                                                 cuenta = cuenta * 2;
+                                                                var precioInterior3 = this.precioInterior3;
+                                                                var precioTodo;
+                                                                precioTodo = $('#precioDimension').text();
+                                                                precioTodo = precioTodo - precioInterior3;
                                                                 if (i == 1) {
                                                                     this.interioresArmarioNuevosService
                                                                         .findBus(dato.codigo, idProdInt[nombre])
@@ -5888,8 +6030,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             $('#precioInt' + (hueco - 1)).text(
                                                                                 '+ ' + data.body[0].a + ' pp'
                                                                             );
-                                                                            var precioTodo;
-                                                                            precioTodo = $('#precioDimension').text();
+                                                                            this.precioInterior3 = data.body[0].a;
                                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                             $('#precioDimension').text(precioTodoFloat);
                                                                         });
@@ -5907,6 +6048,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                             if (hueco == 4) {
                                                                 cuenta = ancho / puertas;
                                                                 cuenta = cuenta * 2;
+                                                                var precioInterior4 = this.precioInterior4;
+                                                                var precioTodo;
+                                                                precioTodo = $('#precioDimension').text();
+                                                                precioTodo = precioTodo - precioInterior4;
                                                                 if (i == 1) {
                                                                     this.interioresArmarioNuevosService
                                                                         .findBus(dato.codigo, idProdInt[nombre])
@@ -5925,8 +6070,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                             $('#precioInt' + (hueco - 1)).text(
                                                                                 '+ ' + data.body[0].a + ' pp'
                                                                             );
-                                                                            var precioTodo;
-                                                                            precioTodo = $('#precioDimension').text();
+                                                                            this.precioInterior4 = data.body[0].a;
                                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                             $('#precioDimension').text(precioTodoFloat);
                                                                         });
@@ -5948,6 +6092,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                 if (hueco == 2) {
                                                                     cuenta = ancho / puertas;
                                                                     cuenta = cuenta * 2;
+                                                                    var precioInterior2 = this.precioInterior2;
+                                                                    var precioTodo;
+                                                                    precioTodo = $('#precioDimension').text();
+                                                                    precioTodo = precioTodo - precioInterior2;
                                                                     if (i == 1) {
                                                                         if (ancho >= 300 && ancho < 310) {
                                                                             cuenta = 871;
@@ -5980,6 +6128,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                         data.body[0].b +
                                                                                         '€</span><p/>'
                                                                                 );
+                                                                                $('#precioInt' + (hueco - 1)).text(
+                                                                                    '+ ' + data.body[0].a + ' pp'
+                                                                                );
+                                                                                this.precioInterior2 = data.body[0].a;
+                                                                                var precioTodoFloat =
+                                                                                    data.body[0].a + parseFloat(precioTodo);
+                                                                                $('#precioDimension').text(precioTodoFloat);
                                                                             });
                                                                     }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -6009,6 +6164,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     }
                                                                     cuenta = ancho / puertas;
                                                                     cuenta = cuenta * 2;
+                                                                    var precioInterior3 = this.precioInterior3;
+                                                                    var precioTodo;
+                                                                    precioTodo = $('#precioDimension').text();
+                                                                    precioTodo = precioTodo - precioInterior3;
                                                                     if (i == 1) {
                                                                         this.interioresArmarioNuevosService
                                                                             .findBus(dato.codigo, idProdInt[nombre])
@@ -6026,6 +6185,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                         data.body[0].c +
                                                                                         '€</span><p/>'
                                                                                 );
+                                                                                $('#precioInt' + (hueco - 1)).text(
+                                                                                    '+ ' + data.body[0].a + ' pp'
+                                                                                );
+                                                                                this.precioInterior3 = data.body[0].a;
+                                                                                var precioTodoFloat =
+                                                                                    data.body[0].a + parseFloat(precioTodo);
+                                                                                $('#precioDimension').text(precioTodoFloat);
                                                                             });
                                                                     }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -6055,6 +6221,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     }
                                                                     cuenta = ancho / puertas;
                                                                     cuenta = cuenta * 2;
+                                                                    var precioInterior4 = this.precioInterior4;
+                                                                    var precioTodo;
+                                                                    precioTodo = $('#precioDimension').text();
+                                                                    precioTodo = precioTodo - precioInterior4;
                                                                     if (i == 1) {
                                                                         this.interioresArmarioNuevosService
                                                                             .findBus(dato.codigo, idProdInt[nombre])
@@ -6072,6 +6242,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                         data.body[0].c +
                                                                                         '€</span><p/>'
                                                                                 );
+                                                                                $('#precioInt' + (hueco - 1)).text(
+                                                                                    '+ ' + data.body[0].a + ' pp'
+                                                                                );
+                                                                                this.precioInterior4 = data.body[0].a;
+                                                                                var precioTodoFloat =
+                                                                                    data.body[0].a + parseFloat(precioTodo);
+                                                                                $('#precioDimension').text(precioTodoFloat);
                                                                             });
                                                                     }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -6102,6 +6279,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     }
                                                                     cuenta = ancho / puertas;
                                                                     cuenta = cuenta * 2;
+                                                                    var precioInterior5 = this.precioInterior5;
+                                                                    var precioTodo;
+                                                                    precioTodo = $('#precioDimension').text();
+                                                                    precioTodo = precioTodo - precioInterior5;
                                                                     if (i == 1) {
                                                                         this.interioresArmarioNuevosService
                                                                             .findBus(dato.codigo, idProdInt[nombre])
@@ -6119,6 +6300,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                         data.body[0].c +
                                                                                         '€</span><p/>'
                                                                                 );
+                                                                                $('#precioInt' + (hueco - 1)).text(
+                                                                                    '+ ' + data.body[0].a + ' pp'
+                                                                                );
+                                                                                this.precioInterior5 = data.body[0].a;
+                                                                                var precioTodoFloat =
+                                                                                    data.body[0].a + parseFloat(precioTodo);
+                                                                                $('#precioDimension').text(precioTodoFloat);
                                                                             });
                                                                     }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -6150,6 +6338,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         if (ancho >= 340 && ancho < 350) {
                                                                             cuenta = 975;
                                                                         }
+                                                                        var precioInterior1 = this.precioInterior1;
+                                                                        var precioTodo;
+                                                                        precioTodo = $('#precioDimension').text();
+                                                                        precioTodo = precioTodo - precioInterior1;
                                                                         this.interioresArmarioNuevosService
                                                                             .findBus(dato.codigo, idProdInt[nombre])
                                                                             .subscribe(data => {
@@ -6166,6 +6358,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                         data.body[0].a +
                                                                                         '€</span><p/>'
                                                                                 );
+                                                                                $('#precioInt' + (hueco - 1)).text(
+                                                                                    '+ ' + data.body[0].a + ' pp'
+                                                                                );
+                                                                                this.precioInterior1 = data.body[0].a;
+                                                                                var precioTodoFloat =
+                                                                                    data.body[0].a + parseFloat(precioTodo);
+                                                                                $('#precioDimension').text(precioTodoFloat);
                                                                             });
                                                                     }
                                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
@@ -6184,6 +6383,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     if (hueco == 1) {
                                                                         cuenta = ancho / puertas;
                                                                         cuenta = cuenta * 1;
+                                                                        var precioInterior1 = this.precioInterior1;
+                                                                        var precioTodo;
+                                                                        precioTodo = $('#precioDimension').text();
+                                                                        precioTodo = precioTodo - precioInterior1;
                                                                         if (i == 1) {
                                                                             this.interioresArmarioNuevosService
                                                                                 .findBus(dato.codigo, idProdInt[nombre])
@@ -6206,8 +6409,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                     $('#precioInt' + (hueco - 1)).text(
                                                                                         '+ ' + data.body[0].a + ' pp'
                                                                                     );
-                                                                                    var precioTodo;
-                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    this.precioInterior1 = data.body[0].a;
                                                                                     var precioTodoFloat =
                                                                                         data.body[0].a + parseFloat(precioTodo);
                                                                                     $('#precioDimension').text(precioTodoFloat);
@@ -6226,6 +6428,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     if (hueco == 2) {
                                                                         cuenta = ancho / puertas;
                                                                         cuenta = cuenta * 2;
+                                                                        var precioInterior2 = this.precioInterior2;
+                                                                        var precioTodo;
+                                                                        precioTodo = $('#precioDimension').text();
+                                                                        precioTodo = precioTodo - precioInterior2;
                                                                         if (i == 1) {
                                                                             this.interioresArmarioNuevosService
                                                                                 .findBus(dato.codigo, idProdInt[nombre])
@@ -6246,8 +6452,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                     $('#precioInt' + (hueco - 1)).text(
                                                                                         '+ ' + data.body[0].a + ' pp'
                                                                                     );
-                                                                                    var precioTodo;
-                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    this.precioInterior2 = data.body[0].a;
                                                                                     var precioTodoFloat =
                                                                                         data.body[0].a + parseFloat(precioTodo);
                                                                                     $('#precioDimension').text(precioTodoFloat);
@@ -6266,6 +6471,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     if (hueco == 3) {
                                                                         cuenta = ancho / puertas;
                                                                         cuenta = cuenta * 2;
+                                                                        var precioInterior3 = this.precioInterior3;
+                                                                        var precioTodo;
+                                                                        precioTodo = $('#precioDimension').text();
+                                                                        precioTodo = precioTodo - precioInterior3;
                                                                         if (i == 1) {
                                                                             this.interioresArmarioNuevosService
                                                                                 .findBus(dato.codigo, idProdInt[nombre])
@@ -6286,8 +6495,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                     $('#precioInt' + (hueco - 1)).text(
                                                                                         '+ ' + data.body[0].a + ' pp'
                                                                                     );
-                                                                                    var precioTodo;
-                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    this.precioInterior3 = data.body[0].a;
                                                                                     var precioTodoFloat =
                                                                                         data.body[0].a + parseFloat(precioTodo);
                                                                                     $('#precioDimension').text(precioTodoFloat);
@@ -6306,6 +6514,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     if (hueco == 4) {
                                                                         cuenta = ancho / puertas;
                                                                         cuenta = cuenta * 2;
+                                                                        var precioInterior4 = this.precioInterior4;
+                                                                        var precioTodo;
+                                                                        precioTodo = $('#precioDimension').text();
+                                                                        precioTodo = precioTodo - precioInterior4;
                                                                         if (i == 1) {
                                                                             this.interioresArmarioNuevosService
                                                                                 .findBus(dato.codigo, idProdInt[nombre])
@@ -6326,8 +6538,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                     $('#precioInt' + (hueco - 1)).text(
                                                                                         '+ ' + data.body[0].a + ' pp'
                                                                                     );
-                                                                                    var precioTodo;
-                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    this.precioInterior4 = data.body[0].a;
                                                                                     var precioTodoFloat =
                                                                                         data.body[0].a + parseFloat(precioTodo);
                                                                                     $('#precioDimension').text(precioTodoFloat);
@@ -6346,6 +6557,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                     if (hueco == 5) {
                                                                         cuenta = ancho / puertas;
                                                                         cuenta = cuenta * 2;
+                                                                        var precioInterior5 = this.precioInterior5;
+                                                                        var precioTodo;
+                                                                        precioTodo = $('#precioDimension').text();
+                                                                        precioTodo = precioTodo - precioInterior5;
                                                                         if (i == 1) {
                                                                             this.interioresArmarioNuevosService
                                                                                 .findBus(dato.codigo, idProdInt[nombre])
@@ -6366,8 +6581,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                     $('#precioInt' + (hueco - 1)).text(
                                                                                         '+ ' + data.body[0].a + ' pp'
                                                                                     );
-                                                                                    var precioTodo;
-                                                                                    precioTodo = $('#precioDimension').text();
+                                                                                    this.precioInterior5 = data.body[0].a;
                                                                                     var precioTodoFloat =
                                                                                         data.body[0].a + parseFloat(precioTodo);
                                                                                     $('#precioDimension').text(precioTodoFloat);
@@ -6389,6 +6603,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         if (hueco == 1) {
                                                                             cuenta = ancho / puertas;
                                                                             cuenta = cuenta * 1;
+                                                                            var precioInterior1 = this.precioInterior1;
+                                                                            var precioTodo;
+                                                                            precioTodo = $('#precioDimension').text();
+                                                                            precioTodo = precioTodo - precioInterior1;
                                                                             if (i == 1) {
                                                                                 this.interioresArmarioNuevosService
                                                                                     .findBus(dato.codigo, idProdInt[nombre])
@@ -6411,8 +6629,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                         $('#precioInt' + (hueco - 1)).text(
                                                                                             '+ ' + data.body[0].a + ' pp'
                                                                                         );
-                                                                                        var precioTodo;
-                                                                                        precioTodo = $('#precioDimension').text();
+                                                                                        this.precioInterior1 = data.body[0].a;
                                                                                         var precioTodoFloat =
                                                                                             data.body[0].a + parseFloat(precioTodo);
                                                                                         $('#precioDimension').text(precioTodoFloat);
@@ -6431,6 +6648,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         if (hueco == 2) {
                                                                             cuenta = ancho / puertas;
                                                                             cuenta = cuenta * 2;
+                                                                            var precioInterior2 = this.precioInterior2;
+                                                                            var precioTodo;
+                                                                            precioTodo = $('#precioDimension').text();
+                                                                            precioTodo = precioTodo - precioInterior2;
                                                                             if (i == 1) {
                                                                                 this.interioresArmarioNuevosService
                                                                                     .findBus(dato.codigo, idProdInt[nombre])
@@ -6451,8 +6672,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                         $('#precioInt' + (hueco - 1)).text(
                                                                                             '+ ' + data.body[0].a + ' pp'
                                                                                         );
-                                                                                        var precioTodo;
-                                                                                        precioTodo = $('#precioDimension').text();
+                                                                                        this.precioInterior2 = data.body[0].a;
                                                                                         var precioTodoFloat =
                                                                                             data.body[0].a + parseFloat(precioTodo);
                                                                                         $('#precioDimension').text(precioTodoFloat);
@@ -6471,6 +6691,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         if (hueco == 3) {
                                                                             cuenta = ancho / puertas;
                                                                             cuenta = cuenta * 2;
+                                                                            var precioInterior3 = this.precioInterior3;
+                                                                            var precioTodo;
+                                                                            precioTodo = $('#precioDimension').text();
+                                                                            precioTodo = precioTodo - precioInterior3;
                                                                             if (i == 1) {
                                                                                 this.interioresArmarioNuevosService
                                                                                     .findBus(dato.codigo, idProdInt[nombre])
@@ -6491,8 +6715,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                         $('#precioInt' + (hueco - 1)).text(
                                                                                             '+ ' + data.body[0].a + ' pp'
                                                                                         );
-                                                                                        var precioTodo;
-                                                                                        precioTodo = $('#precioDimension').text();
+                                                                                        this.precioInterior3 = data.body[0].a;
                                                                                         var precioTodoFloat =
                                                                                             data.body[0].a + parseFloat(precioTodo);
                                                                                         $('#precioDimension').text(precioTodoFloat);
@@ -6511,6 +6734,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         if (hueco == 4) {
                                                                             cuenta = ancho / puertas;
                                                                             cuenta = cuenta * 2;
+                                                                            var precioInterior4 = this.precioInterior4;
+                                                                            var precioTodo;
+                                                                            precioTodo = $('#precioDimension').text();
+                                                                            precioTodo = precioTodo - precioInterior4;
                                                                             if (i == 1) {
                                                                                 this.interioresArmarioNuevosService
                                                                                     .findBus(dato.codigo, idProdInt[nombre])
@@ -6531,8 +6758,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                         $('#precioInt' + (hueco - 1)).text(
                                                                                             '+ ' + data.body[0].a + ' pp'
                                                                                         );
-                                                                                        var precioTodo;
-                                                                                        precioTodo = $('#precioDimension').text();
+                                                                                        this.precioInterior4 = data.body[0].a;
                                                                                         var precioTodoFloat =
                                                                                             data.body[0].a + parseFloat(precioTodo);
                                                                                         $('#precioDimension').text(precioTodoFloat);
@@ -6551,6 +6777,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                         if (hueco == 5) {
                                                                             cuenta = ancho / puertas;
                                                                             cuenta = cuenta * 2;
+                                                                            var precioInterior5 = this.precioInterior5;
+                                                                            var precioTodo;
+                                                                            precioTodo = $('#precioDimension').text();
+                                                                            precioTodo = precioTodo - precioInterior5;
                                                                             if (i == 1) {
                                                                                 this.interioresArmarioNuevosService
                                                                                     .findBus(dato.codigo, idProdInt[nombre])
@@ -6571,8 +6801,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                                                                                         $('#precioInt' + (hueco - 1)).text(
                                                                                             '+ ' + data.body[0].a + ' pp'
                                                                                         );
-                                                                                        var precioTodo;
-                                                                                        precioTodo = $('#precioDimension').text();
+                                                                                        this.precioInterior5 = data.body[0].a;
                                                                                         var precioTodoFloat =
                                                                                             data.body[0].a + parseFloat(precioTodo);
                                                                                         $('#precioDimension').text(precioTodoFloat);

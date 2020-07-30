@@ -3697,6 +3697,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
 
                                     var precioTodoFloat = todoPrecioLoco + parseFloat(precioTodo);
                                 }
+                                $('#precioDimension').text(precioTodoFloat);
                             });
                         }
                         $('#imagenesArmario' + i + ' #imagenesArmario').append(

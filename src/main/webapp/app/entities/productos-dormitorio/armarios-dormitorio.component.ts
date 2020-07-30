@@ -9695,6 +9695,49 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             this.armarioCogido = todo;
         }
         var tirador = $('#acabadoTirador').text();
+        if (nombre == 391) {
+            $('#puertaColor' + id).css({ display: 'none' });
+            $('#nombrePuerta' + (id + 1)).remove();
+
+            if (nombreArmario == '3 PUERTAS IZQUIERDA' || nombreArmario == '3 PUERTAS DERECHA') {
+                var puertasQueTiene = 3;
+            }
+
+            if (nombreArmario == '4 PUERTAS - 2 HUECOS GRANDES' || nombreArmario == '4 PUERTAS ASIMETRICAS') {
+                var puertasQueTiene = 4;
+            }
+
+            if (nombreArmario == '5 PUERTAS CENTRAL' || nombreArmario == '5 PUERTAS IZQUIERDA' || nombreArmario == '5 PUERTAS DERECHA') {
+                var puertasQueTiene = 5;
+            }
+
+            if (nombreArmario == '6 PUERTAS -3 HUECOS GRANDES' || nombreArmario == '6 PUERTAS ASIMETRICAS') {
+                var puertasQueTiene = 6;
+            }
+
+            if (nombreArmario == '7 PUERTAS IZQUIERDA' || nombreArmario == '7 PUERTAS DERECHA' || nombreArmario == '7 PUERTA ASIMETRICAS') {
+                var puertasQueTiene = 7;
+            }
+
+            if (nombreArmario == '8 PUERTAS ASIMETRICAS') {
+                var puertasQueTiene = 8;
+            }
+
+            if (nombreArmario == '1 PUERTA') {
+                var puertasQueTiene = 1;
+            }
+
+            if (nombreArmario == '2 PUERTAS') {
+                var puertasQueTiene = 2;
+            }
+
+            var arrayPuertas = this.arraySaberPuertas;
+            var arrayHuecos = this.arraySaberHuecos;
+            var mejorArmario = this.armarioCogido;
+            if (mejorArmario['puertas'].length == puertasQueTiene && mejorArmario['interiores'].length == arrayHuecos.length) {
+                $('#botonCalculadoraBatientes').css({ display: 'block' });
+            }
+        }
         if (nombreArmario == '3 PUERTAS IZQUIERDA' && id == 0) {
             $('#puertaColorMarco' + id).remove();
             var codigoArmario = this.codigoArmario;
