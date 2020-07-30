@@ -1628,7 +1628,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('.dimensionesColor1').css({ border: '0px' });
         $('.dimensionesColor2').css({ border: '0px' });
         $('.dimensionesColor3').css({ border: '0px' });
-
+        $('#divDentroCalcu #siLuz').prop('checked', false);
+        $('#divDentroCalcu #noLuz').prop('checked', true);
+        $('#precioDeLaLuz').text('');
+        this.estaEsLaLUZ = undefined;
         this.modulosBajos = undefined;
         this.aparadores = undefined;
         this.singulares = undefined;
