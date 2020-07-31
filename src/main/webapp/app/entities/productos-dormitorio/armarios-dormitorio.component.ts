@@ -364,6 +364,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#nombreMesita').empty();
         $('#precioDimension').empty();
         $('#nombreMesitaArma').empty();
+        $('#nombreMesita').css({ display: 'block' });
+        $('#ppCalculadora').css({ display: 'none' });
         $('#nombreMesitaArma').css({ display: 'none' });
         $('#calcuBatientes').css({ display: 'none' });
         $('#botonCalculadoraBatientes').css({ display: 'none' });

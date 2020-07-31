@@ -322,6 +322,8 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         $('#nombreMesita').empty();
         $('#precioDimension').empty();
         $('#nombreMesita').empty();
+        $('#nombreMesita').css({ display: 'block' });
+        $('#ppCalculadora').css({ display: 'none' });
         $('#precioDimension').empty();
         $('#nombreMesitaArma').empty();
         $('#nombreMesitaArma').css({ display: 'none' });

@@ -365,6 +365,8 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
         $('#derechaTirador').css({ 'background-color': 'white' });
         $('#nombreMesita').empty();
         $('#precioDimension').empty();
+        $('#nombreMesita').css({ display: 'block' });
+        $('#ppCalculadora').css({ display: 'none' });
         $('#nombreMesitaArma').empty();
         $('#nombreMesitaArma').css({ display: 'none' });
         $('#calcuVista').css({ display: 'none' });

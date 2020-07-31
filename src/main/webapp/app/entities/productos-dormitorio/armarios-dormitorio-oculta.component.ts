@@ -409,6 +409,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         $('#nombreMesita').empty();
         $('#precioDimension').empty();
         $('#nombreMesitaArma').empty();
+        $('#nombreMesita').css({ display: 'block' });
+        $('#ppCalculadora').css({ display: 'none' });
         $('#nombreMesitaArma').css({ display: 'none' });
         $('#calcuOculta').css({ display: 'none' });
         $('#botonCalculadoraBatientes').css({ display: 'none' });
