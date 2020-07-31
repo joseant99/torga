@@ -1,6 +1,10 @@
 package com.torga.pedidos.repository;
 
+import com.torga.pedidos.domain.PuertasPrecios;
 import com.torga.pedidos.domain.TiposApoyo;
+
+import java.util.Collection;
+
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +15,10 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface TiposApoyoRepository extends JpaRepository<TiposApoyo, Long> {
-
+	
+	@Query("SELECT u FROM TiposApoyo u WHERE  u.productoApoyo.id =?1 and u.id<61")
+	Collection<TiposApoyo> findAncho1(Long id);
+	
+	@Query("SELECT u FROM TiposApoyo u WHERE  u.productoApoyo.id =?1 and u.id>60")
+	Collection<TiposApoyo> findAncho2(Long id);
 }

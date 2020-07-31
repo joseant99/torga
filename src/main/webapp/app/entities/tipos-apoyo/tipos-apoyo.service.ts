@@ -36,4 +36,12 @@ export class TiposApoyoService {
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
+
+    findBus(id: any): Observable<EntityArrayResponseType> {
+        return this.http.get<ITiposApoyo[]>(`${this.resourceUrl}-id/${id}`, { observe: 'response' });
+    }
+
+    findBus1(id: any): Observable<EntityArrayResponseType> {
+        return this.http.get<ITiposApoyo[]>(`${this.resourceUrl}-id1/${id}`, { observe: 'response' });
+    }
 }

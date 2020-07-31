@@ -5003,13 +5003,25 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             }
         }
         var apoyoDentro = 0;
-        this.tiposApoyoService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(data => {
+        if (
+            parseFloat(idProd) != 360 &&
+            parseFloat(idProd) != 361 &&
+            parseFloat(idProd) != 362 &&
+            parseFloat(idProd) != 363 &&
+            parseFloat(idProd) != 364 &&
+            parseFloat(idProd) != 365 &&
+            parseFloat(idProd) != 366 &&
+            parseFloat(idProd) != 367 &&
+            parseFloat(idProd) != 368 &&
+            parseFloat(idProd) != 369 &&
+            parseFloat(idProd) != 370 &&
+            parseFloat(idProd) != 371 &&
+            parseFloat(idProd) != 372 &&
+            parseFloat(idProd) != 373 &&
+            parseFloat(idProd) != 374 &&
+            parseFloat(idProd) != 375
+        ) {
+            this.tiposApoyoService.findBus(idApoyo).subscribe(data => {
                 datos = data['body'];
                 $.each(datos, function(index, value) {
                     if (idApoyo == 15 || idApoyo == 16 || idApoyo == 376) {
@@ -5441,6 +5453,338 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     }
                 });
             });
+        } else {
+            this.tiposApoyoService.findBus1(idApoyo).subscribe(data => {
+                datos = data['body'];
+                $.each(datos, function(index, value) {
+                    if (idApoyo == 15 || idApoyo == 16 || idApoyo == 376) {
+                        if (idApoyo == 16) {
+                            if (h < 175) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
+                                    var precio = parseFloat(value['precio']);
+
+                                    precio = precio * precioPunto;
+                                    precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
+                                    var totalfloat = parseFloat(precioDimension);
+                                    totalfloat = totalfloat + precio;
+                                    $('#precioDimension').text(totalfloat.toFixed(2));
+                                    $('#datos1').append(
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</span><span style="float:right" id="apoyo1" class="' +
+                                            value['id'] +
+                                            '">+' +
+                                            precio.toFixed(2) +
+                                            '&euro;</span></p>'
+                                    );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
+                                    $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#botonApoyoNuevo').append(
+                                        '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</p>'
+                                    );
+                                    var total = $('#total').text();
+                                    var totalfloat = parseFloat(total);
+                                    totalfloat = totalfloat + precio;
+                                    $('#total').text(totalfloat);
+                                }
+                            }
+
+                            if (h >= 175) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
+                                    var precio = parseFloat(value['precio']);
+
+                                    precio = precio * precioPunto;
+                                    precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
+                                    var totalfloat = parseFloat(precioDimension);
+                                    totalfloat = totalfloat + precio;
+                                    $('#precioDimension').text(totalfloat.toFixed(2));
+                                    $('#datos1').append(
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</span><span style="float:right" id="apoyo1" class="' +
+                                            value['id'] +
+                                            '">+' +
+                                            precio.toFixed(2) +
+                                            '&euro;</span></p>'
+                                    );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
+                                    $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#botonApoyoNuevo').append(
+                                        '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</p>'
+                                    );
+                                    var total = $('#total').text();
+                                    var totalfloat = parseFloat(total);
+                                    totalfloat = totalfloat + precio;
+                                    $('#total').text(totalfloat);
+                                }
+                            }
+                        }
+
+                        if (idApoyo == 376) {
+                            if (h < 175) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
+                                    var precio = parseFloat(value['precio']);
+
+                                    precio = precio * precioPunto;
+                                    precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
+                                    var totalfloat = parseFloat(precioDimension);
+                                    totalfloat = totalfloat + precio;
+                                    $('#precioDimension').text(totalfloat.toFixed(2));
+                                    $('#datos1').append(
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</span><span style="float:right" id="apoyo1" class="' +
+                                            value['id'] +
+                                            '">+' +
+                                            precio.toFixed(2) +
+                                            '&euro;</span></p>'
+                                    );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
+                                    $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#botonApoyoNuevo').append(
+                                        '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</p>'
+                                    );
+                                    var total = $('#total').text();
+                                    var totalfloat = parseFloat(total);
+                                    totalfloat = totalfloat + precio;
+                                    $('#total').text(totalfloat);
+                                }
+                            }
+
+                            if (h >= 175) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
+                                    var precio = parseFloat(value['precio']);
+                                    precio = precio * precioPunto;
+                                    precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
+                                    var totalfloat = parseFloat(precioDimension);
+                                    totalfloat = totalfloat + precio;
+                                    $('#precioDimension').text(totalfloat.toFixed(2));
+                                    $('#datos1').append(
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</span><span style="float:right" id="apoyo1" class="' +
+                                            value['id'] +
+                                            '">+' +
+                                            precio.toFixed(2) +
+                                            '&euro;</span></p>'
+                                    );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
+                                    $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#botonApoyoNuevo').append(
+                                        '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</p>'
+                                    );
+                                    var total = $('#total').text();
+                                    var totalfloat = parseFloat(total);
+                                    totalfloat = totalfloat + precio;
+                                    $('#total').text(totalfloat);
+                                }
+                            }
+                        }
+
+                        if (idApoyo == 15) {
+                            if (h < 150) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
+                                    var precio = parseFloat(value['precio']);
+
+                                    precio = precio * precioPunto;
+                                    precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
+                                    var totalfloat = parseFloat(precioDimension);
+                                    totalfloat = totalfloat + precio;
+                                    $('#precioDimension').text(totalfloat.toFixed(2));
+                                    $('#datos1').append(
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</span><span style="float:right" id="apoyo1" class="' +
+                                            value['id'] +
+                                            '">+' +
+                                            precio.toFixed(2) +
+                                            '&euro;</span></p>'
+                                    );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
+                                    $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#botonApoyoNuevo').append(
+                                        '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</p>'
+                                    );
+                                    var total = $('#total').text();
+                                    var totalfloat = parseFloat(total);
+                                    totalfloat = totalfloat + precio;
+                                    $('#total').text(totalfloat);
+                                }
+                            }
+
+                            if (h >= 150) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
+                                    var precio = parseFloat(value['precio']);
+
+                                    precio = precio * precioPunto;
+                                    precio = Math.round(precio * 100) / 100;
+                                    if (iva == 1) {
+                                        var precio = precio * 1.21;
+                                    } else {
+                                        var precio = precio;
+                                    }
+                                    var totalfloat = parseFloat(precioDimension);
+                                    totalfloat = totalfloat + precio;
+                                    $('#precioDimension').text(totalfloat.toFixed(2));
+                                    $('#datos1').append(
+                                        '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</span><span style="float:right" id="apoyo1" class="' +
+                                            value['id'] +
+                                            '">+' +
+                                            precio.toFixed(2) +
+                                            '&euro;</span></p>'
+                                    );
+                                    $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                    $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
+                                    $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                    $('#botonApoyoNuevo').append(
+                                        '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                            value['productoApoyo']['nombre'] +
+                                            '</p>'
+                                    );
+                                    var total = $('#total').text();
+                                    var totalfloat = parseFloat(total);
+                                    totalfloat = totalfloat + precio;
+                                    $('#total').text(totalfloat);
+                                }
+                            }
+                        }
+                    } else {
+                        if (idApoyo == 18) {
+                            if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
+                                var precio = parseFloat(value['precio']);
+
+                                precio = precio * precioPunto;
+                                precio = Math.round(precio * 100) / 100;
+                                if (iva == 1) {
+                                    var precio = precio * 1.21;
+                                } else {
+                                    var precio = precio;
+                                }
+                                var totalfloat = parseFloat(precioDimension);
+                                totalfloat = totalfloat + precio;
+                                $('#precioDimension').text(totalfloat.toFixed(2));
+                                $('#datos1').append(
+                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</span><span style="float:right" id="apoyo1" class="' +
+                                        value['id'] +
+                                        '">+' +
+                                        precio.toFixed(2) +
+                                        '&euro;</span></p>'
+                                );
+                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
+                                $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                $('#botonApoyoNuevo').append(
+                                    '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</p>'
+                                );
+                                var total = $('#total').text();
+                                var totalfloat = parseFloat(total);
+                                totalfloat = totalfloat + precio;
+                                $('#total').text(totalfloat);
+                            }
+                        }
+                        if (idApoyo == 32) {
+                            if (idApoyo == value['productoApoyo']['id']) {
+                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #precioApoyo').text('+ 0 ');
+
+                                $('#precioDimension').text(precioDimension);
+                                $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                $('#botonApoyoNuevo').append(
+                                    '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</p>'
+                                );
+                                var totalfloat = parseFloat(total);
+                                $('#total').text(totalfloat);
+                            }
+                        }
+
+                        if (idApoyo == 17) {
+                            if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
+                                var precio = parseFloat(value['precio']);
+                                precio = precio * precioPunto;
+                                precio = Math.round(precio * 100) / 100;
+                                if (iva == 1) {
+                                    var precio = precio * 1.21;
+                                } else {
+                                    var precio = precio;
+                                }
+                                var totalfloat = parseFloat(precioDimension);
+                                totalfloat = totalfloat + precio;
+                                $('#precioDimension').text(totalfloat.toFixed(2));
+                                $('#datos1').append(
+                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</span><span style="float:right" id="apoyo1" class="' +
+                                        value['id'] +
+                                        '">+' +
+                                        precio.toFixed(2) +
+                                        '&euro;</span></p>'
+                                );
+                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #precioApoyo').text('+ ' + precio + ' ');
+                                $('#botonApoyoNuevo #nombreApoyoCajon').remove();
+                                $('#botonApoyoNuevo').append(
+                                    '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</p>'
+                                );
+                                var total = $('#total').text();
+                                var totalfloat = parseFloat(total);
+                                totalfloat = totalfloat + precio;
+                                $('#total').text(totalfloat);
+                            }
+                        }
+                    }
+                });
+            });
+        }
         if (contadorApoyo == cont - 1) {
             var iluminacion = this.iluminacion;
             var texto = 0;

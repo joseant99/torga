@@ -1,6 +1,7 @@
 package com.torga.pedidos.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.torga.pedidos.domain.PuertasPrecios;
 import com.torga.pedidos.domain.TiposApoyo;
 import com.torga.pedidos.repository.TiposApoyoRepository;
 import com.torga.pedidos.web.rest.errors.BadRequestAlertException;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -80,6 +81,33 @@ public class TiposApoyoResource {
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, tiposApoyo.getId().toString()))
             .body(result);
+    }
+    
+    /**
+     * GET  /cascos : get all the cascos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of cascos in body
+     */
+    @GetMapping("/tipos-apoyos-id/{id}")
+    @Timed
+    public ResponseEntity<Collection<TiposApoyo>> getAllCascosBus1( @PathVariable("id") Long id ) {
+        log.debug("REST request to get a page of Cascos");
+        Collection<TiposApoyo> page = tiposApoyoRepository.findAncho1(id);
+        return ResponseEntity.ok().body(page);
+    }
+    /**
+     * GET  /cascos : get all the cascos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of cascos in body
+     */
+    @GetMapping("/tipos-apoyos-id1/{id}")
+    @Timed
+    public ResponseEntity<Collection<TiposApoyo>> getAllCascosBus2( @PathVariable("id") Long id ) {
+        log.debug("REST request to get a page of Cascos");
+        Collection<TiposApoyo> page = tiposApoyoRepository.findAncho2(id);
+        return ResponseEntity.ok().body(page);
     }
 
     /**
