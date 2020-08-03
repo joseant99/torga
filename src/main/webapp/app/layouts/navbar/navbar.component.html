@@ -936,6 +936,12 @@
                                 <span jhiTranslate="global.menu.admin.logs">Logs</span>
                             </a>
                         </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="register" routerLinkActive="active" (click)="collapseNavbar()">
+                                <fa-icon icon="tasks" fixedWidth="true"></fa-icon>
+                                <span >Crear Usuario</span>
+                            </a>
+                        </li>
                         <li *ngIf="swaggerEnabled">
                             <a class="dropdown-item" routerLink="admin/docs" routerLinkActive="active" (click)="collapseNavbar()">
                                 <fa-icon icon="book" fixedWidth="true"></fa-icon>
@@ -1519,11 +1525,11 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body" style="text-align:center">
-		        	<input style="height:30px;width:180px;margin-right:35px" list="listaTiendas" id="selectTiendas" name="listaTi" type="text" /><label style="margin-left:10px">Nombre fiscal</label><br>
-		        	<br><input type="text" id="referenciaCliente"> <label style="margin-left:10px" >Referencia Cliente</label><br>
+		        	<input *jhiHasAnyAuthority="'ROLE_ADMIN'" style="height:30px;width:180px;margin-right:35px" list="listaTiendas" id="selectTiendas" name="listaTi" type="text" /><label *jhiHasAnyAuthority="'ROLE_ADMIN'" style="margin-left:10px">Nombre fiscal</label><br *jhiHasAnyAuthority="'ROLE_ADMIN'">  
+		        	<br *jhiHasAnyAuthority="'ROLE_ADMIN'"><input type="text" id="referenciaCliente"> <label  style="margin-left:10px" >Referencia Cliente</label><br>
 		        	<p>Vas a generar un presupuesto &#191;Estas seguro?</p><br>
-		        	 <input type="radio" name="estado" id="Activo" value="Activo"> Presupuesto
-     				 <input type="radio" name="estado" id="Inactivo" value="Inactivo"> Pedido
+		        	 <input *jhiHasAnyAuthority="'ROLE_ADMIN'" type="radio" name="estado" id="Activo" value="Activo" checked> <span *jhiHasAnyAuthority="'ROLE_ADMIN'">Presupuesto</span>
+     				 <input *jhiHasAnyAuthority="'ROLE_ADMIN'" type="radio" name="estado" id="Inactivo" value="Inactivo"> <span *jhiHasAnyAuthority="'ROLE_ADMIN'">Pedido</span>
 		        	<button type="button" style="width: 110px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="generarPresupuesto()" onclick="cerrarModal()">Si</button>
 			        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal" >No</button>
 		        </div>

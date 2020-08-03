@@ -21,7 +21,7 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="codigo"><span >Referencia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span >Referencia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="fecha_presupuesto"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto">Fecha Presupuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
@@ -29,11 +29,8 @@
             </thead>
             <tbody>
             <tr *ngFor="let presupuestoPedido of presupuestoPedidos ;">
-                <td *ngIf="presupuestoPedido != undefined"><a>{{presupuestoPedido.id}}</a></td>
-                <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</td>
-                <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.pedido}}</td>
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'"><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</i></td>
                 <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_presupuesto}}</td>
-                <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_pedido}}</td>
                 <td *ngIf="presupuestoPedido != undefined">
                     {{presupuestoPedido.user?.login}}
                 </td>
@@ -43,7 +40,7 @@
                                 [routerLink]="['/pedidos-producto' ]"
                                 class="btn btn-info btn-sm">
                             <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            <span class="d-none d-md-inline" >VER PEDIDO</span>
                         </button>           
                     </div>
                 </td>

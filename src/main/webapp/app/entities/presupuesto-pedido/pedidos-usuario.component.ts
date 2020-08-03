@@ -9,6 +9,7 @@ import { AccountService } from 'app/core';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { PresupuestoPedidoService } from './presupuesto-pedido.service';
+import { RepresentanteTiendaService } from '../representante-tienda/representante-tienda.service';
 import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 @Component({
     selector: 'jhi-pedidos-usuario',
@@ -38,6 +39,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         protected parseLinks: JhiParseLinks,
         protected jhiAlertService: JhiAlertService,
         protected accountService: AccountService,
+        protected representanteTiendaService: RepresentanteTiendaService,
         protected activatedRoute: ActivatedRoute,
         protected router: Router,
         public datosUsuarioService: DatosUsuarioService,
@@ -124,20 +126,40 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         }
     }
     loadAll() {
+        console.log(sessionStorage);
         var idUsu = this.accountService['userIdentity']['id'];
+        var auto = this.accountService['userIdentity']['authorities'][1];
         var cogidos = [];
+        var account = this.accountService['userIdentity'];
         var contador = 0;
+        var todos = this.representanteTiendaService.todos;
         this.presupuestoPedidoService
             .query({
                 page: this.page - 1,
-                size: 1000000,
+                size: this.itemsPerPage,
                 sort: this.sort()
             })
             .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
                 $.each(res['body'], function(index, value) {
-                    if (value['pedido'] == 1) {
-                        cogidos[contador] = value;
-                        contador++;
+                    if (auto == 'ROLE_ADMIN') {
+                        if (value['pedido'] == 1) {
+                            cogidos[contador] = value;
+                            contador++;
+                        }
+                    } else {
+                        if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                            for (let k = 0; k < todos.length; k++) {
+                                if (todos[k]['datosUsuario']['user']['id'] == value['user']['id'] && value['pedido'] == 1) {
+                                    cogidos[contador] = value;
+                                    contador++;
+                                }
+                            }
+                        } else {
+                            if (value['user']['id'] == idUsu && value['pedido'] == 1) {
+                                cogidos[contador] = value;
+                                contador++;
+                            }
+                        }
                     }
                 });
                 if (res['body']['0'] != 'undefined') {
@@ -146,6 +168,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
                     this.presuped1 = cogidos;
                     this.paginatePresupuestoPedidos(cogidos, res.headers);
                 }
+
                 (res: HttpErrorResponse) => this.onError(res.message);
             });
     }

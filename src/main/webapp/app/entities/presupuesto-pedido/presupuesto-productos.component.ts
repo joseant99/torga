@@ -8631,8 +8631,8 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     });
                 var precioPunto = this.precioPunto[0];
                 var apoyoPrecios = this.apoyoPrecios;
-                var olauseleles = this.precioTiendaService.precioTienda[0].precio / 100 + 1;
-                var yeahburi = this.precioTiendaService.precioTienda[0].precio / 100 + 1;
+                var olauseleles = 0;
+                var yeahburi = 0;
                 var precioAparadores = this.aparadores;
                 var precioVitrinas = this.vitrinas;
                 var precioSingulares = this.singulares;

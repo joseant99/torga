@@ -397,9 +397,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         prueba['user'] = usuGG;
                         prueba['codigo'] = referenciaCliente;
                     }
-                    if (memo[1]['checked'] == true) {
-                        prueba['pedido'] = 1;
-                        prueba['fecha_pedido'] = output;
+                    if (referenciaCliente != null && referenciaCliente != '') {
+                        prueba['codigo'] = referenciaCliente;
+                    }
+                    if (memo.length != 0) {
+                        if (memo[1]['checked'] == true) {
+                            prueba['pedido'] = 1;
+                            prueba['fecha_pedido'] = output;
+                        }
                     }
                     console.log(prueba);
                     this.presupuestoPedido = prueba;

@@ -188,20 +188,20 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
                 $.each(res['body'], function(index, value) {
                     if (auto == 'ROLE_ADMIN') {
                         if (value['pedido'] == 0) {
-                            cogidos[index] = value;
+                            cogidos[contador] = value;
                             contador++;
                         }
                     } else {
                         if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
                             for (let k = 0; k < todos.length; k++) {
                                 if (todos[k]['datosUsuario']['user']['id'] == value['user']['id'] && value['pedido'] == 0) {
-                                    cogidos[index] = value;
+                                    cogidos[contador] = value;
                                     contador++;
                                 }
                             }
                         } else {
                             if (value['user']['id'] == idUsu && value['pedido'] == 0) {
-                                cogidos[index] = value;
+                                cogidos[contador] = value;
                                 contador++;
                             }
                         }
