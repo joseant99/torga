@@ -180,9 +180,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         var todos = this.representanteTiendaService.todos;
         this.presupuestoPedidoService
             .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
+                size: 10000000
             })
             .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
                 $.each(res['body'], function(index, value) {
