@@ -32,6 +32,22 @@ public class PresupuestoArmarioPuertas implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties("")
     private Acabados acabados;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Acabados acabados1;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Acabados acabados2;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Acabados acabados3;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Acabados acabados4;
 
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -87,6 +103,58 @@ public class PresupuestoArmarioPuertas implements Serializable {
 
     public void setAcabados(Acabados acabados) {
         this.acabados = acabados;
+    }
+    
+    public Acabados getAcabados1() {
+        return acabados1;
+    }
+
+    public PresupuestoArmarioPuertas acabados1(Acabados acabados1) {
+        this.acabados1 = acabados1;
+        return this;
+    }
+
+    public void setAcabados1(Acabados acabados1) {
+        this.acabados1 = acabados1;
+    }
+    
+    public Acabados getAcabados2() {
+        return acabados2;
+    }
+
+    public PresupuestoArmarioPuertas acabados2(Acabados acabados2) {
+        this.acabados2 = acabados2;
+        return this;
+    }
+
+    public void setAcabados2(Acabados acabados2) {
+        this.acabados2 = acabados2;
+    }
+    
+    public Acabados getAcabados3() {
+        return acabados3;
+    }
+
+    public PresupuestoArmarioPuertas acabados3(Acabados acabados3) {
+        this.acabados3 = acabados3;
+        return this;
+    }
+
+    public void setAcabados3(Acabados acabados3) {
+        this.acabados3 = acabados3;
+    }
+    
+    public Acabados getAcabados4() {
+        return acabados4;
+    }
+
+    public PresupuestoArmarioPuertas acabados4(Acabados acabados4) {
+        this.acabados4 = acabados4;
+        return this;
+    }
+
+    public void setAcabados4(Acabados acabados4) {
+        this.acabados4 = acabados4;
     }
 
     public ProductosDormitorio getProductosDormitorio() {

@@ -86,7 +86,11 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
 
     protected onSaveSuccess() {
         this.isSaving = false;
-        this.router.navigate(['/presupuesto-puntos']);
+        for (let i = 0; i <= 10000; i++) {
+            if (i == 10000) {
+                this.router.navigate(['/presupuesto-producto']);
+            }
+        }
     }
 
     protected onSaveError() {
@@ -218,6 +222,22 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
 
     public cogerIdPresupuesto(id) {
         sessionStorage.setItem('presupuesto', id);
+    }
+
+    public cogerIdPresupuesto1(id) {
+        sessionStorage.setItem('presupuesto', id);
+        this.presupuestoPedidoService
+            .query({
+                size: 10000000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['id'] == id) {
+                        data.body[i]['visto'] = 1;
+                        this.subscribeToSaveResponse(this.presupuestoPedidoService.update(data.body[i]));
+                    }
+                }
+            });
     }
 
     loadPage(page: number) {

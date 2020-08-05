@@ -9,8 +9,8 @@
     	<p style="text-align:center;"><select style="height: 50px;width: 300px;" id="filtroos" (change)="filtrosBuscados()">
     		<option>TODOS</option>
     		<option>FECHA PRESUPUESTO</option>
-    		<option>CODIGO CLIENTE</option>
-    		<option>NOMBRE FISCAL</option>
+    		<option *jhiHasAnyAuthority="'ROLE_ADMIN'">CODIGO CLIENTE</option>
+    		<option *jhiHasAnyAuthority="'ROLE_ADMIN'">NOMBRE FISCAL</option>
     		<option>REFERENCIA CLIENTE</option>
     	</select></p>
     	<p style="text-align:center;display: none" id="textoDemasFiltros" ><input list="listaBuena" style="height: 50px;width: 300px;" type="text" id="inputFiltro"></p>
@@ -21,19 +21,27 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="codigo" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span >Referencia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="fecha_presupuesto"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto">Fecha Presupuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo" ><span >Referencia Cliente</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            
+            <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let presupuestoPedido of presupuestoPedidos;">
-                <td *jhiHasAnyAuthority="'ROLE_ADMIN'"><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</i></td>
-                <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_presupuesto}}</td>
-                <td *ngIf="presupuestoPedido != undefined">
-                    {{presupuestoPedido.user?.login}}
+            	<td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_presupuesto}}</td>
+                <td ><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</i></td>
+                
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'" >
+                    <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.login}}</i>
                 </td>
+                
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'" >
+                    <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.firstName}}</i>
+                </td>
+                
                 <td *ngIf="presupuestoPedido != undefined" class="text-right">
                    
                     
@@ -62,13 +70,26 @@
                         </button>           
                     </div>
                      -->
-                     <div class="btn-group flex-btn-group-container" style="float: right;margin-left:20px">
+                     <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" style="float: right;margin-left:20px;POSITION: absolute;z-index: 1;right: 10px;">
                         <button (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
                                 [routerLink]="['/presupuesto-producto' ]"
                                 class="btn btn-info btn-sm">
                             <span class="d-none d-md-inline">VER PRESUPUESTO</span>
                         </button>           
                     </div>
+                    
+                    <div *jhiHasAnyAuthority="'ROLE_ADMIN'" class="btn-group flex-btn-group-container" style="float: right;margin-left:20px;POSITION: absolute;z-index: 2;right: 10px;">
+                        <button *ngIf="presupuestoPedido.visto == 0" style="background-color:red" (click)="cogerIdPresupuesto1(presupuestoPedido.id)" type="submit"
+                                class="btn btn-info btn-sm">
+                            <span class="d-none d-md-inline">VER PRESUPUESTO</span>
+                        </button>  
+                        <button *ngIf="presupuestoPedido.visto == 1" (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                                [routerLink]="['/presupuesto-producto' ]"
+                                class="btn btn-info btn-sm">
+                            <span class="d-none d-md-inline">VER PRESUPUESTO</span>
+                        </button>         
+                    </div>
+                    
                     
                     
                 </td>

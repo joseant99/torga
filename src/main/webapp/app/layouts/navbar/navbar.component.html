@@ -1,16 +1,8 @@
 <div id="menuFijoArriba">
 	<a id="botonEsconder" onclick="apareceMenu()"><img style="max-width:30%;" id="rayasNavegador" src="../../../content/images/LINEAS-min.png"></a>
-<a  *jhiHasAnyAuthority="'ROLE_CLIENTE','ROLE_USER'" class="navbar-brand logo" (click)="open('inicio',false,myModel)"(click)="collapseNavbar()" id="imagenLogoCuenta">
-	                <span class="logo-img"></span>
-</a>
-<a  *jhiHasAnyAuthority="'ROLE_USER'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" id="imagenLogoCuenta">
-	                <span class="logo-img"></span>
-</a>
-<a  *jhiHasAnyAuthority="'ROLE_CLIENTE'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" id="imagenLogoCuenta">
-	                <span class="logo-img"></span>
-</a>
-<a  *jhiHasAnyAuthority="'ROLE_REPRESENTATE'" class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" id="imagenLogoCuenta">
-	                <span class="logo-img"></span>
+
+<a  class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" id="imagenLogoCuenta">
+	                <span class="logo-img"><img id="logoImagen" src="../../../content/images/LOGOHD.png" ></span>
 </a>
 <!--  	
 <a style="margin-left: 45%;color: black;background-color:#D8E8C6;border: 1px solid white;padding: 3px;margin-top: 3px;float: left;padding-left: 5px;padding-right: 5px;" data-toggle="modal" id="modalCambiar1A" data-target="#modalCambiarA" (click)="textoRojoMostrarA()">

@@ -626,6 +626,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         this.precioInterior2 = 0;
         this.precioInterior3 = 0;
         this.precioInterior4 = 0;
+        this.gg = 0;
         this.precioInterior5 = 0;
         this.niveladoresPrecio = 0;
         this.iva = JSON.parse(sessionStorage.getItem('IVA'));
@@ -4158,7 +4159,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         idProdInt[23] = 155;
         idProdInt[24] = 156;
         idProdInt[25] = 157;
-        this.gg = 0;
+        var luzSiTiene = this.gg;
         var texto = this.textoArmario;
         var puertas = 0;
         var dimens = this.dimenArmarios;
@@ -4183,7 +4184,16 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 buenInt = todosLosInteriores[o];
             }
         }
+
         meterInt[hueco - 1] = buenInt;
+        if (luzSiTiene == 1) {
+            meterInt[hueco - 1]['luz'] = 'Luz izq';
+            meterInt[hueco - 1]['precioLuz'] = 120;
+        }
+        if (luzSiTiene == 2) {
+            meterInt[hueco - 1]['luz'] = 'Luz 2 costados';
+            meterInt[hueco - 1]['precioLuz'] = 200;
+        }
         todo['interiores'] = meterInt;
         this.armarioCogido = todo;
         puertas = parseFloat(texto.split(' ')[0]);
@@ -4230,7 +4240,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             );
 
                             if (cogerSeccion == 'A') {
-                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                var todoPrecioLoco = data.body[0].a;
+                                if (luzSiTiene == 1) {
+                                    var todoPrecioLoco = data.body[0].a + 120;
+                                }
+                                if (luzSiTiene == 2) {
+                                    var todoPrecioLoco = data.body[0].a + 200;
+                                }
+                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                 this.precioInterior1 = data.body[0].a;
                             }
@@ -4245,6 +4262,12 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     todoPrecioLoco = todoPrecioLoco * 1.21;
                                 }
                                 this.precioInterior1 = todoPrecioLoco;
+                                if (luzSiTiene == 1) {
+                                    todoPrecioLoco = todoPrecioLoco + 120;
+                                }
+                                if (luzSiTiene == 2) {
+                                    todoPrecioLoco = todoPrecioLoco + 200;
+                                }
                                 $('#precioInt' + (hueco - 1)).text(todoPrecioLoco + ' €');
 
                                 var precioTodoFloat = todoPrecioLoco + parseFloat(precioTodo);
@@ -4291,7 +4314,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '€</span><p/>'
                             );
                             if (cogerSeccion == 'A') {
-                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                var todoPrecioLoco = data.body[0].a;
+                                if (luzSiTiene == 1) {
+                                    var todoPrecioLoco = data.body[0].a + 120;
+                                }
+                                if (luzSiTiene == 2) {
+                                    var todoPrecioLoco = data.body[0].a + 200;
+                                }
+                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                 this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
@@ -4344,7 +4374,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '€</span><p/>'
                             );
                             if (cogerSeccion == 'A') {
-                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                var todoPrecioLoco = data.body[0].a;
+                                if (luzSiTiene == 1) {
+                                    var todoPrecioLoco = data.body[0].a + 120;
+                                }
+                                if (luzSiTiene == 2) {
+                                    var todoPrecioLoco = data.body[0].a + 200;
+                                }
+                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                 this.precioInterior2 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
@@ -4404,7 +4441,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '</span>€</span><p/>'
                             );
                             if (cogerSeccion == 'A') {
-                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                var todoPrecioLoco = data.body[0].a;
+                                if (luzSiTiene == 1) {
+                                    var todoPrecioLoco = data.body[0].a + 120;
+                                }
+                                if (luzSiTiene == 2) {
+                                    var todoPrecioLoco = data.body[0].a + 200;
+                                }
+                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                 this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
@@ -4456,7 +4500,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '€</span><p/>'
                             );
                             if (cogerSeccion == 'A') {
-                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                var todoPrecioLoco = data.body[0].a;
+                                if (luzSiTiene == 1) {
+                                    var todoPrecioLoco = data.body[0].a + 120;
+                                }
+                                if (luzSiTiene == 2) {
+                                    var todoPrecioLoco = data.body[0].a + 200;
+                                }
+                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                 this.precioInterior1 = data.body[0].a;
                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                             }
@@ -4516,7 +4567,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         '€</span><p/>'
                                 );
                                 if (cogerSeccion == 'A') {
-                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                    var todoPrecioLoco = data.body[0].a;
+                                    if (luzSiTiene == 1) {
+                                        var todoPrecioLoco = data.body[0].a + 120;
+                                    }
+                                    if (luzSiTiene == 2) {
+                                        var todoPrecioLoco = data.body[0].a + 200;
+                                    }
+                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                     this.precioInterior1 = data.body[0].a;
                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                 }
@@ -4570,7 +4628,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         '€</span><p/>'
                                 );
                                 if (cogerSeccion == 'A') {
-                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
+                                    var todoPrecioLoco = data.body[0].b;
+                                    if (luzSiTiene == 1) {
+                                        var todoPrecioLoco = data.body[0].b + 120;
+                                    }
+                                    if (luzSiTiene == 2) {
+                                        var todoPrecioLoco = data.body[0].b + 200;
+                                    }
+                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                     this.precioInterior2 = data.body[0].b;
                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                 }
@@ -4642,7 +4707,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             '€</span><p/>'
                                     );
                                     if (cogerSeccion == 'A') {
-                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                        var todoPrecioLoco = data.body[0].a;
+                                        if (luzSiTiene == 1) {
+                                            var todoPrecioLoco = data.body[0].a + 120;
+                                        }
+                                        if (luzSiTiene == 2) {
+                                            var todoPrecioLoco = data.body[0].a + 200;
+                                        }
+                                        $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                         this.precioInterior1 = data.body[0].a;
                                         var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                     }
@@ -4709,7 +4781,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             '€</span><p/>'
                                     );
                                     if (cogerSeccion == 'A') {
-                                        $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
+                                        var todoPrecioLoco = data.body[0].b;
+                                        if (luzSiTiene == 1) {
+                                            var todoPrecioLoco = data.body[0].b + 120;
+                                        }
+                                        if (luzSiTiene == 2) {
+                                            var todoPrecioLoco = data.body[0].b + 200;
+                                        }
+                                        $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                         this.precioInterior2 = data.body[0].b;
                                         var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                     }
@@ -4782,7 +4861,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 '€</span><p/>'
                                         );
                                         if (cogerSeccion == 'A') {
-                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                            var todoPrecioLoco = data.body[0].a;
+                                            if (luzSiTiene == 1) {
+                                                var todoPrecioLoco = data.body[0].a + 120;
+                                            }
+                                            if (luzSiTiene == 2) {
+                                                var todoPrecioLoco = data.body[0].a + 200;
+                                            }
+                                            $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                             this.precioInterior1 = data.body[0].a;
                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                         }
@@ -4850,7 +4936,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 '€</span><p/>'
                                         );
                                         if (cogerSeccion == 'A') {
-                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
+                                            var todoPrecioLoco = data.body[0].b;
+                                            if (luzSiTiene == 1) {
+                                                var todoPrecioLoco = data.body[0].b + 120;
+                                            }
+                                            if (luzSiTiene == 2) {
+                                                var todoPrecioLoco = data.body[0].b + 200;
+                                            }
+                                            $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                             this.precioInterior2 = data.body[0].b;
                                             var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                         }
@@ -4918,7 +5011,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 '€</span><p/>'
                                         );
                                         if (cogerSeccion == 'A') {
-                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
+                                            var todoPrecioLoco = data.body[0].c;
+                                            if (luzSiTiene == 1) {
+                                                var todoPrecioLoco = data.body[0].c + 120;
+                                            }
+                                            if (luzSiTiene == 2) {
+                                                var todoPrecioLoco = data.body[0].c + 200;
+                                            }
+                                            $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                             this.precioInterior3 = data.body[0].c;
                                             var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                         }
@@ -4991,7 +5091,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     '€</span><p/>'
                                             );
                                             if (cogerSeccion == 'A') {
-                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                var todoPrecioLoco = data.body[0].a;
+                                                if (luzSiTiene == 1) {
+                                                    var todoPrecioLoco = data.body[0].a + 120;
+                                                }
+                                                if (luzSiTiene == 2) {
+                                                    var todoPrecioLoco = data.body[0].a + 200;
+                                                }
+                                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                 this.precioInterior1 = data.body[0].a;
                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                             }
@@ -5060,7 +5167,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     '€</span><p/>'
                                             );
                                             if (cogerSeccion == 'A') {
-                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
+                                                var todoPrecioLoco = data.body[0].b;
+                                                if (luzSiTiene == 1) {
+                                                    var todoPrecioLoco = data.body[0].b + 120;
+                                                }
+                                                if (luzSiTiene == 2) {
+                                                    var todoPrecioLoco = data.body[0].b + 200;
+                                                }
+                                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                 this.precioInterior2 = data.body[0].b;
                                                 var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                             }
@@ -5128,7 +5242,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     '€</span><p/>'
                                             );
                                             if (cogerSeccion == 'A') {
-                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
+                                                var todoPrecioLoco = data.body[0].c;
+                                                if (luzSiTiene == 1) {
+                                                    var todoPrecioLoco = data.body[0].c + 120;
+                                                }
+                                                if (luzSiTiene == 2) {
+                                                    var todoPrecioLoco = data.body[0].c + 200;
+                                                }
+                                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                 this.precioInterior3 = data.body[0].c;
                                                 var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                             }
@@ -5201,7 +5322,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         '€</span><p/>'
                                                 );
                                                 if (cogerSeccion == 'A') {
-                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                    var todoPrecioLoco = data.body[0].a;
+                                                    if (luzSiTiene == 1) {
+                                                        var todoPrecioLoco = data.body[0].a + 120;
+                                                    }
+                                                    if (luzSiTiene == 2) {
+                                                        var todoPrecioLoco = data.body[0].a + 200;
+                                                    }
+                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                     this.precioInterior1 = data.body[0].a;
                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                 }
@@ -5270,7 +5398,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         '€</span><p/>'
                                                 );
                                                 if (cogerSeccion == 'A') {
-                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
+                                                    var todoPrecioLoco = data.body[0].b;
+                                                    if (luzSiTiene == 1) {
+                                                        var todoPrecioLoco = data.body[0].b + 120;
+                                                    }
+                                                    if (luzSiTiene == 2) {
+                                                        var todoPrecioLoco = data.body[0].b + 200;
+                                                    }
+                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                     this.precioInterior2 = data.body[0].b;
                                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                 }
@@ -5338,7 +5473,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         '€</span><p/>'
                                                 );
                                                 if (cogerSeccion == 'A') {
-                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
+                                                    var todoPrecioLoco = data.body[0].c;
+                                                    if (luzSiTiene == 1) {
+                                                        var todoPrecioLoco = data.body[0].c + 120;
+                                                    }
+                                                    if (luzSiTiene == 2) {
+                                                        var todoPrecioLoco = data.body[0].c + 200;
+                                                    }
+                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                     this.precioInterior3 = data.body[0].c;
                                                     var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                 }
@@ -5412,7 +5554,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 '€</span><p/>'
                                                         );
                                                         if (cogerSeccion == 'A') {
-                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                            var todoPrecioLoco = data.body[0].a;
+                                                            if (luzSiTiene == 1) {
+                                                                var todoPrecioLoco = data.body[0].a + 120;
+                                                            }
+                                                            if (luzSiTiene == 2) {
+                                                                var todoPrecioLoco = data.body[0].a + 200;
+                                                            }
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                             this.precioInterior1 = data.body[0].a;
                                                             var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                         }
@@ -5482,7 +5631,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 '€</span><p/>'
                                                         );
                                                         if (cogerSeccion == 'A') {
-                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
+                                                            var todoPrecioLoco = data.body[0].b;
+                                                            if (luzSiTiene == 1) {
+                                                                var todoPrecioLoco = data.body[0].b + 120;
+                                                            }
+                                                            if (luzSiTiene == 2) {
+                                                                var todoPrecioLoco = data.body[0].b + 200;
+                                                            }
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                             this.precioInterior2 = data.body[0].b;
                                                             var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                         }
@@ -5553,7 +5709,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 '€</span><p/>'
                                                         );
                                                         if (cogerSeccion == 'A') {
-                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
+                                                            var todoPrecioLoco = data.body[0].c;
+                                                            if (luzSiTiene == 1) {
+                                                                var todoPrecioLoco = data.body[0].c + 120;
+                                                            }
+                                                            if (luzSiTiene == 2) {
+                                                                var todoPrecioLoco = data.body[0].c + 200;
+                                                            }
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                             this.precioInterior3 = data.body[0].c;
                                                             var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                         }
@@ -5623,7 +5786,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                 '€</span><p/>'
                                                         );
                                                         if (cogerSeccion == 'A') {
-                                                            $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].d + ' pp');
+                                                            var todoPrecioLoco = data.body[0].d;
+                                                            if (luzSiTiene == 1) {
+                                                                var todoPrecioLoco = data.body[0].d + 120;
+                                                            }
+                                                            if (luzSiTiene == 2) {
+                                                                var todoPrecioLoco = data.body[0].d + 200;
+                                                            }
+                                                            $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                             this.precioInterior4 = data.body[0].d;
                                                             var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                         }
@@ -5698,7 +5868,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     '€</span><p/>'
                                                             );
                                                             if (cogerSeccion == 'A') {
-                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                                var todoPrecioLoco = data.body[0].a;
+                                                                if (luzSiTiene == 1) {
+                                                                    var todoPrecioLoco = data.body[0].a + 120;
+                                                                }
+                                                                if (luzSiTiene == 2) {
+                                                                    var todoPrecioLoco = data.body[0].a + 200;
+                                                                }
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                 this.precioInterior1 = data.body[0].a;
                                                                 var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                             }
@@ -5768,7 +5945,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     '€</span><p/>'
                                                             );
                                                             if (cogerSeccion == 'A') {
-                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
+                                                                var todoPrecioLoco = data.body[0].b;
+                                                                if (luzSiTiene == 1) {
+                                                                    var todoPrecioLoco = data.body[0].b + 120;
+                                                                }
+                                                                if (luzSiTiene == 2) {
+                                                                    var todoPrecioLoco = data.body[0].b + 200;
+                                                                }
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                 this.precioInterior2 = data.body[0].b;
                                                                 var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                             }
@@ -5838,7 +6022,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     '€</span><p/>'
                                                             );
                                                             if (cogerSeccion == 'A') {
-                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
+                                                                var todoPrecioLoco = data.body[0].c;
+                                                                if (luzSiTiene == 1) {
+                                                                    var todoPrecioLoco = data.body[0].c + 120;
+                                                                }
+                                                                if (luzSiTiene == 2) {
+                                                                    var todoPrecioLoco = data.body[0].c + 200;
+                                                                }
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                 this.precioInterior3 = data.body[0].c;
                                                                 var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                             }
@@ -5908,7 +6099,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                     '€</span><p/>'
                                                             );
                                                             if (cogerSeccion == 'A') {
-                                                                $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].d + ' pp');
+                                                                var todoPrecioLoco = data.body[0].d;
+                                                                if (luzSiTiene == 1) {
+                                                                    var todoPrecioLoco = data.body[0].d + 120;
+                                                                }
+                                                                if (luzSiTiene == 2) {
+                                                                    var todoPrecioLoco = data.body[0].d + 200;
+                                                                }
+                                                                $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                 this.precioInterior4 = data.body[0].d;
                                                                 var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                             }
@@ -5983,7 +6181,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         '€</span><p/>'
                                                                 );
                                                                 if (cogerSeccion == 'A') {
-                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].d + ' pp');
+                                                                    var todoPrecioLoco = data.body[0].d;
+                                                                    if (luzSiTiene == 1) {
+                                                                        var todoPrecioLoco = data.body[0].d + 120;
+                                                                    }
+                                                                    if (luzSiTiene == 2) {
+                                                                        var todoPrecioLoco = data.body[0].d + 200;
+                                                                    }
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                     this.precioInterior4 = data.body[0].d;
                                                                     var precioTodoFloat = data.body[0].d + parseFloat(precioTodo);
                                                                 }
@@ -6053,7 +6258,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         '€</span><p/>'
                                                                 );
                                                                 if (cogerSeccion == 'A') {
-                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].b + ' pp');
+                                                                    var todoPrecioLoco = data.body[0].b;
+                                                                    if (luzSiTiene == 1) {
+                                                                        var todoPrecioLoco = data.body[0].b + 120;
+                                                                    }
+                                                                    if (luzSiTiene == 2) {
+                                                                        var todoPrecioLoco = data.body[0].b + 200;
+                                                                    }
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                     this.precioInterior2 = data.body[0].b;
                                                                     var precioTodoFloat = data.body[0].b + parseFloat(precioTodo);
                                                                 }
@@ -6123,7 +6335,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         '€</span><p/>'
                                                                 );
                                                                 if (cogerSeccion == 'A') {
-                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].c + ' pp');
+                                                                    var todoPrecioLoco = data.body[0].c;
+                                                                    if (luzSiTiene == 1) {
+                                                                        var todoPrecioLoco = data.body[0].c + 120;
+                                                                    }
+                                                                    if (luzSiTiene == 2) {
+                                                                        var todoPrecioLoco = data.body[0].c + 200;
+                                                                    }
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                     this.precioInterior3 = data.body[0].c;
                                                                     var precioTodoFloat = data.body[0].c + parseFloat(precioTodo);
                                                                 }
@@ -6193,7 +6412,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                         '€</span><p/>'
                                                                 );
                                                                 if (cogerSeccion == 'A') {
-                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                                    var todoPrecioLoco = data.body[0].a;
+                                                                    if (luzSiTiene == 1) {
+                                                                        var todoPrecioLoco = data.body[0].a + 120;
+                                                                    }
+                                                                    if (luzSiTiene == 2) {
+                                                                        var todoPrecioLoco = data.body[0].a + 200;
+                                                                    }
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                     this.precioInterior1 = data.body[0].a;
                                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
                                                                 }
@@ -6268,7 +6494,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             '€</span><p/>'
                                                                     );
 
-                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                                    var todoPrecioLoco = data.body[0].a;
+                                                                    if (luzSiTiene == 1) {
+                                                                        var todoPrecioLoco = data.body[0].a + 120;
+                                                                    }
+                                                                    if (luzSiTiene == 2) {
+                                                                        var todoPrecioLoco = data.body[0].a + 200;
+                                                                    }
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                     this.precioInterior2 = data.body[0].a;
                                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
 
@@ -6321,7 +6554,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             data.body[0].c +
                                                                             '€</span><p/>'
                                                                     );
-                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                                    var todoPrecioLoco = data.body[0].a;
+                                                                    if (luzSiTiene == 1) {
+                                                                        var todoPrecioLoco = data.body[0].a + 120;
+                                                                    }
+                                                                    if (luzSiTiene == 2) {
+                                                                        var todoPrecioLoco = data.body[0].a + 200;
+                                                                    }
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                     this.precioInterior3 = data.body[0].a;
                                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
 
@@ -6374,7 +6614,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             data.body[0].c +
                                                                             '€</span><p/>'
                                                                     );
-                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                                    var todoPrecioLoco = data.body[0].a;
+                                                                    if (luzSiTiene == 1) {
+                                                                        var todoPrecioLoco = data.body[0].a + 120;
+                                                                    }
+                                                                    if (luzSiTiene == 2) {
+                                                                        var todoPrecioLoco = data.body[0].a + 200;
+                                                                    }
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                     this.precioInterior1 = data.body[0].a;
                                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
 
@@ -6427,7 +6674,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                             data.body[0].a +
                                                                             '€</span><p/>'
                                                                     );
-                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + data.body[0].a + ' pp');
+                                                                    var todoPrecioLoco = data.body[0].a;
+                                                                    if (luzSiTiene == 1) {
+                                                                        var todoPrecioLoco = data.body[0].a + 120;
+                                                                    }
+                                                                    if (luzSiTiene == 2) {
+                                                                        var todoPrecioLoco = data.body[0].a + 200;
+                                                                    }
+                                                                    $('#precioInt' + (hueco - 1)).text('+ ' + todoPrecioLoco + ' pp');
                                                                     this.precioInterior1 = data.body[0].a;
                                                                     var precioTodoFloat = data.body[0].a + parseFloat(precioTodo);
 
@@ -7507,8 +7761,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
+                                                                                                var todoPrecioLoco = data.body[0].b;
+                                                                                                if (luzSiTiene == 1) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].b + 120;
+                                                                                                }
+                                                                                                if (luzSiTiene == 2) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].b + 200;
+                                                                                                }
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    '+ ' + data.body[0].b + ' pp'
+                                                                                                    '+ ' + todoPrecioLoco + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior2 = data.body[0].b;
                                                                                                 var precioTodoFloat =
@@ -7591,8 +7854,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
+                                                                                                var todoPrecioLoco = data.body[0].c;
+                                                                                                if (luzSiTiene == 1) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].c + 120;
+                                                                                                }
+                                                                                                if (luzSiTiene == 2) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].c + 200;
+                                                                                                }
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    '+ ' + data.body[0].c + ' pp'
+                                                                                                    '+ ' + todoPrecioLoco + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
@@ -7675,8 +7947,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
+                                                                                                var todoPrecioLoco = data.body[0].a;
+                                                                                                if (luzSiTiene == 1) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].a + 120;
+                                                                                                }
+                                                                                                if (luzSiTiene == 2) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].a + 200;
+                                                                                                }
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    '+ ' + data.body[0].a + ' pp'
+                                                                                                    '+ ' + todoPrecioLoco + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior1 = data.body[0].a;
                                                                                                 var precioTodoFloat =
@@ -7764,8 +8045,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
+                                                                                                var todoPrecioLoco = data.body[0].a;
+                                                                                                if (luzSiTiene == 1) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].a + 120;
+                                                                                                }
+                                                                                                if (luzSiTiene == 2) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].a + 200;
+                                                                                                }
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    '+ ' + data.body[0].a + ' pp'
+                                                                                                    '+ ' + todoPrecioLoco + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior1 = data.body[0].a;
                                                                                                 var precioTodoFloat =
@@ -7848,8 +8138,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
+                                                                                                var todoPrecioLoco = data.body[0].b;
+                                                                                                if (luzSiTiene == 1) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].b + 120;
+                                                                                                }
+                                                                                                if (luzSiTiene == 2) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].b + 200;
+                                                                                                }
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    '+ ' + data.body[0].b + ' pp'
+                                                                                                    '+ ' + todoPrecioLoco + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior2 = data.body[0].b;
                                                                                                 var precioTodoFloat =
@@ -7931,8 +8230,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
+                                                                                                var todoPrecioLoco = data.body[0].c;
+                                                                                                if (luzSiTiene == 1) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].c + 120;
+                                                                                                }
+                                                                                                if (luzSiTiene == 2) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].c + 200;
+                                                                                                }
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    '+ ' + data.body[0].c + ' pp'
+                                                                                                    '+ ' + todoPrecioLoco + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
@@ -8014,8 +8322,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
+                                                                                                var todoPrecioLoco = data.body[0].d;
+                                                                                                if (luzSiTiene == 1) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].d + 120;
+                                                                                                }
+                                                                                                if (luzSiTiene == 2) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].d + 200;
+                                                                                                }
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    '+ ' + data.body[0].d + ' pp'
+                                                                                                    '+ ' + todoPrecioLoco + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior4 = data.body[0].d;
                                                                                                 var precioTodoFloat =
@@ -8087,8 +8404,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
+                                                                                                var todoPrecioLoco = data.body[0].c;
+                                                                                                if (luzSiTiene == 1) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].c + 120;
+                                                                                                }
+                                                                                                if (luzSiTiene == 2) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].c + 200;
+                                                                                                }
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    '+ ' + data.body[0].c + ' pp'
+                                                                                                    '+ ' + todoPrecioLoco + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior3 = data.body[0].c;
                                                                                                 var precioTodoFloat =
@@ -8156,8 +8482,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
+                                                                                                var todoPrecioLoco = data.body[0].b;
+                                                                                                if (luzSiTiene == 1) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].b + 120;
+                                                                                                }
+                                                                                                if (luzSiTiene == 2) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].b + 200;
+                                                                                                }
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    '+ ' + data.body[0].b + ' pp'
+                                                                                                    '+ ' + todoPrecioLoco + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior2 = data.body[0].b;
                                                                                                 var precioTodoFloat =
@@ -8226,8 +8561,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                                     '€</span><p/>'
                                                                                             );
                                                                                             if (cogerSeccion == 'A') {
+                                                                                                var todoPrecioLoco = data.body[0].a;
+                                                                                                if (luzSiTiene == 1) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].a + 120;
+                                                                                                }
+                                                                                                if (luzSiTiene == 2) {
+                                                                                                    var todoPrecioLoco =
+                                                                                                        data.body[0].a + 200;
+                                                                                                }
                                                                                                 $('#precioInt' + (hueco - 1)).text(
-                                                                                                    '+ ' + data.body[0].a + ' pp'
+                                                                                                    '+ ' + todoPrecioLoco + ' pp'
                                                                                                 );
                                                                                                 this.precioInterior1 = data.body[0].a;
                                                                                                 var precioTodoFloat =
@@ -18951,7 +19295,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 );
                 var todo = this.armarioCogido;
                 var pue123 = todo['puertas'][id];
-                pue123['acabado'] = acabados[w];
+                pue123['acabado0'] = acabados[w];
                 todo['puertas'][id] = pue123;
                 this.armarioCogido = todo;
 

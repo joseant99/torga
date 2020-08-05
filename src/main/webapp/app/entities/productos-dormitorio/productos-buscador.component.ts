@@ -480,7 +480,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#botonCalculadora').attr('class', 'displayBoton');
         $('.armariosDivInputCodigo').css({ display: 'none' });
         $('.armariosVistaDivInputCodigo').css({ display: 'none' });
-
+        $('.armariosOcultaDivInputCodigo').css({ display: 'none' });
         $('#inputCodigoArmario').removeAttr('readonly');
         $('#inputCodigoArmario').val('');
         $('#inputCodigoArmario').css({ 'background-color': 'white' });

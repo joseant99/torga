@@ -47,6 +47,9 @@ public class PresupuestoPedido implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties("")
     private User usuarioCreadoPre;
+    
+    @Column(name = "visto")
+    private Integer visto;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -90,6 +93,19 @@ public class PresupuestoPedido implements Serializable {
 
     public void setPedido(Integer pedido) {
         this.pedido = pedido;
+    }
+    
+    public Integer getVisto() {
+        return visto;
+    }
+
+    public PresupuestoPedido visto(Integer visto) {
+        this.visto = visto;
+        return this;
+    }
+
+    public void setVisto(Integer visto) {
+        this.visto = visto;
     }
 
     public String getFecha_presupuesto() {

@@ -108,7 +108,9 @@
 	  		<p id="contacto2" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal1">Contacto con Fabrica</button></p>-->
 	  		<!--  <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" [routerLink]="['/presupuesto-edicion']">EDITAR PRESUPUESTO</button></p>-->
 	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="eliminar()" [routerLink]="['/presupuesto-usuario']">ELIMINAR PRESUPUESTO</button></p>
-	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;"[routerLink]="['/presupuesto-usuario']">SALIR</button></p>
+	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;"  [routerLink]="['/presupuesto-usuario']">SALIR</button></p>
+	  		<p style="text-align:center;position: absolute;margin-top: -81px;margin-left: 42.16%;z-index: 10;" *jhiHasAnyAuthority="'ROLE_ADMIN'"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalVistoPresupuesto"">SALIR</button></p>
+		
 		</div>
   	</div>
 <div class="modal fade" id="modalPasarPedido" role="dialog" style="margin-top: 100px;">
@@ -128,6 +130,25 @@
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">No</button></p>
 	        </div>
 	        	<p id="verPresupuesto" style="display:none"> <a data-dismiss="modal" routerLink="../presupuesto-usuario"  routerLinkActive="active"><span>Abrir Presupuesto</span></a></p>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalVistoPresupuesto" role="dialog" style="margin-top: 100px;">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">SALIR</h4>
+	        </div>
+	        <div class="modal-body">
+	        	<p style="text-align:center">&#191;Quiere volver a poner el presupuesto como no visto?</p>
+	          
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9FF781" (click)="cambiarVisto()" data-dismiss="modal" >Si</button></p>
+	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal" [routerLink]="['/presupuesto-usuario']">No</button></p>
+	        </div>
 	      </div>
 	      
 	    </div>

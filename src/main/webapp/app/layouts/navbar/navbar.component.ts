@@ -141,7 +141,15 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 this.todasLasTiendas = data.body;
                 for (let o = 0; o < data.body['length']; o++) {
                     $('#modalConfirmarCreacionPresu').append('<datalist id="listaTiendas"></datalist>');
-                    $('#listaTiendas').append('<option value="' + data.body[o]['id'] + '">' + data.body[o]['nombreFiscal'] + '</option>');
+                    $('#listaTiendas').append(
+                        '<option class="' +
+                            data.body[o]['id'] +
+                            '" id="' +
+                            data.body[o]['nombreFiscal'] +
+                            '">' +
+                            data.body[o]['nombreFiscal'] +
+                            '</option>'
+                    );
                 }
             });
     }
@@ -390,7 +398,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     var todasTiendaBuenas = this.todasLasTiendas;
                     if (tiendaElegida != null && tiendaElegida != '' && referenciaCliente != null && referenciaCliente != '') {
                         for (let q = 0; q < todasTiendaBuenas.length; q++) {
-                            if (todasTiendaBuenas[q]['id'] == tiendaElegida) {
+                            if (todasTiendaBuenas[q]['nombreFiscal'] == tiendaElegida) {
                                 var usuGG = todasTiendaBuenas[q]['user'];
                             }
                         }
@@ -8847,7 +8855,100 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         sesion[1]['puertas'][w]['precio'] +
                                         ' pp</i></p>'
                                 );
+                                for (let k = 0; k < 5; k++) {
+                                    if (sesion[1]['puertas'][w]['acabado' + k] != undefined) {
+                                        $('#textoCesta' + i).append(
+                                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado ' +
+                                                (k + 1) +
+                                                ' Puerta ' +
+                                                (w + 1) +
+                                                ': ' +
+                                                sesion[1]['puertas'][w]['acabado' + k]['nombre'] +
+                                                '</p>'
+                                        );
+                                    }
+                                }
                             }
+                        }
+
+                        if (sesion[1]['niveladores'] != undefined) {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Niveladores: Con niveladores <i style="float:right;margin-right:40%">+ ' +
+                                    sesion[1]['niveladores']['precio'] +
+                                    ' pp</i></p>'
+                            );
+                        } else {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Niveladores: Sin niveladores</p>'
+                            );
+                        }
+                        if (sesion[1]['cajeado'] != undefined) {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado: ' +
+                                    sesion[1]['cajeado']['tipo'] +
+                                    '<i style="float:right;margin-right:40%">+ ' +
+                                    sesion[1]['cajeado']['precio'] +
+                                    ' pp</i></p>'
+                            );
+                            if (sesion[1]['cajeado']['medA'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado Medida A: ' +
+                                        sesion[1]['cajeado']['medA'] +
+                                        '</p>'
+                                );
+                            }
+                            if (sesion[1]['cajeado']['medB'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado Medida B: ' +
+                                        sesion[1]['cajeado']['medB'] +
+                                        '</p>'
+                                );
+                            }
+                            if (sesion[1]['cajeado']['medC'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado Medida C: ' +
+                                        sesion[1]['cajeado']['medC'] +
+                                        '</p>'
+                                );
+                            }
+                        } else {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado: Sin cajeado</p>'
+                            );
+                        }
+                        if (sesion[1]['enmarcado'] != undefined) {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado: ' +
+                                    sesion[1]['enmarcado']['codigo'] +
+                                    '<i style="float:right;margin-right:40%">+ ' +
+                                    sesion[1]['enmarcado']['precio'] +
+                                    ' pp</i></p>'
+                            );
+                            if (sesion[1]['enmarcado']['medA'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado Medida A: ' +
+                                        sesion[1]['enmarcado']['medA'] +
+                                        '</p>'
+                                );
+                            }
+                            if (sesion[1]['enmarcado']['medB'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado Medida B: ' +
+                                        sesion[1]['enmarcado']['medB'] +
+                                        '</p>'
+                                );
+                            }
+                            if (sesion[1]['enmarcado']['medC'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado Medida C: ' +
+                                        sesion[1]['enmarcado']['medC'] +
+                                        '</p>'
+                                );
+                            }
+                        } else {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado: Sin enmarcado</p>'
+                            );
                         }
 
                         var cestaTodo = parseFloat($('#cestaTotal').text());
@@ -10418,17 +10519,66 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 if (prodCarr[m][1]['puertas'] != undefined) {
                     for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
                         var puertas;
-                        for (let ve = 0; ve <= 10000500; ve++) {
-                            if (ve == 10000500) {
-                                puertas = {
-                                    precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                    presupuestoArmario: presupuestoArmario,
-                                    productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                    acabados: prodCarr[m][1]['puertas'][x]['acabado' + x],
-                                    orden: x
-                                };
+                        if (
+                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones' &&
+                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
+                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones'
+                        ) {
+                            for (let ve = 0; ve <= 10000500; ve++) {
+                                if (ve == 10000500) {
+                                    puertas = {
+                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                        orden: x
+                                    };
 
-                                this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                    this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                }
+                            }
+                        } else {
+                            for (let ve = 0; ve <= 10000500; ve++) {
+                                if (ve == 10000500) {
+                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
+                                        puertas = {
+                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                            presupuestoArmario: presupuestoArmario,
+                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                            acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                            orden: x
+                                        };
+                                    }
+
+                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 3 Plafones') {
+                                        puertas = {
+                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                            presupuestoArmario: presupuestoArmario,
+                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                            acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                            acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
+                                            orden: x
+                                        };
+                                    }
+
+                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 5 Plafones') {
+                                        puertas = {
+                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                            presupuestoArmario: presupuestoArmario,
+                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                            acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                            acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
+                                            acabados3: prodCarr[m][1]['puertas'][x]['acabado3'],
+                                            acabados4: prodCarr[m][1]['puertas'][x]['acabado4'],
+                                            orden: x
+                                        };
+                                    }
+
+                                    this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                }
                             }
                         }
                     }
