@@ -39,7 +39,7 @@
     <br/>
     
     
-    <div id="articulosEstanterias" style="width:100%;display:none">
+    <div id="articulosEstanterias" style="width:70%;display:none;margin-left: 11%;margin-top: 8%;font-size:30px">
     
     </div>
     
@@ -2018,8 +2018,9 @@
 									<div id="divEstant" style="display:none"> 
 									<p style="width:100%;float:left;font-size:14px;letter-spacing:3px;margin-right:25px;">ESTANTERIA</p>
 									<p style="width:102%;float:left;font-size:12px;letter-spacing:3px;"><span style="float:left" id="nombreCostado">Costado Visto Izq</span><span id="precioCostado" style="float:right"></span></p>
+									<p style="width:102%;float:left;font-size:12px;letter-spacing:3px;"><span style="float:left" id="nombreCostadoBase"></span><span id="precioCostadoBase" style="float:right"></span></p>
 									<div style="width:100%;float:left"  *ngFor="let estant of estanteria; let u=index" id="estanteria{{u}}">
-										<p style="width:102%;float:left;font-size:12px;letter-spacing:3px;"><span style="float:left" id="nombreCostado{{u}}">{{estant.productosDormitorio.nombre}}</span><span id="precioCuerpo{{u}}" style="float:right">{{estant.precio}} &euro;</span></p>
+										<p style="width:102%;float:left;font-size:12px;letter-spacing:3px;"><span style="float:left" id="nombreCostado{{u}}">{{estant.productosDormitorio.nombre}}</span><span id="precioCuerpo{{u}}" style="float:right">{{estant.precio}} pp</span></p>
 										<p style="float:left;font-size:12px;letter-spacing:3px;margin-top: 20px;"><span style="float:left" id="nombreCostado{{u}}">Acabado trasera</span> <div style="height:60px;width:120px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalAcabadosEstanterias" (click)="acabadoPonerDiv(u,'Trasera')"></div></p>
 										<p style="float:left;font-size:12px;letter-spacing:3px;margin-top: 60px;"><span style="float:left" id="nombreCostado{{u}}">Acabado costado</span> <div style="height:60px;width:120px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;" id="inputAcabadoCostado" data-toggle="modal" data-target="#modalAcabadosEstanterias" (click)="acabadoPonerDiv(u,'Costado')"> </div></p>
 										<p style="float:left;font-size:12px;letter-spacing:3px;margin-top: 55px;"><span style="float:left" id="nombreCostado{{u}}">Acabado estantes</span> <div style="height:60px;width:120px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;" id="inputAcabadoEstantes" data-toggle="modal" data-target="#modalAcabadosEstanterias" (click)="acabadoPonerDiv(u,'Estantes')"></div></p>
@@ -2027,6 +2028,8 @@
 									</div>
 									<p style="width:100%;float:left;text-align:center"><button (click)="cargarAntesEstant()" data-toggle="modal" data-target="#modalEstanteriasCoger" >A&Ntilde;ADIR CUERPO</button></p>
 								</div>
+								<button style="width: 86%;height: 6%;bottom: 80px;position: absolute;font-size: 16px;background-color: black;left: 25px;color: white;display:none"  data-toggle="modal" id="botonCalculadoraEstanteria" (click)="enviarCarritoEstanteria()" data-target="#modalEnviadoCarrito" >Mandar articulo/s al carro de la compra</button>
+								
 						</div>
 						
 						
@@ -2558,9 +2561,8 @@
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados"> </div></p></a>
-								<label style="float: left;margin-right:20px;margin-top: 15px;">TRASERA :</label>
-								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesVestidor #modalTraseraAcabados"> </div></a>
+								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;color: black;font-family: 'Lato', sans-serif;font-weight: 400;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados"> </div></p></a>
+								<a href="#imagenesArmario1" id="traseraVestidor"><p style="float: left;margin-top: 15px;color: black;font-family: 'Lato', sans-serif;font-weight: 400;">TRASERA :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesVestidor #modalTraseraAcabados"></p> </div></a>
 		    					<label style="float: left;margin-right:20px;margin-top: 15px;">INTERIORES :</label>
 		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados1"> </div></a>
 							</div>

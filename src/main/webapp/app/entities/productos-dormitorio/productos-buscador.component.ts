@@ -133,7 +133,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     errormessage: string;
     posicionEstanteria: any;
     acabados1: any;
-
+    estanteriaCogida: any;
+    precioBase: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -185,21 +186,23 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             for (let i = 0; i < data.body['length']; i++) {
                 if (data.body[i]['alto'] == altura) {
                     var precio = data.body[i]['precio'];
-                    precio = precio * preciosPuntos[0];
-                    var preciosum = precio * (precioCat[0]['precio'] / 100);
-                    precio = precio + preciosum;
                     $('#divEstant').css({ display: 'block' });
                     $('#articulosEstanterias').css({ display: 'block' });
+                    $('#articulosEstanterias').append('<p style="text-align:center;margin-bottom:8%">ESTANTERIA A MEDIDA</p>');
                     $('#articulosEstanterias').append(
-                        '<img style="z-index:100;position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/1-min.png">'
+                        '<img style="z-index:100;position: absolute;max-width: 460px;" src="../../../content/images/1- PARA WEB/DORMITORIO/NH422.png">'
                     );
-                    $('#precioCostado').text(precio + ' €');
+                    var array = [];
+                    array[0] = data.body[i];
+                    array[1] = undefined;
+                    this.estanteriaCogida = array;
+                    $('#precioCostado').text(precio + ' pp');
                     $('#anchoEstant').text(data.body[i]['ancho']);
                     $('#precioDimension').text(precio);
-                    $('#euroCalculadora').css({ display: 'block' });
                 }
             }
         });
+        this.estanteria = [];
     }
 
     selectedFilesFacturas(event) {
@@ -320,13 +323,15 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var altura = this.alturaEstan;
         var arrayMedidas = [];
         var posicion = this.posicionEstanteria;
-        arrayMedidas[0] = 'z-index:99;margin-left: 25px;margin-top: -9px;';
-        arrayMedidas[1] = 'z-index:97;margin-left: 75px;margin-top: -21px;';
-        arrayMedidas[2] = 'z-index:96;margin-left: 114px;margin-top: -26px;';
-        arrayMedidas[3] = 'z-index:95;margin-left: 157px;margin-top: -38px;';
-        arrayMedidas[4] = 'z-index:94;margin-left: 25px;margin-top: -9px;';
+        arrayMedidas[0] = 'z-index:99;margin-left: 14px;margin-top: -9px;';
+        arrayMedidas[1] = 'z-index:97;margin-left: 56px;margin-top: -20px;';
+        arrayMedidas[2] = 'z-index:96;margin-left: 103px;margin-top: -30px;';
+        arrayMedidas[3] = 'z-index:95;margin-left: 154px;margin-top: -42px;';
+        arrayMedidas[4] = 'z-index:94;margin-left: 210px;margin-top: -55px;';
+        arrayMedidas[5] = 'z-index:93;margin-left: 263px;margin-top: -68px;';
+        arrayMedidas[6] = 'z-index:92;margin-left: 315px;margin-top: -81px;';
 
-        var array = this.estanteria;
+        $('#botonCalculadoraEstanteria').css({ display: 'none' });
         var preciosPuntos = this.precioPunto;
         var precioCat = this.catalogoCome;
         var anchoEstant = $('#anchoEstant').text();
@@ -335,44 +340,49 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('#articulosEstanterias').append(
                 '<img style="' +
                     arrayMedidas[posicion] +
-                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/2-min.png">'
+                    'position: absolute;max-width: 460px;" src="../../../content/images/1- PARA WEB/DORMITORIO/NH427.png">'
             );
         }
         if (estant.id == 354) {
             $('#articulosEstanterias').append(
                 '<img style="' +
                     arrayMedidas[posicion] +
-                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/3-min.png">'
+                    'position: absolute;max-width: 460px;" src="../../../content/images/1- PARA WEB/DORMITORIO/NH430.png">'
             );
         }
         if (estant.id == 355) {
+            $('#articulosEstanterias').append(
+                '<img style="' +
+                    arrayMedidas[posicion] +
+                    'position: absolute;max-width: 460px;" src="../../../content/images/1- PARA WEB/DORMITORIO/NH433.png">'
+            );
         }
         if (estant.id == 356) {
             $('#articulosEstanterias').append(
                 '<img style="' +
                     arrayMedidas[posicion] +
-                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/4-min.png">'
+                    'position: absolute;max-width: 460px;" src="../../../content/images/1- PARA WEB/DORMITORIO/NH435.png">'
             );
         }
         if (estant.id == 357) {
             $('#articulosEstanterias').append(
                 '<img style="' +
                     arrayMedidas[posicion] +
-                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/5-min.png">'
+                    'position: absolute;max-width: 460px;" src="../../../content/images/1- PARA WEB/DORMITORIO/NH438.png">'
             );
         }
         if (estant.id == 358) {
             $('#articulosEstanterias').append(
                 '<img style="' +
                     arrayMedidas[posicion] +
-                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/6-min.png">'
+                    'position: absolute;max-width: 460px;" src="../../../content/images/1- PARA WEB/DORMITORIO/NH441.png">'
             );
         }
         if (estant.id == 359) {
             $('#articulosEstanterias').append(
                 '<img style="' +
                     arrayMedidas[posicion] +
-                    'position: absolute;max-width: 400px;" src="../../../content/images/ESTANTERIAS/7-min.png">'
+                    'position: absolute;max-width: 460px;" src="../../../content/images/1- PARA WEB/DORMITORIO/NH444.png">'
             );
         }
         this.posicionEstanteria = posicion + 1;
@@ -380,18 +390,44 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             for (let i = 0; i < data.body['length']; i++) {
                 if (data.body[i]['alto'] == altura) {
                     var precio = data.body[i]['precio'];
-                    precio = precio * preciosPuntos[0];
-                    var preciosum = precio * (precioCat[0]['precio'] / 100);
-                    precio = precio + preciosum;
                     var ancho = parseFloat(anchoEstant) + data.body[i]['ancho'];
                     var todoPrecio = parseFloat(precioTodo) + precio;
                     $('#precioDimension').text(todoPrecio);
                     $('#anchoEstant').text(ancho);
                     data.body[i]['precio'] = precio;
+                    var array = this.estanteria;
                     array[array['length']] = data.body[i];
                     this.estanteria = array;
+                    var array = this.estanteriaCogida;
+                    array[array.length] = data.body[i];
+                    this.estanteriaCogida = array;
+                    console.log(this.estanteriaCogida);
                 }
             }
+
+            var ole = 0;
+            this.dimensionesProductoTipoService.findProducto(402).subscribe(data => {
+                for (let i = 0; i < data.body['length']; i++) {
+                    var ancho = $('#anchoEstant').text();
+                    if (data.body[i]['ancho'] > ancho && ole == 0) {
+                        if (this.precioBase != data.body[i]['precio']) {
+                            var precio = data.body[i]['precio'];
+                            var tot = parseFloat($('#precioDimension').text());
+                            tot = tot - this.precioBase;
+                            this.precioBase = precio;
+                            var array = this.estanteriaCogida;
+                            array[1] = data.body[i];
+                            this.estanteriaCogida = array;
+                            $('#precioCostadoBase').text(precio + ' pp');
+                            $('#nombreCostadoBase').text('Base con ancho ' + data.body[i]['ancho'] + ' CM');
+                            $('#precioDimension').text(parseFloat(precio) + tot);
+                            ole = 1;
+                        } else {
+                            ole = 1;
+                        }
+                    }
+                }
+            });
         });
 
         this.acaProdService.findAca(estant.id).subscribe(data => {
@@ -417,16 +453,81 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var acabados = this.acabadosEstanteria;
         var u = this.uid;
         var texto = this.idMeterimagen;
+        var acabadoCogido;
+        var nombreEstant = $('#nombreCostado' + u).text();
         for (let i = 0; i < acabados.length; i++) {
             if (acabados[i]['id'] == id) {
                 var src = 'data:image/gif;base64,' + acabados[i]['imagenFondo'];
+                acabadoCogido = acabados[i];
             }
         }
+        var array = this.estanteria;
+        var array1 = this.estanteriaCogida;
+        if (texto == 'Trasera') {
+            array[u]['acabado0'] = acabadoCogido;
+            array1[u + 1]['acabado0'] = acabadoCogido;
+        }
+        if (texto == 'Costado') {
+            array[u]['acabado1'] = acabadoCogido;
+            array1[u + 1]['acabado1'] = acabadoCogido;
+        }
+        if (texto == 'Estantes') {
+            array[u]['acabado2'] = acabadoCogido;
+            array1[u + 1]['acabado2'] = acabadoCogido;
+            if (
+                nombreEstant != 'CUERPO N2 CON PUERTA SUPERIOR' &&
+                nombreEstant != 'CUERPO N2 CON PUERTA INFERIOR' &&
+                nombreEstant != 'CUERPO N4 CON PUERTAS'
+            ) {
+                $('#botonCalculadoraEstanteria').css({ display: 'block' });
+            }
+        }
+        if (texto == 'Puerta') {
+            array[u]['acabado3'] = acabadoCogido;
+            array1[u + 1]['acabado3'] = acabadoCogido;
+            $('#botonCalculadoraEstanteria').css({ display: 'block' });
+        }
+        this.estanteria = array;
+        this.estanteriaCogida = array1;
         $('#estanteria' + u + ' #inputAcabado' + texto).empty();
         $('#estanteria' + u + ' #inputAcabado' + texto).append('<img src="' + src + '" height="60px" border="0" width="120px" />');
         $('#estanteria' + u + ' #inputAcabado' + texto).append('<p style="margin-top:-40px">' + nombre + '</p>');
     }
 
+    public enviarCarritoEstanteria() {
+        var contador = 1;
+        var conta = 0;
+        var todo = [];
+        todo[1] = this.estanteriaCogida;
+        var ancho = $('#anchoEstant').text();
+        var altura = $('input:radio[name=altura]:checked').val();
+        const todoSumadoPrecio = $('#precioDimension').text();
+        for (let k = 1; k < sessionStorage.length; k++) {
+            if (sessionStorage['prod' + k] != null) {
+                contador++;
+            }
+        }
+        todo[1]['todoSumadoPrecio'] = todoSumadoPrecio;
+        todo[1]['ancho'] = ancho;
+        todo[1]['alto'] = altura;
+        var contadorProd = contador;
+        var contadorDimen = contador;
+        sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(todo));
+        $('#articulosEstanterias').empty();
+        $('#articulosEstanterias').css({ display: 'none' });
+        $('#botonCalculadoraEstanteria').css({ display: 'none' });
+        $('#estanteriaDiv').css({ display: 'none' });
+        $('#divEstant').css({ display: 'none' });
+        this.estanteria = [];
+        this.estanteriaCogida = [];
+        $("input[name=altura][value='0']").prop('checked', true);
+        for (let i = 1; i <= 100; i++) {
+            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+            if (sesion != null) {
+                this.productosDormitorioService.numeroCesta = i;
+            }
+        }
+    }
     public cargarAntesEstant() {
         var altura = this.alturaEstan;
         this.productosDormitorioService.categoria(28).subscribe(data => {
@@ -470,6 +571,12 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('.armariosDivTodo3').css({ display: 'none' });
         $('#calcuVesti').css({ display: 'none' });
         $('#modalesVesti').css({ display: 'none' });
+        $('#articulosEstanterias').css({ display: 'none' });
+        $('#articulosEstanterias').empty();
+        this.estanteria = [];
+        $('#divEstant').css({ display: 'none' });
+        $('#botonCalculadoraEstanteria').css({ display: 'none' });
+        $("input[name=altura][value='0']").prop('checked', true);
         $('#datos1').empty();
         $('#precioDimension').empty();
         $('#nombreMesita').empty();
@@ -1265,6 +1372,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     idProd != 220 &&
                     idProd != 221 &&
                     idProd != 222 &&
+                    idProd != 223 &&
                     idProd != 158 &&
                     idProd != 159 &&
                     idProd != 160 &&
@@ -1388,6 +1496,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 idProd != 220 &&
                 idProd != 221 &&
                 idProd != 222 &&
+                idProd != 223 &&
                 idProd != 158 &&
                 idProd != 159 &&
                 idProd != 160 &&
@@ -1440,7 +1549,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 idProd != 282 &&
                 idProd != 283 &&
                 idProd != 284 &&
-                idProd != 285
+                idProd != 285 &&
+                idProd != 229 &&
+                idProd != 5
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     for (let w = 0; w < data.body['length']; w++) {
@@ -1471,7 +1582,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 idProd == 2 ||
                                 idProd == 3 ||
                                 idProd == 4 ||
-                                idProd == 5 ||
                                 idProd == 6 ||
                                 idProd == 7 ||
                                 idProd == 8 ||
@@ -1479,8 +1589,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 idProd == 10 ||
                                 idProd == 11 ||
                                 idProd == 12 ||
-                                idProd == 13 ||
-                                idProd == 229
+                                idProd == 13
                             ) {
                                 $('#modalApoyo #apoyoModal' + w).empty();
                                 $('#modalApoyo #apoyoModal' + w).append(
@@ -6211,6 +6320,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var apoyos = [];
         this.posicionEstanteria = 0;
         var cont = 0;
+        this.precioBase = 0;
         this.armariosDormitorioComponent.loadAll();
         this.armariosDormitorioOcultaComponent.loadAll();
         this.armariosDormitorioVistaComponent.loadAll();

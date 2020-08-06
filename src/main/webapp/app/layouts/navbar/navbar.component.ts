@@ -500,7 +500,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                         var nombreArmario = sesion[1]['mensaje'];
                         var casco = sesion[1]['acabadoCasco']['nombre'];
-                        var trasera = sesion[1]['acabadoTrasera']['nombre'];
+                        if (sesion[1]['acabadoTrasera'] != undefined) {
+                            var trasera = sesion[1]['acabadoTrasera']['nombre'];
+                        }
                         var interiores = 'blanco';
 
                         $('#cuerpo' + i).append(
@@ -960,6 +962,345 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             $('#cuerpo' + i + ' #izquierda').append(
                                 '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 1;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
                                     interior1['nombre'] +
+                                    '.png">'
+                            );
+                        }
+                        if (nombreArmario == '2 CUERPO TIPO 1') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '2 CUERPO TIPO 2') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '2 CUERPO TIPO 3') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '3 CUERPO TIPO 1') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 213px;z-index: 6;margin-top: -57px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '3 CUERPO TIPO 2') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 213px;z-index: 6;margin-top: -57px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '3 CUERPO TIPO 3') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 213px;z-index: 6;margin-top: -57px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '4 CUERPO TIPO 1') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+                            var interior4 = sesion[1]['interiores'][3];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 350px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 213px;z-index: 6;margin-top: -57px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 328px;z-index: 5;margin-top: -81px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior4['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '4 CUERPO TIPO 2') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+                            var interior4 = sesion[1]['interiores'][3];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 350px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 213px;z-index: 6;margin-top: -57px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 328px;z-index: 5;margin-top: -81px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior4['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '4 CUERPO TIPO 3') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+                            var interior4 = sesion[1]['interiores'][3];
+
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 350px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 213px;z-index: 6;margin-top: -57px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 328px;z-index: 5;margin-top: -81px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior4['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '5 CUERPO TIPO 1') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+                            var interior4 = sesion[1]['interiores'][3];
+                            var interior5 = sesion[1]['interiores'][4];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 270px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 213px;z-index: 6;margin-top: -57px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 328px;z-index: 5;margin-top: -81px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior4['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 443px;z-index: 4;margin-top: -105px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    interior5['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '5 CUERPO TIPO 2') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+                            var interior4 = sesion[1]['interiores'][3];
+                            var interior5 = sesion[1]['interiores'][4];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 270px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 213px;z-index: 6;margin-top: -57px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 328px;z-index: 5;margin-top: -81px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior4['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 443px;z-index: 4;margin-top: -105px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                    interior5['nombre'] +
+                                    '.png">'
+                            );
+                        }
+
+                        if (nombreArmario == '5 CUERPO TIPO 3') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+                            var interior4 = sesion[1]['interiores'][3];
+                            var interior5 = sesion[1]['interiores'][4];
+
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 270px;margin-top: 110px;float: left;"></div>'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: -18px;z-index: 8;margin-top: -10px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 7;margin-top: -33px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 213px;z-index: 6;margin-top: -57px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 328px;z-index: 5;margin-top: -81px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior4['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 443px;z-index: 4;margin-top: -105px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                    interior5['nombre'] +
                                     '.png">'
                             );
                         }
@@ -8763,6 +9104,42 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (nombreArmario == '1 CUERPO TIPO 3') {
                             $('#textoCesta' + i).css({ 'margin-top': '20%' });
                         }
+                        if (nombreArmario == '2 CUERPO TIPO 1') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '2 CUERPO TIPO 2') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '2 CUERPO TIPO 3') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '3 CUERPO TIPO 1') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '3 CUERPO TIPO 2') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '3 CUERPO TIPO 3') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '4 CUERPO TIPO 1') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '4 CUERPO TIPO 2') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '4 CUERPO TIPO 3') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '5 CUERPO TIPO 1') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '5 CUERPO TIPO 2') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
+                        if (nombreArmario == '5 CUERPO TIPO 3') {
+                            $('#textoCesta' + i).css({ 'margin-top': '20%' });
+                        }
                         $('#textoCesta' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Ancho: ' +
                                 sesion[1]['ancho'] +
@@ -8815,11 +9192,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 sesion[1]['acabadoCasco']['nombre'] +
                                 '</p>'
                         );
-                        $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Trasera: ' +
-                                sesion[1]['acabadoTrasera']['nombre'] +
-                                '</p>'
-                        );
+                        if (sesion[1]['acabadoTrasera'] != undefined) {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Trasera: ' +
+                                    sesion[1]['acabadoTrasera']['nombre'] +
+                                    '</p>'
+                            );
+                        }
+
                         $('#textoCesta' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Interiores: ' +
                                 sesion[1]['acabadoInterior']['nombre'] +

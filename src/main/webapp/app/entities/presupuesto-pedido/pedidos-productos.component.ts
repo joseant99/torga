@@ -332,14 +332,18 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                         var datosInteriores = data.body;
                                         console.log(data.body);
                                         var casco = data.body[0]['presupuestoArmario']['acabadosCasco']['nombre'].toLowerCase();
-                                        var trasera = data.body[0]['presupuestoArmario']['acabados']['nombre'].toLowerCase();
+                                        if (data.body[0]['presupuestoArmario']['acabados'] != undefined) {
+                                            var trasera = data.body[0]['presupuestoArmario']['acabados']['nombre'].toLowerCase();
+                                        }
                                         var interiorAca = data.body[0]['presupuestoArmario']['acabadosInterior']['nombre'].toLowerCase();
                                         $('#datosMeter' + (cont - 1)).append(
                                             '<p>Acabado Casco: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + casco + '</p>'
                                         );
-                                        $('#datosMeter' + (cont - 1)).append(
-                                            '<p>Acabado trasera: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + trasera + '</p>'
-                                        );
+                                        if (data.body[0]['presupuestoArmario']['acabados'] != undefined) {
+                                            $('#datosMeter' + (cont - 1)).append(
+                                                '<p>Acabado trasera: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + trasera + '</p>'
+                                            );
+                                        }
                                         $('#datosMeter' + (cont - 1)).append(
                                             '<p>Acabado Interiores: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + interiorAca + '</p>'
                                         );
@@ -385,6 +389,352 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         ' pp</span></p>'
                                                 );
                                             }
+                                        }
+                                        if ('1 CUERPO TIPO 1' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('1 CUERPO TIPO 2' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('1 CUERPO TIPO 3' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('2 CUERPO TIPO 1' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('2 CUERPO TIPO 2' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('2 CUERPO TIPO 3' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('3 CUERPO TIPO 1' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:48;margin-left:190px;margin-top:-40px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('3 CUERPO TIPO 2' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:48;margin-left:190px;margin-top:-40px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('3 CUERPO TIPO 3' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:48;margin-left:190px;margin-top:-40px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('4 CUERPO TIPO 1' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:48;margin-left:190px;margin-top:-40px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:47;margin-left:285px;margin-top:-60px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('4 CUERPO TIPO 2' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:48;margin-left:190px;margin-top:-40px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:47;margin-left:285px;margin-top:-60px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('4 CUERPO TIPO 3' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:48;margin-left:190px;margin-top:-40px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:47;margin-left:285px;margin-top:-60px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('5 CUERPO TIPO 1' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:48;margin-left:190px;margin-top:-40px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:47;margin-left:285px;margin-top:-60px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[4]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:46;margin-left:380px;margin-top:-80px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('5 CUERPO TIPO 2' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:48;margin-left:190px;margin-top:-40px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:47;margin-left:285px;margin-top:-60px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[4]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:46;margin-left:380px;margin-top:-80px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                        }
+                                        if ('5 CUERPO TIPO 3' == nombre) {
+                                            var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:49;margin-left:95px;margin-top:-20px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:48;margin-left:190px;margin-top:-40px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+                                            var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:47;margin-left:285px;margin-top:-60px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
+
+                                            var nombreInt = datosInteriores[4]['productosDormitorio']['nombre'];
+                                            $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                            $('#imagen' + (cont - 1)).append(
+                                                '<img style="max-width: 400px;position: absolute;z-index:46;margin-left:380px;margin-top:-80px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/' +
+                                                    nombreInt +
+                                                    '.png">'
+                                            );
                                         }
 
                                         if ('3 PUERTAS IZQUIERDA' == nombre) {

@@ -252,7 +252,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
 
         for (let i = 0; i < todo[1]['interiores'].length; i++) {
             var precio = $('#calculadoraCarrito #productoCalculadora1 #precioInt' + i).text();
-            precio = precio.split(' ')[0];
+            precio = precio.split(' ')[1];
             todo[1]['interiores'][i]['precio'] = precio;
         }
 
@@ -329,7 +329,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         $('#nombreMesitaArma').css({ display: 'none' });
         $('#calcuVesti').css({ display: 'none' });
         $('#botonCalculadoraVestidor').css({ display: 'none' });
-        $('.armariosDivInputCodigo').css({ display: 'none' });
+        $('.vestidoresDivInputCodigo').css({ display: 'none' });
+        $('#inputCodigoVes').val('');
+        $('#inputCodigoVes').empty();
         $('.armariosDivTodo3').css({ display: 'none' });
         $('.armariosDivTodo3 #anchosSelect').text('');
         $('.armariosDivTodo3 #alturaSelect').text('');
@@ -842,6 +844,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         var alto = $('.armariosDivTodo3 #alturaSelect').val();
         var id = 0;
         var armariosTodos = this.armarioService.todo;
+        var codigo = $('#inputCodigoVes').val();
         var classe = $('#armariosCogidos' + id).attr('class');
         for (let j = 0; j < armariosTodos.length; j++) {
             if (armariosTodos[j]['id'] == classe) {
@@ -849,10 +852,11 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 armariosTodos[j]['ancho'] = ancho;
                 armariosTodos[j]['alto'] = alto;
                 armariosTodos[j]['fondo'] = 61;
+                armariosTodos[j]['codigo'] = codigo;
                 this.armarioCogido = armariosTodos[j];
             }
         }
-        var codigo = $('#inputCodigoVes').val();
+
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
         $('#armarioColorFondo1').css({ 'background-color': 'white' });
         $('#armarioColorFondo2').css({ 'background-color': 'white' });
@@ -1226,6 +1230,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 for (let j = 0; j < puertas; j++) {
                     array[j] = j;
                 }
+                $('#traseraVestidor').css({ display: 'none' });
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 1) {
@@ -1435,6 +1440,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 for (let j = 0; j < puertas; j++) {
                     array[j] = j;
                 }
+                $('#traseraVestidor').css({ display: 'none' });
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
@@ -1694,6 +1700,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 for (let j = 0; j < puertas; j++) {
                     array[j] = j;
                 }
+                $('#traseraVestidor').css({ display: 'none' });
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
@@ -2004,6 +2011,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 for (let j = 0; j < puertas; j++) {
                     array[j] = j;
                 }
+                $('#traseraVestidor').css({ display: 'none' });
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
@@ -2365,6 +2373,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 for (let j = 0; j < puertas; j++) {
                     array[j] = j;
                 }
+                $('#traseraVestidor').css({ display: 'none' });
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
 
@@ -4570,18 +4579,24 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             var quitar = this.gg;
             if (quitar == 1) {
                 var prec = $('#precioInt' + id).text();
-                prec = prec.split(' ')[0];
+                prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 120;
-                $('#precioInt' + id).text(precio + ' €');
+                $('#precioInt' + id).text('+ ' + precio + ' pp');
+                var precioTod = parseFloat($('#precioDimension').text());
+                precioTod = precioTod - 120;
+                $('#precioDimension').text(precioTod);
             }
             if (quitar == 2) {
                 this.gg = 2;
                 var prec = $('#precioInt' + id).text();
-                prec = prec.split(' ')[0];
+                prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 200;
-                $('#precioInt' + id).text(precio + ' €');
+                $('#precioInt' + id).text('+ ' + precio + ' pp');
+                var precioTod = parseFloat($('#precioDimension').text());
+                precioTod = precioTod - 200;
+                $('#precioDimension').text(precioTod);
             }
         }
 
@@ -4589,37 +4604,49 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             var quitar = this.gg;
             if (quitar == 2) {
                 var prec = $('#precioInt' + id).text();
-                prec = prec.split(' ')[0];
+                prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 200;
-                $('#precioInt' + id).text(precio + ' €');
+                $('#precioInt' + id).text('+ ' + precio + ' pp');
+                var precioTod = parseFloat($('#precioDimension').text());
+                precioTod = precioTod - 200;
+                $('#precioDimension').text(precioTod);
             }
             this.gg = 1;
             $('#precioLuz' + id + '2').css({ display: 'none' });
             $('#precioLuz' + id + '' + lol).css({ display: 'block' });
             var prec = $('#precioInt' + id).text();
-            prec = prec.split(' ')[0];
+            prec = prec.split(' ')[1];
             var precio = parseFloat(prec);
             precio = precio + 120;
-            $('#precioInt' + id).text(precio + ' €');
+            $('#precioInt' + id).text('+ ' + precio + ' pp');
+            var precioTod = parseFloat($('#precioDimension').text());
+            precioTod = precioTod + 120;
+            $('#precioDimension').text(precioTod);
         }
         if (lol == 2) {
             var quitar = this.gg;
             if (quitar == 1) {
                 var prec = $('#precioInt' + id).text();
-                prec = prec.split(' ')[0];
+                prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 120;
-                $('#precioInt' + id).text(precio + ' €');
+                $('#precioInt' + id).text('+ ' + precio + ' pp');
+                var precioTod = parseFloat($('#precioDimension').text());
+                precioTod = precioTod - 120;
+                $('#precioDimension').text(precioTod);
             }
             $('#precioLuz' + id + '1').css({ display: 'none' });
             $('#precioLuz' + id + '' + lol).css({ display: 'block' });
             this.gg = 2;
             var prec = $('#precioInt' + id).text();
-            prec = prec.split(' ')[0];
+            prec = prec.split(' ')[1];
             var precio = parseFloat(prec);
             precio = precio + 200;
-            $('#precioInt' + id).text(precio + ' €');
+            $('#precioInt' + id).text('+ ' + precio + ' pp');
+            var precioTod = parseFloat($('#precioDimension').text());
+            precioTod = precioTod + 200;
+            $('#precioDimension').text(precioTod);
         }
     }
 
@@ -7076,7 +7103,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         var trasera = $('#calcuVesti #inputAcabadoTrasera').val();
         var arrayPuertas = [];
         var contPuertas = 0;
-        if (casco != '' && trasera != '') {
+        if (casco != '') {
             $('#calcuVesti #interioresDiv').removeAttr('class');
             this.productosDormitorioService.categoria(24).subscribe(data => {
                 this.productosDormitorioModal = data.body;
