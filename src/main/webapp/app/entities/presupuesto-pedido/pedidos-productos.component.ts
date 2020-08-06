@@ -356,6 +356,75 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         datosInteriores[p]['presupuestoArmario']['cascoPrecio'] +
                                                         ' pp</span></p>'
                                                 );
+                                                if (data.body[0]['presupuestoArmario']['niveladores']['id'] != 25000) {
+                                                    $('#datosMeter' + (cont - 1)).append(
+                                                        '<p>Niveladores : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            data.body[0]['presupuestoArmario']['niveladores']['precio'] +
+                                                            '</p>'
+                                                    );
+                                                } else {
+                                                    $('#datosMeter' + (cont - 1)).append('<p>Niveladores : Sin niveladores</p>');
+                                                }
+                                                if (data.body[0]['presupuestoArmario']['cajeado']['id'] != 25000) {
+                                                    $('#datosMeter' + (cont - 1)).append(
+                                                        '<p>Cajeado : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            data.body[0]['presupuestoArmario']['cajeado']['precio'] +
+                                                            '</p>'
+                                                    );
+                                                    if (data.body[0]['presupuestoArmario']['medACaj'] != 0) {
+                                                        $('#datosMeter' + (cont - 1)).append(
+                                                            '<p>Medida A Cajeado : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                data.body[0]['presupuestoArmario']['medACaj'] +
+                                                                '</p>'
+                                                        );
+                                                    }
+                                                    if (data.body[0]['presupuestoArmario']['medBCaj'] != 0) {
+                                                        $('#datosMeter' + (cont - 1)).append(
+                                                            '<p>Medida B Cajeado : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                data.body[0]['presupuestoArmario']['medBCaj'] +
+                                                                '</p>'
+                                                        );
+                                                    }
+                                                    if (data.body[0]['presupuestoArmario']['medCCaj'] != 0) {
+                                                        $('#datosMeter' + (cont - 1)).append(
+                                                            '<p>Medida C Cajeado : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                data.body[0]['presupuestoArmario']['medCCaj'] +
+                                                                '</p>'
+                                                        );
+                                                    }
+                                                } else {
+                                                    $('#datosMeter' + (cont - 1)).append('<p>Cajeado : Sin Cajeado</p>');
+                                                }
+                                                if (data.body[0]['presupuestoArmario']['enmarcados']['id'] != 25000) {
+                                                    $('#datosMeter' + (cont - 1)).append(
+                                                        '<p>Enmarcados : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            data.body[0]['presupuestoArmario']['enmarcados']['precio'] +
+                                                            '</p>'
+                                                    );
+                                                    if (data.body[0]['presupuestoArmario']['medAEnm'] != 0) {
+                                                        $('#datosMeter' + (cont - 1)).append(
+                                                            '<p>Medida A enmarcados : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                data.body[0]['presupuestoArmario']['medAEnm'] +
+                                                                '</p>'
+                                                        );
+                                                    }
+                                                    if (data.body[0]['presupuestoArmario']['medBEnm'] != 0) {
+                                                        $('#datosMeter' + (cont - 1)).append(
+                                                            '<p>Medida B enmarcados : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                data.body[0]['presupuestoArmario']['medBEnm'] +
+                                                                '</p>'
+                                                        );
+                                                    }
+                                                    if (data.body[0]['presupuestoArmario']['medCEnm'] != 0) {
+                                                        $('#datosMeter' + (cont - 1)).append(
+                                                            '<p>Medida C enmarcados : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                data.body[0]['presupuestoArmario']['medCEnm'] +
+                                                                '</p>'
+                                                        );
+                                                    }
+                                                } else {
+                                                    $('#datosMeter' + (cont - 1)).append('<p>Enmarcados : Sin Enmarcados</p>');
+                                                }
                                                 $('#precioTotal' + (cont - 1)).text(
                                                     datosInteriores[p]['presupuestoArmario']['precioTotal']
                                                 );
