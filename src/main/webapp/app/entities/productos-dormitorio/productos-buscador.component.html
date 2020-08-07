@@ -157,15 +157,7 @@
 		<p style="text-align:center;margin-top:3%;"><button id="botonOkAnchos" style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.rinconDormitorioComponent.carcarCascosInterioresPuertas()">OK</button></p>
 		   
 		<h2 style="text-align:center;margin-top: 5%;margin-bottom: 5%;" id="textoTituloInterior"></h2>
-		<div *ngIf="this.rinconDormitorioComponent.todo != undefined" style="margin-left:25px;display:none">
-	    	<div *ngFor="let tabla of this.rinconDormitorioComponent.todo;let u=index" style="width:40%;float:left;border:1px solid #B5BABD;margin-right:50px;margin-bottom:50px" id="armarioColorFondo{{u}}">
-	    		<div style="margin-top:25px;margin-bottom:25px;">
-		    		<p style="text-align:center"><img (click)="this.rinconDormitorioComponent.carcarCascosInterioresPuertas()" (click)="quitarnone(1)" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  height="200px" width="500px" alt="productosDormitorio image"/></p>
-		    		<p style="text-align:center"><img (click)="this.rinconDormitorioComponent.carcarCascosInterioresPuertas()" (click)="quitarnone(1)" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.productosDormitorio.imagenContentType + ';base64,' + tabla.productosDormitorio.imagen" height="200px" width="500px" alt="productosDormitorio image"/></p>
-		    		<p id="textoMensajeArmario{{u}}" style="width:100%;text-align:center">{{tabla.mensaje}}</p>
-	    		</div>
-	    	</div>
-    	</div>
+		
     	
     	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario1">
     		
@@ -2536,7 +2528,7 @@
 					    			<div id="inputs" style="float:left;width:100%">
 					    				<span style="float:left;margin-top:15px" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.rinconDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalesRincon #modalAcabadosPuertas1"></div></a>
 					    				<div style="display:none;float: left;width: 100%;margin-top: 20px;" id="2acaPuerta{{u}}">
-					    					<span style="float:left;margin-top:15px;" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="guardarIdPuerta(u,interior)" data-target="#modalesRincon #modalAcabadosPuertas1"></div></a>
+					    					<span style="float:left;margin-top:15px;" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.rinconDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalesRincon #modalAcabadosPuertas1"></div></a>
 					    				</div>
 					    			</div>
 					    			
