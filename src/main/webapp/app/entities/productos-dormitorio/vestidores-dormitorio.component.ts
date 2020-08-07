@@ -141,6 +141,13 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
     segunWIDTH: any;
     saberAcabados: any;
     gg: any;
+    luz1: any;
+    luz2: any;
+    luz3: any;
+    luz4: any;
+    luz5: any;
+    luz6: any;
+    luz7: any;
     anchoMin: any;
     anchoMax: any;
     altoMin: any;
@@ -631,6 +638,14 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
         this.precioInterior3 = 0;
         this.precioInterior4 = 0;
         this.precioInterior5 = 0;
+        this.gg = 0;
+        this.luz1 = 0;
+        this.luz2 = 0;
+        this.luz3 = 0;
+        this.luz4 = 0;
+        this.luz5 = 0;
+        this.luz6 = 0;
+        this.luz7 = 0;
         this.saberPuerta = 0;
         this.interioresParaArray = [];
         this.puertasParaArray = [];
@@ -4575,28 +4590,81 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
     }
 
     public luzInteriores(id, lol) {
+        var precioDimen = parseFloat($('#precioDimension').text());
+
+        var todo = this.armarioCogido;
+        var saberCont = 0;
+        var meterInt;
+        meterInt = todo['interiores'][id];
+
+        if (id == 0) {
+            this.gg = this.luz1;
+        }
+        if (id == 1) {
+            this.gg = this.luz2;
+        }
+        if (id == 2) {
+            this.gg = this.luz3;
+        }
+        if (id == 3) {
+            this.gg = this.luz4;
+        }
+        if (id == 4) {
+            this.gg = this.luz5;
+        }
+        if (id == 5) {
+            this.gg = this.luz6;
+        }
+        if (id == 6) {
+            this.gg = this.luz7;
+        }
         if (lol == 0) {
             var quitar = this.gg;
+            this.gg = 0;
+            if (id == 0) {
+                this.luz1 = 0;
+            }
+            if (id == 1) {
+                this.luz2 = 0;
+            }
+            if (id == 2) {
+                this.luz3 = 0;
+            }
+            if (id == 3) {
+                this.luz4 = 0;
+            }
+            if (id == 4) {
+                this.luz5 = 0;
+            }
+            if (id == 5) {
+                this.luz6 = 0;
+            }
+            if (id == 6) {
+                this.luz7 = 0;
+            }
             if (quitar == 1) {
                 var prec = $('#precioInt' + id).text();
                 prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 120;
+                precioDimen = precioDimen - 120;
+                $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text('+ ' + precio + ' pp');
-                var precioTod = parseFloat($('#precioDimension').text());
-                precioTod = precioTod - 120;
-                $('#precioDimension').text(precioTod);
+                meterInt['luz'] = undefined;
+                meterInt['precioLuz'] = undefined;
+                $('#precioLuz' + id + '1').css({ display: 'none' });
             }
             if (quitar == 2) {
-                this.gg = 2;
                 var prec = $('#precioInt' + id).text();
                 prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 200;
+                precioDimen = precioDimen - 200;
+                $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text('+ ' + precio + ' pp');
-                var precioTod = parseFloat($('#precioDimension').text());
-                precioTod = precioTod - 200;
-                $('#precioDimension').text(precioTod);
+                meterInt['luz'] = undefined;
+                meterInt['precioLuz'] = undefined;
+                $('#precioLuz' + id + '2').css({ display: 'none' });
             }
         }
 
@@ -4607,22 +4675,48 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 200;
+                precioDimen = precioDimen - 200;
+                $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text('+ ' + precio + ' pp');
-                var precioTod = parseFloat($('#precioDimension').text());
-                precioTod = precioTod - 200;
-                $('#precioDimension').text(precioTod);
+                $('#precioLuz' + id + '2').css({ display: 'none' });
+                meterInt['luz'] = undefined;
+                meterInt['precioLuz'] = undefined;
+            }
+            if (this.gg != 1) {
+                precioDimen = precioDimen + 120;
+                $('#precioDimension').text(precioDimen);
+                $('#precioLuz' + id + '2').css({ display: 'none' });
+                $('#precioLuz' + id + '' + lol).css({ display: 'block' });
+                var prec = $('#precioInt' + id).text();
+                prec = prec.split(' ')[1];
+                var precio = parseFloat(prec);
+                precio = precio + 120;
+                $('#precioInt' + id).text('+ ' + precio + ' pp');
+                meterInt['luz'] = 'Iluminacion izq';
+                meterInt['precioLuz'] = '120';
             }
             this.gg = 1;
-            $('#precioLuz' + id + '2').css({ display: 'none' });
-            $('#precioLuz' + id + '' + lol).css({ display: 'block' });
-            var prec = $('#precioInt' + id).text();
-            prec = prec.split(' ')[1];
-            var precio = parseFloat(prec);
-            precio = precio + 120;
-            $('#precioInt' + id).text('+ ' + precio + ' pp');
-            var precioTod = parseFloat($('#precioDimension').text());
-            precioTod = precioTod + 120;
-            $('#precioDimension').text(precioTod);
+            if (id == 0) {
+                this.luz1 = 1;
+            }
+            if (id == 1) {
+                this.luz2 = 1;
+            }
+            if (id == 2) {
+                this.luz3 = 1;
+            }
+            if (id == 3) {
+                this.luz4 = 1;
+            }
+            if (id == 4) {
+                this.luz5 = 1;
+            }
+            if (id == 5) {
+                this.luz6 = 1;
+            }
+            if (id == 6) {
+                this.luz7 = 1;
+            }
         }
         if (lol == 2) {
             var quitar = this.gg;
@@ -4631,23 +4725,52 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 prec = prec.split(' ')[1];
                 var precio = parseFloat(prec);
                 precio = precio - 120;
+                precioDimen = precioDimen - 120;
+                $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text('+ ' + precio + ' pp');
-                var precioTod = parseFloat($('#precioDimension').text());
-                precioTod = precioTod - 120;
-                $('#precioDimension').text(precioTod);
+                $('#precioLuz' + id + '1').css({ display: 'none' });
+                meterInt['luz'] = undefined;
+                meterInt['precioLuz'] = undefined;
             }
             $('#precioLuz' + id + '1').css({ display: 'none' });
             $('#precioLuz' + id + '' + lol).css({ display: 'block' });
+            if (this.gg != 2) {
+                precioDimen = precioDimen + 200;
+                $('#precioDimension').text(precioDimen);
+                var prec = $('#precioInt' + id).text();
+                prec = prec.split(' ')[1];
+                var precio = parseFloat(prec);
+                precio = precio + 200;
+                $('#precioInt' + id).text('+ ' + precio + ' pp');
+                meterInt['luz'] = 'Iluminacion izq';
+                meterInt['precioLuz'] = '200';
+            }
             this.gg = 2;
-            var prec = $('#precioInt' + id).text();
-            prec = prec.split(' ')[1];
-            var precio = parseFloat(prec);
-            precio = precio + 200;
-            $('#precioInt' + id).text('+ ' + precio + ' pp');
-            var precioTod = parseFloat($('#precioDimension').text());
-            precioTod = precioTod + 200;
-            $('#precioDimension').text(precioTod);
+            if (id == 0) {
+                this.luz1 = 2;
+            }
+            if (id == 1) {
+                this.luz2 = 2;
+            }
+            if (id == 2) {
+                this.luz3 = 2;
+            }
+            if (id == 3) {
+                this.luz4 = 2;
+            }
+            if (id == 4) {
+                this.luz5 = 2;
+            }
+            if (id == 5) {
+                this.luz6 = 2;
+            }
+            if (id == 6) {
+                this.luz7 = 2;
+            }
         }
+
+        todo['interiores'][id] = meterInt;
+        this.armarioCogido = todo;
     }
 
     public pintarInteriores(nombre) {

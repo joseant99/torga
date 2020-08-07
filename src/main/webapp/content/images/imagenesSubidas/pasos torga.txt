@@ -1,0 +1,6 @@
+
+1 - Crear la máquina t2.medium
+2 - Instalar docker y docker compose
+3 - Subir proyecto con WinSCP o con GIT 
+4 - Seguir la guia
+5 - Cambiar las inbound rules

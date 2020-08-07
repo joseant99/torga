@@ -24,6 +24,7 @@
 		    		</div>
 		    		
 		    	</div>
+		    	
 		    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo === null">
 		    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.tiposApoyo.productoApoyo?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.tiposApoyo?.precio}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
 		    		<p>Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.ancho}}</p>
@@ -31,6 +32,7 @@
 		    		<p>Fondo &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.fondo}}</p>
 		    	</div>
 		    </div>
+		    <div style="float:right;width:25%;text-align:center;display:none;position: absolute;right: 0;margin-top: 24.8%;" id="datosAnadirEstanteria"></div>
 	    </div>
     <hr id="idLineaDiv" style="width:100%;background-color:black;float:left;height:0px"></hr>
   	 <div style="float:left;width:100%"></div>

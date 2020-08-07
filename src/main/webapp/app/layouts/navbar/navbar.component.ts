@@ -290,8 +290,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     for (let i = 1; i < 100; i++) {
                         todoCarr = JSON.parse(sessionStorage.getItem('prod' + i));
                         if (todoCarr != undefined) {
-                            prodCarr[contProd] = todoCarr;
-                            contProd++;
+                            if (todoCarr[1].length == undefined) {
+                                prodCarr[contProd] = todoCarr;
+                                contProd++;
+                            } else {
+                                for (let v = 0; v < todoCarr[1].length; v++) {
+                                    var arrayAux = [];
+                                    arrayAux[1] = todoCarr[1][v];
+                                    prodCarr[contProd] = arrayAux;
+                                    contProd++;
+                                }
+                            }
                         }
                     }
 
@@ -9212,17 +9221,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '</p>'
                             );
                         }
-
-                        for (let w = 0; w < sesion[1]['interiores']['length']; w++) {
-                            $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Interior ' +
-                                    (w + 1) +
-                                    ': ' +
-                                    sesion[1]['interiores'][w]['nombre'] +
-                                    '<i style="float:right;margin-right:40%">+ ' +
-                                    sesion[1]['interiores'][w]['precio'] +
-                                    ' pp</i></p>'
-                            );
+                        if (sesion[1]['interiores'] != undefined) {
+                            for (let w = 0; w < sesion[1]['interiores']['length']; w++) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Interior ' +
+                                        (w + 1) +
+                                        ': ' +
+                                        sesion[1]['interiores'][w]['nombre'] +
+                                        '<i style="float:right;margin-right:40%">+ ' +
+                                        sesion[1]['interiores'][w]['precio'] +
+                                        ' pp</i></p>'
+                                );
+                            }
                         }
                         if (sesion[1]['puertas'] != undefined) {
                             for (let w = 0; w < sesion[1]['puertas']['length']; w++) {
@@ -10135,6 +10145,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         '</span> PP </i></p>'
                                 );
                             }
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' + sesion[1]['texto'] + '</p>'
+                            );
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><a download href="../../../content/images/imagenesSubidas/' +
+                                    sesion[1]['imagen'] +
+                                    '">Descargar Archivo</a></p>'
+                            );
 
                             var precioTotalCesta;
                             precioTotalCesta = $('#cestaTotal').text();
@@ -10871,27 +10889,39 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     }
                 }
                 presupuestoArmario['id'] = idArmario;
-
-                for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
+                if (prodCarr[m][1]['interiores'] != undefined) {
+                    for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
+                        var interiores;
+                        for (let ve = 0; ve <= 10000500; ve++) {
+                            if (ve == 10000500) {
+                                if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
+                                    interiores = {
+                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                        orden: x
+                                    };
+                                } else {
+                                    interiores = {
+                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                        orden: x,
+                                        mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
+                                    };
+                                }
+                                this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                            }
+                        }
+                    }
+                } else {
                     var interiores;
                     for (let ve = 0; ve <= 10000500; ve++) {
                         if (ve == 10000500) {
-                            if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
-                                interiores = {
-                                    precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                    presupuestoArmario: presupuestoArmario,
-                                    productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                    orden: x
-                                };
-                            } else {
-                                interiores = {
-                                    precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                    presupuestoArmario: presupuestoArmario,
-                                    productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                    orden: x,
-                                    mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
-                                };
-                            }
+                            interiores = {
+                                presupuestoArmario: presupuestoArmario
+                            };
+
                             this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
                         }
                     }

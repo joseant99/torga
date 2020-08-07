@@ -143,6 +143,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     segunWIDTH: any;
     saberAcabados: any;
     gg: any;
+    luz1: any;
+    luz2: any;
+    luz3: any;
+    luz4: any;
+    luz5: any;
+    luz6: any;
+    luz7: any;
     niveladoresPrecio: any;
     cajeadoPrecio: any;
     enmarcadosPrecio: any;
@@ -627,6 +634,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         this.precioInterior3 = 0;
         this.precioInterior4 = 0;
         this.gg = 0;
+        this.luz1 = 0;
+        this.luz2 = 0;
+        this.luz3 = 0;
+        this.luz4 = 0;
+        this.luz5 = 0;
+        this.luz6 = 0;
+        this.luz7 = 0;
         this.precioInterior5 = 0;
         this.niveladoresPrecio = 0;
         this.iva = JSON.parse(sessionStorage.getItem('IVA'));
@@ -4040,9 +4054,51 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var meterInt;
         meterInt = todo['interiores'][id];
 
+        if (id == 0) {
+            this.gg = this.luz1;
+        }
+        if (id == 1) {
+            this.gg = this.luz2;
+        }
+        if (id == 2) {
+            this.gg = this.luz3;
+        }
+        if (id == 3) {
+            this.gg = this.luz4;
+        }
+        if (id == 4) {
+            this.gg = this.luz5;
+        }
+        if (id == 5) {
+            this.gg = this.luz6;
+        }
+        if (id == 6) {
+            this.gg = this.luz7;
+        }
         if (lol == 0) {
             var quitar = this.gg;
             this.gg = 0;
+            if (id == 0) {
+                this.luz1 = 0;
+            }
+            if (id == 1) {
+                this.luz2 = 0;
+            }
+            if (id == 2) {
+                this.luz3 = 0;
+            }
+            if (id == 3) {
+                this.luz4 = 0;
+            }
+            if (id == 4) {
+                this.luz5 = 0;
+            }
+            if (id == 5) {
+                this.luz6 = 0;
+            }
+            if (id == 6) {
+                this.luz7 = 0;
+            }
             if (quitar == 1) {
                 var prec = $('#precioInt' + id).text();
                 prec = prec.split(' ')[1];
@@ -4097,6 +4153,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 meterInt['precioLuz'] = '120';
             }
             this.gg = 1;
+            if (id == 0) {
+                this.luz1 = 1;
+            }
+            if (id == 1) {
+                this.luz2 = 1;
+            }
+            if (id == 2) {
+                this.luz3 = 1;
+            }
+            if (id == 3) {
+                this.luz4 = 1;
+            }
+            if (id == 4) {
+                this.luz5 = 1;
+            }
+            if (id == 5) {
+                this.luz6 = 1;
+            }
+            if (id == 6) {
+                this.luz7 = 1;
+            }
         }
         if (lol == 2) {
             var quitar = this.gg;
@@ -4126,6 +4203,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 meterInt['precioLuz'] = '200';
             }
             this.gg = 2;
+            if (id == 0) {
+                this.luz1 = 2;
+            }
+            if (id == 1) {
+                this.luz2 = 2;
+            }
+            if (id == 2) {
+                this.luz3 = 2;
+            }
+            if (id == 3) {
+                this.luz4 = 2;
+            }
+            if (id == 4) {
+                this.luz5 = 2;
+            }
+            if (id == 5) {
+                this.luz6 = 2;
+            }
+            if (id == 6) {
+                this.luz7 = 2;
+            }
         }
 
         todo['interiores'][id] = meterInt;

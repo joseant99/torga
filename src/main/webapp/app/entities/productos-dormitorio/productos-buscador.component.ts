@@ -23,6 +23,7 @@ import { IProductosPresupuestoPedidos } from 'app/shared/model/productos-presupu
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { ProductosDormitorioService } from './productos-dormitorio.service';
 import { ArmariosDormitorioComponent } from './armarios-dormitorio.component';
+import { RinconDormitorioComponent } from './rincon-dormitorio.component';
 import { VestidoresDormitorioComponent } from './vestidores-dormitorio.component';
 import { ArmariosDormitorioOcultaComponent } from './armarios-dormitorio-oculta.component';
 import { ArmariosDormitorioVistaComponent } from './armarios-dormitorio-vista.component';
@@ -47,6 +48,7 @@ import { HttpEventType } from '@angular/common/http';
         ArmariosDormitorioComponent,
         ArmariosDormitorioOcultaComponent,
         ArmariosDormitorioVistaComponent,
+        RinconDormitorioComponent,
         VestidoresDormitorioComponent
     ],
     selector: 'jhi-productos-dormitorio',
@@ -165,6 +167,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         protected eventManager: JhiEventManager,
         private loginService: LoginService,
         public armariosDormitorioComponent: ArmariosDormitorioComponent,
+        public rinconDormitorioComponent: RinconDormitorioComponent,
         public armariosDormitorioOcultaComponent: ArmariosDormitorioOcultaComponent,
         public armariosDormitorioVistaComponent: ArmariosDormitorioVistaComponent,
         public vestidoresDormitorioComponent: VestidoresDormitorioComponent,
@@ -225,8 +228,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 if (i === long) {
                     if (event.type === HttpEventType.UploadProgress) {
                         this.progressFactura.percentage = Math.round((100 * event.loaded) / event.total);
-                    } else if (event instanceof HttpResponse) {
-                        console.log('File is completely uploaded!');
                     }
                 }
             });
@@ -281,6 +282,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         } else {
             $('#inputSi').css({ display: 'none' });
             this.mostrarTextoSINO = 2;
+            $('#botonEnviarEspecial').css({ display: 'block' });
+            $('#nombreMesita').text('Articulo especial');
         }
     }
 
@@ -292,6 +295,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     }
 
     public enviarCarritoEspecial() {
+        this.progressExcel.percentage = 0;
+
+        this.currentFileUploadExcel = this.selectedFilesExcel.item(0);
+
         var nombre = this.currentFileUploadExcel['name'];
         var textarticulo = $('#textArticulo').val();
         var valor;
@@ -317,6 +324,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         prod[1]['imagen'] = nombre;
         prod[1]['especial'] = 0;
         sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
+
+        this.vistaadminService.pushFileToStorageExcel(this.currentFileUploadExcel).subscribe(event => {});
+
+        this.selectedFilesExcel = undefined;
     }
 
     public escogidaEstanteria(estant) {
@@ -507,9 +518,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 contador++;
             }
         }
-        todo[1]['todoSumadoPrecio'] = todoSumadoPrecio;
-        todo[1]['ancho'] = ancho;
-        todo[1]['alto'] = altura;
+        todo[1][0]['todoSumadoPrecio'] = todoSumadoPrecio;
+        todo[1][0]['anchoTotal'] = ancho;
+        todo[1][0]['altoTotal'] = altura;
         var contadorProd = contador;
         var contadorDimen = contador;
         sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(todo));
@@ -518,6 +529,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#botonCalculadoraEstanteria').css({ display: 'none' });
         $('#estanteriaDiv').css({ display: 'none' });
         $('#divEstant').css({ display: 'none' });
+        $('#ppCalculadora').css({ display: 'none' });
+        $('#nombreMesita').empty();
         this.estanteria = [];
         this.estanteriaCogida = [];
         $("input[name=altura][value='0']").prop('checked', true);
@@ -611,6 +624,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#calcuBatientes #niveladoresCalcu').css({ display: 'none' });
         $('#nombreMesitaArma').css({ display: 'none' });
         $('#imagenAcabadoPrincipal').css({ display: 'none' });
+        $('.armariosRinconDivInputCodigo').css({ display: 'none' });
         $('#ppCalculadora').css({ display: 'block' });
         if (id == 0) {
             $('#inputBusca').css({ display: 'block' });
@@ -650,6 +664,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
         if (id == 6) {
             $('#articulosEspeciales').css({ display: 'block' });
+        }
+        if (id == 7) {
+            $('.armariosRinconDivInputCodigo').css({ display: 'block' });
+            $('#calcuRincon').css({ display: 'block' });
+            $('#modalesRincon').css({ display: 'block' });
         }
     }
 
@@ -6075,70 +6094,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             if (sesion != null) {
                 this.productosDormitorioService.numeroCesta = i;
                 console.log(sessionStorage);
-                $('#productoCarrito' + i).removeAttr('style');
-                $('#productoCarrito' + i).attr('style');
-                $('#productoCarrito' + i).css({ float: 'left' });
-                $('#productoCarrito' + i).attr('class', 'prod' + i);
-                $('#productoCarrito' + i + ' #datos' + i).append(
-                    '<strong id="nombreProd' + i + '"><font>' + sesion[1]['productosDormitorio']['nombre'] + '</font></strong>'
-                );
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<font>Ancho</font>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<font id="ancho' + i + '">' + sesion[1]['ancho'] + '</font>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<font>Alto</font>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<font id="alto' + i + '">' + sesion[1]['alto'] + '</font>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<font>Fondo</font>');
-                $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<font id="fondo' + i + '">' + sesion[1]['fondo'] + '</font>');
-                $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                for (let j = 1; j < 100; j++) {
-                    if (sesion[1]['acabado' + j] != undefined) {
-                        $('#productoCarrito' + i + ' #datos' + i).append('<font>Acabado ' + j + '</font>');
-                        $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                        $('#productoCarrito' + i + ' #precios' + i).append(
-                            '<font id="acabado' + i + '' + j + '">' + sesion[1]['acabado' + j]['nombre'] + '</font>'
-                        );
-                        $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>-</font>');
-                        $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                    }
-                }
-                if (sesion[1]['apoyo'] != undefined) {
-                    $('#productoCarrito' + i + ' #datos' + i).append('<font>' + sesion[1]['apoyo']['productoApoyo']['nombre'] + '</font>');
-                    $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precios' + i).append(
-                        '<font id="sistemaApoyo' + i + '" class="' + sesion[1]['apoyo']['id'] + '">-</font>'
-                    );
-                    $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<font>' + sesion[1]['apoyo']['precio'] + '&euro;</font>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                }
-                if (sesion[1]['iluminacion'] != undefined) {
-                    $('#productoCarrito' + i + ' #datos' + i).append('<font>Iluminacion</font>');
-                    $('#productoCarrito' + i + ' #datos' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precios' + i).append(
-                        '<font id="iluminacionCarr' + i + '" class="' + sesion[1]['iluminacion']['id'] + '">-</font>'
-                    );
-                    $('#productoCarrito' + i + ' #precios' + i).append('<br>');
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append(
-                        '<font>' + sesion[1]['iluminacion']['precio'] + '&euro;</font>'
-                    );
-                    $('#productoCarrito' + i + ' #precioCalculado' + i).append('<br>');
-                }
             }
         }
         this.borrarProdCalculadora();
@@ -6323,6 +6278,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         this.precioBase = 0;
         this.armariosDormitorioComponent.loadAll();
         this.armariosDormitorioOcultaComponent.loadAll();
+        this.rinconDormitorioComponent.loadAll();
         this.armariosDormitorioVistaComponent.loadAll();
         this.vestidoresDormitorioComponent.loadAll();
         $('#productosPrincipal').append('<datalist id="listaAnchos"></datalist>');
@@ -6343,6 +6299,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             }
             if (i >= 100) {
                 $('#listaArmarios').append('<option value="NB' + i + '">NB' + i + '</option>');
+            }
+        }
+
+        $('#productosPrincipal').append('<datalist id="listaArmariosRincon"></datalist>');
+        for (let i = 277; i < 325; i++) {
+            if (i >= 100) {
+                $('#listaArmariosRincon').append('<option value="NB' + i + '">NB' + i + '</option>');
             }
         }
 

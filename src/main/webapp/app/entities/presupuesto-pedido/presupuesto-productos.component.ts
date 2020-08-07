@@ -9110,7 +9110,10 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 var acaComprobar = 0;
 
                 for (let w = 0; w < productos.length; w++) {
-                    if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
+                    if (
+                        productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9 &&
+                        productos[w]['productosDormitorio']['categoriasDormi']['id'] != 28
+                    ) {
                         this.acabadosProductosPresupuestoPedidoService.query1(productos[w]['id']).subscribe(data => {
                             var res = data;
                             acaComprobar = 0;
@@ -9142,583 +9145,580 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                         var contador = 1;
                                         apoyo = undefined;
                                         for (let k = 0; k < acabados.length; k++) {
-                                            if (productos[i]['id'] == acabados[k]['productosPresupuestoPedidos']['id']) {
-                                                $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p >Acabado ' +
-                                                        contador +
-                                                        '&nbsp;&nbsp;&nbsp; <span class="acabado' +
-                                                        contador +
-                                                        '">' +
-                                                        acabados[k]['acabados']['nombre'] +
-                                                        '</span></p>'
-                                                );
-                                                var prodNombre =
-                                                    acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
-                                                var idProdNombre = acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['id'];
+                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                '<p >Acabado ' +
+                                                    contador +
+                                                    '&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                    contador +
+                                                    '">' +
+                                                    acabados[k]['acabados']['nombre'] +
+                                                    '</span></p>'
+                                            );
+                                            var prodNombre = acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
+                                            var idProdNombre = acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['id'];
 
-                                                var nombreCargarImagen;
-                                                if (idProdNombre == 277) {
-                                                    nombreCargarImagen = 'NT007_NT022';
-                                                }
-                                                if (idProdNombre == 275) {
-                                                    nombreCargarImagen = 'NT001_NT004';
-                                                }
-                                                if (idProdNombre == 276) {
-                                                    nombreCargarImagen = 'NT005_NT006';
-                                                }
-                                                if (idProdNombre == 278) {
-                                                    nombreCargarImagen = 'NT023_NT038';
-                                                }
-                                                if (idProdNombre == 279) {
-                                                    nombreCargarImagen = 'NT039_NT054';
-                                                }
-                                                if (idProdNombre == 280) {
-                                                    nombreCargarImagen = 'NT055_NT070';
-                                                }
-                                                if (idProdNombre == 281) {
-                                                    nombreCargarImagen = 'NT071_NT078';
-                                                }
-                                                if (idProdNombre == 246) {
-                                                    nombreCargarImagen = 'NT079_NT094';
-                                                }
-                                                if (idProdNombre == 282) {
-                                                    nombreCargarImagen = 'NT095_NT110';
-                                                }
-                                                if (idProdNombre == 247) {
-                                                    nombreCargarImagen = 'NT111_NT115';
-                                                }
-                                                if (idProdNombre == 249) {
-                                                    nombreCargarImagen = 'NT116_NT123';
-                                                }
-                                                if (idProdNombre == 250) {
-                                                    nombreCargarImagen = 'NT116_NT123';
-                                                }
-                                                if (idProdNombre == 248) {
-                                                    nombreCargarImagen = 'NT124_NT143';
-                                                }
-                                                if (idProdNombre == 251) {
-                                                    nombreCargarImagen = 'NT144_NT148';
-                                                }
-                                                if (idProdNombre == 253) {
-                                                    nombreCargarImagen = 'NT149_NT156';
-                                                }
-                                                if (idProdNombre == 254) {
-                                                    nombreCargarImagen = 'NT149_NT156';
-                                                }
-                                                if (idProdNombre == 252) {
-                                                    nombreCargarImagen = 'NT157_NT176';
-                                                }
-                                                if (idProdNombre == 255) {
-                                                    nombreCargarImagen = 'NT177_NT181';
-                                                }
-                                                if (idProdNombre == 257) {
-                                                    nombreCargarImagen = 'NT182_NT189';
-                                                }
-                                                if (idProdNombre == 258) {
-                                                    nombreCargarImagen = 'NT182_NT189';
-                                                }
-                                                if (idProdNombre == 256) {
-                                                    nombreCargarImagen = 'NT190_NT209';
-                                                }
-                                                if (idProdNombre == 259) {
-                                                    nombreCargarImagen = 'NT210_NT211';
-                                                }
-                                                if (idProdNombre == 261) {
-                                                    nombreCargarImagen = 'NT212_NT219';
-                                                }
-                                                if (idProdNombre == 262) {
-                                                    nombreCargarImagen = 'NT212_NT219';
-                                                }
-                                                if (idProdNombre == 260) {
-                                                    nombreCargarImagen = 'NT220_NT227';
-                                                }
-
-                                                if (idProdNombre == 263) {
-                                                    nombreCargarImagen = 'NT228_NT229';
-                                                }
-                                                if (idProdNombre == 266) {
-                                                    nombreCargarImagen = 'NT230_NT237';
-                                                }
-                                                if (idProdNombre == 265) {
-                                                    nombreCargarImagen = 'NT230_NT237';
-                                                }
-                                                if (idProdNombre == 264) {
-                                                    nombreCargarImagen = 'NT238_NT245';
-                                                }
-
-                                                if (idProdNombre == 271) {
-                                                    nombreCargarImagen = 'NT246_NT250';
-                                                }
-                                                if (idProdNombre == 274) {
-                                                    nombreCargarImagen = 'NT251_NT258';
-                                                }
-                                                if (idProdNombre == 273) {
-                                                    nombreCargarImagen = 'NT251_NT258';
-                                                }
-                                                if (idProdNombre == 272) {
-                                                    nombreCargarImagen = 'NT259_NT278';
-                                                }
-
-                                                if (idProdNombre == 267) {
-                                                    nombreCargarImagen = 'NT279_NT280';
-                                                }
-                                                if (idProdNombre == 269) {
-                                                    nombreCargarImagen = 'NT281_NT288';
-                                                }
-                                                if (idProdNombre == 270) {
-                                                    nombreCargarImagen = 'NT281_NT288';
-                                                }
-                                                if (idProdNombre == 268) {
-                                                    nombreCargarImagen = 'NT289_NT296';
-                                                }
-
-                                                if (idProdNombre == 283) {
-                                                    nombreCargarImagen = 'NT297_NT314';
-                                                }
-                                                if (idProdNombre == 284) {
-                                                    nombreCargarImagen = 'NT315_NT332';
-                                                }
-                                                if (idProdNombre == 285) {
-                                                    nombreCargarImagen = 'NT333_NT350';
-                                                }
-                                                if (idProdNombre == 1) {
-                                                    nombreCargarImagen = 'NX009_NX012';
-                                                }
-                                                if (idProdNombre == 2) {
-                                                    nombreCargarImagen = 'NX009_NX012';
-                                                }
-                                                if (idProdNombre == 3) {
-                                                    nombreCargarImagen = 'NX009_NX012';
-                                                }
-                                                if (idProdNombre == 4) {
-                                                    nombreCargarImagen = 'NX013_NX016';
-                                                }
-                                                if (idProdNombre == 5) {
-                                                    nombreCargarImagen = 'NX017_NX020';
-                                                }
-                                                if (idProdNombre == 6) {
-                                                    nombreCargarImagen = 'NX021_NX024';
-                                                }
-                                                if (idProdNombre == 7) {
-                                                    nombreCargarImagen = 'NX025_NX028';
-                                                }
-                                                if (idProdNombre == 8) {
-                                                    nombreCargarImagen = 'NX029_NX032';
-                                                }
-                                                if (idProdNombre == 9) {
-                                                    nombreCargarImagen = 'NX033_NX036';
-                                                }
-                                                if (idProdNombre == 10) {
-                                                    nombreCargarImagen = 'NX037_NX040';
-                                                }
-                                                if (idProdNombre == 11) {
-                                                    nombreCargarImagen = 'NX041_NX044';
-                                                }
-                                                if (idProdNombre == 12) {
-                                                    nombreCargarImagen = 'NX045_NX048';
-                                                }
-                                                if (idProdNombre == 13) {
-                                                    nombreCargarImagen = 'NX049_NX052';
-                                                }
-                                                if (idProdNombre == 229) {
-                                                    nombreCargarImagen = 'NX053';
-                                                }
-                                                if (idProdNombre == 239) {
-                                                    nombreCargarImagen = 'NX058_NX061';
-                                                }
-                                                if (idProdNombre == 240) {
-                                                    nombreCargarImagen = 'NX062_NX065';
-                                                }
-                                                if (idProdNombre == 241) {
-                                                    nombreCargarImagen = 'NX066_NX069';
-                                                }
-                                                if (idProdNombre == 107) {
-                                                    nombreCargarImagen = 'NH001-NH006';
-                                                }
-                                                if (idProdNombre == 108) {
-                                                    nombreCargarImagen = 'NH011-NH014';
-                                                }
-                                                if (idProdNombre == 109) {
-                                                    nombreCargarImagen = 'NH015-NH016';
-                                                }
-
-                                                if (idProdNombre == 295) {
-                                                    nombreCargarImagen = 'NH017-NH018';
-                                                }
-                                                if (idProdNombre == 296) {
-                                                    nombreCargarImagen = 'NH019-NH020';
-                                                }
-                                                if (idProdNombre == 111) {
-                                                    nombreCargarImagen = 'NH021-NH024';
-                                                }
-                                                if (idProdNombre == 110) {
-                                                    nombreCargarImagen = 'NH025_NH028';
-                                                }
-                                                if (idProdNombre == 113) {
-                                                    nombreCargarImagen = 'NH029_NH032';
-                                                }
-                                                if (idProdNombre == 112) {
-                                                    nombreCargarImagen = 'NH033_NH036';
-                                                }
-                                                if (idProdNombre == 114) {
-                                                    nombreCargarImagen = 'NH037_NH041';
-                                                }
-                                                if (idProdNombre == 116) {
-                                                    nombreCargarImagen = 'NH042_NH045';
-                                                }
-                                                if (idProdNombre == 115) {
-                                                    nombreCargarImagen = 'NH046_NH049';
-                                                }
-                                                if (idProdNombre == 298) {
-                                                    nombreCargarImagen = 'NH050_NH051';
-                                                }
-                                                if (idProdNombre == 297) {
-                                                    nombreCargarImagen = 'NH052_NH053';
-                                                }
-                                                if (idProdNombre == 118) {
-                                                    nombreCargarImagen = 'NH054_NH057';
-                                                }
-                                                if (idProdNombre == 117) {
-                                                    nombreCargarImagen = 'NH058_NH061';
-                                                }
-                                                if (idProdNombre == 119) {
-                                                    nombreCargarImagen = 'NH062_NH066';
-                                                }
-                                                if (idProdNombre == 299) {
-                                                    nombreCargarImagen = 'NH067_NH069';
-                                                }
-                                                if (idProdNombre == 301) {
-                                                    nombreCargarImagen = 'NH070_NH071';
-                                                }
-                                                if (idProdNombre == 300) {
-                                                    nombreCargarImagen = 'NH072_NH073';
-                                                }
-                                                if (idProdNombre == 302) {
-                                                    nombreCargarImagen = 'NH074_NH077';
-                                                }
-                                                if (idProdNombre == 334) {
-                                                    nombreCargarImagen = 'NH078_NH079';
-                                                }
-                                                if (idProdNombre == 303) {
-                                                    nombreCargarImagen = 'NH080_NH081';
-                                                }
-                                                if (idProdNombre == 14) {
-                                                    nombreCargarImagen = 'NH082_NH083';
-                                                }
-                                                if (idProdNombre == 304) {
-                                                    nombreCargarImagen = 'NH084';
-                                                }
-                                                if (idProdNombre == 53) {
-                                                    nombreCargarImagen = 'NH085';
-                                                }
-                                                if (idProdNombre == 305) {
-                                                    nombreCargarImagen = 'NH086_NH088';
-                                                }
-                                                if (idProdNombre == 62) {
-                                                    nombreCargarImagen = 'NH089_NH091';
-                                                }
-                                                if (idProdNombre == 306) {
-                                                    nombreCargarImagen = 'NH092_NH094';
-                                                }
-                                                if (idProdNombre == 63) {
-                                                    nombreCargarImagen = 'NH095_NH097';
-                                                }
-                                                if (idProdNombre == 307) {
-                                                    nombreCargarImagen = 'NH098_NH100';
-                                                }
-                                                if (idProdNombre == 64) {
-                                                    nombreCargarImagen = 'NH101_NH103';
-                                                }
-                                                if (idProdNombre == 308) {
-                                                    nombreCargarImagen = 'NH104_NH106';
-                                                }
-                                                if (idProdNombre == 65) {
-                                                    nombreCargarImagen = 'NH107_NH109';
-                                                }
-                                                if (idProdNombre == 308) {
-                                                    nombreCargarImagen = 'NH104_NH106';
-                                                }
-                                                if (idProdNombre == 65) {
-                                                    nombreCargarImagen = 'NH107_NH109';
-                                                }
-                                                if (idProdNombre == 309) {
-                                                    nombreCargarImagen = 'NH110_NH112';
-                                                }
-                                                if (idProdNombre == 66) {
-                                                    nombreCargarImagen = 'NH113_NH115';
-                                                }
-                                                if (idProdNombre == 310) {
-                                                    nombreCargarImagen = 'NH116_NH118';
-                                                }
-                                                if (idProdNombre == 67) {
-                                                    nombreCargarImagen = 'NH119_NH121';
-                                                }
-                                                if (idProdNombre == 311) {
-                                                    nombreCargarImagen = 'NH122_NH124';
-                                                }
-                                                if (idProdNombre == 68) {
-                                                    nombreCargarImagen = 'NH125_NH127';
-                                                }
-                                                if (idProdNombre == 171) {
-                                                    nombreCargarImagen = 'NH136';
-                                                }
-                                                if (idProdNombre == 172) {
-                                                    nombreCargarImagen = 'NH137';
-                                                }
-                                                if (idProdNombre == 173) {
-                                                    nombreCargarImagen = 'NH138';
-                                                }
-                                                if (idProdNombre == 73) {
-                                                    nombreCargarImagen = 'NH139_NH140';
-                                                }
-                                                if (idProdNombre == 72) {
-                                                    nombreCargarImagen = 'NH141_NH142';
-                                                }
-                                                if (idProdNombre == 75) {
-                                                    nombreCargarImagen = 'NH143';
-                                                }
-                                                if (idProdNombre == 74) {
-                                                    nombreCargarImagen = 'NH144';
-                                                }
-                                                if (idProdNombre == 87) {
-                                                    nombreCargarImagen = 'NH145';
-                                                }
-                                                if (idProdNombre == 86) {
-                                                    nombreCargarImagen = 'NH146';
-                                                }
-                                                if (idProdNombre == 77) {
-                                                    nombreCargarImagen = 'NH147';
-                                                }
-                                                if (idProdNombre == 76) {
-                                                    nombreCargarImagen = 'NH148';
-                                                }
-                                                if (idProdNombre == 313) {
-                                                    nombreCargarImagen = 'NH149';
-                                                }
-                                                if (idProdNombre == 79) {
-                                                    nombreCargarImagen = 'NH152';
-                                                }
-                                                if (idProdNombre == 319) {
-                                                    nombreCargarImagen = 'NH154';
-                                                }
-                                                if (idProdNombre == 320) {
-                                                    nombreCargarImagen = 'NH156';
-                                                }
-                                                if (idProdNombre == 325) {
-                                                    nombreCargarImagen = 'NH168';
-                                                }
-                                                if (idProdNombre == 320) {
-                                                    nombreCargarImagen = 'NH179';
-                                                }
-                                                if (idProdNombre == 89) {
-                                                    nombreCargarImagen = 'NH189';
-                                                }
-                                                if (idProdNombre == 88) {
-                                                    nombreCargarImagen = 'NH190';
-                                                }
-                                                if (idProdNombre == 322) {
-                                                    nombreCargarImagen = 'NH191';
-                                                }
-                                                if (idProdNombre == 80) {
-                                                    nombreCargarImagen = 'NH194';
-                                                }
-                                                if (idProdNombre == 316) {
-                                                    nombreCargarImagen = 'NH195';
-                                                }
-                                                if (idProdNombre == 81) {
-                                                    nombreCargarImagen = 'NH196';
-                                                }
-                                                if (idProdNombre == 174) {
-                                                    nombreCargarImagen = 'NH197';
-                                                }
-                                                if (idProdNombre == 175) {
-                                                    nombreCargarImagen = 'NH198';
-                                                }
-
-                                                if (idProdNombre == 177) {
-                                                    nombreCargarImagen = 'NH234-NH235';
-                                                }
-                                                if (idProdNombre == 178) {
-                                                    nombreCargarImagen = 'NH236-NH240';
-                                                }
-                                                if (idProdNombre == 179) {
-                                                    nombreCargarImagen = 'NH241-NH245';
-                                                }
-                                                if (idProdNombre == 159) {
-                                                    nombreCargarImagen = 'NH246';
-                                                }
-                                                if (idProdNombre == 158) {
-                                                    nombreCargarImagen = 'NH247';
-                                                }
-                                                if (idProdNombre == 161) {
-                                                    nombreCargarImagen = 'NH248';
-                                                }
-                                                if (idProdNombre == 160) {
-                                                    nombreCargarImagen = 'NH249';
-                                                }
-                                                if (idProdNombre == 163) {
-                                                    nombreCargarImagen = 'NH250';
-                                                }
-                                                if (idProdNombre == 162) {
-                                                    nombreCargarImagen = 'NH251';
-                                                }
-                                                if (idProdNombre == 165) {
-                                                    nombreCargarImagen = 'NH258';
-                                                }
-                                                if (idProdNombre == 164) {
-                                                    nombreCargarImagen = 'NH259';
-                                                }
-                                                if (idProdNombre == 167) {
-                                                    nombreCargarImagen = 'NH268';
-                                                }
-                                                if (idProdNombre == 166) {
-                                                    nombreCargarImagen = 'NH269';
-                                                }
-                                                if (idProdNombre == 169) {
-                                                    nombreCargarImagen = 'NH270';
-                                                }
-                                                if (idProdNombre == 168) {
-                                                    nombreCargarImagen = 'NH271';
-                                                }
-                                                if (idProdNombre == 170) {
-                                                    nombreCargarImagen = 'NH272';
-                                                }
-                                                if (idProdNombre == 180) {
-                                                    nombreCargarImagen = 'NH279_NH280';
-                                                }
-                                                if (idProdNombre == 181) {
-                                                    nombreCargarImagen = 'NH281_NH282';
-                                                }
-                                                if (idProdNombre == 182) {
-                                                    nombreCargarImagen = 'NH283';
-                                                }
-                                                if (idProdNombre == 183) {
-                                                    nombreCargarImagen = 'NH284';
-                                                }
-                                                if (idProdNombre == 184) {
-                                                    nombreCargarImagen = 'NH289_NH293';
-                                                }
-                                                if (idProdNombre == 185) {
-                                                    nombreCargarImagen = 'NH294_NH298';
-                                                }
-                                                if (idProdNombre == 186) {
-                                                    nombreCargarImagen = 'NH299_NH303';
-                                                }
-                                                if (idProdNombre == 188) {
-                                                    nombreCargarImagen = 'NH304_NH308';
-                                                }
-
-                                                if (idProdNombre == 187) {
-                                                    nombreCargarImagen = 'NH309_NH313';
-                                                }
-                                                if (idProdNombre == 189) {
-                                                    nombreCargarImagen = 'NH314_NH318';
-                                                }
-                                                if (idProdNombre == 194) {
-                                                    nombreCargarImagen = 'NH319_NH320';
-                                                }
-                                                if (idProdNombre == 190) {
-                                                    nombreCargarImagen = 'NH321_NH322';
-                                                }
-                                                if (idProdNombre == 195) {
-                                                    nombreCargarImagen = 'NH323_NH324';
-                                                }
-                                                if (idProdNombre == 191) {
-                                                    nombreCargarImagen = 'NH325_NH326';
-                                                }
-                                                if (idProdNombre == 196) {
-                                                    nombreCargarImagen = 'NH327_NH331';
-                                                }
-                                                if (idProdNombre == 200) {
-                                                    nombreCargarImagen = 'NH332_NH336';
-                                                }
-                                                if (idProdNombre == 192) {
-                                                    nombreCargarImagen = 'NH337_NH341';
-                                                }
-                                                if (idProdNombre == 198) {
-                                                    nombreCargarImagen = 'NH342_NH346';
-                                                }
-                                                if (idProdNombre == 197) {
-                                                    nombreCargarImagen = 'NH347_NH351';
-                                                }
-                                                if (idProdNombre == 201) {
-                                                    nombreCargarImagen = 'NH352_NH356';
-                                                }
-                                                if (idProdNombre == 193) {
-                                                    nombreCargarImagen = 'NH357_NH361';
-                                                }
-                                                if (idProdNombre == 199) {
-                                                    nombreCargarImagen = 'NH362_NH366';
-                                                }
-                                                if (idProdNombre == 203) {
-                                                    nombreCargarImagen = 'NH372_NH373';
-                                                }
-                                                if (idProdNombre == 204) {
-                                                    nombreCargarImagen = 'NH455_NH458';
-                                                }
-                                                if (idProdNombre == 333) {
-                                                    nombreCargarImagen = 'NH461';
-                                                }
-                                                if (idProdNombre == 206) {
-                                                    nombreCargarImagen = 'NH462';
-                                                }
-                                                if (idProdNombre == 207) {
-                                                    nombreCargarImagen = 'NH463_NH468';
-                                                }
-                                                if (idProdNombre == 208) {
-                                                    nombreCargarImagen = 'NH469_NH474';
-                                                }
-                                                if (idProdNombre == 209) {
-                                                    nombreCargarImagen = 'NH475_NH480';
-                                                }
-                                                if (idProdNombre == 210) {
-                                                    nombreCargarImagen = 'NH481_NH486';
-                                                }
-                                                if (idProdNombre == 211) {
-                                                    nombreCargarImagen = 'NH487_NH492';
-                                                }
-                                                if (idProdNombre == 213) {
-                                                    nombreCargarImagen = 'NH493_NH496';
-                                                }
-                                                if (idProdNombre == 214) {
-                                                    nombreCargarImagen = 'NH493_NH496';
-                                                }
-                                                if (idProdNombre == 215) {
-                                                    nombreCargarImagen = 'NH497_NH500';
-                                                }
-                                                if (idProdNombre == 216) {
-                                                    nombreCargarImagen = 'NH497_NH500';
-                                                }
-                                                if (idProdNombre == 217) {
-                                                    nombreCargarImagen = 'NH501_NH502';
-                                                }
-                                                if (idProdNombre == 218) {
-                                                    nombreCargarImagen = 'NH503';
-                                                }
-                                                if (idProdNombre == 219) {
-                                                    nombreCargarImagen = 'NH504';
-                                                }
-                                                if (idProdNombre == 220) {
-                                                    nombreCargarImagen = 'NH505';
-                                                }
-                                                if (idProdNombre == 221) {
-                                                    nombreCargarImagen = 'NH506';
-                                                }
-
-                                                if (idProdNombre == 222) {
-                                                    nombreCargarImagen = 'NH507_NH510';
-                                                }
-                                                if (contador == 1) {
-                                                    $('#imagen' + i).append(
-                                                        '<img style="z-index:' +
-                                                            (100 - i) +
-                                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO/' +
-                                                            nombreCargarImagen +
-                                                            '.jpg">'
-                                                    );
-                                                }
-                                                contador++;
+                                            var nombreCargarImagen;
+                                            if (idProdNombre == 277) {
+                                                nombreCargarImagen = 'NT007_NT022';
                                             }
+                                            if (idProdNombre == 275) {
+                                                nombreCargarImagen = 'NT001_NT004';
+                                            }
+                                            if (idProdNombre == 276) {
+                                                nombreCargarImagen = 'NT005_NT006';
+                                            }
+                                            if (idProdNombre == 278) {
+                                                nombreCargarImagen = 'NT023_NT038';
+                                            }
+                                            if (idProdNombre == 279) {
+                                                nombreCargarImagen = 'NT039_NT054';
+                                            }
+                                            if (idProdNombre == 280) {
+                                                nombreCargarImagen = 'NT055_NT070';
+                                            }
+                                            if (idProdNombre == 281) {
+                                                nombreCargarImagen = 'NT071_NT078';
+                                            }
+                                            if (idProdNombre == 246) {
+                                                nombreCargarImagen = 'NT079_NT094';
+                                            }
+                                            if (idProdNombre == 282) {
+                                                nombreCargarImagen = 'NT095_NT110';
+                                            }
+                                            if (idProdNombre == 247) {
+                                                nombreCargarImagen = 'NT111_NT115';
+                                            }
+                                            if (idProdNombre == 249) {
+                                                nombreCargarImagen = 'NT116_NT123';
+                                            }
+                                            if (idProdNombre == 250) {
+                                                nombreCargarImagen = 'NT116_NT123';
+                                            }
+                                            if (idProdNombre == 248) {
+                                                nombreCargarImagen = 'NT124_NT143';
+                                            }
+                                            if (idProdNombre == 251) {
+                                                nombreCargarImagen = 'NT144_NT148';
+                                            }
+                                            if (idProdNombre == 253) {
+                                                nombreCargarImagen = 'NT149_NT156';
+                                            }
+                                            if (idProdNombre == 254) {
+                                                nombreCargarImagen = 'NT149_NT156';
+                                            }
+                                            if (idProdNombre == 252) {
+                                                nombreCargarImagen = 'NT157_NT176';
+                                            }
+                                            if (idProdNombre == 255) {
+                                                nombreCargarImagen = 'NT177_NT181';
+                                            }
+                                            if (idProdNombre == 257) {
+                                                nombreCargarImagen = 'NT182_NT189';
+                                            }
+                                            if (idProdNombre == 258) {
+                                                nombreCargarImagen = 'NT182_NT189';
+                                            }
+                                            if (idProdNombre == 256) {
+                                                nombreCargarImagen = 'NT190_NT209';
+                                            }
+                                            if (idProdNombre == 259) {
+                                                nombreCargarImagen = 'NT210_NT211';
+                                            }
+                                            if (idProdNombre == 261) {
+                                                nombreCargarImagen = 'NT212_NT219';
+                                            }
+                                            if (idProdNombre == 262) {
+                                                nombreCargarImagen = 'NT212_NT219';
+                                            }
+                                            if (idProdNombre == 260) {
+                                                nombreCargarImagen = 'NT220_NT227';
+                                            }
+
+                                            if (idProdNombre == 263) {
+                                                nombreCargarImagen = 'NT228_NT229';
+                                            }
+                                            if (idProdNombre == 266) {
+                                                nombreCargarImagen = 'NT230_NT237';
+                                            }
+                                            if (idProdNombre == 265) {
+                                                nombreCargarImagen = 'NT230_NT237';
+                                            }
+                                            if (idProdNombre == 264) {
+                                                nombreCargarImagen = 'NT238_NT245';
+                                            }
+
+                                            if (idProdNombre == 271) {
+                                                nombreCargarImagen = 'NT246_NT250';
+                                            }
+                                            if (idProdNombre == 274) {
+                                                nombreCargarImagen = 'NT251_NT258';
+                                            }
+                                            if (idProdNombre == 273) {
+                                                nombreCargarImagen = 'NT251_NT258';
+                                            }
+                                            if (idProdNombre == 272) {
+                                                nombreCargarImagen = 'NT259_NT278';
+                                            }
+
+                                            if (idProdNombre == 267) {
+                                                nombreCargarImagen = 'NT279_NT280';
+                                            }
+                                            if (idProdNombre == 269) {
+                                                nombreCargarImagen = 'NT281_NT288';
+                                            }
+                                            if (idProdNombre == 270) {
+                                                nombreCargarImagen = 'NT281_NT288';
+                                            }
+                                            if (idProdNombre == 268) {
+                                                nombreCargarImagen = 'NT289_NT296';
+                                            }
+
+                                            if (idProdNombre == 283) {
+                                                nombreCargarImagen = 'NT297_NT314';
+                                            }
+                                            if (idProdNombre == 284) {
+                                                nombreCargarImagen = 'NT315_NT332';
+                                            }
+                                            if (idProdNombre == 285) {
+                                                nombreCargarImagen = 'NT333_NT350';
+                                            }
+                                            if (idProdNombre == 1) {
+                                                nombreCargarImagen = 'NX009_NX012';
+                                            }
+                                            if (idProdNombre == 2) {
+                                                nombreCargarImagen = 'NX009_NX012';
+                                            }
+                                            if (idProdNombre == 3) {
+                                                nombreCargarImagen = 'NX009_NX012';
+                                            }
+                                            if (idProdNombre == 4) {
+                                                nombreCargarImagen = 'NX013_NX016';
+                                            }
+                                            if (idProdNombre == 5) {
+                                                nombreCargarImagen = 'NX017_NX020';
+                                            }
+                                            if (idProdNombre == 6) {
+                                                nombreCargarImagen = 'NX021_NX024';
+                                            }
+                                            if (idProdNombre == 7) {
+                                                nombreCargarImagen = 'NX025_NX028';
+                                            }
+                                            if (idProdNombre == 8) {
+                                                nombreCargarImagen = 'NX029_NX032';
+                                            }
+                                            if (idProdNombre == 9) {
+                                                nombreCargarImagen = 'NX033_NX036';
+                                            }
+                                            if (idProdNombre == 10) {
+                                                nombreCargarImagen = 'NX037_NX040';
+                                            }
+                                            if (idProdNombre == 11) {
+                                                nombreCargarImagen = 'NX041_NX044';
+                                            }
+                                            if (idProdNombre == 12) {
+                                                nombreCargarImagen = 'NX045_NX048';
+                                            }
+                                            if (idProdNombre == 13) {
+                                                nombreCargarImagen = 'NX049_NX052';
+                                            }
+                                            if (idProdNombre == 229) {
+                                                nombreCargarImagen = 'NX053';
+                                            }
+                                            if (idProdNombre == 239) {
+                                                nombreCargarImagen = 'NX058_NX061';
+                                            }
+                                            if (idProdNombre == 240) {
+                                                nombreCargarImagen = 'NX062_NX065';
+                                            }
+                                            if (idProdNombre == 241) {
+                                                nombreCargarImagen = 'NX066_NX069';
+                                            }
+                                            if (idProdNombre == 107) {
+                                                nombreCargarImagen = 'NH001-NH006';
+                                            }
+                                            if (idProdNombre == 108) {
+                                                nombreCargarImagen = 'NH011-NH014';
+                                            }
+                                            if (idProdNombre == 109) {
+                                                nombreCargarImagen = 'NH015-NH016';
+                                            }
+
+                                            if (idProdNombre == 295) {
+                                                nombreCargarImagen = 'NH017-NH018';
+                                            }
+                                            if (idProdNombre == 296) {
+                                                nombreCargarImagen = 'NH019-NH020';
+                                            }
+                                            if (idProdNombre == 111) {
+                                                nombreCargarImagen = 'NH021-NH024';
+                                            }
+                                            if (idProdNombre == 110) {
+                                                nombreCargarImagen = 'NH025_NH028';
+                                            }
+                                            if (idProdNombre == 113) {
+                                                nombreCargarImagen = 'NH029_NH032';
+                                            }
+                                            if (idProdNombre == 112) {
+                                                nombreCargarImagen = 'NH033_NH036';
+                                            }
+                                            if (idProdNombre == 114) {
+                                                nombreCargarImagen = 'NH037_NH041';
+                                            }
+                                            if (idProdNombre == 116) {
+                                                nombreCargarImagen = 'NH042_NH045';
+                                            }
+                                            if (idProdNombre == 115) {
+                                                nombreCargarImagen = 'NH046_NH049';
+                                            }
+                                            if (idProdNombre == 298) {
+                                                nombreCargarImagen = 'NH050_NH051';
+                                            }
+                                            if (idProdNombre == 297) {
+                                                nombreCargarImagen = 'NH052_NH053';
+                                            }
+                                            if (idProdNombre == 118) {
+                                                nombreCargarImagen = 'NH054_NH057';
+                                            }
+                                            if (idProdNombre == 117) {
+                                                nombreCargarImagen = 'NH058_NH061';
+                                            }
+                                            if (idProdNombre == 119) {
+                                                nombreCargarImagen = 'NH062_NH066';
+                                            }
+                                            if (idProdNombre == 299) {
+                                                nombreCargarImagen = 'NH067_NH069';
+                                            }
+                                            if (idProdNombre == 301) {
+                                                nombreCargarImagen = 'NH070_NH071';
+                                            }
+                                            if (idProdNombre == 300) {
+                                                nombreCargarImagen = 'NH072_NH073';
+                                            }
+                                            if (idProdNombre == 302) {
+                                                nombreCargarImagen = 'NH074_NH077';
+                                            }
+                                            if (idProdNombre == 334) {
+                                                nombreCargarImagen = 'NH078_NH079';
+                                            }
+                                            if (idProdNombre == 303) {
+                                                nombreCargarImagen = 'NH080_NH081';
+                                            }
+                                            if (idProdNombre == 14) {
+                                                nombreCargarImagen = 'NH082_NH083';
+                                            }
+                                            if (idProdNombre == 304) {
+                                                nombreCargarImagen = 'NH084';
+                                            }
+                                            if (idProdNombre == 53) {
+                                                nombreCargarImagen = 'NH085';
+                                            }
+                                            if (idProdNombre == 305) {
+                                                nombreCargarImagen = 'NH086_NH088';
+                                            }
+                                            if (idProdNombre == 62) {
+                                                nombreCargarImagen = 'NH089_NH091';
+                                            }
+                                            if (idProdNombre == 306) {
+                                                nombreCargarImagen = 'NH092_NH094';
+                                            }
+                                            if (idProdNombre == 63) {
+                                                nombreCargarImagen = 'NH095_NH097';
+                                            }
+                                            if (idProdNombre == 307) {
+                                                nombreCargarImagen = 'NH098_NH100';
+                                            }
+                                            if (idProdNombre == 64) {
+                                                nombreCargarImagen = 'NH101_NH103';
+                                            }
+                                            if (idProdNombre == 308) {
+                                                nombreCargarImagen = 'NH104_NH106';
+                                            }
+                                            if (idProdNombre == 65) {
+                                                nombreCargarImagen = 'NH107_NH109';
+                                            }
+                                            if (idProdNombre == 308) {
+                                                nombreCargarImagen = 'NH104_NH106';
+                                            }
+                                            if (idProdNombre == 65) {
+                                                nombreCargarImagen = 'NH107_NH109';
+                                            }
+                                            if (idProdNombre == 309) {
+                                                nombreCargarImagen = 'NH110_NH112';
+                                            }
+                                            if (idProdNombre == 66) {
+                                                nombreCargarImagen = 'NH113_NH115';
+                                            }
+                                            if (idProdNombre == 310) {
+                                                nombreCargarImagen = 'NH116_NH118';
+                                            }
+                                            if (idProdNombre == 67) {
+                                                nombreCargarImagen = 'NH119_NH121';
+                                            }
+                                            if (idProdNombre == 311) {
+                                                nombreCargarImagen = 'NH122_NH124';
+                                            }
+                                            if (idProdNombre == 68) {
+                                                nombreCargarImagen = 'NH125_NH127';
+                                            }
+                                            if (idProdNombre == 171) {
+                                                nombreCargarImagen = 'NH136';
+                                            }
+                                            if (idProdNombre == 172) {
+                                                nombreCargarImagen = 'NH137';
+                                            }
+                                            if (idProdNombre == 173) {
+                                                nombreCargarImagen = 'NH138';
+                                            }
+                                            if (idProdNombre == 73) {
+                                                nombreCargarImagen = 'NH139_NH140';
+                                            }
+                                            if (idProdNombre == 72) {
+                                                nombreCargarImagen = 'NH141_NH142';
+                                            }
+                                            if (idProdNombre == 75) {
+                                                nombreCargarImagen = 'NH143';
+                                            }
+                                            if (idProdNombre == 74) {
+                                                nombreCargarImagen = 'NH144';
+                                            }
+                                            if (idProdNombre == 87) {
+                                                nombreCargarImagen = 'NH145';
+                                            }
+                                            if (idProdNombre == 86) {
+                                                nombreCargarImagen = 'NH146';
+                                            }
+                                            if (idProdNombre == 77) {
+                                                nombreCargarImagen = 'NH147';
+                                            }
+                                            if (idProdNombre == 76) {
+                                                nombreCargarImagen = 'NH148';
+                                            }
+                                            if (idProdNombre == 313) {
+                                                nombreCargarImagen = 'NH149';
+                                            }
+                                            if (idProdNombre == 79) {
+                                                nombreCargarImagen = 'NH152';
+                                            }
+                                            if (idProdNombre == 319) {
+                                                nombreCargarImagen = 'NH154';
+                                            }
+                                            if (idProdNombre == 320) {
+                                                nombreCargarImagen = 'NH156';
+                                            }
+                                            if (idProdNombre == 325) {
+                                                nombreCargarImagen = 'NH168';
+                                            }
+                                            if (idProdNombre == 320) {
+                                                nombreCargarImagen = 'NH179';
+                                            }
+                                            if (idProdNombre == 89) {
+                                                nombreCargarImagen = 'NH189';
+                                            }
+                                            if (idProdNombre == 88) {
+                                                nombreCargarImagen = 'NH190';
+                                            }
+                                            if (idProdNombre == 322) {
+                                                nombreCargarImagen = 'NH191';
+                                            }
+                                            if (idProdNombre == 80) {
+                                                nombreCargarImagen = 'NH194';
+                                            }
+                                            if (idProdNombre == 316) {
+                                                nombreCargarImagen = 'NH195';
+                                            }
+                                            if (idProdNombre == 81) {
+                                                nombreCargarImagen = 'NH196';
+                                            }
+                                            if (idProdNombre == 174) {
+                                                nombreCargarImagen = 'NH197';
+                                            }
+                                            if (idProdNombre == 175) {
+                                                nombreCargarImagen = 'NH198';
+                                            }
+
+                                            if (idProdNombre == 177) {
+                                                nombreCargarImagen = 'NH234-NH235';
+                                            }
+                                            if (idProdNombre == 178) {
+                                                nombreCargarImagen = 'NH236-NH240';
+                                            }
+                                            if (idProdNombre == 179) {
+                                                nombreCargarImagen = 'NH241-NH245';
+                                            }
+                                            if (idProdNombre == 159) {
+                                                nombreCargarImagen = 'NH246';
+                                            }
+                                            if (idProdNombre == 158) {
+                                                nombreCargarImagen = 'NH247';
+                                            }
+                                            if (idProdNombre == 161) {
+                                                nombreCargarImagen = 'NH248';
+                                            }
+                                            if (idProdNombre == 160) {
+                                                nombreCargarImagen = 'NH249';
+                                            }
+                                            if (idProdNombre == 163) {
+                                                nombreCargarImagen = 'NH250';
+                                            }
+                                            if (idProdNombre == 162) {
+                                                nombreCargarImagen = 'NH251';
+                                            }
+                                            if (idProdNombre == 165) {
+                                                nombreCargarImagen = 'NH258';
+                                            }
+                                            if (idProdNombre == 164) {
+                                                nombreCargarImagen = 'NH259';
+                                            }
+                                            if (idProdNombre == 167) {
+                                                nombreCargarImagen = 'NH268';
+                                            }
+                                            if (idProdNombre == 166) {
+                                                nombreCargarImagen = 'NH269';
+                                            }
+                                            if (idProdNombre == 169) {
+                                                nombreCargarImagen = 'NH270';
+                                            }
+                                            if (idProdNombre == 168) {
+                                                nombreCargarImagen = 'NH271';
+                                            }
+                                            if (idProdNombre == 170) {
+                                                nombreCargarImagen = 'NH272';
+                                            }
+                                            if (idProdNombre == 180) {
+                                                nombreCargarImagen = 'NH279_NH280';
+                                            }
+                                            if (idProdNombre == 181) {
+                                                nombreCargarImagen = 'NH281_NH282';
+                                            }
+                                            if (idProdNombre == 182) {
+                                                nombreCargarImagen = 'NH283';
+                                            }
+                                            if (idProdNombre == 183) {
+                                                nombreCargarImagen = 'NH284';
+                                            }
+                                            if (idProdNombre == 184) {
+                                                nombreCargarImagen = 'NH289_NH293';
+                                            }
+                                            if (idProdNombre == 185) {
+                                                nombreCargarImagen = 'NH294_NH298';
+                                            }
+                                            if (idProdNombre == 186) {
+                                                nombreCargarImagen = 'NH299_NH303';
+                                            }
+                                            if (idProdNombre == 188) {
+                                                nombreCargarImagen = 'NH304_NH308';
+                                            }
+
+                                            if (idProdNombre == 187) {
+                                                nombreCargarImagen = 'NH309_NH313';
+                                            }
+                                            if (idProdNombre == 189) {
+                                                nombreCargarImagen = 'NH314_NH318';
+                                            }
+                                            if (idProdNombre == 194) {
+                                                nombreCargarImagen = 'NH319_NH320';
+                                            }
+                                            if (idProdNombre == 190) {
+                                                nombreCargarImagen = 'NH321_NH322';
+                                            }
+                                            if (idProdNombre == 195) {
+                                                nombreCargarImagen = 'NH323_NH324';
+                                            }
+                                            if (idProdNombre == 191) {
+                                                nombreCargarImagen = 'NH325_NH326';
+                                            }
+                                            if (idProdNombre == 196) {
+                                                nombreCargarImagen = 'NH327_NH331';
+                                            }
+                                            if (idProdNombre == 200) {
+                                                nombreCargarImagen = 'NH332_NH336';
+                                            }
+                                            if (idProdNombre == 192) {
+                                                nombreCargarImagen = 'NH337_NH341';
+                                            }
+                                            if (idProdNombre == 198) {
+                                                nombreCargarImagen = 'NH342_NH346';
+                                            }
+                                            if (idProdNombre == 197) {
+                                                nombreCargarImagen = 'NH347_NH351';
+                                            }
+                                            if (idProdNombre == 201) {
+                                                nombreCargarImagen = 'NH352_NH356';
+                                            }
+                                            if (idProdNombre == 193) {
+                                                nombreCargarImagen = 'NH357_NH361';
+                                            }
+                                            if (idProdNombre == 199) {
+                                                nombreCargarImagen = 'NH362_NH366';
+                                            }
+                                            if (idProdNombre == 203) {
+                                                nombreCargarImagen = 'NH372_NH373';
+                                            }
+                                            if (idProdNombre == 204) {
+                                                nombreCargarImagen = 'NH455_NH458';
+                                            }
+                                            if (idProdNombre == 333) {
+                                                nombreCargarImagen = 'NH461';
+                                            }
+                                            if (idProdNombre == 206) {
+                                                nombreCargarImagen = 'NH462';
+                                            }
+                                            if (idProdNombre == 207) {
+                                                nombreCargarImagen = 'NH463_NH468';
+                                            }
+                                            if (idProdNombre == 208) {
+                                                nombreCargarImagen = 'NH469_NH474';
+                                            }
+                                            if (idProdNombre == 209) {
+                                                nombreCargarImagen = 'NH475_NH480';
+                                            }
+                                            if (idProdNombre == 210) {
+                                                nombreCargarImagen = 'NH481_NH486';
+                                            }
+                                            if (idProdNombre == 211) {
+                                                nombreCargarImagen = 'NH487_NH492';
+                                            }
+                                            if (idProdNombre == 213) {
+                                                nombreCargarImagen = 'NH493_NH496';
+                                            }
+                                            if (idProdNombre == 214) {
+                                                nombreCargarImagen = 'NH493_NH496';
+                                            }
+                                            if (idProdNombre == 215) {
+                                                nombreCargarImagen = 'NH497_NH500';
+                                            }
+                                            if (idProdNombre == 216) {
+                                                nombreCargarImagen = 'NH497_NH500';
+                                            }
+                                            if (idProdNombre == 217) {
+                                                nombreCargarImagen = 'NH501_NH502';
+                                            }
+                                            if (idProdNombre == 218) {
+                                                nombreCargarImagen = 'NH503';
+                                            }
+                                            if (idProdNombre == 219) {
+                                                nombreCargarImagen = 'NH504';
+                                            }
+                                            if (idProdNombre == 220) {
+                                                nombreCargarImagen = 'NH505';
+                                            }
+                                            if (idProdNombre == 221) {
+                                                nombreCargarImagen = 'NH506';
+                                            }
+
+                                            if (idProdNombre == 222) {
+                                                nombreCargarImagen = 'NH507_NH510';
+                                            }
+                                            if (contador == 1) {
+                                                $('#imagen' + i).append(
+                                                    '<img style="z-index:' +
+                                                        (100 - i) +
+                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO/' +
+                                                        nombreCargarImagen +
+                                                        '.jpg">'
+                                                );
+                                            }
+                                            contador++;
                                         }
                                         var precioTotProd = productos[w]['precioTotal'];
                                         var subTotal = parseFloat($('#precioSubtotal').text());
@@ -9867,6 +9867,41 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                 }
                             }, 0);
                         });
+                    } else {
+                        if (productos[w]['productosDormitorio']['categoriasDormi']['id'] == 28) {
+                            var prodGG = this.productosPresupuestoPedidos;
+                            var contmeter = 0;
+
+                            if (prodGG[w] != undefined) {
+                                var nombreProd = {
+                                    nombre: 'Estanteria a medida'
+                                };
+                                var ancho = productos[w]['dimensionesProductoTipo']['ancho'];
+                                $('#datosAnadirEstanteria').append(
+                                    '<p><strong>' + productos[w]['productosDormitorio']['nombre'] + '</strong></p>'
+                                );
+                                $('#datosAnadirEstanteria').css({ display: 'block' });
+                                prodGG[contmeter];
+                                var dimensionesProductoTipo = {
+                                    precio: productos[w]['precioTotal'],
+                                    ancho: ancho,
+                                    alto: productos[1]['dimensionesProductoTipo']['alto'],
+                                    fondo: 44
+                                };
+                                if (prodGG[w]['id'] == productos[w]['id']) {
+                                    prodGG[w] = undefined;
+                                }
+
+                                var prod987 = {
+                                    productosDormitorio: nombreProd,
+                                    id: 1,
+                                    dimensionesProductoTipo: dimensionesProductoTipo
+                                };
+                                prodGG[contmeter] = prod987;
+                                prodGG[1] = {};
+                                this.productosPresupuestoPedidos = prodGG;
+                            }
+                        }
                     }
                 }
             },
