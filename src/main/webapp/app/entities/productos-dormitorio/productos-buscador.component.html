@@ -53,7 +53,7 @@
 			</p>
             <p style="width:50%;margin-left:12%;font-size:14px;letter-spacing:3px;"> 3. &#191;Sabes cuantos puntos supone el articulo?</p><br>
             <form>
-            	<p style="width:100%;float:left"><input type="radio" id="siMostrar" name="mostrarTexto" style="float:left;margin-left:20%" value="Si" (click)="mostrarTexto('Si')"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:1%">SI</label><input type="number" style="display:none" id="inputSi">
+            	<p style="width:100%;float:left"><input type="radio" id="siMostrar" name="mostrarTexto" style="float:left;margin-left:20%" value="Si" (click)="mostrarTexto('Si')"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:1%">SI</label><input type="number" (change) = "mostrarTexto12()" style="display:none" id="inputSi">
 				</p>
 				<p style="width:100%;float:left"><input type="radio" id="noMostrar" name="mostrarTexto" style="float:left;margin-left:20%" value="No" (click)="mostrarTexto('No')"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:1%">No</label>
 				</p>
@@ -522,6 +522,23 @@
 	      
 	    </div>
 	  </div>
+	  <div class="modal fade" id="modalEnviadoCarrito1" role="dialog" style="margin-top:200px">
+	    <div class="modal-dialog modal-sm">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title"></h4>
+	        </div>
+	        <div class="modal-body">
+	          <p>El archivo se esta subiendo un momento</p>
+	          <img src="../../../content/images/ruedaGirando.gif">
+	        </div>
+
+	      </div>
+	      
+	    </div>
+	  </div>
 	  <div class="modal fade" id="myModalColores1" role="dialog">
 		    <div class="modal-dialog modal-lg">
 		    
@@ -546,7 +563,8 @@
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,1)" data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,1)" data-dismiss="modal"></div>          
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,1)" data-dismiss="modal"></div>          
-		                   
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,1)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,1)" data-dismiss="modal"></div>           
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -578,7 +596,9 @@
 		          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,2)"  data-dismiss="modal"></div>
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,2)"  data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,2)"  data-dismiss="modal"></div>          
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,2)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,2)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -611,7 +631,9 @@
 		          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,3)" data-dismiss="modal"></div>
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,3)" data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,3)" data-dismiss="modal"></div>          
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,3)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,3)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,3)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,3)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -644,7 +666,9 @@
 		          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,4)" data-dismiss="modal"></div>
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,4)" data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,4)" data-dismiss="modal"></div>          
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,4)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,4)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,4)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,4)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -677,7 +701,9 @@
 		          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,5)" data-dismiss="modal"></div>
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,5)" data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,5)" data-dismiss="modal"></div>          
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,5)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,5)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,5)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,5)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -710,7 +736,9 @@
 		          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,6)" data-dismiss="modal"></div>
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,6)" data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,6)" data-dismiss="modal"></div>          
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,6)" data-dismiss="modal"></div>          
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,6)" data-dismiss="modal"></div>
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,6)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,6)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -743,7 +771,9 @@
 			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,7)" data-dismiss="modal"></div>
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,7)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,7)" data-dismiss="modal"></div>          
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,7)" data-dismiss="modal"></div>          
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,7)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,7)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,7)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -778,7 +808,8 @@
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,8)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,8)" data-dismiss="modal"></div>          
 			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,8)" data-dismiss="modal"></div>          
-		                   
+		              <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,8)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,8)" data-dismiss="modal"></div>       
 		        </div>    
 		                   
 		      
@@ -812,7 +843,9 @@
 			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,9)" data-dismiss="modal"></div>
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,9)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,9)" data-dismiss="modal"></div>          
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,9)" data-dismiss="modal"></div>          
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,9)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,9)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,9)" data-dismiss="modal"></div>             
 		                   
 		        </div>    
 		        <div class="modal-footer">
@@ -845,7 +878,9 @@
 			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,10)" data-dismiss="modal"></div>
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,10)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,10)" data-dismiss="modal"></div>          
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,10)" data-dismiss="modal"></div>          
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,10)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,10)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,10)" data-dismiss="modal"></div>             
 		                   
 		        </div>    
 		        <div class="modal-footer">
@@ -878,7 +913,9 @@
 			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,11)" data-dismiss="modal"></div>
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,11)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,11)" data-dismiss="modal"></div>          
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,11)" data-dismiss="modal"></div>          
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,11)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,11)" data-dismiss="modal"></div>  
+		              <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,11)" data-dismiss="modal"></div>             
 		                   
 		        </div>  
 		        <div class="modal-footer">
@@ -911,7 +948,9 @@
 			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,12)" data-dismiss="modal"></div>
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,12)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,12)" data-dismiss="modal"></div>          
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,12)" data-dismiss="modal"></div>          
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,12)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,12)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,12)" data-dismiss="modal"></div>             
 		                   
 		        </div>  
 		        <div class="modal-footer">
@@ -944,7 +983,9 @@
 			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,13)" data-dismiss="modal"></div>
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,13)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,13)" data-dismiss="modal"></div>          
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,13)" data-dismiss="modal"></div>          
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,13)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,13)" data-dismiss="modal"></div>  
+		         	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,13)" data-dismiss="modal"></div>             
 		                   
 		        </div>  
 		        <div class="modal-footer">
@@ -979,7 +1020,9 @@
 			          <div class="acabadosModal" id="acabadoImagen10" (click)="cambiarAcabado(10,1,14)" data-dismiss="modal"></div>
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,14)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,14)" data-dismiss="modal"></div>          
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,14)" data-dismiss="modal"></div>          
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,14)" data-dismiss="modal"></div>
+			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,14)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,14)" data-dismiss="modal"></div>             
 		                   
 		        </div>  
 		        <div class="modal-footer">
@@ -3008,7 +3051,7 @@
 						<p>Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
 				<button  id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarrito()"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar articulo/s al carro de la compra</a></button>
-				<button id="botonEnviarEspecial" style="width: 86%;height: 6%;bottom: 80px;position: absolute;font-size: 16px;background-color: black;left: 25px;color: white;display:none" data-toggle="modal" data-target="#modalEnviadoCarrito" (click)="enviarCarritoEspecial()">Enviar al carrito</button>
+				<button id="botonEnviarEspecial" style="width: 86%;height: 6%;bottom: 80px;position: absolute;font-size: 16px;background-color: black;left: 25px;color: white;display:none" data-toggle="modal" data-target="#modalEnviadoCarrito1" (click)="enviarCarritoEspecial()">Enviar al carrito</button>
 				
 			</div>
 			

@@ -30,6 +30,12 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @Column(name = "precio_total")
     private Float precioTotal;
     
+    @Column(name = "nombre_archivo")
+    private String nombreArchivo;
+    
+    @Column(name = "texto_especial")
+    private String textoEspecial;
+    
     
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -88,6 +94,32 @@ public class ProductosPresupuestoPedidos implements Serializable {
 
     public void setPrecioTotal(Float precioTotal) {
         this.precioTotal = precioTotal;
+    }
+    
+    public String getNombreArchivo() {
+        return nombreArchivo;
+    }
+
+    public ProductosPresupuestoPedidos nombreArchivo(String nombreArchivo) {
+        this.nombreArchivo = nombreArchivo;
+        return this;
+    }
+
+    public void setNombreArchivo(String nombreArchivo) {
+        this.nombreArchivo = nombreArchivo;
+    }
+    
+    public String getTextoEspecial() {
+        return textoEspecial;
+    }
+
+    public ProductosPresupuestoPedidos textoEspecial(String textoEspecial) {
+        this.textoEspecial = textoEspecial;
+        return this;
+    }
+
+    public void setTextoEspecial(String textoEspecial) {
+        this.textoEspecial = textoEspecial;
     }
     
     public Usb getUsb() {

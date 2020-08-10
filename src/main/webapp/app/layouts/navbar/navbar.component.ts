@@ -11036,8 +11036,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         var esArmario = 0;
         var prodCarr = this.productoPresupuesto;
         for (let m = 0; m < prodCarr.length; m++) {
-            if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                esArmario = 1;
+            if (prodCarr[m][1]['productosDormitorio'] != undefined) {
+                if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                    esArmario = 1;
+                }
             }
         }
         var armario;
@@ -11074,253 +11076,280 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 var prodPrePed;
                 var idProdCar = 0;
                 for (let m = 0; m < prodCarr.length; m++) {
-                    if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                        for (let k = 0; k < numeroProductos.length; k++) {
-                            if (idProdCar < numeroProductos[k]['id']) {
-                                idProdCar = numeroProductos[k]['id'];
+                    if (prodCarr[m][1]['especial'] != 0) {
+                        if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                            for (let k = 0; k < numeroProductos.length; k++) {
+                                if (idProdCar < numeroProductos[k]['id']) {
+                                    idProdCar = numeroProductos[k]['id'];
+                                }
                             }
-                        }
-                        prodPrePed = {
-                            productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                            presupuestoPedido: prueba1
-                        };
-
-                        this.productosPresupuestoPedidos = prodPrePed;
-                        this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
-                        prodPrePed['id'] = idProdCar + 1;
-                        var armario;
-                        armario = {
-                            id: prodCarr[m][1]['id'],
-                            anchoMax: prodCarr[m][1]['anchoMax'],
-                            anchoMin: prodCarr[m][1]['anchoMin'],
-                            imagen: prodCarr[m][1]['imagen'],
-                            imagenContentType: prodCarr[m][1]['imagenContentType'],
-                            mensaje: prodCarr[m][1]['mensaje'],
-                            numCostado: prodCarr[m][1]['numCostado'],
-                            numeroPuertas: prodCarr[m][1]['numeroPuertas'],
-                            productosDormitorio: prodCarr[m][1]['productosDormitorio']
-                        };
-
-                        var presupuestoArmario;
-
-                        if (prodCarr[m][1]['niveladores'] == undefined) {
-                            var arrayNive = {
-                                id: 25000
+                            prodPrePed = {
+                                productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                presupuestoPedido: prueba1
                             };
-                            prodCarr[m][1]['niveladores'] = arrayNive;
-                        }
-                        if (prodCarr[m][1]['enmarcado'] == undefined) {
-                            var arrayEnmar = {
-                                id: 25000
-                            };
-                            prodCarr[m][1]['enmarcado'] = arrayEnmar;
-                        }
-                        if (prodCarr[m][1]['cajeado'] == undefined) {
-                            var arrayCaje = {
-                                id: 25000
-                            };
-                            prodCarr[m][1]['cajeado'] = arrayCaje;
-                        }
-                        presupuestoArmario = {
-                            productosPresupuestoPedidos: prodPrePed,
-                            acabadosInterior: prodCarr[m][1]['acabadoInterior'],
-                            acabados: prodCarr[m][1]['acabadoTrasera'],
-                            acabadosCasco: prodCarr[m][1]['acabadoCasco'],
-                            acabadosTirador: prodCarr[m][1]['acabadoTirador'],
-                            niveladores: prodCarr[m][1]['niveladores'],
-                            enmarcados: prodCarr[m][1]['enmarcado'],
-                            cajeado: prodCarr[m][1]['cajeado'],
-                            medACaj: 0,
-                            medBCaj: 0,
-                            medCCaj: 0,
-                            medAEnm: 0,
-                            medBEnm: 0,
-                            medCEnm: 0,
-                            armario: armario,
-                            precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
-                            cascoPrecio: prodCarr[m][1]['precioCasco'],
-                            fondo: prodCarr[m][1]['fondo'],
-                            alto: prodCarr[m][1]['alto'],
-                            ancho: prodCarr[m][1]['ancho']
-                        };
-                        if (prodCarr[m][1]['enmarcado'] != undefined) {
-                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'A') {
-                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                            }
-                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'B') {
-                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                            }
-                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'C') {
-                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                                presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
-                            }
-                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'D') {
-                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                                presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
-                                presupuestoArmario['medCEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medC']);
-                            }
-                        }
 
-                        if (prodCarr[m][1]['cajeado'] != undefined) {
-                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO A') {
-                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                            }
-                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO B') {
-                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                            }
-                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO C') {
-                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                                presupuestoArmario['medCCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medC']);
-                            }
-                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO D') {
-                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                            }
-                        }
-
-                        this.presupuestoArmarioTodoLOL = presupuestoArmario;
-                        this.mGuardar = m;
-                        this.subscribeToSaveResponse6(this.presupuestoArmarioService.create(presupuestoArmario));
-                    } else {
-                        if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 2) {
-                            var dimen = {
+                            this.productosPresupuestoPedidos = prodPrePed;
+                            this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
+                            prodPrePed['id'] = idProdCar + 1;
+                            var armario;
+                            armario = {
                                 id: prodCarr[m][1]['id'],
-                                nombre: prodCarr[m][1]['nombre'],
-                                anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
-                                fondo: prodCarr[m][1]['fondo'],
-                                alto: prodCarr[m][1]['alto'],
-                                ancho: prodCarr[m][1]['ancho'],
+                                anchoMax: prodCarr[m][1]['anchoMax'],
+                                anchoMin: prodCarr[m][1]['anchoMin'],
                                 imagen: prodCarr[m][1]['imagen'],
                                 imagenContentType: prodCarr[m][1]['imagenContentType'],
                                 mensaje: prodCarr[m][1]['mensaje'],
-                                precio: prodCarr[m][1]['precio'],
+                                numCostado: prodCarr[m][1]['numCostado'],
+                                numeroPuertas: prodCarr[m][1]['numeroPuertas'],
                                 productosDormitorio: prodCarr[m][1]['productosDormitorio']
                             };
-                            var dimensionesFinal = dimen;
-                            if (dimen['mensaje'] == 'Medidas Especiales') {
-                                var anchoEspecial = dimensionesFinal['ancho'].split(':')[1];
-                                anchoEspecial = anchoEspecial.split(' ')[1];
-                                var altoEspecial = dimensionesFinal['alto'].split(':')[1];
-                                altoEspecial = altoEspecial.split(' ')[1];
-                                var fondoEspecial = dimensionesFinal['fondo'].split(':')[1];
-                                fondoEspecial = fondoEspecial.split(' ')[1];
-                                dimen['ancho'] = parseFloat(anchoEspecial);
-                                dimen['alto'] = parseFloat(altoEspecial);
-                                dimen['fondo'] = parseFloat(fondoEspecial);
-                            }
-                            if (prodCarr[m][1]['apoyo'] == undefined) {
-                                prodPrePed = {
-                                    productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                    presupuestoPedido: prueba1,
-                                    dimensionesProductoTipo: dimen,
-                                    precioTotal: prodCarr[m][1]['todoSumadoPrecio']
+
+                            var presupuestoArmario;
+
+                            if (prodCarr[m][1]['niveladores'] == undefined) {
+                                var arrayNive = {
+                                    id: 25000
                                 };
+                                prodCarr[m][1]['niveladores'] = arrayNive;
+                            }
+                            if (prodCarr[m][1]['enmarcado'] == undefined) {
+                                var arrayEnmar = {
+                                    id: 25000
+                                };
+                                prodCarr[m][1]['enmarcado'] = arrayEnmar;
+                            }
+                            if (prodCarr[m][1]['cajeado'] == undefined) {
+                                var arrayCaje = {
+                                    id: 25000
+                                };
+                                prodCarr[m][1]['cajeado'] = arrayCaje;
+                            }
+                            presupuestoArmario = {
+                                productosPresupuestoPedidos: prodPrePed,
+                                acabadosInterior: prodCarr[m][1]['acabadoInterior'],
+                                acabados: prodCarr[m][1]['acabadoTrasera'],
+                                acabadosCasco: prodCarr[m][1]['acabadoCasco'],
+                                acabadosTirador: prodCarr[m][1]['acabadoTirador'],
+                                niveladores: prodCarr[m][1]['niveladores'],
+                                enmarcados: prodCarr[m][1]['enmarcado'],
+                                cajeado: prodCarr[m][1]['cajeado'],
+                                medACaj: 0,
+                                medBCaj: 0,
+                                medCCaj: 0,
+                                medAEnm: 0,
+                                medBEnm: 0,
+                                medCEnm: 0,
+                                armario: armario,
+                                precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
+                                cascoPrecio: prodCarr[m][1]['precioCasco'],
+                                fondo: prodCarr[m][1]['fondo'],
+                                alto: prodCarr[m][1]['alto'],
+                                ancho: prodCarr[m][1]['ancho']
+                            };
+                            if (prodCarr[m][1]['enmarcado'] != undefined) {
+                                if (prodCarr[m][1]['enmarcado']['codigo'] == 'A') {
+                                    presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
+                                }
+                                if (prodCarr[m][1]['enmarcado']['codigo'] == 'B') {
+                                    presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
+                                }
+                                if (prodCarr[m][1]['enmarcado']['codigo'] == 'C') {
+                                    presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
+                                    presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
+                                }
+                                if (prodCarr[m][1]['enmarcado']['codigo'] == 'D') {
+                                    presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
+                                    presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
+                                    presupuestoArmario['medCEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medC']);
+                                }
+                            }
+
+                            if (prodCarr[m][1]['cajeado'] != undefined) {
+                                if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO A') {
+                                    presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
+                                    presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                                }
+                                if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO B') {
+                                    presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
+                                    presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                                }
+                                if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO C') {
+                                    presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
+                                    presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                                    presupuestoArmario['medCCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medC']);
+                                }
+                                if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO D') {
+                                    presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
+                                    presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                                }
+                            }
+
+                            this.presupuestoArmarioTodoLOL = presupuestoArmario;
+                            this.mGuardar = m;
+                            this.subscribeToSaveResponse6(this.presupuestoArmarioService.create(presupuestoArmario));
+                        } else {
+                            if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 2) {
+                                var dimen = {
+                                    id: prodCarr[m][1]['id'],
+                                    nombre: prodCarr[m][1]['nombre'],
+                                    anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
+                                    fondo: prodCarr[m][1]['fondo'],
+                                    alto: prodCarr[m][1]['alto'],
+                                    ancho: prodCarr[m][1]['ancho'],
+                                    imagen: prodCarr[m][1]['imagen'],
+                                    imagenContentType: prodCarr[m][1]['imagenContentType'],
+                                    mensaje: prodCarr[m][1]['mensaje'],
+                                    precio: prodCarr[m][1]['precio'],
+                                    productosDormitorio: prodCarr[m][1]['productosDormitorio']
+                                };
+                                var dimensionesFinal = dimen;
+                                if (dimen['mensaje'] == 'Medidas Especiales') {
+                                    var anchoEspecial = dimensionesFinal['ancho'].split(':')[1];
+                                    anchoEspecial = anchoEspecial.split(' ')[1];
+                                    var altoEspecial = dimensionesFinal['alto'].split(':')[1];
+                                    altoEspecial = altoEspecial.split(' ')[1];
+                                    var fondoEspecial = dimensionesFinal['fondo'].split(':')[1];
+                                    fondoEspecial = fondoEspecial.split(' ')[1];
+                                    dimen['ancho'] = parseFloat(anchoEspecial);
+                                    dimen['alto'] = parseFloat(altoEspecial);
+                                    dimen['fondo'] = parseFloat(fondoEspecial);
+                                }
+                                if (prodCarr[m][1]['apoyo'] == undefined) {
+                                    prodPrePed = {
+                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                        presupuestoPedido: prueba1,
+                                        dimensionesProductoTipo: dimen,
+                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio']
+                                    };
+                                } else {
+                                    prodPrePed = {
+                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                        presupuestoPedido: prueba1,
+                                        dimensionesProductoTipo: dimen,
+                                        tiposApoyo: prodCarr[m][1]['apoyo'],
+                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio']
+                                    };
+                                }
+                                if (prodCarr[m][1]['usb'] != undefined) {
+                                    prodPrePed = {
+                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                        presupuestoPedido: prueba1,
+                                        dimensionesProductoTipo: dimen,
+                                        tiposApoyo: prodCarr[m][1]['apoyo'],
+                                        usb: prodCarr[m][1]['usb'],
+                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio']
+                                    };
+                                }
+                                if (prodCarr[m][1]['iluminacion'] != undefined) {
+                                    prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
+                                }
+                                numeroAcaProd[m]['prod'] = prodPrePed;
+                                prodAca[m] = prodPrePed;
+                                prodIlu[m] = prodPrePed;
+                                dimensionEspecialBien[m] = prodPrePed;
+                                this.productosPresupuestoPedidos = prodPrePed;
+                                for (let ve = 0; ve <= 10050000; ve++) {
+                                    if (ve == 10050000) {
+                                        this.subscribeToSaveResponse1(
+                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                        );
+                                    }
+                                }
+
+                                if (numeroAcaProd[m].length != 0) {
+                                    var acaPedProd = this.acaProdPed.length;
+                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                    prodAca[m]['id'] = acaPedProd['id'] + m + 1;
+                                    for (let b = 0; b < numeroAcaProd[m].length; b++) {
+                                        for (let ve = 0; ve <= 1000050000; ve++) {
+                                            if (ve == 1000050000) {
+                                                const acabados1 = {
+                                                    acabados: numeroAcaProd[m][b],
+                                                    productosPresupuestoPedidos: prodAca[m],
+                                                    orden: b + 1
+                                                };
+                                                this.subscribeToSaveResponse2(
+                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                );
+                                            }
+                                        }
+                                    }
+                                }
+
+                                if (dimensionesFinal['mensaje'] == 'Medidas Especiales') {
+                                    var acaPedProd = this.acaProdPed.length;
+                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                    dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
+
+                                    const medEsp = {
+                                        productosPresupuestoPedidos: dimensionEspecialBien[m],
+                                        ancho: anchoEspecial,
+                                        fondo: fondoEspecial,
+                                        alto: altoEspecial,
+                                        precio: dimensionesFinal['precio']
+                                    };
+                                    this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
+                                }
                             } else {
                                 prodPrePed = {
-                                    productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                    productosDormitorio: prodCarr[m][1]['apoyo']['productoApoyo'],
                                     presupuestoPedido: prueba1,
-                                    dimensionesProductoTipo: dimen,
                                     tiposApoyo: prodCarr[m][1]['apoyo'],
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                 };
-                            }
-                            if (prodCarr[m][1]['usb'] != undefined) {
-                                prodPrePed = {
-                                    productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                    presupuestoPedido: prueba1,
-                                    dimensionesProductoTipo: dimen,
-                                    tiposApoyo: prodCarr[m][1]['apoyo'],
-                                    usb: prodCarr[m][1]['usb'],
-                                    precioTotal: prodCarr[m][1]['todoSumadoPrecio']
-                                };
-                            }
-                            if (prodCarr[m][1]['iluminacion'] != undefined) {
-                                prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
-                            }
-                            numeroAcaProd[m]['prod'] = prodPrePed;
-                            prodAca[m] = prodPrePed;
-                            prodIlu[m] = prodPrePed;
-                            dimensionEspecialBien[m] = prodPrePed;
-                            this.productosPresupuestoPedidos = prodPrePed;
-                            for (let ve = 0; ve <= 10050000; ve++) {
-                                if (ve == 10050000) {
-                                    this.subscribeToSaveResponse1(
-                                        this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                    );
+                                numeroAcaProd[m]['prod'] = prodPrePed;
+                                prodAca[m] = prodPrePed;
+                                prodIlu[m] = prodPrePed;
+                                dimensionEspecialBien[m] = prodPrePed;
+                                this.productosPresupuestoPedidos = prodPrePed;
+                                for (let ve = 0; ve <= 10050000; ve++) {
+                                    if (ve == 10050000) {
+                                        this.subscribeToSaveResponse1(
+                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                        );
+                                    }
                                 }
-                            }
 
-                            if (numeroAcaProd[m].length != 0) {
-                                var acaPedProd = this.acaProdPed.length;
-                                acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                prodAca[m]['id'] = acaPedProd['id'] + m + 1;
-                                for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                    for (let ve = 0; ve <= 1000050000; ve++) {
-                                        if (ve == 1000050000) {
-                                            const acabados1 = {
-                                                acabados: numeroAcaProd[m][b],
-                                                productosPresupuestoPedidos: prodAca[m],
-                                                orden: b + 1
-                                            };
-                                            this.subscribeToSaveResponse2(this.acabadosProductosPresupuestoPedidoService.create(acabados1));
+                                if (numeroAcaProd[m].length != 0) {
+                                    var acaPedProd = this.acaProdPed.length;
+                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                    prodAca[m]['id'] = acaPedProd['id'] + m + 1;
+                                    for (let b = 0; b < numeroAcaProd[m].length; b++) {
+                                        for (let ve = 0; ve <= 1000050000; ve++) {
+                                            if (ve == 1000050000) {
+                                                const acabados1 = {
+                                                    acabados: numeroAcaProd[m][b],
+                                                    productosPresupuestoPedidos: prodAca[m],
+                                                    orden: b + 1
+                                                };
+                                                this.subscribeToSaveResponse(
+                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                );
+                                            }
                                         }
                                     }
                                 }
                             }
-
-                            if (dimensionesFinal['mensaje'] == 'Medidas Especiales') {
-                                var acaPedProd = this.acaProdPed.length;
-                                acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
-
-                                const medEsp = {
-                                    productosPresupuestoPedidos: dimensionEspecialBien[m],
-                                    ancho: anchoEspecial,
-                                    fondo: fondoEspecial,
-                                    alto: altoEspecial,
-                                    precio: dimensionesFinal['precio']
-                                };
-                                this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
-                            }
+                        }
+                    } else {
+                        if (prodCarr[m][1]['precio'] != 'No definido') {
+                            prodPrePed = {
+                                presupuestoPedido: prueba1,
+                                precioTotal: prodCarr[m][1]['precio'],
+                                nombreArchivo: prodCarr[m][1]['imagen'],
+                                textoEspecial: prodCarr[m][1]['texto']
+                            };
                         } else {
                             prodPrePed = {
-                                productosDormitorio: prodCarr[m][1]['apoyo']['productoApoyo'],
                                 presupuestoPedido: prueba1,
-                                tiposApoyo: prodCarr[m][1]['apoyo'],
-                                precioTotal: prodCarr[m][1]['todoSumadoPrecio']
+                                nombreArchivo: prodCarr[m][1]['imagen'],
+                                textoEspecial: prodCarr[m][1]['texto']
                             };
-                            numeroAcaProd[m]['prod'] = prodPrePed;
-                            prodAca[m] = prodPrePed;
-                            prodIlu[m] = prodPrePed;
-                            dimensionEspecialBien[m] = prodPrePed;
-                            this.productosPresupuestoPedidos = prodPrePed;
-                            for (let ve = 0; ve <= 10050000; ve++) {
-                                if (ve == 10050000) {
-                                    this.subscribeToSaveResponse1(
-                                        this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                    );
-                                }
-                            }
+                        }
 
-                            if (numeroAcaProd[m].length != 0) {
-                                var acaPedProd = this.acaProdPed.length;
-                                acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                prodAca[m]['id'] = acaPedProd['id'] + m + 1;
-                                for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                    for (let ve = 0; ve <= 1000050000; ve++) {
-                                        if (ve == 1000050000) {
-                                            const acabados1 = {
-                                                acabados: numeroAcaProd[m][b],
-                                                productosPresupuestoPedidos: prodAca[m],
-                                                orden: b + 1
-                                            };
-                                            this.subscribeToSaveResponse(this.acabadosProductosPresupuestoPedidoService.create(acabados1));
-                                        }
-                                    }
-                                }
+                        for (let ve = 0; ve <= 10050000; ve++) {
+                            if (ve == 10050000) {
+                                this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(prodPrePed));
                             }
                         }
                     }

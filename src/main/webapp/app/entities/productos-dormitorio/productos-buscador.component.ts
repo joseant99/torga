@@ -287,6 +287,14 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         }
     }
 
+    public mostrarTexto12() {
+        var valor;
+        valor = $('#inputSi').val();
+        $('#precioDimension').text(valor);
+        $('#botonEnviarEspecial').css({ display: 'block' });
+        $('#nombreMesita').text('Articulo especial');
+    }
+
     public abrirBotonEspecial() {
         var textarticulo = $('#textArticulo').val();
         if (textarticulo != '') {
