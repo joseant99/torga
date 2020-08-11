@@ -8987,15 +8987,15 @@ ui bootstrap tweaks
     #puertaColor1 {
         max-width: 150px;
         max-height: 400px;
-        margin-left: 90px !important;
-        margin-top: -24px !important;
+        margin-left: 90px;
+        margin-top: -24px;
     }
 
     #puertaColor2 {
         max-width: 150px;
         max-height: 400px;
-        margin-left: 90px !important;
-        margin-top: -24px !important;
+        margin-left: 90px;
+        margin-top: -24px;
     }
 
     #botonCalculadoraBatientes {
