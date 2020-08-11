@@ -125,6 +125,15 @@ Generic styles
 .ng-valid.required {
     border-left: 5px solid green;
 }
+#puertaColor1 {
+    margin-left: 212px;
+    margin-top: -39px;
+}
+
+#puertaColor2 {
+    margin-left: 212px;
+    margin-top: -39px;
+}
 #imagenDimensionesSin {
     margin-left: 100px;
     margin-right: 95px;
@@ -2883,15 +2892,7 @@ ui bootstrap tweaks
 #divBodyPrincipal {
     display: none;
 }
-@media only screen and (max-width: 550px) {
-    #divBodyPrincipal {
-        display: block;
-        position: fixed;
-        z-index: 1000000000;
-        background: white;
-        top: 0;
-    }
-}
+
 #imagenAcabadoPrincipal1 {
     max-width: 100%;
 }
@@ -5366,44 +5367,12 @@ ui bootstrap tweaks
     #fondoCalcu {
         height: 60% !important;
     }
-    #interiorDentroArmario1 {
-        max-width: 225px;
-        max-height: 525px;
-    }
-    #interiorDentroArmario2 {
-        max-width: 225px;
-        max-height: 525px;
-        margin-left: 133px !important;
-        margin-top: -30px !important;
-    }
-    #interiorDentroArmario3 {
-        max-width: 225px;
-        max-height: 525px;
-        margin-left: 315px !important;
-        margin-top: -72px !important;
-    }
-    #interiorDentroArmario4 {
-        max-width: 225px;
-        max-height: 525px;
-        margin-left: 448px !important;
-        margin-top: -103px !important;
-    }
+
     #puertaColor0 {
         max-width: 225px;
         max-height: 525px;
     }
-    #puertaColor1 {
-        max-width: 225px;
-        max-height: 525px;
-        margin-left: 133px !important;
-        margin-top: -30px !important;
-    }
-    #puertaColor2 {
-        max-width: 225px;
-        max-height: 525px;
-        margin-left: 133px !important;
-        margin-top: -30px !important;
-    }
+
     #puertaColor3 {
         max-width: 225px;
         max-height: 525px;
@@ -7573,44 +7542,12 @@ ui bootstrap tweaks
         height: 350px;
         width: 48%;
     }
-    #interiorDentroArmario1 {
-        max-width: 150px;
-        max-height: 400px;
-    }
-    #interiorDentroArmario2 {
-        max-width: 150px;
-        max-height: 400px;
-        margin-left: 90px !important;
-        margin-top: -24px !important;
-    }
-    #interiorDentroArmario3 {
-        max-width: 150px;
-        max-height: 400px;
-        margin-left: 211px !important;
-        margin-top: -56px !important;
-    }
-    #interiorDentroArmario4 {
-        max-width: 150px;
-        max-height: 400px;
-        margin-left: 301px !important;
-        margin-top: -80px !important;
-    }
+
     #puertaColor0 {
         max-width: 150px;
         max-height: 400px;
     }
-    #puertaColor1 {
-        max-width: 150px;
-        max-height: 400px;
-        margin-left: 90px !important;
-        margin-top: -24px !important;
-    }
-    #puertaColor2 {
-        max-width: 150px;
-        max-height: 400px;
-        margin-left: 90px !important;
-        margin-top: -24px !important;
-    }
+
     #puertaColor3 {
         max-width: 150px;
         max-height: 400px;
@@ -8406,7 +8343,7 @@ ui bootstrap tweaks
 
 @media screen and (max-width: 800px) {
     #page-heading {
-        margin-left: 20%;
+        margin-left: 0%;
     }
     #acabado {
         margin-left: 20%;
@@ -8433,6 +8370,86 @@ ui bootstrap tweaks
         overflow-y: auto;
         overflow-x: hidden;
     }
+    #artFor {
+        margin-left: 15% !important;
+        margin-top: 15px;
+    }
+
+    #estFor {
+        margin-left: 15% !important;
+        margin-top: 15px;
+    }
+    #armFor {
+        margin-left: 15% !important;
+        margin-top: 15px;
+    }
+    #ocuFor {
+        margin-left: 15% !important;
+        margin-top: 15px;
+    }
+    #visFor {
+        margin-left: 15% !important;
+        margin-top: 15px;
+    }
+    #vesFor {
+        margin-left: 15% !important;
+        margin-top: 15px;
+    }
+    #espFor {
+        margin-left: 15% !important;
+        margin-top: 15px;
+    }
+    #rinFor {
+        margin-left: 15% !important;
+        margin-top: 15px;
+    }
+
+    #artFor {
+        margin-left: 15% !important;
+        margin-top: 15px;
+    }
+
+    .artInputFor {
+        margin-right: 15% !important;
+        margin-top: 15px;
+    }
+    .artInputFor {
+        margin-right: 15% !important;
+        margin-top: 15px;
+    }
+    .estInputFor {
+        margin-right: 15% !important;
+        margin-top: 15px;
+    }
+    .armInputFor {
+        margin-right: 15% !important;
+        margin-top: 15px;
+    }
+    .ocuInputFor {
+        margin-right: 15% !important;
+        margin-top: 15px;
+    }
+    .visInputFor {
+        margin-right: 15% !important;
+        margin-top: 15px;
+    }
+    .vesInputFor {
+        margin-right: 15% !important;
+        margin-top: 15px;
+    }
+    .espInputFor {
+        margin-right: 15% !important;
+        margin-top: 15px;
+    }
+    .rinInputFor {
+        margin-right: 15% !important;
+        margin-top: 15px;
+    }
+    #anchosSelect1 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
     #botonCalculadora {
         width: 86%;
         height: 15%;
@@ -8487,14 +8504,14 @@ ui bootstrap tweaks
     }
 
     #botonEsconder {
-        max-width: 6%;
+        max-width: 25%;
         margin-left: 5px;
         margin-top: 5px;
     }
     #posicion0 {
         position: absolute;
         right: 8px;
-        top: 6px;
+        top: 11px;
         color: white;
     }
     #imagenLogoCuenta {
@@ -8514,6 +8531,7 @@ ui bootstrap tweaks
         width: 100%;
         margin-left: 0px;
         margin-top: 25px;
+        padding-left: 0px;
     }
     #ProductosCargados1 {
         margin-left: 27%;
@@ -8556,6 +8574,7 @@ ui bootstrap tweaks
         top: 0;
         width: 10%;
         right: 11px;
+        margin-top: 5px;
     }
 
     .productosColor33 {
@@ -8650,16 +8669,31 @@ ui bootstrap tweaks
     }
 
     .imagenAcabadoPrincipalImg {
-        margin-left: 28%;
-        max-height: 290px;
-        max-width: 450px;
+        margin-top: -100px;
+        max-width: 370px !important;
+        max-height: 370px !important;
+        margin-left: -4% !important;
     }
+    .imagenAcabadoPrincipalImgSin {
+        margin-top: -100px;
+        max-width: 370px !important;
+        max-height: 370px !important;
+        margin-left: -4% !important;
+    }
+
     .acabadoPartes {
         position: absolute;
         max-width: 450px;
         max-height: 290px;
         margin-left: -450px;
         margin-top: -183px;
+    }
+
+    #modalcontenidoCss {
+        height: 750px !important;
+        margin-top: 50px !important;
+        width: 350px !important;
+        overflow-y: scroll !important;
     }
     .pietra {
         position: absolute;
@@ -8784,22 +8818,53 @@ ui bootstrap tweaks
         height: 190px;
     }
     #calculadoraCarrito {
-        width: 30%;
-        background-color: #f5f5f5;
-        height: 91%;
-        position: fixed;
-        top: 40px;
-        right: 0;
-        bottom: 0;
-        display: block;
-        z-index: 0;
-    }
-    #imagenFOndoMueble {
-        height: 115%;
-        position: fixed;
         width: 100%;
-        top: -10px;
-        left: 0;
+        background-color: #f5f5f5;
+        height: 45%;
+        position: fixed;
+        right: 0;
+        bottom: 0px;
+        display: block;
+        z-index: 100001;
+        top: auto;
+    }
+
+    #imagenesArmario2 {
+        margin-top: 360px !important;
+        margin-bottom: 45px;
+    }
+
+    .puertas3izquierda1 {
+        margin-top: -50px !important;
+        margin-left: -122px !important;
+        max-width: 396px;
+        max-height: 500px;
+    }
+
+    .puertas3izquierda2 {
+        max-width: 405px;
+        max-height: 521px;
+        margin-left: -37px !important;
+        margin-top: -85px !important;
+    }
+
+    .container-fluid {
+        overflow-x: hidden;
+    }
+
+    #imagenFOndoMueble {
+        height: 104%;
+        /* position: fixed; */
+        width: 240%;
+        /* top: -10px; */
+        left: -345px;
+    }
+    .armariosDivInputCodigo {
+        margin-top: 30% !important;
+    }
+    #labelFondoArmario {
+        margin-right: 23% !important;
+        margin-left: 22% !important;
     }
     .marginIzquierda {
         margin-left: 165px;
@@ -8807,6 +8872,135 @@ ui bootstrap tweaks
     #modalCesta {
         margin-top: -15px;
         z-index: 100000;
+    }
+    #acabados {
+        width: 87% !important;
+        float: left !important;
+        margin-top: -10% !important;
+        padding-top: 35px !important;
+        height: 550px !important;
+    }
+
+    #inputAcabadoInterior {
+        width: 110px !important;
+        margin-left: -4% !important;
+        margin-top: -50px !important;
+    }
+    #inputAcabadoTrasera {
+        width: 110px !important;
+        margin-top: -50px !important;
+    }
+    #inputAcabadoTirador {
+        width: 110px !important;
+        margin-top: -50px !important;
+    }
+
+    #batPCasco {
+        float: inherit !important;
+    }
+    #batPTrasera {
+        float: inherit !important;
+        margin-top: 80px !important;
+    }
+    #batPInterior {
+        float: inherit !important;
+        margin-top: 80px !important;
+    }
+    #batPTirador {
+        float: inherit !important;
+        margin-top: 80px !important;
+    }
+
+    #inputAcabadoCasco {
+        width: 110px !important;
+        margin-left: 20% !important;
+        margin-top: -50px;
+    }
+
+    #tirador012 {
+        float: left !important;
+        width: 90px !important;
+        height: 200px !important;
+        margin-left: 10px !important;
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+    }
+
+    #tirador013 {
+        float: left !important;
+        width: 130px !important;
+        height: 230px !important;
+        margin-left: 10px !important;
+        margin-top: 30px !important;
+        margin-bottom: 70px !important;
+    }
+
+    #puertaColorMarco0 {
+        position: absolute !important;
+        width: 396px !important;
+        height: 500px !important;
+        z-index: 101 !important;
+        margin-top: -50px !important;
+        margin-left: -122px !important;
+    }
+    #puertaColorMarco1 {
+        position: absolute !important;
+        width: 396px !important;
+        height: 500px !important;
+        z-index: 101 !important;
+        margin-top: -50px !important;
+        margin-left: -122px !important;
+    }
+    #puertaColorMarco2 {
+        position: absolute !important;
+        width: 396px !important;
+        height: 500px !important;
+        z-index: 101 !important;
+        margin-top: -50px !important;
+        margin-left: -122px !important;
+    }
+    .puertas3Izq1 {
+        position: absolute !important;
+        max-width: 396px !important;
+        max-height: 500px !important;
+        z-index: 101 !important;
+        margin-top: -50px !important;
+        margin-left: -122px !important;
+    }
+    .puertas3Izq2 {
+        position: absolute !important;
+        max-width: 396px !important;
+        max-height: 525px !important;
+        z-index: 101 !important;
+        margin-top: -86px !important;
+        margin-left: -31px !important;
+    }
+    .puertas3Izq3 {
+        position: absolute !important;
+        max-width: 396px !important;
+        max-height: 525px !important;
+        z-index: 101 !important;
+        margin-top: -86px !important;
+        margin-left: -31px !important;
+    }
+
+    #puertaColor1 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 90px !important;
+        margin-top: -24px !important;
+    }
+
+    #puertaColor2 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 90px !important;
+        margin-top: -24px !important;
+    }
+
+    #botonCalculadoraBatientes {
+        height: 12% !important;
+        bottom: 15px !important;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */

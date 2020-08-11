@@ -4,29 +4,29 @@
         <span ><strong>BUSCADOR</strong></span>
         
         <form style="margin-top:5%;">
-								  <label for="cajeA" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ART&#205;CULOS</label>
-								  <input type="radio" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(0)" checked><br>
+								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ART&#205;CULOS</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(0)" checked><br>
 								  
-								  <label for="cajeB" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ESTANTER&#205;AS A MEDIDA</label>
-								  <input type="radio" id="cajeB" name="cajeado" value="cajeB" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(1)"><br>
+								  <label for="cajeB" id="estFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ESTANTER&#205;AS A MEDIDA</label>
+								  <input type="radio" class="estInputFor" id="cajeB" name="cajeado" value="cajeB" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(1)"><br>
 								  
-								  <label for="cajeC" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS BATIENTES</label>
-								  <input type="radio" id="cajeC" name="cajeado" value="cajeC" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(2)"><br>
+								  <label for="cajeC" id="armFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS BATIENTES</label>
+								  <input type="radio" class="armInputFor" id="cajeC" name="cajeado" value="cajeC" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(2)"><br>
 								  
-								  <label for="cajeD" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS GUIA OCULTA</label>
-								  <input type="radio" id="cajeD" name="cajeado" value="cajeE" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(3)"><br>
+								  <label for="cajeD" id="ocuFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS GUIA OCULTA</label>
+								  <input type="radio" class="ocuInputFor" id="cajeD" name="cajeado" value="cajeE" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(3)"><br>
 								  
-								  <label for="cajeF" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS GUIA VISTA</label>
-								  <input type="radio" id="cajeF" name="cajeado" value="cajeF" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(4)"><br>
+								  <label for="cajeF" id="visFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS GUIA VISTA</label>
+								  <input type="radio" class="visInputFor" id="cajeF" name="cajeado" value="cajeF" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(4)"><br>
 								  
-								  <label for="cajeG" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">VESTIDORES</label>
-								  <input type="radio" id="cajeG" name="cajeado" value="cajeG" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(5)"><br>
+								  <label for="cajeG" id="vesFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">VESTIDORES</label>
+								  <input type="radio" class="vesInputFor" id="cajeG" name="cajeado" value="cajeG" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(5)"><br>
 								  
-								  <label for="cajeH" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARTICULOS ESPECIALES</label>
-								  <input type="radio" id="cajeH" name="cajeado" value="cajeH" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(6)"><br>
+								  <label for="cajeH" id="espFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARTICULOS ESPECIALES</label>
+								  <input type="radio" class="espInputFor" id="cajeH" name="cajeado" value="cajeH" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(6)"><br>
 								  
-								  <label for="cajeI" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS RINCON</label>
-								  <input type="radio" id="cajeI" name="cajeado" value="cajeI" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(7)"><br>
+								  <label for="cajeI" id="rinFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS RINCON</label>
+								  <input type="radio" class="rinInputFor" id="cajeI" name="cajeado" value="cajeI" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(7)"><br>
 								  
 								
 		</form>
@@ -100,7 +100,7 @@
     	<p id="armariosCogidos" style="display:none"></p>
     	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.anchoMin}} Y {{this.armariosDormitorioComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect4" name="anchos" type="number" (change)="this.armariosDormitorioComponent.comproAncho()"/></p>
 		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.altoMin}} Y {{this.armariosDormitorioComponent.altoMax}}]</label><input style="text-align:center" list="listaAltura" id="alturaSelect4" name="anchos" type="number" (change)="this.armariosDormitorioComponent.comproAlto()"/></p>
-		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input list="listaFondoBat" data-toggle="modal" data-target="#modalFondoCm" id="inputFondoBatientes" style="text-align:center;background-color:#F0F0F0" value="61" type="number" readonly="readonly"/></p>
+		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px" id="labelFondoArmario">FONDO EN CM</label><input list="listaFondoBat" data-toggle="modal" data-target="#modalFondoCm" id="inputFondoBatientes" style="text-align:center;background-color:#F0F0F0" value="61" type="number" readonly="readonly"/></p>
 		<p style="text-align:center;margin-top:3%;"><button id="botonOkAnchos" style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioComponent.carcarCascosInterioresPuertas()">OK</button></p>
 		   
 		<h2 style="text-align:center;margin-top: 5%;margin-bottom: 5%;" id="textoTituloInterior"></h2>
@@ -543,7 +543,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -563,8 +563,8 @@
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,1)" data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,1)" data-dismiss="modal"></div>          
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,1)" data-dismiss="modal"></div>          
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,1)" data-dismiss="modal"></div>  
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,1)" data-dismiss="modal"></div>           
+		          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,1)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,1)" data-dismiss="modal"></div>           
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -577,7 +577,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -597,8 +597,8 @@
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,2)"  data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,2)"  data-dismiss="modal"></div>          
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,2)" data-dismiss="modal"></div>
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,2)" data-dismiss="modal"></div>  
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,2)" data-dismiss="modal"></div>             
+		          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,2)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,2)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -612,7 +612,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -632,8 +632,8 @@
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,3)" data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,3)" data-dismiss="modal"></div>          
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,3)" data-dismiss="modal"></div>
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,3)" data-dismiss="modal"></div>  
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,3)" data-dismiss="modal"></div>             
+		          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,3)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,3)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -647,7 +647,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -667,8 +667,8 @@
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,4)" data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,4)" data-dismiss="modal"></div>          
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,4)" data-dismiss="modal"></div>
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,4)" data-dismiss="modal"></div>  
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,4)" data-dismiss="modal"></div>             
+		          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,4)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,4)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -682,7 +682,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -702,8 +702,8 @@
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,5)" data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,5)" data-dismiss="modal"></div>          
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,5)" data-dismiss="modal"></div>
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,5)" data-dismiss="modal"></div>  
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,5)" data-dismiss="modal"></div>             
+		          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,5)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,5)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -717,7 +717,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -737,8 +737,8 @@
 		          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,6)" data-dismiss="modal"></div> 
 		          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,6)" data-dismiss="modal"></div>          
 		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,6)" data-dismiss="modal"></div>
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,6)" data-dismiss="modal"></div>  
-		          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,6)" data-dismiss="modal"></div>             
+		          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,6)" data-dismiss="modal"></div>  
+		          <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,6)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -752,7 +752,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -772,8 +772,8 @@
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,7)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,7)" data-dismiss="modal"></div>          
 			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,7)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,7)" data-dismiss="modal"></div>  
-		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,7)" data-dismiss="modal"></div>             
+			          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,7)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,7)" data-dismiss="modal"></div>             
 		                   
 		        </div>
 		        <div class="modal-footer">
@@ -787,7 +787,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -808,8 +808,8 @@
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,8)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,8)" data-dismiss="modal"></div>          
 			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,8)" data-dismiss="modal"></div>          
-		              <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,8)" data-dismiss="modal"></div>  
-		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,8)" data-dismiss="modal"></div>       
+		              <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,8)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,8)" data-dismiss="modal"></div>       
 		        </div>    
 		                   
 		      
@@ -821,10 +821,10 @@
 		    </div>
 	  </div>
 	  <div class="modal fade" id="myModalColores9" role="dialog">
-		    <div class="modal-dialog modal-lg">
+		    <div class="modal-dialog modal-lg" >
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -844,8 +844,8 @@
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,9)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,9)" data-dismiss="modal"></div>          
 			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,9)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,9)" data-dismiss="modal"></div>  
-		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,9)" data-dismiss="modal"></div>             
+			          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,9)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,9)" data-dismiss="modal"></div>             
 		                   
 		        </div>    
 		        <div class="modal-footer">
@@ -859,7 +859,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -879,8 +879,8 @@
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,10)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,10)" data-dismiss="modal"></div>          
 			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,10)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,10)" data-dismiss="modal"></div>  
-		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,10)" data-dismiss="modal"></div>             
+			          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,10)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,10)" data-dismiss="modal"></div>             
 		                   
 		        </div>    
 		        <div class="modal-footer">
@@ -894,7 +894,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -914,8 +914,8 @@
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,11)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,11)" data-dismiss="modal"></div>          
 			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,11)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,11)" data-dismiss="modal"></div>  
-		              <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,11)" data-dismiss="modal"></div>             
+			          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,11)" data-dismiss="modal"></div>  
+		              <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,11)" data-dismiss="modal"></div>             
 		                   
 		        </div>  
 		        <div class="modal-footer">
@@ -929,7 +929,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -949,8 +949,8 @@
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,12)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,12)" data-dismiss="modal"></div>          
 			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,12)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,12)" data-dismiss="modal"></div>  
-		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,12)" data-dismiss="modal"></div>             
+			          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,12)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,12)" data-dismiss="modal"></div>             
 		                   
 		        </div>  
 		        <div class="modal-footer">
@@ -964,7 +964,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -984,8 +984,8 @@
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,13)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,13)" data-dismiss="modal"></div>          
 			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,13)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,13)" data-dismiss="modal"></div>  
-		         	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,13)" data-dismiss="modal"></div>             
+			          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,13)" data-dismiss="modal"></div>  
+		         	  <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,13)" data-dismiss="modal"></div>             
 		                   
 		        </div>  
 		        <div class="modal-footer">
@@ -1001,7 +1001,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1021,8 +1021,8 @@
 			          <div class="acabadosModal" id="acabadoImagen11" (click)="cambiarAcabado(11,1,14)" data-dismiss="modal"></div> 
 			          <div class="acabadosModal" id="acabadoImagen12" (click)="cambiarAcabado(12,1,14)" data-dismiss="modal"></div>          
 			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(13,1,14)" data-dismiss="modal"></div>
-			          <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(14,1,14)" data-dismiss="modal"></div>  
-		          	  <div class="acabadosModal" id="acabadoImagen13" (click)="cambiarAcabado(15,1,14)" data-dismiss="modal"></div>             
+			          <div class="acabadosModal" id="acabadoImagen14" (click)="cambiarAcabado(14,1,14)" data-dismiss="modal"></div>  
+		          	  <div class="acabadosModal" id="acabadoImagen15" (click)="cambiarAcabado(15,1,14)" data-dismiss="modal"></div>             
 		                   
 		        </div>  
 		        <div class="modal-footer">
@@ -1039,7 +1039,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un Acabado para la Puerta 1</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1058,7 +1058,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un Acabado para la Puerta 1</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1078,7 +1078,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1097,7 +1097,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1116,7 +1116,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1135,7 +1135,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un acabado</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1156,13 +1156,13 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un interior</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div *ngFor="let aca of this.armariosDormitorioComponent.productosDormitorioModal" style="float:left; width:140px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{aca.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.pintarInteriores(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		          <div *ngFor="let aca of this.armariosDormitorioComponent.productosDormitorioModal" style="float:left; width:140px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{aca.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.pintarInteriores(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1175,23 +1175,23 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un interior</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	           
-		         	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA ALUMINIO TRANSPA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(381)" src="../../../content/images/puertas/1.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
-		       	  	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA ALUMINIO GRIS</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(382)" src="../../../content/images/puertas/2.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
-		       		<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA BATIENTE SIN TIRADOR</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(383)" src="../../../content/images/puertas/3.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
-		       		<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA BATIENTE TIRADOR TIM</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(384)" src="../../../content/images/puertas/4.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
-		       	  	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA BATIENTE TIRADOR NYE</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(385)" src="../../../content/images/puertas/6.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
-		       		<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA BATIENTE TIRADOR DRAW</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(386)" src="../../../content/images/puertas/8.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
-		       		<div *ngIf="this.armariosDormitorioComponent.puertaGrande == 1" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">2 PUERTAS FUELLE TIM IZQUIERDA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(387)" src="../../../content/images/puertas/14.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
-		       	  	<div *ngIf="this.armariosDormitorioComponent.puertaGrande == 1" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">2 PUERTAS FUELLE TIM DERECHA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(388)" src="../../../content/images/puertas/15.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
-		       		<div *ngIf="this.armariosDormitorioComponent.puertaGrande == 1" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">2 PUERTAS FUELLE NYE IZQUIERDA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(389)" src="../../../content/images/puertas/16.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
-		       		<div *ngIf="this.armariosDormitorioComponent.puertaGrande == 1" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">2 PUERTAS FUELLE NYE DERECHA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(390)" src="../../../content/images/puertas/17.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
-		       	  	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">SIN PUERTA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(391)" src="../../../content/images/blanco.jpg" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		         	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA ALUMINIO TRANSPA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(381)" src="../../../content/images/puertas/1.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		       	  	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA ALUMINIO GRIS</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(382)" src="../../../content/images/puertas/2.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		       		<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id=tirador013 data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA BATIENTE SIN TIRADOR</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(383)" src="../../../content/images/puertas/3.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		       		<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA BATIENTE TIRADOR TIM</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(384)" src="../../../content/images/puertas/4.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		       	  	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA BATIENTE TIRADOR NYE</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(385)" src="../../../content/images/puertas/6.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		       		<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><p style="text-align:center;font-size:25px">PUERTA BATIENTE TIRADOR DRAW</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(386)" src="../../../content/images/puertas/8.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		       		<div *ngIf="this.armariosDormitorioComponent.puertaGrande == 1" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><p style="text-align:center;font-size:25px">2 PUERTAS FUELLE TIM IZQUIERDA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(387)" src="../../../content/images/puertas/14.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		       	  	<div *ngIf="this.armariosDormitorioComponent.puertaGrande == 1" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><p style="text-align:center;font-size:25px">2 PUERTAS FUELLE TIM DERECHA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(388)" src="../../../content/images/puertas/15.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		       		<div *ngIf="this.armariosDormitorioComponent.puertaGrande == 1" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><p style="text-align:center;font-size:25px">2 PUERTAS FUELLE NYE IZQUIERDA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(389)" src="../../../content/images/puertas/16.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		       		<div *ngIf="this.armariosDormitorioComponent.puertaGrande == 1" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><p style="text-align:center;font-size:25px">2 PUERTAS FUELLE NYE DERECHA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(390)" src="../../../content/images/puertas/17.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+		       	  	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><p style="text-align:center;font-size:25px">SIN PUERTA</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(391)" src="../../../content/images/blanco.jpg" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
 		       		
 		        </div>
 		        <div class="modal-footer">
@@ -1206,7 +1206,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un Interior</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1226,7 +1226,7 @@
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge una puerta</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -2424,13 +2424,10 @@
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalInterioresAcabados"> </div></p></a>
-								<label style="float: left;margin-right:20px;margin-top: 15px;">TRASERA :</label>
-								<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalTraseraAcabados"> </div></a>
-		    					<label style="float: left;margin-right:20px;margin-top: 15px;">INTERIORES :</label>
-		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></a>
-		    					<label style="float: left;margin-right:20px;margin-top: 55px;">TIRADORES <br>Y PERFILES :</label>
-		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalInterioresAcabados2"> </div></a>
+								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalInterioresAcabados"> </div></p></a>
+								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalTraseraAcabados"> </div></p></a>
+		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 60px;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></p></a>
+		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 40px;" id="batPTirador">TIRADORES <br>Y PERFILES :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalInterioresAcabados2"> </div></p></a>
 		    					
 							</div>
 							
