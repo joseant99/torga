@@ -33,7 +33,7 @@
 		
 		
 		
-		<p style="text-align:center;margin-top: 5%;" id="inputBusca"><input style="text-align:center" list="listaAnchos1" id="anchosSelect1" name="anchos1" type="text" /><button style="width: 140px;margin-left: 20px;" (click)="cargarDimen()">Buscar</button></p>
+		<p style="text-align:center;margin-top: 5%;" id="inputBusca"><input style="text-align:center" list="listaAnchos1" id="anchosSelect1" name="anchos1" type="text" class="inputbuscaarticulos"/><select class="selectbuscaarticulos" id="anchosSelect1" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select><button style="width: 140px;margin-left: 20px;" (click)="cargarDimen()">Buscar</button></p>
     </h2>
     <jhi-alert></jhi-alert>
     <br/>
@@ -63,34 +63,34 @@
     
     <div id="producto" class="armariosDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
     	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NB001 Y NB276]</label><input list="listaArmarios" type="text" id="inputCodigoArmario" ></p>
+    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NB001 Y NB276]</label><input list="listaArmarios" type="text" id="inputCodigoArmario" class="claseInputArmario"><select class="selectInputArmario" id="inputCodigoArmario" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select></p>
    		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioComponent.abrirArmariosTodos()">OK</button></p>
 
     </div>
     
     <div id="producto" class="vestidoresDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
     	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NW001 Y NW504]</label><input list="listaArmariosVest" type="text" id="inputCodigoVes" ></p>
+    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NW001 Y NW504]</label><input list="listaArmariosVest" type="text" id="inputCodigoVes" class="inputbuscarvestidor"><select class="selectbuscarvestidor" id="inputCodigoVes" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select></p>
    		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.vestidoresDormitorioComponent.abrirArmariosTodos()">OK</button></p>
 
     </div>
     
     <div id="producto" class="armariosOcultaDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
     	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NL001 Y NL076]</label><input list="listaArmariosOculta" type="text" id="inputCodigoOculta" ></p>
+    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NL001 Y NL076]</label><input list="listaArmariosOculta" type="text" id="inputCodigoOculta" class="inputbuscaroculta"><select class="selectbuscaroculta" id="inputCodigoOculta" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select></p>
    		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioOcultaComponent.abrirArmariosTodos()">OK</button></p>
 
     </div>
     
     <div id="producto" class="armariosVistaDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
     	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NV001 Y NV076]</label><input list="listaArmariosVista" type="text" id="inputCodigoVista" ></p>
+    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NV001 Y NV076]</label><input list="listaArmariosVista" type="text" class="inputbuscarvista" id="inputCodigoVista" ><select class="selectbuscarvista" id="inputCodigoVista" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select></p>
    		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioVistaComponent.abrirArmariosTodos()">OK</button></p>
     </div>
     
     <div id="producto" class="armariosRinconDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
     	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NB277 Y NB324]</label><input list="listaArmariosRincon" type="text" id="inputCodigoRincon" ></p>
+    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NB277 Y NB324]</label><input list="listaArmariosRincon" type="text" id="inputCodigoRincon" class="inputbuscarrincon"><select class="selectbuscarrincon" id="inputCodigoRincon" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select></p>
    		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.rinconDormitorioComponent.abrirArmariosTodos()">OK</button></p>
     </div>
     
@@ -98,9 +98,9 @@
     <div id="producto" class="armariosDivTodo" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDAS</h2><BR><BR>
     	<p id="armariosCogidos" style="display:none"></p>
-    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.anchoMin}} Y {{this.armariosDormitorioComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect4" name="anchos" type="number" (change)="this.armariosDormitorioComponent.comproAncho()"/></p>
-		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.altoMin}} Y {{this.armariosDormitorioComponent.altoMax}}]</label><input style="text-align:center" list="listaAltura" id="alturaSelect4" name="anchos" type="number" (change)="this.armariosDormitorioComponent.comproAlto()"/></p>
-		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px" id="labelFondoArmario">FONDO EN CM</label><input list="listaFondoBat" data-toggle="modal" data-target="#modalFondoCm" id="inputFondoBatientes" style="text-align:center;background-color:#F0F0F0" value="61" type="number" readonly="readonly"/></p>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.anchoMin}} Y {{this.armariosDormitorioComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchos" step="10" id="anchosSelect4" name="anchos" type="number" class="classinputanchoArmarioBat" (change)="this.armariosDormitorioComponent.comproAncho()"/><select class="classanchoArmarioBat" id="anchosSelect4" style="display:none;margin-left:28%;width:160px;height:25px"><option></option></select></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioComponent.altoMin}} Y {{this.armariosDormitorioComponent.altoMax}}]</label><input style="text-align:center" list="listaAltura" id="alturaSelect4" name="anchos" type="number" class="classinputaltoArmarioBat" (change)="this.armariosDormitorioComponent.comproAlto()"/><select class="classaltoArmarioBat" id="alturaSelect4" style="display:none;margin-left:28%;width:160px;height:25px"><option></option></select></p>
+		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px" id="labelFondoArmario">FONDO EN CM</label><input list="listaFondoBat" data-toggle="modal" data-target="#modalFondoCm" class="inputfondoArmBatientes" id="inputFondoBatientes" style="text-align:center;background-color:#F0F0F0" value="61" type="number" readonly="readonly"/> <select data-toggle="modal" class="selectfondoArmBatientes"  data-target="#modalFondoCm" id="inputFondoBatientes" style="display:none;margin-left:28%;width:160px;height:25px;background-color:#F0F0F0"><option>61</option></select></p>
 		<p style="text-align:center;margin-top:3%;"><button id="botonOkAnchos" style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioComponent.carcarCascosInterioresPuertas()">OK</button></p>
 		   
 		<h2 style="text-align:center;margin-top: 5%;margin-bottom: 5%;" id="textoTituloInterior"></h2>
@@ -471,11 +471,11 @@
 	    </div>
 	  </div>
 	  
-	  <div class="modal fade" id="modalApoyo" role="dialog">
+	  <div class="modal fade" id="modalApoyo" role="dialog" style="z-index: 1000000;">
 		    <div class="modal-dialog modal-lg">
 		    
 		      <!-- Modal content-->
-		      <div class="modal-content">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title">Escoge un sistema de apoyo</h4>
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>

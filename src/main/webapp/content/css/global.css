@@ -126,8 +126,8 @@ Generic styles
     border-left: 5px solid green;
 }
 #puertaColor1 {
-    margin-left: 212px;
-    margin-top: -39px;
+    margin-left: 0px;
+    margin-top: 0px;
 }
 
 #puertaColor2 {
@@ -146,7 +146,14 @@ Generic styles
     width: 85%;
     margin-left: 15%;
 }
-
+.puertaColor3puertas2 {
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+}
+.puertaColor3puertas3 {
+    margin-left: 212px;
+    margin-top: -39px;
+}
 #menuPrincipal {
     width: 20%;
     position: fixed;
@@ -5430,18 +5437,7 @@ ui bootstrap tweaks
         max-width: 225px;
         max-height: 525px;
     }
-    #casco1 {
-        max-width: 225px;
-        max-height: 525px;
-        margin-left: 133px !important;
-        margin-top: -30px !important;
-    }
-    #trasera1 {
-        max-width: 225px;
-        max-height: 525px;
-        margin-left: 133px !important;
-        margin-top: -30px !important;
-    }
+
     #casco2 {
         max-width: 225px;
         max-height: 525px;
@@ -7545,7 +7541,7 @@ ui bootstrap tweaks
 
     #puertaColor0 {
         max-width: 150px;
-        max-height: 400px;
+        max-height: 340px;
     }
 
     #puertaColor3 {
@@ -7641,24 +7637,13 @@ ui bootstrap tweaks
     }
     #casco0 {
         max-width: 150px;
-        max-height: 400px;
+        max-height: 340px;
     }
     #trasera0 {
         max-width: 150px;
-        max-height: 400px;
+        max-height: 340px;
     }
-    #casco1 {
-        max-width: 150px;
-        max-height: 400px;
-        margin-left: 90px !important;
-        margin-top: -24px !important;
-    }
-    #trasera1 {
-        max-width: 150px;
-        max-height: 400px;
-        margin-left: 90px !important;
-        margin-top: -24px !important;
-    }
+
     #casco2 {
         max-width: 150px;
         max-height: 400px;
@@ -8356,6 +8341,9 @@ ui bootstrap tweaks
         height: 40px;
         background-color: black;
     }
+    .puerta1 {
+        margin-left: 45%;
+    }
     #productosFiltrados {
         margin-top: 4%;
         width: 100%;
@@ -8515,7 +8503,7 @@ ui bootstrap tweaks
         color: white;
     }
     #imagenLogoCuenta {
-        margin-left: 5%;
+        margin-left: 30%;
     }
     #logoImagen {
         position: absolute;
@@ -8532,6 +8520,8 @@ ui bootstrap tweaks
         margin-left: 0px;
         margin-top: 25px;
         padding-left: 0px;
+        overflow-y: scroll;
+        height: 2500px;
     }
     #ProductosCargados1 {
         margin-left: 27%;
@@ -8835,17 +8825,24 @@ ui bootstrap tweaks
     }
 
     .puertas3izquierda1 {
-        margin-top: -50px !important;
+        margin-top: -42px !important;
         margin-left: -122px !important;
         max-width: 396px;
-        max-height: 500px;
+        max-height: 424px;
+    }
+
+    .puertas2izquierda1 {
+        margin-top: -64px !important;
+        margin-left: -127px !important;
+        max-width: 405px !important;
+        max-height: 525px !important;
     }
 
     .puertas3izquierda2 {
         max-width: 405px;
-        max-height: 521px;
+        max-height: 444px;
         margin-left: -37px !important;
-        margin-top: -85px !important;
+        margin-top: -73px !important;
     }
 
     .container-fluid {
@@ -8937,70 +8934,208 @@ ui bootstrap tweaks
 
     #puertaColorMarco0 {
         position: absolute !important;
-        width: 396px !important;
-        height: 500px !important;
+        max-width: 396px !important;
+        max-height: 424px !important;
+        position: absolute !important;
         z-index: 101 !important;
-        margin-top: -50px !important;
+        margin-top: -42px !important;
         margin-left: -122px !important;
     }
     #puertaColorMarco1 {
         position: absolute !important;
-        width: 396px !important;
-        height: 500px !important;
+        max-width: 396px !important;
+        max-height: 444px !important;
         z-index: 101 !important;
-        margin-top: -50px !important;
-        margin-left: -122px !important;
+        margin-top: -72px !important;
+        margin-left: -31px !important;
     }
     #puertaColorMarco2 {
         position: absolute !important;
-        width: 396px !important;
-        height: 500px !important;
+        max-width: 396px !important;
+        max-height: 444px !important;
         z-index: 101 !important;
-        margin-top: -50px !important;
-        margin-left: -122px !important;
+        margin-top: -72px !important;
+        margin-left: -31px !important;
     }
     .puertas3Izq1 {
         position: absolute !important;
         max-width: 396px !important;
-        max-height: 500px !important;
+        max-height: 424px !important;
+        position: absolute !important;
         z-index: 101 !important;
-        margin-top: -50px !important;
+        margin-top: -42px !important;
         margin-left: -122px !important;
     }
     .puertas3Izq2 {
         position: absolute !important;
         max-width: 396px !important;
-        max-height: 525px !important;
+        max-height: 444px !important;
         z-index: 101 !important;
-        margin-top: -86px !important;
+        margin-top: -72px !important;
         margin-left: -31px !important;
     }
     .puertas3Izq3 {
         position: absolute !important;
         max-width: 396px !important;
-        max-height: 525px !important;
+        max-height: 444px !important;
         z-index: 101 !important;
-        margin-top: -86px !important;
+        margin-top: -72px !important;
         margin-left: -31px !important;
     }
 
     #puertaColor1 {
         max-width: 150px;
-        max-height: 400px;
+        max-height: 343px;
         margin-left: 90px;
-        margin-top: -24px;
+        margin-top: -22px;
     }
 
     #puertaColor2 {
         max-width: 150px;
-        max-height: 400px;
+        max-height: 343px;
         margin-left: 90px;
-        margin-top: -24px;
+        margin-top: -22px;
+    }
+    #puertaColor3 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 120px !important;
+        margin-top: -33px !important;
     }
 
     #botonCalculadoraBatientes {
         height: 12% !important;
         bottom: 15px !important;
+    }
+    .puertas2 {
+        margin-left: 45%;
+    }
+    .puertaColor2puertas {
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+    .puertaColor3puertas2 {
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    .puertas3derecha1 {
+        margin-top: -61px !important;
+        margin-left: -129px !important;
+        max-width: 412px !important;
+        max-height: 522px !important;
+    }
+    .puertas3derecha12 {
+        margin-top: -61px !important;
+        margin-left: -129px !important;
+        max-width: 412px !important;
+        max-height: 522px !important;
+    }
+    .puertas3derecha2 {
+        margin-top: -77px !important;
+        margin-left: -36px !important;
+        max-width: 412px !important;
+        max-height: 504px !important;
+    }
+
+    .puertas3derecha3 {
+        margin-top: -74px !important;
+        margin-left: -28px !important;
+        max-width: 396px !important;
+        max-height: 500px !important;
+    }
+    .casco4Puertas {
+        max-width: 150px !important;
+        max-height: 400px;
+        margin-left: 120px !important;
+        margin-top: -32px !important;
+    }
+    #casco1 {
+        max-width: 150px;
+        max-height: 340px;
+        margin-left: 90px !important;
+        margin-top: -21px !important;
+    }
+    #trasera1 {
+        max-width: 150px;
+        max-height: 340px;
+        margin-left: 90px !important;
+        margin-top: -21px !important;
+    }
+    .puerta4Color2 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+    #puertaColor3 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 120px !important;
+        margin-top: -33px !important;
+    }
+    .puerta4Color3 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 122px !important;
+        margin-top: -32px !important;
+    }
+    .interior14puertas {
+        margin-top: -60px !important;
+        margin-left: -131px !important;
+        max-width: 412px !important;
+        max-height: 519px !important;
+    }
+    .interior24puertas {
+        margin-top: -93px !important;
+        margin-left: -7px !important;
+        max-width: 412px !important;
+        max-height: 519px !important;
+    }
+    .puerta14puertas {
+        max-width: 412px !important;
+        max-height: 519px !important;
+        margin-top: -58px !important;
+        margin-left: -131px !important;
+    }
+    .puerta24puertas {
+        max-width: 412px !important;
+        max-height: 519px !important;
+        margin-top: -58px !important;
+        margin-left: -131px !important;
+    }
+    .puerta34puertas {
+        max-width: 412px !important;
+        max-height: 519px !important;
+        margin-top: -91px !important;
+        margin-left: -7px !important;
+    }
+    .puerta44puertas {
+        max-width: 412px !important;
+        max-height: 519px !important;
+        margin-top: -91px !important;
+        margin-left: -7px !important;
+    }
+    .casco4Puertas {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 180px !important;
+        margin-top: -48px !important;
+    }
+    .puertas4 {
+        margin-left: 20% !important;
+    }
+    #apoyoModal0 {
+        margin-right: 30px;
+    }
+    #apoyoModal2 {
+        margin-right: 30px;
+    }
+    #apoyoModal4 {
+        margin-right: 30px;
+    }
+    #apoyoModal6 {
+        margin-right: 30px;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */

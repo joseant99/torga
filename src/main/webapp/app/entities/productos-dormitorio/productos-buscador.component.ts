@@ -242,8 +242,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#inputFondoBatientes').removeAttr('data-target');
         $('#inputFondoBatientes').removeAttr('data-toggle');
         $('#productosPrincipal').append('<datalist id="listaFondoBat"></datalist>');
+        $('.selectfondoArmBatientes').css({ 'background-color': 'white' });
         for (let i = 45; i < 66; i++) {
             $('#listaFondoBat').append('<option value="' + i + '">' + i + '</option>');
+            $('.selectfondoArmBatientes').append('<option value="' + i + '">' + i + '</option>');
         }
     }
 
@@ -6300,20 +6302,44 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#productosPrincipal').append('<datalist id="listaArmarios"></datalist>');
         for (let i = 1; i < 277; i++) {
             if (i >= 1 && i <= 9) {
+                $('.selectInputArmario').append('<option value="NB00' + i + '">NB00' + i + '</option>');
                 $('#listaArmarios').append('<option value="NB00' + i + '">NB00' + i + '</option>');
             }
             if (i >= 10 && i <= 99) {
                 $('#listaArmarios').append('<option value="NB0' + i + '">NB0' + i + '</option>');
+                $('.selectInputArmario').append('<option value="NB0' + i + '">NB0' + i + '</option>');
             }
             if (i >= 100) {
                 $('#listaArmarios').append('<option value="NB' + i + '">NB' + i + '</option>');
+                $('.selectInputArmario').append('<option value="NB' + i + '">NB' + i + '</option>');
             }
+        }
+        if (screen.width < 800) {
+            $('.claseInputArmario').remove();
+            $('.selectInputArmario').css({ display: 'block' });
+            $('.inputbuscaarticulos').remove();
+            $('.selectbuscaarticulos').css({ display: 'block' });
+            $('.inputbuscarvestidor').remove();
+            $('.selectbuscarvestidor').css({ display: 'block' });
+            $('.inputbuscaroculta').remove();
+            $('.selectbuscaroculta').css({ display: 'block' });
+            $('.inputbuscarvista').remove();
+            $('.selectbuscarvista').css({ display: 'block' });
+            $('.inputbuscarrincon').remove();
+            $('.selectbuscarrincon').css({ display: 'block' });
+            $('.classinputanchoArmarioBat').remove();
+            $('.classanchoArmarioBat').css({ display: 'block' });
+            $('.classinputaltoArmarioBat').remove();
+            $('.classaltoArmarioBat').css({ display: 'block' });
+            $('.inputfondoArmBatientes').remove();
+            $('.selectfondoArmBatientes').css({ display: 'block' });
         }
 
         $('#productosPrincipal').append('<datalist id="listaArmariosRincon"></datalist>');
         for (let i = 277; i < 325; i++) {
             if (i >= 100) {
                 $('#listaArmariosRincon').append('<option value="NB' + i + '">NB' + i + '</option>');
+                $('.selectbuscarrincon').append('<option value="NB' + i + '">NB' + i + '</option>');
             }
         }
 
@@ -6321,12 +6347,15 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         for (let i = 1; i < 505; i++) {
             if (i >= 1 && i <= 9) {
                 $('#listaArmariosVest').append('<option value="NW00' + i + '">NW00' + i + '</option>');
+                $('.selectbuscarvestidor').append('<option value="NW00' + i + '">NW00' + i + '</option>');
             }
             if (i >= 10 && i <= 99) {
                 $('#listaArmariosVest').append('<option value="NW0' + i + '">NW0' + i + '</option>');
+                $('.selectbuscarvestidor').append('<option value="NW0' + i + '">NW0' + i + '</option>');
             }
             if (i >= 100) {
                 $('#listaArmariosVest').append('<option value="NW' + i + '">NW' + i + '</option>');
+                $('.selectbuscarvestidor').append('<option value="NW' + i + '">NW' + i + '</option>');
             }
         }
 
@@ -6334,9 +6363,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         for (let i = 1; i < 77; i++) {
             if (i >= 1 && i <= 9) {
                 $('#listaArmariosOculta').append('<option value="NL00' + i + '">NL00' + i + '</option>');
+                $('.selectbuscaroculta').append('<option value="NL00' + i + '">NL00' + i + '</option>');
             }
             if (i >= 10 && i <= 76) {
                 $('#listaArmariosOculta').append('<option value="NL0' + i + '">NL0' + i + '</option>');
+                $('.selectbuscaroculta').append('<option value="NL0' + i + '">NL0' + i + '</option>');
             }
         }
 
@@ -6344,9 +6375,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         for (let i = 1; i < 77; i++) {
             if (i >= 1 && i <= 9) {
                 $('#listaArmariosVista').append('<option value="NV00' + i + '">NV00' + i + '</option>');
+                $('.selectbuscarvista').append('<option value="NV00' + i + '">NV00' + i + '</option>');
             }
             if (i >= 10 && i <= 76) {
                 $('#listaArmariosVista').append('<option value="NV0' + i + '">NV0' + i + '</option>');
+                $('.selectbuscarvista').append('<option value="NV0' + i + '">NV0' + i + '</option>');
             }
         }
 
@@ -6355,36 +6388,45 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#producto').append('<datalist id="listaAnchos1"></datalist>');
         for (let i = 1; i < 457; i++) {
             if (i >= 1 && i <= 9) {
+                $('.selectbuscaarticulos').append('<option value="NH00' + i + '">NH00' + i + '</option>');
                 $('#listaAnchos1').append('<option value="NH00' + i + '">NH00' + i + '</option>');
             }
             if (i >= 10 && i <= 99) {
                 $('#listaAnchos1').append('<option value="NH0' + i + '">NH0' + i + '</option>');
+                $('.selectbuscaarticulos').append('<option value="NH0' + i + '">NH0' + i + '</option>');
             }
             if (i >= 100) {
                 $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                $('.selectbuscaarticulos').append('<option value="NH0' + i + '">NH0' + i + '</option>');
             }
         }
 
         for (let i = 1; i < 351; i++) {
             if (i >= 1 && i <= 9) {
                 $('#listaAnchos1').append('<option value="NT00' + i + '">NT00' + i + '</option>');
+                $('.selectbuscaarticulos').append('<option value="NT00' + i + '">NT00' + i + '</option>');
             }
             if (i >= 10 && i <= 99) {
                 $('#listaAnchos1').append('<option value="NT0' + i + '">NT0' + i + '</option>');
+                $('.selectbuscaarticulos').append('<option value="NT0' + i + '">NT0' + i + '</option>');
             }
             if (i >= 100) {
                 $('#listaAnchos1').append('<option value="NT' + i + '">NT' + i + '</option>');
+                $('.selectbuscaarticulos').append('<option value="NT' + i + '">NT' + i + '</option>');
             }
         }
         for (let i = 1; i < 82; i++) {
             if (i >= 1 && i <= 9) {
                 $('#listaAnchos1').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                $('.selectbuscaarticulos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
             }
             if (i >= 10 && i <= 99) {
                 $('#listaAnchos1').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                $('.selectbuscaarticulos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
             }
             if (i >= 100) {
                 $('#listaAnchos1').append('<option value="NX' + i + '">NX' + i + '</option>');
+                $('.selectbuscaarticulos').append('<option value="NX' + i + '">NX' + i + '</option>');
             }
         }
     }

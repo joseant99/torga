@@ -7,7 +7,7 @@
     <title>Torga Área Clientes</title>
     <meta name="description" content="Description for torgaPedidos">
     <meta name="google" value="notranslate">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <link rel="shortcut icon" href="favicon.ico" />
    <link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
@@ -217,6 +217,14 @@
 		$("#botonEsconderCalcu").attr("onclick","esconderCalcu()");
 		$("#calculadoraCarrito #calculadora").attr("class","container tab-pane fade active show")
 		$("#calculadoraCarrito #carrito").attr("class","container tab-pane fade")
+	}
+	function quitarText(){
+		if (screen.width < 800){
+			$(".claseInputArmario").remove();
+			$(".selectInputArmario").css({'display':'block'});
+		}
+		
+		
 	}
 	function esconderCalcu(){
 		$("#calculadoraCarrito").css({"display":"none"});
