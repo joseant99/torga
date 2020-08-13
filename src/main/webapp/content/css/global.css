@@ -9440,5 +9440,29 @@ ui bootstrap tweaks
         margin-left: 243px !important;
         margin-top: -66px !important;
     }
+    .armario8Int1 {
+        max-width: 270px !important;
+        max-height: 358px !important;
+        margin-left: -85px !important;
+        margin-top: -42px !important;
+    }
+    .armario8Int2 {
+        max-width: 270px !important;
+        max-height: 358px !important;
+        margin-left: -3px !important;
+        margin-top: -65px !important;
+    }
+    .armario8Int3 {
+        max-width: 270px !important;
+        max-height: 358px !important;
+        margin-left: 78px !important;
+        margin-top: -87px !important;
+    }
+    .armario8Int4 {
+        max-width: 270px !important;
+        max-height: 358px !important;
+        margin-left: 159px !important;
+        margin-top: -109px !important;
+    }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */

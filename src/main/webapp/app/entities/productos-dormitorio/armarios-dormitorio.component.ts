@@ -3072,7 +3072,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         }
                         if (screen.width < 800) {
                             $('#imagenesArmario1').append(
-                                '<p style="width:100%;margin-top:20%;margin-left:20.5% !important;" id="imagenesArmario"></p>'
+                                '<p style="width:100%;margin-top:20%;margin-left:20.5% !important;margin-bottom:-20%;" id="imagenesArmario"></p>'
                             );
                             $(' #imagenesArmario').append(
                                 '<img class="armario8casco1" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
@@ -7091,7 +7091,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-150px;margin-left: -20px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                '" class="armario8Int2" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-150px;margin-left: -20px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -7151,7 +7151,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-202px;margin-left: 262px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                '" class="armario8Int3" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-202px;margin-left: 262px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -7211,7 +7211,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" style="position:absolute;width: 950px;height: 845px;z-index:97;margin-top:-254px;margin-left: 545px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                '" class="armario8Int4" style="position:absolute;width: 950px;height: 845px;z-index:97;margin-top:-254px;margin-left: 545px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -7271,7 +7271,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                '" class="armario8Int1" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -10400,37 +10400,74 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         var cuenta = puertas;
                         if (cuenta % 1 == 0) {
                             for (let i = 1; i <= puertas; i++) {
-                                if (i == 1) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                    );
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                    );
+                                if (screen.width >= 800) {
+                                    if (i == 1) {
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        );
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        );
+                                    }
+                                    if (i == 2) {
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        );
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        );
+                                    }
+                                    if (i == 3) {
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        );
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        );
+                                    }
+                                    if (i == 4) {
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 845px;margin-top: -155px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        );
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor7" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 845px;margin-top: -155px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        );
+                                    }
                                 }
-                                if (i == 2) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                    );
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                    );
-                                }
-                                if (i == 3) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                    );
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                    );
-                                }
-                                if (i == 4) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 845px;margin-top: -155px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                    );
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor7" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 845px;margin-top: -155px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                    );
+
+                                if (screen.width < 800) {
+                                    if (i == 1) {
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101;max-width: 100px !important;max-height: 278px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        );
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;max-width: 100px !important;max-height: 278px !important;margin-left:0px !important; margin-top:0px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        );
+                                    }
+                                    if (i == 2) {
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;max-width: 100px !important;max-height: 278px !important;margin-top: -22px !important;margin-left: 82px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        );
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;max-width: 100px !important;max-height: 278px !important;margin-top: -22px !important;margin-left: 82px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        );
+                                    }
+                                    if (i == 3) {
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;max-width: 100px !important;max-height: 278px !important;margin-top: -44px !important;margin-left: 163px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        );
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;max-width: 100px !important;max-height: 278px !important;margin-top: -44px !important;margin-left: 163px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        );
+                                    }
+                                    if (i == 4) {
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 845px;margin-top: -155px;max-width: 100px !important;max-height: 278px !important;margin-top: -66px !important;margin-left: 243px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        );
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img id="puertaColor7" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 845px;margin-top: -155px;max-width: 100px !important;max-height: 278px !important;margin-top: -66px !important;margin-left: 243px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        );
+                                    }
                                 }
                             }
                         }
@@ -10443,15 +10480,92 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             dimens['dimenPuerta6'] = 'margin-left: 780px;margin-top: 220px;z-index:100000;font-size:30px';
                             dimens['dimenPuerta7'] = 'margin-left: 925px;margin-top: 175px;z-index:100000;font-size:30px';
                             dimens['dimenPuerta8'] = 'margin-left: 1068px;margin-top: 150px;z-index:100000;font-size:30px';
-                            $('#imagenesArmario2 #imagenesArmario').append(
-                                '<p id="nombrePuerta' +
-                                    i +
-                                    '" style="position:absolute;' +
-                                    dimens['dimenPuerta' + i] +
-                                    '"> Puerta ' +
-                                    i +
-                                    '</p>'
-                            );
+                            if (screen.width >= 800) {
+                                $('#imagenesArmario2 #imagenesArmario').append(
+                                    '<p id="nombrePuerta' +
+                                        i +
+                                        '" style="position:absolute;' +
+                                        dimens['dimenPuerta' + i] +
+                                        '"> Puerta ' +
+                                        i +
+                                        '</p>'
+                                );
+                            }
+
+                            if (screen.width < 800) {
+                                if (i == 1) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;margin-left: 19px !important;margin-top: 155px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                                if (i == 2) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;margin-left: 60px !important;margin-top: 140px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                                if (i == 3) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;margin-left: 101px !important;margin-top: 125px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                                if (i == 4) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;margin-left: 141px !important;margin-top: 115px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                                if (i == 5) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;margin-left: 182px !important;margin-top: 105px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                                if (i == 6) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;margin-left: 222px !important;margin-top: 95px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                                if (i == 7) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;margin-left: 262px !important;margin-top: 85px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                                if (i == 8) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;margin-left: 302px !important;margin-top: 75px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                            }
                         }
                     }
 
@@ -12535,6 +12649,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
+                }
+
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12564,6 +12687,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
                 $('#puertaColorMarco' + id).css({ height: '845px' });
+
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
+                }
+
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 var arrayPuertas = this.arraySaberPuertas;
@@ -12598,6 +12730,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
+
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
+                }
+
                 $('#puertaColorMarco' + id).css({ width: '915px' });
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
@@ -12627,6 +12768,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-284px' });
+
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
+                }
+
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
@@ -12666,6 +12816,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
+                }
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
@@ -12697,6 +12854,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
+                }
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
@@ -12733,6 +12897,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
+                }
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
@@ -12764,6 +12935,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
+                }
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
@@ -12796,6 +12974,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '845px' });
                 $('#puertaColor' + id).css({ 'margin-top': '-203px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
+                }
                 $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
@@ -12827,6 +13012,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '845px' });
                 $('#puertaColor' + id).css({ 'margin-top': '-203px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
+                }
                 $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
@@ -12863,6 +13055,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ height: '845px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ 'margin-top': '-203px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
+                }
                 $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
@@ -12899,6 +13098,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
                 $('#puertaColorMarco' + id).css({ height: '845px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
+                }
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '282px' });
                 var arrayPuertas = this.arraySaberPuertas;
@@ -12935,6 +13141,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
                 $('#puertaColorMarco' + id).css({ height: '845px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
+                }
+
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '282px' });
                 var arrayPuertas = this.arraySaberPuertas;
@@ -12963,6 +13177,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
+                }
+
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
                 $('#puertaColorMarco' + id).css({ height: '845px' });
@@ -12999,6 +13221,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
+                }
+
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
                 $('#puertaColorMarco' + id).css({ height: '845px' });
@@ -13029,6 +13259,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColor' + id).css({ 'margin-left': '282px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
+                }
+
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
@@ -23754,6 +23992,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-286px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
+                }
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 1) {
@@ -23847,6 +24093,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
+                }
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 2) {
@@ -23940,6 +24193,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColor' + id).css({ 'margin-left': '0px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
+                }
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 3) {
@@ -24033,6 +24293,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColor' + id).css({ 'margin-left': '0px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
+                }
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 4) {
@@ -24126,6 +24393,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
+                }
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 5) {
@@ -24219,6 +24493,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
+                }
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 6) {
@@ -24312,6 +24593,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-252px' });
                 $('#puertaColor' + id).css({ 'margin-left': '562px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
+                }
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 7) {
@@ -24405,6 +24693,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-252px' });
                 $('#puertaColor' + id).css({ 'margin-left': '562px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '275px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '360px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
+                }
             }
 
             if (texto == '7 PUERTAS DERECHA' && id == 0) {
