@@ -134,6 +134,10 @@ Generic styles
     margin-left: 212px;
     margin-top: -39px;
 }
+#puertaColor3 {
+    margin-left: 280px;
+    margin-top: -51px;
+}
 #imagenDimensionesSin {
     margin-left: 100px;
     margin-right: 95px;
@@ -5383,8 +5387,8 @@ ui bootstrap tweaks
     #puertaColor3 {
         max-width: 225px;
         max-height: 525px;
-        margin-left: 315px !important;
-        margin-top: -72px !important;
+        margin-left: 315px;
+        margin-top: -72px;
     }
     #puertaColor4 {
         max-width: 225px;
@@ -7547,8 +7551,8 @@ ui bootstrap tweaks
     #puertaColor3 {
         max-width: 150px;
         max-height: 400px;
-        margin-left: 211px !important;
-        margin-top: -56px !important;
+        margin-left: 211px;
+        margin-top: -56px;
     }
     #puertaColor4 {
         max-width: 150px;
@@ -7833,7 +7837,7 @@ ui bootstrap tweaks
     }
     #menuFijoArriba {
         position: fixed;
-        z-index: 10000;
+        z-index: 1000000;
         width: 100%;
         top: 0;
         height: 40px;
@@ -8327,6 +8331,31 @@ ui bootstrap tweaks
 }
 
 @media screen and (max-width: 800px) {
+    .puerta2nombre1 {
+        margin-left: 34px !important;
+        margin-top: 180px !important;
+        font-size: 14px !important;
+    }
+    .puerta2nombre2 {
+        margin-left: 94px !important;
+        margin-top: 168px !important;
+        font-size: 14px !important;
+    }
+    .puerta3nombre1 {
+        margin-left: 32px !important;
+        margin-top: 180px !important;
+        font-size: 14px !important;
+    }
+    .puerta3nombre2 {
+        margin-left: 94px !important;
+        margin-top: 165px !important;
+        font-size: 14px !important;
+    }
+    .puerta3nombre3 {
+        margin-left: 158px !important;
+        margin-top: 150px !important;
+        font-size: 14px !important;
+    }
     #page-heading {
         margin-left: 0%;
     }
@@ -8335,11 +8364,17 @@ ui bootstrap tweaks
     }
     #menuFijoArriba {
         position: fixed;
-        z-index: 10000;
+        z-index: 1000000;
         width: 100%;
         top: 0;
         height: 40px;
         background-color: black;
+    }
+    #menuPrincipal {
+        float: left;
+        width: 100%;
+        position: fixed;
+        z-index: 999990 !important;
     }
     .puerta1 {
         margin-left: 45%;
@@ -8465,6 +8500,11 @@ ui bootstrap tweaks
     #imagenApoyo1 {
         max-height: 80px;
         max-width: 140px;
+    }
+    #botonDerechaPresupuesto {
+        margin-right: 28px;
+        margin-top: 0px;
+        margin-bottom: -15px;
     }
     #imagenApoyo2 {
         max-height: 80px;
@@ -8832,10 +8872,10 @@ ui bootstrap tweaks
     }
 
     .puertas2izquierda1 {
-        margin-top: -64px !important;
+        margin-top: -52px !important;
         margin-left: -127px !important;
         max-width: 405px !important;
-        max-height: 525px !important;
+        max-height: 445px !important;
     }
 
     .puertas3izquierda2 {
@@ -8935,10 +8975,10 @@ ui bootstrap tweaks
     #puertaColorMarco0 {
         position: absolute !important;
         max-width: 396px !important;
-        max-height: 424px !important;
+        max-height: 444px !important;
         position: absolute !important;
         z-index: 101 !important;
-        margin-top: -42px !important;
+        margin-top: -50px !important;
         margin-left: -122px !important;
     }
     #puertaColorMarco1 {
@@ -8998,9 +9038,9 @@ ui bootstrap tweaks
     }
     #puertaColor3 {
         max-width: 150px;
-        max-height: 400px;
-        margin-left: 120px !important;
-        margin-top: -33px !important;
+        max-height: 340px;
+        margin-left: 120px;
+        margin-top: -28px;
     }
 
     #botonCalculadoraBatientes {
@@ -9020,35 +9060,35 @@ ui bootstrap tweaks
     }
 
     .puertas3derecha1 {
-        margin-top: -61px !important;
+        margin-top: -52px !important;
         margin-left: -129px !important;
         max-width: 412px !important;
-        max-height: 522px !important;
+        max-height: 444px !important;
     }
     .puertas3derecha12 {
-        margin-top: -61px !important;
+        margin-top: -50px !important;
         margin-left: -129px !important;
         max-width: 412px !important;
-        max-height: 522px !important;
+        max-height: 444px !important;
     }
     .puertas3derecha2 {
-        margin-top: -77px !important;
+        margin-top: -65px !important;
         margin-left: -36px !important;
         max-width: 412px !important;
-        max-height: 504px !important;
+        max-height: 428px !important;
     }
 
     .puertas3derecha3 {
-        margin-top: -74px !important;
+        margin-top: -62px !important;
         margin-left: -28px !important;
         max-width: 396px !important;
-        max-height: 500px !important;
+        max-height: 427px !important;
     }
     .casco4Puertas {
         max-width: 150px !important;
-        max-height: 400px;
-        margin-left: 120px !important;
-        margin-top: -32px !important;
+        max-height: 340px;
+        margin-left: 180px !important;
+        margin-top: -42px !important;
     }
     #casco1 {
         max-width: 150px;
@@ -9068,12 +9108,6 @@ ui bootstrap tweaks
         margin-left: 0px !important;
         margin-top: 0px !important;
     }
-    #puertaColor3 {
-        max-width: 150px;
-        max-height: 400px;
-        margin-left: 120px !important;
-        margin-top: -33px !important;
-    }
     .puerta4Color3 {
         max-width: 150px;
         max-height: 400px;
@@ -9081,47 +9115,43 @@ ui bootstrap tweaks
         margin-top: -32px !important;
     }
     .interior14puertas {
-        margin-top: -60px !important;
+        margin-top: -50px !important;
         margin-left: -131px !important;
         max-width: 412px !important;
-        max-height: 519px !important;
+        max-height: 440px !important;
     }
+
     .interior24puertas {
-        margin-top: -93px !important;
+        margin-top: -78px !important;
         margin-left: -7px !important;
         max-width: 412px !important;
-        max-height: 519px !important;
+        max-height: 440px !important;
     }
     .puerta14puertas {
         max-width: 412px !important;
-        max-height: 519px !important;
-        margin-top: -58px !important;
+        max-height: 440px !important;
+        margin-top: -45px !important;
         margin-left: -131px !important;
     }
     .puerta24puertas {
         max-width: 412px !important;
-        max-height: 519px !important;
-        margin-top: -58px !important;
+        max-height: 440px !important;
+        margin-top: -45px !important;
         margin-left: -131px !important;
     }
     .puerta34puertas {
         max-width: 412px !important;
-        max-height: 519px !important;
-        margin-top: -91px !important;
+        max-height: 440px !important;
+        margin-top: -76px !important;
         margin-left: -7px !important;
     }
     .puerta44puertas {
         max-width: 412px !important;
-        max-height: 519px !important;
-        margin-top: -91px !important;
+        max-height: 440px !important;
+        margin-top: -76px !important;
         margin-left: -7px !important;
     }
-    .casco4Puertas {
-        max-width: 150px;
-        max-height: 400px;
-        margin-left: 180px !important;
-        margin-top: -48px !important;
-    }
+
     .puertas4 {
         margin-left: 20% !important;
     }
@@ -9136,6 +9166,279 @@ ui bootstrap tweaks
     }
     #apoyoModal6 {
         margin-right: 30px;
+    }
+    #nombrePuerta1 {
+        margin-left: 63px !important;
+        margin-top: 205px !important;
+        font-size: 14px !important;
+    }
+    #nombrePuerta2 {
+        margin-left: 122px !important;
+        margin-top: 190px !important;
+        font-size: 14px !important;
+    }
+    .puertaAsi41 {
+        max-width: 150px;
+        max-height: 343px;
+        margin-left: 90px;
+        margin-top: -22px;
+    }
+    .puertaAsi42 {
+        max-width: 150px;
+        max-height: 343px;
+        margin-left: 90px;
+        margin-top: -22px;
+    }
+    .puertaAsi43 {
+        max-width: 150px;
+        max-height: 343px;
+        margin-left: 180px;
+        margin-top: -42px;
+    }
+    .interior14puertasAsi {
+        margin-top: -42px !important;
+        margin-left: -131px !important;
+        max-width: 412px !important;
+        max-height: 424px !important;
+    }
+    .interior24puertasAsi {
+        max-width: 412px !important;
+        margin-left: -37px !important;
+        margin-top: -72px !important;
+        max-height: 440px !important;
+    }
+    .interior34puertasAsi {
+        margin-top: -85px !important;
+        margin-left: 56px !important;
+        max-width: 412px !important;
+        max-height: 424px !important;
+    }
+    .puertaAsi41 {
+        margin-left: 93px !important;
+        margin-top: -23px !important;
+    }
+    .puertaAsi42 {
+        margin-left: 93px !important;
+        margin-top: -23px !important;
+    }
+    .puertaAsi43 {
+        margin-left: 186px !important;
+        margin-top: -43px !important;
+    }
+    .puertaAsiBue40 {
+        margin-left: -132px !important;
+        margin-top: -40px !important;
+        max-width: 412px !important;
+        max-height: 424px !important;
+    }
+    .puertaAsiBue41 {
+        margin-left: -37px !important;
+        margin-top: -71px !important;
+        max-width: 412px !important;
+        max-height: 444px !important;
+    }
+    .puertaAsiBue42 {
+        margin-left: 93px !important;
+        margin-left: -37px !important;
+        margin-top: -71px !important;
+        max-width: 412px !important;
+        max-height: 444px !important;
+    }
+    .puertaAsiBue43 {
+        margin-left: 56px !important;
+        margin-top: -84px !important;
+        max-width: 412px !important;
+        max-height: 424px !important;
+    }
+    .casco5Central0 {
+        max-width: 125px !important;
+        max-height: 300px !important;
+    }
+
+    #casco5Central1 {
+        max-width: 125px;
+        max-height: 300px;
+        margin-left: 74px !important;
+        margin-top: -18px !important;
+    }
+
+    #casco5Central2 {
+        max-width: 125px;
+        max-height: 300px;
+        margin-left: 148px !important;
+        margin-top: -35px !important;
+    }
+
+    .armario5centralint1 {
+        margin-top: -46px !important;
+        margin-left: -107px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+
+    .armario5centralint2 {
+        margin-top: -56px !important;
+        margin-left: -15px !important;
+        max-width: 305px !important;
+        max-height: 375px !important;
+    }
+    .armario5centralint3 {
+        margin-top: -82px !important;
+        margin-left: 41px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+
+    #casco5Izq0 {
+        max-width: 125px;
+        max-height: 300px;
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    #casco5Izq2 {
+        max-width: 125px;
+        max-height: 300px;
+        margin-left: 173px !important;
+        margin-top: -41px !important;
+    }
+
+    .armario5izqint3 {
+        margin-top: -88px !important;
+        margin-left: 68px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario5izqint2 {
+        margin-top: -63px !important;
+        margin-left: -35px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario5izqint1 {
+        margin-top: -37px !important;
+        margin-left: -96px !important;
+        max-width: 315px !important;
+        max-height: 375px !important;
+    }
+
+    #casco5Der0 {
+        max-width: 125px !important;
+        max-height: 300px !important;
+    }
+    .casco5Der1 {
+        max-width: 125px !important;
+        max-height: 300px !important;
+    }
+    #casco5Der2 {
+        max-width: 125px !important;
+        max-height: 300px !important;
+    }
+    .armario5der1 {
+        margin-top: -45px !important;
+        margin-left: -107px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario5der2 {
+        margin-top: -69px !important;
+        margin-left: -5px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario5der3 {
+        margin-top: -80px !important;
+        margin-left: 84px !important;
+        max-width: 315px !important;
+        max-height: 375px !important;
+    }
+    .armario6simint1 {
+        margin-top: -45px !important;
+        margin-left: -107px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+
+    .armario6simint2 {
+        margin-top: -5px !important;
+        margin-left: -70px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario6simint3 {
+        margin-top: -94px !important;
+        margin-left: 96px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario7asi1 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+    }
+    .armario7asi2 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 66px !important;
+        margin-top: -17px !important;
+    }
+    .armario7asi3 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 133px !important;
+        margin-top: -34px !important;
+    }
+    .armario7asi4 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 222px !important;
+        margin-top: -57px !important;
+    }
+    .armario7asi1 {
+        max-width: 300px !important;
+        max-height: 365px !important;
+        margin-top: -43px !important;
+        margin-left: -94px !important;
+    }
+    .armario7asi2 {
+        max-width: 300px !important;
+        max-height: 350px !important;
+        margin-top: -52px !important;
+        margin-left: -29px !important;
+    }
+    .armario7asi3 {
+        max-width: 300px !important;
+        max-height: 365px !important;
+        margin-top: -77px !important;
+        margin-left: 38px !important;
+    }
+    .armario7asi4 {
+        max-width: 300px !important;
+        max-height: 365px !important;
+        margin-top: -100px !important;
+        margin-left: 127px !important;
+    }
+
+    .armario8casco1 {
+        max-width: 100px;
+        max-height: 275px;
+    }
+    .armario8casco2 {
+        max-width: 100px;
+        max-height: 275px;
+        margin-left: 81px !important;
+        margin-top: -22px !important;
+    }
+    .armario8casco3 {
+        max-width: 100px;
+        max-height: 275px;
+        margin-left: 162px !important;
+        margin-top: -44px !important;
+    }
+    .armario8casco4 {
+        max-width: 100px;
+        max-height: 275px;
+        margin-left: 243px !important;
+        margin-top: -66px !important;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */
