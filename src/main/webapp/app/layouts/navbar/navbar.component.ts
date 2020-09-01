@@ -523,11 +523,22 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (nombreArmario == '1 PUERTA') {
                             var interior1 = sesion[1]['interiores'][0];
                             var puerta1 = sesion[1]['puertas'][0];
-                            $('#cuerpo' + i).append(
-                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 470px;margin-top: 110px;float: left;"></div>'
-                            );
-                            $('#cuerpo' + i).append('<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>');
-
+                            if (screen.width >= 800) {
+                                $('#cuerpo' + i).append(
+                                    '<div id="izquierda" class="armarioIzquierda" style="margin-left: 470px;margin-top: 110px;float: left;"></div>'
+                                );
+                                $('#cuerpo' + i).append(
+                                    '<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>'
+                                );
+                            }
+                            if (screen.width < 800) {
+                                $('#cuerpo' + i).append(
+                                    '<div id="izquierda" class="armarioIzquierda" style="margin-left: 470px;margin-top: 110px;float: left;margin-left: 7% !important;margin-top: 45px !important;"></div>'
+                                );
+                                $('#cuerpo' + i).append(
+                                    '<div id="derecha" class="armarioDerecha" style="float:left;margin-left:0px !important;margin-top: 330px !important;"></div>'
+                                );
+                            }
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:2" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
                                     interior1['nombre'] +
@@ -1318,10 +1329,22 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             var interior1 = sesion[1]['interiores'][0];
                             var puerta1 = sesion[1]['puertas'][0];
                             var puerta2 = sesion[1]['puertas'][1];
-                            $('#cuerpo' + i).append(
-                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
-                            );
-                            $('#cuerpo' + i).append('<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>');
+                            if (screen.width >= 800) {
+                                $('#cuerpo' + i).append(
+                                    '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;"></div>'
+                                );
+                                $('#cuerpo' + i).append(
+                                    '<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>'
+                                );
+                            }
+                            if (screen.width < 800) {
+                                $('#cuerpo' + i).append(
+                                    '<div id="izquierda" class="armarioIzquierda" style="margin-left: 420px;margin-top: 110px;float: left;margin-left: 7% !important;margin-top: 45px !important;"></div>'
+                                );
+                                $('#cuerpo' + i).append(
+                                    '<div id="derecha" class="armarioDerecha" style="float:left;margin-left:0px !important;margin-top: 330px !important;"></div>'
+                                );
+                            }
 
                             $('#cuerpo' + i + ' #derecha').append(
                                 '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 1;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
@@ -1337,14 +1360,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
                                     var src1 =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src1 +
                                             '">'
                                     );
@@ -1354,14 +1377,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
                                     var src1 =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src1 +
                                             '">'
                                     );
@@ -1371,7 +1394,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1380,7 +1403,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1389,7 +1412,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1398,7 +1421,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1407,7 +1430,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1416,7 +1439,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1426,7 +1449,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1435,7 +1458,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1447,14 +1470,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
                                     var src1 =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src1 +
                                             '">'
                                     );
@@ -1464,14 +1487,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
                                     var src1 =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src1 +
                                             '">'
                                     );
@@ -1481,7 +1504,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1490,7 +1513,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1499,7 +1522,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1508,7 +1531,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1517,7 +1540,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1526,7 +1549,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1536,7 +1559,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -1545,7 +1568,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var src =
                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                     $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                        '<img class="armarioCalculadora" id="puertasArmario2puertas" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
                                             src +
                                             '">'
                                     );
@@ -9098,9 +9121,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             '<div style="float: left;width: 100%;margin-top:50%" id="textoCesta' + i + '"></div>'
                         );
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;">' +
+                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;margin-left:28%;">' +
                                 sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                '<i style="float:right;margin-right:40%">' +
+                                '<i id="precioArm" style="float:right;margin-right:40%">' +
                                 sesion[1]['todoSumadoPrecio'] +
                                 ' pp</i></p>'
                         );
@@ -9150,22 +9173,22 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             $('#textoCesta' + i).css({ 'margin-top': '20%' });
                         }
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Ancho: ' +
+                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Ancho: ' +
                                 sesion[1]['ancho'] +
                                 '</p>'
                         );
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Alto: ' +
+                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Alto: ' +
                                 sesion[1]['alto'] +
                                 '</p>'
                         );
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Fondo: ' +
+                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Fondo: ' +
                                 sesion[1]['fondo'] +
                                 '</p>'
                         );
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Codigo: ' +
+                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Codigo: ' +
                                 sesion[1]['codigo'] +
                                 '<i style="float:right;margin-right:40%">+ ' +
                                 sesion[1]['precioCasco'] +
@@ -9173,14 +9196,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         );
                         if (sesion[1]['niveladores'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Niveladores: <i style="float:right;margin-right:40%">+ ' +
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Niveladores: <i style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['niveladores']['precio'] +
                                     ' pp</i></p>'
                             );
                         }
                         if (sesion[1]['cajeado'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado: ' +
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado: ' +
                                     sesion[1]['cajeado']['tipo'] +
                                     '<i style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['cajeado']['precio'] +
@@ -9189,7 +9212,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                         if (sesion[1]['enmarcado'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado: ' +
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado: ' +
                                     sesion[1]['enmarcado']['codigo'] +
                                     '<i style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['enmarcado']['precio'] +
@@ -9197,26 +9220,26 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             );
                         }
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Casco: ' +
+                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Casco: ' +
                                 sesion[1]['acabadoCasco']['nombre'] +
                                 '</p>'
                         );
                         if (sesion[1]['acabadoTrasera'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Trasera: ' +
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Trasera: ' +
                                     sesion[1]['acabadoTrasera']['nombre'] +
                                     '</p>'
                             );
                         }
 
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Interiores: ' +
+                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Interiores: ' +
                                 sesion[1]['acabadoInterior']['nombre'] +
                                 '</p>'
                         );
                         if (sesion[1]['acabadoTirador'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Tirador: ' +
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado Tirador: ' +
                                     sesion[1]['acabadoTirador']['nombre'] +
                                     '</p>'
                             );
@@ -9224,7 +9247,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['interiores'] != undefined) {
                             for (let w = 0; w < sesion[1]['interiores']['length']; w++) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Interior ' +
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Interior ' +
                                         (w + 1) +
                                         ': ' +
                                         sesion[1]['interiores'][w]['nombre'] +
@@ -9237,7 +9260,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['puertas'] != undefined) {
                             for (let w = 0; w < sesion[1]['puertas']['length']; w++) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Puerta ' +
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Puerta ' +
                                         (w + 1) +
                                         ': ' +
                                         sesion[1]['puertas'][w]['nombre'] +
@@ -9248,7 +9271,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 for (let k = 0; k < 5; k++) {
                                     if (sesion[1]['puertas'][w]['acabado' + k] != undefined) {
                                         $('#textoCesta' + i).append(
-                                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado ' +
+                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Acabado ' +
                                                 (k + 1) +
                                                 ' Puerta ' +
                                                 (w + 1) +
@@ -9263,18 +9286,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                         if (sesion[1]['niveladores'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Niveladores: Con niveladores <i style="float:right;margin-right:40%">+ ' +
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Niveladores: Con niveladores <i style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['niveladores']['precio'] +
                                     ' pp</i></p>'
                             );
                         } else {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Niveladores: Sin niveladores</p>'
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Niveladores: Sin niveladores</p>'
                             );
                         }
                         if (sesion[1]['cajeado'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado: ' +
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado: ' +
                                     sesion[1]['cajeado']['tipo'] +
                                     '<i style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['cajeado']['precio'] +
@@ -9282,33 +9305,33 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             );
                             if (sesion[1]['cajeado']['medA'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado Medida A: ' +
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado Medida A: ' +
                                         sesion[1]['cajeado']['medA'] +
                                         '</p>'
                                 );
                             }
                             if (sesion[1]['cajeado']['medB'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado Medida B: ' +
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado Medida B: ' +
                                         sesion[1]['cajeado']['medB'] +
                                         '</p>'
                                 );
                             }
                             if (sesion[1]['cajeado']['medC'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado Medida C: ' +
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado Medida C: ' +
                                         sesion[1]['cajeado']['medC'] +
                                         '</p>'
                                 );
                             }
                         } else {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado: Sin cajeado</p>'
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Cajeado: Sin cajeado</p>'
                             );
                         }
                         if (sesion[1]['enmarcado'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado: ' +
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado: ' +
                                     sesion[1]['enmarcado']['codigo'] +
                                     '<i style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['enmarcado']['precio'] +
@@ -9316,28 +9339,28 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             );
                             if (sesion[1]['enmarcado']['medA'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado Medida A: ' +
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado Medida A: ' +
                                         sesion[1]['enmarcado']['medA'] +
                                         '</p>'
                                 );
                             }
                             if (sesion[1]['enmarcado']['medB'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado Medida B: ' +
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado Medida B: ' +
                                         sesion[1]['enmarcado']['medB'] +
                                         '</p>'
                                 );
                             }
                             if (sesion[1]['enmarcado']['medC'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado Medida C: ' +
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado Medida C: ' +
                                         sesion[1]['enmarcado']['medC'] +
                                         '</p>'
                                 );
                             }
                         } else {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado: Sin enmarcado</p>'
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;">Enmarcado: Sin enmarcado</p>'
                             );
                         }
 
@@ -9376,9 +9399,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                         if (saberlo != 'A') {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
+                                '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
                                     sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                    '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    '<i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
                                     i +
                                     '">' +
                                     sesion[1]['todoSumadoPrecio'] +
@@ -9386,9 +9409,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             );
                         } else {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
+                                '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
                                     sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                    '<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    '<i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
                                     i +
                                     '">' +
                                     sesion[1]['todoSumadoPrecio'] +
@@ -9397,7 +9420,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
 
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Ancho: ' +
+                            '<p id="anchoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Ancho: ' +
                                 sesion[1]['ancho'] +
                                 '</p>'
                         );
@@ -9956,7 +9979,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img style="z-index:' +
+                            '<img id="mueblesTodos" style="z-index:' +
                                 (100 - i) +
                                 ';max-width:400px;max-height:400px;;max-width:410px;max-height:350px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO/' +
                                 nombreCargarImagen +
@@ -9975,19 +9998,19 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             $('#cestaTotal').text(cogerPrecio);
                         }
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Alto: ' +
+                            '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Alto: ' +
                                 sesion[1]['alto'] +
                                 '</p>'
                         );
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Fondo: ' +
+                            '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Fondo: ' +
                                 sesion[1]['fondo'] +
                                 '</p>'
                         );
 
                         for (let o = 0; o < acabados.length; o++) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Acabado ' +
+                                '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Acabado ' +
                                     (o + 1) +
                                     ': ' +
                                     acabados[o] +
@@ -9997,9 +10020,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (saberlo != 'A') {
                             if (sesion[1]['apoyo'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
+                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
                                         sesion[1]['apoyo']['productoApoyo']['nombre'] +
-                                        '<i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                        '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                         sesion[1]['apoyo']['precio'] +
                                         ' &euro;</i></p>'
                                 );
@@ -10024,9 +10047,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         } else {
                             if (sesion[1]['apoyo'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
+                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
                                         sesion[1]['apoyo']['productoApoyo']['nombre'] +
-                                        '<i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                        '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                         sesion[1]['apoyo']['precio'] +
                                         ' PP</i></p>'
                                 );

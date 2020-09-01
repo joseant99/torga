@@ -680,6 +680,308 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('#calcuRincon').css({ display: 'block' });
             $('#modalesRincon').css({ display: 'block' });
         }
+
+        if (id == 8) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 1; i < 78; i++) {
+                if (i >= 1 && i <= 9) {
+                    $('.selectbuscaarticulos').append('<option value="NH00' + i + '">NH00' + i + '</option>');
+                    $('#listaAnchos1').append('<option value="NH00' + i + '">NH00' + i + '</option>');
+                }
+                if (i >= 10 && i <= 99) {
+                    $('#listaAnchos1').append('<option value="NH0' + i + '">NH0' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH0' + i + '">NH0' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 9) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 78; i < 136; i++) {
+                if (i >= 10 && i <= 99) {
+                    $('#listaAnchos1').append('<option value="NH0' + i + '">NH0' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH0' + i + '">NH0' + i + '</option>');
+                }
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 10) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 136; i < 139; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 11) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 139; i < 197; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 12) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 197; i < 200; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 13) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 200; i < 234; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 14) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 234; i < 246; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 15) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 246; i < 279; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 16) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 279; i < 289; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 17) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 289; i < 374; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 18) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 374; i < 422; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 19) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 455; i < 463; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 27) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 463; i < 493; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 20) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 493; i < 512; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 21) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 1; i < 297; i++) {
+                if (i >= 1 && i <= 9) {
+                    $('.selectbuscaarticulos').append('<option value="NT00' + i + '">NT00' + i + '</option>');
+                    $('#listaAnchos1').append('<option value="NT00' + i + '">NT00' + i + '</option>');
+                }
+                if (i >= 10 && i <= 99) {
+                    $('#listaAnchos1').append('<option value="NT0' + i + '">NT0' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NT0' + i + '">NT0' + i + '</option>');
+                }
+
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NT' + i + '">NT' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NT' + i + '">NT' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 22) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 297; i < 351; i++) {
+                if (i >= 1 && i <= 9) {
+                    $('.selectbuscaarticulos').append('<option value="NT00' + i + '">NT00' + i + '</option>');
+                    $('#listaAnchos1').append('<option value="NT00' + i + '">NT00' + i + '</option>');
+                }
+                if (i >= 10 && i <= 99) {
+                    $('#listaAnchos1').append('<option value="NT0' + i + '">NT0' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NT0' + i + '">NT0' + i + '</option>');
+                }
+
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NT' + i + '">NT' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NT' + i + '">NT' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 23) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 1; i < 54; i++) {
+                if (i >= 1 && i <= 9) {
+                    $('.selectbuscaarticulos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                    $('#listaAnchos1').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                }
+                if (i >= 10 && i <= 99) {
+                    $('#listaAnchos1').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                }
+
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NX' + i + '">NX' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NX' + i + '">NX' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 24) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 54; i < 70; i++) {
+                if (i >= 1 && i <= 9) {
+                    $('.selectbuscaarticulos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                    $('#listaAnchos1').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                }
+                if (i >= 10 && i <= 99) {
+                    $('#listaAnchos1').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                }
+
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NX' + i + '">NX' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NX' + i + '">NX' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 25) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 70; i < 74; i++) {
+                if (i >= 1 && i <= 9) {
+                    $('.selectbuscaarticulos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                    $('#listaAnchos1').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                }
+                if (i >= 10 && i <= 99) {
+                    $('#listaAnchos1').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                }
+
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NX' + i + '">NX' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NX' + i + '">NX' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 26) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 74; i < 82; i++) {
+                if (i >= 1 && i <= 9) {
+                    $('.selectbuscaarticulos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                    $('#listaAnchos1').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                }
+                if (i >= 10 && i <= 99) {
+                    $('#listaAnchos1').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                }
+
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NX' + i + '">NX' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NX' + i + '">NX' + i + '</option>');
+                }
+            }
+        }
     }
 
     public quitarnone(id) {
@@ -6386,7 +6688,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         this.estanteria = [];
         this.saberNumArrayAca = [];
         $('#producto').append('<datalist id="listaAnchos1"></datalist>');
-        for (let i = 1; i < 457; i++) {
+        for (let i = 1; i < 78; i++) {
             if (i >= 1 && i <= 9) {
                 $('.selectbuscaarticulos').append('<option value="NH00' + i + '">NH00' + i + '</option>');
                 $('#listaAnchos1').append('<option value="NH00' + i + '">NH00' + i + '</option>');
@@ -6398,35 +6700,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             if (i >= 100) {
                 $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
                 $('.selectbuscaarticulos').append('<option value="NH0' + i + '">NH0' + i + '</option>');
-            }
-        }
-
-        for (let i = 1; i < 351; i++) {
-            if (i >= 1 && i <= 9) {
-                $('#listaAnchos1').append('<option value="NT00' + i + '">NT00' + i + '</option>');
-                $('.selectbuscaarticulos').append('<option value="NT00' + i + '">NT00' + i + '</option>');
-            }
-            if (i >= 10 && i <= 99) {
-                $('#listaAnchos1').append('<option value="NT0' + i + '">NT0' + i + '</option>');
-                $('.selectbuscaarticulos').append('<option value="NT0' + i + '">NT0' + i + '</option>');
-            }
-            if (i >= 100) {
-                $('#listaAnchos1').append('<option value="NT' + i + '">NT' + i + '</option>');
-                $('.selectbuscaarticulos').append('<option value="NT' + i + '">NT' + i + '</option>');
-            }
-        }
-        for (let i = 1; i < 82; i++) {
-            if (i >= 1 && i <= 9) {
-                $('#listaAnchos1').append('<option value="NX00' + i + '">NX00' + i + '</option>');
-                $('.selectbuscaarticulos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
-            }
-            if (i >= 10 && i <= 99) {
-                $('#listaAnchos1').append('<option value="NX0' + i + '">NX0' + i + '</option>');
-                $('.selectbuscaarticulos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
-            }
-            if (i >= 100) {
-                $('#listaAnchos1').append('<option value="NX' + i + '">NX' + i + '</option>');
-                $('.selectbuscaarticulos').append('<option value="NX' + i + '">NX' + i + '</option>');
             }
         }
     }

@@ -1393,7 +1393,9 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 arrayPuertas[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
-
+                $('.armariosDivTodo2 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1416,7 +1418,9 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 arrayPuertas[2] = '3';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
-
+                $('.armariosDivTodo2 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];

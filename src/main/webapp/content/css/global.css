@@ -8397,6 +8397,52 @@ ui bootstrap tweaks
         margin-left: 15% !important;
         margin-top: 15px;
     }
+    #artFor1 {
+        margin-left: 19% !important;
+        margin-top: 15px;
+    }
+
+    #artFor2 {
+        margin-left: 13% !important;
+        width: 61%;
+    }
+
+    #artFor3 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 60%;
+    }
+
+    #artFor4 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 59%;
+    }
+    #artFor5 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 59%;
+    }
+    #artFor6 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 26%;
+    }
+    #artFor7 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 31%;
+    }
+    #artFor8 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 26%;
+    }
+    #artFor9 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 37%;
+    }
 
     #estFor {
         margin-left: 15% !important;
@@ -8484,7 +8530,7 @@ ui bootstrap tweaks
         color: black;
     }
     #imagenAcabadoPrincipal1 {
-        max-width: 60px;
+        max-width: 100px;
     }
     .acabadosModal {
         float: left;
@@ -8561,7 +8607,7 @@ ui bootstrap tweaks
         margin-top: 25px;
         padding-left: 0px;
         overflow-y: scroll;
-        height: 2500px;
+        height: 4000px;
     }
     #ProductosCargados1 {
         margin-left: 27%;
@@ -8904,7 +8950,7 @@ ui bootstrap tweaks
         margin-left: 22% !important;
     }
     .marginIzquierda {
-        margin-left: 165px;
+        margin-left: 0px;
     }
     #modalCesta {
         margin-top: -15px;
@@ -9463,6 +9509,145 @@ ui bootstrap tweaks
         max-height: 358px !important;
         margin-left: 159px !important;
         margin-top: -109px !important;
+    }
+    .class6interior1 {
+        width: 320px !important;
+        height: 375px !important;
+        margin-top: -37px !important;
+        margin-left: -98px !important;
+    }
+    .class6interior2 {
+        width: 335px !important;
+        height: 390px !important;
+        margin-top: -63px !important;
+        margin-left: -31px !important;
+    }
+    .class6interior3 {
+        width: 335px !important;
+        height: 390px !important;
+        margin-top: -88px !important;
+        margin-left: 70px !important;
+    }
+    .class6interior4 {
+        width: 320px !important;
+        height: 375px !important;
+        margin-top: -99px !important;
+        margin-left: 153px !important;
+    }
+
+    .armario7izq1 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+    }
+    .armario7izq2 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 66px !important;
+        margin-top: -17px !important;
+    }
+    .armario7izq3 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 133px !important;
+        margin-top: -34px !important;
+    }
+    .armario7izq4 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 222px !important;
+        margin-top: -57px !important;
+    }
+    .class7Izqinterior1 {
+        max-width: 280px !important;
+        max-height: 350px !important;
+        margin-top: -35px !important;
+        margin-left: -86px !important;
+    }
+    .class7Izqinterior2 {
+        max-width: 290px !important;
+        max-height: 365px !important;
+        margin-top: -60px !important;
+        margin-left: -25px !important;
+    }
+    .class7Izqinterior3 {
+        max-width: 290px !important;
+        max-height: 365px !important;
+        margin-top: -83px !important;
+        margin-left: 63px !important;
+    }
+    .class7Izqinterior4 {
+        max-width: 300px !important;
+        max-height: 365px !important;
+        margin-top: -106px !important;
+        margin-left: 147px !important;
+    }
+    #mueblesTodos {
+        max-width: 310px !important;
+        max-height: 310px !important;
+    }
+    #anchoCesta {
+        margin-left: 15% !important;
+    }
+    #altoCesta {
+        margin-left: 15% !important;
+    }
+    #fondoCesta {
+        margin-left: 15% !important;
+    }
+    #acabadoCesta {
+        margin-left: 15% !important;
+    }
+    #apoyoCesta {
+        margin-left: 15% !important;
+    }
+    #apoyoPrecioCesta {
+        margin-right: 15% !important;
+        font-size: 12px !important;
+    }
+
+    #nombreMueble {
+        margin-left: 15% !important;
+    }
+    #precioMueble {
+        margin-right: 15% !important;
+    }
+
+    .cuerpoArmario {
+        height: 455px !important;
+    }
+
+    .armarioCalculadora {
+        width: 300px !important;
+    }
+
+    #texto1Arm {
+        margin-left: 15% !important;
+    }
+
+    #precioArm {
+        margin-right: 15% !important;
+    }
+
+    .puertas3Izquierda {
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+        width: 300px !important;
+    }
+
+    #puertasArmario2puertas {
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    .armariosOcultaDivInputCodigo {
+        margin-top: 500px;
+    }
+
+    #imagenNoDisponible {
+        width: 335px !important;
+        float: left !important;
+        left: 0 !important;
+        margin-left: 5% !important;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */
