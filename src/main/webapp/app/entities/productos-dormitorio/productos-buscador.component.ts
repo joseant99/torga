@@ -1033,6 +1033,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             });
         this.acabados = acabados;
         this.acabados1 = acabados;
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('.productosColor').css({ 'background-color': 'white' });
         $('#nombreApoyoTitulo').css({ display: 'none' });
         $('#dimensionesInput1').css({ 'background-color': 'white' });

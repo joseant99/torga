@@ -9871,5 +9871,103 @@ ui bootstrap tweaks
     #fechapedidop {
         font-size: 23px !important;
     }
+    #botonCalculadora {
+        width: 50%;
+        height: 15%;
+        bottom: 0;
+        position: absolute;
+        font-size: 16px;
+        background-color: black;
+        left: auto;
+        color: white;
+        right: 0;
+        border: 0;
+    }
+    #textprecioCalculadoraazul {
+        float: right !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        background-color: #addaf1 !important;
+        width: 50% !important;
+        height: 55px !important;
+        left: 0 !important;
+        text-align: center !important;
+        margin-bottom: 0 !important;
+    }
+    #precioDimension {
+        float: left !important;
+        padding-top: 15px !important;
+        padding-left: 28% !important;
+    }
+    #ppCalculadora {
+        padding-top: 15px !important;
+    }
+    #div1calcutodo {
+        height: 18% !important;
+    }
+    #botonCalculadoraBatientes {
+        width: 50% !important;
+        height: 15% !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        font-size: 16px !important;
+        background-color: black !important;
+        left: auto !important;
+        color: white !important;
+        right: 0 !important;
+        border: 0 !important;
+    }
+
+    #botonCalculadoraRincon {
+        width: 50% !important;
+        height: 15% !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        font-size: 16px !important;
+        background-color: black !important;
+        left: auto !important;
+        color: white !important;
+        right: 0 !important;
+        border: 0 !important;
+    }
+
+    #botonCalculadoraOculta {
+        width: 50% !important;
+        height: 15% !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        font-size: 16px !important;
+        background-color: black !important;
+        left: auto !important;
+        color: white !important;
+        right: 0 !important;
+        border: 0 !important;
+    }
+
+    #botonCalculadoraVista {
+        width: 50% !important;
+        height: 15% !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        font-size: 16px !important;
+        background-color: black !important;
+        left: auto !important;
+        color: white !important;
+        right: 0 !important;
+        border: 0 !important;
+    }
+
+    #botonCalculadoraVestidor {
+        width: 50% !important;
+        height: 15% !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        font-size: 16px !important;
+        background-color: black !important;
+        left: auto !important;
+        color: white !important;
+        right: 0 !important;
+        border: 0 !important;
+    }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */

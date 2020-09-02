@@ -889,6 +889,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var precioPuntosBuenos = JSON.parse(sessionStorage.getItem('C'));
         }
         var id = 0;
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
         var ancho = $('#anchosSelect4').val();
         $('#inputFondoBatientes').removeAttr('data-target');
         $('#inputFondoBatientes').removeAttr('data-toggle');
