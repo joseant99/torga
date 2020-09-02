@@ -8408,7 +8408,7 @@ ui bootstrap tweaks
     }
 
     #artFor3 {
-        margin-left: 15% !important;
+        margin-left: 14% !important;
         margin-top: 15px;
         width: 60%;
     }
@@ -8768,7 +8768,7 @@ ui bootstrap tweaks
     #modalcontenidoCss {
         height: 750px !important;
         margin-top: 50px !important;
-        width: 350px !important;
+        width: 360px !important;
         overflow-y: scroll !important;
     }
     .pietra {
@@ -8943,7 +8943,7 @@ ui bootstrap tweaks
         left: -345px;
     }
     .armariosDivInputCodigo {
-        margin-top: 30% !important;
+        margin-top: 125% !important;
     }
     #labelFondoArmario {
         margin-right: 23% !important;
@@ -9634,6 +9634,12 @@ ui bootstrap tweaks
         width: 300px !important;
     }
 
+    .puertas3Izquierda1 {
+        margin-left: 63px !important;
+        margin-top: -22px !important;
+        width: 315px !important;
+    }
+
     #puertasArmario2puertas {
         margin-left: 0px !important;
         margin-top: 0px !important;
@@ -9648,6 +9654,222 @@ ui bootstrap tweaks
         float: left !important;
         left: 0 !important;
         margin-left: 5% !important;
+    }
+    #modalConfirmarCreacionPresu {
+        padding-top: 150px !important;
+        z-index: 1000000 !important;
+        background: rgb(60 64 60 / 50%) !important;
+        margin-top: 0px !important;
+    }
+    #divRueda {
+        margin-left: 7px !important;
+    }
+    #textoRueda {
+        font-size: 17px !important;
+    }
+    #imagenRueda {
+        width: 360px;
+    }
+    #pfilasalir {
+        margin-top: -66px !important;
+        margin-left: 23.4% !important;
+    }
+    #imagen0 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter0 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen1 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter1 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen2 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter2 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen3 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter3 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen4 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter4 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen5 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter5 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen6 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter6 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen7 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter7 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen8 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter8 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen9 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter9 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen10 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter10 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen11 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter11 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen12 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter12 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen13 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter13 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen14 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter14 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen15 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter15 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen16 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter16 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen17 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter17 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagen18 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #datosMeter18 {
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+    #imagenPresupues {
+        max-width: 350px !important;
+        max-height: 350px !important;
+    }
+    #totalDescuento {
+        margin-right: 10% !important;
+    }
+    #totalPuntosParaCss {
+        margin-left: 10% !important;
+        font-size: 25px !important;
+    }
+    #divTotalPuntosParaTodo {
+        margin-bottom: -15px !important;
+    }
+    #pNombreProd {
+        font-size: 25px !important;
+    }
+    #codigopedidoP {
+        font-size: 26px !important;
+    }
+    #fechapresupuestop {
+        font-size: 23px !important;
+    }
+    #fechapedidop {
+        font-size: 23px !important;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */

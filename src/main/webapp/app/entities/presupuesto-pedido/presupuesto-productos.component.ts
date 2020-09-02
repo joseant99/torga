@@ -9727,7 +9727,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     ) {
                                                         if (contador == 1) {
                                                             $('#imagen' + i).append(
-                                                                '<img style="z-index:' +
+                                                                '<img id="imagenPresupues" style="z-index:' +
                                                                     (100 - i) +
                                                                     ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO/' +
                                                                     nombreCargarImagen +
@@ -9737,7 +9737,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     } else {
                                                         if (contador == 1) {
                                                             $('#imagen' + (i - 1)).append(
-                                                                '<img style="z-index:' +
+                                                                '<img id="imagenPresupues" style="z-index:' +
                                                                     (100 - i) +
                                                                     ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO/' +
                                                                     nombreCargarImagen +
@@ -9748,7 +9748,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 } else {
                                                     if (contador == 1) {
                                                         $('#imagen' + i).append(
-                                                            '<img style="z-index:' +
+                                                            '<img id="imagenPresupues" style="z-index:' +
                                                                 (100 - i) +
                                                                 ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO/' +
                                                                 nombreCargarImagen +

@@ -52,8 +52,8 @@
 			</div>
 			<div style="float:right;margin-right:25%;display:none" id="subtotalPago"><p style="font-size:25px" id="precioSubtotal">0</p></div>
 		</div>
-		<div style="float:left;width:100%;margin-bottom:15px;">
-			<div style="float:left;margin-left:25%;font-size:25px"><p style="letter-spacing: 2px;" id="bajarFontSize">TOTAL PUNTOS</p>
+		<div id="divTotalPuntosParaTodo" style="float:left;width:100%;margin-bottom:15px;">
+			<div id="totalPuntosParaCss" style="float:left;margin-left:25%;font-size:25px"><p style="letter-spacing: 2px;" id="bajarFontSize">TOTAL PUNTOS</p>
 			
 			</div>
 			<div style="float:right;margin-right:25%" id="totalDescuento"><span id="totalDescuentoTexto" style="font-size:25px">0</span><span style="font-size:25px" id="euro"> pp</span></div>
@@ -113,7 +113,7 @@
 	  		<!--  <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" [routerLink]="['/presupuesto-edicion']">EDITAR PRESUPUESTO</button></p>-->
 	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="eliminar()" [routerLink]="['/presupuesto-usuario']">ELIMINAR PRESUPUESTO</button></p>
 	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;"  [routerLink]="['/presupuesto-usuario']">SALIR</button></p>
-	  		<p style="text-align:center;position: absolute;margin-top: -81px;margin-left: 42.16%;z-index: 10;" *jhiHasAnyAuthority="'ROLE_ADMIN'"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalVistoPresupuesto"">SALIR</button></p>
+	  		<p id="pfilasalir" style="text-align:center;position: absolute;margin-top: -81px;margin-left: 42.16%;z-index: 10;" *jhiHasAnyAuthority="'ROLE_ADMIN'"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalVistoPresupuesto"">SALIR</button></p>
 		
 		</div>
   	</div>

@@ -3,9 +3,9 @@
 	    <br/>
 			    <div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let i=index;">
 		    	<div style="width:100%;" *ngIf="i===0">
-		    		<p style="text-align:center;font-size:30px">PEDIDO: {{productosPresupuestoPedidos.presupuestoPedido?.codigo}}</p>
-		    		<p style="text-align:center;font-size:30px">FECHA PRESUPUESTO:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_presupuesto}}</p>
-		    		<p style="text-align:center;font-size:30px">FECHA PEDIDO:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_pedido}}</p>
+		    		<p style="text-align:center;font-size:30px" id="codigopedidoP">PEDIDO: {{productosPresupuestoPedidos.presupuestoPedido?.codigo}}</p>
+		    		<p style="text-align:center;font-size:30px" id="fechapresupuestop">FECHA PRESUPUESTO:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_presupuesto}}</p>
+		    		<p style="text-align:center;font-size:30px" id="fechapedidop">FECHA PEDIDO:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_pedido}}</p>
 		    		<div style="margin-top:40px" id="clienteDiv">
 		    			<p style="text-align:center;font-size:23px">TIENDA</p>
 		    			<p style="text-align:center;font-size:18px">{{datosUsuarioService.tiendaCargadaPresu.nombreComercial}}</p>
@@ -51,8 +51,8 @@
 			</div>
 			<div style="float:right;margin-right:25%;display:none" id="subtotalPago"><p style="font-size:25px" id="precioSubtotal">0</p></div>
 		</div>
-		<div style="float:left;width:100%;margin-bottom:15px;">
-			<div style="float:left;margin-left:25%;font-size:25px"><p style="letter-spacing: 2px;" id="bajarFontSize">TOTAL PUNTOS</p>
+		<div id="divTotalPuntosParaTodo" style="float:left;width:100%;margin-bottom:15px;">
+			<div id="totalPuntosParaCss" style="float:left;margin-left:25%;font-size:25px"><p style="letter-spacing: 2px;" id="bajarFontSize">TOTAL PUNTOS</p>
 			
 			</div>
 			<div style="float:right;margin-right:25%" id="totalDescuento"><span id="totalDescuentoTexto" style="font-size:25px">0</span><span style="font-size:25px" id="euro"> pp</span></div>

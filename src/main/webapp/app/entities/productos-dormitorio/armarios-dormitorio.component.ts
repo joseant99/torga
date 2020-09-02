@@ -9621,12 +9621,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     );
                                 }
                                 if (i == 2) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img class="" id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 213px;margin-top: -39px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                    );
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img class="" id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                    );
+                                    if (screen.width >= 800) {
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img class="" id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 213px;margin-top: -39px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        );
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img class="" id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        );
+                                    }
+
+                                    if (screen.width < 800) {
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img class="" id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        );
+                                        $('#imagenesArmario2 #imagenesArmario').append(
+                                            '<img class="" id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        );
+                                    }
                                 }
                             }
                         }
