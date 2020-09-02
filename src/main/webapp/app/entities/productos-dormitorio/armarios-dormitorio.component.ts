@@ -269,7 +269,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var conta = 0;
         var todo = [];
         todo[1] = this.armarioCogido;
-
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
         for (let i = 0; i < todo[1]['interiores'].length; i++) {
             var precio = $('#calculadoraCarrito #productoCalculadora1 #precioInt' + i).text();
             precio = precio.split(' ')[1];

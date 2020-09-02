@@ -8398,8 +8398,9 @@ ui bootstrap tweaks
         margin-top: 15px;
     }
     #artFor1 {
-        margin-left: 19% !important;
+        margin-left: 15% !important;
         margin-top: 15px;
+        width: 29%;
     }
 
     #artFor2 {
@@ -8431,7 +8432,7 @@ ui bootstrap tweaks
     #artFor7 {
         margin-left: 15% !important;
         margin-top: 15px;
-        width: 31%;
+        width: 32%;
     }
     #artFor8 {
         margin-left: 15% !important;
@@ -8441,7 +8442,7 @@ ui bootstrap tweaks
     #artFor9 {
         margin-left: 15% !important;
         margin-top: 15px;
-        width: 37%;
+        width: 38%;
     }
 
     #estFor {
@@ -9873,7 +9874,7 @@ ui bootstrap tweaks
     }
     #botonCalculadora {
         width: 50%;
-        height: 15%;
+        height: 55px !important;
         bottom: 0;
         position: absolute;
         font-size: 16px;
@@ -9907,7 +9908,7 @@ ui bootstrap tweaks
     }
     #botonCalculadoraBatientes {
         width: 50% !important;
-        height: 15% !important;
+        height: 55px !important;
         bottom: 0 !important;
         position: absolute !important;
         font-size: 16px !important;
@@ -9920,7 +9921,7 @@ ui bootstrap tweaks
 
     #botonCalculadoraRincon {
         width: 50% !important;
-        height: 15% !important;
+        height: 55px !important;
         bottom: 0 !important;
         position: absolute !important;
         font-size: 16px !important;
@@ -9933,7 +9934,7 @@ ui bootstrap tweaks
 
     #botonCalculadoraOculta {
         width: 50% !important;
-        height: 15% !important;
+        height: 55px !important;
         bottom: 0 !important;
         position: absolute !important;
         font-size: 16px !important;
@@ -9946,7 +9947,7 @@ ui bootstrap tweaks
 
     #botonCalculadoraVista {
         width: 50% !important;
-        height: 15% !important;
+        height: 55px !important;
         bottom: 0 !important;
         position: absolute !important;
         font-size: 16px !important;
@@ -9959,7 +9960,7 @@ ui bootstrap tweaks
 
     #botonCalculadoraVestidor {
         width: 50% !important;
-        height: 15% !important;
+        height: 55px !important;
         bottom: 0 !important;
         position: absolute !important;
         font-size: 16px !important;

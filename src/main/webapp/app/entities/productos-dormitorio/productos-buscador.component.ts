@@ -6313,6 +6313,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#textoFinal').css({ display: 'none' });
         $('#iluminacion').removeAttr('style');
         $('#iluminacion').attr('style');
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#iluminacion').css({ display: 'none' });
         var conta = 0;
         for (let k = 1; k < sessionStorage.length; k++) {
