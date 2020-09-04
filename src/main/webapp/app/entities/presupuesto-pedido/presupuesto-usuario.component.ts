@@ -196,9 +196,11 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
                     } else {
                         if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
                             for (let k = 0; k < todos.length; k++) {
-                                if (todos[k]['datosUsuario']['user']['id'] == value['user']['id'] && value['pedido'] == 0) {
-                                    cogidos[contador] = value;
-                                    contador++;
+                                if (todos[k]['user'] != null) {
+                                    if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 0) {
+                                        cogidos[contador] = value;
+                                        contador++;
+                                    }
                                 }
                             }
                         } else {
@@ -293,20 +295,20 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        var arrayBueno = [];
+        arrayBueno[83] = 3;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
             if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
-                this.represenTorgaService.findUsu(account.id).subscribe(data => {
-                    this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
-                        this.representanteTiendaService.todos = data.body;
-                        var tiendas = [];
-                        for (let m = 0; m < data.body['length']; m++) {
-                            tiendas[m] = data.body[m]['datosUsuario'];
-                        }
-                        this.tiendas = tiendas;
-                        this.representanteTiendaService.representante = data.body[0]['represenTorga'];
-                        this.loadAll();
-                    });
+                this.datosUsuarioService.query12(arrayBueno[account.id]).subscribe(data => {
+                    this.representanteTiendaService.todos = data.body;
+                    var tiendas = [];
+                    for (let m = 0; m < data.body['length']; m++) {
+                        tiendas[m] = data.body[m]['datosUsuario'];
+                    }
+                    this.tiendas = tiendas;
+                    this.representanteTiendaService.representante = data.body[0]['represenTorga'];
+                    this.loadAll();
                 });
             } else {
                 this.loadAll();

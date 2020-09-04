@@ -1074,7 +1074,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             armariosTodos[j]['fondo'] = 61;
             this.armarioCogido = armariosTodos[j];
         }
-
+        $('#productosPrincipal').css({ height: '2650px' });
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
         $('#armarioColorFondo1').css({ 'background-color': 'white' });
         $('#armarioColorFondo2').css({ 'background-color': 'white' });

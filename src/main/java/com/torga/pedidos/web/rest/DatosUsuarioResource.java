@@ -95,6 +95,19 @@ public class DatosUsuarioResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/datos-usuarios");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
+    
+    /**
+     * GET  /datos-usuarios : get all the datosUsuarios.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of datosUsuarios in body
+     */
+    @GetMapping("/datos-usuarios-busquing/{id}")
+    @Timed
+    public ResponseEntity<Collection<DatosUsuario>> getAllDatosUsuarios13(@PathVariable Long id) {
+        Collection<DatosUsuario> page = datosUsuarioRepository.busquing1(id);
+        return ResponseEntity.ok().body(page);
+    }
 
     /**
      * GET  /datos-usuarios/:id : get the "id" datosUsuario.

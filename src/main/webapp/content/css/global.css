@@ -8444,6 +8444,11 @@ ui bootstrap tweaks
         margin-top: 15px;
         width: 38%;
     }
+    #artFor10 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 32%;
+    }
 
     #estFor {
         margin-left: 15% !important;
@@ -8607,8 +8612,7 @@ ui bootstrap tweaks
         margin-left: 0px;
         margin-top: 25px;
         padding-left: 0px;
-        overflow-y: scroll;
-        height: 4000px;
+        height: 1750px;
     }
     #ProductosCargados1 {
         margin-left: 27%;
@@ -9022,10 +9026,10 @@ ui bootstrap tweaks
     #puertaColorMarco0 {
         position: absolute !important;
         max-width: 396px !important;
-        max-height: 444px !important;
+        max-height: 424px !important;
         position: absolute !important;
         z-index: 101 !important;
-        margin-top: -50px !important;
+        margin-top: -42px !important;
         margin-left: -122px !important;
     }
     #puertaColorMarco1 {
@@ -9407,8 +9411,8 @@ ui bootstrap tweaks
     }
 
     .armario6simint2 {
-        margin-top: -5px !important;
-        margin-left: -70px !important;
+        margin-top: -70px !important;
+        margin-left: -6px !important;
         max-width: 340px !important;
         max-height: 390px !important;
     }
@@ -9425,8 +9429,10 @@ ui bootstrap tweaks
     .armario7asi2 {
         max-width: 110px !important;
         max-height: 280px !important;
-        margin-left: 66px !important;
         margin-top: -17px !important;
+        margin-left: 67px !important;
+        max-width: 110px !important;
+        max-height: 280px !important;
     }
     .armario7asi3 {
         max-width: 110px !important;
@@ -9439,30 +9445,6 @@ ui bootstrap tweaks
         max-height: 280px !important;
         margin-left: 222px !important;
         margin-top: -57px !important;
-    }
-    .armario7asi1 {
-        max-width: 300px !important;
-        max-height: 365px !important;
-        margin-top: -43px !important;
-        margin-left: -94px !important;
-    }
-    .armario7asi2 {
-        max-width: 300px !important;
-        max-height: 350px !important;
-        margin-top: -52px !important;
-        margin-left: -29px !important;
-    }
-    .armario7asi3 {
-        max-width: 300px !important;
-        max-height: 365px !important;
-        margin-top: -77px !important;
-        margin-left: 38px !important;
-    }
-    .armario7asi4 {
-        max-width: 300px !important;
-        max-height: 365px !important;
-        margin-top: -100px !important;
-        margin-left: 127px !important;
     }
 
     .armario8casco1 {
@@ -9647,6 +9629,12 @@ ui bootstrap tweaks
     }
 
     .armariosOcultaDivInputCodigo {
+        margin-top: 500px;
+    }
+    .armariosVistaDivInputCodigo {
+        margin-top: 500px;
+    }
+    .vestidoresDivInputCodigo {
         margin-top: 500px;
     }
 

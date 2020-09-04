@@ -44,4 +44,8 @@ export class DatosUsuarioService {
     findCoger1(): Observable<EntityResponseType> {
         return this.http.get<IDatosUsuario>(`${this.resourceUrl}-id1`, { observe: 'response' });
     }
+
+    query12(id: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IDatosUsuario[]>(`${this.resourceUrl}-busquing/${id}`, { observe: 'response' });
+    }
 }

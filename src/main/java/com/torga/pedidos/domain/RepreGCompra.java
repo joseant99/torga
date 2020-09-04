@@ -3,6 +3,8 @@ package com.torga.pedidos.domain;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 import java.io.Serializable;
@@ -129,6 +131,10 @@ public class RepreGCompra implements Serializable {
 
     @Column(name = "codigo")
     private Float codigo;
+    
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -254,6 +260,19 @@ public class RepreGCompra implements Serializable {
 
     public void setDto2(Float dto2) {
         this.dto2 = dto2;
+    }
+    
+    public User getUser() {
+        return user;
+    }
+
+    public RepreGCompra user(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Float getCom2() {

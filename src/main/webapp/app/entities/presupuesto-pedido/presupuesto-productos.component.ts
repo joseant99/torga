@@ -861,6 +861,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                         nombreInt +
                                                         '.png">'
                                                 );
+
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-14%', 'important');
+                                                }
                                             }
 
                                             if ('4 PUERTAS ASIMETRICAS' == nombre) {
@@ -920,61 +928,126 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                         nombreInt +
                                                         '.png">'
                                                 );
+
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '3%', 'important');
+                                                }
                                             }
 
                                             if ('7 PUERTAS IZQUIERDA' == nombre) {
-                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                if (screen.width >= 800) {
+                                                    var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 350px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 350px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 74px;margin-top: -24px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;margin-left: 74px;margin-top: -24px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:291px;margin-left:74px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:291px;margin-left:74px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 183px;margin-top: -47px;position: absolute;z-index:48" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;margin-left: 183px;margin-top: -47px;position: absolute;z-index:48" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:268px;margin-left:183px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:268px;margin-left:183px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 292px;margin-top: -70px;position: absolute;z-index:47" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;margin-left: 292px;margin-top: -70px;position: absolute;z-index:47" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:47;margin-top:245px;margin-left:292px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:47;margin-top:245px;margin-left:292px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+                                                }
+
+                                                if (screen.width < 800) {
+                                                    var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 300px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 300px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 315px;margin-left: 62px;margin-top: -22px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 315px;position: absolute;z-index:49;margin-top:293px;margin-left:62px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 315px;margin-left: 156px;margin-top: -42px;position: absolute;z-index:48" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 315px;position: absolute;z-index:48;margin-top:273px;margin-left:156px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 315px;margin-left: 250px;margin-top: -62px;position: absolute;z-index:47" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 315px;position: absolute;z-index:47;margin-top:253px;margin-left:250px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+                                                }
                                             }
 
                                             if ('2 PUERTAS' == nombre) {
@@ -990,6 +1063,13 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                         nombreInt +
                                                         '.png">'
                                                 );
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '3%', 'important');
+                                                }
                                             }
 
                                             if ('3 PUERTAS DERECHA' == nombre) {
@@ -1019,48 +1099,181 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                         nombreInt +
                                                         '.png">'
                                                 );
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-6%', 'important');
+                                                }
                                             }
-
+                                            if ('2 PUERTAS CORREDERA' == nombre) {
+                                                if (screen.width >= 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                }
+                                                if (screen.width < 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                    if (screen.width < 800) {
+                                                        var elem1 = $('#datosMeter' + (cont - 1));
+                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
+                                                    }
+                                                }
+                                            }
+                                            if ('3 PUERTAS CORREDERA' == nombre) {
+                                                if (screen.width >= 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                }
+                                                if (screen.width < 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                    if (screen.width < 800) {
+                                                        var elem1 = $('#datosMeter' + (cont - 1));
+                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
+                                                    }
+                                                }
+                                            }
+                                            if ('2 PUERTAS CORREDERA VISTA' == nombre) {
+                                                if (screen.width >= 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                }
+                                                if (screen.width < 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                    if (screen.width < 800) {
+                                                        var elem1 = $('#datosMeter' + (cont - 1));
+                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
+                                                    }
+                                                }
+                                            }
+                                            if ('3 PUERTAS CORREDERA VISTA' == nombre) {
+                                                if (screen.width >= 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                }
+                                                if (screen.width < 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                    if (screen.width < 800) {
+                                                        var elem1 = $('#datosMeter' + (cont - 1));
+                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
+                                                    }
+                                                }
+                                            }
                                             if ('5 PUERTAS CENTRAL' == nombre) {
-                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                if (screen.width >= 800) {
+                                                    var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:49;margin-left:90px;margin-top:-10px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 350px;position: absolute;z-index:49;margin-left:90px;margin-top:-10px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:49;margin-top:305px;margin-left:90px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 350px;position: absolute;z-index:49;margin-top:305px;margin-left:90px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:48;margin-left:164px;margin-top:-34px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:48;margin-left:164px;margin-top:-34px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
 
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:281px;margin-left:164px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:281px;margin-left:164px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+                                                }
+
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+
+                                                    var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                    var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 350px;position: absolute;z-index:49;margin-left:90px;margin-top:-10px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 350px;position: absolute;z-index:49;margin-top:305px;margin-left:90px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:48;margin-left:164px;margin-top:-34px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:281px;margin-left:164px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            nombreInt +
+                                                            '.png">'
+                                                    );
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-21%', 'important');
+                                                    $('#imagen' + (cont - 1)).attr(
+                                                        'style',
+                                                        'height: 700px !important;margin-left:-21% !important;float: left; width: 40%;margin-top: 4%;'
+                                                    );
+                                                }
                                             }
                                             if ('7 PUERTA ASIMETRICAS' == nombre) {
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
@@ -1292,6 +1505,13 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                         nombreInt +
                                                         '.png">'
                                                 );
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-14%', 'important');
+                                                }
                                             }
 
                                             if ('5 PUERTAS DERECHA' == nombre) {
@@ -1418,16 +1638,16 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                         '.png">'
                                                 );
 
-                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 350px;position: absolute;z-index:47;margin-left: 272px;margin-top:-57px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 350px;position: absolute;z-index:47;margin-top:258px;margin-left: 272px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1483,18 +1703,26 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             }
                                             if ('3 PUERTAS IZQUIERDA' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-14%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1504,14 +1732,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1521,7 +1749,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1530,7 +1758,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1539,7 +1767,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1548,7 +1776,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1560,14 +1788,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#cuerpo' + i + ' #derecha').append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1577,14 +1805,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1594,7 +1822,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1603,7 +1831,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1612,7 +1840,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1621,7 +1849,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1630,7 +1858,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1639,7 +1867,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1649,7 +1877,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1658,7 +1886,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1670,14 +1898,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#cuerpo' + i + ' #derecha').append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1687,14 +1915,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1704,7 +1932,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1713,7 +1941,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1722,7 +1950,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1731,7 +1959,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1740,7 +1968,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1749,7 +1977,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1759,7 +1987,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1768,7 +1996,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1777,18 +2005,26 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                             if ('4 PUERTAS ASIMETRICAS' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-18%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1798,14 +2034,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1815,7 +2051,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1824,7 +2060,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1833,7 +2069,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1842,7 +2078,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1854,14 +2090,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#cuerpo' + i + ' #derecha').append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1871,14 +2107,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1888,7 +2124,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1897,7 +2133,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1906,7 +2142,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1915,7 +2151,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1924,7 +2160,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1933,7 +2169,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1943,7 +2179,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1952,7 +2188,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -1964,14 +2200,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#cuerpo' + i + ' #derecha').append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1981,14 +2217,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -1998,7 +2234,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2007,7 +2243,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2016,7 +2252,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2025,7 +2261,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2034,7 +2270,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2043,7 +2279,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2053,7 +2289,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2062,7 +2298,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2073,14 +2309,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;opacity:0.4;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;opacity:0.4;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2090,14 +2326,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;opacity:0.4;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;opacity:0.4;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2107,7 +2343,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2116,7 +2352,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2125,7 +2361,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2134,7 +2370,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2143,18 +2379,26 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                             if ('1 PUERTA' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '3%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2164,14 +2408,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2181,7 +2425,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2190,7 +2434,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2199,7 +2443,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2208,7 +2452,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2217,18 +2461,27 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                             if ('5 PUERTAS IZQUIERDA' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-26%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '2%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2238,14 +2491,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2255,7 +2508,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2264,7 +2517,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2273,7 +2526,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2282,7 +2535,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2294,14 +2547,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2311,14 +2564,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2328,7 +2581,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2337,7 +2590,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2346,7 +2599,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2355,7 +2608,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2364,7 +2617,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2373,7 +2626,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2383,7 +2636,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2392,7 +2645,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2404,14 +2657,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2421,14 +2674,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2438,7 +2691,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2447,7 +2700,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2456,7 +2709,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2465,7 +2718,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2474,7 +2727,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2483,7 +2736,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2493,7 +2746,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2502,7 +2755,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2514,14 +2767,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2531,14 +2784,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2548,7 +2801,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2557,7 +2810,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2566,7 +2819,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2575,7 +2828,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2584,7 +2837,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2593,7 +2846,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2603,7 +2856,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2612,7 +2865,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2624,14 +2877,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2641,14 +2894,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -2658,7 +2911,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2667,7 +2920,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2676,7 +2929,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2685,7 +2938,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2694,7 +2947,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2703,7 +2956,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2713,7 +2966,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2722,7 +2975,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2730,754 +2983,1508 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             }
 
                                             if ('7 PUERTAS IZQUIERDA' == nombre) {
-                                                var tipo = data.body[0]['productosDormitorio']['nombre'];
-                                                if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-28%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '8%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
+                                                if (screen.width < 800) {
+                                                    var tipo = data.body[0]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    var tipo = data.body[1]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    var tipo = data.body[2]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;margin-top: 293px;margin-left: 62px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    var tipo = data.body[3]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    var tipo = data.body[4]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;width: 315px !important;margin-left: 157px;margin-top: 274px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    var tipo = data.body[5]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    var tipo = data.body[6]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;margin-left: 251px;margin-top: 255px;width: 315px !important;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
                                                 }
 
-                                                if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                if (screen.width >= 800) {
+                                                    var tipo = data.body[0]['productosDormitorio']['nombre'];
 
-                                                if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                var tipo = data.body[1]['productosDormitorio']['nombre'];
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    var tipo = data.body[1]['productosDormitorio']['nombre'];
 
-                                                if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                var tipo = data.body[2]['productosDormitorio']['nombre'];
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    var tipo = data.body[2]['productosDormitorio']['nombre'];
 
-                                                if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                var tipo = data.body[3]['productosDormitorio']['nombre'];
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    var tipo = data.body[3]['productosDormitorio']['nombre'];
 
-                                                if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                var tipo = data.body[4]['productosDormitorio']['nombre'];
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    var tipo = data.body[4]['productosDormitorio']['nombre'];
 
-                                                if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                var tipo = data.body[5]['productosDormitorio']['nombre'];
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    var tipo = data.body[5]['productosDormitorio']['nombre'];
 
-                                                if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                var tipo = data.body[6]['productosDormitorio']['nombre'];
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
-                                                }
+                                                    var tipo = data.body[6]['productosDormitorio']['nombre'];
 
-                                                if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
+                                                    if (tipo == 'Puerta Aluminio Transparente') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
 
-                                                if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
-                                                }
-                                                if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
-                                                            src +
-                                                            '">'
-                                                    );
+                                                    if (tipo == 'Puerta Aluminio Gris') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                        var src1 =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src1 +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta Batiente sin tirador') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador TIM') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador NYE') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta Batiente tirador DRAW') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle TIM Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == '2 Puertas Fuelle NYE Izquierda') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == '2 Puertas Fuelle NYE Derecha') {
+                                                        var src =
+                                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 292px;margin-top: 245px;" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
                                                 }
                                             }
 
                                             if ('3 PUERTAS DERECHA' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
-
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-6%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -3487,14 +4494,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -3504,7 +4511,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3513,7 +4520,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3522,7 +4529,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3531,7 +4538,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3540,7 +4547,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3549,7 +4556,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3559,7 +4566,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3568,7 +4575,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3580,14 +4587,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -3597,14 +4604,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -3614,7 +4621,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3623,7 +4630,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3632,7 +4639,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3641,7 +4648,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3650,7 +4657,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3659,7 +4666,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3669,7 +4676,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3678,7 +4685,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3689,14 +4696,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -3706,14 +4713,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -3723,7 +4730,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3732,7 +4739,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3741,7 +4748,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3750,7 +4757,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3758,13 +4765,18 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                             }
 
                                             if ('5 PUERTAS CENTRAL' == nombre) {
+                                                if (screen.width < 800) {
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                    elem[0].style.setProperty('margin-left', '-21%', 'important');
+                                                }
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img  style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3781,14 +4793,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img  style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -3798,7 +4810,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3807,7 +4819,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3816,7 +4828,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3825,7 +4837,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3834,7 +4846,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3843,7 +4855,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3853,7 +4865,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3862,7 +4874,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3874,14 +4886,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -3891,14 +4903,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -3908,7 +4920,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3917,7 +4929,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3926,7 +4938,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3935,7 +4947,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3944,7 +4956,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3953,7 +4965,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3963,7 +4975,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3972,7 +4984,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3983,14 +4995,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -4000,14 +5012,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -4017,7 +5029,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4026,7 +5038,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4035,7 +5047,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4044,7 +5056,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4056,14 +5068,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -4073,14 +5085,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -4090,7 +5102,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4099,7 +5111,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4108,7 +5120,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4117,7 +5129,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4126,7 +5138,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4135,7 +5147,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4145,7 +5157,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4154,7 +5166,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4166,14 +5178,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -4183,14 +5195,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -4200,7 +5212,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4209,7 +5221,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4218,7 +5230,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4227,7 +5239,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4236,7 +5248,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4245,7 +5257,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4255,7 +5267,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4264,7 +5276,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5007,19 +6019,26 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                             if ('2 PUERTAS' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
-
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '3%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5029,14 +6048,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5046,7 +6065,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5055,7 +6074,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5064,7 +6083,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5073,7 +6092,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5082,7 +6101,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5091,7 +6110,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5101,7 +6120,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5110,7 +6129,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5122,14 +6141,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5139,14 +6158,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5156,7 +6175,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5165,7 +6184,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5174,7 +6193,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5183,7 +6202,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5192,7 +6211,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5201,7 +6220,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5211,7 +6230,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5220,7 +6239,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5229,19 +6248,26 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                             if ('4 PUERTAS - 2 HUECOS GRANDES' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
-
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-14%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5251,14 +6277,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5268,7 +6294,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5277,7 +6303,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5286,7 +6312,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5295,7 +6321,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5304,7 +6330,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5313,7 +6339,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5323,7 +6349,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5332,7 +6358,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5344,14 +6370,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5361,14 +6387,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5378,7 +6404,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5387,7 +6413,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5396,7 +6422,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5405,7 +6431,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5414,7 +6440,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5423,7 +6449,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5433,7 +6459,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5442,7 +6468,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5454,14 +6480,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5471,14 +6497,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5488,7 +6514,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5497,7 +6523,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5506,7 +6532,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5515,7 +6541,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5524,7 +6550,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5533,7 +6559,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5543,7 +6569,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5552,7 +6578,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5564,14 +6590,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5581,14 +6607,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5598,7 +6624,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5607,7 +6633,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5616,7 +6642,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5625,7 +6651,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5634,7 +6660,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5643,7 +6669,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5653,7 +6679,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5662,7 +6688,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5671,19 +6697,27 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                             if ('5 PUERTAS DERECHA' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
-
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-21%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '-2%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5693,14 +6727,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5710,7 +6744,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5719,7 +6753,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5728,7 +6762,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5737,7 +6771,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5746,7 +6780,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5755,7 +6789,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5765,7 +6799,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5774,7 +6808,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5786,14 +6820,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5803,14 +6837,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5820,7 +6854,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5829,7 +6863,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5838,7 +6872,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5847,7 +6881,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5856,7 +6890,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5865,7 +6899,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5875,7 +6909,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5884,7 +6918,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5896,14 +6930,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5913,14 +6947,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -5930,7 +6964,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5939,7 +6973,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5948,7 +6982,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5957,7 +6991,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5966,7 +7000,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5975,7 +7009,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5985,7 +7019,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5994,7 +7028,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6006,14 +7040,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -6023,14 +7057,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -6040,7 +7074,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6049,7 +7083,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6058,7 +7092,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6067,7 +7101,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6076,7 +7110,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6085,7 +7119,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6104,7 +7138,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6114,14 +7148,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:282px;margin-left:198px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -6131,14 +7165,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:282px;margin-left:198px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -6148,7 +7182,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6157,7 +7191,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6166,7 +7200,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6175,7 +7209,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6918,19 +7952,27 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                             if ('6 PUERTAS -3 HUECOS GRANDES' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
-
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-28%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '5%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -6940,14 +7982,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -6957,7 +7999,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6966,7 +8008,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6975,7 +8017,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6984,7 +8026,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -6993,7 +8035,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7002,7 +8044,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7012,7 +8054,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7021,7 +8063,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7033,14 +8075,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -7050,14 +8092,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -7067,7 +8109,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7076,7 +8118,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7085,7 +8127,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7094,7 +8136,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7103,7 +8145,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7112,7 +8154,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7122,7 +8164,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7131,7 +8173,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7143,14 +8185,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -7167,7 +8209,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -7177,7 +8219,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7186,7 +8228,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7195,7 +8237,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7204,7 +8246,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7213,7 +8255,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7222,7 +8264,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7232,7 +8274,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7241,7 +8283,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7253,14 +8295,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -7270,14 +8312,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -7287,7 +8329,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7296,7 +8338,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7305,7 +8347,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7314,7 +8356,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7323,7 +8365,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7332,7 +8374,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7342,7 +8384,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7351,7 +8393,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7363,14 +8405,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -7380,14 +8422,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -7397,7 +8439,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7406,7 +8448,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7415,7 +8457,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7424,7 +8466,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7433,7 +8475,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7442,7 +8484,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7452,7 +8494,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7461,7 +8503,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7473,14 +8515,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -7490,14 +8532,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -7507,7 +8549,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7516,7 +8558,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7525,7 +8567,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7534,7 +8576,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7543,7 +8585,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7552,7 +8594,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7562,7 +8604,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7571,7 +8613,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 218px;margin-top: 270px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8462,18 +9504,27 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                             if ('6 PUERTAS ASIMETRICAS' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '-33%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '5%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8483,14 +9534,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8500,7 +9551,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8509,7 +9560,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8518,7 +9569,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8527,7 +9578,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8539,14 +9590,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8556,14 +9607,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8573,7 +9624,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8582,7 +9633,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8591,7 +9642,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8600,7 +9651,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8609,7 +9660,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8618,7 +9669,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8628,7 +9679,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8637,7 +9688,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8649,14 +9700,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8666,14 +9717,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8683,7 +9734,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8692,7 +9743,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8701,7 +9752,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8710,7 +9761,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8719,7 +9770,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8728,7 +9779,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8738,7 +9789,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8747,7 +9798,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8759,14 +9810,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8776,14 +9827,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8793,7 +9844,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8802,7 +9853,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8811,7 +9862,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8820,7 +9871,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8829,7 +9880,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8838,7 +9889,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8848,7 +9899,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8857,7 +9908,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8869,14 +9920,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8886,14 +9937,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:5;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:5;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8903,7 +9954,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8912,7 +9963,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8921,7 +9972,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8930,7 +9981,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8939,7 +9990,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8948,7 +9999,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8958,7 +10009,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -8967,25 +10018,25 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
-                                                var tipo = data.body[0]['productosDormitorio']['nombre'];
+                                                var tipo = data.body[5]['productosDormitorio']['nombre'];
                                                 if (tipo == 'Puerta Aluminio Transparente') {
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:260px;margin-left:272px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:260px;margin-left:272px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -8995,14 +10046,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:260px;margin-left:272px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:260px;margin-left:272px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
@@ -9012,34 +10063,34 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
                                                     var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
+                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
                                                     var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
+                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
                                                     var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
+                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
+                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:260px;margin-left:272px;" src="' +
                                                             src +
                                                             '">'
                                                     );

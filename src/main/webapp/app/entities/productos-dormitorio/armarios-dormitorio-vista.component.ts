@@ -1032,7 +1032,8 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             armariosTodos[j]['fondo'] = 61;
             this.armarioCogido = armariosTodos[j];
         }
-
+        $('#productosPrincipal').css({ height: '2650px' });
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
         $('#armarioColorFondo1').css({ 'background-color': 'white' });
         $('#armarioColorFondo2').css({ 'background-color': 'white' });
@@ -1393,6 +1394,8 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 arrayPuertas[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                $('#imagenesArmario1').append('<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>');
+
                 $('.armariosDivTodo2 #imagenesArmario1').append(
                     '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
                 );
@@ -1418,6 +1421,8 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 arrayPuertas[2] = '3';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                $('#imagenesArmario1').append('<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>');
+
                 $('.armariosDivTodo2 #imagenesArmario1').append(
                     '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
                 );

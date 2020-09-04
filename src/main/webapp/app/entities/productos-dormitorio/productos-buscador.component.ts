@@ -636,6 +636,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#imagenAcabadoPrincipal').css({ display: 'none' });
         $('.armariosRinconDivInputCodigo').css({ display: 'none' });
         $('#ppCalculadora').css({ display: 'block' });
+        $('.selectbuscaarticulos').empty();
+        $('.selectbuscaarticulos').append('<option></option>');
         if (id == 0) {
             $('#inputBusca').css({ display: 'block' });
         }
@@ -647,6 +649,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
         if (id == 2) {
             $('.armariosDivInputCodigo').css({ display: 'block' });
+            if (screen.width < 800) {
+                $('#productosPrincipal').css({ height: '2050px' });
+            }
             $('#calcuBatientes').css({ display: 'block' });
             $('#modalesBatientes').css({ display: 'block' });
             $('.armariosDivInputCodigo #botonOkAnchos').removeAttr('disabled');
@@ -654,6 +659,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
         if (id == 3) {
             $('#calcuOculta').css({ display: 'block' });
+            if (screen.width < 800) {
+                $('#productosPrincipal').css({ height: '2350px' });
+            }
             $('#modalesOculta').css({ display: 'block' });
             $('.armariosOcultaDivInputCodigo').css({ display: 'block' });
             $('.armariosOcultaDivInputCodigo').removeAttr('disabled');
@@ -662,6 +670,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         if (id == 4) {
             $('.armariosVistaDivInputCodigo').css({ display: 'block' });
             $('#calcuVista').css({ display: 'block' });
+            if (screen.width < 800) {
+                $('#productosPrincipal').css({ height: '2350px' });
+            }
             $('#modalesVista').css({ display: 'block' });
             $('.armariosVistaDivInputCodigo').removeAttr('disabled');
         }
@@ -670,6 +681,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('.vestidoresDivInputCodigo').css({ display: 'block' });
             $('#calcuVesti').css({ display: 'block' });
             $('#modalesVesti').css({ display: 'block' });
+            if (screen.width < 800) {
+                $('#productosPrincipal').css({ height: '2050px' });
+            }
         }
 
         if (id == 6) {
@@ -1016,6 +1030,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     public cargarDimen() {
         var precioTienda1;
         $('#total').text(0);
+        $('.divBuscadorArticulos').css({ display: 'block' });
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2050px' });
+        }
         $('.dimensionesColor1').css({ 'background-color': 'white' });
         $('#imagenAcabado').remove();
         $('#datos1').empty();

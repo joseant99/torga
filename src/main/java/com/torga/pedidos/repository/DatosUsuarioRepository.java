@@ -21,5 +21,9 @@ public interface DatosUsuarioRepository extends JpaRepository<DatosUsuario, Long
     
     @Query("Select u.nombreFiscal from DatosUsuario u")
 	Collection<DatosUsuario> busquing();
+    
+    @Query("Select u from DatosUsuario u where u.repreGCompra.id = ?1")
+	Collection<DatosUsuario> busquing1(Long id);
+    
 
 }
