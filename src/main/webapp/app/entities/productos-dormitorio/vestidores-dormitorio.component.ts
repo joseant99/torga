@@ -871,7 +871,8 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 this.armarioCogido = armariosTodos[j];
             }
         }
-
+        $('#productosPrincipal').css({ height: '2650px' });
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
         $('#armarioColorFondo1').css({ 'background-color': 'white' });
         $('#armarioColorFondo2').css({ 'background-color': 'white' });
@@ -1121,9 +1122,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 }
             }
             if (texto == '1 CUERPO TIPO 1') {
-                var dimens = this.dimenArmarios;
                 $('body').css({ 'overflow-x': 'hidden' });
-                var grandes = dimens['grandes'];
                 var array = [];
                 var arrayPuertas = [];
                 for (let j = 0; j < puertas; j++) {
@@ -1132,44 +1131,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 1) {
-                    for (let i = 0; i < puertas; i++) {
-                        if (width >= 1500 && width < 2200) {
-                            var dimensiones = dimens[puertas + ' puertas'];
-                        }
-                        if (width < 1500 && width >= 1300) {
-                            var dimensiones = segunWIDTH[puertas + ' puertas'];
-                        }
-                        this.numeroDeHuecos = puertas;
-                        if (i == 0) {
-                            $('.armariosDivTodo3 #imagenesArmario1').append(
-                                '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                    }
-                    var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                    for (let i = 0; i < puertas; i++) {
-                        var dimensiones = dimens[puertas + ' puertas'];
-                        this.numeroDeHuecos = puertas;
-                        if (i == 0) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                    }
+                    $('.armariosDivTodo3 #imagenesArmario1').append(
+                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                    );
                     $('#acabadosTodo').removeAttr('class');
                     this.acaProdService.findAca(42).subscribe(data => {
                         this.todos = data.body[0]['acabados'];
@@ -1193,39 +1157,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 1) {
-                    for (let i = 0; i < puertas; i++) {
-                        if (width >= 1500 && width < 2200) {
-                            var dimensiones = dimens[puertas + ' puertas'];
-                        }
-                        if (width < 1500 && width >= 1300) {
-                            var dimensiones = segunWIDTH[puertas + ' puertas'];
-                        }
-                        this.numeroDeHuecos = puertas;
-                        if (i == 0) {
-                            $('.armariosDivTodo3 #imagenesArmario1').append(
-                                '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -280px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                            );
-                        }
-                    }
-                    var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                    for (let i = 0; i < puertas; i++) {
-                        var dimensiones = dimens[puertas + ' puertas'];
-                        this.numeroDeHuecos = puertas;
-                        if (i == 0) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                    }
+                    $('.armariosDivTodo3 #imagenesArmario1').append(
+                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                    );
                     $('#acabadosTodo').removeAttr('class');
                     this.acaProdService.findAca(42).subscribe(data => {
                         this.todos = data.body[0]['acabados'];
@@ -1249,39 +1183,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 if (puertas == 1) {
-                    for (let i = 0; i < puertas; i++) {
-                        if (width >= 1500 && width < 2200) {
-                            var dimensiones = dimens[puertas + ' puertas'];
-                        }
-                        if (width < 1500 && width >= 1300) {
-                            var dimensiones = segunWIDTH[puertas + ' puertas'];
-                        }
-                        this.numeroDeHuecos = puertas;
-                        if (i == 0) {
-                            $('.armariosDivTodo3 #imagenesArmario1').append(
-                                '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -280px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                            );
-                        }
-                    }
-                    var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                    for (let i = 0; i < puertas; i++) {
-                        var dimensiones = dimens[puertas + ' puertas'];
-                        this.numeroDeHuecos = puertas;
-                        if (i == 0) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                    }
+                    $('.armariosDivTodo3 #imagenesArmario1').append(
+                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                    );
                     $('#acabadosTodo').removeAttr('class');
                     this.acaProdService.findAca(42).subscribe(data => {
                         this.todos = data.body[0]['acabados'];
@@ -1312,59 +1216,11 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                     if (width < 1500 && width >= 1300) {
                         var dimensiones = segunWIDTH[puertas + ' puertas'];
                     }
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '22%' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="trasera' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left:281px;margin-top:-53px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="trasera' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left:281px;margin-top:-53px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                        );
-                    }
                 }
-                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 210px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                this.numeroDeHuecos = puertas;
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1394,48 +1250,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         var dimensiones = segunWIDTH[puertas + ' puertas'];
                     }
                     this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '22%' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-                    }
                 }
-                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1466,49 +1284,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                     if (width < 1500 && width >= 1300) {
                         var dimensiones = segunWIDTH[puertas + ' puertas'];
                     }
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '22%' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-                    }
                 }
-                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1534,82 +1313,11 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 for (let i = 0; i < puertas; i++) {
                     var dimensiones = dimens[puertas + ' puertas'];
                     this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '11%' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                        );
-                        $('#imagenesArmario').append(
-                            '<img id="trasera' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                        );
-                    } else {
-                        if (i == 1) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                        if (i == 2) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                    }
                 }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
 
-                var html = $('#imagenesArmario1').html();
-
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 250px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 2) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 730px;margin-top: 220px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
                 $('.armariosDivTodo3 #acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1639,63 +1347,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         var dimensiones = segunWIDTH[puertas + ' puertas'];
                     }
                     this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '15%' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-                    }
                 }
-                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 2) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1727,63 +1382,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         var dimensiones = segunWIDTH[puertas + ' puertas'];
                     }
                     this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '15%' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-                    }
                 }
-                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 2) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1809,103 +1411,11 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 for (let i = 0; i < puertas; i++) {
                     var dimensiones = dimens[puertas + ' puertas'];
                     this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '0' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                        );
-                        $('#imagenesArmario').append(
-                            '<img id="trasera' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                        );
-                    } else {
-                        if (i == 1) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                        if (i == 2) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                        if (i == 3) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                    }
                 }
 
-                var html = $('#imagenesArmario1').html();
-
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 245px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 2) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 730px;margin-top: 205px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 3) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 1010px;margin-top: 165px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('.armariosDivTodo3 #acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1935,78 +1445,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         var dimensiones = segunWIDTH[puertas + ' puertas'];
                     }
                     this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:9%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '10%' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-226px;margin-left: 378px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-                    }
                 }
-                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 2) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 3) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 840px;margin-top: 120px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -2038,78 +1480,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         var dimensiones = segunWIDTH[puertas + ' puertas'];
                     }
                     this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:9%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '10%' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-226px;margin-left: 378px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-                    }
                 }
-                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 2) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 3) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 840px;margin-top: 120px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -2135,124 +1509,11 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 for (let i = 0; i < puertas; i++) {
                     var dimensiones = dimens[puertas + ' puertas'];
                     this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:14%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '-10%' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                        );
-                        $('#imagenesArmario').append(
-                            '<img id="trasera' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                        );
-                    } else {
-                        if (i == 1) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                        if (i == 2) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                        if (i == 3) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                        if (i == 4) {
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:96;margin-left: 1124px;margin-top: -206px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('.armariosDivTodo3 #imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:96;margin-left: 1124px;margin-top: -206px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                    }
                 }
 
-                var html = $('#imagenesArmario1').html();
-
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 245px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 2) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 730px;margin-top: 205px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 3) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 1010px;margin-top: 165px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 4) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 1285px;margin-top: 115px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('.armariosDivTodo3 #acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -2282,93 +1543,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         var dimensiones = segunWIDTH[puertas + ' puertas'];
                     }
                     this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:9%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '0' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-226px;margin-left: 378px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:96;margin-top:-268px;margin-left: 603px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO/0.png">'
-                        );
-                    }
                 }
-                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 2) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 3) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 840px;margin-top: 120px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 4) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 1060px;margin-top: 90px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -2400,93 +1578,10 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                         var dimensiones = segunWIDTH[puertas + ' puertas'];
                     }
                     this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario1').append(
-                            '<p style="width:100%;margin-top:9%;' + dimensiones + '" id="imagenesArmario"></p>'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').css({ 'margin-left': '0' });
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:99;margin-top:-142px;margin-left: -72px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:98;margin-top:-184px;margin-left: 153px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:97;margin-top:-226px;margin-left: 378px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<img id="casco' +
-                                i +
-                                '" style="position:absolute;width: 950px;height: 850px;z-index:96;margin-top:-268px;margin-left: 603px;" src="../../../content/images/1- PARA WEB/VESTIDOR REMETIDO SIN TRASERA/0.png">'
-                        );
-                    }
                 }
-                var html = $('.armariosDivTodo3 #imagenesArmario1').html();
-                for (let i = 0; i < puertas; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = puertas;
-                    if (i == 0) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 1) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 400px;margin-top: 210px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 2) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 605px;margin-top: 165px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                    if (i == 3) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 840px;margin-top: 120px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-
-                    if (i == 4) {
-                        $('.armariosDivTodo3 #imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 1060px;margin-top: 90px ;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
+                $('.armariosDivTodo3 #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];

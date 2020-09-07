@@ -6636,26 +6636,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 $('.selectInputArmario').append('<option value="NB' + i + '">NB' + i + '</option>');
             }
         }
-        if (screen.width < 800) {
-            $('.claseInputArmario').remove();
-            $('.selectInputArmario').css({ display: 'block' });
-            $('.inputbuscaarticulos').remove();
-            $('.selectbuscaarticulos').css({ display: 'block' });
-            $('.inputbuscarvestidor').remove();
-            $('.selectbuscarvestidor').css({ display: 'block' });
-            $('.inputbuscaroculta').remove();
-            $('.selectbuscaroculta').css({ display: 'block' });
-            $('.inputbuscarvista').remove();
-            $('.selectbuscarvista').css({ display: 'block' });
-            $('.inputbuscarrincon').remove();
-            $('.selectbuscarrincon').css({ display: 'block' });
-            $('.classinputanchoArmarioBat').remove();
-            $('.classanchoArmarioBat').css({ display: 'block' });
-            $('.classinputaltoArmarioBat').remove();
-            $('.classaltoArmarioBat').css({ display: 'block' });
-            $('.inputfondoArmBatientes').remove();
-            $('.selectfondoArmBatientes').css({ display: 'block' });
-        }
 
         $('#productosPrincipal').append('<datalist id="listaArmariosRincon"></datalist>');
         for (let i = 277; i < 325; i++) {
@@ -6757,7 +6737,26 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     ngOnInit() {
         var todasDimensiones = [];
         var contDimenTipo = 0;
-
+        if (screen.width < 800) {
+            $('.claseInputArmario').remove();
+            $('.selectInputArmario').css({ display: 'block' });
+            $('.inputbuscaarticulos').remove();
+            $('.selectbuscaarticulos').css({ display: 'block' });
+            $('.inputbuscarvestidor').remove();
+            $('.selectbuscarvestidor').css({ display: 'block' });
+            $('.inputbuscaroculta').remove();
+            $('.selectbuscaroculta').css({ display: 'block' });
+            $('.inputbuscarvista').remove();
+            $('.selectbuscarvista').css({ display: 'block' });
+            $('.inputbuscarrincon').remove();
+            $('.selectbuscarrincon').css({ display: 'block' });
+            $('.classinputanchoArmarioBat').remove();
+            $('.classanchoArmarioBat').css({ display: 'block' });
+            $('.classinputaltoArmarioBat').remove();
+            $('.classaltoArmarioBat').css({ display: 'block' });
+            $('.inputfondoArmBatientes').remove();
+            $('.selectfondoArmBatientes').css({ display: 'block' });
+        }
         this.pruebaCargar();
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
         var precioMulti = JSON.parse(sessionStorage.getItem(item));

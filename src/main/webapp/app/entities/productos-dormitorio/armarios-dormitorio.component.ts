@@ -9570,17 +9570,88 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         }
                     }
                     for (let i = 1; i <= puertas; i++) {
-                        $('#imagenesArmario2 #imagenesArmario').append(
-                            '<p class="puerta2nombre' +
-                                i +
-                                '" id="nombrePuerta' +
-                                i +
-                                '" style="position:absolute;' +
-                                dimens['dimenPuerta' + i] +
-                                '"> Puerta ' +
-                                i +
-                                '</p>'
-                        );
+                        if (texto == '4 PUERTAS - 2 HUECOS GRANDES') {
+                            if (screen.width >= 800) {
+                                $('#imagenesArmario2 #imagenesArmario').append(
+                                    '<p class="puerta2nombre' +
+                                        i +
+                                        '" id="nombrePuerta' +
+                                        i +
+                                        '" style="position:absolute;' +
+                                        dimens['dimenPuerta' + i] +
+                                        '"> Puerta ' +
+                                        i +
+                                        '</p>'
+                                );
+                            }
+
+                            if (screen.width < 800) {
+                                if (i == 1) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p class="puerta2nombre' +
+                                            i +
+                                            '" id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;' +
+                                            dimens['dimenPuerta' + i] +
+                                            ';margin-left: 33px !important;margin-top: 180px !important;font-size: 14px !important;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                                if (i == 2) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p class="puerta2nombre' +
+                                            i +
+                                            '" id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;' +
+                                            dimens['dimenPuerta' + i] +
+                                            ';margin-left: 94px !important;margin-top: 165px !important;font-size: 14px !important;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                                if (i == 3) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p class="puerta2nombre' +
+                                            i +
+                                            '" id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;' +
+                                            dimens['dimenPuerta' + i] +
+                                            ';margin-left: 153px !important;margin-top: 150px !important;font-size: 14px !important;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                                if (i == 4) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<p class="puerta2nombre' +
+                                            i +
+                                            '" id="nombrePuerta' +
+                                            i +
+                                            '" style="position:absolute;' +
+                                            dimens['dimenPuerta' + i] +
+                                            ';margin-left: 213px !important;margin-top: 135px !important;font-size: 14px !important;"> Puerta ' +
+                                            i +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                        } else {
+                            $('#imagenesArmario2 #imagenesArmario').append(
+                                '<p class="puerta2nombre' +
+                                    i +
+                                    '" id="nombrePuerta' +
+                                    i +
+                                    '" style="position:absolute;' +
+                                    dimens['dimenPuerta' + i] +
+                                    '"> Puerta ' +
+                                    i +
+                                    '</p>'
+                            );
+                        }
                     }
                 } else {
                     if (texto == '1 PUERTA') {
@@ -11745,6 +11816,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
+                $('#puertaColorMarco' + id).remove();
                 $('#imagenesArmario2 #imagenesArmario').append(
                     '<img id="puertaColorMarco' +
                         id +
@@ -11775,6 +11847,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
+                $('#puertaColorMarco' + id).remove();
                 $('#imagenesArmario2 #imagenesArmario').append(
                     '<img id="puertaColorMarco' +
                         id +
@@ -11810,6 +11883,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
+                $('#puertaColorMarco' + id).remove();
                 $('#imagenesArmario2 #imagenesArmario').append(
                     '<img id="puertaColorMarco' +
                         id +
@@ -11833,7 +11907,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
                 $('#puertaColor' + id).attr('class', 'puertas3Izq2');
-                $('#puertaColorMarco' + id).remove();
+
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -11842,6 +11916,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
+                $('#puertaColorMarco' + id).remove();
                 $('#imagenesArmario2 #imagenesArmario').append(
                     '<img id="puertaColorMarco' +
                         id +
@@ -11863,7 +11938,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
-                $('#puertaColorMarco' + id).remove();
                 $('#nombrePuerta' + (id + 1)).remove();
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
@@ -11879,6 +11953,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
+                $('#puertaColorMarco' + id).remove();
                 $('#imagenesArmario2 #imagenesArmario').append(
                     '<img id="puertaColorMarco' +
                         id +
@@ -11900,7 +11975,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
-                $('#puertaColorMarco' + id).remove();
                 var arrayPuertas = this.arraySaberPuertas;
                 $('#puertaColor' + id).attr('class', 'puertas3Izq3');
                 var arrayHuecos = this.arraySaberHuecos;
@@ -11910,6 +11984,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
+                $('#puertaColorMarco' + id).remove();
                 $('#imagenesArmario2 #imagenesArmario').append(
                     '<img id="puertaColorMarco' +
                         id +
@@ -11931,7 +12006,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
-                $('#puertaColorMarco' + id).remove();
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).attr('class', 'puertas3Izq3');
                 var arrayPuertas = this.arraySaberPuertas;
@@ -12168,6 +12242,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-122px', 'important');
+                    elem[0].style.setProperty('margin-top', '-42px', 'important');
+                    elem[0].style.setProperty('max-width', '396px', 'important');
+                    elem[0].style.setProperty('max-height', '424px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12199,6 +12280,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).attr('class', 'puertas2izquierda1');
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-122px', 'important');
+                    elem[0].style.setProperty('margin-top', '-42px', 'important');
+                    elem[0].style.setProperty('max-width', '396px', 'important');
+                    elem[0].style.setProperty('max-height', '424px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12235,6 +12323,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-73px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 $('#puertaColor' + id).attr('class', 'puertas3derecha3');
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-28px', 'important');
+                    elem[0].style.setProperty('margin-top', '-62px', 'important');
+                    elem[0].style.setProperty('max-width', '396px', 'important');
+                    elem[0].style.setProperty('max-height', '427px', 'important');
+                }
 
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12265,7 +12360,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-118px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-73px' });
                 $('#puertaColor' + id).attr('class', 'puertas3derecha3');
-
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-28px', 'important');
+                    elem[0].style.setProperty('margin-top', '-62px', 'important');
+                    elem[0].style.setProperty('max-width', '396px', 'important');
+                    elem[0].style.setProperty('max-height', '427px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12304,6 +12405,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 $('#puertaColor' + id).attr('class', 'puertas3derecha1');
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-129px', 'important');
+                    elem[0].style.setProperty('margin-top', '-50px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
 
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
@@ -12338,7 +12446,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 $('#puertaColor' + id).attr('class', 'puertas3derecha1');
-
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-129px', 'important');
+                    elem[0].style.setProperty('margin-top', '-50px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12376,7 +12490,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 $('#puertaColor' + id).attr('class', 'puertas3derecha12');
-
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-129px', 'important');
+                    elem[0].style.setProperty('margin-top', '-50px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12410,7 +12530,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
-
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-129px', 'important');
+                    elem[0].style.setProperty('margin-top', '-50px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12448,6 +12574,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 $('#puertaColor' + id).attr('class', 'puerta14puertas');
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-131px', 'important');
+                    elem[0].style.setProperty('margin-top', '-49px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
+
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12480,6 +12614,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-131px', 'important');
+                    elem[0].style.setProperty('margin-top', '-49px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12517,6 +12658,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-131px', 'important');
+                    elem[0].style.setProperty('margin-top', '-49px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12549,6 +12697,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-131px', 'important');
+                    elem[0].style.setProperty('margin-top', '-49px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12586,6 +12741,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-7px', 'important');
+                    elem[0].style.setProperty('margin-top', '-76px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12618,6 +12780,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).attr('class', 'puerta34puertas');
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-7px', 'important');
+                    elem[0].style.setProperty('margin-top', '-76px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12655,6 +12824,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-7px', 'important');
+                    elem[0].style.setProperty('margin-top', '-76px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12687,6 +12863,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-7px', 'important');
+                    elem[0].style.setProperty('margin-top', '-76px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '444px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12723,6 +12906,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-43px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-108px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-108px', 'important');
+                    elem[0].style.setProperty('margin-top', '-43px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12754,6 +12950,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-43px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-108px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-108px', 'important');
+                    elem[0].style.setProperty('margin-top', '-43px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12790,6 +12998,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-43px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-108px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-108px', 'important');
+                    elem[0].style.setProperty('margin-top', '-43px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12821,6 +13041,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-43px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-108px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-108px', 'important');
+                    elem[0].style.setProperty('margin-top', '-43px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12857,6 +13089,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-67px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-6px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-6px', 'important');
+                    elem[0].style.setProperty('margin-top', '-67px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12888,6 +13132,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-67px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-6px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-6px', 'important');
+                    elem[0].style.setProperty('margin-top', '-67px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12924,6 +13180,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-67px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-6px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-6px', 'important');
+                    elem[0].style.setProperty('margin-top', '-67px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12955,6 +13223,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-67px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-6px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-6px', 'important');
+                    elem[0].style.setProperty('margin-top', '-67px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12991,6 +13271,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '282px' });
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    elem12[0].style.setProperty('margin-left', '95px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-91px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '95px', 'important');
+                    elem[0].style.setProperty('margin-top', '-91px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -13022,6 +13315,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '282px' });
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    elem12[0].style.setProperty('margin-left', '95px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-91px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '95px', 'important');
+                    elem[0].style.setProperty('margin-top', '-91px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -13058,6 +13364,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '282px' });
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    elem12[0].style.setProperty('margin-left', '95px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-91px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '95px', 'important');
+                    elem[0].style.setProperty('margin-top', '-91px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -13085,10 +13404,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'max-width': '915px' });
+                $('#puertaColorMarco' + id).css({ 'max-height': '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-203px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '282px' });
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ width: '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ height: '390px' });
+                    elem12[0].style.setProperty('margin-left', '95px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-91px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '95px', 'important');
+                    elem[0].style.setProperty('margin-top', '-91px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -13851,6 +14183,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '810px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-157px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '140px' });
+                if (screen.width < 800) {
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '56px', 'important');
+                    elem[0].style.setProperty('margin-top', '-84px', 'important');
+                    elem[0].style.setProperty('max-width', '412px', 'important');
+                    elem[0].style.setProperty('max-height', '424px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14046,18 +14385,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-286px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-46px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-107px' });
+
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-107px', 'important');
+                    elem[0].style.setProperty('margin-top', '-46px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14084,18 +14430,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-286px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-46px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-107px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-107px', 'important');
+                    elem[0].style.setProperty('margin-top', '-46px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14126,19 +14478,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-80px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-282px' });
 
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '810px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-80px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '310px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '370px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-34px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-93px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-93px', 'important');
+                    elem[0].style.setProperty('margin-top', '-34px', 'important');
+                    elem[0].style.setProperty('max-width', '310px', 'important');
+                    elem[0].style.setProperty('max-height', '370px', 'important');
                 }
-
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '810px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-80px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14164,19 +14520,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-80px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-282px' });
 
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '810px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-80px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '310px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '370px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-34px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-93px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-93px', 'important');
+                    elem[0].style.setProperty('margin-top', '-34px', 'important');
+                    elem[0].style.setProperty('max-width', '310px', 'important');
+                    elem[0].style.setProperty('max-height', '370px', 'important');
                 }
-
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '810px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-80px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14207,18 +14567,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-136px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-69px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-62px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-32px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-32px', 'important');
+                    elem[0].style.setProperty('margin-top', '-62px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14244,18 +14610,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-136px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-69px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-62px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-32px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-32px', 'important');
+                    elem[0].style.setProperty('margin-top', '-62px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14286,18 +14658,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-136px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-69px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-62px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-32px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-32px', 'important');
+                    elem[0].style.setProperty('margin-top', '-62px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14323,18 +14701,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-136px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-69px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-62px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-32px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-32px', 'important');
+                    elem[0].style.setProperty('margin-top', '-62px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-69px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14365,18 +14749,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-187px' });
                 $('#puertaColor' + id).css({ 'margin-left': '213px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-187px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '213px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-87px' });
                     $('#puertaColor' + id).css({ 'margin-left': '70px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '70px', 'important');
+                    elem[0].style.setProperty('margin-top', '-87px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-187px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '213px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14402,18 +14792,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-187px' });
                 $('#puertaColor' + id).css({ 'margin-left': '213px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-187px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '213px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-87px' });
                     $('#puertaColor' + id).css({ 'margin-left': '70px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '70px', 'important');
+                    elem[0].style.setProperty('margin-top', '-87px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-187px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '213px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14444,18 +14840,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-187px' });
                 $('#puertaColor' + id).css({ 'margin-left': '213px' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '340px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '390px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-87px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '70px' });
-                }
+
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-187px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '213px' });
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColorMarco' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-87px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '70px' });
+                    elem12[0].style.setProperty('margin-left', '70px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-87px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '70px', 'important');
+                    elem[0].style.setProperty('margin-top', '-87px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -14474,13 +14879,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     'src',
                     '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
                 );
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '340px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '390px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-87px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '70px' });
-                }
+
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '915px' });
                 $('#puertaColor' + id).css({ height: '845px' });
@@ -14493,6 +14892,21 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-187px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '213px' });
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColorMarco' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-87px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '70px' });
+                    elem12[0].style.setProperty('margin-left', '70px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-87px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '70px', 'important');
+                    elem[0].style.setProperty('margin-top', '-87px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -15950,18 +16364,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-284px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-46px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-107px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-107px', 'important');
+                    elem[0].style.setProperty('margin-top', '-46px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-284px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -15988,18 +16408,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-284px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-46px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-107px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-107px', 'important');
+                    elem[0].style.setProperty('margin-top', '-46px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-284px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16029,18 +16455,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ height: '810px' });
                 $('#puertaColor' + id).css({ 'margin-top': '-118px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-73px' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '810px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-118px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-73px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '310px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '370px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-53px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-17px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-32px', 'important');
+                    elem[0].style.setProperty('margin-top', '-53px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '370px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '810px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-118px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-73px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16065,18 +16497,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ height: '810px' });
                 $('#puertaColor' + id).css({ 'margin-top': '-118px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-73px' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '810px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-118px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-73px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '310px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '370px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-53px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-17px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-32px', 'important');
+                    elem[0].style.setProperty('margin-top', '-53px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '370px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '810px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-118px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-73px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16109,19 +16547,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-left': '143px' });
                 $('#puertaColor' + id).css({ display: 'block' });
 
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-173px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '143px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-80px' });
                     $('#puertaColor' + id).css({ 'margin-left': '43px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '43px', 'important');
+                    elem[0].style.setProperty('margin-top', '-80px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-173px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '143px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16149,19 +16591,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-left': '143px' });
                 $('#puertaColor' + id).css({ display: 'block' });
 
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-173px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '143px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-80px' });
                     $('#puertaColor' + id).css({ 'margin-left': '43px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '43px', 'important');
+                    elem[0].style.setProperty('margin-top', '-80px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-173px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '143px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16194,19 +16640,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-left': '143px' });
                 $('#puertaColor' + id).css({ display: 'block' });
 
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '340px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '390px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-80px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '43px' });
-                }
-
                 $('#puertaColor' + id).css({ opacity: '0.3' });
                 $('#puertaColorMarco' + id).css({ width: '915px' });
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-173px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '143px' });
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    elem12[0].style.setProperty('margin-left', '43px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-80px', 'important');
+                    elem12[0].style.setProperty('max-width', '340px', 'important');
+                    elem12[0].style.setProperty('max-height', '390px', 'important');
+                    elem12[0].style.setProperty('z-index', '102', 'important');
+
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '43px', 'important');
+                    elem[0].style.setProperty('margin-top', '-80px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16239,6 +16691,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-173px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '143px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-80px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '43px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '43px', 'important');
+                    elem[0].style.setProperty('margin-top', '-80px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16270,18 +16734,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-286px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-44px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-108px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-108px', 'important');
+                    elem[0].style.setProperty('margin-top', '-44px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16308,18 +16778,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-286px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-44px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-108px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-108px', 'important');
+                    elem[0].style.setProperty('margin-top', '-44px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-286px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16351,18 +16827,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-96px' });
                 $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-284px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-44px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-108px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-108px', 'important');
+                    elem[0].style.setProperty('margin-top', '-44px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-284px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16390,17 +16872,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).css({ opacity: '0.3' });
+
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '-284px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-44px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-108px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-108px', 'important');
+                    elem[0].style.setProperty('margin-top', '-44px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '-284px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16432,18 +16920,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColor' + id).css({ 'margin-left': '0px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-69px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-5px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-5px', 'important');
+                    elem[0].style.setProperty('margin-top', '-69px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16470,18 +16963,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColor' + id).css({ 'margin-left': '0px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-69px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-5px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-5px', 'important');
+                    elem[0].style.setProperty('margin-top', '-69px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16525,6 +17024,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '845px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-69px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-5px', 'important');
+                    elem[0].style.setProperty('margin-top', '-69px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16551,18 +17062,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ 'margin-top': '-150px' });
                 $('#puertaColor' + id).css({ 'margin-left': '0px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                $('#puertaColor' + id).css({ opacity: '0.3' });
+                $('#puertaColorMarco' + id).css({ width: '915px' });
+                $('#puertaColorMarco' + id).css({ height: '845px' });
+                $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
+                $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
                     $('#puertaColor' + id).css({ 'max-height': '390px' });
                     $('#puertaColor' + id).css({ 'margin-top': '-69px' });
                     $('#puertaColor' + id).css({ 'margin-left': '-5px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-5px', 'important');
+                    elem[0].style.setProperty('margin-top', '-69px', 'important');
+                    elem[0].style.setProperty('max-width', '340px', 'important');
+                    elem[0].style.setProperty('max-height', '390px', 'important');
                 }
-                $('#puertaColor' + id).css({ opacity: '0.3' });
-                $('#puertaColorMarco' + id).css({ width: '915px' });
-                $('#puertaColorMarco' + id).css({ height: '845px' });
-                $('#puertaColorMarco' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColorMarco' + id).css({ 'margin-left': '0px' });
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16599,6 +17115,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '810px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-200px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '330px' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '310px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '370px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-76px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '86px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '86px', 'important');
+                    elem[0].style.setProperty('margin-top', '-76px', 'important');
+                    elem[0].style.setProperty('max-width', '310px', 'important');
+                    elem[0].style.setProperty('max-height', '370px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -16630,6 +17158,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColorMarco' + id).css({ height: '810px' });
                 $('#puertaColorMarco' + id).css({ 'margin-top': '-200px' });
                 $('#puertaColorMarco' + id).css({ 'margin-left': '330px' });
+                if (screen.width < 800) {
+                    $('#puertaColor6').css({ 'max-width': '310px' });
+                    $('#puertaColor6').css({ 'z-index': '102' });
+                    $('#puertaColor6').css({ 'max-height': '370px' });
+                    $('#puertaColor6').css({ 'margin-top': '-76px' });
+                    $('#puertaColor6').css({ 'margin-left': '86px' });
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '86px', 'important');
+                    elem[0].style.setProperty('margin-top', '-76px', 'important');
+                    elem[0].style.setProperty('max-width', '310px', 'important');
+                    elem[0].style.setProperty('max-height', '370px', 'important');
+                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;

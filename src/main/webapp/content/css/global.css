@@ -8357,7 +8357,8 @@ ui bootstrap tweaks
         font-size: 14px !important;
     }
     #page-heading {
-        margin-left: 0%;
+        margin-left: -5%;
+        margin-right: 2%;
     }
     #acabado {
         margin-left: 20%;
@@ -8447,7 +8448,7 @@ ui bootstrap tweaks
     #artFor10 {
         margin-left: 15% !important;
         margin-top: 15px;
-        width: 32%;
+        width: 34%;
     }
 
     #estFor {
